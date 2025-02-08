@@ -7080,9 +7080,12 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 chatActivityEnterViewAnimatedIconView.setVisibility(0);
             }
             if (z) {
-                this.attachButton.setAlpha(0.0f);
-                this.attachButton.setScaleX(0.0f);
-                this.attachButton.setScaleY(0.0f);
+                ImageView imageView = this.attachButton;
+                if (imageView != null) {
+                    imageView.setAlpha(0.0f);
+                    this.attachButton.setScaleX(0.0f);
+                    this.attachButton.setScaleY(0.0f);
+                }
                 this.emojiButtonAlpha = 0.0f;
                 this.emojiButtonScale = 0.0f;
                 updateEmojiButtonParams();
@@ -7100,9 +7103,12 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 Property property3 = View.SCALE_Y;
                 arrayList.add(ObjectAnimator.ofFloat(rLottieImageView3, (Property<RLottieImageView, Float>) property3, 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(this.recordedAudioPanel, (Property<FrameLayout, Float>) property, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.attachButton, (Property<ImageView, Float>) property, 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.attachButton, (Property<ImageView, Float>) property2, 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.attachButton, (Property<ImageView, Float>) property3, 1.0f));
+                ImageView imageView2 = this.attachButton;
+                if (imageView2 != null) {
+                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(this.attachButton, (Property<ImageView, Float>) property2, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(this.attachButton, (Property<ImageView, Float>) property3, 1.0f));
+                }
                 arrayList.add(ObjectAnimator.ofFloat(this.messageEditText, (Property<EditTextCaption, Float>) property, 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(this.messageEditText, (Property<EditTextCaption, Float>) this.MESSAGE_TEXT_TRANSLATION_X, 0.0f));
                 ControlsView controlsView = this.controlsView;
@@ -7195,9 +7201,9 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     animatorSet4.playTogether(arrayList2);
                 }
                 animatorSet4.setDuration(200L);
-                ImageView imageView = this.attachButton;
-                if (imageView != null) {
-                    imageView.setAlpha(0.0f);
+                ImageView imageView3 = this.attachButton;
+                if (imageView3 != null) {
+                    imageView3.setAlpha(0.0f);
                     this.attachButton.setScaleX(0.0f);
                     this.attachButton.setScaleY(0.0f);
                     animatorSet = new AnimatorSet();
@@ -8321,6 +8327,13 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
             });
             Browser.openAsInternalIntent(getContext(), this.botMenuWebViewUrl, false, false, progress);
+            return;
+        }
+        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.dialog_id));
+        String restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(user == null ? null : user.restriction_reason);
+        if (!TextUtils.isEmpty(restrictionReason)) {
+            MessagesController.getInstance(this.currentAccount);
+            MessagesController.showCantOpenAlert(this.parentFragment, restrictionReason);
             return;
         }
         BotWebViewSheet botWebViewSheet = new BotWebViewSheet(getContext(), this.resourcesProvider);
@@ -10450,7 +10463,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         j = message.from_id.user_id;
                     }
                     final long j2 = j;
-                    MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j2));
+                    final TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j2));
                     final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView.70
                         @Override // java.lang.Runnable
                         public void run() {
@@ -10476,7 +10489,14 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                             if (launchActivity != null && launchActivity.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(of2) != null) {
                                 if (ChatActivityEnterView.this.botCommandsMenuButton != null) {
                                     ChatActivityEnterView.this.botCommandsMenuButton.setOpened(false);
+                                    return;
                                 }
+                                return;
+                            }
+                            String restrictionReason = user == null ? null : MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).getRestrictionReason(user.restriction_reason);
+                            if (!TextUtils.isEmpty(restrictionReason)) {
+                                MessagesController.getInstance(ChatActivityEnterView.this.currentAccount);
+                                MessagesController.showCantOpenAlert(ChatActivityEnterView.this.parentFragment, restrictionReason);
                             } else {
                                 BotWebViewSheet botWebViewSheet = new BotWebViewSheet(ChatActivityEnterView.this.getContext(), ChatActivityEnterView.this.resourcesProvider);
                                 botWebViewSheet.setParentActivity(ChatActivityEnterView.this.parentActivity);
@@ -10520,11 +10540,11 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         if (j4 != 0) {
                             j3 = j4;
                         }
-                        TLRPC.User user = this.accountInstance.getMessagesController().getUser(Long.valueOf(j3));
-                        if (user == null) {
+                        TLRPC.User user2 = this.accountInstance.getMessagesController().getUser(Long.valueOf(j3));
+                        if (user2 == null) {
                             return true;
                         }
-                        setFieldText("@" + UserObject.getPublicUsername(user) + " " + keyboardButton.query);
+                        setFieldText("@" + UserObject.getPublicUsername(user2) + " " + keyboardButton.query);
                     } else {
                         Bundle bundle = new Bundle();
                         bundle.putBoolean("onlySelect", true);

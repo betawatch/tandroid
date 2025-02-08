@@ -1996,18 +1996,19 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         super.requestLayout();
     }
 
-    public void search(final long j, final long j2, final long j3, final FiltersView.MediaFilterData mediaFilterData, final boolean z, final String str, boolean z2) {
+    public void search(final long j, final long j2, final long j3, final FiltersView.MediaFilterData mediaFilterData, final boolean z, String str, boolean z2) {
         FlickerLoadingView flickerLoadingView;
         int i;
-        final String format = String.format(Locale.ENGLISH, "%d%d%d%d%s%s", Long.valueOf(j), Long.valueOf(j2), Long.valueOf(j3), Integer.valueOf(mediaFilterData == null ? -1 : mediaFilterData.filterType), str, Boolean.valueOf(z));
-        String str2 = this.lastSearchFilterQueryString;
-        boolean z3 = str2 != null && str2.equals(format);
+        final String str2 = str == null ? "" : str;
+        final String format = String.format(Locale.ENGLISH, "%d%d%d%d%s%s", Long.valueOf(j), Long.valueOf(j2), Long.valueOf(j3), Integer.valueOf(mediaFilterData == null ? -1 : mediaFilterData.filterType), str2, Boolean.valueOf(z));
+        String str3 = this.lastSearchFilterQueryString;
+        boolean z3 = str3 != null && str3.equals(format);
         boolean z4 = !z3 && z2;
         this.currentSearchFilter = mediaFilterData;
         this.currentSearchDialogId = j;
         this.currentSearchMinDate = j2;
         this.currentSearchMaxDate = j3;
-        this.currentSearchString = str;
+        this.currentSearchString = str2;
         this.currentIncludeFolder = z;
         Runnable runnable = this.searchRunnable;
         if (runnable != null) {
@@ -2049,7 +2050,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             this.clearCurrentResultsRunnable.run();
             this.emptyView.showProgress(true, !z2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str2)) {
             this.localTipDates.clear();
             this.localTipChats.clear();
             Delegate delegate = this.delegate;
@@ -2064,7 +2065,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.FilteredSearchView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                FilteredSearchView.this.lambda$search$4(j, str, mediaFilterData, i3, j2, j3, z5, z, format, i2);
+                FilteredSearchView.this.lambda$search$4(j, str2, mediaFilterData, i3, j2, j3, z5, z, format, i2);
             }
         };
         this.searchRunnable = runnable2;

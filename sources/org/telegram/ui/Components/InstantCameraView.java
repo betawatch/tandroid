@@ -1931,7 +1931,9 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 setupVideoPlayer(this.videoFile);
                 videoEditedInfo4.estimatedDuration = InstantCameraView.this.recordedTime;
                 NotificationCenter.getInstance(InstantCameraView.this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.audioDidSent, Integer.valueOf(InstantCameraView.this.recordingGuid), videoEditedInfo4, this.videoFile.getAbsolutePath(), this.keyframeThumbs);
-            } else if (InstantCameraView.this.delegate.isInScheduleMode()) {
+                return;
+            }
+            if (InstantCameraView.this.delegate.isInScheduleMode()) {
                 AlertsCreator.createScheduleDatePickerDialog(InstantCameraView.this.delegate.getParentActivity(), InstantCameraView.this.delegate.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.InstantCameraView$VideoRecorder$$ExternalSyntheticLambda11
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i2) {
@@ -2315,7 +2317,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
 
                 @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
                 public void onStateChanged(boolean z, int i) {
-                    if (InstantCameraView.this.videoPlayer != null && InstantCameraView.this.videoPlayer.isPlaying() && i == 4) {
+                    if (InstantCameraView.this.videoPlayer != null && InstantCameraView.this.videoPlayer.isPlaying() && i == 4 && InstantCameraView.this.videoEditedInfo != null) {
                         InstantCameraView.this.videoPlayer.seekTo(InstantCameraView.this.videoEditedInfo.startTime > 0 ? InstantCameraView.this.videoEditedInfo.startTime : 0L);
                     }
                 }
@@ -3870,9 +3872,9 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         this.cameraFile = null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0107, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0118, code lost:
     
-        if (r27 != 0) goto L64;
+        if (r27 != 0) goto L67;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3896,49 +3898,55 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             if (BuildVars.DEBUG_VERSION && !this.cameraFile.exists()) {
                 FileLog.e(new RuntimeException("file not found :( round video"));
             }
+            if (this.videoEditedInfo == null) {
+                VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
+                this.videoEditedInfo = videoEditedInfo;
+                videoEditedInfo.startTime = -1L;
+                videoEditedInfo.endTime = -1L;
+            }
             if (this.videoEditedInfo.needConvert()) {
                 this.file = null;
                 this.encryptedFile = null;
                 this.key = null;
                 this.iv = null;
-                VideoEditedInfo videoEditedInfo = this.videoEditedInfo;
-                long j2 = videoEditedInfo.estimatedDuration;
+                VideoEditedInfo videoEditedInfo2 = this.videoEditedInfo;
+                long j2 = videoEditedInfo2.estimatedDuration;
                 double d = j2;
-                long j3 = videoEditedInfo.startTime;
+                long j3 = videoEditedInfo2.startTime;
                 if (j3 < 0) {
                     j3 = 0;
                 }
-                long j4 = videoEditedInfo.endTime;
+                long j4 = videoEditedInfo2.endTime;
                 if (j4 >= 0) {
                     j2 = j4;
                 }
                 long j5 = j2 - j3;
-                videoEditedInfo.estimatedDuration = j5;
+                videoEditedInfo2.estimatedDuration = j5;
                 double d2 = this.size;
                 double d3 = j5;
                 Double.isNaN(d3);
                 Double.isNaN(d);
                 Double.isNaN(d2);
-                videoEditedInfo.estimatedSize = Math.max(1L, (long) (d2 * (d3 / d)));
-                VideoEditedInfo videoEditedInfo2 = this.videoEditedInfo;
-                videoEditedInfo2.bitrate = MediaController.VIDEO_BITRATE_480;
-                long j6 = videoEditedInfo2.startTime;
+                videoEditedInfo2.estimatedSize = Math.max(1L, (long) (d2 * (d3 / d)));
+                VideoEditedInfo videoEditedInfo3 = this.videoEditedInfo;
+                videoEditedInfo3.bitrate = MediaController.VIDEO_BITRATE_480;
+                long j6 = videoEditedInfo3.startTime;
                 if (j6 > 0) {
-                    videoEditedInfo2.startTime = j6 * 1000;
+                    videoEditedInfo3.startTime = j6 * 1000;
                 }
-                long j7 = videoEditedInfo2.endTime;
+                long j7 = videoEditedInfo3.endTime;
                 if (j7 > 0) {
-                    videoEditedInfo2.endTime = j7 * 1000;
+                    videoEditedInfo3.endTime = j7 * 1000;
                 }
                 FileLoader.getInstance(this.currentAccount).cancelFileUpload(this.cameraFile.getAbsolutePath(), false);
             } else {
                 this.videoEditedInfo.estimatedSize = Math.max(1L, this.size);
             }
-            VideoEditedInfo videoEditedInfo3 = this.videoEditedInfo;
-            videoEditedInfo3.file = this.file;
-            videoEditedInfo3.encryptedFile = this.encryptedFile;
-            videoEditedInfo3.key = this.key;
-            videoEditedInfo3.iv = this.iv;
+            VideoEditedInfo videoEditedInfo4 = this.videoEditedInfo;
+            videoEditedInfo4.file = this.file;
+            videoEditedInfo4.encryptedFile = this.encryptedFile;
+            videoEditedInfo4.key = this.key;
+            videoEditedInfo4.iv = this.iv;
             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, this.cameraFile.getAbsolutePath(), 0, true, 0, 0, 0L);
             photoEntry.ttl = i3;
             photoEntry.effectId = j;
