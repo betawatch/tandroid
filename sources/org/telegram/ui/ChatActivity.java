@@ -873,6 +873,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private ReplyQuote replyingQuote;
     private MessageObject.GroupedMessages replyingQuoteGroup;
     public MessageObject replyingTopMessage;
+    private String reportMessage;
     private byte[] reportOption;
     private TextView reportSpamButton;
     private AnimatorSet reportSpamViewAnimator;
@@ -6601,15 +6602,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             updateRowsInternal();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:150:0x0332, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:150:0x033a, code lost:
         
             if (org.telegram.messenger.MessageObject.getPeerId(r3.messageOwner.peer_id) == org.telegram.messenger.MessageObject.getPeerId(r5.messageOwner.peer_id)) goto L216;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:151:0x03a2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:151:0x03aa, code lost:
         
             r9 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:157:0x034d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:157:0x0355, code lost:
         
             if (r5.getSenderId() == r3.getSenderId()) goto L216;
          */
@@ -6617,73 +6618,73 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         
             if (r21.this$0.chatListView.getScrollState() == 0) goto L437;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:174:0x03a0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:174:0x03a8, code lost:
         
             if (org.telegram.messenger.MessageObject.getPeerId(r5) == org.telegram.messenger.MessageObject.getPeerId(r3.messageOwner.fwd_from.from_id)) goto L216;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:17:0x075c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:17:0x0764, code lost:
         
             r5 = false;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:216:0x0450, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:216:0x0458, code lost:
         
             if (r5 != (r2.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r21.this$0).currentAccount, r2.messageOwner, r10) : r12.id)) goto L302;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x075a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0762, code lost:
         
             r5 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:229:0x0485, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:229:0x048d, code lost:
         
             if (org.telegram.messenger.MessageObject.getPeerId(r3.messageOwner.peer_id) == org.telegram.messenger.MessageObject.getPeerId(r2.messageOwner.peer_id)) goto L301;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:230:0x04f5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:230:0x04fd, code lost:
         
             r2 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:236:0x04a0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:236:0x04a8, code lost:
         
             if (r2.getSenderId() == r3.getSenderId()) goto L301;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:253:0x04f3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:253:0x04fb, code lost:
         
             if (org.telegram.messenger.MessageObject.getPeerId(r2) == org.telegram.messenger.MessageObject.getPeerId(r3.messageOwner.fwd_from.from_id)) goto L301;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:359:0x06d6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:359:0x06de, code lost:
         
             if (r21.this$0.chatListItemAnimator == null) goto L419;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:419:0x0758, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:419:0x0760, code lost:
         
             if (r21.this$0.chatListView.getScrollState() != 0) goto L436;
          */
-        /* JADX WARN: Removed duplicated region for block: B:101:0x01cb  */
-        /* JADX WARN: Removed duplicated region for block: B:107:0x01f0  */
-        /* JADX WARN: Removed duplicated region for block: B:110:0x01f7  */
-        /* JADX WARN: Removed duplicated region for block: B:117:0x029f  */
-        /* JADX WARN: Removed duplicated region for block: B:125:0x02cc  */
-        /* JADX WARN: Removed duplicated region for block: B:178:0x03ab  */
-        /* JADX WARN: Removed duplicated region for block: B:258:0x0504  */
-        /* JADX WARN: Removed duplicated region for block: B:267:0x0522  */
-        /* JADX WARN: Removed duplicated region for block: B:269:0x0525  */
-        /* JADX WARN: Removed duplicated region for block: B:272:0x0530  */
-        /* JADX WARN: Removed duplicated region for block: B:279:0x054e  */
-        /* JADX WARN: Removed duplicated region for block: B:283:0x0567  */
-        /* JADX WARN: Removed duplicated region for block: B:286:0x0576  */
-        /* JADX WARN: Removed duplicated region for block: B:291:0x058c  */
-        /* JADX WARN: Removed duplicated region for block: B:305:0x05ec  */
-        /* JADX WARN: Removed duplicated region for block: B:308:0x05fa  */
-        /* JADX WARN: Removed duplicated region for block: B:362:0x06fa  */
-        /* JADX WARN: Removed duplicated region for block: B:366:0x071f  */
-        /* JADX WARN: Removed duplicated region for block: B:369:0x0732  */
-        /* JADX WARN: Removed duplicated region for block: B:372:0x0739  */
-        /* JADX WARN: Removed duplicated region for block: B:376:0x05cd  */
-        /* JADX WARN: Removed duplicated region for block: B:382:0x0569  */
-        /* JADX WARN: Removed duplicated region for block: B:383:0x0553  */
-        /* JADX WARN: Removed duplicated region for block: B:403:0x0285  */
-        /* JADX WARN: Removed duplicated region for block: B:404:0x01f2  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x0170  */
-        /* JADX WARN: Removed duplicated region for block: B:96:0x01b7  */
+        /* JADX WARN: Removed duplicated region for block: B:101:0x01d3  */
+        /* JADX WARN: Removed duplicated region for block: B:107:0x01f8  */
+        /* JADX WARN: Removed duplicated region for block: B:110:0x01ff  */
+        /* JADX WARN: Removed duplicated region for block: B:117:0x02a7  */
+        /* JADX WARN: Removed duplicated region for block: B:125:0x02d4  */
+        /* JADX WARN: Removed duplicated region for block: B:178:0x03b3  */
+        /* JADX WARN: Removed duplicated region for block: B:258:0x050c  */
+        /* JADX WARN: Removed duplicated region for block: B:267:0x052a  */
+        /* JADX WARN: Removed duplicated region for block: B:269:0x052d  */
+        /* JADX WARN: Removed duplicated region for block: B:272:0x0538  */
+        /* JADX WARN: Removed duplicated region for block: B:279:0x0556  */
+        /* JADX WARN: Removed duplicated region for block: B:283:0x056f  */
+        /* JADX WARN: Removed duplicated region for block: B:286:0x057e  */
+        /* JADX WARN: Removed duplicated region for block: B:291:0x0594  */
+        /* JADX WARN: Removed duplicated region for block: B:305:0x05f4  */
+        /* JADX WARN: Removed duplicated region for block: B:308:0x0602  */
+        /* JADX WARN: Removed duplicated region for block: B:362:0x0702  */
+        /* JADX WARN: Removed duplicated region for block: B:366:0x0727  */
+        /* JADX WARN: Removed duplicated region for block: B:369:0x073a  */
+        /* JADX WARN: Removed duplicated region for block: B:372:0x0741  */
+        /* JADX WARN: Removed duplicated region for block: B:376:0x05d5  */
+        /* JADX WARN: Removed duplicated region for block: B:382:0x0571  */
+        /* JADX WARN: Removed duplicated region for block: B:383:0x055b  */
+        /* JADX WARN: Removed duplicated region for block: B:403:0x028d  */
+        /* JADX WARN: Removed duplicated region for block: B:404:0x01fa  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x0178  */
+        /* JADX WARN: Removed duplicated region for block: B:96:0x01bf  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -6785,6 +6786,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     MessageObject.GroupedMessages validGroupedMessage = ChatActivity.this.getValidGroupedMessage(messageObject);
                     ChatActivity chatActivity4 = ChatActivity.this;
                     chatMessageCell.isChat = chatActivity4.currentChat != null || UserObject.isUserSelf(chatActivity4.currentUser) || UserObject.isReplyUser(ChatActivity.this.currentUser) || ChatActivity.this.chatMode == 7;
+                    chatMessageCell.isReportChat = ChatActivity.this.isReport();
                     chatMessageCell.isSavedChat = ChatActivity.this.chatMode == 3;
                     chatMessageCell.isSavedPreviewChat = ChatActivity.this.chatMode == 3 && ChatActivity.this.isInsideContainer;
                     ChatActivity chatActivity5 = ChatActivity.this;
@@ -26397,7 +26399,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 arrayList.add(Integer.valueOf(this.selectedMessagesIds[0].keyAt(i)));
             }
             showBottomOverlayProgress(true, true);
-            ReportBottomSheet.continueReport(this, this.reportOption, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda234
+            ReportBottomSheet.continueReport(this, this.reportOption, this.reportMessage, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda234
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ChatActivity.this.lambda$createView$58((Boolean) obj);
@@ -31129,22 +31131,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
     }
 
-    public static ChatActivity openReportChat(long j, String str, byte[] bArr) {
-        String str2;
+    public static ChatActivity openReportChat(long j, String str, byte[] bArr, String str2) {
+        String str3;
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return null;
         }
         Bundle bundle = new Bundle();
         if (DialogObject.isUserDialog(j)) {
-            str2 = "user_id";
+            str3 = "user_id";
         } else {
             j = -j;
-            str2 = "chat_id";
+            str3 = "chat_id";
         }
-        bundle.putLong(str2, j);
+        bundle.putLong(str3, j);
         bundle.putString("reportTitle", str);
         bundle.putByteArray("reportOption", bArr);
+        bundle.putString("reportMessage", str2);
         ChatActivity chatActivity = new ChatActivity(bundle);
         safeLastFragment.presentFragment(chatActivity);
         return chatActivity;
@@ -54623,23 +54626,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         AndroidUtilities.requestAdjustResize(getParentActivity(), this.classGuid);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:310:0x0365, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:310:0x036f, code lost:
     
         if (r0 != null) goto L106;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x0812, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x081c, code lost:
     
         if (r31.highlightMessageId == r31.startLoadFromMessageId) goto L156;
      */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0489  */
-    /* JADX WARN: Type inference failed for: r10v15 */
-    /* JADX WARN: Type inference failed for: r10v17 */
-    /* JADX WARN: Type inference failed for: r10v20 */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0493  */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v18 */
     /* JADX WARN: Type inference failed for: r10v21 */
     /* JADX WARN: Type inference failed for: r10v22 */
     /* JADX WARN: Type inference failed for: r10v23 */
     /* JADX WARN: Type inference failed for: r10v24 */
     /* JADX WARN: Type inference failed for: r10v25 */
+    /* JADX WARN: Type inference failed for: r10v26 */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -54683,6 +54686,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         this.reportTitle = this.arguments.getString("reportTitle", null);
         this.reportOption = this.arguments.getByteArray("reportOption");
+        this.reportMessage = this.arguments.getString("reportMessage", null);
         this.pulled = this.arguments.getBoolean("pulled", false);
         this.historyPreloaded = this.arguments.getBoolean("historyPreloaded", false);
         int i5 = this.highlightMessageId;

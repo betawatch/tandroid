@@ -525,6 +525,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     private boolean isPressed;
     public boolean isRepliesChat;
     public boolean isReplyQuote;
+    public boolean isReportChat;
     private boolean isRoundVideo;
     public boolean isSavedChat;
     public boolean isSavedPreviewChat;
@@ -14537,9 +14538,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         return FileLoader.getInstance(this.currentAccount).checkLoadCaughtPremiumFloodWait(getFilename());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x002b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0031, code lost:
     
-        if ((r0 & (r5.isOutOwner() ? 1 : 2)) != 0) goto L23;
+        if ((r0 & (r5.isOutOwner() ? 1 : 2)) != 0) goto L27;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -14547,6 +14548,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     protected boolean checkNeedDrawShareButton(MessageObject messageObject) {
         MessageObject.GroupedMessagePosition groupedMessagePosition;
         boolean z;
+        if (this.isReportChat) {
+            return false;
+        }
         MessageObject messageObject2 = this.currentMessageObject;
         if ((messageObject2.deleted && !messageObject2.deletedByThanos) || messageObject2.isSponsored()) {
             return false;
