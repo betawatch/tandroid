@@ -8052,8 +8052,8 @@ public abstract class AlertsCreator {
         baseFragment.showDialog(create2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8074,7 +8074,7 @@ public abstract class AlertsCreator {
         if (safeLastFragment instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) safeLastFragment;
             if (chatActivity.isComments && chatActivity.getDialogId() == j && (chat = chatActivity.replyOriginalChat) != null) {
-                shortName = DialogObject.getShortName(i, chat.id);
+                shortName = DialogObject.getShortName(i, -chat.id);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 int i3 = (int) j2;
                 spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage1", i3, shortName)));
