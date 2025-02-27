@@ -241,7 +241,7 @@ public final class BulletinFactory {
             replaceTags = AndroidUtilities.replaceSingleTag(string, -1, 2, bulletinFactory$$ExternalSyntheticLambda0);
             lottieLayout.setAnimation(R.raw.saved_messages, 30, 30, new String[0]);
         } else {
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda5
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     BulletinFactory.lambda$createForwardedBulletin$6(BaseFragment.this, j);
@@ -285,7 +285,7 @@ public final class BulletinFactory {
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
         }
         lottieLayout.textView.setText(replaceTags);
-        lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda6
+        lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
@@ -331,7 +331,7 @@ public final class BulletinFactory {
         }
         lottieLayout.textView.setText(replaceTags);
         if (i5 > 0) {
-            lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda8
+            lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
@@ -547,7 +547,7 @@ public final class BulletinFactory {
         } else {
             string = AndroidUtilities.replaceTags(i == 1 ? LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title) : i == 2 ? LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title) : LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title));
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 Bulletin.this.onLoaded(string);

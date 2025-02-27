@@ -1,7 +1,5 @@
 package org.webrtc.audio;
 
-import org.webrtc.audio.AudioDeviceModule;
-
 @Deprecated
 /* loaded from: classes5.dex */
 public class LegacyAudioDeviceModule implements AudioDeviceModule {
@@ -17,16 +15,6 @@ public class LegacyAudioDeviceModule implements AudioDeviceModule {
     @Override // org.webrtc.audio.AudioDeviceModule
     public void setMicrophoneMute(boolean z) {
         org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z) {
-        return AudioDeviceModule.-CC.$default$setNoiseSuppressorEnabled(this, z);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public /* synthetic */ boolean setPreferredMicrophoneFieldDimension(float f) {
-        return AudioDeviceModule.-CC.$default$setPreferredMicrophoneFieldDimension(this, f);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule

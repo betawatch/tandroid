@@ -56,11 +56,6 @@ public class RtpReceiver {
         this.nativeRtpReceiver = 0L;
     }
 
-    long getNativeRtpReceiver() {
-        checkRtpReceiverExists();
-        return this.nativeRtpReceiver;
-    }
-
     public RtpParameters getParameters() {
         checkRtpReceiverExists();
         return nativeGetParameters(this.nativeRtpReceiver);

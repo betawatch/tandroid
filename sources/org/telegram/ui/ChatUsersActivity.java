@@ -90,6 +90,7 @@ import org.telegram.ui.Components.StickerEmptyView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.GroupCreateActivity;
+import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 
 /* loaded from: classes4.dex */
@@ -529,7 +530,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$3(Integer num, Integer num2) {
             if (num.intValue() == 0) {
-                return LocaleController.formatPluralStringComma("Stars", num2.intValue());
+                return StarsIntroActivity.replaceStars(LocaleController.formatPluralStringComma("Stars", num2.intValue()));
             }
             return "" + num2;
         }

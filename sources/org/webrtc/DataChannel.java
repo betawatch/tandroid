@@ -149,6 +149,5 @@ public class DataChannel {
     public void unregisterObserver() {
         checkDataChannelExists();
         nativeUnregisterObserver(this.nativeObserver);
-        this.nativeObserver = 0L;
     }
 }

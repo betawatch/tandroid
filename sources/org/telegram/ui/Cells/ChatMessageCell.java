@@ -1129,9 +1129,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             public static void $default$didQuickShareMove(ChatMessageCellDelegate chatMessageCellDelegate, ChatMessageCell chatMessageCell, float f, float f2) {
             }
 
-            public static void $default$didQuickShareStart(ChatMessageCellDelegate chatMessageCellDelegate, ChatMessageCell chatMessageCell, float f, float f2) {
-            }
-
             public static void $default$didStartVideoStream(ChatMessageCellDelegate chatMessageCellDelegate, MessageObject messageObject) {
             }
 
@@ -1321,8 +1318,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         void didQuickShareEnd(ChatMessageCell chatMessageCell, float f, float f2);
 
         void didQuickShareMove(ChatMessageCell chatMessageCell, float f, float f2);
-
-        void didQuickShareStart(ChatMessageCell chatMessageCell, float f, float f2);
 
         void didStartVideoStream(MessageObject messageObject);
 
@@ -50014,15 +50009,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:154:0x035a  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x033a  */
     @Override // org.telegram.ui.Cells.BaseCell
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected boolean onLongPress() {
-        int i;
         boolean z;
-        int i2;
+        int i;
         TLRPC.Message message;
         TLRPC.MessageReplyHeader messageReplyHeader;
         if (this.isRoundVideo && this.isPlayingRound && MediaController.getInstance().isPlayingMessage(this.currentMessageObject) && ((this.lastTouchX - this.photoImage.getCenterX()) * (this.lastTouchX - this.photoImage.getCenterX())) + ((this.lastTouchY - this.photoImage.getCenterY()) * (this.lastTouchY - this.photoImage.getCenterY())) < (this.photoImage.getImageWidth() / 2.0f) * (this.photoImage.getImageWidth() / 2.0f) && (this.lastTouchX > this.photoImage.getCenterX() + (this.photoImage.getImageWidth() / 4.0f) || this.lastTouchX < this.photoImage.getCenterX() - (this.photoImage.getImageWidth() / 4.0f))) {
@@ -50210,17 +50204,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.psaHintPressed = false;
             this.otherPressed = false;
             if (Build.VERSION.SDK_INT >= 21) {
-                int i3 = 0;
+                int i2 = 0;
                 while (true) {
                     Drawable[] drawableArr = this.selectorDrawable;
-                    if (i3 >= drawableArr.length) {
+                    if (i2 >= drawableArr.length) {
                         break;
                     }
-                    Drawable drawable6 = drawableArr[i3];
+                    Drawable drawable6 = drawableArr[i2];
                     if (drawable6 != null) {
                         drawable6.setState(StateSet.NOTHING);
                     }
-                    i3++;
+                    i2++;
                 }
                 Drawable drawable7 = this.linkPreviewSelector;
                 if (drawable7 != null) {
@@ -50242,11 +50236,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (chat != null) {
                         TLRPC.MessageFwdHeader messageFwdHeader = this.currentMessageObject.messageOwner.fwd_from;
                         if (messageFwdHeader != null) {
-                            i2 = (messageFwdHeader.flags & 16) != 0 ? messageFwdHeader.saved_from_msg_id : messageFwdHeader.channel_post;
+                            i = (messageFwdHeader.flags & 16) != 0 ? messageFwdHeader.saved_from_msg_id : messageFwdHeader.channel_post;
                         } else {
-                            i2 = 0;
+                            i = 0;
                         }
-                        z = chatMessageCellDelegate.didLongPressChannelAvatar(this, chat, i2, this.lastTouchX, this.lastTouchY);
+                        z = chatMessageCellDelegate.didLongPressChannelAvatar(this, chat, i, this.lastTouchX, this.lastTouchY);
                         if (!z) {
                         }
                     }
@@ -50256,12 +50250,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         this.delegate.didLongPress(this, this.lastTouchX, this.lastTouchY);
                     }
                 }
-            } else if (this.sideButtonPressed && (i = this.pressedSideButton) != 4 && i != 5 && i != 3 && i != 2) {
-                chatMessageCellDelegate.didQuickShareStart(this, this.lastTouchX, this.lastTouchY);
-                this.sideButtonPressed = false;
-                this.pressedSideButton = 0;
-                this.inQuickShareMode = true;
-                return false;
             }
             z = false;
             if (!z) {

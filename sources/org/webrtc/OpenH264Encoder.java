@@ -1,7 +1,7 @@
 package org.webrtc;
 
 /* loaded from: classes5.dex */
-public class LibaomAv1Encoder extends WrappedNativeVideoEncoder {
+public class OpenH264Encoder extends WrappedNativeVideoEncoder {
     static native long nativeCreateEncoder();
 
     @Override // org.webrtc.WrappedNativeVideoEncoder, org.webrtc.VideoEncoder

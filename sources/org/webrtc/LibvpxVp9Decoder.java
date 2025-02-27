@@ -7,7 +7,7 @@ public class LibvpxVp9Decoder extends WrappedNativeVideoDecoder {
     static native boolean nativeIsSupported();
 
     @Override // org.webrtc.WrappedNativeVideoDecoder, org.webrtc.VideoDecoder
-    public long createNative(long j) {
+    public long createNativeVideoDecoder() {
         return nativeCreateDecoder();
     }
 }

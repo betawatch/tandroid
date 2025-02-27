@@ -3,7 +3,7 @@ package org.webrtc;
 /* loaded from: classes5.dex */
 class BaseBitrateAdjuster implements BitrateAdjuster {
     protected int targetBitrateBps;
-    protected double targetFramerateFps;
+    protected int targetFps;
 
     BaseBitrateAdjuster() {
     }
@@ -14,8 +14,8 @@ class BaseBitrateAdjuster implements BitrateAdjuster {
     }
 
     @Override // org.webrtc.BitrateAdjuster
-    public double getAdjustedFramerateFps() {
-        return this.targetFramerateFps;
+    public int getCodecConfigFramerate() {
+        return this.targetFps;
     }
 
     @Override // org.webrtc.BitrateAdjuster
@@ -23,8 +23,8 @@ class BaseBitrateAdjuster implements BitrateAdjuster {
     }
 
     @Override // org.webrtc.BitrateAdjuster
-    public void setTargets(int i, double d) {
+    public void setTargets(int i, int i2) {
         this.targetBitrateBps = i;
-        this.targetFramerateFps = d;
+        this.targetFps = i2;
     }
 }

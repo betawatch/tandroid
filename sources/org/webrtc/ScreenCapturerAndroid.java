@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.hardware.display.VirtualDisplay;
 import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
-import android.os.Build;
 import android.view.Surface;
+import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticApiModelOutline0;
 import org.webrtc.VideoSink;
 
@@ -39,23 +39,35 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
 
     private void createVirtualDisplay() {
         VirtualDisplay createVirtualDisplay;
-        VirtualDisplay virtualDisplay = this.virtualDisplay;
-        if (virtualDisplay != null) {
-            virtualDisplay.release();
+        this.surfaceTextureHelper.setTextureSize(this.width, this.height);
+        try {
+            createVirtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
+            this.virtualDisplay = createVirtualDisplay;
+        } catch (Throwable th) {
+            FileLog.e(th);
         }
-        createVirtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
-        this.virtualDisplay = createVirtualDisplay;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void updateVirtualDisplay() {
-        this.surfaceTextureHelper.setTextureSize(this.width, this.height);
+    public /* synthetic */ void lambda$changeCaptureFormat$1() {
+        this.virtualDisplay.release();
+        createVirtualDisplay();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$stopCapture$0() {
+        this.surfaceTextureHelper.stopListening();
+        this.capturerObserver.onCapturerStopped();
         VirtualDisplay virtualDisplay = this.virtualDisplay;
-        if (virtualDisplay == null || Build.VERSION.SDK_INT < 31) {
-            createVirtualDisplay();
-        } else {
-            virtualDisplay.resize(this.width, this.height, VIRTUAL_DISPLAY_DPI);
-            this.virtualDisplay.setSurface(new Surface(this.surfaceTextureHelper.getSurfaceTexture()));
+        if (virtualDisplay != null) {
+            virtualDisplay.release();
+            this.virtualDisplay = null;
+        }
+        MediaProjection mediaProjection = this.mediaProjection;
+        if (mediaProjection != null) {
+            mediaProjection.unregisterCallback(this.mediaProjectionCallback);
+            this.mediaProjection.stop();
+            this.mediaProjection = null;
         }
     }
 
@@ -67,10 +79,10 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         if (this.virtualDisplay == null) {
             return;
         }
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new Runnable() { // from class: org.webrtc.ScreenCapturerAndroid$$ExternalSyntheticLambda5
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new Runnable() { // from class: org.webrtc.ScreenCapturerAndroid$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                ScreenCapturerAndroid.this.updateVirtualDisplay();
+                ScreenCapturerAndroid.this.lambda$changeCaptureFormat$1();
             }
         });
     }
@@ -121,34 +133,32 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     @Override // org.webrtc.VideoCapturer
     public synchronized void startCapture(int i, int i2, int i3) {
         MediaProjection mediaProjection;
-        checkNotDisposed();
-        this.width = i;
-        this.height = i2;
-        mediaProjection = this.mediaProjectionManager.getMediaProjection(-1, this.mediaProjectionPermissionResultData);
-        this.mediaProjection = mediaProjection;
-        mediaProjection.registerCallback(this.mediaProjectionCallback, this.surfaceTextureHelper.getHandler());
-        updateVirtualDisplay();
-        this.capturerObserver.onCapturerStarted(true);
-        this.surfaceTextureHelper.startListening(this);
+        if (this.mediaProjection != null || this.mediaProjectionManager == null) {
+            return;
+        }
+        try {
+            checkNotDisposed();
+            this.width = i;
+            this.height = i2;
+            mediaProjection = this.mediaProjectionManager.getMediaProjection(-1, this.mediaProjectionPermissionResultData);
+            this.mediaProjection = mediaProjection;
+            mediaProjection.registerCallback(this.mediaProjectionCallback, this.surfaceTextureHelper.getHandler());
+            createVirtualDisplay();
+            this.capturerObserver.onCapturerStarted(true);
+            this.surfaceTextureHelper.startListening(this);
+        } catch (Throwable th) {
+            this.mediaProjectionCallback.onStop();
+            FileLog.e(th);
+        }
     }
 
     @Override // org.webrtc.VideoCapturer
     public synchronized void stopCapture() {
         checkNotDisposed();
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new Runnable() { // from class: org.webrtc.ScreenCapturerAndroid.1
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new Runnable() { // from class: org.webrtc.ScreenCapturerAndroid$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
-            public void run() {
-                ScreenCapturerAndroid.this.surfaceTextureHelper.stopListening();
-                ScreenCapturerAndroid.this.capturerObserver.onCapturerStopped();
-                if (ScreenCapturerAndroid.this.virtualDisplay != null) {
-                    ScreenCapturerAndroid.this.virtualDisplay.release();
-                    ScreenCapturerAndroid.this.virtualDisplay = null;
-                }
-                if (ScreenCapturerAndroid.this.mediaProjection != null) {
-                    ScreenCapturerAndroid.this.mediaProjection.unregisterCallback(ScreenCapturerAndroid.this.mediaProjectionCallback);
-                    ScreenCapturerAndroid.this.mediaProjection.stop();
-                    ScreenCapturerAndroid.this.mediaProjection = null;
-                }
+            public final void run() {
+                ScreenCapturerAndroid.this.lambda$stopCapture$0();
             }
         });
     }

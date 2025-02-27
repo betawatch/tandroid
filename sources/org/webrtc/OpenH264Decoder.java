@@ -1,11 +1,13 @@
 package org.webrtc;
 
 /* loaded from: classes5.dex */
-public class Dav1dDecoder extends WrappedNativeVideoDecoder {
+public class OpenH264Decoder extends WrappedNativeVideoDecoder {
     static native long nativeCreateDecoder();
 
+    static native boolean nativeIsSupported();
+
     @Override // org.webrtc.WrappedNativeVideoDecoder, org.webrtc.VideoDecoder
-    public long createNative(long j) {
+    public long createNativeVideoDecoder() {
         return nativeCreateDecoder();
     }
 }

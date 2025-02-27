@@ -837,7 +837,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private QuickRepliesEmptyView quickRepliesEmptyView;
     private MessageObject quickReplyMessage;
     public String quickReplyShortcut;
-    private QuickShareSelectorOverlayLayout quickShareSelectorOverlay;
     private AlertDialog quoteMessageUpdateAlert;
     private ValueAnimator reactionsMentionButtonAnimation;
     private float reactionsMentionButtonEnterProgress;
@@ -4081,9 +4080,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (isFastScrollAnimationRunning()) {
                 return false;
             }
-            if (ChatActivity.this.quickShareSelectorOverlay != null && ChatActivity.this.quickShareSelectorOverlay.isActive()) {
-                return false;
-            }
+            ChatActivity.access$13800(ChatActivity.this);
             boolean onInterceptTouchEvent = super.onInterceptTouchEvent(motionEvent);
             if (!((BaseFragment) ChatActivity.this).actionBar.isActionModeShowed() && !ChatActivity.this.isReport()) {
                 processTouchEvent(motionEvent);
@@ -8695,16 +8692,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         
             if (r35.this$0.scrimViewAlpha < 1.0f) goto L361;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:229:0x0d6f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:226:0x0d6f, code lost:
         
             r35.this$0.scrimPaint.setAlpha((int) ((r35.this$0.scrimPaintAlpha * 255.0f) * (1.0f - r35.this$0.scrimViewAlpha)));
             r36.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), r35.this$0.scrimPaint);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:374:0x08c7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:371:0x08c7, code lost:
         
             if ((r4 & 1) != 0) goto L267;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:482:0x0d6d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:479:0x0d6d, code lost:
         
             if (r35.this$0.scrimViewAlpha < 1.0f) goto L361;
          */
@@ -9389,9 +9386,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (ChatActivity.this.fireworksOverlay != null) {
                     super.drawChild(canvas7, ChatActivity.this.fireworksOverlay, SystemClock.uptimeMillis());
                 }
-                if (ChatActivity.this.quickShareSelectorOverlay != null) {
-                    super.drawChild(canvas7, ChatActivity.this.quickShareSelectorOverlay, SystemClock.uptimeMillis());
-                }
+                ChatActivity.access$13800(ChatActivity.this);
                 if (ChatActivity.this.gifHintTextView != null) {
                     super.drawChild(canvas7, ChatActivity.this.gifHintTextView, SystemClock.uptimeMillis());
                 }
@@ -9622,13 +9617,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x010c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:167:0x0070, code lost:
+        
+            if (r10 != r8.this$0.topUndoView) goto L31;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x010b, code lost:
         
             return false;
          */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0188  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x0355  */
-        /* JADX WARN: Removed duplicated region for block: B:89:0x025a  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0187  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x0354  */
+        /* JADX WARN: Removed duplicated region for block: B:89:0x0259  */
         @Override // android.view.ViewGroup
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -9639,7 +9638,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             boolean z2;
             boolean z3;
             int i = 0;
-            if ((ChatActivity.this.scrimView != null || ChatActivity.this.messageEnterTransitionContainer.isRunning()) && (view == ChatActivity.this.pagedownButton || view == ChatActivity.this.searchUpButton || view == ChatActivity.this.searchDownButton || view == ChatActivity.this.mentiondownButton || view == ChatActivity.this.floatingDateView || view == ChatActivity.this.fireworksOverlay || view == ChatActivity.this.reactionsMentiondownButton || view == ChatActivity.this.quickShareSelectorOverlay || view == ChatActivity.this.gifHintTextView || view == ChatActivity.this.emojiHintTextView || view == ChatActivity.this.undoView || view == ChatActivity.this.topUndoView)) {
+            if (ChatActivity.this.scrimView != null || ChatActivity.this.messageEnterTransitionContainer.isRunning()) {
+                if (view != ChatActivity.this.pagedownButton && view != ChatActivity.this.searchUpButton && view != ChatActivity.this.searchDownButton && view != ChatActivity.this.mentiondownButton && view != ChatActivity.this.floatingDateView && view != ChatActivity.this.fireworksOverlay && view != ChatActivity.this.reactionsMentiondownButton) {
+                    ChatActivity.access$13800(ChatActivity.this);
+                    if (view != null) {
+                        if (view != ChatActivity.this.gifHintTextView) {
+                            if (view != ChatActivity.this.emojiHintTextView) {
+                                if (view != ChatActivity.this.undoView) {
+                                }
+                            }
+                        }
+                    }
+                }
                 return false;
             }
             if (view == ChatActivity.this.fragmentContextView && ChatActivity.this.fragmentContextView.isCallStyle()) {
@@ -9926,23 +9936,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             super.onDraw(canvas);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:104:0x0245, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:102:0x0240, code lost:
         
-            if (getLayoutParams().height < 0) goto L179;
+            if (getLayoutParams().height < 0) goto L176;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:105:0x02fa, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:103:0x02f5, code lost:
         
             r8 = r8 - r2;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:147:0x02f8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:145:0x02f3, code lost:
         
-            if (getLayoutParams().height < 0) goto L179;
+            if (getLayoutParams().height < 0) goto L176;
          */
-        /* JADX WARN: Removed duplicated region for block: B:164:0x00d3  */
+        /* JADX WARN: Removed duplicated region for block: B:162:0x00d3  */
         /* JADX WARN: Removed duplicated region for block: B:22:0x0088  */
         /* JADX WARN: Removed duplicated region for block: B:29:0x00e6  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x0104  */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x0122  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x00ff  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x011d  */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -9988,59 +9998,62 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             } else {
                                 i7 = ((i4 - emojiPadding) - i2) - measuredHeight3;
                             }
-                            if (childAt != ChatActivity.this.blurredView && childAt != this.backgroundView && childAt != ChatActivity.this.quickShareSelectorOverlay && !(childAt instanceof HintView) && !(childAt instanceof ChecksHintView)) {
-                                chatActivity = ChatActivity.this;
-                                if (childAt != chatActivity.mentionContainer) {
-                                    i8 -= chatActivity.chatActivityEnterView.getMeasuredHeight() - AndroidUtilities.dp(2.0f);
-                                    ChatActivity.this.mentionContainer.setTranslationY(r12.chatActivityEnterView.getAnimatedTop());
-                                } else if (childAt != chatActivity.pagedownButton && childAt != ChatActivity.this.searchUpButton && childAt != ChatActivity.this.searchDownButton && childAt != ChatActivity.this.mentiondownButton && childAt != ChatActivity.this.reactionsMentiondownButton) {
-                                    if (childAt == ChatActivity.this.emptyViewContainer) {
-                                        measuredHeight = (this.inputFieldHeight / 2) - (((BaseFragment) ChatActivity.this).actionBar.getVisibility() == 0 ? ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() / 2 : 0);
-                                    } else if (!ChatActivity.this.chatActivityEnterView.isPopupView(childAt)) {
-                                        if (childAt != ChatActivity.this.gifHintTextView && childAt != ChatActivity.this.voiceHintTextView && childAt != ChatActivity.this.mediaBanTooltip && childAt != ChatActivity.this.emojiHintTextView) {
-                                            if (childAt == ChatActivity.this.chatListView || childAt == ChatActivity.this.chatListThanosEffect || childAt == ChatActivity.this.floatingDateView || childAt == ChatActivity.this.infoTopView) {
-                                                ChatActivity chatActivity2 = ChatActivity.this;
-                                                int i13 = i8 - chatActivity2.blurredViewTopOffset;
-                                                if (!((BaseFragment) chatActivity2).inPreviewMode && !ChatActivity.this.isInsideContainer) {
-                                                    i13 -= this.inputFieldHeight - AndroidUtilities.dp(51.0f);
-                                                }
-                                                i8 = i13 - emojiPadding;
-                                                if (keyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                }
-                                            } else if (childAt == ChatActivity.this.progressView) {
-                                                if (ChatActivity.this.chatActivityEnterView.isTopViewVisible()) {
-                                                    measuredHeight = AndroidUtilities.dp(48.0f);
-                                                }
-                                            } else if (childAt == ((BaseFragment) ChatActivity.this).actionBar) {
-                                                if (((BaseFragment) ChatActivity.this).inPreviewMode && Build.VERSION.SDK_INT >= 21) {
-                                                    i8 += AndroidUtilities.statusBarHeight;
-                                                }
-                                                measuredHeight = getPaddingTop();
-                                            } else if (childAt == ChatActivity.this.videoPlayerContainer) {
-                                                i8 = ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() - emojiPadding;
-                                                if (keyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                }
-                                            } else {
-                                                ChatActivity chatActivity3 = ChatActivity.this;
-                                                if (childAt != chatActivity3.instantCameraView && childAt != chatActivity3.overlayView && childAt != ChatActivity.this.animatingImageView) {
-                                                    if (childAt == ChatActivity.this.textSelectionHelper.getOverlayView(getContext())) {
-                                                        i8 -= emojiPadding;
-                                                        if (keyboardHeight > AndroidUtilities.dp(20.0f) && getLayoutParams().height < 0) {
-                                                            i8 -= keyboardHeight;
-                                                        }
-                                                        measuredHeight = ChatActivity.this.blurredViewTopOffset;
-                                                    } else {
-                                                        ChatActivity chatActivity4 = ChatActivity.this;
-                                                        ChatActivityEnterView chatActivityEnterView = chatActivity4.chatActivityEnterView;
-                                                        if (chatActivityEnterView == null || childAt != chatActivityEnterView.botCommandsMenuContainer) {
-                                                            if (childAt instanceof MessagePreviewView) {
-                                                                i8 = AndroidUtilities.statusBarHeight;
-                                                            } else if (childAt != chatActivity4.searchViewPager) {
-                                                                if (childAt == ChatActivity.this.messagesSearchListContainer) {
-                                                                    ChatActivity chatActivity5 = ChatActivity.this;
-                                                                    if (chatActivity5.isInsideContainer && chatActivity5.parentChatActivity != null) {
-                                                                        measuredHeight2 = ChatActivity.this.chatMode != 7 ? ChatActivity.this.contentPaddingTop : ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight();
-                                                                        i8 += measuredHeight2;
+                            if (childAt != ChatActivity.this.blurredView && childAt != this.backgroundView) {
+                                ChatActivity.access$13800(ChatActivity.this);
+                                if (!(childAt instanceof HintView) && !(childAt instanceof ChecksHintView)) {
+                                    chatActivity = ChatActivity.this;
+                                    if (childAt != chatActivity.mentionContainer) {
+                                        i8 -= chatActivity.chatActivityEnterView.getMeasuredHeight() - AndroidUtilities.dp(2.0f);
+                                        ChatActivity.this.mentionContainer.setTranslationY(r12.chatActivityEnterView.getAnimatedTop());
+                                    } else if (childAt != chatActivity.pagedownButton && childAt != ChatActivity.this.searchUpButton && childAt != ChatActivity.this.searchDownButton && childAt != ChatActivity.this.mentiondownButton && childAt != ChatActivity.this.reactionsMentiondownButton) {
+                                        if (childAt == ChatActivity.this.emptyViewContainer) {
+                                            measuredHeight = (this.inputFieldHeight / 2) - (((BaseFragment) ChatActivity.this).actionBar.getVisibility() == 0 ? ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() / 2 : 0);
+                                        } else if (!ChatActivity.this.chatActivityEnterView.isPopupView(childAt)) {
+                                            if (childAt != ChatActivity.this.gifHintTextView && childAt != ChatActivity.this.voiceHintTextView && childAt != ChatActivity.this.mediaBanTooltip && childAt != ChatActivity.this.emojiHintTextView) {
+                                                if (childAt == ChatActivity.this.chatListView || childAt == ChatActivity.this.chatListThanosEffect || childAt == ChatActivity.this.floatingDateView || childAt == ChatActivity.this.infoTopView) {
+                                                    ChatActivity chatActivity2 = ChatActivity.this;
+                                                    int i13 = i8 - chatActivity2.blurredViewTopOffset;
+                                                    if (!((BaseFragment) chatActivity2).inPreviewMode && !ChatActivity.this.isInsideContainer) {
+                                                        i13 -= this.inputFieldHeight - AndroidUtilities.dp(51.0f);
+                                                    }
+                                                    i8 = i13 - emojiPadding;
+                                                    if (keyboardHeight > AndroidUtilities.dp(20.0f)) {
+                                                    }
+                                                } else if (childAt == ChatActivity.this.progressView) {
+                                                    if (ChatActivity.this.chatActivityEnterView.isTopViewVisible()) {
+                                                        measuredHeight = AndroidUtilities.dp(48.0f);
+                                                    }
+                                                } else if (childAt == ((BaseFragment) ChatActivity.this).actionBar) {
+                                                    if (((BaseFragment) ChatActivity.this).inPreviewMode && Build.VERSION.SDK_INT >= 21) {
+                                                        i8 += AndroidUtilities.statusBarHeight;
+                                                    }
+                                                    measuredHeight = getPaddingTop();
+                                                } else if (childAt == ChatActivity.this.videoPlayerContainer) {
+                                                    i8 = ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() - emojiPadding;
+                                                    if (keyboardHeight > AndroidUtilities.dp(20.0f)) {
+                                                    }
+                                                } else {
+                                                    ChatActivity chatActivity3 = ChatActivity.this;
+                                                    if (childAt != chatActivity3.instantCameraView && childAt != chatActivity3.overlayView && childAt != ChatActivity.this.animatingImageView) {
+                                                        if (childAt == ChatActivity.this.textSelectionHelper.getOverlayView(getContext())) {
+                                                            i8 -= emojiPadding;
+                                                            if (keyboardHeight > AndroidUtilities.dp(20.0f) && getLayoutParams().height < 0) {
+                                                                i8 -= keyboardHeight;
+                                                            }
+                                                            measuredHeight = ChatActivity.this.blurredViewTopOffset;
+                                                        } else {
+                                                            ChatActivity chatActivity4 = ChatActivity.this;
+                                                            ChatActivityEnterView chatActivityEnterView = chatActivity4.chatActivityEnterView;
+                                                            if (chatActivityEnterView == null || childAt != chatActivityEnterView.botCommandsMenuContainer) {
+                                                                if (childAt instanceof MessagePreviewView) {
+                                                                    i8 = AndroidUtilities.statusBarHeight;
+                                                                } else if (childAt != chatActivity4.searchViewPager) {
+                                                                    if (childAt == ChatActivity.this.messagesSearchListContainer) {
+                                                                        ChatActivity chatActivity5 = ChatActivity.this;
+                                                                        if (chatActivity5.isInsideContainer && chatActivity5.parentChatActivity != null) {
+                                                                            measuredHeight2 = ChatActivity.this.chatMode != 7 ? ChatActivity.this.contentPaddingTop : ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight();
+                                                                            i8 += measuredHeight2;
+                                                                        }
                                                                     }
                                                                 }
                                                             }
@@ -10048,21 +10061,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                     }
                                                 }
                                             }
+                                            measuredHeight = this.inputFieldHeight;
+                                        } else if (AndroidUtilities.isInMultiwindow || ((BaseFragment) ChatActivity.this).inBubbleMode) {
+                                            i8 = ChatActivity.this.chatActivityEnterView.getTop() - childAt.getMeasuredHeight();
+                                            measuredHeight2 = AndroidUtilities.dp(1.0f);
+                                            i8 += measuredHeight2;
+                                        } else {
+                                            i8 = ChatActivity.this.chatActivityEnterView.getBottom();
                                         }
-                                        measuredHeight = this.inputFieldHeight;
-                                    } else if (AndroidUtilities.isInMultiwindow || ((BaseFragment) ChatActivity.this).inBubbleMode) {
-                                        i8 = ChatActivity.this.chatActivityEnterView.getTop() - childAt.getMeasuredHeight();
-                                        measuredHeight2 = AndroidUtilities.dp(1.0f);
-                                        i8 += measuredHeight2;
-                                    } else {
-                                        i8 = ChatActivity.this.chatActivityEnterView.getBottom();
+                                        i8 -= measuredHeight;
+                                    } else if (!((BaseFragment) ChatActivity.this).inPreviewMode) {
+                                        measuredHeight = ChatActivity.this.chatActivityEnterView.getMeasuredHeight();
+                                        i8 -= measuredHeight;
                                     }
-                                    i8 -= measuredHeight;
-                                } else if (!((BaseFragment) ChatActivity.this).inPreviewMode) {
-                                    measuredHeight = ChatActivity.this.chatActivityEnterView.getMeasuredHeight();
-                                    i8 -= measuredHeight;
+                                    childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
                                 }
-                                childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
                             }
                             i8 = 0;
                             childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
@@ -10071,10 +10084,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         i8 = i7 - layoutParams.bottomMargin;
                         if (childAt != ChatActivity.this.blurredView) {
-                            chatActivity = ChatActivity.this;
-                            if (childAt != chatActivity.mentionContainer) {
+                            ChatActivity.access$13800(ChatActivity.this);
+                            if (!(childAt instanceof HintView)) {
+                                chatActivity = ChatActivity.this;
+                                if (childAt != chatActivity.mentionContainer) {
+                                }
+                                childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
                             }
-                            childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
                         }
                         i8 = 0;
                         childAt.layout(i6, i8, measuredWidth + i6, measuredHeight3 + i8);
@@ -11520,32 +11536,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             profileActivity.setPlayProfileAnimation(i);
             AndroidUtilities.setAdjustResizeToNothing(ChatActivity.this.getParentActivity(), ((BaseFragment) ChatActivity.this).classGuid);
             ChatActivity.this.presentFragment(profileActivity);
-        }
-
-        private Bulletin sendMessageFromQuickShare(ChatMessageCell chatMessageCell) {
-            MessageObject.GroupedMessages groupedMessages;
-            if (ChatActivity.this.quickShareSelectorOverlay == null) {
-                return null;
-            }
-            MessageObject selectedMessageObject = ChatActivity.this.quickShareSelectorOverlay.getSelectedMessageObject(chatMessageCell);
-            long selectedDialogId = ChatActivity.this.quickShareSelectorOverlay.getSelectedDialogId(chatMessageCell);
-            if (selectedMessageObject == null || selectedDialogId == 0 || AlertsCreator.checkSlowMode(ChatActivity.this.getContext(), ((BaseFragment) ChatActivity.this).currentAccount, selectedDialogId, false)) {
-                return null;
-            }
-            ArrayList<MessageObject> arrayList = (selectedMessageObject.getGroupId() == 0 || (groupedMessages = (MessageObject.GroupedMessages) ChatActivity.this.groupedMessagesMap.get(selectedMessageObject.getGroupId())) == null) ? null : groupedMessages.messages;
-            if (arrayList == null) {
-                arrayList = new ArrayList<>();
-                arrayList.add(selectedMessageObject);
-            }
-            int sendMessage = SendMessagesHelper.getInstance(((BaseFragment) ChatActivity.this).currentAccount).sendMessage(arrayList, selectedDialogId, false, false, true, 0, null, -1, 0L);
-            AlertsCreator.showSendMediaAlert(sendMessage, ChatActivity.this, null);
-            if (sendMessage != 0) {
-                return null;
-            }
-            Context context = ChatActivity.this.getContext();
-            ChatActivity chatActivity = ChatActivity.this;
-            Bulletin createForwardedBulletin = BulletinFactory.createForwardedBulletin(context, chatActivity, null, 1, selectedDialogId, 1, chatActivity.getThemedColor(Theme.key_undo_background), ChatActivity.this.getThemedColor(Theme.key_undo_infoColor), 2750);
-            return createForwardedBulletin.allowBlur().show(createForwardedBulletin.getLayout() instanceof Bulletin.LottieLayoutWithReactions);
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -13164,30 +13154,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public void didQuickShareEnd(ChatMessageCell chatMessageCell, float f, float f2) {
-            if (ChatActivity.this.quickShareSelectorOverlay == null) {
-                return;
-            }
-            ChatActivity.this.quickShareSelectorOverlay.close(chatMessageCell, sendMessageFromQuickShare(chatMessageCell));
+            ChatActivity.access$13800(ChatActivity.this);
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public void didQuickShareMove(ChatMessageCell chatMessageCell, float f, float f2) {
-            if (ChatActivity.this.quickShareSelectorOverlay != null) {
-                ChatActivity.this.quickShareSelectorOverlay.onTouchMoveEvent(chatMessageCell, f, f2);
-            }
-        }
-
-        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-        public void didQuickShareStart(ChatMessageCell chatMessageCell, float f, float f2) {
-            if (ChatActivity.this.getParentActivity() == null) {
-                return;
-            }
-            if (ChatActivity.this.quickShareSelectorOverlay == null) {
-                ChatActivity.this.quickShareSelectorOverlay = new QuickShareSelectorOverlayLayout(ChatActivity.this.getContext());
-                ChatActivity chatActivity = ChatActivity.this;
-                chatActivity.contentView.addView(chatActivity.quickShareSelectorOverlay, LayoutHelper.createFrame(-1, -1, 48));
-            }
-            ChatActivity.this.quickShareSelectorOverlay.open(chatMessageCell);
+            ChatActivity.access$13800(ChatActivity.this);
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -15614,6 +15586,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         };
         this.preventReopenSearchWithText = false;
+    }
+
+    static /* synthetic */ QuickShareSelectorOverlayLayout access$13800(ChatActivity chatActivity) {
+        chatActivity.getClass();
+        return null;
     }
 
     static /* synthetic */ float access$15116(ChatActivity chatActivity, float f) {
@@ -18179,7 +18156,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r6v8 ??), method size: 11590
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r10v19 ??), method size: 11590
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -38700,11 +38677,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean canBeginSlide() {
-        if ((this.chatMode == 5 && (this.messages.isEmpty() || this.threadMessageId == 0)) || !this.swipeBackEnabled || !this.chatActivityEnterView.swipeToBackEnabled() || this.pullingDownOffset != 0.0f) {
-            return false;
-        }
-        QuickShareSelectorOverlayLayout quickShareSelectorOverlayLayout = this.quickShareSelectorOverlay;
-        return quickShareSelectorOverlayLayout == null || !quickShareSelectorOverlayLayout.isActive();
+        return !(this.chatMode == 5 && (this.messages.isEmpty() || this.threadMessageId == 0)) && this.swipeBackEnabled && this.chatActivityEnterView.swipeToBackEnabled() && this.pullingDownOffset == 0.0f;
     }
 
     public boolean canScheduleMessage() {
@@ -50899,11 +50872,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return false;
         }
         MessagePreviewView messagePreviewView = this.forwardingPreviewView;
-        if (messagePreviewView != null && messagePreviewView.isShowing()) {
-            return false;
-        }
-        QuickShareSelectorOverlayLayout quickShareSelectorOverlayLayout = this.quickShareSelectorOverlay;
-        return quickShareSelectorOverlayLayout == null || !quickShareSelectorOverlayLayout.isActive();
+        return messagePreviewView == null || !messagePreviewView.isShowing();
     }
 
     public boolean isThreadChat() {

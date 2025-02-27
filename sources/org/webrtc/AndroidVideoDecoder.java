@@ -22,6 +22,12 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
     private static final int MEDIA_CODEC_RELEASE_TIMEOUT_MS = 5000;
+    private static final String MEDIA_FORMAT_KEY_CROP_BOTTOM = "crop-bottom";
+    private static final String MEDIA_FORMAT_KEY_CROP_LEFT = "crop-left";
+    private static final String MEDIA_FORMAT_KEY_CROP_RIGHT = "crop-right";
+    private static final String MEDIA_FORMAT_KEY_CROP_TOP = "crop-top";
+    private static final String MEDIA_FORMAT_KEY_SLICE_HEIGHT = "slice-height";
+    private static final String MEDIA_FORMAT_KEY_STRIDE = "stride";
     private static final String TAG = "AndroidVideoDecoder";
     private VideoDecoder.Callback callback;
     private MediaCodecWrapper codec;
@@ -157,10 +163,10 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
             return;
         }
         int i8 = (i7 >= ((i5 * i4) * 3) / 2 || i6 != i4 || i5 <= i3) ? i5 : (i7 * 2) / (i4 * 3);
-        ByteBuffer outputBuffer = this.codec.getOutputBuffer(i);
-        outputBuffer.position(bufferInfo.offset);
-        outputBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        ByteBuffer slice = outputBuffer.slice();
+        ByteBuffer byteBuffer = this.codec.getOutputBuffers()[i];
+        byteBuffer.position(bufferInfo.offset);
+        byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
+        ByteBuffer slice = byteBuffer.slice();
         VideoFrame.Buffer copyI420Buffer = this.colorFormat == 19 ? copyI420Buffer(slice, i8, i6, i3, i4) : copyNV12ToI420Buffer(slice, i8, i6, i3, i4);
         this.codec.releaseOutputBuffer(i, false);
         VideoFrame videoFrame = new VideoFrame(copyI420Buffer, i2, bufferInfo.presentationTimeUs * 1000);
@@ -193,7 +199,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoCodecStatus initDecodeInternal(int i, int i2) {
         this.decoderThreadChecker.checkIsOnValidThread();
-        Logging.d(TAG, "initDecodeInternal name: " + this.codecName + " type: " + this.codecType + " width: " + i + " height: " + i2 + " color format: " + this.colorFormat);
+        Logging.d(TAG, "initDecodeInternal name: " + this.codecName + " type: " + this.codecType + " width: " + i + " height: " + i2);
         if (this.outputThread != null) {
             Logging.e(TAG, "initDecodeInternal called while the codec is already running");
             return VideoCodecStatus.FALLBACK_SOFTWARE;
@@ -245,8 +251,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0112 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0116 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -254,10 +260,10 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         int integer;
         int integer2;
         this.outputThreadChecker.checkIsOnValidThread();
-        Logging.d(TAG, "Decoder format changed: " + mediaFormat);
-        if (mediaFormat.containsKey("crop-left") && mediaFormat.containsKey("crop-right") && mediaFormat.containsKey("crop-bottom") && mediaFormat.containsKey("crop-top")) {
-            integer = (mediaFormat.getInteger("crop-right") + 1) - mediaFormat.getInteger("crop-left");
-            integer2 = (mediaFormat.getInteger("crop-bottom") + 1) - mediaFormat.getInteger("crop-top");
+        Logging.d(TAG, "Decoder format changed: " + mediaFormat.toString());
+        if (mediaFormat.containsKey(MEDIA_FORMAT_KEY_CROP_LEFT) && mediaFormat.containsKey(MEDIA_FORMAT_KEY_CROP_RIGHT) && mediaFormat.containsKey(MEDIA_FORMAT_KEY_CROP_BOTTOM) && mediaFormat.containsKey(MEDIA_FORMAT_KEY_CROP_TOP)) {
+            integer = (mediaFormat.getInteger(MEDIA_FORMAT_KEY_CROP_RIGHT) + 1) - mediaFormat.getInteger(MEDIA_FORMAT_KEY_CROP_LEFT);
+            integer2 = (mediaFormat.getInteger(MEDIA_FORMAT_KEY_CROP_BOTTOM) + 1) - mediaFormat.getInteger(MEDIA_FORMAT_KEY_CROP_TOP);
         } else {
             integer = mediaFormat.getInteger("width");
             integer2 = mediaFormat.getInteger("height");
@@ -277,11 +283,11 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                     }
                     synchronized (this.dimensionLock) {
                         try {
-                            if (mediaFormat.containsKey("stride")) {
-                                this.stride = mediaFormat.getInteger("stride");
+                            if (mediaFormat.containsKey(MEDIA_FORMAT_KEY_STRIDE)) {
+                                this.stride = mediaFormat.getInteger(MEDIA_FORMAT_KEY_STRIDE);
                             }
-                            if (mediaFormat.containsKey("slice-height")) {
-                                this.sliceHeight = mediaFormat.getInteger("slice-height");
+                            if (mediaFormat.containsKey(MEDIA_FORMAT_KEY_SLICE_HEIGHT)) {
+                                this.sliceHeight = mediaFormat.getInteger(MEDIA_FORMAT_KEY_SLICE_HEIGHT);
                             }
                             Logging.d(TAG, "Frame stride and slice height: " + this.stride + " x " + this.sliceHeight);
                             this.stride = Math.max(this.width, this.stride);
@@ -378,8 +384,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     }
 
     @Override // org.webrtc.VideoDecoder
-    public /* synthetic */ long createNative(long j) {
-        return VideoDecoder.-CC.$default$createNative(this, j);
+    public /* synthetic */ long createNativeVideoDecoder() {
+        return VideoDecoder.-CC.$default$createNativeVideoDecoder(this);
     }
 
     protected SurfaceTextureHelper createSurfaceTextureHelper() {
@@ -431,12 +437,12 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 return VideoCodecStatus.ERROR;
             }
             try {
-                ByteBuffer inputBuffer = this.codec.getInputBuffer(dequeueInputBuffer);
-                if (inputBuffer.capacity() < remaining) {
+                ByteBuffer byteBuffer2 = this.codec.getInputBuffers()[dequeueInputBuffer];
+                if (byteBuffer2.capacity() < remaining) {
                     Logging.e(TAG, "decode() - HW buffer too small");
                     return VideoCodecStatus.ERROR;
                 }
-                inputBuffer.put(encodedImage.buffer);
+                byteBuffer2.put(encodedImage.buffer);
                 this.frameInfos.offer(new FrameInfo(SystemClock.elapsedRealtime(), encodedImage.rotation));
                 try {
                     this.codec.queueInputBuffer(dequeueInputBuffer, 0, remaining, TimeUnit.NANOSECONDS.toMicros(encodedImage.captureTimeNs), 0);
@@ -450,7 +456,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                     return VideoCodecStatus.ERROR;
                 }
             } catch (IllegalStateException e2) {
-                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e2);
+                Logging.e(TAG, "getInputBuffers failed", e2);
                 return VideoCodecStatus.ERROR;
             }
         } catch (IllegalStateException e3) {
@@ -496,6 +502,11 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     @Override // org.webrtc.VideoDecoder
     public String getImplementationName() {
         return this.codecName;
+    }
+
+    @Override // org.webrtc.VideoDecoder
+    public boolean getPrefersLateDecoding() {
+        return true;
     }
 
     @Override // org.webrtc.VideoDecoder
