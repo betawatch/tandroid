@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CancellableContinuation extends Continuation {
     void completeResume(Object obj);
 

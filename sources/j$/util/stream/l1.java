@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 final class l1 extends L2 implements D0, w0 {
@@ -9,7 +11,7 @@ final class l1 extends L2 implements D0, w0 {
 
     @Override // j$.util.stream.L2
     /* renamed from: A */
-    public final j$.util.K spliterator() {
+    public final j$.util.J spliterator() {
         return super.spliterator();
     }
 
@@ -30,7 +32,7 @@ final class l1 extends L2 implements D0, w0 {
         throw null;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;
@@ -42,7 +44,7 @@ final class l1 extends L2 implements D0, w0 {
         throw null;
     }
 
-    @Override // j$.util.stream.L2, j$.util.function.W
+    @Override // j$.util.stream.L2, j$.util.function.T
     public final void accept(long j) {
         super.accept(j);
     }
@@ -80,7 +82,7 @@ final class l1 extends L2 implements D0, w0 {
 
     @Override // j$.util.stream.N2, j$.util.stream.E0
     public final void g(Object obj) {
-        super.g((j$.util.function.W) obj);
+        super.g((j$.util.function.T) obj);
     }
 
     @Override // j$.util.stream.d2
@@ -109,22 +111,22 @@ final class l1 extends L2 implements D0, w0 {
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ Object[] s(j$.util.function.I i) {
-        return t0.m(this, i);
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return t0.m(this, intFunction);
     }
 
     @Override // j$.util.stream.L2, j$.util.stream.N2, java.lang.Iterable
-    public final j$.util.N spliterator() {
+    public final j$.util.M spliterator() {
         return super.spliterator();
     }
 
     @Override // j$.util.stream.L2, j$.util.stream.N2, java.lang.Iterable
-    public final j$.util.Q spliterator() {
+    public final Spliterator spliterator() {
         return super.spliterator();
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
         return t0.v(this, j, j2);
     }
 }

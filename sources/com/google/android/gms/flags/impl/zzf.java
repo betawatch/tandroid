@@ -1,17 +1,24 @@
 package com.google.android.gms.flags.impl;
 
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 /* loaded from: classes.dex */
-public abstract class zzf extends zza {
-    public static Long zza(SharedPreferences sharedPreferences, String str, Long l) {
-        try {
-            return (Long) com.google.android.gms.internal.flags.zze.zza(new zzg(sharedPreferences, str, l));
-        } catch (Exception e) {
-            String valueOf = String.valueOf(e.getMessage());
-            Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
-            return l;
+public abstract class zzf {
+    private static SharedPreferences zza;
+
+    public static SharedPreferences zza(Context context) {
+        SharedPreferences sharedPreferences;
+        synchronized (SharedPreferences.class) {
+            try {
+                if (zza == null) {
+                    zza = (SharedPreferences) com.google.android.gms.internal.flags.zzd.zza(new zze(context));
+                }
+                sharedPreferences = zza;
+            } catch (Throwable th) {
+                throw th;
+            }
         }
+        return sharedPreferences;
     }
 }

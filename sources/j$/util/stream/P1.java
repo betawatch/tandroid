@@ -1,18 +1,19 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
 final class P1 extends e {
     private final t0 h;
 
-    P1(P1 p1, j$.util.Q q) {
-        super(p1, q);
+    P1(P1 p1, Spliterator spliterator) {
+        super(p1, spliterator);
         this.h = p1.h;
     }
 
-    P1(t0 t0Var, b bVar, j$.util.Q q) {
-        super(bVar, q);
+    P1(t0 t0Var, b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
         this.h = t0Var;
     }
 
@@ -20,13 +21,13 @@ final class P1 extends e {
     protected final Object a() {
         b bVar = this.a;
         N1 d0 = this.h.d0();
-        bVar.D0(this.b, d0);
+        bVar.C0(this.b, d0);
         return d0;
     }
 
     @Override // j$.util.stream.e
-    protected final e d(j$.util.Q q) {
-        return new P1(this, q);
+    protected final e d(Spliterator spliterator) {
+        return new P1(this, spliterator);
     }
 
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter

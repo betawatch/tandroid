@@ -202,7 +202,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                 }
 
                 @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-                public void didPressedButton(int i2, boolean z2, boolean z3, int i3, long j, boolean z4, boolean z5) {
+                public void didPressedButton(int i2, boolean z2, boolean z3, int i3, long j, boolean z4, boolean z5, long j2) {
                     BaseFragment baseFragment2 = ImageUpdater.this.parentFragment;
                     if (baseFragment2 == null || baseFragment2.getParentActivity() == null || ImageUpdater.this.chatAttachAlert == null) {
                         return;
@@ -304,8 +304,8 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                 }
 
                 @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-                public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z2, int i2, long j, boolean z3) {
-                    ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z2, i2, j, z3);
+                public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z2, int i2, long j, boolean z3, long j2) {
+                    ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z2, i2, j, z3, j2);
                 }
             });
             this.chatAttachAlert.setImageUpdater(this);

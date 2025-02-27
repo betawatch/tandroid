@@ -984,9 +984,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    private boolean handleIntent(android.content.Intent r109, boolean r110, boolean r111, boolean r112, org.telegram.messenger.browser.Browser.Progress r113, boolean r114, boolean r115) {
+    private boolean handleIntent(android.content.Intent r111, boolean r112, boolean r113, boolean r114, org.telegram.messenger.browser.Browser.Progress r115, boolean r116, boolean r117) {
         /*
-            Method dump skipped, instructions count: 14520
+            Method dump skipped, instructions count: 14030
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.handleIntent(android.content.Intent, boolean, boolean, boolean, org.telegram.messenger.browser.Browser$Progress, boolean, boolean):boolean");
@@ -1231,7 +1231,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$144(HashMap hashMap, int i, TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3) {
+    public static /* synthetic */ void lambda$didReceivedNotification$144(HashMap hashMap, int i, TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext()) {
             MessageObject messageObject = (MessageObject) ((Map.Entry) it.next()).getValue();
@@ -1246,8 +1246,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             LocationActivity locationActivity = new LocationActivity(0);
             locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda87
                 @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
-                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z, int i4) {
-                    LaunchActivity.lambda$didReceivedNotification$144(hashMap, i, messageMedia, i3, z, i4);
+                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z, int i4, long j) {
+                    LaunchActivity.lambda$didReceivedNotification$144(hashMap, i, messageMedia, i3, z, i4, j);
                 }
             });
             lambda$runLinkRequest$95(locationActivity);
@@ -1366,7 +1366,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didSelectDialogs$137(ChatActivity chatActivity, ArrayList arrayList, int i, CharSequence charSequence, int i2, boolean z, TLRPC.User user, boolean z2, int i3, long j, boolean z3) {
+    public /* synthetic */ void lambda$didSelectDialogs$137(ChatActivity chatActivity, ArrayList arrayList, int i, CharSequence charSequence, int i2, boolean z, TLRPC.User user, boolean z2, int i3, long j, boolean z3, long j2) {
         MessageObject messageObject;
         TLRPC.TL_forumTopic findTopic;
         if (chatActivity != null) {
@@ -1374,23 +1374,23 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
         for (int i4 = 0; i4 < arrayList.size(); i4++) {
-            long j2 = ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId;
-            long j3 = ((MessagesStorage.TopicKey) arrayList.get(i4)).topicId;
-            if (j3 == 0 || (findTopic = accountInstance.getMessagesController().getTopicsController().findTopic(-j2, j3)) == null || findTopic.topicStartMessage == null) {
+            long j3 = ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId;
+            long j4 = ((MessagesStorage.TopicKey) arrayList.get(i4)).topicId;
+            if (j4 == 0 || (findTopic = accountInstance.getMessagesController().getTopicsController().findTopic(-j3, j4)) == null || findTopic.topicStartMessage == null) {
                 messageObject = null;
             } else {
                 MessageObject messageObject2 = new MessageObject(accountInstance.getCurrentAccount(), findTopic.topicStartMessage, false, false);
                 messageObject2.isTopicMainMessage = true;
                 messageObject = messageObject2;
             }
-            SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(user, j2, messageObject, messageObject, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z2, i3 != 0 ? i3 : i);
+            SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(user, j3, messageObject, messageObject, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z2, i3 != 0 ? i3 : i);
             if (TextUtils.isEmpty(charSequence)) {
                 of.effect_id = j;
             }
             of.invert_media = z3;
             SendMessagesHelper.getInstance(i2).sendMessage(of);
             if (!TextUtils.isEmpty(charSequence)) {
-                SendMessagesHelper.prepareSendingText(accountInstance, charSequence.toString(), j2, z, i3 != 0 ? i3 : i, j);
+                SendMessagesHelper.prepareSendingText(accountInstance, charSequence.toString(), j3, z, i3 != 0 ? i3 : i, j);
             }
         }
     }
@@ -1438,7 +1438,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleIntent$20(int[] iArr, long j, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2) {
+    public static /* synthetic */ void lambda$handleIntent$20(int[] iArr, long j, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j2) {
         SendMessagesHelper.getInstance(iArr[0]).sendMessage(SendMessagesHelper.SendMessageParams.of(messageMedia, j, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z, i2));
     }
 
@@ -1452,8 +1452,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         final long dialogId = sharingLocationInfo.messageObject.getDialogId();
         locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda112
             @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
-            public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3) {
-                LaunchActivity.lambda$handleIntent$20(iArr, dialogId, messageMedia, i2, z, i3);
+            public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
+                LaunchActivity.lambda$handleIntent$20(iArr, dialogId, messageMedia, i2, z, i3, j);
             }
         });
         lambda$runLinkRequest$95(locationActivity);
@@ -6641,7 +6641,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                             View view2 = this.rippleAbove;
                             if (view2 != null && view2.getBackground() != null) {
-                                this.rippleAbove.getBackground().setAlpha(NotificationCenter.liveLocationsChanged);
+                                this.rippleAbove.getBackground().setAlpha(NotificationCenter.proxyCheckDone);
                             }
                             this.frameLayout.removeView(this.themeSwitchImageView);
                             ImageView imageView = new ImageView(this);
@@ -7016,23 +7016,23 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         drawerLayoutAdapter.notifyDataSetChanged();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:214:0x02df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x02e1, code lost:
     
-        if (r39.photoPathsArray.size() == 1) goto L189;
+        if (r41.photoPathsArray.size() == 1) goto L189;
      */
     /* JADX WARN: Removed duplicated region for block: B:107:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x03ed  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x04a4  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x04b3 A[LOOP:2: B:149:0x04ab->B:151:0x04b3, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x04df A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x04f6 A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x03a3  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x03ad  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x03b7  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03b2  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x03a8  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x03f5  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0499  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x04ac  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x04bb A[LOOP:2: B:149:0x04b3->B:151:0x04bb, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04e7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x04fe A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x03a9  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x03bd  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x03b8  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x03ae  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x02e4  */
     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -7145,20 +7145,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     final ChatActivity chatActivity5 = chatActivity;
                     phonebookShareAlert.setDelegate(new ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda89
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
-                        public final void didSelectContact(TLRPC.User user, boolean z10, int i6, long j3, boolean z11) {
-                            LaunchActivity.this.lambda$didSelectDialogs$137(chatActivity5, arrayList, i4, charSequence, currentAccount, z9, user, z10, i6, j3, z11);
+                        public final void didSelectContact(TLRPC.User user, boolean z10, int i6, long j3, boolean z11, long j4) {
+                            LaunchActivity.this.lambda$didSelectDialogs$137(chatActivity5, arrayList, i4, charSequence, currentAccount, z9, user, z10, i6, j3, z11, j4);
                         }
 
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
-                        public /* synthetic */ void didSelectContacts(ArrayList arrayList13, String str6, boolean z10, int i6, long j3, boolean z11) {
-                            ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate.-CC.$default$didSelectContacts(this, arrayList13, str6, z10, i6, j3, z11);
+                        public /* synthetic */ void didSelectContacts(ArrayList arrayList13, String str6, boolean z10, int i6, long j3, boolean z11, long j4) {
+                            ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate.-CC.$default$didSelectContacts(this, arrayList13, str6, z10, i6, j3, z11, j4);
                         }
                     });
                     ((BaseFragment) arrayList12.get(arrayList12.size() - 1)).showDialog(phonebookShareAlert);
                     chatActivity2 = chatActivity;
                     z3 = true;
                     if (dialogsActivity != null && chatActivity2 == null && !z3) {
-                        dialogsActivity.lambda$onBackPressed$323();
+                        dialogsActivity.lambda$onBackPressed$335();
                     }
                 }
             }
@@ -7193,7 +7193,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         }
                                         ArrayList arrayList14 = new ArrayList();
                                         arrayList14.add(this.videoPath);
-                                        SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList14, arrayList14, null, str6, null, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false);
+                                        SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList14, arrayList14, null, str6, null, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false, 0L);
                                     } else {
                                         ArrayList arrayList15 = this.photoPathsArray;
                                         if (arrayList15 != null && arrayList15.size() > 0) {
@@ -7202,7 +7202,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                 if (str9.length() <= 1024) {
                                                 }
                                             }
-                                            SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false);
+                                            SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
                                         }
                                     }
                                     str = str6;
@@ -7235,13 +7235,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 }
                                 ArrayList arrayList16 = new ArrayList();
                                 arrayList16.add(this.videoPath);
-                                SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList16, arrayList16, null, str6, null, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false);
+                                SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList16, arrayList16, null, str6, null, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false, 0L);
                             }
                             if (this.photoPathsArray != null) {
                                 String str11 = this.sendingText;
                                 if (str11 == null || str11.length() > 1024 || this.photoPathsArray.size() != 1) {
                                     z5 = z4;
-                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false);
+                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
                                     str = str6;
                                     z6 = false;
                                     z7 = false;
@@ -7249,7 +7249,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     z5 = z4;
                                     ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = this.sendingText;
                                     this.sendingText = null;
-                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false);
+                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
                                     str = str6;
                                     z6 = false;
                                     z7 = false;
@@ -7273,7 +7273,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 }
                             }
                             str3 = str;
-                            SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str3, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false);
+                            SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str3, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false, 0L);
                         } else {
                             str3 = str;
                         }
@@ -7358,7 +7358,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                 }
                 str3 = str;
-                SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str3, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false);
+                SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str3, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z9, i4, null, null, 0, 0L, false, 0L);
                 if (this.voicePath != null) {
                 }
                 z8 = z5;
@@ -7378,7 +7378,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             chatActivity2 = chatActivity;
             if (dialogsActivity != null) {
-                dialogsActivity.lambda$onBackPressed$323();
+                dialogsActivity.lambda$onBackPressed$335();
             }
         }
         this.photoPathsArray = null;
@@ -7967,7 +7967,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 } else if (this.rightActionBarLayout.getView().getVisibility() == 0 && !this.rightActionBarLayout.getFragmentStack().isEmpty()) {
                     BaseFragment baseFragment = this.rightActionBarLayout.getFragmentStack().get(this.rightActionBarLayout.getFragmentStack().size() - 1);
                     if (baseFragment.onBackPressed()) {
-                        baseFragment.lambda$onBackPressed$323();
+                        baseFragment.lambda$onBackPressed$335();
                         return;
                     }
                     return;

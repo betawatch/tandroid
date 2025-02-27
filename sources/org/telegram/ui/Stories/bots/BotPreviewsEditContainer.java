@@ -1771,7 +1771,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
         }
         chatAttachAlert.setDelegate(new ChatAttachAlert.ChatAttachViewDelegate() { // from class: org.telegram.ui.Stories.bots.BotPreviewsEditContainer.4
             @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public void didPressedButton(int i2, boolean z, boolean z2, int i3, long j, boolean z3, boolean z4) {
+            public void didPressedButton(int i2, boolean z, boolean z2, int i3, long j, boolean z3, boolean z4, long j2) {
                 if (chatAttachAlert.getPhotoLayout().getSelectedPhotos().isEmpty()) {
                     return;
                 }
@@ -1834,8 +1834,8 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
             }
 
             @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i2, long j, boolean z2) {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z, i2, j, z2);
+            public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i2, long j, boolean z2, long j2) {
+                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z, i2, j, z2, j2);
             }
         });
         chatAttachAlert.init();

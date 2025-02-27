@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Unconfined extends CoroutineDispatcher {
     public static final Unconfined INSTANCE = new Unconfined();
 

@@ -34,9 +34,9 @@ public abstract class X1 implements b2 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2

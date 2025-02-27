@@ -3,31 +3,31 @@ package j$.util.function;
 import java.util.function.DoubleBinaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h implements j {
-    public final /* synthetic */ DoubleBinaryOperator a;
+public final /* synthetic */ class h implements DoubleBinaryOperator {
+    public final /* synthetic */ i a;
 
-    private /* synthetic */ h(DoubleBinaryOperator doubleBinaryOperator) {
-        this.a = doubleBinaryOperator;
+    private /* synthetic */ h(i iVar) {
+        this.a = iVar;
     }
 
-    public static /* synthetic */ j a(DoubleBinaryOperator doubleBinaryOperator) {
-        if (doubleBinaryOperator == null) {
+    public static /* synthetic */ DoubleBinaryOperator a(i iVar) {
+        if (iVar == null) {
             return null;
         }
-        return doubleBinaryOperator instanceof i ? ((i) doubleBinaryOperator).a : new h(doubleBinaryOperator);
+        return iVar instanceof g ? ((g) iVar).a : new h(iVar);
     }
 
-    @Override // j$.util.function.j
+    @Override // java.util.function.DoubleBinaryOperator
     public final /* synthetic */ double applyAsDouble(double d, double d2) {
         return this.a.applyAsDouble(d, d2);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        DoubleBinaryOperator doubleBinaryOperator = this.a;
+        i iVar = this.a;
         if (obj instanceof h) {
             obj = ((h) obj).a;
         }
-        return doubleBinaryOperator.equals(obj);
+        return iVar.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

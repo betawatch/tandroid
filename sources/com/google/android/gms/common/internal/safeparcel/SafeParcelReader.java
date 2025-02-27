@@ -104,6 +104,17 @@ public abstract class SafeParcelReader {
         return arrayList;
     }
 
+    public static long[] createLongArray(Parcel parcel, int i) {
+        int readSize = readSize(parcel, i);
+        int dataPosition = parcel.dataPosition();
+        if (readSize == 0) {
+            return null;
+        }
+        long[] createLongArray = parcel.createLongArray();
+        parcel.setDataPosition(dataPosition + readSize);
+        return createLongArray;
+    }
+
     public static Parcelable createParcelable(Parcel parcel, int i, Parcelable.Creator creator) {
         int readSize = readSize(parcel, i);
         int dataPosition = parcel.dataPosition();
@@ -184,6 +195,15 @@ public abstract class SafeParcelReader {
     public static boolean readBoolean(Parcel parcel, int i) {
         zzb(parcel, i, 4);
         return parcel.readInt() != 0;
+    }
+
+    public static Boolean readBooleanObject(Parcel parcel, int i) {
+        int readSize = readSize(parcel, i);
+        if (readSize == 0) {
+            return null;
+        }
+        zza(parcel, i, readSize, 4);
+        return Boolean.valueOf(parcel.readInt() != 0);
     }
 
     public static byte readByte(Parcel parcel, int i) {

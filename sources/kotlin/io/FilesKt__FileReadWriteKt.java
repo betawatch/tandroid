@@ -9,7 +9,7 @@ import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
     public static byte[] readBytes(File file) {
         Intrinsics.checkNotNullParameter(file, "<this>");

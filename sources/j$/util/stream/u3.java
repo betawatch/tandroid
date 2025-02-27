@@ -1,91 +1,73 @@
 package j$.util.stream;
 
-import java.util.concurrent.atomic.AtomicLong;
+import j$.util.Spliterator;
+import j$.util.function.Consumer;
+import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-abstract class u3 {
-    protected final j$.util.Q a;
-    protected final boolean b;
-    private final long c;
-    private final AtomicLong d;
-
-    u3(j$.util.Q q, long j, long j2) {
-        this.a = q;
-        this.b = j2 < 0;
-        this.c = j2 >= 0 ? j2 : 0L;
-        this.d = new AtomicLong(j2 >= 0 ? j + j2 : j);
+final class u3 extends T2 {
+    u3(b bVar, Spliterator spliterator, boolean z) {
+        super(bVar, spliterator, z);
     }
 
-    u3(j$.util.Q q, u3 u3Var) {
-        this.a = q;
-        this.b = u3Var.b;
-        this.d = u3Var.d;
-        this.c = u3Var.c;
+    u3(b bVar, Supplier supplier, boolean z) {
+        super(bVar, supplier, z);
     }
 
-    public final int characteristics() {
-        return this.a.characteristics() & (-16465);
-    }
-
-    public final long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    protected final long t(long j) {
-        AtomicLong atomicLong;
-        long j2;
-        boolean z;
-        long min;
-        do {
-            atomicLong = this.d;
-            j2 = atomicLong.get();
-            z = this.b;
-            if (j2 != 0) {
-                min = Math.min(j2, j);
-                if (min <= 0) {
-                    break;
-                }
-            } else {
-                if (z) {
-                    return j;
-                }
-                return 0L;
+    @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        if (this.h != null || this.i) {
+            while (s(consumer)) {
             }
-        } while (!atomicLong.compareAndSet(j2, j2 - min));
-        if (z) {
-            return Math.max(j - min, 0L);
+            return;
         }
-        long j3 = this.c;
-        return j2 > j3 ? Math.max(min - (j2 - j3), 0L) : min;
+        consumer.getClass();
+        h();
+        a aVar = new a(consumer, 8);
+        this.b.C0(this.d, aVar);
+        this.i = true;
     }
 
-    public /* bridge */ /* synthetic */ j$.util.E trySplit() {
-        return (j$.util.E) trySplit();
+    @Override // j$.util.stream.T2
+    final void j() {
+        O2 o2 = new O2();
+        this.h = o2;
+        this.e = this.b.D0(new a(o2, 6));
+        this.f = new a(this, 7);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.H trySplit() {
-        return (j$.util.H) trySplit();
+    @Override // j$.util.stream.T2
+    final T2 k(Spliterator spliterator) {
+        return new u3(this.b, spliterator, this.a);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.K trySplit() {
-        return (j$.util.K) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.N trySplit() {
-        return (j$.util.N) trySplit();
-    }
-
-    public final j$.util.Q trySplit() {
-        j$.util.Q trySplit;
-        if (this.d.get() == 0 || (trySplit = this.a.trySplit()) == null) {
-            return null;
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
+        Object obj;
+        consumer.getClass();
+        boolean b = b();
+        if (b) {
+            O2 o2 = (O2) this.h;
+            long j = this.g;
+            if (o2.c != 0) {
+                if (j >= o2.count()) {
+                    throw new IndexOutOfBoundsException(Long.toString(j));
+                }
+                for (int i = 0; i <= o2.c; i++) {
+                    long j2 = o2.d[i];
+                    Object[] objArr = o2.f[i];
+                    if (j < objArr.length + j2) {
+                        obj = objArr[(int) (j - j2)];
+                    }
+                }
+                throw new IndexOutOfBoundsException(Long.toString(j));
+            }
+            if (j >= o2.b) {
+                throw new IndexOutOfBoundsException(Long.toString(j));
+            }
+            obj = o2.e[(int) j];
+            consumer.r(obj);
         }
-        return u(trySplit);
-    }
-
-    protected abstract j$.util.Q u(j$.util.Q q);
-
-    protected final t3 v() {
-        return this.d.get() > 0 ? t3.MAYBE_MORE : this.b ? t3.UNLIMITED : t3.NO_MORE;
+        return b;
     }
 }

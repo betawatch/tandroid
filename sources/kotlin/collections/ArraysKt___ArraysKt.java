@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__AppendableKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     public static final boolean contains(Object[] objArr, Object obj) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");

@@ -14,7 +14,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.ThreadLocalEventLoop;
 import kotlinx.coroutines.UndispatchedCoroutine;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DispatchedContinuationKt {
     private static final Symbol UNDEFINED = new Symbol("UNDEFINED");
     public static final Symbol REUSABLE_CLAIMED = new Symbol("REUSABLE_CLAIMED");

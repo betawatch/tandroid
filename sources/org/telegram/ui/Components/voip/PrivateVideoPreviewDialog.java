@@ -44,7 +44,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.webrtc.RendererCommon;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class PrivateVideoPreviewDialog extends FrameLayout implements VoIPService.StateListener {
     private boolean cameraReady;
     private int currentPage;
@@ -249,7 +249,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             protected void onDraw(Canvas canvas) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.liveLocationsChanged);
+                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.proxyCheckDone);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage]);
                 if (PrivateVideoPreviewDialog.this.pageOffset > 0.0f) {
                     int i2 = PrivateVideoPreviewDialog.this.currentPage + 1;

@@ -37,7 +37,7 @@ abstract class z extends A {
     }
 
     @Override // j$.util.stream.b
-    final boolean y0() {
+    final boolean x0() {
         switch (this.l) {
             case 0:
                 return true;

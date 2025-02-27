@@ -807,7 +807,7 @@ public class SecretVoicePlayer extends Dialog {
                         this.radialMatrix.postScale(width4, width4);
                         this.radialMatrix.postTranslate(SecretVoicePlayer.this.rect.centerX(), SecretVoicePlayer.this.rect.centerY());
                         this.radialGradient.setLocalMatrix(this.radialMatrix);
-                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.liveLocationsChanged, 31);
+                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.proxyCheckDone, 31);
                         super.drawBlurredPhoto(canvas);
                         canvas.save();
                         canvas.drawRect(SecretVoicePlayer.this.rect, this.radialPaint);
@@ -893,7 +893,7 @@ public class SecretVoicePlayer extends Dialog {
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
                         if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.liveLocationsChanged, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
                     }
@@ -1150,6 +1150,21 @@ public class SecretVoicePlayer extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell6, TLRPC.WebPage webPage, String str2, boolean z) {
                     Browser.openUrl(chatMessageCell6.getContext(), str2);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didQuickShareEnd(ChatMessageCell chatMessageCell6, float f4, float f5) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareEnd(this, chatMessageCell6, f4, f5);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didQuickShareMove(ChatMessageCell chatMessageCell6, float f4, float f5) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareMove(this, chatMessageCell6, f4, f5);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell6, float f4, float f5) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell6, f4, f5);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

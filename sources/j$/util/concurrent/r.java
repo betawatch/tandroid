@@ -1,29 +1,18 @@
 package j$.util.concurrent;
 
-import j$.util.Collection$-EL;
-import j$.util.P;
-import j$.util.Q;
+import j$.util.Collection;
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
-import j$.util.function.G;
+import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
-import j$.util.function.r0;
-import j$.util.stream.P2;
+import j$.util.stream.Stream;
 import j$.util.stream.t0;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.IntFunction;
-import java.util.stream.Stream;
 
 /* loaded from: classes2.dex */
-final class r extends b implements j$.util.b {
+final class r extends b implements Collection {
     r(ConcurrentHashMap concurrentHashMap) {
         super(concurrentHashMap);
-    }
-
-    @Override // j$.util.b
-    public final /* synthetic */ boolean a(Predicate predicate) {
-        return j$.util.a.l(this, predicate);
     }
 
     @Override // java.util.Collection
@@ -32,7 +21,7 @@ final class r extends b implements j$.util.b {
     }
 
     @Override // java.util.Collection
-    public final boolean addAll(Collection collection) {
+    public final boolean addAll(java.util.Collection collection) {
         throw new UnsupportedOperationException();
     }
 
@@ -41,7 +30,7 @@ final class r extends b implements j$.util.b {
         return this.a.containsValue(obj);
     }
 
-    @Override // j$.util.b
+    @Override // j$.util.Collection
     public final void forEach(Consumer consumer) {
         consumer.getClass();
         k[] kVarArr = this.a.a;
@@ -61,7 +50,7 @@ final class r extends b implements j$.util.b {
 
     @Override // java.lang.Iterable
     public final /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-        forEach(j$.util.function.g.a(consumer));
+        forEach(Consumer.VivifiedWrapper.convert(consumer));
     }
 
     @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
@@ -72,9 +61,18 @@ final class r extends b implements j$.util.b {
         return new g(kVarArr, length, length, concurrentHashMap, 1);
     }
 
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        Stream e0;
+        e0 = t0.e0(Collection.-EL.b(this), true);
+        return e0;
+    }
+
     @Override // java.util.Collection
-    public final Stream parallelStream() {
-        return P2.i0(t0.e0(Collection$-EL.b(this), true));
+    public final /* synthetic */ java.util.stream.Stream parallelStream() {
+        Stream e0;
+        e0 = t0.e0(Collection.-EL.b(this), true);
+        return Stream.Wrapper.convert(e0);
     }
 
     @Override // java.util.Collection
@@ -94,13 +92,18 @@ final class r extends b implements j$.util.b {
         return true;
     }
 
-    @Override // java.util.Collection
-    public final /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-        return j$.util.a.l(this, r0.a(predicate));
+    @Override // j$.util.Collection
+    public final /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.b, java.util.Set
-    public final Q spliterator() {
+    @Override // java.util.Collection
+    public final /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, Predicate.VivifiedWrapper.convert(predicate));
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
         long k = concurrentHashMap.k();
         k[] kVarArr = concurrentHashMap.a;
@@ -109,22 +112,31 @@ final class r extends b implements j$.util.b {
     }
 
     @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return P.a(spliterator());
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
-    @Override // java.util.Collection, j$.util.b
-    public final /* synthetic */ j$.util.stream.Stream stream() {
-        return j$.util.a.m(this);
-    }
-
-    @Override // java.util.Collection
+    @Override // java.util.Collection, j$.util.Collection
     public final /* synthetic */ Stream stream() {
-        return P2.i0(j$.util.a.m(this));
+        return Collection.-CC.$default$stream(this);
     }
 
     @Override // java.util.Collection
-    public final Object[] toArray(IntFunction intFunction) {
-        return toArray((Object[]) G.a(intFunction).apply(0));
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
+    }
+
+    @Override // j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) IntFunction.VivifiedWrapper.convert(intFunction).apply(0));
+        return array;
     }
 }

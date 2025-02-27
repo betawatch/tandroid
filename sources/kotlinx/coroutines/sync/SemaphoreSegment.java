@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SemaphoreSegment extends Segment {
     private final AtomicReferenceArray acquirers;
 

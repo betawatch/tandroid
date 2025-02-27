@@ -6,7 +6,7 @@ import java.io.Writer;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TextStreamsKt {
     public static final long copyTo(Reader reader, Writer out, int i) {
         Intrinsics.checkNotNullParameter(reader, "<this>");

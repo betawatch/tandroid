@@ -1,51 +1,52 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class o3 extends r3 implements j$.util.E, j$.util.function.n {
-    double e;
+final class o3 extends q3 implements j$.util.G, j$.util.function.E {
+    int e;
 
-    o3(j$.util.E e, long j, long j2) {
-        super(e, j, j2);
+    o3(j$.util.G g, long j, long j2) {
+        super(g, j, j2);
     }
 
-    o3(j$.util.E e, o3 o3Var) {
-        super(e, o3Var);
+    o3(j$.util.G g, o3 o3Var) {
+        super(g, o3Var);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.a.b(this, consumer);
+        j$.util.A.f(this, consumer);
     }
 
-    @Override // j$.util.function.n
-    public final void accept(double d) {
-        this.e = d;
+    @Override // j$.util.function.E
+    public final void accept(int i) {
+        this.e = i;
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.a.n(this, consumer);
+        return j$.util.A.m(this, consumer);
     }
 
-    @Override // j$.util.stream.u3
-    protected final j$.util.Q u(j$.util.Q q) {
-        return new o3((j$.util.E) q, this);
+    @Override // j$.util.stream.t3
+    protected final Spliterator u(Spliterator spliterator) {
+        return new o3((j$.util.G) spliterator, this);
     }
 
-    @Override // j$.util.stream.r3
+    @Override // j$.util.stream.q3
     protected final void w(Object obj) {
-        ((j$.util.function.n) obj).accept(this.e);
+        ((j$.util.function.E) obj).accept(this.e);
     }
 
-    @Override // j$.util.stream.r3
-    protected final Y2 x() {
+    @Override // j$.util.stream.q3
+    protected final X2 x() {
         return new V2();
     }
 }

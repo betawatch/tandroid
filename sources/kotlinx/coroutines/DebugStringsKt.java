@@ -5,7 +5,7 @@ import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DebugStringsKt {
     public static final String getClassSimpleName(Object obj) {
         return obj.getClass().getSimpleName();

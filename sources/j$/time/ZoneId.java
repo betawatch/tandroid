@@ -3,6 +3,7 @@ package j$.time;
 import j$.time.format.TextStyle;
 import j$.time.format.q;
 import j$.time.zone.ZoneRules;
+import j$.util.A;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
@@ -54,8 +55,8 @@ public abstract class ZoneId implements Serializable {
     }
 
     public static ZoneId f(String str, ZoneOffset zoneOffset) {
-        j$.util.a.B(str, "prefix");
-        j$.util.a.B(zoneOffset, "offset");
+        A.z(str, "prefix");
+        A.z(zoneOffset, "offset");
         if (str.length() == 0) {
             return zoneOffset;
         }
@@ -86,7 +87,7 @@ public abstract class ZoneId implements Serializable {
 
     public static ZoneId of(String str) {
         int i;
-        j$.util.a.B(str, "zoneId");
+        A.z(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
             return ZoneOffset.h(str);
         }
@@ -103,9 +104,9 @@ public abstract class ZoneId implements Serializable {
 
     public static ZoneId systemDefault() {
         String id = TimeZone.getDefault().getID();
-        j$.util.a.B(id, "zoneId");
+        A.z(id, "zoneId");
         Map map = a;
-        j$.util.a.B(map, "aliasMap");
+        A.z(map, "aliasMap");
         String str = (String) map.get(id);
         if (str != null) {
             id = str;

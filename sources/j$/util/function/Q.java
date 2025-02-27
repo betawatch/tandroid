@@ -1,33 +1,38 @@
 package j$.util.function;
 
-import java.util.function.LongBinaryOperator;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Q implements LongBinaryOperator {
-    public final /* synthetic */ S a;
+public final /* synthetic */ class Q implements T {
+    public final /* synthetic */ LongConsumer a;
 
-    private /* synthetic */ Q(S s) {
-        this.a = s;
+    private /* synthetic */ Q(LongConsumer longConsumer) {
+        this.a = longConsumer;
     }
 
-    public static /* synthetic */ LongBinaryOperator a(S s) {
-        if (s == null) {
+    public static /* synthetic */ T a(LongConsumer longConsumer) {
+        if (longConsumer == null) {
             return null;
         }
-        return s instanceof P ? ((P) s).a : new Q(s);
+        return longConsumer instanceof S ? ((S) longConsumer).a : new Q(longConsumer);
     }
 
-    @Override // java.util.function.LongBinaryOperator
-    public final /* synthetic */ long applyAsLong(long j, long j2) {
-        return this.a.applyAsLong(j, j2);
+    @Override // j$.util.function.T
+    public final /* synthetic */ void accept(long j) {
+        this.a.accept(j);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        S s = this.a;
+        LongConsumer longConsumer = this.a;
         if (obj instanceof Q) {
             obj = ((Q) obj).a;
         }
-        return s.equals(obj);
+        return longConsumer.equals(obj);
+    }
+
+    @Override // j$.util.function.T
+    public final /* synthetic */ T f(T t) {
+        return a(this.a.andThen(S.a(t)));
     }
 
     public final /* synthetic */ int hashCode() {

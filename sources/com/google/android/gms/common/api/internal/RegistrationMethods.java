@@ -38,6 +38,11 @@ public class RegistrationMethods {
             return this;
         }
 
+        public Builder setFeatures(Feature... featureArr) {
+            this.zae = featureArr;
+            return this;
+        }
+
         public Builder setMethodKey(int i) {
             this.zag = i;
             return this;

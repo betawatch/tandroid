@@ -6,27 +6,27 @@ import java.util.NoSuchElementException;
 public final class l {
     private static final l c = new l();
     private final boolean a;
-    private final double b;
+    private final long b;
 
     private l() {
         this.a = false;
-        this.b = Double.NaN;
+        this.b = 0L;
     }
 
-    private l(double d) {
+    private l(long j) {
         this.a = true;
-        this.b = d;
+        this.b = j;
     }
 
     public static l a() {
         return c;
     }
 
-    public static l d(double d) {
-        return new l(d);
+    public static l d(long j) {
+        return new l(j);
     }
 
-    public final double b() {
+    public final long b() {
         if (this.a) {
             return this.b;
         }
@@ -47,7 +47,7 @@ public final class l {
         l lVar = (l) obj;
         boolean z = this.a;
         if (z && lVar.a) {
-            if (Double.compare(this.b, lVar.b) == 0) {
+            if (this.b == lVar.b) {
                 return true;
             }
         } else if (z == lVar.a) {
@@ -60,14 +60,14 @@ public final class l {
         if (!this.a) {
             return 0;
         }
-        long doubleToLongBits = Double.doubleToLongBits(this.b);
-        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+        long j = this.b;
+        return (int) (j ^ (j >>> 32));
     }
 
     public final String toString() {
         if (!this.a) {
-            return "OptionalDouble.empty";
+            return "OptionalLong.empty";
         }
-        return "OptionalDouble[" + this.b + "]";
+        return "OptionalLong[" + this.b + "]";
     }
 }

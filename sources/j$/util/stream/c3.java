@@ -1,118 +1,81 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c3 implements b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j$.util.function.n b;
-
-    public /* synthetic */ c3(j$.util.function.n nVar, int i) {
-        this.a = i;
-        this.b = nVar;
+final class c3 extends T2 implements j$.util.D {
+    c3(b bVar, Spliterator spliterator, boolean z) {
+        super(bVar, spliterator, z);
     }
 
-    private final /* synthetic */ void a(long j) {
+    c3(b bVar, Supplier supplier, boolean z) {
+        super(bVar, supplier, z);
     }
 
-    private final /* synthetic */ void c(long j) {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void a(Consumer consumer) {
+        j$.util.A.b(this, consumer);
     }
 
-    private final /* synthetic */ void d() {
-    }
-
-    private final /* synthetic */ void e() {
-    }
-
-    @Override // j$.util.stream.e2, j$.util.function.n
-    public final void accept(double d) {
-        switch (this.a) {
-            case 0:
-                ((H2) this.b).accept(d);
-                break;
-            default:
-                this.b.accept(d);
-                break;
+    @Override // j$.util.M
+    public final void e(j$.util.function.m mVar) {
+        if (this.h != null || this.i) {
+            while (p(mVar)) {
+            }
+            return;
         }
+        mVar.getClass();
+        h();
+        b3 b3Var = new b3(mVar, 1);
+        this.b.C0(this.d, b3Var);
+        this.i = true;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(int i) {
-        switch (this.a) {
-            case 0:
-                t0.k();
-                throw null;
-            default:
-                t0.k();
-                throw null;
+    @Override // j$.util.stream.T2
+    final void j() {
+        H2 h2 = new H2();
+        this.h = h2;
+        this.e = this.b.D0(new b3(h2, 0));
+        this.f = new a(this, 3);
+    }
+
+    @Override // j$.util.stream.T2
+    final T2 k(Spliterator spliterator) {
+        return new c3(this.b, spliterator, this.a);
+    }
+
+    @Override // j$.util.M
+    public final boolean p(j$.util.function.m mVar) {
+        mVar.getClass();
+        boolean b = b();
+        if (b) {
+            H2 h2 = (H2) this.h;
+            long j = this.g;
+            int w = h2.w(j);
+            mVar.accept((h2.c == 0 && w == 0) ? ((double[]) h2.e)[(int) j] : ((double[][]) h2.f)[w][(int) (j - h2.d[w])]);
         }
+        return b;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(long j) {
-        switch (this.a) {
-            case 0:
-                t0.l();
-                throw null;
-            default:
-                t0.l();
-                throw null;
-        }
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean s(Consumer consumer) {
+        return j$.util.A.l(this, consumer);
     }
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        switch (this.a) {
-            case 0:
-                r((Double) obj);
-                break;
-            default:
-                r((Double) obj);
-                break;
-        }
+    @Override // j$.util.stream.T2, j$.util.Spliterator
+    public final j$.util.D trySplit() {
+        return (j$.util.D) super.trySplit();
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
-        return Consumer.-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.T2, j$.util.Spliterator
+    public final j$.util.M trySplit() {
+        return (j$.util.D) super.trySplit();
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.b(this, nVar);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void m() {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void n(long j) {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ boolean q() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // j$.util.stream.b2
-    public final /* synthetic */ void r(Double d) {
-        switch (this.a) {
-            case 0:
-                t0.e(this, d);
-                break;
-            default:
-                t0.e(this, d);
-                break;
-        }
+    @Override // j$.util.stream.T2, j$.util.Spliterator
+    public final Spliterator trySplit() {
+        return (j$.util.D) super.trySplit();
     }
 }

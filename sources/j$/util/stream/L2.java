@@ -1,12 +1,12 @@
 package j$.util.stream;
 
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
-class L2 extends N2 implements j$.util.function.W {
+class L2 extends N2 implements j$.util.function.T {
     L2() {
     }
 
@@ -16,11 +16,11 @@ class L2 extends N2 implements j$.util.function.W {
 
     @Override // j$.util.stream.N2, java.lang.Iterable
     /* renamed from: A, reason: merged with bridge method [inline-methods] */
-    public j$.util.K spliterator() {
+    public j$.util.J spliterator() {
         return new K2(this, 0, this.c, 0, this.b);
     }
 
-    @Override // j$.util.function.W
+    @Override // j$.util.function.T
     public void accept(long j) {
         z();
         long[] jArr = (long[]) this.e;
@@ -34,26 +34,26 @@ class L2 extends N2 implements j$.util.function.W {
         return new long[i];
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
-        return j$.com.android.tools.r8.a.d(this, w);
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 
     public final void forEach(Consumer consumer) {
-        if (consumer instanceof j$.util.function.W) {
-            g((j$.util.function.W) consumer);
+        if (consumer instanceof j$.util.function.T) {
+            g((j$.util.function.T) consumer);
         } else {
-            if (A3.a) {
-                A3.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
+            if (z3.a) {
+                z3.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
                 throw null;
             }
-            j$.util.a.h((K2) spliterator(), consumer);
+            j$.util.A.h((K2) spliterator(), consumer);
         }
     }
 
     @Override // java.lang.Iterable
     public final Iterator iterator() {
-        return j$.util.f0.h(spliterator());
+        return Spliterators.h(spliterator());
     }
 
     public final String toString() {
@@ -61,15 +61,15 @@ class L2 extends N2 implements j$.util.function.W {
         if (jArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(jArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, NotificationCenter.storyQualityUpdate)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, 200)));
     }
 
     @Override // j$.util.stream.N2
     protected final void u(Object obj, int i, int i2, Object obj2) {
         long[] jArr = (long[]) obj;
-        j$.util.function.W w = (j$.util.function.W) obj2;
+        j$.util.function.T t = (j$.util.function.T) obj2;
         while (i < i2) {
-            w.accept(jArr[i]);
+            t.accept(jArr[i]);
             i++;
         }
     }

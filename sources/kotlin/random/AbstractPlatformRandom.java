@@ -1,6 +1,6 @@
 package kotlin.random;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractPlatformRandom extends Random {
     public abstract java.util.Random getImpl();
 

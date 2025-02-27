@@ -214,7 +214,7 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ChatReactionsEditActivity.this.lambda$onBackPressed$323();
+                    ChatReactionsEditActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -409,7 +409,7 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
             if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                 removeSelfFromStack();
             } else {
-                lambda$onBackPressed$323();
+                lambda$onBackPressed$335();
             }
         }
     }

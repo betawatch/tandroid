@@ -1,5 +1,6 @@
 package j$.time.zone;
 
+import j$.util.A;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.security.AccessController;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public abstract class f {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static ZoneRules a(String str, boolean z) {
-        j$.util.a.B(str, "zoneId");
+        A.z(str, "zoneId");
         ConcurrentHashMap concurrentHashMap = b;
         f fVar = (f) concurrentHashMap.get(str);
         if (fVar != null) {
@@ -39,9 +40,9 @@ public abstract class f {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static void d(f fVar) {
-        j$.util.a.B(fVar, "provider");
+        A.z(fVar, "provider");
         for (String str : fVar.c()) {
-            j$.util.a.B(str, "zoneId");
+            A.z(str, "zoneId");
             if (((f) b.putIfAbsent(str, fVar)) != null) {
                 throw new c("Unable to register zone as one already registered with that ID: " + str + ", currently loading from provider: " + fVar);
             }

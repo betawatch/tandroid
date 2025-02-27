@@ -102,6 +102,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
     private double rate;
     private StatisticActivity.ChartViewData revenueChart;
     private StatisticActivity.ChartViewData revenueChartData;
+    public final boolean self;
     private CharSequence titleInfo;
     private ButtonWithCounterView tonBalanceButton;
     private LinearLayout tonBalanceLayout;
@@ -274,13 +275,17 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
     public BotStarsActivity(int i, long j) {
         this.type = i;
         this.bot_id = j;
+        boolean z = j == getUserConfig().getClientUserId();
+        this.self = z;
         if (i == 0) {
             BotStarsController.getInstance(this.currentAccount).preloadStarsStats(j);
-            BotStarsController.getInstance(this.currentAccount).invalidateTransactions(j, true);
+            if (!z) {
+                BotStarsController.getInstance(this.currentAccount).invalidateTransactions(j, true);
+            }
         } else if (i == 1) {
             BotStarsController.getInstance(this.currentAccount).preloadTonStats(j);
         }
-        this.withdrawInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotStarsWithdrawInfo), new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda2
+        this.withdrawInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(z ? R.string.SelfStarsWithdrawInfo : R.string.BotStarsWithdrawInfo), new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 BotStarsActivity.this.lambda$new$0();
@@ -368,10 +373,13 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             arrayList.add(UItem.asProceedOverview(this.availableValue));
             arrayList.add(UItem.asProceedOverview(this.totalValue));
             arrayList.add(UItem.asProceedOverview(this.totalProceedsValue));
-            arrayList.add(UItem.asShadow(-2, LocaleController.getString(R.string.BotStarsOverviewInfo)));
+            arrayList.add(UItem.asShadow(-2, LocaleController.getString(this.self ? R.string.SelfStarsOverviewInfo : R.string.BotStarsOverviewInfo)));
             arrayList.add(UItem.asBlackHeader(LocaleController.getString(R.string.BotStarsAvailableBalance)));
             arrayList.add(UItem.asCustom(1, this.balanceLayout));
             arrayList.add(UItem.asShadow(-3, this.withdrawInfo));
+            if (this.self) {
+                return;
+            }
             if (getMessagesController().starrefConnectAllowed) {
                 arrayList.add(AffiliateProgramFragment.ColorfulTextCell.Factory.as(2, Theme.getColor(Theme.key_color_green, this.resourceProvider), R.drawable.filled_earn_stars, ChatEditActivity.applyNewSpan(LocaleController.getString(R.string.BotAffiliateProgramRowTitle)), LocaleController.getString(R.string.BotAffiliateProgramRowText)));
                 arrayList.add(UItem.asShadow(-4, null));
@@ -667,7 +675,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         int i2;
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$323();
+            twoStepVerificationActivity.lambda$onBackPressed$335();
             if (tLObject instanceof TL_stats.TL_broadcastRevenueWithdrawalUrl) {
                 context = getContext();
                 str = ((TL_stats.TL_broadcastRevenueWithdrawalUrl) tLObject).url;
@@ -679,7 +687,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 context = getContext();
                 str = ((TLRPC.TL_payments_starsRevenueWithdrawalUrl) tLObject).url;
             }
-            Browser.openUrl(context, str);
+            Browser.openUrlInSystemBrowser(context, str);
             return;
         }
         if (!"PASSWORD_MISSING".equals(tL_error.text) && !tL_error.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error.text.startsWith("SESSION_TOO_FRESH_")) {
@@ -694,7 +702,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$323();
+                twoStepVerificationActivity.lambda$onBackPressed$335();
             }
             BulletinFactory.showError(tL_error);
             return;
@@ -1056,7 +1064,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    BotStarsActivity.this.lambda$onBackPressed$323();
+                    BotStarsActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -1223,8 +1231,10 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             }
         });
         this.balanceButtonsLayout.addView(this.balanceButton, LayoutHelper.createLinear(-1, 48, 1.0f, 119));
-        this.balanceButtonsLayout.addView(new Space(context), LayoutHelper.createLinear(8, 48, 0.0f, 119));
-        this.balanceButtonsLayout.addView(this.adsButton, LayoutHelper.createLinear(-1, 48, 1.0f, 119));
+        if (!this.self) {
+            this.balanceButtonsLayout.addView(new Space(context), LayoutHelper.createLinear(8, 48, 0.0f, 119));
+            this.balanceButtonsLayout.addView(this.adsButton, LayoutHelper.createLinear(-1, 48, 1.0f, 119));
+        }
         this.balanceLayout.addView(this.balanceButtonsLayout, LayoutHelper.createFrame(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
         LinearLayout linearLayout4 = new LinearLayout(context) { // from class: org.telegram.ui.Stars.BotStarsActivity.7
             @Override // android.widget.LinearLayout, android.view.View
@@ -1286,8 +1296,11 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Stars.BotStarsActivity.8
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
-                if (!BotStarsActivity.this.listView.canScrollVertically(1) || BotStarsActivity.this.isLoadingVisible()) {
-                    BotStarsActivity.this.loadTonTransactions();
+                BotStarsActivity botStarsActivity = BotStarsActivity.this;
+                if (botStarsActivity.type == 1) {
+                    if (!botStarsActivity.listView.canScrollVertically(1) || BotStarsActivity.this.isLoadingVisible()) {
+                        BotStarsActivity.this.loadTonTransactions();
+                    }
                 }
             }
         });

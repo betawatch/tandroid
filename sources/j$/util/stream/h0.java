@@ -1,13 +1,16 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.BiConsumer;
+import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 abstract class h0 extends b implements LongStream {
-    h0(j$.util.Q q, int i) {
-        super(q, i, false);
+    h0(Spliterator spliterator, int i) {
+        super(spliterator, i, false);
     }
 
     h0(b bVar, int i) {
@@ -15,74 +18,68 @@ abstract class h0 extends b implements LongStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.K H0(j$.util.Q q) {
-        if (q instanceof j$.util.K) {
-            return (j$.util.K) q;
+    public static j$.util.J G0(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.J) {
+            return (j$.util.J) spliterator;
         }
-        if (!A3.a) {
+        if (!z3.a) {
             throw new UnsupportedOperationException("LongStream.adapt(Spliterator<Long> s)");
         }
-        A3.a(b.class, "using LongStream.adapt(Spliterator<Long> s)");
+        z3.a(b.class, "using LongStream.adapt(Spliterator<Long> s)");
         throw null;
     }
 
-    @Override // j$.util.stream.LongStream
-    public final IntStream A(j$.util.function.b0 b0Var) {
-        b0Var.getClass();
-        return new v(this, S2.p | S2.n, b0Var, 5);
-    }
-
     @Override // j$.util.stream.b
-    final j$.util.Q C0(b bVar, Supplier supplier, boolean z) {
-        return new h3(bVar, supplier, z);
+    final Spliterator B0(b bVar, Supplier supplier, boolean z) {
+        return new g3(bVar, supplier, z);
     }
 
     @Override // j$.util.stream.LongStream
-    public final boolean E(j$.util.function.Z z) {
-        return ((Boolean) l0(t0.a0(z, q0.ANY))).booleanValue();
+    public final boolean D(j$.util.function.W w) {
+        return ((Boolean) k0(t0.a0(w, q0.ANY))).booleanValue();
     }
 
     @Override // j$.util.stream.LongStream
-    public final boolean G(j$.util.function.Z z) {
-        return ((Boolean) l0(t0.a0(z, q0.NONE))).booleanValue();
+    public final boolean F(j$.util.function.W w) {
+        return ((Boolean) k0(t0.a0(w, q0.NONE))).booleanValue();
     }
 
     @Override // j$.util.stream.LongStream
-    public final LongStream M(j$.util.function.Z z) {
-        z.getClass();
-        return new w(this, S2.t, z, 4);
-    }
-
-    public void V(j$.util.function.W w) {
+    public final LongStream L(j$.util.function.W w) {
         w.getClass();
-        l0(new O(w, true));
+        return new w(this, R2.t, w, 4);
+    }
+
+    public void U(j$.util.function.T t) {
+        t.getClass();
+        k0(new O(t, true));
     }
 
     @Override // j$.util.stream.LongStream
-    public final Object Z(Supplier supplier, j$.util.function.o0 o0Var, BiConsumer biConsumer) {
+    public final Object Y(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer) {
         r rVar = new r(biConsumer, 2);
         supplier.getClass();
-        o0Var.getClass();
-        return l0(new u1(T2.LONG_VALUE, rVar, o0Var, supplier, 0));
+        l0Var.getClass();
+        return k0(new u1(S2.LONG_VALUE, rVar, l0Var, supplier, 0));
     }
 
     @Override // j$.util.stream.LongStream
     public final D asDoubleStream() {
-        return new x(this, S2.p | S2.n, 2);
+        return new x(this, R2.p | R2.n, 2);
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.l average() {
-        long[] jArr = (long[]) Z(new E(25), new E(26), new E(27));
+    public final j$.util.j average() {
+        long[] jArr = (long[]) Y(new E(25), new E(26), new E(27));
         long j = jArr[0];
         if (j <= 0) {
-            return j$.util.l.a();
+            return j$.util.j.a();
         }
         double d = jArr[1];
         double d2 = j;
         Double.isNaN(d);
         Double.isNaN(d2);
-        return j$.util.l.d(d / d2);
+        return j$.util.j.d(d / d2);
     }
 
     @Override // j$.util.stream.LongStream
@@ -92,12 +89,12 @@ abstract class h0 extends b implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final long count() {
-        return ((h0) v(new E(24))).sum();
+        return ((h0) u(new E(24))).sum();
     }
 
-    public void d(j$.util.function.W w) {
-        w.getClass();
-        l0(new O(w, false));
+    public void d(j$.util.function.T t) {
+        t.getClass();
+        k0(new O(t, false));
     }
 
     @Override // j$.util.stream.LongStream
@@ -106,24 +103,24 @@ abstract class h0 extends b implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.n findAny() {
-        return (j$.util.n) l0(new F(false, T2.LONG_VALUE, j$.util.n.a(), new E(2), new l(7)));
+    public final j$.util.l findAny() {
+        return (j$.util.l) k0(new F(false, S2.LONG_VALUE, j$.util.l.a(), new E(2), new l(7)));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.n findFirst() {
-        return (j$.util.n) l0(new F(true, T2.LONG_VALUE, j$.util.n.a(), new E(2), new l(7)));
+    public final j$.util.l findFirst() {
+        return (j$.util.l) k0(new F(true, S2.LONG_VALUE, j$.util.l.a(), new E(2), new l(7)));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.n h(j$.util.function.S s) {
-        s.getClass();
-        return (j$.util.n) l0(new y1(T2.LONG_VALUE, s, 3));
+    public final j$.util.l h(j$.util.function.O o) {
+        o.getClass();
+        return (j$.util.l) k0(new y1(S2.LONG_VALUE, o, 3));
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.z iterator() {
-        return j$.util.f0.h(spliterator());
+    public final j$.util.x iterator() {
+        return Spliterators.h(spliterator());
     }
 
     @Override // j$.util.stream.LongStream
@@ -134,65 +131,65 @@ abstract class h0 extends b implements LongStream {
         throw new IllegalArgumentException(Long.toString(j));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final Stream mapToObj(LongFunction longFunction) {
-        longFunction.getClass();
-        return new u(this, S2.p | S2.n, longFunction, 2);
+    @Override // j$.util.stream.b
+    final F0 m0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return t0.H(bVar, spliterator, z);
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.n max() {
+    public final Stream mapToObj(LongFunction longFunction) {
+        longFunction.getClass();
+        return new u(this, R2.p | R2.n, longFunction, 2);
+    }
+
+    @Override // j$.util.stream.LongStream
+    public final j$.util.l max() {
         return h(new E(28));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.n min() {
+    public final j$.util.l min() {
         return h(new E(19));
     }
 
-    @Override // j$.util.stream.b
-    final F0 n0(b bVar, j$.util.Q q, boolean z, j$.util.function.I i) {
-        return t0.H(bVar, q, z);
+    @Override // j$.util.stream.LongStream
+    public final LongStream n(j$.util.function.T t) {
+        t.getClass();
+        return new w(this, t);
     }
 
     @Override // j$.util.stream.LongStream
-    public final LongStream o(j$.util.function.W w) {
-        w.getClass();
-        return new w(this, w);
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final LongStream p(LongFunction longFunction) {
-        return new w(this, S2.p | S2.n | S2.t, longFunction, 3);
+    public final LongStream o(LongFunction longFunction) {
+        return new w(this, R2.p | R2.n | R2.t, longFunction, 3);
     }
 
     @Override // j$.util.stream.b
-    final void p0(j$.util.Q q, e2 e2Var) {
-        j$.util.function.W c0Var;
-        j$.util.K H0 = H0(q);
-        if (e2Var instanceof j$.util.function.W) {
-            c0Var = (j$.util.function.W) e2Var;
+    final void o0(Spliterator spliterator, e2 e2Var) {
+        j$.util.function.T c0Var;
+        j$.util.J G0 = G0(spliterator);
+        if (e2Var instanceof j$.util.function.T) {
+            c0Var = (j$.util.function.T) e2Var;
         } else {
-            if (A3.a) {
-                A3.a(b.class, "using LongStream.adapt(Sink<Long> s)");
+            if (z3.a) {
+                z3.a(b.class, "using LongStream.adapt(Sink<Long> s)");
                 throw null;
             }
             e2Var.getClass();
             c0Var = new c0(0, e2Var);
         }
-        while (!e2Var.q() && H0.p(c0Var)) {
+        while (!e2Var.q() && G0.p(c0Var)) {
         }
     }
 
     @Override // j$.util.stream.b
-    final T2 q0() {
-        return T2.LONG_VALUE;
+    final S2 p0() {
+        return S2.LONG_VALUE;
     }
 
     @Override // j$.util.stream.LongStream
-    public final D r(j$.util.function.a0 a0Var) {
-        a0Var.getClass();
-        return new t(this, S2.p | S2.n, a0Var, 5);
+    public final D q(j$.util.function.X x) {
+        x.getClass();
+        return new t(this, R2.p | R2.n, x, 5);
     }
 
     @Override // j$.util.stream.LongStream
@@ -209,49 +206,55 @@ abstract class h0 extends b implements LongStream {
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.K spliterator() {
-        return H0(super.spliterator());
+    public final j$.util.J spliterator() {
+        return G0(super.spliterator());
     }
 
     @Override // j$.util.stream.LongStream
     public final long sum() {
-        return x(0L, new E(18));
+        return w(0L, new E(18));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.k summaryStatistics() {
-        return (j$.util.k) Z(new l(16), new E(17), new E(21));
+    public final j$.util.i summaryStatistics() {
+        return (j$.util.i) Y(new l(16), new E(17), new E(21));
+    }
+
+    @Override // j$.util.stream.LongStream
+    public final boolean t(j$.util.function.W w) {
+        return ((Boolean) k0(t0.a0(w, q0.ALL))).booleanValue();
     }
 
     @Override // j$.util.stream.LongStream
     public final long[] toArray() {
-        return (long[]) t0.Q((D0) m0(new E(22))).e();
+        return (long[]) t0.Q((D0) l0(new E(22))).e();
     }
 
     @Override // j$.util.stream.LongStream
-    public final boolean u(j$.util.function.Z z) {
-        return ((Boolean) l0(t0.a0(z, q0.ALL))).booleanValue();
+    public final LongStream u(j$.util.function.c0 c0Var) {
+        c0Var.getClass();
+        return new w(this, R2.p | R2.n, c0Var, 2);
+    }
+
+    @Override // j$.util.stream.b
+    final x0 u0(long j, IntFunction intFunction) {
+        return t0.T(j);
     }
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        return !t0() ? this : new X(this, S2.r, 1);
+        return !s0() ? this : new X(this, R2.r, 1);
     }
 
     @Override // j$.util.stream.LongStream
-    public final LongStream v(j$.util.function.f0 f0Var) {
-        f0Var.getClass();
-        return new w(this, S2.p | S2.n, f0Var, 2);
-    }
-
-    @Override // j$.util.stream.b
-    final x0 v0(long j, j$.util.function.I i) {
-        return t0.T(j);
+    public final long w(long j, j$.util.function.O o) {
+        o.getClass();
+        return ((Long) k0(new K1(S2.LONG_VALUE, o, j))).longValue();
     }
 
     @Override // j$.util.stream.LongStream
-    public final long x(long j, j$.util.function.S s) {
-        s.getClass();
-        return ((Long) l0(new K1(T2.LONG_VALUE, s, j))).longValue();
+    public final IntStream z(j$.util.function.Y y) {
+        y.getClass();
+        return new v(this, R2.p | R2.n, y, 5);
     }
 }

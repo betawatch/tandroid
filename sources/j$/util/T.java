@@ -1,75 +1,89 @@
 package j$.util;
 
 import j$.util.function.Consumer;
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class T implements v, j$.util.function.F, j {
-    boolean a = false;
-    int b;
-    final /* synthetic */ H c;
+final class T implements Spliterator {
+    private final Object[] a;
+    private int b;
+    private final int c;
+    private final int d;
 
-    T(H h) {
-        this.c = h;
+    public T(Object[] objArr, int i, int i2, int i3) {
+        this.a = objArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
     }
 
-    @Override // j$.util.v, j$.util.j
+    @Override // j$.util.Spliterator
     public final void a(Consumer consumer) {
-        if (consumer instanceof j$.util.function.F) {
-            forEachRemaining((j$.util.function.F) consumer);
+        int i;
+        consumer.getClass();
+        Object[] objArr = this.a;
+        int length = objArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
             return;
         }
+        this.b = i2;
+        if (i < i2) {
+            do {
+                consumer.r(objArr[i]);
+                i++;
+            } while (i < i2);
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.c - this.b;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        if (A.k(this, 4)) {
+            return null;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return A.j(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return A.k(this, i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
         consumer.getClass();
-        if (h0.a) {
-            h0.a(T.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
-            throw null;
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
+            return false;
         }
-        forEachRemaining(new s(consumer));
+        this.b = i + 1;
+        consumer.r(this.a[i]);
+        return true;
     }
 
-    @Override // j$.util.function.F
-    public final void accept(int i) {
-        this.a = true;
-        this.b = i;
-    }
-
-    @Override // j$.util.A
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final void forEachRemaining(j$.util.function.F f) {
-        f.getClass();
-        while (hasNext()) {
-            f.accept(nextInt());
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
         }
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.p(this);
-        }
-        return this.a;
-    }
-
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
-    }
-
-    @Override // java.util.Iterator
-    public final Integer next() {
-        if (!h0.a) {
-            return Integer.valueOf(nextInt());
-        }
-        h0.a(T.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
-        throw null;
-    }
-
-    @Override // j$.util.v
-    public final int nextInt() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.a = false;
-        return this.b;
+        this.b = i2;
+        return new T(this.a, i, i2, this.d);
     }
 }

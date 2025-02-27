@@ -1,10 +1,11 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Spliterator;
 
 /* loaded from: classes2.dex */
 class O2 extends d implements Consumer, Iterable {
@@ -92,22 +93,22 @@ class O2 extends d implements Consumer, Iterable {
 
     @Override // java.lang.Iterable
     public final /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-        forEach(j$.util.function.g.a(consumer));
+        forEach(Consumer.VivifiedWrapper.convert(consumer));
     }
 
     @Override // java.lang.Iterable
     public final Iterator iterator() {
-        return j$.util.f0.i(spliterator());
+        return Spliterators.i(spliterator());
     }
 
     @Override // java.lang.Iterable
-    public j$.util.Q spliterator() {
+    public Spliterator spliterator() {
         return new F2(this, 0, this.c, 0, this.b);
     }
 
     @Override // java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.P.a(spliterator());
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
     public final String toString() {

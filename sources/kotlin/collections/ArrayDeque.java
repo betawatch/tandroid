@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ArrayDeque extends AbstractMutableList {
     public static final Companion Companion = new Companion(null);
     private static final Object[] emptyElementData = new Object[0];

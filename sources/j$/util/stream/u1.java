@@ -12,8 +12,8 @@ final class u1 extends t0 {
     final /* synthetic */ Object k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u1(T2 t2, Object obj, Object obj2, Object obj3, int i) {
-        super(t2);
+    public /* synthetic */ u1(S2 s2, Object obj, Object obj2, Object obj3, int i) {
+        super(s2);
         this.h = i;
         this.i = obj;
         this.k = obj2;
@@ -24,15 +24,15 @@ final class u1 extends t0 {
     public final N1 d0() {
         switch (this.h) {
             case 0:
-                return new v1((Supplier) this.j, (j$.util.function.o0) this.k, (j$.util.function.f) this.i);
+                return new v1((Supplier) this.j, (j$.util.function.l0) this.k, (j$.util.function.f) this.i);
             case 1:
-                return new A1((Supplier) this.j, (j$.util.function.i0) this.k, (j$.util.function.f) this.i);
+                return new A1((Supplier) this.j, (j$.util.function.f0) this.k, (j$.util.function.f) this.i);
             case 2:
                 return new B1(this.j, (BiFunction) this.k, (j$.util.function.f) this.i);
             case 3:
                 return new F1((Supplier) this.j, (BiConsumer) this.k, (BiConsumer) this.i);
             default:
-                return new J1((Supplier) this.j, (j$.util.function.l0) this.k, (j$.util.function.f) this.i);
+                return new J1((Supplier) this.j, (j$.util.function.i0) this.k, (j$.util.function.f) this.i);
         }
     }
 }

@@ -12,13 +12,13 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
+import androidx.mediarouter.media.MediaRoute2Provider$$ExternalSyntheticLambda21;
 import com.google.android.exoplayer2.Bundleable;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.RendererCapabilities;
 import com.google.android.exoplayer2.RendererConfiguration;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.audio.AudioAttributes;
-import com.google.android.exoplayer2.audio.DefaultAudioSink$StreamEventCallbackV29$$ExternalSyntheticLambda2;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroup;
 import com.google.android.exoplayer2.source.TrackGroupArray;
@@ -837,7 +837,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 };
                 Handler handler = new Handler(looper);
                 this.handler = handler;
-                this.spatializer.addOnSpatializerStateChangedListener(new DefaultAudioSink$StreamEventCallbackV29$$ExternalSyntheticLambda2(handler), this.listener);
+                this.spatializer.addOnSpatializerStateChangedListener(new MediaRoute2Provider$$ExternalSyntheticLambda21(handler), this.listener);
             }
         }
 

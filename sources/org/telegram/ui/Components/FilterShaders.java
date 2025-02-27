@@ -1372,9 +1372,9 @@ public class FilterShaders {
             GLES20.glUniform1f(this.fadeAmountHandle, this.delegate.getFadeValue());
             int tintHighlightsColor = this.delegate.getTintHighlightsColor();
             int tintShadowsColor = this.delegate.getTintShadowsColor();
-            GLES20.glUniform3f(this.highlightsTintColorHandle, ((tintHighlightsColor >> 16) & NotificationCenter.liveLocationsChanged) / 255.0f, ((tintHighlightsColor >> 8) & NotificationCenter.liveLocationsChanged) / 255.0f, (tintHighlightsColor & NotificationCenter.liveLocationsChanged) / 255.0f);
+            GLES20.glUniform3f(this.highlightsTintColorHandle, ((tintHighlightsColor >> 16) & NotificationCenter.proxyCheckDone) / 255.0f, ((tintHighlightsColor >> 8) & NotificationCenter.proxyCheckDone) / 255.0f, (tintHighlightsColor & NotificationCenter.proxyCheckDone) / 255.0f);
             GLES20.glUniform1f(this.highlightsTintIntensityHandle, this.delegate.getTintHighlightsIntensityValue());
-            GLES20.glUniform3f(this.shadowsTintColorHandle, ((tintShadowsColor >> 16) & NotificationCenter.liveLocationsChanged) / 255.0f, ((tintShadowsColor >> 8) & NotificationCenter.liveLocationsChanged) / 255.0f, (tintShadowsColor & NotificationCenter.liveLocationsChanged) / 255.0f);
+            GLES20.glUniform3f(this.shadowsTintColorHandle, ((tintShadowsColor >> 16) & NotificationCenter.proxyCheckDone) / 255.0f, ((tintShadowsColor >> 8) & NotificationCenter.proxyCheckDone) / 255.0f, (tintShadowsColor & NotificationCenter.proxyCheckDone) / 255.0f);
             GLES20.glUniform1f(this.shadowsTintIntensityHandle, this.delegate.getTintShadowsIntensityValue());
             boolean shouldDrawCurvesPass = this.delegate.shouldDrawCurvesPass();
             GLES20.glUniform1f(this.skipToneHandle, shouldDrawCurvesPass ? 0.0f : 1.0f);
@@ -1382,7 +1382,7 @@ public class FilterShaders {
                 ByteBuffer fillAndGetCurveBuffer = this.delegate.fillAndGetCurveBuffer();
                 GLES20.glActiveTexture(33985);
                 GLES20.glBindTexture(3553, this.curveTextures[0]);
-                GLES20.glTexImage2D(3553, 0, 6408, NotificationCenter.storyQualityUpdate, 1, 0, 6408, 5121, fillAndGetCurveBuffer);
+                GLES20.glTexImage2D(3553, 0, 6408, 200, 1, 0, 6408, 5121, fillAndGetCurveBuffer);
                 GLES20.glUniform1i(this.curvesImageHandle, 1);
             }
         }

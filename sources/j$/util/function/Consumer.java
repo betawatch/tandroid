@@ -10,6 +10,43 @@ public interface Consumer<T> {
         }
     }
 
+    public final /* synthetic */ class VivifiedWrapper implements Consumer {
+        public final /* synthetic */ java.util.function.Consumer a;
+
+        private /* synthetic */ VivifiedWrapper(java.util.function.Consumer consumer) {
+            this.a = consumer;
+        }
+
+        public static /* synthetic */ Consumer convert(java.util.function.Consumer consumer) {
+            if (consumer == null) {
+                return null;
+            }
+            return consumer instanceof Wrapper ? Consumer.this : new VivifiedWrapper(consumer);
+        }
+
+        @Override // j$.util.function.Consumer
+        public final /* synthetic */ void accept(Object obj) {
+            this.a.accept(obj);
+        }
+
+        @Override // j$.util.function.Consumer
+        public final /* synthetic */ Consumer andThen(Consumer consumer) {
+            return convert(this.a.andThen(Wrapper.convert(consumer)));
+        }
+
+        public final /* synthetic */ boolean equals(Object obj) {
+            java.util.function.Consumer consumer = this.a;
+            if (obj instanceof VivifiedWrapper) {
+                obj = ((VivifiedWrapper) obj).a;
+            }
+            return consumer.equals(obj);
+        }
+
+        public final /* synthetic */ int hashCode() {
+            return this.a.hashCode();
+        }
+    }
+
     public final /* synthetic */ class Wrapper implements java.util.function.Consumer {
         private /* synthetic */ Wrapper() {
         }
@@ -18,7 +55,7 @@ public interface Consumer<T> {
             if (consumer == null) {
                 return null;
             }
-            return consumer instanceof g ? ((g) consumer).a : new Wrapper();
+            return consumer instanceof VivifiedWrapper ? ((VivifiedWrapper) consumer).a : new Wrapper();
         }
 
         @Override // java.util.function.Consumer
@@ -28,7 +65,7 @@ public interface Consumer<T> {
 
         @Override // java.util.function.Consumer
         public final /* synthetic */ java.util.function.Consumer andThen(java.util.function.Consumer consumer) {
-            return convert(Consumer.this.andThen(g.a(consumer)));
+            return convert(Consumer.this.andThen(VivifiedWrapper.convert(consumer)));
         }
 
         public final /* synthetic */ boolean equals(Object obj) {

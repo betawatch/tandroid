@@ -4,7 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.SourceLocation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class JoinPointImpl implements JoinPoint {
     Object _this;
     Object[] args;

@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class EventLoopKt {
     public static final EventLoop createEventLoop() {
         return new BlockingEventLoop(Thread.currentThread());

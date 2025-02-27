@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SupervisorKt {
     public static final CompletableJob SupervisorJob(Job job) {
         return new SupervisorJobImpl(job);

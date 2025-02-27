@@ -24,7 +24,7 @@ public final /* synthetic */ class k0 implements Supplier, Consumer {
     public void r(Object obj) {
         switch (this.a) {
             case 4:
-                ((b3) this.b).f((Consumer) this.c, obj);
+                ((a3) this.b).f((Consumer) this.c, obj);
                 break;
             case 5:
                 if (obj != null) {
@@ -51,11 +51,11 @@ public final /* synthetic */ class k0 implements Supplier, Consumer {
     public Object get() {
         switch (this.a) {
             case 0:
-                return new n0((j$.util.function.Z) this.c, (q0) this.b);
+                return new n0((j$.util.function.W) this.c, (q0) this.b);
             case 1:
-                return new m0((j$.util.function.J) this.c, (q0) this.b);
+                return new m0((j$.util.function.G) this.c, (q0) this.b);
             case 2:
-                return new o0((j$.util.function.r) this.c, (q0) this.b);
+                return new o0((j$.util.function.q) this.c, (q0) this.b);
             default:
                 return new l0((Predicate) this.c, (q0) this.b);
         }

@@ -1,6 +1,7 @@
 package j$.time.format;
 
 import j$.time.ZoneId;
+import j$.util.A;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
@@ -172,17 +173,17 @@ public final class a {
     a(f fVar, Locale locale, x xVar, j$.time.chrono.g gVar) {
         w wVar = w.a;
         this.a = fVar;
-        j$.util.a.B(locale, "locale");
+        A.z(locale, "locale");
         this.b = locale;
         this.c = wVar;
-        j$.util.a.B(xVar, "resolverStyle");
+        A.z(xVar, "resolverStyle");
         this.d = gVar;
         this.e = null;
     }
 
     public final String a(j$.time.temporal.k kVar) {
         StringBuilder sb = new StringBuilder(32);
-        j$.util.a.B(kVar, "temporal");
+        A.z(kVar, "temporal");
         try {
             this.a.a(new s(kVar, this), sb);
             return sb.toString();

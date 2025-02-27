@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsKt {
     public static final boolean regionMatches(String str, int i, String other, int i2, int i3, boolean z) {
         Intrinsics.checkNotNullParameter(str, "<this>");

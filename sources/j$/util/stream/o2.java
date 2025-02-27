@@ -1,26 +1,28 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.IntFunction;
 import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
 final class o2 extends c {
     private final b j;
-    private final j$.util.function.I k;
+    private final IntFunction k;
     private final long l;
     private final long m;
     private long n;
     private volatile boolean o;
 
-    o2(b bVar, b bVar2, j$.util.Q q, j$.util.function.I i, long j, long j2) {
-        super(bVar2, q);
+    o2(b bVar, b bVar2, Spliterator spliterator, IntFunction intFunction, long j, long j2) {
+        super(bVar2, spliterator);
         this.j = bVar;
-        this.k = i;
+        this.k = intFunction;
         this.l = j;
         this.m = j2;
     }
 
-    o2(o2 o2Var, j$.util.Q q) {
-        super(o2Var, q);
+    o2(o2 o2Var, Spliterator spliterator) {
+        super(o2Var, spliterator);
         this.j = o2Var.j;
         this.k = o2Var.k;
         this.l = o2Var.l;
@@ -43,16 +45,16 @@ final class o2 extends c {
     @Override // j$.util.stream.e
     protected final Object a() {
         if (c()) {
-            x0 v0 = this.j.v0(S2.SIZED.e(this.j.c) ? this.j.o0(this.b) : -1L, this.k);
-            e2 z0 = this.j.z0(this.a.s0(), v0);
+            x0 u0 = this.j.u0(R2.SIZED.e(this.j.c) ? this.j.n0(this.b) : -1L, this.k);
+            e2 y0 = this.j.y0(this.a.r0(), u0);
             b bVar = this.a;
-            bVar.j0(this.b, bVar.E0(z0));
-            return v0.b();
+            bVar.i0(this.b, bVar.D0(y0));
+            return u0.b();
         }
         b bVar2 = this.a;
-        x0 v02 = bVar2.v0(-1L, this.k);
-        bVar2.D0(this.b, v02);
-        F0 b = v02.b();
+        x0 u02 = bVar2.u0(-1L, this.k);
+        bVar2.C0(this.b, u02);
+        F0 b = u02.b();
         this.n = b.count();
         this.o = true;
         this.b = null;
@@ -60,21 +62,21 @@ final class o2 extends c {
     }
 
     @Override // j$.util.stream.e
-    protected final e d(j$.util.Q q) {
-        return new o2(this, q);
+    protected final e d(Spliterator spliterator) {
+        return new o2(this, spliterator);
     }
 
     @Override // j$.util.stream.c
     protected final void g() {
         this.i = true;
         if (this.o) {
-            e(t0.L(this.j.q0()));
+            e(t0.L(this.j.p0()));
         }
     }
 
     @Override // j$.util.stream.c
     protected final Object i() {
-        return t0.L(this.j.q0());
+        return t0.L(this.j.p0());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00df, code lost:
@@ -95,7 +97,7 @@ final class o2 extends c {
             if (this.i) {
                 this.n = 0L;
             } else if (this.n != 0) {
-                I = ((o2) this.d).n == 0 ? (F0) ((o2) this.e).b() : t0.I(this.j.q0(), (F0) ((o2) this.d).b(), (F0) ((o2) this.e).b());
+                I = ((o2) this.d).n == 0 ? (F0) ((o2) this.e).b() : t0.I(this.j.p0(), (F0) ((o2) this.d).b(), (F0) ((o2) this.e).b());
                 F0 f0 = I;
                 if (c()) {
                     f0 = f0.t(this.l, this.m >= 0 ? Math.min(f0.count(), this.l + this.m) : this.n, this.k);
@@ -103,7 +105,7 @@ final class o2 extends c {
                 e(f0);
                 this.o = true;
             }
-            I = t0.L(this.j.q0());
+            I = t0.L(this.j.p0());
             F0 f02 = I;
             if (c()) {
             }

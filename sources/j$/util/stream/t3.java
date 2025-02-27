@@ -1,8 +1,92 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.concurrent.atomic.AtomicLong;
+
 /* loaded from: classes2.dex */
-enum t3 {
-    NO_MORE,
-    MAYBE_MORE,
-    UNLIMITED
+abstract class t3 {
+    protected final Spliterator a;
+    protected final boolean b;
+    private final long c;
+    private final AtomicLong d;
+
+    t3(Spliterator spliterator, long j, long j2) {
+        this.a = spliterator;
+        this.b = j2 < 0;
+        this.c = j2 >= 0 ? j2 : 0L;
+        this.d = new AtomicLong(j2 >= 0 ? j + j2 : j);
+    }
+
+    t3(Spliterator spliterator, t3 t3Var) {
+        this.a = spliterator;
+        this.b = t3Var.b;
+        this.d = t3Var.d;
+        this.c = t3Var.c;
+    }
+
+    public final int characteristics() {
+        return this.a.characteristics() & (-16465);
+    }
+
+    public final long estimateSize() {
+        return this.a.estimateSize();
+    }
+
+    protected final long t(long j) {
+        AtomicLong atomicLong;
+        long j2;
+        boolean z;
+        long min;
+        do {
+            atomicLong = this.d;
+            j2 = atomicLong.get();
+            z = this.b;
+            if (j2 != 0) {
+                min = Math.min(j2, j);
+                if (min <= 0) {
+                    break;
+                }
+            } else {
+                if (z) {
+                    return j;
+                }
+                return 0L;
+            }
+        } while (!atomicLong.compareAndSet(j2, j2 - min));
+        if (z) {
+            return Math.max(j - min, 0L);
+        }
+        long j3 = this.c;
+        return j2 > j3 ? Math.max(min - (j2 - j3), 0L) : min;
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
+        return (j$.util.D) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
+        return (j$.util.G) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
+        return (j$.util.J) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.M trySplit() {
+        return (j$.util.M) trySplit();
+    }
+
+    public final Spliterator trySplit() {
+        Spliterator trySplit;
+        if (this.d.get() == 0 || (trySplit = this.a.trySplit()) == null) {
+            return null;
+        }
+        return u(trySplit);
+    }
+
+    protected abstract Spliterator u(Spliterator spliterator);
+
+    protected final s3 v() {
+        return this.d.get() > 0 ? s3.MAYBE_MORE : this.b ? s3.UNLIMITED : s3.NO_MORE;
+    }
 }

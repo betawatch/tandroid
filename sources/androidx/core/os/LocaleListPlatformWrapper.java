@@ -8,7 +8,7 @@ final class LocaleListPlatformWrapper implements LocaleListInterface {
     private final LocaleList mLocaleList;
 
     LocaleListPlatformWrapper(Object obj) {
-        this.mLocaleList = LocaleListPlatformWrapper$$ExternalSyntheticApiModelOutline3.m(obj);
+        this.mLocaleList = LocaleListPlatformWrapper$$ExternalSyntheticApiModelOutline5.m(obj);
     }
 
     public boolean equals(Object obj) {

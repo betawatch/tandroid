@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
 final class W extends Y1 {
     public final /* synthetic */ int b;
@@ -16,26 +18,26 @@ final class W extends Y1 {
     public final void accept(int i) {
         switch (this.b) {
             case 0:
-                ((j$.util.function.F) ((v) this.c).n).accept(i);
+                ((j$.util.function.E) ((v) this.c).n).accept(i);
                 this.a.accept(i);
                 return;
             case 1:
-                this.a.accept(((j$.util.function.O) ((v) this.c).n).a.applyAsInt(i));
+                this.a.accept(((j$.util.function.L) ((v) this.c).n).a.applyAsInt(i));
                 return;
             case 2:
-                this.a.r((e2) ((j$.util.function.I) ((u) this.c).n).apply(i));
+                this.a.r((e2) ((IntFunction) ((u) this.c).n).apply(i));
                 return;
             case 3:
-                this.a.accept(((j$.util.function.N) ((w) this.c).n).applyAsLong(i));
+                this.a.accept(((j$.util.function.K) ((w) this.c).n).applyAsLong(i));
                 return;
             case 4:
-                this.a.accept(((j$.util.function.K) ((t) this.c).n).a.applyAsDouble(i));
+                this.a.accept(((j$.util.function.H) ((t) this.c).n).a.applyAsDouble(i));
                 return;
             case 5:
-                IntStream intStream = (IntStream) ((j$.util.function.I) ((v) this.c).n).apply(i);
+                IntStream intStream = (IntStream) ((IntFunction) ((v) this.c).n).apply(i);
                 if (intStream != null) {
                     try {
-                        intStream.sequential().L(new U(1, this));
+                        intStream.sequential().K(new U(1, this));
                     } catch (Throwable th) {
                         try {
                             intStream.close();
@@ -51,7 +53,7 @@ final class W extends Y1 {
                 }
                 return;
             default:
-                if (((j$.util.function.J) ((v) this.c).n).a.test(i)) {
+                if (((j$.util.function.G) ((v) this.c).n).a.test(i)) {
                     this.a.accept(i);
                     return;
                 }

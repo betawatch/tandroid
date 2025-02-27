@@ -1,22 +1,24 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+
 /* loaded from: classes2.dex */
 final class p1 extends q1 {
     private final Object[] h;
 
-    p1(j$.util.Q q, b bVar, Object[] objArr) {
-        super(objArr.length, q, bVar);
+    p1(Spliterator spliterator, b bVar, Object[] objArr) {
+        super(objArr.length, spliterator, bVar);
         this.h = objArr;
     }
 
-    p1(p1 p1Var, j$.util.Q q, long j, long j2) {
-        super(p1Var, q, j, j2, p1Var.h.length);
+    p1(p1 p1Var, Spliterator spliterator, long j, long j2) {
+        super(p1Var, spliterator, j, j2, p1Var.h.length);
         this.h = p1Var.h;
     }
 
     @Override // j$.util.stream.q1
-    final q1 a(j$.util.Q q, long j, long j2) {
-        return new p1(this, q, j, j2);
+    final q1 a(Spliterator spliterator, long j, long j2) {
+        return new p1(this, spliterator, j, j2);
     }
 
     @Override // j$.util.function.Consumer

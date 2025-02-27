@@ -1,86 +1,83 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-import java.util.Comparator;
+import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-final class m3 extends n3 implements j$.util.Q {
-    m3(j$.util.Q q, long j, long j2) {
-        super(q, j, j2, 0L, Math.min(q.estimateSize(), j2));
+abstract class m3 {
+    final long a;
+    final long b;
+    Spliterator c;
+    long d;
+    long e;
+
+    m3(Spliterator spliterator, long j, long j2, long j3, long j4) {
+        this.c = spliterator;
+        this.a = j;
+        this.b = j2;
+        this.d = j3;
+        this.e = j4;
     }
 
-    private m3(j$.util.Q q, long j, long j2, long j3, long j4) {
-        super(q, j, j2, j3, j4);
+    protected abstract Spliterator b(Spliterator spliterator, long j, long j2, long j3, long j4);
+
+    public final int characteristics() {
+        return this.c.characteristics();
     }
 
-    @Override // j$.util.Q
-    public final void a(Consumer consumer) {
-        consumer.getClass();
+    public final long estimateSize() {
         long j = this.e;
         long j2 = this.a;
-        if (j2 >= j) {
-            return;
+        if (j2 < j) {
+            return j - Math.max(j2, this.d);
         }
-        long j3 = this.d;
-        if (j3 >= j) {
-            return;
-        }
-        if (j3 >= j2 && this.c.estimateSize() + j3 <= this.b) {
-            this.c.a(consumer);
-            this.d = this.e;
-            return;
-        }
-        while (j2 > this.d) {
-            this.c.s(new Q1(7));
-            this.d++;
-        }
-        while (this.d < this.e) {
-            this.c.s(consumer);
-            this.d++;
-        }
+        return 0L;
     }
 
-    @Override // j$.util.stream.n3
-    protected final j$.util.Q b(j$.util.Q q, long j, long j2, long j3, long j4) {
-        return new m3(q, j, j2, j3, j4);
+    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
+        return (j$.util.D) trySplit();
     }
 
-    @Override // j$.util.Q
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
+        return (j$.util.G) trySplit();
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.a.j(this);
+    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
+        return (j$.util.J) trySplit();
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.a.k(this, i);
+    public /* bridge */ /* synthetic */ j$.util.M trySplit() {
+        return (j$.util.M) trySplit();
     }
 
-    @Override // j$.util.Q
-    public final boolean s(Consumer consumer) {
-        long j;
-        consumer.getClass();
-        long j2 = this.e;
-        long j3 = this.a;
-        if (j3 >= j2) {
-            return false;
+    public final Spliterator trySplit() {
+        long j = this.e;
+        if (this.a >= j || this.d >= j) {
+            return null;
         }
         while (true) {
-            j = this.d;
-            if (j3 <= j) {
-                break;
+            Spliterator trySplit = this.c.trySplit();
+            if (trySplit == null) {
+                return null;
             }
-            this.c.s(new Q1(6));
-            this.d++;
+            long estimateSize = trySplit.estimateSize() + this.d;
+            long min = Math.min(estimateSize, this.b);
+            long j2 = this.a;
+            if (j2 >= min) {
+                this.d = min;
+            } else {
+                long j3 = this.b;
+                if (min < j3) {
+                    long j4 = this.d;
+                    if (j4 < j2 || estimateSize > j3) {
+                        this.d = min;
+                        return b(trySplit, j2, j3, j4, min);
+                    }
+                    this.d = min;
+                    return trySplit;
+                }
+                this.c = trySplit;
+                this.e = min;
+            }
         }
-        if (j >= this.e) {
-            return false;
-        }
-        this.d = j + 1;
-        return this.c.s(consumer);
     }
 }

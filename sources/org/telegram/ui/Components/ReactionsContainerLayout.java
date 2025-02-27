@@ -1643,8 +1643,8 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             canvas.drawCircle(width2, lerp, f3, this.bgPaint);
         }
         canvas.restore();
-        this.shadow.setAlpha(NotificationCenter.liveLocationsChanged);
-        this.bgPaint.setAlpha(NotificationCenter.liveLocationsChanged);
+        this.shadow.setAlpha(NotificationCenter.proxyCheckDone);
+        this.bgPaint.setAlpha(NotificationCenter.proxyCheckDone);
     }
 
     private void fillRecentReactionsList(List list) {
@@ -2183,7 +2183,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                         f7 = width2;
                         f6 = f12;
                         i = 5;
-                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.liveLocationsChanged, false);
+                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.proxyCheckDone, false);
                     } else {
                         RectF rectF = this.rect;
                         float f14 = this.radius;
@@ -2332,7 +2332,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     }
                 }
                 canvas.restoreToCount(save3);
-                drawBubbles(canvas, f, max2, f2, NotificationCenter.liveLocationsChanged);
+                drawBubbles(canvas, f, max2, f2, NotificationCenter.proxyCheckDone);
                 invalidate();
             }
         }
@@ -2416,7 +2416,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         if (!showCustomEmojiReaction) {
         }
         canvas.restoreToCount(save32);
-        drawBubbles(canvas, f, max2, f2, NotificationCenter.liveLocationsChanged);
+        drawBubbles(canvas, f, max2, f2, NotificationCenter.proxyCheckDone);
         invalidate();
     }
 
@@ -2430,7 +2430,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
 
     public void drawBubbles(Canvas canvas) {
         float max = (Math.max(0.25f, Math.min(this.transitionProgress, 1.0f)) - 0.25f) / 0.75f;
-        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.liveLocationsChanged : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
+        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.proxyCheckDone : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
     }
 
     public float expandSize() {

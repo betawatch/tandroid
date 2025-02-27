@@ -972,12 +972,12 @@ public class TopicsController extends BaseController {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x01b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:116:0x01b9, code lost:
     
         if (r25 == 1) goto L88;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01f3  */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v6 */

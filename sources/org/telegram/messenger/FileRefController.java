@@ -506,22 +506,22 @@ public class FileRefController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onUpdateObjectReference$29(TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr) {
-        getSendMessagesHelper().performSendMessageRequestMulti(tL_messages_sendMultiMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequestMulti$48(tL_messages_sendMultiMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onUpdateObjectReference$30(TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr) {
-        getSendMessagesHelper().performSendMessageRequestMulti(tL_messages_sendMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequestMulti$48(tL_messages_sendMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onUpdateObjectReference$31(Requester requester) {
-        getSendMessagesHelper().performSendMessageRequest((TLObject) requester.args[0], (MessageObject) requester.args[1], (String) requester.args[2], (SendMessagesHelper.DelayedMessage) requester.args[3], ((Boolean) requester.args[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) requester.args[5], null, null, ((Boolean) requester.args[6]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequest$58((TLObject) requester.args[0], (MessageObject) requester.args[1], (String) requester.args[2], (SendMessagesHelper.DelayedMessage) requester.args[3], ((Boolean) requester.args[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) requester.args[5], null, null, ((Boolean) requester.args[6]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onUpdateObjectReference$32(Requester requester) {
-        getSendMessagesHelper().performSendMessageRequest((TLObject) requester.args[0], (MessageObject) requester.args[1], (String) requester.args[2], (SendMessagesHelper.DelayedMessage) requester.args[3], ((Boolean) requester.args[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) requester.args[5], null, null, ((Boolean) requester.args[6]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequest$58((TLObject) requester.args[0], (MessageObject) requester.args[1], (String) requester.args[2], (SendMessagesHelper.DelayedMessage) requester.args[3], ((Boolean) requester.args[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) requester.args[5], null, null, ((Boolean) requester.args[6]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -696,29 +696,29 @@ public class FileRefController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendErrorToObject$37(TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr) {
-        getSendMessagesHelper().performSendMessageRequestMulti(tL_messages_sendMultiMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequestMulti$48(tL_messages_sendMultiMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendErrorToObject$38(TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr) {
-        getSendMessagesHelper().performSendMessageRequestMulti(tL_messages_sendMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequestMulti$48(tL_messages_sendMedia, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (SendMessagesHelper.DelayedMessage) objArr[4], ((Boolean) objArr[5]).booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendErrorToObject$39(Object[] objArr) {
-        getSendMessagesHelper().performSendMessageRequest((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
+        getSendMessagesHelper().lambda$performSendMessageRequest$58((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x02d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x02db, code lost:
     
         if (r1 != null) goto L136;
      */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x0696 A[LOOP:9: B:303:0x0632->B:312:0x0696, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0693 A[EDGE_INSN: B:313:0x0693->B:79:0x0693 BREAK  A[LOOP:9: B:303:0x0632->B:312:0x0696], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009f A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x091a  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0936  */
+    /* JADX WARN: Removed duplicated region for block: B:312:0x0698 A[LOOP:9: B:303:0x0634->B:312:0x0698, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x0695 A[EDGE_INSN: B:313:0x0695->B:79:0x0695 BREAK  A[LOOP:9: B:303:0x0634->B:312:0x0698], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00a1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x091c  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0938  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v20 */
     /*
@@ -2242,12 +2242,12 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0483, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0484, code lost:
     
         if ("update".equals(r0) != false) goto L174;
      */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0490  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x04a7  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0491  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x04a8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

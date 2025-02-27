@@ -3,7 +3,7 @@ package kotlinx.coroutines.sync;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SemaphoreKt {
     private static final Symbol BROKEN;
     private static final Symbol CANCELLED;

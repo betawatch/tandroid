@@ -19,7 +19,7 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ReactionImageHolder {
     public AnimatedEmojiDrawable animatedEmojiDrawable;
     private boolean attached;

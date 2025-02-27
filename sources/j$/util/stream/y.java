@@ -1,30 +1,32 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+
 /* loaded from: classes2.dex */
 final class y extends A {
-    y(j$.util.Q q, int i) {
-        super(q, i);
+    y(Spliterator spliterator, int i) {
+        super(spliterator, i);
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void f0(j$.util.function.n nVar) {
-        j$.util.E H0;
+    public final void e0(j$.util.function.m mVar) {
+        j$.util.D G0;
         if (isParallel()) {
-            super.f0(nVar);
+            super.e0(mVar);
         } else {
-            H0 = A.H0(B0());
-            H0.e(nVar);
+            G0 = A.G0(A0());
+            G0.e(mVar);
         }
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void j(j$.util.function.n nVar) {
-        j$.util.E H0;
+    public final void j(j$.util.function.m mVar) {
+        j$.util.D G0;
         if (isParallel()) {
-            super.j(nVar);
+            super.j(mVar);
         } else {
-            H0 = A.H0(B0());
-            H0.e(nVar);
+            G0 = A.G0(A0());
+            G0.e(mVar);
         }
     }
 
@@ -41,12 +43,12 @@ final class y extends A {
     }
 
     @Override // j$.util.stream.b
-    final boolean y0() {
+    final boolean x0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 z0(int i, e2 e2Var) {
+    final e2 y0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

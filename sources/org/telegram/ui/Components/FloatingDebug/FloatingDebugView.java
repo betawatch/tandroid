@@ -130,6 +130,11 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
                 }
 
                 @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+                public /* synthetic */ boolean needVisuallyDivideSteps() {
+                    return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+                }
+
+                @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
                 public void onSeekBarDrag(boolean z, float f) {
                     SeekBarCell seekBarCell = SeekBarCell.this;
                     seekBarCell.value = seekBarCell.min + ((SeekBarCell.this.max - SeekBarCell.this.min) * f);

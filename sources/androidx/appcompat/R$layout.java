@@ -21,5 +21,5 @@ public abstract class R$layout {
     public static final int abc_search_dropdown_item_icons_2line = 2131492888;
     public static final int abc_search_view = 2131492889;
     public static final int abc_tooltip = 2131492891;
-    public static final int support_simple_spinner_dropdown_item = 2131492923;
+    public static final int support_simple_spinner_dropdown_item = 2131492953;
 }

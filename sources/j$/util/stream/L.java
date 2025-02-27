@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -7,22 +8,22 @@ import java.util.concurrent.atomic.AtomicReference;
 final class L extends c {
     private final F j;
 
-    L(F f, b bVar, j$.util.Q q) {
-        super(bVar, q);
+    L(F f, b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
         this.j = f;
     }
 
-    L(L l, j$.util.Q q) {
-        super(l, q);
+    L(L l, Spliterator spliterator) {
+        super(l, spliterator);
         this.j = l.j;
     }
 
     @Override // j$.util.stream.e
     protected final Object a() {
         b bVar = this.a;
-        y3 y3Var = (y3) this.j.d.get();
-        bVar.D0(this.b, y3Var);
-        Object obj = y3Var.get();
+        x3 x3Var = (x3) this.j.d.get();
+        bVar.C0(this.b, x3Var);
+        Object obj = x3Var.get();
         if (!this.j.a) {
             if (obj != null) {
                 AtomicReference atomicReference = this.h;
@@ -53,8 +54,8 @@ final class L extends c {
     }
 
     @Override // j$.util.stream.e
-    protected final e d(j$.util.Q q) {
-        return new L(this, q);
+    protected final e d(Spliterator spliterator) {
+        return new L(this, spliterator);
     }
 
     @Override // j$.util.stream.c

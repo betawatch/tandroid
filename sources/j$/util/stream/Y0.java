@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
 abstract class Y0 implements F0 {
     Y0() {
@@ -27,12 +29,12 @@ abstract class Y0 implements F0 {
     }
 
     @Override // j$.util.stream.F0
-    public final Object[] s(j$.util.function.I i) {
-        return (Object[]) i.apply(0);
+    public final Object[] s(IntFunction intFunction) {
+        return (Object[]) intFunction.apply(0);
     }
 
     @Override // j$.util.stream.F0
-    public /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
-        return t0.w(this, j, j2, i);
+    public /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
+        return t0.w(this, j, j2, intFunction);
     }
 }

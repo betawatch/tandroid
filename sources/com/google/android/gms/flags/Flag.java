@@ -2,20 +2,20 @@ package com.google.android.gms.flags;
 
 /* loaded from: classes.dex */
 public abstract class Flag {
-    private final String mKey;
-    private final int zze;
-    private final Object zzf;
+    private final int zza;
+    private final String zzb;
+    private final Object zzc;
 
     public static class BooleanFlag extends Flag {
         public BooleanFlag(int i, String str, Boolean bool) {
-            super(i, str, bool);
+            super(i, str, bool, null);
         }
     }
 
-    private Flag(int i, String str, Object obj) {
-        this.zze = i;
-        this.mKey = str;
-        this.zzf = obj;
+    /* synthetic */ Flag(int i, String str, Object obj, zza zzaVar) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = obj;
         Singletons.flagRegistry().zza(this);
     }
 

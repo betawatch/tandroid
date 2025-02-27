@@ -1,31 +1,31 @@
 package j$.util.function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class w0 implements java.util.function.ToDoubleFunction {
-    public final /* synthetic */ ToDoubleFunction a;
+public final /* synthetic */ class w0 implements java.util.function.ToLongFunction {
+    public final /* synthetic */ ToLongFunction a;
 
-    private /* synthetic */ w0(ToDoubleFunction toDoubleFunction) {
-        this.a = toDoubleFunction;
+    private /* synthetic */ w0(ToLongFunction toLongFunction) {
+        this.a = toLongFunction;
     }
 
-    public static /* synthetic */ java.util.function.ToDoubleFunction a(ToDoubleFunction toDoubleFunction) {
-        if (toDoubleFunction == null) {
+    public static /* synthetic */ java.util.function.ToLongFunction a(ToLongFunction toLongFunction) {
+        if (toLongFunction == null) {
             return null;
         }
-        return toDoubleFunction instanceof v0 ? ((v0) toDoubleFunction).a : new w0(toDoubleFunction);
+        return toLongFunction instanceof v0 ? ((v0) toLongFunction).a : new w0(toLongFunction);
     }
 
-    @Override // java.util.function.ToDoubleFunction
-    public final /* synthetic */ double applyAsDouble(Object obj) {
-        return this.a.applyAsDouble(obj);
+    @Override // java.util.function.ToLongFunction
+    public final /* synthetic */ long applyAsLong(Object obj) {
+        return this.a.applyAsLong(obj);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        ToDoubleFunction toDoubleFunction = this.a;
+        ToLongFunction toLongFunction = this.a;
         if (obj instanceof w0) {
             obj = ((w0) obj).a;
         }
-        return toDoubleFunction.equals(obj);
+        return toLongFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

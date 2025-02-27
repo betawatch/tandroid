@@ -31,7 +31,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.StaticLayoutEx;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoIPNotificationsLayout extends LinearLayout {
     VoIPBackgroundProvider backgroundProvider;
     boolean lockAnimation;
@@ -74,12 +74,12 @@ public class VoIPNotificationsLayout extends LinearLayout {
             this.backgroundProvider.setDarkTranslation(getX() + ((View) getParent()).getX(), getY() + ((View) getParent()).getY());
             int alpha = this.backgroundProvider.getDarkPaint(this.ignoreShader).getAlpha();
             canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-            this.backgroundProvider.getDarkPaint(this.ignoreShader).setAlpha(NotificationCenter.liveLocationsChanged);
+            this.backgroundProvider.getDarkPaint(this.ignoreShader).setAlpha(NotificationCenter.proxyCheckDone);
             canvas.drawRoundRect(this.bgRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.backgroundProvider.getDarkPaint(this.ignoreShader));
             this.backgroundProvider.getDarkPaint(this.ignoreShader).setAlpha(alpha);
             if (this.backgroundProvider.isReveal()) {
                 int alpha2 = this.backgroundProvider.getRevealDarkPaint().getAlpha();
-                this.backgroundProvider.getRevealDarkPaint().setAlpha(NotificationCenter.liveLocationsChanged);
+                this.backgroundProvider.getRevealDarkPaint().setAlpha(NotificationCenter.proxyCheckDone);
                 canvas.drawRoundRect(this.bgRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.backgroundProvider.getRevealDarkPaint());
                 this.backgroundProvider.getRevealDarkPaint().setAlpha(alpha2);
             }

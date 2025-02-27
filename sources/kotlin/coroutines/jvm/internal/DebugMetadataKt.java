@@ -3,7 +3,7 @@ package kotlin.coroutines.jvm.internal;
 import java.lang.reflect.Field;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DebugMetadataKt {
     private static final void checkDebugMetadataVersion(int i, int i2) {
         if (i2 <= i) {

@@ -3,7 +3,7 @@ package kotlinx.coroutines.sync;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 /* synthetic */ class SemaphoreImpl$addAcquireToQueue$createNewSegment$1 extends FunctionReferenceImpl implements Function2 {
     public static final SemaphoreImpl$addAcquireToQueue$createNewSegment$1 INSTANCE = new SemaphoreImpl$addAcquireToQueue$createNewSegment$1();
 

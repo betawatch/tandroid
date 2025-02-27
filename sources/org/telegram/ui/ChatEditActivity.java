@@ -437,7 +437,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$43(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -447,11 +447,11 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$45(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$10(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2) {
+    public /* synthetic */ void lambda$createView$10(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
         tL_channelLocation.address = messageMedia.address;
         tL_channelLocation.geo_point = messageMedia.geo;
@@ -476,8 +476,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             }
             locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda39
                 @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
-                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2) {
-                    ChatEditActivity.this.lambda$createView$10(messageMedia, i, z, i2);
+                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+                    ChatEditActivity.this.lambda$createView$10(messageMedia, i, z, i2, j);
                 }
             });
             presentFragment(locationActivity);
@@ -770,7 +770,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         } else {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-this.currentChat.id), null, this.currentChat, Boolean.valueOf(z));
     }
 
@@ -1006,7 +1006,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$46() {
         this.progressDialog.dismiss();
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1185,7 +1185,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 }
             }
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
@@ -1350,72 +1350,72 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x01ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x01e9, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0238, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x0237, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x0242, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x0241, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x024c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x024b, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x0263, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0262, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x026d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x026c, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x0277, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x0276, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x0364, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x0361, code lost:
     
         if (r5.getVisibility() == 0) goto L241;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x047e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x047c, code lost:
     
         r5 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:229:0x047c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:229:0x047a, code lost:
     
         if (r5.getVisibility() == 0) goto L241;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:265:0x04d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:265:0x04cf, code lost:
     
         if (r4.getVisibility() == 0) goto L268;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x0506, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:266:0x0504, code lost:
     
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:280:0x0504, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:280:0x0502, code lost:
     
         if (r4.getVisibility() == 0) goto L268;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x01d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x01d5, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0279, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0278, code lost:
     
         r5 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01df, code lost:
     
         if (r5.getVisibility() == 0) goto L144;
      */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0494  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0499  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0492  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0497  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1656,7 +1656,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                         } else {
                             i2 = this.forum ? 14 : 13;
                         }
-                        this.blockCell.setTextAndValueAndIcon(LocaleController.getString("ChannelPermissions", R.string.ChannelPermissions), String.format("%d/%d", Integer.valueOf(i2), Integer.valueOf(this.forum ? 14 : 13)), z2, R.drawable.msg_permissions, true);
+                        this.blockCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ChannelPermissions), String.format("%d/%d", Integer.valueOf(i2), Integer.valueOf(this.forum ? 14 : 13)), z2, R.drawable.msg_permissions, true);
                     }
                     textCell2 = this.memberRequestsCell;
                     if (textCell2 != null) {
@@ -1696,7 +1696,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                         }
                         z3 = false;
                     } else {
-                        this.blockCell.setTextAndIcon((CharSequence) LocaleController.getString("ChannelPermissions", R.string.ChannelPermissions), R.drawable.msg_permissions, true);
+                        this.blockCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.ChannelPermissions), R.drawable.msg_permissions, true);
                         this.adminCell.setTextAndIcon((CharSequence) LocaleController.getString("ChannelAdministrators", R.string.ChannelAdministrators), R.drawable.msg_admins, true);
                     }
                 }
@@ -1935,7 +1935,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             public void onItemClick(int i8) {
                 if (i8 == -1) {
                     if (ChatEditActivity.this.checkDiscard()) {
-                        ChatEditActivity.this.lambda$onBackPressed$323();
+                        ChatEditActivity.this.lambda$onBackPressed$335();
                     }
                 } else if (i8 == 1) {
                     ChatEditActivity.this.processDone();
@@ -2224,7 +2224,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.descriptionTextView.setEnabled(this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat));
         EditTextBoldCursor editTextBoldCursor5 = this.descriptionTextView;
         editTextBoldCursor5.setFocusable(editTextBoldCursor5.isEnabled());
-        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.liveLocationsChanged)});
+        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.proxyCheckDone)});
         this.descriptionTextView.setHint(LocaleController.getString("DescriptionOptionalPlaceholder", R.string.DescriptionOptionalPlaceholder));
         this.descriptionTextView.setCursorColor(Theme.getColor(i10));
         this.descriptionTextView.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -2982,7 +2982,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x024e, code lost:
     
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:?, code lost:
     

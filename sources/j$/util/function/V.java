@@ -1,38 +1,31 @@
 package j$.util.function;
 
-import java.util.function.LongConsumer;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class V implements LongConsumer {
-    public final /* synthetic */ W a;
+public final /* synthetic */ class V implements java.util.function.LongFunction {
+    public final /* synthetic */ LongFunction a;
 
-    private /* synthetic */ V(W w) {
-        this.a = w;
+    private /* synthetic */ V(LongFunction longFunction) {
+        this.a = longFunction;
     }
 
-    public static /* synthetic */ LongConsumer a(W w) {
-        if (w == null) {
+    public static /* synthetic */ java.util.function.LongFunction a(LongFunction longFunction) {
+        if (longFunction == null) {
             return null;
         }
-        return w instanceof U ? ((U) w).a : new V(w);
+        return longFunction instanceof U ? ((U) longFunction).a : new V(longFunction);
     }
 
-    @Override // java.util.function.LongConsumer
-    public final /* synthetic */ void accept(long j) {
-        this.a.accept(j);
-    }
-
-    @Override // java.util.function.LongConsumer
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return a(this.a.f(U.a(longConsumer)));
+    @Override // java.util.function.LongFunction
+    public final /* synthetic */ Object apply(long j) {
+        return this.a.apply(j);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        W w = this.a;
+        LongFunction longFunction = this.a;
         if (obj instanceof V) {
             obj = ((V) obj).a;
         }
-        return w.equals(obj);
+        return longFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

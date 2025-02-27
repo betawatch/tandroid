@@ -5,54 +5,56 @@ import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public interface D extends BaseStream {
-    Object B(Supplier supplier, j$.util.function.i0 i0Var, BiConsumer biConsumer);
+    Object A(Supplier supplier, j$.util.function.f0 f0Var, BiConsumer biConsumer);
 
-    double F(double d, j$.util.function.j jVar);
+    double E(double d, j$.util.function.i iVar);
 
-    Stream I(j$.util.function.q qVar);
+    Stream H(j$.util.function.p pVar);
 
-    D N(j$.util.function.w wVar);
+    D M(j$.util.function.v vVar);
 
-    IntStream S(j$.util.function.s sVar);
+    IntStream R(j$.util.function.r rVar);
 
-    D U(j$.util.function.r rVar);
+    D T(j$.util.function.q qVar);
 
-    j$.util.l average();
+    j$.util.j average();
 
-    D b(j$.util.function.n nVar);
+    D b(j$.util.function.m mVar);
 
     Stream boxed();
 
-    long count();
+    boolean c0(j$.util.function.q qVar);
 
-    boolean d0(j$.util.function.r rVar);
+    long count();
 
     D distinct();
 
-    void f0(j$.util.function.n nVar);
+    void e0(j$.util.function.m mVar);
 
-    j$.util.l findAny();
+    boolean f0(j$.util.function.q qVar);
 
-    j$.util.l findFirst();
+    j$.util.j findAny();
 
-    boolean g0(j$.util.function.r rVar);
+    j$.util.j findFirst();
 
-    j$.util.r iterator();
+    j$.util.p iterator();
 
-    void j(j$.util.function.n nVar);
+    void j(j$.util.function.m mVar);
 
-    boolean k(j$.util.function.r rVar);
+    boolean k(j$.util.function.q qVar);
 
     D limit(long j);
 
-    j$.util.l max();
+    j$.util.j max();
 
-    j$.util.l min();
+    j$.util.j min();
 
     @Override // j$.util.stream.BaseStream
     D parallel();
 
-    D s(j$.util.function.q qVar);
+    D r(j$.util.function.p pVar);
+
+    LongStream s(j$.util.function.u uVar);
 
     @Override // j$.util.stream.BaseStream
     D sequential();
@@ -61,15 +63,13 @@ public interface D extends BaseStream {
 
     D sorted();
 
-    j$.util.E spliterator();
+    j$.util.D spliterator();
 
     double sum();
 
-    j$.util.h summaryStatistics();
-
-    LongStream t(j$.util.function.v vVar);
+    j$.util.f summaryStatistics();
 
     double[] toArray();
 
-    j$.util.l z(j$.util.function.j jVar);
+    j$.util.j y(j$.util.function.i iVar);
 }

@@ -346,6 +346,10 @@ public abstract class BaseGmsClient {
         return null;
     }
 
+    public final Looper getLooper() {
+        return this.zzm;
+    }
+
     public abstract int getMinApkVersion();
 
     public void getRemoteService(IAccountAccessor iAccountAccessor, Set set) {

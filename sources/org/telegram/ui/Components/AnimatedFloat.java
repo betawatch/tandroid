@@ -127,6 +127,10 @@ public class AnimatedFloat {
         this.firstSet = true;
     }
 
+    public void force(float f) {
+        set(f, true);
+    }
+
     public void force(boolean z) {
         set(z ? 1.0f : 0.0f, true);
     }

@@ -1,11 +1,12 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
 abstract class q1 extends CountedCompleter implements e2 {
-    protected final j$.util.Q a;
+    protected final Spliterator a;
     protected final b b;
     protected final long c;
     protected long d;
@@ -13,17 +14,17 @@ abstract class q1 extends CountedCompleter implements e2 {
     protected int f;
     protected int g;
 
-    q1(int i, j$.util.Q q, b bVar) {
-        this.a = q;
+    q1(int i, Spliterator spliterator, b bVar) {
+        this.a = spliterator;
         this.b = bVar;
-        this.c = e.f(q.estimateSize());
+        this.c = e.f(spliterator.estimateSize());
         this.d = 0L;
         this.e = i;
     }
 
-    q1(q1 q1Var, j$.util.Q q, long j, long j2, int i) {
+    q1(q1 q1Var, Spliterator spliterator, long j, long j2, int i) {
         super(q1Var);
-        this.a = q;
+        this.a = spliterator;
         this.b = q1Var.b;
         this.c = q1Var.c;
         this.d = j;
@@ -33,7 +34,7 @@ abstract class q1 extends CountedCompleter implements e2 {
         }
     }
 
-    abstract q1 a(j$.util.Q q, long j, long j2);
+    abstract q1 a(Spliterator spliterator, long j, long j2);
 
     public /* synthetic */ void accept(double d) {
         t0.b();
@@ -57,16 +58,16 @@ abstract class q1 extends CountedCompleter implements e2 {
 
     @Override // java.util.concurrent.CountedCompleter
     public final void compute() {
-        j$.util.Q trySplit;
-        j$.util.Q q = this.a;
+        Spliterator trySplit;
+        Spliterator spliterator = this.a;
         q1 q1Var = this;
-        while (q.estimateSize() > q1Var.c && (trySplit = q.trySplit()) != null) {
+        while (spliterator.estimateSize() > q1Var.c && (trySplit = spliterator.trySplit()) != null) {
             q1Var.setPendingCount(1);
             long estimateSize = trySplit.estimateSize();
             q1Var.a(trySplit, q1Var.d, estimateSize).fork();
-            q1Var = q1Var.a(q, q1Var.d + estimateSize, q1Var.e - estimateSize);
+            q1Var = q1Var.a(spliterator, q1Var.d + estimateSize, q1Var.e - estimateSize);
         }
-        q1Var.b.D0(q, q1Var);
+        q1Var.b.C0(spliterator, q1Var);
         q1Var.propagateCompletion();
     }
 

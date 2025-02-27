@@ -2,7 +2,7 @@ package kotlin;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class UInt implements Comparable {
     public static final Companion Companion = new Companion(null);
 

@@ -1,16 +1,17 @@
 package j$.util;
 
+import j$.util.Collection;
+import j$.util.List;
+import j$.util.function.Consumer;
 import j$.util.function.Predicate;
+import j$.util.function.UnaryOperator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 /* loaded from: classes2.dex */
 public class DesugarCollections {
@@ -48,7 +49,7 @@ public class DesugarCollections {
             field2.setAccessible(true);
         }
         try {
-            constructor = Collections.synchronizedSet(new HashSet()).getClass().getDeclaredConstructor(Set.class, Object.class);
+            constructor = Collections.synchronizedSet(new HashSet()).getClass().getDeclaredConstructor(java.util.Set.class, Object.class);
         } catch (NoSuchMethodException unused3) {
             constructor = null;
         }
@@ -57,7 +58,7 @@ public class DesugarCollections {
             constructor.setAccessible(true);
         }
         try {
-            constructor2 = cls.getDeclaredConstructor(Collection.class, Object.class);
+            constructor2 = cls.getDeclaredConstructor(java.util.Collection.class, Object.class);
         } catch (NoSuchMethodException unused4) {
         }
         e = constructor2;
@@ -66,19 +67,38 @@ public class DesugarCollections {
         }
     }
 
-    static boolean c(Collection collection, Predicate predicate) {
+    public static void c(Iterable iterable, Consumer consumer) {
+        Field field = c;
+        if (field == null) {
+            try {
+                Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
+            } catch (IllegalAccessException e2) {
+                throw new Error("Runtime illegal access in synchronized collection forEach fall-back.", e2);
+            }
+        } else {
+            try {
+                synchronized (field.get(iterable)) {
+                    Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
+                }
+            } catch (IllegalAccessException e3) {
+                throw new Error("Runtime illegal access in synchronized collection forEach.", e3);
+            }
+        }
+    }
+
+    static boolean d(java.util.Collection collection, Predicate predicate) {
         boolean removeIf;
         Field field = c;
         if (field == null) {
             try {
-                return Collection$-EL.removeIf((Collection) d.get(collection), predicate);
+                return Collection.-EL.removeIf((java.util.Collection) d.get(collection), predicate);
             } catch (IllegalAccessException e2) {
                 throw new Error("Runtime illegal access in synchronized collection removeIf fall-back.", e2);
             }
         }
         try {
             synchronized (field.get(collection)) {
-                removeIf = Collection$-EL.removeIf((Collection) d.get(collection), predicate);
+                removeIf = Collection.-EL.removeIf((java.util.Collection) d.get(collection), predicate);
             }
             return removeIf;
         } catch (IllegalAccessException e3) {
@@ -86,26 +106,67 @@ public class DesugarCollections {
         }
     }
 
-    static void d(List list, Comparator comparator) {
+    static void e(java.util.List list, UnaryOperator unaryOperator) {
         Field field = c;
         if (field == null) {
             try {
-                a.C((List) d.get(list), comparator);
+                java.util.List list2 = (java.util.List) d.get(list);
+                if (list2 instanceof List) {
+                    ((List) list2).replaceAll(unaryOperator);
+                    return;
+                } else {
+                    List.-CC.$default$replaceAll(list2, unaryOperator);
+                    return;
+                }
+            } catch (IllegalAccessException e2) {
+                throw new Error("Runtime illegal access in synchronized list replaceAll fall-back.", e2);
+            }
+        }
+        try {
+            synchronized (field.get(list)) {
+                java.util.List list3 = (java.util.List) d.get(list);
+                if (list3 instanceof List) {
+                    ((List) list3).replaceAll(unaryOperator);
+                } else {
+                    List.-CC.$default$replaceAll(list3, unaryOperator);
+                }
+            }
+        } catch (IllegalAccessException e3) {
+            throw new Error("Runtime illegal access in synchronized list replaceAll.", e3);
+        }
+    }
+
+    static void f(java.util.List list, Comparator comparator) {
+        Field field = c;
+        if (field == null) {
+            try {
+                java.util.List list2 = (java.util.List) d.get(list);
+                if (list2 instanceof List) {
+                    ((List) list2).sort(comparator);
+                    return;
+                } else {
+                    List.-CC.$default$sort(list2, comparator);
+                    return;
+                }
             } catch (IllegalAccessException e2) {
                 throw new Error("Runtime illegal access in synchronized collection sort fall-back.", e2);
             }
-        } else {
-            try {
-                synchronized (field.get(list)) {
-                    a.C((List) d.get(list), comparator);
+        }
+        try {
+            synchronized (field.get(list)) {
+                java.util.List list3 = (java.util.List) d.get(list);
+                if (list3 instanceof List) {
+                    ((List) list3).sort(comparator);
+                } else {
+                    List.-CC.$default$sort(list3, comparator);
                 }
-            } catch (IllegalAccessException e3) {
-                throw new Error("Runtime illegal access in synchronized list sort.", e3);
             }
+        } catch (IllegalAccessException e3) {
+            throw new Error("Runtime illegal access in synchronized list sort.", e3);
         }
     }
 
     public static <K, V> java.util.Map<K, V> synchronizedMap(java.util.Map<K, V> map) {
-        return new g(map);
+        return new e(map);
     }
 }

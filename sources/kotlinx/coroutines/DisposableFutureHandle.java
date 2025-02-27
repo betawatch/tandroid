@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import java.util.concurrent.Future;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class DisposableFutureHandle implements DisposableHandle {
     private final Future future;
 

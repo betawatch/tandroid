@@ -21,6 +21,15 @@ public abstract class SafeParcelWriter {
         parcel.writeInt(z ? 1 : 0);
     }
 
+    public static void writeBooleanObject(Parcel parcel, int i, Boolean bool, boolean z) {
+        if (bool != null) {
+            zzc(parcel, i, 4);
+            parcel.writeInt(bool.booleanValue() ? 1 : 0);
+        } else if (z) {
+            zzc(parcel, i, 0);
+        }
+    }
+
     public static void writeBundle(Parcel parcel, int i, Bundle bundle, boolean z) {
         if (bundle == null) {
             if (z) {
@@ -172,6 +181,18 @@ public abstract class SafeParcelWriter {
     public static void writeLong(Parcel parcel, int i, long j) {
         zzc(parcel, i, 8);
         parcel.writeLong(j);
+    }
+
+    public static void writeLongArray(Parcel parcel, int i, long[] jArr, boolean z) {
+        if (jArr == null) {
+            if (z) {
+                zzc(parcel, i, 0);
+            }
+        } else {
+            int zza = zza(parcel, i);
+            parcel.writeLongArray(jArr);
+            zzb(parcel, zza);
+        }
     }
 
     public static void writeParcelable(Parcel parcel, int i, Parcelable parcelable, int i2, boolean z) {

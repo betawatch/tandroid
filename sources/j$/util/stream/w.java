@@ -13,14 +13,14 @@ final class w extends g0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(b bVar, j$.util.function.W w) {
+    public w(b bVar, j$.util.function.T t) {
         super(bVar, 0, 1);
         this.m = 5;
-        this.n = w;
+        this.n = t;
     }
 
     @Override // j$.util.stream.b
-    final e2 z0(int i, e2 e2Var) {
+    final e2 y0(int i, e2 e2Var) {
         switch (this.m) {
             case 0:
                 return new s(this, e2Var, 3);

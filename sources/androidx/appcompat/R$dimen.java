@@ -11,8 +11,8 @@ public abstract class R$dimen {
     public static final int abc_star_big = 2131165243;
     public static final int abc_star_medium = 2131165244;
     public static final int abc_star_small = 2131165245;
-    public static final int tooltip_precise_anchor_extra_offset = 2131165302;
-    public static final int tooltip_precise_anchor_threshold = 2131165303;
-    public static final int tooltip_y_offset_non_touch = 2131165305;
-    public static final int tooltip_y_offset_touch = 2131165306;
+    public static final int tooltip_precise_anchor_extra_offset = 2131165358;
+    public static final int tooltip_precise_anchor_threshold = 2131165359;
+    public static final int tooltip_y_offset_non_touch = 2131165361;
+    public static final int tooltip_y_offset_touch = 2131165362;
 }

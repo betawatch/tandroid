@@ -41,7 +41,7 @@ import kotlin.jvm.functions.Function9;
 import kotlin.reflect.KClass;
 import kotlin.text.StringsKt__StringsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ClassReference implements KClass, ClassBasedDeclarationContainer {
     public static final Companion Companion = new Companion(null);
     private static final Map FUNCTION_CLASSES;

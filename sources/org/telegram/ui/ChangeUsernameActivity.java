@@ -1280,7 +1280,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         MessagesController.getInstance(this.currentAccount).putUsers(arrayList, false);
         MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(arrayList, null, false, true);
         UserConfig.getInstance(this.currentAccount).saveConfig(true);
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1290,7 +1290,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1322,7 +1322,7 @@ public class ChangeUsernameActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void saveName() {
         if (this.botId != 0) {
-            lambda$onBackPressed$323();
+            lambda$onBackPressed$335();
             return;
         }
         if (this.username.startsWith("@")) {
@@ -1341,7 +1341,7 @@ public class ChangeUsernameActivity extends BaseFragment {
             publicUsername = "";
         }
         if (publicUsername.equals(this.username)) {
-            lambda$onBackPressed$323();
+            lambda$onBackPressed$335();
             return;
         }
         final AlertDialog alertDialog = new AlertDialog(getParentActivity(), 3);
@@ -1420,7 +1420,7 @@ public class ChangeUsernameActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ChangeUsernameActivity.this.lambda$onBackPressed$323();
+                    ChangeUsernameActivity.this.lambda$onBackPressed$335();
                 } else if (i == 1) {
                     ChangeUsernameActivity.this.sendReorder();
                     ChangeUsernameActivity.this.saveName();

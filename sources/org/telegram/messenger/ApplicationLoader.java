@@ -411,7 +411,7 @@ public class ApplicationLoader extends Application {
             ContactsController.getInstance(i2).checkAppAccount();
             DownloadController.getInstance(i2);
         }
-        BillingController.getInstance().lambda$onBillingServiceDisconnected$6();
+        BillingController.getInstance().lambda$onBillingServiceDisconnected$11();
     }
 
     public static void startAppCenter(Activity activity) {

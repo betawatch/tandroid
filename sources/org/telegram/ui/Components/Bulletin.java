@@ -39,6 +39,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.core.math.MathUtils;
 import androidx.core.util.Consumer;
 import androidx.core.view.ViewCompat;
 import androidx.dynamicanimation.animation.DynamicAnimation;
@@ -71,6 +72,7 @@ import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
+import org.telegram.ui.Components.quickforward.BlurVisibilityDrawable;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
 
@@ -79,6 +81,7 @@ public class Bulletin {
     private static final HashMap delegates = new HashMap();
     private static final HashMap fragmentDelegates = new HashMap();
     private static Bulletin visibleBulletin;
+    private boolean allowBlurAnimation;
     private SpringAnimation bottomOffsetSpring;
     private boolean canHide;
     private final BaseFragment containerFragment;
@@ -530,6 +533,7 @@ public class Bulletin {
         public static final FloatPropertyCompat IN_OUT_OFFSET_Y;
         public static final Property IN_OUT_OFFSET_Y2;
         Drawable background;
+        private BlurVisibilityDrawable blurVisibilityDrawable;
         protected Bulletin bulletin;
         private final List callbacks;
         private LinearGradient clipGradient;
@@ -830,6 +834,11 @@ public class Bulletin {
         public void setInOutOffset(float f) {
             this.inOutOffset = f;
             updatePosition();
+            Bulletin bulletin = this.bulletin;
+            if (bulletin == null || !bulletin.allowBlurAnimation) {
+                return;
+            }
+            invalidate();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -873,6 +882,28 @@ public class Bulletin {
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
+            Bulletin bulletin = this.bulletin;
+            if (bulletin == null || !bulletin.allowBlurAnimation) {
+                dispatchDrawImpl(canvas, false, NotificationCenter.proxyCheckDone);
+                return;
+            }
+            if (this.blurVisibilityDrawable == null) {
+                this.blurVisibilityDrawable = new BlurVisibilityDrawable(new BlurVisibilityDrawable.DrawRunnable() { // from class: org.telegram.ui.Components.Bulletin$Layout$$ExternalSyntheticLambda0
+                    @Override // org.telegram.ui.Components.quickforward.BlurVisibilityDrawable.DrawRunnable
+                    public final void draw(Canvas canvas2, int i) {
+                        Bulletin.Layout.this.dispatchDrawImplBlur(canvas2, i);
+                    }
+                });
+            }
+            if (!this.blurVisibilityDrawable.hasBitmap()) {
+                this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
+            }
+            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.proxyCheckDone));
+            this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            this.blurVisibilityDrawable.draw(canvas);
+        }
+
+        protected void dispatchDrawImpl(Canvas canvas, boolean z, int i) {
             Delegate delegate;
             float dp;
             float width;
@@ -880,7 +911,7 @@ public class Bulletin {
             float f;
             Canvas canvas2;
             float f2;
-            if (this.bulletin == null) {
+            if (this.bulletin == null || i == 0) {
                 return;
             }
             this.background.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredBackgroundHeight() - getPaddingBottom());
@@ -891,15 +922,18 @@ public class Bulletin {
             }
             float topOffset = delegate.getTopOffset(this.bulletin.tag) - getY();
             float measuredHeight = (((View) getParent()).getMeasuredHeight() - getBottomOffset()) - getY();
-            boolean clipWithGradient = this.delegate.clipWithGradient(this.bulletin.tag);
+            boolean z2 = !z && this.delegate.clipWithGradient(this.bulletin.tag);
             canvas.save();
-            canvas.clipRect(0.0f, topOffset, getMeasuredWidth(), measuredHeight);
-            if (clipWithGradient) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.liveLocationsChanged, 31);
+            if (!z) {
+                canvas.clipRect(0.0f, topOffset, getMeasuredWidth(), measuredHeight);
+            }
+            boolean z3 = z2 || i != 255;
+            if (z3) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i, 31);
             }
             this.background.draw(canvas);
             super.dispatchDraw(canvas);
-            if (clipWithGradient) {
+            if (z2) {
                 if (this.clipPaint == null) {
                     Paint paint2 = new Paint(1);
                     this.clipPaint = paint2;
@@ -931,10 +965,16 @@ public class Bulletin {
                 }
                 canvas2.drawRect(f, dp, width, f2, paint);
                 canvas.restore();
+            }
+            if (z3) {
                 canvas.restore();
             }
             canvas.restore();
             invalidate();
+        }
+
+        protected void dispatchDrawImplBlur(Canvas canvas, int i) {
+            dispatchDrawImpl(canvas, true, i);
         }
 
         protected CharSequence getAccessibilityText() {
@@ -966,6 +1006,13 @@ public class Bulletin {
             return Theme.getColor(i, this.resourcesProvider);
         }
 
+        public float getTopOffset() {
+            if (this.delegate == null) {
+                return 0.0f;
+            }
+            return r0.getTopOffset(this.bulletin != null ? r1.tag : 0);
+        }
+
         public boolean isTransitionRunning() {
             return this.transitionRunningEnter || this.transitionRunningExit;
         }
@@ -989,6 +1036,10 @@ public class Bulletin {
             int size = this.callbacks.size();
             for (int i = 0; i < size; i++) {
                 ((Callback) this.callbacks.get(i)).onDetach(this);
+            }
+            BlurVisibilityDrawable blurVisibilityDrawable = this.blurVisibilityDrawable;
+            if (blurVisibilityDrawable != null) {
+                blurVisibilityDrawable.recycle();
             }
         }
 
@@ -1820,7 +1871,7 @@ public class Bulletin {
         private final LinearLayout linearLayout;
         public final AnimatedTextView subtitleTextView;
         private final int textColor;
-        public final LinkSpanDrawable.LinksTextView titleTextView;
+        public final AnimatedTextView titleTextView;
 
         public TwoLineAnimatedLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
@@ -1837,21 +1888,22 @@ public class Bulletin {
             this.linearLayout = linearLayout;
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
-            this.titleTextView = linksTextView;
-            linksTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            linksTextView.setSingleLine();
-            linksTextView.setTextColor(themedColor);
-            linksTextView.setTextSize(1, 14.0f);
-            linksTextView.setTypeface(AndroidUtilities.bold());
-            linearLayout.addView(linksTextView);
-            AnimatedTextView animatedTextView = new AnimatedTextView(context, false, true, true);
-            this.subtitleTextView = animatedTextView;
+            AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
+            this.titleTextView = animatedTextView;
             animatedTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
             animatedTextView.setTextColor(themedColor);
-            animatedTextView.setTypeface(Typeface.SANS_SERIF);
-            animatedTextView.setTextSize(AndroidUtilities.dp(13.0f));
-            linearLayout.addView(animatedTextView, LayoutHelper.createLinear(-1, AndroidUtilities.dp(6.0f)));
+            animatedTextView.setTextSize(AndroidUtilities.dp(14.0f));
+            animatedTextView.setTypeface(AndroidUtilities.bold());
+            animatedTextView.setEllipsizeByGradient(true);
+            linearLayout.addView(animatedTextView, LayoutHelper.createLinear(-1, 20));
+            AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true);
+            this.subtitleTextView = animatedTextView2;
+            animatedTextView2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+            animatedTextView2.setTextColor(themedColor);
+            animatedTextView2.setTypeface(Typeface.SANS_SERIF);
+            animatedTextView2.setTextSize(AndroidUtilities.dp(13.0f));
+            animatedTextView2.setEllipsizeByGradient(true);
+            linearLayout.addView(animatedTextView2, LayoutHelper.createLinear(-1, 18));
         }
 
         @Override // org.telegram.ui.Components.Bulletin.Layout
@@ -2412,6 +2464,20 @@ public class Bulletin {
 
     public static void removeDelegate(BaseFragment baseFragment) {
         fragmentDelegates.remove(baseFragment);
+    }
+
+    public static void updateCurrentPosition() {
+        Layout layout;
+        Bulletin bulletin = visibleBulletin;
+        if (bulletin == null || (layout = bulletin.layout) == null) {
+            return;
+        }
+        layout.updatePosition();
+    }
+
+    public Bulletin allowBlur() {
+        this.allowBlurAnimation = true;
+        return this;
     }
 
     public Layout getLayout() {

@@ -3,31 +3,31 @@ package j$.util.function;
 import java.util.function.DoubleFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o implements q {
-    public final /* synthetic */ DoubleFunction a;
+public final /* synthetic */ class o implements DoubleFunction {
+    public final /* synthetic */ p a;
 
-    private /* synthetic */ o(DoubleFunction doubleFunction) {
-        this.a = doubleFunction;
+    private /* synthetic */ o(p pVar) {
+        this.a = pVar;
     }
 
-    public static /* synthetic */ q a(DoubleFunction doubleFunction) {
-        if (doubleFunction == null) {
+    public static /* synthetic */ DoubleFunction a(p pVar) {
+        if (pVar == null) {
             return null;
         }
-        return doubleFunction instanceof p ? ((p) doubleFunction).a : new o(doubleFunction);
+        return pVar instanceof n ? ((n) pVar).a : new o(pVar);
     }
 
-    @Override // j$.util.function.q
+    @Override // java.util.function.DoubleFunction
     public final /* synthetic */ Object apply(double d) {
         return this.a.apply(d);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        DoubleFunction doubleFunction = this.a;
+        p pVar = this.a;
         if (obj instanceof o) {
             obj = ((o) obj).a;
         }
-        return doubleFunction.equals(obj);
+        return pVar.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

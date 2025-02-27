@@ -1,80 +1,66 @@
 package j$.util;
 
-import j$.util.function.Function;
-import j$.util.function.v0;
-import j$.util.function.x0;
-import j$.util.function.z0;
-import java.util.Comparator;
-import java.util.function.Function;
-import java.util.function.ToDoubleFunction;
-import java.util.function.ToIntFunction;
-import java.util.function.ToLongFunction;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-final class f implements Comparator, e {
-    public static final f INSTANCE;
-    private static final /* synthetic */ f[] a;
+public final class f implements j$.util.function.m {
+    private double a;
+    private double b;
+    private long count;
+    private double sum;
+    private double min = Double.POSITIVE_INFINITY;
+    private double max = Double.NEGATIVE_INFINITY;
 
-    static {
-        f fVar = new f();
-        INSTANCE = fVar;
-        a = new f[]{fVar};
+    private void c(double d) {
+        double d2 = d - this.a;
+        double d3 = this.sum;
+        double d4 = d3 + d2;
+        this.a = (d4 - d3) - d2;
+        this.sum = d4;
     }
 
-    private f() {
+    public final void a(f fVar) {
+        this.count += fVar.count;
+        this.b += fVar.b;
+        c(fVar.sum);
+        c(fVar.a);
+        this.min = Math.min(this.min, fVar.min);
+        this.max = Math.max(this.max, fVar.max);
     }
 
-    public static f valueOf(String str) {
-        return (f) Enum.valueOf(f.class, str);
+    @Override // j$.util.function.m
+    public final void accept(double d) {
+        this.count++;
+        this.b += d;
+        c(d);
+        this.min = Math.min(this.min, d);
+        this.max = Math.max(this.max, d);
     }
 
-    public static f[] values() {
-        return (f[]) a.clone();
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return ((Comparable) obj).compareTo((Comparable) obj2);
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator reversed() {
-        return Comparator$-CC.reverseOrder();
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(Comparator comparator) {
-        comparator.getClass();
-        return new d(this, comparator, 0);
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparing(Function.VivifiedWrapper.convert(function)));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(java.util.function.Function function, Comparator comparator) {
-        j$.util.function.Function convert = Function.VivifiedWrapper.convert(function);
-        convert.getClass();
-        comparator.getClass();
-        return Comparator$-EL.a(this, new d(comparator, convert, 1));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(v0.a(toDoubleFunction)));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingInt(x0.a(toIntFunction)));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingLong(z0.a(toLongFunction)));
+    public final String toString() {
+        double d;
+        String simpleName = f.class.getSimpleName();
+        Long valueOf = Long.valueOf(this.count);
+        double d2 = this.sum + this.a;
+        if (Double.isNaN(d2) && Double.isInfinite(this.b)) {
+            d2 = this.b;
+        }
+        Double valueOf2 = Double.valueOf(d2);
+        Double valueOf3 = Double.valueOf(this.min);
+        if (this.count > 0) {
+            double d3 = this.sum + this.a;
+            if (Double.isNaN(d3) && Double.isInfinite(this.b)) {
+                d3 = this.b;
+            }
+            double d4 = this.count;
+            Double.isNaN(d4);
+            d = d3 / d4;
+        } else {
+            d = 0.0d;
+        }
+        return String.format("%s{count=%d, sum=%f, min=%f, average=%f, max=%f}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(d), Double.valueOf(this.max));
     }
 }

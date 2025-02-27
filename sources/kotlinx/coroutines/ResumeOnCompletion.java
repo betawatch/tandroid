@@ -4,7 +4,7 @@ import kotlin.Result;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ResumeOnCompletion extends JobNode {
     private final Continuation continuation;
 

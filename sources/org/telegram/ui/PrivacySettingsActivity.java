@@ -84,6 +84,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
     private boolean deleteAccountUpdate;
     private SessionsActivity devicesActivityPreload;
     private int emailLoginRow;
+    private boolean feeValue;
     private int forwardsRow;
     private int giftsRow;
     private int groupsDetailRow;
@@ -329,7 +330,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                                 textSettingsCell.getValueImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.MULTIPLY));
                                 z4 = z;
                             } else if (i == PrivacySettingsActivity.this.noncontactsRow) {
-                                textSettingsCell.setTextAndValue(PrivacySettingsActivity.this.getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium ? LocaleController.getString(R.string.PrivacyMessages) : PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyMessages)), LocaleController.getString(PrivacySettingsActivity.this.noncontactsValue ? R.string.ContactsAndPremium : R.string.P2PEverybody), PrivacySettingsActivity.this.bioRow != -1);
+                                textSettingsCell.setTextAndValue((!PrivacySettingsActivity.this.getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium || PrivacySettingsActivity.this.getMessagesController().starsPaidMessagesAvailable) ? PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyMessages)) : LocaleController.getString(R.string.PrivacyMessages), LocaleController.getString(PrivacySettingsActivity.this.feeValue ? R.string.ContactsAndFee : PrivacySettingsActivity.this.noncontactsValue ? R.string.ContactsAndPremium : R.string.P2PEverybody), PrivacySettingsActivity.this.bioRow != -1);
                             } else {
                                 if (i == PrivacySettingsActivity.this.passportRow) {
                                     i2 = R.string.TelegramPassport;
@@ -1421,7 +1422,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PrivacySettingsActivity.this.lambda$onBackPressed$323();
+                    PrivacySettingsActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -1469,6 +1470,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             if (globalPrivacySettings != null) {
                 this.archiveChats = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
                 this.noncontactsValue = globalPrivacySettings.new_noncontact_peers_require_premium;
+                this.feeValue = (globalPrivacySettings.flags & 32) != 0;
             }
             ListAdapter listAdapter3 = this.listAdapter;
             if (listAdapter3 != null) {
@@ -1542,6 +1544,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
         if (globalPrivacySettings != null) {
             this.archiveChats = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
             this.noncontactsValue = globalPrivacySettings.new_noncontact_peers_require_premium;
+            this.feeValue = (globalPrivacySettings.flags & 32) != 0;
         }
         updateRows();
         loadPasswordSettings();

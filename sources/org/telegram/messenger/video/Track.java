@@ -78,7 +78,7 @@ public class Track {
         samplingFrequencyIndexMap.put(8000, 11);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0169  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -276,7 +276,7 @@ public class Track {
                                 } else {
                                     if (integer2 != 32) {
                                         if (integer2 == 64) {
-                                            i3 = NotificationCenter.needShareTheme;
+                                            i3 = NotificationCenter.themeAccentListUpdated;
                                         }
                                         avcConfigurationBox.setBitDepthLumaMinus8(-1);
                                         avcConfigurationBox.setBitDepthChromaMinus8(-1);

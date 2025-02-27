@@ -11,7 +11,7 @@ public abstract class a2 implements e2 {
         this.a = e2Var;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;

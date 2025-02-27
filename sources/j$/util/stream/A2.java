@@ -1,9 +1,11 @@
 package j$.util.stream;
 
-import j$.util.Collection$-EL;
+import j$.util.Collection;
+import j$.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 /* loaded from: classes2.dex */
 final class A2 extends s2 {
@@ -21,7 +23,14 @@ final class A2 extends s2 {
 
     @Override // j$.util.stream.a2, j$.util.stream.e2
     public final void m() {
-        j$.util.a.C(this.d, this.b);
+        List list = this.d;
+        boolean z = list instanceof j$.util.List;
+        Comparator comparator = this.b;
+        if (z) {
+            ((j$.util.List) list).sort(comparator);
+        } else {
+            List.-CC.$default$sort(list, comparator);
+        }
         long size = this.d.size();
         e2 e2Var = this.a;
         e2Var.n(size);
@@ -36,9 +45,7 @@ final class A2 extends s2 {
                 }
             }
         } else {
-            ArrayList arrayList = this.d;
-            e2Var.getClass();
-            Collection$-EL.a(arrayList, new a(e2Var, 2));
+            Collection.-EL.a(this.d, new a(e2Var, 2));
         }
         e2Var.m();
         this.d = null;

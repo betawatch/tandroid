@@ -21,7 +21,7 @@ public interface BiFunction<T, U, R> {
 
         @Override // j$.util.function.BiFunction
         public final /* synthetic */ BiFunction andThen(Function function) {
-            return convert(this.a.andThen(y.a(function)));
+            return convert(this.a.andThen(x.a(function)));
         }
 
         @Override // j$.util.function.BiFunction

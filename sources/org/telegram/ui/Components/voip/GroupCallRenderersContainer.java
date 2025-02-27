@@ -53,7 +53,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.GroupCallActivity;
 import org.webrtc.TextureViewRenderer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GroupCallRenderersContainer extends FrameLayout {
     private boolean animateSpeakingOnNextDraw;
     private LongSparseIntArray attachedPeerIds;

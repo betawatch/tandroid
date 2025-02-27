@@ -3,39 +3,39 @@ package j$.util.function;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class D implements F {
-    public final /* synthetic */ IntConsumer a;
+public final /* synthetic */ class D implements IntConsumer {
+    public final /* synthetic */ E a;
 
-    private /* synthetic */ D(IntConsumer intConsumer) {
-        this.a = intConsumer;
+    private /* synthetic */ D(E e) {
+        this.a = e;
     }
 
-    public static /* synthetic */ F a(IntConsumer intConsumer) {
-        if (intConsumer == null) {
+    public static /* synthetic */ IntConsumer a(E e) {
+        if (e == null) {
             return null;
         }
-        return intConsumer instanceof E ? ((E) intConsumer).a : new D(intConsumer);
+        return e instanceof C ? ((C) e).a : new D(e);
     }
 
-    @Override // j$.util.function.F
+    @Override // java.util.function.IntConsumer
     public final /* synthetic */ void accept(int i) {
         this.a.accept(i);
     }
 
+    @Override // java.util.function.IntConsumer
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return a(this.a.l(C.a(intConsumer)));
+    }
+
     public final /* synthetic */ boolean equals(Object obj) {
-        IntConsumer intConsumer = this.a;
+        E e = this.a;
         if (obj instanceof D) {
             obj = ((D) obj).a;
         }
-        return intConsumer.equals(obj);
+        return e.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
-    }
-
-    @Override // j$.util.function.F
-    public final /* synthetic */ F l(F f) {
-        return a(this.a.andThen(E.a(f)));
     }
 }

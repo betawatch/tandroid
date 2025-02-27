@@ -74,7 +74,7 @@ import org.telegram.ui.Delegates.MemberRequestsDelegate;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClickListener {
     private final long chatId;
     private final MemberRequestsController controller;
@@ -636,7 +636,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         /* JADX INFO: Access modifiers changed from: private */
         public void updateBackgroundBitmap() {
             BitmapDrawable bitmapDrawable = this.backgroundDrawable;
-            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.liveLocationsChanged;
+            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.proxyCheckDone;
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable(getContext().getResources(), getBlurredBitmap());
             this.backgroundDrawable = bitmapDrawable2;
             bitmapDrawable2.setAlpha(alpha);

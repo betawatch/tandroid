@@ -1,38 +1,25 @@
 package j$.util.concurrent;
 
-import j$.util.Collection$-EL;
-import j$.util.P;
-import j$.util.Q;
+import j$.util.Collection;
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
-import j$.util.function.G;
-import j$.util.function.I;
+import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
-import j$.util.function.r0;
-import j$.util.stream.P2;
+import j$.util.stream.Stream;
 import j$.util.stream.t0;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.Spliterator;
-import java.util.function.IntFunction;
-import java.util.stream.Stream;
 
 /* loaded from: classes2.dex */
-public final class h extends b implements Set, j$.util.b {
+public final class h extends b implements Set, j$.util.Set {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ h(ConcurrentHashMap concurrentHashMap, int i) {
         super(concurrentHashMap);
         this.b = i;
-    }
-
-    @Override // j$.util.b
-    public final /* synthetic */ boolean a(Predicate predicate) {
-        switch (this.b) {
-        }
-        return j$.util.a.l(this, predicate);
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -95,7 +82,7 @@ public final class h extends b implements Set, j$.util.b {
         return false;
     }
 
-    @Override // j$.util.b
+    @Override // j$.util.Collection
     public final void forEach(Consumer consumer) {
         switch (this.b) {
             case 0:
@@ -135,10 +122,10 @@ public final class h extends b implements Set, j$.util.b {
     public final /* synthetic */ void forEach(java.util.function.Consumer consumer) {
         switch (this.b) {
             case 0:
-                forEach(j$.util.function.g.a(consumer));
+                forEach(Consumer.VivifiedWrapper.convert(consumer));
                 break;
             default:
-                forEach(j$.util.function.g.a(consumer));
+                forEach(Consumer.VivifiedWrapper.convert(consumer));
                 break;
         }
     }
@@ -185,11 +172,32 @@ public final class h extends b implements Set, j$.util.b {
         }
     }
 
-    @Override // java.util.Collection
-    public final Stream parallelStream() {
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        Stream e0;
+        Stream e02;
         switch (this.b) {
+            case 0:
+                e0 = t0.e0(Collection.-EL.b(this), true);
+                return e0;
+            default:
+                e02 = t0.e0(Collection.-EL.b(this), true);
+                return e02;
         }
-        return P2.i0(t0.e0(Collection$-EL.b(this), true));
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream parallelStream() {
+        Stream e0;
+        Stream e02;
+        switch (this.b) {
+            case 0:
+                e0 = t0.e0(Collection.-EL.b(this), true);
+                return Stream.Wrapper.convert(e0);
+            default:
+                e02 = t0.e0(Collection.-EL.b(this), true);
+                return Stream.Wrapper.convert(e02);
+        }
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -210,17 +218,24 @@ public final class h extends b implements Set, j$.util.b {
         return false;
     }
 
+    @Override // j$.util.Collection
+    public final /* synthetic */ boolean removeIf(Predicate predicate) {
+        switch (this.b) {
+        }
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
     @Override // java.util.Collection
     public final /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
         int i = this.b;
-        Predicate a = r0.a(predicate);
+        Predicate convert = Predicate.VivifiedWrapper.convert(predicate);
         switch (i) {
         }
-        return j$.util.a.l(this, a);
+        return Collection.-CC.$default$removeIf(this, convert);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.b
-    public final Q spliterator() {
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
+    public final Spliterator spliterator() {
         switch (this.b) {
             case 0:
                 ConcurrentHashMap concurrentHashMap = this.a;
@@ -238,32 +253,53 @@ public final class h extends b implements Set, j$.util.b {
     }
 
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Spliterator spliterator() {
+    public final /* synthetic */ java.util.Spliterator spliterator() {
         switch (this.b) {
         }
-        return P.a(spliterator());
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
-    @Override // java.util.Collection, j$.util.b
-    public final /* synthetic */ j$.util.stream.Stream stream() {
-        switch (this.b) {
-        }
-        return j$.util.a.m(this);
-    }
-
-    @Override // java.util.Collection
+    @Override // java.util.Collection, j$.util.Collection
     public final /* synthetic */ Stream stream() {
         switch (this.b) {
         }
-        return P2.i0(j$.util.a.m(this));
+        return Collection.-CC.$default$stream(this);
     }
 
     @Override // java.util.Collection
-    public final Object[] toArray(IntFunction intFunction) {
-        int i = this.b;
-        I a = G.a(intFunction);
-        switch (i) {
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        switch (this.b) {
         }
-        return toArray((Object[]) a.apply(0));
+        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
+    }
+
+    @Override // j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        Object[] array2;
+        switch (this.b) {
+            case 0:
+                array = toArray((Object[]) intFunction.apply(0));
+                return array;
+            default:
+                array2 = toArray((Object[]) intFunction.apply(0));
+                return array2;
+        }
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
+        Object[] array;
+        Object[] array2;
+        int i = this.b;
+        IntFunction convert = IntFunction.VivifiedWrapper.convert(intFunction);
+        switch (i) {
+            case 0:
+                array = toArray((Object[]) convert.apply(0));
+                return array;
+            default:
+                array2 = toArray((Object[]) convert.apply(0));
+                return array2;
+        }
     }
 }

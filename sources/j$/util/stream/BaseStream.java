@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.stream.BaseStream;
 import java.util.Iterator;
 
@@ -18,7 +19,7 @@ public interface BaseStream<T, S extends BaseStream<T, S>> extends AutoCloseable
 
     BaseStream sequential();
 
-    j$.util.Q spliterator();
+    Spliterator spliterator();
 
     BaseStream unordered();
 }

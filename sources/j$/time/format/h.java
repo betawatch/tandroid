@@ -1,5 +1,6 @@
 package j$.time.format;
 
+import j$.util.A;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
@@ -12,7 +13,7 @@ final class h implements g {
     private final boolean d;
 
     h(j$.time.temporal.a aVar) {
-        j$.util.a.B(aVar, "field");
+        A.z(aVar, "field");
         if (!aVar.a().f()) {
             throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);
         }

@@ -9,7 +9,7 @@ final class k1 extends j1 implements w0 {
         super(j);
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;
@@ -59,9 +59,9 @@ final class k1 extends j1 implements w0 {
         return this;
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
-        return j$.com.android.tools.r8.a.d(this, w);
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 
     @Override // j$.util.stream.d2

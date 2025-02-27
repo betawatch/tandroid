@@ -44,6 +44,11 @@ public class GLIconSettingsView extends LinearLayout {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 Icon3D icon3D = gLIconRenderer.model;
                 if (icon3D != null) {
@@ -78,6 +83,11 @@ public class GLIconSettingsView extends LinearLayout {
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -171,6 +181,11 @@ public class GLIconSettingsView extends LinearLayout {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 Icon3D icon3D3 = gLIconRenderer.model;
                 if (icon3D3 != null) {
@@ -205,6 +220,11 @@ public class GLIconSettingsView extends LinearLayout {
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -294,6 +314,11 @@ public class GLIconSettingsView extends LinearLayout {
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate

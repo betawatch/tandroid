@@ -467,7 +467,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
         } catch (Exception e) {
             FileLog.e(e);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda30
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 MusicBrowserService.this.lambda$onLoadChildren$0(str, result);
@@ -645,7 +645,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
             }
             this.loadingChats = true;
             final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-            messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda31
+            messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
                     MusicBrowserService.this.lambda$onLoadChildren$1(messagesStorage, str, result);

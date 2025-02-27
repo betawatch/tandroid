@@ -1,31 +1,40 @@
 package j$.util.function;
 
-import java.util.function.DoubleUnaryOperator;
+import j$.util.function.Function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class w {
-    public final /* synthetic */ DoubleUnaryOperator a;
+public final /* synthetic */ class w implements Function {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Function b;
+    public final /* synthetic */ Function c;
 
-    private /* synthetic */ w(DoubleUnaryOperator doubleUnaryOperator) {
-        this.a = doubleUnaryOperator;
+    public /* synthetic */ w(Function function, Function function2, int i) {
+        this.a = i;
+        this.b = function;
+        this.c = function2;
     }
 
-    public static /* synthetic */ w a(DoubleUnaryOperator doubleUnaryOperator) {
-        if (doubleUnaryOperator == null) {
-            return null;
+    @Override // j$.util.function.Function
+    public final /* synthetic */ Function andThen(Function function) {
+        switch (this.a) {
         }
-        return new w(doubleUnaryOperator);
+        return Function.-CC.$default$andThen(this, function);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        DoubleUnaryOperator doubleUnaryOperator = this.a;
-        if (obj instanceof w) {
-            obj = ((w) obj).a;
+    @Override // j$.util.function.Function
+    public final Object apply(Object obj) {
+        switch (this.a) {
+            case 0:
+                return this.c.apply(this.b.apply(obj));
+            default:
+                return this.b.apply(this.c.apply(obj));
         }
-        return doubleUnaryOperator.equals(obj);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.function.Function
+    public final /* synthetic */ Function compose(Function function) {
+        switch (this.a) {
+        }
+        return Function.-CC.$default$compose(this, function);
     }
 }

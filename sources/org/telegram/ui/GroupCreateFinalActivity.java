@@ -314,12 +314,12 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$4(View view) {
-        this.imageUpdater.openMenu(this.avatar != null, new Runnable() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda7
+        this.imageUpdater.openMenu(this.avatar != null, new Runnable() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 GroupCreateFinalActivity.this.lambda$createView$2();
             }
-        }, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda8
+        }, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda9
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 GroupCreateFinalActivity.this.lambda$createView$3(dialogInterface);
@@ -331,7 +331,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2) {
+    public /* synthetic */ void lambda$createView$5(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
         this.currentGroupCreateLocation.setLatitude(messageMedia.geo.lat);
         this.currentGroupCreateLocation.setLongitude(messageMedia.geo._long);
         this.currentGroupCreateAddress = messageMedia.address;
@@ -345,10 +345,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
             LocationActivity locationActivity = new LocationActivity(4);
             locationActivity.setDialogId(0L);
-            locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda6
+            locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
-                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3) {
-                    GroupCreateFinalActivity.this.lambda$createView$5(messageMedia, i2, z, i3);
+                public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
+                    GroupCreateFinalActivity.this.lambda$createView$5(messageMedia, i2, z, i3, j);
                 }
             });
             presentFragment(locationActivity);
@@ -619,7 +619,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupCreateFinalActivity.this.lambda$onBackPressed$323();
+                    GroupCreateFinalActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -1032,7 +1032,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
     public void didUploadPhoto(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, boolean z, final TLRPC.VideoSize videoSize) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 GroupCreateFinalActivity.this.lambda$didUploadPhoto$8(inputFile, inputFile2, videoSize, str, d, photoSize2, photoSize);

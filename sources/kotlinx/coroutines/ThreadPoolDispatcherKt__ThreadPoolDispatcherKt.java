@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract /* synthetic */ class ThreadPoolDispatcherKt__ThreadPoolDispatcherKt {
     public static final ExecutorCoroutineDispatcher newFixedThreadPoolContext(final int i, final String str) {
         if (i >= 1) {

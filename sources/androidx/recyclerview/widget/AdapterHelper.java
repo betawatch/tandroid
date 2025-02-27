@@ -1,6 +1,5 @@
 package androidx.recyclerview.widget;
 
-import android.text.TextUtils;
 import androidx.core.util.Pools$Pool;
 import androidx.core.util.Pools$SimplePool;
 import androidx.recyclerview.widget.OpReorderer;
@@ -272,37 +271,6 @@ class AdapterHelper implements OpReorderer.Callback {
         }
     }
 
-    private void logNotify(String str) {
-        int i;
-        if (this.lastNotifies == null) {
-            return;
-        }
-        while (true) {
-            if (this.lastNotifies.size() <= 5) {
-                break;
-            } else {
-                this.lastNotifies.remove(0);
-            }
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(new Date().toString());
-        sb.append("  ");
-        sb.append(str);
-        sb.append("\n");
-        StackTraceElement[] stackTrace = new Exception().getStackTrace();
-        int i2 = 0;
-        for (i = 0; i < stackTrace.length && i2 < 5; i++) {
-            String stackTraceElement = stackTrace[i].toString();
-            if (!stackTraceElement.startsWith("androidx.recyclerview.widget.") || i2 != 0) {
-                sb.append("\n");
-                sb.append(stackTraceElement);
-                sb.append("\n");
-                i2++;
-            }
-        }
-        this.lastNotifies.add(sb.toString());
-    }
-
     private void postponeAndUpdateViewHolders(UpdateOp updateOp) {
         this.mPostponedList.add(updateOp);
         int i = updateOp.cmd;
@@ -541,11 +509,17 @@ class AdapterHelper implements OpReorderer.Callback {
     }
 
     public String getLastNotifies() {
-        ArrayList arrayList = this.lastNotifies;
-        if (arrayList == null) {
+        if (this.lastNotifies == null) {
             return null;
         }
-        return TextUtils.join("\n\n", arrayList);
+        StringBuilder sb = new StringBuilder();
+        for (int size = this.lastNotifies.size() - 1; size >= 0; size--) {
+            if (size < this.lastNotifies.size() - 1) {
+                sb.append("\n\n");
+            }
+            sb.append((String) this.lastNotifies.get(size));
+        }
+        return sb.toString();
     }
 
     boolean hasAnyUpdateTypes(int i) {
@@ -558,6 +532,37 @@ class AdapterHelper implements OpReorderer.Callback {
 
     boolean hasUpdates() {
         return (this.mPostponedList.isEmpty() || this.mPendingUpdates.isEmpty()) ? false : true;
+    }
+
+    public void logNotify(String str) {
+        int i;
+        if (this.lastNotifies == null) {
+            return;
+        }
+        while (true) {
+            if (this.lastNotifies.size() <= 5) {
+                break;
+            } else {
+                this.lastNotifies.remove(0);
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(new Date().toString());
+        sb.append("  ");
+        sb.append(str);
+        sb.append("\n");
+        StackTraceElement[] stackTrace = new Exception().getStackTrace();
+        int i2 = 0;
+        for (i = 0; i < stackTrace.length && i2 < 5; i++) {
+            String stackTraceElement = stackTrace[i].toString();
+            if (!stackTraceElement.startsWith("androidx.recyclerview.widget.") || i2 != 0) {
+                sb.append("\n");
+                sb.append(stackTraceElement);
+                sb.append("\n");
+                i2++;
+            }
+        }
+        this.lastNotifies.add(sb.toString());
     }
 
     @Override // androidx.recyclerview.widget.OpReorderer.Callback

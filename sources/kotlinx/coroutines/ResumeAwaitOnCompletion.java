@@ -4,7 +4,7 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ResumeAwaitOnCompletion extends JobNode {
     private final CancellableContinuationImpl continuation;
 

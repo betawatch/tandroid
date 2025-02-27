@@ -16,7 +16,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.VoIPFragment;
 import org.webrtc.OrientationHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class VoIPWindowView extends FrameLayout {
     Activity activity;
     boolean finished;

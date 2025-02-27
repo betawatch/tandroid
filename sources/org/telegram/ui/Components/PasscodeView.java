@@ -1876,15 +1876,15 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
         onShow(z, z2, -1, -1, null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x009f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00a0, code lost:
     
         if ((r15.backgroundDrawable instanceof org.telegram.ui.Components.BackgroundGradientDrawable) != false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ca, code lost:
     
         r5 = r15.backgroundFrameLayout;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x00c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x00c8, code lost:
     
         if (r5 != null) goto L41;
      */

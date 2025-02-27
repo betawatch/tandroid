@@ -324,7 +324,7 @@ public abstract class AbstractResolvableFuture implements ListenableFuture {
         return obj;
     }
 
-    private static Object getUninterruptibly(Future future) {
+    static Object getUninterruptibly(Future future) {
         Object obj;
         boolean z = false;
         while (true) {

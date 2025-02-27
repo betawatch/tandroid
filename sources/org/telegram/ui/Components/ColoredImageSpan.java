@@ -1,6 +1,7 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -64,53 +65,103 @@ public class ColoredImageSpan extends ReplacementSpan {
         this.verticalAlignment = i;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0050  */
     @Override // android.text.style.ReplacementSpan
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        boolean z;
+        int i6;
+        float alpha;
+        float f2;
         Runnable runnable = this.checkColorDelegate;
         if (runnable != null) {
             runnable.run();
         } else if (this.recolorDrawable) {
-            int i6 = this.overrideColor;
-            if (i6 == 0) {
-                i6 = (this.useLinkPaintColor && (paint instanceof TextPaint)) ? ((TextPaint) paint).linkColor : this.usePaintColor ? paint.getColor() : Theme.getColor(this.colorKey);
-            }
-            if (this.drawableColor != i6) {
-                this.drawableColor = i6;
-                this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.MULTIPLY));
-            }
-        }
-        canvas.save();
-        Drawable drawable = this.drawable;
-        int i7 = i5 - (drawable != null ? drawable.getBounds().bottom : i5);
-        int i8 = this.verticalAlignment;
-        if (i8 != 1) {
-            if (i8 == 2) {
-                int i9 = i3 + ((i5 - i3) / 2);
-                Drawable drawable2 = this.drawable;
-                i7 = i9 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
-            } else if (i8 == 0) {
-                int i10 = i5 - i3;
-                int i11 = this.size;
-                if (i11 == 0) {
-                    i11 = this.drawable.getIntrinsicHeight();
+            int i7 = this.overrideColor;
+            if (i7 == 0) {
+                if (this.useLinkPaintColor && (paint instanceof TextPaint)) {
+                    i7 = ((TextPaint) paint).linkColor;
+                } else {
+                    if (this.usePaintColor) {
+                        i7 = paint.getColor();
+                        z = true;
+                        if (this.drawableColor != i7) {
+                            this.drawableColor = i7;
+                            this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.SRC_IN));
+                        }
+                        canvas.save();
+                        Drawable drawable = this.drawable;
+                        int i8 = i5 - (drawable != null ? drawable.getBounds().bottom : i5);
+                        i6 = this.verticalAlignment;
+                        if (i6 != 1) {
+                            if (i6 == 2) {
+                                int i9 = i3 + ((i5 - i3) / 2);
+                                Drawable drawable2 = this.drawable;
+                                i8 = i9 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
+                            } else if (i6 == 0) {
+                                int i10 = i5 - i3;
+                                int i11 = this.size;
+                                if (i11 == 0) {
+                                    i11 = this.drawable.getIntrinsicHeight();
+                                }
+                                i8 = AndroidUtilities.dp(this.topOffset) + i3 + ((i10 - i11) / 2);
+                            }
+                        }
+                        canvas.translate(f + this.translateX, i8 + this.translateY);
+                        if (this.drawable != null) {
+                            float f3 = this.scaleX;
+                            if (f3 != 1.0f || this.scaleY != 1.0f) {
+                                canvas.scale(f3, this.scaleY, 0.0f, r5.getBounds().centerY());
+                            }
+                            float f4 = this.rotate;
+                            if (f4 != 1.0f) {
+                                canvas.rotate(f4, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
+                            }
+                            Drawable drawable3 = this.drawable;
+                            if (z) {
+                                alpha = this.alpha * 255.0f;
+                                f2 = paint.getAlpha() / Color.alpha(this.drawableColor);
+                            } else {
+                                alpha = paint.getAlpha();
+                                f2 = this.alpha;
+                            }
+                            drawable3.setAlpha((int) (alpha * f2));
+                            this.drawable.draw(canvas);
+                        }
+                        canvas.restore();
+                    }
+                    i7 = Theme.getColor(this.colorKey);
                 }
-                i7 = AndroidUtilities.dp(this.topOffset) + i3 + ((i10 - i11) / 2);
             }
+            z = false;
+            if (this.drawableColor != i7) {
+            }
+            canvas.save();
+            Drawable drawable4 = this.drawable;
+            int i82 = i5 - (drawable4 != null ? drawable4.getBounds().bottom : i5);
+            i6 = this.verticalAlignment;
+            if (i6 != 1) {
+            }
+            canvas.translate(f + this.translateX, i82 + this.translateY);
+            if (this.drawable != null) {
+            }
+            canvas.restore();
         }
-        canvas.translate(f + this.translateX, i7 + this.translateY);
+        z = false;
+        canvas.save();
+        Drawable drawable42 = this.drawable;
+        int i822 = i5 - (drawable42 != null ? drawable42.getBounds().bottom : i5);
+        i6 = this.verticalAlignment;
+        if (i6 != 1) {
+        }
+        canvas.translate(f + this.translateX, i822 + this.translateY);
         if (this.drawable != null) {
-            float f2 = this.scaleX;
-            if (f2 != 1.0f || this.scaleY != 1.0f) {
-                canvas.scale(f2, this.scaleY, 0.0f, r2.getBounds().centerY());
-            }
-            float f3 = this.rotate;
-            if (f3 != 1.0f) {
-                canvas.rotate(f3, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
-            }
-            if (this.alpha != 1.0f || paint.getAlpha() != 255) {
-                this.drawable.setAlpha((int) (this.alpha * paint.getAlpha()));
-            }
-            this.drawable.draw(canvas);
         }
         canvas.restore();
     }

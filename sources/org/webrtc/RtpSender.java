@@ -12,8 +12,14 @@ public class RtpSender {
     public RtpSender(long j) {
         this.nativeRtpSender = j;
         this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j));
-        long nativeGetDtmfSender = nativeGetDtmfSender(j);
-        this.dtmfSender = nativeGetDtmfSender != 0 ? new DtmfSender(nativeGetDtmfSender) : null;
+        DtmfSender dtmfSender = null;
+        if (nativeGetMediaType(j).equalsIgnoreCase(MediaStreamTrack.AUDIO_TRACK_KIND)) {
+            long nativeGetDtmfSender = nativeGetDtmfSender(j);
+            if (nativeGetDtmfSender != 0) {
+                dtmfSender = new DtmfSender(nativeGetDtmfSender);
+            }
+        }
+        this.dtmfSender = dtmfSender;
     }
 
     private void checkRtpSenderExists() {
@@ -25,6 +31,8 @@ public class RtpSender {
     private static native long nativeGetDtmfSender(long j);
 
     private static native String nativeGetId(long j);
+
+    private static native String nativeGetMediaType(long j);
 
     private static native RtpParameters nativeGetParameters(long j);
 

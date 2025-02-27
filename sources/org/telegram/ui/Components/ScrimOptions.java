@@ -628,7 +628,7 @@ public class ScrimOptions extends Dialog {
                 chatMessageCell.getLocationOnScreen(iArr);
                 final int[] iArr2 = {iArr[0] + ((int) f4), iArr[1] + ((int) f5)};
                 this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                    private int alpha = NotificationCenter.liveLocationsChanged;
+                    private int alpha = NotificationCenter.proxyCheckDone;
 
                     @Override // android.graphics.drawable.Drawable
                     public void draw(Canvas canvas2) {
@@ -651,10 +651,10 @@ public class ScrimOptions extends Dialog {
                                 int[] iArr4 = iArr2;
                                 canvas2.translate(-iArr4[0], -iArr4[1]);
                                 int[] iArr5 = iArr;
-                                canvas2.translate(iArr5[0], iArr5[1]);
+                                canvas2.translate(iArr5[0], iArr5[1] + chatMessageCell.getPaddingTop());
                                 chatMessageCell.drawBackgroundInternal(canvas2, true);
                                 int[] iArr6 = iArr;
-                                canvas2.translate(-iArr6[0], -iArr6[1]);
+                                canvas2.translate(-iArr6[0], (-iArr6[1]) - chatMessageCell.getPaddingTop());
                                 int[] iArr7 = iArr2;
                                 canvas2.translate(iArr7[0], iArr7[1]);
                             } else {
@@ -741,7 +741,7 @@ public class ScrimOptions extends Dialog {
         chatMessageCell.getLocationOnScreen(iArr3);
         final int[] iArr22 = {iArr3[0] + ((int) f4), iArr3[1] + ((int) f5)};
         this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-            private int alpha = NotificationCenter.liveLocationsChanged;
+            private int alpha = NotificationCenter.proxyCheckDone;
 
             @Override // android.graphics.drawable.Drawable
             public void draw(Canvas canvas2) {
@@ -764,10 +764,10 @@ public class ScrimOptions extends Dialog {
                         int[] iArr4 = iArr22;
                         canvas2.translate(-iArr4[0], -iArr4[1]);
                         int[] iArr5 = iArr3;
-                        canvas2.translate(iArr5[0], iArr5[1]);
+                        canvas2.translate(iArr5[0], iArr5[1] + chatMessageCell.getPaddingTop());
                         chatMessageCell.drawBackgroundInternal(canvas2, true);
                         int[] iArr6 = iArr3;
-                        canvas2.translate(-iArr6[0], -iArr6[1]);
+                        canvas2.translate(-iArr6[0], (-iArr6[1]) - chatMessageCell.getPaddingTop());
                         int[] iArr7 = iArr22;
                         canvas2.translate(iArr7[0], iArr7[1]);
                     } else {

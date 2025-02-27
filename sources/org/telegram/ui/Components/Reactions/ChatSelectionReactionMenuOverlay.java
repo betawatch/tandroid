@@ -28,7 +28,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     private float currentOffsetY;
     private MessageObject currentPrimaryObject;
@@ -448,7 +448,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     public void setSelectedMessages(List<MessageObject> list) {
         boolean z;
         this.selectedMessages = list;
-        if (!this.parentFragment.isSecretChat() && ((this.parentFragment.getCurrentChatInfo() == null || !(this.parentFragment.getCurrentChatInfo().available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (!this.parentFragment.isReport() && !this.parentFragment.isSecretChat() && ((this.parentFragment.getCurrentChatInfo() == null || !(this.parentFragment.getCurrentChatInfo().available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             Iterator<MessageObject> it = list.iterator();
             long j = 0;
             boolean z2 = false;

@@ -88,7 +88,7 @@ public class JNIUtilities {
             Iterator it = linkAddresses.iterator();
             String str2 = null;
             while (it.hasNext()) {
-                address = JNIUtilities$$ExternalSyntheticApiModelOutline3.m(it.next()).getAddress();
+                address = JNIUtilities$$ExternalSyntheticApiModelOutline1.m(it.next()).getAddress();
                 if (address instanceof Inet4Address) {
                     if (!address.isLinkLocalAddress()) {
                         str = address.getHostAddress();

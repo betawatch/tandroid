@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.temporal.q;
+import j$.util.A;
 import java.io.Serializable;
 import org.telegram.messenger.NotificationCenter;
 
@@ -19,7 +20,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
     }
 
     public static LocalDate h(j$.time.temporal.k kVar) {
-        j$.util.a.B(kVar, "temporal");
+        A.z(kVar, "temporal");
         LocalDate localDate = (LocalDate) kVar.c(j$.time.temporal.j.e());
         if (localDate != null) {
             return localDate;
@@ -121,7 +122,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
         }
         int i = (int) j6;
         int i2 = ((i * 5) + 2) / NotificationCenter.recordStopped;
-        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.storiesReadUpdated) + 5) / 10)) + 1);
+        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.stealthModeChanged) + 5) / 10)) + 1);
     }
 
     private static LocalDate r(int i, int i2, int i3) {

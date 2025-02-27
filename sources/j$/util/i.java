@@ -1,13 +1,11 @@
 package j$.util;
 
-import org.telegram.tgnet.ConnectionsManager;
-
 /* loaded from: classes2.dex */
-public final class i implements j$.util.function.F {
+public final class i implements j$.util.function.T, j$.util.function.E {
     private long count;
     private long sum;
-    private int min = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    private int max = Integer.MIN_VALUE;
+    private long min = Long.MAX_VALUE;
+    private long max = Long.MIN_VALUE;
 
     public final void a(i iVar) {
         this.count += iVar.count;
@@ -16,17 +14,27 @@ public final class i implements j$.util.function.F {
         this.max = Math.max(this.max, iVar.max);
     }
 
-    @Override // j$.util.function.F
+    @Override // j$.util.function.E
     public final void accept(int i) {
-        this.count++;
-        this.sum += i;
-        this.min = Math.min(this.min, i);
-        this.max = Math.max(this.max, i);
+        accept(i);
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.T
+    public final void accept(long j) {
+        this.count++;
+        this.sum += j;
+        this.min = Math.min(this.min, j);
+        this.max = Math.max(this.max, j);
+    }
+
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
+    }
+
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
     public final String toString() {
@@ -34,7 +42,7 @@ public final class i implements j$.util.function.F {
         String simpleName = i.class.getSimpleName();
         Long valueOf = Long.valueOf(this.count);
         Long valueOf2 = Long.valueOf(this.sum);
-        Integer valueOf3 = Integer.valueOf(this.min);
+        Long valueOf3 = Long.valueOf(this.min);
         long j = this.count;
         if (j > 0) {
             double d2 = this.sum;
@@ -45,6 +53,6 @@ public final class i implements j$.util.function.F {
         } else {
             d = 0.0d;
         }
-        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(d), Integer.valueOf(this.max));
+        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(d), Long.valueOf(this.max));
     }
 }

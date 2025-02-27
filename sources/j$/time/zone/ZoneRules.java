@@ -4,6 +4,7 @@ import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
 import j$.time.g;
+import j$.util.A;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -120,7 +121,7 @@ public final class ZoneRules implements Serializable {
     }
 
     public static ZoneRules e(ZoneOffset zoneOffset) {
-        j$.util.a.B(zoneOffset, "offset");
+        A.z(zoneOffset, "offset");
         return new ZoneRules(zoneOffset);
     }
 
@@ -224,7 +225,7 @@ public final class ZoneRules implements Serializable {
             return false;
         }
         ZoneRules zoneRules = (ZoneRules) obj;
-        return j$.util.a.A(this.f, zoneRules.f) && Arrays.equals(this.a, zoneRules.a) && Arrays.equals(this.b, zoneRules.b) && Arrays.equals(this.c, zoneRules.c) && Arrays.equals(this.d, zoneRules.d) && Arrays.equals(this.e, zoneRules.e);
+        return A.y(this.f, zoneRules.f) && Arrays.equals(this.a, zoneRules.a) && Arrays.equals(this.b, zoneRules.b) && Arrays.equals(this.c, zoneRules.c) && Arrays.equals(this.d, zoneRules.d) && Arrays.equals(this.e, zoneRules.e);
     }
 
     public ZoneOffset getOffset(Instant instant) {

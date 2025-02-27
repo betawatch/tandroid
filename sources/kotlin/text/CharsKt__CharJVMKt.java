@@ -2,7 +2,7 @@ package kotlin.text;
 
 import kotlin.ranges.IntRange;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class CharsKt__CharJVMKt {
     public static final int checkRadix(int i) {
         if (new IntRange(2, 36).contains(i)) {

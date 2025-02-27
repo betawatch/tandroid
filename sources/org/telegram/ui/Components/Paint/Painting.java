@@ -686,8 +686,8 @@ public class Painting {
         Utils.HasGLError();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x012d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1019,9 +1019,9 @@ public class Painting {
         return new RectF(0.0f, 0.0f, size.width, size.height);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0222 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0223 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x024b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

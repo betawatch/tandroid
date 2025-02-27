@@ -1,72 +1,22 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class m {
-    private static final m c = new m();
-    private final boolean a;
-    private final int b;
+public final /* synthetic */ class m implements j$.util.function.m {
+    public final /* synthetic */ Consumer a;
 
-    private m() {
-        this.a = false;
-        this.b = 0;
+    public /* synthetic */ m(Consumer consumer) {
+        this.a = consumer;
     }
 
-    private m(int i) {
-        this.a = true;
-        this.b = i;
+    @Override // j$.util.function.m
+    public final void accept(double d) {
+        this.a.r(Double.valueOf(d));
     }
 
-    public static m a() {
-        return c;
-    }
-
-    public static m d(int i) {
-        return new m(i);
-    }
-
-    public final int b() {
-        if (this.a) {
-            return this.b;
-        }
-        throw new NoSuchElementException("No value present");
-    }
-
-    public final boolean c() {
-        return this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof m)) {
-            return false;
-        }
-        m mVar = (m) obj;
-        boolean z = this.a;
-        if (z && mVar.a) {
-            if (this.b == mVar.b) {
-                return true;
-            }
-        } else if (z == mVar.a) {
-            return true;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        if (this.a) {
-            return this.b;
-        }
-        return 0;
-    }
-
-    public final String toString() {
-        if (!this.a) {
-            return "OptionalInt.empty";
-        }
-        return "OptionalInt[" + this.b + "]";
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 }

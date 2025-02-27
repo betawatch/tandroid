@@ -10,15 +10,15 @@ final class I extends K implements d2 {
         r(Long.valueOf(j));
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
-        return j$.com.android.tools.r8.a.d(this, w);
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 
     @Override // j$.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.n.d(((Long) this.b).longValue());
+            return j$.util.l.d(((Long) this.b).longValue());
         }
         return null;
     }

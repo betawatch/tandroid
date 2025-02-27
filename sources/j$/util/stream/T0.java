@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 final class T0 extends H2 implements z0, u0 {
@@ -9,7 +11,7 @@ final class T0 extends H2 implements z0, u0 {
 
     @Override // j$.util.stream.H2
     /* renamed from: A */
-    public final j$.util.E spliterator() {
+    public final j$.util.D spliterator() {
         return super.spliterator();
     }
 
@@ -30,7 +32,7 @@ final class T0 extends H2 implements z0, u0 {
         throw null;
     }
 
-    @Override // j$.util.stream.H2, j$.util.function.n
+    @Override // j$.util.stream.H2, j$.util.function.m
     public final void accept(double d) {
         super.accept(d);
     }
@@ -80,7 +82,7 @@ final class T0 extends H2 implements z0, u0 {
 
     @Override // j$.util.stream.N2, j$.util.stream.E0
     public final void g(Object obj) {
-        super.g((j$.util.function.n) obj);
+        super.g((j$.util.function.m) obj);
     }
 
     @Override // j$.util.stream.e2
@@ -109,22 +111,22 @@ final class T0 extends H2 implements z0, u0 {
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ Object[] s(j$.util.function.I i) {
-        return t0.m(this, i);
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return t0.m(this, intFunction);
     }
 
     @Override // j$.util.stream.H2, j$.util.stream.N2, java.lang.Iterable
-    public final j$.util.N spliterator() {
+    public final j$.util.M spliterator() {
         return super.spliterator();
     }
 
     @Override // j$.util.stream.H2, j$.util.stream.N2, java.lang.Iterable
-    public final j$.util.Q spliterator() {
+    public final Spliterator spliterator() {
         return super.spliterator();
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
         return t0.t(this, j, j2);
     }
 }

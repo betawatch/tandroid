@@ -6,14 +6,14 @@ import j$.util.function.Consumer;
 final class x1 implements N1, b2 {
     private double a;
     final /* synthetic */ double b;
-    final /* synthetic */ j$.util.function.j c;
+    final /* synthetic */ j$.util.function.i c;
 
-    x1(double d, j$.util.function.j jVar) {
+    x1(double d, j$.util.function.i iVar) {
         this.b = d;
-        this.c = jVar;
+        this.c = iVar;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         this.a = this.c.applyAsDouble(this.a, d);
     }
@@ -51,9 +51,9 @@ final class x1 implements N1, b2 {
         accept(((x1) n1).a);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2

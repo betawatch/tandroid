@@ -4,7 +4,7 @@ import kotlin.collections.CharIterator;
 import kotlin.internal.ProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CharProgression implements Iterable {
     public static final Companion Companion = new Companion(null);
     private final char first;

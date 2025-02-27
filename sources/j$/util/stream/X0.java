@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
@@ -16,7 +18,7 @@ final class X0 extends Y0 {
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.Q spliterator() {
-        return j$.util.f0.e();
+    public final Spliterator spliterator() {
+        return Spliterators.e();
     }
 }

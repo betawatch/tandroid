@@ -67,9 +67,9 @@ public enum k implements j$.time.temporal.k {
             case 3:
                 return (z ? 1 : 0) + NotificationCenter.recordStartError;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.needShareTheme;
+                return (z ? 1 : 0) + NotificationCenter.themeAccentListUpdated;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.onReceivedChannelDifference;
+                return (z ? 1 : 0) + NotificationCenter.customTypefacesLoaded;
             case 6:
                 return 1;
             case 7:
@@ -81,7 +81,7 @@ public enum k implements j$.time.temporal.k {
             case 10:
                 return (z ? 1 : 0) + NotificationCenter.starTransactionsLoaded;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.chatAvailableReactionsUpdated;
+                return (z ? 1 : 0) + NotificationCenter.reactionsDidLoad;
             default:
                 return (z ? 1 : 0) + 335;
         }

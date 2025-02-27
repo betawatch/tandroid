@@ -13,13 +13,13 @@ final class H extends K implements c2 {
     @Override // j$.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.m.d(((Integer) this.b).intValue());
+            return j$.util.k.d(((Integer) this.b).intValue());
         }
         return null;
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 }

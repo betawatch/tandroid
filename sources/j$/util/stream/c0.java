@@ -1,7 +1,7 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c0 implements j$.util.function.W {
+public final /* synthetic */ class c0 implements j$.util.function.T {
     public final /* synthetic */ int a;
     public final /* synthetic */ e2 b;
 
@@ -10,7 +10,7 @@ public final /* synthetic */ class c0 implements j$.util.function.W {
         this.b = e2Var;
     }
 
-    @Override // j$.util.function.W
+    @Override // j$.util.function.T
     public final void accept(long j) {
         switch (this.a) {
             case 0:
@@ -22,10 +22,10 @@ public final /* synthetic */ class c0 implements j$.util.function.W {
         }
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.d(this, w);
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 }

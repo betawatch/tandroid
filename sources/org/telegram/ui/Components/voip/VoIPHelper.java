@@ -33,7 +33,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
@@ -56,7 +55,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.GroupCallActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class VoIPHelper {
     public static long lastCallTime;
 
@@ -97,7 +96,7 @@ public abstract class VoIPHelper {
         if (user == null && chat == null) {
             return;
         }
-        if (SystemClock.elapsedRealtime() - lastCallTime < (chat != null ? NotificationCenter.storyQualityUpdate : 2000)) {
+        if (SystemClock.elapsedRealtime() - lastCallTime < (chat != null ? 200 : 2000)) {
             return;
         }
         if (z5 && chat != null && !z4 && (chatFull2 = accountInstance.getMessagesController().getChatFull(chat.id)) != null && (peer = chatFull2.groupcall_default_join_as) != null) {

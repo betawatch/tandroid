@@ -3,7 +3,7 @@ package kotlin.text;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Charsets {
     public static final Charsets INSTANCE = new Charsets();
     public static final Charset ISO_8859_1;

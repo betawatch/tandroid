@@ -30,7 +30,7 @@ import org.telegram.ui.Components.MotionBackgroundDrawable;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoIPTextureView extends FrameLayout {
     public static int SCALE_TYPE_ADAPTIVE = 2;
     public static int SCALE_TYPE_FILL = 0;
@@ -82,8 +82,8 @@ public class VoIPTextureView extends FrameLayout {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0191 A[Catch: all -> 0x01a7, TryCatch #0 {all -> 0x01a7, blocks: (B:21:0x0179, B:23:0x0191, B:24:0x01a9), top: B:20:0x0179 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0190 A[Catch: all -> 0x01a6, TryCatch #0 {all -> 0x01a6, blocks: (B:21:0x0179, B:23:0x0190, B:24:0x01a8), top: B:20:0x0179 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x01b4  */
     /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -15,7 +15,7 @@ import kotlinx.coroutines.internal.SegmentOrClosed;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.scheduling.WorkQueue$$ExternalSyntheticBackportWithForwarding0;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SemaphoreImpl {
     private volatile int _availablePermits;
     private volatile long deqIdx;

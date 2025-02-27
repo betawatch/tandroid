@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     public static Iterable asIterable(final Sequence sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");

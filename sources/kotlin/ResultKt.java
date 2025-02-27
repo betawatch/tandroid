@@ -3,7 +3,7 @@ package kotlin;
 import kotlin.Result;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ResultKt {
     public static final Object createFailure(Throwable exception) {
         Intrinsics.checkNotNullParameter(exception, "exception");

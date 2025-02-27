@@ -4,7 +4,7 @@ import kotlin.text.StringsKt__StringNumberConversionsKt;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     public static final int systemProp(String str, int i, int i2, int i3) {
         return (int) SystemPropsKt.systemProp(str, i, i2, i3);

@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class InvokeOnCancel extends CancelHandler {
     private final Function1 handler;
 

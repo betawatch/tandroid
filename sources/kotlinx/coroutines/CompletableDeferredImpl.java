@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CompletableDeferredImpl extends JobSupport implements CompletableDeferred {
     public CompletableDeferredImpl(Job job) {
         super(true);

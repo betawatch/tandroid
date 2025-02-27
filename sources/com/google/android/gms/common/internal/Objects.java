@@ -1,8 +1,10 @@
 package com.google.android.gms.common.internal;
 
+import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 /* loaded from: classes.dex */
 public abstract class Objects {
@@ -38,6 +40,25 @@ public abstract class Objects {
             sb.append('}');
             return sb.toString();
         }
+    }
+
+    public static boolean checkBundlesEquality(Bundle bundle, Bundle bundle2) {
+        if (bundle == null || bundle2 == null) {
+            return bundle == bundle2;
+        }
+        if (bundle.size() != bundle2.size()) {
+            return false;
+        }
+        Set<String> keySet = bundle.keySet();
+        if (!keySet.containsAll(bundle2.keySet())) {
+            return false;
+        }
+        for (String str : keySet) {
+            if (!equal(bundle.get(str), bundle2.get(str))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean equal(Object obj, Object obj2) {

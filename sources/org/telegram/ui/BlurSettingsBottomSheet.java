@@ -54,6 +54,11 @@ public class BlurSettingsBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 BlurSettingsBottomSheet.saturation = f;
                 textView.setText("Saturation " + (f * 5.0f));
@@ -89,6 +94,11 @@ public class BlurSettingsBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 textView2.setText("Alpha " + BlurSettingsBottomSheet.blurAlpha);
                 BlurSettingsBottomSheet.blurAlpha = f;
@@ -120,6 +130,11 @@ public class BlurSettingsBottomSheet extends BottomSheet {
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate

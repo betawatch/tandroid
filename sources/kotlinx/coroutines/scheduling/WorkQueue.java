@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class WorkQueue {
     private volatile int blockingTasksInBuffer;
     private final AtomicReferenceArray buffer = new AtomicReferenceArray(128);

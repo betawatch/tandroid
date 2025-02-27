@@ -1,38 +1,31 @@
 package j$.util.function;
 
-import java.util.function.LongConsumer;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class U implements W {
-    public final /* synthetic */ LongConsumer a;
+public final /* synthetic */ class U implements LongFunction {
+    public final /* synthetic */ java.util.function.LongFunction a;
 
-    private /* synthetic */ U(LongConsumer longConsumer) {
-        this.a = longConsumer;
+    private /* synthetic */ U(java.util.function.LongFunction longFunction) {
+        this.a = longFunction;
     }
 
-    public static /* synthetic */ W a(LongConsumer longConsumer) {
-        if (longConsumer == null) {
+    public static /* synthetic */ LongFunction a(java.util.function.LongFunction longFunction) {
+        if (longFunction == null) {
             return null;
         }
-        return longConsumer instanceof V ? ((V) longConsumer).a : new U(longConsumer);
+        return longFunction instanceof V ? ((V) longFunction).a : new U(longFunction);
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ void accept(long j) {
-        this.a.accept(j);
+    @Override // j$.util.function.LongFunction
+    public final /* synthetic */ Object apply(long j) {
+        return this.a.apply(j);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        LongConsumer longConsumer = this.a;
+        java.util.function.LongFunction longFunction = this.a;
         if (obj instanceof U) {
             obj = ((U) obj).a;
         }
-        return longConsumer.equals(obj);
-    }
-
-    @Override // j$.util.function.W
-    public final /* synthetic */ W f(W w) {
-        return a(this.a.andThen(V.a(w)));
+        return longFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

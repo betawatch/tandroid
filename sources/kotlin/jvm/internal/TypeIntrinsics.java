@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TypeIntrinsics {
     public static Object beforeCheckcastToFunctionOfArity(Object obj, int i) {
         if (obj != null && !isFunctionOfArity(obj, i)) {

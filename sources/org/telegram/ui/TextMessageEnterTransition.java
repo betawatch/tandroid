@@ -506,36 +506,36 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         messageEnterTransitionContainer.invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:229:0x040d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:229:0x0414, code lost:
     
         if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L91;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:233:0x0429, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:233:0x0430, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r46.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L91;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:249:0x046c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:249:0x0473, code lost:
     
         if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:253:0x0488, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:253:0x048f, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r46.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L111;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x069c  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x071a  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x07b1  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x0882  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0700  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x0694  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x062f  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x049c  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x03d1  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x04ff  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0522  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x05ad  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x068d  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x06a3  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0721  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x07b8  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0889  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0707  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x069b  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x0636  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x03d8  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0506  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0529  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x05b4  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0694  */
     @Override // org.telegram.ui.MessageEnterTransitionContainer.Transition
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -603,7 +603,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             return;
         }
         float x2 = (this.messageView.getX() + this.listView.getX()) - this.container.getX();
-        float top = ((this.messageView.getTop() + this.listView.getTop()) - this.container.getY()) + this.enterView.getTopViewHeight();
+        float top = (((this.messageView.getTop() + this.messageView.getPaddingTop()) + this.listView.getTop()) - this.container.getY()) + this.enterView.getTopViewHeight();
         this.lastMessageX = x2;
         this.lastMessageY = top;
         float interpolation = ChatListItemAnimator.DEFAULT_INTERPOLATOR.getInterpolation(this.progress);
@@ -620,7 +620,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             f = interpolation2;
             f2 = f25;
             f3 = interpolation;
-            canvas.saveLayerAlpha(0.0f, Math.max(0.0f, top), this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), NotificationCenter.liveLocationsChanged, 31);
+            canvas.saveLayerAlpha(0.0f, Math.max(0.0f, top), this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), NotificationCenter.proxyCheckDone, 31);
         } else {
             i = measuredHeight;
             f = interpolation2;
@@ -655,7 +655,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                 shadowDrawable.setAlpha((int) (f6 * 255.0f));
                 shadowDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) y4);
                 shadowDrawable.draw(canvas);
-                shadowDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                shadowDrawable.setAlpha(NotificationCenter.proxyCheckDone);
             }
             currentBackgroundDrawable.setAlpha((int) (f7 * 255.0f));
             currentBackgroundDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) y4);
@@ -663,7 +663,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             currentBackgroundDrawable.draw(canvas);
             z = false;
             currentBackgroundDrawable.setDrawFullBubble(false);
-            currentBackgroundDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+            currentBackgroundDrawable.setAlpha(NotificationCenter.proxyCheckDone);
         } else {
             f4 = f3;
             f5 = x;

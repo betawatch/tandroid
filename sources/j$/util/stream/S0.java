@@ -9,7 +9,7 @@ final class S0 extends R0 implements u0 {
         super(j);
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         int i = this.b;
         double[] dArr = this.a;
@@ -59,9 +59,9 @@ final class S0 extends R0 implements u0 {
         throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(dArr.length)));
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2

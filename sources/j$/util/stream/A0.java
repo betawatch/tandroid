@@ -1,7 +1,7 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class A0 implements j$.util.function.F {
+public final /* synthetic */ class A0 implements j$.util.function.E {
     public final /* synthetic */ int a;
 
     public /* synthetic */ A0(int i) {
@@ -14,15 +14,15 @@ public final /* synthetic */ class A0 implements j$.util.function.F {
     private final void c(int i) {
     }
 
-    @Override // j$.util.function.F
+    @Override // j$.util.function.E
     public final void accept(int i) {
         int i2 = this.a;
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.c(this, f);
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 }

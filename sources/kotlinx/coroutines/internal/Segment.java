@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.NotCompleted;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Segment extends ConcurrentLinkedListNode implements NotCompleted {
     private static final AtomicIntegerFieldUpdater cleanedAndPointers$FU = AtomicIntegerFieldUpdater.newUpdater(Segment.class, "cleanedAndPointers");
     private volatile int cleanedAndPointers;

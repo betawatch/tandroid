@@ -1216,19 +1216,19 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         openProfile(z, true, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0126, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0127, code lost:
     
         if (r12 != false) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0129, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x012a, code lost:
     
         r0 = 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x016e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x016f, code lost:
     
         r1.setPlayProfileAnimation(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x016c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x016d, code lost:
     
         if (r12 != false) goto L65;
      */
@@ -1236,7 +1236,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     
         if (r11.avatarImageView.getImageReceiver().hasNotThumb() != false) goto L11;
      */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x016d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

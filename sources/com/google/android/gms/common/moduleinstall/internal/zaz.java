@@ -10,11 +10,12 @@ import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
 import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.GmsClient;
 import com.google.android.gms.internal.base.zav;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class zaz extends GmsClient {
     protected zaz(Context context, Looper looper, ClientSettings clientSettings, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, 308, clientSettings, connectionCallbacks, onConnectionFailedListener);
+        super(context, looper, NotificationCenter.storiesReadUpdated, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient

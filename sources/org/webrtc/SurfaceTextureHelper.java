@@ -2,7 +2,6 @@ package org.webrtc;
 
 import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
-import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.concurrent.Callable;
@@ -94,7 +93,7 @@ public class SurfaceTextureHelper {
             this.oesTextureId = generateTexture;
             SurfaceTexture surfaceTexture = new SurfaceTexture(generateTexture);
             this.surfaceTexture = surfaceTexture;
-            setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.SurfaceTextureHelper$$ExternalSyntheticLambda5
+            surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.SurfaceTextureHelper$$ExternalSyntheticLambda5
                 @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                 public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
@@ -216,14 +215,6 @@ public class SurfaceTextureHelper {
         });
     }
 
-    private static void setOnFrameAvailableListener(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener onFrameAvailableListener, Handler handler) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            surfaceTexture.setOnFrameAvailableListener(onFrameAvailableListener, handler);
-        } else {
-            surfaceTexture.setOnFrameAvailableListener(onFrameAvailableListener);
-        }
-    }
-
     private void tryDeliverTextureFrame() {
         if (this.handler.getLooper().getThread() != Thread.currentThread()) {
             throw new IllegalStateException("Wrong thread.");
@@ -258,10 +249,7 @@ public class SurfaceTextureHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateTexImage() {
         synchronized (EglBase.lock) {
-            try {
-                this.surfaceTexture.updateTexImage();
-            } catch (Throwable unused) {
-            }
+            this.surfaceTexture.updateTexImage();
         }
     }
 

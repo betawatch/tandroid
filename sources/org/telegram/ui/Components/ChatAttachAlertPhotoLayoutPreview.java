@@ -42,7 +42,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -183,7 +182,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             return 1000.0f / f;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:223:0x0740, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:223:0x0741, code lost:
         
             if (r4[2] > r4[3]) goto L187;
          */
@@ -191,8 +190,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         
             if (r1 != r13) goto L32;
          */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x07dd  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x081c A[LOOP:2: B:75:0x081a->B:76:0x081c, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x07de  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x081d A[LOOP:2: B:75:0x081b->B:76:0x081d, LOOP_END] */
         /* JADX WARN: Type inference failed for: r14v17 */
         /* JADX WARN: Type inference failed for: r14v19, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r14v2 */
@@ -682,7 +681,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 for (i24 = 0; i24 < i23; i24 += r14) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) groupCalculator.posArray.get(i24);
                     if (groupedMessagePosition15.minX == 0) {
-                        groupedMessagePosition15.spanSize += NotificationCenter.storyQualityUpdate;
+                        groupedMessagePosition15.spanSize += 200;
                     }
                     if ((groupedMessagePosition15.flags & 2) != 0) {
                         groupedMessagePosition15.edge = r14;

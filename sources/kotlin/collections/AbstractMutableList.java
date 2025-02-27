@@ -2,7 +2,7 @@ package kotlin.collections;
 
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractMutableList extends java.util.AbstractList implements List {
     protected AbstractMutableList() {
     }

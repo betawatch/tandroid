@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.stream.IntStream;
 import j$.util.stream.Stream;
 import java.util.Iterator;
@@ -13,11 +14,11 @@ public final /* synthetic */ class f implements BaseStream {
         this.a = baseStream;
     }
 
-    public static /* synthetic */ BaseStream i0(java.util.stream.BaseStream baseStream) {
+    public static /* synthetic */ BaseStream h0(java.util.stream.BaseStream baseStream) {
         if (baseStream == null) {
             return null;
         }
-        return baseStream instanceof g ? ((g) baseStream).a : baseStream instanceof DoubleStream ? B.i0((DoubleStream) baseStream) : baseStream instanceof java.util.stream.IntStream ? IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) baseStream) : baseStream instanceof java.util.stream.LongStream ? i0.i0((java.util.stream.LongStream) baseStream) : baseStream instanceof java.util.stream.Stream ? Stream.VivifiedWrapper.convert((java.util.stream.Stream) baseStream) : new f(baseStream);
+        return baseStream instanceof g ? ((g) baseStream).a : baseStream instanceof DoubleStream ? B.h0((DoubleStream) baseStream) : baseStream instanceof java.util.stream.IntStream ? IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) baseStream) : baseStream instanceof java.util.stream.LongStream ? i0.h0((java.util.stream.LongStream) baseStream) : baseStream instanceof java.util.stream.Stream ? Stream.VivifiedWrapper.convert((java.util.stream.Stream) baseStream) : new f(baseStream);
     }
 
     @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
@@ -49,26 +50,26 @@ public final /* synthetic */ class f implements BaseStream {
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-        return i0(this.a.onClose(runnable));
+        return h0(this.a.onClose(runnable));
     }
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream parallel() {
-        return i0(this.a.parallel());
+        return h0(this.a.parallel());
     }
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream sequential() {
-        return i0(this.a.sequential());
+        return h0(this.a.sequential());
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final /* synthetic */ j$.util.Q spliterator() {
-        return j$.util.O.b(this.a.spliterator());
+    public final /* synthetic */ Spliterator spliterator() {
+        return j$.util.N.b(this.a.spliterator());
     }
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream unordered() {
-        return i0(this.a.unordered());
+        return h0(this.a.unordered());
     }
 }

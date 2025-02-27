@@ -3,38 +3,44 @@ package j$.util.function;
 import j$.util.function.Function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class x implements Function {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Function b;
-    public final /* synthetic */ Function c;
+public final /* synthetic */ class x implements java.util.function.Function {
+    public final /* synthetic */ Function a;
 
-    public /* synthetic */ x(Function function, Function function2, int i) {
-        this.a = i;
-        this.b = function;
-        this.c = function2;
+    private /* synthetic */ x(Function function) {
+        this.a = function;
     }
 
-    @Override // j$.util.function.Function
-    public final /* synthetic */ Function andThen(Function function) {
-        switch (this.a) {
+    public static /* synthetic */ java.util.function.Function a(Function function) {
+        if (function == null) {
+            return null;
         }
-        return Function.-CC.$default$andThen(this, function);
+        return function instanceof Function.VivifiedWrapper ? ((Function.VivifiedWrapper) function).a : function instanceof UnaryOperator ? x0.a((UnaryOperator) function) : new x(function);
     }
 
-    @Override // j$.util.function.Function
-    public final Object apply(Object obj) {
-        switch (this.a) {
-            case 0:
-                return this.c.apply(this.b.apply(obj));
-            default:
-                return this.b.apply(this.c.apply(obj));
-        }
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function andThen(java.util.function.Function function) {
+        return a(this.a.andThen(Function.VivifiedWrapper.convert(function)));
     }
 
-    @Override // j$.util.function.Function
-    public final /* synthetic */ Function compose(Function function) {
-        switch (this.a) {
+    @Override // java.util.function.Function
+    public final /* synthetic */ Object apply(Object obj) {
+        return this.a.apply(obj);
+    }
+
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function compose(java.util.function.Function function) {
+        return a(this.a.compose(Function.VivifiedWrapper.convert(function)));
+    }
+
+    public final /* synthetic */ boolean equals(Object obj) {
+        Function function = this.a;
+        if (obj instanceof x) {
+            obj = ((x) obj).a;
         }
-        return Function.-CC.$default$compose(this, function);
+        return function.equals(obj);
+    }
+
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 }

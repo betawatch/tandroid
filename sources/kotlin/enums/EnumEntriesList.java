@@ -6,7 +6,7 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class EnumEntriesList extends AbstractList implements EnumEntries, Serializable {
     private volatile Enum[] _entries;
     private final Function0 entriesProvider;

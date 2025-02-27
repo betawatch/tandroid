@@ -2,22 +2,16 @@ package org.webrtc;
 
 /* loaded from: classes5.dex */
 class FramerateBitrateAdjuster extends BaseBitrateAdjuster {
-    private static final int INITIAL_FPS = 30;
+    private static final int DEFAULT_FRAMERATE_FPS = 30;
 
     FramerateBitrateAdjuster() {
     }
 
     @Override // org.webrtc.BaseBitrateAdjuster, org.webrtc.BitrateAdjuster
-    public int getCodecConfigFramerate() {
-        return 30;
-    }
-
-    @Override // org.webrtc.BaseBitrateAdjuster, org.webrtc.BitrateAdjuster
-    public void setTargets(int i, int i2) {
-        if (this.targetFps == 0) {
-            i2 = 30;
-        }
-        super.setTargets(i, i2);
-        this.targetBitrateBps = (this.targetBitrateBps * 30) / this.targetFps;
+    public void setTargets(int i, double d) {
+        this.targetFramerateFps = 30.0d;
+        double d2 = i * 30;
+        Double.isNaN(d2);
+        this.targetBitrateBps = (int) (d2 / d);
     }
 }

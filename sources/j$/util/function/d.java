@@ -20,7 +20,7 @@ public final /* synthetic */ class d implements f {
 
     @Override // j$.util.function.BiFunction
     public final /* synthetic */ BiFunction andThen(Function function) {
-        return BiFunction.VivifiedWrapper.convert(this.a.andThen(y.a(function)));
+        return BiFunction.VivifiedWrapper.convert(this.a.andThen(x.a(function)));
     }
 
     @Override // j$.util.function.BiFunction

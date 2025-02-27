@@ -66,8 +66,8 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x017d  */
     /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

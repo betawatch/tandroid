@@ -366,7 +366,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.Components.ShareAlert
-        protected void onSend(final androidx.collection.LongSparseArray longSparseArray, final int i, TLRPC.TL_forumTopic tL_forumTopic) {
+        protected void onSend(final androidx.collection.LongSparseArray longSparseArray, final int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiPacksAlert$9$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -699,7 +699,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                         int i3 = this.threadIndex;
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].time = j;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set(emojiImageView.getLeft() + emojiImageView.getPaddingLeft(), emojiImageView.getPaddingTop(), emojiImageView.getRight() - emojiImageView.getPaddingRight(), emojiImageView.getMeasuredHeight() - emojiImageView.getPaddingBottom());
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].setBounds(rect);

@@ -1,73 +1,45 @@
 package j$.util;
 
 import j$.util.function.Consumer;
-import java.util.Comparator;
-import java.util.Spliterator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class O implements Q {
-    public final /* synthetic */ Spliterator a;
+final class O implements Iterator, Consumer {
+    boolean a = false;
+    Object b;
+    final /* synthetic */ Spliterator c;
 
-    private /* synthetic */ O(Spliterator spliterator) {
-        this.a = spliterator;
+    O(Spliterator spliterator) {
+        this.c = spliterator;
     }
 
-    public static /* synthetic */ Q b(Spliterator spliterator) {
-        if (spliterator == null) {
-            return null;
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final void r(Object obj) {
+        this.a = true;
+        this.b = obj;
+    }
+
+    @Override // j$.util.function.Consumer
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer.-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        if (!this.a) {
+            this.c.s(this);
         }
-        return spliterator instanceof P ? ((P) spliterator).a : spliterator instanceof Spliterator.OfPrimitive ? L.b((Spliterator.OfPrimitive) spliterator) : new O(spliterator);
+        return this.a;
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ void a(Consumer consumer) {
-        this.a.forEachRemaining(Consumer.Wrapper.convert(consumer));
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator spliterator = this.a;
-        if (obj instanceof O) {
-            obj = ((O) obj).a;
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.a && !hasNext()) {
+            throw new NoSuchElementException();
         }
-        return spliterator.equals(obj);
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return this.a.tryAdvance(Consumer.Wrapper.convert(consumer));
-    }
-
-    @Override // j$.util.Q
-    public final /* synthetic */ Q trySplit() {
-        return b(this.a.trySplit());
+        this.a = false;
+        return this.b;
     }
 }

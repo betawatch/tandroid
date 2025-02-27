@@ -3,16 +3,16 @@ package j$.util.stream;
 /* loaded from: classes2.dex */
 final class o0 extends p0 implements b2 {
     final /* synthetic */ q0 c;
-    final /* synthetic */ j$.util.function.r d;
+    final /* synthetic */ j$.util.function.q d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    o0(j$.util.function.r rVar, q0 q0Var) {
+    o0(j$.util.function.q qVar, q0 q0Var) {
         super(q0Var);
         this.c = q0Var;
-        this.d = rVar;
+        this.d = qVar;
     }
 
-    @Override // j$.util.stream.p0, j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.p0, j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         boolean z;
         boolean z2;
@@ -35,9 +35,9 @@ final class o0 extends p0 implements b2 {
         r((Double) obj);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.b2

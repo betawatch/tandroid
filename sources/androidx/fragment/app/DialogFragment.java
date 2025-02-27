@@ -155,6 +155,10 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         dismissInternal(true, false);
     }
 
+    public Dialog getDialog() {
+        return this.mDialog;
+    }
+
     public int getTheme() {
         return this.mTheme;
     }
@@ -342,6 +346,14 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
             return;
         }
         this.mDialog.onRestoreInstanceState(bundle2);
+    }
+
+    public void setCancelable(boolean z) {
+        this.mCancelable = z;
+        Dialog dialog = this.mDialog;
+        if (dialog != null) {
+            dialog.setCancelable(z);
+        }
     }
 
     public void setShowsDialog(boolean z) {

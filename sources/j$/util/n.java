@@ -1,73 +1,72 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import j$.util.function.Consumer;
+import java.util.PrimitiveIterator;
 
 /* loaded from: classes2.dex */
-public final class n {
-    private static final n c = new n();
-    private final boolean a;
-    private final long b;
+public final /* synthetic */ class n implements p, h {
+    public final /* synthetic */ PrimitiveIterator.OfDouble a;
 
-    private n() {
-        this.a = false;
-        this.b = 0L;
+    private /* synthetic */ n(PrimitiveIterator.OfDouble ofDouble) {
+        this.a = ofDouble;
     }
 
-    private n(long j) {
-        this.a = true;
-        this.b = j;
-    }
-
-    public static n a() {
-        return c;
-    }
-
-    public static n d(long j) {
-        return new n(j);
-    }
-
-    public final long b() {
-        if (this.a) {
-            return this.b;
+    public static /* synthetic */ p b(PrimitiveIterator.OfDouble ofDouble) {
+        if (ofDouble == null) {
+            return null;
         }
-        throw new NoSuchElementException("No value present");
+        return ofDouble instanceof o ? ((o) ofDouble).a : new n(ofDouble);
     }
 
-    public final boolean c() {
-        return this.a;
+    @Override // j$.util.p, j$.util.h
+    public final /* synthetic */ void a(Consumer consumer) {
+        this.a.forEachRemaining(Consumer.Wrapper.convert(consumer));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof n)) {
-            return false;
-        }
-        n nVar = (n) obj;
-        boolean z = this.a;
-        if (z && nVar.a) {
-            if (this.b == nVar.b) {
-                return true;
-            }
-        } else if (z == nVar.a) {
-            return true;
-        }
-        return false;
+    @Override // j$.util.p
+    public final /* synthetic */ void e(j$.util.function.m mVar) {
+        this.a.forEachRemaining(j$.util.function.l.a(mVar));
     }
 
-    public final int hashCode() {
-        if (!this.a) {
-            return 0;
+    public final /* synthetic */ boolean equals(Object obj) {
+        PrimitiveIterator.OfDouble ofDouble = this.a;
+        if (obj instanceof n) {
+            obj = ((n) obj).a;
         }
-        long j = this.b;
-        return (int) (j ^ (j >>> 32));
+        return ofDouble.equals(obj);
     }
 
-    public final String toString() {
-        if (!this.a) {
-            return "OptionalLong.empty";
-        }
-        return "OptionalLong[" + this.b + "]";
+    @Override // j$.util.y
+    public final /* synthetic */ void forEachRemaining(Object obj) {
+        this.a.forEachRemaining((PrimitiveIterator.OfDouble) obj);
+    }
+
+    @Override // java.util.Iterator
+    public final /* synthetic */ boolean hasNext() {
+        return this.a.hasNext();
+    }
+
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
+    }
+
+    @Override // j$.util.p, java.util.Iterator
+    public final /* synthetic */ Double next() {
+        return this.a.next();
+    }
+
+    @Override // java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
+    }
+
+    @Override // j$.util.p
+    public final /* synthetic */ double nextDouble() {
+        return this.a.nextDouble();
+    }
+
+    @Override // java.util.Iterator
+    public final /* synthetic */ void remove() {
+        this.a.remove();
     }
 }

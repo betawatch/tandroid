@@ -1,33 +1,33 @@
 package j$.util.function;
 
-import java.util.function.ObjIntConsumer;
+import java.util.function.ObjLongConsumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class j0 implements l0 {
-    public final /* synthetic */ ObjIntConsumer a;
+    public final /* synthetic */ ObjLongConsumer a;
 
-    private /* synthetic */ j0(ObjIntConsumer objIntConsumer) {
-        this.a = objIntConsumer;
+    private /* synthetic */ j0(ObjLongConsumer objLongConsumer) {
+        this.a = objLongConsumer;
     }
 
-    public static /* synthetic */ l0 a(ObjIntConsumer objIntConsumer) {
-        if (objIntConsumer == null) {
+    public static /* synthetic */ l0 a(ObjLongConsumer objLongConsumer) {
+        if (objLongConsumer == null) {
             return null;
         }
-        return objIntConsumer instanceof k0 ? ((k0) objIntConsumer).a : new j0(objIntConsumer);
+        return objLongConsumer instanceof k0 ? ((k0) objLongConsumer).a : new j0(objLongConsumer);
     }
 
     @Override // j$.util.function.l0
-    public final /* synthetic */ void accept(Object obj, int i) {
-        this.a.accept(obj, i);
+    public final /* synthetic */ void accept(Object obj, long j) {
+        this.a.accept(obj, j);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        ObjIntConsumer objIntConsumer = this.a;
+        ObjLongConsumer objLongConsumer = this.a;
         if (obj instanceof j0) {
             obj = ((j0) obj).a;
         }
-        return objIntConsumer.equals(obj);
+        return objLongConsumer.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

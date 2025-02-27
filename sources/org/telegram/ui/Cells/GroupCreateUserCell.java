@@ -17,6 +17,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -28,6 +29,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -44,6 +46,7 @@ public class GroupCreateUserCell extends FrameLayout {
     private ValueAnimator animator;
     private AvatarDrawable avatarDrawable;
     private BackupImageView avatarImageView;
+    private TL_account.RequirementToContact blockedOverridden;
     private CheckBox2 checkBox;
     private int checkBoxType;
     private float checkProgress;
@@ -65,12 +68,13 @@ public class GroupCreateUserCell extends FrameLayout {
     private int padding;
     private Paint paint;
     private boolean premiumBlocked;
-    private Boolean premiumBlockedOverriden;
     private final AnimatedFloat premiumBlockedT;
     private PremiumGradient.PremiumGradientTools premiumGradient;
     Theme.ResourcesProvider resourcesProvider;
     private boolean showPremiumBlocked;
     private boolean showSelfAsSaved;
+    private final AnimatedFloat starsBlockedT;
+    private long starsPriceBlocked;
     private SimpleTextView statusTextView;
 
     public GroupCreateUserCell(Context context, int i, int i2, boolean z) {
@@ -80,7 +84,9 @@ public class GroupCreateUserCell extends FrameLayout {
     public GroupCreateUserCell(Context context, int i, int i2, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.currentAccount = UserConfig.selectedAccount;
-        this.premiumBlockedT = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
+        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.premiumBlockedT = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
+        this.starsBlockedT = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.resourcesProvider = resourcesProvider;
         this.checkBoxType = i;
         this.forceDarkTheme = z2;
@@ -190,17 +196,37 @@ public class GroupCreateUserCell extends FrameLayout {
         return combinedDrawable;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void updatePremiumBlocked(boolean z) {
-        Boolean bool;
-        boolean z2 = this.premiumBlocked;
-        boolean z3 = this.showPremiumBlocked && ((bool = this.premiumBlockedOverriden) == null ? (this.currentObject instanceof TLRPC.User) && MessagesController.getInstance(this.currentAccount).isUserPremiumBlocked(((TLRPC.User) this.currentObject).id) : bool.booleanValue());
-        this.premiumBlocked = z3;
-        if (z2 != z3) {
-            if (!z) {
-                this.premiumBlockedT.set(z3, true);
+        TL_account.RequirementToContact requirementToContact;
+        if (this.showPremiumBlocked) {
+            requirementToContact = this.blockedOverridden;
+            if (requirementToContact == null) {
+                if (this.currentObject instanceof TLRPC.User) {
+                    requirementToContact = MessagesController.getInstance(this.currentAccount).isUserContactBlocked(((TLRPC.User) this.currentObject).id);
+                }
             }
-            invalidate();
+            if (this.premiumBlocked == DialogObject.isPremiumBlocked(requirementToContact) || this.starsPriceBlocked != DialogObject.getMessagesStarsPrice(requirementToContact)) {
+                this.premiumBlocked = DialogObject.isPremiumBlocked(requirementToContact);
+                this.starsPriceBlocked = DialogObject.getMessagesStarsPrice(requirementToContact);
+                if (!z) {
+                    this.premiumBlockedT.set(this.premiumBlocked, true);
+                }
+                invalidate();
+            }
+            return;
         }
+        requirementToContact = null;
+        if (this.premiumBlocked == DialogObject.isPremiumBlocked(requirementToContact)) {
+        }
+        this.premiumBlocked = DialogObject.isPremiumBlocked(requirementToContact);
+        this.starsPriceBlocked = DialogObject.getMessagesStarsPrice(requirementToContact);
+        if (!z) {
+        }
+        invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -214,7 +240,7 @@ public class GroupCreateUserCell extends FrameLayout {
             canvas.save();
             Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
             canvas.drawCircle(x, y, AndroidUtilities.dp(11.33f) * f, Theme.dialogs_onlineCirclePaint);
-            if (this.premiumBlockedOverriden == null) {
+            if (this.blockedOverridden == null) {
                 if (this.premiumGradient == null) {
                     this.premiumGradient = new PremiumGradient.PremiumGradientTools(Theme.key_premiumGradient1, Theme.key_premiumGradient2, -1, -1, -1, this.resourcesProvider);
                 }
@@ -315,10 +341,10 @@ public class GroupCreateUserCell extends FrameLayout {
         super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((!(obj instanceof String) || "premium".equalsIgnoreCase((String) obj) || "miniapps".equalsIgnoreCase((String) this.currentObject)) ? 58.0f : 50.0f), 1073741824));
     }
 
-    public void overridePremiumBlocked(boolean z, boolean z2) {
+    public void overridePremiumBlocked(TL_account.RequirementToContact requirementToContact, boolean z) {
         this.showPremiumBlocked = true;
-        this.premiumBlockedOverriden = Boolean.valueOf(z);
-        updatePremiumBlocked(z2);
+        this.blockedOverridden = requirementToContact;
+        updatePremiumBlocked(z);
     }
 
     public void recycle() {

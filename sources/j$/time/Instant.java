@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.temporal.q;
+import j$.util.A;
 import java.io.Serializable;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
@@ -35,7 +36,7 @@ public final class Instant implements j$.time.temporal.k, Comparable<Instant>, S
         if (kVar instanceof Instant) {
             return (Instant) kVar;
         }
-        j$.util.a.B(kVar, "temporal");
+        A.z(kVar, "temporal");
         try {
             return l(kVar.b(j$.time.temporal.a.INSTANT_SECONDS), kVar.d(j$.time.temporal.a.NANO_OF_SECOND));
         } catch (c e) {

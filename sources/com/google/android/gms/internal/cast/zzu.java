@@ -1,0 +1,39 @@
+package com.google.android.gms.internal.cast;
+
+import com.google.android.gms.cast.SessionState;
+import com.google.android.gms.cast.framework.SessionTransferCallback;
+
+/* loaded from: classes.dex */
+public final class zzu extends SessionTransferCallback {
+    final /* synthetic */ zzv zza;
+
+    public zzu(zzv zzvVar) {
+        this.zza = zzvVar;
+    }
+
+    @Override // com.google.android.gms.cast.framework.SessionTransferCallback
+    public final void onTransferFailed(int i, int i2) {
+        zzaf zzafVar;
+        zzy zzyVar = new zzy(11);
+        zzyVar.zzb(Integer.valueOf(i2));
+        zzafVar = this.zza.zzb;
+        zzyVar.zza(Boolean.valueOf(zzafVar.zze()));
+        zzv.zzf(this.zza, new zzz(zzyVar));
+    }
+
+    @Override // com.google.android.gms.cast.framework.SessionTransferCallback
+    public final void onTransferred(int i, SessionState sessionState) {
+    }
+
+    @Override // com.google.android.gms.cast.framework.SessionTransferCallback
+    public final void onTransferring(int i) {
+        zzaf zzafVar;
+        zzx zzg;
+        zzy zzyVar = new zzy(10);
+        zzafVar = this.zza.zzb;
+        zzyVar.zza(Boolean.valueOf(zzafVar.zze()));
+        zzv.zzf(this.zza, new zzz(zzyVar));
+        zzg = this.zza.zzg();
+        zzg.zzd(new zzab(new zzaa(i)));
+    }
+}

@@ -3,6 +3,7 @@ package androidx.core.app;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -10,6 +11,15 @@ import android.os.Bundle;
 
 /* loaded from: classes.dex */
 public abstract class NavUtils {
+    public static Intent getParentActivityIntent(Context context, ComponentName componentName) {
+        String parentActivityName = getParentActivityName(context, componentName);
+        if (parentActivityName == null) {
+            return null;
+        }
+        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), parentActivityName);
+        return getParentActivityName(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+    }
+
     public static String getParentActivityName(Activity activity) {
         try {
             return getParentActivityName(activity, activity.getComponentName());

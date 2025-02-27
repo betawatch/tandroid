@@ -40,7 +40,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPFragment;
 import org.webrtc.EglBase;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoIPPiPView implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public static int bottomInset = 0;
     private static VoIPPiPView expandedInstance = null;

@@ -6,31 +6,31 @@ import java.util.Comparator;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class Comparator$-EL {
-    public static d a(Comparator comparator, Comparator comparator2) {
-        if (!(comparator instanceof e)) {
+    public static b a(Comparator comparator, Comparator comparator2) {
+        if (!(comparator instanceof c)) {
             comparator2.getClass();
-            return new d(comparator, comparator2, 0);
+            return new b(comparator, comparator2, 0);
         }
-        f fVar = (f) ((e) comparator);
-        fVar.getClass();
+        d dVar = (d) ((c) comparator);
+        dVar.getClass();
         comparator2.getClass();
-        return new d(fVar, comparator2, 0);
+        return new b(dVar, comparator2, 0);
     }
 
     public static Comparator reversed(Comparator comparator) {
-        if (!(comparator instanceof e)) {
+        if (!(comparator instanceof c)) {
             return Collections.reverseOrder(comparator);
         }
-        ((f) ((e) comparator)).getClass();
+        ((d) ((c) comparator)).getClass();
         return Comparator$-CC.reverseOrder();
     }
 
     public static Comparator thenComparingInt(Comparator comparator, ToIntFunction toIntFunction) {
-        if (!(comparator instanceof e)) {
+        if (!(comparator instanceof c)) {
             return a(comparator, Comparator$-CC.comparingInt(toIntFunction));
         }
-        f fVar = (f) ((e) comparator);
-        fVar.getClass();
-        return a(fVar, Comparator$-CC.comparingInt(toIntFunction));
+        d dVar = (d) ((c) comparator);
+        dVar.getClass();
+        return a(dVar, Comparator$-CC.comparingInt(toIntFunction));
     }
 }

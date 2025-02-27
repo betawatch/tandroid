@@ -4,10 +4,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.util.Pair;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Result;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.Preconditions;
 import java.lang.ref.WeakReference;
@@ -21,6 +21,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
     static final ThreadLocal zaa = new zaq();
     protected final CallbackHandler zab;
     protected final WeakReference zac;
+    private ResultCallback zah;
     private Result zaj;
     private Status zak;
     private volatile boolean zal;
@@ -42,10 +43,11 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
             int i = message.what;
             if (i == 1) {
                 Pair pair = (Pair) message.obj;
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.first);
+                ResultCallback resultCallback = (ResultCallback) pair.first;
                 Result result = (Result) pair.second;
                 try {
-                    throw null;
+                    resultCallback.onResult(result);
+                    return;
                 } catch (RuntimeException e) {
                     BasePendingResult.zal(result);
                     throw e;
@@ -56,6 +58,11 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
                 return;
             }
             Log.wtf("BasePendingResult", "Don't know how to handle message: " + i, new Exception());
+        }
+
+        public final void zaa(ResultCallback resultCallback, Result result) {
+            ThreadLocal threadLocal = BasePendingResult.zaa;
+            sendMessage(obtainMessage(1, new Pair((ResultCallback) Preconditions.checkNotNull(resultCallback), result)));
         }
     }
 
@@ -71,6 +78,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
             Preconditions.checkState(isReady(), "Result is not ready.");
             result = this.zaj;
             this.zaj = null;
+            this.zah = null;
             this.zal = true;
         }
         zadb zadbVar = (zadb) this.zai.getAndSet(null);
@@ -84,6 +92,15 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
         this.zaj = result;
         this.zak = result.getStatus();
         this.zaf.countDown();
+        if (this.zam) {
+            this.zah = null;
+        } else {
+            ResultCallback resultCallback = this.zah;
+            if (resultCallback != null) {
+                this.zab.removeMessages(2);
+                this.zab.zaa(resultCallback, zaa());
+            }
+        }
         ArrayList arrayList = this.zag;
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
@@ -129,6 +146,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
         return zaa();
     }
 
+    @Override // com.google.android.gms.common.api.PendingResult
     public void cancel() {
         synchronized (this.zae) {
             try {
@@ -180,6 +198,30 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
                 Preconditions.checkState(!isReady(), "Results have already been set");
                 Preconditions.checkState(!this.zal, "Result has already been consumed");
                 zab(result);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.PendingResult
+    public final void setResultCallback(ResultCallback resultCallback) {
+        synchronized (this.zae) {
+            try {
+                if (resultCallback == null) {
+                    this.zah = null;
+                    return;
+                }
+                Preconditions.checkState(!this.zal, "Result has already been consumed.");
+                Preconditions.checkState(true, "Cannot set callbacks if then() has been called.");
+                if (isCanceled()) {
+                    return;
+                }
+                if (isReady()) {
+                    this.zab.zaa(resultCallback, zaa());
+                } else {
+                    this.zah = resultCallback;
+                }
             } catch (Throwable th) {
                 throw th;
             }

@@ -6,28 +6,28 @@ import android.os.Parcel;
 import com.google.android.gms.dynamic.IObjectWrapper;
 
 /* loaded from: classes.dex */
-public abstract class zzd extends com.google.android.gms.internal.flags.zzb implements zzc {
+public abstract class zzd extends com.google.android.gms.internal.flags.zzb implements zze {
     public zzd() {
         super("com.google.android.gms.flags.IFlagProvider");
     }
 
-    public static zzc asInterface(IBinder iBinder) {
+    public static zze asInterface(IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
         IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.flags.IFlagProvider");
-        return queryLocalInterface instanceof zzc ? (zzc) queryLocalInterface : new zze(iBinder);
+        return queryLocalInterface instanceof zze ? (zze) queryLocalInterface : new zzc(iBinder);
     }
 
     @Override // com.google.android.gms.internal.flags.zzb
-    protected final boolean dispatchTransaction(int i, Parcel parcel, Parcel parcel2, int i2) {
+    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) {
         if (i == 1) {
             init(IObjectWrapper.Stub.asInterface(parcel.readStrongBinder()));
             parcel2.writeNoException();
         } else if (i == 2) {
-            boolean booleanFlagValue = getBooleanFlagValue(parcel.readString(), com.google.android.gms.internal.flags.zzc.zza(parcel), parcel.readInt());
+            boolean booleanFlagValue = getBooleanFlagValue(parcel.readString(), com.google.android.gms.internal.flags.zzc.zzc(parcel), parcel.readInt());
             parcel2.writeNoException();
-            com.google.android.gms.internal.flags.zzc.writeBoolean(parcel2, booleanFlagValue);
+            com.google.android.gms.internal.flags.zzc.zza(parcel2, booleanFlagValue);
         } else if (i == 3) {
             int intFlagValue = getIntFlagValue(parcel.readString(), parcel.readInt(), parcel.readInt());
             parcel2.writeNoException();

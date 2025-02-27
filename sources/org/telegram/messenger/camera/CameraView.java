@@ -2189,7 +2189,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:100:0x01ea, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:100:0x01eb, code lost:
         
             r13 = new android.media.MediaCodec.BufferInfo();
             r14 = r17.audioBufferInfo;
@@ -2200,11 +2200,11 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             r8 = org.telegram.messenger.AndroidUtilities.cloneByteBuffer(r8);
             r17.fileWriteQueue.postRunnable(new org.telegram.messenger.camera.CameraView$VideoRecorder$$ExternalSyntheticLambda1(r17, r8, r13));
          */
-        /* JADX WARN: Code restructure failed: missing block: B:101:0x020f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:101:0x0210, code lost:
         
             r17.audioEncoder.releaseOutputBuffer(r2, false);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:102:0x021a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:102:0x021b, code lost:
         
             if ((r17.audioBufferInfo.flags & 4) == 0) goto L177;
          */
@@ -2212,43 +2212,43 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         
             return;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:109:0x0234, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:109:0x0235, code lost:
         
             throw new java.lang.RuntimeException("encoderOutputBuffer " + r2 + " was null");
          */
-        /* JADX WARN: Code restructure failed: missing block: B:110:0x01d4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:110:0x01d5, code lost:
         
             r8 = r17.audioEncoder.getOutputBuffer(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:113:0x01b6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:113:0x01b7, code lost:
         
             r2 = r17.audioEncoder.getOutputFormat();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:114:0x01be, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:114:0x01bf, code lost:
         
             if (r17.audioTrackIndex != (-5)) goto L170;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:116:0x01c0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:116:0x01c1, code lost:
         
             r17.audioTrackIndex = r17.mediaMuxer.addTrack(r2, true);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:123:0x01aa, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:123:0x01ab, code lost:
         
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L168;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:124:0x01ac, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:124:0x01ad, code lost:
         
             r1 = r17.audioEncoder.getOutputBuffers();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:128:0x0195, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:128:0x0196, code lost:
         
             if (r18 == false) goto L163;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:130:0x0199, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:130:0x019a, code lost:
         
             if (r17.running != false) goto L93;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:132:0x019d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:132:0x019e, code lost:
         
             if (r17.sendWhenDone != 0) goto L93;
          */
@@ -2256,7 +2256,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         
             return;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:137:0x021c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:137:0x021d, code lost:
         
             return;
          */
@@ -2264,59 +2264,59 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         
             r1 = r17.videoEncoder.getOutputBuffers();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:76:0x0185, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:76:0x0186, code lost:
         
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L180;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:78:0x01ac, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:78:0x01ad, code lost:
         
             r1 = r17.audioEncoder.getOutputBuffers();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:80:0x0189, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:80:0x018a, code lost:
         
             r2 = r17.audioEncoder.dequeueOutputBuffer(r17.audioBufferInfo, 0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:81:0x0193, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:81:0x0194, code lost:
         
             if (r2 != (-1)) goto L96;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:83:0x01a6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:83:0x01a7, code lost:
         
             if (r2 != (-3)) goto L167;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:86:0x01b4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:86:0x01b5, code lost:
         
             if (r2 != (-2)) goto L162;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:89:0x01cb, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:89:0x01cc, code lost:
         
             if (r2 < 0) goto L176;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:92:0x01cf, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:92:0x01d0, code lost:
         
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L111;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:93:0x01d1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:93:0x01d2, code lost:
         
             r8 = r1[r2];
          */
-        /* JADX WARN: Code restructure failed: missing block: B:94:0x01da, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:94:0x01db, code lost:
         
             if (r8 == null) goto L174;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:95:0x01dc, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:95:0x01dd, code lost:
         
             r13 = r17.audioBufferInfo;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:96:0x01e2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x01e3, code lost:
         
             if ((r13.flags & 2) == 0) goto L116;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x01e4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x01e5, code lost:
         
             r13.size = 0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:99:0x01e8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:99:0x01e9, code lost:
         
             if (r13.size == 0) goto L119;
          */

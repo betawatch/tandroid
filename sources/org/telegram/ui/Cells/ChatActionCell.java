@@ -2719,7 +2719,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f10);
                             RectF rectF2 = AndroidUtilities.rectTmp;
                             rectF2.set(0.0f, -AndroidUtilities.dp(20.0f), getWidth(), height2);
-                            canvas.saveLayerAlpha(rectF2, NotificationCenter.liveLocationsChanged, 31);
+                            canvas.saveLayerAlpha(rectF2, NotificationCenter.proxyCheckDone, 31);
                         } else {
                             canvas.save();
                         }
@@ -2950,7 +2950,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x03e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x03e6, code lost:
     
         if (r3.isEmpty == false) goto L137;
      */
@@ -2958,14 +2958,14 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     
         if (r3.isEmpty == false) goto L137;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x03e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x03e8, code lost:
     
         r3.totalHeight = r3.height + org.telegram.messenger.AndroidUtilities.dp(8.0f);
         r7 = r7 + r20.reactionsLayoutInBubble.totalHeight;
      */
     /* JADX WARN: Removed duplicated region for block: B:35:0x00e2  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x03fe  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x03fc  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0108  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2981,7 +2981,6 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         TLRPC.Message message;
         int dp4;
         ReactionsLayoutInBubble reactionsLayoutInBubble;
-        ReactionsLayoutInBubble reactionsLayoutInBubble2;
         int i6;
         int dp5;
         int i7;
@@ -3128,10 +3127,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     reactionsLayoutInBubble = this.reactionsLayoutInBubble;
                 }
             }
-            reactionsLayoutInBubble2 = this.reactionsLayoutInBubble;
-            if (!reactionsLayoutInBubble2.isEmpty) {
-                reactionsLayoutInBubble2.totalHeight = reactionsLayoutInBubble2.height + AndroidUtilities.dp(8.0f);
-                i3 += this.reactionsLayoutInBubble.totalHeight;
+            if (this.currentMessageObject != null) {
+                ReactionsLayoutInBubble reactionsLayoutInBubble2 = this.reactionsLayoutInBubble;
+                if (!reactionsLayoutInBubble2.isEmpty) {
+                    reactionsLayoutInBubble2.totalHeight = reactionsLayoutInBubble2.height + AndroidUtilities.dp(8.0f);
+                    i3 += this.reactionsLayoutInBubble.totalHeight;
+                }
             }
             if (messageObject == null && isNewStyleButtonLayout()) {
                 setMeasuredDimension(max, r7);
@@ -3143,8 +3144,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         i3 = 0;
         if (!this.starGiftLayout.has()) {
         }
-        reactionsLayoutInBubble2 = this.reactionsLayoutInBubble;
-        if (!reactionsLayoutInBubble2.isEmpty) {
+        if (this.currentMessageObject != null) {
         }
         if (messageObject == null) {
         }
@@ -3502,12 +3502,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x05db  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0658  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x05de  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x065b  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0254  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x01d3  */
     /* JADX WARN: Type inference failed for: r6v11, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
     /* JADX WARN: Type inference failed for: r6v36 */
     /* JADX WARN: Type inference failed for: r6v37 */
@@ -3545,6 +3545,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         StringBuilder sb;
         String str6;
         StaticLayout staticLayout;
+        if (messageObject == null) {
+            return;
+        }
         if (this.currentMessageObject != messageObject || (!((staticLayout = this.textLayout) == null || TextUtils.equals(staticLayout.getText(), messageObject.messageText)) || (!(this.hasReplyMessage || messageObject.replyMessageObject == null) || z || messageObject.type == 21 || messageObject.forceUpdate))) {
             if (BuildVars.DEBUG_PRIVATE_VERSION && Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
                 FileLog.e(new IllegalStateException("Wrong thread!!!"));

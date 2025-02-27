@@ -3,6 +3,7 @@ package j$.time.temporal;
 import j$.time.LocalDate;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
+import j$.util.A;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class j {
@@ -290,7 +291,7 @@ public abstract /* synthetic */ class j {
 
     public static q c(k kVar, l lVar) {
         if (!(lVar instanceof a)) {
-            j$.util.a.B(lVar, "field");
+            A.z(lVar, "field");
             return lVar.d(kVar);
         }
         if (kVar.e(lVar)) {

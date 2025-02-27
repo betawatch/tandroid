@@ -18,8 +18,8 @@ final class OggPageHeader {
     public int revision;
     public long streamSerialNumber;
     public int type;
-    public final int[] laces = new int[NotificationCenter.liveLocationsChanged];
-    private final ParsableByteArray scratch = new ParsableByteArray(NotificationCenter.liveLocationsChanged);
+    public final int[] laces = new int[NotificationCenter.proxyCheckDone];
+    private final ParsableByteArray scratch = new ParsableByteArray(NotificationCenter.proxyCheckDone);
 
     OggPageHeader() {
     }

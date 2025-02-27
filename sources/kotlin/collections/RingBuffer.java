@@ -6,7 +6,7 @@ import java.util.RandomAccess;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class RingBuffer extends AbstractList implements RandomAccess {
     private final Object[] buffer;
     private final int capacity;

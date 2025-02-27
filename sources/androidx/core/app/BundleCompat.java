@@ -16,6 +16,10 @@ public abstract class BundleCompat {
         }
     }
 
+    public static IBinder getBinder(Bundle bundle, String str) {
+        return Api18Impl.getBinder(bundle, str);
+    }
+
     public static void putBinder(Bundle bundle, String str, IBinder iBinder) {
         Api18Impl.putBinder(bundle, str, iBinder);
     }

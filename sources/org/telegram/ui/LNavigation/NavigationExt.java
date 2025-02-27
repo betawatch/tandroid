@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.INavigationLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class NavigationExt {
 
     public interface FragmentConsumer {
@@ -25,7 +25,7 @@ public abstract class NavigationExt {
                             ((BaseFragment) arrayList.get(size2)).removeSelfFromStack();
                         }
                     }
-                    lastFragment.lambda$onBackPressed$323();
+                    lastFragment.lambda$onBackPressed$335();
                     return true;
                 }
                 arrayList.add((BaseFragment) fragmentStack.get(size));

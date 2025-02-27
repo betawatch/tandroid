@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 interface F0 {
@@ -14,9 +16,9 @@ interface F0 {
 
     int p();
 
-    Object[] s(j$.util.function.I i);
+    Object[] s(IntFunction intFunction);
 
-    j$.util.Q spliterator();
+    Spliterator spliterator();
 
-    F0 t(long j, long j2, j$.util.function.I i);
+    F0 t(long j, long j2, IntFunction intFunction);
 }

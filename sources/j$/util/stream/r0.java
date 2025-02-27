@@ -1,32 +1,33 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class r0 implements x3 {
+final class r0 implements w3 {
     final q0 a;
     final Supplier b;
 
-    r0(T2 t2, q0 q0Var, Supplier supplier) {
+    r0(S2 s2, q0 q0Var, Supplier supplier) {
         this.a = q0Var;
         this.b = supplier;
     }
 
-    @Override // j$.util.stream.x3
-    public final Object a(b bVar, j$.util.Q q) {
+    @Override // j$.util.stream.w3
+    public final Object a(b bVar, Spliterator spliterator) {
         p0 p0Var = (p0) this.b.get();
-        bVar.D0(q, p0Var);
+        bVar.C0(spliterator, p0Var);
         return Boolean.valueOf(p0Var.b);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // j$.util.stream.x3
-    public final Object c(b bVar, j$.util.Q q) {
-        return (Boolean) new s0(this, bVar, q).invoke();
+    @Override // j$.util.stream.w3
+    public final Object c(b bVar, Spliterator spliterator) {
+        return (Boolean) new s0(this, bVar, spliterator).invoke();
     }
 
-    @Override // j$.util.stream.x3
+    @Override // j$.util.stream.w3
     public final int d() {
-        return S2.u | S2.r;
+        return R2.u | R2.r;
     }
 }

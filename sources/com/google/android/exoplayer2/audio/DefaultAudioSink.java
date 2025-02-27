@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
+import androidx.mediarouter.media.MediaRoute2Provider$$ExternalSyntheticLambda21;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackParameters;
@@ -460,7 +461,7 @@ public final class DefaultAudioSink implements AudioSink {
         public void register(AudioTrack audioTrack) {
             Handler handler = this.handler;
             Objects.requireNonNull(handler);
-            audioTrack.registerStreamEventCallback(new DefaultAudioSink$StreamEventCallbackV29$$ExternalSyntheticLambda2(handler), this.callback);
+            audioTrack.registerStreamEventCallback(new MediaRoute2Provider$$ExternalSyntheticLambda21(handler), this.callback);
         }
 
         public void unregister(AudioTrack audioTrack) {

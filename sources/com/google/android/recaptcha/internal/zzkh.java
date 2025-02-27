@@ -628,7 +628,7 @@ final class zzkh<T> implements zzkr<T> {
                 iArr[i64] = i65;
                 i64++;
             }
-            int i74 = charAt25 & NotificationCenter.liveLocationsChanged;
+            int i74 = charAt25 & NotificationCenter.proxyCheckDone;
             int i75 = charAt25 & 2048;
             int i76 = length;
             if (i74 >= 51) {
@@ -872,7 +872,7 @@ final class zzkh<T> implements zzkr<T> {
     }
 
     private static int zzt(int i) {
-        return (i >>> 20) & NotificationCenter.liveLocationsChanged;
+        return (i >>> 20) & NotificationCenter.proxyCheckDone;
     }
 
     private final int zzu(int i) {

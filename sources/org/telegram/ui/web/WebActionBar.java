@@ -29,7 +29,6 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -538,7 +537,7 @@ public abstract class WebActionBar extends FrameLayout {
             makeOptions.setDimAlpha(0);
             makeOptions.setColors(this.menuTextColor, this.menuIconColor);
             makeOptions.translate(0.0f, -AndroidUtilities.dp(52.0f));
-            makeOptions.setMinWidth(NotificationCenter.storyQualityUpdate);
+            makeOptions.setMinWidth(200);
             makeOptions.setSelectorColor(Theme.blendOver(this.menuBackgroundColor, Theme.multAlpha(this.menuTextColor, 0.1f)));
             if (AndroidUtilities.computePerceivedBrightness(this.menuBackgroundColor) > 0.721f) {
                 makeOptions.setBackgroundColor(-1);

@@ -14,5 +14,5 @@ public interface E0 extends F0 {
     void g(Object obj);
 
     @Override // j$.util.stream.F0
-    j$.util.N spliterator();
+    j$.util.M spliterator();
 }

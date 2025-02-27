@@ -1,81 +1,52 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.Consumer;
+
 /* loaded from: classes2.dex */
-abstract class n3 {
-    final long a;
-    final long b;
-    j$.util.Q c;
-    long d;
-    long e;
+final class n3 extends q3 implements j$.util.D, j$.util.function.m {
+    double e;
 
-    n3(j$.util.Q q, long j, long j2, long j3, long j4) {
-        this.c = q;
-        this.a = j;
-        this.b = j2;
-        this.d = j3;
-        this.e = j4;
+    n3(j$.util.D d, long j, long j2) {
+        super(d, j, j2);
     }
 
-    protected abstract j$.util.Q b(j$.util.Q q, long j, long j2, long j3, long j4);
-
-    public final int characteristics() {
-        return this.c.characteristics();
+    n3(j$.util.D d, n3 n3Var) {
+        super(d, n3Var);
     }
 
-    public final long estimateSize() {
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 < j) {
-            return j - Math.max(j2, this.d);
-        }
-        return 0L;
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void a(Consumer consumer) {
+        j$.util.A.b(this, consumer);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.E trySplit() {
-        return (j$.util.E) trySplit();
+    @Override // j$.util.function.m
+    public final void accept(double d) {
+        this.e = d;
     }
 
-    public /* bridge */ /* synthetic */ j$.util.H trySplit() {
-        return (j$.util.H) trySplit();
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.K trySplit() {
-        return (j$.util.K) trySplit();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean s(Consumer consumer) {
+        return j$.util.A.l(this, consumer);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.N trySplit() {
-        return (j$.util.N) trySplit();
+    @Override // j$.util.stream.t3
+    protected final Spliterator u(Spliterator spliterator) {
+        return new n3((j$.util.D) spliterator, this);
     }
 
-    public final j$.util.Q trySplit() {
-        long j = this.e;
-        if (this.a >= j || this.d >= j) {
-            return null;
-        }
-        while (true) {
-            j$.util.Q trySplit = this.c.trySplit();
-            if (trySplit == null) {
-                return null;
-            }
-            long estimateSize = trySplit.estimateSize() + this.d;
-            long min = Math.min(estimateSize, this.b);
-            long j2 = this.a;
-            if (j2 >= min) {
-                this.d = min;
-            } else {
-                long j3 = this.b;
-                if (min < j3) {
-                    long j4 = this.d;
-                    if (j4 < j2 || estimateSize > j3) {
-                        this.d = min;
-                        return b(trySplit, j2, j3, j4, min);
-                    }
-                    this.d = min;
-                    return trySplit;
-                }
-                this.c = trySplit;
-                this.e = min;
-            }
-        }
+    @Override // j$.util.stream.q3
+    protected final void w(Object obj) {
+        ((j$.util.function.m) obj).accept(this.e);
+    }
+
+    @Override // j$.util.stream.q3
+    protected final X2 x() {
+        return new U2();
     }
 }

@@ -1,40 +1,71 @@
 package j$.util;
 
 import j$.util.function.Consumer;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-final class S implements Iterator, Consumer {
+final class S implements p, j$.util.function.m, h {
     boolean a = false;
-    Object b;
-    final /* synthetic */ Q c;
+    double b;
+    final /* synthetic */ D c;
 
-    S(Q q) {
-        this.c = q;
+    S(D d) {
+        this.c = d;
     }
 
-    @Override // j$.util.function.Consumer
-    public final void accept(Object obj) {
+    @Override // j$.util.p, j$.util.h
+    public final void a(Consumer consumer) {
+        if (consumer instanceof j$.util.function.m) {
+            forEachRemaining((j$.util.function.m) consumer);
+            return;
+        }
+        consumer.getClass();
+        if (d0.a) {
+            d0.a(S.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
+            throw null;
+        }
+        forEachRemaining(new m(consumer));
+    }
+
+    @Override // j$.util.function.m
+    public final void accept(double d) {
         this.a = true;
-        this.b = obj;
+        this.b = d;
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    @Override // j$.util.y
+    /* renamed from: e, reason: merged with bridge method [inline-methods] */
+    public final void forEachRemaining(j$.util.function.m mVar) {
+        mVar.getClass();
+        while (hasNext()) {
+            mVar.accept(nextDouble());
+        }
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
         if (!this.a) {
-            this.c.s(this);
+            this.c.tryAdvance(this);
         }
         return this.a;
     }
 
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
+    }
+
     @Override // java.util.Iterator
-    public final Object next() {
+    public final Double next() {
+        if (!d0.a) {
+            return Double.valueOf(nextDouble());
+        }
+        d0.a(S.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
+        throw null;
+    }
+
+    @Override // j$.util.p
+    public final double nextDouble() {
         if (!this.a && !hasNext()) {
             throw new NoSuchElementException();
         }

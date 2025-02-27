@@ -1,11 +1,12 @@
 package j$.util.concurrent;
 
-import j$.util.Q;
+import j$.util.A;
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class i extends o implements Q {
+final class i extends o implements Spliterator {
     public final /* synthetic */ int i;
     long j;
 
@@ -16,7 +17,7 @@ final class i extends o implements Q {
         this.j = j;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final void a(Consumer consumer) {
         switch (this.i) {
             case 0:
@@ -42,7 +43,7 @@ final class i extends o implements Q {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final int characteristics() {
         switch (this.i) {
             case 0:
@@ -52,14 +53,14 @@ final class i extends o implements Q {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final long estimateSize() {
         switch (this.i) {
         }
         return this.j;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final Comparator getComparator() {
         switch (this.i) {
             case 0:
@@ -69,21 +70,21 @@ final class i extends o implements Q {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         switch (this.i) {
         }
-        return j$.util.a.j(this);
+        return A.j(this);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
         switch (this.i) {
         }
-        return j$.util.a.k(this, i);
+        return A.k(this, i);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final boolean s(Consumer consumer) {
         switch (this.i) {
             case 0:
@@ -106,8 +107,8 @@ final class i extends o implements Q {
         return true;
     }
 
-    @Override // j$.util.Q
-    public final Q trySplit() {
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
         switch (this.i) {
             case 0:
                 int i = this.f;

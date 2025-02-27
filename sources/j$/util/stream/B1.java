@@ -15,7 +15,7 @@ final class B1 extends O1 implements N1 {
         this.d = fVar;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;

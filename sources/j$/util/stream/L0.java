@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.LongFunction;
 import java.util.concurrent.CountedCompleter;
 
@@ -9,15 +10,15 @@ class L0 extends e {
     protected final LongFunction i;
     protected final j$.util.function.f j;
 
-    L0(L0 l0, j$.util.Q q) {
-        super(l0, q);
+    L0(L0 l0, Spliterator spliterator) {
+        super(l0, spliterator);
         this.h = l0.h;
         this.i = l0.i;
         this.j = l0.j;
     }
 
-    L0(b bVar, j$.util.Q q, LongFunction longFunction, j$.util.function.f fVar) {
-        super(bVar, q);
+    L0(b bVar, Spliterator spliterator, LongFunction longFunction, j$.util.function.f fVar) {
+        super(bVar, spliterator);
         this.h = bVar;
         this.i = longFunction;
         this.j = fVar;
@@ -25,14 +26,14 @@ class L0 extends e {
 
     @Override // j$.util.stream.e
     protected final Object a() {
-        x0 x0Var = (x0) this.i.apply(this.h.o0(this.b));
-        this.h.D0(this.b, x0Var);
+        x0 x0Var = (x0) this.i.apply(this.h.n0(this.b));
+        this.h.C0(this.b, x0Var);
         return x0Var.b();
     }
 
     @Override // j$.util.stream.e
-    protected final e d(j$.util.Q q) {
-        return new L0(this, q);
+    protected final e d(Spliterator spliterator) {
+        return new L0(this, spliterator);
     }
 
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter

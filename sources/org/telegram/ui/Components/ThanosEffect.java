@@ -231,17 +231,17 @@ public class ThanosEffect extends TextureView {
             }
 
             /* JADX WARN: Can't wrap try/catch for region: R(15:0|1|(1:3)|4|(1:6)|7|(2:9|(8:11|12|(3:14|(1:18)|19)|(1:21)(1:(1:31))|22|23|24|25))|(2:33|(1:35))|12|(0)|(0)(0)|22|23|24|25) */
-            /* JADX WARN: Code restructure failed: missing block: B:28:0x012e, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:28:0x014a, code lost:
             
                 r7 = move-exception;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:29:0x012f, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:29:0x014b, code lost:
             
                 org.telegram.messenger.FileLog.e(r7);
              */
-            /* JADX WARN: Removed duplicated region for block: B:14:0x00f7  */
-            /* JADX WARN: Removed duplicated region for block: B:21:0x011b  */
-            /* JADX WARN: Removed duplicated region for block: B:30:0x0122  */
+            /* JADX WARN: Removed duplicated region for block: B:14:0x0105  */
+            /* JADX WARN: Removed duplicated region for block: B:21:0x0129  */
+            /* JADX WARN: Removed duplicated region for block: B:30:0x013e  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -311,7 +311,10 @@ public class ThanosEffect extends TextureView {
                             chatMessageCell.drawingToBitmap = false;
                         }
                         if (!z) {
+                            canvas.save();
+                            canvas.translate(0.0f, view.getPaddingTop());
                             ((ChatMessageCell) view).drawOutboundsContent(canvas);
+                            canvas.restore();
                         } else if (z2) {
                             ((ChatActionCell) view).drawOutboundsContent(canvas);
                         }
@@ -322,7 +325,10 @@ public class ThanosEffect extends TextureView {
                 if (z) {
                     ChatMessageCell chatMessageCell2 = (ChatMessageCell) view;
                     if (chatMessageCell2.drawBackgroundInParent()) {
+                        canvas.save();
+                        canvas.translate(0.0f, chatMessageCell2.getPaddingTop());
                         chatMessageCell2.drawBackgroundInternal(canvas, true);
+                        canvas.restore();
                     }
                 }
                 view.draw(canvas);
@@ -494,8 +500,8 @@ public class ThanosEffect extends TextureView {
                                                     currentMessagesGroup.transitionParams.pinnedBotton = chatMessageCell.isPinnedBottom();
                                                     int left = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableLeft();
                                                     int left2 = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableRight();
-                                                    int top = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableTop();
-                                                    int top2 = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableBottom();
+                                                    int top = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableTop();
+                                                    int top2 = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableBottom();
                                                     arrayList13 = arrayList19;
                                                     arrayList14 = arrayList18;
                                                     int dp = (chatMessageCell.getCurrentPosition().flags & 4) == 0 ? top - AndroidUtilities.dp(10.0f) : top;

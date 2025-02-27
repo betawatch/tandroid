@@ -6,16 +6,16 @@ import j$.util.function.Supplier;
 /* loaded from: classes2.dex */
 final class A1 extends O1 implements N1, b2 {
     final /* synthetic */ Supplier b;
-    final /* synthetic */ j$.util.function.i0 c;
+    final /* synthetic */ j$.util.function.f0 c;
     final /* synthetic */ j$.util.function.f d;
 
-    A1(Supplier supplier, j$.util.function.i0 i0Var, j$.util.function.f fVar) {
+    A1(Supplier supplier, j$.util.function.f0 f0Var, j$.util.function.f fVar) {
         this.b = supplier;
-        this.c = i0Var;
+        this.c = f0Var;
         this.d = fVar;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         this.c.accept(this.a, d);
     }
@@ -48,9 +48,9 @@ final class A1 extends O1 implements N1, b2 {
         this.a = this.d.apply(this.a, ((A1) n1).a);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2

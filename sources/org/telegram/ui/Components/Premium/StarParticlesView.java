@@ -472,10 +472,10 @@ public class StarParticlesView extends View {
             return i;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:100:0x0243  */
-        /* JADX WARN: Removed duplicated region for block: B:78:0x01ec  */
-        /* JADX WARN: Removed duplicated region for block: B:91:0x0266  */
-        /* JADX WARN: Removed duplicated region for block: B:93:0x028e A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:100:0x0290  */
+        /* JADX WARN: Removed duplicated region for block: B:102:0x02b8 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:109:0x026d  */
+        /* JADX WARN: Removed duplicated region for block: B:87:0x0216  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -497,6 +497,9 @@ public class StarParticlesView extends View {
                 int i3 = this.type;
                 if (i3 == 9) {
                     this.stars[i2] = SvgHelper.getBitmap(i2 == 0 ? R.raw.premium_object_folder : i2 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i2] = true;
+                } else if (i3 == 39) {
+                    this.stars[i2] = SvgHelper.getBitmap(i2 == 0 ? R.raw.filled_messages_paid : i2 == 1 ? R.raw.filled_crown_on : R.raw.premium_object_star2, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg[i2] = true;
                 } else if (i3 == 11 || i3 == 4) {
                     this.stars[i2] = SvgHelper.getBitmap(i2 == 0 ? R.raw.premium_object_smile1 : i2 == 1 ? R.raw.premium_object_smile2 : R.raw.premium_object_like, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
@@ -521,7 +524,7 @@ public class StarParticlesView extends View {
                     this.svg[i2] = true;
                 } else if (i3 == 28) {
                     if (i2 == 0) {
-                        this.stars[i2] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.liveLocationsChanged));
+                        this.stars[i2] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.proxyCheckDone));
                         this.flip[i2] = true;
                     }
                     Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
@@ -558,13 +561,13 @@ public class StarParticlesView extends View {
                                 mainGradientPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
                             if (this.forceMaxAlpha) {
-                                mainGradientPaint.setAlpha(NotificationCenter.liveLocationsChanged);
+                                mainGradientPaint.setAlpha(NotificationCenter.proxyCheckDone);
                             } else {
                                 mainGradientPaint.setAlpha(this.useBlur ? 60 : 120);
                             }
                             canvas.drawPath(path, mainGradientPaint);
                             mainGradientPaint.setPathEffect(null);
-                            mainGradientPaint.setAlpha(NotificationCenter.liveLocationsChanged);
+                            mainGradientPaint.setAlpha(NotificationCenter.proxyCheckDone);
                         }
                         if (!this.useBlur) {
                             Utilities.stackBlurBitmap(createBitmap, 2);
@@ -611,7 +614,7 @@ public class StarParticlesView extends View {
         }
 
         protected int getPathColor(int i) {
-            return this.type == 100 ? ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.storyQualityUpdate) : Theme.getColor(this.colorKey, this.resourcesProvider);
+            return this.type == 100 ? ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 200) : Theme.getColor(this.colorKey, this.resourcesProvider);
         }
 
         public void init() {
@@ -699,7 +702,7 @@ public class StarParticlesView extends View {
     }
 
     public StarParticlesView(Context context) {
-        this(context, SharedConfig.getDevicePerformanceClass() == 2 ? NotificationCenter.storyQualityUpdate : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50);
+        this(context, SharedConfig.getDevicePerformanceClass() == 2 ? 200 : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50);
     }
 
     public StarParticlesView(Context context, int i) {
@@ -757,7 +760,7 @@ public class StarParticlesView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.clipGradientPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.liveLocationsChanged, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
         }
         this.drawable.onDraw(canvas);
         if (this.clipGradientPaint != null) {

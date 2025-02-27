@@ -1,29 +1,29 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class W2 extends Y2 implements j$.util.function.F {
-    final int[] c = new int[128];
+final class W2 extends X2 implements j$.util.function.T {
+    final long[] c = new long[128];
 
     W2() {
     }
 
-    @Override // j$.util.stream.Y2
+    @Override // j$.util.stream.X2
     public final void a(Object obj, long j) {
-        j$.util.function.F f = (j$.util.function.F) obj;
+        j$.util.function.T t = (j$.util.function.T) obj;
         for (int i = 0; i < j; i++) {
-            f.accept(this.c[i]);
+            t.accept(this.c[i]);
         }
     }
 
-    @Override // j$.util.function.F
-    public final void accept(int i) {
-        int i2 = this.b;
-        this.b = i2 + 1;
-        this.c[i2] = i;
+    @Override // j$.util.function.T
+    public final void accept(long j) {
+        int i = this.b;
+        this.b = i + 1;
+        this.c[i] = j;
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 }

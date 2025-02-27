@@ -9362,6 +9362,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
 
                 @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+                public /* synthetic */ boolean needVisuallyDivideSteps() {
+                    return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+                }
+
+                @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
                 public void onSeekBarDrag(boolean z, float f) {
                     int round = Math.round(TextSizeCell.this.startFontSize + ((TextSizeCell.this.endFontSize - TextSizeCell.this.startFontSize) * f));
                     if (round != SharedConfig.ivFontSize) {

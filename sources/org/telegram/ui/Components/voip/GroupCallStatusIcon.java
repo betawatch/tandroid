@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GroupCallStatusIcon {
     Callback callback;
     RLottieImageView iconView;
@@ -78,9 +78,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.themeListUpdated;
+            i = NotificationCenter.didReplacedPhotoInMemCache;
             if (nextInt < 64) {
-                i2 = NotificationCenter.themeListUpdated;
+                i2 = NotificationCenter.didReplacedPhotoInMemCache;
                 i = 120;
             } else {
                 i2 = 420;

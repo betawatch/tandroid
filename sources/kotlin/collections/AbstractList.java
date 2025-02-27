@@ -9,7 +9,7 @@ import java.util.RandomAccess;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractList extends AbstractCollection implements List {
     public static final Companion Companion = new Companion(null);
 

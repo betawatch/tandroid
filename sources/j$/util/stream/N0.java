@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 final class N0 extends P0 implements B0 {
@@ -25,17 +27,17 @@ final class N0 extends P0 implements B0 {
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.N spliterator() {
+    public final j$.util.M spliterator() {
         return new e1(this);
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.Q spliterator() {
+    public final Spliterator spliterator() {
         return new e1(this);
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
         return t0.u(this, j, j2);
     }
 }

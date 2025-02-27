@@ -1,6 +1,9 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
@@ -64,9 +67,9 @@ class R0 implements z0 {
 
     @Override // j$.util.stream.E0
     public final void g(Object obj) {
-        j$.util.function.n nVar = (j$.util.function.n) obj;
+        j$.util.function.m mVar = (j$.util.function.m) obj;
         for (int i = 0; i < this.b; i++) {
-            nVar.accept(this.a[i]);
+            mVar.accept(this.a[i]);
         }
     }
 
@@ -76,22 +79,22 @@ class R0 implements z0 {
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ Object[] s(j$.util.function.I i) {
-        return t0.m(this, i);
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return t0.m(this, intFunction);
     }
 
     @Override // j$.util.stream.E0, j$.util.stream.F0
-    public final j$.util.N spliterator() {
-        return j$.util.f0.j(this.a, 0, this.b);
+    public final j$.util.M spliterator() {
+        return Spliterators.j(this.a, 0, this.b);
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.Q spliterator() {
-        return j$.util.f0.j(this.a, 0, this.b);
+    public final Spliterator spliterator() {
+        return Spliterators.j(this.a, 0, this.b);
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
         return t0.t(this, j, j2);
     }
 

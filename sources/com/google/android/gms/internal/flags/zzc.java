@@ -4,13 +4,13 @@ import android.os.Parcel;
 
 /* loaded from: classes.dex */
 public abstract class zzc {
-    private static final ClassLoader zzd = zzc.class.getClassLoader();
+    private static final ClassLoader zza = zzc.class.getClassLoader();
 
-    public static void writeBoolean(Parcel parcel, boolean z) {
+    public static void zza(Parcel parcel, boolean z) {
         parcel.writeInt(z ? 1 : 0);
     }
 
-    public static boolean zza(Parcel parcel) {
+    public static boolean zzc(Parcel parcel) {
         return parcel.readInt() != 0;
     }
 }

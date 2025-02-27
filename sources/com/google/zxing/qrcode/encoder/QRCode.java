@@ -3,7 +3,6 @@ package com.google.zxing.qrcode.encoder;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.decoder.Mode;
 import com.google.zxing.qrcode.decoder.Version;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class QRCode {
@@ -42,7 +41,7 @@ public final class QRCode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder(NotificationCenter.storyQualityUpdate);
+        StringBuilder sb = new StringBuilder(200);
         sb.append("<<\n");
         sb.append(" mode: ");
         sb.append(this.mode);

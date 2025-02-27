@@ -1894,7 +1894,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].time = j;
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].overrideAlpha = 1.0f;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
                         int height = (int) (imageViewEmoji.getHeight() * 0.03f);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set((imageViewEmoji.getLeft() + imageViewEmoji.getPaddingLeft()) - this.startOffset, height, (imageViewEmoji.getRight() - imageViewEmoji.getPaddingRight()) - this.startOffset, ((imageViewEmoji.getMeasuredHeight() + height) - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom());
@@ -2306,6 +2306,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         public TLRPC.InputStickerSet needLoadSet;
         public int resId;
         public TLRPC.StickerSet set;
+        public Long thumbDocumentId;
     }
 
     private class EmojiPackButton extends FrameLayout {
@@ -3184,8 +3185,8 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             return viewHolder.getItemViewType() == 0;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:41:0x00fa  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0114  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x00fe  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0118  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -3207,15 +3208,15 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     TLRPC.Document document3 = (TLRPC.Document) this.packs.get(size);
                     if (document3 instanceof SelectAnimatedEmojiDialog.SetTitleDocument) {
                         StickerSetNameCell stickerSetNameCell = (StickerSetNameCell) viewHolder.itemView;
-                        String str5 = ((SelectAnimatedEmojiDialog.SetTitleDocument) document3).title;
-                        if (this.lastSearchEmojiString != null && str5 != null) {
-                            i2 = str5.toLowerCase().indexOf(this.lastSearchEmojiString.toLowerCase());
+                        CharSequence charSequence = ((SelectAnimatedEmojiDialog.SetTitleDocument) document3).title;
+                        if (this.lastSearchEmojiString != null && charSequence != null) {
+                            i2 = charSequence.toString().toLowerCase().indexOf(this.lastSearchEmojiString.toLowerCase());
                         }
                         if (i2 >= 0) {
-                            stickerSetNameCell.setText(str5, 0, i2, this.lastSearchEmojiString.length());
+                            stickerSetNameCell.setText(charSequence, 0, i2, this.lastSearchEmojiString.length());
                             return;
                         } else {
-                            stickerSetNameCell.setText(str5, 0);
+                            stickerSetNameCell.setText(charSequence, 0);
                             return;
                         }
                     }
@@ -4529,7 +4530,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                         this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.liveLocationsChanged, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.proxyCheckDone, 31);
                     super.dispatchDraw(canvas);
                     this.fadePaint.setAlpha((int) (SearchField.this.inputBoxGradientAlpha * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), this.fadePaint);

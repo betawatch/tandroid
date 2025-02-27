@@ -484,7 +484,7 @@ public abstract class BaseFragment {
     }
 
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$323() {
+    public void lambda$onBackPressed$335() {
         PreviewDelegate previewDelegate;
         Dialog dialog = this.parentDialog;
         if (dialog != null) {

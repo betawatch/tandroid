@@ -1,31 +1,31 @@
 package j$.util.function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v0 implements ToDoubleFunction {
-    public final /* synthetic */ java.util.function.ToDoubleFunction a;
+public final /* synthetic */ class v0 implements ToLongFunction {
+    public final /* synthetic */ java.util.function.ToLongFunction a;
 
-    private /* synthetic */ v0(java.util.function.ToDoubleFunction toDoubleFunction) {
-        this.a = toDoubleFunction;
+    private /* synthetic */ v0(java.util.function.ToLongFunction toLongFunction) {
+        this.a = toLongFunction;
     }
 
-    public static /* synthetic */ ToDoubleFunction a(java.util.function.ToDoubleFunction toDoubleFunction) {
-        if (toDoubleFunction == null) {
+    public static /* synthetic */ ToLongFunction a(java.util.function.ToLongFunction toLongFunction) {
+        if (toLongFunction == null) {
             return null;
         }
-        return toDoubleFunction instanceof w0 ? ((w0) toDoubleFunction).a : new v0(toDoubleFunction);
+        return toLongFunction instanceof w0 ? ((w0) toLongFunction).a : new v0(toLongFunction);
     }
 
-    @Override // j$.util.function.ToDoubleFunction
-    public final /* synthetic */ double applyAsDouble(Object obj) {
-        return this.a.applyAsDouble(obj);
+    @Override // j$.util.function.ToLongFunction
+    public final /* synthetic */ long applyAsLong(Object obj) {
+        return this.a.applyAsLong(obj);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.function.ToDoubleFunction toDoubleFunction = this.a;
+        java.util.function.ToLongFunction toLongFunction = this.a;
         if (obj instanceof v0) {
             obj = ((v0) obj).a;
         }
-        return toDoubleFunction.equals(obj);
+        return toLongFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

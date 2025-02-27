@@ -1,49 +1,34 @@
 package j$.util.function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class s0 implements java.util.function.Predicate {
-    public final /* synthetic */ Predicate a;
+public final /* synthetic */ class s0 implements java.util.function.ToDoubleFunction {
+    public final /* synthetic */ ToDoubleFunction a;
 
-    private /* synthetic */ s0(Predicate predicate) {
-        this.a = predicate;
+    private /* synthetic */ s0(ToDoubleFunction toDoubleFunction) {
+        this.a = toDoubleFunction;
     }
 
-    public static /* synthetic */ java.util.function.Predicate a(Predicate predicate) {
-        if (predicate == null) {
+    public static /* synthetic */ java.util.function.ToDoubleFunction a(ToDoubleFunction toDoubleFunction) {
+        if (toDoubleFunction == null) {
             return null;
         }
-        return predicate instanceof r0 ? ((r0) predicate).a : new s0(predicate);
+        return toDoubleFunction instanceof r0 ? ((r0) toDoubleFunction).a : new s0(toDoubleFunction);
     }
 
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate and(java.util.function.Predicate predicate) {
-        return a(this.a.and(r0.a(predicate)));
+    @Override // java.util.function.ToDoubleFunction
+    public final /* synthetic */ double applyAsDouble(Object obj) {
+        return this.a.applyAsDouble(obj);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Predicate predicate = this.a;
+        ToDoubleFunction toDoubleFunction = this.a;
         if (obj instanceof s0) {
             obj = ((s0) obj).a;
         }
-        return predicate.equals(obj);
+        return toDoubleFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate negate() {
-        return a(this.a.negate());
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate or(java.util.function.Predicate predicate) {
-        return a(this.a.or(r0.a(predicate)));
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ boolean test(Object obj) {
-        return this.a.test(obj);
     }
 }

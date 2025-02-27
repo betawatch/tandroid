@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TimeoutKt {
     public static final TimeoutCancellationException TimeoutCancellationException(long j, Delay delay, Job job) {
         return new TimeoutCancellationException("Timed out waiting for " + j + " ms", job);

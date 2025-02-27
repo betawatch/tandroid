@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import java.util.concurrent.CancellationException;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class JobCancellationException extends CancellationException {
     public final transient Job job;
 

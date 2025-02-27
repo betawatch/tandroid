@@ -58,6 +58,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.Cells.ChatActionCell;
+import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -2159,6 +2160,10 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 if (view != null) {
                     int[] iArr = new int[2];
                     view.getLocationOnScreen(iArr);
+                    View view2 = this.transitionViewHolder.view;
+                    if (view2 instanceof ChatMessageCell) {
+                        iArr[1] = iArr[1] + view2.getPaddingTop();
+                    }
                     float f2 = iArr[0];
                     this.fromXCell = f2;
                     this.fromYCell = iArr[1];
@@ -2182,11 +2187,11 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                             this.fromHeight *= this.transitionViewHolder.params.getScale();
                         }
                         if (this.transitionViewHolder.view.getParent() instanceof View) {
-                            View view2 = (View) this.transitionViewHolder.view.getParent();
-                            this.fromX = iArr[0] + (this.transitionViewHolder.avatarImage.getCenterX() * view2.getScaleX());
-                            this.fromY = iArr[1] + (this.transitionViewHolder.avatarImage.getCenterY() * view2.getScaleY());
-                            this.fromWidth *= view2.getScaleX();
-                            this.fromHeight *= view2.getScaleY();
+                            View view3 = (View) this.transitionViewHolder.view.getParent();
+                            this.fromX = iArr[0] + (this.transitionViewHolder.avatarImage.getCenterX() * view3.getScaleX());
+                            this.fromY = iArr[1] + (this.transitionViewHolder.avatarImage.getCenterY() * view3.getScaleY());
+                            this.fromWidth *= view3.getScaleX();
+                            this.fromHeight *= view3.getScaleY();
                         }
                         this.animateAvatar = true;
                     } else {

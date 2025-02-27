@@ -3500,16 +3500,16 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0219  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x029d  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x02cf  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x032e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0346  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x02d2  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x02a2  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x02a3  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x02d5  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0334  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x034c  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0118  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3523,7 +3523,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.chatId);
         int i = (chatFull == null || !chatFull.can_view_stats) ? 0 : 1;
         final boolean isBoostSupported = ChatObject.isBoostSupported(chat);
-        boolean z = ChatObject.isChannelAndNotMegaGroup(chat) && chatFull != null && (chatFull.can_view_revenue || chatFull.can_view_stars_revenue);
+        boolean z = chatFull != null && (chatFull.can_view_revenue || chatFull.can_view_stars_revenue);
         final boolean z2 = i;
         final boolean z3 = z;
         final BottomPagerTabs bottomPagerTabs3 = new BottomPagerTabs(context, getResourceProvider()) { // from class: org.telegram.ui.StatisticActivity.3
@@ -3568,7 +3568,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         if (z) {
             frameLayout = frameLayout2;
             bottomPagerTabs = bottomPagerTabs3;
-            ChannelMonetizationLayout channelMonetizationLayout = new ChannelMonetizationLayout(getContext(), this, this.currentAccount, -this.chatId, getResourceProvider(), chatFull.can_view_revenue, chatFull.can_view_stars_revenue);
+            ChannelMonetizationLayout channelMonetizationLayout = new ChannelMonetizationLayout(getContext(), this, this.currentAccount, -this.chatId, getResourceProvider(), ChatObject.isChannelAndNotMegaGroup(chat) && chatFull.can_view_revenue, chatFull.can_view_stars_revenue);
             this.monetizationLayout = channelMonetizationLayout;
             channelMonetizationLayout.setActionBar(this.actionBar);
         } else {
@@ -3714,7 +3714,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
             this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
             this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
-            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.themeListUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.didReplacedPhotoInMemCache, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
             if (this.adapter == null) {
                 this.adapter = new Adapter();
             }
@@ -3769,7 +3769,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        StatisticActivity.this.lambda$onBackPressed$323();
+                        StatisticActivity.this.lambda$onBackPressed$335();
                     }
                 }
             });
@@ -3841,7 +3841,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView22, LayoutHelper.createLinear(-2, -2, 1));
-        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.themeListUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.didReplacedPhotoInMemCache, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         if (this.adapter == null) {
         }
         this.recyclerListView.setAdapter(this.adapter);
@@ -3895,7 +3895,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    StatisticActivity.this.lambda$onBackPressed$323();
+                    StatisticActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -3937,7 +3937,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 List fragmentStack2 = getParentLayout().getFragmentStack();
                 BaseFragment baseFragment2 = fragmentStack2.size() >= 2 ? (BaseFragment) fragmentStack2.get(fragmentStack2.size() - 2) : null;
                 if (!booleanValue) {
-                    lambda$onBackPressed$323();
+                    lambda$onBackPressed$335();
                     if (baseFragment2 instanceof ProfileActivity) {
                         BoostDialogs.showBulletin(baseFragment2, chat, false);
                         return;
@@ -3948,7 +3948,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 if (baseFragment2 instanceof ProfileActivity) {
                     getParentLayout().removeFragmentFromStack(baseFragment2);
                 }
-                lambda$onBackPressed$323();
+                lambda$onBackPressed$335();
                 if (baseFragment3 instanceof ChatActivity) {
                     BoostDialogs.showBulletin(baseFragment3, chat, true);
                     return;

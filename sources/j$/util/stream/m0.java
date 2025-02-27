@@ -3,13 +3,13 @@ package j$.util.stream;
 /* loaded from: classes2.dex */
 final class m0 extends p0 implements c2 {
     final /* synthetic */ q0 c;
-    final /* synthetic */ j$.util.function.J d;
+    final /* synthetic */ j$.util.function.G d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    m0(j$.util.function.J j, q0 q0Var) {
+    m0(j$.util.function.G g, q0 q0Var) {
         super(q0Var);
         this.c = q0Var;
-        this.d = j;
+        this.d = g;
     }
 
     @Override // j$.util.stream.p0, j$.util.stream.e2
@@ -35,9 +35,9 @@ final class m0 extends p0 implements c2 {
         o((Integer) obj);
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
     @Override // j$.util.stream.c2

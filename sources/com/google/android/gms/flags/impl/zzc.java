@@ -5,18 +5,18 @@ import java.util.concurrent.Callable;
 
 /* loaded from: classes.dex */
 final class zzc implements Callable {
-    private final /* synthetic */ SharedPreferences zzo;
-    private final /* synthetic */ String zzp;
-    private final /* synthetic */ Boolean zzq;
+    final /* synthetic */ SharedPreferences zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Long zzc;
 
-    zzc(SharedPreferences sharedPreferences, String str, Boolean bool) {
-        this.zzo = sharedPreferences;
-        this.zzp = str;
-        this.zzq = bool;
+    zzc(SharedPreferences sharedPreferences, String str, Long l) {
+        this.zza = sharedPreferences;
+        this.zzb = str;
+        this.zzc = l;
     }
 
     @Override // java.util.concurrent.Callable
-    public final /* synthetic */ Object call() {
-        return Boolean.valueOf(this.zzo.getBoolean(this.zzp, this.zzq.booleanValue()));
+    public final /* bridge */ /* synthetic */ Object call() {
+        return Long.valueOf(this.zza.getLong(this.zzb, this.zzc.longValue()));
     }
 }

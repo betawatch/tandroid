@@ -4,7 +4,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StringsKt__AppendableKt {
     public static void appendElement(Appendable appendable, Object obj, Function1 function1) {
         CharSequence valueOf;

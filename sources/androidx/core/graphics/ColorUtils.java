@@ -55,7 +55,7 @@ public abstract class ColorUtils {
                 round2 = 0;
                 break;
         }
-        return Color.rgb(constrain(round, 0, NotificationCenter.liveLocationsChanged), constrain(round2, 0, NotificationCenter.liveLocationsChanged), constrain(round3, 0, NotificationCenter.liveLocationsChanged));
+        return Color.rgb(constrain(round, 0, NotificationCenter.proxyCheckDone), constrain(round2, 0, NotificationCenter.proxyCheckDone), constrain(round3, 0, NotificationCenter.proxyCheckDone));
     }
 
     public static void RGBToHSL(int i, int i2, int i3, float[] fArr) {
@@ -109,7 +109,7 @@ public abstract class ColorUtils {
         double d4 = (((3.2406d * d) + ((-1.5372d) * d2)) + ((-0.4986d) * d3)) / 100.0d;
         double d5 = ((((-0.9689d) * d) + (1.8758d * d2)) + (0.0415d * d3)) / 100.0d;
         double d6 = (((0.0557d * d) + ((-0.204d) * d2)) + (1.057d * d3)) / 100.0d;
-        return Color.rgb(constrain((int) Math.round((d4 > 0.0031308d ? (Math.pow(d4, 0.4166666666666667d) * 1.055d) - 0.055d : d4 * 12.92d) * 255.0d), 0, NotificationCenter.liveLocationsChanged), constrain((int) Math.round((d5 > 0.0031308d ? (Math.pow(d5, 0.4166666666666667d) * 1.055d) - 0.055d : d5 * 12.92d) * 255.0d), 0, NotificationCenter.liveLocationsChanged), constrain((int) Math.round((d6 > 0.0031308d ? (Math.pow(d6, 0.4166666666666667d) * 1.055d) - 0.055d : 12.92d * d6) * 255.0d), 0, NotificationCenter.liveLocationsChanged));
+        return Color.rgb(constrain((int) Math.round((d4 > 0.0031308d ? (Math.pow(d4, 0.4166666666666667d) * 1.055d) - 0.055d : d4 * 12.92d) * 255.0d), 0, NotificationCenter.proxyCheckDone), constrain((int) Math.round((d5 > 0.0031308d ? (Math.pow(d5, 0.4166666666666667d) * 1.055d) - 0.055d : d5 * 12.92d) * 255.0d), 0, NotificationCenter.proxyCheckDone), constrain((int) Math.round((d6 > 0.0031308d ? (Math.pow(d6, 0.4166666666666667d) * 1.055d) - 0.055d : 12.92d * d6) * 255.0d), 0, NotificationCenter.proxyCheckDone));
     }
 
     public static int blendARGB(int i, int i2, float f) {
@@ -117,10 +117,44 @@ public abstract class ColorUtils {
         return Color.argb((int) ((Color.alpha(i) * f2) + (Color.alpha(i2) * f)), (int) ((Color.red(i) * f2) + (Color.red(i2) * f)), (int) ((Color.green(i) * f2) + (Color.green(i2) * f)), (int) ((Color.blue(i) * f2) + (Color.blue(i2) * f)));
     }
 
+    public static double calculateContrast(int i, int i2) {
+        if (Color.alpha(i2) != 255) {
+            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i2));
+        }
+        if (Color.alpha(i) < 255) {
+            i = compositeColors(i, i2);
+        }
+        double calculateLuminance = calculateLuminance(i) + 0.05d;
+        double calculateLuminance2 = calculateLuminance(i2) + 0.05d;
+        return Math.max(calculateLuminance, calculateLuminance2) / Math.min(calculateLuminance, calculateLuminance2);
+    }
+
     public static double calculateLuminance(int i) {
         double[] tempDouble3Array = getTempDouble3Array();
         colorToXYZ(i, tempDouble3Array);
         return tempDouble3Array[1] / 100.0d;
+    }
+
+    public static int calculateMinimumAlpha(int i, int i2, float f) {
+        int alpha = Color.alpha(i2);
+        int i3 = NotificationCenter.proxyCheckDone;
+        if (alpha != 255) {
+            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i2));
+        }
+        double d = f;
+        if (calculateContrast(setAlphaComponent(i, NotificationCenter.proxyCheckDone), i2) < d) {
+            return -1;
+        }
+        int i4 = 0;
+        for (int i5 = 0; i5 <= 10 && i3 - i4 > 1; i5++) {
+            int i6 = (i4 + i3) / 2;
+            if (calculateContrast(setAlphaComponent(i, i6), i2) < d) {
+                i4 = i6;
+            } else {
+                i3 = i6;
+            }
+        }
+        return i3;
     }
 
     public static void colorToHSL(int i, float[] fArr) {
@@ -132,7 +166,7 @@ public abstract class ColorUtils {
     }
 
     private static int compositeAlpha(int i, int i2) {
-        return 255 - (((255 - i2) * (255 - i)) / NotificationCenter.liveLocationsChanged);
+        return 255 - (((255 - i2) * (255 - i)) / NotificationCenter.proxyCheckDone);
     }
 
     public static int compositeColors(int i, int i2) {
@@ -146,7 +180,7 @@ public abstract class ColorUtils {
         if (i5 == 0) {
             return 0;
         }
-        return (((i * NotificationCenter.liveLocationsChanged) * i2) + ((i3 * i4) * (255 - i2))) / (i5 * NotificationCenter.liveLocationsChanged);
+        return (((i * NotificationCenter.proxyCheckDone) * i2) + ((i3 * i4) * (255 - i2))) / (i5 * NotificationCenter.proxyCheckDone);
     }
 
     private static float constrain(float f, float f2, float f3) {

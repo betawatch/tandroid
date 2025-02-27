@@ -29,7 +29,7 @@ import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.OpDescriptor;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class JobSupport implements Job, ChildJob, ParentJob {
     private volatile Object _parentHandle;
     private volatile Object _state;

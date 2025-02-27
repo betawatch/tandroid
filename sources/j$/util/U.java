@@ -1,75 +1,99 @@
 package j$.util;
 
 import j$.util.function.Consumer;
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class U implements z, j$.util.function.W, j {
-    boolean a = false;
-    long b;
-    final /* synthetic */ K c;
+final class U implements D {
+    private final double[] a;
+    private int b;
+    private final int c;
+    private final int d;
 
-    U(K k) {
-        this.c = k;
+    public U(double[] dArr, int i, int i2, int i3) {
+        this.a = dArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
     }
 
-    @Override // j$.util.z, j$.util.j
-    public final void a(Consumer consumer) {
-        if (consumer instanceof j$.util.function.W) {
-            forEachRemaining((j$.util.function.W) consumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void a(Consumer consumer) {
+        A.b(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
+    }
+
+    @Override // j$.util.M
+    public final void e(j$.util.function.m mVar) {
+        int i;
+        mVar.getClass();
+        double[] dArr = this.a;
+        int length = dArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
             return;
         }
-        consumer.getClass();
-        if (h0.a) {
-            h0.a(U.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
-            throw null;
-        }
-        forEachRemaining(new w(consumer));
-    }
-
-    @Override // j$.util.function.W
-    public final void accept(long j) {
-        this.a = true;
-        this.b = j;
-    }
-
-    @Override // j$.util.A
-    /* renamed from: d, reason: merged with bridge method [inline-methods] */
-    public final void forEachRemaining(j$.util.function.W w) {
-        w.getClass();
-        while (hasNext()) {
-            w.accept(nextLong());
+        this.b = i2;
+        if (i < i2) {
+            do {
+                mVar.accept(dArr[i]);
+                i++;
+            } while (i < i2);
         }
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
-        return j$.com.android.tools.r8.a.d(this, w);
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.c - this.b;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.p(this);
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        if (A.k(this, 4)) {
+            return null;
         }
-        return this.a;
+        throw new IllegalStateException();
     }
 
-    @Override // java.util.Iterator
-    public final Long next() {
-        if (!h0.a) {
-            return Long.valueOf(nextLong());
-        }
-        h0.a(U.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
-        throw null;
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return A.j(this);
     }
 
-    @Override // j$.util.z
-    public final long nextLong() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return A.k(this, i);
+    }
+
+    @Override // j$.util.M
+    public final boolean p(j$.util.function.m mVar) {
+        mVar.getClass();
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
+            return false;
         }
-        this.a = false;
-        return this.b;
+        this.b = i + 1;
+        mVar.accept(this.a[i]);
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean s(Consumer consumer) {
+        return A.l(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final D trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
+        }
+        this.b = i2;
+        return new U(this.a, i, i2, this.d);
     }
 }

@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.IntFunction;
 import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes2.dex */
@@ -15,21 +17,21 @@ final class g2 extends V1 {
     }
 
     @Override // j$.util.stream.b
-    final F0 w0(j$.util.Q q, j$.util.function.I i, b bVar) {
+    final F0 v0(Spliterator spliterator, IntFunction intFunction, b bVar) {
         long j;
         long j2;
-        long o0 = bVar.o0(q);
-        if (o0 > 0 && q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            return t0.E(bVar, t0.y(bVar.r0(), q, this.m, this.n), true, i);
+        long n0 = bVar.n0(spliterator);
+        if (n0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            return t0.E(bVar, t0.y(bVar.q0(), spliterator, this.m, this.n), true, intFunction);
         }
-        if (S2.ORDERED.d(bVar.s0())) {
-            return (F0) new o2(this, bVar, q, i, this.m, this.n).invoke();
+        if (R2.ORDERED.d(bVar.r0())) {
+            return (F0) new o2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
         }
-        j$.util.Q F0 = bVar.F0(q);
+        Spliterator E0 = bVar.E0(spliterator);
         long j3 = this.m;
         long j4 = this.n;
-        if (j3 <= o0) {
-            long j5 = o0 - j3;
+        if (j3 <= n0) {
+            long j5 = n0 - j3;
             if (j4 >= 0) {
                 j5 = Math.min(j4, j5);
             }
@@ -39,27 +41,27 @@ final class g2 extends V1 {
             j = j4;
             j2 = j3;
         }
-        return t0.E(this, new s3(F0, j2, j), true, i);
+        return t0.E(this, new r3(E0, j2, j), true, intFunction);
     }
 
     @Override // j$.util.stream.b
-    final j$.util.Q x0(b bVar, j$.util.Q q) {
+    final Spliterator w0(b bVar, Spliterator spliterator) {
         long j;
         long j2;
-        long o0 = bVar.o0(q);
+        long n0 = bVar.n0(spliterator);
         long j3 = this.n;
-        if (o0 > 0 && q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            j$.util.Q F0 = bVar.F0(q);
+        if (n0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            Spliterator E0 = bVar.E0(spliterator);
             long j4 = this.m;
-            return new m3(F0, j4, t0.x(j4, j3));
+            return new l3(E0, j4, t0.x(j4, j3));
         }
-        if (S2.ORDERED.d(bVar.s0())) {
-            return ((F0) new o2(this, bVar, q, new Q1(2), this.m, this.n).invoke()).spliterator();
+        if (R2.ORDERED.d(bVar.r0())) {
+            return ((F0) new o2(this, bVar, spliterator, new Q1(2), this.m, this.n).invoke()).spliterator();
         }
-        j$.util.Q F02 = bVar.F0(q);
+        Spliterator E02 = bVar.E0(spliterator);
         long j5 = this.m;
-        if (j5 <= o0) {
-            long j6 = o0 - j5;
+        if (j5 <= n0) {
+            long j6 = n0 - j5;
             if (j3 >= 0) {
                 j6 = Math.min(j3, j6);
             }
@@ -69,11 +71,11 @@ final class g2 extends V1 {
             j = j3;
             j2 = j5;
         }
-        return new s3(F02, j2, j);
+        return new r3(E02, j2, j);
     }
 
     @Override // j$.util.stream.b
-    final e2 z0(int i, e2 e2Var) {
+    final e2 y0(int i, e2 e2Var) {
         return new f2(this, e2Var);
     }
 }

@@ -61,6 +61,12 @@ public class VideoFrame implements RefCounted {
 
     public interface TextureBuffer extends Buffer {
 
+        public abstract /* synthetic */ class -CC {
+            public static TextureBuffer $default$applyTransformMatrix(TextureBuffer textureBuffer, Matrix matrix, int i, int i2) {
+                throw new UnsupportedOperationException("Not implemented");
+            }
+        }
+
         public enum Type {
             OES(36197),
             RGB(3553);
@@ -76,11 +82,17 @@ public class VideoFrame implements RefCounted {
             }
         }
 
+        TextureBuffer applyTransformMatrix(Matrix matrix, int i, int i2);
+
         int getTextureId();
 
         Matrix getTransformMatrix();
 
         Type getType();
+
+        int getUnscaledHeight();
+
+        int getUnscaledWidth();
     }
 
     public VideoFrame(Buffer buffer, int i, long j) {

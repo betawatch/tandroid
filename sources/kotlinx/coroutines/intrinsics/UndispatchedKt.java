@@ -14,7 +14,7 @@ import kotlinx.coroutines.TimeoutCancellationException;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.internal.ThreadContextKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class UndispatchedKt {
     public static final void startCoroutineUndispatched(Function2 function2, Object obj, Continuation continuation) {
         Object createFailure;

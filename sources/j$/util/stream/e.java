@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.ForkJoinPool;
 
@@ -7,22 +8,22 @@ import java.util.concurrent.ForkJoinPool;
 abstract class e extends CountedCompleter {
     static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
     protected final b a;
-    protected j$.util.Q b;
+    protected Spliterator b;
     protected long c;
     protected e d;
     protected e e;
     private Object f;
 
-    protected e(b bVar, j$.util.Q q) {
+    protected e(b bVar, Spliterator spliterator) {
         super(null);
         this.a = bVar;
-        this.b = q;
+        this.b = spliterator;
         this.c = 0L;
     }
 
-    protected e(e eVar, j$.util.Q q) {
+    protected e(e eVar, Spliterator spliterator) {
         super(eVar);
-        this.b = q;
+        this.b = spliterator;
         this.a = eVar.a;
         this.c = eVar.c;
     }
@@ -47,9 +48,9 @@ abstract class e extends CountedCompleter {
 
     @Override // java.util.concurrent.CountedCompleter
     public void compute() {
-        j$.util.Q trySplit;
-        j$.util.Q q = this.b;
-        long estimateSize = q.estimateSize();
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long estimateSize = spliterator.estimateSize();
         long j = this.c;
         if (j == 0) {
             j = f(estimateSize);
@@ -57,14 +58,14 @@ abstract class e extends CountedCompleter {
         }
         boolean z = false;
         e eVar = this;
-        while (estimateSize > j && (trySplit = q.trySplit()) != null) {
+        while (estimateSize > j && (trySplit = spliterator.trySplit()) != null) {
             e d = eVar.d(trySplit);
             eVar.d = d;
-            e d2 = eVar.d(q);
+            e d2 = eVar.d(spliterator);
             eVar.e = d2;
             eVar.setPendingCount(1);
             if (z) {
-                q = trySplit;
+                spliterator = trySplit;
                 eVar = d;
                 d = d2;
             } else {
@@ -72,13 +73,13 @@ abstract class e extends CountedCompleter {
             }
             z = !z;
             d.fork();
-            estimateSize = q.estimateSize();
+            estimateSize = spliterator.estimateSize();
         }
         eVar.e(eVar.a());
         eVar.tryComplete();
     }
 
-    protected abstract e d(j$.util.Q q);
+    protected abstract e d(Spliterator spliterator);
 
     protected void e(Object obj) {
         this.f = obj;

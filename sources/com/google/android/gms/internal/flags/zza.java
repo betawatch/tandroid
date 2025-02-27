@@ -6,15 +6,14 @@ import android.os.IInterface;
 /* loaded from: classes.dex */
 public abstract class zza implements IInterface {
     private final IBinder zza;
-    private final String zzb;
+    private final String zzb = "com.google.android.gms.flags.IFlagProvider";
 
     protected zza(IBinder iBinder, String str) {
         this.zza = iBinder;
-        this.zzb = str;
     }
 
     @Override // android.os.IInterface
-    public IBinder asBinder() {
+    public final IBinder asBinder() {
         return this.zza;
     }
 }

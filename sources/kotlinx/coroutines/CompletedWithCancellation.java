@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CompletedWithCancellation {
     public final Function1 onCancellation;
     public final Object result;

@@ -774,7 +774,7 @@ public class PinchToZoomHelper {
         this.clipBoundsListener = clipBoundsListener;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x021e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -831,7 +831,7 @@ public class PinchToZoomHelper {
             imageReceiver2.setColorFilter(colorMatrixColorFilter);
             setFullImage(messageObject);
             this.imageX = imageReceiver.getImageX();
-            this.imageY = imageReceiver.getImageY();
+            this.imageY = imageReceiver.getImageY() + view.getPaddingTop();
             this.imageHeight = imageReceiver.getImageHeight();
             this.imageWidth = imageReceiver.getImageWidth();
             this.fullImageHeight = imageReceiver.getBitmapHeight();

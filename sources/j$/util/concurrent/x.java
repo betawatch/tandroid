@@ -1,11 +1,12 @@
 package j$.util.concurrent;
 
-import j$.util.E;
+import j$.util.A;
+import j$.util.D;
 import j$.util.function.Consumer;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class x implements E {
+final class x implements D {
     long a;
     final long b;
     final double c;
@@ -18,12 +19,12 @@ final class x implements E {
         this.d = d2;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.a.b(this, consumer);
+        A.b(this, consumer);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
     public final x trySplit() {
         long j = this.a;
@@ -35,60 +36,60 @@ final class x implements E {
         return new x(j, j2, this.c, this.d);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final int characteristics() {
         return 17728;
     }
 
-    @Override // j$.util.N
-    public final void e(j$.util.function.n nVar) {
-        nVar.getClass();
+    @Override // j$.util.M
+    public final void e(j$.util.function.m mVar) {
+        mVar.getClass();
         long j = this.a;
         long j2 = this.b;
         if (j < j2) {
             this.a = j2;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
-                nVar.accept(current.c(this.c, this.d));
+                mVar.accept(current.c(this.c, this.d));
                 j++;
             } while (j < j2);
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final long estimateSize() {
         return this.b - this.a;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final Comparator getComparator() {
         throw new IllegalStateException();
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.a.j(this);
+        return A.j(this);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.a.k(this, i);
+        return A.k(this, i);
     }
 
-    @Override // j$.util.N
-    public final boolean p(j$.util.function.n nVar) {
-        nVar.getClass();
+    @Override // j$.util.M
+    public final boolean p(j$.util.function.m mVar) {
+        mVar.getClass();
         long j = this.a;
         if (j >= this.b) {
             return false;
         }
-        nVar.accept(ThreadLocalRandom.current().c(this.c, this.d));
+        mVar.accept(ThreadLocalRandom.current().c(this.c, this.d));
         this.a = j + 1;
         return true;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.a.n(this, consumer);
+        return A.l(this, consumer);
     }
 }

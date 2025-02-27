@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Supplier;
 import java.util.List;
@@ -27,7 +29,7 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 6:
@@ -97,23 +99,23 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
 
     @Override // j$.util.function.LongFunction
     public Object apply(long j) {
-        return t0.D(j, (j$.util.function.I) this.b);
+        return t0.D(j, (IntFunction) this.b);
     }
 
     public boolean f() {
         switch (this.a) {
             case 3:
-                d3 d3Var = (d3) this.b;
-                return d3Var.d.s(d3Var.e);
+                c3 c3Var = (c3) this.b;
+                return c3Var.d.s(c3Var.e);
             case 4:
-                f3 f3Var = (f3) this.b;
-                return f3Var.d.s(f3Var.e);
+                e3 e3Var = (e3) this.b;
+                return e3Var.d.s(e3Var.e);
             case 5:
-                h3 h3Var = (h3) this.b;
-                return h3Var.d.s(h3Var.e);
+                g3 g3Var = (g3) this.b;
+                return g3Var.d.s(g3Var.e);
             default:
-                v3 v3Var = (v3) this.b;
-                return v3Var.d.s(v3Var.e);
+                u3 u3Var = (u3) this.b;
+                return u3Var.d.s(u3Var.e);
         }
     }
 
@@ -121,9 +123,9 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public Object get() {
         switch (this.a) {
             case 0:
-                return ((b) this.b).u0();
+                return ((b) this.b).t0();
             default:
-                return (j$.util.Q) this.b;
+                return (Spliterator) this.b;
         }
     }
 

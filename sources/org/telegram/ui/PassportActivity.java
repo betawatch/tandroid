@@ -321,7 +321,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$4() {
-            PassportActivity.this.lambda$onBackPressed$323();
+            PassportActivity.this.lambda$onBackPressed$335();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -430,7 +430,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 }
             }
             if (PassportActivity.this.isHasNotAnyChanges()) {
-                PassportActivity.this.lambda$onBackPressed$323();
+                PassportActivity.this.lambda$onBackPressed$335();
                 return false;
             }
             SecureDocument secureDocument = null;
@@ -572,7 +572,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 if (PassportActivity.this.currentActivityType == 0 || PassportActivity.this.currentActivityType == 5) {
                     PassportActivity.this.callCallback(false);
                 }
-                PassportActivity.this.lambda$onBackPressed$323();
+                PassportActivity.this.lambda$onBackPressed$335();
                 return;
             }
             if (i == 1) {
@@ -669,7 +669,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                             return;
                         }
                         if (PassportActivity.this.isHasNotAnyChanges()) {
-                            PassportActivity.this.lambda$onBackPressed$323();
+                            PassportActivity.this.lambda$onBackPressed$335();
                             return;
                         }
                         if (!PassportActivity.this.documentOnly) {
@@ -1669,7 +1669,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate.saveValue(tL_secureRequiredType, str, null, null, null, null, null, null, null, null, new Runnable() { // from class: org.telegram.ui.PassportActivity$PhoneConfirmationView$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PassportActivity.this.lambda$onBackPressed$323();
+                        PassportActivity.this.lambda$onBackPressed$335();
                     }
                 }, null);
                 return;
@@ -1745,7 +1745,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$resendCode$1(AlertDialog alertDialog, int i) {
             onBackPressed(true);
-            PassportActivity.this.lambda$onBackPressed$323();
+            PassportActivity.this.lambda$onBackPressed$335();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3838,7 +3838,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (byte b : bArr) {
             i += b & 255;
         }
-        if (i % NotificationCenter.liveLocationsChanged != 239) {
+        if (i % NotificationCenter.proxyCheckDone != 239) {
             return false;
         }
         return l == null || Utilities.bytesToLong(Utilities.computeSHA256(bArr)) == l.longValue();
@@ -4368,7 +4368,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             this.chatAttachAlert = chatAttachAlert;
             chatAttachAlert.setDelegate(new ChatAttachAlert.ChatAttachViewDelegate() { // from class: org.telegram.ui.PassportActivity.24
                 @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-                public void didPressedButton(int i, boolean z, boolean z2, int i2, long j, boolean z3, boolean z4) {
+                public void didPressedButton(int i, boolean z, boolean z2, int i2, long j, boolean z3, boolean z4, long j2) {
                     if (PassportActivity.this.getParentActivity() == null || PassportActivity.this.chatAttachAlert == null) {
                         return;
                     }
@@ -4438,8 +4438,8 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 }
 
                 @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-                public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, long j, boolean z2) {
-                    ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z, i, j, z2);
+                public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, long j, boolean z2, long j2) {
+                    ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z, i, j, z2, j2);
                 }
             });
         }
@@ -7118,15 +7118,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i2 = 0; i2 < 32; i2++) {
             i += 255 & bArr[i2];
         }
-        int i3 = i % NotificationCenter.liveLocationsChanged;
+        int i3 = i % NotificationCenter.proxyCheckDone;
         if (i3 != 239) {
-            int i4 = NotificationCenter.didSetNewTheme - i3;
+            int i4 = NotificationCenter.cameraInitied - i3;
             int nextInt = Utilities.random.nextInt(32);
             int i5 = (bArr[nextInt] & 255) + i4;
             if (i5 < 255) {
-                i5 += NotificationCenter.liveLocationsChanged;
+                i5 += NotificationCenter.proxyCheckDone;
             }
-            bArr[nextInt] = (byte) (i5 % NotificationCenter.liveLocationsChanged);
+            bArr[nextInt] = (byte) (i5 % NotificationCenter.proxyCheckDone);
         }
         return bArr;
     }
@@ -7483,7 +7483,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$69(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7561,7 +7561,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         this.currentDocumentValues.clear();
         this.delegate.deleteValue(this.currentType, this.currentDocumentsType, this.availableDocumentTypes, zArr[0], null, null);
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8156,7 +8156,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         if (tL_error == null) {
             this.ignoreOnFailure = true;
             callCallback(true);
-            lambda$onBackPressed$323();
+            lambda$onBackPressed$335();
         } else {
             showEditDoneProgress(false, false);
             if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {

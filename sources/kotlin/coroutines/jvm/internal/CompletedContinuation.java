@@ -3,7 +3,7 @@ package kotlin.coroutines.jvm.internal;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CompletedContinuation implements Continuation {
     public static final CompletedContinuation INSTANCE = new CompletedContinuation();
 

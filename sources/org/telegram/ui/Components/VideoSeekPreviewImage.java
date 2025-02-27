@@ -22,7 +22,6 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -296,7 +295,7 @@ public abstract class VideoSeekPreviewImage extends View {
             this.pendingProgress = f;
             return;
         }
-        int max = Math.max(NotificationCenter.storyQualityUpdate, AndroidUtilities.dp(100.0f));
+        int max = Math.max(200, AndroidUtilities.dp(100.0f));
         final Bitmap frameAtTime = this.fileDrawable.getFrameAtTime(j, false);
         if (frameAtTime != null) {
             int width = frameAtTime.getWidth();

@@ -32,25 +32,26 @@ public class SlideIntChooseView extends FrameLayout {
     private Options options;
     private final Theme.ResourcesProvider resourcesProvider;
     private final SeekBarView seekBarView;
-    private int stepsCount;
     private float toMaxTextEmojiSaturation;
     private int value;
     private final AnimatedTextView valueText;
     private Utilities.Callback whenChanged;
 
     public static class Options {
-        public int max;
-        public int min;
+        private int max;
+        private int min;
         public int style;
         public Utilities.Callback2Return toString;
+        public int[] steps = null;
+        public int betweenSteps = 1;
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ String lambda$make$0(Utilities.CallbackReturn callbackReturn, Integer num, Integer num2) {
-            return (String) callbackReturn.run(num2);
+        public static /* synthetic */ CharSequence lambda$make$0(Utilities.CallbackReturn callbackReturn, Integer num, Integer num2) {
+            return (CharSequence) callbackReturn.run(num2);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ String lambda$make$1(String str, Integer num, Integer num2) {
+        public static /* synthetic */ CharSequence lambda$make$1(String str, Integer num, Integer num2) {
             if (num.intValue() == 0) {
                 return LocaleController.formatPluralString(str, num2.intValue(), new Object[0]);
             }
@@ -65,7 +66,7 @@ public class SlideIntChooseView extends FrameLayout {
             options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
-                    String lambda$make$0;
+                    CharSequence lambda$make$0;
                     lambda$make$0 = SlideIntChooseView.Options.lambda$make$0(Utilities.CallbackReturn.this, (Integer) obj, (Integer) obj2);
                     return lambda$make$0;
                 }
@@ -81,12 +82,35 @@ public class SlideIntChooseView extends FrameLayout {
             options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
-                    String lambda$make$1;
+                    CharSequence lambda$make$1;
                     lambda$make$1 = SlideIntChooseView.Options.lambda$make$1(str, (Integer) obj, (Integer) obj2);
                     return lambda$make$1;
                 }
             };
             return options;
+        }
+
+        public static Options make(int i, int[] iArr, int i2, Utilities.Callback2Return callback2Return) {
+            Options options = new Options();
+            options.style = i;
+            options.steps = iArr;
+            options.betweenSteps = i2;
+            options.toString = callback2Return;
+            return options;
+        }
+
+        public int getMax() {
+            int[] iArr = this.steps;
+            return iArr != null ? iArr[iArr.length - 1] : this.max;
+        }
+
+        public int getMin() {
+            int[] iArr = this.steps;
+            return iArr != null ? iArr[0] : this.min;
+        }
+
+        public int getStepsCount() {
+            return this.steps != null ? (r0.length - 1) * this.betweenSteps : getMax() - getMin();
         }
     }
 
@@ -143,7 +167,12 @@ public class SlideIntChooseView extends FrameLayout {
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public int getStepsCount() {
-                return SlideIntChooseView.this.stepsCount;
+                return SlideIntChooseView.this.options.getStepsCount();
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public boolean needVisuallyDivideSteps() {
+                return false;
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -151,15 +180,18 @@ public class SlideIntChooseView extends FrameLayout {
                 if (SlideIntChooseView.this.options == null || SlideIntChooseView.this.whenChanged == null) {
                     return;
                 }
-                int round = Math.round(SlideIntChooseView.this.options.min + (SlideIntChooseView.this.stepsCount * f));
+                int value = SlideIntChooseView.this.getValue(f);
                 if (SlideIntChooseView.this.minValueAllowed != Integer.MIN_VALUE) {
-                    round = Math.max(round, SlideIntChooseView.this.minValueAllowed);
+                    value = Math.max(value, SlideIntChooseView.this.minValueAllowed);
                 }
-                if (SlideIntChooseView.this.value != round) {
-                    SlideIntChooseView.this.value = round;
-                    AndroidUtilities.vibrateCursor(SlideIntChooseView.this.seekBarView);
+                if (SlideIntChooseView.this.value != value) {
                     SlideIntChooseView slideIntChooseView = SlideIntChooseView.this;
-                    slideIntChooseView.updateTexts(slideIntChooseView.value, true);
+                    if (slideIntChooseView.getStep(slideIntChooseView.value) != SlideIntChooseView.this.getStep(value)) {
+                        AndroidUtilities.vibrateCursor(SlideIntChooseView.this.seekBarView);
+                    }
+                    SlideIntChooseView.this.value = value;
+                    SlideIntChooseView slideIntChooseView2 = SlideIntChooseView.this;
+                    slideIntChooseView2.updateTexts(slideIntChooseView2.value, true);
                     if (SlideIntChooseView.this.whenChanged != null) {
                         SlideIntChooseView.this.whenChanged.run(Integer.valueOf(SlideIntChooseView.this.value));
                     }
@@ -172,6 +204,37 @@ public class SlideIntChooseView extends FrameLayout {
             }
         });
         addView(seekBarView, LayoutHelper.createFrame(-1, 38.0f, 55, 6.0f, 30.0f, 6.0f, 0.0f));
+    }
+
+    public static int[] cut(int[] iArr, int i) {
+        boolean z = false;
+        int i2 = 0;
+        for (int i3 : iArr) {
+            if (i3 <= i) {
+                i2++;
+                if (i3 == i) {
+                    z = true;
+                }
+            }
+        }
+        if (!z) {
+            i2++;
+        }
+        if (i2 == iArr.length) {
+            return iArr;
+        }
+        int[] iArr2 = new int[i2];
+        int i4 = 0;
+        for (int i5 : iArr) {
+            if (i5 <= i) {
+                iArr2[i4] = i5;
+                i4++;
+            }
+        }
+        if (!z) {
+            iArr2[i4] = i;
+        }
+        return iArr2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -229,6 +292,60 @@ public class SlideIntChooseView extends FrameLayout {
         this.maxText.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
     }
 
+    public float getProgress(int i) {
+        if (this.options.steps != null) {
+            int i2 = 1;
+            while (true) {
+                int[] iArr = this.options.steps;
+                if (i2 >= iArr.length) {
+                    break;
+                }
+                int i3 = iArr[i2 - 1];
+                int i4 = iArr[i2];
+                if (i >= i3 && i <= i4) {
+                    return (1.0f / (iArr.length - 1)) * (r4 + (Math.round(((i - i3) / (i4 - i3)) * r2.betweenSteps) / this.options.betweenSteps));
+                }
+                i2++;
+            }
+        }
+        return Utilities.clamp01((i - this.options.getMin()) / (this.options.getMax() - this.options.getMin()));
+    }
+
+    public int getStep(int i) {
+        if (this.options.steps != null) {
+            int i2 = 1;
+            while (true) {
+                int[] iArr = this.options.steps;
+                if (i2 >= iArr.length) {
+                    break;
+                }
+                int i3 = i2 - 1;
+                int i4 = iArr[i3];
+                int i5 = iArr[i2];
+                if (i >= i4 && i <= i5) {
+                    return i3;
+                }
+                i2++;
+            }
+        }
+        return i;
+    }
+
+    public int getValue(float f) {
+        if (this.options.steps == null) {
+            return Math.round(r0.getMin() + ((this.options.getMax() - this.options.getMin()) * f));
+        }
+        double length = f * (r1.length - 1);
+        int clamp = Utilities.clamp((int) Math.floor(length), this.options.steps.length - 1, 0);
+        int clamp2 = Utilities.clamp((int) Math.ceil(length), this.options.steps.length - 1, 0);
+        int[] iArr = this.options.steps;
+        int i = iArr[clamp];
+        int i2 = iArr[clamp2];
+        double floor = Math.floor(length);
+        Double.isNaN(length);
+        return Math.round(AndroidUtilities.lerp(i, i2, Math.round(((float) (length - floor)) * this.options.betweenSteps) / this.options.betweenSteps));
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), 1073741824));
@@ -241,9 +358,7 @@ public class SlideIntChooseView extends FrameLayout {
         this.value = i;
         this.options = options;
         this.whenChanged = callback;
-        int i2 = options.max - options.min;
-        this.stepsCount = i2;
-        this.seekBarView.setProgress((i - r3) / i2, false);
+        this.seekBarView.setProgress(getProgress(i), false);
         updateTexts(i, false);
     }
 
@@ -252,7 +367,7 @@ public class SlideIntChooseView extends FrameLayout {
         if (this.value < i) {
             this.value = i;
         }
-        this.seekBarView.setMinProgress(Utilities.clamp01((i - this.options.min) / this.stepsCount));
+        this.seekBarView.setMinProgress(getProgress(i));
         updateTexts(this.value, false);
         invalidate();
     }
@@ -262,9 +377,9 @@ public class SlideIntChooseView extends FrameLayout {
         this.maxText.cancelAnimation();
         this.valueText.cancelAnimation();
         this.valueText.setText((CharSequence) this.options.toString.run(0, Integer.valueOf(i)), z);
-        this.minText.setText((CharSequence) this.options.toString.run(-1, Integer.valueOf(this.options.min)), z);
-        this.maxText.setText((CharSequence) this.options.toString.run(1, Integer.valueOf(this.options.max)), z);
-        this.maxText.setTextColor(Theme.getColor(i >= this.options.max ? Theme.key_windowBackgroundWhiteValueText : Theme.key_windowBackgroundWhiteGrayText, this.resourcesProvider), z);
-        setMaxTextEmojiSaturation(i >= this.options.max ? 1.0f : 0.0f, z);
+        this.minText.setText((CharSequence) this.options.toString.run(-1, Integer.valueOf(this.options.getMin())), z);
+        this.maxText.setText((CharSequence) this.options.toString.run(1, Integer.valueOf(this.options.getMax())), z);
+        this.maxText.setTextColor(Theme.getColor(i >= this.options.getMax() ? Theme.key_windowBackgroundWhiteValueText : Theme.key_windowBackgroundWhiteGrayText, this.resourcesProvider), z);
+        setMaxTextEmojiSaturation(i >= this.options.getMax() ? 1.0f : 0.0f, z);
     }
 }

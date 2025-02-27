@@ -6,7 +6,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
     private String query;

@@ -1,33 +1,28 @@
 package j$.util.function;
 
-import java.util.function.IntToLongFunction;
+import java.util.function.IntUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class L implements N {
-    public final /* synthetic */ IntToLongFunction a;
+public final /* synthetic */ class L {
+    public final /* synthetic */ IntUnaryOperator a;
 
-    private /* synthetic */ L(IntToLongFunction intToLongFunction) {
-        this.a = intToLongFunction;
+    private /* synthetic */ L(IntUnaryOperator intUnaryOperator) {
+        this.a = intUnaryOperator;
     }
 
-    public static /* synthetic */ N a(IntToLongFunction intToLongFunction) {
-        if (intToLongFunction == null) {
+    public static /* synthetic */ L a(IntUnaryOperator intUnaryOperator) {
+        if (intUnaryOperator == null) {
             return null;
         }
-        return intToLongFunction instanceof M ? ((M) intToLongFunction).a : new L(intToLongFunction);
-    }
-
-    @Override // j$.util.function.N
-    public final /* synthetic */ long applyAsLong(int i) {
-        return this.a.applyAsLong(i);
+        return new L(intUnaryOperator);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        IntToLongFunction intToLongFunction = this.a;
+        IntUnaryOperator intUnaryOperator = this.a;
         if (obj instanceof L) {
             obj = ((L) obj).a;
         }
-        return intToLongFunction.equals(obj);
+        return intUnaryOperator.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

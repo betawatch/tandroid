@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ByteStreamsKt {
     public static final long copyTo(InputStream inputStream, OutputStream out, int i) {
         Intrinsics.checkNotNullParameter(inputStream, "<this>");

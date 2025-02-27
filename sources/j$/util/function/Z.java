@@ -1,31 +1,50 @@
 package j$.util.function;
 
-import java.util.function.LongPredicate;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Z {
-    public final /* synthetic */ LongPredicate a;
+public final /* synthetic */ class Z implements c0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c0 b;
+    public final /* synthetic */ c0 c;
 
-    private /* synthetic */ Z(LongPredicate longPredicate) {
-        this.a = longPredicate;
+    public /* synthetic */ Z(c0 c0Var, c0 c0Var2, int i) {
+        this.a = i;
+        this.b = c0Var;
+        this.c = c0Var2;
     }
 
-    public static /* synthetic */ Z a(LongPredicate longPredicate) {
-        if (longPredicate == null) {
-            return null;
+    @Override // j$.util.function.c0
+    public final c0 a(c0 c0Var) {
+        switch (this.a) {
+            case 0:
+                c0Var.getClass();
+                break;
+            default:
+                c0Var.getClass();
+                break;
         }
-        return new Z(longPredicate);
+        return new Z(this, c0Var, 0);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        LongPredicate longPredicate = this.a;
-        if (obj instanceof Z) {
-            obj = ((Z) obj).a;
+    @Override // j$.util.function.c0
+    public final long applyAsLong(long j) {
+        switch (this.a) {
+            case 0:
+                return this.c.applyAsLong(this.b.applyAsLong(j));
+            default:
+                return this.b.applyAsLong(this.c.applyAsLong(j));
         }
-        return longPredicate.equals(obj);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.function.c0
+    public final c0 c(c0 c0Var) {
+        switch (this.a) {
+            case 0:
+                c0Var.getClass();
+                break;
+            default:
+                c0Var.getClass();
+                break;
+        }
+        return new Z(this, c0Var, 1);
     }
 }

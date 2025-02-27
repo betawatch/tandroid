@@ -8,7 +8,7 @@ import kotlin.sequences.SequencesKt__SequencesKt;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineExceptionHandlerImplKt {
     private static final Collection platformExceptionHandlers;
 

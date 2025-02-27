@@ -41,7 +41,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ReactionsEffectOverlay {
     public static ReactionsEffectOverlay currentOverlay;
     public static ReactionsEffectOverlay currentShortOverlay;
@@ -672,7 +672,7 @@ public class ReactionsEffectOverlay {
             AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
             if (animatedEmojiDrawable != null) {
                 animatedEmojiDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.animatedEmojiDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                this.animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
                 this.animatedEmojiDrawable.draw(canvas);
             } else {
                 AnimatedEmojiEffect animatedEmojiEffect = this.emojiEffect;
@@ -738,24 +738,24 @@ public class ReactionsEffectOverlay {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x03cf  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x03dc  */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x04b4  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x04cd  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x04dc  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x068e  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x06cd  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x06f2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x06f6  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x04c1  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x04da  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x04e9  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x069b  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x06da  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x06ff A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0703  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x05fb  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0608  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x04c9  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x03ec  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x04d6  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x03f9  */
     /* JADX WARN: Removed duplicated region for block: B:220:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x0076  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x0105  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x02cc  */
@@ -763,9 +763,9 @@ public class ReactionsEffectOverlay {
     /* JADX WARN: Type inference failed for: r14v13 */
     /* JADX WARN: Type inference failed for: r14v14, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r14v15 */
-    /* JADX WARN: Type inference failed for: r3v32 */
-    /* JADX WARN: Type inference failed for: r3v38, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r3v56 */
+    /* JADX WARN: Type inference failed for: r3v39 */
+    /* JADX WARN: Type inference failed for: r3v45, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v63 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1231,7 +1231,7 @@ public class ReactionsEffectOverlay {
                             } else if (view != null) {
                                 ((View) view.getParent()).getLocationInWindow(this.loc);
                                 int[] iArr2 = this.loc;
-                                f5 = iArr2[1] + f2;
+                                f5 = iArr2[1] + f2 + (view instanceof ChatMessageCell ? ((ChatMessageCell) view).starsPriceTopPadding : 0);
                                 f6 = iArr2[0] + f;
                                 f7 = 0.0f;
                             } else {
@@ -1541,11 +1541,11 @@ public class ReactionsEffectOverlay {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x006d, code lost:
     
         if (r26 != 2) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0078, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0077, code lost:
     
         if (r1.isShowing() == false) goto L31;
      */

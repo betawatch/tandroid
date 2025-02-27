@@ -3,6 +3,7 @@ package j$.time.format;
 import j$.time.Instant;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
+import j$.util.A;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
@@ -19,7 +20,7 @@ final class p extends o {
         super(j$.time.temporal.j.i(), "ZoneText(" + textStyle + ")");
         new HashMap();
         new HashMap();
-        j$.util.a.B(textStyle, "textStyle");
+        A.z(textStyle, "textStyle");
         this.c = textStyle;
     }
 

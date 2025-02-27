@@ -1,28 +1,28 @@
 package j$.util.function;
 
-import java.util.function.DoublePredicate;
+import java.util.function.DoubleToIntFunction;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class r {
-    public final /* synthetic */ DoublePredicate a;
+    public final /* synthetic */ DoubleToIntFunction a;
 
-    private /* synthetic */ r(DoublePredicate doublePredicate) {
-        this.a = doublePredicate;
+    private /* synthetic */ r(DoubleToIntFunction doubleToIntFunction) {
+        this.a = doubleToIntFunction;
     }
 
-    public static /* synthetic */ r a(DoublePredicate doublePredicate) {
-        if (doublePredicate == null) {
+    public static /* synthetic */ r a(DoubleToIntFunction doubleToIntFunction) {
+        if (doubleToIntFunction == null) {
             return null;
         }
-        return new r(doublePredicate);
+        return new r(doubleToIntFunction);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        DoublePredicate doublePredicate = this.a;
+        DoubleToIntFunction doubleToIntFunction = this.a;
         if (obj instanceof r) {
             obj = ((r) obj).a;
         }
-        return doublePredicate.equals(obj);
+        return doubleToIntFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

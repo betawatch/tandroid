@@ -18,7 +18,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     public static final int getLastIndex(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");

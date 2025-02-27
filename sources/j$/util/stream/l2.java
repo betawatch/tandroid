@@ -15,7 +15,7 @@ final class l2 extends X1 {
         this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         long j = this.b;
         if (j != 0) {

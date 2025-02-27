@@ -20,7 +20,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.EmojiAnimationsOverlay;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AnimatedEmojiEffect {
     private static int currentIndex;
     public AnimatedEmojiDrawable animatedEmojiDrawable;
@@ -93,7 +93,7 @@ public class AnimatedEmojiEffect {
                     AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha((int) (f * 255.0f * Utilities.clamp(this.progress / 0.2f, 1.0f, 0.0f)));
                     AnimatedEmojiEffect.this.animatedEmojiDrawable.setBounds((int) (lerp - f3), (int) (lerp2 - f3), (int) (lerp + f3), (int) (lerp2 + f3));
                     AnimatedEmojiEffect.this.animatedEmojiDrawable.draw(canvas);
-                    AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                    AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
                     canvas.restore();
                 }
             }
@@ -106,7 +106,7 @@ public class AnimatedEmojiEffect {
             AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha((int) (f * 255.0f * Utilities.clamp(this.progress / 0.2f, 1.0f, 0.0f)));
             AnimatedEmojiEffect.this.animatedEmojiDrawable.setBounds((int) (lerp - f32), (int) (lerp2 - f32), (int) (lerp + f32), (int) (lerp2 + f32));
             AnimatedEmojiEffect.this.animatedEmojiDrawable.draw(canvas);
-            AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+            AnimatedEmojiEffect.this.animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
             canvas.restore();
         }
 

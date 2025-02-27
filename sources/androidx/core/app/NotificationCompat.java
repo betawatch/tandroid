@@ -7,22 +7,32 @@ import android.content.LocusId;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.TextAppearanceSpan;
 import android.widget.RemoteViews;
 import androidx.core.R$dimen;
+import androidx.core.R$drawable;
+import androidx.core.R$id;
+import androidx.core.R$integer;
+import androidx.core.R$string;
 import androidx.core.app.Person;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.text.BidiFormatter;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -171,6 +181,10 @@ public abstract class NotificationCompat {
 
         public Bundle getExtras() {
             return this.mExtras;
+        }
+
+        public int getIcon() {
+            return this.icon;
         }
 
         public IconCompat getIconCompat() {
@@ -608,6 +622,7 @@ public abstract class NotificationCompat {
         BubbleMetadata mBubbleMetadata;
         String mCategory;
         String mChannelId;
+        boolean mChronometerCountDown;
         int mColor;
         boolean mColorized;
         boolean mColorizedSet;
@@ -783,6 +798,17 @@ public abstract class NotificationCompat {
             return this.mExtras;
         }
 
+        public int getPriority() {
+            return this.mPriority;
+        }
+
+        public long getWhenIfShowing() {
+            if (this.mShowWhen) {
+                return this.mNotification.when;
+            }
+            return 0L;
+        }
+
         public Builder setAutoCancel(boolean z) {
             setFlag(16, z);
             return this;
@@ -873,6 +899,11 @@ public abstract class NotificationCompat {
 
         public Builder setNumber(int i) {
             this.mNumber = i;
+            return this;
+        }
+
+        public Builder setOngoing(boolean z) {
+            setFlag(2, z);
             return this;
         }
 
@@ -1409,6 +1440,58 @@ public abstract class NotificationCompat {
         CharSequence mSummaryText;
         boolean mSummaryTextSet = false;
 
+        static class Api16Impl {
+            static void setTextViewTextSize(RemoteViews remoteViews, int i, int i2, float f) {
+                remoteViews.setTextViewTextSize(i, i2, f);
+            }
+
+            static void setViewPadding(RemoteViews remoteViews, int i, int i2, int i3, int i4, int i5) {
+                remoteViews.setViewPadding(i, i2, i3, i4, i5);
+            }
+        }
+
+        static class Api24Impl {
+            static void setChronometerCountDown(RemoteViews remoteViews, int i, boolean z) {
+                remoteViews.setChronometerCountDown(i, z);
+            }
+        }
+
+        private Bitmap createColoredBitmap(int i, int i2, int i3) {
+            return createColoredBitmap(IconCompat.createWithResource(this.mBuilder.mContext, i), i2, i3);
+        }
+
+        private Bitmap createColoredBitmap(IconCompat iconCompat, int i, int i2) {
+            Drawable loadDrawable = iconCompat.loadDrawable(this.mBuilder.mContext);
+            int intrinsicWidth = i2 == 0 ? loadDrawable.getIntrinsicWidth() : i2;
+            if (i2 == 0) {
+                i2 = loadDrawable.getIntrinsicHeight();
+            }
+            Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, i2, Bitmap.Config.ARGB_8888);
+            loadDrawable.setBounds(0, 0, intrinsicWidth, i2);
+            if (i != 0) {
+                loadDrawable.mutate().setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
+            }
+            loadDrawable.draw(new Canvas(createBitmap));
+            return createBitmap;
+        }
+
+        private Bitmap createIconWithBackground(int i, int i2, int i3, int i4) {
+            int i5 = R$drawable.notification_icon_background;
+            if (i4 == 0) {
+                i4 = 0;
+            }
+            Bitmap createColoredBitmap = createColoredBitmap(i5, i4, i2);
+            Canvas canvas = new Canvas(createColoredBitmap);
+            Drawable mutate = this.mBuilder.mContext.getResources().getDrawable(i).mutate();
+            mutate.setFilterBitmap(true);
+            int i6 = (i2 - i3) / 2;
+            int i7 = i3 + i6;
+            mutate.setBounds(i6, i6, i7, i7);
+            mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_ATOP));
+            mutate.draw(canvas);
+            return createColoredBitmap;
+        }
+
         public void addCompatExtras(Bundle bundle) {
             if (this.mSummaryTextSet) {
                 bundle.putCharSequence("android.summaryText", this.mSummaryText);
@@ -1425,7 +1508,152 @@ public abstract class NotificationCompat {
 
         public abstract void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor);
 
-        protected abstract String getClassName();
+        /* JADX WARN: Removed duplicated region for block: B:38:0x0151  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x018c  */
+        /* JADX WARN: Removed duplicated region for block: B:56:0x01d5  */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x01e1  */
+        /* JADX WARN: Removed duplicated region for block: B:63:0x01d7  */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x01d0  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public RemoteViews applyStandardTemplate(boolean z, int i, boolean z2) {
+            Bitmap createColoredBitmap;
+            boolean z3;
+            int i2;
+            CharSequence charSequence;
+            int i3;
+            int i4;
+            Resources resources = this.mBuilder.mContext.getResources();
+            RemoteViews remoteViews = new RemoteViews(this.mBuilder.mContext.getPackageName(), i);
+            boolean z4 = true;
+            boolean z5 = this.mBuilder.getPriority() < -1;
+            int i5 = Build.VERSION.SDK_INT;
+            if (i5 < 21) {
+                if (z5) {
+                    remoteViews.setInt(R$id.notification_background, "setBackgroundResource", R$drawable.notification_bg_low);
+                    i3 = R$id.icon;
+                    i4 = R$drawable.notification_template_icon_low_bg;
+                } else {
+                    remoteViews.setInt(R$id.notification_background, "setBackgroundResource", R$drawable.notification_bg);
+                    i3 = R$id.icon;
+                    i4 = R$drawable.notification_template_icon_bg;
+                }
+                remoteViews.setInt(i3, "setBackgroundResource", i4);
+            }
+            Builder builder = this.mBuilder;
+            if (builder.mLargeIcon != null) {
+                int i6 = R$id.icon;
+                remoteViews.setViewVisibility(i6, 0);
+                remoteViews.setImageViewBitmap(i6, this.mBuilder.mLargeIcon);
+                if (z && this.mBuilder.mNotification.icon != 0) {
+                    int dimensionPixelSize = resources.getDimensionPixelSize(R$dimen.notification_right_icon_size);
+                    int dimensionPixelSize2 = dimensionPixelSize - (resources.getDimensionPixelSize(R$dimen.notification_small_icon_background_padding) * 2);
+                    if (i5 >= 21) {
+                        Builder builder2 = this.mBuilder;
+                        remoteViews.setImageViewBitmap(R$id.right_icon, createIconWithBackground(builder2.mNotification.icon, dimensionPixelSize, dimensionPixelSize2, builder2.getColor()));
+                    } else {
+                        remoteViews.setImageViewBitmap(R$id.right_icon, createColoredBitmap(this.mBuilder.mNotification.icon, -1));
+                    }
+                    remoteViews.setViewVisibility(R$id.right_icon, 0);
+                }
+            } else if (z && builder.mNotification.icon != 0) {
+                int i7 = R$id.icon;
+                remoteViews.setViewVisibility(i7, 0);
+                if (i5 >= 21) {
+                    int dimensionPixelSize3 = resources.getDimensionPixelSize(R$dimen.notification_large_icon_width) - resources.getDimensionPixelSize(R$dimen.notification_big_circle_margin);
+                    int dimensionPixelSize4 = resources.getDimensionPixelSize(R$dimen.notification_small_icon_size_as_large);
+                    Builder builder3 = this.mBuilder;
+                    createColoredBitmap = createIconWithBackground(builder3.mNotification.icon, dimensionPixelSize3, dimensionPixelSize4, builder3.getColor());
+                } else {
+                    createColoredBitmap = createColoredBitmap(this.mBuilder.mNotification.icon, -1);
+                }
+                remoteViews.setImageViewBitmap(i7, createColoredBitmap);
+            }
+            CharSequence charSequence2 = this.mBuilder.mContentTitle;
+            if (charSequence2 != null) {
+                remoteViews.setTextViewText(R$id.title, charSequence2);
+            }
+            CharSequence charSequence3 = this.mBuilder.mContentText;
+            if (charSequence3 != null) {
+                remoteViews.setTextViewText(R$id.text, charSequence3);
+                z3 = true;
+            } else {
+                z3 = false;
+            }
+            boolean z6 = i5 < 21 && this.mBuilder.mLargeIcon != null;
+            Builder builder4 = this.mBuilder;
+            CharSequence charSequence4 = builder4.mContentInfo;
+            if (charSequence4 != null) {
+                i2 = R$id.info;
+                remoteViews.setTextViewText(i2, charSequence4);
+            } else {
+                if (builder4.mNumber <= 0) {
+                    remoteViews.setViewVisibility(R$id.info, 8);
+                    charSequence = this.mBuilder.mSubText;
+                    if (charSequence != null) {
+                        int i8 = R$id.text;
+                        remoteViews.setTextViewText(i8, charSequence);
+                        CharSequence charSequence5 = this.mBuilder.mContentText;
+                        if (charSequence5 != null) {
+                            int i9 = R$id.text2;
+                            remoteViews.setTextViewText(i9, charSequence5);
+                            remoteViews.setViewVisibility(i9, 0);
+                            if (z2) {
+                                Api16Impl.setTextViewTextSize(remoteViews, i8, 0, resources.getDimensionPixelSize(R$dimen.notification_subtext_size));
+                            }
+                            Api16Impl.setViewPadding(remoteViews, R$id.line1, 0, 0, 0, 0);
+                        } else {
+                            remoteViews.setViewVisibility(R$id.text2, 8);
+                        }
+                    }
+                    if (this.mBuilder.getWhenIfShowing() != 0) {
+                        z4 = z6;
+                    } else if (this.mBuilder.mUseChronometer) {
+                        int i10 = R$id.chronometer;
+                        remoteViews.setViewVisibility(i10, 0);
+                        remoteViews.setLong(i10, "setBase", this.mBuilder.getWhenIfShowing() + (SystemClock.elapsedRealtime() - System.currentTimeMillis()));
+                        remoteViews.setBoolean(i10, "setStarted", true);
+                        boolean z7 = this.mBuilder.mChronometerCountDown;
+                        if (z7 && i5 >= 24) {
+                            Api24Impl.setChronometerCountDown(remoteViews, i10, z7);
+                        }
+                    } else {
+                        int i11 = R$id.time;
+                        remoteViews.setViewVisibility(i11, 0);
+                        remoteViews.setLong(i11, "setTime", this.mBuilder.getWhenIfShowing());
+                    }
+                    remoteViews.setViewVisibility(R$id.right_side, !z4 ? 0 : 8);
+                    remoteViews.setViewVisibility(R$id.line3, z3 ? 0 : 8);
+                    return remoteViews;
+                }
+                if (this.mBuilder.mNumber > resources.getInteger(R$integer.status_bar_notification_info_maxnum)) {
+                    remoteViews.setTextViewText(R$id.info, resources.getString(R$string.status_bar_notification_info_overflow));
+                } else {
+                    remoteViews.setTextViewText(R$id.info, NumberFormat.getIntegerInstance().format(this.mBuilder.mNumber));
+                }
+                i2 = R$id.info;
+            }
+            remoteViews.setViewVisibility(i2, 0);
+            z3 = true;
+            z6 = true;
+            charSequence = this.mBuilder.mSubText;
+            if (charSequence != null) {
+            }
+            if (this.mBuilder.getWhenIfShowing() != 0) {
+            }
+            remoteViews.setViewVisibility(R$id.right_side, !z4 ? 0 : 8);
+            remoteViews.setViewVisibility(R$id.line3, z3 ? 0 : 8);
+            return remoteViews;
+        }
+
+        public Bitmap createColoredBitmap(int i, int i2) {
+            return createColoredBitmap(i, i2, 0);
+        }
+
+        protected String getClassName() {
+            return null;
+        }
 
         public RemoteViews makeBigContentView(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
             return null;

@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AwaitKt {
     public static final Object awaitAll(Deferred[] deferredArr, Continuation continuation) {
         return deferredArr.length == 0 ? CollectionsKt__CollectionsKt.emptyList() : new AwaitAll(deferredArr).await(continuation);

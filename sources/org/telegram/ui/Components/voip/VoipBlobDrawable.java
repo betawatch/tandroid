@@ -3,7 +3,7 @@ package org.telegram.ui.Components.voip;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.BlobDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoipBlobDrawable extends BlobDrawable {
     public VoipBlobDrawable(int i) {
         super(i);

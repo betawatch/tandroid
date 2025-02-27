@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.temporal.q;
+import j$.util.A;
 import java.io.Serializable;
 
 /* loaded from: classes2.dex */
@@ -16,7 +17,7 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
     }
 
     public static p g(Instant instant, ZoneId zoneId) {
-        j$.util.a.B(instant, "instant");
+        A.z(instant, "instant");
         long i = instant.i();
         int j = instant.j();
         ZoneOffset offset = zoneId.getRules().getOffset(Instant.l(i, j));

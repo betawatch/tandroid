@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
 abstract class P0 extends H0 implements E0 {
     P0(E0 e0, E0 e02) {
@@ -31,8 +33,8 @@ abstract class P0 extends H0 implements E0 {
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ Object[] s(j$.util.function.I i) {
-        return t0.m(this, i);
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return t0.m(this, intFunction);
     }
 
     public final String toString() {

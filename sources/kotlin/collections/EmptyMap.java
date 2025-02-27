@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class EmptyMap implements Map, Serializable {
     public static final EmptyMap INSTANCE = new EmptyMap();
 

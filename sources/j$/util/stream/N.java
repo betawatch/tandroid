@@ -2,11 +2,11 @@ package j$.util.stream;
 
 /* loaded from: classes2.dex */
 final class N extends Q implements c2 {
-    final j$.util.function.F b;
+    final j$.util.function.E b;
 
-    N(j$.util.function.F f, boolean z) {
+    N(j$.util.function.E e, boolean z) {
         super(z);
-        this.b = f;
+        this.b = e;
     }
 
     @Override // j$.util.stream.Q, j$.util.stream.e2
@@ -20,9 +20,9 @@ final class N extends Q implements c2 {
         o((Integer) obj);
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
     @Override // j$.util.stream.c2

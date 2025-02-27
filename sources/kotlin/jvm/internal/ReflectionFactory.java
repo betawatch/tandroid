@@ -5,7 +5,7 @@ import kotlin.reflect.KDeclarationContainer;
 import kotlin.reflect.KFunction;
 import kotlin.reflect.KProperty0;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ReflectionFactory {
     public KFunction function(FunctionReference functionReference) {
         return functionReference;

@@ -22,6 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.GroupCallActivity;
 
@@ -956,7 +957,7 @@ public class ChatObject {
             this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.id), Boolean.FALSE);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:179:0x03d8  */
+        /* JADX WARN: Removed duplicated region for block: B:179:0x03d9  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -2363,6 +2364,15 @@ public class ChatObject {
             return null;
         }
         return chat.username;
+    }
+
+    public static TL_account.RequirementToContact getRequirementToContact(TLRPC.Chat chat) {
+        if (chat == null || chat.send_paid_messages_stars == 0) {
+            return null;
+        }
+        TL_account.requirementToContactPaidMessages requirementtocontactpaidmessages = new TL_account.requirementToContactPaidMessages();
+        requirementtocontactpaidmessages.stars_amount = chat.send_paid_messages_stars;
+        return requirementtocontactpaidmessages;
     }
 
     public static String getRestrictedErrorText(TLRPC.Chat chat, int i) {

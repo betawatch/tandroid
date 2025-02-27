@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -8,13 +9,13 @@ abstract class c extends e {
     protected final AtomicReference h;
     protected volatile boolean i;
 
-    protected c(b bVar, j$.util.Q q) {
-        super(bVar, q);
+    protected c(b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
         this.h = new AtomicReference(null);
     }
 
-    protected c(c cVar, j$.util.Q q) {
-        super(cVar, q);
+    protected c(c cVar, Spliterator spliterator) {
+        super(cVar, spliterator);
         this.h = cVar.h;
     }
 
@@ -30,9 +31,9 @@ abstract class c extends e {
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
     public final void compute() {
         Object obj;
-        j$.util.Q trySplit;
-        j$.util.Q q = this.b;
-        long estimateSize = q.estimateSize();
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long estimateSize = spliterator.estimateSize();
         long j = this.c;
         if (j == 0) {
             j = e.f(estimateSize);
@@ -62,16 +63,16 @@ abstract class c extends e {
                 obj = cVar.i();
                 break;
             }
-            if (estimateSize <= j || (trySplit = q.trySplit()) == null) {
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
             c cVar3 = (c) cVar.d(trySplit);
             cVar.d = cVar3;
-            c cVar4 = (c) cVar.d(q);
+            c cVar4 = (c) cVar.d(spliterator);
             cVar.e = cVar4;
             cVar.setPendingCount(1);
             if (z) {
-                q = trySplit;
+                spliterator = trySplit;
                 cVar = cVar3;
                 cVar3 = cVar4;
             } else {
@@ -79,7 +80,7 @@ abstract class c extends e {
             }
             z = !z;
             cVar3.fork();
-            estimateSize = q.estimateSize();
+            estimateSize = spliterator.estimateSize();
         }
         obj = cVar.a();
         cVar.e(obj);

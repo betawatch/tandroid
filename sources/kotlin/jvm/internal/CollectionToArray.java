@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionToArray {
     private static final Object[] EMPTY = new Object[0];
 

@@ -1201,14 +1201,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 i6 = i5;
                                                 drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i6 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                                                    drawable.setAlpha(NotificationCenter.proxyCheckDone);
                                                 }
                                             }
                                             i5 = (int) ((f5 - min) * f3 * 255.0f);
                                             i6 = i5;
                                             drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i6 != 255) {
-                                                drawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                                                drawable.setAlpha(NotificationCenter.proxyCheckDone);
                                             }
                                         }
                                     }
@@ -3288,9 +3288,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x032f  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0343  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0366  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0330  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0344  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0367  */
     /* JADX WARN: Type inference failed for: r8v2 */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.graphics.BitmapShader, java.lang.String] */
     /* JADX WARN: Type inference failed for: r8v6 */
@@ -4268,7 +4268,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if ((drawable == null || (bitmapShader = this.thumbShader) == null) && ((drawable = this.staticThumbDrawable) == null || (bitmapShader = this.staticThumbShader) == null)) {
             return false;
         }
-        drawDrawable(null, drawable, NotificationCenter.liveLocationsChanged, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable, NotificationCenter.proxyCheckDone, bitmapShader, 0, 0, 0, null);
         return true;
     }
 }

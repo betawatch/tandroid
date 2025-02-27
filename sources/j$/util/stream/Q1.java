@@ -1,10 +1,11 @@
 package j$.util.stream;
 
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import j$.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Q1 implements j$.util.function.I, ToLongFunction, Consumer {
+public final /* synthetic */ class Q1 implements IntFunction, ToLongFunction, Consumer {
     public final /* synthetic */ int a;
 
     private final void a(Object obj) {
@@ -25,7 +26,7 @@ public final /* synthetic */ class Q1 implements j$.util.function.I, ToLongFunct
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.I
+    @Override // j$.util.function.IntFunction
     public Object apply(int i) {
         switch (this.a) {
             case 0:

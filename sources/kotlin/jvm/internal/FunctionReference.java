@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KFunction;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class FunctionReference extends CallableReference implements FunctionBase, KFunction {
     private final int arity;
     private final int flags;

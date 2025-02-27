@@ -2,6 +2,7 @@ package org.telegram.ui.Stars;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,6 +20,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.transition.ChangeBounds;
 import android.transition.TransitionManager;
+import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -86,7 +88,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes4.dex */
 public class StarsReactionsSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
-    private final StarsIntroActivity.StarsBalanceView balanceView;
+    private final BalanceCloud balanceCloud;
     private final Space beforeTitleSpace;
     private final ButtonWithCounterView buttonView;
     private ChatActivity chatActivity;
@@ -95,6 +97,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     private final View checkSeparatorView;
     private final TextView checkTextView;
     private boolean checkedVisiblity;
+    private final ImageView closeView;
     private final int currentAccount;
     private final BackupImageView dialogImageView;
     private final ImageView dialogSelectorIconView;
@@ -119,6 +122,73 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     private final FrameLayout topLayout;
     private final TopSendersView topSendersView;
     private final LinearLayout toptopLayout;
+
+    public static class BalanceCloud extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+        private final int currentAccount;
+        private final TextView textView1;
+        private final LinkSpanDrawable.LinksTextView textView2;
+
+        public BalanceCloud(final Context context, int i, final Theme.ResourcesProvider resourcesProvider) {
+            super(context);
+            this.currentAccount = i;
+            setOrientation(1);
+            setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
+            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_undo_background, resourcesProvider)));
+            TextView textView = new TextView(context);
+            this.textView1 = textView;
+            textView.setTextSize(1, 13.0f);
+            textView.setTextColor(Theme.getColor(Theme.key_undo_infoColor, resourcesProvider));
+            textView.setGravity(17);
+            addView(textView, LayoutHelper.createLinear(-2, -2, 0.0f, 17, 0, 0, 0, 0));
+            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, resourcesProvider);
+            this.textView2 = linksTextView;
+            linksTextView.setTextSize(1, 12.0f);
+            int i2 = Theme.key_undo_cancelColor;
+            linksTextView.setTextColor(Theme.getColor(i2, resourcesProvider));
+            linksTextView.setLinkTextColor(Theme.getColor(i2, resourcesProvider));
+            linksTextView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.premiumText("Get More Stars >", new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$BalanceCloud$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarsReactionsSheet.BalanceCloud.lambda$new$0(context, resourcesProvider);
+                }
+            }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+            linksTextView.setGravity(17);
+            addView(linksTextView, LayoutHelper.createLinear(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+            updateBalance(false);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider) {
+            new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
+        }
+
+        private void updateBalance(boolean z) {
+            long j = StarsController.getInstance(this.currentAccount).getBalance().amount;
+            this.textView1.setText(StarsIntroActivity.replaceStarsWithPlain("Your balance is ⭐️" + LocaleController.formatNumber(j, ','), 0.6f));
+        }
+
+        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+        public void didReceivedNotification(int i, int i2, Object... objArr) {
+            if (i == NotificationCenter.starBalanceUpdated) {
+                updateBalance(true);
+            }
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onAttachedToWindow() {
+            super.onAttachedToWindow();
+            updateBalance(false);
+            NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
+            NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.botStarsUpdated);
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onDetachedFromWindow() {
+            super.onDetachedFromWindow();
+            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
+            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.botStarsUpdated);
+        }
+    }
 
     public static class Particles {
         public final Bitmap b;
@@ -342,7 +412,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.chatlistFolderUpdate);
+            this.sliderParticles = new Particles(0, NotificationCenter.storiesListUpdated);
             this.textParticles = new Particles(2, 30);
             this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradientMatrix = new Matrix();
@@ -814,7 +884,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
                         this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
                         this.anonymousAvatarDrawable.draw(canvas);
-                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.liveLocationsChanged);
+                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.proxyCheckDone);
                     }
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
@@ -1039,16 +1109,30 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         }
     }
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StarsReactionsSheet(final Context context, final int i, final long j, final ChatActivity chatActivity, final MessageObject messageObject, ArrayList arrayList, boolean z, final Theme.ResourcesProvider resourcesProvider) {
         super(context, false, resourcesProvider);
         TLRPC.MessageReactor messageReactor;
-        final Theme.ResourcesProvider resourcesProvider2;
+        int i2 = 9;
         this.starRef = new ColoredImageSpan[1];
         this.checkedVisiblity = false;
         this.resourcesProvider = resourcesProvider;
         this.currentAccount = i;
         this.messageObject = messageObject;
         this.reactors = arrayList;
+        BalanceCloud balanceCloud = new BalanceCloud(context, i, resourcesProvider);
+        this.balanceCloud = balanceCloud;
+        balanceCloud.setScaleX(0.6f);
+        balanceCloud.setScaleY(0.6f);
+        balanceCloud.setAlpha(0.0f);
+        this.container.addView(balanceCloud, LayoutHelper.createFrame(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
+        ScaleStateListAnimator.apply(balanceCloud);
+        balanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                StarsReactionsSheet.lambda$new$0(context, resourcesProvider, view);
+            }
+        });
         long clientUserId = UserConfig.getInstance(i).getClientUserId();
         if (arrayList != null) {
             Iterator it = arrayList.iterator();
@@ -1070,7 +1154,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         boolean z2 = (arrayList == null || arrayList.isEmpty()) ? false : true;
         long paidReactionsDialogId = StarsController.getInstance(i).getPaidReactionsDialogId(messageObject);
         this.peer = paidReactionsDialogId;
-        this.lastSelectedPeer = paidReactionsDialogId == UserObject.ANONYMOUS ? clientUserId : paidReactionsDialogId;
+        this.lastSelectedPeer = paidReactionsDialogId != UserObject.ANONYMOUS ? paidReactionsDialogId : clientUserId;
         fixNavigationBar(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
         LinearLayout linearLayout = new LinearLayout(context);
         this.layout = linearLayout;
@@ -1080,15 +1164,14 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2));
         this.slider = new StarsSlider(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.1
             @Override // org.telegram.ui.Stars.StarsReactionsSheet.StarsSlider
-            public void onValueChanged(int i2) {
-                long j2 = i2;
+            public void onValueChanged(int i3) {
+                long j2 = i3;
                 StarsReactionsSheet.this.updateSenders(j2);
                 if (StarsReactionsSheet.this.buttonView != null) {
                     StarsReactionsSheet.this.buttonView.setText(StarsIntroActivity.replaceStars(LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j2, ',')), StarsReactionsSheet.this.starRef), true);
                 }
             }
         };
-        int i2 = 9;
         int[] iArr = {1, 50, 100, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2000, 5000, 7500, 10000};
         long j2 = MessagesController.getInstance(i).starsPaidReactionAmountMax;
         ArrayList arrayList2 = new ArrayList();
@@ -1121,9 +1204,6 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.toptopLayout = linearLayout2;
         linearLayout2.setOrientation(0);
         this.topLayout.addView(linearLayout2, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-        StarsIntroActivity.StarsBalanceView starsBalanceView = new StarsIntroActivity.StarsBalanceView(context, i);
-        this.balanceView = starsBalanceView;
-        starsBalanceView.setDialogId(clientUserId);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.dialogSelectorLayout = frameLayout2;
         FrameLayout frameLayout3 = new FrameLayout(context);
@@ -1137,8 +1217,11 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         frameLayout3.addView(backupImageView, LayoutHelper.createFrame(28, 28, 115));
         ImageView imageView = new ImageView(context);
         this.dialogSelectorIconView = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogTextGray3, resourcesProvider), PorterDuff.Mode.SRC_IN));
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        int color = Theme.getColor(Theme.key_dialogTextGray3, resourcesProvider);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
         imageView.setImageResource(R.drawable.arrows_select);
         frameLayout3.addView(imageView, LayoutHelper.createFrame(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
         frameLayout2.addView(frameLayout3, LayoutHelper.createFrame(52, 28, 17));
@@ -1166,14 +1249,19 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 0.0f, 19, 18, 0, 6, 0));
         linearLayout2.addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f, 119));
         updateCanSwitchPeer(false);
-        ScaleStateListAnimator.apply(starsBalanceView);
-        starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda0
+        ImageView imageView2 = new ImageView(context);
+        this.closeView = imageView2;
+        imageView2.setScaleType(scaleType);
+        imageView2.setImageResource(R.drawable.ic_close_white);
+        imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogEmptyImage, resourcesProvider), mode));
+        ScaleStateListAnimator.apply(imageView2);
+        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarsReactionsSheet.this.lambda$new$0(chatActivity, view);
+                StarsReactionsSheet.this.lambda$new$1(view);
             }
         });
-        linearLayout2.addView(starsBalanceView, LayoutHelper.createLinear(-2, -2, 0.0f, 53, 6, 0, 6, 0));
+        linearLayout2.addView(imageView2, LayoutHelper.createLinear(48, 48, 0.0f, 53, 48, 6, 6, 0));
         LinearLayout linearLayout3 = new LinearLayout(context);
         linearLayout3.setOrientation(1);
         this.topLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, z ? 179.0f : 45.0f, 0.0f, 15.0f));
@@ -1190,8 +1278,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             linearLayout3.addView(textView2, LayoutHelper.createLinear(-1, -2, 55, 40, 0, 40, 0));
         }
         if (z2) {
-            resourcesProvider2 = resourcesProvider;
-            View view = new View(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.4
+            View view = new View(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.3
                 private final LinearGradient gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 private final Matrix gradientMatrix = new Matrix();
                 private final Paint backgroundPaint = new Paint(1);
@@ -1206,7 +1293,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                     this.gradient.setLocalMatrix(this.gradientMatrix);
                     this.backgroundPaint.setShader(this.gradient);
                     float currentWidth = this.text.getCurrentWidth() + AndroidUtilities.dp(30.0f);
-                    this.separatorPaint.setColor(Theme.getColor(Theme.key_divider, resourcesProvider2));
+                    this.separatorPaint.setColor(Theme.getColor(Theme.key_divider, resourcesProvider));
                     canvas.drawRect(AndroidUtilities.dp(24.0f), (getHeight() / 2.0f) - 1.0f, ((getWidth() - currentWidth) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, this.separatorPaint);
                     canvas.drawRect(((getWidth() + currentWidth) / 2.0f) + AndroidUtilities.dp(8.0f), (getHeight() / 2.0f) - 1.0f, getWidth() - AndroidUtilities.dp(24.0f), getHeight() / 2.0f, this.separatorPaint);
                     RectF rectF = AndroidUtilities.rectTmp;
@@ -1219,26 +1306,25 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             linearLayout3.addView(view, LayoutHelper.createLinear(-1, 30, 55, 0, 20, 0, 0));
             TopSendersView topSendersView = new TopSendersView(context);
             this.topSendersView = topSendersView;
-            topSendersView.setOnSenderClickListener(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda1
+            topSendersView.setOnSenderClickListener(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    StarsReactionsSheet.this.lambda$new$1(i, chatActivity, (Long) obj);
+                    StarsReactionsSheet.this.lambda$new$2(i, chatActivity, (Long) obj);
                 }
             });
             this.layout.addView(topSendersView, LayoutHelper.createLinear(-1, 110));
             View view2 = new View(context);
             this.checkSeparatorView = view2;
-            view2.setBackgroundColor(Theme.getColor(Theme.key_divider, resourcesProvider2));
+            view2.setBackgroundColor(Theme.getColor(Theme.key_divider, resourcesProvider));
             if (z || messageReactor != null) {
                 this.layout.addView(view2, LayoutHelper.createLinear(-1, 1.0f / AndroidUtilities.density, 7, 24, 0, 24, 0));
             }
         } else {
-            resourcesProvider2 = resourcesProvider;
             this.separatorView = null;
             this.topSendersView = null;
             this.checkSeparatorView = null;
         }
-        CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider2);
+        CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider);
         this.checkBox = checkBox2;
         checkBox2.setColor(Theme.key_radioBackgroundChecked, Theme.key_checkboxDisabled, Theme.key_checkboxCheck);
         checkBox2.setDrawUnchecked(true);
@@ -1259,10 +1345,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         linearLayout4.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
         linearLayout4.addView(checkBox2, LayoutHelper.createLinear(21, 21, 16, 0, 0, 9, 0));
         linearLayout4.addView(textView3, LayoutHelper.createLinear(-2, -2, 16));
-        linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda2
+        linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                StarsReactionsSheet.this.lambda$new$2(view3);
+                StarsReactionsSheet.this.lambda$new$3(view3);
             }
         });
         ScaleStateListAnimator.apply(linearLayout4, 0.05f, 1.2f);
@@ -1277,25 +1363,27 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         }
         updateSenders(0L);
         buttonWithCounterView.setText(StarsIntroActivity.replaceStars(LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(50L, ',')), this.starRef), true);
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda3
+        TLRPC.MessageReactor messageReactor4 = messageReactor;
+        int i7 = 2;
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                StarsReactionsSheet.this.lambda$new$5(messageObject, chatActivity, i, context, resourcesProvider, chat, view3);
+                StarsReactionsSheet.this.lambda$new$6(messageObject, chatActivity, i, context, resourcesProvider, chat, view3);
             }
         });
-        frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda4
+        frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                StarsReactionsSheet.this.lambda$new$7(i, resourcesProvider, j, view3);
+                StarsReactionsSheet.this.lambda$new$8(i, resourcesProvider, j, view3);
             }
         });
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, resourcesProvider);
         linksTextView.setTextSize(1, 13.0f);
         linksTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
-        linksTextView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsReactionTerms), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda5
+        linksTextView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsReactionTerms), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.lambda$new$8(context);
+                StarsReactionsSheet.lambda$new$9(context);
             }
         }));
         linksTextView.setGravity(17);
@@ -1304,7 +1392,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.layout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 17, 14, 14, 14, 12));
         }
         setCustomView(this.layout);
-        GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 2) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
+        GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, i7) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
             @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView
             protected void startIdleAnimation() {
             }
@@ -1321,13 +1409,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.slider.setValue(50);
         if (arrayList != null) {
             long j3 = 0;
-            for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                long j4 = ((TLRPC.MessageReactor) arrayList.get(i7)).count;
+            for (int i8 = 0; i8 < arrayList.size(); i8++) {
+                long j4 = ((TLRPC.MessageReactor) arrayList.get(i8)).count;
                 if (j4 > j3) {
                     j3 = j4;
                 }
             }
-            j3 = messageReactor != null ? j3 - messageReactor.count : j3;
+            j3 = messageReactor4 != null ? j3 - messageReactor4.count : j3;
             if (j3 > 0) {
                 this.slider.setStarsTop(j3 + 1);
             }
@@ -1392,19 +1480,19 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         rectF.set(this.slider.counterImage.getBounds());
         rectF.inset(-AndroidUtilities.dp(3.5f), -AndroidUtilities.dp(3.5f));
         rectF.offset(iArr[0], iArr[1]);
-        this.icon3dView.whenReady(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda13
+        this.icon3dView.whenReady(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$animate3dIcon$11();
+                StarsReactionsSheet.this.lambda$animate3dIcon$12();
             }
         });
         reactionButton2.drawImage = false;
         view3.invalidate();
         final RectF rectF2 = new RectF();
-        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda14
+        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.lambda$animate3dIcon$12(view3, iArr, rectF2, reactionsLayoutInBubble2, reactionButton2);
+                StarsReactionsSheet.lambda$animate3dIcon$13(view3, iArr, rectF2, reactionsLayoutInBubble2, reactionButton2);
             }
         };
         runnable2.run();
@@ -1423,10 +1511,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         final boolean[] zArr = new boolean[1];
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.iconAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda15
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda16
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StarsReactionsSheet.this.lambda$animate3dIcon$13(runnable2, rectF, rectF2, rectF3, zArr, runnable, valueAnimator2);
+                StarsReactionsSheet.this.lambda$animate3dIcon$14(runnable2, rectF, rectF2, rectF3, zArr, runnable, valueAnimator2);
             }
         });
         this.iconAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarsReactionsSheet.7
@@ -1507,10 +1595,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                     tL_messages_togglePaidReactionPrivacy.privacy = paidreactionprivacypeer;
                     paidreactionprivacypeer.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.peer);
                     NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starReactionAnonymousUpdate, Long.valueOf(from.did), Integer.valueOf(from.mid), Long.valueOf(this.peer));
-                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_togglePaidReactionPrivacy, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda6
+                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_togglePaidReactionPrivacy, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda7
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            StarsReactionsSheet.this.lambda$checkVisibility$10(tLObject, tL_error);
+                            StarsReactionsSheet.this.lambda$checkVisibility$11(tLObject, tL_error);
                         }
                     });
                 }
@@ -1518,30 +1606,30 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             }
             tL_messages_togglePaidReactionPrivacy.privacy = paidreactionprivacyanonymous;
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starReactionAnonymousUpdate, Long.valueOf(from.did), Integer.valueOf(from.mid), Long.valueOf(this.peer));
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_togglePaidReactionPrivacy, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda6
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_togglePaidReactionPrivacy, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsReactionsSheet.this.lambda$checkVisibility$10(tLObject, tL_error);
+                    StarsReactionsSheet.this.lambda$checkVisibility$11(tLObject, tL_error);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate3dIcon$11() {
+    public /* synthetic */ void lambda$animate3dIcon$12() {
         StarsSlider starsSlider = this.slider;
         starsSlider.drawCounterImage = false;
         starsSlider.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$animate3dIcon$12(View view, int[] iArr, RectF rectF, ReactionsLayoutInBubble reactionsLayoutInBubble, ReactionsLayoutInBubble.ReactionButton reactionButton) {
+    public static /* synthetic */ void lambda$animate3dIcon$13(View view, int[] iArr, RectF rectF, ReactionsLayoutInBubble reactionsLayoutInBubble, ReactionsLayoutInBubble.ReactionButton reactionButton) {
         view.getLocationInWindow(iArr);
         rectF.set(iArr[0] + reactionsLayoutInBubble.x + reactionButton.x + AndroidUtilities.dp(4.0f), iArr[1] + reactionsLayoutInBubble.y + reactionButton.y + ((reactionButton.height - AndroidUtilities.dp(22.0f)) / 2.0f), iArr[0] + reactionsLayoutInBubble.x + reactionButton.x + AndroidUtilities.dp(26.0f), iArr[1] + reactionsLayoutInBubble.y + reactionButton.y + ((reactionButton.height + AndroidUtilities.dp(22.0f)) / 2.0f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate3dIcon$13(Runnable runnable, RectF rectF, RectF rectF2, RectF rectF3, boolean[] zArr, Runnable runnable2, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animate3dIcon$14(Runnable runnable, RectF rectF, RectF rectF2, RectF rectF3, boolean[] zArr, Runnable runnable2, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         runnable.run();
         AndroidUtilities.lerp(rectF, rectF2, floatValue, rectF3);
@@ -1571,45 +1659,54 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkVisibility$10(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$checkVisibility$11(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             MessagesStorage.getInstance(this.currentAccount).putMessages(new ArrayList<>(Arrays.asList(this.messageObject.messageOwner)), true, true, true, 0, 0, 0L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(final ChatActivity chatActivity, View view) {
+    public static /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
+        new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(View view) {
         dismiss();
-        chatActivity.presentFragment(new StarsIntroActivity() { // from class: org.telegram.ui.Stars.StarsReactionsSheet.3
-            @Override // org.telegram.ui.Stars.StarsIntroActivity, org.telegram.ui.ActionBar.BaseFragment
-            public void onFragmentDestroy() {
-                super.onFragmentDestroy();
-                if (chatActivity.isFullyVisible) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(int i, ChatActivity chatActivity, Long l) {
+        if (l.longValue() >= 0) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", l.longValue());
+            if (l.longValue() == UserConfig.getInstance(i).getClientUserId()) {
+                bundle.putBoolean("my_profile", true);
+            }
+            chatActivity.presentFragment(new ProfileActivity(bundle) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.4
+                @Override // org.telegram.ui.ProfileActivity, org.telegram.ui.ActionBar.BaseFragment
+                public void onFragmentDestroy() {
+                    super.onFragmentDestroy();
                     StarsReactionsSheet.this.show();
                 }
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, ChatActivity chatActivity, Long l) {
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", l.longValue());
-        if (l.longValue() == UserConfig.getInstance(i).getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
+            });
+            dismiss();
+        } else {
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("chat_id", -l.longValue());
+            chatActivity.presentFragment(new ChatActivity(bundle2) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.5
+                @Override // org.telegram.ui.ChatActivity, org.telegram.ui.ActionBar.BaseFragment
+                public void onFragmentDestroy() {
+                    super.onFragmentDestroy();
+                    StarsReactionsSheet.this.show();
+                }
+            });
         }
-        chatActivity.presentFragment(new ProfileActivity(bundle) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.5
-            @Override // org.telegram.ui.ProfileActivity, org.telegram.ui.ActionBar.BaseFragment
-            public void onFragmentDestroy() {
-                super.onFragmentDestroy();
-                StarsReactionsSheet.this.show();
-            }
-        });
         dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
+    public /* synthetic */ void lambda$new$3(View view) {
         this.checkBox.setChecked(!r3.isChecked(), true);
         this.peer = this.checkBox.isChecked() ? this.lastSelectedPeer : UserObject.ANONYMOUS;
         updatePeerDialog();
@@ -1620,16 +1717,16 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(final StarsController.PendingPaidReactions pendingPaidReactions) {
+    public /* synthetic */ void lambda$new$4(final StarsController.PendingPaidReactions pendingPaidReactions) {
         this.sending = true;
         Objects.requireNonNull(pendingPaidReactions);
-        animate3dIcon(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda11
+        animate3dIcon(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 StarsController.PendingPaidReactions.this.apply();
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda12
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 StarsReactionsSheet.this.dismiss();
@@ -1638,30 +1735,30 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(StarsController starsController, MessageObject messageObject, ChatActivity chatActivity, long j) {
+    public /* synthetic */ void lambda$new$5(StarsController starsController, MessageObject messageObject, ChatActivity chatActivity, long j) {
         final StarsController.PendingPaidReactions sendPaidReaction = starsController.sendPaidReaction(messageObject, chatActivity, j, false, true, Long.valueOf(this.peer));
         if (sendPaidReaction == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$new$3(sendPaidReaction);
+                StarsReactionsSheet.this.lambda$new$4(sendPaidReaction);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(final MessageObject messageObject, final ChatActivity chatActivity, int i, Context context, Theme.ResourcesProvider resourcesProvider, TLRPC.Chat chat, View view) {
+    public /* synthetic */ void lambda$new$6(final MessageObject messageObject, final ChatActivity chatActivity, int i, Context context, Theme.ResourcesProvider resourcesProvider, TLRPC.Chat chat, View view) {
         if (messageObject == null || chatActivity == null || this.iconAnimator != null) {
             return;
         }
         final long value = this.slider.getValue();
         final StarsController starsController = StarsController.getInstance(i);
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda8
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$new$4(starsController, messageObject, chatActivity, value);
+                StarsReactionsSheet.this.lambda$new$5(starsController, messageObject, chatActivity, value);
             }
         };
         if (!starsController.balanceAvailable() || starsController.getBalance().amount >= value) {
@@ -1672,7 +1769,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(long j) {
+    public /* synthetic */ void lambda$new$7(long j) {
         this.lastSelectedPeer = j;
         this.peer = j;
         updatePeerDialog();
@@ -1684,7 +1781,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(int i, Theme.ResourcesProvider resourcesProvider, long j, View view) {
+    public /* synthetic */ void lambda$new$8(int i, Theme.ResourcesProvider resourcesProvider, long j, View view) {
         final long j2;
         ArrayList adminedChannels = BotStarsController.getInstance(i).getAdminedChannels();
         adminedChannels.add(0, UserConfig.getInstance(i).getCurrentUser());
@@ -1702,10 +1799,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             }
             if (j2 != j) {
                 long j3 = this.peer;
-                makeOptions.addChat(tLObject, j2 == j3 || (j3 == 0 && j2 == UserConfig.getInstance(i).getClientUserId()), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda7
+                makeOptions.addChat(tLObject, j2 == j3 || (j3 == 0 && j2 == UserConfig.getInstance(i).getClientUserId()), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StarsReactionsSheet.this.lambda$new$6(j2);
+                        StarsReactionsSheet.this.lambda$new$7(j2);
                     }
                 });
             }
@@ -1714,12 +1811,12 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$8(Context context) {
+    public static /* synthetic */ void lambda$new$9(Context context) {
         Browser.openUrl(context, LocaleController.getString(R.string.StarsReactionTermsLink));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateSenders$9(SenderData senderData, SenderData senderData2) {
+    public static /* synthetic */ int lambda$updateSenders$10(SenderData senderData, SenderData senderData2) {
         return (int) (senderData2.stars - senderData.stars);
     }
 
@@ -1768,6 +1865,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected void appendOpenAnimator(boolean z, ArrayList arrayList) {
+        arrayList.add(ObjectAnimator.ofFloat(this.balanceCloud, (Property<BalanceCloud, Float>) View.ALPHA, z ? 1.0f : 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.balanceCloud, (Property<BalanceCloud, Float>) View.SCALE_X, z ? 1.0f : 0.6f));
+        arrayList.add(ObjectAnimator.ofFloat(this.balanceCloud, (Property<BalanceCloud, Float>) View.SCALE_Y, z ? 1.0f : 0.6f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         if (this.slider.tracking) {
             return false;
@@ -1796,6 +1900,14 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         if (valueAnimator == null || !valueAnimator.isRunning()) {
             super.dismissInternal();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected boolean isTouchOutside(float f, float f2) {
+        if (f < this.balanceCloud.getX() || f > this.balanceCloud.getX() + this.balanceCloud.getWidth() || f2 < this.balanceCloud.getY() || f2 > this.balanceCloud.getY() + this.balanceCloud.getHeight()) {
+            return super.isTouchOutside(f, f2);
+        }
+        return false;
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
@@ -1852,9 +1964,9 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda9
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$updateSenders$9;
-                    lambda$updateSenders$9 = StarsReactionsSheet.lambda$updateSenders$9((StarsReactionsSheet.SenderData) obj, (StarsReactionsSheet.SenderData) obj2);
-                    return lambda$updateSenders$9;
+                    int lambda$updateSenders$10;
+                    lambda$updateSenders$10 = StarsReactionsSheet.lambda$updateSenders$10((StarsReactionsSheet.SenderData) obj, (StarsReactionsSheet.SenderData) obj2);
+                    return lambda$updateSenders$10;
                 }
             });
             this.topSendersView.setSenders(new ArrayList<>(arrayList.subList(0, Math.min(3, arrayList.size()))));

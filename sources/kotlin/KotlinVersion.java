@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class KotlinVersion implements Comparable {
     private final int major;
     private final int minor;
@@ -31,7 +31,7 @@ public final class KotlinVersion implements Comparable {
     }
 
     private final int versionOf(int i, int i2, int i3) {
-        if (new IntRange(0, NotificationCenter.liveLocationsChanged).contains(i) && new IntRange(0, NotificationCenter.liveLocationsChanged).contains(i2) && new IntRange(0, NotificationCenter.liveLocationsChanged).contains(i3)) {
+        if (new IntRange(0, NotificationCenter.proxyCheckDone).contains(i) && new IntRange(0, NotificationCenter.proxyCheckDone).contains(i2) && new IntRange(0, NotificationCenter.proxyCheckDone).contains(i3)) {
             return (i << 16) + (i2 << 8) + i3;
         }
         throw new IllegalArgumentException(("Version components are out of range: " + i + '.' + i2 + '.' + i3).toString());

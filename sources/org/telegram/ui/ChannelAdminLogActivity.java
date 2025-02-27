@@ -54,7 +54,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
-import j$.util.Collection$-EL;
+import j$.util.Collection;
 import j$.util.function.Function;
 import j$.util.function.Predicate;
 import java.io.BufferedWriter;
@@ -920,6 +920,21 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didQuickShareEnd(ChatMessageCell chatMessageCell, float f, float f2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareEnd(this, chatMessageCell, f, f2);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didQuickShareMove(ChatMessageCell chatMessageCell, float f, float f2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareMove(this, chatMessageCell, f, f2);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell, float f, float f2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell, f, f2);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didStartVideoStream(MessageObject messageObject) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didStartVideoStream(this, messageObject);
             }
@@ -1600,7 +1615,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             j = -1;
         }
         messageObject.actionDeleteGroupEventId = j;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(MessageObject.replaceWithLink(LocaleController.formatPluralString(z2 ? "EventLogDeletedMultipleMessagesToExpand" : "EventLogDeletedMultipleMessages", arrayList.size(), TextUtils.join(", ", Collection$-EL.stream(arrayList).map(new Function() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda15
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(MessageObject.replaceWithLink(LocaleController.formatPluralString(z2 ? "EventLogDeletedMultipleMessagesToExpand" : "EventLogDeletedMultipleMessages", arrayList.size(), TextUtils.join(", ", Collection.-EL.stream(arrayList).map(new Function() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda15
             @Override // j$.util.function.Function
             public /* synthetic */ Function andThen(Function function) {
                 return Function.-CC.$default$andThen(this, function);
@@ -1811,7 +1826,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ChannelAdminLogActivity.14
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view2) {
-                                ChannelAdminLogActivity.this.lambda$onBackPressed$323();
+                                ChannelAdminLogActivity.this.lambda$onBackPressed$335();
                             }
 
                             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -2817,7 +2832,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = NotificationCenter.storyQualityUpdate;
+        tL_channels_getParticipants.limit = 200;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3710,7 +3725,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChannelAdminLogActivity.this.lambda$onBackPressed$323();
+                    ChannelAdminLogActivity.this.lambda$onBackPressed$335();
                 }
             }
         });

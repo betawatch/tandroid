@@ -188,7 +188,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
                         this.hasWhiteBackground = true;
                     }
                     if (this.themeInfo.getPreviewBackgroundColor() == 0 && this.themeInfo.previewParsed && this.backgroundDrawable == null) {
-                        createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.storyQualityUpdate);
+                        createDefaultWallpaper = Theme.createDefaultWallpaper(100, 200);
                         this.backgroundDrawable = createDefaultWallpaper;
                         if (createDefaultWallpaper instanceof MotionBackgroundDrawable) {
                             ((MotionBackgroundDrawable) createDefaultWallpaper).setRoundRadius(AndroidUtilities.dp(6.0f));
@@ -206,7 +206,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
             }
             this.hasWhiteBackground = false;
             if (this.themeInfo.getPreviewBackgroundColor() == 0) {
-                createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.storyQualityUpdate);
+                createDefaultWallpaper = Theme.createDefaultWallpaper(100, 200);
                 this.backgroundDrawable = createDefaultWallpaper;
                 if (createDefaultWallpaper instanceof MotionBackgroundDrawable) {
                 }

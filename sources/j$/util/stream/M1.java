@@ -6,13 +6,13 @@ import j$.util.function.Consumer;
 final class M1 implements N1, d2 {
     private boolean a;
     private long b;
-    final /* synthetic */ j$.util.function.S c;
+    final /* synthetic */ j$.util.function.O c;
 
-    M1(j$.util.function.S s) {
-        this.c = s;
+    M1(j$.util.function.O o) {
+        this.c = o;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;
@@ -45,14 +45,14 @@ final class M1 implements N1, d2 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.W
-    public final /* synthetic */ j$.util.function.W f(j$.util.function.W w) {
-        return j$.com.android.tools.r8.a.d(this, w);
+    @Override // j$.util.function.T
+    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
+        return j$.com.android.tools.r8.a.d(this, t);
     }
 
     @Override // j$.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.n.a() : j$.util.n.d(this.b);
+        return this.a ? j$.util.l.a() : j$.util.l.d(this.b);
     }
 
     @Override // j$.util.stream.N1

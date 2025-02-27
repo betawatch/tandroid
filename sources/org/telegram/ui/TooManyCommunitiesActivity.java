@@ -74,13 +74,13 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             TooManyCommunitiesActivity.this.progressBar.animate().alpha(1.0f).start();
         }
     };
-    RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda0
+    RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda2
         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
         public final void onItemClick(View view, int i) {
             TooManyCommunitiesActivity.this.lambda$new$0(view, i);
         }
     };
-    RecyclerListView.OnItemLongClickListener onItemLongClickListener = new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda1
+    RecyclerListView.OnItemLongClickListener onItemLongClickListener = new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda3
         @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
         public final boolean onItemClick(View view, int i) {
             boolean lambda$new$1;
@@ -383,7 +383,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             getMessagesController().putChat(chat, false);
             getMessagesController().deleteParticipantFromChat(chat.id, user);
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -586,7 +586,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    TooManyCommunitiesActivity.this.lambda$onBackPressed$323();
+                    TooManyCommunitiesActivity.this.lambda$onBackPressed$335();
                 }
             }
         });
@@ -713,7 +713,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         this.buttonLayout.setBackgroundColor(Theme.getColor(i2));
         this.buttonLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, -1.0f, 0, 16.0f, 12.0f, 16.0f, 12.0f));
         this.buttonLayout.setVisibility(8);
-        this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda2
+        this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 TooManyCommunitiesActivity.this.lambda$createView$2(view2);
@@ -725,7 +725,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda3
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TooManyCommunitiesActivity.this.lambda$getThemeDescriptions$6();

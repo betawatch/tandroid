@@ -5,7 +5,7 @@ import java.util.List;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 import kotlinx.coroutines.internal.MainDispatcherFactory;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AndroidDispatcherFactory implements MainDispatcherFactory {
     @Override // kotlinx.coroutines.internal.MainDispatcherFactory
     public MainCoroutineDispatcher createDispatcher(List list) {

@@ -1438,6 +1438,11 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 if (z) {
                     MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f);
@@ -2054,7 +2059,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 } else {
                     j = j2;
                 }
-                SendMessagesHelper.getInstance(this.currentAccount).sendMessage(arrayList, j, false, false, true, 0);
+                SendMessagesHelper.getInstance(this.currentAccount).sendMessage(arrayList, j, false, false, true, 0, 0L);
             }
         } else {
             MessagesStorage.TopicKey topicKey = (MessagesStorage.TopicKey) arrayList2.get(0);
@@ -2084,7 +2089,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$323();
+        dialogsActivity.lambda$onBackPressed$335();
         return true;
     }
 

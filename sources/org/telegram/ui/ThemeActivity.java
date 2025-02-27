@@ -248,7 +248,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         */
         public void onItemClick(int i) {
             if (i == -1) {
-                ThemeActivity.this.lambda$onBackPressed$323();
+                ThemeActivity.this.lambda$onBackPressed$335();
                 return;
             }
             if (i == 1) {
@@ -365,6 +365,11 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                 }
 
                 @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+                public /* synthetic */ boolean needVisuallyDivideSteps() {
+                    return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+                }
+
+                @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
                 public void onSeekBarDrag(boolean z, float f) {
                     ThemeActivity.this.setBubbleRadius(Math.round(r4.startRadius + ((BubbleRadiusCell.this.endRadius - BubbleRadiusCell.this.startRadius) * f)), false);
                 }
@@ -469,7 +474,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             this.paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.paint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (this.paint.getStrokeWidth() * 0.5f), this.paint);
-            this.paint.setAlpha(NotificationCenter.liveLocationsChanged);
+            this.paint.setAlpha(NotificationCenter.proxyCheckDone);
             this.paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), this.paint);
             if (this.checkedState != 0.0f) {
@@ -1627,6 +1632,11 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                 @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
                 public int getStepsCount() {
                     return TextSizeCell.this.endFontSize - TextSizeCell.this.startFontSize;
+                }
+
+                @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+                public /* synthetic */ boolean needVisuallyDivideSteps() {
+                    return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
                 }
 
                 @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate

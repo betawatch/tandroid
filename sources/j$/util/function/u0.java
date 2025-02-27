@@ -1,31 +1,31 @@
 package j$.util.function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class u0 implements java.util.function.Supplier {
-    public final /* synthetic */ Supplier a;
+public final /* synthetic */ class u0 implements java.util.function.ToIntFunction {
+    public final /* synthetic */ ToIntFunction a;
 
-    private /* synthetic */ u0(Supplier supplier) {
-        this.a = supplier;
+    private /* synthetic */ u0(ToIntFunction toIntFunction) {
+        this.a = toIntFunction;
     }
 
-    public static /* synthetic */ java.util.function.Supplier a(Supplier supplier) {
-        if (supplier == null) {
+    public static /* synthetic */ java.util.function.ToIntFunction a(ToIntFunction toIntFunction) {
+        if (toIntFunction == null) {
             return null;
         }
-        return supplier instanceof t0 ? ((t0) supplier).a : new u0(supplier);
+        return toIntFunction instanceof t0 ? ((t0) toIntFunction).a : new u0(toIntFunction);
+    }
+
+    @Override // java.util.function.ToIntFunction
+    public final /* synthetic */ int applyAsInt(Object obj) {
+        return this.a.applyAsInt(obj);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Supplier supplier = this.a;
+        ToIntFunction toIntFunction = this.a;
         if (obj instanceof u0) {
             obj = ((u0) obj).a;
         }
-        return supplier.equals(obj);
-    }
-
-    @Override // java.util.function.Supplier
-    public final /* synthetic */ Object get() {
-        return this.a.get();
+        return toIntFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

@@ -1100,7 +1100,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
                     @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                     public void onItemClick(int i3) {
                         if (i3 == -1) {
-                            DataAutoDownloadActivity.this.lambda$onBackPressed$323();
+                            DataAutoDownloadActivity.this.lambda$onBackPressed$335();
                         }
                     }
                 });
@@ -1148,7 +1148,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    DataAutoDownloadActivity.this.lambda$onBackPressed$323();
+                    DataAutoDownloadActivity.this.lambda$onBackPressed$335();
                 }
             }
         });

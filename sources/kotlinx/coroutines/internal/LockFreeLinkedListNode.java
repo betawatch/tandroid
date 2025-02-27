@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference0Impl;
 import kotlinx.coroutines.DebugStringsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LockFreeLinkedListNode {
     private static final AtomicReferenceFieldUpdater _next$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_next");
     private static final AtomicReferenceFieldUpdater _prev$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_prev");

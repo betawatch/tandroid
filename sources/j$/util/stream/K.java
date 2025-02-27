@@ -3,14 +3,14 @@ package j$.util.stream;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class K implements y3 {
+abstract class K implements x3 {
     boolean a;
     Object b;
 
     K() {
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public /* synthetic */ void accept(double d) {
         t0.b();
         throw null;

@@ -5,6 +5,7 @@ import android.system.OsConstants;
 import android.text.TextUtils;
 import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline52;
 import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline53;
+import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.io.FileNotFoundException;
@@ -31,6 +32,20 @@ public final class FileDataSource extends BaseDataSource {
                 }
             }
             return false;
+        }
+    }
+
+    public static final class Factory implements DataSource.Factory {
+        private TransferListener listener;
+
+        @Override // com.google.android.exoplayer2.upstream.DataSource.Factory
+        public FileDataSource createDataSource() {
+            FileDataSource fileDataSource = new FileDataSource();
+            TransferListener transferListener = this.listener;
+            if (transferListener != null) {
+                fileDataSource.addTransferListener(transferListener);
+            }
+            return fileDataSource;
         }
     }
 

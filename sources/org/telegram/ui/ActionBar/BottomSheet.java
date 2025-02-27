@@ -1420,7 +1420,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 this.startedTrackingX = (int) motionEvent.getX();
                 int y2 = (int) motionEvent.getY();
                 this.startedTrackingY = y2;
-                if (y2 < BottomSheet.this.containerView.getTop() || this.startedTrackingX < BottomSheet.this.containerView.getLeft() || this.startedTrackingX > BottomSheet.this.containerView.getRight()) {
+                if (BottomSheet.this.isTouchOutside(this.startedTrackingX, y2)) {
                     BottomSheet.this.onDismissWithTouchOutside();
                     return true;
                 }
@@ -2129,9 +2129,15 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 BottomSheet.this.lambda$startOpenAnimation$5(valueAnimator2);
             }
         });
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.currentSheetAnimation = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f), ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f), ObjectAnimator.ofInt(this.backDrawable, (Property<ColorDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, this.dimBehind ? this.dimBehindAlpha : 0), this.navigationBarAnimation);
+        this.currentSheetAnimation = new AnimatorSet();
+        ArrayList<Animator> arrayList = new ArrayList<>();
+        arrayList.add(ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f));
+        arrayList.add(ObjectAnimator.ofInt(this.backDrawable, (Property<ColorDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, this.dimBehind ? this.dimBehindAlpha : 0));
+        arrayList.add(this.navigationBarAnimation);
+        appendOpenAnimator(true, arrayList);
+        this.currentSheetAnimation.playTogether(arrayList);
         if (this.transitionFromRight) {
             this.currentSheetAnimation.setDuration(250L);
             animatorSet = this.currentSheetAnimation;
@@ -2148,8 +2154,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.currentSheetAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.BottomSheet.6
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
-                AnimatorSet animatorSet3 = BottomSheet.this.currentSheetAnimation;
-                if (animatorSet3 == null || !animatorSet3.equals(animator)) {
+                AnimatorSet animatorSet2 = BottomSheet.this.currentSheetAnimation;
+                if (animatorSet2 == null || !animatorSet2.equals(animator)) {
                     return;
                 }
                 BottomSheet bottomSheet = BottomSheet.this;
@@ -2159,8 +2165,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                AnimatorSet animatorSet3 = BottomSheet.this.currentSheetAnimation;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                AnimatorSet animatorSet2 = BottomSheet.this.currentSheetAnimation;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     BottomSheet bottomSheet = BottomSheet.this;
                     bottomSheet.currentSheetAnimation = null;
                     bottomSheet.currentSheetAnimationType = 0;
@@ -2192,6 +2198,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.currentSheetAnimation.start();
     }
 
+    protected void appendOpenAnimator(boolean z, ArrayList<Animator> arrayList) {
+    }
+
     @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
     public boolean attachedToParent() {
         ContainerView containerView = this.container;
@@ -2219,8 +2228,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.currentSheetAnimationType = 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x014c  */
     @Override // android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2260,7 +2269,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     }
                 });
                 this.currentSheetAnimation = new AnimatorSet();
-                ArrayList arrayList = new ArrayList();
+                ArrayList<Animator> arrayList = new ArrayList<>();
                 ViewGroup viewGroup = this.containerView;
                 if (viewGroup != null) {
                     if (this.transitionFromRight) {
@@ -2273,6 +2282,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 }
                 arrayList.add(ObjectAnimator.ofInt(this.backDrawable, (Property<ColorDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0));
                 arrayList.add(this.navigationBarAnimation);
+                appendOpenAnimator(false, arrayList);
                 this.currentSheetAnimation.playTogether(arrayList);
                 if (this.transitionFromRight) {
                     this.currentSheetAnimation.setDuration(200L);
@@ -2545,6 +2555,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
     public boolean isShown() {
         return !this.dismissed;
+    }
+
+    protected boolean isTouchOutside(float f, float f2) {
+        return f2 < ((float) this.containerView.getTop()) || f < ((float) this.containerView.getLeft()) || f > ((float) this.containerView.getRight());
     }
 
     protected void mainContainerDispatchDraw(Canvas canvas) {

@@ -2,6 +2,7 @@ package j$.time;
 
 import j$.time.temporal.q;
 import j$.time.zone.ZoneRules;
+import j$.util.A;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.Serializable;
 
@@ -55,7 +56,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.k, Comp
         int i;
         int i2;
         char charAt;
-        j$.util.a.B(str, "offsetId");
+        A.z(str, "offsetId");
         ZoneOffset zoneOffset = (ZoneOffset) e.get(str);
         if (zoneOffset != null) {
             return zoneOffset;

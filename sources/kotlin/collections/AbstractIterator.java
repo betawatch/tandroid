@@ -3,7 +3,7 @@ package kotlin.collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractIterator implements Iterator {
     private Object nextValue;
     private State state = State.NotReady;

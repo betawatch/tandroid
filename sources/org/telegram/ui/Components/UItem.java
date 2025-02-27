@@ -49,6 +49,7 @@ public class UItem extends AdapterWithDiffUtils.Item {
     public Object object2;
     public int pad;
     public boolean red;
+    public boolean reordering;
     public int spanCount;
     public CharSequence subtext;
     public CharSequence text;
@@ -75,6 +76,9 @@ public class UItem extends AdapterWithDiffUtils.Item {
             }
             UItem.factoryInstances.put(cls, uItemFactory);
             UItem.factories.put(uItemFactory.viewType, uItemFactory);
+        }
+
+        public void attachedView(View view, UItem uItem) {
         }
 
         public abstract void bindView(View view, UItem uItem, boolean z);
@@ -607,6 +611,11 @@ public class UItem extends AdapterWithDiffUtils.Item {
 
     public UItem setPad(int i) {
         this.pad = i;
+        return this;
+    }
+
+    public UItem setReordering(boolean z) {
+        this.reordering = z;
         return this;
     }
 

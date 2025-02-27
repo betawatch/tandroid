@@ -3,6 +3,7 @@ package j$.util.stream;
 import j$.util.Optional;
 import j$.util.function.BiConsumer;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Predicate;
 import j$.util.function.Supplier;
@@ -10,17 +11,17 @@ import j$.util.function.ToIntFunction;
 import j$.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class E implements Predicate, j$.util.function.I, ToIntFunction, j$.util.function.N, j$.util.function.B, j$.util.function.l0, BiConsumer, Supplier, j$.util.function.o0, j$.util.function.S, ToLongFunction, LongFunction, j$.util.function.f0, Consumer {
+public final /* synthetic */ class E implements Predicate, IntFunction, ToIntFunction, j$.util.function.K, j$.util.function.A, j$.util.function.i0, BiConsumer, Supplier, j$.util.function.l0, j$.util.function.O, ToLongFunction, LongFunction, j$.util.function.c0, Consumer {
     public final /* synthetic */ int a;
 
     public /* synthetic */ E(int i) {
         this.a = i;
     }
 
-    @Override // j$.util.function.f0
-    public j$.util.function.f0 a(j$.util.function.f0 f0Var) {
-        f0Var.getClass();
-        return new j$.util.function.c0(this, f0Var, 0);
+    @Override // j$.util.function.c0
+    public j$.util.function.c0 a(j$.util.function.c0 c0Var) {
+        c0Var.getClass();
+        return new j$.util.function.Z(this, c0Var, 0);
     }
 
     @Override // j$.util.function.Consumer
@@ -28,11 +29,11 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
     public void r(Object obj) {
     }
 
-    @Override // j$.util.function.l0
+    @Override // j$.util.function.i0
     public void accept(Object obj, int i) {
         switch (this.a) {
             case 10:
-                ((j$.util.i) obj).accept(i);
+                ((j$.util.g) obj).accept(i);
                 break;
             default:
                 long[] jArr = (long[]) obj;
@@ -42,11 +43,11 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
         }
     }
 
-    @Override // j$.util.function.o0
+    @Override // j$.util.function.l0
     public void accept(Object obj, long j) {
         switch (this.a) {
             case 17:
-                ((j$.util.k) obj).accept(j);
+                ((j$.util.i) obj).accept(j);
                 break;
             default:
                 long[] jArr = (long[]) obj;
@@ -60,7 +61,7 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
     public void accept(Object obj, Object obj2) {
         switch (this.a) {
             case 11:
-                ((j$.util.i) obj).a((j$.util.i) obj2);
+                ((j$.util.g) obj).a((j$.util.g) obj2);
                 break;
             case 16:
                 long[] jArr = (long[]) obj;
@@ -69,7 +70,7 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
                 jArr[1] = jArr[1] + jArr2[1];
                 break;
             case 21:
-                ((j$.util.k) obj).a((j$.util.k) obj2);
+                ((j$.util.i) obj).a((j$.util.i) obj2);
                 break;
             default:
                 long[] jArr3 = (long[]) obj;
@@ -105,7 +106,7 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.I
+    @Override // j$.util.function.IntFunction
     public Object apply(int i) {
         switch (this.a) {
             case 4:
@@ -126,7 +127,7 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
         return Long.valueOf(j);
     }
 
-    @Override // j$.util.function.B
+    @Override // j$.util.function.A
     public int applyAsInt(int i, int i2) {
         switch (this.a) {
             case 9:
@@ -143,17 +144,17 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
         return ((Integer) obj).intValue();
     }
 
-    @Override // j$.util.function.N
+    @Override // j$.util.function.K
     public long applyAsLong(int i) {
         return 1L;
     }
 
-    @Override // j$.util.function.f0
+    @Override // j$.util.function.c0
     public long applyAsLong(long j) {
         return 1L;
     }
 
-    @Override // j$.util.function.S
+    @Override // j$.util.function.O
     public long applyAsLong(long j, long j2) {
         switch (this.a) {
             case 18:
@@ -170,10 +171,10 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
         return ((Long) obj).longValue();
     }
 
-    @Override // j$.util.function.f0
-    public j$.util.function.f0 c(j$.util.function.f0 f0Var) {
-        f0Var.getClass();
-        return new j$.util.function.c0(this, f0Var, 1);
+    @Override // j$.util.function.c0
+    public j$.util.function.c0 c(j$.util.function.c0 c0Var) {
+        c0Var.getClass();
+        return new j$.util.function.Z(this, c0Var, 1);
     }
 
     @Override // j$.util.function.Supplier
@@ -206,11 +207,11 @@ public final /* synthetic */ class E implements Predicate, j$.util.function.I, T
             case 0:
                 return ((Optional) obj).isPresent();
             case 1:
-                return ((j$.util.l) obj).c();
+                return ((j$.util.j) obj).c();
             case 2:
-                return ((j$.util.n) obj).c();
+                return ((j$.util.l) obj).c();
             default:
-                return ((j$.util.m) obj).c();
+                return ((j$.util.k) obj).c();
         }
     }
 }

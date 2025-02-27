@@ -56,7 +56,7 @@ final class R1 extends a2 {
                 IntStream intStream = (IntStream) ((Function) ((v) this.d).n).apply(obj);
                 if (intStream != null) {
                     try {
-                        intStream.sequential().L((U) this.c);
+                        intStream.sequential().K((U) this.c);
                     } catch (Throwable th3) {
                         try {
                             intStream.close();

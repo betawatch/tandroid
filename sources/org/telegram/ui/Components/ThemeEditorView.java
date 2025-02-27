@@ -282,10 +282,10 @@ public class ThemeEditorView {
             private final int paramValueSliderWidth;
             private Paint valueSliderPaint;
 
-            /* JADX WARN: Removed duplicated region for block: B:12:0x014c  */
-            /* JADX WARN: Removed duplicated region for block: B:15:0x0151  */
-            /* JADX WARN: Removed duplicated region for block: B:17:0x012d  */
-            /* JADX WARN: Removed duplicated region for block: B:9:0x012b  */
+            /* JADX WARN: Removed duplicated region for block: B:12:0x014d  */
+            /* JADX WARN: Removed duplicated region for block: B:15:0x0152  */
+            /* JADX WARN: Removed duplicated region for block: B:17:0x012e  */
+            /* JADX WARN: Removed duplicated region for block: B:9:0x012c  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -365,23 +365,23 @@ public class ThemeEditorView {
                                     ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
                                     intValue = 0;
                                 } else if (intValue > 255) {
-                                    ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.liveLocationsChanged);
+                                    ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.proxyCheckDone);
                                     ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
-                                    intValue = NotificationCenter.liveLocationsChanged;
+                                    intValue = NotificationCenter.proxyCheckDone;
                                 }
                                 int color = ColorPicker.this.getColor();
                                 int i5 = i;
                                 if (i5 == 2) {
                                     i2 = color & (-256);
-                                    i3 = intValue & NotificationCenter.liveLocationsChanged;
+                                    i3 = intValue & NotificationCenter.proxyCheckDone;
                                 } else if (i5 == 1) {
                                     i2 = color & (-65281);
-                                    i3 = (intValue & NotificationCenter.liveLocationsChanged) << 8;
+                                    i3 = (intValue & NotificationCenter.proxyCheckDone) << 8;
                                 } else {
                                     if (i5 != 0) {
                                         if (i5 == 3) {
                                             i2 = color & 16777215;
-                                            i3 = (intValue & NotificationCenter.liveLocationsChanged) << 24;
+                                            i3 = (intValue & NotificationCenter.proxyCheckDone) << 24;
                                         }
                                         ColorPicker.this.setColor(color);
                                         for (i4 = 0; i4 < ThemeEditorView.this.currentThemeDesription.size(); i4++) {
@@ -390,7 +390,7 @@ public class ThemeEditorView {
                                         EditorAlert.this.ignoreTextChange = false;
                                     }
                                     i2 = color & (-16711681);
-                                    i3 = (intValue & NotificationCenter.liveLocationsChanged) << 16;
+                                    i3 = (intValue & NotificationCenter.proxyCheckDone) << 16;
                                 }
                                 color = i2 | i3;
                                 ColorPicker.this.setColor(color);
@@ -441,23 +441,23 @@ public class ThemeEditorView {
                                 ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
                                 intValue = 0;
                             } else if (intValue > 255) {
-                                ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.liveLocationsChanged);
+                                ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.proxyCheckDone);
                                 ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
-                                intValue = NotificationCenter.liveLocationsChanged;
+                                intValue = NotificationCenter.proxyCheckDone;
                             }
                             int color = ColorPicker.this.getColor();
                             int i5 = i;
                             if (i5 == 2) {
                                 i2 = color & (-256);
-                                i3 = intValue & NotificationCenter.liveLocationsChanged;
+                                i3 = intValue & NotificationCenter.proxyCheckDone;
                             } else if (i5 == 1) {
                                 i2 = color & (-65281);
-                                i3 = (intValue & NotificationCenter.liveLocationsChanged) << 8;
+                                i3 = (intValue & NotificationCenter.proxyCheckDone) << 8;
                             } else {
                                 if (i5 != 0) {
                                     if (i5 == 3) {
                                         i2 = color & 16777215;
-                                        i3 = (intValue & NotificationCenter.liveLocationsChanged) << 24;
+                                        i3 = (intValue & NotificationCenter.proxyCheckDone) << 24;
                                     }
                                     ColorPicker.this.setColor(color);
                                     for (i4 = 0; i4 < ThemeEditorView.this.currentThemeDesription.size(); i4++) {
@@ -466,7 +466,7 @@ public class ThemeEditorView {
                                     EditorAlert.this.ignoreTextChange = false;
                                 }
                                 i2 = color & (-16711681);
-                                i3 = (intValue & NotificationCenter.liveLocationsChanged) << 16;
+                                i3 = (intValue & NotificationCenter.proxyCheckDone) << 16;
                             }
                             color = i2 | i3;
                             ColorPicker.this.setColor(color);
@@ -1796,8 +1796,8 @@ public class ThemeEditorView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x017d  */
     /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -1,31 +1,12 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+
 /* loaded from: classes2.dex */
-final class w3 implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ Runnable b;
+interface w3 {
+    Object a(b bVar, Spliterator spliterator);
 
-    w3(Runnable runnable, Runnable runnable2) {
-        this.a = runnable;
-        this.b = runnable2;
-    }
+    Object c(b bVar, Spliterator spliterator);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Runnable runnable = this.b;
-        try {
-            this.a.run();
-            runnable.run();
-        } catch (Throwable th) {
-            try {
-                runnable.run();
-            } catch (Throwable th2) {
-                try {
-                    th.addSuppressed(th2);
-                } catch (Throwable unused) {
-                }
-            }
-            throw th;
-        }
-    }
+    int d();
 }

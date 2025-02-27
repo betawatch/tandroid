@@ -1,19 +1,20 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class Q implements x3, y3 {
+abstract class Q implements w3, x3 {
     private final boolean a;
 
     protected Q(boolean z) {
         this.a = z;
     }
 
-    @Override // j$.util.stream.x3
-    public final Object a(b bVar, j$.util.Q q) {
+    @Override // j$.util.stream.w3
+    public final Object a(b bVar, Spliterator spliterator) {
         bVar.getClass();
-        bVar.i0(q, bVar.E0(this));
+        bVar.h0(spliterator, bVar.D0(this));
         return null;
     }
 
@@ -37,18 +38,18 @@ abstract class Q implements x3, y3 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.x3
-    public final Object c(b bVar, j$.util.Q q) {
-        (this.a ? new S(bVar, q, this) : new T(bVar, q, bVar.E0(this))).invoke();
+    @Override // j$.util.stream.w3
+    public final Object c(b bVar, Spliterator spliterator) {
+        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.D0(this))).invoke();
         return null;
     }
 
-    @Override // j$.util.stream.x3
+    @Override // j$.util.stream.w3
     public final int d() {
         if (this.a) {
             return 0;
         }
-        return S2.r;
+        return R2.r;
     }
 
     @Override // j$.util.function.Supplier

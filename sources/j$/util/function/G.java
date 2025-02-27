@@ -1,33 +1,28 @@
 package j$.util.function;
 
-import java.util.function.IntFunction;
+import java.util.function.IntPredicate;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class G implements I {
-    public final /* synthetic */ IntFunction a;
+public final /* synthetic */ class G {
+    public final /* synthetic */ IntPredicate a;
 
-    private /* synthetic */ G(IntFunction intFunction) {
-        this.a = intFunction;
+    private /* synthetic */ G(IntPredicate intPredicate) {
+        this.a = intPredicate;
     }
 
-    public static /* synthetic */ I a(IntFunction intFunction) {
-        if (intFunction == null) {
+    public static /* synthetic */ G a(IntPredicate intPredicate) {
+        if (intPredicate == null) {
             return null;
         }
-        return intFunction instanceof H ? ((H) intFunction).a : new G(intFunction);
-    }
-
-    @Override // j$.util.function.I
-    public final /* synthetic */ Object apply(int i) {
-        return this.a.apply(i);
+        return new G(intPredicate);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        IntFunction intFunction = this.a;
+        IntPredicate intPredicate = this.a;
         if (obj instanceof G) {
             obj = ((G) obj).a;
         }
-        return intFunction.equals(obj);
+        return intPredicate.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

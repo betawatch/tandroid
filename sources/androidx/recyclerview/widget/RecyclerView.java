@@ -2589,7 +2589,10 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             RecyclerView.this.assertNotInLayoutOrScroll(null);
             RecyclerView recyclerView = RecyclerView.this;
             recyclerView.mState.mStructureChanged = true;
-            recyclerView.processDataSetCompletelyChanged(true);
+            if (BuildVars.DEBUG_VERSION) {
+                recyclerView.mAdapterHelper.logNotify("notifyDataSetChanged()");
+            }
+            RecyclerView.this.processDataSetCompletelyChanged(true);
             if (RecyclerView.this.mAdapterHelper.hasPendingUpdates()) {
                 return;
             }

@@ -1718,6 +1718,12 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public PlaybackParameters getPlaybackParameters() {
+        verifyApplicationThread();
+        return this.playbackInfo.playbackParameters;
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public int getPlaybackState() {
         verifyApplicationThread();
         return this.playbackInfo.playbackState;

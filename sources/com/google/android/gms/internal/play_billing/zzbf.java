@@ -69,11 +69,11 @@ final class zzbf extends zzbi {
         try {
             byte[] bArr = this.zzc;
             int i2 = this.zze;
-            bArr[i2] = (byte) (i & NotificationCenter.liveLocationsChanged);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.liveLocationsChanged);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.liveLocationsChanged);
+            bArr[i2] = (byte) (i & NotificationCenter.proxyCheckDone);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.proxyCheckDone);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.proxyCheckDone);
             this.zze = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.liveLocationsChanged);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.proxyCheckDone);
         } catch (IndexOutOfBoundsException e) {
             throw new zzbg(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -90,15 +90,15 @@ final class zzbf extends zzbi {
         try {
             byte[] bArr = this.zzc;
             int i = this.zze;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.liveLocationsChanged);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.liveLocationsChanged);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.proxyCheckDone);
+            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.proxyCheckDone);
             this.zze = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.liveLocationsChanged);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.proxyCheckDone);
         } catch (IndexOutOfBoundsException e) {
             throw new zzbg(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }

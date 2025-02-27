@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DiagnosticCoroutineContextException extends RuntimeException {
     private final transient CoroutineContext context;
 

@@ -1,26 +1,28 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
 final class y2 extends g0 {
     y2(b bVar) {
-        super(bVar, S2.q | S2.o, 0);
+        super(bVar, R2.q | R2.o, 0);
     }
 
     @Override // j$.util.stream.b
-    public final F0 w0(j$.util.Q q, j$.util.function.I i, b bVar) {
-        if (S2.SORTED.d(bVar.s0())) {
-            return bVar.k0(q, false, i);
+    public final F0 v0(Spliterator spliterator, IntFunction intFunction, b bVar) {
+        if (R2.SORTED.d(bVar.r0())) {
+            return bVar.j0(spliterator, false, intFunction);
         }
-        long[] jArr = (long[]) ((D0) bVar.k0(q, true, i)).e();
+        long[] jArr = (long[]) ((D0) bVar.j0(spliterator, true, intFunction)).e();
         Arrays.sort(jArr);
         return new j1(jArr);
     }
 
     @Override // j$.util.stream.b
-    public final e2 z0(int i, e2 e2Var) {
+    public final e2 y0(int i, e2 e2Var) {
         e2Var.getClass();
-        return S2.SORTED.d(i) ? e2Var : S2.SIZED.d(i) ? new D2(e2Var) : new v2(e2Var);
+        return R2.SORTED.d(i) ? e2Var : R2.SIZED.d(i) ? new D2(e2Var) : new v2(e2Var);
     }
 }

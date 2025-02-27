@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ArraysKt___ArraysJvmKt extends ArraysKt__ArraysKt {
     public static List asList(Object[] objArr) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");

@@ -22,9 +22,17 @@ public class ParcelImpl implements Parcelable {
         this.mParcel = new VersionedParcelParcel(parcel).readVersionedParcelable();
     }
 
+    public ParcelImpl(VersionedParcelable versionedParcelable) {
+        this.mParcel = versionedParcelable;
+    }
+
     @Override // android.os.Parcelable
     public int describeContents() {
         return 0;
+    }
+
+    public VersionedParcelable getVersionedParcel() {
+        return this.mParcel;
     }
 
     @Override // android.os.Parcelable

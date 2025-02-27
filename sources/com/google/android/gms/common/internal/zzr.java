@@ -5,7 +5,6 @@ import android.content.ServiceConnection;
 import android.os.Handler;
 import android.os.Looper;
 import com.google.android.gms.common.stats.ConnectionTracker;
-import com.google.android.gms.internal.common.zzi;
 import java.util.HashMap;
 import java.util.concurrent.Executor;
 
@@ -23,7 +22,7 @@ final class zzr extends GmsClientSupervisor {
         zzq zzqVar = new zzq(this, null);
         this.zze = zzqVar;
         this.zzc = context.getApplicationContext();
-        this.zzd = new zzi(looper, zzqVar);
+        this.zzd = new com.google.android.gms.internal.common.zzi(looper, zzqVar);
         this.zzf = ConnectionTracker.getInstance();
         this.zzg = 5000L;
         this.zzh = 300000L;

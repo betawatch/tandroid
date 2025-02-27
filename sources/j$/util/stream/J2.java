@@ -1,12 +1,12 @@
 package j$.util.stream;
 
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
-class J2 extends N2 implements j$.util.function.F {
+class J2 extends N2 implements j$.util.function.E {
     J2() {
     }
 
@@ -16,11 +16,11 @@ class J2 extends N2 implements j$.util.function.F {
 
     @Override // j$.util.stream.N2, java.lang.Iterable
     /* renamed from: A, reason: merged with bridge method [inline-methods] */
-    public j$.util.H spliterator() {
+    public j$.util.G spliterator() {
         return new I2(this, 0, this.c, 0, this.b);
     }
 
-    @Override // j$.util.function.F
+    @Override // j$.util.function.E
     public void accept(int i) {
         z();
         int[] iArr = (int[]) this.e;
@@ -35,25 +35,25 @@ class J2 extends N2 implements j$.util.function.F {
     }
 
     public final void forEach(Consumer consumer) {
-        if (consumer instanceof j$.util.function.F) {
-            g((j$.util.function.F) consumer);
+        if (consumer instanceof j$.util.function.E) {
+            g((j$.util.function.E) consumer);
         } else {
-            if (A3.a) {
-                A3.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
+            if (z3.a) {
+                z3.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
                 throw null;
             }
-            j$.util.a.f((I2) spliterator(), consumer);
+            j$.util.A.f((I2) spliterator(), consumer);
         }
     }
 
     @Override // java.lang.Iterable
     public final Iterator iterator() {
-        return j$.util.f0.g(spliterator());
+        return Spliterators.g(spliterator());
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
     public final String toString() {
@@ -61,15 +61,15 @@ class J2 extends N2 implements j$.util.function.F {
         if (iArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(iArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, NotificationCenter.storyQualityUpdate)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, 200)));
     }
 
     @Override // j$.util.stream.N2
     protected final void u(Object obj, int i, int i2, Object obj2) {
         int[] iArr = (int[]) obj;
-        j$.util.function.F f = (j$.util.function.F) obj2;
+        j$.util.function.E e = (j$.util.function.E) obj2;
         while (i < i2) {
-            f.accept(iArr[i]);
+            e.accept(iArr[i]);
             i++;
         }
     }

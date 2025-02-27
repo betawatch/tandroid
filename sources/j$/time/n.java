@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.zone.ZoneRules;
+import j$.util.A;
 
 /* loaded from: classes2.dex */
 final class n extends ZoneId {
@@ -13,7 +14,7 @@ final class n extends ZoneId {
     }
 
     static n h(String str) {
-        j$.util.a.B(str, "zoneId");
+        A.z(str, "zoneId");
         int length = str.length();
         if (length < 2) {
             throw new c("Invalid ID for region-based ZoneId, invalid format: ".concat(str));

@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.sequences.Sequence;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class JobKt__JobKt {
     public static final CompletableJob Job(Job job) {
         return new JobImpl(job);

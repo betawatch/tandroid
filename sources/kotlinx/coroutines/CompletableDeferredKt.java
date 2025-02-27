@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CompletableDeferredKt {
     public static final CompletableDeferred CompletableDeferred(Job job) {
         return new CompletableDeferredImpl(job);

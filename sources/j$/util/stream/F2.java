@@ -1,10 +1,12 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class F2 implements j$.util.Q {
+final class F2 implements Spliterator {
     int a;
     final int b;
     int c;
@@ -22,7 +24,7 @@ final class F2 implements j$.util.Q {
         this.e = objArr == null ? o2.e : objArr[i];
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final void a(Consumer consumer) {
         O2 o2;
         consumer.getClass();
@@ -54,12 +56,12 @@ final class F2 implements j$.util.Q {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final int characteristics() {
         return 16464;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final long estimateSize() {
         int i = this.a;
         int i2 = this.d;
@@ -71,22 +73,22 @@ final class F2 implements j$.util.Q {
         return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final Comparator getComparator() {
         throw new IllegalStateException();
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.a.j(this);
+        return j$.util.A.j(this);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.a.k(this, i);
+        return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final boolean s(Consumer consumer) {
         consumer.getClass();
         int i = this.a;
@@ -110,8 +112,8 @@ final class F2 implements j$.util.Q {
         return true;
     }
 
-    @Override // j$.util.Q
-    public final j$.util.Q trySplit() {
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
         int i = this.a;
         int i2 = this.b;
         if (i < i2) {
@@ -132,7 +134,7 @@ final class F2 implements j$.util.Q {
         if (i6 == 0) {
             return null;
         }
-        j$.util.Q m = j$.util.f0.m(this.e, i5, i5 + i6);
+        Spliterator m = Spliterators.m(this.e, i5, i5 + i6);
         this.c += i6;
         return m;
     }

@@ -10,7 +10,7 @@ final class t2 extends p2 {
         super(e2Var);
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         this.c.accept(d);
     }

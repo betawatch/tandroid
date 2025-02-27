@@ -15,7 +15,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__AppendableKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJvmKt {
     public static final Object first(Iterable iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");

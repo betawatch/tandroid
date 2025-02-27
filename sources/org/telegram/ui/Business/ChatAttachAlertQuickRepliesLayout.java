@@ -30,12 +30,13 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Business.QuickRepliesActivity;
 import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Components.ChatActivityInterface;
+import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EmptyTextProgressView;
 import org.telegram.ui.Components.FillLastLinearLayoutManager;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SearchField;
 
@@ -369,7 +370,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                ChatAttachAlertQuickRepliesLayout.this.lambda$new$2(view, i);
+                ChatAttachAlertQuickRepliesLayout.this.lambda$new$3(view, i);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout.4
@@ -410,7 +411,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$3() {
+    public /* synthetic */ void lambda$getThemeDescriptions$4() {
         RecyclerListView recyclerListView = this.listView;
         if (recyclerListView != null) {
             int childCount = recyclerListView.getChildCount();
@@ -438,8 +439,14 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view, int i) {
-        Object item;
+    public /* synthetic */ void lambda$new$2(Object obj, Long l) {
+        QuickRepliesController.getInstance(UserConfig.selectedAccount).sendQuickReplyTo(this.parentAlert.getDialogId(), (QuickRepliesController.QuickReply) obj);
+        this.parentAlert.lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3(View view, int i) {
+        final Object item;
         RecyclerView.Adapter adapter = this.listView.getAdapter();
         ShareSearchAdapter shareSearchAdapter = this.searchAdapter;
         if (adapter == shareSearchAdapter) {
@@ -454,10 +461,16 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
             }
         }
         if (item instanceof QuickRepliesController.QuickReply) {
-            Object obj = this.parentAlert.baseFragment;
-            if (obj instanceof ChatActivityInterface) {
-                QuickRepliesController.getInstance(UserConfig.selectedAccount).sendQuickReplyTo(((ChatActivityInterface) obj).getDialogId(), (QuickRepliesController.QuickReply) item);
-                this.parentAlert.lambda$new$0();
+            if (UserConfig.getInstance(this.parentAlert.currentAccount).isPremium()) {
+                ChatAttachAlert chatAttachAlert = this.parentAlert;
+                AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), ((QuickRepliesController.QuickReply) item).getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda4
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
+                        ChatAttachAlertQuickRepliesLayout.this.lambda$new$2(item, (Long) obj);
+                    }
+                });
+            } else if (this.parentAlert.baseFragment != null) {
+                new PremiumFeatureBottomSheet(this.parentAlert.baseFragment, getContext(), this.parentAlert.currentAccount, true, 31, false, null).show();
             }
         }
     }
@@ -558,7 +571,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                ChatAttachAlertQuickRepliesLayout.this.lambda$getThemeDescriptions$3();
+                ChatAttachAlertQuickRepliesLayout.this.lambda$getThemeDescriptions$4();
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -648,7 +661,8 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void sendSelectedItems(boolean z, int i, long j, boolean z2) {
+    public boolean sendSelectedItems(boolean z, int i, long j, boolean z2) {
+        return false;
     }
 
     @Override // android.view.View

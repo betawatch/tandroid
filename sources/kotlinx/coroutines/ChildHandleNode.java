@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.Unit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ChildHandleNode extends JobCancellingNode implements ChildHandle {
     public final ChildJob childJob;
 

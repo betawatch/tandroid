@@ -16,7 +16,7 @@ import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CancellableContinuationImpl extends DispatchedTask implements CancellableContinuation, CoroutineStackFrame, Waiter {
     private volatile int _decisionAndIndex;
     private volatile Object _parentHandle;

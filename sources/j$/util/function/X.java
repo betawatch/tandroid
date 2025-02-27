@@ -1,31 +1,28 @@
 package j$.util.function;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class X implements LongFunction {
-    public final /* synthetic */ java.util.function.LongFunction a;
+import java.util.function.LongToDoubleFunction;
 
-    private /* synthetic */ X(java.util.function.LongFunction longFunction) {
-        this.a = longFunction;
+/* loaded from: classes2.dex */
+public final /* synthetic */ class X {
+    public final /* synthetic */ LongToDoubleFunction a;
+
+    private /* synthetic */ X(LongToDoubleFunction longToDoubleFunction) {
+        this.a = longToDoubleFunction;
     }
 
-    public static /* synthetic */ LongFunction a(java.util.function.LongFunction longFunction) {
-        if (longFunction == null) {
+    public static /* synthetic */ X a(LongToDoubleFunction longToDoubleFunction) {
+        if (longToDoubleFunction == null) {
             return null;
         }
-        return longFunction instanceof Y ? ((Y) longFunction).a : new X(longFunction);
-    }
-
-    @Override // j$.util.function.LongFunction
-    public final /* synthetic */ Object apply(long j) {
-        return this.a.apply(j);
+        return new X(longToDoubleFunction);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.function.LongFunction longFunction = this.a;
+        LongToDoubleFunction longToDoubleFunction = this.a;
         if (obj instanceof X) {
             obj = ((X) obj).a;
         }
-        return longFunction.equals(obj);
+        return longToDoubleFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

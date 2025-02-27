@@ -8,7 +8,7 @@ import kotlin.sequences.SequencesKt__SequencesKt;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class MainDispatcherLoader {
     public static final MainDispatcherLoader INSTANCE;
     public static final MainCoroutineDispatcher dispatcher;

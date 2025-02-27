@@ -73,6 +73,11 @@ public abstract class MaxFileSizeCell extends FrameLayout {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public /* synthetic */ boolean needVisuallyDivideSteps() {
+                return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 int i;
                 float f2;

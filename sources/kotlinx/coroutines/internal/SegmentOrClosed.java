@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SegmentOrClosed {
     public static Object constructor-impl(Object obj) {
         return obj;

@@ -1,6 +1,6 @@
 package kotlin.internal;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ProgressionUtilKt {
     private static final int differenceModulo(int i, int i2, int i3) {
         return mod(mod(i, i3) - mod(i2, i3), i3);

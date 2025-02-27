@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionsKt__CollectionsJVMKt {
     public static final Object[] copyToArrayOfAny(Object[] objArr, boolean z) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");

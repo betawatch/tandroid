@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoipCoverEmoji {
     private final boolean allowAnimations;
     private int diffX;
@@ -155,7 +155,7 @@ public class VoipCoverEmoji {
         long j2 = NotificationCenter.updateBotMenuButton;
         ofFloat.setStartDelay(j2);
         ofFloat.start();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.liveLocationsChanged, NotificationCenter.liveLocationsChanged);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone);
         ofInt.setInterpolator(CubicBezierInterpolator.DEFAULT);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener

@@ -318,7 +318,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 size--;
             }
             if (baseFragment == null) {
-                lambda$onBackPressed$323();
+                lambda$onBackPressed$335();
                 baseFragment = parentLayout.getBackgroundFragment();
                 if (baseFragment == null) {
                     if (z) {
@@ -341,7 +341,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 parentLayout.removeFragmentFromStack((BaseFragment) fragmentStack.get(size2));
             }
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
         if (baseFragment == null) {
         }
     }
@@ -509,7 +509,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         if (userFull != null) {
             TL_payments.starRefProgram starrefprogram2 = this.program;
             starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.chatlistFolderUpdate : 86400);
+            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.storiesListUpdated : 86400);
             userFull.starref_program = starrefprogram;
             getMessagesStorage().updateUserInfo(userFull, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.bot_id), userFull);
@@ -528,7 +528,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$fillItems$11(Integer num) {
+    public static /* synthetic */ CharSequence lambda$fillItems$11(Integer num) {
         return String.format(Locale.US, "%.1f%%", Float.valueOf(num.intValue() / 10.0f));
     }
 
@@ -773,7 +773,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         UItem asIntSlideView = UItem.asIntSlideView(1, getMessagesController().starrefMinCommissionPermille, this.program.commission_permille, getMessagesController().starrefMaxCommissionPermille, new Utilities.CallbackReturn() { // from class: org.telegram.ui.bots.AffiliateProgramFragment$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
-                String lambda$fillItems$11;
+                CharSequence lambda$fillItems$11;
                 lambda$fillItems$11 = AffiliateProgramFragment.lambda$fillItems$11((Integer) obj);
                 return lambda$fillItems$11;
             }

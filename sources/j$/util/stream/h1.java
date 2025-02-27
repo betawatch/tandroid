@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 import java.util.ArrayDeque;
 
@@ -9,7 +10,7 @@ final class h1 extends i1 {
         super(f0);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final void a(Consumer consumer) {
         if (this.a == null) {
             return;
@@ -19,9 +20,9 @@ final class h1 extends i1 {
             }
             return;
         }
-        j$.util.Q q = this.c;
-        if (q != null) {
-            q.a(consumer);
+        Spliterator spliterator = this.c;
+        if (spliterator != null) {
+            spliterator.a(consumer);
             return;
         }
         ArrayDeque f = f();
@@ -35,7 +36,7 @@ final class h1 extends i1 {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final boolean s(Consumer consumer) {
         F0 b;
         if (!h()) {
@@ -44,7 +45,7 @@ final class h1 extends i1 {
         boolean s = this.d.s(consumer);
         if (!s) {
             if (this.c == null && (b = i1.b(this.e)) != null) {
-                j$.util.Q spliterator = b.spliterator();
+                Spliterator spliterator = b.spliterator();
                 this.d = spliterator;
                 return spliterator.s(consumer);
             }

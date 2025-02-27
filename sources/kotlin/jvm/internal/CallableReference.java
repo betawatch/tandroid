@@ -4,7 +4,7 @@ import java.io.Serializable;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KDeclarationContainer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CallableReference implements KCallable, Serializable {
     public static final Object NO_RECEIVER = NoReceiver.INSTANCE;
     private final boolean isTopLevel;

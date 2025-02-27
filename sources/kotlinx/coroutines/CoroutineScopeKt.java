@@ -9,7 +9,7 @@ import kotlinx.coroutines.internal.ContextScope;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineScopeKt {
     public static final CoroutineScope CoroutineScope(CoroutineContext coroutineContext) {
         CompletableJob Job$default;

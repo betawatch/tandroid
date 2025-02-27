@@ -5,6 +5,7 @@ import j$.time.LocalDate;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
 import j$.time.zone.ZoneRules;
+import j$.util.A;
 import java.util.Locale;
 
 /* loaded from: classes2.dex */
@@ -26,8 +27,8 @@ final class s {
             j$.time.chrono.f fVar = (j$.time.chrono.f) kVar.c(j$.time.temporal.j.d());
             ZoneId zoneId2 = (ZoneId) kVar.c(j$.time.temporal.j.j());
             LocalDate localDate = null;
-            b = j$.util.a.A(b, fVar) ? null : b;
-            e = j$.util.a.A(e, zoneId2) ? null : e;
+            b = A.y(b, fVar) ? null : b;
+            e = A.y(e, zoneId2) ? null : e;
             if (b != null || e != null) {
                 j$.time.chrono.f fVar2 = b != null ? b : fVar;
                 if (e != null) {

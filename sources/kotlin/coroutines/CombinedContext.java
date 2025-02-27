@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CombinedContext implements CoroutineContext, Serializable {
     private final CoroutineContext.Element element;
     private final CoroutineContext left;

@@ -2,14 +2,14 @@ package j$.util.stream;
 
 /* loaded from: classes2.dex */
 final class M extends Q implements b2 {
-    final j$.util.function.n b;
+    final j$.util.function.m b;
 
-    M(j$.util.function.n nVar, boolean z) {
+    M(j$.util.function.m mVar, boolean z) {
         super(z);
-        this.b = nVar;
+        this.b = mVar;
     }
 
-    @Override // j$.util.stream.Q, j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.Q, j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         this.b.accept(d);
     }
@@ -20,9 +20,9 @@ final class M extends Q implements b2 {
         r((Double) obj);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.b2

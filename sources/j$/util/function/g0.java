@@ -1,33 +1,33 @@
 package j$.util.function;
 
-import java.util.function.ObjDoubleConsumer;
+import java.util.function.ObjIntConsumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class g0 implements i0 {
-    public final /* synthetic */ ObjDoubleConsumer a;
+    public final /* synthetic */ ObjIntConsumer a;
 
-    private /* synthetic */ g0(ObjDoubleConsumer objDoubleConsumer) {
-        this.a = objDoubleConsumer;
+    private /* synthetic */ g0(ObjIntConsumer objIntConsumer) {
+        this.a = objIntConsumer;
     }
 
-    public static /* synthetic */ i0 a(ObjDoubleConsumer objDoubleConsumer) {
-        if (objDoubleConsumer == null) {
+    public static /* synthetic */ i0 a(ObjIntConsumer objIntConsumer) {
+        if (objIntConsumer == null) {
             return null;
         }
-        return objDoubleConsumer instanceof h0 ? ((h0) objDoubleConsumer).a : new g0(objDoubleConsumer);
+        return objIntConsumer instanceof h0 ? ((h0) objIntConsumer).a : new g0(objIntConsumer);
     }
 
     @Override // j$.util.function.i0
-    public final /* synthetic */ void accept(Object obj, double d) {
-        this.a.accept(obj, d);
+    public final /* synthetic */ void accept(Object obj, int i) {
+        this.a.accept(obj, i);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        ObjDoubleConsumer objDoubleConsumer = this.a;
+        ObjIntConsumer objIntConsumer = this.a;
         if (obj instanceof g0) {
             obj = ((g0) obj).a;
         }
-        return objDoubleConsumer.equals(obj);
+        return objIntConsumer.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

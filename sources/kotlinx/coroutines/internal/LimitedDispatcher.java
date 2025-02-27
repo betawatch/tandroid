@@ -9,7 +9,7 @@ import kotlinx.coroutines.DefaultExecutorKt;
 import kotlinx.coroutines.Delay;
 import kotlinx.coroutines.DisposableHandle;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class LimitedDispatcher extends CoroutineDispatcher implements Delay {
     private static final AtomicIntegerFieldUpdater runningWorkers$FU = AtomicIntegerFieldUpdater.newUpdater(LimitedDispatcher.class, "runningWorkers");
     private final /* synthetic */ Delay $$delegate_0;

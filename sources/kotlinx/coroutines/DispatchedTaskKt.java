@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.ThreadContextKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DispatchedTaskKt {
     public static final void dispatch(DispatchedTask dispatchedTask, int i) {
         Continuation delegate$kotlinx_coroutines_core = dispatchedTask.getDelegate$kotlinx_coroutines_core();

@@ -3,7 +3,7 @@ package j$.util.stream;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-abstract class M2 implements j$.util.N {
+abstract class M2 implements j$.util.M {
     int a;
     final int b;
     int c;
@@ -23,12 +23,12 @@ abstract class M2 implements j$.util.N {
 
     abstract void b(int i, Object obj, Object obj2);
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final int characteristics() {
         return 16464;
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final long estimateSize() {
         int i = this.a;
         int i2 = this.d;
@@ -40,9 +40,9 @@ abstract class M2 implements j$.util.N {
         return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    abstract j$.util.N f(Object obj, int i, int i2);
+    abstract j$.util.M f(Object obj, int i, int i2);
 
-    @Override // j$.util.N
+    @Override // j$.util.M
     /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
     public final void e(Object obj) {
         N2 n2;
@@ -68,24 +68,24 @@ abstract class M2 implements j$.util.N {
         }
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final Comparator getComparator() {
         throw new IllegalStateException();
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.a.j(this);
+        return j$.util.A.j(this);
     }
 
-    abstract j$.util.N h(int i, int i2, int i3, int i4);
+    abstract j$.util.M h(int i, int i2, int i3, int i4);
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.a.k(this, i);
+        return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.N
+    @Override // j$.util.M
     /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
     public final boolean p(Object obj) {
         obj.getClass();
@@ -113,30 +113,30 @@ abstract class M2 implements j$.util.N {
         return true;
     }
 
-    @Override // j$.util.N, j$.util.Q
-    public /* bridge */ /* synthetic */ j$.util.E trySplit() {
-        return (j$.util.E) trySplit();
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
+        return (j$.util.D) trySplit();
     }
 
-    @Override // j$.util.N, j$.util.Q
-    public /* bridge */ /* synthetic */ j$.util.H trySplit() {
-        return (j$.util.H) trySplit();
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
+        return (j$.util.G) trySplit();
     }
 
-    @Override // j$.util.N, j$.util.Q
-    public /* bridge */ /* synthetic */ j$.util.K trySplit() {
-        return (j$.util.K) trySplit();
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
+        return (j$.util.J) trySplit();
     }
 
-    @Override // j$.util.Q
-    public final j$.util.N trySplit() {
+    @Override // j$.util.Spliterator
+    public final j$.util.M trySplit() {
         int i = this.a;
         int i2 = this.b;
         if (i < i2) {
             int i3 = i2 - 1;
             int i4 = this.c;
             N2 n2 = this.f;
-            j$.util.N h = h(i, i3, i4, n2.v(n2.f[i3]));
+            j$.util.M h = h(i, i3, i4, n2.v(n2.f[i3]));
             this.a = i2;
             this.c = 0;
             this.e = n2.f[i2];
@@ -150,7 +150,7 @@ abstract class M2 implements j$.util.N {
         if (i6 == 0) {
             return null;
         }
-        j$.util.N f = f(this.e, i5, i6);
+        j$.util.M f = f(this.e, i5, i6);
         this.c += i6;
         return f;
     }

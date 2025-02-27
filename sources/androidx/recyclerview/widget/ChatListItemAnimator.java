@@ -30,6 +30,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.BotHelpCell;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Cells.UserInfoCell;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.ChatGreetingsView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -270,24 +271,50 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x004d, code lost:
+    
+        if (r6.getTop() > r3) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
+    
+        if (r6.getTop() > r3) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x004f, code lost:
+    
+        r0 = r3 - r6.getTop();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void restoreTransitionParams(View view) {
+        int measuredHeight;
         view.setAlpha(1.0f);
         view.setScaleX(1.0f);
         view.setScaleY(1.0f);
+        float f = 0.0f;
         view.setTranslationY(0.0f);
         if (view instanceof BotHelpCell) {
-            int measuredHeight = (this.recyclerListView.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
+            measuredHeight = (this.recyclerListView.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
             ((BotHelpCell) view).setAnimating(false);
-            view.setTranslationY(view.getTop() > measuredHeight ? measuredHeight - view.getTop() : 0.0f);
-        } else if (view instanceof ChatMessageCell) {
-            ChatMessageCell chatMessageCell = (ChatMessageCell) view;
-            chatMessageCell.getTransitionParams().resetAnimation();
-            chatMessageCell.setAnimationOffsetX(0.0f);
-        } else if (view instanceof ChatActionCell) {
-            ((ChatActionCell) view).getTransitionParams().resetAnimation();
         } else {
-            view.setTranslationX(0.0f);
+            if (!(view instanceof UserInfoCell)) {
+                if (view instanceof ChatMessageCell) {
+                    ChatMessageCell chatMessageCell = (ChatMessageCell) view;
+                    chatMessageCell.getTransitionParams().resetAnimation();
+                    chatMessageCell.setAnimationOffsetX(0.0f);
+                    return;
+                } else if (view instanceof ChatActionCell) {
+                    ((ChatActionCell) view).getTransitionParams().resetAnimation();
+                    return;
+                } else {
+                    view.setTranslationX(0.0f);
+                    return;
+                }
+            }
+            measuredHeight = (this.recyclerListView.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
+            ((UserInfoCell) view).setAnimating(false);
         }
+        view.setTranslationY(f);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:? A[RETURN, SYNTHETIC] */
@@ -567,7 +594,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         ChatListItemAnimator.lambda$animateAddImpl$8(ChatMessageCell.this, imageX2, f, imageY2, f2, width, imageWidth, height, imageHeight, valueAnimator);
                     }
                 });
-                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.9
+                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.10
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         chatMessageCell2.getTransitionParams().resetAnimation();
@@ -599,7 +626,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     animatorSet.setStartDelay(max);
                     animatorSet.setDuration(250L);
                 }
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.10
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.11
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationCancel(Animator animator) {
                         view.setAlpha(1.0f);
@@ -651,7 +678,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         }
         if (viewHolder != this.greetingsSticker) {
         }
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.10
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.11
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
                 view.setAlpha(1.0f);
@@ -810,7 +837,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             this.mChangeAnimations.add(changeInfo.oldHolder);
             duration.translationX(changeInfo.toX - changeInfo.fromX);
             duration.translationY(changeInfo.toY - changeInfo.fromY);
-            duration.alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.7
+            duration.alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.8
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     duration.setListener(null);
@@ -839,7 +866,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         if (view2 != null) {
             final ViewPropertyAnimator animate = view2.animate();
             this.mChangeAnimations.add(changeInfo.newHolder);
-            animate.translationX(0.0f).translationY(0.0f).setDuration(getChangeDuration()).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.8
+            animate.translationX(0.0f).translationY(0.0f).setDuration(getChangeDuration()).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.9
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     animate.setListener(null);
@@ -869,9 +896,9 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x048e  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x009d  */
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.SimpleItemAnimator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1066,9 +1093,9 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                                     groupedMessages = currentMessagesGroup;
                                     int left2 = chatMessageCell3.getLeft() + chatMessageCell3.getBackgroundDrawableRight();
                                     i10 = i6;
-                                    int top = chatMessageCell3.getTop() + chatMessageCell3.getBackgroundDrawableTop();
+                                    int top = chatMessageCell3.getTop() + chatMessageCell3.getPaddingTop() + chatMessageCell3.getBackgroundDrawableTop();
                                     i9 = i13;
-                                    int top2 = chatMessageCell3.getTop() + chatMessageCell3.getBackgroundDrawableBottom();
+                                    int top2 = chatMessageCell3.getTop() + chatMessageCell3.getPaddingTop() + chatMessageCell3.getBackgroundDrawableBottom();
                                     if (i16 == 0 || left < i16) {
                                         i16 = left;
                                     }
@@ -1132,8 +1159,8 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         if (transitionParams.wasDraw) {
                             int left3 = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableLeft();
                             int left4 = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableRight();
-                            int top3 = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableTop();
-                            int top4 = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableBottom();
+                            int top3 = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableTop();
+                            int top4 = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableBottom();
                             moveInfoExtended.animateRemoveGroup = true;
                             transitionParams.animateBackgroundBoundsInner = true;
                             moveInfoExtended.deltaLeft = left3 - transitionParams4.left;
@@ -1204,6 +1231,8 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     View view2 = viewHolder.itemView;
                     if (view2 instanceof BotHelpCell) {
                         ((BotHelpCell) view2).setAnimating(true);
+                    } else if (view2 instanceof UserInfoCell) {
+                        ((UserInfoCell) view2).setAnimating(true);
                     } else {
                         if (i13 == 0 && i6 == 0) {
                             dispatchMoveFinished(viewHolder);
@@ -1253,9 +1282,9 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r1v44 android.animation.TimeInterpolator, still in use, count: 2, list:
-          (r1v44 android.animation.TimeInterpolator) from 0x024f: IF  (r1v44 android.animation.TimeInterpolator) != (null android.animation.TimeInterpolator)  -> B:11:0x0249 A[HIDDEN]
-          (r1v44 android.animation.TimeInterpolator) from 0x0249: PHI (r1v49 android.animation.TimeInterpolator) = (r1v44 android.animation.TimeInterpolator) binds: [B:19:0x024f] A[DONT_GENERATE, DONT_INLINE]
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r1v47 android.animation.TimeInterpolator, still in use, count: 2, list:
+          (r1v47 android.animation.TimeInterpolator) from 0x0276: IF  (r1v47 android.animation.TimeInterpolator) != (null android.animation.TimeInterpolator)  -> B:12:0x0270 A[HIDDEN]
+          (r1v47 android.animation.TimeInterpolator) from 0x0270: PHI (r1v52 android.animation.TimeInterpolator) = (r1v47 android.animation.TimeInterpolator) binds: [B:20:0x0276] A[DONT_GENERATE, DONT_INLINE]
         	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
         	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
         	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:125)
@@ -1285,15 +1314,15 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
         */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0280  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0274  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void animateMoveImpl(final androidx.recyclerview.widget.RecyclerView.ViewHolder r28, androidx.recyclerview.widget.DefaultItemAnimator.MoveInfo r29, boolean r30) {
         /*
-            Method dump skipped, instructions count: 684
+            Method dump skipped, instructions count: 730
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.ChatListItemAnimator.animateMoveImpl(androidx.recyclerview.widget.RecyclerView$ViewHolder, androidx.recyclerview.widget.DefaultItemAnimator$MoveInfo, boolean):void");
@@ -1343,7 +1372,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
             dispatchRemoveStarting(viewHolder);
             ofFloat.setDuration(getRemoveDuration());
-            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.11
+            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.12
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     animator.removeAllListeners();
@@ -1533,8 +1562,8 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     ChatMessageCell chatMessageCell = (ChatMessageCell) childAt;
                     MessageObject messageObject = chatMessageCell.getMessageObject();
                     if (chatMessageCell.getTransitionParams().wasDraw && groupedMessages.messages.contains(messageObject)) {
-                        groupedMessages.transitionParams.top = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableTop();
-                        groupedMessages.transitionParams.bottom = chatMessageCell.getTop() + chatMessageCell.getBackgroundDrawableBottom();
+                        groupedMessages.transitionParams.top = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableTop();
+                        groupedMessages.transitionParams.bottom = chatMessageCell.getTop() + chatMessageCell.getPaddingTop() + chatMessageCell.getBackgroundDrawableBottom();
                         groupedMessages.transitionParams.left = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableLeft();
                         groupedMessages.transitionParams.right = chatMessageCell.getLeft() + chatMessageCell.getBackgroundDrawableRight();
                         groupedMessages.transitionParams.drawCaptionLayout = chatMessageCell.hasCaptionLayout();

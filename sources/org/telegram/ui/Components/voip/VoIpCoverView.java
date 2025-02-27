@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoIpCoverView extends View {
     private final boolean allowAnimations;
     private final VoIPBackgroundProvider backgroundProvider;
@@ -154,14 +154,14 @@ public class VoIpCoverView extends View {
                 voipCoverEmoji2.onDraw(canvas);
             }
             int alpha = this.backgroundProvider.getDarkPaint().getAlpha();
-            this.saveLayerPaint.setAlpha(NotificationCenter.liveLocationsChanged);
+            this.saveLayerPaint.setAlpha(NotificationCenter.proxyCheckDone);
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.saveLayerPaint, 31);
-            this.backgroundProvider.getDarkPaint().setAlpha(NotificationCenter.liveLocationsChanged);
+            this.backgroundProvider.getDarkPaint().setAlpha(NotificationCenter.proxyCheckDone);
             canvas.drawRect(this.bgRect, this.backgroundProvider.getDarkPaint());
             this.backgroundProvider.getDarkPaint().setAlpha(alpha);
             if (this.backgroundProvider.isReveal()) {
                 int alpha2 = this.backgroundProvider.getRevealDarkPaint().getAlpha();
-                this.backgroundProvider.getRevealDarkPaint().setAlpha(NotificationCenter.liveLocationsChanged);
+                this.backgroundProvider.getRevealDarkPaint().setAlpha(NotificationCenter.proxyCheckDone);
                 canvas.drawRect(this.bgRect, this.backgroundProvider.getRevealDarkPaint());
                 this.backgroundProvider.getRevealDarkPaint().setAlpha(alpha2);
             }

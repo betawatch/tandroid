@@ -2,14 +2,14 @@ package com.google.android.gms.flags;
 
 /* loaded from: classes.dex */
 public final class Singletons {
-    private static Singletons zzl;
-    private final FlagRegistry zzm = new FlagRegistry();
-    private final zzb zzn = new zzb();
+    private static Singletons zza;
+    private final FlagRegistry zzb = new FlagRegistry();
+    private final zzb zzc = new zzb();
 
     static {
         Singletons singletons = new Singletons();
         synchronized (Singletons.class) {
-            zzl = singletons;
+            zza = singletons;
         }
     }
 
@@ -17,13 +17,13 @@ public final class Singletons {
     }
 
     public static FlagRegistry flagRegistry() {
-        return zzc().zzm;
+        return zzb().zzb;
     }
 
-    private static Singletons zzc() {
+    private static Singletons zzb() {
         Singletons singletons;
         synchronized (Singletons.class) {
-            singletons = zzl;
+            singletons = zza;
         }
         return singletons;
     }

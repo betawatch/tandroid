@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class PhoneFormat {
     private static volatile PhoneFormat Instance;
     public ByteBuffer buffer;
@@ -312,10 +312,10 @@ public class PhoneFormat {
                 str = Locale.getDefault().getCountry().toLowerCase();
             }
             this.defaultCountry = str;
-            this.callingCodeOffsets = new HashMap(NotificationCenter.liveLocationsChanged);
-            this.callingCodeCountries = new HashMap(NotificationCenter.liveLocationsChanged);
+            this.callingCodeOffsets = new HashMap(NotificationCenter.proxyCheckDone);
+            this.callingCodeCountries = new HashMap(NotificationCenter.proxyCheckDone);
             this.callingCodeData = new HashMap(10);
-            this.countryCallingCode = new HashMap(NotificationCenter.liveLocationsChanged);
+            this.countryCallingCode = new HashMap(NotificationCenter.proxyCheckDone);
             parseDataHeader();
             this.initialzed = true;
         } catch (Exception e7) {

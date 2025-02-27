@@ -244,6 +244,11 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                             return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
                         }
 
+                        @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+                        public /* synthetic */ boolean needVisuallyDivideSteps() {
+                            return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+                        }
+
                         /* JADX WARN: Removed duplicated region for block: B:10:0x008e  */
                         /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
                         @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -531,7 +536,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             saveGalleryExceptions.put(dialogException.dialogId, dialogException);
             getUserConfig().updateSaveGalleryExceptions(this.type, saveGalleryExceptions);
         }
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -659,7 +664,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$323();
+                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$335();
                 }
             }
         });

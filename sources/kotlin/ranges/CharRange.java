@@ -3,7 +3,7 @@ package kotlin.ranges;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CharRange extends CharProgression {
     public static final Companion Companion = new Companion(null);
     private static final CharRange EMPTY = new CharRange(1, 0);

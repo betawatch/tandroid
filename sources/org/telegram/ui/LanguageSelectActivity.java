@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Collection$-EL;
+import j$.util.Collection;
 import j$.util.function.Predicate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -458,7 +458,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                         HashSet restrictedLanguages = RestrictedLanguagesSelectActivity.getRestrictedLanguages();
                         HashSet hashSet = new HashSet(restrictedLanguages);
                         if (restrictedLanguages.contains(str2) && !restrictedLanguages.contains(str)) {
-                            Collection$-EL.removeIf(hashSet, new Predicate() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda8
+                            Collection.-EL.removeIf(hashSet, new Predicate() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda8
                                 @Override // j$.util.function.Predicate
                                 public /* synthetic */ Predicate and(Predicate predicate) {
                                     return Predicate.-CC.$default$and(this, predicate);
@@ -728,7 +728,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    LanguageSelectActivity.this.lambda$onBackPressed$323();
+                    LanguageSelectActivity.this.lambda$onBackPressed$335();
                 }
             }
         });

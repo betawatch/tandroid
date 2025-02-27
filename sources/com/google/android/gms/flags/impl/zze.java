@@ -1,22 +1,18 @@
 package com.google.android.gms.flags.impl;
 
-import android.content.SharedPreferences;
+import android.content.Context;
 import java.util.concurrent.Callable;
 
 /* loaded from: classes.dex */
 final class zze implements Callable {
-    private final /* synthetic */ SharedPreferences zzo;
-    private final /* synthetic */ String zzp;
-    private final /* synthetic */ Integer zzr;
+    final /* synthetic */ Context zza;
 
-    zze(SharedPreferences sharedPreferences, String str, Integer num) {
-        this.zzo = sharedPreferences;
-        this.zzp = str;
-        this.zzr = num;
+    zze(Context context) {
+        this.zza = context;
     }
 
     @Override // java.util.concurrent.Callable
-    public final /* synthetic */ Object call() {
-        return Integer.valueOf(this.zzo.getInt(this.zzp, this.zzr.intValue()));
+    public final /* bridge */ /* synthetic */ Object call() {
+        return this.zza.getSharedPreferences("google_sdk_flags", 0);
     }
 }

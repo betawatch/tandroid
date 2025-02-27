@@ -2,6 +2,7 @@ package j$.util.stream;
 
 import j$.util.function.BiConsumer;
 import j$.util.function.Function;
+import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Supplier;
 import j$.util.function.ToDoubleFunction;
@@ -10,14 +11,14 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l implements Function, j$.util.function.i0, BiConsumer, Supplier, LongFunction, j$.util.function.I, j$.util.function.j, j$.util.function.q, j$.util.function.v, ToDoubleFunction {
+public final /* synthetic */ class l implements Function, j$.util.function.f0, BiConsumer, Supplier, LongFunction, IntFunction, j$.util.function.i, j$.util.function.p, j$.util.function.u, ToDoubleFunction {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i) {
         this.a = i;
     }
 
-    @Override // j$.util.function.i0
+    @Override // j$.util.function.f0
     public void accept(Object obj, double d) {
         switch (this.a) {
             case 1:
@@ -27,7 +28,7 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
                 break;
             case 2:
             default:
-                ((j$.util.h) obj).accept(d);
+                ((j$.util.f) obj).accept(d);
                 break;
             case 3:
                 double[] dArr2 = (double[]) obj;
@@ -66,7 +67,7 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
                 ((LinkedHashSet) obj).addAll((LinkedHashSet) obj2);
                 break;
             default:
-                ((j$.util.h) obj).a((j$.util.h) obj2);
+                ((j$.util.f) obj).a((j$.util.f) obj2);
                 break;
         }
     }
@@ -93,12 +94,12 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
         return Function.-CC.$default$andThen(this, function);
     }
 
-    @Override // j$.util.function.q
+    @Override // j$.util.function.p
     public Object apply(double d) {
         return Double.valueOf(d);
     }
 
-    @Override // j$.util.function.I
+    @Override // j$.util.function.IntFunction
     public Object apply(int i) {
         switch (this.a) {
             case 12:
@@ -126,7 +127,7 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
         return obj;
     }
 
-    @Override // j$.util.function.j
+    @Override // j$.util.function.i
     public double applyAsDouble(double d, double d2) {
         switch (this.a) {
             case 20:
@@ -141,7 +142,7 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
         return ((Double) obj).doubleValue();
     }
 
-    @Override // j$.util.function.v
+    @Override // j$.util.function.u
     public long applyAsLong(double d) {
         return 1L;
     }
@@ -173,11 +174,11 @@ public final /* synthetic */ class l implements Function, j$.util.function.i0, B
             default:
                 return new double[3];
             case 13:
-                return new j$.util.h();
+                return new j$.util.f();
             case 15:
-                return new j$.util.i();
+                return new j$.util.g();
             case 16:
-                return new j$.util.k();
+                return new j$.util.i();
             case 17:
                 return new LinkedHashSet();
             case 21:

@@ -3,7 +3,7 @@ package kotlin.coroutines.jvm.internal;
 import java.lang.reflect.Method;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ModuleNameRetriever {
     private static Cache cache;
     public static final ModuleNameRetriever INSTANCE = new ModuleNameRetriever();

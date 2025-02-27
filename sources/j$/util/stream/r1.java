@@ -1,6 +1,8 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 final class r1 extends O2 implements F0, x0 {
@@ -12,7 +14,7 @@ final class r1 extends O2 implements F0, x0 {
         throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;
@@ -89,23 +91,23 @@ final class r1 extends O2 implements F0, x0 {
     }
 
     @Override // j$.util.stream.F0
-    public final Object[] s(j$.util.function.I i) {
+    public final Object[] s(IntFunction intFunction) {
         long count = count();
         if (count >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) i.apply((int) count);
+        Object[] objArr = (Object[]) intFunction.apply((int) count);
         i(objArr, 0);
         return objArr;
     }
 
     @Override // j$.util.stream.O2, java.lang.Iterable
-    public final j$.util.Q spliterator() {
+    public final Spliterator spliterator() {
         return super.spliterator();
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
-        return t0.w(this, j, j2, i);
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
+        return t0.w(this, j, j2, intFunction);
     }
 }

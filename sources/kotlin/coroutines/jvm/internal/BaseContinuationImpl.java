@@ -7,7 +7,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseContinuationImpl implements Continuation, CoroutineStackFrame, Serializable {
     private final Continuation completion;
 

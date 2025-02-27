@@ -785,7 +785,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         public void shutdown(int i, boolean z, int i2, int i3, long j) {
             Handler handler = getHandler();
             if (handler != null) {
-                sendMessage(handler.obtainMessage(1, i, 0, new SendOptions(z, i2, i3, j)), 0);
+                sendMessage(handler.obtainMessage(1, i, 0, new SendOptions(z, i2, i3, j, 0L)), 0);
             }
         }
     }
@@ -814,7 +814,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
 
         boolean isSecretChat();
 
-        void sendMedia(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z, int i, boolean z2);
+        void sendMedia(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z, int i, boolean z2, long j);
     }
 
     private static class EncoderHandler extends Handler {
@@ -934,13 +934,15 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         long effectId;
         boolean notify;
         int scheduleDate;
+        long stars;
         int ttl;
 
-        public SendOptions(boolean z, int i, int i2, long j) {
+        public SendOptions(boolean z, int i, int i2, long j, long j2) {
             this.notify = z;
             this.scheduleDate = i;
             this.ttl = i2;
             this.effectId = j;
+            this.stars = j2;
         }
     }
 
@@ -1951,7 +1953,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                     photoEntry.ttl = sendOptions.ttl;
                     photoEntry.effectId = sendOptions.effectId;
                 }
-                InstantCameraView.this.delegate.sendMedia(photoEntry, videoEditedInfo4, sendOptions == null || sendOptions.notify, sendOptions != null ? sendOptions.scheduleDate : 0, false);
+                InstantCameraView.this.delegate.sendMedia(photoEntry, videoEditedInfo4, sendOptions == null || sendOptions.notify, sendOptions != null ? sendOptions.scheduleDate : 0, false, sendOptions != null ? sendOptions.stars : 0L);
             }
             InstantCameraView.this.videoEditedInfo = null;
         }
@@ -1998,7 +2000,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 photoEntry.ttl = sendOptions.ttl;
                 photoEntry.effectId = sendOptions.effectId;
             }
-            InstantCameraView.this.delegate.sendMedia(photoEntry, InstantCameraView.this.videoEditedInfo, sendOptions == null || sendOptions.notify, sendOptions != null ? sendOptions.scheduleDate : 0, false);
+            InstantCameraView.this.delegate.sendMedia(photoEntry, InstantCameraView.this.videoEditedInfo, sendOptions == null || sendOptions.notify, sendOptions != null ? sendOptions.scheduleDate : 0, false, sendOptions != null ? sendOptions.stars : 0L);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2018,7 +2020,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 photoEntry.ttl = sendOptions.ttl;
                 photoEntry.effectId = sendOptions.effectId;
             }
-            InstantCameraView.this.delegate.sendMedia(photoEntry, videoEditedInfo, z || sendOptions == null || sendOptions.notify, i != 0 ? i : sendOptions != null ? sendOptions.scheduleDate : 0, false);
+            InstantCameraView.this.delegate.sendMedia(photoEntry, videoEditedInfo, z || sendOptions == null || sendOptions.notify, i != 0 ? i : sendOptions != null ? sendOptions.scheduleDate : 0, false, sendOptions != null ? sendOptions.stars : 0L);
             InstantCameraView.this.startAnimation(false, false);
         }
 
@@ -2367,11 +2369,11 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             this.eglConfig = null;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:143:0x0261, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:143:0x0262, code lost:
         
             if (r3 != null) goto L152;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:145:0x0293, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:145:0x0294, code lost:
         
             if ((r17.audioBufferInfo.flags & 4) == 0) goto L204;
          */
@@ -2379,15 +2381,15 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         
             return;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:151:0x028a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:151:0x028b, code lost:
         
             r3.releaseOutputBuffer(r2, false);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:160:0x0283, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:160:0x0284, code lost:
         
             if (r3 != null) goto L152;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:162:0x0288, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:162:0x0289, code lost:
         
             if (r3 != null) goto L152;
          */
@@ -2967,7 +2969,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         if (!arrayList2.isEmpty()) {
             arrayList = arrayList2;
         }
-        return Build.MANUFACTURER.equalsIgnoreCase("Xiaomi") ? CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false) : CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.onEmojiInteractionsReceived, this.aspectRatio, false);
+        return Build.MANUFACTURER.equalsIgnoreCase("Xiaomi") ? CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false) : CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.appUpdateAvailable, this.aspectRatio, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3527,7 +3529,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         } else {
             VideoRecorder videoRecorder = this.videoEncoder;
             if (videoRecorder != null) {
-                videoRecorder.stopRecording(0, new SendOptions(true, 0, 0, 0L));
+                videoRecorder.stopRecording(0, new SendOptions(true, 0, 0, 0L, 0L));
             }
         }
         if (this.cameraFile != null) {
@@ -3703,6 +3705,10 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         }
     }
 
+    public boolean isPaused() {
+        return !this.recording;
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -3872,14 +3878,14 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         this.cameraFile = null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0118, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x011c, code lost:
     
         if (r27 != 0) goto L67;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void send(int i, boolean z, int i2, int i3, long j) {
+    public void send(int i, boolean z, int i2, int i3, long j, long j2) {
         if (this.textureView == null) {
             return;
         }
@@ -3892,7 +3898,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         if (i == 4) {
             VideoRecorder videoRecorder = this.videoEncoder;
             if (videoRecorder != null && this.recordedTime > 800) {
-                videoRecorder.stopRecording(1, new SendOptions(z, i2, i3, j));
+                videoRecorder.stopRecording(1, new SendOptions(z, i2, i3, j, j2));
                 return;
             }
             if (BuildVars.DEBUG_VERSION && !this.cameraFile.exists()) {
@@ -3910,33 +3916,33 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 this.key = null;
                 this.iv = null;
                 VideoEditedInfo videoEditedInfo2 = this.videoEditedInfo;
-                long j2 = videoEditedInfo2.estimatedDuration;
-                double d = j2;
-                long j3 = videoEditedInfo2.startTime;
-                if (j3 < 0) {
-                    j3 = 0;
+                long j3 = videoEditedInfo2.estimatedDuration;
+                double d = j3;
+                long j4 = videoEditedInfo2.startTime;
+                if (j4 < 0) {
+                    j4 = 0;
                 }
-                long j4 = videoEditedInfo2.endTime;
-                if (j4 >= 0) {
-                    j2 = j4;
+                long j5 = videoEditedInfo2.endTime;
+                if (j5 >= 0) {
+                    j3 = j5;
                 }
-                long j5 = j2 - j3;
-                videoEditedInfo2.estimatedDuration = j5;
+                long j6 = j3 - j4;
+                videoEditedInfo2.estimatedDuration = j6;
                 double d2 = this.size;
-                double d3 = j5;
+                double d3 = j6;
                 Double.isNaN(d3);
                 Double.isNaN(d);
                 Double.isNaN(d2);
                 videoEditedInfo2.estimatedSize = Math.max(1L, (long) (d2 * (d3 / d)));
                 VideoEditedInfo videoEditedInfo3 = this.videoEditedInfo;
                 videoEditedInfo3.bitrate = MediaController.VIDEO_BITRATE_480;
-                long j6 = videoEditedInfo3.startTime;
-                if (j6 > 0) {
-                    videoEditedInfo3.startTime = j6 * 1000;
-                }
-                long j7 = videoEditedInfo3.endTime;
+                long j7 = videoEditedInfo3.startTime;
                 if (j7 > 0) {
-                    videoEditedInfo3.endTime = j7 * 1000;
+                    videoEditedInfo3.startTime = j7 * 1000;
+                }
+                long j8 = videoEditedInfo3.endTime;
+                if (j8 > 0) {
+                    videoEditedInfo3.endTime = j8 * 1000;
                 }
                 FileLoader.getInstance(this.currentAccount).cancelFileUpload(this.cameraFile.getAbsolutePath(), false);
             } else {
@@ -3950,7 +3956,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, this.cameraFile.getAbsolutePath(), 0, true, 0, 0, 0L);
             photoEntry.ttl = i3;
             photoEntry.effectId = j;
-            this.delegate.sendMedia(photoEntry, this.videoEditedInfo, z, i2, false);
+            this.delegate.sendMedia(photoEntry, this.videoEditedInfo, z, i2, false, j2);
         } else {
             this.cancelled = this.recordedTime < 800;
             this.recording = false;
@@ -4218,7 +4224,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageViewInvertable, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.flashButton, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.muteImageView, (Property<ImageView, Float>) property, 0.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.liveLocationsChanged : 0);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.proxyCheckDone : 0);
         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.cameraContainer, (Property<InstantViewCameraContainer, Float>) property, z ? 1.0f : 0.0f);
         InstantViewCameraContainer instantViewCameraContainer = this.cameraContainer;
         Property property2 = View.SCALE_X;

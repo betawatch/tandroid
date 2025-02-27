@@ -1,11 +1,13 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes2.dex */
-public abstract /* synthetic */ class t0 implements x3 {
+public abstract /* synthetic */ class t0 implements w3 {
     private static final X0 a = new X0();
     private static final B0 b = new V0();
     private static final D0 c = new W0();
@@ -14,71 +16,71 @@ public abstract /* synthetic */ class t0 implements x3 {
     private static final long[] f = new long[0];
     private static final double[] g = new double[0];
 
-    t0(T2 t2) {
+    t0(S2 s2) {
     }
 
-    static x0 D(long j, j$.util.function.I i) {
-        return (j < 0 || j >= 2147483639) ? new r1() : new Z0(j, i);
+    static x0 D(long j, IntFunction intFunction) {
+        return (j < 0 || j >= 2147483639) ? new r1() : new Z0(j, intFunction);
     }
 
-    public static F0 E(b bVar, j$.util.Q q, boolean z, j$.util.function.I i) {
-        long o0 = bVar.o0(q);
-        if (o0 < 0 || !q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            F0 f0 = (F0) new K0(q, i, bVar).invoke();
-            return z ? N(f0, i) : f0;
+    public static F0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        long n0 = bVar.n0(spliterator);
+        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            F0 f0 = (F0) new K0(spliterator, intFunction, bVar).invoke();
+            return z ? N(f0, intFunction) : f0;
         }
-        if (o0 >= 2147483639) {
+        if (n0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) i.apply((int) o0);
-        new p1(q, bVar, objArr).invoke();
+        Object[] objArr = (Object[]) intFunction.apply((int) n0);
+        new p1(spliterator, bVar, objArr).invoke();
         return new I0(objArr);
     }
 
-    public static z0 F(b bVar, j$.util.Q q, boolean z) {
-        long o0 = bVar.o0(q);
-        if (o0 < 0 || !q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            z0 z0Var = (z0) new K0(0, q, bVar).invoke();
+    public static z0 F(b bVar, Spliterator spliterator, boolean z) {
+        long n0 = bVar.n0(spliterator);
+        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            z0 z0Var = (z0) new K0(0, spliterator, bVar).invoke();
             return z ? O(z0Var) : z0Var;
         }
-        if (o0 >= 2147483639) {
+        if (n0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        double[] dArr = new double[(int) o0];
-        new m1(q, bVar, dArr).invoke();
+        double[] dArr = new double[(int) n0];
+        new m1(spliterator, bVar, dArr).invoke();
         return new R0(dArr);
     }
 
-    public static B0 G(b bVar, j$.util.Q q, boolean z) {
-        long o0 = bVar.o0(q);
-        if (o0 < 0 || !q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            B0 b0 = (B0) new K0(1, q, bVar).invoke();
+    public static B0 G(b bVar, Spliterator spliterator, boolean z) {
+        long n0 = bVar.n0(spliterator);
+        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            B0 b0 = (B0) new K0(1, spliterator, bVar).invoke();
             return z ? P(b0) : b0;
         }
-        if (o0 >= 2147483639) {
+        if (n0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        int[] iArr = new int[(int) o0];
-        new n1(q, bVar, iArr).invoke();
+        int[] iArr = new int[(int) n0];
+        new n1(spliterator, bVar, iArr).invoke();
         return new a1(iArr);
     }
 
-    public static D0 H(b bVar, j$.util.Q q, boolean z) {
-        long o0 = bVar.o0(q);
-        if (o0 < 0 || !q.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            D0 d0 = (D0) new K0(2, q, bVar).invoke();
+    public static D0 H(b bVar, Spliterator spliterator, boolean z) {
+        long n0 = bVar.n0(spliterator);
+        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            D0 d0 = (D0) new K0(2, spliterator, bVar).invoke();
             return z ? Q(d0) : d0;
         }
-        if (o0 >= 2147483639) {
+        if (n0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        long[] jArr = new long[(int) o0];
-        new o1(q, bVar, jArr).invoke();
+        long[] jArr = new long[(int) n0];
+        new o1(spliterator, bVar, jArr).invoke();
         return new j1(jArr);
     }
 
-    static H0 I(T2 t2, F0 f0, F0 f02) {
-        int i = G0.a[t2.ordinal()];
+    static H0 I(S2 s2, F0 f0, F0 f02) {
+        int i = G0.a[s2.ordinal()];
         if (i == 1) {
             return new Q0(f0, f02);
         }
@@ -91,20 +93,20 @@ public abstract /* synthetic */ class t0 implements x3 {
         if (i == 4) {
             return new M0((z0) f0, (z0) f02);
         }
-        throw new IllegalStateException("Unknown shape " + t2);
+        throw new IllegalStateException("Unknown shape " + s2);
     }
 
     static u0 J(long j) {
         return (j < 0 || j >= 2147483639) ? new T0() : new S0(j);
     }
 
-    public static D K(j$.util.E e2) {
-        return new y(e2, S2.c(e2));
+    public static D K(j$.util.D d2) {
+        return new y(d2, R2.c(d2));
     }
 
-    static Y0 L(T2 t2) {
+    static Y0 L(S2 s2) {
         Object obj;
-        int i = G0.a[t2.ordinal()];
+        int i = G0.a[s2.ordinal()];
         if (i == 1) {
             return a;
         }
@@ -114,7 +116,7 @@ public abstract /* synthetic */ class t0 implements x3 {
             obj = c;
         } else {
             if (i != 4) {
-                throw new IllegalStateException("Unknown shape " + t2);
+                throw new IllegalStateException("Unknown shape " + s2);
             }
             obj = d;
         }
@@ -122,10 +124,10 @@ public abstract /* synthetic */ class t0 implements x3 {
     }
 
     private static int M(long j) {
-        return (j != -1 ? S2.u : 0) | S2.t;
+        return (j != -1 ? R2.u : 0) | R2.t;
     }
 
-    public static F0 N(F0 f0, j$.util.function.I i) {
+    public static F0 N(F0 f0, IntFunction intFunction) {
         if (f0.p() <= 0) {
             return f0;
         }
@@ -133,7 +135,7 @@ public abstract /* synthetic */ class t0 implements x3 {
         if (count >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) i.apply((int) count);
+        Object[] objArr = (Object[]) intFunction.apply((int) count);
         new t1(f0, objArr, 1).invoke();
         return new I0(objArr);
     }
@@ -181,16 +183,16 @@ public abstract /* synthetic */ class t0 implements x3 {
         return (j < 0 || j >= 2147483639) ? new c1() : new b1(j);
     }
 
-    public static IntStream S(j$.util.H h) {
-        return new Z(h, S2.c(h));
+    public static IntStream S(j$.util.G g2) {
+        return new Z(g2, R2.c(g2));
     }
 
     static w0 T(long j) {
         return (j < 0 || j >= 2147483639) ? new l1() : new k1(j);
     }
 
-    public static LongStream U(j$.util.K k) {
-        return new f0(k, S2.c(k));
+    public static LongStream U(j$.util.J j) {
+        return new f0(j, R2.c(j));
     }
 
     public static D V(b bVar, long j, long j2) {
@@ -200,10 +202,10 @@ public abstract /* synthetic */ class t0 implements x3 {
         throw new IllegalArgumentException("Skip must be non-negative: " + j);
     }
 
-    public static r0 W(j$.util.function.r rVar, q0 q0Var) {
-        rVar.getClass();
+    public static r0 W(j$.util.function.q qVar, q0 q0Var) {
+        qVar.getClass();
         q0Var.getClass();
-        return new r0(T2.DOUBLE_VALUE, q0Var, new k0(2, q0Var, rVar));
+        return new r0(S2.DOUBLE_VALUE, q0Var, new k0(2, q0Var, qVar));
     }
 
     public static IntStream X(b bVar, long j, long j2) {
@@ -213,10 +215,10 @@ public abstract /* synthetic */ class t0 implements x3 {
         throw new IllegalArgumentException("Skip must be non-negative: " + j);
     }
 
-    public static r0 Y(j$.util.function.J j, q0 q0Var) {
-        j.getClass();
+    public static r0 Y(j$.util.function.G g2, q0 q0Var) {
+        g2.getClass();
         q0Var.getClass();
-        return new r0(T2.INT_VALUE, q0Var, new k0(1, q0Var, j));
+        return new r0(S2.INT_VALUE, q0Var, new k0(1, q0Var, g2));
     }
 
     public static LongStream Z(b bVar, long j, long j2) {
@@ -226,10 +228,10 @@ public abstract /* synthetic */ class t0 implements x3 {
         throw new IllegalArgumentException("Skip must be non-negative: " + j);
     }
 
-    public static r0 a0(j$.util.function.Z z, q0 q0Var) {
-        z.getClass();
+    public static r0 a0(j$.util.function.W w, q0 q0Var) {
+        w.getClass();
         q0Var.getClass();
-        return new r0(T2.LONG_VALUE, q0Var, new k0(0, q0Var, z));
+        return new r0(S2.LONG_VALUE, q0Var, new k0(0, q0Var, w));
     }
 
     public static void b() {
@@ -239,7 +241,7 @@ public abstract /* synthetic */ class t0 implements x3 {
     public static r0 b0(Predicate predicate, q0 q0Var) {
         predicate.getClass();
         q0Var.getClass();
-        return new r0(T2.REFERENCE, q0Var, new k0(3, q0Var, predicate));
+        return new r0(S2.REFERENCE, q0Var, new k0(3, q0Var, predicate));
     }
 
     public static Stream c0(b bVar, long j, long j2) {
@@ -250,29 +252,29 @@ public abstract /* synthetic */ class t0 implements x3 {
     }
 
     public static void e(b2 b2Var, Double d2) {
-        if (A3.a) {
-            A3.a(b2Var.getClass(), "{0} calling Sink.OfDouble.accept(Double)");
+        if (z3.a) {
+            z3.a(b2Var.getClass(), "{0} calling Sink.OfDouble.accept(Double)");
             throw null;
         }
         b2Var.accept(d2.doubleValue());
     }
 
-    public static Stream e0(j$.util.Q q, boolean z) {
-        q.getClass();
-        return new U1(q, S2.c(q), z);
+    public static Stream e0(Spliterator spliterator, boolean z) {
+        spliterator.getClass();
+        return new U1(spliterator, R2.c(spliterator), z);
     }
 
     public static void g(c2 c2Var, Integer num) {
-        if (A3.a) {
-            A3.a(c2Var.getClass(), "{0} calling Sink.OfInt.accept(Integer)");
+        if (z3.a) {
+            z3.a(c2Var.getClass(), "{0} calling Sink.OfInt.accept(Integer)");
             throw null;
         }
         c2Var.accept(num.intValue());
     }
 
     public static void i(d2 d2Var, Long l) {
-        if (A3.a) {
-            A3.a(d2Var.getClass(), "{0} calling Sink.OfLong.accept(Long)");
+        if (z3.a) {
+            z3.a(d2Var.getClass(), "{0} calling Sink.OfLong.accept(Long)");
             throw null;
         }
         d2Var.accept(l.longValue());
@@ -286,22 +288,22 @@ public abstract /* synthetic */ class t0 implements x3 {
         throw new IllegalStateException("called wrong accept method");
     }
 
-    public static Object[] m(E0 e0, j$.util.function.I i) {
-        if (A3.a) {
-            A3.a(e0.getClass(), "{0} calling Node.OfPrimitive.asArray");
+    public static Object[] m(E0 e0, IntFunction intFunction) {
+        if (z3.a) {
+            z3.a(e0.getClass(), "{0} calling Node.OfPrimitive.asArray");
             throw null;
         }
         if (e0.count() >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) i.apply((int) e0.count());
+        Object[] objArr = (Object[]) intFunction.apply((int) e0.count());
         e0.i(objArr, 0);
         return objArr;
     }
 
     public static void n(z0 z0Var, Double[] dArr, int i) {
-        if (A3.a) {
-            A3.a(z0Var.getClass(), "{0} calling Node.OfDouble.copyInto(Double[], int)");
+        if (z3.a) {
+            z3.a(z0Var.getClass(), "{0} calling Node.OfDouble.copyInto(Double[], int)");
             throw null;
         }
         double[] dArr2 = (double[]) z0Var.e();
@@ -311,8 +313,8 @@ public abstract /* synthetic */ class t0 implements x3 {
     }
 
     public static void o(B0 b0, Integer[] numArr, int i) {
-        if (A3.a) {
-            A3.a(b0.getClass(), "{0} calling Node.OfInt.copyInto(Integer[], int)");
+        if (z3.a) {
+            z3.a(b0.getClass(), "{0} calling Node.OfInt.copyInto(Integer[], int)");
             throw null;
         }
         int[] iArr = (int[]) b0.e();
@@ -322,8 +324,8 @@ public abstract /* synthetic */ class t0 implements x3 {
     }
 
     public static void p(D0 d0, Long[] lArr, int i) {
-        if (A3.a) {
-            A3.a(d0.getClass(), "{0} calling Node.OfInt.copyInto(Long[], int)");
+        if (z3.a) {
+            z3.a(d0.getClass(), "{0} calling Node.OfInt.copyInto(Long[], int)");
             throw null;
         }
         long[] jArr = (long[]) d0.e();
@@ -333,38 +335,38 @@ public abstract /* synthetic */ class t0 implements x3 {
     }
 
     public static void q(z0 z0Var, Consumer consumer) {
-        if (consumer instanceof j$.util.function.n) {
-            z0Var.g((j$.util.function.n) consumer);
+        if (consumer instanceof j$.util.function.m) {
+            z0Var.g((j$.util.function.m) consumer);
         } else {
-            if (A3.a) {
-                A3.a(z0Var.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
+            if (z3.a) {
+                z3.a(z0Var.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.E) z0Var.spliterator()).a(consumer);
+            ((j$.util.D) z0Var.spliterator()).a(consumer);
         }
     }
 
     public static void r(B0 b0, Consumer consumer) {
-        if (consumer instanceof j$.util.function.F) {
-            b0.g((j$.util.function.F) consumer);
+        if (consumer instanceof j$.util.function.E) {
+            b0.g((j$.util.function.E) consumer);
         } else {
-            if (A3.a) {
-                A3.a(b0.getClass(), "{0} calling Node.OfInt.forEachRemaining(Consumer)");
+            if (z3.a) {
+                z3.a(b0.getClass(), "{0} calling Node.OfInt.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.H) b0.spliterator()).a(consumer);
+            ((j$.util.G) b0.spliterator()).a(consumer);
         }
     }
 
     public static void s(D0 d0, Consumer consumer) {
-        if (consumer instanceof j$.util.function.W) {
-            d0.g((j$.util.function.W) consumer);
+        if (consumer instanceof j$.util.function.T) {
+            d0.g((j$.util.function.T) consumer);
         } else {
-            if (A3.a) {
-                A3.a(d0.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
+            if (z3.a) {
+                z3.a(d0.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.K) d0.spliterator()).a(consumer);
+            ((j$.util.J) d0.spliterator()).a(consumer);
         }
     }
 
@@ -373,12 +375,12 @@ public abstract /* synthetic */ class t0 implements x3 {
             return z0Var;
         }
         long j3 = j2 - j;
-        j$.util.E e2 = (j$.util.E) z0Var.spliterator();
+        j$.util.D d2 = (j$.util.D) z0Var.spliterator();
         u0 J = J(j3);
         J.n(j3);
-        for (int i = 0; i < j && e2.p(new y0(0)); i++) {
+        for (int i = 0; i < j && d2.p(new y0(0)); i++) {
         }
-        for (int i2 = 0; i2 < j3 && e2.p(J); i2++) {
+        for (int i2 = 0; i2 < j3 && d2.p(J); i2++) {
         }
         J.m();
         return J.b();
@@ -389,12 +391,12 @@ public abstract /* synthetic */ class t0 implements x3 {
             return b0;
         }
         long j3 = j2 - j;
-        j$.util.H h = (j$.util.H) b0.spliterator();
+        j$.util.G g2 = (j$.util.G) b0.spliterator();
         v0 R = R(j3);
         R.n(j3);
-        for (int i = 0; i < j && h.p(new A0(0)); i++) {
+        for (int i = 0; i < j && g2.p(new A0(0)); i++) {
         }
-        for (int i2 = 0; i2 < j3 && h.p(R); i2++) {
+        for (int i2 = 0; i2 < j3 && g2.p(R); i2++) {
         }
         R.m();
         return R.b();
@@ -405,28 +407,28 @@ public abstract /* synthetic */ class t0 implements x3 {
             return d0;
         }
         long j3 = j2 - j;
-        j$.util.K k = (j$.util.K) d0.spliterator();
+        j$.util.J j4 = (j$.util.J) d0.spliterator();
         w0 T = T(j3);
         T.n(j3);
-        for (int i = 0; i < j && k.p(new C0(0)); i++) {
+        for (int i = 0; i < j && j4.p(new C0(0)); i++) {
         }
-        for (int i2 = 0; i2 < j3 && k.p(T); i2++) {
+        for (int i2 = 0; i2 < j3 && j4.p(T); i2++) {
         }
         T.m();
         return T.b();
     }
 
-    public static F0 w(F0 f0, long j, long j2, j$.util.function.I i) {
+    public static F0 w(F0 f0, long j, long j2, IntFunction intFunction) {
         if (j == 0 && j2 == f0.count()) {
             return f0;
         }
-        j$.util.Q spliterator = f0.spliterator();
+        Spliterator spliterator = f0.spliterator();
         long j3 = j2 - j;
-        x0 D = D(j3, i);
+        x0 D = D(j3, intFunction);
         D.n(j3);
-        for (int i2 = 0; i2 < j && spliterator.s(new E(29)); i2++) {
+        for (int i = 0; i < j && spliterator.s(new E(29)); i++) {
         }
-        for (int i3 = 0; i3 < j3 && spliterator.s(D); i3++) {
+        for (int i2 = 0; i2 < j3 && spliterator.s(D); i2++) {
         }
         D.m();
         return D.b();
@@ -440,23 +442,23 @@ public abstract /* synthetic */ class t0 implements x3 {
         return Long.MAX_VALUE;
     }
 
-    static j$.util.Q y(T2 t2, j$.util.Q q, long j, long j2) {
+    static Spliterator y(S2 s2, Spliterator spliterator, long j, long j2) {
         long j3 = j2 >= 0 ? j + j2 : Long.MAX_VALUE;
         long j4 = j3 >= 0 ? j3 : Long.MAX_VALUE;
-        int i = n2.a[t2.ordinal()];
+        int i = n2.a[s2.ordinal()];
         if (i == 1) {
-            return new m3(q, j, j4);
+            return new l3(spliterator, j, j4);
         }
         if (i == 2) {
-            return new j3((j$.util.H) q, j, j4);
+            return new i3((j$.util.G) spliterator, j, j4);
         }
         if (i == 3) {
-            return new k3((j$.util.K) q, j, j4);
+            return new j3((j$.util.J) spliterator, j, j4);
         }
         if (i == 4) {
-            return new i3((j$.util.E) q, j, j4);
+            return new h3((j$.util.D) spliterator, j, j4);
         }
-        throw new IllegalStateException("Unknown shape " + t2);
+        throw new IllegalStateException("Unknown shape " + s2);
     }
 
     static long z(long j, long j2, long j3) {
@@ -466,20 +468,20 @@ public abstract /* synthetic */ class t0 implements x3 {
         return -1L;
     }
 
-    @Override // j$.util.stream.x3
-    public Object a(b bVar, j$.util.Q q) {
+    @Override // j$.util.stream.w3
+    public Object a(b bVar, Spliterator spliterator) {
         N1 d0 = d0();
         bVar.getClass();
-        bVar.i0(q, bVar.E0(d0));
+        bVar.h0(spliterator, bVar.D0(d0));
         return d0.get();
     }
 
-    @Override // j$.util.stream.x3
-    public Object c(b bVar, j$.util.Q q) {
-        return ((N1) new P1(this, bVar, q).invoke()).get();
+    @Override // j$.util.stream.w3
+    public Object c(b bVar, Spliterator spliterator) {
+        return ((N1) new P1(this, bVar, spliterator).invoke()).get();
     }
 
-    @Override // j$.util.stream.x3
+    @Override // j$.util.stream.w3
     public /* synthetic */ int d() {
         return 0;
     }

@@ -44,7 +44,7 @@ public class VideoTrack extends MediaStreamTrack {
         super.dispose();
     }
 
-    long getNativeVideoTrack() {
+    public long getNativeVideoTrack() {
         return getNativeMediaStreamTrack();
     }
 

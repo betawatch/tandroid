@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.Unit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DisposeOnCompletion extends JobNode {
     private final DisposableHandle handle;
 

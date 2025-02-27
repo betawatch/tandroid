@@ -1,64 +1,65 @@
 package j$.util;
 
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
 import java.util.Comparator;
 import java.util.Spliterator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class L implements N {
-    public final /* synthetic */ Spliterator.OfPrimitive a;
+public final /* synthetic */ class L implements Spliterator.OfPrimitive {
+    public final /* synthetic */ M a;
 
-    private /* synthetic */ L(Spliterator.OfPrimitive ofPrimitive) {
-        this.a = ofPrimitive;
+    private /* synthetic */ L(M m) {
+        this.a = m;
     }
 
-    public static /* synthetic */ N b(Spliterator.OfPrimitive ofPrimitive) {
-        if (ofPrimitive == null) {
+    public static /* synthetic */ Spliterator.OfPrimitive a(M m) {
+        if (m == null) {
             return null;
         }
-        return ofPrimitive instanceof M ? ((M) ofPrimitive).a : ofPrimitive instanceof Spliterator.OfDouble ? C.b((Spliterator.OfDouble) ofPrimitive) : ofPrimitive instanceof Spliterator.OfInt ? F.b((Spliterator.OfInt) ofPrimitive) : ofPrimitive instanceof Spliterator.OfLong ? I.b((Spliterator.OfLong) ofPrimitive) : new L(ofPrimitive);
+        return m instanceof K ? ((K) m).a : m instanceof D ? C.a((D) m) : m instanceof G ? F.a((G) m) : m instanceof J ? I.a((J) m) : new L(m);
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ void a(Consumer consumer) {
-        this.a.forEachRemaining(Consumer.Wrapper.convert(consumer));
-    }
-
-    @Override // j$.util.Q
+    @Override // java.util.Spliterator
     public final /* synthetic */ int characteristics() {
         return this.a.characteristics();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator.OfPrimitive ofPrimitive = this.a;
+        M m = this.a;
         if (obj instanceof L) {
             obj = ((L) obj).a;
         }
-        return ofPrimitive.equals(obj);
+        return m.equals(obj);
     }
 
-    @Override // j$.util.Q
+    @Override // java.util.Spliterator
     public final /* synthetic */ long estimateSize() {
         return this.a.estimateSize();
     }
 
-    @Override // j$.util.N
-    /* renamed from: forEachRemaining */
-    public final /* synthetic */ void e(Object obj) {
-        this.a.forEachRemaining((Spliterator.OfPrimitive) obj);
+    @Override // java.util.Spliterator.OfPrimitive
+    public final /* synthetic */ void forEachRemaining(Object obj) {
+        this.a.forEachRemaining(obj);
     }
 
-    @Override // j$.util.Q
+    @Override // java.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.a(Consumer.VivifiedWrapper.convert(consumer));
+    }
+
+    @Override // java.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
     }
 
-    @Override // j$.util.Q
+    @Override // java.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         return this.a.getExactSizeIfKnown();
     }
 
-    @Override // j$.util.Q
+    @Override // java.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
         return this.a.hasCharacteristics(i);
     }
@@ -67,24 +68,23 @@ public final /* synthetic */ class L implements N {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return this.a.tryAdvance(Consumer.Wrapper.convert(consumer));
+    @Override // java.util.Spliterator.OfPrimitive
+    public final /* synthetic */ boolean tryAdvance(Object obj) {
+        return this.a.tryAdvance(obj);
     }
 
-    @Override // j$.util.N
-    /* renamed from: tryAdvance */
-    public final /* synthetic */ boolean p(Object obj) {
-        return this.a.tryAdvance((Spliterator.OfPrimitive) obj);
+    @Override // java.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(java.util.function.Consumer consumer) {
+        return this.a.s(Consumer.VivifiedWrapper.convert(consumer));
     }
 
-    @Override // j$.util.N, j$.util.Q
-    public final /* synthetic */ N trySplit() {
-        return b(this.a.trySplit());
+    @Override // java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ Spliterator.OfPrimitive trySplit() {
+        return a(this.a.trySplit());
     }
 
-    @Override // j$.util.Q
-    public final /* synthetic */ Q trySplit() {
-        return O.b(this.a.trySplit());
+    @Override // java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ java.util.Spliterator trySplit() {
+        return Spliterator.Wrapper.convert(this.a.trySplit());
     }
 }

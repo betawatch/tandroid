@@ -251,8 +251,8 @@ public class StarGiftUniqueActionLayout {
         return this.buttonBounce.isPressed() || this.bounce.isPressed();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0045 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x004c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -325,7 +325,7 @@ public class StarGiftUniqueActionLayout {
                     clientUserId = DialogObject.getPeerDialogId(peer);
                 }
                 float dp3 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
-                this.title = this.repost ? new Text(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold()) : (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) ? new Text(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold()) : new Text(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(clientUserId)), 14.0f, AndroidUtilities.bold());
+                this.title = this.repost ? new Text(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold()) : (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) ? new Text(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold()) : messageObject.getDialogId() == UserConfig.getInstance(this.currentAccount).getClientUserId() ? new Text(LocaleController.getString(R.string.Gift2ActionSelfTitle), 14.0f, AndroidUtilities.bold()) : new Text(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(clientUserId)), 14.0f, AndroidUtilities.bold());
                 this.titleY = (this.title.getHeight() / 2.0f) + dp3;
                 float height = dp3 + this.title.getHeight() + AndroidUtilities.dp(3.0f);
                 if (this.repost) {

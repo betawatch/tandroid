@@ -46,7 +46,7 @@ public final /* synthetic */ class j implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Function finisher() {
-        return j$.util.function.y.a(this.a.finisher());
+        return j$.util.function.x.a(this.a.finisher());
     }
 
     public final /* synthetic */ int hashCode() {
@@ -55,6 +55,6 @@ public final /* synthetic */ class j implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Supplier supplier() {
-        return j$.util.function.u0.a(this.a.supplier());
+        return j$.util.function.q0.a(this.a.supplier());
     }
 }

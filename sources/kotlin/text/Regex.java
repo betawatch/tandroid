@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Regex implements Serializable {
     public static final Companion Companion = new Companion(null);
     private final Pattern nativePattern;

@@ -1,15 +1,15 @@
 package j$.com.android.tools.r8;
 
 import j$.util.concurrent.s;
+import j$.util.function.B;
 import j$.util.function.BiConsumer;
 import j$.util.function.BiFunction;
-import j$.util.function.C;
-import j$.util.function.F;
+import j$.util.function.E;
 import j$.util.function.Function;
+import j$.util.function.P;
 import j$.util.function.T;
-import j$.util.function.W;
-import j$.util.function.k;
-import j$.util.function.n;
+import j$.util.function.j;
+import j$.util.function.m;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 import sun.misc.Unsafe;
@@ -21,53 +21,53 @@ public abstract /* synthetic */ class a {
         return new s(biFunction, function);
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.k] */
-    public static k b(final n nVar, final n nVar2) {
-        nVar2.getClass();
-        return new n() { // from class: j$.util.function.k
-            @Override // j$.util.function.n
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.j] */
+    public static j b(final m mVar, final m mVar2) {
+        mVar2.getClass();
+        return new m() { // from class: j$.util.function.j
+            @Override // j$.util.function.m
             public final void accept(double d) {
-                n.this.accept(d);
-                nVar2.accept(d);
+                m.this.accept(d);
+                mVar2.accept(d);
             }
 
-            @Override // j$.util.function.n
-            public final /* synthetic */ n k(n nVar3) {
-                return j$.com.android.tools.r8.a.b(this, nVar3);
+            @Override // j$.util.function.m
+            public final /* synthetic */ m k(m mVar3) {
+                return j$.com.android.tools.r8.a.b(this, mVar3);
             }
         };
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.C] */
-    public static C c(final F f, final F f2) {
-        f2.getClass();
-        return new F() { // from class: j$.util.function.C
-            @Override // j$.util.function.F
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.B] */
+    public static B c(final E e, final E e2) {
+        e2.getClass();
+        return new E() { // from class: j$.util.function.B
+            @Override // j$.util.function.E
             public final void accept(int i) {
-                F.this.accept(i);
-                f2.accept(i);
+                E.this.accept(i);
+                e2.accept(i);
             }
 
-            @Override // j$.util.function.F
-            public final /* synthetic */ F l(F f3) {
-                return j$.com.android.tools.r8.a.c(this, f3);
+            @Override // j$.util.function.E
+            public final /* synthetic */ E l(E e3) {
+                return j$.com.android.tools.r8.a.c(this, e3);
             }
         };
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.T] */
-    public static T d(final W w, final W w2) {
-        w2.getClass();
-        return new W() { // from class: j$.util.function.T
-            @Override // j$.util.function.W
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.P] */
+    public static P d(final T t, final T t2) {
+        t2.getClass();
+        return new T() { // from class: j$.util.function.P
+            @Override // j$.util.function.T
             public final void accept(long j) {
-                W.this.accept(j);
-                w2.accept(j);
+                T.this.accept(j);
+                t2.accept(j);
             }
 
-            @Override // j$.util.function.W
-            public final /* synthetic */ W f(W w3) {
-                return j$.com.android.tools.r8.a.d(this, w3);
+            @Override // j$.util.function.T
+            public final /* synthetic */ T f(T t3) {
+                return j$.com.android.tools.r8.a.d(this, t3);
             }
         };
     }

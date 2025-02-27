@@ -2,6 +2,7 @@ package j$.time.temporal;
 
 import j$.time.DayOfWeek;
 import j$.time.LocalDate;
+import j$.util.A;
 import org.telegram.messenger.NotificationCenter;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
@@ -150,14 +151,14 @@ abstract class g implements l {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, NotificationCenter.giftsToUserSent, NotificationCenter.attachMenuBotsDidLoad, 0, 91, NotificationCenter.didStartedMultiGiftsSelector, NotificationCenter.chatAvailableReactionsUpdated};
+        a = new int[]{0, 90, NotificationCenter.giftsToUserSent, NotificationCenter.emojiPreviewThemesChanged, 0, 91, NotificationCenter.didStartedMultiGiftsSelector, NotificationCenter.reactionsDidLoad};
     }
 
     g(String str, int i) {
     }
 
     static boolean f(k kVar) {
-        j$.util.a.B(kVar, "temporal");
+        A.z(kVar, "temporal");
         Object obj = (j$.time.chrono.f) kVar.c(j.b);
         if (obj == null) {
             obj = j$.time.chrono.g.a;

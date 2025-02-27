@@ -1,7 +1,7 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.Arrays;
-import java.util.Spliterator;
 
 /* loaded from: classes2.dex */
 abstract class N2 extends d implements Iterable {
@@ -70,11 +70,11 @@ abstract class N2 extends d implements Iterable {
         u(this.e, 0, this.b, obj);
     }
 
-    public abstract j$.util.Q spliterator();
+    public abstract Spliterator spliterator();
 
     @Override // java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.P.a(spliterator());
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
     protected abstract void u(Object obj, int i, int i2, Object obj2);

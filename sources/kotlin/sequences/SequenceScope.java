@@ -2,7 +2,7 @@ package kotlin.sequences;
 
 import kotlin.coroutines.Continuation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SequenceScope {
     public abstract Object yield(Object obj, Continuation continuation);
 }

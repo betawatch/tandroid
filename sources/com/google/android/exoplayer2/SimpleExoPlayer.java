@@ -117,6 +117,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public PlaybackParameters getPlaybackParameters() {
+        blockUntilConstructorFinished();
+        return this.player.getPlaybackParameters();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public int getPlaybackState() {
         blockUntilConstructorFinished();
         return this.player.getPlaybackState();

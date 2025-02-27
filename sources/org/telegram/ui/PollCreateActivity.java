@@ -153,7 +153,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i) {
             PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$323();
+            PollCreateActivity.this.lambda$onBackPressed$335();
         }
 
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
@@ -246,7 +246,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             } else if (!PollCreateActivity.this.checkDiscard()) {
                 return;
             }
-            PollCreateActivity.this.lambda$onBackPressed$323();
+            PollCreateActivity.this.lambda$onBackPressed$335();
         }
     }
 
@@ -1287,7 +1287,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$1(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$323();
+        lambda$onBackPressed$335();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1475,12 +1475,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             charSequence = this.questionString;
-            i3 = NotificationCenter.liveLocationsChanged;
+            i3 = NotificationCenter.proxyCheckDone;
             if (charSequence != null) {
-                i2 = NotificationCenter.liveLocationsChanged;
+                i2 = NotificationCenter.proxyCheckDone;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.liveLocationsChanged;
+                i4 = NotificationCenter.proxyCheckDone;
                 i2 = i4;
                 i5 = 0;
             }
@@ -1506,12 +1506,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 return;
             }
             charSequence = this.solutionString;
-            i3 = NotificationCenter.storyQualityUpdate;
+            i3 = 200;
             if (charSequence != null) {
-                i2 = NotificationCenter.storyQualityUpdate;
+                i2 = 200;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.storyQualityUpdate;
+                i4 = 200;
                 i2 = i4;
                 i5 = 0;
             }

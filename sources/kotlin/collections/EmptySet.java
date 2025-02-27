@@ -7,7 +7,7 @@ import java.util.Set;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class EmptySet implements Set, Serializable {
     public static final EmptySet INSTANCE = new EmptySet();
 

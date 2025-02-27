@@ -93,6 +93,10 @@ public class SeekBarView extends FrameLayout {
                 return 0;
             }
 
+            public static boolean $default$needVisuallyDivideSteps(SeekBarViewDelegate seekBarViewDelegate) {
+                return false;
+            }
+
             public static void $default$onSeekBarPressed(SeekBarViewDelegate seekBarViewDelegate, boolean z) {
             }
         }
@@ -100,6 +104,8 @@ public class SeekBarView extends FrameLayout {
         CharSequence getContentDescription();
 
         int getStepsCount();
+
+        boolean needVisuallyDivideSteps();
 
         void onSeekBarDrag(boolean z, float f);
 
@@ -116,7 +122,7 @@ public class SeekBarView extends FrameLayout {
 
     public SeekBarView(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.animatedThumbX = new AnimatedFloat(this, 0L, 80L, CubicBezierInterpolator.EASE_OUT);
+        this.animatedThumbX = new AnimatedFloat(this, 0L, 60L, CubicBezierInterpolator.EASE_OUT);
         this.progressToSet = -100.0f;
         this.minProgress = -1.0f;
         this.pressedState = new int[]{R.attr.state_enabled, R.attr.state_pressed};
@@ -502,136 +508,190 @@ public class SeekBarView extends FrameLayout {
         return this.twoSided;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x01e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x020d, code lost:
     
-        if (r4 > r1) goto L39;
+        if (r4 > r1) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x01fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0222, code lost:
     
         r1 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x01fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0220, code lost:
     
         r16.currentRadius = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x01f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x021e, code lost:
     
-        if (r4 < r1) goto L39;
+        if (r4 < r1) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x027a  */
-    /* JADX WARN: Removed duplicated region for block: B:47:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x01f9  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x02a0  */
+    /* JADX WARN: Removed duplicated region for block: B:49:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x015b  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void onDraw(Canvas canvas) {
-        boolean z;
+        float round;
+        long elapsedRealtime;
         float f;
         float f2;
+        boolean z;
+        float f3;
+        float f4;
+        float f5;
         float measuredHeight;
         int measuredWidth;
         int i = this.thumbX;
         boolean z2 = true;
-        if (!this.twoSided && this.separatorsCount > 1) {
-            i = (int) this.animatedThumbX.set(Math.round(i / r2) * ((getMeasuredWidth() - this.selectorWidth) / (this.separatorsCount - 1.0f)));
-        }
-        int i2 = i;
-        int measuredHeight2 = (getMeasuredHeight() - this.thumbSize) / 2;
-        this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressBackground));
-        float measuredHeight3 = getMeasuredHeight() / 2.0f;
-        float f3 = this.selectorWidth / 2.0f;
-        float measuredWidth2 = getMeasuredWidth() - (this.selectorWidth / 2);
-        float dp = measuredHeight3 - (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
-        float dp2 = measuredHeight3 + (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
-        this.rect.set(f3, dp, measuredWidth2, dp2);
-        drawProgressBar(canvas, this.rect, this.innerPaint1);
-        if (this.bufferedProgress > 0.0f) {
-            this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressCachedBackground));
-            this.rect.set(f3, dp, (this.selectorWidth / 2.0f) + (this.bufferedProgress * (getMeasuredWidth() - this.selectorWidth)), dp2);
+        if (this.twoSided || this.separatorsCount <= 1) {
+            SeekBarViewDelegate seekBarViewDelegate = this.delegate;
+            if (seekBarViewDelegate != null && seekBarViewDelegate.needVisuallyDivideSteps()) {
+                round = Math.round(i / r2) * ((getMeasuredWidth() - this.selectorWidth) / (this.delegate.getStepsCount() - 1.0f));
+            }
+            int i2 = i;
+            int measuredHeight2 = (getMeasuredHeight() - this.thumbSize) / 2;
+            this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressBackground));
+            float measuredHeight3 = getMeasuredHeight() / 2.0f;
+            float f6 = this.selectorWidth / 2.0f;
+            float measuredWidth2 = getMeasuredWidth() - (this.selectorWidth / 2);
+            float dp = measuredHeight3 - (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
+            float dp2 = measuredHeight3 + (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
+            this.rect.set(f6, dp, measuredWidth2, dp2);
             drawProgressBar(canvas, this.rect, this.innerPaint1);
-        }
-        if (this.twoSided) {
-            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) - AndroidUtilities.dp(6.0f), (getMeasuredWidth() / 2) + AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) + AndroidUtilities.dp(6.0f), this.outerPaint1);
-            int measuredWidth3 = getMeasuredWidth();
-            int i3 = this.selectorWidth;
-            if (i2 > (measuredWidth3 - i3) / 2) {
-                f2 = getMeasuredWidth() / 2;
-                measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f);
-                measuredWidth = (this.selectorWidth / 2) + i2;
-            } else {
-                f2 = (i3 / 2) + i2;
-                measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f);
-                measuredWidth = getMeasuredWidth() / 2;
+            if (this.bufferedProgress > 0.0f) {
+                this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressCachedBackground));
+                this.rect.set(f6, dp, (this.selectorWidth / 2.0f) + (this.bufferedProgress * (getMeasuredWidth() - this.selectorWidth)), dp2);
+                drawProgressBar(canvas, this.rect, this.innerPaint1);
             }
-            canvas.drawRect(f2, measuredHeight, measuredWidth, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
-        } else {
-            float f4 = this.minProgress;
-            if (f4 >= 0.0f) {
-                float f5 = measuredWidth2 - f3;
-                this.rect.set((f4 * f5) + f3, dp, i2 + f3, dp2);
-                drawProgressBar(canvas, this.rect, this.outerPaint1);
-                int alpha = this.outerPaint1.getAlpha();
-                this.rect.set(f3, dp, (this.minProgress * f5) + f3, dp2);
-                this.outerPaint1.setAlpha((int) (alpha * 0.5f));
-                drawProgressBar(canvas, this.rect, this.outerPaint1);
-                this.outerPaint1.setAlpha(alpha);
-            } else {
-                this.rect.set(f3, dp, i2 + f3, dp2);
-                drawProgressBar(canvas, this.rect, this.outerPaint1);
-            }
-        }
-        if (this.hoverDrawable != null) {
-            int dp3 = ((this.selectorWidth / 2) + i2) - AndroidUtilities.dp(16.0f);
-            int dp4 = ((this.thumbSize / 2) + measuredHeight2) - AndroidUtilities.dp(16.0f);
-            this.hoverDrawable.setBounds(dp3, dp4, AndroidUtilities.dp(32.0f) + dp3, AndroidUtilities.dp(32.0f) + dp4);
-            this.hoverDrawable.draw(canvas);
-        }
-        int dp5 = AndroidUtilities.dp(this.pressed ? 8.0f : 6.0f);
-        long elapsedRealtime = SystemClock.elapsedRealtime() - this.lastUpdateTime;
-        if (elapsedRealtime > 18) {
-            elapsedRealtime = 16;
-        }
-        float f6 = this.currentRadius;
-        float f7 = dp5;
-        if (f6 == f7) {
-            z = false;
-        } else if (f6 < f7) {
-            float dp6 = f6 + (AndroidUtilities.dp(1.0f) * (elapsedRealtime / 60.0f));
-            this.currentRadius = dp6;
-        } else {
-            float dp7 = f6 - (AndroidUtilities.dp(1.0f) * (elapsedRealtime / 60.0f));
-            this.currentRadius = dp7;
-        }
-        float f8 = this.transitionProgress;
-        if (f8 < 1.0f) {
-            float f9 = f8 + (elapsedRealtime / 225.0f);
-            this.transitionProgress = f9;
-            if (f9 >= 1.0f) {
-                this.transitionProgress = 1.0f;
-            }
-            f = this.transitionProgress;
-            if (f >= 1.0f) {
-                float interpolation = 1.0f - Easings.easeInQuad.getInterpolation(Math.min(1.0f, f * 3.0f));
-                float interpolation2 = Easings.easeOutQuad.getInterpolation(this.transitionProgress);
-                if (interpolation > 0.0f) {
-                    canvas.drawCircle(this.transitionThumbX + (this.selectorWidth / 2), (this.thumbSize / 2) + measuredHeight2, this.currentRadius * interpolation, this.outerPaint1);
+            if (this.twoSided) {
+                float f7 = this.minProgress;
+                if (f7 >= 0.0f) {
+                    float f8 = measuredWidth2 - f6;
+                    this.rect.set((f7 * f8) + f6, dp, i2 + f6, dp2);
+                    drawProgressBar(canvas, this.rect, this.outerPaint1);
+                    int alpha = this.outerPaint1.getAlpha();
+                    this.rect.set(f6, dp, (this.minProgress * f8) + f6, dp2);
+                    this.outerPaint1.setAlpha((int) (alpha * 0.5f));
+                    drawProgressBar(canvas, this.rect, this.outerPaint1);
+                    this.outerPaint1.setAlpha(alpha);
+                } else {
+                    this.rect.set(f6, dp, i2 + f6, dp2);
+                    drawProgressBar(canvas, this.rect, this.outerPaint1);
                 }
-                canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight2 + (this.thumbSize / 2), this.currentRadius * interpolation2, this.outerPaint1);
             } else {
-                canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight2 + (this.thumbSize / 2), this.currentRadius, this.outerPaint1);
+                canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) - AndroidUtilities.dp(6.0f), (getMeasuredWidth() / 2) + AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) + AndroidUtilities.dp(6.0f), this.outerPaint1);
+                int measuredWidth3 = getMeasuredWidth();
+                int i3 = this.selectorWidth;
+                if (i2 > (measuredWidth3 - i3) / 2) {
+                    f5 = getMeasuredWidth() / 2;
+                    measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f);
+                    measuredWidth = (this.selectorWidth / 2) + i2;
+                } else {
+                    f5 = (i3 / 2) + i2;
+                    measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f);
+                    measuredWidth = getMeasuredWidth() / 2;
+                }
+                canvas.drawRect(f5, measuredHeight, measuredWidth, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
+            }
+            if (this.hoverDrawable != null) {
+                int dp3 = ((this.selectorWidth / 2) + i2) - AndroidUtilities.dp(16.0f);
+                int dp4 = ((this.thumbSize / 2) + measuredHeight2) - AndroidUtilities.dp(16.0f);
+                this.hoverDrawable.setBounds(dp3, dp4, AndroidUtilities.dp(32.0f) + dp3, AndroidUtilities.dp(32.0f) + dp4);
+                this.hoverDrawable.draw(canvas);
+            }
+            int dp5 = AndroidUtilities.dp(this.pressed ? 8.0f : 6.0f);
+            elapsedRealtime = SystemClock.elapsedRealtime() - this.lastUpdateTime;
+            if (elapsedRealtime > 18) {
+                elapsedRealtime = 16;
+            }
+            f = this.currentRadius;
+            f2 = dp5;
+            if (f != f2) {
+                z = false;
+            } else if (f < f2) {
+                float dp6 = f + (AndroidUtilities.dp(1.0f) * (elapsedRealtime / 60.0f));
+                this.currentRadius = dp6;
+            } else {
+                float dp7 = f - (AndroidUtilities.dp(1.0f) * (elapsedRealtime / 60.0f));
+                this.currentRadius = dp7;
+            }
+            f3 = this.transitionProgress;
+            if (f3 < 1.0f) {
+                float f9 = f3 + (elapsedRealtime / 225.0f);
+                this.transitionProgress = f9;
+                if (f9 >= 1.0f) {
+                    this.transitionProgress = 1.0f;
+                }
+                f4 = this.transitionProgress;
+                if (f4 < 1.0f) {
+                    float interpolation = 1.0f - Easings.easeInQuad.getInterpolation(Math.min(1.0f, f4 * 3.0f));
+                    float interpolation2 = Easings.easeOutQuad.getInterpolation(this.transitionProgress);
+                    if (interpolation > 0.0f) {
+                        canvas.drawCircle(this.transitionThumbX + (this.selectorWidth / 2), (this.thumbSize / 2) + measuredHeight2, this.currentRadius * interpolation, this.outerPaint1);
+                    }
+                    canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight2 + (this.thumbSize / 2), this.currentRadius * interpolation2, this.outerPaint1);
+                } else {
+                    canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight2 + (this.thumbSize / 2), this.currentRadius, this.outerPaint1);
+                }
+                drawTimestampLabel(canvas);
+                if (z2) {
+                    postInvalidateOnAnimation();
+                    return;
+                }
+                return;
+            }
+            z2 = z;
+            f4 = this.transitionProgress;
+            if (f4 < 1.0f) {
             }
             drawTimestampLabel(canvas);
             if (z2) {
-                return;
             }
-            postInvalidateOnAnimation();
-            return;
+        } else {
+            round = this.animatedThumbX.set(Math.round(i / r2) * ((getMeasuredWidth() - this.selectorWidth) / (this.separatorsCount - 1.0f)));
+        }
+        i = (int) round;
+        int i22 = i;
+        int measuredHeight22 = (getMeasuredHeight() - this.thumbSize) / 2;
+        this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressBackground));
+        float measuredHeight32 = getMeasuredHeight() / 2.0f;
+        float f62 = this.selectorWidth / 2.0f;
+        float measuredWidth22 = getMeasuredWidth() - (this.selectorWidth / 2);
+        float dp8 = measuredHeight32 - (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
+        float dp22 = measuredHeight32 + (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
+        this.rect.set(f62, dp8, measuredWidth22, dp22);
+        drawProgressBar(canvas, this.rect, this.innerPaint1);
+        if (this.bufferedProgress > 0.0f) {
+        }
+        if (this.twoSided) {
+        }
+        if (this.hoverDrawable != null) {
+        }
+        int dp52 = AndroidUtilities.dp(this.pressed ? 8.0f : 6.0f);
+        elapsedRealtime = SystemClock.elapsedRealtime() - this.lastUpdateTime;
+        if (elapsedRealtime > 18) {
+        }
+        f = this.currentRadius;
+        f2 = dp52;
+        if (f != f2) {
+        }
+        f3 = this.transitionProgress;
+        if (f3 < 1.0f) {
         }
         z2 = z;
-        f = this.transitionProgress;
-        if (f >= 1.0f) {
+        f4 = this.transitionProgress;
+        if (f4 < 1.0f) {
         }
         drawTimestampLabel(canvas);
         if (z2) {

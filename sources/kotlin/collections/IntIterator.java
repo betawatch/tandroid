@@ -2,7 +2,7 @@ package kotlin.collections;
 
 import java.util.Iterator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class IntIterator implements Iterator {
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ Object next() {

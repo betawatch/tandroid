@@ -1,43 +1,33 @@
 package j$.util.function;
 
-import j$.util.function.Function;
+import java.util.function.IntBinaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class y implements java.util.function.Function {
-    public final /* synthetic */ Function a;
+public final /* synthetic */ class y implements A {
+    public final /* synthetic */ IntBinaryOperator a;
 
-    private /* synthetic */ y(Function function) {
-        this.a = function;
+    private /* synthetic */ y(IntBinaryOperator intBinaryOperator) {
+        this.a = intBinaryOperator;
     }
 
-    public static /* synthetic */ java.util.function.Function a(Function function) {
-        if (function == null) {
+    public static /* synthetic */ A a(IntBinaryOperator intBinaryOperator) {
+        if (intBinaryOperator == null) {
             return null;
         }
-        return function instanceof Function.VivifiedWrapper ? ((Function.VivifiedWrapper) function).a : function instanceof B0 ? ((B0) function).a : new y(function);
+        return intBinaryOperator instanceof z ? ((z) intBinaryOperator).a : new y(intBinaryOperator);
     }
 
-    @Override // java.util.function.Function
-    public final /* synthetic */ java.util.function.Function andThen(java.util.function.Function function) {
-        return a(this.a.andThen(Function.VivifiedWrapper.convert(function)));
-    }
-
-    @Override // java.util.function.Function
-    public final /* synthetic */ Object apply(Object obj) {
-        return this.a.apply(obj);
-    }
-
-    @Override // java.util.function.Function
-    public final /* synthetic */ java.util.function.Function compose(java.util.function.Function function) {
-        return a(this.a.compose(Function.VivifiedWrapper.convert(function)));
+    @Override // j$.util.function.A
+    public final /* synthetic */ int applyAsInt(int i, int i2) {
+        return this.a.applyAsInt(i, i2);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Function function = this.a;
+        IntBinaryOperator intBinaryOperator = this.a;
         if (obj instanceof y) {
             obj = ((y) obj).a;
         }
-        return function.equals(obj);
+        return intBinaryOperator.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

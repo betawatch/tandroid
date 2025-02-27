@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AwaitKt$joinAll$3 extends ContinuationImpl {
     Object L$0;
     int label;

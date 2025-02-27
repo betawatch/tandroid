@@ -399,6 +399,8 @@ public interface Player {
 
     boolean getPlayWhenReady();
 
+    PlaybackParameters getPlaybackParameters();
+
     int getPlaybackState();
 
     int getPlaybackSuppressionReason();

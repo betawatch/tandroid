@@ -1,7 +1,9 @@
 package j$.util.stream;
 
-import j$.util.Collection$-EL;
+import j$.util.Collection;
+import j$.util.Spliterator;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -25,7 +27,7 @@ final class J0 implements F0 {
 
     @Override // j$.util.stream.F0
     public final void forEach(Consumer consumer) {
-        Collection$-EL.a(this.a, consumer);
+        Collection.-EL.a(this.a, consumer);
     }
 
     @Override // j$.util.stream.F0
@@ -43,23 +45,23 @@ final class J0 implements F0 {
     }
 
     @Override // j$.util.stream.F0
-    public final Object[] s(j$.util.function.I i) {
-        Collection collection = this.a;
-        return collection.toArray((Object[]) i.apply(collection.size()));
+    public final Object[] s(IntFunction intFunction) {
+        java.util.Collection collection = this.a;
+        return collection.toArray((Object[]) intFunction.apply(collection.size()));
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.Q spliterator() {
-        return Collection$-EL.stream(this.a).spliterator();
+    public final Spliterator spliterator() {
+        return Collection.-EL.stream(this.a).spliterator();
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
-        return t0.w(this, j, j2, i);
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
+        return t0.w(this, j, j2, intFunction);
     }
 
     public final String toString() {
-        Collection collection = this.a;
+        java.util.Collection collection = this.a;
         return String.format("CollectionNode[%d][%s]", Integer.valueOf(collection.size()), collection);
     }
 }

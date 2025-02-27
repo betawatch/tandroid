@@ -10,6 +10,6 @@ public final /* synthetic */ class StarGiftSheet$$ExternalSyntheticLambda19 impl
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f$0.openUpgrade();
+        this.f$0.toggleShow();
     }
 }

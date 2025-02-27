@@ -134,7 +134,7 @@ public abstract class MessageEntityView extends EntityView {
             canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
             canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
             canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.liveLocationsChanged, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);
@@ -568,8 +568,8 @@ public abstract class MessageEntityView extends EntityView {
                                     currentMessagesGroup.transitionParams.pinnedBotton = chatMessageCell3.isPinnedBottom();
                                     int left = chatMessageCell3.getLeft() + chatMessageCell3.getBackgroundDrawableLeft();
                                     int left2 = chatMessageCell3.getLeft() + chatMessageCell3.getBackgroundDrawableRight();
-                                    int top = chatMessageCell3.getTop() + chatMessageCell3.getBackgroundDrawableTop();
-                                    int top2 = chatMessageCell3.getTop() + chatMessageCell3.getBackgroundDrawableBottom();
+                                    int top = chatMessageCell3.getTop() + chatMessageCell3.getPaddingTop() + chatMessageCell3.getBackgroundDrawableTop();
+                                    int top2 = chatMessageCell3.getTop() + chatMessageCell3.getPaddingTop() + chatMessageCell3.getBackgroundDrawableBottom();
                                     if ((chatMessageCell3.getCurrentPosition().flags & i4) == 0) {
                                         top -= AndroidUtilities.dp(10.0f);
                                     }
@@ -772,16 +772,16 @@ public abstract class MessageEntityView extends EntityView {
                 canvas.restore();
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:183:0x00f4, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:183:0x00fa, code lost:
             
                 if ((r8 & 1) != 0) goto L66;
              */
-            /* JADX WARN: Removed duplicated region for block: B:12:0x005b  */
-            /* JADX WARN: Removed duplicated region for block: B:14:0x0067  */
-            /* JADX WARN: Removed duplicated region for block: B:151:0x0378  */
-            /* JADX WARN: Removed duplicated region for block: B:17:0x0072  */
-            /* JADX WARN: Removed duplicated region for block: B:20:0x007d  */
-            /* JADX WARN: Removed duplicated region for block: B:22:0x0089  */
+            /* JADX WARN: Removed duplicated region for block: B:12:0x0061  */
+            /* JADX WARN: Removed duplicated region for block: B:14:0x006d  */
+            /* JADX WARN: Removed duplicated region for block: B:151:0x037e  */
+            /* JADX WARN: Removed duplicated region for block: B:17:0x0078  */
+            /* JADX WARN: Removed duplicated region for block: B:20:0x0083  */
+            /* JADX WARN: Removed duplicated region for block: B:22:0x008f  */
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -983,7 +983,7 @@ public abstract class MessageEntityView extends EntityView {
                     return drawChild;
                 }
                 canvas.save();
-                canvas.translate(chatMessageCell.getX(), chatMessageCell.getY());
+                canvas.translate(chatMessageCell.getX(), chatMessageCell.getY() + chatMessageCell.getPaddingTop());
                 chatMessageCell.drawOutboundsContent(canvas);
                 canvas.restore();
                 if (view.getTranslationY() != 0.0f) {
@@ -1135,7 +1135,7 @@ public abstract class MessageEntityView extends EntityView {
                         3 r0 = 3.this;
                         PreviewView.TextureViewHolder textureViewHolder2 = textureViewHolder;
                         if ((textureViewHolder2 != null && textureViewHolder2.active && textureViewHolder2.textureViewActive) || MessageEntityView.this.clipVideoMessageForBitmap) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.liveLocationsChanged, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
                         } else {
                             canvas.save();
                         }

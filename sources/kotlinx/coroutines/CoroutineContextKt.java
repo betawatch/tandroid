@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$ObjectRef;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineContextKt {
     private static final CoroutineContext foldCopies(CoroutineContext coroutineContext, CoroutineContext coroutineContext2, final boolean z) {
         boolean hasCopyableElements = hasCopyableElements(coroutineContext);

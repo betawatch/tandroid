@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
     public static Sequence asSequence(final Iterator it) {
         Intrinsics.checkNotNullParameter(it, "<this>");

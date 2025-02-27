@@ -1,43 +1,33 @@
 package j$.util.function;
 
-import java.util.function.LongUnaryOperator;
+import java.util.function.ObjDoubleConsumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class d0 implements f0 {
-    public final /* synthetic */ LongUnaryOperator a;
+    public final /* synthetic */ ObjDoubleConsumer a;
 
-    private /* synthetic */ d0(LongUnaryOperator longUnaryOperator) {
-        this.a = longUnaryOperator;
+    private /* synthetic */ d0(ObjDoubleConsumer objDoubleConsumer) {
+        this.a = objDoubleConsumer;
     }
 
-    public static /* synthetic */ f0 b(LongUnaryOperator longUnaryOperator) {
-        if (longUnaryOperator == null) {
+    public static /* synthetic */ f0 a(ObjDoubleConsumer objDoubleConsumer) {
+        if (objDoubleConsumer == null) {
             return null;
         }
-        return longUnaryOperator instanceof e0 ? ((e0) longUnaryOperator).a : new d0(longUnaryOperator);
+        return objDoubleConsumer instanceof e0 ? ((e0) objDoubleConsumer).a : new d0(objDoubleConsumer);
     }
 
     @Override // j$.util.function.f0
-    public final /* synthetic */ f0 a(f0 f0Var) {
-        return b(this.a.andThen(e0.a(f0Var)));
-    }
-
-    @Override // j$.util.function.f0
-    public final /* synthetic */ long applyAsLong(long j) {
-        return this.a.applyAsLong(j);
-    }
-
-    @Override // j$.util.function.f0
-    public final /* synthetic */ f0 c(f0 f0Var) {
-        return b(this.a.compose(e0.a(f0Var)));
+    public final /* synthetic */ void accept(Object obj, double d) {
+        this.a.accept(obj, d);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        LongUnaryOperator longUnaryOperator = this.a;
+        ObjDoubleConsumer objDoubleConsumer = this.a;
         if (obj instanceof d0) {
             obj = ((d0) obj).a;
         }
-        return longUnaryOperator.equals(obj);
+        return objDoubleConsumer.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

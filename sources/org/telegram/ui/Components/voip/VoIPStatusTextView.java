@@ -20,7 +20,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.voip.VoIPStatusTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VoIPStatusTextView extends FrameLayout {
     boolean animationInProgress;
     ValueAnimator animator;

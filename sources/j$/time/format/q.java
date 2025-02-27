@@ -2,6 +2,7 @@ package j$.time.format;
 
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
+import j$.util.A;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -76,7 +77,7 @@ public final class q {
     }
 
     private int d(g gVar) {
-        j$.util.a.B(gVar, "pp");
+        A.z(gVar, "pp");
         q qVar = this.a;
         qVar.getClass();
         qVar.c.add(gVar);
@@ -111,7 +112,7 @@ public final class q {
     }
 
     private a w(Locale locale, x xVar, j$.time.chrono.g gVar) {
-        j$.util.a.B(locale, "locale");
+        A.z(locale, "locale");
         while (this.a.b != null) {
             p();
         }
@@ -151,20 +152,20 @@ public final class q {
     }
 
     public final void i(j$.time.temporal.a aVar, TextStyle textStyle) {
-        j$.util.a.B(aVar, "field");
-        j$.util.a.B(textStyle, "textStyle");
+        A.z(aVar, "field");
+        A.z(textStyle, "textStyle");
         d(new n(aVar, textStyle, new v()));
     }
 
     public final void j(j$.time.temporal.a aVar, HashMap hashMap) {
-        j$.util.a.B(aVar, "field");
+        A.z(aVar, "field");
         LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
         TextStyle textStyle = TextStyle.FULL;
         d(new n(aVar, textStyle, new c(new u(Collections.singletonMap(textStyle, linkedHashMap)))));
     }
 
     public final void l(j$.time.temporal.l lVar, int i) {
-        j$.util.a.B(lVar, "field");
+        A.z(lVar, "field");
         if (i >= 1 && i <= 19) {
             k(new j(lVar, i, i, y.NOT_NEGATIVE));
         } else {
@@ -177,8 +178,8 @@ public final class q {
             l(lVar, i2);
             return;
         }
-        j$.util.a.B(lVar, "field");
-        j$.util.a.B(yVar, "signStyle");
+        A.z(lVar, "field");
+        A.z(yVar, "signStyle");
         if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i);
         }

@@ -18,16 +18,16 @@ final class e0 extends Z1 {
     public final void accept(long j) {
         switch (this.b) {
             case 0:
-                this.a.accept(((j$.util.function.f0) ((w) this.c).n).applyAsLong(j));
+                this.a.accept(((j$.util.function.c0) ((w) this.c).n).applyAsLong(j));
                 return;
             case 1:
                 this.a.r((e2) ((LongFunction) ((u) this.c).n).apply(j));
                 return;
             case 2:
-                this.a.accept(((j$.util.function.b0) ((v) this.c).n).a.applyAsInt(j));
+                this.a.accept(((j$.util.function.Y) ((v) this.c).n).a.applyAsInt(j));
                 return;
             case 3:
-                this.a.accept(((j$.util.function.a0) ((t) this.c).n).a.applyAsDouble(j));
+                this.a.accept(((j$.util.function.X) ((t) this.c).n).a.applyAsDouble(j));
                 return;
             case 4:
                 LongStream longStream = (LongStream) ((LongFunction) ((w) this.c).n).apply(j);
@@ -49,13 +49,13 @@ final class e0 extends Z1 {
                 }
                 return;
             case 5:
-                if (((j$.util.function.Z) ((w) this.c).n).a.test(j)) {
+                if (((j$.util.function.W) ((w) this.c).n).a.test(j)) {
                     this.a.accept(j);
                     return;
                 }
                 return;
             default:
-                ((j$.util.function.W) ((w) this.c).n).accept(j);
+                ((j$.util.function.T) ((w) this.c).n).accept(j);
                 this.a.accept(j);
                 return;
         }

@@ -13,7 +13,7 @@ abstract class p0 implements e2 {
         this.b = !z;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public /* synthetic */ void accept(double d) {
         t0.b();
         throw null;

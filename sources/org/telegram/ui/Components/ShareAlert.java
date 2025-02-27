@@ -11,7 +11,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -31,11 +30,9 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.view.ViewParent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -108,6 +105,7 @@ import org.telegram.ui.Cells.ProfileSearchCell;
 import org.telegram.ui.Cells.ShareDialogCell;
 import org.telegram.ui.Cells.ShareTopicCell;
 import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ShareAlert;
 import org.telegram.ui.DialogsActivity;
@@ -170,7 +168,6 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     private FillLastGridLayoutManager searchLayoutManager;
     SearchField searchView;
     private boolean searchWasVisibleBeforeTopics;
-    private View selectedCountView;
     protected Map selectedDialogTopics;
     protected LongSparseArray selectedDialogs;
     private TLRPC.Dialog selectedTopicDialog;
@@ -200,6 +197,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     private RecyclerListView topicsGridView;
     private GridLayoutManager topicsLayoutManager;
     private boolean updateSearchAdapter;
+    private ChatActivityEnterView.SendButton writeButton;
     private FrameLayout writeButtonContainer;
 
     class 17 extends BlurredFrameLayout {
@@ -306,9 +304,6 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             if (ShareAlert.this.writeButtonContainer != null) {
                 ShareAlert.this.writeButtonContainer.bringToFront();
             }
-            if (ShareAlert.this.selectedCountView != null) {
-                ShareAlert.this.selectedCountView.bringToFront();
-            }
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -360,6 +355,34 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         @Override // org.telegram.ui.Components.EditTextEmoji
         protected void showPopup(int i) {
             super.showPopup(i);
+        }
+    }
+
+    class 19 implements TextWatcher {
+        19() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$afterTextChanged$0() {
+            ShareAlert.this.updateSelectedCount(1);
+        }
+
+        @Override // android.text.TextWatcher
+        public void afterTextChanged(Editable editable) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$19$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ShareAlert.19.this.lambda$afterTextChanged$0();
+                }
+            });
+        }
+
+        @Override // android.text.TextWatcher
+        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        }
+
+        @Override // android.text.TextWatcher
+        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
     }
 
@@ -1808,9 +1831,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this(context, chatActivity, arrayList, str, str2, z, str3, str4, z2, z3, false, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:130:0x07a4  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x07be  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x07a7  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x07a2  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x07bc  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x07a5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1818,9 +1841,6 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         super(context, true, resourcesProvider);
         LinearLayout linearLayout;
         int i;
-        float f;
-        int i2;
-        float f2;
         this.sendingText = new String[2];
         this.shadow = new View[2];
         this.shadowAnimation = new AnimatorSet[2];
@@ -1846,21 +1866,21 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 @Override // org.telegram.ui.Stories.DarkThemeResourceProvider
                 public void appendColors() {
                     SparseIntArray sparseIntArray = this.sparseIntArray;
-                    int i3 = Theme.key_windowBackgroundGray;
-                    int i4 = Theme.key_dialogBackground;
-                    sparseIntArray.put(i3, getColor(i4));
+                    int i2 = Theme.key_windowBackgroundGray;
+                    int i3 = Theme.key_dialogBackground;
+                    sparseIntArray.put(i2, getColor(i3));
                     this.sparseIntArray.put(Theme.key_divider, -15264235);
                     this.sparseIntArray.put(Theme.key_chat_messagePanelIcons, Theme.multAlpha(-1, 0.45f));
                     this.sparseIntArray.put(Theme.key_dialogBackgroundGray, 352321535);
-                    this.sparseIntArray.put(Theme.key_chat_emojiPanelBackground, getColor(i4));
+                    this.sparseIntArray.put(Theme.key_chat_emojiPanelBackground, getColor(i3));
                 }
             };
         }
         this.parentFragment = chatActivity;
         this.shadowDrawable = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
-        int i3 = Theme.key_dialogBackground;
-        this.behindKeyboardColorKey = i3;
-        int themedColor = getThemedColor(i3);
+        int i2 = Theme.key_dialogBackground;
+        this.behindKeyboardColorKey = i2;
+        int themedColor = getThemedColor(i2);
         this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
         this.occupyNavigationBarWithoutKeyboard = true;
         this.isFullscreen = z2;
@@ -1897,12 +1917,12 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         ArrayList arrayList2 = this.sendingMessageObjects;
         if (arrayList2 != null) {
             int size = arrayList2.size();
-            for (int i4 = 0; i4 < size; i4++) {
-                MessageObject messageObject2 = (MessageObject) this.sendingMessageObjects.get(i4);
+            for (int i3 = 0; i3 < size; i3++) {
+                MessageObject messageObject2 = (MessageObject) this.sendingMessageObjects.get(i3);
                 if (messageObject2.isPoll()) {
-                    int i5 = messageObject2.isPublicPoll() ? 2 : 1;
-                    this.hasPoll = i5;
-                    if (i5 == 2) {
+                    int i4 = messageObject2.isPublicPoll() ? 2 : 1;
+                    this.hasPoll = i4;
+                    if (i4 == 2) {
                         break;
                     }
                 }
@@ -1944,43 +1964,43 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     }
 
                     @Override // org.telegram.ui.ActionBar.AdjustPanLayoutHelper
-                    protected void onPanTranslationUpdate(float f3, float f4, boolean z5) {
-                        ShareAlert.this.keyboardT = f4;
-                        super.onPanTranslationUpdate(f3, f4, z5);
-                        for (int i6 = 0; i6 < ((BottomSheet) ShareAlert.this).containerView.getChildCount(); i6++) {
-                            View childAt = ((BottomSheet) ShareAlert.this).containerView.getChildAt(i6);
+                    protected void onPanTranslationUpdate(float f, float f2, boolean z5) {
+                        ShareAlert.this.keyboardT = f2;
+                        super.onPanTranslationUpdate(f, f2, z5);
+                        for (int i5 = 0; i5 < ((BottomSheet) ShareAlert.this).containerView.getChildCount(); i5++) {
+                            View childAt = ((BottomSheet) ShareAlert.this).containerView.getChildAt(i5);
                             if (childAt != ShareAlert.this.pickerBottom && childAt != ShareAlert.this.bulletinContainer && childAt != ShareAlert.this.shadow[1] && childAt != ShareAlert.this.sharesCountLayout && childAt != ShareAlert.this.frameLayout2) {
                                 ShareAlert shareAlert = ShareAlert.this;
-                                if (childAt != shareAlert.timestampFrameLayout && childAt != shareAlert.writeButtonContainer && childAt != ShareAlert.this.selectedCountView && childAt != ShareAlert.this.navigationBar) {
-                                    childAt.setTranslationY(f3);
+                                if (childAt != shareAlert.timestampFrameLayout && childAt != shareAlert.writeButtonContainer && childAt != ShareAlert.this.navigationBar) {
+                                    childAt.setTranslationY(f);
                                 }
                             }
                         }
-                        ShareAlert.this.currentPanTranslationY = f3;
+                        ShareAlert.this.currentPanTranslationY = f;
                         if (3.this.fromScrollY != -1) {
                             if (!z5) {
-                                f4 = 1.0f - f4;
+                                f2 = 1.0f - f2;
                             }
-                            float f5 = 1.0f - f4;
-                            ShareAlert.this.scrollOffsetY = (int) ((r5.fromScrollY * f5) + (3.this.toScrollY * f4));
-                            float f6 = ShareAlert.this.currentPanTranslationY + ((3.this.fromScrollY - 3.this.toScrollY) * f5);
-                            ShareAlert.this.gridView.setTranslationY(f6);
+                            float f3 = 1.0f - f2;
+                            ShareAlert.this.scrollOffsetY = (int) ((r5.fromScrollY * f3) + (3.this.toScrollY * f2));
+                            float f4 = ShareAlert.this.currentPanTranslationY + ((3.this.fromScrollY - 3.this.toScrollY) * f3);
+                            ShareAlert.this.gridView.setTranslationY(f4);
                             RecyclerListView recyclerListView = ShareAlert.this.searchGridView;
                             if (!z5) {
-                                f6 += ShareAlert.this.gridView.getPaddingTop();
+                                f4 += ShareAlert.this.gridView.getPaddingTop();
                             }
-                            recyclerListView.setTranslationY(f6);
+                            recyclerListView.setTranslationY(f4);
                         } else if (3.this.fromOffsetTop != -1) {
-                            float f7 = 1.0f - f4;
-                            ShareAlert.this.scrollOffsetY = (int) ((r5.fromOffsetTop * f7) + (3.this.toOffsetTop * f4));
+                            float f5 = 1.0f - f2;
+                            ShareAlert.this.scrollOffsetY = (int) ((r5.fromOffsetTop * f5) + (3.this.toOffsetTop * f2));
                             if (!z5) {
-                                f7 = f4;
+                                f5 = f2;
                             }
                             RecyclerListView recyclerListView2 = ShareAlert.this.gridView;
                             if (z5) {
-                                recyclerListView2.setTranslationY(ShareAlert.this.currentPanTranslationY - ((3.this.fromOffsetTop - 3.this.toOffsetTop) * f4));
+                                recyclerListView2.setTranslationY(ShareAlert.this.currentPanTranslationY - ((3.this.fromOffsetTop - 3.this.toOffsetTop) * f2));
                             } else {
-                                recyclerListView2.setTranslationY(ShareAlert.this.currentPanTranslationY + ((3.this.toOffsetTop - 3.this.fromOffsetTop) * f7));
+                                recyclerListView2.setTranslationY(ShareAlert.this.currentPanTranslationY + ((3.this.toOffsetTop - 3.this.fromOffsetTop) * f5));
                             }
                         }
                         ShareAlert.this.gridView.setTopGlowOffset((int) (ShareAlert.this.scrollOffsetY + ShareAlert.this.currentPanTranslationY));
@@ -2010,8 +2030,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     }
 
                     @Override // org.telegram.ui.ActionBar.AdjustPanLayoutHelper
-                    protected void onTransitionStart(boolean z5, int i6) {
-                        super.onTransitionStart(z5, i6);
+                    protected void onTransitionStart(boolean z5, int i5) {
+                        super.onTransitionStart(z5, i5);
                         if (ShareAlert.this.previousScrollOffsetY != ShareAlert.this.scrollOffsetY) {
                             3 r5 = 3.this;
                             r5.fromScrollY = ShareAlert.this.previousScrollOffsetY;
@@ -2028,11 +2048,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                             3.this.toOffsetTop = 0;
                             ShareAlert.this.panTranslationMoveLayout = true;
                             3 r54 = 3.this;
-                            int i7 = r54.topOffset - 3.this.previousTopOffset;
+                            int i6 = r54.topOffset - 3.this.previousTopOffset;
                             if (z5) {
-                                3.access$3312(r54, i7);
+                                3.access$3312(r54, i6);
                             } else {
-                                3.access$3320(r54, i7);
+                                3.access$3320(r54, i6);
                             }
                             3 r55 = 3.this;
                             ShareAlert.this.scrollOffsetY = z5 ? r55.fromScrollY : r55.toScrollY;
@@ -2049,24 +2069,24 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.pinnedToTop = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
             }
 
-            static /* synthetic */ int access$3312(3 r1, int i6) {
-                int i7 = r1.toOffsetTop + i6;
-                r1.toOffsetTop = i7;
-                return i7;
+            static /* synthetic */ int access$3312(3 r1, int i5) {
+                int i6 = r1.toOffsetTop + i5;
+                r1.toOffsetTop = i6;
+                return i6;
             }
 
-            static /* synthetic */ int access$3320(3 r1, int i6) {
-                int i7 = r1.toOffsetTop - i6;
-                r1.toOffsetTop = i7;
-                return i7;
+            static /* synthetic */ int access$3320(3 r1, int i5) {
+                int i6 = r1.toOffsetTop - i5;
+                r1.toOffsetTop = i6;
+                return i6;
             }
 
-            private void onMeasureInternal(int i6, int i7) {
+            private void onMeasureInternal(int i5, int i6) {
                 int makeMeasureSpec;
                 int paddingTop;
-                int size2 = View.MeasureSpec.getSize(i6);
-                int size3 = View.MeasureSpec.getSize(i7);
-                int i8 = size2 - (((BottomSheet) ShareAlert.this).backgroundPaddingLeft * 2);
+                int size2 = View.MeasureSpec.getSize(i5);
+                int size3 = View.MeasureSpec.getSize(i6);
+                int i7 = size2 - (((BottomSheet) ShareAlert.this).backgroundPaddingLeft * 2);
                 ShareAlert.this.keyboardSize2 = measureKeyboardHeight();
                 if (!ShareAlert.this.commentTextView.isWaitingForKeyboardOpen() && ShareAlert.this.keyboardSize2 <= AndroidUtilities.dp(20.0f) && !ShareAlert.this.commentTextView.isPopupShowing() && !ShareAlert.this.commentTextView.isAnimatePopupClosing()) {
                     this.ignoreLayout = true;
@@ -2077,11 +2097,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 if (ShareAlert.this.keyboardSize2 <= AndroidUtilities.dp(20.0f)) {
                     if (!AndroidUtilities.isInMultiwindow) {
                         size3 -= ((BottomSheet) ShareAlert.this).keyboardVisible ? 0 : ShareAlert.this.commentTextView.getEmojiPadding();
-                        i7 = View.MeasureSpec.makeMeasureSpec(size3, 1073741824);
+                        i6 = View.MeasureSpec.makeMeasureSpec(size3, 1073741824);
                     }
-                    int i9 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
+                    int i8 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
                     if (ShareAlert.this.pickerBottomLayout != null) {
-                        ShareAlert.this.pickerBottomLayout.setVisibility(i9);
+                        ShareAlert.this.pickerBottomLayout.setVisibility(i8);
                     }
                 } else {
                     if (!ShareAlert.this.commentTextView.isPopupVisible()) {
@@ -2094,25 +2114,25 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.ignoreLayout = false;
                 BlurredFrameLayout blurredFrameLayout = ShareAlert.this.navigationBar;
                 if (blurredFrameLayout != null) {
-                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, 1073741824));
+                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i7, 1073741824), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, 1073741824));
                 }
                 int childCount = getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = getChildAt(i10);
+                for (int i9 = 0; i9 < childCount; i9++) {
+                    View childAt = getChildAt(i9);
                     if (childAt != null && childAt.getVisibility() != 8) {
                         ShareAlert shareAlert = ShareAlert.this;
                         if (childAt != shareAlert.navigationBar) {
                             if (shareAlert.commentTextView == null || !ShareAlert.this.commentTextView.isPopupView(childAt)) {
-                                measureChildWithMargins(childAt, i6, 0, i7, 0);
+                                measureChildWithMargins(childAt, i5, 0, i6, 0);
                             } else {
                                 if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
                                     paddingTop = childAt.getLayoutParams().height;
                                 } else if (AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
                                     paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                                 } else {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
                                     paddingTop = (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                                 }
                                 childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, 1073741824));
@@ -2174,29 +2194,29 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
-                float f3;
+                float f;
                 canvas.save();
                 canvas.translate(0.0f, ShareAlert.this.currentPanTranslationY);
                 int dp = (ShareAlert.this.scrollOffsetY - ((BottomSheet) ShareAlert.this).backgroundPaddingTop) + AndroidUtilities.dp(6.0f) + this.topOffset;
                 ShareAlert shareAlert = ShareAlert.this;
-                int i6 = shareAlert.containerViewTop = ((shareAlert.scrollOffsetY - ((BottomSheet) ShareAlert.this).backgroundPaddingTop) - AndroidUtilities.dp(13.0f)) + this.topOffset;
+                int i5 = shareAlert.containerViewTop = ((shareAlert.scrollOffsetY - ((BottomSheet) ShareAlert.this).backgroundPaddingTop) - AndroidUtilities.dp(13.0f)) + this.topOffset;
                 int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(60.0f) + ((BottomSheet) ShareAlert.this).backgroundPaddingTop;
                 if (((BottomSheet) ShareAlert.this).isFullscreen || Build.VERSION.SDK_INT < 21) {
-                    f3 = 0.0f;
+                    f = 0.0f;
                 } else {
                     dp += AndroidUtilities.statusBarHeight;
-                    boolean z5 = this.fullHeight && ((BottomSheet) ShareAlert.this).backgroundPaddingTop + i6 < AndroidUtilities.statusBarHeight;
-                    int i7 = i6 + AndroidUtilities.statusBarHeight;
-                    int i8 = -((BottomSheet) ShareAlert.this).backgroundPaddingTop;
-                    f3 = this.pinnedToTop.set(z5);
-                    i6 = AndroidUtilities.lerp(i7, i8, f3);
+                    boolean z5 = this.fullHeight && ((BottomSheet) ShareAlert.this).backgroundPaddingTop + i5 < AndroidUtilities.statusBarHeight;
+                    int i6 = i5 + AndroidUtilities.statusBarHeight;
+                    int i7 = -((BottomSheet) ShareAlert.this).backgroundPaddingTop;
+                    f = this.pinnedToTop.set(z5);
+                    i5 = AndroidUtilities.lerp(i6, i7, f);
                 }
-                ShareAlert.this.shadowDrawable.setBounds(0, i6, getMeasuredWidth(), measuredHeight);
+                ShareAlert.this.shadowDrawable.setBounds(0, i5, getMeasuredWidth(), measuredHeight);
                 ShareAlert.this.shadowDrawable.draw(canvas);
                 FrameLayout frameLayout = ShareAlert.this.bulletinContainer2;
                 if (frameLayout != null) {
-                    if (i6 > AndroidUtilities.statusBarHeight || frameLayout.getChildCount() <= 0) {
-                        ShareAlert.this.bulletinContainer2.setTranslationY(Math.max(0, ((i6 + ((BottomSheet) r1).backgroundPaddingTop) - ShareAlert.this.bulletinContainer2.getTop()) - ShareAlert.this.bulletinContainer2.getMeasuredHeight()));
+                    if (i5 > AndroidUtilities.statusBarHeight || frameLayout.getChildCount() <= 0) {
+                        ShareAlert.this.bulletinContainer2.setTranslationY(Math.max(0, ((i5 + ((BottomSheet) r1).backgroundPaddingTop) - ShareAlert.this.bulletinContainer2.getTop()) - ShareAlert.this.bulletinContainer2.getMeasuredHeight()));
                     } else {
                         ShareAlert.this.bulletinContainer2.setTranslationY(0.0f);
                         Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
@@ -2208,11 +2228,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         }
                     }
                 }
-                if (f3 < 1.0f) {
+                if (f < 1.0f) {
                     int dp2 = AndroidUtilities.dp(36.0f);
                     this.rect1.set((getMeasuredWidth() - dp2) / 2, dp, (getMeasuredWidth() + dp2) / 2, dp + AndroidUtilities.dp(4.0f));
                     Theme.dialogs_onlineCirclePaint.setColor(ShareAlert.this.getThemedColor(Theme.key_sheet_scrollUp));
-                    Theme.dialogs_onlineCirclePaint.setAlpha((int) (r0.getAlpha() * (1.0f - f3)));
+                    Theme.dialogs_onlineCirclePaint.setAlpha((int) (r0.getAlpha() * (1.0f - f)));
                     canvas.drawRoundRect(this.rect1, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Theme.dialogs_onlineCirclePaint);
                 }
                 if (Build.VERSION.SDK_INT >= 23) {
@@ -2244,64 +2264,64 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            protected void onLayout(boolean z5, int i6, int i7, int i8, int i9) {
+            protected void onLayout(boolean z5, int i5, int i6, int i7, int i8) {
+                int i9;
                 int i10;
                 int i11;
                 int i12;
                 int i13;
-                int i14;
                 int childCount = getChildCount();
                 int measureKeyboardHeight = measureKeyboardHeight();
                 int emojiPadding = (((BottomSheet) ShareAlert.this).keyboardVisible || measureKeyboardHeight > AndroidUtilities.dp(20.0f) || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : ((BottomSheet) ShareAlert.this).navigationBarHeight + ShareAlert.this.commentTextView.getEmojiPadding();
                 setBottomClip(emojiPadding);
-                for (int i15 = 0; i15 < childCount; i15++) {
-                    View childAt = getChildAt(i15);
+                for (int i14 = 0; i14 < childCount; i14++) {
+                    View childAt = getChildAt(i14);
                     if (childAt.getVisibility() != 8) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                         int measuredWidth = childAt.getMeasuredWidth();
                         int measuredHeight = childAt.getMeasuredHeight();
-                        int i16 = layoutParams.gravity;
-                        if (i16 == -1) {
-                            i16 = 51;
+                        int i15 = layoutParams.gravity;
+                        if (i15 == -1) {
+                            i15 = 51;
                         }
-                        int i17 = i16 & 112;
-                        int i18 = i16 & 7;
-                        if (i18 == 1) {
-                            i10 = (((i8 - i6) - measuredWidth) / 2) + layoutParams.leftMargin;
-                            i11 = layoutParams.rightMargin;
-                        } else if (i18 != 5) {
-                            i12 = layoutParams.leftMargin + getPaddingLeft();
-                            if (i17 == 16) {
-                                if (i17 == 48) {
-                                    i14 = layoutParams.topMargin + getPaddingTop() + this.topOffset;
-                                } else if (i17 != 80) {
-                                    i14 = layoutParams.topMargin;
+                        int i16 = i15 & 112;
+                        int i17 = i15 & 7;
+                        if (i17 == 1) {
+                            i9 = (((i7 - i5) - measuredWidth) / 2) + layoutParams.leftMargin;
+                            i10 = layoutParams.rightMargin;
+                        } else if (i17 != 5) {
+                            i11 = layoutParams.leftMargin + getPaddingLeft();
+                            if (i16 == 16) {
+                                if (i16 == 48) {
+                                    i13 = layoutParams.topMargin + getPaddingTop() + this.topOffset;
+                                } else if (i16 != 80) {
+                                    i13 = layoutParams.topMargin;
                                 } else {
-                                    i13 = ((i9 - emojiPadding) - i7) - measuredHeight;
+                                    i12 = ((i8 - emojiPadding) - i6) - measuredHeight;
                                 }
                                 if (ShareAlert.this.commentTextView != null && ShareAlert.this.commentTextView.isPopupView(childAt)) {
-                                    i14 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight : (getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight) + measureKeyboardHeight) - childAt.getMeasuredHeight();
+                                    i13 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight : (getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight) + measureKeyboardHeight) - childAt.getMeasuredHeight();
                                 }
-                                childAt.layout(i12, i14, measuredWidth + i12, measuredHeight + i14);
+                                childAt.layout(i11, i13, measuredWidth + i11, measuredHeight + i13);
                             } else {
-                                i13 = ((((i9 - emojiPadding) - (this.topOffset + i7)) - measuredHeight) / 2) + layoutParams.topMargin;
+                                i12 = ((((i8 - emojiPadding) - (this.topOffset + i6)) - measuredHeight) / 2) + layoutParams.topMargin;
                             }
-                            i14 = i13 - layoutParams.bottomMargin;
+                            i13 = i12 - layoutParams.bottomMargin;
                             if (ShareAlert.this.commentTextView != null) {
-                                i14 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight : (getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight) + measureKeyboardHeight) - childAt.getMeasuredHeight();
+                                i13 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight : (getMeasuredHeight() - ((BottomSheet) ShareAlert.this).navigationBarHeight) + measureKeyboardHeight) - childAt.getMeasuredHeight();
                             }
-                            childAt.layout(i12, i14, measuredWidth + i12, measuredHeight + i14);
+                            childAt.layout(i11, i13, measuredWidth + i11, measuredHeight + i13);
                         } else {
-                            i10 = (((i8 - i6) - measuredWidth) - layoutParams.rightMargin) - getPaddingRight();
-                            i11 = ((BottomSheet) ShareAlert.this).backgroundPaddingLeft;
+                            i9 = (((i7 - i5) - measuredWidth) - layoutParams.rightMargin) - getPaddingRight();
+                            i10 = ((BottomSheet) ShareAlert.this).backgroundPaddingLeft;
                         }
-                        i12 = i10 - i11;
-                        if (i17 == 16) {
+                        i11 = i9 - i10;
+                        if (i16 == 16) {
                         }
-                        i14 = i13 - layoutParams.bottomMargin;
+                        i13 = i12 - layoutParams.bottomMargin;
                         if (ShareAlert.this.commentTextView != null) {
                         }
-                        childAt.layout(i12, i14, measuredWidth + i12, measuredHeight + i14);
+                        childAt.layout(i11, i13, measuredWidth + i11, measuredHeight + i13);
                     }
                 }
                 notifyHeightChanged();
@@ -2310,9 +2330,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i6, int i7) {
+            protected void onMeasure(int i5, int i6) {
                 int dp;
-                int size2 = getLayoutParams().height > 0 ? getLayoutParams().height : View.MeasureSpec.getSize(i7);
+                int size2 = getLayoutParams().height > 0 ? getLayoutParams().height : View.MeasureSpec.getSize(i6);
                 ShareAlert.this.layoutManager.setNeedFixGap(getLayoutParams().height <= 0);
                 ShareAlert.this.searchLayoutManager.setNeedFixGap(getLayoutParams().height <= 0);
                 if (Build.VERSION.SDK_INT >= 21 && !((BottomSheet) ShareAlert.this).isFullscreen) {
@@ -2325,14 +2345,15 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 if (ShareAlert.this.topicsGridView.getVisibility() != 8 && (dp = AndroidUtilities.dp(103.0f) + AndroidUtilities.dp(48.0f) + (Math.max(2, (int) Math.ceil((ShareAlert.this.shareTopicsAdapter.getItemCount() - 1) / 4.0f)) * AndroidUtilities.dp(103.0f)) + ((BottomSheet) ShareAlert.this).backgroundPaddingTop) > dp2) {
                     dp2 = AndroidUtilities.lerp(dp2, dp, ShareAlert.this.topicsGridView.getAlpha());
                 }
-                int dp3 = (dp2 < paddingTop ? 0 : paddingTop - ((paddingTop / 5) * 3)) + AndroidUtilities.dp(8.0f);
-                if (ShareAlert.this.gridView.getPaddingTop() != dp3) {
+                int i7 = dp2 < paddingTop ? 0 : paddingTop - ((paddingTop / 5) * 3);
+                int dp3 = AndroidUtilities.dp((ShareAlert.this.timestampFrameLayout != null ? 48 : 0) + 100) + ((BottomSheet) ShareAlert.this).navigationBarHeight;
+                if (ShareAlert.this.gridView.getPaddingTop() != i7 || ShareAlert.this.gridView.getPaddingBottom() != dp3) {
                     this.ignoreLayout = true;
-                    ShareAlert.this.gridView.setPadding(0, dp3, 0, AndroidUtilities.dp((ShareAlert.this.timestampFrameLayout != null ? 48 : 0) + 60) + ((BottomSheet) ShareAlert.this).navigationBarHeight);
-                    ShareAlert.this.topicsGridView.setPadding(0, dp3, 0, AndroidUtilities.dp((ShareAlert.this.timestampFrameLayout != null ? 48 : 0) + 60) + ((BottomSheet) ShareAlert.this).navigationBarHeight);
+                    ShareAlert.this.gridView.setPadding(0, i7, 0, dp3);
+                    ShareAlert.this.topicsGridView.setPadding(0, i7, 0, dp3);
                     this.ignoreLayout = false;
                 }
-                if (((BottomSheet) ShareAlert.this).keyboardVisible && getLayoutParams().height <= 0 && ShareAlert.this.searchGridView.getPaddingTop() != dp3) {
+                if (((BottomSheet) ShareAlert.this).keyboardVisible && getLayoutParams().height <= 0 && ShareAlert.this.searchGridView.getPaddingTop() != i7) {
                     this.ignoreLayout = true;
                     ShareAlert.this.searchGridView.setPadding(0, 0, 0, AndroidUtilities.dp((ShareAlert.this.timestampFrameLayout == null ? 0 : 48) + 60) + ((BottomSheet) ShareAlert.this).navigationBarHeight);
                     this.ignoreLayout = false;
@@ -2343,8 +2364,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.ignoreLayout = true;
                 ShareAlert.this.checkCurrentList(false);
                 this.ignoreLayout = false;
-                setMeasuredDimension(View.MeasureSpec.getSize(i6), size2);
-                onMeasureInternal(i6, View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                setMeasuredDimension(View.MeasureSpec.getSize(i5), size2);
+                onMeasureInternal(i5, View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
             }
 
             @Override // android.view.View
@@ -2365,16 +2386,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         sizeNotifierFrameLayout.setWillNotDraw(false);
         this.containerView.setClipChildren(false);
         ViewGroup viewGroup = this.containerView;
-        int i6 = this.backgroundPaddingLeft;
-        viewGroup.setPadding(i6, 0, i6, AndroidUtilities.navigationBarHeight);
+        int i5 = this.backgroundPaddingLeft;
+        viewGroup.setPadding(i5, 0, i5, AndroidUtilities.navigationBarHeight);
         FrameLayout frameLayout = new FrameLayout(context);
         this.frameLayout = frameLayout;
-        int i7 = Theme.key_dialogBackground;
-        frameLayout.setBackgroundColor(getThemedColor(i7));
+        int i6 = Theme.key_dialogBackground;
+        frameLayout.setBackgroundColor(getThemedColor(i6));
         if (this.darkTheme && this.linkToCopy[1] != null) {
             SwitchView switchView = new SwitchView(context) { // from class: org.telegram.ui.Components.ShareAlert.4
                 @Override // org.telegram.ui.Components.ShareAlert.SwitchView
-                protected void onTabSwitch(int i8) {
+                protected void onTabSwitch(int i7) {
                     ShareAlert.this.updateLinkTextView();
                 }
             };
@@ -2389,14 +2410,14 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         actionBar.setOccupyStatusBar(false);
         this.topicsBackActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         ActionBar actionBar2 = this.topicsBackActionBar;
-        int i8 = Theme.key_dialogTextBlack;
-        actionBar2.setTitleColor(getThemedColor(i8));
+        int i7 = Theme.key_dialogTextBlack;
+        actionBar2.setTitleColor(getThemedColor(i7));
         this.topicsBackActionBar.setSubtitleColor(getThemedColor(Theme.key_dialogTextGray2));
         this.topicsBackActionBar.setItemsColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2), false);
         this.topicsBackActionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarWhiteSelector), false);
         this.topicsBackActionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ShareAlert.5
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i9) {
+            public void onItemClick(int i8) {
                 ShareAlert.this.onBackPressed();
             }
         });
@@ -2409,8 +2430,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         recyclerListView.setLayoutManager(gridLayoutManager);
         this.topicsLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ShareAlert.6
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-            public int getSpanSize(int i9) {
-                if (i9 == 0) {
+            public int getSpanSize(int i8) {
+                if (i8 == 0) {
                     return ShareAlert.this.topicsLayoutManager.getSpanCount();
                 }
                 return 1;
@@ -2418,8 +2439,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         });
         this.topicsGridView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ShareAlert.7
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
-                if (i10 != 0) {
+            public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
+                if (i9 != 0) {
                     ShareAlert.this.updateLayout();
                     ShareAlert shareAlert = ShareAlert.this;
                     shareAlert.previousScrollOffsetY = shareAlert.scrollOffsetY;
@@ -2431,8 +2452,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.shareTopicsAdapter = shareTopicsAdapter;
         recyclerListView2.setAdapter(shareTopicsAdapter);
         RecyclerListView recyclerListView3 = this.topicsGridView;
-        int i9 = Theme.key_dialogScrollGlow;
-        recyclerListView3.setGlowColor(getThemedColor(i9));
+        int i8 = Theme.key_dialogScrollGlow;
+        recyclerListView3.setGlowColor(getThemedColor(i8));
         this.topicsGridView.setVerticalScrollBarEnabled(false);
         this.topicsGridView.setHorizontalScrollBarEnabled(false);
         this.topicsGridView.setOverScrollMode(2);
@@ -2463,16 +2484,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         });
         this.topicsGridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$3(view, i10);
+            public final void onItemClick(View view, int i9) {
+                ShareAlert.this.lambda$new$3(view, i9);
             }
         });
         this.topicsGridView.setVisibility(8);
         this.containerView.addView(this.topicsGridView, LayoutHelper.createFrame(-1, -1, 51));
         RecyclerListView recyclerListView4 = new RecyclerListView(context, this.resourcesProvider) { // from class: org.telegram.ui.Components.ShareAlert.9
             @Override // org.telegram.ui.Components.RecyclerListView
-            protected boolean allowSelectChildAtPosition(float f3, float f4) {
-                return f4 >= ((float) (AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 58.0f : 111.0f) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)));
+            protected boolean allowSelectChildAtPosition(float f, float f2) {
+                return f2 >= ((float) (AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 58.0f : 111.0f) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)));
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -2505,8 +2526,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         recyclerListView5.setLayoutManager(gridLayoutManager2);
         this.layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ShareAlert.10
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-            public int getSpanSize(int i10) {
-                if (i10 == 0) {
+            public int getSpanSize(int i9) {
+                if (i9 == 0) {
                     return ShareAlert.this.layoutManager.getSpanCount();
                 }
                 return 1;
@@ -2534,17 +2555,17 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         ShareDialogsAdapter shareDialogsAdapter = new ShareDialogsAdapter(context);
         this.listAdapter = shareDialogsAdapter;
         recyclerListView6.setAdapter(shareDialogsAdapter);
-        this.gridView.setGlowColor(getThemedColor(i9));
+        this.gridView.setGlowColor(getThemedColor(i8));
         this.gridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$5(view, i10);
+            public final void onItemClick(View view, int i9) {
+                ShareAlert.this.lambda$new$5(view, i9);
             }
         });
         this.gridView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ShareAlert.12
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i10, int i11) {
-                if (i11 != 0) {
+            public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
+                if (i10 != 0) {
                     ShareAlert.this.updateLayout();
                     ShareAlert shareAlert = ShareAlert.this;
                     shareAlert.previousScrollOffsetY = shareAlert.scrollOffsetY;
@@ -2557,8 +2578,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         });
         RecyclerListView recyclerListView7 = new RecyclerListView(context, this.resourcesProvider) { // from class: org.telegram.ui.Components.ShareAlert.13
             @Override // org.telegram.ui.Components.RecyclerListView
-            protected boolean allowSelectChildAtPosition(float f3, float f4) {
-                return f4 >= ((float) (AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 58.0f : 111.0f) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)));
+            protected boolean allowSelectChildAtPosition(float f, float f2) {
+                return f2 >= ((float) (AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 58.0f : 111.0f) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)));
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -2591,14 +2612,14 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         recyclerListView8.setLayoutManager(fillLastGridLayoutManager);
         this.searchLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ShareAlert.14
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-            public int getSpanSize(int i10) {
-                return ShareAlert.this.searchAdapter.getSpanSize(4, i10);
+            public int getSpanSize(int i9) {
+                return ShareAlert.this.searchAdapter.getSpanSize(4, i9);
             }
         });
         this.searchGridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda14
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$7(view, i10);
+            public final void onItemClick(View view, int i9) {
+                ShareAlert.this.lambda$new$7(view, i9);
             }
         });
         this.searchGridView.setHasFixedSize(true);
@@ -2607,8 +2628,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.searchGridView.setVerticalScrollBarEnabled(false);
         this.searchGridView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ShareAlert.15
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i10, int i11) {
-                if (i11 != 0) {
+            public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
+                if (i10 != 0) {
                     ShareAlert.this.updateLayout();
                     ShareAlert shareAlert = ShareAlert.this;
                     shareAlert.previousScrollOffsetY = shareAlert.scrollOffsetY;
@@ -2635,7 +2656,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         });
         this.searchGridView.setAdapter(this.searchAdapter);
-        this.searchGridView.setGlowColor(getThemedColor(i9));
+        this.searchGridView.setGlowColor(getThemedColor(i8));
         this.recyclerItemsEnterAnimator = new RecyclerItemsEnterAnimator(this.searchGridView, true);
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context, this.resourcesProvider);
         flickerLoadingView.setViewType(12);
@@ -2657,8 +2678,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         layoutParams.topMargin = AndroidUtilities.dp((!this.darkTheme || this.linkToCopy[1] == null) ? 58.0f : 111.0f);
         this.shadow[0] = new View(context);
         View view = this.shadow[0];
-        int i10 = Theme.key_dialogShadowLine;
-        view.setBackgroundColor(getThemedColor(i10));
+        int i9 = Theme.key_dialogShadowLine;
+        view.setBackgroundColor(getThemedColor(i9));
         this.shadow[0].setAlpha(0.0f);
         this.shadow[0].setTag(1);
         this.containerView.addView(this.shadow[0], layoutParams);
@@ -2666,7 +2687,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 83);
         layoutParams2.bottomMargin = AndroidUtilities.dp(48.0f);
         this.shadow[1] = new View(context);
-        this.shadow[1].setBackgroundColor(getThemedColor(i10));
+        this.shadow[1].setBackgroundColor(getThemedColor(i9));
         this.containerView.addView(this.shadow[1], layoutParams2);
         if (!this.isChannel && this.linkToCopy[0] == null) {
             this.shadow[1].setAlpha(0.0f);
@@ -2685,11 +2706,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             linearLayout3.setOrientation(0);
             LinearLayout linearLayout4 = this.linkContainer;
             int dp = AndroidUtilities.dp(8.0f);
-            int i11 = Theme.key_share_linkBackground;
-            int themedColor2 = getThemedColor(i11);
-            int themedColor3 = getThemedColor(i11);
-            int i12 = Theme.key_listSelector;
-            linearLayout4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp, themedColor2, Theme.blendOver(themedColor3, getThemedColor(i12))));
+            int i10 = Theme.key_share_linkBackground;
+            int themedColor2 = getThemedColor(i10);
+            int themedColor3 = getThemedColor(i10);
+            int i11 = Theme.key_listSelector;
+            linearLayout4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp, themedColor2, Theme.blendOver(themedColor3, getThemedColor(i11))));
             ScaleStateListAnimator.apply(this.linkContainer, 0.015f, 1.2f);
             this.linkContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
@@ -2712,7 +2733,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.linkCopyButton.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
             this.linkCopyButton.setTypeface(AndroidUtilities.bold());
             this.linkCopyButton.setGravity(17);
-            this.linkCopyButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i12), 4, 4));
+            this.linkCopyButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i11), 4, 4));
             this.linkContainer.addView(this.linkCopyButton, LayoutHelper.createLinear(-2, 28, 0.0f, 21, 0, 0, 7, 0));
             this.linkCopyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
@@ -2738,16 +2759,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         }
                     });
                     linearLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-                    linearLayout.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i12), 6, 6));
+                    linearLayout.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i11), 6, 6));
                     ScaleStateListAnimator.apply(linearLayout);
                     ImageView imageView = new ImageView(context);
                     imageView.setImageResource(R.drawable.mini_stats_shares);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    int i13 = Theme.key_share_icon;
-                    imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i13), PorterDuff.Mode.SRC_IN));
+                    int i12 = Theme.key_share_icon;
+                    imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i12), PorterDuff.Mode.SRC_IN));
                     linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -2, 0.0f, 16));
                     TextView textView2 = new TextView(context);
-                    textView2.setTextColor(getThemedColor(i13));
+                    textView2.setTextColor(getThemedColor(i12));
                     textView2.setTextSize(1, 15.0f);
                     textView2.setGravity(17);
                     textView2.setText(LocaleController.formatNumber(messageObject3.messageOwner.forwards, ','));
@@ -2772,7 +2793,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             blurredFrameLayout2.setBackgroundColor(themedColor);
             this.pickerBottom.addView(this.pickerBottomLayout);
             TextView textView3 = new TextView(context);
-            textView3.setBackgroundDrawable(Theme.createSelectorWithBackgroundDrawable(getThemedColor(this.darkTheme ? Theme.key_voipgroup_inviteMembersBackground : i7), getThemedColor(this.darkTheme ? Theme.key_voipgroup_listSelector : Theme.key_listSelector)));
+            textView3.setBackgroundDrawable(Theme.createSelectorWithBackgroundDrawable(getThemedColor(this.darkTheme ? Theme.key_voipgroup_inviteMembersBackground : i6), getThemedColor(this.darkTheme ? Theme.key_voipgroup_listSelector : Theme.key_listSelector)));
             textView3.setTextColor(getThemedColor(this.darkTheme ? Theme.key_voipgroup_listeningText : Theme.key_dialogTextBlue2));
             textView3.setTextSize(1, 14.0f);
             textView3.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
@@ -2842,18 +2863,18 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         });
         BlurredFrameLayout blurredFrameLayout4 = new BlurredFrameLayout(context, this.sizeNotifierFrameLayout);
         this.navigationBar = blurredFrameLayout4;
-        blurredFrameLayout4.setBackgroundColor(getThemedColor(i7));
+        blurredFrameLayout4.setBackgroundColor(getThemedColor(i6));
         BlurredFrameLayout blurredFrameLayout5 = this.navigationBar;
         blurredFrameLayout5.isTopView = false;
         this.containerView.addView(blurredFrameLayout5, LayoutHelper.createFrame(-1, 0, 87));
-        AndroidUtilities.setLightNavigationBar(this.container, AndroidUtilities.computePerceivedBrightness(getThemedColor(i7)) > 0.721f);
+        AndroidUtilities.setLightNavigationBar(this.container, AndroidUtilities.computePerceivedBrightness(getThemedColor(i6)) > 0.721f);
         18 r22 = new 18(context, this.sizeNotifierFrameLayout, null, 1, true, this.resourcesProvider);
         this.commentTextView = r22;
         if (this.darkTheme) {
             EditTextCaption editText = r22.getEditText();
-            int i14 = Theme.key_voipgroup_nameText;
-            editText.setTextColor(getThemedColor(i14));
-            this.commentTextView.getEditText().setCursorColor(getThemedColor(i14));
+            int i13 = Theme.key_voipgroup_nameText;
+            editText.setTextColor(getThemedColor(i13));
+            this.commentTextView.getEditText().setCursorColor(getThemedColor(i13));
         }
         this.commentTextView.setHint(LocaleController.getString(R.string.ShareComment));
         this.commentTextView.onResume();
@@ -2862,7 +2883,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.frameLayout2.setClipChildren(false);
         this.frameLayout2.setClipToPadding(false);
         this.commentTextView.setClipChildren(false);
-        FrameLayout frameLayout4 = new FrameLayout(context) { // from class: org.telegram.ui.Components.ShareAlert.19
+        this.commentTextView.getEditText().addTextChangedListener(new 19());
+        FrameLayout frameLayout4 = new FrameLayout(context) { // from class: org.telegram.ui.Components.ShareAlert.20
             @Override // android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -2879,73 +2901,52 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.writeButtonContainer.setScaleX(0.2f);
         this.writeButtonContainer.setScaleY(0.2f);
         this.writeButtonContainer.setAlpha(0.0f);
-        this.containerView.addView(this.writeButtonContainer, LayoutHelper.createFrame(60, 60.0f, 85, 0.0f, 0.0f, 6.0f, 10.0f));
-        final ImageView imageView3 = new ImageView(context);
-        int dp2 = AndroidUtilities.dp(56.0f);
-        int i15 = Theme.key_dialogFloatingButton;
-        int themedColor4 = getThemedColor(i15);
-        int i16 = Build.VERSION.SDK_INT;
-        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(dp2, themedColor4, getThemedColor(i16 >= 21 ? Theme.key_dialogFloatingButtonPressed : i15));
-        if (i16 < 21) {
-            Drawable mutate = context.getResources().getDrawable(R.drawable.floating_shadow_profile).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-            CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            createSimpleSelectorCircleDrawable = combinedDrawable;
-        }
-        imageView3.setBackground(createSimpleSelectorCircleDrawable);
-        imageView3.setImageResource(R.drawable.attach_send);
-        imageView3.setImportantForAccessibility(2);
-        imageView3.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogFloatingIcon), PorterDuff.Mode.MULTIPLY));
-        imageView3.setScaleType(ImageView.ScaleType.CENTER);
-        if (i16 >= 21) {
-            imageView3.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ShareAlert.20
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view3, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                }
-            });
-        }
-        this.writeButtonContainer.addView(imageView3, LayoutHelper.createFrame(i16 >= 21 ? 56 : 60, i16 < 21 ? 60.0f : 56.0f, 51, i16 >= 21 ? 2.0f : 0.0f, 0.0f, 0.0f, 0.0f));
-        imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda6
+        this.containerView.addView(this.writeButtonContainer, LayoutHelper.createFrame(100, 100.0f, 85, 0.0f, 0.0f, 0.0f, 0.0f));
+        ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(context, R.drawable.attach_send, this.resourcesProvider) { // from class: org.telegram.ui.Components.ShareAlert.21
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
+            public int getFillColor() {
+                return ShareAlert.this.getThemedColor(Theme.key_dialogFloatingButton);
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
+            public boolean isInScheduleMode() {
+                return false;
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
+            public boolean isInactive() {
+                return false;
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
+            public boolean isOpen() {
+                return true;
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
+            public boolean shouldDrawBackground() {
+                return true;
+            }
+        };
+        this.writeButton = sendButton;
+        sendButton.setCircleSize(AndroidUtilities.dp(64.0f));
+        this.writeButtonContainer.addView(this.writeButton, LayoutHelper.createFrame(100, 100.0f, 85, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.writeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 ShareAlert.this.lambda$new$14(view3);
             }
         });
-        imageView3.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda7
+        this.writeButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda7
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view3) {
                 boolean lambda$new$15;
-                lambda$new$15 = ShareAlert.this.lambda$new$15(imageView3, view3);
+                lambda$new$15 = ShareAlert.this.lambda$new$15(view3);
                 return lambda$new$15;
             }
         });
         this.textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         this.textPaint.setTypeface(AndroidUtilities.bold());
-        View view3 = new View(context) { // from class: org.telegram.ui.Components.ShareAlert.21
-            @Override // android.view.View
-            protected void onDraw(Canvas canvas) {
-                String format = String.format("%d", Integer.valueOf(Math.max(1, ShareAlert.this.selectedDialogs.size())));
-                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(ShareAlert.this.textPaint.measureText(format))), AndroidUtilities.dp(24.0f));
-                int measuredWidth = getMeasuredWidth() / 2;
-                getMeasuredHeight();
-                ShareAlert.this.textPaint.setColor(ShareAlert.this.getThemedColor(Theme.key_dialogRoundCheckBoxCheck));
-                ShareAlert.this.paint.setColor(ShareAlert.this.getThemedColor(Theme.key_dialogBackground));
-                int i17 = max / 2;
-                ShareAlert.this.rect.set(measuredWidth - i17, 0.0f, i17 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(ShareAlert.this.rect, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), ShareAlert.this.paint);
-                ShareAlert.this.paint.setColor(ShareAlert.this.getThemedColor(Theme.key_dialogFloatingButton));
-                ShareAlert.this.rect.set(r5 + AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), r2 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(ShareAlert.this.rect, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), ShareAlert.this.paint);
-                canvas.drawText(format, measuredWidth - (r1 / 2), AndroidUtilities.dp(16.2f), ShareAlert.this.textPaint);
-            }
-        };
-        this.selectedCountView = view3;
-        view3.setAlpha(0.0f);
-        this.selectedCountView.setScaleX(0.2f);
-        this.selectedCountView.setScaleY(0.2f);
-        this.containerView.addView(this.selectedCountView, LayoutHelper.createFrame(42, 24.0f, 85, 0.0f, 0.0f, -8.0f, 9.0f));
         if (num != null) {
             this.timestamp = num.intValue();
             BlurredFrameLayout blurredFrameLayout6 = new BlurredFrameLayout(context, this.sizeNotifierFrameLayout);
@@ -2967,32 +2968,22 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.timestampLayout.addView(this.timestampCheckbox, LayoutHelper.createLinear(26, 26, 16, 0, 0, 0, 0));
             TextView textView5 = new TextView(context);
             this.timestampTextView = textView5;
-            textView5.setTextColor(getThemedColor(i8));
+            textView5.setTextColor(getThemedColor(i7));
             this.timestampTextView.setTextSize(1, 14.0f);
             this.timestampTextView.setText(LocaleController.formatString(R.string.VideoShareAddTimestamp, AndroidUtilities.formatShortDuration(num.intValue())));
             this.timestampLayout.addView(this.timestampTextView, LayoutHelper.createLinear(-2, -2, 16, 9, 0, 0, 0));
             ScaleStateListAnimator.apply(this.timestampLayout, 0.025f, 1.5f);
             this.timestampLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view4) {
-                    ShareAlert.this.lambda$new$16(view4);
+                public final void onClick(View view3) {
+                    ShareAlert.this.lambda$new$16(view3);
                 }
             });
             this.timestampFrameLayout.addView(this.timestampLayout, LayoutHelper.createFrame(-2, -2, 17));
             if (this.pickerBottom == null) {
-                View view4 = new View(context);
-                view4.setBackgroundColor(getThemedColor(Theme.key_divider));
-                BlurredFrameLayout blurredFrameLayout7 = this.timestampFrameLayout;
-                if (this.darkTheme) {
-                    i2 = 55;
-                    f2 = -1.0f;
-                    f = 0.66f;
-                } else {
-                    f = 1.0f / AndroidUtilities.density;
-                    i2 = 55;
-                    f2 = -1.0f;
-                }
-                blurredFrameLayout7.addView(view4, LayoutHelper.createFrame(f2, f, i2));
+                View view3 = new View(context);
+                view3.setBackgroundColor(getThemedColor(Theme.key_divider));
+                this.timestampFrameLayout.addView(view3, LayoutHelper.createFrame(-1.0f, this.darkTheme ? 0.66f : 1.0f / AndroidUtilities.density, 55));
             }
             this.containerView.addView(this.timestampFrameLayout, LayoutHelper.createFrame(-1, 48, 83));
             if (this.pickerBottom == null) {
@@ -3009,20 +3000,20 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             @Override // org.telegram.ui.Adapters.DialogsSearchAdapter.OnRecentSearchLoaded
             public void setRecentSearch(ArrayList arrayList5, LongSparseArray longSparseArray) {
                 if (arrayList5 != null) {
-                    int i17 = 0;
-                    while (i17 < arrayList5.size()) {
-                        TLObject tLObject = ((DialogsSearchAdapter.RecentSearchObject) arrayList5.get(i17)).object;
+                    int i14 = 0;
+                    while (i14 < arrayList5.size()) {
+                        TLObject tLObject = ((DialogsSearchAdapter.RecentSearchObject) arrayList5.get(i14)).object;
                         if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
-                            arrayList5.remove(i17);
-                            i17--;
+                            arrayList5.remove(i14);
+                            i14--;
                         }
-                        i17++;
+                        i14++;
                     }
                 }
                 ShareAlert.this.recentSearchObjects = arrayList5;
                 ShareAlert.this.recentSearchObjectsById = longSparseArray;
-                for (int i18 = 0; i18 < ShareAlert.this.recentSearchObjects.size(); i18++) {
-                    DialogsSearchAdapter.RecentSearchObject recentSearchObject = (DialogsSearchAdapter.RecentSearchObject) ShareAlert.this.recentSearchObjects.get(i18);
+                for (int i15 = 0; i15 < ShareAlert.this.recentSearchObjects.size(); i15++) {
+                    DialogsSearchAdapter.RecentSearchObject recentSearchObject = (DialogsSearchAdapter.RecentSearchObject) ShareAlert.this.recentSearchObjects.get(i15);
                     TLObject tLObject2 = recentSearchObject.object;
                     if (tLObject2 instanceof TLRPC.User) {
                         MessagesController.getInstance(((BottomSheet) ShareAlert.this).currentAccount).putUser((TLRPC.User) recentSearchObject.object, true);
@@ -3150,9 +3141,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ((LaunchActivity) this.parentActivity).showBulletin(new Function() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda18
                     @Override // androidx.arch.core.util.Function
                     public final Object apply(Object obj) {
-                        Bulletin lambda$copyLink$28;
-                        lambda$copyLink$28 = ShareAlert.lambda$copyLink$28(z, (BulletinFactory) obj);
-                        return lambda$copyLink$28;
+                        Bulletin lambda$copyLink$29;
+                        lambda$copyLink$29 = ShareAlert.lambda$copyLink$29(z, (BulletinFactory) obj);
+                        return lambda$copyLink$29;
                     }
                 });
             }
@@ -3292,7 +3283,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Bulletin lambda$copyLink$28(boolean z, BulletinFactory bulletinFactory) {
+    public static /* synthetic */ Bulletin lambda$copyLink$29(boolean z, BulletinFactory bulletinFactory) {
         return bulletinFactory.createCopyLinkBulletin(z);
     }
 
@@ -3310,7 +3301,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(final Context context, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda26
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 ShareAlert.this.lambda$new$0(tLObject, context);
@@ -3370,8 +3361,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$15(ImageView imageView, View view) {
-        return onSendLongClick(imageView);
+    public /* synthetic */ boolean lambda$new$15(View view) {
+        return onSendLongClick(this.writeButton);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3530,6 +3521,189 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r10v27, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r10v43 */
+    /* JADX WARN: Type inference failed for: r10v44 */
+    /* JADX WARN: Type inference failed for: r13v2, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r13v5 */
+    /* JADX WARN: Type inference failed for: r13v6, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r13v7 */
+    /* JADX WARN: Type inference failed for: r14v4, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r14v5, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r14v6 */
+    /* JADX WARN: Type inference failed for: r14v7, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r14v8 */
+    public /* synthetic */ void lambda$sendInternal$28(CharSequence[] charSequenceArr, ArrayList arrayList, boolean z, int i, HashMap hashMap) {
+        boolean z2;
+        long j;
+        long j2;
+        long j3;
+        SendMessagesHelper.SendMessageParams of;
+        MessageObject.SendAnimationData sendAnimationData;
+        boolean z3;
+        int i2;
+        long j4;
+        ?? r13;
+        ?? r14;
+        TLRPC.WebPage webPage;
+        boolean z4;
+        ArrayList arrayList2;
+        TLRPC.ReplyMarkup replyMarkup;
+        HashMap hashMap2;
+        ?? r10;
+        long j5;
+        long j6 = 0;
+        if (this.sendingMessageObjects != null) {
+            ArrayList arrayList3 = new ArrayList();
+            int i3 = 0;
+            boolean z5 = false;
+            while (i3 < this.selectedDialogs.size()) {
+                long keyAt = this.selectedDialogs.keyAt(i3);
+                Long l = hashMap == null ? 0L : (Long) hashMap.get(Long.valueOf(keyAt));
+                if (l != null && l.longValue() > j6) {
+                    z5 = true;
+                }
+                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt));
+                MessageObject messageObject = tL_forumTopic != null ? new MessageObject(this.currentAccount, tL_forumTopic.topicStartMessage, false, false) : null;
+                if (messageObject != null) {
+                    messageObject.isTopicMainMessage = true;
+                }
+                if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
+                    j5 = keyAt;
+                } else {
+                    CharSequence charSequence = charSequenceArr[0];
+                    j5 = keyAt;
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(charSequence == null ? null : charSequence.toString(), keyAt, messageObject, messageObject, null, true, arrayList, null, null, z, 0, null, false);
+                    of2.payStars = l == null ? 0L : l.longValue();
+                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of2);
+                }
+                int sendMessage = SendMessagesHelper.getInstance(this.currentAccount).sendMessage(this.sendingMessageObjects, j5, !this.showSendersName, false, z, 0, messageObject, i, l == null ? 0L : l.longValue());
+                if (sendMessage != 0) {
+                    arrayList3.add(Long.valueOf(j5));
+                }
+                if (this.selectedDialogs.size() == 1) {
+                    AlertsCreator.showSendMediaAlert(sendMessage, this.parentFragment, null);
+                    if (sendMessage != 0) {
+                        break;
+                    }
+                }
+                i3++;
+                j6 = 0;
+            }
+            Iterator it = arrayList3.iterator();
+            while (it.hasNext()) {
+                long longValue = ((Long) it.next()).longValue();
+                TLRPC.Dialog dialog = (TLRPC.Dialog) this.selectedDialogs.get(longValue);
+                this.selectedDialogs.remove(longValue);
+                if (dialog != null) {
+                    this.selectedDialogTopics.remove(dialog);
+                }
+            }
+            if (!this.selectedDialogs.isEmpty()) {
+                onSend(this.selectedDialogs, this.sendingMessageObjects.size(), this.selectedDialogs.size() == 1 ? (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.valueAt(0)) : null, !z5);
+            }
+        } else {
+            SwitchView switchView = this.switchView;
+            int i4 = switchView != null ? switchView.currentTab : 0;
+            if (this.storyItem != null) {
+                int i5 = 0;
+                z2 = false;
+                while (i5 < this.selectedDialogs.size()) {
+                    long keyAt2 = this.selectedDialogs.keyAt(i5);
+                    Long l2 = hashMap == null ? 0L : (Long) hashMap.get(Long.valueOf(keyAt2));
+                    if (l2 != null && l2.longValue() > 0) {
+                        z2 = true;
+                    }
+                    TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt2));
+                    Object messageObject2 = tL_forumTopic2 != null ? new MessageObject(this.currentAccount, tL_forumTopic2.topicStartMessage, false, false) : r3;
+                    if (this.storyItem == null) {
+                        if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
+                            sendAnimationData = null;
+                            z3 = false;
+                            i2 = 0;
+                            j4 = keyAt2;
+                            r13 = messageObject2;
+                            r14 = messageObject2;
+                            webPage = null;
+                            z4 = true;
+                            arrayList2 = null;
+                            replyMarkup = null;
+                            hashMap2 = null;
+                            r10 = this.sendingText[i4];
+                        } else {
+                            CharSequence charSequence2 = charSequenceArr[0];
+                            sendAnimationData = null;
+                            z3 = false;
+                            replyMarkup = null;
+                            hashMap2 = null;
+                            i2 = 0;
+                            j4 = keyAt2;
+                            r13 = messageObject2;
+                            r14 = messageObject2;
+                            webPage = null;
+                            z4 = true;
+                            arrayList2 = arrayList;
+                            r10 = charSequence2 == null ? r3 : charSequence2.toString();
+                        }
+                        of = SendMessagesHelper.SendMessageParams.of(r10, j4, r13, r14, webPage, z4, arrayList2, replyMarkup, hashMap2, z, i2, sendAnimationData, z3);
+                    } else {
+                        if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0 || charSequenceArr[0] == null) {
+                            j3 = keyAt2;
+                        } else {
+                            j3 = keyAt2;
+                            SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequenceArr[0].toString(), keyAt2, null, messageObject2, null, true, null, null, null, z, 0, null, false));
+                        }
+                        of = SendMessagesHelper.SendMessageParams.of(null, j3, messageObject2, messageObject2, null, true, null, null, null, z, 0, null, false);
+                        of.sendingStory = this.storyItem;
+                    }
+                    of.payStars = l2 == null ? 0L : l2.longValue();
+                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of);
+                    i5++;
+                    r3 = null;
+                }
+            } else if (this.sendingText[i4] != null) {
+                z2 = false;
+                for (int i6 = 0; i6 < this.selectedDialogs.size(); i6++) {
+                    long keyAt3 = this.selectedDialogs.keyAt(i6);
+                    Long l3 = hashMap == null ? 0L : (Long) hashMap.get(Long.valueOf(keyAt3));
+                    if (l3 != null) {
+                        j = 0;
+                        if (l3.longValue() > 0) {
+                            z2 = true;
+                        }
+                    } else {
+                        j = 0;
+                    }
+                    TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt3));
+                    MessageObject messageObject3 = tL_forumTopic3 != null ? new MessageObject(this.currentAccount, tL_forumTopic3.topicStartMessage, false, false) : null;
+                    if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
+                        j2 = keyAt3;
+                    } else {
+                        CharSequence charSequence3 = charSequenceArr[0];
+                        j2 = keyAt3;
+                        SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequence3 == null ? null : charSequence3.toString(), keyAt3, messageObject3, messageObject3, null, true, arrayList, null, null, z, 0, null, false);
+                        of3.payStars = l3 == null ? j : l3.longValue();
+                        SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of3);
+                    }
+                    SendMessagesHelper.SendMessageParams of4 = SendMessagesHelper.SendMessageParams.of(this.sendingText[i4], j2, messageObject3, messageObject3, null, true, null, null, null, z, 0, null, false);
+                    of4.payStars = l3 == null ? j : l3.longValue();
+                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of4);
+                }
+            } else {
+                z2 = false;
+            }
+            LongSparseArray longSparseArray = this.selectedDialogs;
+            onSend(longSparseArray, 1, (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(longSparseArray.valueAt(0)), !z2);
+        }
+        ShareAlertDelegate shareAlertDelegate = this.delegate;
+        if (shareAlertDelegate != null) {
+            shareAlertDelegate.didShare();
+        }
+        dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showPremiumBlockedToast$17() {
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         if (lastFragment != null) {
@@ -3542,7 +3716,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showPremiumBlockedToast$18() {
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda28
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
                 ShareAlert.lambda$showPremiumBlockedToast$17();
@@ -3840,7 +4014,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         categoryAdapterRecycler.notifyItemRangeChanged(0, categoryAdapterRecycler.getItemCount());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0058, code lost:
     
         if (r0 != null) goto L26;
      */
@@ -3890,27 +4064,20 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         if (blurredFrameLayout3 != null && this.pickerBottom == null) {
             arrayList.add(ObjectAnimator.ofFloat(blurredFrameLayout3, (Property<BlurredFrameLayout, Float>) property, z ? 1.0f : 0.0f));
         }
-        FrameLayout frameLayout3 = this.writeButtonContainer;
-        Property property2 = View.SCALE_X;
-        arrayList.add(ObjectAnimator.ofFloat(frameLayout3, (Property<FrameLayout, Float>) property2, z ? 1.0f : 0.2f));
-        FrameLayout frameLayout4 = this.writeButtonContainer;
-        Property property3 = View.SCALE_Y;
-        arrayList.add(ObjectAnimator.ofFloat(frameLayout4, (Property<FrameLayout, Float>) property3, z ? 1.0f : 0.2f));
+        arrayList.add(ObjectAnimator.ofFloat(this.writeButtonContainer, (Property<FrameLayout, Float>) View.SCALE_X, z ? 1.0f : 0.2f));
+        arrayList.add(ObjectAnimator.ofFloat(this.writeButtonContainer, (Property<FrameLayout, Float>) View.SCALE_Y, z ? 1.0f : 0.2f));
         arrayList.add(ObjectAnimator.ofFloat(this.writeButtonContainer, (Property<FrameLayout, Float>) property, z ? 1.0f : 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(this.selectedCountView, (Property<View, Float>) property2, z ? 1.0f : 0.2f));
-        arrayList.add(ObjectAnimator.ofFloat(this.selectedCountView, (Property<View, Float>) property3, z ? 1.0f : 0.2f));
-        arrayList.add(ObjectAnimator.ofFloat(this.selectedCountView, (Property<View, Float>) property, z ? 1.0f : 0.0f));
-        FrameLayout frameLayout5 = this.pickerBottom;
-        if (frameLayout5 == null || frameLayout5.getVisibility() != 0) {
+        FrameLayout frameLayout3 = this.pickerBottom;
+        if (frameLayout3 == null || frameLayout3.getVisibility() != 0) {
             arrayList.add(ObjectAnimator.ofFloat(this.shadow[1], (Property<View, Float>) property, z ? 1.0f : 0.0f));
         }
         BlurredFrameLayout blurredFrameLayout4 = this.pickerBottomLayout;
         if (blurredFrameLayout4 != null) {
-            Property property4 = View.TRANSLATION_Y;
+            Property property2 = View.TRANSLATION_Y;
             if (this.darkTheme && z) {
                 f = AndroidUtilities.dp(this.timestampLayout != null ? 5.0f : 16.0f);
             }
-            arrayList.add(ObjectAnimator.ofFloat(blurredFrameLayout4, (Property<BlurredFrameLayout, Float>) property4, f));
+            arrayList.add(ObjectAnimator.ofFloat(blurredFrameLayout4, (Property<BlurredFrameLayout, Float>) property2, f));
         }
         this.animatorSet.playTogether(arrayList);
         this.animatorSet.setInterpolator(new DecelerateInterpolator());
@@ -3925,11 +4092,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                FrameLayout frameLayout6;
+                FrameLayout frameLayout4;
                 if (animator.equals(ShareAlert.this.animatorSet)) {
                     if (z) {
                         if (ShareAlert.this.pickerBottom != null) {
-                            frameLayout6 = ShareAlert.this.pickerBottom;
+                            frameLayout4 = ShareAlert.this.pickerBottom;
                         }
                         ShareAlert.this.animatorSet = null;
                     } else {
@@ -3938,9 +4105,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         if (shareAlert.timestampFrameLayout != null && shareAlert.pickerBottom == null) {
                             ShareAlert.this.timestampFrameLayout.setVisibility(4);
                         }
-                        frameLayout6 = ShareAlert.this.writeButtonContainer;
+                        frameLayout4 = ShareAlert.this.writeButtonContainer;
                     }
-                    frameLayout6.setVisibility(4);
+                    frameLayout4.setVisibility(4);
                     ShareAlert.this.animatorSet = null;
                 }
             }
@@ -3956,7 +4123,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         AndroidUtilities.shakeViewSpring(view, i);
         BotWebViewVibrationEffect.APP_ERROR.vibrate();
         String userName = j >= 0 ? UserObject.getUserName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j))) : "";
-        (MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked() ? BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda27
+        (MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked() ? BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 ShareAlert.this.lambda$showPremiumBlockedToast$18();
@@ -4107,192 +4274,101 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         }
     }
 
-    protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic) {
+    protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
     }
 
     protected void onShareStory(View view) {
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v10 */
-    /* JADX WARN: Type inference failed for: r10v6 */
-    /* JADX WARN: Type inference failed for: r10v7, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r2v0 */
-    /* JADX WARN: Type inference failed for: r2v14 */
-    /* JADX WARN: Type inference failed for: r2v6, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v48, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r5v50 */
-    /* JADX WARN: Type inference failed for: r5v73, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r5v75 */
-    /* JADX WARN: Type inference failed for: r5v79 */
-    /* JADX WARN: Type inference failed for: r5v80 */
-    /* JADX WARN: Type inference failed for: r9v1 */
-    /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r9v4 */
-    protected void sendInternal(boolean z) {
-        char c;
-        MessageObject messageObject;
-        long j;
+    protected void sendInternal(final boolean z) {
         int i;
-        char c2;
-        MessageObject messageObject2;
         int i2;
-        TLRPC.TL_forumTopic tL_forumTopic;
-        SendMessagesHelper.SendMessageParams of;
-        ArrayList arrayList;
-        MessageObject messageObject3;
-        long j2;
-        int i3;
-        ArrayList arrayList2;
-        int i4 = 1;
-        ?? r2 = 0;
-        for (int i5 = 0; i5 < this.selectedDialogs.size(); i5++) {
-            if (AlertsCreator.checkSlowMode(getContext(), this.currentAccount, this.selectedDialogs.keyAt(i5), this.frameLayout2.getTag() != null && this.commentTextView.length() > 0)) {
+        int i3 = 0;
+        for (int i4 = 0; i4 < this.selectedDialogs.size(); i4++) {
+            if (AlertsCreator.checkSlowMode(getContext(), this.currentAccount, this.selectedDialogs.keyAt(i4), this.frameLayout2.getTag() != null && this.commentTextView.length() > 0)) {
                 return;
             }
         }
-        CharSequence[] charSequenceArr = {this.commentTextView.getText()};
-        ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
+        final CharSequence[] charSequenceArr = {this.commentTextView.getText()};
+        final ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
         CheckBox2 checkBox2 = this.timestampCheckbox;
-        int i6 = (checkBox2 == null || !checkBox2.isChecked()) ? -1 : this.timestamp;
-        TLRPC.TL_forumTopic tL_forumTopic2 = null;
-        if (this.sendingMessageObjects != null) {
-            ArrayList arrayList3 = new ArrayList();
-            int i7 = 0;
-            while (true) {
-                if (i7 >= this.selectedDialogs.size()) {
-                    arrayList = arrayList3;
-                    break;
-                }
-                long keyAt = this.selectedDialogs.keyAt(i7);
-                TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt));
-                MessageObject messageObject4 = tL_forumTopic3 != null ? new MessageObject(this.currentAccount, tL_forumTopic3.topicStartMessage, r2, r2) : tL_forumTopic2;
-                if (messageObject4 != 0) {
-                    messageObject4.isTopicMainMessage = true;
-                }
-                if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
-                    messageObject3 = messageObject4;
-                    j2 = keyAt;
-                    i3 = i7;
-                    arrayList2 = arrayList3;
-                } else {
-                    SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(this.currentAccount);
-                    CharSequence charSequence = charSequenceArr[r2];
-                    messageObject3 = messageObject4;
-                    j2 = keyAt;
-                    i3 = i7;
-                    arrayList2 = arrayList3;
-                    sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence == null ? tL_forumTopic2 : charSequence.toString(), keyAt, messageObject4, messageObject4, null, true, entities, null, null, z, 0, null, false));
-                }
-                int sendMessage = SendMessagesHelper.getInstance(this.currentAccount).sendMessage(this.sendingMessageObjects, j2, !this.showSendersName, false, z, 0, messageObject3, i6);
-                if (sendMessage != 0) {
-                    arrayList = arrayList2;
-                    arrayList.add(Long.valueOf(j2));
-                } else {
-                    arrayList = arrayList2;
-                }
-                if (this.selectedDialogs.size() == 1) {
-                    tL_forumTopic2 = null;
-                    AlertsCreator.showSendMediaAlert(sendMessage, this.parentFragment, null);
-                    if (sendMessage != 0) {
-                        break;
-                    }
-                } else {
-                    tL_forumTopic2 = null;
-                }
-                i7 = i3 + 1;
-                arrayList3 = arrayList;
-                r2 = 0;
-            }
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                long longValue = ((Long) it.next()).longValue();
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.selectedDialogs.get(longValue);
-                this.selectedDialogs.remove(longValue);
-                if (dialog != null) {
-                    this.selectedDialogTopics.remove(dialog);
-                }
-            }
-            if (!this.selectedDialogs.isEmpty()) {
-                LongSparseArray longSparseArray = this.selectedDialogs;
-                int size = this.sendingMessageObjects.size();
-                if (this.selectedDialogs.size() == 1) {
-                    tL_forumTopic2 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.valueAt(0));
-                }
-                onSend(longSparseArray, size, tL_forumTopic2);
-            }
-        } else {
+        final int i5 = (checkBox2 == null || !checkBox2.isChecked()) ? -1 : this.timestamp;
+        ArrayList arrayList = new ArrayList();
+        if (this.sendingMessageObjects == null) {
             SwitchView switchView = this.switchView;
-            int i8 = switchView != null ? switchView.currentTab : 0;
+            int i6 = switchView != null ? switchView.currentTab : 0;
             if (this.storyItem != null) {
-                int i9 = 0;
-                while (i9 < this.selectedDialogs.size()) {
-                    long keyAt2 = this.selectedDialogs.keyAt(i9);
-                    TLRPC.TL_forumTopic tL_forumTopic4 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt2));
-                    if (tL_forumTopic4 != null) {
-                        c2 = 0;
-                        messageObject2 = new MessageObject(this.currentAccount, tL_forumTopic4.topicStartMessage, false, false);
-                    } else {
-                        c2 = 0;
-                        messageObject2 = tL_forumTopic2;
+                i = 0;
+                for (int i7 = 0; i7 < this.selectedDialogs.size(); i7++) {
+                    long keyAt = this.selectedDialogs.keyAt(i7);
+                    long sendPaidMessagesStars = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt);
+                    if (sendPaidMessagesStars <= 0) {
+                        sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt));
                     }
-                    if (this.storyItem != null) {
-                        i2 = i9;
-                        tL_forumTopic = tL_forumTopic2;
-                        if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && charSequenceArr[0] != null) {
-                            SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequenceArr[0].toString(), keyAt2, null, messageObject2, null, true, null, null, null, z, 0, null, false));
-                        }
-                        of = SendMessagesHelper.SendMessageParams.of(null, keyAt2, messageObject2, messageObject2, null, true, null, null, null, z, 0, null, false);
-                        of.sendingStory = this.storyItem;
-                    } else if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
-                        i2 = i9;
-                        tL_forumTopic = tL_forumTopic2;
-                        of = SendMessagesHelper.SendMessageParams.of(this.sendingText[i8], keyAt2, messageObject2, messageObject2, null, true, null, null, null, z, 0, null, false);
-                    } else {
-                        CharSequence charSequence2 = charSequenceArr[c2];
-                        i2 = i9;
-                        tL_forumTopic = tL_forumTopic2;
-                        of = SendMessagesHelper.SendMessageParams.of(charSequence2 == null ? tL_forumTopic2 : charSequence2.toString(), keyAt2, messageObject2, messageObject2, null, true, entities, null, null, z, 0, null, false);
+                    if (this.storyItem != null && this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && charSequenceArr[0] != null && sendPaidMessagesStars > 0) {
+                        i++;
                     }
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of);
-                    i9 = i2 + 1;
-                    tL_forumTopic2 = tL_forumTopic;
+                    if (sendPaidMessagesStars > 0) {
+                        i++;
+                    }
+                    if (sendPaidMessagesStars > 0 && !arrayList.contains(Long.valueOf(keyAt))) {
+                        arrayList.add(Long.valueOf(keyAt));
+                    }
                 }
-            } else if (this.sendingText[i8] != null) {
-                int i10 = 0;
-                while (i10 < this.selectedDialogs.size()) {
-                    long keyAt3 = this.selectedDialogs.keyAt(i10);
-                    TLRPC.TL_forumTopic tL_forumTopic5 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt3));
-                    if (tL_forumTopic5 != null) {
-                        c = 0;
-                        messageObject = new MessageObject(this.currentAccount, tL_forumTopic5.topicStartMessage, false, false);
-                    } else {
-                        c = 0;
-                        messageObject = null;
+            } else if (this.sendingText[i6] != null) {
+                i2 = 0;
+                while (i3 < this.selectedDialogs.size()) {
+                    long keyAt2 = this.selectedDialogs.keyAt(i3);
+                    long sendPaidMessagesStars2 = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt2);
+                    if (sendPaidMessagesStars2 <= 0) {
+                        sendPaidMessagesStars2 = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt2));
                     }
-                    if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
-                        j = keyAt3;
-                        i = i10;
-                    } else {
-                        SendMessagesHelper sendMessagesHelper2 = SendMessagesHelper.getInstance(this.currentAccount);
-                        CharSequence charSequence3 = charSequenceArr[c];
-                        j = keyAt3;
-                        i = i10;
-                        sendMessagesHelper2.sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence3 == null ? null : charSequence3.toString(), keyAt3, messageObject, messageObject, null, true, entities, null, null, z, 0, null, false));
+                    if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && sendPaidMessagesStars2 > 0) {
+                        i2++;
                     }
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(this.sendingText[i8], j, messageObject, messageObject, null, true, null, null, null, z, 0, null, false));
-                    i4 = 1;
-                    i10 = i + 1;
+                    if (sendPaidMessagesStars2 > 0) {
+                        i2++;
+                    }
+                    if (sendPaidMessagesStars2 > 0 && !arrayList.contains(Long.valueOf(keyAt2))) {
+                        arrayList.add(Long.valueOf(keyAt2));
+                    }
+                    i3++;
                 }
+            } else {
+                i = 0;
             }
-            LongSparseArray longSparseArray2 = this.selectedDialogs;
-            onSend(longSparseArray2, i4, (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(longSparseArray2.valueAt(0)));
+            AlertsCreator.ensurePaidMessagesMultiConfirmation(this.currentAccount, arrayList, i, new Utilities.Callback() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda26
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    ShareAlert.this.lambda$sendInternal$28(charSequenceArr, entities, z, i5, (HashMap) obj);
+                }
+            });
         }
-        ShareAlertDelegate shareAlertDelegate = this.delegate;
-        if (shareAlertDelegate != null) {
-            shareAlertDelegate.didShare();
+        i2 = 0;
+        while (i3 < this.selectedDialogs.size()) {
+            long keyAt3 = this.selectedDialogs.keyAt(i3);
+            long sendPaidMessagesStars3 = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt3);
+            if (sendPaidMessagesStars3 <= 0) {
+                sendPaidMessagesStars3 = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt3));
+            }
+            if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && sendPaidMessagesStars3 > 0) {
+                i2++;
+            }
+            if (sendPaidMessagesStars3 > 0) {
+                i2++;
+            }
+            if (sendPaidMessagesStars3 > 0 && !arrayList.contains(Long.valueOf(keyAt3))) {
+                arrayList.add(Long.valueOf(keyAt3));
+            }
+            i3++;
         }
-        dismiss();
+        i = i2;
+        AlertsCreator.ensurePaidMessagesMultiConfirmation(this.currentAccount, arrayList, i, new Utilities.Callback() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda26
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ShareAlert.this.lambda$sendInternal$28(charSequenceArr, entities, z, i5, (HashMap) obj);
+            }
+        });
     }
 
     public void setDelegate(ShareAlertDelegate shareAlertDelegate) {
@@ -4345,28 +4421,30 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         float f4 = -f;
         this.frameLayout2.setTranslationY(f4);
         this.writeButtonContainer.setTranslationY(f4);
-        this.selectedCountView.setTranslationY(f4);
     }
 
     public void updateSelectedCount(int i) {
         if (this.selectedDialogs.size() == 0) {
-            this.selectedCountView.setPivotX(0.0f);
-            this.selectedCountView.setPivotY(0.0f);
             showCommentTextView(false);
             return;
         }
-        this.selectedCountView.invalidate();
-        if (showCommentTextView(true) || i == 0) {
-            this.selectedCountView.setPivotX(0.0f);
-            this.selectedCountView.setPivotY(0.0f);
-            return;
+        ArrayList arrayList = this.sendingMessageObjects;
+        int size = arrayList == null ? 1 : arrayList.size();
+        if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0) {
+            size++;
         }
-        this.selectedCountView.setPivotX(AndroidUtilities.dp(21.0f));
-        this.selectedCountView.setPivotY(AndroidUtilities.dp(12.0f));
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(ObjectAnimator.ofFloat(this.selectedCountView, (Property<View, Float>) View.SCALE_X, i == 1 ? 1.1f : 0.9f, 1.0f), ObjectAnimator.ofFloat(this.selectedCountView, (Property<View, Float>) View.SCALE_Y, i == 1 ? 1.1f : 0.9f, 1.0f));
-        animatorSet.setInterpolator(new OvershootInterpolator());
-        animatorSet.setDuration(180L);
-        animatorSet.start();
+        long j = 0;
+        for (int i2 = 0; i2 < this.selectedDialogs.size(); i2++) {
+            long j2 = ((TLRPC.Dialog) this.selectedDialogs.valueAt(i2)).id;
+            long sendPaidMessagesStars = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(j2);
+            if (sendPaidMessagesStars <= 0) {
+                sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(j2));
+            }
+            j += sendPaidMessagesStars;
+        }
+        this.writeButton.setCount(Math.max(1, this.selectedDialogs.size()), i != 0);
+        this.writeButton.setStarsPrice(j, size, i != 0);
+        showCommentTextView(true);
+        this.commentTextView.setPadding(0, 0, Math.max(AndroidUtilities.dp(84.0f), this.writeButton.width()), 0);
     }
 }

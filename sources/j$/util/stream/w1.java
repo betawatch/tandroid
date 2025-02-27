@@ -2,13 +2,13 @@ package j$.util.stream;
 
 /* loaded from: classes2.dex */
 final class w1 extends t0 {
-    final /* synthetic */ j$.util.function.j h;
+    final /* synthetic */ j$.util.function.i h;
     final /* synthetic */ double i;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    w1(T2 t2, j$.util.function.j jVar, double d) {
-        super(t2);
-        this.h = jVar;
+    w1(S2 s2, j$.util.function.i iVar, double d) {
+        super(s2);
+        this.h = iVar;
         this.i = d;
     }
 

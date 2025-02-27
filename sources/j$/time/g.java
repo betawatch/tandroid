@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.temporal.q;
+import j$.util.A;
 import java.io.Serializable;
 
 /* loaded from: classes2.dex */
@@ -11,12 +12,12 @@ public final class g implements j$.time.temporal.k, j$.time.chrono.c, Serializab
     static {
         LocalDate localDate = LocalDate.d;
         i iVar = i.e;
-        j$.util.a.B(localDate, "date");
-        j$.util.a.B(iVar, "time");
+        A.z(localDate, "date");
+        A.z(iVar, "time");
         LocalDate localDate2 = LocalDate.e;
         i iVar2 = i.f;
-        j$.util.a.B(localDate2, "date");
-        j$.util.a.B(iVar2, "time");
+        A.z(localDate2, "date");
+        A.z(iVar2, "time");
     }
 
     private g(LocalDate localDate, i iVar) {
@@ -29,7 +30,7 @@ public final class g implements j$.time.temporal.k, j$.time.chrono.c, Serializab
     }
 
     public static g j(long j, int i, ZoneOffset zoneOffset) {
-        j$.util.a.B(zoneOffset, "offset");
+        A.z(zoneOffset, "offset");
         long j2 = i;
         j$.time.temporal.a.NANO_OF_SECOND.g(j2);
         return new g(LocalDate.p(j$.com.android.tools.r8.a.j(j + zoneOffset.getTotalSeconds(), 86400L)), i.k((((int) j$.com.android.tools.r8.a.i(r5, 86400L)) * 1000000000) + j2));
@@ -139,7 +140,7 @@ public final class g implements j$.time.temporal.k, j$.time.chrono.c, Serializab
     }
 
     public final long k(ZoneOffset zoneOffset) {
-        j$.util.a.B(zoneOffset, "offset");
+        A.z(zoneOffset, "offset");
         return ((this.a.s() * 86400) + this.b.m()) - zoneOffset.getTotalSeconds();
     }
 

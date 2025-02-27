@@ -5,7 +5,7 @@ import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CompletionStateKt {
     public static final Object recoverResult(Object obj, Continuation continuation) {
         if (obj instanceof CompletedExceptionally) {

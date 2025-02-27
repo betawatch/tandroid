@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.SequenceScope;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda implements Function2 {
     final /* synthetic */ Iterator $iterator;
     final /* synthetic */ boolean $partialWindows;

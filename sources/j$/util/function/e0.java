@@ -1,35 +1,25 @@
 package j$.util.function;
 
-import java.util.function.LongUnaryOperator;
+import java.util.function.ObjDoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class e0 implements LongUnaryOperator {
+public final /* synthetic */ class e0 implements ObjDoubleConsumer {
     public final /* synthetic */ f0 a;
 
     private /* synthetic */ e0(f0 f0Var) {
         this.a = f0Var;
     }
 
-    public static /* synthetic */ LongUnaryOperator a(f0 f0Var) {
+    public static /* synthetic */ ObjDoubleConsumer a(f0 f0Var) {
         if (f0Var == null) {
             return null;
         }
         return f0Var instanceof d0 ? ((d0) f0Var).a : new e0(f0Var);
     }
 
-    @Override // java.util.function.LongUnaryOperator
-    public final /* synthetic */ LongUnaryOperator andThen(LongUnaryOperator longUnaryOperator) {
-        return a(this.a.a(d0.b(longUnaryOperator)));
-    }
-
-    @Override // java.util.function.LongUnaryOperator
-    public final /* synthetic */ long applyAsLong(long j) {
-        return this.a.applyAsLong(j);
-    }
-
-    @Override // java.util.function.LongUnaryOperator
-    public final /* synthetic */ LongUnaryOperator compose(LongUnaryOperator longUnaryOperator) {
-        return a(this.a.c(d0.b(longUnaryOperator)));
+    @Override // java.util.function.ObjDoubleConsumer
+    public final /* synthetic */ void accept(Object obj, double d) {
+        this.a.accept(obj, d);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

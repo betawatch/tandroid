@@ -1,17 +1,10 @@
 package com.google.android.gms.flags;
 
-import android.os.IInterface;
-import com.google.android.gms.dynamic.IObjectWrapper;
+import android.os.IBinder;
 
 /* loaded from: classes.dex */
-public interface zzc extends IInterface {
-    boolean getBooleanFlagValue(String str, boolean z, int i);
-
-    int getIntFlagValue(String str, int i, int i2);
-
-    long getLongFlagValue(String str, long j, int i);
-
-    String getStringFlagValue(String str, String str2, int i);
-
-    void init(IObjectWrapper iObjectWrapper);
+public final class zzc extends com.google.android.gms.internal.flags.zza implements zze {
+    zzc(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.flags.IFlagProvider");
+    }
 }

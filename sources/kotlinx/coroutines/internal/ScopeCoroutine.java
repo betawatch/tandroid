@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlinx.coroutines.AbstractCoroutine;
 import kotlinx.coroutines.CompletionStateKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ScopeCoroutine extends AbstractCoroutine implements CoroutineStackFrame {
     public final Continuation uCont;
 

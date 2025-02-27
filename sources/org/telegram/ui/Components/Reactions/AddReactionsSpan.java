@@ -17,7 +17,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AddReactionsSpan extends ReplacementSpan {
     private int alpha;
     private float height;
@@ -90,7 +90,7 @@ public class AddReactionsSpan extends ReplacementSpan {
     }
 
     public void show(final View view) {
-        ValueAnimator ofInt = ValueAnimator.ofInt(this.alpha, NotificationCenter.liveLocationsChanged);
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.alpha, NotificationCenter.proxyCheckDone);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.AddReactionsSpan$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {

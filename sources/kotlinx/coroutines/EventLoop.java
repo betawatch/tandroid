@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.collections.ArrayDeque;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class EventLoop extends CoroutineDispatcher {
     private boolean shared;
     private ArrayDeque unconfinedQueue;

@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import java.util.Arrays;
 import kotlin.UninitializedPropertyAccessException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Intrinsics {
     public static boolean areEqual(Object obj, Object obj2) {
         return obj == null ? obj2 == null : obj.equals(obj2);

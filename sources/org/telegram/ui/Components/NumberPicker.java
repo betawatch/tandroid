@@ -629,9 +629,9 @@ public class NumberPicker extends LinearLayout {
         }
         this.mPreviousScrollerY = 0;
         if (z) {
-            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.chatlistFolderUpdate);
+            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.storiesListUpdated);
         } else {
-            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.chatlistFolderUpdate);
+            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.storiesListUpdated);
         }
         invalidate();
     }

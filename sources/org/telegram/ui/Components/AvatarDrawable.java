@@ -46,6 +46,8 @@ public class AvatarDrawable extends Drawable {
     private int gradientColor2;
     private boolean hasAdvancedGradient;
     private boolean hasGradient;
+    private int iconTx;
+    private int iconTy;
     private boolean invalidateTextLayout;
     private boolean isProfile;
     private TextPaint namePaint;
@@ -93,7 +95,7 @@ public class AvatarDrawable extends Drawable {
         this.roundRadius = -1;
         this.drawAvatarBackground = true;
         this.rotate45Background = false;
-        this.alpha = NotificationCenter.liveLocationsChanged;
+        this.alpha = NotificationCenter.proxyCheckDone;
         this.resourcesProvider = resourcesProvider;
         TextPaint textPaint = new TextPaint(1);
         this.namePaint = textPaint;
@@ -281,14 +283,14 @@ public class AvatarDrawable extends Drawable {
             if (drawable2 != null) {
                 int intrinsicWidth2 = (int) (drawable2.getIntrinsicWidth() * this.scaleSize);
                 int intrinsicHeight2 = (int) (drawable2.getIntrinsicHeight() * this.scaleSize);
-                int i5 = (width - intrinsicWidth2) / 2;
-                int i6 = (width - intrinsicHeight2) / 2;
+                int i5 = ((width - intrinsicWidth2) / 2) + this.iconTx;
+                int i6 = ((width - intrinsicHeight2) / 2) + this.iconTy;
                 drawable2.setBounds(i5, i6, intrinsicWidth2 + i5, intrinsicHeight2 + i6);
                 int i7 = this.alpha;
                 if (i7 != 255) {
                     drawable2.setAlpha(i7);
                     drawable2.draw(canvas);
-                    drawable2.setAlpha(NotificationCenter.liveLocationsChanged);
+                    drawable2.setAlpha(NotificationCenter.proxyCheckDone);
                 } else {
                     drawable2.draw(canvas);
                 }
@@ -350,6 +352,10 @@ public class AvatarDrawable extends Drawable {
 
     public int getColor2() {
         return this.needApplyColorAccent ? Theme.changeColorAccent(this.color2) : this.color2;
+    }
+
+    public Drawable getCustomIcon() {
+        return this.customIconDrawable;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -528,6 +534,11 @@ public class AvatarDrawable extends Drawable {
 
     public void setDrawAvatarBackground(boolean z) {
         this.drawAvatarBackground = z;
+    }
+
+    public void setIconTranslation(int i, int i2) {
+        this.iconTx = i;
+        this.iconTy = i2;
     }
 
     public void setInfo(int i, TLObject tLObject) {

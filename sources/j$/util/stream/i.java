@@ -54,6 +54,6 @@ public final /* synthetic */ class i implements Collector {
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ Supplier supplier() {
-        return j$.util.function.t0.a(this.a.supplier());
+        return j$.util.function.p0.a(this.a.supplier());
     }
 }

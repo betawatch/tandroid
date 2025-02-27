@@ -1,15 +1,16 @@
 package j$.util.stream;
 
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
 final class Z0 extends I0 implements x0 {
-    Z0(long j, j$.util.function.I i) {
-        super(j, i);
+    Z0(long j, IntFunction intFunction) {
+        super(j, intFunction);
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;

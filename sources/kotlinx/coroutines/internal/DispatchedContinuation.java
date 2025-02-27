@@ -17,7 +17,7 @@ import kotlinx.coroutines.DispatchedTask;
 import kotlinx.coroutines.EventLoop;
 import kotlinx.coroutines.ThreadLocalEventLoop;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DispatchedContinuation extends DispatchedTask implements CoroutineStackFrame, Continuation {
     private static final AtomicReferenceFieldUpdater _reusableCancellableContinuation$FU = AtomicReferenceFieldUpdater.newUpdater(DispatchedContinuation.class, Object.class, "_reusableCancellableContinuation");
     private volatile Object _reusableCancellableContinuation;

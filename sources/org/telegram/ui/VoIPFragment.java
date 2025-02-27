@@ -814,9 +814,8 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomSpeakerBtn.setAlpha(1.0f);
         this.bottomMuteBtn.setAlpha(1.0f);
         this.bottomVideoBtn.setAlpha(1.0f);
-        ViewPropertyAnimator translationX = this.bottomEndCallBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f);
-        long j = NotificationCenter.storyQualityUpdate;
-        translationX.setDuration(j).start();
+        long j = 200;
+        this.bottomEndCallBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
         this.bottomSpeakerBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
         this.bottomMuteBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
         this.bottomVideoBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
@@ -3265,7 +3264,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(NotificationCenter.groupPackUpdated, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
         frameLayout.addView(this.statusLayout, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 135.0f, 0.0f, 0.0f));
         frameLayout.addView(this.hideEmojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
-        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.stealthModeChanged, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.uploadStoryEnd, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
         frameLayout.addView(this.emojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.endCloseLayout, LayoutHelper.createFrame(-1, 52.0f, 5, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.rateCallLayout, LayoutHelper.createFrame(-1, -2.0f, 3, 0.0f, 380.0f, 0.0f, 0.0f));

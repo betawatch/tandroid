@@ -2608,7 +2608,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     private JSONObject buildThemeParams() {
         try {
-            JSONObject makeThemeParams = BotWebViewSheet.makeThemeParams(this.resourcesProvider);
+            JSONObject makeThemeParams = BotWebViewSheet.makeThemeParams(this.resourcesProvider, true);
             if (makeThemeParams != null) {
                 return new JSONObject().put("theme_params", makeThemeParams);
             }

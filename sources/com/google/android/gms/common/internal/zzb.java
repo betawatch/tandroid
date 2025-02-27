@@ -6,10 +6,9 @@ import android.os.Message;
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.BaseGmsClient;
-import com.google.android.gms.internal.common.zzi;
 
 /* loaded from: classes.dex */
-final class zzb extends zzi {
+final class zzb extends com.google.android.gms.internal.common.zzi {
     final /* synthetic */ BaseGmsClient zza;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

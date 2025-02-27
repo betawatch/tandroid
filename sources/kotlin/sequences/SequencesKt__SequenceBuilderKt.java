@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SequencesKt__SequenceBuilderKt {
     public static Iterator iterator(Function2 block) {
         Continuation createCoroutineUnintercepted;

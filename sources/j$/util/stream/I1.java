@@ -6,13 +6,13 @@ import j$.util.function.Consumer;
 final class I1 implements N1, c2 {
     private boolean a;
     private int b;
-    final /* synthetic */ j$.util.function.B c;
+    final /* synthetic */ j$.util.function.A c;
 
-    I1(j$.util.function.B b) {
-        this.c = b;
+    I1(j$.util.function.A a) {
+        this.c = a;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
         t0.b();
         throw null;
@@ -47,7 +47,7 @@ final class I1 implements N1, c2 {
 
     @Override // j$.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.m.a() : j$.util.m.d(this.b);
+        return this.a ? j$.util.k.a() : j$.util.k.d(this.b);
     }
 
     @Override // j$.util.stream.N1
@@ -59,9 +59,9 @@ final class I1 implements N1, c2 {
         accept(i1.b);
     }
 
-    @Override // j$.util.function.F
-    public final /* synthetic */ j$.util.function.F l(j$.util.function.F f) {
-        return j$.com.android.tools.r8.a.c(this, f);
+    @Override // j$.util.function.E
+    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
+        return j$.com.android.tools.r8.a.c(this, e);
     }
 
     @Override // j$.util.stream.e2

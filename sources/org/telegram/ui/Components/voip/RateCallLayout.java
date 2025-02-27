@@ -22,7 +22,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.voip.RateCallLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RateCallLayout extends FrameLayout {
     private final VoIPBackgroundProvider backgroundProvider;
     private OnRateSelected onRateSelected;
@@ -235,7 +235,7 @@ public class RateCallLayout extends FrameLayout {
             }, i);
             this.starsContainer.addView(this.startsViews[i], LayoutHelper.createFrame(-2, -2.0f, 51, i * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.chatlistFolderUpdate, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.storiesListUpdated, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
         addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.openBoostForUsersDialog, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 

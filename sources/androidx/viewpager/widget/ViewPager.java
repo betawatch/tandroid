@@ -1408,7 +1408,7 @@ public class ViewPager extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & NotificationCenter.liveLocationsChanged;
+        int action = motionEvent.getAction() & NotificationCenter.proxyCheckDone;
         if (action == 3 || action == 1) {
             resetTouch();
             return false;
@@ -1831,7 +1831,7 @@ public class ViewPager extends ViewGroup {
             this.mVelocityTracker = VelocityTracker.obtain();
         }
         this.mVelocityTracker.addMovement(motionEvent);
-        int action = motionEvent.getAction() & NotificationCenter.liveLocationsChanged;
+        int action = motionEvent.getAction() & NotificationCenter.proxyCheckDone;
         if (action != 0) {
             if (action != 1) {
                 if (action == 2) {

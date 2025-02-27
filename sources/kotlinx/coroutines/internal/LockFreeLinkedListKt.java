@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class LockFreeLinkedListKt {
     private static final Object CONDITION_FALSE = new Symbol("CONDITION_FALSE");
 

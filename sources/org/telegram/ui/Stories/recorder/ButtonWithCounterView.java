@@ -84,8 +84,8 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.liveLocationsChanged;
-        this.subTextAlpha = NotificationCenter.storyQualityUpdate;
+        this.globalAlpha = NotificationCenter.proxyCheckDone;
+        this.subTextAlpha = 200;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);

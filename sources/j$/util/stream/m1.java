@@ -1,25 +1,27 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+
 /* loaded from: classes2.dex */
 final class m1 extends q1 implements b2 {
     private final double[] h;
 
-    m1(j$.util.Q q, b bVar, double[] dArr) {
-        super(dArr.length, q, bVar);
+    m1(Spliterator spliterator, b bVar, double[] dArr) {
+        super(dArr.length, spliterator, bVar);
         this.h = dArr;
     }
 
-    m1(m1 m1Var, j$.util.Q q, long j, long j2) {
-        super(m1Var, q, j, j2, m1Var.h.length);
+    m1(m1 m1Var, Spliterator spliterator, long j, long j2) {
+        super(m1Var, spliterator, j, j2, m1Var.h.length);
         this.h = m1Var.h;
     }
 
     @Override // j$.util.stream.q1
-    final q1 a(j$.util.Q q, long j, long j2) {
-        return new m1(this, q, j, j2);
+    final q1 a(Spliterator spliterator, long j, long j2) {
+        return new m1(this, spliterator, j, j2);
     }
 
-    @Override // j$.util.stream.q1, j$.util.stream.e2, j$.util.function.n
+    @Override // j$.util.stream.q1, j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
         int i = this.f;
         if (i >= this.g) {
@@ -36,9 +38,9 @@ final class m1 extends q1 implements b2 {
         r((Double) obj);
     }
 
-    @Override // j$.util.function.n
-    public final /* synthetic */ j$.util.function.n k(j$.util.function.n nVar) {
-        return j$.com.android.tools.r8.a.b(this, nVar);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.b2

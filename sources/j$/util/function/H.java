@@ -1,33 +1,28 @@
 package j$.util.function;
 
-import java.util.function.IntFunction;
+import java.util.function.IntToDoubleFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class H implements IntFunction {
-    public final /* synthetic */ I a;
+public final /* synthetic */ class H {
+    public final /* synthetic */ IntToDoubleFunction a;
 
-    private /* synthetic */ H(I i) {
-        this.a = i;
+    private /* synthetic */ H(IntToDoubleFunction intToDoubleFunction) {
+        this.a = intToDoubleFunction;
     }
 
-    public static /* synthetic */ IntFunction a(I i) {
-        if (i == null) {
+    public static /* synthetic */ H a(IntToDoubleFunction intToDoubleFunction) {
+        if (intToDoubleFunction == null) {
             return null;
         }
-        return i instanceof G ? ((G) i).a : new H(i);
-    }
-
-    @Override // java.util.function.IntFunction
-    public final /* synthetic */ Object apply(int i) {
-        return this.a.apply(i);
+        return new H(intToDoubleFunction);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        I i = this.a;
+        IntToDoubleFunction intToDoubleFunction = this.a;
         if (obj instanceof H) {
             obj = ((H) obj).a;
         }
-        return i.equals(obj);
+        return intToDoubleFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

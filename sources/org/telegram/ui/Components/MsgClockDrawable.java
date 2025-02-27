@@ -21,8 +21,8 @@ public class MsgClockDrawable extends Drawable {
     public MsgClockDrawable() {
         Paint paint = new Paint(1);
         this.paint = paint;
-        this.alpha = NotificationCenter.liveLocationsChanged;
-        this.colorAlpha = NotificationCenter.liveLocationsChanged;
+        this.alpha = NotificationCenter.proxyCheckDone;
+        this.colorAlpha = NotificationCenter.proxyCheckDone;
         paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
         this.paint.setStrokeWidth(AndroidUtilities.dp(1.0f));

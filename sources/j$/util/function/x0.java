@@ -1,31 +1,44 @@
 package j$.util.function;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x0 implements ToIntFunction {
-    public final /* synthetic */ java.util.function.ToIntFunction a;
+import j$.util.function.Function;
+import j$.util.function.UnaryOperator;
 
-    private /* synthetic */ x0(java.util.function.ToIntFunction toIntFunction) {
-        this.a = toIntFunction;
+/* loaded from: classes2.dex */
+public final /* synthetic */ class x0 implements java.util.function.UnaryOperator {
+    public final /* synthetic */ UnaryOperator a;
+
+    private /* synthetic */ x0(UnaryOperator unaryOperator) {
+        this.a = unaryOperator;
     }
 
-    public static /* synthetic */ ToIntFunction a(java.util.function.ToIntFunction toIntFunction) {
-        if (toIntFunction == null) {
+    public static /* synthetic */ java.util.function.UnaryOperator a(UnaryOperator unaryOperator) {
+        if (unaryOperator == null) {
             return null;
         }
-        return toIntFunction instanceof y0 ? ((y0) toIntFunction).a : new x0(toIntFunction);
+        return unaryOperator instanceof UnaryOperator.VivifiedWrapper ? ((UnaryOperator.VivifiedWrapper) unaryOperator).a : new x0(unaryOperator);
     }
 
-    @Override // j$.util.function.ToIntFunction
-    public final /* synthetic */ int applyAsInt(Object obj) {
-        return this.a.applyAsInt(obj);
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function andThen(java.util.function.Function function) {
+        return x.a(this.a.andThen(Function.VivifiedWrapper.convert(function)));
+    }
+
+    @Override // java.util.function.Function
+    public final /* synthetic */ Object apply(Object obj) {
+        return this.a.apply(obj);
+    }
+
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function compose(java.util.function.Function function) {
+        return x.a(this.a.compose(Function.VivifiedWrapper.convert(function)));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.function.ToIntFunction toIntFunction = this.a;
+        UnaryOperator unaryOperator = this.a;
         if (obj instanceof x0) {
             obj = ((x0) obj).a;
         }
-        return toIntFunction.equals(obj);
+        return unaryOperator.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

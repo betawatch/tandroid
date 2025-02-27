@@ -1,8 +1,36 @@
 package j$.util.function;
 
-/* loaded from: classes2.dex */
-public interface n {
-    void accept(double d);
+import java.util.function.DoubleFunction;
 
-    n k(n nVar);
+/* loaded from: classes2.dex */
+public final /* synthetic */ class n implements p {
+    public final /* synthetic */ DoubleFunction a;
+
+    private /* synthetic */ n(DoubleFunction doubleFunction) {
+        this.a = doubleFunction;
+    }
+
+    public static /* synthetic */ p a(DoubleFunction doubleFunction) {
+        if (doubleFunction == null) {
+            return null;
+        }
+        return doubleFunction instanceof o ? ((o) doubleFunction).a : new n(doubleFunction);
+    }
+
+    @Override // j$.util.function.p
+    public final /* synthetic */ Object apply(double d) {
+        return this.a.apply(d);
+    }
+
+    public final /* synthetic */ boolean equals(Object obj) {
+        DoubleFunction doubleFunction = this.a;
+        if (obj instanceof n) {
+            obj = ((n) obj).a;
+        }
+        return doubleFunction.equals(obj);
+    }
+
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
+    }
 }

@@ -18,7 +18,7 @@ import kotlinx.coroutines.Waiter;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MutexImpl extends SemaphoreImpl implements Mutex {
     private static final AtomicReferenceFieldUpdater owner$FU = AtomicReferenceFieldUpdater.newUpdater(MutexImpl.class, Object.class, "owner");
     private final Function3 onSelectCancellationUnlockConstructor;

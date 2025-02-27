@@ -308,11 +308,11 @@ public class CodeHighlighting {
         }
 
         public int readUint16() {
-            return (this.is.read() & NotificationCenter.liveLocationsChanged) | ((this.is.read() & NotificationCenter.liveLocationsChanged) << 8);
+            return (this.is.read() & NotificationCenter.proxyCheckDone) | ((this.is.read() & NotificationCenter.proxyCheckDone) << 8);
         }
 
         public int readUint8() {
-            return this.is.read() & NotificationCenter.liveLocationsChanged;
+            return this.is.read() & NotificationCenter.proxyCheckDone;
         }
     }
 

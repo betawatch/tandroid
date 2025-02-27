@@ -19,7 +19,7 @@ import kotlinx.coroutines.internal.ResizableAtomicArray;
 import kotlinx.coroutines.internal.Symbol;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CoroutineScheduler implements Executor, Closeable {
     private volatile int _isTerminated;
     private volatile long controlState;

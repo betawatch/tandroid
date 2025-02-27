@@ -1,6 +1,9 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.Spliterators;
 import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
@@ -8,11 +11,11 @@ class I0 implements F0 {
     final Object[] a;
     int b;
 
-    I0(long j, j$.util.function.I i) {
+    I0(long j, IntFunction intFunction) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = (Object[]) i.apply((int) j);
+        this.a = (Object[]) intFunction.apply((int) j);
         this.b = 0;
     }
 
@@ -49,7 +52,7 @@ class I0 implements F0 {
     }
 
     @Override // j$.util.stream.F0
-    public final Object[] s(j$.util.function.I i) {
+    public final Object[] s(IntFunction intFunction) {
         Object[] objArr = this.a;
         if (objArr.length == this.b) {
             return objArr;
@@ -58,13 +61,13 @@ class I0 implements F0 {
     }
 
     @Override // j$.util.stream.F0
-    public final j$.util.Q spliterator() {
-        return j$.util.f0.m(this.a, 0, this.b);
+    public final Spliterator spliterator() {
+        return Spliterators.m(this.a, 0, this.b);
     }
 
     @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, j$.util.function.I i) {
-        return t0.w(this, j, j2, i);
+    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
+        return t0.w(this, j, j2, intFunction);
     }
 
     public String toString() {

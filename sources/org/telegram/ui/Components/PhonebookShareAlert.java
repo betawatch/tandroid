@@ -40,6 +40,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -637,7 +638,7 @@ public class PhonebookShareAlert extends BottomSheet {
                 this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view4) {
-                        PhonebookShareAlert.this.lambda$new$5(resourcesProvider, view4);
+                        PhonebookShareAlert.this.lambda$new$6(resourcesProvider, view4);
                     }
                 });
             }
@@ -836,7 +837,7 @@ public class PhonebookShareAlert extends BottomSheet {
         this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view42) {
-                PhonebookShareAlert.this.lambda$new$5(resourcesProvider, view42);
+                PhonebookShareAlert.this.lambda$new$6(resourcesProvider, view42);
             }
         });
     }
@@ -925,7 +926,7 @@ public class PhonebookShareAlert extends BottomSheet {
                 }
                 if (i4 != 3) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this.parentFragment.getParentActivity());
-                    builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda5
+                    builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda6
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i5) {
                             PhonebookShareAlert.this.lambda$new$1(vcardItem, dialogInterface, i5);
@@ -1010,12 +1011,18 @@ public class PhonebookShareAlert extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$4(boolean z, int i) {
-        this.delegate.didSelectContact(this.currentUser, z, i, 0L, false);
+        this.delegate.didSelectContact(this.currentUser, z, i, 0L, false, 0L);
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(Theme.ResourcesProvider resourcesProvider, View view) {
+    public /* synthetic */ void lambda$new$5(Long l) {
+        this.delegate.didSelectContact(this.currentUser, true, 0, 0L, false, l.longValue());
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$6(Theme.ResourcesProvider resourcesProvider, View view) {
         StringBuilder sb;
         if (this.isImport) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -1404,8 +1411,13 @@ public class PhonebookShareAlert extends BottomSheet {
                 }
             }, resourcesProvider);
         } else {
-            this.delegate.didSelectContact(this.currentUser, true, 0, 0L, false);
-            lambda$new$0();
+            BaseFragment baseFragment2 = this.parentFragment;
+            AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, baseFragment2 instanceof ChatActivity ? ((ChatActivity) baseFragment2).getDialogId() : 0L, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda5
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    PhonebookShareAlert.this.lambda$new$5((Long) obj);
+                }
+            });
         }
     }
 
