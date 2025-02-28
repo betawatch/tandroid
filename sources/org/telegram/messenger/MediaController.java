@@ -76,6 +76,9 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.audioinfo.AudioInfo;
+import org.telegram.messenger.chromecast.ChromecastController;
+import org.telegram.messenger.chromecast.ChromecastMedia;
+import org.telegram.messenger.chromecast.ChromecastMediaVariations;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -89,6 +92,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Adapters.FiltersView;
+import org.telegram.ui.CastSync;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.EmbedBottomSheet;
 import org.telegram.ui.Components.PermissionRequest;
@@ -159,6 +163,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     private int hasAudioFocus;
     private boolean hasRecordAudioFocus;
     private boolean ignoreOnPause;
+    private boolean ignorePlayerUpdate;
     private boolean ignoreProximity;
     private boolean inputFieldHasText;
     private InternalObserver internalObserver;
@@ -794,12 +799,15 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onRenderedFirstFrame() {
-            if (MediaController.this.currentAspectRatioFrameLayout == null || MediaController.this.currentAspectRatioFrameLayout.isDrawingReady()) {
+            if (MediaController.this.currentAspectRatioFrameLayout != null && !MediaController.this.currentAspectRatioFrameLayout.isDrawingReady()) {
+                MediaController.this.isDrawingWasReady = true;
+                MediaController.this.currentAspectRatioFrameLayout.setDrawingReady(true);
+                MediaController.this.currentTextureViewContainer.setTag(1);
+            }
+            if (MediaController.this.videoPlayer == null || !CastSync.isActive()) {
                 return;
             }
-            MediaController.this.isDrawingWasReady = true;
-            MediaController.this.currentAspectRatioFrameLayout.setDrawingReady(true);
-            MediaController.this.currentTextureViewContainer.setTag(1);
+            MediaController.this.videoPlayer.setMute(true);
         }
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -3105,6 +3113,42 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             FileLog.e(e);
             return false;
         }
+    }
+
+    private ChromecastMediaVariations getCurrentChromecastMedia() {
+        MessageObject messageObject = this.playingMessageObject;
+        if (messageObject == null) {
+            return null;
+        }
+        String musicTitle = messageObject.getMusicTitle();
+        String musicAuthor = this.playingMessageObject.getMusicAuthor();
+        TLRPC.Document document = this.playingMessageObject.getDocument();
+        if (this.playingMessageObject.isRoundVideo() || this.playingMessageObject.isVideo() || this.playingMessageObject.isMusic()) {
+            MessageObject messageObject2 = this.playingMessageObject;
+            File file = (!messageObject2.attachPathExists || messageObject2.messageOwner == null) ? null : new File(this.playingMessageObject.messageOwner.attachPath);
+            if (file == null || !file.exists()) {
+                file = FileLoader.getInstance(this.playingMessageObject.currentAccount).getPathToMessage(this.playingMessageObject.messageOwner);
+            }
+            if (file != null && file.exists()) {
+                String mimeType = this.playingMessageObject.getMimeType();
+                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(Uri.parse("file://" + file.getAbsolutePath()), "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).build());
+            }
+        }
+        VideoPlayer videoPlayer = this.videoPlayer;
+        if (videoPlayer != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(document != null ? document.id : this.playingMessageObject.getId());
+            sb.append("");
+            return videoPlayer.getCurrentChromecastMedia(sb.toString(), musicTitle, musicAuthor);
+        }
+        VideoPlayer videoPlayer2 = this.audioPlayer;
+        if (videoPlayer2 == null) {
+            return null;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(document != null ? document.id : this.playingMessageObject.getId());
+        sb2.append("");
+        return videoPlayer2.getCurrentChromecastMedia(sb2.toString(), musicTitle, musicAuthor);
     }
 
     public static String getFileName(Uri uri) {
@@ -6101,7 +6145,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         startRecording(currentAccount, dialogId, null, threadMessage, null, classGuid, false, chatActivity != null ? chatActivity.quickReplyShortcut : null, chatActivity != null ? chatActivity.getQuickReplyId() : 0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0067, code lost:
     
         if (r1 != null) goto L28;
      */
@@ -6135,9 +6179,17 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 checkAudioFocus(messageObject);
                 this.isPaused = false;
                 NotificationCenter.getInstance(this.playingMessageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, Integer.valueOf(this.playingMessageObject.getId()));
+                try {
+                    CastSync.check(1);
+                    if (!this.ignorePlayerUpdate) {
+                        CastSync.setPlaying(true);
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
                 return true;
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e2) {
+                FileLog.e(e2);
             }
         }
         return false;
@@ -6369,15 +6421,19 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     /* JADX INFO: Access modifiers changed from: private */
     public void setPlayerVolume() {
         try {
-            float f = this.isSilent ? 0.0f : this.audioFocus != 1 ? VOLUME_NORMAL : VOLUME_DUCK;
+            float f = 0.0f;
+            float f2 = this.isSilent ? 0.0f : this.audioFocus != 1 ? VOLUME_NORMAL : VOLUME_DUCK;
             VideoPlayer videoPlayer = this.audioPlayer;
-            if (videoPlayer != null) {
-                f *= this.audioVolume;
-            } else {
+            if (videoPlayer == null) {
                 videoPlayer = this.videoPlayer;
                 if (videoPlayer == null) {
                     return;
                 }
+                if (!CastSync.isActive()) {
+                    f = f2;
+                }
+            } else if (!CastSync.isActive()) {
+                f = this.audioVolume * f2;
             }
             videoPlayer.setVolume(f);
         } catch (Exception e) {
@@ -6740,11 +6796,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         cleanupPlayer(z, z2, false, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0169, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x016f, code lost:
     
-        if (r10.voiceMessagesPlaylist.isEmpty() != false) goto L57;
+        if (r10.voiceMessagesPlaylist.isEmpty() != false) goto L59;
      */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01da  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6758,7 +6814,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 valueAnimator.removeAllUpdateListeners();
                 this.audioVolumeAnimator.cancel();
             }
-            if (!this.audioPlayer.isPlaying() || (messageObject = this.playingMessageObject) == null || messageObject.isVoice()) {
+            if (CastSync.isActive() || !this.audioPlayer.isPlaying() || (messageObject = this.playingMessageObject) == null || messageObject.isVoice()) {
                 try {
                     this.audioPlayer.releasePlayer(true);
                 } catch (Exception e) {
@@ -6882,12 +6938,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         } else {
             z5 = false;
         }
-        if (z5 || !z3 || SharedConfig.enabledRaiseTo(true)) {
-            return;
+        if (!z5 && z3 && !SharedConfig.enabledRaiseTo(true)) {
+            ChatActivity chatActivity = this.raiseChat;
+            stopRaiseToEarSensors(chatActivity, false, false);
+            this.raiseChat = chatActivity;
         }
-        ChatActivity chatActivity = this.raiseChat;
-        stopRaiseToEarSensors(chatActivity, false, false);
-        this.raiseChat = chatActivity;
+        if (z2) {
+            CastSync.stop();
+        }
     }
 
     public boolean currentPlaylistIsGlobalSearch() {
@@ -7079,6 +7137,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return this.currentForegroundConvertingVideo;
     }
 
+    public long getCurrentPosition() {
+        MessageObject messageObject = this.playingMessageObject;
+        if (messageObject == null) {
+            return -1L;
+        }
+        return getProgressMs(messageObject);
+    }
+
     public long getDuration() {
         VideoPlayer videoPlayer = this.audioPlayer;
         if (videoPlayer == null) {
@@ -7105,6 +7171,24 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
     public ArrayList<MessageObject> getPlaylist() {
         return this.playlist;
+    }
+
+    public long getProgressMs(MessageObject messageObject) {
+        MessageObject messageObject2 = this.playingMessageObject;
+        if ((this.audioPlayer != null || this.videoPlayer != null) && messageObject != null && messageObject2 != null && isSamePlayingMessage(messageObject)) {
+            try {
+                VideoPlayer videoPlayer = this.audioPlayer;
+                if (videoPlayer != null) {
+                    return videoPlayer.getCurrentPosition();
+                }
+                VideoPlayer videoPlayer2 = this.videoPlayer;
+                if (videoPlayer2 != null) {
+                    return videoPlayer2.getCurrentPosition();
+                }
+            } catch (Exception unused) {
+            }
+        }
+        return -1L;
     }
 
     public VideoPlayer getVideoPlayer() {
@@ -7599,7 +7683,20 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(9:16|(3:20|21|(8:25|(1:27)|28|29|30|31|(1:33)|35))|39|40|29|30|31|(0)|35) */
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00bf, code lost:
+    
+        r8 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c0, code lost:
+    
+        org.telegram.messenger.FileLog.e(r8);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00b0 A[Catch: Exception -> 0x00bf, TRY_LEAVE, TryCatch #0 {Exception -> 0x00bf, blocks: (B:31:0x00a9, B:33:0x00b0), top: B:30:0x00a9 }] */
     /* renamed from: pauseMessage, reason: merged with bridge method [inline-methods] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public boolean lambda$startAudioAgain$7(MessageObject messageObject) {
         VideoPlayer videoPlayer;
         if ((this.audioPlayer != null || this.videoPlayer != null) && messageObject != null && this.playingMessageObject != null && isSamePlayingMessage(messageObject)) {
@@ -7612,9 +7709,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     }
                     this.isPaused = true;
                     NotificationCenter.getInstance(this.playingMessageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, Integer.valueOf(this.playingMessageObject.getId()));
+                    CastSync.check(1);
+                    if (!this.ignorePlayerUpdate) {
+                    }
                     return true;
                 }
-                if (!this.playingMessageObject.isVoice()) {
+                if (!CastSync.isActive() && !this.playingMessageObject.isVoice()) {
                     double duration = this.playingMessageObject.getDuration();
                     double d = VOLUME_NORMAL - this.playingMessageObject.audioProgress;
                     Double.isNaN(d);
@@ -7639,6 +7739,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         this.audioVolumeAnimator.start();
                         this.isPaused = true;
                         NotificationCenter.getInstance(this.playingMessageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, Integer.valueOf(this.playingMessageObject.getId()));
+                        CastSync.check(1);
+                        if (!this.ignorePlayerUpdate) {
+                            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                            CastSync.setPlaying(false);
+                        }
                         return true;
                     }
                 }
@@ -7646,6 +7751,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 videoPlayer.pause();
                 this.isPaused = true;
                 NotificationCenter.getInstance(this.playingMessageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, Integer.valueOf(this.playingMessageObject.getId()));
+                CastSync.check(1);
+                if (!this.ignorePlayerUpdate) {
+                }
                 return true;
             } catch (Exception e) {
                 FileLog.e(e);
@@ -7671,12 +7779,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return playMessage(messageObject, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:225:0x04d7  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x059e  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x05d6  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x04f0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x04ce  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x04b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x04d7  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x05d6  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x04f0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x04ce  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x04b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r10v4 */
     /* JADX WARN: Type inference failed for: r10v5, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r10v6 */
@@ -7954,24 +8062,22 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             MessageObject messageObject4 = messageObject;
                             messageObject4.audioProgress = MediaController.VOLUME_NORMAL;
                             NotificationCenter.getInstance(messageObject4.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingProgressDidChanged, Integer.valueOf(messageObject.getId()), 0);
-                            if (!MediaController.this.playlist.isEmpty() && (MediaController.this.playlist.size() > 1 || !messageObject.isVoice())) {
-                                MediaController.this.playNextMessageWithoutOrder(true);
-                                return;
-                            } else {
+                            if (MediaController.this.playlist.isEmpty() || (MediaController.this.playlist.size() <= 1 && messageObject.isVoice())) {
                                 MediaController mediaController = MediaController.this;
                                 mediaController.cleanupPlayer(true, mediaController.hasNoNextVoiceOrRoundVideoMessage(), messageObject.isVoice(), false);
-                                return;
+                            } else {
+                                MediaController.this.playNextMessageWithoutOrder(true);
                             }
-                        }
-                        if (MediaController.this.audioPlayer == null || MediaController.this.seekToProgressPending == 0.0f) {
-                            return;
-                        }
-                        if (i4 == 3 || i4 == 1) {
+                        } else if (MediaController.this.audioPlayer != null && MediaController.this.seekToProgressPending != 0.0f && (i4 == 3 || i4 == 1)) {
                             long duration = (int) (MediaController.this.audioPlayer.getDuration() * MediaController.this.seekToProgressPending);
                             MediaController.this.audioPlayer.seekTo(duration);
                             MediaController.this.lastProgress = duration;
                             MediaController.this.seekToProgressPending = 0.0f;
                         }
+                        if (MediaController.this.audioPlayer == null || !CastSync.isActive()) {
+                            return;
+                        }
+                        MediaController.this.audioPlayer.setMute(true);
                     }
 
                     @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -8173,7 +8279,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         if (duration2 == -9223372036854775807L) {
                             duration2 = ((long) this.playingMessageObject.getDuration()) * 1000;
                         }
-                        this.audioPlayer.seekTo((int) (duration2 * this.playingMessageObject.audioProgress));
+                        long j = (int) (duration2 * this.playingMessageObject.audioProgress);
+                        this.audioPlayer.seekTo(j);
+                        if (!this.ignorePlayerUpdate) {
+                            CastSync.seekTo(j);
+                        }
                     }
                 } catch (Exception e5) {
                     this.playingMessageObject.resetPlayingProgress();
@@ -8187,17 +8297,26 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 }
             }
         }
-        if (!canStartMusicPlayerService()) {
+        if (canStartMusicPlayerService()) {
+            try {
+                ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) MusicPlayerService.class));
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+            }
+        } else {
             ApplicationLoader.applicationContext.stopService(new Intent(ApplicationLoader.applicationContext, (Class<?>) MusicPlayerService.class));
-            return true;
         }
         try {
-            ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) MusicPlayerService.class));
-            return true;
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+            CastSync.check(1);
+        } catch (Exception e6) {
+            FileLog.e(e6);
+        }
+        if (this.ignorePlayerUpdate) {
             return true;
         }
+        ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+        CastSync.setPlaying(true);
+        return true;
     }
 
     public void playMessageAtIndex(int i) {
@@ -8321,11 +8440,17 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         long j = (int) (duration * f);
                         this.audioPlayer.seekTo(j);
                         this.lastProgress = j;
+                        if (!this.ignorePlayerUpdate) {
+                            CastSync.seekTo(j);
+                        }
                     }
                 } else {
                     VideoPlayer videoPlayer2 = this.videoPlayer;
                     if (videoPlayer2 != null) {
                         videoPlayer2.seekTo((long) (videoPlayer2.getDuration() * f));
+                        if (!this.ignorePlayerUpdate) {
+                            CastSync.seekTo((long) (this.videoPlayer.getDuration() * f));
+                        }
                     }
                 }
                 NotificationCenter.getInstance(messageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingDidSeek, Integer.valueOf(messageObject2.getId()), Float.valueOf(f));
@@ -8333,6 +8458,53 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             } catch (Exception e) {
                 FileLog.e(e);
             }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0050, code lost:
+    
+        if (r8.ignorePlayerUpdate == false) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean seekToProgressMs(MessageObject messageObject, long j) {
+        long j2;
+        MessageObject messageObject2 = this.playingMessageObject;
+        if ((this.audioPlayer != null || this.videoPlayer != null) && messageObject != null && messageObject2 != null && isSamePlayingMessage(messageObject)) {
+            try {
+                VideoPlayer videoPlayer = this.audioPlayer;
+                if (videoPlayer == null) {
+                    VideoPlayer videoPlayer2 = this.videoPlayer;
+                    if (videoPlayer2 != null) {
+                        j2 = videoPlayer2.getDuration();
+                        this.videoPlayer.seekTo(j);
+                    } else {
+                        j2 = 1;
+                    }
+                    if (j2 != 0) {
+                    }
+                    return true;
+                }
+                j2 = videoPlayer.getDuration();
+                if (j2 != -9223372036854775807L) {
+                    messageObject2.audioProgress = Utilities.clamp01(j / j2);
+                }
+                this.audioPlayer.seekTo(j);
+                this.lastProgress = j;
+                if (!this.ignorePlayerUpdate) {
+                    CastSync.seekTo(j);
+                }
+                if (j2 != 0) {
+                    NotificationCenter.getInstance(messageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingDidSeek, Integer.valueOf(messageObject2.getId()), Float.valueOf(Utilities.clamp01(j / j2)));
+                }
+                return true;
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            FileLog.e(e);
         }
         return false;
     }
@@ -8472,6 +8644,10 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         MessagesController.getGlobalMainSettings().edit().putFloat(z ? "musicPlaybackSpeed" : "playbackSpeed", f).putFloat(z ? "fastMusicPlaybackSpeed" : "fastPlaybackSpeed", z ? this.fastMusicPlaybackSpeed : this.fastPlaybackSpeed).commit();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingSpeedChanged, new Object[0]);
+        if (this.ignorePlayerUpdate) {
+            return;
+        }
+        CastSync.setSpeed(f);
     }
 
     public boolean setPlaylist(ArrayList<MessageObject> arrayList, MessageObject messageObject, long j) {
@@ -8771,6 +8947,28 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 MediaController.this.lambda$stopRecording$42(i, z, i2, z2, j);
             }
         });
+    }
+
+    public void syncCastedPlayer() {
+        if (this.playingMessageObject == null) {
+            return;
+        }
+        this.ignorePlayerUpdate = true;
+        if (CastSync.isActive() && !CastSync.isUpdatePending()) {
+            long position = CastSync.getPosition();
+            long progressMs = getProgressMs(this.playingMessageObject);
+            if (progressMs >= 0 && position >= 0 && Math.abs(progressMs - position) > 1000) {
+                seekToProgressMs(this.playingMessageObject, position);
+            }
+            if (CastSync.isPlaying()) {
+                playMessage(this.playingMessageObject);
+            } else {
+                lambda$startAudioAgain$7(this.playingMessageObject);
+            }
+            setPlaybackSpeed(true, CastSync.getSpeed());
+        }
+        setPlayerVolume();
+        this.ignorePlayerUpdate = false;
     }
 
     public void toggleRecordingPause(final boolean z) {

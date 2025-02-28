@@ -49,6 +49,19 @@ public abstract class Session {
         return false;
     }
 
+    public boolean isConnecting() {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        zzaw zzawVar = this.zzb;
+        if (zzawVar != null) {
+            try {
+                return zzawVar.zzq();
+            } catch (RemoteException e) {
+                zza.d(e, "Unable to call %s on %s.", "isConnecting", zzaw.class.getSimpleName());
+            }
+        }
+        return false;
+    }
+
     public boolean isResuming() {
         Preconditions.checkMainThread("Must be called from the main thread.");
         zzaw zzawVar = this.zzb;

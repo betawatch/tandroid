@@ -135,7 +135,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -8667,7 +8666,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         updateQualityItems();
         this.videoItem.toggleSubMenu();
         try {
-            CastSync.check();
+            CastSync.check(0);
             ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
         } catch (Exception e) {
             FileLog.e(e);
@@ -10609,10 +10608,6 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.videoPlayerSeekbar.setProgress(0.0f);
             this.videoTimelineView.setProgress(0.0f);
             this.videoPlayerSeekbar.setBufferedProgress(0.0f);
-            ActionBarMenuItem actionBarMenuItem = this.videoItem;
-            if (actionBarMenuItem != null) {
-                actionBarMenuItem.setSubItemShown(24, this.photoViewerWebView == null);
-            }
         }
     }
 
@@ -15745,10 +15740,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX WARN: Removed duplicated region for block: B:198:0x0983  */
     /* JADX WARN: Removed duplicated region for block: B:205:0x0997  */
     /* JADX WARN: Removed duplicated region for block: B:268:0x0aef  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0bb0  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x0bb5  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0baf  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x0bb4  */
     /* JADX WARN: Removed duplicated region for block: B:299:0x0b27  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0b44  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0b43  */
     /* JADX WARN: Type inference failed for: r11v2 */
     /* JADX WARN: Type inference failed for: r11v26 */
     /* JADX WARN: Type inference failed for: r11v3, types: [android.animation.AnimatorSet, java.lang.String] */
@@ -15777,12 +15772,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         MessageObject messageObject2;
         TLRPC.BotInlineResult botInlineResult;
         PageBlocksAdapter pageBlocksAdapter;
-        boolean z6;
         ChatActivity chatActivity2;
         MessageObject messageObject3;
         PhotoViewerProvider photoViewerProvider2;
         ChatActivity chatActivity3;
-        boolean z7;
+        boolean z6;
         ActionBarMenuSubItem actionBarMenuSubItem2;
         String string2;
         TLRPC.MessageAction messageAction;
@@ -16002,7 +15996,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.currentVideoSpeed = f;
         }
         setMenuItemIcon(false, true);
-        boolean z8 = messageObject != null && (MessagesController.getInstance(this.currentAccount).isChatNoForwards(messageObject.getChatId()) || (((message = messageObject.messageOwner) != null && message.noforwards) || messageObject.hasRevealedExtendedMedia()));
+        boolean z7 = messageObject != null && (MessagesController.getInstance(this.currentAccount).isChatNoForwards(messageObject.getChatId()) || (((message = messageObject.messageOwner) != null && message.noforwards) || messageObject.hasRevealedExtendedMedia()));
         try {
             if (messageObject != null && arrayList == null) {
                 TLRPC.Message message2 = messageObject.messageOwner;
@@ -16071,7 +16065,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 ChatActivity chatActivity4 = this.parentChatActivity;
                                 if (chatActivity4 != null) {
                                     i4 = (chatActivity4.isThreadChat() || this.parentChatActivity.getChatMode() == 3) ? 5 : 5;
-                                    setItemVisible(this.sendItem, !z8, false);
+                                    setItemVisible(this.sendItem, !z7, false);
                                 }
                                 this.menuItem.showSubItem(i4);
                                 long dialogId = messageObject.getDialogId();
@@ -16081,7 +16075,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     this.menuItem.hideSubItem(21);
                                 }
                                 this.menuItem.showSubItem(3);
-                                setItemVisible(this.sendItem, !z8, false);
+                                setItemVisible(this.sendItem, !z7, false);
                             } else if (this.isEmbedVideo) {
                             }
                             i8 = 0;
@@ -16125,7 +16119,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             } else {
                                 this.menuItem.hideSubItem(21);
                             }
-                            if (messageObject5.canForwardMessage() && !z8) {
+                            if (messageObject5.canForwardMessage() && !z7) {
                                 setItemVisible(this.sendItem, true, false);
                             }
                             if (messageObject5.canPreviewDocument()) {
@@ -16296,21 +16290,21 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     if (this.currentIndex < 0) {
                                         this.currentIndex = this.imagesArr.size();
                                         this.imagesArr.add(this.currentMessageObject);
-                                        z7 = false;
+                                        z6 = false;
                                         this.imagesByIds[0].put(this.currentMessageObject.getId(), this.currentMessageObject);
                                     } else {
-                                        z7 = false;
+                                        z6 = false;
                                     }
                                     setImages();
                                     PhotoCountView photoCountView2 = this.countView;
                                     if (photoCountView2 != null) {
-                                        photoCountView2.updateShow(true, z7);
-                                        this.countView.set(this.currentIndex + 1, this.imagesArr.size(), z7);
+                                        photoCountView2.updateShow(true, z6);
+                                        this.countView.set(this.currentIndex + 1, this.imagesArr.size(), z6);
                                     }
                                 } else {
-                                    z7 = false;
+                                    z6 = false;
                                 }
-                                this.isFirstLoading = z7;
+                                this.isFirstLoading = z6;
                             } else if (MediaDataController.getMediaType(messageObject3.messageOwner) == this.sharedMediaType && ((photoViewerProvider2 = this.placeProvider) == null || !photoViewerProvider2.forceAllInGroup())) {
                                 MediaDataController.getInstance(this.currentAccount).getMediaCount(this.currentDialogId, this.topicId, this.sharedMediaType, this.classGuid, true);
                                 if (this.mergeDialogId != 0) {
@@ -16325,28 +16319,28 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     Object obj2 = this.imagesArrLocals.get(i);
                                     ChatActivity chatActivity5 = this.parentChatActivity;
                                     TLRPC.User currentUser = chatActivity5 != null ? chatActivity5.getCurrentUser() : null;
-                                    boolean z9 = (this.isDocumentsPicker || (chatActivity2 = this.parentChatActivity) == null || chatActivity2.isSecretChat() || this.parentChatActivity.isInScheduleMode() || currentUser == null || currentUser.bot || UserObject.isUserSelf(currentUser) || this.parentChatActivity.isEditingMessageMedia()) ? false : true;
+                                    boolean z8 = (this.isDocumentsPicker || (chatActivity2 = this.parentChatActivity) == null || chatActivity2.isSecretChat() || this.parentChatActivity.isInScheduleMode() || currentUser == null || currentUser.bot || UserObject.isUserSelf(currentUser) || this.parentChatActivity.isEditingMessageMedia()) ? false : true;
                                     PhotoViewerProvider photoViewerProvider4 = this.placeProvider;
                                     if (photoViewerProvider4 != null && photoViewerProvider4.getEditingMessageObject() != null) {
-                                        z9 = false;
+                                        z8 = false;
                                     }
                                     if (!(obj2 instanceof TLRPC.BotInlineResult)) {
-                                        if (!z9 || !(obj2 instanceof MediaController.SearchImage)) {
-                                            z6 = z9;
-                                        } else if (((MediaController.SearchImage) obj2).type == 0) {
-                                            z6 = true;
+                                        if (z8 && (obj2 instanceof MediaController.SearchImage)) {
+                                            if (((MediaController.SearchImage) obj2).type == 0) {
+                                                z8 = true;
+                                            }
                                         }
-                                        this.captionEdit.setTimerVisible(z6, true);
-                                        this.topCaptionEdit.setTimerVisible(z6, true);
+                                        this.captionEdit.setTimerVisible(z8, true);
+                                        this.topCaptionEdit.setTimerVisible(z8, true);
                                     }
-                                    z6 = false;
-                                    this.captionEdit.setTimerVisible(z6, true);
-                                    this.topCaptionEdit.setTimerVisible(z6, true);
+                                    z8 = false;
+                                    this.captionEdit.setTimerVisible(z8, true);
+                                    this.topCaptionEdit.setTimerVisible(z8, true);
                                 }
                                 checkFullscreenButton();
                                 VideoPlayer videoPlayer = this.videoPlayer;
                                 this.lastQualityIndexSelected = videoPlayer == null ? videoPlayer.getCurrentQualityIndex() : -1;
-                                CastSync.check();
+                                CastSync.check(0);
                                 ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
                                 return;
                             }
@@ -16356,7 +16350,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         checkFullscreenButton();
                         VideoPlayer videoPlayer2 = this.videoPlayer;
                         this.lastQualityIndexSelected = videoPlayer2 == null ? videoPlayer2.getCurrentQualityIndex() : -1;
-                        CastSync.check();
+                        CastSync.check(0);
                         ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
                         return;
                     }
@@ -16383,7 +16377,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     checkFullscreenButton();
                     VideoPlayer videoPlayer22 = this.videoPlayer;
                     this.lastQualityIndexSelected = videoPlayer22 == null ? videoPlayer22.getCurrentQualityIndex() : -1;
-                    CastSync.check();
+                    CastSync.check(0);
                     ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
                     return;
                 }
@@ -16429,7 +16423,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     this.containerView.setTag(null);
                 }
             }
-            CastSync.check();
+            CastSync.check(0);
             ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
             return;
         } catch (Exception e) {
@@ -21753,7 +21747,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
         checkFullscreenButton();
         try {
-            CastSync.check();
+            CastSync.check(0);
             ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
         } catch (Exception e) {
             FileLog.e(e);
@@ -23130,8 +23124,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x03c2  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x03da  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x03c2  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x03da  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -23400,7 +23394,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
         if (this.lastQualityIndexSelected != i) {
             try {
-                CastSync.check();
+                CastSync.check(0);
                 ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
             } catch (Exception e) {
                 FileLog.e(e);
@@ -23753,19 +23747,19 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:259:0x06d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:257:0x06c8, code lost:
     
-        if (r24[r12] != false) goto L285;
+        if (r24[r12] != false) goto L283;
      */
     /* JADX WARN: Removed duplicated region for block: B:104:0x01da  */
     /* JADX WARN: Removed duplicated region for block: B:107:0x01e7  */
     /* JADX WARN: Removed duplicated region for block: B:128:0x0272  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x0278 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:137:0x02af  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x02e2  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x02eb  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0307  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x02d9  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x01e9  */
     /* JADX WARN: Type inference failed for: r11v0 */
     /* JADX WARN: Type inference failed for: r11v1, types: [android.view.VelocityTracker, org.telegram.ui.ChatActivity, org.telegram.ui.Components.PhotoViewerWebView] */
     /* JADX WARN: Type inference failed for: r11v41 */
@@ -24027,10 +24021,6 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         photoViewerWebView.release();
                         this.containerView.removeView(this.photoViewerWebView);
                         this.photoViewerWebView = r11;
-                        ActionBarMenuItem actionBarMenuItem = this.videoItem;
-                        if (actionBarMenuItem != null) {
-                            actionBarMenuItem.setSubItemShown(24, true);
-                        }
                     }
                     chatActivity = this.parentChatActivity;
                     if (chatActivity != null && chatActivity.getFragmentView() != null) {
@@ -26468,6 +26458,14 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         return this.currentIndex;
     }
 
+    public long getCurrentPosition() {
+        VideoPlayer videoPlayer = this.videoPlayer;
+        if (videoPlayer == null) {
+            return -1L;
+        }
+        return videoPlayer.getCurrentPosition();
+    }
+
     public float getCurrentVideoSpeed() {
         return this.currentVideoSpeed;
     }
@@ -27816,7 +27814,6 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             addSubItem2.setEnabledByColor(false, -1, -9194260);
             this.castItem.setSelectorColor(268435455);
             this.castItem.addView(this.castItemButton, 0, LayoutHelper.createFrame(-1, -1.0f));
-            this.videoItem.setSubItemShown(24, this.photoViewerWebView == null);
         }
         this.videoItem.redrawPopup(-115203550);
         this.videoItem.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda82
@@ -30334,22 +30331,17 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (videoPlayer != null) {
                 videoPlayer.setMute(CastSync.isActive() || this.muteVideo);
             }
-            if (this.videoPlayer != null && CastSync.isActive()) {
+            if (this.videoPlayer != null && CastSync.isActive() && !CastSync.isUpdatePending()) {
                 long position = CastSync.getPosition();
-                AtomicInteger atomicInteger = CastSync.pendingSeek;
-                if ((atomicInteger == null || atomicInteger.get() == 0) && position >= 0 && Math.abs(this.videoPlayer.getCurrentPosition() - position) > 1000) {
+                if (position >= 0 && Math.abs(this.videoPlayer.getCurrentPosition() - position) > 1000) {
                     this.videoPlayer.seekTo(position);
                 }
-                AtomicInteger atomicInteger2 = CastSync.pendingPlaying;
-                if (atomicInteger2 == null || atomicInteger2.get() == 0) {
-                    if (CastSync.isPlaying()) {
-                        this.videoPlayer.play();
-                    } else {
-                        this.videoPlayer.pause();
-                    }
+                if (CastSync.isPlaying()) {
+                    this.videoPlayer.play();
+                } else {
+                    this.videoPlayer.pause();
                 }
-                AtomicInteger atomicInteger3 = CastSync.pendingVolume;
-                if ((atomicInteger3 == null || atomicInteger3.get() == 0) && this.activityContext != null && Math.abs(CastSync.getDeviceVolume() - CastSync.getVolume()) > 0.05f) {
+                if (this.activityContext != null && Math.abs(CastSync.getDeviceVolume() - CastSync.getVolume()) > 0.05f) {
                     AudioManager audioManager = (AudioManager) this.activityContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
                     int streamMaxVolume = audioManager.getStreamMaxVolume(3);
                     int streamMinVolume = (Build.VERSION.SDK_INT >= 28 ? audioManager.getStreamMinVolume(3) : 0) + ((int) ((streamMaxVolume - r5) * CastSync.getVolume()));
@@ -30357,8 +30349,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         audioManager.setStreamVolume(3, streamMinVolume, 1);
                     }
                 }
+                chooseSpeed(CastSync.getSpeed(), true, false);
             }
-            chooseSpeed(CastSync.getSpeed(), true, false);
             this.ignorePlayerUpdate = false;
         }
     }

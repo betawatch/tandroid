@@ -14,7 +14,6 @@ import com.google.android.gms.cast.MediaSeekOptions;
 import com.google.android.gms.cast.MediaStatus;
 import com.google.android.gms.cast.SessionState;
 import com.google.android.gms.cast.internal.Logger;
-import com.google.android.gms.cast.internal.zzao;
 import com.google.android.gms.cast.internal.zzaq;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Result;
@@ -349,6 +348,16 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         return zzamVar;
     }
 
+    public PendingResult queueSetRepeatMode(int i, JSONObject jSONObject) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzao zzaoVar = new zzao(this, i, jSONObject);
+        zzz(zzaoVar);
+        return zzaoVar;
+    }
+
     public void registerCallback(Callback callback) {
         Preconditions.checkMainThread("Must be called from the main thread.");
         if (callback != null) {
@@ -475,7 +484,7 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
     public final Task zzk(JSONObject jSONObject) {
         Preconditions.checkMainThread("Must be called from the main thread.");
         if (!zzy()) {
-            return Tasks.forException(new zzao());
+            return Tasks.forException(new com.google.android.gms.cast.internal.zzao());
         }
         this.zzh = new TaskCompletionSource();
         zza.d("create SessionState with cached mediaInfo and mediaStatus", new Object[0]);
@@ -499,7 +508,7 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         if (sessionState != null) {
             taskCompletionSource.setResult(sessionState);
         } else {
-            taskCompletionSource.setException(new zzao());
+            taskCompletionSource.setException(new com.google.android.gms.cast.internal.zzao());
         }
         return this.zzh.getTask();
     }

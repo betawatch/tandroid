@@ -74,6 +74,14 @@ public final class zzau extends zza implements zzaw {
     }
 
     @Override // com.google.android.gms.cast.framework.zzaw
+    public final boolean zzq() {
+        Parcel zzb = zzb(6, zza());
+        boolean zzf = zzc.zzf(zzb);
+        zzb.recycle();
+        return zzf;
+    }
+
+    @Override // com.google.android.gms.cast.framework.zzaw
     public final boolean zzt() {
         Parcel zzb = zzb(9, zza());
         boolean zzf = zzc.zzf(zzb);

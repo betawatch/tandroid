@@ -44438,7 +44438,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             canvas.save();
             canvas.translate((getParentWidth() - this.starsPriceText.getWidth()) / 2.0f, (-this.starsPriceTopPadding) + AndroidUtilities.dp(4.5f) + AndroidUtilities.dp(3.33f));
             applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, getX(), (this.viewTop - this.starsPriceTopPadding) + AndroidUtilities.dp(4.5f) + AndroidUtilities.dp(3.33f));
-            Paint themedPaint = getThemedPaint("paintChatActionBackgroundSelected");
+            Paint themedPaint = getThemedPaint("paintChatActionBackground");
             int alpha = themedPaint.getAlpha();
             themedPaint.setPathEffect(this.starsPriceTextPathEffect);
             themedPaint.setAlpha((int) (alpha * getAlpha()));

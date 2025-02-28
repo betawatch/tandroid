@@ -21,5 +21,7 @@ public interface zzaw extends IInterface {
 
     boolean zzp();
 
+    boolean zzq();
+
     boolean zzt();
 }

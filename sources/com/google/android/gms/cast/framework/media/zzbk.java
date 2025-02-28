@@ -2,7 +2,6 @@ package com.google.android.gms.cast.framework.media;
 
 import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.cast.framework.media.RemoteMediaClient;
-import com.google.android.gms.cast.internal.zzao;
 import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
@@ -58,7 +57,7 @@ abstract class zzbk extends BasePendingResult {
             synchronized (obj) {
                 zza();
             }
-        } catch (zzao unused) {
+        } catch (com.google.android.gms.cast.internal.zzao unused) {
             setResult(new zzbj(this, new Status(2100)));
         }
     }
