@@ -43,6 +43,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -2706,7 +2707,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             sb.append(LocaleController.formatNumber(Math.abs(j2), c));
             spannableStringBuilder.append((CharSequence) sb.toString());
             if (floatFormat == null) {
-                floatFormat = new DecimalFormat("0.################");
+                floatFormat = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
             }
             DecimalFormat decimalFormat = floatFormat;
             int i2 = starsAmount.nanos;
@@ -2761,7 +2762,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             sb2.append(LocaleController.formatNumber(Math.abs(j2), c));
             spannableStringBuilder.append((CharSequence) sb2.toString());
             if (floatFormat == null) {
-                floatFormat = new DecimalFormat("0.################");
+                floatFormat = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
             }
             DecimalFormat decimalFormat = floatFormat;
             int i2 = starsAmount.nanos;
@@ -2800,7 +2801,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             sb.append(LocaleController.formatNumber(Math.abs(j2), c));
             spannableStringBuilder.append((CharSequence) sb.toString());
             if (floatFormat == null) {
-                floatFormat = new DecimalFormat("0.################");
+                floatFormat = new DecimalFormat("0.################", new DecimalFormatSymbols(Locale.US));
             }
             DecimalFormat decimalFormat = floatFormat;
             int i2 = starsAmount.nanos;

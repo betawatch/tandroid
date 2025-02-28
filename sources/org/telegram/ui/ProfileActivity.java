@@ -3413,6 +3413,52 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
         }
 
+        class 8 extends SettingsSuggestionCell {
+            8(Context context, Theme.ResourcesProvider resourcesProvider) {
+                super(context, resourcesProvider);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onYesClick$0(int i) {
+                NotificationCenter notificationCenter = ProfileActivity.this.getNotificationCenter();
+                ProfileActivity profileActivity = ProfileActivity.this;
+                int i2 = NotificationCenter.newSuggestionsAvailable;
+                notificationCenter.removeObserver(profileActivity, i2);
+                if (i == 2) {
+                    ProfileActivity.this.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+                    Browser.openUrl(getContext(), ProfileActivity.this.getMessagesController().premiumManageSubscriptionUrl);
+                } else {
+                    ProfileActivity.this.getMessagesController().removeSuggestion(0L, i == 0 ? "VALIDATE_PHONE_NUMBER" : "VALIDATE_PASSWORD");
+                }
+                ProfileActivity.this.getNotificationCenter().addObserver(ProfileActivity.this, i2);
+                ProfileActivity.this.updateListAnimated(false);
+            }
+
+            @Override // org.telegram.ui.Cells.SettingsSuggestionCell
+            protected void onNoClick(int i) {
+                ProfileActivity profileActivity;
+                BaseFragment twoStepVerificationSetupActivity;
+                if (i == 0) {
+                    profileActivity = ProfileActivity.this;
+                    twoStepVerificationSetupActivity = new ActionIntroActivity(3);
+                } else {
+                    profileActivity = ProfileActivity.this;
+                    twoStepVerificationSetupActivity = new TwoStepVerificationSetupActivity(8, null);
+                }
+                profileActivity.presentFragment(twoStepVerificationSetupActivity);
+            }
+
+            @Override // org.telegram.ui.Cells.SettingsSuggestionCell
+            protected void onYesClick(final int i) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$8$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ProfileActivity.ListAdapter.8.this.lambda$onYesClick$0(i);
+                    }
+                });
+            }
+        }
+
         public ListAdapter(Context context) {
             this.mContext = context;
         }
@@ -4858,38 +4904,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     view2 = ProfileActivity.this.sharedMediaLayout;
                     break;
                 case 15:
-                    view2 = new SettingsSuggestionCell(this.mContext, ProfileActivity.this.resourcesProvider) { // from class: org.telegram.ui.ProfileActivity.ListAdapter.8
-                        @Override // org.telegram.ui.Cells.SettingsSuggestionCell
-                        protected void onNoClick(int i5) {
-                            ProfileActivity profileActivity3;
-                            BaseFragment twoStepVerificationSetupActivity;
-                            if (i5 == 0) {
-                                profileActivity3 = ProfileActivity.this;
-                                twoStepVerificationSetupActivity = new ActionIntroActivity(3);
-                            } else {
-                                profileActivity3 = ProfileActivity.this;
-                                twoStepVerificationSetupActivity = new TwoStepVerificationSetupActivity(8, null);
-                            }
-                            profileActivity3.presentFragment(twoStepVerificationSetupActivity);
-                        }
-
-                        @Override // org.telegram.ui.Cells.SettingsSuggestionCell
-                        protected void onYesClick(int i5) {
-                            NotificationCenter notificationCenter = ProfileActivity.this.getNotificationCenter();
-                            ProfileActivity profileActivity3 = ProfileActivity.this;
-                            int i6 = NotificationCenter.newSuggestionsAvailable;
-                            notificationCenter.removeObserver(profileActivity3, i6);
-                            if (i5 == 2) {
-                                ProfileActivity.this.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
-                                ProfileActivity.this.updateListAnimated(false);
-                                Browser.openUrl(getContext(), ProfileActivity.this.getMessagesController().premiumManageSubscriptionUrl);
-                            } else {
-                                ProfileActivity.this.getMessagesController().removeSuggestion(0L, i5 == 0 ? "VALIDATE_PHONE_NUMBER" : "VALIDATE_PASSWORD");
-                                ProfileActivity.this.updateListAnimated(false);
-                            }
-                            ProfileActivity.this.getNotificationCenter().addObserver(ProfileActivity.this, i6);
-                        }
-                    };
+                    view2 = new 8(this.mContext, ProfileActivity.this.resourcesProvider);
                     break;
                 case 17:
                     view = new TextInfoPrivacyCell(this.mContext, ProfileActivity.this.resourcesProvider);
@@ -14100,7 +14115,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         diffCallback.fillPositions(diffCallback.newPositionToItem);
         try {
             DiffUtil.calculateDiff(diffCallback).dispatchUpdatesTo(this.listAdapter);
-        } catch (Exception unused) {
+        } catch (Exception e) {
+            FileLog.e(e);
             this.listAdapter.notifyDataSetChanged();
         }
         int i = this.savedScrollPosition;
@@ -18280,7 +18296,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                                     return;
                                                 }
                                             } else {
-                                                if (i != NotificationCenter.starUserGiftsLoaded || ((Long) objArr[0]).longValue() != getDialogId()) {
+                                                if (i != NotificationCenter.starUserGiftsLoaded || ((Long) objArr[0]).longValue() != getDialogId() || isSettings()) {
                                                     return;
                                                 }
                                                 if (this.sharedMediaRow >= 0) {

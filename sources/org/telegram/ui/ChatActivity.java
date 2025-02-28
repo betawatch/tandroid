@@ -18156,7 +18156,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r10v19 ??), method size: 11590
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r6v8 ??), method size: 11590
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -36950,7 +36950,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     
         if (r0 != null) goto L295;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x06cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x06c1, code lost:
     
         r0.setVisibility(8);
      */
@@ -36958,7 +36958,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     
         if (r3 > 0) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x06c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:475:0x06bf, code lost:
     
         if (r0 != null) goto L295;
      */
@@ -36966,15 +36966,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     
         if (r1 == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:484:0x070b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:484:0x0701, code lost:
     
         if (android.os.Build.VERSION.SDK_INT >= 21) goto L322;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:485:0x077b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:485:0x0771, code lost:
     
         r43.reportSpamButton.setTag(java.lang.Integer.valueOf(r3));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:489:0x076c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:489:0x0762, code lost:
     
         org.telegram.ui.ActionBar.Theme.setSelectorDrawableColor(r43.reportSpamButton.getBackground(), 436207615 & getThemedColor(r3), true);
      */
@@ -36983,7 +36983,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         r8 = r10;
         r9 = r21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x076a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:499:0x0760, code lost:
     
         if (android.os.Build.VERSION.SDK_INT >= 21) goto L322;
      */
@@ -37036,19 +37036,19 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:165:0x043f A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:169:0x0449  */
     /* JADX WARN: Removed duplicated region for block: B:171:0x045e  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0790  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x079f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x07f9 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x0c0b  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0c75  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x0a72 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x0a73  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x08b0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x08b1  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0786  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0795 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x07ef A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0c01  */
+    /* JADX WARN: Removed duplicated region for block: B:295:0x0c6b  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x0a68 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x0a69  */
+    /* JADX WARN: Removed duplicated region for block: B:376:0x08a6 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:377:0x08a7  */
     /* JADX WARN: Removed duplicated region for block: B:421:0x052f  */
     /* JADX WARN: Removed duplicated region for block: B:429:0x057b  */
-    /* JADX WARN: Removed duplicated region for block: B:488:0x0788  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x0758  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x077e  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x074e  */
     /* JADX WARN: Removed duplicated region for block: B:506:0x045b  */
     /* JADX WARN: Removed duplicated region for block: B:512:0x0335 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:523:0x028a  */
@@ -37369,7 +37369,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                             TextPaint paint = this.addToContactsButton.getPaint();
                                                             int i11 = R.string.AddContactFullChat;
                                                             i4 = 0;
-                                                            this.addToContactsButton.setText(LocaleController.formatString(i11, TextUtils.ellipsize(UserObject.getFirstName(user2), this.addToContactsButton.getPaint(), (getContext().getResources().getDisplayMetrics().widthPixels - paint.measureText(LocaleController.formatString(i11, ""))) - AndroidUtilities.dp(128.0f), TextUtils.TruncateAt.MIDDLE)).toUpperCase());
+                                                            this.addToContactsButton.setText(LocaleController.formatString(i11, TextUtils.ellipsize(UserObject.getFirstName(user2), this.addToContactsButton.getPaint(), (AndroidUtilities.displaySize.x - paint.measureText(LocaleController.formatString(i11, ""))) - AndroidUtilities.dp(128.0f), TextUtils.TruncateAt.MIDDLE)).toUpperCase());
                                                             this.addToContactsButton.setTag(user);
                                                             this.addToContactsButton.setVisibility(i4);
                                                         }
@@ -51497,7 +51497,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 public final void run() {
                     ChatActivity.this.lambda$onEditTextDialogClose$111();
                 }
-            }, 50L);
+            }, 200L);
             if (z2) {
                 this.openKeyboardOnAttachMenuClose = false;
             }
