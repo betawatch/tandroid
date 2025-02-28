@@ -2699,8 +2699,11 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         long j = starsAmount.amount;
         int i = starsAmount.nanos;
-        long j2 = j + ((i >= 0 || j <= 0) ? (i <= 0 || j >= 0) ? 0 : 1 : -1);
-        boolean z = j2 < 0;
+        boolean z = false;
+        long j2 = ((i >= 0 || j <= 0) ? (i <= 0 || j >= 0) ? 0 : 1 : -1) + j;
+        if (j != 0 ? j < 0 : i < 0) {
+            z = true;
+        }
         if (i != 0) {
             StringBuilder sb = new StringBuilder();
             sb.append(z ? "-" : "");
@@ -2742,8 +2745,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         long j = starsAmount.amount;
         int i = starsAmount.nanos;
-        long j2 = j + ((i >= 0 || j <= 0) ? (i <= 0 || j >= 0) ? 0 : 1 : -1);
-        boolean z = j2 < 0;
+        long j2 = ((i >= 0 || j <= 0) ? (i <= 0 || j >= 0) ? 0 : 1 : -1) + j;
+        boolean z = j != 0 ? j < 0 : i < 0;
         if (Math.abs(j2) > 1000 || starsAmount.nanos == 0) {
             if (starsAmount.amount <= 1000) {
                 sb = new StringBuilder();
@@ -2793,8 +2796,11 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         long j = starsAmount.amount;
         int i = starsAmount.nanos;
+        boolean z = false;
         long j2 = ((i >= 0 || j <= 0) ? (i <= 0 || j >= 0) ? 0 : 1 : -1) + j;
-        boolean z = j2 < 0;
+        if (j != 0 ? j < 0 : i < 0) {
+            z = true;
+        }
         if (i != 0) {
             StringBuilder sb = new StringBuilder();
             sb.append(z ? "-" : "");
@@ -5396,55 +5402,55 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0b4f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0b61  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0b64  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0b72  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0bd1  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0c03  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0c95  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0cc5  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0ce7  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0ccf  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0ca0  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0713  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0418  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0446  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x045f  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x047a  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x04c6  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x04d5  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x049f  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x0449  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0353  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x0309  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0b49 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0b5b  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0b5e  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0b6c  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0bcb  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0bfd  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0c8f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0cbf  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0ce1  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0cc9  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0c9a  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0709  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x040e  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x043c  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0455  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0470  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x04bc  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x04cb  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0495  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x0458  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x0349  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0311  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0303  */
     /* JADX WARN: Removed duplicated region for block: B:293:0x0218  */
     /* JADX WARN: Removed duplicated region for block: B:295:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0306  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0349  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0395  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0534  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x09d7  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x09e5  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x09f6  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0a90  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0ac9 A[LOOP:0: B:72:0x0a41->B:82:0x0ac9, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0ad6 A[EDGE_INSN: B:83:0x0ad6->B:84:0x0ad6 BREAK  A[LOOP:0: B:72:0x0a41->B:82:0x0ac9], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0ac3  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x033f  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x038b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x052a  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x09d1  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x09df  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x09f0  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0a8a  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0ac3 A[LOOP:0: B:72:0x0a3b->B:82:0x0ac3, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0ad0 A[EDGE_INSN: B:83:0x0ad0->B:84:0x0ad0 BREAK  A[LOOP:0: B:72:0x0a3b->B:82:0x0ac3], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0abd  */
+    /* JADX WARN: Type inference failed for: r3v71 */
+    /* JADX WARN: Type inference failed for: r3v72, types: [boolean] */
     /* JADX WARN: Type inference failed for: r3v73 */
-    /* JADX WARN: Type inference failed for: r3v74, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r3v75 */
-    /* JADX WARN: Type inference failed for: r4v25 */
+    /* JADX WARN: Type inference failed for: r4v24 */
+    /* JADX WARN: Type inference failed for: r4v29 */
     /* JADX WARN: Type inference failed for: r4v30 */
     /* JADX WARN: Type inference failed for: r4v31 */
-    /* JADX WARN: Type inference failed for: r4v32 */
-    /* JADX WARN: Type inference failed for: r4v39, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r4v62 */
+    /* JADX WARN: Type inference failed for: r4v38, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r4v61 */
+    /* JADX WARN: Type inference failed for: r4v70 */
     /* JADX WARN: Type inference failed for: r4v71 */
-    /* JADX WARN: Type inference failed for: r4v72 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5656,9 +5662,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     textView3.setTextSize(1, 18.0f);
                     textView3.setTypeface(AndroidUtilities.bold());
                     textView3.setGravity(17);
-                    textView3.setTextColor(Theme.getColor(starsTransaction.stars.amount >= 0 ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
-                    TL_stars.StarsAmount starsAmount = starsTransaction.stars;
-                    textView3.setText(replaceStarsWithPlain(TextUtils.concat(starsAmount.amount >= 0 ? "+" : str2, formatStarsAmount(starsAmount), " ⭐️"), 0.8f));
+                    textView3.setTextColor(Theme.getColor(positive ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
+                    textView3.setText(replaceStarsWithPlain(TextUtils.concat(positive ? "+" : str2, formatStarsAmount(starsTransaction.stars), " ⭐️"), 0.8f));
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(textView3.getText());
                     if (starsTransaction.refund) {
                         i6 = R.string.StarsRefunded;
@@ -5782,9 +5787,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                                                 double d = starsTransaction.stars.toDouble();
                                                 double d2 = starsTransaction.starref_commission_permille;
                                                 Double.isNaN(d2);
-                                                long round = Math.round(d / (d2 / 1000.0d));
+                                                long abs = Math.abs(Math.round(d / (d2 / 1000.0d)));
                                                 tableView72 = tableView;
-                                                tableView72.addRow(LocaleController.getString(R.string.StarsTransactionFullPrice), replaceStarsWithPlain("⭐️ " + LocaleController.formatNumber(round, ','), 0.8f));
+                                                tableView72.addRow(LocaleController.getString(R.string.StarsTransactionFullPrice), replaceStarsWithPlain("⭐️ " + LocaleController.formatNumber(abs, ','), 0.8f));
                                                 viewGroup2 = viewGroup9;
                                                 context2 = context;
                                                 tableView5 = tableView72;
@@ -6670,9 +6675,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             textView32.setTextSize(1, 18.0f);
             textView32.setTypeface(AndroidUtilities.bold());
             textView32.setGravity(17);
-            textView32.setTextColor(Theme.getColor(starsTransaction.stars.amount >= 0 ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
-            TL_stars.StarsAmount starsAmount2 = starsTransaction.stars;
-            textView32.setText(replaceStarsWithPlain(TextUtils.concat(starsAmount2.amount >= 0 ? "+" : str2, formatStarsAmount(starsAmount2), " ⭐️"), 0.8f));
+            textView32.setTextColor(Theme.getColor(positive2 ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
+            textView32.setText(replaceStarsWithPlain(TextUtils.concat(positive2 ? "+" : str2, formatStarsAmount(starsTransaction.stars), " ⭐️"), 0.8f));
             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(textView32.getText());
             if (starsTransaction.refund) {
             }
@@ -6794,9 +6798,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         textView322.setTextSize(1, 18.0f);
         textView322.setTypeface(AndroidUtilities.bold());
         textView322.setGravity(17);
-        textView322.setTextColor(Theme.getColor(starsTransaction.stars.amount >= 0 ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
-        TL_stars.StarsAmount starsAmount22 = starsTransaction.stars;
-        textView322.setText(replaceStarsWithPlain(TextUtils.concat(starsAmount22.amount >= 0 ? "+" : str2, formatStarsAmount(starsAmount22), " ⭐️"), 0.8f));
+        textView322.setTextColor(Theme.getColor(positive22 ? Theme.key_color_green : Theme.key_color_red, resourcesProvider));
+        textView322.setText(replaceStarsWithPlain(TextUtils.concat(positive22 ? "+" : str2, formatStarsAmount(starsTransaction.stars), " ⭐️"), 0.8f));
         SpannableStringBuilder spannableStringBuilder42 = new SpannableStringBuilder(textView322.getText());
         if (starsTransaction.refund) {
         }

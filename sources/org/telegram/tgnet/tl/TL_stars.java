@@ -328,12 +328,12 @@ public class TL_stars {
 
         public boolean negative() {
             long j = this.amount;
-            return j < 0 || (j == 0 && this.nanos < 0);
+            return j != 0 ? j < 0 : this.nanos < 0;
         }
 
         public boolean positive() {
             long j = this.amount;
-            return j > 0 || (j == 0 && this.nanos > 0);
+            return j != 0 ? j > 0 : this.nanos > 0;
         }
 
         @Override // org.telegram.tgnet.TLObject
