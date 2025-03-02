@@ -1542,7 +1542,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 tL_globalPrivacySettings2.new_noncontact_peers_require_premium = false;
             } else {
                 TLRPC.TL_globalPrivacySettings tL_globalPrivacySettings3 = setglobalprivacysettings.settings;
-                tL_globalPrivacySettings3.flags &= -33;
+                tL_globalPrivacySettings3.flags |= 32;
                 tL_globalPrivacySettings3.noncontact_peers_paid_stars = 0L;
                 tL_globalPrivacySettings3.new_noncontact_peers_require_premium = i4 == 2;
             }
@@ -2020,9 +2020,17 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
         zArr[1] = true;
         if (tL_globalPrivacySettings != null) {
             TLRPC.TL_globalPrivacySettings tL_globalPrivacySettings2 = setglobalprivacysettings.settings;
-            tL_globalPrivacySettings.flags = tL_globalPrivacySettings2.flags;
             tL_globalPrivacySettings.new_noncontact_peers_require_premium = tL_globalPrivacySettings2.new_noncontact_peers_require_premium;
-            tL_globalPrivacySettings.noncontact_peers_paid_stars = tL_globalPrivacySettings2.noncontact_peers_paid_stars;
+            int i = tL_globalPrivacySettings2.flags;
+            tL_globalPrivacySettings.flags = i;
+            long j = tL_globalPrivacySettings2.noncontact_peers_paid_stars;
+            if (j > 0) {
+                tL_globalPrivacySettings.flags = i | 32;
+                tL_globalPrivacySettings.noncontact_peers_paid_stars = j;
+            } else {
+                tL_globalPrivacySettings.flags = i & (-33);
+                tL_globalPrivacySettings.noncontact_peers_paid_stars = 0L;
+            }
         }
         if (zArr[0]) {
             finished();

@@ -2005,7 +2005,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
 
         /* JADX WARN: Removed duplicated region for block: B:208:0x04af  */
         /* JADX WARN: Removed duplicated region for block: B:26:0x00e9  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x0592  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x05a8  */
         /* JADX WARN: Removed duplicated region for block: B:54:0x0141  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2084,7 +2084,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                                             this.subtitleTextView.setText(LocaleController.getString(R.string.StarsTransactionUnknown));
                                             this.subtitleTextView.setVisibility(0);
                                         } else {
-                                            this.titleTextView.setText(LocaleController.getString(z ? R.string.StarsTransactionWithdrawFragment : R.string.StarsTransactionFragment));
+                                            this.titleTextView.setText(LocaleController.getString((z || (!starsTransaction.refund ? !starsTransaction.stars.negative() : !starsTransaction.stars.positive())) ? R.string.StarsTransactionWithdrawFragment : R.string.StarsTransactionFragment));
                                         }
                                         backupImageView = this.imageView;
                                         platformDrawable = getPlatformDrawable("fragment");
@@ -2838,6 +2838,13 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         return i != 3 ? i != 6 ? i != 12 ? i != 24 ? "1⃣" : "5⃣" : "4⃣" : "3⃣" : "2⃣";
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0147, code lost:
+    
+        r5 = org.telegram.messenger.R.string.StarsTransactionFragment;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static CharSequence getTransactionTitle(int i, boolean z, TL_stars.StarsTransaction starsTransaction) {
         if (starsTransaction.premium_gift) {
             return LocaleController.getString(R.string.StarsTransactionPremiumGift);
@@ -2895,10 +2902,16 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             return chat == null ? "" : chat.title;
         }
         TL_stars.StarsTransactionPeer starsTransactionPeer = starsTransaction.peer;
-        if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment) {
-            return LocaleController.getString(z ? R.string.StarsTransactionWithdrawFragment : R.string.StarsTransactionFragment);
+        if (!(starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment)) {
+            return starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? LocaleController.getString(R.string.StarsTransactionBot) : LocaleController.getString(R.string.StarsTransactionUnsupported);
         }
-        return starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? LocaleController.getString(R.string.StarsTransactionBot) : LocaleController.getString(R.string.StarsTransactionUnsupported);
+        if (!z) {
+            if (starsTransaction.refund) {
+            }
+            return LocaleController.getString(r5);
+        }
+        int i4 = R.string.StarsTransactionWithdrawFragment;
+        return LocaleController.getString(i4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6892,13 +6905,15 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
     }
 
     private void updateBalance() {
+        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         StarsController starsController = StarsController.getInstance(this.currentAccount);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) this.starBalanceIcon);
         spannableStringBuilder.append(formatStarsAmount(starsController.getBalance(), 0.66f, ' '));
         this.starBalanceTextView.setText(spannableStringBuilder);
         this.buyButton.setText(LocaleController.getString(starsController.getBalance().amount > 0 ? R.string.StarsBuyMore : R.string.StarsBuy), true);
-        updateButtonsLayouts(starsController.getBalance().amount > 0 && BotStarsController.getInstance(this.currentAccount).getStarsRevenueStats(getUserConfig().getClientUserId()) != null, true);
+        TLRPC.TL_payments_starsRevenueStats starsRevenueStats = BotStarsController.getInstance(this.currentAccount).getStarsRevenueStats(getUserConfig().getClientUserId());
+        updateButtonsLayouts((starsRevenueStats == null || (tL_starsRevenueStatus = starsRevenueStats.status) == null || !tL_starsRevenueStatus.overall_revenue.positive()) ? false : true, true);
     }
 
     private void updateButtonsLayouts(final boolean z, boolean z2) {

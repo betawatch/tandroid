@@ -1947,17 +1947,18 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0227, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0237, code lost:
     
-        if (r2.giftsLoading != false) goto L86;
+        if (r2.giftsLoading != false) goto L88;
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0241  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         StarsController.GiftsList giftsList;
+        StarsController.GiftsList giftsList2;
         if (!this.self && this.dialogId >= 0) {
             arrayList.add(UItem.asCustom(this.premiumHeaderView));
             ArrayList arrayList2 = this.premiumTiers;
@@ -1989,8 +1990,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         this.TAB_ALL = -1;
         this.TAB_ALL = arrayList4.size();
         arrayList4.add(LocaleController.getString(R.string.Gift2TabAll));
-        StarsController.GiftsList giftsList2 = this.myGifts;
-        if (giftsList2 != null) {
+        if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList2 = this.myGifts) != null) {
             Iterator it2 = giftsList2.gifts.iterator();
             while (true) {
                 if (!it2.hasNext()) {

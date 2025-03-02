@@ -244,7 +244,7 @@ public class ContactsController extends BaseController {
         this.sectionsToReplace.put("Ý", "Y");
         this.sectionsToReplace.put("Ţ", "Y");
         if (i == 0) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda56
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda54
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$new$0();
@@ -402,7 +402,7 @@ public class ContactsController extends BaseController {
     private void buildContactsSectionsArrays(boolean z) {
         final Collator localeCollator = getLocaleCollator();
         if (z) {
-            Collections.sort(this.contacts, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda18
+            Collections.sort(this.contacts, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda16
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$buildContactsSectionsArrays$43;
@@ -435,7 +435,7 @@ public class ContactsController extends BaseController {
                 arrayList2.add(tL_contact);
             }
         }
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda19
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda17
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$buildContactsSectionsArrays$44;
@@ -588,7 +588,7 @@ public class ContactsController extends BaseController {
 
     private long getContactsHash(ArrayList<TLRPC.TL_contact> arrayList) {
         ArrayList arrayList2 = new ArrayList(arrayList);
-        Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda51
+        Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda49
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$getContactsHash$26;
@@ -816,7 +816,7 @@ public class ContactsController extends BaseController {
         for (int i2 = 0; i2 < updates.users.size(); i2++) {
             final TLRPC.User user2 = updates.users.get(i2);
             if (user2.id == user.id) {
-                Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda20
+                Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
                     public final void run() {
                         ContactsController.this.lambda$addContact$50(user2);
@@ -837,7 +837,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda21
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$addContact$51(updates, user);
@@ -968,7 +968,7 @@ public class ContactsController extends BaseController {
         if (tLObject != null) {
             final TLRPC.TL_help_inviteText tL_help_inviteText = (TLRPC.TL_help_inviteText) tLObject;
             if (tL_help_inviteText.message.length() != 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda25
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda23
                     @Override // java.lang.Runnable
                     public final void run() {
                         ContactsController.this.lambda$checkInviteText$2(tL_help_inviteText);
@@ -1096,7 +1096,7 @@ public class ContactsController extends BaseController {
         }
         getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
         getMessagesStorage().deleteContacts(arrayList);
-        Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda37
+        Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$deleteContact$55(arrayList2);
@@ -1112,7 +1112,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda38
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$deleteContact$56(arrayList2, z, str);
@@ -1207,7 +1207,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalPrivacySetting$61(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda31
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$loadGlobalPrivacySetting$60(tL_error, tLObject);
@@ -1295,7 +1295,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadPrivacySettings$65(final int i, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda15
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$loadPrivacySettings$64(tL_error, tLObject, i);
@@ -1412,7 +1412,7 @@ public class ContactsController extends BaseController {
         final Collator localeCollator = getLocaleCollator();
         Iterator it = hashMap2.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda26
+            Collections.sort((ArrayList) it.next(), new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda24
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$mergePhonebookAndTelegramContacts$38;
@@ -1421,7 +1421,7 @@ public class ContactsController extends BaseController {
                 }
             });
         }
-        Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda27
+        Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda25
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$mergePhonebookAndTelegramContacts$39;
@@ -1429,7 +1429,7 @@ public class ContactsController extends BaseController {
                 return lambda$mergePhonebookAndTelegramContacts$39;
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda28
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$mergePhonebookAndTelegramContacts$40(arrayList2, hashMap, hashMap2);
@@ -1555,7 +1555,7 @@ public class ContactsController extends BaseController {
             this.delayedContactsUpdate.clear();
         }
         getMessagesStorage().putCachedPhoneBook(hashMap2, false, false);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$performSyncPhoneBook$15(hashMap3, arrayList, hashMap4);
@@ -1587,14 +1587,14 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda33
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$performSyncPhoneBook$17(hashMap3, arrayList, hashMap4);
             }
         });
         if (zArr[0]) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda34
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda32
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$performSyncPhoneBook$18();
@@ -1648,7 +1648,7 @@ public class ContactsController extends BaseController {
             if (!hashMap.isEmpty()) {
                 getMessagesStorage().putCachedPhoneBook(hashMap, false, false);
             }
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda57
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda55
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$performSyncPhoneBook$19(hashMap3, hashMap2, z, hashMap4, arrayList, hashMap5, zArr);
@@ -1678,7 +1678,7 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda32
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$performSyncPhoneBook$21(hashMap3, arrayList, hashMap4);
@@ -1699,7 +1699,7 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda35
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$performSyncPhoneBook$23(hashMap3, arrayList, hashMap4);
@@ -2274,7 +2274,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processLoadedContacts$35(final HashMap hashMap, final HashMap hashMap2) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda58
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda56
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$processLoadedContacts$34(hashMap, hashMap2);
@@ -2303,7 +2303,7 @@ public class ContactsController extends BaseController {
         if (i == 1 && (arrayList.isEmpty() || Math.abs((System.currentTimeMillis() / 1000) - getUserConfig().lastContactsSyncTime) >= 86400)) {
             loadContacts(false, getContactsHash(arrayList4));
             if (arrayList.isEmpty()) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda40
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda38
                     @Override // java.lang.Runnable
                     public final void run() {
                         ContactsController.this.lambda$processLoadedContacts$29();
@@ -2332,7 +2332,7 @@ public class ContactsController extends BaseController {
             getMessagesStorage().putContacts(arrayList4, i != 2);
         }
         final Collator localeCollator = getLocaleCollator();
-        Collections.sort(arrayList4, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda41
+        Collections.sort(arrayList4, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda39
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$processLoadedContacts$30;
@@ -2412,7 +2412,7 @@ public class ContactsController extends BaseController {
         }
         final HashMap hashMap6 = hashMap;
         final ArrayList arrayList10 = arrayList6;
-        Collections.sort(arrayList5, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda42
+        Collections.sort(arrayList5, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda40
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$processLoadedContacts$31;
@@ -2420,7 +2420,7 @@ public class ContactsController extends BaseController {
                 return lambda$processLoadedContacts$31;
             }
         });
-        Collections.sort(arrayList10, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda43
+        Collections.sort(arrayList10, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda41
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$processLoadedContacts$32;
@@ -2428,7 +2428,7 @@ public class ContactsController extends BaseController {
                 return lambda$processLoadedContacts$32;
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda44
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$processLoadedContacts$33(arrayList, concurrentHashMap, hashMap4, hashMap5, arrayList5, arrayList10, i, z, z2);
@@ -2439,7 +2439,7 @@ public class ContactsController extends BaseController {
             this.delayedContactsUpdate.clear();
         }
         if (hashMap2 != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda45
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda43
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$processLoadedContacts$35(hashMap2, hashMap6);
@@ -2472,7 +2472,7 @@ public class ContactsController extends BaseController {
                 longSparseArray.put(user.id, user);
             }
         }
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda54
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda52
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$processLoadedContacts$36(i, arrayList2, arrayList, longSparseArray, isEmpty);
@@ -2541,7 +2541,7 @@ public class ContactsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$reloadContactsStatuses$59(final SharedPreferences.Editor editor, final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof Vector) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda24
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$reloadContactsStatuses$58(editor, tLObject);
@@ -2583,7 +2583,7 @@ public class ContactsController extends BaseController {
 
     private void mergePhonebookAndTelegramContacts(final HashMap<String, ArrayList<Object>> hashMap, final ArrayList<String> arrayList, final HashMap<String, Contact> hashMap2, final boolean z) {
         final ArrayList arrayList2 = new ArrayList(this.contacts);
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda48
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$mergePhonebookAndTelegramContacts$41(z, arrayList2, hashMap2, hashMap, arrayList);
@@ -2593,7 +2593,7 @@ public class ContactsController extends BaseController {
 
     private void performWriteContactsToPhoneBook() {
         final ArrayList arrayList = new ArrayList(this.contacts);
-        Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda39
+        Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$performWriteContactsToPhoneBook$45(arrayList);
@@ -2695,7 +2695,7 @@ public class ContactsController extends BaseController {
         getMessagesController().clearFullUsers();
         final SharedPreferences.Editor edit = MessagesController.getMainSettings(this.currentAccount).edit();
         edit.putBoolean("needGetStatuses", true).commit();
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda57
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ContactsController.this.lambda$reloadContactsStatuses$59(edit, tLObject, tL_error);
@@ -2736,7 +2736,7 @@ public class ContactsController extends BaseController {
             }
         }
         final Collator localeCollator = getLocaleCollator();
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda52
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda50
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$updateUnregisteredContacts$42;
@@ -2763,7 +2763,7 @@ public class ContactsController extends BaseController {
             if (str2.length() > 0 && !tL_contacts_addContact.phone.startsWith("+")) {
                 str = "+" + tL_contacts_addContact.phone;
             }
-            getConnectionsManager().sendRequest(tL_contacts_addContact, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda53
+            getConnectionsManager().sendRequest(tL_contacts_addContact, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda51
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ContactsController.this.lambda$addContact$52(user, tLObject, tL_error);
@@ -2772,7 +2772,7 @@ public class ContactsController extends BaseController {
         }
         str = "";
         tL_contacts_addContact.phone = str;
-        getConnectionsManager().sendRequest(tL_contacts_addContact, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda53
+        getConnectionsManager().sendRequest(tL_contacts_addContact, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda51
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ContactsController.this.lambda$addContact$52(user, tLObject, tL_error);
@@ -2814,7 +2814,7 @@ public class ContactsController extends BaseController {
 
     public void checkAppAccount() {
         this.systemAccount = null;
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda50
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$checkAppAccount$4();
@@ -2840,7 +2840,7 @@ public class ContactsController extends BaseController {
         }
         if (this.inviteLink == null || Math.abs((System.currentTimeMillis() / 1000) - i) >= 86400) {
             this.updatingInviteLink = true;
-            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda17
+            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda15
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ContactsController.this.lambda$checkInviteText$3(tLObject, tL_error);
@@ -2885,7 +2885,7 @@ public class ContactsController extends BaseController {
         this.giftsPrivacyRules = null;
         this.forwardsPrivacyRules = null;
         this.phonePrivacyRules = null;
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda55
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda53
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$cleanup$1();
@@ -3019,7 +3019,7 @@ public class ContactsController extends BaseController {
             }
         }
         final String str = arrayList.get(0).first_name;
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda36
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda34
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ContactsController.this.lambda$deleteContact$57(arrayList2, arrayList, z, str, tLObject, tL_error);
@@ -3219,7 +3219,7 @@ public class ContactsController extends BaseController {
             }
             TLRPC.TL_contacts_getContacts tL_contacts_getContacts = new TLRPC.TL_contacts_getContacts();
             tL_contacts_getContacts.hash = j;
-            getConnectionsManager().sendRequest(tL_contacts_getContacts, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda23
+            getConnectionsManager().sendRequest(tL_contacts_getContacts, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda21
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ContactsController.this.lambda$loadContacts$28(j, tLObject, tL_error);
@@ -3231,7 +3231,7 @@ public class ContactsController extends BaseController {
     public void loadGlobalPrivacySetting() {
         if (this.loadingGlobalSettings == 0) {
             this.loadingGlobalSettings = 1;
-            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda29
+            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda27
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ContactsController.this.lambda$loadGlobalPrivacySetting$61(tLObject, tL_error);
@@ -3241,10 +3241,32 @@ public class ContactsController extends BaseController {
     }
 
     public void loadPrivacySettings() {
+        loadPrivacySettings(false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0096 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void loadPrivacySettings(boolean z) {
+        final int i;
         TLRPC.InputPrivacyKey tL_inputPrivacyKeyStatusTimestamp;
         if (this.loadingDeleteInfo == 0) {
             this.loadingDeleteInfo = 1;
-            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda13
+            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda58
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ContactsController.this.lambda$loadPrivacySettings$63(tLObject, tL_error);
@@ -3252,21 +3274,21 @@ public class ContactsController extends BaseController {
             });
         }
         loadGlobalPrivacySetting();
-        final int i = 0;
         while (true) {
             int[] iArr = this.loadingPrivacyInfo;
             if (i >= iArr.length) {
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.privacyRulesUpdated, new Object[0]);
                 return;
             }
-            if (iArr[i] == 0) {
+            if (z) {
+                i = iArr[i] == 1 ? i + 1 : 0;
                 iArr[i] = 1;
                 TL_account.getPrivacy getprivacy = new TL_account.getPrivacy();
                 switch (i) {
                     case 0:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3276,7 +3298,7 @@ public class ContactsController extends BaseController {
                     case 1:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyChatInvite();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3286,7 +3308,7 @@ public class ContactsController extends BaseController {
                     case 2:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyPhoneCall();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3296,7 +3318,7 @@ public class ContactsController extends BaseController {
                     case 3:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3306,7 +3328,7 @@ public class ContactsController extends BaseController {
                     case 4:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3316,7 +3338,7 @@ public class ContactsController extends BaseController {
                     case 5:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyForwards();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3326,7 +3348,7 @@ public class ContactsController extends BaseController {
                     case 6:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3336,7 +3358,7 @@ public class ContactsController extends BaseController {
                     case 7:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3346,7 +3368,7 @@ public class ContactsController extends BaseController {
                     case 8:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3356,7 +3378,7 @@ public class ContactsController extends BaseController {
                     case 9:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyAbout();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3366,7 +3388,7 @@ public class ContactsController extends BaseController {
                     case 11:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyBirthday();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3376,7 +3398,7 @@ public class ContactsController extends BaseController {
                     case 12:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3386,7 +3408,7 @@ public class ContactsController extends BaseController {
                     case 13:
                         tL_inputPrivacyKeyStatusTimestamp = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
                         getprivacy.key = tL_inputPrivacyKeyStatusTimestamp;
-                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
@@ -3394,8 +3416,14 @@ public class ContactsController extends BaseController {
                         });
                         break;
                 }
+            } else {
+                if (iArr[i] != 0) {
+                }
+                iArr[i] = 1;
+                TL_account.getPrivacy getprivacy2 = new TL_account.getPrivacy();
+                switch (i) {
+                }
             }
-            i++;
         }
     }
 
@@ -3412,7 +3440,7 @@ public class ContactsController extends BaseController {
     }
 
     protected void migratePhoneBookToV7(final SparseArray<Contact> sparseArray) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda49
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$migratePhoneBookToV7$12(sparseArray);
@@ -3422,7 +3450,7 @@ public class ContactsController extends BaseController {
 
     protected void performSyncPhoneBook(final HashMap<String, Contact> hashMap, final boolean z, final boolean z2, final boolean z3, final boolean z4, final boolean z5, final boolean z6) {
         if (z2 || this.contactsBookLoaded) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda16
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$performSyncPhoneBook$25(hashMap, z3, z, z2, z4, z5, z6);
@@ -3469,7 +3497,7 @@ public class ContactsController extends BaseController {
     }
 
     public void processLoadedContacts(final ArrayList<TLRPC.TL_contact> arrayList, final ArrayList<TLRPC.User> arrayList2, final int i) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda46
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$processLoadedContacts$37(arrayList2, i, arrayList);
@@ -4033,7 +4061,7 @@ public class ContactsController extends BaseController {
     }
 
     public void resetImportedContacts() {
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda47
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda45
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ContactsController.lambda$resetImportedContacts$10(tLObject, tL_error);
@@ -4092,7 +4120,7 @@ public class ContactsController extends BaseController {
     }
 
     public void syncPhoneBookByAlert(final HashMap<String, Contact> hashMap, final boolean z, final boolean z2, final boolean z3) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda30
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$syncPhoneBookByAlert$7(hashMap, z, z2, z3);

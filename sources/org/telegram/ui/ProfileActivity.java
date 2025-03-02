@@ -290,6 +290,7 @@ import org.telegram.ui.ProfileBirthdayEffect;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.Stars.BotStarsActivity;
 import org.telegram.ui.Stars.BotStarsController;
+import org.telegram.ui.Stars.ProfileGiftsView;
 import org.telegram.ui.Stars.StarGiftPatterns;
 import org.telegram.ui.Stars.StarGiftSheet;
 import org.telegram.ui.Stars.StarsController;
@@ -441,6 +442,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private boolean fragmentViewAttached;
     private boolean fullyVisible;
     private HintView fwdRestrictedHint;
+    public ProfileGiftsView giftsView;
     private int graceSuggestionRow;
     private int graceSuggestionSectionRow;
     private boolean hasCustomPhoto;
@@ -2553,11 +2555,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             ProfileActivity.this.checkListViewScroll();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:141:0x05c4  */
-        /* JADX WARN: Removed duplicated region for block: B:83:0x0604  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x0609  */
-        /* JADX WARN: Removed duplicated region for block: B:89:0x061b  */
-        /* JADX WARN: Removed duplicated region for block: B:95:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:144:0x05cd  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x060d  */
+        /* JADX WARN: Removed duplicated region for block: B:89:0x0612  */
+        /* JADX WARN: Removed duplicated region for block: B:92:0x0624  */
+        /* JADX WARN: Removed duplicated region for block: B:98:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2672,6 +2674,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                     if (ProfileActivity.this.storyView != null) {
                         ProfileActivity.this.storyView.setExpandProgress(1.0f);
+                    }
+                    ProfileGiftsView profileGiftsView = ProfileActivity.this.giftsView;
+                    if (profileGiftsView != null) {
+                        profileGiftsView.setExpandProgress(1.0f);
                     }
                     ProfileActivity.this.expandPhoto = false;
                     ProfileActivity.this.updateCollectibleHint();
@@ -8474,6 +8480,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (ProfileActivity.this.storyView != null) {
                     ProfileActivity.this.storyView.setActionBarActionMode(f);
                 }
+                ProfileGiftsView profileGiftsView = ProfileActivity.this.giftsView;
+                if (profileGiftsView != null) {
+                    profileGiftsView.setActionBarActionMode(f);
+                }
                 ProfileActivity.this.topView.invalidate();
                 int themedColor2 = ProfileActivity.this.getThemedColor(Theme.key_profile_title);
                 ProfileActivity profileActivity = ProfileActivity.this;
@@ -12293,9 +12303,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         AudioPlayerAlert.ClippingTextViewSwitcher clippingTextViewSwitcher;
         float f;
         BackupImageView currentItemView;
-        float f2;
-        float f3;
         ValueAnimator valueAnimator;
+        float f2;
+        ValueAnimator valueAnimator2;
         TLRPC.ChatFull chatFull;
         int i = 0;
         int currentActionBarHeight = (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight();
@@ -12315,11 +12325,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (rLottieImageView != null) {
                 rLottieImageView.setTranslationY(((((this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight()) + this.extraHeight) + this.searchTransitionOffset) - AndroidUtilities.dp(29.5f));
                 boolean z2 = min > 0.2f && !this.searchMode && (this.imageUpdater == null || this.setAvatarRow == -1);
-                boolean z3 = (!z2 || this.chatId == 0) ? z2 : (!ChatObject.isChannel(this.currentChat) || this.currentChat.megagroup || (chatFull = this.chatInfo) == null || chatFull.linked_chat_id == 0 || this.infoHeaderRow == -1) ? false : true;
+                if (z2 && this.chatId != 0) {
+                    z2 = (!ChatObject.isChannel(this.currentChat) || this.currentChat.megagroup || (chatFull = this.chatInfo) == null || chatFull.linked_chat_id == 0 || this.infoHeaderRow == -1) ? false : true;
+                }
                 if (!this.openAnimationInProgress) {
-                    if (z3 != (this.writeButton.getTag() == null)) {
+                    if (z2 != (this.writeButton.getTag() == null)) {
                         RLottieImageView rLottieImageView2 = this.writeButton;
-                        if (z3) {
+                        if (z2) {
                             rLottieImageView2.setTag(null);
                         } else {
                             rLottieImageView2.setTag(0);
@@ -12332,7 +12344,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         if (z) {
                             AnimatorSet animatorSet2 = new AnimatorSet();
                             this.writeButtonAnimation = animatorSet2;
-                            if (z3) {
+                            if (z2) {
                                 animatorSet2.setInterpolator(new DecelerateInterpolator());
                                 this.writeButtonAnimation.playTogether(ObjectAnimator.ofFloat(this.writeButton, (Property<RLottieImageView, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(this.writeButton, (Property<RLottieImageView, Float>) View.SCALE_Y, 1.0f), ObjectAnimator.ofFloat(this.writeButton, (Property<RLottieImageView, Float>) View.ALPHA, 1.0f));
                             } else {
@@ -12351,9 +12363,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             });
                             this.writeButtonAnimation.start();
                         } else {
-                            this.writeButton.setScaleX(z3 ? 1.0f : 0.2f);
-                            this.writeButton.setScaleY(z3 ? 1.0f : 0.2f);
-                            this.writeButton.setAlpha(z3 ? 1.0f : 0.0f);
+                            this.writeButton.setScaleX(z2 ? 1.0f : 0.2f);
+                            this.writeButton.setScaleY(z2 ? 1.0f : 0.2f);
+                            this.writeButton.setAlpha(z2 ? 1.0f : 0.0f);
                         }
                     }
                     if (this.qrItem != null) {
@@ -12370,20 +12382,28 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 ProfileStoriesView profileStoriesView = this.storyView;
                 if (profileStoriesView != null) {
-                    profileStoriesView.setExpandCoords(this.avatarContainer2.getMeasuredWidth() - AndroidUtilities.dp(40.0f), z3, (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight() + this.extraHeight + this.searchTransitionOffset);
+                    profileStoriesView.setExpandCoords(this.avatarContainer2.getMeasuredWidth() - AndroidUtilities.dp(40.0f), z2, (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight() + this.extraHeight + this.searchTransitionOffset);
+                }
+                ProfileGiftsView profileGiftsView = this.giftsView;
+                if (profileGiftsView != null) {
+                    profileGiftsView.setExpandCoords(this.avatarContainer2.getMeasuredWidth() - AndroidUtilities.dp(40.0f), z2, (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight() + this.extraHeight + this.searchTransitionOffset);
                 }
             }
             this.avatarX = (-AndroidUtilities.dpf2(47.0f)) * min;
-            float f4 = AndroidUtilities.density;
-            this.avatarY = (((this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ((ActionBar.getCurrentActionBarHeight() / 2.0f) * (min + 1.0f))) - (f4 * 21.0f)) + (f4 * 27.0f * min) + this.actionBar.getTranslationY();
-            float f5 = this.openAnimationInProgress ? this.initialAnimationExtraHeight : this.extraHeight;
-            if (f5 > AndroidUtilities.dp(88.0f) || this.isPulledDown) {
-                float max = Math.max(0.0f, Math.min(1.0f, (f5 - AndroidUtilities.dp(88.0f)) / ((this.listView.getMeasuredWidth() - currentActionBarHeight) - AndroidUtilities.dp(88.0f))));
+            float f3 = AndroidUtilities.density;
+            this.avatarY = (((this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + ((ActionBar.getCurrentActionBarHeight() / 2.0f) * (min + 1.0f))) - (f3 * 21.0f)) + (f3 * 27.0f * min) + this.actionBar.getTranslationY();
+            float f4 = this.openAnimationInProgress ? this.initialAnimationExtraHeight : this.extraHeight;
+            if (f4 > AndroidUtilities.dp(88.0f) || this.isPulledDown) {
+                float max = Math.max(0.0f, Math.min(1.0f, (f4 - AndroidUtilities.dp(88.0f)) / ((this.listView.getMeasuredWidth() - currentActionBarHeight) - AndroidUtilities.dp(88.0f))));
                 this.expandProgress = max;
                 this.avatarScale = AndroidUtilities.lerp(1.4285715f, 2.4285715f, Math.min(1.0f, max * 3.0f));
                 ProfileStoriesView profileStoriesView2 = this.storyView;
                 if (profileStoriesView2 != null) {
                     profileStoriesView2.invalidate();
+                }
+                ProfileGiftsView profileGiftsView2 = this.giftsView;
+                if (profileGiftsView2 != null) {
+                    profileGiftsView2.invalidate();
                 }
                 float min2 = Math.min(AndroidUtilities.dpf2(2000.0f), Math.max(AndroidUtilities.dpf2(1100.0f), Math.abs(this.listViewVelocityY))) / AndroidUtilities.dpf2(1100.0f);
                 if (!this.allowPullingDown || (!this.openingAvatar && this.expandProgress < 0.33f)) {
@@ -12436,8 +12456,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                     this.avatarContainer.setScaleX(this.avatarScale);
                     this.avatarContainer.setScaleY(this.avatarScale);
-                    ValueAnimator valueAnimator2 = this.expandAnimator;
-                    if (valueAnimator2 == null || !valueAnimator2.isRunning()) {
+                    ValueAnimator valueAnimator3 = this.expandAnimator;
+                    if (valueAnimator3 == null || !valueAnimator3.isRunning()) {
                         refreshNameAndOnlineXY();
                         this.nameTextView[1].setTranslationX(this.nameX);
                         this.nameTextView[1].setTranslationY(this.nameY);
@@ -12483,11 +12503,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         ProfileStoriesView profileStoriesView3 = this.storyView;
                         if (profileStoriesView3 == null || profileStoriesView3.isEmpty()) {
                             this.expandAnimator.setInterpolator(CubicBezierInterpolator.EASE_BOTH);
-                            this.expandAnimator.setDuration((long) (((1.0f - lerp2) * 250.0f) / min2));
+                            valueAnimator = this.expandAnimator;
+                            f2 = 1.0f - lerp2;
                         } else {
                             this.expandAnimator.setInterpolator(new FastOutSlowInInterpolator());
-                            this.expandAnimator.setDuration((long) ((((1.0f - lerp2) * 1.3f) * 250.0f) / min2));
+                            valueAnimator = this.expandAnimator;
+                            f2 = (1.0f - lerp2) * 1.3f;
                         }
+                        valueAnimator.setDuration((long) ((f2 * 250.0f) / min2));
                         this.expandAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ProfileActivity.45
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
@@ -12508,22 +12531,16 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                     ViewGroup.LayoutParams layoutParams2 = this.avatarsViewPager.getLayoutParams();
                     layoutParams2.width = this.listView.getMeasuredWidth();
-                    float f6 = f5 + currentActionBarHeight;
-                    layoutParams2.height = (int) f6;
+                    float f5 = f4 + currentActionBarHeight;
+                    layoutParams2.height = (int) f5;
                     this.avatarsViewPager.requestLayout();
                     if (!this.expandAnimator.isRunning()) {
-                        if (this.openAnimationInProgress && this.playProfileAnimation == 2) {
-                            f3 = (-(1.0f - this.avatarAnimationProgress)) * AndroidUtilities.dp(50.0f);
-                            f2 = 16.0f;
-                        } else {
-                            f2 = 16.0f;
-                            f3 = 0.0f;
-                        }
-                        this.onlineX = AndroidUtilities.dpf2(f2) - this.onlineTextView[1].getLeft();
+                        float dp2 = (this.openAnimationInProgress && this.playProfileAnimation == 2) ? (-(1.0f - this.avatarAnimationProgress)) * AndroidUtilities.dp(50.0f) : 0.0f;
+                        this.onlineX = AndroidUtilities.dpf2(16.0f) - this.onlineTextView[1].getLeft();
                         this.nameTextView[1].setTranslationX(AndroidUtilities.dpf2(18.0f) - this.nameTextView[1].getLeft());
-                        this.nameTextView[1].setTranslationY(((f6 - AndroidUtilities.dpf2(38.0f)) - this.nameTextView[1].getBottom()) + f3);
+                        this.nameTextView[1].setTranslationY(((f5 - AndroidUtilities.dpf2(38.0f)) - this.nameTextView[1].getBottom()) + dp2);
                         this.onlineTextView[1].setTranslationX(this.onlineX + this.customPhotoOffset);
-                        this.onlineTextView[1].setTranslationY(((f6 - AndroidUtilities.dpf2(18.0f)) - this.onlineTextView[1].getBottom()) + f3);
+                        this.onlineTextView[1].setTranslationY(((f5 - AndroidUtilities.dpf2(18.0f)) - this.onlineTextView[1].getBottom()) + dp2);
                         this.mediaCounterTextView.setTranslationX(this.onlineTextView[1].getTranslationX());
                         clippingTextViewSwitcher = this.mediaCounterTextView;
                         f = this.onlineTextView[1].getTranslationY();
@@ -12541,13 +12558,17 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 this.onlineTextView[0].setTranslationY(((float) Math.floor(d)) + AndroidUtilities.dp(24.0f));
                 this.nameTextView[0].setScaleX(1.0f);
                 this.nameTextView[0].setScaleY(1.0f);
-                this.nameTextView[1].setPivotY(r4.getMeasuredHeight());
+                this.nameTextView[1].setPivotY(r5.getMeasuredHeight());
                 this.nameTextView[1].setScaleX(1.67f);
                 this.nameTextView[1].setScaleY(1.67f);
                 this.avatarScale = AndroidUtilities.lerp(1.0f, 2.4285715f, this.avatarAnimationProgress);
                 ProfileStoriesView profileStoriesView4 = this.storyView;
                 if (profileStoriesView4 != null) {
                     profileStoriesView4.setExpandProgress(1.0f);
+                }
+                ProfileGiftsView profileGiftsView3 = this.giftsView;
+                if (profileGiftsView3 != null) {
+                    profileGiftsView3.setExpandProgress(1.0f);
                 }
                 this.avatarImage.setRoundRadius((int) AndroidUtilities.lerp(getSmallAvatarRoundRadius(), 0.0f, this.avatarAnimationProgress));
                 this.avatarContainer.setTranslationX(AndroidUtilities.lerp(0.0f, 0.0f, this.avatarAnimationProgress));
@@ -12590,25 +12611,29 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 this.avatarContainer.requestLayout();
             } else {
                 if (this.extraHeight <= AndroidUtilities.dp(88.0f)) {
-                    this.avatarScale = ((min * 18.0f) + 42.0f) / 42.0f;
+                    this.avatarScale = ((18.0f * min) + 42.0f) / 42.0f;
                     ProfileStoriesView profileStoriesView5 = this.storyView;
                     if (profileStoriesView5 != null) {
                         profileStoriesView5.invalidate();
                     }
-                    float f7 = (0.12f * min) + 1.0f;
-                    ValueAnimator valueAnimator3 = this.expandAnimator;
-                    if (valueAnimator3 == null || !valueAnimator3.isRunning()) {
+                    ProfileGiftsView profileGiftsView4 = this.giftsView;
+                    if (profileGiftsView4 != null) {
+                        profileGiftsView4.invalidate();
+                    }
+                    float f6 = (0.12f * min) + 1.0f;
+                    ValueAnimator valueAnimator4 = this.expandAnimator;
+                    if (valueAnimator4 == null || !valueAnimator4.isRunning()) {
                         this.avatarContainer.setScaleX(this.avatarScale);
                         this.avatarContainer.setScaleY(this.avatarScale);
                         this.avatarContainer.setTranslationX(this.avatarX);
                         this.avatarContainer.setTranslationY((float) Math.ceil(this.avatarY));
-                        float dp2 = (AndroidUtilities.dp(42.0f) * this.avatarScale) - AndroidUtilities.dp(42.0f);
-                        this.timeItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(16.0f) + dp2);
-                        this.timeItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(15.0f) + dp2);
-                        this.starBgItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(28.0f) + dp2);
-                        this.starBgItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(24.0f) + dp2);
-                        this.starFgItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(28.0f) + dp2);
-                        this.starFgItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(24.0f) + dp2);
+                        float dp3 = (AndroidUtilities.dp(42.0f) * this.avatarScale) - AndroidUtilities.dp(42.0f);
+                        this.timeItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(16.0f) + dp3);
+                        this.timeItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(15.0f) + dp3);
+                        this.starBgItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(28.0f) + dp3);
+                        this.starBgItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(24.0f) + dp3);
+                        this.starFgItem.setTranslationX(this.avatarContainer.getX() + AndroidUtilities.dp(28.0f) + dp3);
+                        this.starFgItem.setTranslationY(this.avatarContainer.getY() + AndroidUtilities.dp(24.0f) + dp3);
                     }
                     this.nameX = AndroidUtilities.density * (-21.0f) * min;
                     this.nameY = ((float) Math.floor(this.avatarY)) + AndroidUtilities.dp(1.3f) + (AndroidUtilities.dp(7.0f) * min) + (this.titleAnimationsYDiff * (1.0f - this.avatarAnimationProgress));
@@ -12624,8 +12649,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             break;
                         }
                         if (simpleTextViewArr[i] != null) {
-                            ValueAnimator valueAnimator4 = this.expandAnimator;
-                            if (valueAnimator4 == null || !valueAnimator4.isRunning()) {
+                            ValueAnimator valueAnimator5 = this.expandAnimator;
+                            if (valueAnimator5 == null || !valueAnimator5.isRunning()) {
                                 this.nameTextView[i].setTranslationX(this.nameX);
                                 this.nameTextView[i].setTranslationY(this.nameY);
                                 this.onlineTextView[i].setTranslationX(this.onlineX + this.customPhotoOffset);
@@ -12635,13 +12660,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     this.mediaCounterTextView.setTranslationY(this.onlineY);
                                 }
                             }
-                            this.nameTextView[i].setScaleX(f7);
-                            this.nameTextView[i].setScaleY(f7);
+                            this.nameTextView[i].setScaleX(f6);
+                            this.nameTextView[i].setScaleY(f6);
                         }
                         i++;
                     }
                 }
-                if (!this.openAnimationInProgress && ((valueAnimator = this.expandAnimator) == null || !valueAnimator.isRunning())) {
+                if (!this.openAnimationInProgress && ((valueAnimator2 = this.expandAnimator) == null || !valueAnimator2.isRunning())) {
                     needLayoutText(min);
                 }
             }
@@ -13581,12 +13606,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         undoView.showWithAction(dialogId, i2, user, Integer.valueOf(userFull != null ? userFull.ttl_period : this.chatInfo.ttl_period), (Runnable) null, (Runnable) null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x022d  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x02a8  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0234  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0264  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0297  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x02af  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0299  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -13608,6 +13633,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         ProfileStoriesView profileStoriesView = this.storyView;
         if (profileStoriesView != null) {
             profileStoriesView.setExpandProgress(lerp);
+        }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.setExpandProgress(lerp);
         }
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
         if (actionBarMenuItem != null) {
@@ -13829,7 +13858,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (z) {
             arrayList.add(ObjectAnimator.ofFloat(this, (Property<ProfileActivity, Float>) this.HEADER_SHADOW, 0.0f));
         }
-        if (this.storyView != null) {
+        if (this.storyView != null || this.giftsView != null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda35
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -16151,6 +16180,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (profileStoriesView2 != null) {
             profileStoriesView2.setAlpha(1.0f);
         }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.setAlpha(1.0f);
+        }
         this.nameTextView[1].setAlpha(1.0f);
         this.onlineTextView[1].setAlpha(1.0f);
         this.searchItem.setAlpha(1.0f);
@@ -16200,7 +16233,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public void updateStoriesViewBounds(boolean z) {
         ActionBar actionBar;
-        if (this.storyView == null || (actionBar = this.actionBar) == null) {
+        if ((this.storyView == null && this.giftsView == null) || (actionBar = this.actionBar) == null) {
             return;
         }
         float f = actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0.0f;
@@ -16217,7 +16250,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
             }
         }
-        this.storyView.setBounds(max, width, f + ((this.actionBar.getHeight() - f) / 2.0f), !z);
+        ProfileStoriesView profileStoriesView = this.storyView;
+        if (profileStoriesView != null) {
+            profileStoriesView.setBounds(max, width, ((this.actionBar.getHeight() - f) / 2.0f) + f, !z);
+        }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.setBounds(max, width, f + ((this.actionBar.getHeight() - f) / 2.0f), !z);
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0030, code lost:
@@ -16335,6 +16375,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (profileStoriesView != null) {
             profileStoriesView.update();
         }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.update();
+        }
     }
 
     private void writeButtonSetBackground() {
@@ -16436,14 +16480,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:232:0x0a8e  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0ab4  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0b62 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0c08  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0c57  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0ca7  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0cbe  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0c18  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x0b27  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x0ad3  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0b81 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0c27  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0c76  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x0cc6  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0cdd  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0c37  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x0b46  */
     /* JADX WARN: Type inference failed for: r12v2 */
     /* JADX WARN: Type inference failed for: r12v3, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v5 */
@@ -17311,6 +17355,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 avatarImageView.setHasStories(needInsetForStories());
             }
             this.avatarContainer2.addView(this.storyView, LayoutHelper.createFrame(-1, -1.0f));
+            ProfileGiftsView profileGiftsView = new ProfileGiftsView(context, this.currentAccount, getDialogId(), this.avatarContainer, this.avatarImage, this.resourcesProvider);
+            this.giftsView = profileGiftsView;
+            this.avatarContainer2.addView(profileGiftsView, LayoutHelper.createFrame(-1, -1.0f));
             updateProfileData(true);
             this.writeButton = new RLottieImageView(context);
             writeButtonSetBackground();
@@ -17716,6 +17763,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (avatarImageView != null) {
         }
         this.avatarContainer2.addView(this.storyView, LayoutHelper.createFrame(-1, -1.0f));
+        ProfileGiftsView profileGiftsView2 = new ProfileGiftsView(context, this.currentAccount, getDialogId(), this.avatarContainer, this.avatarImage, this.resourcesProvider);
+        this.giftsView = profileGiftsView2;
+        this.avatarContainer2.addView(profileGiftsView2, LayoutHelper.createFrame(-1, -1.0f));
         updateProfileData(true);
         this.writeButton = new RLottieImageView(context);
         writeButtonSetBackground();
@@ -18021,6 +18071,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 if (profileStoriesView != null && (chatFull3 = this.chatInfo) != null) {
                                     profileStoriesView.setStories(chatFull3.stories);
                                 }
+                                ProfileGiftsView profileGiftsView = this.giftsView;
+                                if (profileGiftsView != null) {
+                                    profileGiftsView.update();
+                                }
                                 AvatarImageView avatarImageView = this.avatarImage;
                                 if (avatarImageView != null) {
                                     avatarImageView.setHasStories(needInsetForStories());
@@ -18078,6 +18132,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             if (profileStoriesView2 != null && (chatFull = this.chatInfo) != null) {
                                 profileStoriesView2.setStories(chatFull.stories);
                             }
+                            ProfileGiftsView profileGiftsView2 = this.giftsView;
+                            if (profileGiftsView2 != null) {
+                                profileGiftsView2.update();
+                            }
                             AvatarImageView avatarImageView2 = this.avatarImage;
                             if (avatarImageView2 != null) {
                                 avatarImageView2.setHasStories(needInsetForStories());
@@ -18110,6 +18168,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 ProfileStoriesView profileStoriesView3 = this.storyView;
                                 if (profileStoriesView3 != null) {
                                     profileStoriesView3.setStories(userFull.stories);
+                                }
+                                ProfileGiftsView profileGiftsView3 = this.giftsView;
+                                if (profileGiftsView3 != null) {
+                                    profileGiftsView3.update();
                                 }
                                 AvatarImageView avatarImageView3 = this.avatarImage;
                                 if (avatarImageView3 != null) {
@@ -18831,7 +18893,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         fixLayout();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:213:0x0693  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x06ba  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -18948,6 +19010,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 arrayList.add(ofFloat);
             }
+            ProfileGiftsView profileGiftsView = this.giftsView;
+            if (profileGiftsView != null) {
+                profileGiftsView.setAlpha(0.0f);
+                arrayList.add(ObjectAnimator.ofFloat(this.giftsView, (Property<ProfileGiftsView, Float>) View.ALPHA, 1.0f));
+            }
             if (this.timeItem.getTag() != null) {
                 arrayList.add(ObjectAnimator.ofFloat(this.timeItem, (Property<ImageView, Float>) View.ALPHA, 1.0f, 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(this.timeItem, (Property<ImageView, Float>) View.SCALE_X, 1.0f, 0.0f));
@@ -19023,6 +19090,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             ProfileStoriesView profileStoriesView = this.storyView;
             if (profileStoriesView != null) {
                 arrayList2.add(this.dialogId > 0 ? ObjectAnimator.ofFloat(profileStoriesView, (Property<ProfileStoriesView, Float>) View.ALPHA, 0.0f) : ObjectAnimator.ofFloat(profileStoriesView, "fragmentTransitionProgress", 0.0f));
+            }
+            ProfileGiftsView profileGiftsView2 = this.giftsView;
+            if (profileGiftsView2 != null) {
+                arrayList2.add(ObjectAnimator.ofFloat(profileGiftsView2, (Property<ProfileGiftsView, Float>) View.ALPHA, 0.0f));
             }
             if (this.timeItem.getTag() != null) {
                 this.timeItem.setAlpha(0.0f);
@@ -19856,6 +19927,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (profileStoriesView != null) {
                 profileStoriesView.setProgressToStoriesInsets(this.avatarAnimationProgress);
             }
+            ProfileGiftsView profileGiftsView = this.giftsView;
+            if (profileGiftsView != null) {
+                profileGiftsView.setProgressToStoriesInsets(this.avatarAnimationProgress);
+            }
         }
     }
 
@@ -19881,6 +19956,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         ProfileStoriesView profileStoriesView = this.storyView;
         if (profileStoriesView != null && (chatFull3 = this.chatInfo) != null) {
             profileStoriesView.setStories(chatFull3.stories);
+        }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.update();
         }
         AvatarImageView avatarImageView = this.avatarImage;
         if (avatarImageView != null) {
@@ -19989,6 +20068,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         ProfileStoriesView profileStoriesView = this.storyView;
         if (profileStoriesView != null) {
             profileStoriesView.setStories(userFull.stories);
+        }
+        ProfileGiftsView profileGiftsView = this.giftsView;
+        if (profileGiftsView != null) {
+            profileGiftsView.update();
         }
         AvatarImageView avatarImageView = this.avatarImage;
         if (avatarImageView != null) {

@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -196,7 +197,12 @@ public class StarsController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$sendPinnedOrder$2(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void lambda$sendPinnedOrder$3(TLObject tLObject, TLRPC.TL_error tL_error) {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ int lambda$togglePinned$2(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
+            return savedStarGift2.date - savedStarGift.date;
         }
 
         public boolean eq(ArrayList arrayList, ArrayList arrayList2) {
@@ -324,7 +330,7 @@ public class StarsController {
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(togglestargiftspinnedtotop, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsController.GiftsList.lambda$sendPinnedOrder$2(tLObject, tL_error);
+                    StarsController.GiftsList.lambda$sendPinnedOrder$3(tLObject, tL_error);
                 }
             }, 64);
         }
@@ -357,6 +363,16 @@ public class StarsController {
             }
             savedStarGift.pinned_to_top = z;
             this.gifts.removeAll(pinned);
+            if (this.sort_by_date) {
+                Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda3
+                    @Override // java.util.Comparator
+                    public final int compare(Object obj, Object obj2) {
+                        int lambda$togglePinned$2;
+                        lambda$togglePinned$2 = StarsController.GiftsList.lambda$togglePinned$2((TL_stars.SavedStarGift) obj, (TL_stars.SavedStarGift) obj2);
+                        return lambda$togglePinned$2;
+                    }
+                });
+            }
             this.gifts.addAll(0, pinned);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.dialogId), this);
             sendPinnedOrder();
@@ -3299,7 +3315,7 @@ public class StarsController {
                 peerSettings.charge_paid_message_stars = 0L;
             }
             MessagesController.getInstance(this.currentAccount).loadPeerSettings(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j)), MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j)), true);
-            ContactsController.getInstance(this.currentAccount).loadPrivacySettings();
+            ContactsController.getInstance(this.currentAccount).loadPrivacySettings(true);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j));
         }
     }

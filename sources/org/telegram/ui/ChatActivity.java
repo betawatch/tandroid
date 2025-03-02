@@ -15508,8 +15508,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         };
         this.onItemLongClickListener = new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.ChatActivity.10
-            /* JADX WARN: Removed duplicated region for block: B:28:0x009c  */
-            /* JADX WARN: Removed duplicated region for block: B:39:0x0089  */
+            /* JADX WARN: Removed duplicated region for block: B:32:0x009f  */
+            /* JADX WARN: Removed duplicated region for block: B:42:0x008c  */
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -15523,7 +15523,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         chatActivity.wasManualScroll = true;
                         if (view instanceof ChatActionCell) {
                             ChatActionCell chatActionCell = (ChatActionCell) view;
-                            if (!(chatActionCell.getMessageObject().messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && chatActionCell.getMessageObject().type != 21 && !chatActionCell.getMessageObject().isWallpaperAction() && chatActionCell.getMessageObject().type != 30) {
+                            MessageObject messageObject = chatActionCell.getMessageObject();
+                            if (messageObject == null) {
+                                return false;
+                            }
+                            if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && chatActionCell.getMessageObject().type != 21 && !chatActionCell.getMessageObject().isWallpaperAction() && chatActionCell.getMessageObject().type != 30) {
                                 z = false;
                                 if (!((BaseFragment) ChatActivity.this).actionBar.isActionModeShowed() || (ChatActivity.this.isReport() && !z)) {
                                     ChatActivity.this.processRowSelect(view, view instanceof ChatMessageCell ? !((ChatMessageCell) view).isInsideBackground(f, f2) : false, f, f2);
@@ -18156,7 +18160,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r6v8 ??), method size: 11590
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r10v19 ??), method size: 11590
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
