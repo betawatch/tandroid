@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import com.google.android.gms.cast.internal.CastUtils;
+import com.google.android.gms.common.images.WebImage;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.util.ArrayList;
@@ -109,6 +110,10 @@ public class MediaMetadata extends AbstractSafeParcelable {
             }
         }
         return true;
+    }
+
+    public void addImage(WebImage webImage) {
+        this.zzd.add(webImage);
     }
 
     public void clear() {

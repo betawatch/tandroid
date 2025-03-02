@@ -25,6 +25,10 @@ public final class WebImage extends AbstractSafeParcelable {
         this.zad = i3;
     }
 
+    public WebImage(Uri uri) {
+        this(uri, 0, 0);
+    }
+
     public WebImage(Uri uri, int i, int i2) {
         this(1, uri, i, i2);
         if (uri == null) {

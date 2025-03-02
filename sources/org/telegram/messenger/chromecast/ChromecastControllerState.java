@@ -1,5 +1,7 @@
 package org.telegram.messenger.chromecast;
 
+import java.io.File;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.chromecast.ChromecastController;
 
 /* loaded from: classes3.dex */
@@ -60,13 +62,26 @@ class ChromecastControllerState {
         this.client = remoteMediaClientHandler;
     }
 
+    public String setCoverFile(File file) {
+        String str = "/file" + Utilities.fastRandom.nextLong();
+        if (this.server == null) {
+            this.server = new ChromecastFileServer();
+        }
+        this.server.setCoverFile(str, file);
+        return str;
+    }
+
     public void setMedia(ChromecastMediaVariations chromecastMediaVariations) {
+        ChromecastFileServer chromecastFileServer;
         ChromecastMediaVariations chromecastMediaVariations2;
         if (this.client != null && chromecastMediaVariations != null) {
             addToFileServer(chromecastMediaVariations);
         }
         if (this.client != null && (chromecastMediaVariations2 = this.media) != null) {
             removeFromFileServer(chromecastMediaVariations2);
+        }
+        if (chromecastMediaVariations != null && chromecastMediaVariations.getVariationsCount() > 0 && !chromecastMediaVariations.getVariation(0).mimeType.startsWith("audio/") && (chromecastFileServer = this.server) != null) {
+            chromecastFileServer.setCoverFile(null, null);
         }
         ChromecastController.RemoteMediaClientHandler remoteMediaClientHandler = this.client;
         if (remoteMediaClientHandler != null && chromecastMediaVariations != null) {

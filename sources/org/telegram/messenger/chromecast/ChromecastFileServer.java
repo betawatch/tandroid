@@ -5,6 +5,7 @@ import android.net.wifi.WifiManager;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Pair;
 import com.google.android.exoplayer2.upstream.AssetDataSource;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DataSpec;
@@ -30,16 +31,16 @@ import org.telegram.messenger.chromecast.ChromecastMedia;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 
 /* loaded from: classes3.dex */
-class ChromecastFileServer extends NanoHTTPD {
+public class ChromecastFileServer extends NanoHTTPD {
     public static final ChromecastMedia ASSET_FALLBACK_FILE;
     private static final ChromecastMedia[] ASSET_FILES;
     private static final HashMap ASSET_FILES_MAP;
     private final DataSource.Factory assetDataSourceFactory;
     private final HashMap castedFiles;
+    private Pair coverFile;
     private final DataSource.Factory fileDataSourceFactory;
     private final DataSource.Factory mediaDataSourceFactory;
     private final AtomicInteger reqId;
-    private final HashMap savedFiles;
     private boolean started;
 
     private static class DataSourceInputStream extends InputStream {
@@ -111,7 +112,7 @@ class ChromecastFileServer extends NanoHTTPD {
     public ChromecastFileServer() {
         super(61578);
         this.castedFiles = new HashMap();
-        this.savedFiles = new HashMap();
+        this.coverFile = null;
         this.started = false;
         this.reqId = new AtomicInteger();
         this.assetDataSourceFactory = new DataSource.Factory() { // from class: org.telegram.messenger.chromecast.ChromecastFileServer$$ExternalSyntheticLambda0
@@ -135,7 +136,7 @@ class ChromecastFileServer extends NanoHTTPD {
     }
 
     private void check() {
-        if (this.castedFiles.isEmpty() && this.savedFiles.isEmpty()) {
+        if (this.castedFiles.isEmpty()) {
             if (this.started) {
                 stop();
                 this.started = false;
@@ -230,6 +231,12 @@ class ChromecastFileServer extends NanoHTTPD {
 
     private NanoHTTPD.Response serveAvailableRoutes(String str) {
         StringBuilder sb = new StringBuilder();
+        if (this.coverFile != null) {
+            if (sb.length() > 0) {
+                sb.append('\n');
+            }
+            sb.append(getUrlToSource(str, (String) this.coverFile.first));
+        }
         int i = 0;
         while (i < 2) {
             for (Map.Entry entry : (i == 0 ? ASSET_FILES_MAP : this.castedFiles).entrySet()) {
@@ -254,17 +261,11 @@ class ChromecastFileServer extends NanoHTTPD {
             }
             i++;
         }
-        for (Map.Entry entry2 : this.savedFiles.entrySet()) {
-            if (sb.length() > 0) {
-                sb.append('\n');
-            }
-            sb.append(getUrlToSource(str, (String) entry2.getKey()));
-        }
         return NanoHTTPD.newFixedLengthResponse(NanoHTTPD.Response.Status.OK, "text/plain", sb.toString());
     }
 
     private NanoHTTPD.Response serveFileImpl(NanoHTTPD.IHTTPSession iHTTPSession, File file) {
-        return NanoHTTPD.newFixedLengthResponse(NanoHTTPD.Response.Status.OK, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), 0L);
+        return NanoHTTPD.newFixedLengthResponse(NanoHTTPD.Response.Status.OK, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length());
     }
 
     private NanoHTTPD.Response serveFileImpl(NanoHTTPD.IHTTPSession iHTTPSession, ChromecastMedia chromecastMedia) {
@@ -319,7 +320,8 @@ class ChromecastFileServer extends NanoHTTPD {
             if (file != null) {
                 return serveFileImpl(iHTTPSession, file);
             }
-            File file2 = (File) this.savedFiles.get(path);
+            Pair pair = this.coverFile;
+            File file2 = (pair == null || !((String) pair.first).equalsIgnoreCase(path)) ? null : (File) this.coverFile.second;
             if (file2 != null) {
                 return serveFileImpl(iHTTPSession, file2);
             }
@@ -349,5 +351,21 @@ class ChromecastFileServer extends NanoHTTPD {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             return addCorsHeaders(NanoHTTPD.newFixedLengthResponse(NanoHTTPD.Response.Status.INTERNAL_ERROR, "text/plain", "Error reading file"));
         }
+    }
+
+    public void setCoverFile(String str, File file) {
+        if (str == null || file == null) {
+            Pair pair = this.coverFile;
+            if (pair != null && ((File) pair.second).exists()) {
+                try {
+                    ((File) this.coverFile.second).delete();
+                } catch (Exception unused) {
+                }
+            }
+            this.coverFile = null;
+        } else {
+            this.coverFile = new Pair(str, file);
+        }
+        check();
     }
 }

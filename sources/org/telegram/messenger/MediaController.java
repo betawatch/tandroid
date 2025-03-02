@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
@@ -51,6 +52,7 @@ import android.widget.FrameLayout;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import com.google.android.gms.cast.MediaMetadata;
+import com.google.android.gms.common.images.WebImage;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -78,6 +80,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.audioinfo.AudioInfo;
 import org.telegram.messenger.chromecast.ChromecastController;
+import org.telegram.messenger.chromecast.ChromecastFileServer;
 import org.telegram.messenger.chromecast.ChromecastMedia;
 import org.telegram.messenger.chromecast.ChromecastMediaVariations;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
@@ -105,6 +108,7 @@ import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
@@ -3116,8 +3120,23 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x01a4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x017c  */
+    /* JADX WARN: Type inference failed for: r7v2, types: [android.graphics.Bitmap] */
+    /* JADX WARN: Type inference failed for: r9v0 */
+    /* JADX WARN: Type inference failed for: r9v1, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r9v2 */
+    /* JADX WARN: Type inference failed for: r9v3, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r9v4, types: [java.io.FileOutputStream, java.io.OutputStream] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private ChromecastMediaVariations getCurrentChromecastMedia() {
+        ?? r9;
+        Exception e;
         MessageObject messageObject = this.playingMessageObject;
+        File file = null;
         if (messageObject == null) {
             return null;
         }
@@ -3126,13 +3145,13 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         TLRPC.Document document = this.playingMessageObject.getDocument();
         if (this.playingMessageObject.isRoundVideo() || this.playingMessageObject.isVideo() || this.playingMessageObject.isMusic()) {
             MessageObject messageObject2 = this.playingMessageObject;
-            File file = (!messageObject2.attachPathExists || messageObject2.messageOwner == null) ? null : new File(this.playingMessageObject.messageOwner.attachPath);
-            if (file == null || !file.exists()) {
-                file = FileLoader.getInstance(this.playingMessageObject.currentAccount).getPathToMessage(this.playingMessageObject.messageOwner);
+            File file2 = (!messageObject2.attachPathExists || messageObject2.messageOwner == null) ? null : new File(this.playingMessageObject.messageOwner.attachPath);
+            if (file2 == null || !file2.exists()) {
+                file2 = FileLoader.getInstance(this.playingMessageObject.currentAccount).getPathToMessage(this.playingMessageObject.messageOwner);
             }
-            if (file != null && file.exists()) {
+            if (file2 != null && file2.exists()) {
                 String mimeType = this.playingMessageObject.getMimeType();
-                Uri parse = Uri.parse("file://" + file.getAbsolutePath());
+                Uri parse = Uri.parse("file://" + file2.getAbsolutePath());
                 MediaMetadata mediaMetadata = new MediaMetadata();
                 AudioInfo audioInfo = this.audioInfo;
                 if (audioInfo != null) {
@@ -3156,6 +3175,90 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     }
                     if (this.audioInfo.getTrack() != 0) {
                         mediaMetadata.putInt("com.google.android.gms.cast.metadata.TRACK_NUMBER", this.audioInfo.getTrack());
+                    }
+                    if (this.audioInfo.getCover() != null) {
+                        File coverFile = this.audioInfo.getCoverFile();
+                        if (coverFile == null || !coverFile.exists()) {
+                            File makeCacheFile = StoryEntry.makeCacheFile(UserConfig.selectedAccount, "jpg");
+                            try {
+                                ?? cover = this.audioInfo.getCover();
+                                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
+                                r9 = new FileOutputStream(makeCacheFile);
+                                try {
+                                    cover.compress(compressFormat, 80, r9);
+                                    try {
+                                        r9.close();
+                                    } catch (Exception e2) {
+                                        e = e2;
+                                        FileLog.e(e);
+                                        file = makeCacheFile;
+                                        this.audioInfo.setCoverFile(file);
+                                        coverFile = file;
+                                        if (coverFile != null) {
+                                        }
+                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                    }
+                                    file = makeCacheFile;
+                                } catch (Exception e3) {
+                                    e = e3;
+                                    try {
+                                        FileLog.e(e);
+                                        if (r9 != 0) {
+                                            try {
+                                                r9.close();
+                                            } catch (Exception e4) {
+                                                makeCacheFile = null;
+                                                e = e4;
+                                                FileLog.e(e);
+                                                file = makeCacheFile;
+                                                this.audioInfo.setCoverFile(file);
+                                                coverFile = file;
+                                                if (coverFile != null) {
+                                                    mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
+                                                }
+                                                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                            }
+                                        }
+                                        this.audioInfo.setCoverFile(file);
+                                        coverFile = file;
+                                        if (coverFile != null) {
+                                        }
+                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                    } catch (Throwable th) {
+                                        th = th;
+                                        file = r9;
+                                        r9 = file;
+                                        if (r9 != 0) {
+                                            try {
+                                                r9.close();
+                                            } catch (Exception e5) {
+                                                FileLog.e(e5);
+                                            }
+                                        }
+                                        throw th;
+                                    }
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                    if (r9 != 0) {
+                                    }
+                                    throw th;
+                                }
+                            } catch (Exception e6) {
+                                e = e6;
+                                r9 = 0;
+                            } catch (Throwable th3) {
+                                th = th3;
+                                r9 = file;
+                                if (r9 != 0) {
+                                }
+                                throw th;
+                            }
+                            this.audioInfo.setCoverFile(file);
+                            coverFile = file;
+                        }
+                        if (coverFile != null && coverFile.exists()) {
+                            mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
+                        }
                     }
                 }
                 return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
