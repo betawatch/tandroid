@@ -2915,10 +2915,6 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.webViewResultSent);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x014e  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public boolean restoreState(BaseFragment baseFragment, BottomSheetTabs.WebTabData webTabData) {
         int i;
         if (webTabData == null || webTabData.props == null) {
@@ -2974,44 +2970,26 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             this.webViewContainer.replaceWebView(this.currentAccount, webTabData.webView, webTabData.proxy);
             this.webViewContainer.setState(webTabData.ready || webTabData.webView.isPageLoaded(), webTabData.lastUrl);
             if (Theme.isCurrentThemeDark() != webTabData.themeIsDark) {
-                if (this.webViewContainer.getWebView() != null) {
-                    this.webViewContainer.getWebView().animate().cancel();
-                    this.webViewContainer.getWebView().animate().alpha(0.0f).start();
-                }
-                this.progressView.setLoadProgress(0.0f);
-                this.progressView.setAlpha(1.0f);
-                this.progressView.setVisibility(0);
-                this.webViewContainer.setBotUser(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId)));
-                this.webViewContainer.loadFlickerAndSettingsItem(this.currentAccount, this.botId, null);
-                this.webViewContainer.setState(false, null);
-                if (this.webViewContainer.getWebView() != null) {
-                    this.webViewContainer.getWebView().loadUrl("about:blank");
-                }
-                webViewRequestProps = webTabData.props;
+                this.webViewContainer.notifyThemeChanged();
             }
-            requestWebView(baseFragment, webTabData.props);
-            this.hasSettings = webTabData.settings;
-            if (webTabData.error) {
-                this.errorShown = true;
-                createErrorContainer();
-                ArticleViewer.ErrorContainer errorContainer = this.errorContainer;
-                String userName = UserObject.getUserName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId)));
-                String str = webTabData.errorDescription;
-                this.errorCode = str;
-                errorContainer.set(userName, str);
-                this.errorContainer.setDark(AndroidUtilities.computePerceivedBrightness(this.backgroundPaint.getColor()) <= 0.721f, false);
-                this.errorContainer.setBackgroundColor(this.backgroundPaint.getColor());
-                this.errorContainer.setVisibility(0);
-                this.errorContainer.setAlpha(1.0f);
-            }
-            lockOrientation(webTabData.orientationLocked);
-            return true;
+        } else {
+            webViewRequestProps.response = null;
+            webViewRequestProps.responseTime = 0L;
         }
-        webViewRequestProps.response = null;
-        webViewRequestProps.responseTime = 0L;
         requestWebView(baseFragment, webTabData.props);
         this.hasSettings = webTabData.settings;
         if (webTabData.error) {
+            this.errorShown = true;
+            createErrorContainer();
+            ArticleViewer.ErrorContainer errorContainer = this.errorContainer;
+            String userName = UserObject.getUserName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId)));
+            String str = webTabData.errorDescription;
+            this.errorCode = str;
+            errorContainer.set(userName, str);
+            this.errorContainer.setDark(AndroidUtilities.computePerceivedBrightness(this.backgroundPaint.getColor()) <= 0.721f, false);
+            this.errorContainer.setBackgroundColor(this.backgroundPaint.getColor());
+            this.errorContainer.setVisibility(0);
+            this.errorContainer.setAlpha(1.0f);
         }
         lockOrientation(webTabData.orientationLocked);
         return true;
