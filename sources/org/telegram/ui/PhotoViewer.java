@@ -2382,7 +2382,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (PhotoViewer.this.menuItem.isSubItemVisible(10)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PhotoViewer.this.parentActivity, PhotoViewer.this.resourcesProvider);
                 builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                builder.setMessage(LocaleController.getString("CantPlayVideo", R.string.CantPlayVideo));
+                builder.setMessage(LocaleController.getString(R.string.CantPlayVideo));
                 builder.setPositiveButton(LocaleController.getString("Open", R.string.Open), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PhotoViewer$55$$ExternalSyntheticLambda2
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
@@ -27768,7 +27768,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.sendItem = addItem3;
         addItem3.setContentDescription(LocaleController.getString(R.string.Forward));
         ActionBarMenu actionBarMenu = this.menu;
-        ChooseQualityLayout$QualityIcon chooseQualityLayout$QualityIcon = new ChooseQualityLayout$QualityIcon(this.activityContext);
+        ChooseQualityLayout$QualityIcon chooseQualityLayout$QualityIcon = new ChooseQualityLayout$QualityIcon(this.activityContext, R.drawable.video_settings, new DarkThemeResourceProvider());
         this.videoItemIcon = chooseQualityLayout$QualityIcon;
         ActionBarMenuItem addItem4 = actionBarMenu.addItem(1, chooseQualityLayout$QualityIcon);
         this.videoItem = addItem4;
@@ -27820,6 +27820,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
                 if (PhotoViewer.this.videoPlayer != null) {
                     PhotoViewer.this.videoPlayer.setMute(CastSync.isActive() || PhotoViewer.this.muteVideo);
+                }
+                if (PhotoViewer.this.videoItemIcon != null) {
+                    PhotoViewer.this.videoItemIcon.setCasting(CastSync.isActive(), true);
                 }
             }
         };
@@ -30374,6 +30377,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     }
                 }
                 chooseSpeed(CastSync.getSpeed(), true, false);
+            }
+            ChooseQualityLayout$QualityIcon chooseQualityLayout$QualityIcon = this.videoItemIcon;
+            if (chooseQualityLayout$QualityIcon != null) {
+                chooseQualityLayout$QualityIcon.setCasting(CastSync.isActive(), true);
             }
             this.ignorePlayerUpdate = false;
         }

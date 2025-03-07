@@ -2759,27 +2759,33 @@ public class LocaleController {
         if (localeInfo != null) {
             if (localeInfo.isRemote() || this.currentLocaleInfo.isUnofficial()) {
                 if (this.currentLocaleInfo.hasBaseLang()) {
-                    LocaleInfo localeInfo2 = this.currentLocaleInfo;
-                    if (localeInfo2.baseVersion < i3) {
+                    if (this.currentLocaleInfo.baseVersion < i3) {
+                        FileLog.d("LocaleController checkUpdateForCurrentRemoteLocale base version is out of date, applying (local is " + this.currentLocaleInfo.baseVersion + ", remote is " + i3 + ")");
                         this.checkingUpdateForCurrentRemoteLocale = true;
+                        LocaleInfo localeInfo2 = this.currentLocaleInfo;
                         applyRemoteLanguage(localeInfo2, localeInfo2.baseLangCode, false, i, new Runnable() { // from class: org.telegram.messenger.LocaleController$$ExternalSyntheticLambda8
                             @Override // java.lang.Runnable
                             public final void run() {
                                 LocaleController.this.lambda$checkUpdateForCurrentRemoteLocale$2(i);
                             }
                         });
+                    } else {
+                        FileLog.d("LocaleController checkUpdateForCurrentRemoteLocale base version is up to date (local is " + this.currentLocaleInfo.baseVersion + ", remote is " + i3 + ")");
                     }
                 }
-                LocaleInfo localeInfo3 = this.currentLocaleInfo;
-                if (localeInfo3.version < i2) {
-                    this.checkingUpdateForCurrentRemoteLocale = true;
-                    applyRemoteLanguage(localeInfo3, localeInfo3.shortName, false, i, new Runnable() { // from class: org.telegram.messenger.LocaleController$$ExternalSyntheticLambda9
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            LocaleController.this.lambda$checkUpdateForCurrentRemoteLocale$3(i);
-                        }
-                    });
+                if (this.currentLocaleInfo.version >= i2) {
+                    FileLog.d("LocaleController checkUpdateForCurrentRemoteLocale version is up to date (local is " + this.currentLocaleInfo.version + ", remote is " + i2 + ")");
+                    return;
                 }
+                FileLog.d("LocaleController checkUpdateForCurrentRemoteLocale version is out of date, applying (local is " + this.currentLocaleInfo.version + ", remote is " + i2 + ")");
+                this.checkingUpdateForCurrentRemoteLocale = true;
+                LocaleInfo localeInfo3 = this.currentLocaleInfo;
+                applyRemoteLanguage(localeInfo3, localeInfo3.shortName, false, i, new Runnable() { // from class: org.telegram.messenger.LocaleController$$ExternalSyntheticLambda9
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        LocaleController.this.lambda$checkUpdateForCurrentRemoteLocale$3(i);
+                    }
+                });
             }
         }
     }

@@ -1,5 +1,6 @@
 package org.telegram.messenger.chromecast;
 
+import android.text.TextUtils;
 import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.chromecast.ChromecastController;
@@ -63,6 +64,10 @@ class ChromecastControllerState {
     }
 
     public String setCoverFile(File file) {
+        ChromecastFileServer chromecastFileServer;
+        if (file != null && (chromecastFileServer = this.server) != null && chromecastFileServer.getCoverFile() != null && TextUtils.equals(this.server.getCoverFile().getAbsolutePath(), file.getAbsolutePath())) {
+            return this.server.getCoverPath();
+        }
         String str = "/file" + Utilities.fastRandom.nextLong();
         if (this.server == null) {
             this.server = new ChromecastFileServer();

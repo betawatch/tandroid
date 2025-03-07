@@ -4857,31 +4857,31 @@ public class AndroidUtilities {
         baseFragment.showDialog(create);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x003f, code lost:
     
-        if (r8.length() != 0) goto L27;
+        if (r8.length() != 0) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008c, code lost:
     
-        if (r8 != null) goto L45;
+        if (r8 != null) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0097, code lost:
     
         r3 = "text/plain";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0095, code lost:
     
         r3 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0093, code lost:
     
-        if (r8 != null) goto L45;
+        if (r8 != null) goto L37;
      */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x006a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00b9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0050 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x009f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x008f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4899,8 +4899,7 @@ public class AndroidUtilities {
         int lastIndexOf = str.lastIndexOf(46);
         if (lastIndexOf != -1) {
             String substring = str.substring(lastIndexOf + 1);
-            int hashCode = substring.toLowerCase().hashCode();
-            if (z && (hashCode == 96796 || hashCode == 3213227 || hashCode == 104987 || hashCode == 3669 || hashCode == 99351)) {
+            if (z && MessageObject.isV(substring)) {
                 return true;
             }
             String mimeTypeFromExtension = singleton.getMimeTypeFromExtension(substring.toLowerCase());

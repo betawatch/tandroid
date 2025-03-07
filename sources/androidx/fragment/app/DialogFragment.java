@@ -155,10 +155,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         dismissInternal(true, false);
     }
 
-    public Dialog getDialog() {
-        return this.mDialog;
-    }
-
     public int getTheme() {
         return this.mTheme;
     }
