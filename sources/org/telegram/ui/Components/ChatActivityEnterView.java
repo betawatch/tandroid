@@ -14220,25 +14220,25 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         editTextCaption.setHintText(string2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x007e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x009c, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r7.parentFragment.getDialogId(), true) == false) goto L22;
+        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r7.parentFragment.getDialogId(), true) == false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00de, code lost:
     
         r0 = r7.parentFragment;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00e0, code lost:
     
-        if (r0 == null) goto L31;
+        if (r0 == null) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00e6, code lost:
     
-        if (r0.getChatMode() != 0) goto L31;
+        if (r0.getChatMode() != 0) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00dc, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.parentFragment.getDialogId(), true) != false) goto L26;
+        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.parentFragment.getDialogId(), true) != false) goto L30;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -14246,7 +14246,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     public void updateGiftButton(boolean z) {
         boolean z2;
         HintView2 hintView2;
-        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && getParentFragment().getCurrentUser() != null && !BuildVars.IS_BILLING_UNAVAILABLE && !getParentFragment().getCurrentUser().self && getParentFragment().getCurrentUserInfo() != null) {
+        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && getParentFragment().getCurrentUser() != null && !BuildVars.IS_BILLING_UNAVAILABLE && !UserObject.isUserSelf(getParentFragment().getCurrentUser()) && !UserObject.isBot(getParentFragment().getCurrentUser()) && !MessagesController.isSupportUser(getParentFragment().getCurrentUser()) && getParentFragment().getCurrentUserInfo() != null) {
             z2 = true;
             if (!getParentFragment().getCurrentUser().premium && MessagesController.getInstance(this.currentAccount).giftAttachMenuIcon && MessagesController.getInstance(this.currentAccount).giftTextFieldIcon) {
             }

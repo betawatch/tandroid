@@ -361,7 +361,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
-            PrivacyControlActivity.this.showDialog(new PremiumFeatureBottomSheet(PrivacyControlActivity.this, 39, false));
+            PrivacyControlActivity.this.showDialog(new PremiumFeatureBottomSheet(PrivacyControlActivity.this, 27, false));
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -2478,7 +2478,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             applyCurrentPrivacySettings();
             return;
         }
-        create = new PremiumFeatureBottomSheet(this, 39, true);
+        create = new PremiumFeatureBottomSheet(this, 27, true);
         showDialog(create);
     }
 

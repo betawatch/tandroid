@@ -7188,45 +7188,43 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0138  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$sendMessage$16(final long j, final int i, boolean z, boolean z2, LongSparseArray longSparseArray, ArrayList arrayList, final ArrayList arrayList2, final MessageObject messageObject, final TLRPC.Peer peer, final TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$sendMessage$16(final long j, final int i, boolean z, boolean z2, LongSparseArray longSparseArray, ArrayList arrayList, final ArrayList arrayList2, final MessageObject messageObject, final TLRPC.Peer peer, final TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages, TLObject tLObject, TLRPC.TL_error tL_error) {
+        final TLRPC.TL_error tL_error2;
         String str;
         String str2;
-        int i2;
         TLRPC.Message message;
         TLRPC.Message message2;
+        int i2;
         int i3;
-        int i4;
         long j2;
         TLRPC.Updates updates;
         SparseLongArray sparseLongArray;
-        int i5;
+        int i4;
         final TLRPC.Message message3;
         int indexOf;
-        int i6 = i;
+        int i5 = i;
         ArrayList arrayList3 = arrayList;
         ArrayList arrayList4 = arrayList2;
-        int i7 = -1;
+        int i6 = -1;
         if (tL_error == null) {
             SparseLongArray sparseLongArray2 = new SparseLongArray();
             TLRPC.Updates updates2 = (TLRPC.Updates) tLObject;
-            int i8 = 0;
-            while (i8 < updates2.updates.size()) {
-                TLRPC.Update update = updates2.updates.get(i8);
+            int i7 = 0;
+            while (i7 < updates2.updates.size()) {
+                TLRPC.Update update = updates2.updates.get(i7);
                 if (update instanceof TLRPC.TL_updateMessageID) {
                     TLRPC.TL_updateMessageID tL_updateMessageID = (TLRPC.TL_updateMessageID) update;
                     sparseLongArray2.put(tL_updateMessageID.id, tL_updateMessageID.random_id);
-                    updates2.updates.remove(i8);
-                    i8--;
+                    updates2.updates.remove(i7);
+                    i7--;
                 }
-                i8++;
+                i7++;
             }
             getNotificationCenter().postNotificationNameOnUIThread(NotificationCenter.savedMessagesForwarded, sparseLongArray2);
             Integer num = getMessagesController().dialogs_read_outbox_max.get(Long.valueOf(j));
@@ -7235,73 +7233,72 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 getMessagesController().dialogs_read_outbox_max.put(Long.valueOf(j), num);
             }
             Integer num2 = num;
+            int i8 = 0;
             int i9 = 0;
-            int i10 = 0;
-            while (i9 < updates2.updates.size()) {
-                TLRPC.Update update2 = updates2.updates.get(i9);
+            while (i8 < updates2.updates.size()) {
+                TLRPC.Update update2 = updates2.updates.get(i8);
                 boolean z3 = update2 instanceof TLRPC.TL_updateNewMessage;
                 if ((z3 || (update2 instanceof TLRPC.TL_updateNewChannelMessage) || (update2 instanceof TLRPC.TL_updateNewScheduledMessage) || (update2 instanceof TLRPC.TL_updateQuickReplyMessage)) && (getMessageFromUpdate(update2) == null || !(getMessageFromUpdate(update2).action instanceof TLRPC.TL_messageActionPaidMessage))) {
-                    int i11 = i6 != 0 ? 1 : 0;
-                    updates2.updates.remove(i9);
-                    int i12 = i9 - 1;
+                    int i10 = i9;
+                    int i11 = i5 != 0 ? 1 : 0;
+                    updates2.updates.remove(i8);
+                    int i12 = i8 - 1;
                     if (z3) {
                         TLRPC.TL_updateNewMessage tL_updateNewMessage = (TLRPC.TL_updateNewMessage) update2;
-                        message2 = tL_updateNewMessage.message;
-                        getMessagesController().processNewDifferenceParams(i7, tL_updateNewMessage.pts, i7, tL_updateNewMessage.pts_count);
+                        message = tL_updateNewMessage.message;
+                        getMessagesController().processNewDifferenceParams(i6, tL_updateNewMessage.pts, i6, tL_updateNewMessage.pts_count);
                     } else if (update2 instanceof TLRPC.TL_updateNewScheduledMessage) {
-                        message = ((TLRPC.TL_updateNewScheduledMessage) update2).message;
-                        i2 = i10;
-                        i3 = 1;
-                        i4 = (z || message.date == 2147483646) ? i3 : 0;
-                        ImageLoader.saveMessageThumbs(message);
-                        if (i4 == 0) {
-                            message.unread = num2.intValue() < message.id;
+                        message2 = ((TLRPC.TL_updateNewScheduledMessage) update2).message;
+                        i2 = 1;
+                        i3 = (z || message2.date == 2147483646) ? i2 : 0;
+                        ImageLoader.saveMessageThumbs(message2);
+                        if (i3 == 0) {
+                            message2.unread = num2.intValue() < message2.id;
                         }
-                        if (z2) {
-                            message.out = true;
-                            message.unread = false;
-                            message.media_unread = false;
+                        if (!z2) {
+                            message2.out = true;
+                            message2.unread = false;
+                            message2.media_unread = false;
                         }
-                        j2 = sparseLongArray2.get(message.id);
+                        j2 = sparseLongArray2.get(message2.id);
                         if (j2 != 0 || (message3 = (TLRPC.Message) longSparseArray.get(j2)) == null || (indexOf = arrayList3.indexOf(message3)) == -1) {
                             updates = updates2;
                             sparseLongArray = sparseLongArray2;
-                            i10 = i2;
-                            i9 = i12;
+                            i9 = i10;
+                            i8 = i12;
                         } else {
+                            TLRPC.Updates updates3 = updates2;
                             MessageObject messageObject2 = (MessageObject) arrayList4.get(indexOf);
                             arrayList3.remove(indexOf);
                             arrayList4.remove(indexOf);
                             final int i13 = message3.id;
                             final ArrayList arrayList5 = new ArrayList();
-                            arrayList5.add(message);
+                            arrayList5.add(message2);
                             TLRPC.Message message4 = messageObject2.messageOwner;
-                            message4.post_author = message.post_author;
-                            if ((message.flags & ConnectionsManager.FileTypeVideo) != 0) {
-                                message4.ttl_period = message.ttl_period;
+                            message4.post_author = message2.post_author;
+                            if ((message2.flags & ConnectionsManager.FileTypeVideo) != 0) {
+                                message4.ttl_period = message2.ttl_period;
                                 message4.flags |= ConnectionsManager.FileTypeVideo;
                             }
-                            updateMediaPaths(messageObject2, message, message.id, null, true);
+                            updates = updates3;
+                            updateMediaPaths(messageObject2, message2, message2.id, null, true);
                             final int mediaExistanceFlags = messageObject2.getMediaExistanceFlags();
-                            message3.id = message.id;
-                            int i14 = i2 + 1;
-                            if (i11 != i4) {
-                                final int i15 = i4;
-                                TLRPC.Updates updates3 = updates2;
-                                final int i16 = i11;
+                            message3.id = message2.id;
+                            int i14 = i10 + 1;
+                            if (i11 != i3) {
+                                final int i15 = i3;
                                 sparseLongArray = sparseLongArray2;
-                                final TLRPC.Message message5 = message;
+                                final int i16 = i11;
+                                final TLRPC.Message message5 = message2;
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda38
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$sendMessage$10(arrayList5, i15, i13, message3, i16, message5, messageObject, i);
                                     }
                                 });
-                                updates = updates3;
                             } else {
                                 sparseLongArray = sparseLongArray2;
-                                final TLRPC.Message message6 = message;
-                                updates = updates2;
+                                final TLRPC.Message message6 = message2;
                                 getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda39
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -7309,98 +7306,81 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     }
                                 });
                             }
-                            i9 = i12;
-                            i10 = i14;
+                            i8 = i12;
+                            i9 = i14;
                         }
-                        i5 = 1;
+                        i4 = 1;
                     } else if (update2 instanceof TLRPC.TL_updateQuickReplyMessage) {
                         QuickRepliesController.getInstance(this.currentAccount).processUpdate(update2, null, 0);
-                        message2 = ((TLRPC.TL_updateQuickReplyMessage) update2).message;
+                        message = ((TLRPC.TL_updateQuickReplyMessage) update2).message;
                     } else {
                         TLRPC.TL_updateNewChannelMessage tL_updateNewChannelMessage = (TLRPC.TL_updateNewChannelMessage) update2;
-                        TLRPC.Message message7 = tL_updateNewChannelMessage.message;
-                        i2 = i10;
-                        getMessagesController().processNewChannelDifferenceParams(tL_updateNewChannelMessage.pts, tL_updateNewChannelMessage.pts_count, message7.peer_id.channel_id);
-                        message = message7;
-                        i3 = 0;
-                        if (z) {
-                        }
-                        ImageLoader.saveMessageThumbs(message);
-                        if (i4 == 0) {
-                        }
-                        if (z2) {
-                        }
-                        j2 = sparseLongArray2.get(message.id);
-                        if (j2 != 0) {
-                        }
-                        updates = updates2;
-                        sparseLongArray = sparseLongArray2;
-                        i10 = i2;
-                        i9 = i12;
-                        i5 = 1;
+                        message = tL_updateNewChannelMessage.message;
+                        getMessagesController().processNewChannelDifferenceParams(tL_updateNewChannelMessage.pts, tL_updateNewChannelMessage.pts_count, message.peer_id.channel_id);
                     }
-                    message = message2;
-                    i2 = i10;
-                    i3 = 0;
+                    message2 = message;
+                    i2 = 0;
                     if (z) {
                     }
-                    ImageLoader.saveMessageThumbs(message);
-                    if (i4 == 0) {
+                    ImageLoader.saveMessageThumbs(message2);
+                    if (i3 == 0) {
                     }
-                    if (z2) {
+                    if (!z2) {
                     }
-                    j2 = sparseLongArray2.get(message.id);
+                    j2 = sparseLongArray2.get(message2.id);
                     if (j2 != 0) {
                     }
                     updates = updates2;
                     sparseLongArray = sparseLongArray2;
-                    i10 = i2;
-                    i9 = i12;
-                    i5 = 1;
+                    i9 = i10;
+                    i8 = i12;
+                    i4 = 1;
                 } else {
                     updates = updates2;
                     sparseLongArray = sparseLongArray2;
-                    i5 = 1;
+                    i4 = 1;
                 }
-                i9 += i5;
-                i6 = i;
-                arrayList4 = arrayList2;
+                i8 += i4;
+                i5 = i;
+                arrayList3 = arrayList;
                 updates2 = updates;
                 sparseLongArray2 = sparseLongArray;
-                i7 = -1;
-                arrayList3 = arrayList;
+                i6 = -1;
+                arrayList4 = arrayList2;
             }
-            int i17 = i10;
+            int i17 = i9;
             TLRPC.Updates updates4 = updates2;
             if (!updates4.updates.isEmpty()) {
                 getMessagesController().processUpdates(updates4, false);
             }
             getStatsController().incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 1, i17);
+            tL_error2 = tL_error;
         } else {
+            tL_error2 = tL_error;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.this.lambda$sendMessage$13(tL_error, tL_messages_forwardMessages);
+                    SendMessagesHelper.this.lambda$sendMessage$13(tL_error2, tL_messages_forwardMessages);
                 }
             });
         }
         for (int i18 = 0; i18 < arrayList.size(); i18++) {
-            final TLRPC.Message message8 = (TLRPC.Message) arrayList.get(i18);
-            getMessagesStorage().markMessageAsSendError(message8, i != 0 ? 1 : 0);
-            if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
+            final TLRPC.Message message7 = (TLRPC.Message) arrayList.get(i18);
+            getMessagesStorage().markMessageAsSendError(message7, i != 0 ? 1 : 0);
+            if (tL_error2 != null && (str2 = tL_error2.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
                 StarsController.getInstance(this.currentAccount);
-                message8.errorAllowedPriceStars = StarsController.getAllowedPaidStars(tL_messages_forwardMessages);
-                message8.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message8), message8);
+                message7.errorAllowedPriceStars = StarsController.getAllowedPaidStars(tL_messages_forwardMessages);
+                message7.errorNewPriceStars = Long.parseLong(tL_error2.text.substring(23)) / tL_messages_forwardMessages.id.size();
+                getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message7), message7);
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda41
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.this.lambda$sendMessage$14(message8, i);
+                    SendMessagesHelper.this.lambda$sendMessage$14(message7, i);
                 }
             });
         }
-        if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
+        if (tL_error2 == null || (str = tL_error2.text) == null || !str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
             return;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda42
@@ -13583,24 +13563,25 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:302:0x0971  */
     /* JADX WARN: Removed duplicated region for block: B:304:0x097f  */
     /* JADX WARN: Removed duplicated region for block: B:307:0x098f  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x09db  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x09fc  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x0a0a  */
-    /* JADX WARN: Removed duplicated region for block: B:324:0x0a1e  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x0a7a  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x0a87  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0a21  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x09ee A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:335:0x09b9  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x092b  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0912  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0902  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0884  */
-    /* JADX WARN: Removed duplicated region for block: B:342:0x0845  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x07ee  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x0733  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x06d9  */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x06eb  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x09d6  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x09f4  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x0a02  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x0a24  */
+    /* JADX WARN: Removed duplicated region for block: B:327:0x0a83  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x0a90  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x0a27  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x0a18  */
+    /* JADX WARN: Removed duplicated region for block: B:335:0x09e9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x09b9  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x092b  */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x0912  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0902  */
+    /* JADX WARN: Removed duplicated region for block: B:342:0x0884  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x0845  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x07ee  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x0733  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x06d9  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x06eb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -13667,6 +13648,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages;
         boolean z15;
         boolean z16;
+        TLRPC.InputPeer inputPeer2;
         final ArrayList arrayList12;
         Runnable runnable;
         TLRPC.Message message2;
@@ -13791,7 +13773,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         ArrayList<Long> arrayList16 = new ArrayList<>();
         ArrayList<Integer> arrayList17 = new ArrayList<>();
         LongSparseArray longSparseArray5 = new LongSparseArray();
-        TLRPC.InputPeer inputPeer2 = getMessagesController().getInputPeer(j11);
+        TLRPC.InputPeer inputPeer3 = getMessagesController().getInputPeer(j11);
         boolean z20 = j11 == clientUserId;
         ArrayList arrayList18 = arrayList15;
         ArrayList<Long> arrayList19 = arrayList16;
@@ -13800,7 +13782,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i13 = 0;
         LongSparseArray longSparseArray6 = longSparseArray5;
         ArrayList<Integer> arrayList21 = arrayList17;
-        TLRPC.InputPeer inputPeer3 = inputPeer2;
+        TLRPC.InputPeer inputPeer4 = inputPeer3;
         while (i12 < arrayList.size()) {
             final MessageObject messageObject3 = arrayList13.get(i12);
             if (messageObject3.getId() <= 0 || messageObject3.needDrawBluredPreview()) {
@@ -13813,7 +13795,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 arrayList2 = arrayList19;
                 arrayList3 = arrayList13;
                 arrayList4 = arrayList20;
-                inputPeer = inputPeer3;
+                inputPeer = inputPeer4;
                 arrayList5 = arrayList21;
                 longSparseArray2 = longSparseArray6;
                 arrayList6 = arrayList18;
@@ -13845,7 +13827,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -13858,7 +13840,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -13875,7 +13857,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -13888,7 +13870,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -13905,7 +13887,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -13918,7 +13900,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -13935,7 +13917,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -13948,7 +13930,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -13965,7 +13947,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -13978,7 +13960,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -14263,8 +14245,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     ArrayList<Integer> arrayList23 = arrayList21;
                                     arrayList23.add(Integer.valueOf(tL_message.fwd_msg_id));
                                     tL_message.date = i == 0 ? i : getConnectionsManager().getCurrentTime();
-                                    TLRPC.InputPeer inputPeer4 = inputPeer3;
-                                    z14 = inputPeer4 instanceof TLRPC.TL_inputPeerChannel;
+                                    TLRPC.InputPeer inputPeer5 = inputPeer4;
+                                    z14 = inputPeer5 instanceof TLRPC.TL_inputPeerChannel;
                                     if (z14 || !z8) {
                                         message = messageObject3.messageOwner;
                                         longSparseArray3 = longSparseArray4;
@@ -14335,13 +14317,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         StringBuilder sb = new StringBuilder();
                                         sb.append("forward message user_id = ");
                                         arrayList11 = arrayList22;
-                                        sb.append(inputPeer4.user_id);
+                                        sb.append(inputPeer5.user_id);
                                         sb.append(" chat_id = ");
-                                        sb.append(inputPeer4.chat_id);
+                                        sb.append(inputPeer5.chat_id);
                                         sb.append(" channel_id = ");
-                                        sb.append(inputPeer4.channel_id);
+                                        sb.append(inputPeer5.channel_id);
                                         sb.append(" access_hash = ");
-                                        sb.append(inputPeer4.access_hash);
+                                        sb.append(inputPeer5.access_hash);
                                         FileLog.d(sb.toString());
                                     }
                                     if (messageObject != null) {
@@ -14357,7 +14339,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             if (arrayList8.size() != 100) {
                                                 i7 = i5;
                                                 if (i7 != arrayList.size() - i6 && (i7 == arrayList.size() - i6 || arrayList9.get(i7 + 1).getDialogId() == messageObject3.getDialogId())) {
-                                                    inputPeer = inputPeer4;
+                                                    inputPeer = inputPeer5;
+                                                    arrayList4 = arrayList24;
                                                     arrayList6 = arrayList8;
                                                     i3 = i7;
                                                     longSparseArray2 = longSparseArray7;
@@ -14368,7 +14351,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     peer = peer3;
                                                     arrayList2 = arrayList11;
                                                     j6 = j9;
-                                                    arrayList4 = arrayList24;
                                                     arrayList3 = arrayList9;
                                                     j5 = j14;
                                                 }
@@ -14380,7 +14362,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                                             getUserConfig().saveConfig(false);
                                             tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
-                                            tL_messages_forwardMessages.to_peer = inputPeer4;
+                                            tL_messages_forwardMessages.to_peer = inputPeer5;
                                             if (z3) {
                                                 if (!MessagesController.getNotificationsSettings(this.currentAccount).getBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + j11, false)) {
                                                     z15 = false;
@@ -14413,27 +14395,30 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     if (arrayList.size() == 1 && arrayList.get(0).messageOwner.with_my_score) {
                                                         z16 = true;
                                                         tL_messages_forwardMessages.with_my_score = z16;
-                                                        int i19 = i7;
                                                         if (i2 >= 0) {
                                                             tL_messages_forwardMessages.flags |= FileLoaderPriorityQueue.PRIORITY_VALUE_MAX;
                                                             tL_messages_forwardMessages.video_timestamp = i2;
                                                         }
-                                                        if (j2 > 0) {
+                                                        if (j2 <= 0) {
                                                             tL_messages_forwardMessages.flags |= 2097152;
-                                                            tL_messages_forwardMessages.allow_paid_stars = j2;
+                                                            inputPeer2 = inputPeer5;
+                                                            tL_messages_forwardMessages.allow_paid_stars = tL_messages_forwardMessages.id.size() * j2;
+                                                        } else {
+                                                            inputPeer2 = inputPeer5;
                                                         }
                                                         arrayList12 = new ArrayList(arrayList24);
                                                         peer = peer3;
+                                                        int i19 = i7;
                                                         j5 = j14;
+                                                        arrayList4 = arrayList24;
                                                         arrayList5 = arrayList26;
                                                         longSparseArray2 = longSparseArray7;
                                                         longSparseArray = longSparseArray3;
-                                                        inputPeer = inputPeer4;
+                                                        inputPeer = inputPeer2;
                                                         str3 = str7;
                                                         final boolean z24 = i != 2147483646;
                                                         j6 = j9;
                                                         final boolean z25 = z20;
-                                                        arrayList4 = arrayList24;
                                                         chat2 = chat6;
                                                         arrayList2 = arrayList25;
                                                         arrayList6 = arrayList8;
@@ -14458,23 +14443,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     }
                                                     z16 = false;
                                                     tL_messages_forwardMessages.with_my_score = z16;
-                                                    int i192 = i7;
                                                     if (i2 >= 0) {
                                                     }
-                                                    if (j2 > 0) {
+                                                    if (j2 <= 0) {
                                                     }
                                                     arrayList12 = new ArrayList(arrayList24);
                                                     peer = peer3;
+                                                    int i192 = i7;
                                                     j5 = j14;
+                                                    arrayList4 = arrayList24;
                                                     arrayList5 = arrayList26;
                                                     longSparseArray2 = longSparseArray7;
                                                     longSparseArray = longSparseArray3;
-                                                    inputPeer = inputPeer4;
+                                                    inputPeer = inputPeer2;
                                                     str3 = str7;
                                                     final boolean z242 = i != 2147483646;
                                                     j6 = j9;
                                                     final boolean z252 = z20;
-                                                    arrayList4 = arrayList24;
                                                     chat2 = chat6;
                                                     arrayList2 = arrayList25;
                                                     arrayList6 = arrayList8;
@@ -14509,23 +14494,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             if (arrayList.size() == 1) {
                                                 z16 = true;
                                                 tL_messages_forwardMessages.with_my_score = z16;
-                                                int i1922 = i7;
                                                 if (i2 >= 0) {
                                                 }
-                                                if (j2 > 0) {
+                                                if (j2 <= 0) {
                                                 }
                                                 arrayList12 = new ArrayList(arrayList24);
                                                 peer = peer3;
+                                                int i1922 = i7;
                                                 j5 = j14;
+                                                arrayList4 = arrayList24;
                                                 arrayList5 = arrayList262;
                                                 longSparseArray2 = longSparseArray7;
                                                 longSparseArray = longSparseArray3;
-                                                inputPeer = inputPeer4;
+                                                inputPeer = inputPeer2;
                                                 str3 = str7;
                                                 final boolean z2422 = i != 2147483646;
                                                 j6 = j9;
                                                 final boolean z2522 = z20;
-                                                arrayList4 = arrayList24;
                                                 chat2 = chat6;
                                                 arrayList2 = arrayList252;
                                                 arrayList6 = arrayList8;
@@ -14544,23 +14529,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             }
                                             z16 = false;
                                             tL_messages_forwardMessages.with_my_score = z16;
-                                            int i19222 = i7;
                                             if (i2 >= 0) {
                                             }
-                                            if (j2 > 0) {
+                                            if (j2 <= 0) {
                                             }
                                             arrayList12 = new ArrayList(arrayList24);
                                             peer = peer3;
+                                            int i19222 = i7;
                                             j5 = j14;
+                                            arrayList4 = arrayList24;
                                             arrayList5 = arrayList262;
                                             longSparseArray2 = longSparseArray7;
                                             longSparseArray = longSparseArray3;
-                                            inputPeer = inputPeer4;
+                                            inputPeer = inputPeer2;
                                             str3 = str7;
                                             final boolean z24222 = i != 2147483646;
                                             j6 = j9;
                                             final boolean z25222 = z20;
-                                            arrayList4 = arrayList24;
                                             chat2 = chat6;
                                             arrayList2 = arrayList252;
                                             arrayList6 = arrayList8;
@@ -14586,7 +14571,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                                     getUserConfig().saveConfig(false);
                                     tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
-                                    tL_messages_forwardMessages.to_peer = inputPeer4;
+                                    tL_messages_forwardMessages.to_peer = inputPeer5;
                                     if (z3) {
                                     }
                                     z15 = true;
@@ -14607,23 +14592,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     }
                                     z16 = false;
                                     tL_messages_forwardMessages.with_my_score = z16;
-                                    int i192222 = i7;
                                     if (i2 >= 0) {
                                     }
-                                    if (j2 > 0) {
+                                    if (j2 <= 0) {
                                     }
                                     arrayList12 = new ArrayList(arrayList24);
                                     peer = peer3;
+                                    int i192222 = i7;
                                     j5 = j14;
+                                    arrayList4 = arrayList24;
                                     arrayList5 = arrayList2622;
                                     longSparseArray2 = longSparseArray7;
                                     longSparseArray = longSparseArray3;
-                                    inputPeer = inputPeer4;
+                                    inputPeer = inputPeer2;
                                     str3 = str7;
                                     final boolean z242222 = i != 2147483646;
                                     j6 = j9;
                                     final boolean z252222 = z20;
-                                    arrayList4 = arrayList24;
                                     chat2 = chat6;
                                     arrayList2 = arrayList2522;
                                     arrayList6 = arrayList8;
@@ -14673,8 +14658,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             ArrayList<Integer> arrayList232 = arrayList21;
                             arrayList232.add(Integer.valueOf(tL_message.fwd_msg_id));
                             tL_message.date = i == 0 ? i : getConnectionsManager().getCurrentTime();
-                            TLRPC.InputPeer inputPeer42 = inputPeer3;
-                            z14 = inputPeer42 instanceof TLRPC.TL_inputPeerChannel;
+                            TLRPC.InputPeer inputPeer52 = inputPeer4;
+                            z14 = inputPeer52 instanceof TLRPC.TL_inputPeerChannel;
                             if (z14) {
                             }
                             message = messageObject3.messageOwner;
@@ -14727,7 +14712,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                             getUserConfig().saveConfig(false);
                             tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
-                            tL_messages_forwardMessages.to_peer = inputPeer42;
+                            tL_messages_forwardMessages.to_peer = inputPeer52;
                             if (z3) {
                             }
                             z15 = true;
@@ -14748,23 +14733,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             }
                             z16 = false;
                             tL_messages_forwardMessages.with_my_score = z16;
-                            int i1922222 = i7;
                             if (i2 >= 0) {
                             }
-                            if (j2 > 0) {
+                            if (j2 <= 0) {
                             }
                             arrayList12 = new ArrayList(arrayList242);
                             peer = peer3;
+                            int i1922222 = i7;
                             j5 = j142;
+                            arrayList4 = arrayList242;
                             arrayList5 = arrayList26222;
                             longSparseArray2 = longSparseArray72;
                             longSparseArray = longSparseArray3;
-                            inputPeer = inputPeer42;
+                            inputPeer = inputPeer2;
                             str3 = str72;
                             final boolean z2422222 = i != 2147483646;
                             j6 = j9;
                             final boolean z2522222 = z20;
-                            arrayList4 = arrayList242;
                             chat2 = chat62;
                             arrayList2 = arrayList25222;
                             arrayList6 = arrayList8;
@@ -14791,7 +14776,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 chat2 = chat;
                                 arrayList2 = arrayList19;
                                 arrayList3 = arrayList13;
-                                inputPeer = inputPeer3;
+                                inputPeer = inputPeer4;
                                 i3 = i4;
                                 arrayList6 = arrayList18;
                                 peer = peer6;
@@ -14804,7 +14789,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList2 = arrayList19;
                             arrayList3 = arrayList13;
                             arrayList4 = arrayList20;
-                            inputPeer = inputPeer3;
+                            inputPeer = inputPeer4;
                             arrayList5 = arrayList21;
                             longSparseArray2 = longSparseArray6;
                             i3 = i4;
@@ -14822,7 +14807,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             chat2 = chat;
                             arrayList2 = arrayList19;
                             arrayList3 = arrayList13;
-                            inputPeer = inputPeer3;
+                            inputPeer = inputPeer4;
                             i3 = i4;
                             arrayList6 = arrayList18;
                             peer = peer6;
@@ -14835,7 +14820,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
                         arrayList4 = arrayList20;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         arrayList5 = arrayList21;
                         longSparseArray2 = longSparseArray6;
                         i3 = i4;
@@ -14852,7 +14837,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             chat2 = chat;
                             arrayList2 = arrayList19;
                             arrayList3 = arrayList13;
-                            inputPeer = inputPeer3;
+                            inputPeer = inputPeer4;
                             i3 = i4;
                             arrayList6 = arrayList18;
                             peer = peer6;
@@ -14865,7 +14850,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
                         arrayList4 = arrayList20;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         arrayList5 = arrayList21;
                         longSparseArray2 = longSparseArray6;
                         i3 = i4;
@@ -14883,7 +14868,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -14896,7 +14881,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -14913,7 +14898,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         chat2 = chat;
                         arrayList2 = arrayList19;
                         arrayList3 = arrayList13;
-                        inputPeer = inputPeer3;
+                        inputPeer = inputPeer4;
                         i3 = i4;
                         arrayList6 = arrayList18;
                         peer = peer6;
@@ -14926,7 +14911,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList2 = arrayList19;
                     arrayList3 = arrayList13;
                     arrayList4 = arrayList20;
-                    inputPeer = inputPeer3;
+                    inputPeer = inputPeer4;
                     arrayList5 = arrayList21;
                     longSparseArray2 = longSparseArray6;
                     i3 = i4;
@@ -14941,16 +14926,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 peer6 = peer;
                 clientUserId = j5;
                 longSparseArray4 = longSparseArray;
-                inputPeer3 = inputPeer;
+                inputPeer4 = inputPeer;
                 str2 = str3;
                 j4 = j6;
                 chat = chat2;
                 arrayList18 = arrayList6;
                 arrayList19 = arrayList2;
             }
-            arrayList20 = arrayList4;
             arrayList21 = arrayList5;
             longSparseArray6 = longSparseArray2;
+            arrayList20 = arrayList4;
             i12 = i3 + 1;
             j11 = j;
             z17 = z;
@@ -14959,7 +14944,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             peer6 = peer;
             clientUserId = j5;
             longSparseArray4 = longSparseArray;
-            inputPeer3 = inputPeer;
+            inputPeer4 = inputPeer;
             str2 = str3;
             j4 = j6;
             chat = chat2;

@@ -355,6 +355,7 @@ import org.telegram.ui.Components.URLSpanReplacement;
 import org.telegram.ui.Components.URLSpanUserMention;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.UnreadCounterTextView;
+import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.Components.ViewHelper;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Components.quickforward.QuickShareSelectorOverlayLayout;
@@ -18160,7 +18161,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r10v19 ??), method size: 11590
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r6v8 ??), method size: 11590
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -20088,7 +20089,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (!TextUtils.isEmpty(messageObject.messageOwner.attachPath) && new File(messageObject.messageOwner.attachPath).exists()) {
                 z = true;
             }
-            if ((z || !messageObject.mediaExists) ? z : true) {
+            if ((z || !messageObject.mediaExists()) ? z : true) {
                 if (messageObject.getDocument() != null && !messageObject.isMusic() && (str2 = messageObject.getDocument().mime_type) != null) {
                     if (messageObject.getDocumentName().toLowerCase().endsWith("attheme")) {
                         return 10;
@@ -30308,12 +30309,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:318:0x087a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:362:0x0930, code lost:
     
-        if (r0.exists() != false) goto L329;
+        if (r0.exists() != false) goto L372;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v101, types: [org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.Components.StickersAlert] */
+    /* JADX WARN: Type inference failed for: r0v103, types: [org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.Components.StickersAlert] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -30327,12 +30328,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         DialogInterface.OnDismissListener onDismissListener;
         BaseFragment languageSelectActivity;
         int checkSelfPermission2;
+        File pathToAttach;
+        VideoPlayer.VideoUri videoUri;
+        File pathToMessage;
         DialogsActivity dialogsActivity;
         TLRPC.Chat chat;
         MessageObject.GroupedMessages group;
         TLRPC.Message message2;
         TLRPC.Chat chat2;
         ArrayList arrayList;
+        File pathToAttach2;
+        VideoPlayer.VideoUri videoUri2;
+        File pathToMessage2;
         int checkSelfPermission3;
         AlertDialog.Builder builder2;
         TLRPC.Chat chat3;
@@ -30449,9 +30456,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     file = null;
                     if (file == null) {
-                        File pathToMessage = getFileLoader().getPathToMessage(this.selectedObject.messageOwner);
-                        if (pathToMessage.exists()) {
-                            file = pathToMessage;
+                        File pathToMessage3 = getFileLoader().getPathToMessage(this.selectedObject.messageOwner);
+                        if (pathToMessage3.exists()) {
+                            file = pathToMessage3;
                         }
                     }
                     if (file != null) {
@@ -30543,8 +30550,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     if (str2 != null && str2.length() > 0 && !new File(str2).exists()) {
                         str2 = null;
                     }
-                    if (str2 == null || str2.length() == 0) {
-                        str2 = getFileLoader().getPathToMessage(this.selectedObject.messageOwner).toString();
+                    if (TextUtils.isEmpty(str2) && (pathToMessage = FileLoader.getInstance(this.currentAccount).getPathToMessage(this.selectedObject.messageOwner)) != null && pathToMessage.exists()) {
+                        str2 = pathToMessage.getPath();
+                    }
+                    if (TextUtils.isEmpty(str2) && (videoUri = this.selectedObject.cachedQuality) != null && videoUri.isCached()) {
+                        File file3 = new File(this.selectedObject.cachedQuality.uri.getPath());
+                        if (file3.exists()) {
+                            str2 = file3.getPath();
+                        }
+                    }
+                    if (TextUtils.isEmpty(str2) && this.selectedObject.qualityToSave != null && (pathToAttach = FileLoader.getInstance(this.currentAccount).getPathToAttach(this.selectedObject.qualityToSave, null, false, true)) != null && pathToAttach.exists()) {
+                        str2 = pathToAttach.getPath();
                     }
                     int i7 = Build.VERSION.SDK_INT;
                     if (i7 >= 23 && (i7 <= 28 || BuildVars.NO_SCOPED_STORAGE)) {
@@ -30557,9 +30573,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             break;
                         }
                     }
-                    MediaController.saveFile(str2, getParentActivity(), 0, null, null);
-                    createDownloadBulletin = BulletinFactory.createSaveToGalleryBulletin(this, this.selectedObject.isVideo(), this.themeDelegate);
-                    createDownloadBulletin.show();
+                    if (!TextUtils.isEmpty(str2)) {
+                        MediaController.saveFile(str2, getParentActivity(), 0, null, null);
+                        createDownloadBulletin = BulletinFactory.createSaveToGalleryBulletin(this, this.selectedObject.isVideo(), this.themeDelegate);
+                        createDownloadBulletin.show();
+                        break;
+                    }
                     break;
                 case 8:
                     MessageObject messageObject3 = this.selectedObject;
@@ -30629,8 +30648,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (str4 != null && str4.length() > 0 && !new File(str4).exists()) {
                             str4 = null;
                         }
-                        if (str4 == null || str4.length() == 0) {
-                            str4 = getFileLoader().getPathToMessage(this.selectedObject.messageOwner).toString();
+                        if (TextUtils.isEmpty(str4) && (pathToMessage2 = FileLoader.getInstance(this.currentAccount).getPathToMessage(this.selectedObject.messageOwner)) != null && pathToMessage2.exists()) {
+                            str4 = pathToMessage2.getPath();
+                        }
+                        if (TextUtils.isEmpty(str4) && (videoUri2 = this.selectedObject.cachedQuality) != null && videoUri2.isCached()) {
+                            File file4 = new File(this.selectedObject.cachedQuality.uri.getPath());
+                            if (file4.exists()) {
+                                str4 = file4.getPath();
+                            }
+                        }
+                        if (TextUtils.isEmpty(str4) && this.selectedObject.qualityToSave != null && (pathToAttach2 = FileLoader.getInstance(this.currentAccount).getPathToAttach(this.selectedObject.qualityToSave, null, false, true)) != null && pathToAttach2.exists()) {
+                            str4 = pathToAttach2.getPath();
                         }
                         MediaController.saveFile(str4, getParentActivity(), 2, str3, this.selectedObject.getDocument() != null ? this.selectedObject.getDocument().mime_type : "", new Utilities.Callback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda311
                             @Override // org.telegram.messenger.Utilities.Callback
@@ -31432,20 +31460,27 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     private void saveMessageToGallery(MessageObject messageObject) {
+        File pathToAttach;
+        VideoPlayer.VideoUri videoUri;
+        File pathToMessage;
         String str = messageObject.messageOwner.attachPath;
         if (!TextUtils.isEmpty(str) && !new File(str).exists()) {
             str = null;
         }
-        if (TextUtils.isEmpty(str)) {
-            str = FileLoader.getInstance(this.currentAccount).getPathToMessage(messageObject.messageOwner).toString();
+        if (TextUtils.isEmpty(str) && (pathToMessage = FileLoader.getInstance(this.currentAccount).getPathToMessage(messageObject.messageOwner)) != null && pathToMessage.exists()) {
+            str = pathToMessage.getPath();
         }
-        if (messageObject.qualityToSave != null) {
-            File pathToAttach = FileLoader.getInstance(this.currentAccount).getPathToAttach(messageObject.qualityToSave, null, false, true);
-            if (pathToAttach == null) {
-                return;
-            } else {
-                str = pathToAttach.getPath();
+        if (TextUtils.isEmpty(str) && (videoUri = messageObject.cachedQuality) != null && videoUri.isCached()) {
+            File file = new File(messageObject.cachedQuality.uri.getPath());
+            if (file.exists()) {
+                str = file.getPath();
             }
+        }
+        if (TextUtils.isEmpty(str) && messageObject.qualityToSave != null && (pathToAttach = FileLoader.getInstance(this.currentAccount).getPathToAttach(messageObject.qualityToSave, null, false, true)) != null && pathToAttach.exists()) {
+            str = pathToAttach.getPath();
+        }
+        if (TextUtils.isEmpty(str)) {
+            return;
         }
         MediaController.saveFile(str, getParentActivity(), messageObject.isVideo() ? 1 : 0, null, null);
     }

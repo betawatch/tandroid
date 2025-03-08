@@ -498,7 +498,7 @@ public class StarParticlesView extends View {
                 if (i3 == 9) {
                     this.stars[i2] = SvgHelper.getBitmap(i2 == 0 ? R.raw.premium_object_folder : i2 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg[i2] = true;
-                } else if (i3 == 39) {
+                } else if (i3 == 27) {
                     this.stars[i2] = SvgHelper.getBitmap(i2 == 0 ? R.raw.filled_messages_paid : i2 == 1 ? R.raw.filled_crown_on : R.raw.premium_object_star2, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg[i2] = true;
                 } else if (i3 == 11 || i3 == 4) {

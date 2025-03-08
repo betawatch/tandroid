@@ -22,6 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -117,8 +118,18 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0370  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0389  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x038c  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0373  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public ProfileGiftsContainer(final BaseFragment baseFragment, Context context, final int i, final long j, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        int i2;
+        String str;
         this.checkboxRequestId = -1;
         this.visibleHeight = AndroidUtilities.displaySize.y;
         this.fragment = baseFragment;
@@ -131,10 +142,10 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         profileGiftsList.resetFilters();
         profileGiftsList.load();
         this.resourcesProvider = resourcesProvider;
-        int i2 = Theme.key_windowBackgroundWhite;
-        int color = Theme.getColor(i2, resourcesProvider);
-        int i3 = Theme.key_windowBackgroundWhiteBlackText;
-        setBackgroundColor(Theme.blendOver(color, Theme.multAlpha(Theme.getColor(i3, resourcesProvider), 0.04f)));
+        int i3 = Theme.key_windowBackgroundWhite;
+        int color = Theme.getColor(i3, resourcesProvider);
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
+        setBackgroundColor(Theme.blendOver(color, Theme.multAlpha(Theme.getColor(i4, resourcesProvider), 0.04f)));
         UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, i, 0, false, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
@@ -161,7 +172,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1, 119));
         universalRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i4, int i5) {
+            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
                 if (!ProfileGiftsContainer.this.listView.canScrollVertically(1) || ProfileGiftsContainer.this.isLoadingVisible()) {
                     ProfileGiftsContainer.this.list.load();
                 }
@@ -222,9 +233,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i4) {
+            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i5) {
                 ProfileGiftsContainer profileGiftsContainer = ProfileGiftsContainer.this;
-                if (i4 == 0) {
+                if (i5 == 0) {
                     profileGiftsContainer.list.reorderDone();
                 } else {
                     if (profileGiftsContainer.listView != null) {
@@ -234,11 +245,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                         viewHolder.itemView.setPressed(true);
                     }
                 }
-                super.onSelectedChanged(viewHolder, i4);
+                super.onSelectedChanged(viewHolder, i5);
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int i4) {
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int i5) {
             }
         });
         this.reorder = itemTouchHelper;
@@ -255,14 +266,14 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.emptyViewTitle = textView;
         textView.setTextSize(1, 17.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(Theme.getColor(i3, resourcesProvider));
+        textView.setTextColor(Theme.getColor(i4, resourcesProvider));
         textView.setText(LocaleController.getString(R.string.ProfileGiftsNotFoundTitle));
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 12, 0, 0));
         TextView textView2 = new TextView(context);
         this.emptyViewButton = textView2;
         textView2.setTextSize(1, 14.0f);
-        int i4 = Theme.key_featuredStickers_addButton;
-        textView2.setTextColor(Theme.getColor(i4, resourcesProvider));
+        int i5 = Theme.key_featuredStickers_addButton;
+        textView2.setTextColor(Theme.getColor(i5, resourcesProvider));
         textView2.setText(LocaleController.getString(R.string.ProfileGiftsNotFoundButton));
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -271,14 +282,14 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
         });
         textView2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(Theme.createRadSelectorDrawable(Theme.multAlpha(Theme.getColor(i4, resourcesProvider), 0.1f), 4, 4));
+        textView2.setBackground(Theme.createRadSelectorDrawable(Theme.multAlpha(Theme.getColor(i5, resourcesProvider), 0.1f), 4, 4));
         ScaleStateListAnimator.apply(textView2);
         linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1, 0, 8, 0, 0));
         addView(frameLayout, LayoutHelper.createFrame(-1, -1, 119));
         universalRecyclerView.setEmptyView(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.buttonContainer = frameLayout2;
-        frameLayout2.setBackgroundColor(Theme.getColor(i2, resourcesProvider));
+        frameLayout2.setBackgroundColor(Theme.getColor(i3, resourcesProvider));
         addView(frameLayout2, LayoutHelper.createFrame(-1, -2, 87));
         View view = new View(context);
         this.buttonShadow = view;
@@ -317,24 +328,52 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         if (bool != null) {
             checkBox2.setChecked(bool.booleanValue(), false);
         }
+        TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(j));
+        boolean z = j < 0 || !(user == null || UserObject.isUserSelf(user) || UserObject.isBot(user));
         ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
         this.button = buttonWithCounterView;
         StringBuilder sb = new StringBuilder();
         sb.append("G ");
-        sb.append(LocaleController.getString(j < 0 ? R.string.ProfileGiftsSendChannel : R.string.ProfileGiftsSend));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb.toString());
-        spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
-        buttonWithCounterView.setText(spannableStringBuilder, false);
+        if (!z) {
+            i2 = R.string.ProfileGiftsSend;
+        } else {
+            if (j >= 0) {
+                str = LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j));
+                sb.append(str);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb.toString());
+                spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
+                buttonWithCounterView.setText(spannableStringBuilder, false);
+                frameLayout2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
+                final boolean z2 = z;
+                buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view2) {
+                        ProfileGiftsContainer.this.lambda$new$4(z2, i, j, view2);
+                    }
+                });
+                buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
+                linearLayout2.setVisibility(canSwitchNotify() ? 0 : 8);
+                this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
+                addView(frameLayout3, LayoutHelper.createFrame(-1, 200, 87));
+            }
+            i2 = R.string.ProfileGiftsSendChannel;
+        }
+        str = LocaleController.getString(i2);
+        sb.append(str);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(sb.toString());
+        spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
+        buttonWithCounterView.setText(spannableStringBuilder2, false);
         frameLayout2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
+        final boolean z22 = z;
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ProfileGiftsContainer.this.lambda$new$4(j, i, view2);
+                ProfileGiftsContainer.this.lambda$new$4(z22, i, j, view2);
             }
         });
-        buttonWithCounterView.setVisibility(canSwitchNotify() ? 8 : 0);
+        buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
         linearLayout2.setVisibility(canSwitchNotify() ? 0 : 8);
-        this.buttonContainerHeightDp = canSwitchNotify() ? 50 : 68;
+        this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
         addView(frameLayout3, LayoutHelper.createFrame(-1, 200, 87));
     }
 
@@ -393,8 +432,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(long j, int i, View view) {
-        if (j < 0) {
+    public /* synthetic */ void lambda$new$4(boolean z, int i, long j, View view) {
+        if (z) {
             new GiftSheet(getContext(), i, j, null, null).show();
         } else {
             UserSelectorBottomSheet.open(2, 0L, BirthdayController.getInstance(i).getState());
