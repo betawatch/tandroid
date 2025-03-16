@@ -37,7 +37,7 @@ final class R1 extends a2 {
                 LongStream longStream = (LongStream) ((Function) ((w) this.d).n).apply(obj);
                 if (longStream != null) {
                     try {
-                        longStream.sequential().d((c0) this.c);
+                        longStream.sequential().c((c0) this.c);
                     } catch (Throwable th) {
                         try {
                             longStream.close();
@@ -56,7 +56,7 @@ final class R1 extends a2 {
                 IntStream intStream = (IntStream) ((Function) ((v) this.d).n).apply(obj);
                 if (intStream != null) {
                     try {
-                        intStream.sequential().K((U) this.c);
+                        intStream.sequential().J((U) this.c);
                     } catch (Throwable th3) {
                         try {
                             intStream.close();
@@ -75,7 +75,7 @@ final class R1 extends a2 {
                 D d = (D) ((Function) ((t) this.d).n).apply(obj);
                 if (d != null) {
                     try {
-                        d.sequential().j((q) this.c);
+                        d.sequential().i((q) this.c);
                     } catch (Throwable th5) {
                         try {
                             d.close();

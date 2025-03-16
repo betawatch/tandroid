@@ -7,11 +7,9 @@ import com.google.firebase.inject.Provider;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /* loaded from: classes.dex */
 public class FirebaseABTesting {
@@ -53,30 +51,43 @@ public class FirebaseABTesting {
         return arrayList;
     }
 
+    private boolean experimentsListContainsExperiment(List list, AbtExperimentInfo abtExperimentInfo) {
+        String experimentId = abtExperimentInfo.getExperimentId();
+        String variantId = abtExperimentInfo.getVariantId();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            AbtExperimentInfo abtExperimentInfo2 = (AbtExperimentInfo) it.next();
+            if (abtExperimentInfo2.getExperimentId().equals(experimentId) && abtExperimentInfo2.getVariantId().equals(variantId)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private List getAllExperimentsInAnalytics() {
         ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
         throw null;
     }
 
-    private ArrayList getExperimentsToAdd(List list, Set set) {
+    private ArrayList getExperimentsToAdd(List list, List list2) {
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
         while (it.hasNext()) {
             AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
-            if (!set.contains(abtExperimentInfo.getExperimentId())) {
+            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
                 arrayList.add(abtExperimentInfo);
             }
         }
         return arrayList;
     }
 
-    private ArrayList getExperimentsToRemove(List list, Set set) {
+    private ArrayList getExperimentsToRemove(List list, List list2) {
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = (AnalyticsConnector.ConditionalUserProperty) it.next();
-            if (!set.contains(conditionalUserProperty.name)) {
-                arrayList.add(conditionalUserProperty);
+            AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
+            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
+                arrayList.add(abtExperimentInfo.toConditionalUserProperty(this.originService));
             }
         }
         return arrayList;
@@ -108,25 +119,26 @@ public class FirebaseABTesting {
             removeAllExperiments();
             return;
         }
-        HashSet hashSet = new HashSet();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            hashSet.add(((AbtExperimentInfo) it.next()).getExperimentId());
-        }
-        List allExperimentsInAnalytics = getAllExperimentsInAnalytics();
-        HashSet hashSet2 = new HashSet();
-        Iterator it2 = allExperimentsInAnalytics.iterator();
-        while (it2.hasNext()) {
-            hashSet2.add(((AnalyticsConnector.ConditionalUserProperty) it2.next()).name);
-        }
-        removeExperiments(getExperimentsToRemove(allExperimentsInAnalytics, hashSet));
-        addExperiments(getExperimentsToAdd(list, hashSet2));
+        List allExperiments = getAllExperiments();
+        removeExperiments(getExperimentsToRemove(allExperiments, list));
+        addExperiments(getExperimentsToAdd(list, allExperiments));
     }
 
     private void throwAbtExceptionIfAnalyticsIsNull() {
         if (this.analyticsConnector.get() == null) {
             throw new AbtException("The Analytics SDK is not available. Please check that the Analytics SDK is included in your app dependencies.");
         }
+    }
+
+    public List getAllExperiments() {
+        throwAbtExceptionIfAnalyticsIsNull();
+        List allExperimentsInAnalytics = getAllExperimentsInAnalytics();
+        ArrayList arrayList = new ArrayList();
+        Iterator it = allExperimentsInAnalytics.iterator();
+        while (it.hasNext()) {
+            arrayList.add(AbtExperimentInfo.fromConditionalUserProperty((AnalyticsConnector.ConditionalUserProperty) it.next()));
+        }
+        return arrayList;
     }
 
     public void removeAllExperiments() {

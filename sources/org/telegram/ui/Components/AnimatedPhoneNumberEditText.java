@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AnimatedPhoneNumberEditText extends HintEditText {
     private ObjectAnimator animator;
     private Runnable hintAnimationCallback;

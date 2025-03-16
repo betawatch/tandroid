@@ -5,7 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TypedProperty implements Model {
     private String name;
 

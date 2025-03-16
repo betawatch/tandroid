@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UniversalRecyclerView extends RecyclerListView {
     public final UniversalAdapter adapter;
     private boolean doNotDetachViews;

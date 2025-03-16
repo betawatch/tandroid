@@ -50,7 +50,7 @@ import org.telegram.ui.Cells.GroupCreateUserCell;
 import org.telegram.ui.Cells.ShareDialogCell;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class JoinCallAlert extends BottomSheet {
     private static ArrayList cachedChats;
     private static long lastCacheDid;

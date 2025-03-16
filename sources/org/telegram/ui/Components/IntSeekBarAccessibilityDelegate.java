@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class IntSeekBarAccessibilityDelegate extends SeekBarAccessibilityDelegate {
     @Override // org.telegram.ui.Components.SeekBarAccessibilityDelegate
     protected boolean canScrollBackward(View view) {

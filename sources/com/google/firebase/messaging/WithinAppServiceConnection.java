@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
@@ -36,29 +36,23 @@ class WithinAppServiceConnection implements ServiceConnection {
             this.intent = intent;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$arrangeTimeout$0() {
+            Log.w("FirebaseMessaging", "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
+            finish();
+        }
+
         void arrangeTimeout(ScheduledExecutorService scheduledExecutorService) {
-            final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable(this) { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$Lambda$0
-                private final WithinAppServiceConnection.BindRequest arg$1;
-
-                {
-                    this.arg$1 = this;
-                }
-
+            final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
-                public void run() {
-                    this.arg$1.lambda$arrangeTimeout$0$WithinAppServiceConnection$BindRequest();
+                public final void run() {
+                    WithinAppServiceConnection.BindRequest.this.lambda$arrangeTimeout$0();
                 }
-            }, 9000L, TimeUnit.MILLISECONDS);
-            getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener(schedule) { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$Lambda$1
-                private final ScheduledFuture arg$1;
-
-                {
-                    this.arg$1 = schedule;
-                }
-
+            }, 20L, TimeUnit.SECONDS);
+            getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda1
                 @Override // com.google.android.gms.tasks.OnCompleteListener
-                public void onComplete(Task task) {
-                    this.arg$1.cancel(false);
+                public final void onComplete(Task task) {
+                    schedule.cancel(false);
                 }
             });
         }
@@ -71,20 +65,10 @@ class WithinAppServiceConnection implements ServiceConnection {
         Task getTask() {
             return this.taskCompletionSource.getTask();
         }
-
-        final /* synthetic */ void lambda$arrangeTimeout$0$WithinAppServiceConnection$BindRequest() {
-            String action = this.intent.getAction();
-            StringBuilder sb = new StringBuilder(String.valueOf(action).length() + 61);
-            sb.append("Service took too long to process intent: ");
-            sb.append(action);
-            sb.append(" App may get closed.");
-            Log.w("FirebaseMessaging", sb.toString());
-            finish();
-        }
     }
 
     WithinAppServiceConnection(Context context, String str) {
-        this(context, "com.google.firebase.MESSAGING_EVENT", new ScheduledThreadPoolExecutor(0, new NamedThreadFactory("Firebase-FirebaseInstanceIdServiceConnection")));
+        this(context, str, new ScheduledThreadPoolExecutor(0, new NamedThreadFactory("Firebase-FirebaseInstanceIdServiceConnection")));
     }
 
     WithinAppServiceConnection(Context context, String str, ScheduledExecutorService scheduledExecutorService) {
@@ -92,7 +76,7 @@ class WithinAppServiceConnection implements ServiceConnection {
         this.connectionInProgress = false;
         Context applicationContext = context.getApplicationContext();
         this.context = applicationContext;
-        this.connectionIntent = new Intent("com.google.firebase.MESSAGING_EVENT").setPackage(applicationContext.getPackageName());
+        this.connectionIntent = new Intent(str).setPackage(applicationContext.getPackageName());
         this.scheduledExecutorService = scheduledExecutorService;
     }
 
@@ -128,10 +112,9 @@ class WithinAppServiceConnection implements ServiceConnection {
 
     private void startConnectionIfNeeded() {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
-            boolean z = this.connectionInProgress;
-            StringBuilder sb = new StringBuilder(39);
+            StringBuilder sb = new StringBuilder();
             sb.append("binder is dead. start connection? ");
-            sb.append(!z);
+            sb.append(!this.connectionInProgress);
             Log.d("FirebaseMessaging", sb.toString());
         }
         if (this.connectionInProgress) {
@@ -154,11 +137,7 @@ class WithinAppServiceConnection implements ServiceConnection {
     public synchronized void onServiceConnected(ComponentName componentName, IBinder iBinder) {
         try {
             if (Log.isLoggable("FirebaseMessaging", 3)) {
-                String valueOf = String.valueOf(componentName);
-                StringBuilder sb = new StringBuilder(valueOf.length() + 20);
-                sb.append("onServiceConnected: ");
-                sb.append(valueOf);
-                Log.d("FirebaseMessaging", sb.toString());
+                Log.d("FirebaseMessaging", "onServiceConnected: " + componentName);
             }
             this.connectionInProgress = false;
             if (iBinder instanceof WithinAppServiceBinder) {
@@ -166,11 +145,7 @@ class WithinAppServiceConnection implements ServiceConnection {
                 flushQueue();
                 return;
             }
-            String valueOf2 = String.valueOf(iBinder);
-            StringBuilder sb2 = new StringBuilder(valueOf2.length() + 28);
-            sb2.append("Invalid service connection: ");
-            sb2.append(valueOf2);
-            Log.e("FirebaseMessaging", sb2.toString());
+            Log.e("FirebaseMessaging", "Invalid service connection: " + iBinder);
             finishAllInQueue();
         } catch (Throwable th) {
             throw th;
@@ -180,11 +155,7 @@ class WithinAppServiceConnection implements ServiceConnection {
     @Override // android.content.ServiceConnection
     public void onServiceDisconnected(ComponentName componentName) {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
-            String valueOf = String.valueOf(componentName);
-            StringBuilder sb = new StringBuilder(valueOf.length() + 23);
-            sb.append("onServiceDisconnected: ");
-            sb.append(valueOf);
-            Log.d("FirebaseMessaging", sb.toString());
+            Log.d("FirebaseMessaging", "onServiceDisconnected: " + componentName);
         }
         flushQueue();
     }

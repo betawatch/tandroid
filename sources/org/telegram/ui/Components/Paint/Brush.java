@@ -8,7 +8,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Brush {
     public static List BRUSHES_LIST = Arrays.asList(new Radial(), new Arrow(), new Elliptical(), new Neon(), new Blurer(), new Eraser());
 

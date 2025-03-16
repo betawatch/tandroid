@@ -3,11 +3,9 @@ package com.microsoft.appcenter.analytics;
 import android.app.Activity;
 import android.content.Context;
 import com.microsoft.appcenter.AbstractAppCenterService;
-import com.microsoft.appcenter.Flags;
 import com.microsoft.appcenter.analytics.channel.AnalyticsListener;
 import com.microsoft.appcenter.analytics.channel.AnalyticsValidator;
 import com.microsoft.appcenter.analytics.channel.SessionTracker;
-import com.microsoft.appcenter.analytics.ingestion.models.EventLog;
 import com.microsoft.appcenter.analytics.ingestion.models.PageLog;
 import com.microsoft.appcenter.analytics.ingestion.models.json.EventLogFactory;
 import com.microsoft.appcenter.analytics.ingestion.models.json.PageLogFactory;
@@ -16,13 +14,9 @@ import com.microsoft.appcenter.analytics.ingestion.models.one.json.CommonSchemaE
 import com.microsoft.appcenter.channel.Channel;
 import com.microsoft.appcenter.ingestion.models.Log;
 import com.microsoft.appcenter.utils.AppCenterLog;
-import com.microsoft.appcenter.utils.context.UserIdContext;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
@@ -54,13 +48,6 @@ public class Analytics extends AbstractAppCenterService {
     static /* synthetic */ AnalyticsListener access$500(Analytics analytics) {
         analytics.getClass();
         return null;
-    }
-
-    private static List convertProperties(EventProperties eventProperties) {
-        if (eventProperties == null) {
-            return null;
-        }
-        return new ArrayList(eventProperties.getProperties().values());
     }
 
     private AnalyticsTransmissionTarget createAnalyticsTransmissionTarget(String str) {
@@ -136,65 +123,6 @@ public class Analytics extends AbstractAppCenterService {
             this.mAnalyticsTransmissionTargetListener = channelListener;
             this.mChannel.addListener(channelListener);
         }
-    }
-
-    public static void trackEvent(String str, EventProperties eventProperties) {
-        trackEvent(str, eventProperties, 1);
-    }
-
-    public static void trackEvent(String str, EventProperties eventProperties, int i) {
-        trackEvent(str, eventProperties, null, i);
-    }
-
-    static void trackEvent(String str, EventProperties eventProperties, AnalyticsTransmissionTarget analyticsTransmissionTarget, int i) {
-        getInstance().trackEventAsync(str, convertProperties(eventProperties), analyticsTransmissionTarget, i);
-    }
-
-    private synchronized void trackEventAsync(final String str, final List list, final AnalyticsTransmissionTarget analyticsTransmissionTarget, final int i) {
-        final String userId = UserIdContext.getInstance().getUserId();
-        post(new Runnable() { // from class: com.microsoft.appcenter.analytics.Analytics.8
-            /* JADX WARN: Removed duplicated region for block: B:13:0x005f  */
-            /* JADX WARN: Removed duplicated region for block: B:17:0x0062  */
-            @Override // java.lang.Runnable
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            public void run() {
-                String str2;
-                AnalyticsTransmissionTarget analyticsTransmissionTarget2 = analyticsTransmissionTarget;
-                if (analyticsTransmissionTarget2 == null) {
-                    analyticsTransmissionTarget2 = Analytics.this.mDefaultTransmissionTarget;
-                }
-                EventLog eventLog = new EventLog();
-                if (analyticsTransmissionTarget2 == null) {
-                    if (!Analytics.this.mStartedFromApp) {
-                        str2 = "Cannot track event using Analytics.trackEvent if not started from app, please start from the application or use Analytics.getTransmissionTarget.";
-                        AppCenterLog.error("AppCenterAnalytics", str2);
-                        return;
-                    }
-                    eventLog.setId(UUID.randomUUID());
-                    eventLog.setName(str);
-                    eventLog.setTypedProperties(list);
-                    int persistenceFlag = Flags.getPersistenceFlag(i, true);
-                    ((AbstractAppCenterService) Analytics.this).mChannel.enqueue(eventLog, persistenceFlag != 2 ? "group_analytics_critical" : "group_analytics", persistenceFlag);
-                }
-                if (!analyticsTransmissionTarget2.isEnabled()) {
-                    str2 = "This transmission target is disabled.";
-                    AppCenterLog.error("AppCenterAnalytics", str2);
-                    return;
-                }
-                eventLog.addTransmissionTarget(analyticsTransmissionTarget2.getTransmissionTargetToken());
-                eventLog.setTag(analyticsTransmissionTarget2);
-                if (analyticsTransmissionTarget2 == Analytics.this.mDefaultTransmissionTarget) {
-                    eventLog.setUserId(userId);
-                }
-                eventLog.setId(UUID.randomUUID());
-                eventLog.setName(str);
-                eventLog.setTypedProperties(list);
-                int persistenceFlag2 = Flags.getPersistenceFlag(i, true);
-                ((AbstractAppCenterService) Analytics.this).mChannel.enqueue(eventLog, persistenceFlag2 != 2 ? "group_analytics_critical" : "group_analytics", persistenceFlag2);
-            }
-        });
     }
 
     @Override // com.microsoft.appcenter.AbstractAppCenterService
@@ -330,12 +258,6 @@ public class Analytics extends AbstractAppCenterService {
         this.mStartedFromApp = z;
         super.onStarted(context, channel, str, str2, z);
         setDefaultTransmissionTarget(str2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.microsoft.appcenter.AbstractAppCenterService
-    public synchronized void post(Runnable runnable) {
-        super.post(runnable);
     }
 
     void postCommandEvenIfDisabled(Runnable runnable) {

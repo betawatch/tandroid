@@ -2,7 +2,7 @@ package com.google.firebase.installations;
 
 import com.google.firebase.installations.InstallationTokenResult;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
     private final String token;
     private final long tokenCreationTimestamp;

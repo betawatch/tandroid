@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import com.google.zxing.common.detector.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class EntitiesContainerView extends FrameLayout {
     private boolean cancelled;
     private EntitiesContainerViewDelegate delegate;

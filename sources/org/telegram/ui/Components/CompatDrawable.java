@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CompatDrawable extends Drawable {
     public final Paint paint = new Paint(1);
 

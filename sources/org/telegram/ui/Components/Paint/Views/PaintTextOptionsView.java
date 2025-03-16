@@ -26,7 +26,7 @@ import org.telegram.ui.Components.Paint.PaintTypeface;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintTextOptionsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final List ALIGN_PAIRS;
     private RLottieImageView alignView;

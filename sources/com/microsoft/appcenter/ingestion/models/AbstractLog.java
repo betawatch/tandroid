@@ -11,7 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractLog implements Log {
     private Device device;
     private String distributionGroupId;

@@ -5,13 +5,14 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import java.util.Date;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ConfigMetadataClient {
     static final Date LAST_FETCH_TIME_NO_FETCH_YET = new Date(-1);
     static final Date NO_BACKOFF_TIME = new Date(-1);
     private final SharedPreferences frcMetadata;
     private final Object frcInfoLock = new Object();
     private final Object backoffMetadataLock = new Object();
+    private final Object realtimeBackoffMetadataLock = new Object();
 
     static class BackoffMetadata {
         private Date backoffEndTime;
@@ -28,6 +29,24 @@ public class ConfigMetadataClient {
 
         int getNumFailedFetches() {
             return this.numFailedFetches;
+        }
+    }
+
+    public static class RealtimeBackoffMetadata {
+        private Date backoffEndTime;
+        private int numFailedStreams;
+
+        public RealtimeBackoffMetadata(int i, Date date) {
+            this.numFailedStreams = i;
+            this.backoffEndTime = date;
+        }
+
+        Date getBackoffEndTime() {
+            return this.backoffEndTime;
+        }
+
+        int getNumFailedStreams() {
+            return this.numFailedStreams;
         }
     }
 
@@ -65,8 +84,24 @@ public class ConfigMetadataClient {
         return new Date(this.frcMetadata.getLong("last_fetch_time_in_millis", -1L));
     }
 
+    long getLastTemplateVersion() {
+        return this.frcMetadata.getLong("last_template_version", 0L);
+    }
+
+    public RealtimeBackoffMetadata getRealtimeBackoffMetadata() {
+        RealtimeBackoffMetadata realtimeBackoffMetadata;
+        synchronized (this.realtimeBackoffMetadataLock) {
+            realtimeBackoffMetadata = new RealtimeBackoffMetadata(this.frcMetadata.getInt("num_failed_realtime_streams", 0), new Date(this.frcMetadata.getLong("realtime_backoff_end_time_in_millis", -1L)));
+        }
+        return realtimeBackoffMetadata;
+    }
+
     void resetBackoff() {
         setBackoffMetadata(0, NO_BACKOFF_TIME);
+    }
+
+    void resetRealtimeBackoff() {
+        setRealtimeBackoffMetadata(0, NO_BACKOFF_TIME);
     }
 
     void setBackoffMetadata(int i, Date date) {
@@ -78,6 +113,18 @@ public class ConfigMetadataClient {
     void setLastFetchETag(String str) {
         synchronized (this.frcInfoLock) {
             this.frcMetadata.edit().putString("last_fetch_etag", str).apply();
+        }
+    }
+
+    void setLastTemplateVersion(long j) {
+        synchronized (this.frcInfoLock) {
+            this.frcMetadata.edit().putLong("last_template_version", j).apply();
+        }
+    }
+
+    void setRealtimeBackoffMetadata(int i, Date date) {
+        synchronized (this.realtimeBackoffMetadataLock) {
+            this.frcMetadata.edit().putInt("num_failed_realtime_streams", i).putLong("realtime_backoff_end_time_in_millis", date.getTime()).apply();
         }
     }
 

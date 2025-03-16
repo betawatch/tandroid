@@ -30,7 +30,7 @@ import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.spoilers.SpoilersClickDetector;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SpoilersTextView extends TextView implements TextSelectionHelper.SimpleSelectabeleView {
     public boolean allowClickSpoilers;
     private AnimatedEmojiSpan.EmojiGroupedSpans animatedEmoji;

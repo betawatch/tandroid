@@ -26,7 +26,7 @@ import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
 import org.telegram.ui.Components.spoilers.SpoilersClickDetector;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class EditTextEffects extends EditText {
     private static final int SPOILER_TIMEOUT = 10000;
     private static Boolean allowHackingTextCanvasCache;

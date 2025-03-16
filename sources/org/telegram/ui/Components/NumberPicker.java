@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NumberPicker extends LinearLayout {
     private static final CubicBezierInterpolator interpolator = new CubicBezierInterpolator(0.0f, 0.5f, 0.5f, 1.0f);
     private int SELECTOR_MIDDLE_ITEM_INDEX;
@@ -629,9 +629,9 @@ public class NumberPicker extends LinearLayout {
         }
         this.mPreviousScrollerY = 0;
         if (z) {
-            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.storiesListUpdated);
+            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.storiesUpdated);
         } else {
-            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.storiesListUpdated);
+            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.storiesUpdated);
         }
         invalidate();
     }

@@ -17,7 +17,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.MotionBackgroundDrawable;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIpGradientLayout extends FrameLayout {
     private boolean allowAnimations;
     private int alphaBlueGreen;

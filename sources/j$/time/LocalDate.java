@@ -98,7 +98,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
                 if (i3 == 29) {
                     throw new c("Invalid date 'February 29' as '" + i + "' is not a leap year");
                 }
-                throw new c("Invalid date '" + k.h(i2).name() + " " + i3 + "'");
+                throw new c("Invalid date '" + j.h(i2).name() + " " + i3 + "'");
             }
         }
         return new LocalDate(i, i2, i3);
@@ -122,7 +122,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
         }
         int i = (int) j6;
         int i2 = ((i * 5) + 2) / NotificationCenter.recordStopped;
-        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.stealthModeChanged) + 5) / 10)) + 1);
+        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.customTypefacesLoaded) + 5) / 10)) + 1);
     }
 
     private static LocalDate r(int i, int i2, int i3) {
@@ -156,7 +156,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
             return q.i(1L, n() ? 366 : 365);
         }
         if (i == 3) {
-            return q.i(1L, (k.h(this.b) != k.FEBRUARY || n()) ? 5L : 4L);
+            return q.i(1L, (j.h(this.b) != j.FEBRUARY || n()) ? 5L : 4L);
         }
         if (i != 4) {
             return ((j$.time.temporal.a) lVar).a();
@@ -230,7 +230,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
     }
 
     public final int k() {
-        return (k.h(this.b).f(n()) + this.c) - 1;
+        return (j.h(this.b).f(n()) + this.c) - 1;
     }
 
     public final int m() {
@@ -333,7 +333,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
         j$.time.temporal.a.DAY_OF_YEAR.g(NotificationCenter.updateBotMenuButton);
         j$.time.chrono.g.a.getClass();
         boolean a = j$.time.chrono.g.a(j);
-        k h = k.h(6);
+        j h = j.h(6);
         if (180 > (h.g(a) + h.f(a)) - 1) {
             h = h.i();
         }

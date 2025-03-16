@@ -20,7 +20,7 @@ import org.telegram.ui.Adapters.DialogsAdapter;
 import org.telegram.ui.Cells.DialogCell;
 import org.telegram.ui.Cells.DialogsEmptyCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class DialogsItemAnimator extends SimpleItemAnimator {
     private static TimeInterpolator sDefaultInterpolator = new DecelerateInterpolator();
     private int bottomClip;

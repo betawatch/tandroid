@@ -38,7 +38,7 @@ import org.telegram.ui.Cells.ManageChatUserCell;
 import org.telegram.ui.Components.GroupVoipInviteAlert;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupVoipInviteAlert extends UsersAlertBase {
     private int addNewRow;
     private ArrayList contacts;

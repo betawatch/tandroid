@@ -16,7 +16,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.boosts.cells.BaseCell;
 import org.telegram.ui.Components.RadioButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelectorCountryCell extends BaseCell {
     private final CheckBox2 checkBox;
     private TLRPC.TL_help_country country;

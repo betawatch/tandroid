@@ -31,7 +31,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.ActionBtnCell;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumPreviewGiftSentBottomSheet extends PremiumPreviewBottomSheet {
     private final List selectedUsers;
 

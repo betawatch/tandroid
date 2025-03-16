@@ -4,7 +4,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.os.AsyncTask;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class DownloadManagerRemoveTask extends AsyncTask {
     private final Context mContext;
     private final long mDownloadId;

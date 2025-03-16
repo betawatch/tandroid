@@ -27,6 +27,7 @@ public class LanguageIdentifierImpl implements LanguageIdentifier {
     private final AtomicReference zzd;
     private final CancellationTokenSource zze = new CancellationTokenSource();
 
+    /* loaded from: classes3.dex */
     public static final class Factory {
         private final zzcv zza;
         private final LanguageIdentificationJni zzb;

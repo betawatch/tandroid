@@ -8,7 +8,7 @@ import com.microsoft.appcenter.ingestion.models.one.CommonSchemaLog;
 import com.microsoft.appcenter.ingestion.models.one.DeviceExtension;
 import com.microsoft.appcenter.ingestion.models.one.UserExtension;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class PropertyConfigurator extends AbstractChannelListener {
     private String mAppLocale;
     private String mAppName;

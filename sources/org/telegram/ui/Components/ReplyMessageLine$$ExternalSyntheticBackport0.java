@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class ReplyMessageLine$$ExternalSyntheticBackport0 {
     public static /* synthetic */ int m(int i, int i2) {
         int i3 = i % i2;

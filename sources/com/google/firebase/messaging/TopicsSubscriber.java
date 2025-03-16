@@ -7,7 +7,6 @@ import androidx.collection.ArrayMap;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.installations.FirebaseInstallationsApi;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Map;
@@ -17,11 +16,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class TopicsSubscriber {
     private static final long MAX_DELAY_SEC = TimeUnit.HOURS.toSeconds(8);
     private final Context context;
-    private final FirebaseInstallationsApi firebaseInstallationsApi;
     private final FirebaseMessaging firebaseMessaging;
     private final Metadata metadata;
     private final GmsRpc rpc;
@@ -30,9 +28,8 @@ class TopicsSubscriber {
     private final Map pendingOperations = new ArrayMap();
     private boolean syncScheduledOrRunning = false;
 
-    private TopicsSubscriber(FirebaseMessaging firebaseMessaging, FirebaseInstallationsApi firebaseInstallationsApi, Metadata metadata, TopicsStore topicsStore, GmsRpc gmsRpc, Context context, ScheduledExecutorService scheduledExecutorService) {
+    private TopicsSubscriber(FirebaseMessaging firebaseMessaging, Metadata metadata, TopicsStore topicsStore, GmsRpc gmsRpc, Context context, ScheduledExecutorService scheduledExecutorService) {
         this.firebaseMessaging = firebaseMessaging;
-        this.firebaseInstallationsApi = firebaseInstallationsApi;
         this.metadata = metadata;
         this.store = topicsStore;
         this.rpc = gmsRpc;
@@ -40,9 +37,9 @@ class TopicsSubscriber {
         this.syncExecutor = scheduledExecutorService;
     }
 
-    private static Object awaitTask(Task task) {
+    private static void awaitTask(Task task) {
         try {
-            return Tasks.await(task, 30L, TimeUnit.SECONDS);
+            Tasks.await(task, 30L, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e = e;
             throw new IOException("SERVICE_NOT_AVAILABLE", e);
@@ -51,10 +48,10 @@ class TopicsSubscriber {
             if (cause instanceof IOException) {
                 throw ((IOException) cause);
             }
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
+            if (!(cause instanceof RuntimeException)) {
+                throw new IOException(e2);
             }
-            throw new IOException(e2);
+            throw ((RuntimeException) cause);
         } catch (TimeoutException e3) {
             e = e3;
             throw new IOException("SERVICE_NOT_AVAILABLE", e);
@@ -62,47 +59,31 @@ class TopicsSubscriber {
     }
 
     private void blockingSubscribeToTopic(String str) {
-        awaitTask(this.rpc.subscribeToTopic((String) awaitTask(this.firebaseInstallationsApi.getId()), this.firebaseMessaging.blockingGetToken(), str));
+        awaitTask(this.rpc.subscribeToTopic(this.firebaseMessaging.blockingGetToken(), str));
     }
 
     private void blockingUnsubscribeFromTopic(String str) {
-        awaitTask(this.rpc.unsubscribeFromTopic((String) awaitTask(this.firebaseInstallationsApi.getId()), this.firebaseMessaging.blockingGetToken(), str));
+        awaitTask(this.rpc.unsubscribeFromTopic(this.firebaseMessaging.blockingGetToken(), str));
     }
 
-    static Task createInstance(final FirebaseMessaging firebaseMessaging, final FirebaseInstallationsApi firebaseInstallationsApi, final Metadata metadata, final GmsRpc gmsRpc, final Context context, final ScheduledExecutorService scheduledExecutorService) {
-        return Tasks.call(scheduledExecutorService, new Callable(context, scheduledExecutorService, firebaseMessaging, firebaseInstallationsApi, metadata, gmsRpc) { // from class: com.google.firebase.messaging.TopicsSubscriber$$Lambda$0
-            private final Context arg$1;
-            private final ScheduledExecutorService arg$2;
-            private final FirebaseMessaging arg$3;
-            private final FirebaseInstallationsApi arg$4;
-            private final Metadata arg$5;
-            private final GmsRpc arg$6;
-
-            {
-                this.arg$1 = context;
-                this.arg$2 = scheduledExecutorService;
-                this.arg$3 = firebaseMessaging;
-                this.arg$4 = firebaseInstallationsApi;
-                this.arg$5 = metadata;
-                this.arg$6 = gmsRpc;
-            }
-
+    static Task createInstance(final FirebaseMessaging firebaseMessaging, final Metadata metadata, final GmsRpc gmsRpc, final Context context, final ScheduledExecutorService scheduledExecutorService) {
+        return Tasks.call(scheduledExecutorService, new Callable() { // from class: com.google.firebase.messaging.TopicsSubscriber$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
-            public Object call() {
-                return TopicsSubscriber.lambda$createInstance$0$TopicsSubscriber(this.arg$1, this.arg$2, this.arg$3, this.arg$4, this.arg$5, this.arg$6);
+            public final Object call() {
+                TopicsSubscriber lambda$createInstance$0;
+                lambda$createInstance$0 = TopicsSubscriber.lambda$createInstance$0(context, scheduledExecutorService, firebaseMessaging, metadata, gmsRpc);
+                return lambda$createInstance$0;
             }
         });
     }
 
     static boolean isDebugLogEnabled() {
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            return true;
-        }
-        return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
+        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 
-    static final /* synthetic */ TopicsSubscriber lambda$createInstance$0$TopicsSubscriber(Context context, ScheduledExecutorService scheduledExecutorService, FirebaseMessaging firebaseMessaging, FirebaseInstallationsApi firebaseInstallationsApi, Metadata metadata, GmsRpc gmsRpc) {
-        return new TopicsSubscriber(firebaseMessaging, firebaseInstallationsApi, metadata, TopicsStore.getInstance(context, scheduledExecutorService), gmsRpc, context, scheduledExecutorService);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ TopicsSubscriber lambda$createInstance$0(Context context, ScheduledExecutorService scheduledExecutorService, FirebaseMessaging firebaseMessaging, Metadata metadata, GmsRpc gmsRpc) {
+        return new TopicsSubscriber(firebaseMessaging, metadata, TopicsStore.getInstance(context, scheduledExecutorService), gmsRpc, context, scheduledExecutorService);
     }
 
     private void markCompletePendingOperation(TopicOperation topicOperation) {
@@ -140,129 +121,72 @@ class TopicsSubscriber {
         return this.syncScheduledOrRunning;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008c A[Catch: IOException -> 0x005a, TryCatch #0 {IOException -> 0x005a, blocks: (B:3:0x0003, B:14:0x0030, B:16:0x0036, B:17:0x0056, B:21:0x005c, B:23:0x0069, B:24:0x008c, B:26:0x0099), top: B:2:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0079 A[Catch: IOException -> 0x001f, TryCatch #0 {IOException -> 0x001f, blocks: (B:3:0x0003, B:12:0x0033, B:14:0x0039, B:15:0x004f, B:19:0x0053, B:21:0x0060, B:22:0x0079, B:24:0x0086, B:25:0x0015, B:28:0x0022), top: B:2:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     boolean performTopicOperation(TopicOperation topicOperation) {
-        String sb;
-        String operation;
-        int hashCode;
+        String str;
         char c;
-        String sb2;
+        String str2;
         try {
-            operation = topicOperation.getOperation();
-            hashCode = operation.hashCode();
+            String operation = topicOperation.getOperation();
+            int hashCode = operation.hashCode();
+            if (hashCode != 83) {
+                if (hashCode == 85 && operation.equals("U")) {
+                    c = 1;
+                    if (c != 0) {
+                        blockingSubscribeToTopic(topicOperation.getTopic());
+                        if (isDebugLogEnabled()) {
+                            str2 = "Subscribe to topic: " + topicOperation.getTopic() + " succeeded.";
+                            Log.d("FirebaseMessaging", str2);
+                        }
+                        return true;
+                    }
+                    if (c != 1) {
+                        if (isDebugLogEnabled()) {
+                            str2 = "Unknown topic operation" + topicOperation + ".";
+                            Log.d("FirebaseMessaging", str2);
+                        }
+                        return true;
+                    }
+                    blockingUnsubscribeFromTopic(topicOperation.getTopic());
+                    if (isDebugLogEnabled()) {
+                        str2 = "Unsubscribe from topic: " + topicOperation.getTopic() + " succeeded.";
+                        Log.d("FirebaseMessaging", str2);
+                    }
+                    return true;
+                }
+                c = 65535;
+                if (c != 0) {
+                }
+            } else {
+                if (operation.equals("S")) {
+                    c = 0;
+                    if (c != 0) {
+                    }
+                }
+                c = 65535;
+                if (c != 0) {
+                }
+            }
         } catch (IOException e) {
             if ("SERVICE_NOT_AVAILABLE".equals(e.getMessage())) {
             }
-            String message = e.getMessage();
-            StringBuilder sb3 = new StringBuilder(String.valueOf(message).length() + 53);
-            sb3.append("Topic operation failed: ");
-            sb3.append(message);
-            sb3.append(". Will retry Topic operation.");
-            sb = sb3.toString();
-            Log.e("FirebaseMessaging", sb);
+            str = "Topic operation failed: " + e.getMessage() + ". Will retry Topic operation.";
+            Log.e("FirebaseMessaging", str);
             return false;
         }
-        if (hashCode == 83) {
-            if (operation.equals("S")) {
-                c = 0;
-                if (c != 0) {
-                }
-                if ("SERVICE_NOT_AVAILABLE".equals(e.getMessage())) {
-                }
-                String message2 = e.getMessage();
-                StringBuilder sb32 = new StringBuilder(String.valueOf(message2).length() + 53);
-                sb32.append("Topic operation failed: ");
-                sb32.append(message2);
-                sb32.append(". Will retry Topic operation.");
-                sb = sb32.toString();
-                Log.e("FirebaseMessaging", sb);
-                return false;
+        if (!"SERVICE_NOT_AVAILABLE".equals(e.getMessage()) || "INTERNAL_SERVER_ERROR".equals(e.getMessage())) {
+            str = "Topic operation failed: " + e.getMessage() + ". Will retry Topic operation.";
+        } else {
+            if (e.getMessage() != null) {
+                throw e;
             }
-            c = 65535;
-            if (c != 0) {
-            }
-            if ("SERVICE_NOT_AVAILABLE".equals(e.getMessage())) {
-            }
-            String message22 = e.getMessage();
-            StringBuilder sb322 = new StringBuilder(String.valueOf(message22).length() + 53);
-            sb322.append("Topic operation failed: ");
-            sb322.append(message22);
-            sb322.append(". Will retry Topic operation.");
-            sb = sb322.toString();
-            Log.e("FirebaseMessaging", sb);
-            return false;
+            str = "Topic operation failed without exception message. Will retry Topic operation.";
         }
-        if (hashCode == 85 && operation.equals("U")) {
-            c = 1;
-            if (c != 0) {
-                blockingSubscribeToTopic(topicOperation.getTopic());
-                if (isDebugLogEnabled()) {
-                    String topic = topicOperation.getTopic();
-                    StringBuilder sb4 = new StringBuilder(String.valueOf(topic).length() + 31);
-                    sb4.append("Subscribe to topic: ");
-                    sb4.append(topic);
-                    sb4.append(" succeeded.");
-                    sb2 = sb4.toString();
-                    Log.d("FirebaseMessaging", sb2);
-                }
-                return true;
-            }
-            if (c != 1) {
-                if (isDebugLogEnabled()) {
-                    String valueOf = String.valueOf(topicOperation);
-                    StringBuilder sb5 = new StringBuilder(valueOf.length() + 24);
-                    sb5.append("Unknown topic operation");
-                    sb5.append(valueOf);
-                    sb5.append(".");
-                    sb2 = sb5.toString();
-                    Log.d("FirebaseMessaging", sb2);
-                }
-                return true;
-            }
-            blockingUnsubscribeFromTopic(topicOperation.getTopic());
-            if (isDebugLogEnabled()) {
-                String topic2 = topicOperation.getTopic();
-                StringBuilder sb6 = new StringBuilder(String.valueOf(topic2).length() + 35);
-                sb6.append("Unsubscribe from topic: ");
-                sb6.append(topic2);
-                sb6.append(" succeeded.");
-                sb2 = sb6.toString();
-                Log.d("FirebaseMessaging", sb2);
-            }
-            return true;
-            if (!"SERVICE_NOT_AVAILABLE".equals(e.getMessage()) || "INTERNAL_SERVER_ERROR".equals(e.getMessage())) {
-                String message222 = e.getMessage();
-                StringBuilder sb3222 = new StringBuilder(String.valueOf(message222).length() + 53);
-                sb3222.append("Topic operation failed: ");
-                sb3222.append(message222);
-                sb3222.append(". Will retry Topic operation.");
-                sb = sb3222.toString();
-            } else {
-                if (e.getMessage() != null) {
-                    throw e;
-                }
-                sb = "Topic operation failed without exception message. Will retry Topic operation.";
-            }
-            Log.e("FirebaseMessaging", sb);
-            return false;
-        }
-        c = 65535;
-        if (c != 0) {
-        }
-        if ("SERVICE_NOT_AVAILABLE".equals(e.getMessage())) {
-        }
-        String message2222 = e.getMessage();
-        StringBuilder sb32222 = new StringBuilder(String.valueOf(message2222).length() + 53);
-        sb32222.append("Topic operation failed: ");
-        sb32222.append(message2222);
-        sb32222.append(". Will retry Topic operation.");
-        sb = sb32222.toString();
-        Log.e("FirebaseMessaging", sb);
+        Log.e("FirebaseMessaging", str);
         return false;
     }
 
@@ -316,7 +240,7 @@ class TopicsSubscriber {
     }
 
     void syncWithDelaySecondsInternal(long j) {
-        scheduleSyncTaskWithDelaySeconds(new TopicsSyncTask(this, this.context, this.metadata, Math.min(Math.max(30L, j + j), MAX_DELAY_SEC)), j);
+        scheduleSyncTaskWithDelaySeconds(new TopicsSyncTask(this, this.context, this.metadata, Math.min(Math.max(30L, 2 * j), MAX_DELAY_SEC)), j);
         setSyncScheduledOrRunning(true);
     }
 }

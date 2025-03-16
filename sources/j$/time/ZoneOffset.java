@@ -8,16 +8,13 @@ import java.io.Serializable;
 
 /* loaded from: classes2.dex */
 public final class ZoneOffset extends ZoneId implements j$.time.temporal.k, Comparable<ZoneOffset>, Serializable {
-    private static final ConcurrentHashMap d = new ConcurrentHashMap(16, 0.75f, 4);
-    private static final ConcurrentHashMap e = new ConcurrentHashMap(16, 0.75f, 4);
-    public static final ZoneOffset f = j(0);
     private final int b;
     private final transient String c;
-
-    static {
-        j(-64800);
-        j(64800);
-    }
+    private static final ConcurrentHashMap d = new ConcurrentHashMap(16, 0.75f, 4);
+    private static final ConcurrentHashMap e = new ConcurrentHashMap(16, 0.75f, 4);
+    public static final ZoneOffset UTC = j(0);
+    public static final ZoneOffset f = j(-64800);
+    public static final ZoneOffset g = j(64800);
 
     private ZoneOffset(int i) {
         String sb;

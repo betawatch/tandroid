@@ -26,7 +26,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.MemberRequestsBottomSheet;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ChatActivityMemberRequestsDelegate {
     private AvatarsImageView avatarsView;
     private MemberRequestsBottomSheet bottomSheet;

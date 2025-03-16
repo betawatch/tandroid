@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 /* loaded from: classes.dex */
 public final class zzb implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         Intent intent = null;
         while (parcel.dataPosition() < validateObjectHeader) {

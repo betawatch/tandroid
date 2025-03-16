@@ -2,7 +2,7 @@ package org.telegram.ui.Stars;
 
 import android.view.View;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class ISuperRipple {
     public final View view;
 

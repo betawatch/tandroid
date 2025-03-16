@@ -42,7 +42,7 @@ import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FeaturesPageView extends BaseListPageView {
     RecyclerListView.SelectionAdapter adapter;
     Bitmap bitmap;

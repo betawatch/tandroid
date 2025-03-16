@@ -3,7 +3,7 @@ package com.microsoft.appcenter.crashes;
 import com.microsoft.appcenter.utils.ShutdownHelper;
 import java.lang.Thread;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private Thread.UncaughtExceptionHandler mDefaultUncaughtExceptionHandler;
     private boolean mIgnoreDefaultExceptionHandler = false;

@@ -11,22 +11,38 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FcmBroadcastProcessor {
     private static WithinAppServiceConnection fcmServiceConn;
     private static final Object lock = new Object();
     private final Context context;
-    private final Executor executor = FcmBroadcastProcessor$$Lambda$0.$instance;
+    private final Executor executor = new EnhancedIntentService$$ExternalSyntheticLambda0();
 
     public FcmBroadcastProcessor(Context context) {
         this.context = context;
     }
 
-    private static Task bindToMessagingService(Context context, Intent intent) {
+    private static Task bindToMessagingService(Context context, Intent intent, boolean z) {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
         }
-        return getServiceConnection(context, "com.google.firebase.MESSAGING_EVENT").sendIntent(intent).continueWith(FcmBroadcastProcessor$$Lambda$3.$instance, FcmBroadcastProcessor$$Lambda$4.$instance);
+        WithinAppServiceConnection serviceConnection = getServiceConnection(context, "com.google.firebase.MESSAGING_EVENT");
+        if (!z) {
+            return serviceConnection.sendIntent(intent).continueWith(new EnhancedIntentService$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda3
+                @Override // com.google.android.gms.tasks.Continuation
+                public final Object then(Task task) {
+                    Integer lambda$bindToMessagingService$3;
+                    lambda$bindToMessagingService$3 = FcmBroadcastProcessor.lambda$bindToMessagingService$3(task);
+                    return lambda$bindToMessagingService$3;
+                }
+            });
+        }
+        if (ServiceStarter.getInstance().hasWakeLockPermission(context)) {
+            WakeLockHolder.sendWakefulServiceIntent(context, serviceConnection, intent);
+        } else {
+            serviceConnection.sendIntent(intent);
+        }
+        return Tasks.forResult(-1);
     }
 
     private static WithinAppServiceConnection getServiceConnection(Context context, String str) {
@@ -34,7 +50,7 @@ public class FcmBroadcastProcessor {
         synchronized (lock) {
             try {
                 if (fcmServiceConn == null) {
-                    fcmServiceConn = new WithinAppServiceConnection(context, "com.google.firebase.MESSAGING_EVENT");
+                    fcmServiceConn = new WithinAppServiceConnection(context, str);
                 }
                 withinAppServiceConnection = fcmServiceConn;
             } catch (Throwable th) {
@@ -44,16 +60,31 @@ public class FcmBroadcastProcessor {
         return withinAppServiceConnection;
     }
 
-    static final /* synthetic */ Integer lambda$bindToMessagingService$3$FcmBroadcastProcessor(Task task) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Integer lambda$bindToMessagingService$3(Task task) {
         return -1;
     }
 
-    static final /* synthetic */ Integer lambda$startMessagingService$1$FcmBroadcastProcessor(Task task) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Integer lambda$startMessagingService$0(Context context, Intent intent) {
+        return Integer.valueOf(ServiceStarter.getInstance().startMessagingService(context, intent));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Integer lambda$startMessagingService$1(Task task) {
         return 403;
     }
 
-    static final /* synthetic */ Task lambda$startMessagingService$2$FcmBroadcastProcessor(Context context, Intent intent, Task task) {
-        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent).continueWith(FcmBroadcastProcessor$$Lambda$5.$instance, FcmBroadcastProcessor$$Lambda$6.$instance) : task;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Task lambda$startMessagingService$2(Context context, Intent intent, boolean z, Task task) {
+        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent, z).continueWith(new EnhancedIntentService$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda2
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task2) {
+                Integer lambda$startMessagingService$1;
+                lambda$startMessagingService$1 = FcmBroadcastProcessor.lambda$startMessagingService$1(task2);
+                return lambda$startMessagingService$1;
+            }
+        }) : task;
     }
 
     public Task process(Intent intent) {
@@ -66,38 +97,22 @@ public class FcmBroadcastProcessor {
     }
 
     public Task startMessagingService(final Context context, final Intent intent) {
-        boolean z = false;
-        if (PlatformVersion.isAtLeastO() && context.getApplicationInfo().targetSdkVersion >= 26) {
-            z = true;
-        }
-        return (z && (intent.getFlags() & 268435456) == 0) ? bindToMessagingService(context, intent) : Tasks.call(this.executor, new Callable(context, intent) { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$Lambda$1
-            private final Context arg$1;
-            private final Intent arg$2;
-
-            {
-                this.arg$1 = context;
-                this.arg$2 = intent;
-            }
-
+        boolean z = PlatformVersion.isAtLeastO() && context.getApplicationInfo().targetSdkVersion >= 26;
+        final boolean z2 = (intent.getFlags() & 268435456) != 0;
+        return (!z || z2) ? Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
-            public Object call() {
-                Integer valueOf;
-                valueOf = Integer.valueOf(ServiceStarter.getInstance().startMessagingService(this.arg$1, this.arg$2));
-                return valueOf;
+            public final Object call() {
+                Integer lambda$startMessagingService$0;
+                lambda$startMessagingService$0 = FcmBroadcastProcessor.lambda$startMessagingService$0(context, intent);
+                return lambda$startMessagingService$0;
             }
-        }).continueWithTask(this.executor, new Continuation(context, intent) { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$Lambda$2
-            private final Context arg$1;
-            private final Intent arg$2;
-
-            {
-                this.arg$1 = context;
-                this.arg$2 = intent;
-            }
-
+        }).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.Continuation
-            public Object then(Task task) {
-                return FcmBroadcastProcessor.lambda$startMessagingService$2$FcmBroadcastProcessor(this.arg$1, this.arg$2, task);
+            public final Object then(Task task) {
+                Task lambda$startMessagingService$2;
+                lambda$startMessagingService$2 = FcmBroadcastProcessor.lambda$startMessagingService$2(context, intent, z2, task);
+                return lambda$startMessagingService$2;
             }
-        });
+        }) : bindToMessagingService(context, intent, z2);
     }
 }

@@ -9,7 +9,7 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.nio.channels.OverlappingFileLockException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class CrossProcessLock {
     private final FileChannel channel;
     private final FileLock lock;

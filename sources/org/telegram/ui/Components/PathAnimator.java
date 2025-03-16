@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PathAnimator {
     private float durationScale;
     private float scale;

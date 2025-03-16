@@ -15,6 +15,11 @@ public final class ChildHandleNode extends JobCancellingNode implements ChildHan
         return getJob().childCancelled(th);
     }
 
+    @Override // kotlinx.coroutines.ChildHandle
+    public Job getParent() {
+        return getJob();
+    }
+
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Object invoke(Object obj) {
         invoke((Throwable) obj);

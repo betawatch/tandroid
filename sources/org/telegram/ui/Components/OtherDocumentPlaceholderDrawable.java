@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable implements DownloadController.FileDownloadProgressListener {
     private int TAG;
     private String ext;

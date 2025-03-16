@@ -60,7 +60,7 @@ import org.telegram.ui.Components.StableAnimator;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CustomEmojiReactionsWindow {
     private int account;
     boolean attachToParent;

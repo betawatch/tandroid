@@ -1,75 +1,76 @@
 package j$.time.format;
 
-import j$.util.A;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
+import j$.time.LocalDateTime;
+import j$.time.ZoneOffset;
 
 /* loaded from: classes2.dex */
-final class h implements g {
-    private final j$.time.temporal.l a;
-    private final int b;
-    private final int c;
-    private final boolean d;
-
-    h(j$.time.temporal.a aVar) {
-        A.z(aVar, "field");
-        if (!aVar.a().f()) {
-            throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);
-        }
-        this.a = aVar;
-        this.b = 0;
-        this.c = 9;
-        this.d = true;
+final class h implements f {
+    h() {
     }
 
-    @Override // j$.time.format.g
-    public final boolean a(s sVar, StringBuilder sb) {
-        j$.time.temporal.l lVar = this.a;
-        Long e = sVar.e(lVar);
+    @Override // j$.time.format.f
+    public final boolean a(r rVar, StringBuilder sb) {
+        Long e = rVar.e(j$.time.temporal.a.INSTANT_SECONDS);
+        j$.time.temporal.k d = rVar.d();
+        j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
+        Long valueOf = d.e(aVar) ? Long.valueOf(rVar.d().b(aVar)) : null;
+        int i = 0;
         if (e == null) {
             return false;
         }
-        w b = sVar.b();
         long longValue = e.longValue();
-        j$.time.temporal.q a = lVar.a();
-        a.b(longValue, lVar);
-        BigDecimal valueOf = BigDecimal.valueOf(a.e());
-        BigDecimal add = BigDecimal.valueOf(a.d()).subtract(valueOf).add(BigDecimal.ONE);
-        BigDecimal subtract = BigDecimal.valueOf(longValue).subtract(valueOf);
-        RoundingMode roundingMode = RoundingMode.FLOOR;
-        BigDecimal divide = subtract.divide(add, 9, roundingMode);
-        BigDecimal bigDecimal = BigDecimal.ZERO;
-        if (divide.compareTo(bigDecimal) != 0) {
-            bigDecimal = divide.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : divide.stripTrailingZeros();
-        }
-        int scale = bigDecimal.scale();
-        boolean z = this.d;
-        int i = this.b;
-        if (scale != 0) {
-            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i), this.c), roundingMode).toPlainString().substring(2);
-            b.getClass();
-            if (z) {
-                sb.append('.');
+        int f = aVar.f(valueOf != null ? valueOf.longValue() : 0L);
+        if (longValue >= -62167219200L) {
+            long j = longValue - 253402300800L;
+            long j2 = j$.com.android.tools.r8.a.j(j, 315569520000L) + 1;
+            LocalDateTime j3 = LocalDateTime.j(j$.com.android.tools.r8.a.i(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
+            if (j2 > 0) {
+                sb.append('+');
+                sb.append(j2);
             }
-            sb.append(substring);
-            return true;
+            sb.append(j3);
+            if (j3.g() == 0) {
+                sb.append(":00");
+            }
+        } else {
+            long j4 = longValue + 62167219200L;
+            long j5 = j4 / 315569520000L;
+            long j6 = j4 % 315569520000L;
+            LocalDateTime j7 = LocalDateTime.j(j6 - 62167219200L, 0, ZoneOffset.UTC);
+            int length = sb.length();
+            sb.append(j7);
+            if (j7.g() == 0) {
+                sb.append(":00");
+            }
+            if (j5 < 0) {
+                if (j7.h() == -10000) {
+                    sb.replace(length, length + 2, Long.toString(j5 - 1));
+                } else if (j6 == 0) {
+                    sb.insert(length, j5);
+                } else {
+                    sb.insert(length + 1, Math.abs(j5));
+                }
+            }
         }
-        if (i <= 0) {
-            return true;
-        }
-        if (z) {
-            b.getClass();
+        if (f > 0) {
             sb.append('.');
+            int i2 = 100000000;
+            while (true) {
+                if (f <= 0 && i % 3 == 0 && i >= -2) {
+                    break;
+                }
+                int i3 = f / i2;
+                sb.append((char) (i3 + 48));
+                f -= i3 * i2;
+                i2 /= 10;
+                i++;
+            }
         }
-        for (int i2 = 0; i2 < i; i2++) {
-            b.getClass();
-            sb.append('0');
-        }
+        sb.append('Z');
         return true;
     }
 
     public final String toString() {
-        return "Fraction(" + this.a + "," + this.b + "," + this.c + (this.d ? ",DecimalPoint" : "") + ")";
+        return "Instant()";
     }
 }

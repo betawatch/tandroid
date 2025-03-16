@@ -30,7 +30,7 @@ import org.telegram.ui.Cells.ShadowSectionCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Components.SlideChooseView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ClearHistoryAlert extends BottomSheet {
     private boolean autoDeleteOnly;
     private CheckBoxCell cell;

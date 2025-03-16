@@ -26,6 +26,11 @@ final class TransportImpl implements Transport {
     public static /* synthetic */ void lambda$send$0(Exception exc) {
     }
 
+    TransportContext getTransportContext() {
+        return this.transportContext;
+    }
+
+    @Override // com.google.android.datatransport.Transport
     public void schedule(Event event, TransportScheduleCallback transportScheduleCallback) {
         this.transportInternal.send(SendRequest.builder().setTransportContext(this.transportContext).setEvent(event).setTransportName(this.name).setTransformer(this.transformer).setEncoding(this.payloadEncoding).build(), transportScheduleCallback);
     }

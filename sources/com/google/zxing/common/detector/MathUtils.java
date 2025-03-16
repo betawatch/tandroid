@@ -1,6 +1,6 @@
 package com.google.zxing.common.detector;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class MathUtils {
     public static float distance(float f, float f2, float f3, float f4) {
         double d = f - f3;

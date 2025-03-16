@@ -49,7 +49,7 @@ import org.telegram.ui.Components.Paint.Views.PaintColorsListView;
 import org.telegram.ui.Components.Paint.Views.PipettePickerView;
 import org.telegram.ui.Components.ViewPagerFixed;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ColorPickerBottomSheet extends BottomSheet {
     private AlphaPickerView alphaPickerView;
     private Consumer colorListener;

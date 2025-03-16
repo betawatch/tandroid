@@ -1,17 +1,13 @@
 package com.google.android.gms.internal.cloudmessaging;
 
+import android.os.Build;
+import org.telegram.tgnet.ConnectionsManager;
+
 /* loaded from: classes.dex */
 public abstract class zza {
-    private static final zzb zza;
-    private static volatile zzb zzb;
+    public static final int zza;
 
     static {
-        zzc zzcVar = new zzc();
-        zza = zzcVar;
-        zzb = zzcVar;
-    }
-
-    public static zzb zza() {
-        return zzb;
+        zza = Build.VERSION.SDK_INT >= 31 ? ConnectionsManager.FileTypeVideo : 0;
     }
 }

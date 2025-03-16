@@ -7,17 +7,23 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import android.view.ViewGroup;
 import androidx.core.content.FileProvider;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.CustomProperties;
 import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.analytics.EventProperties;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.UpdateAppAlertDialog;
+import org.telegram.ui.Components.UpdateButton;
+import org.telegram.ui.Components.UpdateLayout;
+import org.telegram.ui.IUpdateButton;
+import org.telegram.ui.IUpdateLayout;
 
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
@@ -33,8 +39,20 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     protected void appCenterLogInternal(Throwable th) {
         try {
+            FirebaseCrashlytics.getInstance().recordException(th);
+        } catch (Throwable th2) {
+            FileLog.e(th2, false);
+        }
+        try {
             Crashes.trackError(th);
         } catch (Throwable unused) {
+        }
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public void cancelDownloadingUpdate() {
+        if (isCustomUpdate()) {
+            BetaUpdaterController.getInstance().cancelDownloadingUpdate();
         }
     }
 
@@ -66,15 +84,63 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
-    protected void logDualCameraInternal(boolean z, boolean z2) {
-        try {
-            StringBuilder sb = new StringBuilder();
-            sb.append("dual-camera[");
-            sb.append((Build.MANUFACTURER + " " + Build.DEVICE).toUpperCase());
-            sb.append("]");
-            Analytics.trackEvent(sb.toString(), new EventProperties().set("success", z).set("vendor", z2).set("product", Build.PRODUCT + "").set("model", Build.MODEL));
-        } catch (Throwable unused) {
+    public void checkUpdate(boolean z, Runnable runnable) {
+        if (isCustomUpdate()) {
+            BetaUpdaterController.getInstance().checkForUpdate(z, runnable);
         }
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public void downloadUpdate() {
+        if (isCustomUpdate()) {
+            BetaUpdaterController.getInstance().downloadUpdate();
+        }
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public File getDownloadedUpdateFile() {
+        if (isCustomUpdate()) {
+            return BetaUpdaterController.getInstance().getDownloadedFile();
+        }
+        return null;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public float getDownloadingUpdateProgress() {
+        if (isCustomUpdate()) {
+            return BetaUpdaterController.getInstance().getDownloadingProgress();
+        }
+        return 0.0f;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public BetaUpdate getUpdate() {
+        if (isCustomUpdate()) {
+            return BetaUpdaterController.getInstance().getUpdate();
+        }
+        return null;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    protected boolean isBeta() {
+        return true;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public boolean isCustomUpdate() {
+        return !TextUtils.isEmpty(BuildConfig.BETA_URL);
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public boolean isDownloadingUpdate() {
+        if (isCustomUpdate()) {
+            return BetaUpdaterController.getInstance().isDownloading();
+        }
+        return false;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    protected void logDualCameraInternal(boolean z, boolean z2) {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
@@ -112,10 +178,48 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
+    public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i) {
+        try {
+            new UpdateAppAlertDialog(context, betaUpdate, i).show();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return true;
+        }
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
     protected void startAppCenterInternal(Activity activity) {
         String str;
         String str2;
+        String str3;
+        String str4;
         try {
+            if (BuildVars.DEBUG_VERSION) {
+                String str5 = "" + UserConfig.getInstance(UserConfig.selectedAccount).clientUserId;
+                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null) {
+                    String publicUsername = UserObject.getPublicUsername(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                    if (!TextUtils.isEmpty(publicUsername)) {
+                        str5 = "@" + publicUsername;
+                    }
+                }
+                FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+                firebaseCrashlytics.setUserId(str5);
+                firebaseCrashlytics.setCustomKey("version", BuildVars.DEBUG_PRIVATE_VERSION ? "private" : "public");
+                firebaseCrashlytics.setCustomKey("model", Build.MODEL);
+                firebaseCrashlytics.setCustomKey("manufacturer", Build.MANUFACTURER);
+                if (Build.VERSION.SDK_INT >= 31) {
+                    str3 = Build.SOC_MODEL;
+                    firebaseCrashlytics.setCustomKey("soc_model", str3);
+                    str4 = Build.SOC_MANUFACTURER;
+                    firebaseCrashlytics.setCustomKey("soc_manufacturer", str4);
+                }
+                firebaseCrashlytics.setCustomKey("device", Build.DEVICE);
+                firebaseCrashlytics.setCustomKey("product", Build.PRODUCT);
+                firebaseCrashlytics.setCustomKey("hardware", Build.HARDWARE);
+                firebaseCrashlytics.setCustomKey("user", Build.USER);
+                firebaseCrashlytics.setCrashlyticsCollectionEnabled(true);
+            }
             if (BuildVars.DEBUG_VERSION) {
                 Distribute.setEnabledForDebuggableBuild(true);
                 if (TextUtils.isEmpty(BuildConfig.APP_CENTER_HASH)) {
@@ -133,26 +237,42 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 customProperties.set("manufacturer", Build.MANUFACTURER);
                 if (Build.VERSION.SDK_INT >= 31) {
                     str = Build.SOC_MODEL;
-                    customProperties.set("model", str);
+                    customProperties.set("soc_model", str);
                     str2 = Build.SOC_MANUFACTURER;
-                    customProperties.set("manufacturer", str2);
+                    customProperties.set("soc_manufacturer", str2);
                 }
                 customProperties.set("device", Build.DEVICE);
                 customProperties.set("product", Build.PRODUCT);
                 customProperties.set("hardware", Build.HARDWARE);
                 customProperties.set("user", Build.USER);
                 AppCenter.setCustomProperties(customProperties);
-                String str3 = "uid=" + UserConfig.getInstance(UserConfig.selectedAccount).clientUserId;
+                String str6 = "uid=" + UserConfig.getInstance(UserConfig.selectedAccount).clientUserId;
                 if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null) {
-                    String publicUsername = UserObject.getPublicUsername(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
-                    if (!TextUtils.isEmpty(publicUsername)) {
-                        str3 = str3 + " @" + publicUsername;
+                    String publicUsername2 = UserObject.getPublicUsername(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                    if (!TextUtils.isEmpty(publicUsername2)) {
+                        str6 = str6 + " @" + publicUsername2;
                     }
                 }
-                AppCenter.setUserId(str3);
+                AppCenter.setUserId(str6);
             }
         } catch (Throwable th) {
             FileLog.e(th);
         }
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public IUpdateButton takeUpdateButton(Context context) {
+        if (isCustomUpdate()) {
+            return new UpdateButton(context);
+        }
+        return null;
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
+    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        if (isCustomUpdate()) {
+            return new UpdateLayout(activity, viewGroup, viewGroup2);
+        }
+        return null;
     }
 }

@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HideViewAfterAnimation extends AnimatorListenerAdapter {
     private final boolean goneOnHide;
     private final View view;

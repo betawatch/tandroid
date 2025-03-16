@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class IidStore {
     private static final String[] ALLOWABLE_SCOPES = {"*", "FCM", "GCM", ""};
     private final String defaultSenderId;

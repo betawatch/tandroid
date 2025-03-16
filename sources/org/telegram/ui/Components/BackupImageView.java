@@ -21,7 +21,7 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BackupImageView extends View {
     public AnimatedEmojiDrawable animatedEmojiDrawable;
     public ColorFilter animatedEmojiDrawableColorFilter;

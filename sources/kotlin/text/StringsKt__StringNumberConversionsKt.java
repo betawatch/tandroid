@@ -27,7 +27,7 @@ public abstract class StringsKt__StringNumberConversionsKt extends StringsKt__St
         int i2 = 0;
         char charAt = str.charAt(0);
         long j = -9223372036854775807L;
-        if (Intrinsics.compare(charAt, 48) < 0) {
+        if (Intrinsics.compare((int) charAt, 48) < 0) {
             z = true;
             if (length == 1) {
                 return null;

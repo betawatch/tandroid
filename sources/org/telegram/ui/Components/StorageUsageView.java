@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StorageUsageView extends FrameLayout {
     private Paint bgPaint;
     private boolean calculating;

@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaActionDrawable extends Drawable {
     private float animatedDownloadProgress;
     private boolean animatingTransition;
@@ -1113,6 +1113,11 @@ public class MediaActionDrawable extends Drawable {
 
     public void setBackgroundDrawable(Theme.MessageDrawable messageDrawable) {
         this.messageDrawable = messageDrawable;
+    }
+
+    public void setBackgroundGradientDrawable(LinearGradient linearGradient) {
+        this.gradientDrawable = linearGradient;
+        this.gradientMatrix = new Matrix();
     }
 
     @Override // android.graphics.drawable.Drawable

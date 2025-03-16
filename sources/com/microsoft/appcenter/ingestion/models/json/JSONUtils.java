@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class JSONUtils {
     public static List readArray(JSONObject jSONObject, String str, ModelFactory modelFactory) {
         JSONArray optJSONArray = jSONObject.optJSONArray(str);

@@ -2,7 +2,7 @@ package com.microsoft.appcenter.utils;
 
 import android.os.Process;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ShutdownHelper {
     public static void shutdown(int i) {
         Process.killProcess(Process.myPid());

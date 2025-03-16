@@ -31,7 +31,7 @@ import org.telegram.ui.Components.Paint.Views.EntityView;
 import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Rect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextPaintView extends EntityView {
     private int align;
     private int baseFontSize;

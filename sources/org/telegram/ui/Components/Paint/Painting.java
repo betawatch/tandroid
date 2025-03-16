@@ -29,7 +29,7 @@ import org.telegram.ui.Components.Paint.Brush;
 import org.telegram.ui.Components.Paint.Painting;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Painting {
     private Path activePath;
     private Shape activeShape;
@@ -686,8 +686,8 @@ public class Painting {
         Utils.HasGLError();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x012b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1019,9 +1019,9 @@ public class Painting {
         return new RectF(0.0f, 0.0f, size.width, size.height);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0223 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x021e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0246  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

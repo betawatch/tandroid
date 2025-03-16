@@ -1338,28 +1338,28 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         
             if (((android.widget.LinearLayout) r0.getButtonsLayout()).getOrientation() == 1) goto L177;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:110:0x04ec, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:110:0x04f9, code lost:
         
             r1.bringToFront();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:181:0x04ea, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:181:0x04f7, code lost:
         
             if (((android.widget.LinearLayout) r0.getButtonsLayout()).getOrientation() == 1) goto L177;
          */
-        /* JADX WARN: Removed duplicated region for block: B:150:0x03d1  */
-        /* JADX WARN: Removed duplicated region for block: B:152:0x03e7  */
-        /* JADX WARN: Removed duplicated region for block: B:160:0x040b  */
-        /* JADX WARN: Removed duplicated region for block: B:187:0x04fc  */
-        /* JADX WARN: Removed duplicated region for block: B:189:0x03ed  */
-        /* JADX WARN: Removed duplicated region for block: B:212:0x05ba  */
-        /* JADX WARN: Removed duplicated region for block: B:219:0x069d  */
-        /* JADX WARN: Removed duplicated region for block: B:266:0x0806  */
+        /* JADX WARN: Removed duplicated region for block: B:150:0x03de  */
+        /* JADX WARN: Removed duplicated region for block: B:152:0x03f4  */
+        /* JADX WARN: Removed duplicated region for block: B:160:0x0418  */
+        /* JADX WARN: Removed duplicated region for block: B:187:0x0509  */
+        /* JADX WARN: Removed duplicated region for block: B:189:0x03fa  */
+        /* JADX WARN: Removed duplicated region for block: B:212:0x05c7  */
+        /* JADX WARN: Removed duplicated region for block: B:219:0x06aa  */
+        /* JADX WARN: Removed duplicated region for block: B:266:0x0813  */
         /* JADX WARN: Removed duplicated region for block: B:268:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:269:0x05c8  */
-        /* JADX WARN: Removed duplicated region for block: B:350:0x0a3f  */
+        /* JADX WARN: Removed duplicated region for block: B:269:0x05d5  */
+        /* JADX WARN: Removed duplicated region for block: B:350:0x0a4c  */
         /* JADX WARN: Removed duplicated region for block: B:352:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:426:0x0e1f A[RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:427:0x0e20  */
+        /* JADX WARN: Removed duplicated region for block: B:426:0x0e2c A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:427:0x0e2d  */
         /* JADX WARN: Type inference failed for: r10v4 */
         /* JADX WARN: Type inference failed for: r10v5, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r10v7 */
@@ -1521,6 +1521,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
             }
             if (i == 24) {
+                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(PhotoViewer.this.getCurrentChromecastMedia());
                 PhotoViewer.this.castItemButton.performClick();
                 return;
             }
@@ -2006,7 +2007,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             translateController.translatePhoto(messageObject2, new Runnable() { // from class: org.telegram.ui.PhotoViewer$17$$ExternalSyntheticLambda5
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    PhotoViewer.access$17600(PhotoViewer.this);
+                                    PhotoViewer.access$17700(PhotoViewer.this);
                                 }
                             });
                             return;
@@ -6481,7 +6482,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 i = 131072;
             }
             layoutParams.flags = i;
-            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.onEmojiInteractionsReceived;
+            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.onDatabaseMigration;
             PhotoViewer.this.windowView.setFocusable(false);
             PhotoViewer.this.containerView.setFocusable(false);
             PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.proxyCheckDone);
@@ -7012,7 +7013,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$17600(PhotoViewer photoViewer) {
+    public static /* synthetic */ void access$17700(PhotoViewer photoViewer) {
         photoViewer.updateCaptionTranslated();
     }
 
@@ -7441,21 +7442,21 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         z6 = false;
                     } else {
                         String str2 = mediaEditState.fullPaintPath;
-                        Bitmap thumb = str.equals(str2) ? this.paintingOverlay.getThumb() : null;
+                        Bitmap bitmap7 = str.equals(str2) ? this.paintingOverlay.getBitmap() : null;
                         MediaController.CropState cropState3 = mediaEditState.cropState;
                         if (cropState3 != null) {
-                            if (thumb == null) {
+                            if (bitmap7 == null) {
                                 Bitmap decodeFile2 = BitmapFactory.decodeFile(mediaEditState.fullPaintPath);
                                 Bitmap createCroppedBitmap5 = createCroppedBitmap(decodeFile2, mediaEditState.cropState, null, false);
                                 decodeFile2.recycle();
                                 createCroppedBitmap = createCroppedBitmap5;
                             } else {
-                                createCroppedBitmap = createCroppedBitmap(thumb, cropState3, null, false);
+                                createCroppedBitmap = createCroppedBitmap(bitmap7, cropState3, null, false);
                             }
                             bitmap5 = createCroppedBitmap;
                             z4 = true;
                         } else {
-                            bitmap5 = thumb;
+                            bitmap5 = bitmap7;
                             z4 = false;
                         }
                         if (!this.isCurrentVideo) {
@@ -7570,16 +7571,16 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             mediaEditState.croppedPaintPath = editState7.croppedPaintPath;
                             mediaEditState.croppedMediaEntities = editState7.croppedMediaEntities;
                         }
-                        Bitmap bitmap7 = bitmapArr[0];
-                        if (bitmap7 == null) {
-                            bitmap7 = bitmap;
+                        Bitmap bitmap8 = bitmapArr[0];
+                        if (bitmap8 == null) {
+                            bitmap8 = bitmap;
                         }
                         MediaController.CropState cropState7 = mediaEditState.cropState;
                         if (cropState7 == null || !cropState7.initied) {
-                            bitmap2 = bitmap7;
+                            bitmap2 = bitmap8;
                             z2 = false;
                         } else {
-                            bitmap2 = createCroppedBitmap(bitmap7, cropState7, null, false);
+                            bitmap2 = createCroppedBitmap(bitmap8, cropState7, null, false);
                             z2 = true;
                         }
                         if (this.isCurrentVideo) {
@@ -7601,7 +7602,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             if (mediaEditState.cropState != null) {
                                 createBitmap = createCroppedBitmap(this.centerImage.getBitmap(), mediaEditState.cropState, iArr3, true);
                             } else {
-                                Bitmap bitmap8 = this.centerImage.getBitmap();
+                                Bitmap bitmap9 = this.centerImage.getBitmap();
                                 if (iArr3[0] != 0) {
                                     Matrix matrix = new Matrix();
                                     matrix.postRotate(iArr3[0]);
@@ -7611,9 +7612,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     } else if (i10 == 2) {
                                         matrix.postScale(1.0f, -1.0f);
                                     }
-                                    createBitmap = Bitmaps.createBitmap(bitmap8, 0, 0, bitmap8.getWidth(), bitmap8.getHeight(), matrix, true);
+                                    createBitmap = Bitmaps.createBitmap(bitmap9, 0, 0, bitmap9.getWidth(), bitmap9.getHeight(), matrix, true);
                                 } else {
-                                    bitmap3 = bitmap8;
+                                    bitmap3 = bitmap9;
                                     z3 = false;
                                     if (!this.isCurrentVideo) {
                                         if (hasAnimatedMediaEntities()) {
@@ -7744,9 +7745,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 return;
             }
             if (i6 == 4) {
-                Bitmap bitmap9 = this.maskPaintView.getBitmap();
-                this.centerImage.setImageBitmap(bitmap9);
-                lambda$setParentActivity$42(bitmap9);
+                Bitmap bitmap10 = this.maskPaintView.getBitmap();
+                this.centerImage.setImageBitmap(bitmap10);
+                lambda$setParentActivity$42(bitmap10);
                 this.eraseBtn.setActive(false, true);
                 this.restoreBtn.setActive(false, true);
                 if (this.stickerMakerView != null) {
@@ -7754,11 +7755,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     StickerMakerView stickerMakerView = this.stickerMakerView;
                     int i12 = orientation - stickerMakerView.orientation;
                     if (i12 == 0) {
-                        stickerMakerView.updateOutlinePath(bitmap9);
+                        stickerMakerView.updateOutlinePath(bitmap10);
                         return;
                     }
-                    int width = bitmap9.getWidth();
-                    int height = bitmap9.getHeight();
+                    int width = bitmap10.getWidth();
+                    int height = bitmap10.getHeight();
                     if ((i12 / 90) % 2 != 0) {
                         i4 = width;
                         i3 = height;
@@ -7771,7 +7772,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     canvas2.translate((-width) / 2.0f, (-height) / 2.0f);
                     canvas2.rotate(i12);
                     canvas2.translate(i3 / 2.0f, i4 / 2.0f);
-                    canvas2.drawBitmap(bitmap9, 0.0f, 0.0f, new Paint(3));
+                    canvas2.drawBitmap(bitmap10, 0.0f, 0.0f, new Paint(3));
                     this.stickerMakerView.updateOutlinePath(createBitmap3);
                     return;
                 }
@@ -8670,7 +8671,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.videoItem.toggleSubMenu();
         try {
             CastSync.check(0);
-            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            if (ChromecastController.getInstance().isCasting()) {
+                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            }
             VideoPlayer videoPlayer3 = this.videoPlayer;
             if (videoPlayer3 != null) {
                 CastSync.setPlaying(videoPlayer3.isPlaying());
@@ -9874,7 +9877,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         return Math.max(min / bitmapHeight, min / bitmapWidth);
     }
 
-    private ChromecastMediaVariations getCurrentChromecastMedia() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public ChromecastMediaVariations getCurrentChromecastMedia() {
         String str;
         MessageObject messageObject = this.currentMessageObject;
         if (messageObject == null) {
@@ -13143,7 +13147,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             i = 0;
         }
         layoutParams.flags = i;
-        this.windowLayoutParams.softInputMode = NotificationCenter.onEmojiInteractionsReceived;
+        this.windowLayoutParams.softInputMode = NotificationCenter.onDatabaseMigration;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -15748,11 +15752,12 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX WARN: Removed duplicated region for block: B:205:0x0997  */
     /* JADX WARN: Removed duplicated region for block: B:268:0x0aef  */
     /* JADX WARN: Removed duplicated region for block: B:274:0x0baf  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0bca A[Catch: Exception -> 0x0bd2, TRY_LEAVE, TryCatch #0 {Exception -> 0x0bd2, blocks: (B:277:0x0bb8, B:279:0x0bca), top: B:276:0x0bb8 }] */
-    /* JADX WARN: Removed duplicated region for block: B:283:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0bb4  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0b27  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x0b43  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x0bc5 A[Catch: Exception -> 0x0bd1, TryCatch #0 {Exception -> 0x0bd1, blocks: (B:277:0x0bb8, B:279:0x0bc5, B:280:0x0bd3, B:282:0x0bd7), top: B:276:0x0bb8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0bd7 A[Catch: Exception -> 0x0bd1, TRY_LEAVE, TryCatch #0 {Exception -> 0x0bd1, blocks: (B:277:0x0bb8, B:279:0x0bc5, B:280:0x0bd3, B:282:0x0bd7), top: B:276:0x0bb8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:286:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0bb4  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x0b27  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0b43  */
     /* JADX WARN: Type inference failed for: r11v2 */
     /* JADX WARN: Type inference failed for: r11v26 */
     /* JADX WARN: Type inference failed for: r11v3, types: [android.animation.AnimatorSet, java.lang.String] */
@@ -16392,7 +16397,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             VideoPlayer videoPlayer2 = this.videoPlayer;
                             this.lastQualityIndexSelected = videoPlayer2 == null ? videoPlayer2.getCurrentQualityIndex() : -1;
                             CastSync.check(0);
-                            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                            if (ChromecastController.getInstance().isCasting()) {
+                                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                            }
                             videoPlayer = this.videoPlayer;
                             if (videoPlayer == null) {
                                 CastSync.setPlaying(videoPlayer.isPlaying());
@@ -16407,7 +16414,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     VideoPlayer videoPlayer22 = this.videoPlayer;
                     this.lastQualityIndexSelected = videoPlayer22 == null ? videoPlayer22.getCurrentQualityIndex() : -1;
                     CastSync.check(0);
-                    ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                    if (ChromecastController.getInstance().isCasting()) {
+                    }
                     videoPlayer = this.videoPlayer;
                     if (videoPlayer == null) {
                     }
@@ -16436,13 +16444,15 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 VideoPlayer videoPlayer222 = this.videoPlayer;
                 this.lastQualityIndexSelected = videoPlayer222 == null ? videoPlayer222.getCurrentQualityIndex() : -1;
                 CastSync.check(0);
-                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                if (ChromecastController.getInstance().isCasting()) {
+                }
                 videoPlayer = this.videoPlayer;
                 if (videoPlayer == null) {
                 }
             }
             CastSync.check(0);
-            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            if (ChromecastController.getInstance().isCasting()) {
+            }
             videoPlayer = this.videoPlayer;
             if (videoPlayer == null) {
             }
@@ -17631,7 +17641,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: private */
     public void requestAdjust() {
-        this.windowLayoutParams.softInputMode = NotificationCenter.onEmojiInteractionsReceived;
+        this.windowLayoutParams.softInputMode = NotificationCenter.onDatabaseMigration;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -21768,7 +21778,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         checkFullscreenButton();
         try {
             CastSync.check(0);
-            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            if (ChromecastController.getInstance().isCasting()) {
+                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            }
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -23144,8 +23156,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x03c2  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x03da  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x03c2  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x03da  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -23415,7 +23427,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         if (this.lastQualityIndexSelected != i) {
             try {
                 CastSync.check(0);
-                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                if (ChromecastController.getInstance().isCasting()) {
+                    ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                }
                 VideoPlayer videoPlayer3 = this.videoPlayer;
                 if (videoPlayer3 != null) {
                     CastSync.setPlaying(videoPlayer3.isPlaying());
@@ -27127,7 +27141,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     i2 = layoutParams.flags | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
                 }
                 layoutParams.flags = i2;
-                this.windowLayoutParams.softInputMode = NotificationCenter.onEmojiInteractionsReceived;
+                this.windowLayoutParams.softInputMode = NotificationCenter.onDatabaseMigration;
                 this.windowView.setFocusable(false);
                 this.containerView.setFocusable(false);
                 windowManager.addView(this.windowView, this.windowLayoutParams);

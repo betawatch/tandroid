@@ -31,7 +31,7 @@ final class s extends X1 {
                 D d2 = (D) ((j$.util.function.p) ((t) this.c).n).apply(d);
                 if (d2 != null) {
                     try {
-                        d2.sequential().j(new q(1, this));
+                        d2.sequential().i(new q(1, this));
                     } catch (Throwable th) {
                         try {
                             d2.close();

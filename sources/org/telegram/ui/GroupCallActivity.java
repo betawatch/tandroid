@@ -8568,7 +8568,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             if (groupCallInvitedCell.hasAvatarSet()) {
                 bundle.putBoolean("expandPhoto", true);
             }
-            this.parentActivity.lambda$runLinkRequest$95(new ProfileActivity(bundle));
+            this.parentActivity.lambda$runLinkRequest$93(new ProfileActivity(bundle));
             dismiss();
             return;
         }
@@ -9756,7 +9756,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             launchActivity = this.parentActivity;
             chatActivity = new ChatActivity(bundle2);
         }
-        launchActivity.lambda$runLinkRequest$95(chatActivity);
+        launchActivity.lambda$runLinkRequest$93(chatActivity);
         dismiss();
     }
 
@@ -11074,7 +11074,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                                         int i8 = this.muteButtonState;
                                                         if (z3) {
                                                             if (i8 == 7) {
-                                                                this.bigMicDrawable.setCurrentFrame(NotificationCenter.reactionsDidLoad);
+                                                                this.bigMicDrawable.setCurrentFrame(NotificationCenter.emojiPreviewThemesChanged);
                                                             } else if (i8 == 6) {
                                                                 rLottieDrawable3 = this.bigMicDrawable;
                                                                 i5 = NotificationCenter.invalidateMotionBackground;
@@ -11294,7 +11294,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                     i2 = 311;
                                 } else if (i10 == 6) {
                                     rLottieDrawable = this.bigMicDrawable;
-                                    i2 = NotificationCenter.reactionsDidLoad;
+                                    i2 = NotificationCenter.emojiPreviewThemesChanged;
                                 } else if (i10 == 1) {
                                     rLottieDrawable = this.bigMicDrawable;
                                     i2 = NotificationCenter.needDeleteDialog;

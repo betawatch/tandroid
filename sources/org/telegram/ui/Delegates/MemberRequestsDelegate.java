@@ -74,7 +74,7 @@ import org.telegram.ui.Delegates.MemberRequestsDelegate;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClickListener {
     private final long chatId;
     private final MemberRequestsController controller;

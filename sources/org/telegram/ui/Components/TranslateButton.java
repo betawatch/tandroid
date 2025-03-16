@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.RestrictedLanguagesSelectActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class TranslateButton extends FrameLayout {
     private boolean[] accusative;
     private final int currentAccount;

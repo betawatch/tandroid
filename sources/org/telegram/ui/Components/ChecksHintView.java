@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.ChecksHintView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChecksHintView extends FrameLayout {
     private AnimatorSet animatorSet;
     private ImageView arrowImageView;

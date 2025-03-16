@@ -49,7 +49,7 @@ import org.telegram.ui.Components.VideoForwardDrawable;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PipVideoOverlay {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter
@@ -962,10 +962,10 @@ public class PipVideoOverlay {
         return instance.showInternal(z, activity, view, photoViewerWebView, i, i2, z2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x02fe  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x02e4  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x02c5  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x02fd  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0308  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x02e3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

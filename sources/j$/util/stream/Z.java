@@ -9,24 +9,24 @@ final class Z extends b0 {
     }
 
     @Override // j$.util.stream.b0, j$.util.stream.IntStream
-    public final void B(j$.util.function.E e) {
-        j$.util.G G0;
+    public final void A(j$.util.function.E e) {
+        j$.util.G F0;
         if (isParallel()) {
-            super.B(e);
+            super.A(e);
         } else {
-            G0 = b0.G0(A0());
-            G0.e(e);
+            F0 = b0.F0(z0());
+            F0.e(e);
         }
     }
 
     @Override // j$.util.stream.b0, j$.util.stream.IntStream
-    public final void K(j$.util.function.E e) {
-        j$.util.G G0;
+    public final void J(j$.util.function.E e) {
+        j$.util.G F0;
         if (isParallel()) {
-            super.K(e);
+            super.J(e);
         } else {
-            G0 = b0.G0(A0());
-            G0.e(e);
+            F0 = b0.F0(z0());
+            F0.e(e);
         }
     }
 
@@ -43,12 +43,12 @@ final class Z extends b0 {
     }
 
     @Override // j$.util.stream.b
-    final boolean x0() {
+    final boolean w0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 y0(int i, e2 e2Var) {
+    final e2 x0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

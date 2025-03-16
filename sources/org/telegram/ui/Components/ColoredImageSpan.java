@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ColoredImageSpan extends ReplacementSpan {
     private float alpha;
     private Runnable checkColorDelegate;

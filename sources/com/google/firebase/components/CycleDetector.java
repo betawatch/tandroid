@@ -49,11 +49,11 @@ abstract class CycleDetector {
     }
 
     private static class Dep {
-        private final Class anInterface;
+        private final Qualified anInterface;
         private final boolean set;
 
-        private Dep(Class cls, boolean z) {
-            this.anInterface = cls;
+        private Dep(Qualified qualified, boolean z) {
+            this.anInterface = qualified;
             this.set = z;
         }
 
@@ -137,14 +137,14 @@ abstract class CycleDetector {
             }
             Component component = (Component) it.next();
             ComponentNode componentNode3 = new ComponentNode(component);
-            for (Class cls : component.getProvidedInterfaces()) {
-                Dep dep = new Dep(cls, !component.isValue());
+            for (Qualified qualified : component.getProvidedInterfaces()) {
+                Dep dep = new Dep(qualified, !component.isValue());
                 if (!hashMap.containsKey(dep)) {
                     hashMap.put(dep, new HashSet());
                 }
                 Set set2 = (Set) hashMap.get(dep);
                 if (!set2.isEmpty() && !dep.set) {
-                    throw new IllegalArgumentException(String.format("Multiple components provide %s.", cls));
+                    throw new IllegalArgumentException(String.format("Multiple components provide %s.", qualified));
                 }
                 set2.add(componentNode3);
             }

@@ -1,8 +1,8 @@
 package com.google.firebase.messaging.reporting;
 
-import com.google.android.gms.internal.firebase_messaging.zze;
+import com.google.firebase.messaging.ProtoEncoderDoNotUse;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class MessagingClientEventExtension {
     private static final MessagingClientEventExtension DEFAULT_INSTANCE = new Builder().build();
     private final MessagingClientEvent messaging_client_event_;
@@ -36,6 +36,6 @@ public final class MessagingClientEventExtension {
     }
 
     public byte[] toByteArray() {
-        return zze.zza(this);
+        return ProtoEncoderDoNotUse.encode(this);
     }
 }

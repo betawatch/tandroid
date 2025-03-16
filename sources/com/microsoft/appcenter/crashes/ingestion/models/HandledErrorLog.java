@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class HandledErrorLog extends LogWithProperties {
     private Exception exception;
     private UUID id;

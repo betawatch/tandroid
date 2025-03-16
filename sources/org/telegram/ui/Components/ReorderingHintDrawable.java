@@ -9,7 +9,7 @@ import android.view.animation.Interpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReorderingHintDrawable extends Drawable {
     private final RectDrawable primaryRectDrawable;
     private float scaleX;

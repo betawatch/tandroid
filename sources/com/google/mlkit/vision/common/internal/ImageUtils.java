@@ -10,7 +10,7 @@ import com.google.mlkit.common.MlKitException;
 import com.google.mlkit.vision.common.InputImage;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ImageUtils {
     private static final GmsLogger zza = new GmsLogger("MLKitImageUtils", "");
     private static final ImageUtils zzb = new ImageUtils();

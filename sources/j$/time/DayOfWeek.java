@@ -55,8 +55,8 @@ public enum DayOfWeek implements j$.time.temporal.k {
     }
 
     public String getDisplayName(TextStyle textStyle, Locale locale) {
-        j$.time.format.q qVar = new j$.time.format.q();
-        qVar.i(j$.time.temporal.a.DAY_OF_WEEK, textStyle);
-        return qVar.v(locale).a(this);
+        j$.time.format.p pVar = new j$.time.format.p();
+        pVar.i(j$.time.temporal.a.DAY_OF_WEEK, textStyle);
+        return pVar.v(locale).a(this);
     }
 }

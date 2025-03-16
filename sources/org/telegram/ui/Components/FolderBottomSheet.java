@@ -61,7 +61,7 @@ import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.FilterCreateActivity;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     private int alreadyHeaderRow;
     private ArrayList alreadyJoined;
@@ -899,7 +899,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0062  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

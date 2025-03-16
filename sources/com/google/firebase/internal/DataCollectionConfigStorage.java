@@ -9,7 +9,7 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import com.google.firebase.events.Publisher;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DataCollectionConfigStorage {
     private boolean dataCollectionDefaultEnabled;
     private final Context deviceProtectedContext;

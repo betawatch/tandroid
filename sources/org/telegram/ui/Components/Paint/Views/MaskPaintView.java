@@ -33,7 +33,7 @@ import org.telegram.ui.Components.Paint.UndoStore;
 import org.telegram.ui.Components.Paint.Views.PaintWeightChooserView;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MaskPaintView extends FrameLayout {
     private float baseScale;
     private Bitmap bitmapToEdit;

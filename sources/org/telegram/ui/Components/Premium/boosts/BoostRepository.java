@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PaymentFormActivity;
 import org.telegram.ui.bots.BotWebViewSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BoostRepository {
     private static HashMap cachedGiftOptions;
 

@@ -56,7 +56,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.TranslateAlert2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class TranslateAlert2 extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private static HashMap localesByCode;
     private PaddedAdapter adapter;

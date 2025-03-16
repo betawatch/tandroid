@@ -1,27 +1,24 @@
 package j$.time.format;
 
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class d {
-    static final /* synthetic */ int[] a;
+final class d implements f {
+    private final char a;
 
-    static {
-        int[] iArr = new int[y.values().length];
-        a = iArr;
-        try {
-            iArr[y.EXCEEDS_PAD.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    d(char c) {
+        this.a = c;
+    }
+
+    @Override // j$.time.format.f
+    public final boolean a(r rVar, StringBuilder sb) {
+        sb.append(this.a);
+        return true;
+    }
+
+    public final String toString() {
+        char c = this.a;
+        if (c == '\'') {
+            return "''";
         }
-        try {
-            a[y.ALWAYS.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[y.NORMAL.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[y.NOT_NEGATIVE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
+        return "'" + c + "'";
     }
 }

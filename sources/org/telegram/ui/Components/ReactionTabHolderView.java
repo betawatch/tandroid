@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReactionTabHolderView extends FrameLayout {
     private Paint bgPaint;
     private int count;

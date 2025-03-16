@@ -13,7 +13,7 @@ import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.BitmapShaderTools;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIPBackgroundProvider {
     private final Paint darkPaint;
     private final BitmapShaderTools darkShaderTools;

@@ -1,24 +1,61 @@
 package j$.time.format;
 
-/* loaded from: classes2.dex */
-final class e implements g {
-    private final char a;
+import java.util.ArrayList;
 
-    e(char c) {
-        this.a = c;
+/* loaded from: classes2.dex */
+final class e implements f {
+    private final f[] a;
+    private final boolean b;
+
+    e(ArrayList arrayList, boolean z) {
+        this((f[]) arrayList.toArray(new f[arrayList.size()]), z);
     }
 
-    @Override // j$.time.format.g
-    public final boolean a(s sVar, StringBuilder sb) {
-        sb.append(this.a);
-        return true;
+    e(f[] fVarArr, boolean z) {
+        this.a = fVarArr;
+        this.b = z;
+    }
+
+    @Override // j$.time.format.f
+    public final boolean a(r rVar, StringBuilder sb) {
+        int length = sb.length();
+        boolean z = this.b;
+        if (z) {
+            rVar.g();
+        }
+        try {
+            for (f fVar : this.a) {
+                if (!fVar.a(rVar, sb)) {
+                    sb.setLength(length);
+                    return true;
+                }
+            }
+            if (z) {
+                rVar.a();
+            }
+            return true;
+        } finally {
+            if (z) {
+                rVar.a();
+            }
+        }
+    }
+
+    public final e b() {
+        return !this.b ? this : new e(this.a, false);
     }
 
     public final String toString() {
-        char c = this.a;
-        if (c == '\'') {
-            return "''";
+        StringBuilder sb = new StringBuilder();
+        f[] fVarArr = this.a;
+        if (fVarArr != null) {
+            boolean z = this.b;
+            sb.append(z ? "[" : "(");
+            for (f fVar : fVarArr) {
+                sb.append(fVar);
+            }
+            sb.append(z ? "]" : ")");
         }
-        return "'" + c + "'";
+        return sb.toString();
     }
 }

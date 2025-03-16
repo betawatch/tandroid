@@ -30,7 +30,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GLIconTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     ArrayList animationIndexes;
     int animationPointer;

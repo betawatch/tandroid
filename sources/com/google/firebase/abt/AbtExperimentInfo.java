@@ -30,6 +30,14 @@ public class AbtExperimentInfo {
         this.timeToLiveInMillis = j2;
     }
 
+    static AbtExperimentInfo fromConditionalUserProperty(AnalyticsConnector.ConditionalUserProperty conditionalUserProperty) {
+        String str = conditionalUserProperty.triggerEventName;
+        if (str == null) {
+            str = "";
+        }
+        return new AbtExperimentInfo(conditionalUserProperty.name, String.valueOf(conditionalUserProperty.value), str, new Date(conditionalUserProperty.creationTimestamp), conditionalUserProperty.triggerTimeout, conditionalUserProperty.timeToLive);
+    }
+
     static AbtExperimentInfo fromMap(Map map) {
         validateExperimentInfoMap(map);
         try {
@@ -59,6 +67,10 @@ public class AbtExperimentInfo {
 
     long getStartTimeInMillisSinceEpoch() {
         return this.experimentStartTime.getTime();
+    }
+
+    String getVariantId() {
+        return this.variantId;
     }
 
     AnalyticsConnector.ConditionalUserProperty toConditionalUserProperty(String str) {

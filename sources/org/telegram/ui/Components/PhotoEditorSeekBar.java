@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoEditorSeekBar extends View {
     private PhotoEditorSeekBarDelegate delegate;
     private Paint innerPaint;

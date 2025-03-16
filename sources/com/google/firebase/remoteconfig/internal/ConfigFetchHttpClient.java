@@ -13,6 +13,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigException;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigServerException;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.google.firebase.remoteconfig.internal.ConfigFetchHandler;
+import j$.util.DesugarTimeZone;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -32,7 +34,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ConfigFetchHttpClient {
     private static final Pattern GMP_APP_ID_PATTERN = Pattern.compile("^[^:]+:([0-9]+):(android|ios|web):([0-9a-f]+)");
     private final String apiKey;
@@ -61,7 +63,13 @@ public class ConfigFetchHttpClient {
         }
     }
 
-    private JSONObject createFetchRequestBody(String str, String str2, Map map) {
+    private String convertToISOString(long j) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+        simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
+        return simpleDateFormat.format(Long.valueOf(j));
+    }
+
+    private JSONObject createFetchRequestBody(String str, String str2, Map map, Long l) {
         HashMap hashMap = new HashMap();
         if (str == null) {
             throw new FirebaseRemoteConfigClientException("Fetch failed: Firebase installation id is null.");
@@ -84,24 +92,28 @@ public class ConfigFetchHttpClient {
         } catch (PackageManager.NameNotFoundException unused) {
         }
         hashMap.put("packageName", this.context.getPackageName());
-        hashMap.put("sdkVersion", "21.0.1");
+        hashMap.put("sdkVersion", "21.6.0");
         hashMap.put("analyticsUserProperties", new JSONObject(map));
+        if (l != null) {
+            hashMap.put("firstOpenTime", convertToISOString(l.longValue()));
+        }
         return new JSONObject(hashMap);
     }
 
     private static ConfigContainer extractConfigs(JSONObject jSONObject, Date date) {
         JSONObject jSONObject2;
         JSONArray jSONArray;
+        JSONObject jSONObject3;
         try {
             ConfigContainer.Builder withFetchTime = ConfigContainer.newBuilder().withFetchTime(date);
-            JSONObject jSONObject3 = null;
+            JSONArray jSONArray2 = null;
             try {
                 jSONObject2 = jSONObject.getJSONObject("entries");
             } catch (JSONException unused) {
                 jSONObject2 = null;
             }
             if (jSONObject2 != null) {
-                withFetchTime.replaceConfigsWith(jSONObject2);
+                withFetchTime = withFetchTime.replaceConfigsWith(jSONObject2);
             }
             try {
                 jSONArray = jSONObject.getJSONArray("experimentDescriptions");
@@ -109,14 +121,26 @@ public class ConfigFetchHttpClient {
                 jSONArray = null;
             }
             if (jSONArray != null) {
-                withFetchTime.withAbtExperiments(jSONArray);
+                withFetchTime = withFetchTime.withAbtExperiments(jSONArray);
             }
             try {
                 jSONObject3 = jSONObject.getJSONObject("personalizationMetadata");
             } catch (JSONException unused3) {
+                jSONObject3 = null;
             }
             if (jSONObject3 != null) {
-                withFetchTime.withPersonalizationMetadata(jSONObject3);
+                withFetchTime = withFetchTime.withPersonalizationMetadata(jSONObject3);
+            }
+            String string = jSONObject.has("templateVersion") ? jSONObject.getString("templateVersion") : null;
+            if (string != null) {
+                withFetchTime.withTemplateVersionNumber(Long.parseLong(string));
+            }
+            try {
+                jSONArray2 = jSONObject.getJSONArray("rolloutMetadata");
+            } catch (JSONException unused4) {
+            }
+            if (jSONArray2 != null) {
+                withFetchTime = withFetchTime.withRolloutMetadata(jSONArray2);
             }
             return withFetchTime.build();
         } catch (JSONException e) {
@@ -205,11 +229,11 @@ public class ConfigFetchHttpClient {
         }
     }
 
-    ConfigFetchHandler.FetchResponse fetch(HttpURLConnection httpURLConnection, String str, String str2, Map<String, String> map, String str3, Map<String, String> map2, Date date) {
+    ConfigFetchHandler.FetchResponse fetch(HttpURLConnection httpURLConnection, String str, String str2, Map<String, String> map, String str3, Map<String, String> map2, Long l, Date date) {
         setUpUrlConnection(httpURLConnection, str3, str2, map2);
         try {
             try {
-                setFetchRequestBody(httpURLConnection, createFetchRequestBody(str, str2, map).toString().getBytes("utf-8"));
+                setFetchRequestBody(httpURLConnection, createFetchRequestBody(str, str2, map, l).toString().getBytes("utf-8"));
                 httpURLConnection.connect();
                 int responseCode = httpURLConnection.getResponseCode();
                 if (responseCode != 200) {
@@ -221,7 +245,8 @@ public class ConfigFetchHttpClient {
                     httpURLConnection.getInputStream().close();
                 } catch (IOException unused) {
                 }
-                return !backendHasUpdates(fetchResponseBody) ? ConfigFetchHandler.FetchResponse.forBackendHasNoUpdates(date) : ConfigFetchHandler.FetchResponse.forBackendUpdatesFetched(extractConfigs(fetchResponseBody, date), headerField);
+                ConfigContainer extractConfigs = extractConfigs(fetchResponseBody, date);
+                return !backendHasUpdates(fetchResponseBody) ? ConfigFetchHandler.FetchResponse.forBackendHasNoUpdates(date, extractConfigs) : ConfigFetchHandler.FetchResponse.forBackendUpdatesFetched(extractConfigs, headerField);
             } finally {
                 httpURLConnection.disconnect();
                 try {

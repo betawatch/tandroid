@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ImportingAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private BottomSheetCell cell;
     private boolean completed;

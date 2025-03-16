@@ -44,7 +44,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ChatGreetingsView extends LinearLayout {
     private int backgroundHeight;
     private final int currentAccount;

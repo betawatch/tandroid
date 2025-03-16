@@ -1,5 +1,7 @@
 package kotlinx.coroutines;
 
+import kotlin.Result;
+
 /* loaded from: classes3.dex */
 public abstract class CompletableDeferredKt {
     public static final CompletableDeferred CompletableDeferred(Job job) {
@@ -11,5 +13,10 @@ public abstract class CompletableDeferredKt {
             job = null;
         }
         return CompletableDeferred(job);
+    }
+
+    public static final boolean completeWith(CompletableDeferred completableDeferred, Object obj) {
+        Throwable th = Result.exceptionOrNull-impl(obj);
+        return th == null ? completableDeferred.complete(obj) : completableDeferred.completeExceptionally(th);
     }
 }

@@ -116,7 +116,7 @@ import org.telegram.ui.Components.TrendingStickersLayout;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.recorder.EmojiBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto implements IPhotoPaintView, PaintToolsView.Delegate, EntityView.EntityViewDelegate, PaintTextOptionsView.Delegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
     private float baseScale;
     private Bitmap bitmapToEdit;

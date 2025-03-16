@@ -44,7 +44,7 @@ import org.telegram.ui.ChatBackgroundDrawable;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.WallpaperParallaxEffect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SizeNotifierFrameLayout extends FrameLayout {
     private static DispatchQueue blurQueue;
     public static boolean drawingBlur;

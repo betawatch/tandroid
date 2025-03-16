@@ -9,12 +9,12 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.AndroidUtilsLight;
 import com.google.android.gms.common.util.Hex;
-import com.google.firebase.heartbeatinfo.HeartBeatInfo;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.heartbeatinfo.HeartBeatController;
 import com.google.firebase.inject.Provider;
 import com.google.firebase.installations.FirebaseInstallationsException;
 import com.google.firebase.installations.remote.InstallationResponse;
 import com.google.firebase.installations.remote.TokenResult;
-import com.google.firebase.platforminfo.UserAgentPublisher;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,24 +25,23 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseInstallationServiceClient {
     private static final Pattern EXPIRATION_TIMESTAMP_PATTERN = Pattern.compile("[0-9]+s");
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private final Context context;
-    private final Provider heartbeatInfo;
+    private final Provider heartBeatProvider;
     private final RequestLimiter requestLimiter = new RequestLimiter();
-    private final Provider userAgentPublisher;
 
-    public FirebaseInstallationServiceClient(Context context, Provider provider, Provider provider2) {
+    public FirebaseInstallationServiceClient(Context context, Provider provider) {
         this.context = context;
-        this.userAgentPublisher = provider;
-        this.heartbeatInfo = provider2;
+        this.heartBeatProvider = provider;
     }
 
     private static String availableFirebaseOptions(String str, String str2, String str3) {
@@ -61,7 +60,7 @@ public class FirebaseInstallationServiceClient {
             jSONObject.put("fid", str);
             jSONObject.put("appId", str2);
             jSONObject.put("authVersion", "FIS_v2");
-            jSONObject.put("sdkVersion", "a:17.0.0");
+            jSONObject.put("sdkVersion", "a:17.2.0");
             return jSONObject;
         } catch (JSONException e) {
             throw new IllegalStateException(e);
@@ -71,7 +70,7 @@ public class FirebaseInstallationServiceClient {
     private static JSONObject buildGenerateAuthTokenRequestBody() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("sdkVersion", "a:17.0.0");
+            jSONObject.put("sdkVersion", "a:17.2.0");
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("installation", jSONObject);
             return jSONObject2;
@@ -125,7 +124,6 @@ public class FirebaseInstallationServiceClient {
     }
 
     private HttpURLConnection openHttpURLConnection(URL url, String str) {
-        HeartBeatInfo.HeartBeat heartBeatCode;
         try {
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setConnectTimeout(10000);
@@ -136,9 +134,24 @@ public class FirebaseInstallationServiceClient {
             httpURLConnection.addRequestProperty("Content-Encoding", "gzip");
             httpURLConnection.addRequestProperty("Cache-Control", "no-cache");
             httpURLConnection.addRequestProperty("X-Android-Package", this.context.getPackageName());
-            if (this.heartbeatInfo.get() != null && this.userAgentPublisher.get() != null && (heartBeatCode = ((HeartBeatInfo) this.heartbeatInfo.get()).getHeartBeatCode("fire-installations-id")) != HeartBeatInfo.HeartBeat.NONE) {
-                httpURLConnection.addRequestProperty("x-firebase-client", ((UserAgentPublisher) this.userAgentPublisher.get()).getUserAgent());
-                httpURLConnection.addRequestProperty("x-firebase-client-log-type", Integer.toString(heartBeatCode.getCode()));
+            HeartBeatController heartBeatController = (HeartBeatController) this.heartBeatProvider.get();
+            if (heartBeatController != null) {
+                try {
+                    httpURLConnection.addRequestProperty("x-firebase-client", (String) Tasks.await(heartBeatController.getHeartBeatsHeader()));
+                } catch (InterruptedException e) {
+                    e = e;
+                    Thread.currentThread().interrupt();
+                    Log.w("ContentValues", "Failed to get heartbeats header", e);
+                    httpURLConnection.addRequestProperty("X-Android-Cert", getFingerprintHashForPackage());
+                    httpURLConnection.addRequestProperty("x-goog-api-key", str);
+                    return httpURLConnection;
+                } catch (ExecutionException e2) {
+                    e = e2;
+                    Log.w("ContentValues", "Failed to get heartbeats header", e);
+                    httpURLConnection.addRequestProperty("X-Android-Cert", getFingerprintHashForPackage());
+                    httpURLConnection.addRequestProperty("x-goog-api-key", str);
+                    return httpURLConnection;
+                }
             }
             httpURLConnection.addRequestProperty("X-Android-Cert", getFingerprintHashForPackage());
             httpURLConnection.addRequestProperty("x-goog-api-key", str);

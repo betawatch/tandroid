@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PlayPauseDrawable extends Drawable {
     private int alpha = NotificationCenter.proxyCheckDone;
     float duration = 300.0f;

@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Excluder implements TypeAdapterFactory, Cloneable {
     public static final Excluder DEFAULT = new Excluder();
     private boolean requireExpose;

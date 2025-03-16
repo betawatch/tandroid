@@ -4,11 +4,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import com.google.android.gms.stats.WakeLock;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class WakeLockHolder {
-    private static final long WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS = TimeUnit.MINUTES.toMillis(1);
+    static final long WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS = TimeUnit.MINUTES.toMillis(1);
     private static final Object syncObject = new Object();
     private static WakeLock wakeLock;
 
@@ -20,7 +22,8 @@ abstract class WakeLockHolder {
         }
     }
 
-    static void completeWakefulIntent(Intent intent) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void completeWakefulIntent(Intent intent) {
         synchronized (syncObject) {
             try {
                 if (wakeLock != null && isWakefulIntent(intent)) {
@@ -35,6 +38,27 @@ abstract class WakeLockHolder {
 
     static boolean isWakefulIntent(Intent intent) {
         return intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+    }
+
+    static void sendWakefulServiceIntent(Context context, WithinAppServiceConnection withinAppServiceConnection, final Intent intent) {
+        synchronized (syncObject) {
+            try {
+                checkAndInitWakeLock(context);
+                boolean isWakefulIntent = isWakefulIntent(intent);
+                setAsWakefulIntent(intent, true);
+                if (!isWakefulIntent) {
+                    wakeLock.acquire(WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS);
+                }
+                withinAppServiceConnection.sendIntent(intent).addOnCompleteListener(new OnCompleteListener() { // from class: com.google.firebase.messaging.WakeLockHolder$$ExternalSyntheticLambda0
+                    @Override // com.google.android.gms.tasks.OnCompleteListener
+                    public final void onComplete(Task task) {
+                        WakeLockHolder.completeWakefulIntent(intent);
+                    }
+                });
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
     private static void setAsWakefulIntent(Intent intent, boolean z) {

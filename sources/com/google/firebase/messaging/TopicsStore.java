@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class TopicsStore {
     private static WeakReference topicsStoreWeakReference;
     private final SharedPreferences sharedPreferences;
@@ -18,21 +18,21 @@ final class TopicsStore {
     }
 
     public static synchronized TopicsStore getInstance(Context context, Executor executor) {
+        TopicsStore topicsStore;
         synchronized (TopicsStore.class) {
             try {
                 WeakReference weakReference = topicsStoreWeakReference;
-                TopicsStore topicsStore = weakReference != null ? (TopicsStore) weakReference.get() : null;
-                if (topicsStore != null) {
-                    return topicsStore;
+                topicsStore = weakReference != null ? (TopicsStore) weakReference.get() : null;
+                if (topicsStore == null) {
+                    topicsStore = new TopicsStore(context.getSharedPreferences("com.google.android.gms.appid", 0), executor);
+                    topicsStore.initStore();
+                    topicsStoreWeakReference = new WeakReference(topicsStore);
                 }
-                TopicsStore topicsStore2 = new TopicsStore(context.getSharedPreferences("com.google.android.gms.appid", 0), executor);
-                topicsStore2.initStore();
-                topicsStoreWeakReference = new WeakReference(topicsStore2);
-                return topicsStore2;
             } catch (Throwable th) {
                 throw th;
             }
         }
+        return topicsStore;
     }
 
     private synchronized void initStore() {

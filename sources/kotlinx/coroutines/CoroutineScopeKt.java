@@ -35,6 +35,10 @@ public abstract class CoroutineScopeKt {
         return startUndispatchedOrReturn;
     }
 
+    public static final void ensureActive(CoroutineScope coroutineScope) {
+        JobKt.ensureActive(coroutineScope.getCoroutineContext());
+    }
+
     public static final boolean isActive(CoroutineScope coroutineScope) {
         Job job = (Job) coroutineScope.getCoroutineContext().get(Job.Key);
         if (job != null) {

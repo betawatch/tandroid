@@ -16,7 +16,7 @@ import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Rect;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WeatherView extends EntityView {
     private int currentColor;
     private int currentType;

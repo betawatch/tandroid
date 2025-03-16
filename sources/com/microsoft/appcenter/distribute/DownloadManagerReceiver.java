@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import com.microsoft.appcenter.utils.AsyncTaskUtils;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DownloadManagerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {

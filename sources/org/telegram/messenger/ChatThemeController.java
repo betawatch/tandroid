@@ -198,7 +198,7 @@ public class ChatThemeController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00a8  */
     /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -48,7 +48,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.NumberPicker;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BoostDialogs {
     public static void applyDialogStyle(AlertDialog alertDialog, boolean z) {
         alertDialog.setTextSize(20, 14);

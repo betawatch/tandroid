@@ -709,16 +709,16 @@ public class FileRefController extends BaseController {
         getSendMessagesHelper().lambda$performSendMessageRequest$58((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x02db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x02d8, code lost:
     
         if (r1 != null) goto L136;
      */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x0698 A[LOOP:9: B:303:0x0634->B:312:0x0698, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0695 A[EDGE_INSN: B:313:0x0695->B:79:0x0695 BREAK  A[LOOP:9: B:303:0x0634->B:312:0x0698], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00a1 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x091c  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0938  */
+    /* JADX WARN: Removed duplicated region for block: B:312:0x0695 A[LOOP:9: B:303:0x0631->B:312:0x0695, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x0692 A[EDGE_INSN: B:313:0x0692->B:79:0x0692 BREAK  A[LOOP:9: B:303:0x0631->B:312:0x0695], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009e A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0919  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0935  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v20 */
     /*
@@ -2242,12 +2242,12 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0484, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x047f, code lost:
     
         if ("update".equals(r0) != false) goto L174;
      */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x048c  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x04a3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

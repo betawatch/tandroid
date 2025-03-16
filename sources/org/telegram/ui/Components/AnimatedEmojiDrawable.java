@@ -52,7 +52,7 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedEmojiDrawable extends Drawable {
     private static boolean LOG_MEMORY_LEAK = false;
     public static int attachedCount;
@@ -1058,7 +1058,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         return num.intValue();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x021b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x021a, code lost:
     
         if (r3 != null) goto L122;
      */

@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AttachableDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmojiSpan.InvalidateHolder, AttachableDrawable, NotificationCenter.NotificationCenterDelegate {
     AnimatedEmojiDrawable animatedEmojiDrawable;
     final int currentAccount;
@@ -67,7 +67,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

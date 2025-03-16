@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.ui.Components.AnimationProperties;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedNumberLayout {
     public static final Property PROGRESS = new AnimationProperties.FloatProperty("progress") { // from class: org.telegram.ui.Components.AnimatedNumberLayout.1
         @Override // android.util.Property

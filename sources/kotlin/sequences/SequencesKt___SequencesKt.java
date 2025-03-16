@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,6 +19,12 @@ public abstract class SequencesKt___SequencesKt extends SequencesKt___SequencesJ
                 return Sequence.this.iterator();
             }
         };
+    }
+
+    public static Sequence map(Sequence sequence, Function1 transform) {
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        return new TransformingSequence(sequence, transform);
     }
 
     public static final Collection toCollection(Sequence sequence, Collection destination) {

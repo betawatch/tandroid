@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FilledTabsView extends View {
     private final Paint backgroundPaint;
     private RectF[] bounds;

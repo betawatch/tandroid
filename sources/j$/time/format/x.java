@@ -2,7 +2,9 @@ package j$.time.format;
 
 /* loaded from: classes2.dex */
 public enum x {
-    STRICT,
-    SMART,
-    LENIENT
+    NORMAL,
+    ALWAYS,
+    NEVER,
+    NOT_NEGATIVE,
+    EXCEEDS_PAD
 }

@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.mlkit.vision.common.internal.MultiFlavorDetectorCreator;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ImageLabelerOptionsBase implements MultiFlavorDetectorCreator.DetectorOptions {
     private final Executor zza;
     private final float zzb;

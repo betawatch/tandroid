@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DialogCellTags {
     private final View parentView;
     private final ArrayList filters = new ArrayList();

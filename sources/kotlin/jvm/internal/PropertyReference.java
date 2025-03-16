@@ -31,6 +31,14 @@ public abstract class PropertyReference extends CallableReference implements KPr
         return false;
     }
 
+    @Override // kotlin.jvm.internal.CallableReference
+    protected KProperty getReflected() {
+        if (this.syntheticJavaProperty) {
+            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties");
+        }
+        return (KProperty) super.getReflected();
+    }
+
     public int hashCode() {
         return (((getOwner().hashCode() * 31) + getName().hashCode()) * 31) + getSignature().hashCode();
     }

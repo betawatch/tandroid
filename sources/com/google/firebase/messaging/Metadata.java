@@ -10,7 +10,7 @@ import com.google.android.gms.common.util.PlatformVersion;
 import com.google.firebase.FirebaseApp;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class Metadata {
     private String appVersionCode;
     private String appVersionName;
@@ -46,11 +46,7 @@ class Metadata {
         try {
             return this.context.getPackageManager().getPackageInfo(str, 0);
         } catch (PackageManager.NameNotFoundException e) {
-            String valueOf = String.valueOf(e);
-            StringBuilder sb = new StringBuilder(valueOf.length() + 23);
-            sb.append("Failed to find package ");
-            sb.append(valueOf);
-            Log.w("FirebaseMessaging", sb.toString());
+            Log.w("FirebaseMessaging", "Failed to find package " + e);
             return null;
         }
     }
@@ -107,7 +103,6 @@ class Metadata {
             Log.e("FirebaseMessaging", "Google Play services missing or without correct permission.");
             return 0;
         }
-        int i2 = 1;
         if (!PlatformVersion.isAtLeastO()) {
             Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
             intent.setPackage("com.google.android.gms");
@@ -127,11 +122,10 @@ class Metadata {
         Log.w("FirebaseMessaging", "Failed to resolve IID implementation package, falling back");
         if (PlatformVersion.isAtLeastO()) {
             this.iidImplementation = 2;
-            i2 = 2;
         } else {
             this.iidImplementation = 1;
         }
-        return i2;
+        return this.iidImplementation;
     }
 
     boolean isGmscorePresent() {

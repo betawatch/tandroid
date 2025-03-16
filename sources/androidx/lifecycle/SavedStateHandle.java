@@ -5,7 +5,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.core.os.BundleKt;
 import androidx.savedstate.SavedStateRegistry;
 import java.io.Serializable;
@@ -18,6 +17,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.flow.MutableStateFlow;
 
 /* loaded from: classes.dex */
 public final class SavedStateHandle {
@@ -162,6 +162,10 @@ public final class SavedStateHandle {
         } else {
             this.regular.put(key, obj);
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.flows.get(key));
+        MutableStateFlow mutableStateFlow = (MutableStateFlow) this.flows.get(key);
+        if (mutableStateFlow == null) {
+            return;
+        }
+        mutableStateFlow.setValue(obj);
     }
 }

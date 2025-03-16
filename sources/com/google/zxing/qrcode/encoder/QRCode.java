@@ -4,7 +4,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.decoder.Mode;
 import com.google.zxing.qrcode.decoder.Version;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class QRCode {
     private ErrorCorrectionLevel ecLevel;
     private int maskPattern = -1;

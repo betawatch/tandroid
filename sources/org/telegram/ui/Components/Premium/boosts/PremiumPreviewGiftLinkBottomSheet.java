@@ -28,7 +28,7 @@ import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet {
     private static PremiumPreviewGiftLinkBottomSheet instance;
     private ActionBtnCell actionBtn;

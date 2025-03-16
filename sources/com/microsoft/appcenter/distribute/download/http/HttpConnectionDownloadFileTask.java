@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import javax.net.ssl.HttpsURLConnection;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class HttpConnectionDownloadFileTask extends AsyncTask {
     private final Uri mDownloadUri;
     private final HttpConnectionReleaseDownloader mDownloader;

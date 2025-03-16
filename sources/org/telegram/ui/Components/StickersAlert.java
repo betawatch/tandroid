@@ -99,7 +99,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickersAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private GridAdapter adapter;
     private List animatingDescriptions;
@@ -932,7 +932,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             init();
             final int i = 0;
             while (i < 6) {
-                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.storiesListUpdated);
+                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.storiesUpdated);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, -2.0f, 0.0f, 2.0f, 0.0f);
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickersAlert$StickersShaker$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -944,7 +944,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat.setRepeatMode(1);
                 ofFloat.setInterpolator(new LinearInterpolator());
                 ofFloat.setCurrentPlayTime(nextFloat);
-                long j = NotificationCenter.storiesListUpdated;
+                long j = NotificationCenter.storiesUpdated;
                 ofFloat.setDuration(j);
                 ofFloat.start();
                 float dp = AndroidUtilities.dp(0.5f);
@@ -965,7 +965,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat2.setRepeatMode(1);
                 ofFloat2.setInterpolator(new LinearInterpolator());
                 ofFloat2.setCurrentPlayTime(nextFloat);
-                double d = NotificationCenter.storiesListUpdated;
+                double d = NotificationCenter.storiesUpdated;
                 Double.isNaN(d);
                 ofFloat2.setDuration((long) (d * 1.2d));
                 ofFloat2.start();
@@ -2459,7 +2459,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$95(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
         }
     }
 

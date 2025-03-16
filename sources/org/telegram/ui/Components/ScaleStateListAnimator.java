@@ -9,7 +9,7 @@ import android.util.Property;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ScaleStateListAnimator {
     public static void apply(View view) {
         apply(view, 0.1f, 1.5f);

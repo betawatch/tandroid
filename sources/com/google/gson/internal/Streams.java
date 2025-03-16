@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.Objects;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Streams {
 
     private static final class AppendableWriter extends Writer {

@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelectorBtnCell extends LinearLayout {
     private final AnimatedFloat alpha;
     private final Paint dividerPaint;

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.SimpleFloatPropertyCompat;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SenderSelectView extends View {
     private static final FloatPropertyCompat MENU_PROGRESS = new SimpleFloatPropertyCompat("menuProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.SenderSelectView$$ExternalSyntheticLambda0
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter

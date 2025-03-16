@@ -3,7 +3,7 @@ package com.microsoft.appcenter.distribute.download.http;
 import android.os.AsyncTask;
 import java.io.File;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class HttpConnectionRemoveFileTask extends AsyncTask {
     private final File mFile;
 

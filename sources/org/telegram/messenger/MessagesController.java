@@ -2697,7 +2697,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.giveawayBoostsPerPremium = this.mainPreferences.getLong("giveaway_boosts_per_premium", 4L);
         this.boostsPerSentGift = this.mainPreferences.getLong("boosts_per_sent_gift", 3L);
         this.giveawayPeriodMax = this.mainPreferences.getLong("giveaway_period_max", 7L);
-        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.storiesListUpdated);
+        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.storiesUpdated);
         this.stealthModeCooldown = this.mainPreferences.getInt("stories_stealth_cooldown_period", 3600);
         boolean z = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0;
         this.chatlistInvitesLimitDefault = this.mainPreferences.getInt("chatlistInvitesLimitDefault", 3);
@@ -2708,7 +2708,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.storiesSuggestedReactionsLimitPremium = this.mainPreferences.getInt("storiesSuggestedReactionsLimitPremium", 5);
         this.storiesSentWeeklyLimitPremium = this.mainPreferences.getInt("storiesSentWeeklyLimitPremium", 70);
         this.storiesSentMonthlyLimitDefault = this.mainPreferences.getInt("storiesSentMonthlyLimitDefault", 30);
-        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.storiesListUpdated);
+        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.storiesUpdated);
         this.channelBgIconLevelMin = this.mainPreferences.getInt("channelBgIconLevelMin", 1);
         this.channelProfileIconLevelMin = this.mainPreferences.getInt("channelProfileIconLevelMin", 1);
         this.channelEmojiStatusLevelMin = this.mainPreferences.getInt("channelEmojiStatusLevelMin", 1);
@@ -2726,7 +2726,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.chatlistJoinedLimitDefault = this.mainPreferences.getInt("chatlistJoinedLimitDefault", 2);
         this.chatlistJoinedLimitPremium = this.mainPreferences.getInt("chatlistJoinedLimitPremium", z ? 5 : 20);
         this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.proxyCheckDone);
-        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.storiesListUpdated : 7776000);
+        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.storiesUpdated : 7776000);
         this.videoIgnoreAltDocuments = this.mainPreferences.getBoolean("videoIgnoreAltDocuments", false);
         this.disableBotFullscreenBlur = this.mainPreferences.getBoolean("disableBotFullscreenBlur", false);
         this.tonBlockchainExplorerUrl = this.mainPreferences.getString("tonBlockchainExplorerUrl", "https://tonviewer.com/");
@@ -2746,7 +2746,7 @@ public class MessagesController extends BaseController implements NotificationCe
         int i4 = this.mainPreferences.getInt("transcribeAudioTrialWeeklyNumber", BuildVars.DEBUG_PRIVATE_VERSION ? 2 : 0);
         this.transcribeAudioTrialWeeklyNumber = i4;
         this.transcribeAudioTrialCurrentNumber = this.mainPreferences.getInt("transcribeAudioTrialCurrentNumber", i4);
-        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.storiesListUpdated);
+        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.storiesUpdated);
         this.transcribeAudioTrialCooldownUntil = this.mainPreferences.getInt("transcribeAudioTrialCooldownUntil", 0);
         this.recommendedChannelsLimitDefault = this.mainPreferences.getInt("recommendedChannelsLimitDefault", 10);
         this.recommendedChannelsLimitPremium = this.mainPreferences.getInt("recommendedChannelsLimitPremium", 100);
@@ -26065,12 +26065,15 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public String getPeerName(long j, boolean z) {
+        String str;
         if (j >= 0) {
             TLRPC.User user = getUser(Long.valueOf(j));
-            return AndroidUtilities.removeDiacritics(z ? UserObject.getFirstName(user, true) : UserObject.getUserName(user));
+            str = z ? UserObject.getFirstName(user, true) : UserObject.getUserName(user);
+        } else {
+            TLRPC.Chat chat = getChat(Long.valueOf(-j));
+            str = chat == null ? "" : chat.title;
         }
-        TLRPC.Chat chat = getChat(Long.valueOf(-j));
-        return AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title);
+        return AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(str));
     }
 
     public TLRPC.PeerSettings getPeerSettings(long j) {

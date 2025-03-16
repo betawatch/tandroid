@@ -69,6 +69,11 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
     }
 
     @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) {
+        return add(fieldDescriptor.getName(), d);
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
     public ObjectEncoderContext add(FieldDescriptor fieldDescriptor, int i) {
         return add(fieldDescriptor.getName(), i);
     }
@@ -81,6 +86,17 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
     @Override // com.google.firebase.encoders.ObjectEncoderContext
     public ObjectEncoderContext add(FieldDescriptor fieldDescriptor, Object obj) {
         return add(fieldDescriptor.getName(), obj);
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public ObjectEncoderContext add(FieldDescriptor fieldDescriptor, boolean z) {
+        return add(fieldDescriptor.getName(), z);
+    }
+
+    public JsonValueObjectEncoderContext add(double d) {
+        maybeUnNest();
+        this.jsonWriter.value(d);
+        return this;
     }
 
     public JsonValueObjectEncoderContext add(int i) {
@@ -143,7 +159,11 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
             if (!(obj instanceof Enum)) {
                 return doEncode(this.fallbackEncoder, obj, z);
             }
-            add(((Enum) obj).name());
+            if (obj instanceof NumberedEnum) {
+                add(((NumberedEnum) obj).getNumber());
+            } else {
+                add(((Enum) obj).name());
+            }
             return this;
         }
         if (obj instanceof byte[]) {
@@ -197,6 +217,12 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
         return this;
     }
 
+    public JsonValueObjectEncoderContext add(String str, double d) {
+        maybeUnNest();
+        this.jsonWriter.name(str);
+        return add(d);
+    }
+
     public JsonValueObjectEncoderContext add(String str, int i) {
         maybeUnNest();
         this.jsonWriter.name(str);
@@ -211,6 +237,12 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
 
     public JsonValueObjectEncoderContext add(String str, Object obj) {
         return this.ignoreNullValues ? internalAddIgnoreNullValues(str, obj) : internalAdd(str, obj);
+    }
+
+    public JsonValueObjectEncoderContext add(String str, boolean z) {
+        maybeUnNest();
+        this.jsonWriter.name(str);
+        return add(z);
     }
 
     @Override // com.google.firebase.encoders.ValueEncoderContext

@@ -22,7 +22,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.voip.VoIpSwitchLayout;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIpSwitchLayout extends FrameLayout {
     public int animationDelay;
     private final VoIPBackgroundProvider backgroundProvider;

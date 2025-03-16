@@ -32,7 +32,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.voip.EndCloseLayout;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class EndCloseLayout extends FrameLayout {
     private final EndCloseView endCloseView;
     private boolean isClosedState;

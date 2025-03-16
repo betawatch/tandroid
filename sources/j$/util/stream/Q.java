@@ -14,7 +14,7 @@ abstract class Q implements w3, x3 {
     @Override // j$.util.stream.w3
     public final Object a(b bVar, Spliterator spliterator) {
         bVar.getClass();
-        bVar.h0(spliterator, bVar.D0(this));
+        bVar.g0(spliterator, bVar.C0(this));
         return null;
     }
 
@@ -40,7 +40,7 @@ abstract class Q implements w3, x3 {
 
     @Override // j$.util.stream.w3
     public final Object c(b bVar, Spliterator spliterator) {
-        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.D0(this))).invoke();
+        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.C0(this))).invoke();
         return null;
     }
 

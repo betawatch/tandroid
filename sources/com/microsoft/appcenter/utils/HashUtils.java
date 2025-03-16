@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class HashUtils {
     private static final char[] HEXADECIMAL_OUTPUT = "0123456789abcdef".toCharArray();
 

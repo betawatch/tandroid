@@ -51,7 +51,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BoostViaGiftsBottomSheet extends BottomSheetWithRecyclerListView implements SelectorBottomSheet.SelectedObjectsListener, NotificationCenter.NotificationCenterDelegate {
     private ActionBtnCell actionBtn;
     private ActionListener actionListener;

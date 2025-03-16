@@ -41,7 +41,7 @@ import org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticApiModelOutli
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EditTextCaption extends EditTextBoldCursor {
     private static final int ACCESSIBILITY_ACTION_SHARE = 268435456;
     public boolean adaptiveCreateLinkDialog;

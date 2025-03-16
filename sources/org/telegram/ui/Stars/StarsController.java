@@ -74,7 +74,7 @@ import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.bots.BotWebViewSheet;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StarsController {
     private static volatile StarsController[] Instance = new StarsController[4];
     private static final Object[] lockObjects = new Object[4];
@@ -554,7 +554,7 @@ public class StarsController {
                     undoButton.animate().alpha(0.0f).scaleX(0.3f).scaleY(0.3f).start();
                 } else {
                     undoButton.setAlpha(0.0f);
-                    this.bulletinButton.setVisibility(4);
+                    this.bulletinButton.setVisibility(8);
                 }
             }
             Bulletin.TimerView timerView = this.timerView;
@@ -839,7 +839,7 @@ public class StarsController {
         }
 
         public void commit() {
-            TL_stars.PaidReactionPrivacy paidreactionprivacyanonymous;
+            TL_stars.PaidReactionPrivacy paidreactionprivacydefault;
             String str;
             if (this.committed || this.cancelled) {
                 return;
@@ -888,8 +888,8 @@ public class StarsController {
             tL_messages_sendPaidReaction.count = (int) this.amount;
             tL_messages_sendPaidReaction.flags = 1 | tL_messages_sendPaidReaction.flags;
             long peerId = getPeerId();
-            if (peerId == 0) {
-                paidreactionprivacyanonymous = new TL_stars.paidReactionPrivacyDefault();
+            if (peerId == 0 || peerId == UserConfig.getInstance(StarsController.this.currentAccount).getClientUserId()) {
+                paidreactionprivacydefault = new TL_stars.paidReactionPrivacyDefault();
             } else {
                 if (peerId != UserObject.ANONYMOUS) {
                     TL_stars.paidReactionPrivacyPeer paidreactionprivacypeer = new TL_stars.paidReactionPrivacyPeer();
@@ -903,9 +903,9 @@ public class StarsController {
                         }
                     });
                 }
-                paidreactionprivacyanonymous = new TL_stars.paidReactionPrivacyAnonymous();
+                paidreactionprivacydefault = new TL_stars.paidReactionPrivacyAnonymous();
             }
-            tL_messages_sendPaidReaction.privacy = paidreactionprivacyanonymous;
+            tL_messages_sendPaidReaction.privacy = paidreactionprivacydefault;
             StarsController.this.invalidateBalance();
             connectionsManager.sendRequest(tL_messages_sendPaidReaction, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$PendingPaidReactions$$ExternalSyntheticLambda3
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -3924,7 +3924,7 @@ public class StarsController {
             tL_inputInvoicePremiumGiftStars.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
             tL_inputInvoicePremiumGiftStars.months = i;
             if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                tL_inputInvoicePremiumGiftStars.flags |= 2;
+                tL_inputInvoicePremiumGiftStars.flags |= 1;
                 tL_inputInvoicePremiumGiftStars.message = tL_textWithEntities;
             }
             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();

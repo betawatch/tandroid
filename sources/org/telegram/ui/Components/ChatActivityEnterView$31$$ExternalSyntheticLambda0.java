@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.app.Dialog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final /* synthetic */ class ChatActivityEnterView$31$$ExternalSyntheticLambda0 implements Runnable {
     public final /* synthetic */ Dialog f$0;
 

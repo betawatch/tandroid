@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.EditTextCaption;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class CustomReactionEditText extends EditTextCaption {
     private final GestureDetectorCompat gestureDetector;
     private int maxLength;

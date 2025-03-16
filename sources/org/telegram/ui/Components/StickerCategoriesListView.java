@@ -45,7 +45,7 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.StickerCategoriesListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StickerCategoriesListView extends RecyclerListView {
     private static EmojiGroupFetcher fetcher;
     public static CacheFetcher search;

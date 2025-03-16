@@ -12,8 +12,10 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.WithinAppServiceBinder;
 import java.util.concurrent.ExecutorService;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class EnhancedIntentService extends Service {
+    static final long MESSAGE_TIMEOUT_S = 20;
+    private static final String TAG = "EnhancedIntentService";
     private Binder binder;
     private int lastStartId;
     final ExecutorService executor = FcmExecutors.newIntentHandleExecutor();
@@ -38,25 +40,29 @@ public abstract class EnhancedIntentService extends Service {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onStartCommand$1(Intent intent, Task task) {
+        finishTask(intent);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processIntent$0(Intent intent, TaskCompletionSource taskCompletionSource) {
+        try {
+            handleIntent(intent);
+        } finally {
+            taskCompletionSource.setResult(null);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public Task processIntent(final Intent intent) {
         if (handleIntentOnMainThread(intent)) {
             return Tasks.forResult(null);
         }
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new Runnable(this, intent, taskCompletionSource) { // from class: com.google.firebase.messaging.EnhancedIntentService$$Lambda$0
-            private final EnhancedIntentService arg$1;
-            private final Intent arg$2;
-            private final TaskCompletionSource arg$3;
-
-            {
-                this.arg$1 = this;
-                this.arg$2 = intent;
-                this.arg$3 = taskCompletionSource;
-            }
-
+        this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
-            public void run() {
-                this.arg$1.lambda$processIntent$0$EnhancedIntentService(this.arg$2, this.arg$3);
+            public final void run() {
+                EnhancedIntentService.this.lambda$processIntent$0(intent, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
@@ -70,23 +76,11 @@ public abstract class EnhancedIntentService extends Service {
         return false;
     }
 
-    final /* synthetic */ void lambda$onStartCommand$1$EnhancedIntentService(Intent intent, Task task) {
-        finishTask(intent);
-    }
-
-    final /* synthetic */ void lambda$processIntent$0$EnhancedIntentService(Intent intent, TaskCompletionSource taskCompletionSource) {
-        try {
-            handleIntent(intent);
-        } finally {
-            taskCompletionSource.setResult(null);
-        }
-    }
-
     @Override // android.app.Service
     public final synchronized IBinder onBind(Intent intent) {
         try {
-            if (Log.isLoggable("EnhancedIntentService", 3)) {
-                Log.d("EnhancedIntentService", "Service received bind request");
+            if (Log.isLoggable(TAG, 3)) {
+                Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
                 this.binder = new WithinAppServiceBinder(new WithinAppServiceBinder.IntentHandler() { // from class: com.google.firebase.messaging.EnhancedIntentService.1
@@ -124,18 +118,10 @@ public abstract class EnhancedIntentService extends Service {
             finishTask(intent);
             return 2;
         }
-        processIntent.addOnCompleteListener(EnhancedIntentService$$Lambda$1.$instance, new OnCompleteListener(this, intent) { // from class: com.google.firebase.messaging.EnhancedIntentService$$Lambda$2
-            private final EnhancedIntentService arg$1;
-            private final Intent arg$2;
-
-            {
-                this.arg$1 = this;
-                this.arg$2 = intent;
-            }
-
+        processIntent.addOnCompleteListener(new EnhancedIntentService$$ExternalSyntheticLambda0(), new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.OnCompleteListener
-            public void onComplete(Task task) {
-                this.arg$1.lambda$onStartCommand$1$EnhancedIntentService(this.arg$2, task);
+            public final void onComplete(Task task) {
+                EnhancedIntentService.this.lambda$onStartCommand$1(intent, task);
             }
         });
         return 3;

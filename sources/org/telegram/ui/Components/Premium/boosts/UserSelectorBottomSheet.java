@@ -72,7 +72,7 @@ import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UserSelectorBottomSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private static UserSelectorBottomSheet instance;
     private final ButtonWithCounterView actionButton;

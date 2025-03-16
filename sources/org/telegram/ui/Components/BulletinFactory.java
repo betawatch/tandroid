@@ -45,7 +45,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BulletinFactory {
     private final FrameLayout containerLayout;
     private final BaseFragment fragment;
@@ -290,7 +290,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.storiesListUpdated);
+        }, NotificationCenter.storiesUpdated);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else {
@@ -312,7 +312,7 @@ public final class BulletinFactory {
         SpannableStringBuilder replaceTags;
         String formatString;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.storiesListUpdated;
+        int i5 = NotificationCenter.storiesUpdated;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);

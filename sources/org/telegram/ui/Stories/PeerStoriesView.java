@@ -50,6 +50,7 @@ import androidx.core.math.MathUtils;
 import androidx.core.view.inputmethod.InputContentInfoCompat;
 import androidx.recyclerview.widget.ChatListItemAnimator;
 import com.google.android.exoplayer2.util.Consumer;
+import com.google.firebase.sessions.SessionDetails$$ExternalSyntheticBackport0;
 import java.io.File;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -73,7 +74,6 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FactCheckController$Key$$ExternalSyntheticBackport0;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -5485,7 +5485,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             storyItem.close_friends = i2 == 1;
             storyItem.contacts = i2 == 2;
             storyItem.selected_contacts = i2 == 3;
-            MessagesController.getInstance(this.currentAccount).getStoriesController().updateStoryItem(storyItem.dialogId, storyItem);
+            MessagesController.getInstance(this.currentAccount).getStoriesController().updateStoryItem(storyItem.dialogId, storyItem, true, true);
             this.editedPrivacy = true;
             int i3 = storyPrivacy.type;
             if (i3 == 4) {
@@ -8476,7 +8476,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         } else {
             i2 = this.uploadingStories.size();
             for (int i4 = 0; i4 < this.uploadingStories.size(); i4++) {
-                if (FactCheckController$Key$$ExternalSyntheticBackport0.m(((StoriesController.UploadingStory) this.uploadingStories.get(i4)).random_id) == this.storyViewer.dayStoryId) {
+                if (SessionDetails$$ExternalSyntheticBackport0.m(((StoriesController.UploadingStory) this.uploadingStories.get(i4)).random_id) == this.storyViewer.dayStoryId) {
                     this.selectedPosition = i4;
                     return;
                 }

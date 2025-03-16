@@ -1,24 +1,8 @@
 package com.google.android.gms.cloudmessaging;
 
-import android.os.Bundle;
-
 /* loaded from: classes.dex */
-final class zzs extends zzq {
-    zzs(int i, int i2, Bundle bundle) {
-        super(i, 1, bundle);
-    }
-
-    @Override // com.google.android.gms.cloudmessaging.zzq
-    final void zza(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle("data");
-        if (bundle2 == null) {
-            bundle2 = Bundle.EMPTY;
-        }
-        zza((Object) bundle2);
-    }
-
-    @Override // com.google.android.gms.cloudmessaging.zzq
-    final boolean zza() {
-        return false;
+public final class zzs extends Exception {
+    zzs(int i, String str, Throwable th) {
+        super(str, th);
     }
 }

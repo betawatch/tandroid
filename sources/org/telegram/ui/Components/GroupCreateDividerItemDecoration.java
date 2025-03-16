@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.GroupCreateSectionCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupCreateDividerItemDecoration extends RecyclerView.ItemDecoration {
     private boolean searching;
     private boolean single;

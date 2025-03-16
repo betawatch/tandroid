@@ -2,7 +2,7 @@ package com.microsoft.appcenter.ingestion.models;
 
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LogContainer {
     private List logs;
 

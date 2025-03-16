@@ -51,7 +51,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ViewPagerFixed;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ViewPagerFixed extends FrameLayout {
     private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
         @Override // android.animation.TimeInterpolator

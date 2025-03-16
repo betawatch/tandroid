@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SmoothScroller extends LinearSmoothScroller {
     private float durationScale;
     private Interpolator interpolator;

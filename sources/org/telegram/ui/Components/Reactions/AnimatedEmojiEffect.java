@@ -20,7 +20,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.EmojiAnimationsOverlay;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class AnimatedEmojiEffect {
     private static int currentIndex;
     public AnimatedEmojiDrawable animatedEmojiDrawable;

@@ -4398,7 +4398,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                             public final void run(Object obj6) {
                                                 BotWebViewContainer.this.lambda$onEventReceived$34(alertDialog, str10, str11, str12, (File) obj6);
                                             }
-                                        }).execute(str9);
+                                        }, null).execute(str9);
                                         alertDialog.showDelayed(250L);
                                         break;
                                     } else {

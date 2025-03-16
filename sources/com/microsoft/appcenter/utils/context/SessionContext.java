@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SessionContext {
     private static SessionContext sInstance;
     private final NavigableMap mSessions = new TreeMap();

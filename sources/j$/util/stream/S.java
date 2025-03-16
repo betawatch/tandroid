@@ -68,9 +68,9 @@ final class S extends CountedCompleter {
         if (s.getPendingCount() > 0) {
             E e = new E(4);
             b bVar = s.a;
-            x0 u0 = bVar.u0(bVar.n0(spliterator), e);
-            s.a.C0(spliterator, u0);
-            s.g = u0.b();
+            x0 t0 = bVar.t0(bVar.m0(spliterator), e);
+            s.a.B0(spliterator, t0);
+            s.g = t0.b();
             s.b = null;
         }
         s.tryComplete();
@@ -85,7 +85,7 @@ final class S extends CountedCompleter {
         } else {
             Spliterator spliterator = this.b;
             if (spliterator != null) {
-                this.a.C0(spliterator, this.e);
+                this.a.B0(spliterator, this.e);
                 this.b = null;
             }
         }

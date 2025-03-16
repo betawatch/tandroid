@@ -11,9 +11,10 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.collection.SimpleArrayMap;
-import com.google.android.gms.cloudmessaging.zza;
+import com.google.android.gms.internal.cloudmessaging.zza;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -30,89 +31,54 @@ import java.util.regex.Pattern;
 public class Rpc {
     private static int zza;
     private static PendingIntent zzb;
-    private static final Executor zzc = zzz.zza;
-    private final Context zze;
-    private final zzr zzf;
-    private final ScheduledExecutorService zzg;
-    private Messenger zzi;
-    private zza zzj;
-    private final SimpleArrayMap zzd = new SimpleArrayMap();
-    private Messenger zzh = new Messenger(new zzy(this, Looper.getMainLooper()));
+    private static final Executor zzc = new Executor() { // from class: com.google.android.gms.cloudmessaging.zzy
+        @Override // java.util.concurrent.Executor
+        public final void execute(Runnable runnable) {
+            runnable.run();
+        }
+    };
+    private static final Pattern zzd = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)");
+    private final Context zzf;
+    private final zzv zzg;
+    private final ScheduledExecutorService zzh;
+    private Messenger zzj;
+    private zze zzk;
+    private final SimpleArrayMap zze = new SimpleArrayMap();
+    private final Messenger zzi = new Messenger(new zzad(this, Looper.getMainLooper()));
 
     public Rpc(Context context) {
-        this.zze = context;
-        this.zzf = new zzr(context);
+        this.zzf = context;
+        this.zzg = new zzv(context);
         ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
         scheduledThreadPoolExecutor.setKeepAliveTime(60L, TimeUnit.SECONDS);
         scheduledThreadPoolExecutor.allowCoreThreadTimeOut(true);
-        this.zzg = scheduledThreadPoolExecutor;
+        this.zzh = scheduledThreadPoolExecutor;
     }
 
-    static final /* synthetic */ Bundle zza(Task task) {
-        if (task.isSuccessful()) {
-            return (Bundle) task.getResult();
-        }
-        if (Log.isLoggable("Rpc", 3)) {
-            String valueOf = String.valueOf(task.getException());
-            StringBuilder sb = new StringBuilder(valueOf.length() + 22);
-            sb.append("Error making request: ");
-            sb.append(valueOf);
-            Log.d("Rpc", sb.toString());
-        }
-        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+    static /* synthetic */ Task zza(Bundle bundle) {
+        return zzi(bundle) ? Tasks.forResult(null) : Tasks.forResult(bundle);
     }
 
-    static final /* synthetic */ Task zza(Bundle bundle) {
-        return zzb(bundle) ? Tasks.forResult(null) : Tasks.forResult(bundle);
-    }
-
-    private static synchronized String zza() {
-        String num;
-        synchronized (Rpc.class) {
-            int i = zza;
-            zza = i + 1;
-            num = Integer.toString(i);
-        }
-        return num;
-    }
-
-    private static synchronized void zza(Context context, Intent intent) {
-        synchronized (Rpc.class) {
-            try {
-                if (zzb == null) {
-                    Intent intent2 = new Intent();
-                    intent2.setPackage("com.google.example.invalidpackage");
-                    zzb = PendingIntent.getBroadcast(context, 0, intent2, 0);
-                }
-                intent.putExtra("app", zzb);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zza(Message message) {
+    static /* bridge */ /* synthetic */ void zzc(Rpc rpc, Message message) {
         if (message != null) {
             Object obj = message.obj;
             if (obj instanceof Intent) {
                 Intent intent = (Intent) obj;
-                intent.setExtrasClassLoader(new zza.zza());
+                intent.setExtrasClassLoader(new zzd());
                 if (intent.hasExtra("google.messenger")) {
                     Parcelable parcelableExtra = intent.getParcelableExtra("google.messenger");
-                    if (parcelableExtra instanceof zza) {
-                        this.zzj = (zza) parcelableExtra;
+                    if (parcelableExtra instanceof zze) {
+                        rpc.zzk = (zze) parcelableExtra;
                     }
                     if (parcelableExtra instanceof Messenger) {
-                        this.zzi = (Messenger) parcelableExtra;
+                        rpc.zzj = (Messenger) parcelableExtra;
                     }
                 }
                 Intent intent2 = (Intent) message.obj;
                 String action = intent2.getAction();
-                if (!"com.google.android.c2dm.intent.REGISTRATION".equals(action)) {
+                if (!zzw.zza(action, "com.google.android.c2dm.intent.REGISTRATION")) {
                     if (Log.isLoggable("Rpc", 3)) {
-                        String valueOf = String.valueOf(action);
-                        Log.d("Rpc", valueOf.length() != 0 ? "Unexpected response action: ".concat(valueOf) : new String("Unexpected response action: "));
+                        Log.d("Rpc", "Unexpected response action: ".concat(String.valueOf(action)));
                         return;
                     }
                     return;
@@ -122,10 +88,10 @@ public class Rpc {
                     stringExtra = intent2.getStringExtra("unregistered");
                 }
                 if (stringExtra != null) {
-                    Matcher matcher = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)").matcher(stringExtra);
+                    Matcher matcher = zzd.matcher(stringExtra);
                     if (!matcher.matches()) {
                         if (Log.isLoggable("Rpc", 3)) {
-                            Log.d("Rpc", stringExtra.length() != 0 ? "Unexpected response string: ".concat(stringExtra) : new String("Unexpected response string: "));
+                            Log.d("Rpc", "Unexpected response string: ".concat(stringExtra));
                             return;
                         }
                         return;
@@ -135,28 +101,24 @@ public class Rpc {
                     if (group != null) {
                         Bundle extras = intent2.getExtras();
                         extras.putString("registration_id", group2);
-                        zza(group, extras);
+                        rpc.zzh(group, extras);
                         return;
                     }
                     return;
                 }
                 String stringExtra2 = intent2.getStringExtra("error");
                 if (stringExtra2 == null) {
-                    String valueOf2 = String.valueOf(intent2.getExtras());
-                    StringBuilder sb = new StringBuilder(valueOf2.length() + 49);
-                    sb.append("Unexpected response, no error or registration id ");
-                    sb.append(valueOf2);
-                    Log.w("Rpc", sb.toString());
+                    Log.w("Rpc", "Unexpected response, no error or registration id ".concat(String.valueOf(intent2.getExtras())));
                     return;
                 }
                 if (Log.isLoggable("Rpc", 3)) {
-                    Log.d("Rpc", stringExtra2.length() != 0 ? "Received InstanceID error ".concat(stringExtra2) : new String("Received InstanceID error "));
+                    Log.d("Rpc", "Received InstanceID error ".concat(stringExtra2));
                 }
                 if (!stringExtra2.startsWith("|")) {
-                    synchronized (this.zzd) {
-                        for (int i = 0; i < this.zzd.size(); i++) {
+                    synchronized (rpc.zze) {
+                        for (int i = 0; i < rpc.zze.size(); i++) {
                             try {
-                                zza((String) this.zzd.keyAt(i), intent2.getExtras());
+                                rpc.zzh((String) rpc.zze.keyAt(i), intent2.getExtras());
                             } catch (Throwable th) {
                                 throw th;
                             }
@@ -165,8 +127,8 @@ public class Rpc {
                     return;
                 }
                 String[] split = stringExtra2.split("\\|");
-                if (split.length <= 2 || !"ID".equals(split[1])) {
-                    Log.w("Rpc", stringExtra2.length() != 0 ? "Unexpected structured response ".concat(stringExtra2) : new String("Unexpected structured response "));
+                if (split.length <= 2 || !zzw.zza(split[1], "ID")) {
+                    Log.w("Rpc", "Unexpected structured response ".concat(stringExtra2));
                     return;
                 }
                 String str = split[2];
@@ -174,168 +136,171 @@ public class Rpc {
                 if (str2.startsWith(":")) {
                     str2 = str2.substring(1);
                 }
-                zza(str, intent2.putExtra("error", str2).getExtras());
+                rpc.zzh(str, intent2.putExtra("error", str2).getExtras());
                 return;
             }
         }
         Log.w("Rpc", "Dropping invalid message");
     }
 
-    static final /* synthetic */ void zza(TaskCompletionSource taskCompletionSource) {
-        if (taskCompletionSource.trySetException(new IOException("TIMEOUT"))) {
-            Log.w("Rpc", "No response");
-        }
-    }
-
-    private final void zza(String str, Bundle bundle) {
-        synchronized (this.zzd) {
-            try {
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.zzd.remove(str);
-                if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(bundle);
-                } else {
-                    String valueOf = String.valueOf(str);
-                    Log.w("Rpc", valueOf.length() != 0 ? "Missing callback for ".concat(valueOf) : new String("Missing callback for "));
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    private static boolean zzb(Bundle bundle) {
-        return bundle != null && bundle.containsKey("google.messenger");
-    }
-
-    private final Task zzc(Bundle bundle) {
-        final String zza2 = zza();
+    private final Task zze(Bundle bundle) {
+        final String zzf = zzf();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        synchronized (this.zzd) {
-            this.zzd.put(zza2, taskCompletionSource);
+        synchronized (this.zze) {
+            this.zze.put(zzf, taskCompletionSource);
         }
         Intent intent = new Intent();
         intent.setPackage("com.google.android.gms");
-        intent.setAction(this.zzf.zza() == 2 ? "com.google.iid.TOKEN_REQUEST" : "com.google.android.c2dm.intent.REGISTER");
+        intent.setAction(this.zzg.zzb() == 2 ? "com.google.iid.TOKEN_REQUEST" : "com.google.android.c2dm.intent.REGISTER");
         intent.putExtras(bundle);
-        zza(this.zze, intent);
-        StringBuilder sb = new StringBuilder(String.valueOf(zza2).length() + 5);
-        sb.append("|ID|");
-        sb.append(zza2);
-        sb.append("|");
-        intent.putExtra("kid", sb.toString());
+        zzg(this.zzf, intent);
+        intent.putExtra("kid", "|ID|" + zzf + "|");
         if (Log.isLoggable("Rpc", 3)) {
-            String valueOf = String.valueOf(intent.getExtras());
-            StringBuilder sb2 = new StringBuilder(valueOf.length() + 8);
-            sb2.append("Sending ");
-            sb2.append(valueOf);
-            Log.d("Rpc", sb2.toString());
+            Log.d("Rpc", "Sending ".concat(String.valueOf(intent.getExtras())));
         }
-        intent.putExtra("google.messenger", this.zzh);
-        if (this.zzi != null || this.zzj != null) {
+        intent.putExtra("google.messenger", this.zzi);
+        if (this.zzj != null || this.zzk != null) {
             Message obtain = Message.obtain();
             obtain.obj = intent;
             try {
-                Messenger messenger = this.zzi;
+                Messenger messenger = this.zzj;
                 if (messenger != null) {
                     messenger.send(obtain);
                 } else {
-                    this.zzj.zza(obtain);
+                    this.zzk.zzb(obtain);
                 }
             } catch (RemoteException unused) {
                 if (Log.isLoggable("Rpc", 3)) {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            final ScheduledFuture<?> schedule = this.zzg.schedule(new Runnable(taskCompletionSource) { // from class: com.google.android.gms.cloudmessaging.zzu
-                private final TaskCompletionSource zza;
-
-                {
-                    this.zza = taskCompletionSource;
-                }
-
+            final ScheduledFuture<?> schedule = this.zzh.schedule(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzab
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Rpc.zza(this.zza);
+                    if (TaskCompletionSource.this.trySetException(new IOException("TIMEOUT"))) {
+                        Log.w("Rpc", "No response");
+                    }
                 }
             }, 30L, TimeUnit.SECONDS);
-            taskCompletionSource.getTask().addOnCompleteListener(zzc, new OnCompleteListener(this, zza2, schedule) { // from class: com.google.android.gms.cloudmessaging.zzx
-                private final Rpc zza;
-                private final String zzb;
-                private final ScheduledFuture zzc;
-
-                {
-                    this.zza = this;
-                    this.zzb = zza2;
-                    this.zzc = schedule;
-                }
-
+            taskCompletionSource.getTask().addOnCompleteListener(zzc, new OnCompleteListener() { // from class: com.google.android.gms.cloudmessaging.zzac
                 @Override // com.google.android.gms.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
-                    this.zza.zza(this.zzb, this.zzc, task);
+                    Rpc.this.zzd(zzf, schedule, task);
                 }
             });
             return taskCompletionSource.getTask();
         }
-        if (this.zzf.zza() == 2) {
-            this.zze.sendBroadcast(intent);
+        if (this.zzg.zzb() == 2) {
+            this.zzf.sendBroadcast(intent);
         } else {
-            this.zze.startService(intent);
+            this.zzf.startService(intent);
         }
-        final ScheduledFuture schedule2 = this.zzg.schedule(new Runnable(taskCompletionSource) { // from class: com.google.android.gms.cloudmessaging.zzu
-            private final TaskCompletionSource zza;
-
-            {
-                this.zza = taskCompletionSource;
-            }
-
+        final ScheduledFuture schedule2 = this.zzh.schedule(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzab
             @Override // java.lang.Runnable
             public final void run() {
-                Rpc.zza(this.zza);
+                if (TaskCompletionSource.this.trySetException(new IOException("TIMEOUT"))) {
+                    Log.w("Rpc", "No response");
+                }
             }
         }, 30L, TimeUnit.SECONDS);
-        taskCompletionSource.getTask().addOnCompleteListener(zzc, new OnCompleteListener(this, zza2, schedule2) { // from class: com.google.android.gms.cloudmessaging.zzx
-            private final Rpc zza;
-            private final String zzb;
-            private final ScheduledFuture zzc;
-
-            {
-                this.zza = this;
-                this.zzb = zza2;
-                this.zzc = schedule2;
-            }
-
+        taskCompletionSource.getTask().addOnCompleteListener(zzc, new OnCompleteListener() { // from class: com.google.android.gms.cloudmessaging.zzac
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                this.zza.zza(this.zzb, this.zzc, task);
+                Rpc.this.zzd(zzf, schedule2, task);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    public Task send(final Bundle bundle) {
-        return this.zzf.zzb() >= 12000000 ? zze.zza(this.zze).zzb(1, bundle).continueWith(zzc, zzt.zza) : this.zzf.zza() != 0 ? zzc(bundle).continueWithTask(zzc, new Continuation(this, bundle) { // from class: com.google.android.gms.cloudmessaging.zzv
-            private final Rpc zza;
-            private final Bundle zzb;
+    private static synchronized String zzf() {
+        String num;
+        synchronized (Rpc.class) {
+            int i = zza;
+            zza = i + 1;
+            num = Integer.toString(i);
+        }
+        return num;
+    }
 
-            {
-                this.zza = this;
-                this.zzb = bundle;
+    private static synchronized void zzg(Context context, Intent intent) {
+        synchronized (Rpc.class) {
+            try {
+                if (zzb == null) {
+                    Intent intent2 = new Intent();
+                    intent2.setPackage("com.google.example.invalidpackage");
+                    zzb = PendingIntent.getBroadcast(context, 0, intent2, zza.zza);
+                }
+                intent.putExtra("app", zzb);
+            } catch (Throwable th) {
+                throw th;
             }
+        }
+    }
 
+    private final void zzh(String str, Bundle bundle) {
+        synchronized (this.zze) {
+            try {
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.zze.remove(str);
+                if (taskCompletionSource != null) {
+                    taskCompletionSource.setResult(bundle);
+                    return;
+                }
+                Log.w("Rpc", "Missing callback for " + str);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    private static boolean zzi(Bundle bundle) {
+        return bundle != null && bundle.containsKey("google.messenger");
+    }
+
+    public Task messageHandled(CloudMessage cloudMessage) {
+        if (this.zzg.zza() < 233700000) {
+            return Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("google.message_id", cloudMessage.getMessageId());
+        Integer zza2 = cloudMessage.zza();
+        if (zza2 != null) {
+            bundle.putInt("google.product_id", zza2.intValue());
+        }
+        return zzu.zzb(this.zzf).zzc(3, bundle);
+    }
+
+    public Task send(final Bundle bundle) {
+        return this.zzg.zza() < 12000000 ? this.zzg.zzb() != 0 ? zze(bundle).continueWithTask(zzc, new Continuation() { // from class: com.google.android.gms.cloudmessaging.zzz
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                return this.zza.zza(this.zzb, task);
+                return Rpc.this.zzb(bundle, task);
             }
-        }) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
+        }) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE")) : zzu.zzb(this.zzf).zzd(1, bundle).continueWith(zzc, new Continuation() { // from class: com.google.android.gms.cloudmessaging.zzaa
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                if (task.isSuccessful()) {
+                    return (Bundle) task.getResult();
+                }
+                if (Log.isLoggable("Rpc", 3)) {
+                    Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
+                }
+                throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+            }
+        });
     }
 
-    final /* synthetic */ Task zza(Bundle bundle, Task task) {
-        return (task.isSuccessful() && zzb((Bundle) task.getResult())) ? zzc(bundle).onSuccessTask(zzc, zzw.zza) : task;
+    final /* synthetic */ Task zzb(Bundle bundle, Task task) {
+        return (task.isSuccessful() && zzi((Bundle) task.getResult())) ? zze(bundle).onSuccessTask(zzc, new SuccessContinuation() { // from class: com.google.android.gms.cloudmessaging.zzx
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                return Rpc.zza((Bundle) obj);
+            }
+        }) : task;
     }
 
-    final /* synthetic */ void zza(String str, ScheduledFuture scheduledFuture, Task task) {
-        synchronized (this.zzd) {
-            this.zzd.remove(str);
+    final /* synthetic */ void zzd(String str, ScheduledFuture scheduledFuture, Task task) {
+        synchronized (this.zze) {
+            this.zze.remove(str);
         }
         scheduledFuture.cancel(false);
     }

@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.Task;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class RequestDeduplicator {
     private final Executor executor;
     private final Map getTokenRequests = new ArrayMap();
@@ -20,46 +20,34 @@ class RequestDeduplicator {
         this.executor = executor;
     }
 
-    synchronized Task getOrStartGetTokenRequest(final String str, GetTokenRequest getTokenRequest) {
-        try {
-            Task task = (Task) this.getTokenRequests.get(str);
-            if (task != null) {
-                if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    String valueOf = String.valueOf(str);
-                    Log.d("FirebaseMessaging", valueOf.length() != 0 ? "Joining ongoing request for: ".concat(valueOf) : new String("Joining ongoing request for: "));
-                }
-                return task;
-            }
-            if (Log.isLoggable("FirebaseMessaging", 3)) {
-                String valueOf2 = String.valueOf(str);
-                Log.d("FirebaseMessaging", valueOf2.length() != 0 ? "Making new request for: ".concat(valueOf2) : new String("Making new request for: "));
-            }
-            Task continueWithTask = getTokenRequest.start().continueWithTask(this.executor, new Continuation(this, str) { // from class: com.google.firebase.messaging.RequestDeduplicator$$Lambda$0
-                private final RequestDeduplicator arg$1;
-                private final String arg$2;
-
-                {
-                    this.arg$1 = this;
-                    this.arg$2 = str;
-                }
-
-                @Override // com.google.android.gms.tasks.Continuation
-                public Object then(Task task2) {
-                    this.arg$1.lambda$getOrStartGetTokenRequest$0$RequestDeduplicator(this.arg$2, task2);
-                    return task2;
-                }
-            });
-            this.getTokenRequests.put(str, continueWithTask);
-            return continueWithTask;
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
-    final /* synthetic */ Task lambda$getOrStartGetTokenRequest$0$RequestDeduplicator(String str, Task task) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Task lambda$getOrStartGetTokenRequest$0(String str, Task task) {
         synchronized (this) {
             this.getTokenRequests.remove(str);
         }
         return task;
+    }
+
+    synchronized Task getOrStartGetTokenRequest(final String str, GetTokenRequest getTokenRequest) {
+        Task task = (Task) this.getTokenRequests.get(str);
+        if (task != null) {
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Joining ongoing request for: " + str);
+            }
+            return task;
+        }
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Making new request for: " + str);
+        }
+        Task continueWithTask = getTokenRequest.start().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.messaging.RequestDeduplicator$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task2) {
+                Task lambda$getOrStartGetTokenRequest$0;
+                lambda$getOrStartGetTokenRequest$0 = RequestDeduplicator.this.lambda$getOrStartGetTokenRequest$0(str, task2);
+                return lambda$getOrStartGetTokenRequest$0;
+            }
+        });
+        this.getTokenRequests.put(str, continueWithTask);
+        return continueWithTask;
     }
 }

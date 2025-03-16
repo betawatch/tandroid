@@ -7,6 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.components.Lazy;
 import com.google.firebase.inject.Provider;
 import com.google.firebase.installations.FirebaseInstallationsException;
 import com.google.firebase.installations.local.IidStore;
@@ -21,24 +22,22 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseInstallations implements FirebaseInstallationsApi {
     private final ExecutorService backgroundExecutor;
     private String cachedFid;
     private final RandomFidGenerator fidGenerator;
     private Set fidListeners;
     private final FirebaseApp firebaseApp;
-    private final IidStore iidStore;
+    private final Lazy iidStore;
     private final List listeners;
     private final Object lock;
-    private final ExecutorService networkExecutor;
+    private final Executor networkExecutor;
     private final PersistedInstallation persistedInstallation;
     private final FirebaseInstallationServiceClient serviceClient;
     private final Utils utils;
@@ -84,11 +83,18 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         }
     }
 
-    FirebaseInstallations(FirebaseApp firebaseApp, Provider provider, Provider provider2) {
-        this(new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), THREAD_FACTORY), firebaseApp, new FirebaseInstallationServiceClient(firebaseApp.getApplicationContext(), provider, provider2), new PersistedInstallation(firebaseApp), Utils.getInstance(), new IidStore(firebaseApp), new RandomFidGenerator());
+    FirebaseInstallations(final FirebaseApp firebaseApp, Provider provider, ExecutorService executorService, Executor executor) {
+        this(executorService, executor, firebaseApp, new FirebaseInstallationServiceClient(firebaseApp.getApplicationContext(), provider), new PersistedInstallation(firebaseApp), Utils.getInstance(), new Lazy(new Provider() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.inject.Provider
+            public final Object get() {
+                IidStore lambda$new$0;
+                lambda$new$0 = FirebaseInstallations.lambda$new$0(FirebaseApp.this);
+                return lambda$new$0;
+            }
+        }), new RandomFidGenerator());
     }
 
-    FirebaseInstallations(ExecutorService executorService, FirebaseApp firebaseApp, FirebaseInstallationServiceClient firebaseInstallationServiceClient, PersistedInstallation persistedInstallation, Utils utils, IidStore iidStore, RandomFidGenerator randomFidGenerator) {
+    FirebaseInstallations(ExecutorService executorService, Executor executor, FirebaseApp firebaseApp, FirebaseInstallationServiceClient firebaseInstallationServiceClient, PersistedInstallation persistedInstallation, Utils utils, Lazy lazy, RandomFidGenerator randomFidGenerator) {
         this.lock = new Object();
         this.fidListeners = new HashSet();
         this.listeners = new ArrayList();
@@ -96,10 +102,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.serviceClient = firebaseInstallationServiceClient;
         this.persistedInstallation = persistedInstallation;
         this.utils = utils;
-        this.iidStore = iidStore;
+        this.iidStore = lazy;
         this.fidGenerator = randomFidGenerator;
         this.backgroundExecutor = executorService;
-        this.networkExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), THREAD_FACTORY);
+        this.networkExecutor = executor;
     }
 
     private Task addGetAuthTokenListener() {
@@ -128,7 +134,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void lambda$doRegistrationOrRefresh$2(boolean z) {
+    public void lambda$doRegistrationOrRefresh$3(boolean z) {
         PersistedInstallationEntry registerFidWithServer;
         Exception iOException;
         PersistedInstallationEntry multiProcessSafePrefs = getMultiProcessSafePrefs();
@@ -169,7 +175,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: doRegistrationOrRefresh, reason: merged with bridge method [inline-methods] */
-    public final void lambda$getToken$1(final boolean z) {
+    public final void lambda$getToken$2(final boolean z) {
         PersistedInstallationEntry prefsWithGeneratedIdMultiProcessSafe = getPrefsWithGeneratedIdMultiProcessSafe();
         if (z) {
             prefsWithGeneratedIdMultiProcessSafe = prefsWithGeneratedIdMultiProcessSafe.withClearedAuthToken();
@@ -178,7 +184,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.networkExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$doRegistrationOrRefresh$2(z);
+                FirebaseInstallations.this.lambda$doRegistrationOrRefresh$3(z);
             }
         });
     }
@@ -201,6 +207,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     private synchronized String getCacheFid() {
         return this.cachedFid;
+    }
+
+    private IidStore getIidStore() {
+        return (IidStore) this.iidStore.get();
     }
 
     public static FirebaseInstallations getInstance(FirebaseApp firebaseApp) {
@@ -282,8 +292,13 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getId$0() {
-        lambda$getToken$1(false);
+    public /* synthetic */ void lambda$getId$1() {
+        lambda$getToken$2(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ IidStore lambda$new$0(FirebaseApp firebaseApp) {
+        return new IidStore(firebaseApp);
     }
 
     private void preConditionChecks() {
@@ -298,12 +313,12 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         if ((!this.firebaseApp.getName().equals("CHIME_ANDROID_SDK") && !this.firebaseApp.isDefaultApp()) || !persistedInstallationEntry.shouldAttemptMigration()) {
             return this.fidGenerator.createRandomFid();
         }
-        String readIid = this.iidStore.readIid();
+        String readIid = getIidStore().readIid();
         return TextUtils.isEmpty(readIid) ? this.fidGenerator.createRandomFid() : readIid;
     }
 
     private PersistedInstallationEntry registerFidWithServer(PersistedInstallationEntry persistedInstallationEntry) {
-        InstallationResponse createFirebaseInstallation = this.serviceClient.createFirebaseInstallation(getApiKey(), persistedInstallationEntry.getFirebaseInstallationId(), getProjectIdentifier(), getApplicationId(), (persistedInstallationEntry.getFirebaseInstallationId() == null || persistedInstallationEntry.getFirebaseInstallationId().length() != 11) ? null : this.iidStore.readToken());
+        InstallationResponse createFirebaseInstallation = this.serviceClient.createFirebaseInstallation(getApiKey(), persistedInstallationEntry.getFirebaseInstallationId(), getProjectIdentifier(), getApplicationId(), (persistedInstallationEntry.getFirebaseInstallationId() == null || persistedInstallationEntry.getFirebaseInstallationId().length() != 11) ? null : getIidStore().readToken());
         int i = 3.$SwitchMap$com$google$firebase$installations$remote$InstallationResponse$ResponseCode[createFirebaseInstallation.getResponseCode().ordinal()];
         if (i == 1) {
             return persistedInstallationEntry.withRegisteredFid(createFirebaseInstallation.getFid(), createFirebaseInstallation.getRefreshToken(), this.utils.currentTimeInSecs(), createFirebaseInstallation.getAuthToken().getToken(), createFirebaseInstallation.getAuthToken().getTokenExpirationTimestamp());
@@ -349,7 +364,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     }
 
     private synchronized void updateFidListener(PersistedInstallationEntry persistedInstallationEntry, PersistedInstallationEntry persistedInstallationEntry2) {
-        if (this.fidListeners.size() != 0 && !persistedInstallationEntry.getFirebaseInstallationId().equals(persistedInstallationEntry2.getFirebaseInstallationId())) {
+        if (this.fidListeners.size() != 0 && !TextUtils.equals(persistedInstallationEntry.getFirebaseInstallationId(), persistedInstallationEntry2.getFirebaseInstallationId())) {
             Iterator it = this.fidListeners.iterator();
             if (it.hasNext()) {
                 ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
@@ -375,10 +390,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
             return Tasks.forResult(cacheFid);
         }
         Task addGetIdListener = addGetIdListener();
-        this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda0
+        this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$getId$0();
+                FirebaseInstallations.this.lambda$getId$1();
             }
         });
         return addGetIdListener;
@@ -392,10 +407,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     public Task getToken(final boolean z) {
         preConditionChecks();
         Task addGetAuthTokenListener = addGetAuthTokenListener();
-        this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda1
+        this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$getToken$1(z);
+                FirebaseInstallations.this.lambda$getToken$2(z);
             }
         });
         return addGetAuthTokenListener;

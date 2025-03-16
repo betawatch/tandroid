@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.VideoPlayer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class VideoSeekPreviewImage extends View {
     private Paint bitmapPaint;
     private RectF bitmapRect;

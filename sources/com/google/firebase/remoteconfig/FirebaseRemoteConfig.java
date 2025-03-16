@@ -9,12 +9,15 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.abt.AbtException;
 import com.google.firebase.abt.FirebaseABTesting;
+import com.google.firebase.concurrent.FirebaseExecutors;
 import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.remoteconfig.internal.ConfigCacheClient;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.google.firebase.remoteconfig.internal.ConfigFetchHandler;
 import com.google.firebase.remoteconfig.internal.ConfigGetParameterHandler;
 import com.google.firebase.remoteconfig.internal.ConfigMetadataClient;
+import com.google.firebase.remoteconfig.internal.ConfigRealtimeHandler;
+import com.google.firebase.remoteconfig.internal.rollouts.RolloutsStateSubscriptionsHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -24,10 +27,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteConfig {
     public static final byte[] DEFAULT_VALUE_FOR_BYTE_ARRAY = new byte[0];
     private final ConfigCacheClient activatedConfigsCache;
+    private final ConfigRealtimeHandler configRealtimeHandler;
     private final Context context;
     private final ConfigCacheClient defaultConfigsCache;
     private final Executor executor;
@@ -38,8 +42,9 @@ public class FirebaseRemoteConfig {
     private final FirebaseInstallationsApi firebaseInstallations;
     private final ConfigMetadataClient frcMetadata;
     private final ConfigGetParameterHandler getHandler;
+    private final RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler;
 
-    FirebaseRemoteConfig(Context context, FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigMetadataClient configMetadataClient) {
+    FirebaseRemoteConfig(Context context, FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigMetadataClient configMetadataClient, ConfigRealtimeHandler configRealtimeHandler, RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler) {
         this.context = context;
         this.firebaseApp = firebaseApp;
         this.firebaseInstallations = firebaseInstallationsApi;
@@ -51,6 +56,8 @@ public class FirebaseRemoteConfig {
         this.fetchHandler = configFetchHandler;
         this.getHandler = configGetParameterHandler;
         this.frcMetadata = configMetadataClient;
+        this.configRealtimeHandler = configRealtimeHandler;
+        this.rolloutsStateSubscriptionsHandler = rolloutsStateSubscriptionsHandler;
     }
 
     public static FirebaseRemoteConfig getInstance() {
@@ -92,11 +99,13 @@ public class FirebaseRemoteConfig {
             return false;
         }
         this.fetchedConfigsCache.clear();
-        if (task.getResult() != null) {
-            updateAbtWithActivatedExperiments(((ConfigContainer) task.getResult()).getAbtExperiments());
+        ConfigContainer configContainer = (ConfigContainer) task.getResult();
+        if (configContainer == null) {
+            Log.e("FirebaseRemoteConfig", "Activated configs written to disk are null.");
             return true;
         }
-        Log.e("FirebaseRemoteConfig", "Activated configs written to disk are null.");
+        updateAbtWithActivatedExperiments(configContainer.getAbtExperiments());
+        this.rolloutsStateSubscriptionsHandler.publishActiveRolloutsState(configContainer);
         return true;
     }
 
@@ -129,7 +138,7 @@ public class FirebaseRemoteConfig {
     }
 
     public Task fetch(long j) {
-        return this.fetchHandler.fetch(j).onSuccessTask(new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda1
+        return this.fetchHandler.fetch(j).onSuccessTask(FirebaseExecutors.directExecutor(), new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.SuccessContinuation
             public final Task then(Object obj) {
                 Task lambda$fetch$4;
@@ -143,8 +152,16 @@ public class FirebaseRemoteConfig {
         return this.frcMetadata.getInfo();
     }
 
+    RolloutsStateSubscriptionsHandler getRolloutsStateSubscriptionsHandler() {
+        return this.rolloutsStateSubscriptionsHandler;
+    }
+
     public String getString(String str) {
         return this.getHandler.getString(str);
+    }
+
+    void setConfigUpdateBackgroundState(boolean z) {
+        this.configRealtimeHandler.setBackgroundState(z);
     }
 
     void startLoadingConfigsFromDisk() {

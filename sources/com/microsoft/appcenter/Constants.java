@@ -3,7 +3,7 @@ package com.microsoft.appcenter;
 import android.content.Context;
 import com.microsoft.appcenter.utils.AppCenterLog;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Constants {
     public static boolean APPLICATION_DEBUGGABLE = false;
     public static String FILES_PATH;

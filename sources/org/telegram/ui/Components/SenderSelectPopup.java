@@ -44,7 +44,7 @@ import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SenderSelectPopup extends ActionBarPopupWindow {
     private FrameLayout bulletinContainer;
     private Runnable bulletinHideCallback;

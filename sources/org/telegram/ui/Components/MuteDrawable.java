@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MuteDrawable extends Drawable {
     private final AnimatedFloat animatedMuted;
     private Drawable baseDrawable;

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class QuoteHighlight extends Path {
     private float currentOffsetX;
     private float currentOffsetY;

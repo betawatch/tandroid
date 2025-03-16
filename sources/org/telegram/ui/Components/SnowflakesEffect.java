@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SnowflakesEffect {
     private int color;
     private long lastAnimationTime;
@@ -189,7 +189,7 @@ public class SnowflakesEffect {
             ((Particle) this.particles.get(i)).draw(canvas);
         }
         int i2 = this.viewType;
-        int i3 = i2 == 0 ? 100 : NotificationCenter.storiesListUpdated;
+        int i3 = i2 == 0 ? 100 : NotificationCenter.storiesUpdated;
         int i4 = i2 == 0 ? 1 : 10;
         if (this.particles.size() < i3) {
             for (int i5 = 0; i5 < i4; i5++) {

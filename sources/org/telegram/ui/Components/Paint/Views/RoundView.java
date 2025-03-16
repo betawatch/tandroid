@@ -22,7 +22,7 @@ import org.telegram.ui.Components.Paint.Views.EntityView;
 import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RoundView extends EntityView {
     private float a;
     private int anchor;

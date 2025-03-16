@@ -44,7 +44,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.webrtc.RendererCommon;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class PrivateVideoPreviewDialog extends FrameLayout implements VoIPService.StateListener {
     private boolean cameraReady;
     private int currentPage;

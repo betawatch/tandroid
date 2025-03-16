@@ -3555,7 +3555,7 @@ public class TLRPC {
             if (r11.send_state != 3) goto L45;
          */
         /* JADX WARN: Removed duplicated region for block: B:27:0x0045  */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x00aa  */
+        /* JADX WARN: Removed duplicated region for block: B:54:0x00a9  */
         /* JADX WARN: Removed duplicated region for block: B:94:0x0063  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4198,15 +4198,15 @@ public class TLRPC {
         public ArrayList<Document> alt_documents = new ArrayList<>();
         public ArrayList<MessageExtendedMedia> extended_media = new ArrayList<>();
 
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x01c8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:19:0x01c7, code lost:
         
             if (r5.captionLegacy == null) goto L81;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:22:0x0252, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:22:0x0250, code lost:
         
             r5.captionLegacy = "";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:34:0x0250, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:34:0x024e, code lost:
         
             if (r5.captionLegacy == null) goto L81;
          */

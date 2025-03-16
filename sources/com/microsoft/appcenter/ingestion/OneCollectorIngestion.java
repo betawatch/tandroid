@@ -21,7 +21,7 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class OneCollectorIngestion implements Ingestion {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;

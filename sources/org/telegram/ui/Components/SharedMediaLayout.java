@@ -53,6 +53,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.sessions.SessionDetails$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -68,7 +69,6 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FactCheckController$Key$$ExternalSyntheticBackport0;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
@@ -149,7 +149,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SharedMediaLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, DialogCell.DialogCellDelegate {
     private ActionBar actionBar;
     private AnimatorSet actionModeAnimation;
@@ -5411,7 +5411,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         sharedPhotoVideoCell2.isStoryPinned = false;
                         if (uploadingStory.sharedMessageObject == null) {
                             TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
-                            int m = FactCheckController$Key$$ExternalSyntheticBackport0.m(uploadingStory.random_id);
+                            int m = SessionDetails$$ExternalSyntheticBackport0.m(uploadingStory.random_id);
                             tL_storyItem.messageId = m;
                             tL_storyItem.id = m;
                             tL_storyItem.attachPath = uploadingStory.firstFramePath;
@@ -5543,17 +5543,17 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:104:0x0500  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x070b  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0759  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x07a0  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0877  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0bee A[EDGE_INSN: B:152:0x0bee->B:153:0x0bee BREAK  A[LOOP:3: B:125:0x0872->B:150:0x0b02], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0c44  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0d13  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0d31  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0758  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x079f  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0876  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0bed A[EDGE_INSN: B:152:0x0bed->B:153:0x0bed BREAK  A[LOOP:3: B:125:0x0871->B:150:0x0b01], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0c43  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0d12  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0d30  */
     /* JADX WARN: Removed duplicated region for block: B:167:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0d15  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0cf6  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x07b7  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0d14  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0cf5  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x07b6  */
     /* JADX WARN: Removed duplicated region for block: B:175:0x064f  */
     /* JADX WARN: Removed duplicated region for block: B:177:0x02b6  */
     /* JADX WARN: Removed duplicated region for block: B:178:0x01cd  */
@@ -12428,8 +12428,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     public void showChatPreview(DialogCell dialogCell) {
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x008a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -12769,15 +12769,15 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     
         r11 = r11 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:215:0x0437, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:215:0x0436, code lost:
     
         if (r19.scrollSlidingTextTabStrip.hasTab(4) == false) goto L302;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:216:0x0449, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x0448, code lost:
     
         r19.scrollSlidingTextTabStrip.addTextTab(r3, org.telegram.messenger.LocaleController.getString("SharedMusicTab2", org.telegram.messenger.R.string.SharedMusicTab2), r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:243:0x0447, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:243:0x0446, code lost:
     
         if (r19.scrollSlidingTextTabStrip.hasTab(4) == false) goto L302;
      */
@@ -12821,8 +12821,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     
         if ((r19.hasMedia[4] <= 0) == r19.scrollSlidingTextTabStrip.hasTab(4)) goto L148;
      */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x04c0  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x04c3  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x04c2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -287,8 +287,8 @@ public class ConnectionsManager extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Removed duplicated region for block: B:65:0x0145 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:69:0x013b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x0143 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:69:0x0139 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         @Override // android.os.AsyncTask
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -458,8 +458,8 @@ public class ConnectionsManager extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Removed duplicated region for block: B:60:0x0140 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x0136 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:60:0x013e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x0134 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         @Override // android.os.AsyncTask
         /*
             Code decompiled incorrectly, please refer to instructions dump.

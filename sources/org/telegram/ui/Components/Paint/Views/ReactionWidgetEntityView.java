@@ -24,7 +24,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.Size;
 import org.telegram.ui.Stories.StoryReactionWidgetBackground;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReactionWidgetEntityView extends EntityView {
     Size baseSize;
     AnimatedFloat crossfadeBackgrounds;

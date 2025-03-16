@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CellFlickerDrawable {
     public float animationSpeedScale;
     public boolean drawFrame;

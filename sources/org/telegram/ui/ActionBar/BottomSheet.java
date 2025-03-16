@@ -64,7 +64,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
     private boolean allowCustomAnimation;
@@ -162,6 +162,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     protected boolean useSmoothKeyboard;
     protected boolean waitingKeyboard;
 
+    /* loaded from: classes4.dex */
     class 7 extends AnimatorListenerAdapter {
         final /* synthetic */ int val$item;
 
@@ -213,6 +214,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    /* loaded from: classes4.dex */
     class 8 extends AnimatorListenerAdapter {
         8() {
         }
@@ -255,6 +257,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    /* loaded from: classes4.dex */
     public static class BottomSheetCell extends FrameLayout {
         private boolean checked;
         int currentType;
@@ -405,6 +408,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    /* loaded from: classes4.dex */
     public static class BottomSheetDelegate implements BottomSheetDelegateInterface {
         @Override // org.telegram.ui.ActionBar.BottomSheet.BottomSheetDelegateInterface
         public boolean canDismiss() {
@@ -416,12 +420,14 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    /* loaded from: classes4.dex */
     public interface BottomSheetDelegateInterface {
         boolean canDismiss();
 
         void onOpenAnimationEnd();
     }
 
+    /* loaded from: classes4.dex */
     public static class Builder {
         public static int CELL_TYPE_CALL = 4;
         private BottomSheet bottomSheet;
@@ -536,6 +542,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    /* loaded from: classes4.dex */
     public class ContainerView extends FrameLayout implements NestedScrollingParent {
         private boolean allowedSwipeToBack;
         private Paint backgroundPaint;

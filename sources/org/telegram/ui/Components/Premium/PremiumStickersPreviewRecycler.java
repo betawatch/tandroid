@@ -28,7 +28,7 @@ import org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class PremiumStickersPreviewRecycler extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate, PagerHeaderView {
     boolean autoPlayEnabled;
     Runnable autoScrollRunnable;
@@ -97,7 +97,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
             super(context);
             this.animateImage = true;
             this.view = new View(context) { // from class: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler.StickerView.1
-                /* JADX WARN: Removed duplicated region for block: B:41:0x01c7  */
+                /* JADX WARN: Removed duplicated region for block: B:41:0x01c5  */
                 /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
                 @Override // android.view.View
                 /*

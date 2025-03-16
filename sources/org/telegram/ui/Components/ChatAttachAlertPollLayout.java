@@ -71,7 +71,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SuggestEmojiView;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout implements SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
     private int addAnswerRow;
     private boolean allowNesterScroll;

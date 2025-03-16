@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BoostCounterSpan extends ReplacementSpan {
     private final Drawable boostProfileBadge;
     private final Drawable boostProfileBadge2;

@@ -156,6 +156,11 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
         }
     }
 
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) {
+        return add(fieldDescriptor, d, true);
+    }
+
     ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d, boolean z) {
         if (z && d == 0.0d) {
             return this;
@@ -284,6 +289,11 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             this.output.write(allocateBuffer(8).putLong(j).array());
         }
         return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public ProtobufDataEncoderContext add(FieldDescriptor fieldDescriptor, boolean z) {
+        return add(fieldDescriptor, z, true);
     }
 
     ProtobufDataEncoderContext add(FieldDescriptor fieldDescriptor, boolean z, boolean z2) {

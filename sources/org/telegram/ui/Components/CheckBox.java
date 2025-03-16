@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CheckBox extends View {
     private static Paint backgroundPaint;
     private static Paint eraser;

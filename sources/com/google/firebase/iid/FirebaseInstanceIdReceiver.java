@@ -13,8 +13,12 @@ import java.util.concurrent.ExecutionException;
 
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
+    private static Intent createServiceIntent(Context context, String str, Bundle bundle) {
+        return new Intent(str).putExtras(bundle);
+    }
+
     @Override // com.google.android.gms.cloudmessaging.CloudMessagingReceiver
-    protected final int onMessageReceive(Context context, CloudMessage cloudMessage) {
+    protected int onMessageReceive(Context context, CloudMessage cloudMessage) {
         try {
             return ((Integer) Tasks.await(new FcmBroadcastProcessor(context).process(cloudMessage.getIntent()))).intValue();
         } catch (InterruptedException | ExecutionException e) {
@@ -24,10 +28,10 @@ public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
     }
 
     @Override // com.google.android.gms.cloudmessaging.CloudMessagingReceiver
-    protected final void onNotificationDismissed(Context context, Bundle bundle) {
-        Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(bundle);
-        if (MessagingAnalytics.shouldUploadScionMetrics(putExtras)) {
-            MessagingAnalytics.logNotificationDismiss(putExtras);
+    protected void onNotificationDismissed(Context context, Bundle bundle) {
+        Intent createServiceIntent = createServiceIntent(context, "com.google.firebase.messaging.NOTIFICATION_DISMISS", bundle);
+        if (MessagingAnalytics.shouldUploadScionMetrics(createServiceIntent)) {
+            MessagingAnalytics.logNotificationDismiss(createServiceIntent);
         }
     }
 }

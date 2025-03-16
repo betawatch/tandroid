@@ -15,7 +15,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SuperRippleFallback extends ISuperRipple {
     public final int MAX_COUNT;
     public final ArrayList effects;

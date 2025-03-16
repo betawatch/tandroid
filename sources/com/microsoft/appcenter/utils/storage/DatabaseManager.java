@@ -11,7 +11,7 @@ import com.microsoft.appcenter.utils.AppCenterLog;
 import java.io.Closeable;
 import java.util.Arrays;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DatabaseManager implements Closeable {
     public static final String[] SELECT_PRIMARY_KEY = {"oid"};
     private final Context mContext;

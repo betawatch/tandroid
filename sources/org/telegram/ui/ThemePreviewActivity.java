@@ -1456,7 +1456,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
                 tL_photoSize.size = 0;
                 tL_photoSize.w = 500;
-                tL_photoSize.h = NotificationCenter.chatlistFolderUpdate;
+                tL_photoSize.h = NotificationCenter.storiesDraftsUpdated;
                 tL_photoSize.type = "s";
                 tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
                 tL_message19.media.photo.sizes.add(tL_photoSize);
@@ -5175,7 +5175,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.valueAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.valueAnimator.setDuration(300L);
         this.valueAnimator.start();
-        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.storiesListUpdated);
+        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.storiesUpdated);
         this.backgroundImage.getImageReceiver().setImage(ImageLocation.getForDocument(tL_wallPaper.document), this.imageFilter, null, null, null, tL_wallPaper.document.size, "jpg", tL_wallPaper, 1);
         this.backgroundImage.onNewImageSet();
         this.selectedPattern = tL_wallPaper;
@@ -6716,7 +6716,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         if (ThemePreviewActivity.this.patternLayout[i24] != null) {
                             FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i24].getLayoutParams();
                             if (i24 == 0) {
-                                f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.emojiPreviewThemesChanged;
+                                f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.onEmojiInteractionsReceived;
                             } else {
                                 f13 = 316.0f;
                             }
@@ -8329,12 +8329,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             i14 = 316;
                                         } else {
                                             if (i12 == 0) {
-                                                i14 = NotificationCenter.emojiPreviewThemesChanged;
+                                                i14 = NotificationCenter.onEmojiInteractionsReceived;
                                             }
                                             i14 = 316;
                                         }
                                         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, i14, 83);
-                                        createFrame.height = AndroidUtilities.dp(i12 == 0 ? this.screenType == 2 ? 321 : NotificationCenter.emojiPreviewThemesChanged : 316.0f);
+                                        createFrame.height = AndroidUtilities.dp(i12 == 0 ? this.screenType == 2 ? 321 : NotificationCenter.onEmojiInteractionsReceived : 316.0f);
                                         if (insideBottomSheet()) {
                                             createFrame.height += AndroidUtilities.navigationBarHeight;
                                         }
@@ -9328,7 +9328,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     if (ThemePreviewActivity.this.patternLayout[i242] != null) {
                         FrameLayout.LayoutParams layoutParams42 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i242].getLayoutParams();
                         if (i242 == 0) {
-                            f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.emojiPreviewThemesChanged;
+                            f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.onEmojiInteractionsReceived;
                         } else {
                             f13 = 316.0f;
                         }

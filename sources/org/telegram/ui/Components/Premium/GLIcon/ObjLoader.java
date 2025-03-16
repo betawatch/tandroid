@@ -5,7 +5,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObjLoader {
     public float[] normals;
     public int numFaces;

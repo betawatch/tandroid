@@ -2,7 +2,7 @@ package com.microsoft.appcenter.distribute;
 
 import android.content.Context;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class PermissionUtils {
     public static boolean permissionsAreGranted(int[] iArr) {
         for (int i : iArr) {

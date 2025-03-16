@@ -4,7 +4,7 @@ import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Device extends WrapperSdk {
     private String appBuild;
     private String appNamespace;

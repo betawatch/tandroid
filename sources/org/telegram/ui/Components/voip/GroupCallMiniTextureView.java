@@ -68,7 +68,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class GroupCallMiniTextureView extends FrameLayout implements GroupCallStatusIcon.Callback {
     GroupCallActivity activity;
     boolean animateEnter;

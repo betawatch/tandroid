@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoipCoverEmoji {
     private final boolean allowAnimations;
     private int diffX;

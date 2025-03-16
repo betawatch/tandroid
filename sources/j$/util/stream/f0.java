@@ -9,24 +9,24 @@ final class f0 extends h0 {
     }
 
     @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void U(j$.util.function.T t) {
-        j$.util.J G0;
+    public final void T(j$.util.function.T t) {
+        j$.util.J F0;
         if (isParallel()) {
-            super.U(t);
+            super.T(t);
         } else {
-            G0 = h0.G0(A0());
-            G0.e(t);
+            F0 = h0.F0(z0());
+            F0.e(t);
         }
     }
 
     @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void d(j$.util.function.T t) {
-        j$.util.J G0;
+    public final void c(j$.util.function.T t) {
+        j$.util.J F0;
         if (isParallel()) {
-            super.d(t);
+            super.c(t);
         } else {
-            G0 = h0.G0(A0());
-            G0.e(t);
+            F0 = h0.F0(z0());
+            F0.e(t);
         }
     }
 
@@ -43,12 +43,12 @@ final class f0 extends h0 {
     }
 
     @Override // j$.util.stream.b
-    final boolean x0() {
+    final boolean w0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 y0(int i, e2 e2Var) {
+    final e2 x0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

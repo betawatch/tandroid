@@ -16,7 +16,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EarListener implements SensorEventListener {
     private Sensor accelerometerSensor;
     private boolean accelerometerVertical;
@@ -156,7 +156,7 @@ public class EarListener implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int i) {
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x01fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x01f9, code lost:
     
         if (r1 == 6) goto L80;
      */

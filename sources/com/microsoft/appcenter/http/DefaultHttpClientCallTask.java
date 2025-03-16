@@ -17,7 +17,7 @@ import java.util.zip.GZIPOutputStream;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class DefaultHttpClientCallTask extends AsyncTask {
     private final HttpClient.CallTemplate mCallTemplate;
     private final boolean mCompressionEnabled;

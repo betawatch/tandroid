@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.reflect.Factory;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractDescriptorBox extends AbstractFullBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_0 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_1 = null;

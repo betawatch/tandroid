@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AudioSpecificConfig extends BaseDescriptor {
     public boolean aacScalefactorDataResilienceFlag;
     public boolean aacSectionDataResilienceFlag;

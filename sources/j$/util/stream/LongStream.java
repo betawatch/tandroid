@@ -6,15 +6,15 @@ import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public interface LongStream extends BaseStream<Long, LongStream> {
-    boolean D(j$.util.function.W w);
+    boolean C(j$.util.function.W w);
 
-    boolean F(j$.util.function.W w);
+    boolean E(j$.util.function.W w);
 
-    LongStream L(j$.util.function.W w);
+    LongStream K(j$.util.function.W w);
 
-    void U(j$.util.function.T t);
+    void T(j$.util.function.T t);
 
-    Object Y(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer);
+    Object X(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer);
 
     D asDoubleStream();
 
@@ -22,9 +22,9 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     Stream boxed();
 
-    long count();
+    void c(j$.util.function.T t);
 
-    void d(j$.util.function.T t);
+    long count();
 
     LongStream distinct();
 
@@ -32,12 +32,14 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.l findFirst();
 
-    j$.util.l h(j$.util.function.O o);
+    j$.util.l g(j$.util.function.O o);
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
     j$.util.x iterator();
 
     LongStream limit(long j);
+
+    LongStream m(j$.util.function.T t);
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
@@ -45,14 +47,14 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.l min();
 
-    LongStream n(j$.util.function.T t);
+    LongStream n(LongFunction longFunction);
 
-    LongStream o(LongFunction longFunction);
+    D p(j$.util.function.X x);
 
     @Override // j$.util.stream.BaseStream
     LongStream parallel();
 
-    D q(j$.util.function.X x);
+    boolean s(j$.util.function.W w);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
@@ -68,13 +70,11 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.i summaryStatistics();
 
-    boolean t(j$.util.function.W w);
+    LongStream t(j$.util.function.c0 c0Var);
 
     long[] toArray();
 
-    LongStream u(j$.util.function.c0 c0Var);
+    long v(long j, j$.util.function.O o);
 
-    long w(long j, j$.util.function.O o);
-
-    IntStream z(j$.util.function.Y y);
+    IntStream y(j$.util.function.Y y);
 }

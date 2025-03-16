@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Texture {
     private Bitmap bitmap;
     private int texture;

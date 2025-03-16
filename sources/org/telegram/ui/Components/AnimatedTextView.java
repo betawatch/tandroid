@@ -35,7 +35,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedTextView extends View {
     public boolean adaptWidth;
     private final AnimatedTextDrawable drawable;

@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UndoStore {
     private UndoStoreDelegate delegate;
     private Map uuidToOperationMap = new HashMap();

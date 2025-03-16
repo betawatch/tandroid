@@ -25,20 +25,20 @@ import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0071 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0103  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01b4  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0231  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0248  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x02ba  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x031b  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0318  */
     /* JADX WARN: Removed duplicated region for block: B:96:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -292,7 +292,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$0(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$95(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$93(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
         }
     }
 
@@ -300,7 +300,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$1(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$95(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$93(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
         }
     }
 }

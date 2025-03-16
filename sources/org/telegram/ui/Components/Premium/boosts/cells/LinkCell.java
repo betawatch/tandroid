@@ -15,7 +15,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LinkCell extends FrameLayout {
     private ImageView imageView;
     private String link;

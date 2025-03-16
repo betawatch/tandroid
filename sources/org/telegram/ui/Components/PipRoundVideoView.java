@@ -39,7 +39,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PipRoundVideoView implements NotificationCenter.NotificationCenterDelegate {
     private static PipRoundVideoView instance;
     private AspectRatioFrameLayout aspectRatioFrameLayout;
@@ -66,8 +66,8 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0177  */
     /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

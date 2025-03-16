@@ -29,7 +29,7 @@ import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LocationMarker extends View {
     private AnimatedFloat animatedVideo;
     private boolean attachedToWindow;

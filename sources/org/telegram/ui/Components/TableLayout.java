@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.Cells.TextSelectionHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TableLayout extends View {
     public static final Alignment BASELINE;
     public static final Alignment BOTTOM;

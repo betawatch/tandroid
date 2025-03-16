@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class BrowserUtils {
     static String appendUri(String str, String str2) {
         URI uri = new URI(str);

@@ -21,7 +21,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.Theme$$ExternalSyntheticApiModelOutline2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int currentPosition;
     private float currentPositionOffset;

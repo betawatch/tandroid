@@ -94,7 +94,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class GiftSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private int TAB_ALL;
     private int TAB_IN_STOCK;

@@ -23,7 +23,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.StatisticActivity;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class ReactionsUtils {
     public static void addReactionToEditText(TLRPC.TL_availableReaction tL_availableReaction, HashMap hashMap, List list, Editable editable, SelectAnimatedEmojiDialog selectAnimatedEmojiDialog, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;

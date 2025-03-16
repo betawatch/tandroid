@@ -113,7 +113,7 @@ final class CctTransportBackend implements TransportBackend {
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setInstanceFollowRedirects(false);
         httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("User-Agent", String.format("datatransport/%s android/", "3.1.8"));
+        httpURLConnection.setRequestProperty("User-Agent", String.format("datatransport/%s android/", "3.1.9"));
         httpURLConnection.setRequestProperty("Content-Encoding", "gzip");
         httpURLConnection.setRequestProperty("Content-Type", "application/json");
         httpURLConnection.setRequestProperty("Accept-Encoding", "gzip");

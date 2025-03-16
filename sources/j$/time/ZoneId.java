@@ -1,7 +1,6 @@
 package j$.time;
 
 import j$.time.format.TextStyle;
-import j$.time.format.q;
 import j$.time.zone.ZoneRules;
 import j$.util.A;
 import java.io.Serializable;
@@ -72,14 +71,14 @@ public abstract class ZoneId implements Serializable {
     private static ZoneId g(String str, int i) {
         String substring = str.substring(0, i);
         if (str.length() == i) {
-            return f(substring, ZoneOffset.f);
+            return f(substring, ZoneOffset.UTC);
         }
         if (str.charAt(i) != '+' && str.charAt(i) != '-') {
             return n.h(str);
         }
         try {
             ZoneOffset h = ZoneOffset.h(str.substring(i));
-            return h == ZoneOffset.f ? f(substring, h) : f(substring, h);
+            return h == ZoneOffset.UTC ? f(substring, h) : f(substring, h);
         } catch (c e) {
             throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
         }
@@ -125,9 +124,9 @@ public abstract class ZoneId implements Serializable {
     }
 
     public String getDisplayName(TextStyle textStyle, Locale locale) {
-        q qVar = new q();
-        qVar.o(textStyle);
-        return qVar.v(locale).a(new m(this));
+        j$.time.format.p pVar = new j$.time.format.p();
+        pVar.o(textStyle);
+        return pVar.v(locale).a(new m(this));
     }
 
     public abstract String getId();

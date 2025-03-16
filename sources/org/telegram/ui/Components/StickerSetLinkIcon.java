@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerSetLinkIcon extends Drawable {
     private final int N;
     private final int count;

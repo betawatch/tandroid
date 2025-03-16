@@ -5,7 +5,7 @@ import java.util.Date;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DateTimeTypedProperty extends TypedProperty {
     private Date value;
 

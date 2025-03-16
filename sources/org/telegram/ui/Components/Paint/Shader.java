@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Shader {
     private int vertexShader;
     protected Map uniformsMap = new HashMap();

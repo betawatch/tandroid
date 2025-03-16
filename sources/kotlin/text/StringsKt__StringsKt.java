@@ -1,14 +1,18 @@
 package kotlin.text;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.IntIterator;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntProgression;
@@ -20,6 +24,104 @@ import kotlin.sequences.SequencesKt___SequencesKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0096, code lost:
+    
+        return kotlin.TuplesKt.to(java.lang.Integer.valueOf(r12), r9);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Pair findAnyOf$StringsKt__StringsKt(CharSequence charSequence, Collection collection, int i, boolean z, boolean z2) {
+        int coerceAtMost;
+        IntProgression downTo;
+        int first;
+        Object obj;
+        String str;
+        Object obj2;
+        int coerceAtLeast;
+        if (!z && collection.size() == 1) {
+            String str2 = (String) CollectionsKt___CollectionsKt.single(collection);
+            int indexOf$default = !z2 ? indexOf$default(charSequence, str2, i, false, 4, (Object) null) : lastIndexOf$default(charSequence, str2, i, false, 4, (Object) null);
+            if (indexOf$default < 0) {
+                return null;
+            }
+            return TuplesKt.to(Integer.valueOf(indexOf$default), str2);
+        }
+        if (z2) {
+            coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, getLastIndex(charSequence));
+            downTo = RangesKt___RangesKt.downTo(coerceAtMost, 0);
+        } else {
+            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(i, 0);
+            downTo = new IntRange(coerceAtLeast, charSequence.length());
+        }
+        if (charSequence instanceof String) {
+            first = downTo.getFirst();
+            int last = downTo.getLast();
+            int step = downTo.getStep();
+            if ((step > 0 && first <= last) || (step < 0 && last <= first)) {
+                while (true) {
+                    Iterator it = collection.iterator();
+                    while (true) {
+                        if (!it.hasNext()) {
+                            obj2 = null;
+                            break;
+                        }
+                        obj2 = it.next();
+                        String str3 = (String) obj2;
+                        if (StringsKt__StringsJVMKt.regionMatches(str3, 0, (String) charSequence, first, str3.length(), z)) {
+                            break;
+                        }
+                    }
+                    str = (String) obj2;
+                    if (str == null) {
+                        if (first == last) {
+                            break;
+                        }
+                        first += step;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            return null;
+        }
+        first = downTo.getFirst();
+        int last2 = downTo.getLast();
+        int step2 = downTo.getStep();
+        if ((step2 > 0 && first <= last2) || (step2 < 0 && last2 <= first)) {
+            while (true) {
+                Iterator it2 = collection.iterator();
+                while (true) {
+                    if (!it2.hasNext()) {
+                        obj = null;
+                        break;
+                    }
+                    obj = it2.next();
+                    String str4 = (String) obj;
+                    if (regionMatchesImpl(str4, 0, charSequence, first, str4.length(), z)) {
+                        break;
+                    }
+                }
+                str = (String) obj;
+                if (str == null) {
+                    if (first == last2) {
+                        break;
+                    }
+                    first += step2;
+                } else {
+                    break;
+                }
+            }
+        }
+        return null;
+    }
+
+    public static final IntRange getIndices(CharSequence charSequence) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        return new IntRange(0, charSequence.length() - 1);
+    }
+
     public static final int getLastIndex(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         return charSequence.length() - 1;
@@ -107,10 +209,12 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
 
     public static final int indexOfAny(CharSequence charSequence, char[] chars, int i, boolean z) {
         int coerceAtLeast;
+        char single;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(chars, "chars");
         if (!z && chars.length == 1 && (charSequence instanceof String)) {
-            return ((String) charSequence).indexOf(ArraysKt___ArraysKt.single(chars), i);
+            single = ArraysKt___ArraysKt.single(chars);
+            return ((String) charSequence).indexOf(single, i);
         }
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(i, 0);
         IntIterator it = new IntRange(coerceAtLeast, getLastIndex(charSequence)).iterator();
@@ -131,6 +235,12 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return (z || !(charSequence instanceof String)) ? lastIndexOfAny(charSequence, new char[]{c}, i, z) : ((String) charSequence).lastIndexOf(c, i);
     }
 
+    public static final int lastIndexOf(CharSequence charSequence, String string, int i, boolean z) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        Intrinsics.checkNotNullParameter(string, "string");
+        return (z || !(charSequence instanceof String)) ? indexOf$StringsKt__StringsKt(charSequence, string, i, 0, z, true) : ((String) charSequence).lastIndexOf(string, i);
+    }
+
     public static /* synthetic */ int lastIndexOf$default(CharSequence charSequence, char c, int i, boolean z, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = getLastIndex(charSequence);
@@ -141,12 +251,24 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return lastIndexOf(charSequence, c, i, z);
     }
 
+    public static /* synthetic */ int lastIndexOf$default(CharSequence charSequence, String str, int i, boolean z, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            i = getLastIndex(charSequence);
+        }
+        if ((i2 & 4) != 0) {
+            z = false;
+        }
+        return lastIndexOf(charSequence, str, i, z);
+    }
+
     public static final int lastIndexOfAny(CharSequence charSequence, char[] chars, int i, boolean z) {
         int coerceAtMost;
+        char single;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(chars, "chars");
         if (!z && chars.length == 1 && (charSequence instanceof String)) {
-            return ((String) charSequence).lastIndexOf(ArraysKt___ArraysKt.single(chars), i);
+            single = ArraysKt___ArraysKt.single(chars);
+            return ((String) charSequence).lastIndexOf(single, i);
         }
         for (coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, getLastIndex(charSequence)); -1 < coerceAtMost; coerceAtMost--) {
             char charAt = charSequence.charAt(coerceAtMost);
@@ -157,6 +279,18 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             }
         }
         return -1;
+    }
+
+    public static final Sequence lineSequence(CharSequence charSequence) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        return splitToSequence$default(charSequence, new String[]{"\r\n", "\n", "\r"}, false, 0, 6, null);
+    }
+
+    public static final List lines(CharSequence charSequence) {
+        List list;
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        list = SequencesKt___SequencesKt.toList(lineSequence(charSequence));
+        return list;
     }
 
     public static final CharSequence padEnd(CharSequence charSequence, int i, char c) {
@@ -189,6 +323,29 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return padEnd(str, i, c);
     }
 
+    public static final CharSequence padStart(CharSequence charSequence, int i, char c) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        if (i < 0) {
+            throw new IllegalArgumentException("Desired length " + i + " is less than zero.");
+        }
+        if (i <= charSequence.length()) {
+            return charSequence.subSequence(0, charSequence.length());
+        }
+        StringBuilder sb = new StringBuilder(i);
+        IntIterator it = new IntRange(1, i - charSequence.length()).iterator();
+        while (it.hasNext()) {
+            it.nextInt();
+            sb.append(c);
+        }
+        sb.append(charSequence);
+        return sb;
+    }
+
+    public static String padStart(String str, int i, char c) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return padStart((CharSequence) str, i, c).toString();
+    }
+
     private static final Sequence rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, final char[] cArr, int i, final boolean z, int i2) {
         requireNonNegativeLimit(i2);
         return new DelimitedRangesSequence(charSequence, i, i2, new Function2() { // from class: kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1
@@ -213,6 +370,33 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         });
     }
 
+    private static final Sequence rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, String[] strArr, int i, final boolean z, int i2) {
+        final List asList;
+        requireNonNegativeLimit(i2);
+        asList = ArraysKt___ArraysJvmKt.asList(strArr);
+        return new DelimitedRangesSequence(charSequence, i, i2, new Function2() { // from class: kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+                return invoke((CharSequence) obj, ((Number) obj2).intValue());
+            }
+
+            public final Pair invoke(CharSequence $receiver, int i3) {
+                Pair findAnyOf$StringsKt__StringsKt;
+                Intrinsics.checkNotNullParameter($receiver, "$this$$receiver");
+                findAnyOf$StringsKt__StringsKt = StringsKt__StringsKt.findAnyOf$StringsKt__StringsKt($receiver, asList, i3, z, false);
+                if (findAnyOf$StringsKt__StringsKt != null) {
+                    return TuplesKt.to(findAnyOf$StringsKt__StringsKt.getFirst(), Integer.valueOf(((String) findAnyOf$StringsKt__StringsKt.getSecond()).length()));
+                }
+                return null;
+            }
+        });
+    }
+
     static /* synthetic */ Sequence rangesDelimitedBy$StringsKt__StringsKt$default(CharSequence charSequence, char[] cArr, int i, boolean z, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             i = 0;
@@ -224,6 +408,19 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             i2 = 0;
         }
         return rangesDelimitedBy$StringsKt__StringsKt(charSequence, cArr, i, z, i2);
+    }
+
+    static /* synthetic */ Sequence rangesDelimitedBy$StringsKt__StringsKt$default(CharSequence charSequence, String[] strArr, int i, boolean z, int i2, int i3, Object obj) {
+        if ((i3 & 2) != 0) {
+            i = 0;
+        }
+        if ((i3 & 4) != 0) {
+            z = false;
+        }
+        if ((i3 & 8) != 0) {
+            i2 = 0;
+        }
+        return rangesDelimitedBy$StringsKt__StringsKt(charSequence, strArr, i, z, i2);
     }
 
     public static final boolean regionMatchesImpl(CharSequence charSequence, int i, CharSequence other, int i2, int i3, boolean z) {
@@ -254,7 +451,7 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         if (delimiters.length == 1) {
             return split$StringsKt__StringsKt(charSequence, String.valueOf(delimiters[0]), z, i);
         }
-        asIterable = SequencesKt___SequencesKt.asIterable(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, null));
+        asIterable = SequencesKt___SequencesKt.asIterable(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null));
         ArrayList arrayList = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(asIterable, 10));
         Iterator it = asIterable.iterator();
         while (it.hasNext()) {
@@ -292,6 +489,35 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             i = 0;
         }
         return split(charSequence, cArr, z, i);
+    }
+
+    public static final Sequence splitToSequence(final CharSequence charSequence, String[] delimiters, boolean z, int i) {
+        Sequence map;
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        Intrinsics.checkNotNullParameter(delimiters, "delimiters");
+        map = SequencesKt___SequencesKt.map(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null), new Function1() { // from class: kotlin.text.StringsKt__StringsKt$splitToSequence$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final String invoke(IntRange it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return StringsKt__StringsKt.substring(charSequence, it);
+            }
+        });
+        return map;
+    }
+
+    public static /* synthetic */ Sequence splitToSequence$default(CharSequence charSequence, String[] strArr, boolean z, int i, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            z = false;
+        }
+        if ((i2 & 4) != 0) {
+            i = 0;
+        }
+        return splitToSequence(charSequence, strArr, z, i);
     }
 
     public static final String substring(CharSequence charSequence, IntRange range) {
@@ -339,10 +565,10 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return substringAfter(str, str2, str3);
     }
 
-    public static final String substringAfterLast(String str, char c, String missingDelimiterValue) {
+    public static String substringAfterLast(String str, char c, String missingDelimiterValue) {
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(missingDelimiterValue, "missingDelimiterValue");
-        int lastIndexOf$default = lastIndexOf$default(str, c, 0, false, 6, null);
+        int lastIndexOf$default = lastIndexOf$default((CharSequence) str, c, 0, false, 6, (Object) null);
         if (lastIndexOf$default == -1) {
             return missingDelimiterValue;
         }

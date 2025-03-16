@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AvatarConstructorFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AvatarConstructorPreviewCell extends FrameLayout {
     private AnimatedEmojiDrawable animatedEmojiDrawable;
     int backgroundIndex;

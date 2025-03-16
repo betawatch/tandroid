@@ -45,7 +45,7 @@ import org.telegram.ui.Components.GroupCreateSpan;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorSearchCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SelectorSearchCell extends ScrollView {
     public ArrayList allSpans;
     private final LinearGradient bottomGradient;

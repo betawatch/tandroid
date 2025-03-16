@@ -142,7 +142,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StarsIntroActivity extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private static DecimalFormat floatFormat;
     private FrameLayout aboveTitleView;

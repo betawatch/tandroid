@@ -17,7 +17,7 @@ abstract class b0 extends b implements IntStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.G G0(Spliterator spliterator) {
+    public static j$.util.G F0(Spliterator spliterator) {
         if (spliterator instanceof j$.util.G) {
             return (j$.util.G) spliterator;
         }
@@ -28,75 +28,75 @@ abstract class b0 extends b implements IntStream {
         throw null;
     }
 
-    public void B(j$.util.function.E e) {
+    public void A(j$.util.function.E e) {
         e.getClass();
-        k0(new N(e, true));
+        j0(new N(e, true));
     }
 
     @Override // j$.util.stream.b
-    final Spliterator B0(b bVar, Supplier supplier, boolean z) {
+    final Spliterator A0(b bVar, Supplier supplier, boolean z) {
         return new e3(bVar, supplier, z);
     }
 
     @Override // j$.util.stream.IntStream
-    public final Stream C(IntFunction intFunction) {
+    public final Stream B(IntFunction intFunction) {
         intFunction.getClass();
         return new u(this, R2.p | R2.n, intFunction, 1);
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream G(j$.util.function.L l) {
+    public final IntStream F(j$.util.function.L l) {
         l.getClass();
         return new v(this, R2.p | R2.n, l, 2);
     }
 
     @Override // j$.util.stream.IntStream
-    public final int I(int i, j$.util.function.A a) {
+    public final int H(int i, j$.util.function.A a) {
         a.getClass();
-        return ((Integer) k0(new G1(S2.INT_VALUE, a, i))).intValue();
+        return ((Integer) j0(new G1(S2.INT_VALUE, a, i))).intValue();
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream J(IntFunction intFunction) {
+    public final IntStream I(IntFunction intFunction) {
         return new v(this, R2.p | R2.n | R2.t, intFunction, 3);
     }
 
-    public void K(j$.util.function.E e) {
+    public void J(j$.util.function.E e) {
         e.getClass();
-        k0(new N(e, false));
+        j0(new N(e, false));
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream P(j$.util.function.G g) {
+    public final IntStream O(j$.util.function.G g) {
         g.getClass();
         return new v(this, R2.t, g, 4);
     }
 
     @Override // j$.util.stream.IntStream
-    public final boolean S(j$.util.function.G g) {
-        return ((Boolean) k0(t0.Y(g, q0.ALL))).booleanValue();
+    public final boolean R(j$.util.function.G g) {
+        return ((Boolean) j0(t0.Y(g, q0.ALL))).booleanValue();
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.k V(j$.util.function.A a) {
+    public final j$.util.k U(j$.util.function.A a) {
         a.getClass();
-        return (j$.util.k) k0(new y1(S2.INT_VALUE, a, 2));
+        return (j$.util.k) j0(new y1(S2.INT_VALUE, a, 2));
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream W(j$.util.function.E e) {
+    public final IntStream V(j$.util.function.E e) {
         e.getClass();
         return new v(this, e);
     }
 
     @Override // j$.util.stream.IntStream
-    public final boolean Z(j$.util.function.G g) {
-        return ((Boolean) k0(t0.Y(g, q0.ANY))).booleanValue();
+    public final boolean Y(j$.util.function.G g) {
+        return ((Boolean) j0(t0.Y(g, q0.ANY))).booleanValue();
     }
 
     @Override // j$.util.stream.IntStream
-    public final boolean a0(j$.util.function.G g) {
-        return ((Boolean) k0(t0.Y(g, q0.NONE))).booleanValue();
+    public final boolean Z(j$.util.function.G g) {
+        return ((Boolean) j0(t0.Y(g, q0.NONE))).booleanValue();
     }
 
     @Override // j$.util.stream.IntStream
@@ -111,7 +111,7 @@ abstract class b0 extends b implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final j$.util.j average() {
-        long[] jArr = (long[]) d0(new E(14), new E(15), new E(16));
+        long[] jArr = (long[]) c0(new E(14), new E(15), new E(16));
         long j = jArr[0];
         if (j <= 0) {
             return j$.util.j.a();
@@ -125,52 +125,57 @@ abstract class b0 extends b implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final Stream boxed() {
-        return C(new E(8));
+        return B(new E(8));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final Object c0(Supplier supplier, j$.util.function.i0 i0Var, BiConsumer biConsumer) {
+        r rVar = new r(biConsumer, 1);
+        supplier.getClass();
+        i0Var.getClass();
+        return j0(new u1(S2.INT_VALUE, rVar, i0Var, supplier, 4));
     }
 
     @Override // j$.util.stream.IntStream
     public final long count() {
-        return ((h0) g(new E(7))).sum();
+        return ((h0) f(new E(7))).sum();
     }
 
     @Override // j$.util.stream.IntStream
-    public final Object d0(Supplier supplier, j$.util.function.i0 i0Var, BiConsumer biConsumer) {
-        r rVar = new r(biConsumer, 1);
-        supplier.getClass();
-        i0Var.getClass();
-        return k0(new u1(S2.INT_VALUE, rVar, i0Var, supplier, 4));
-    }
-
-    @Override // j$.util.stream.IntStream
-    public final IntStream distinct() {
-        return ((W1) ((W1) boxed()).distinct()).l(new E(6));
-    }
-
-    @Override // j$.util.stream.IntStream
-    public final D e(j$.util.function.H h) {
+    public final D d(j$.util.function.H h) {
         h.getClass();
         return new t(this, R2.p | R2.n, h, 4);
     }
 
     @Override // j$.util.stream.IntStream
+    public final IntStream distinct() {
+        return ((W1) ((W1) boxed()).distinct()).k(new E(6));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final LongStream f(j$.util.function.K k) {
+        k.getClass();
+        return new w(this, R2.p | R2.n, k, 1);
+    }
+
+    @Override // j$.util.stream.IntStream
     public final j$.util.k findAny() {
-        return (j$.util.k) k0(new F(false, S2.INT_VALUE, j$.util.k.a(), new E(3), new l(8)));
+        return (j$.util.k) j0(new F(false, S2.INT_VALUE, j$.util.k.a(), new E(3), new l(8)));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.k findFirst() {
-        return (j$.util.k) k0(new F(true, S2.INT_VALUE, j$.util.k.a(), new E(3), new l(8)));
-    }
-
-    @Override // j$.util.stream.IntStream
-    public final LongStream g(j$.util.function.K k) {
-        k.getClass();
-        return new w(this, R2.p | R2.n, k, 1);
+        return (j$.util.k) j0(new F(true, S2.INT_VALUE, j$.util.k.a(), new E(3), new l(8)));
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
     public final j$.util.t iterator() {
         return Spliterators.g(spliterator());
+    }
+
+    @Override // j$.util.stream.b
+    final F0 l0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return t0.G(bVar, spliterator, z);
     }
 
     @Override // j$.util.stream.IntStream
@@ -181,25 +186,20 @@ abstract class b0 extends b implements IntStream {
         throw new IllegalArgumentException(Long.toString(j));
     }
 
-    @Override // j$.util.stream.b
-    final F0 m0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
-        return t0.G(bVar, spliterator, z);
-    }
-
     @Override // j$.util.stream.IntStream
     public final j$.util.k max() {
-        return V(new E(13));
+        return U(new E(13));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.k min() {
-        return V(new E(9));
+        return U(new E(9));
     }
 
     @Override // j$.util.stream.b
-    final void o0(Spliterator spliterator, e2 e2Var) {
+    final void n0(Spliterator spliterator, e2 e2Var) {
         j$.util.function.E u;
-        j$.util.G G0 = G0(spliterator);
+        j$.util.G F0 = F0(spliterator);
         if (e2Var instanceof j$.util.function.E) {
             u = (j$.util.function.E) e2Var;
         } else {
@@ -210,12 +210,12 @@ abstract class b0 extends b implements IntStream {
             e2Var.getClass();
             u = new U(0, e2Var);
         }
-        while (!e2Var.q() && G0.p(u)) {
+        while (!e2Var.q() && F0.p(u)) {
         }
     }
 
     @Override // j$.util.stream.b
-    final S2 p0() {
+    final S2 o0() {
         return S2.INT_VALUE;
     }
 
@@ -234,31 +234,31 @@ abstract class b0 extends b implements IntStream {
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
     public final j$.util.G spliterator() {
-        return G0(super.spliterator());
+        return F0(super.spliterator());
     }
 
     @Override // j$.util.stream.IntStream
     public final int sum() {
-        return I(0, new E(12));
+        return H(0, new E(12));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.g summaryStatistics() {
-        return (j$.util.g) d0(new l(15), new E(10), new E(11));
+        return (j$.util.g) c0(new l(15), new E(10), new E(11));
+    }
+
+    @Override // j$.util.stream.b
+    final x0 t0(long j, IntFunction intFunction) {
+        return t0.R(j);
     }
 
     @Override // j$.util.stream.IntStream
     public final int[] toArray() {
-        return (int[]) t0.P((B0) l0(new E(5))).e();
-    }
-
-    @Override // j$.util.stream.b
-    final x0 u0(long j, IntFunction intFunction) {
-        return t0.R(j);
+        return (int[]) t0.P((B0) k0(new E(5))).e();
     }
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        return !s0() ? this : new Y(this, R2.r);
+        return !r0() ? this : new Y(this, R2.r);
     }
 }

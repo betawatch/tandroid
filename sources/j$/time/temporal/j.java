@@ -52,7 +52,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -87,7 +87,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -122,7 +122,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -157,7 +157,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -192,7 +192,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -227,7 +227,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }
@@ -262,7 +262,7 @@ public abstract /* synthetic */ class j {
                     default:
                         l lVar2 = a.NANO_OF_DAY;
                         if (kVar.e(lVar2)) {
-                            return j$.time.i.k(kVar.b(lVar2));
+                            return j$.time.h.k(kVar.b(lVar2));
                         }
                         return null;
                 }

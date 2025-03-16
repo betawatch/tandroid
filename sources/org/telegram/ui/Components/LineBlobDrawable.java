@@ -6,7 +6,7 @@ import android.graphics.Path;
 import java.util.Random;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LineBlobDrawable {
     private final float N;
     public float maxRadius;

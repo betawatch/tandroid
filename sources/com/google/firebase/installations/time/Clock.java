@@ -1,6 +1,6 @@
 package com.google.firebase.installations.time;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface Clock {
     long currentTimeMillis();
 }

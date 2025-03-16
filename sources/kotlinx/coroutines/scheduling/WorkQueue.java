@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.internal.Ref$ObjectRef;
+import kotlinx.coroutines.channels.ChannelSegment$$ExternalSyntheticBackportWithForwarding0;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
@@ -120,7 +121,7 @@ public final class WorkQueue {
         int i2 = i & NotificationCenter.dialogTranslate;
         Task task = (Task) this.buffer.get(i2);
         if (task != null) {
-            if ((task.taskContext.getTaskMode() == 1) == z && WorkQueue$$ExternalSyntheticBackportWithForwarding0.m(this.buffer, i2, task, null)) {
+            if ((task.taskContext.getTaskMode() == 1) == z && ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(this.buffer, i2, task, null)) {
                 if (z) {
                     blockingTasksInBuffer$FU.decrementAndGet(this);
                 }

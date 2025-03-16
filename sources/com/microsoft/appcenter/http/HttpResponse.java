@@ -2,7 +2,7 @@ package com.microsoft.appcenter.http;
 
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class HttpResponse {
     private final Map headers;
     private final String payload;

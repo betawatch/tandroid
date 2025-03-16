@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 /* loaded from: classes2.dex */
 public final class p implements j$.time.temporal.k, Serializable, Comparable {
-    private final g a;
+    private final LocalDateTime a;
     private final ZoneOffset b;
     private final ZoneId c;
 
-    private p(g gVar, ZoneOffset zoneOffset, ZoneId zoneId) {
-        this.a = gVar;
+    private p(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneId zoneId) {
+        this.a = localDateTime;
         this.b = zoneOffset;
         this.c = zoneId;
     }
@@ -21,7 +21,7 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
         long i = instant.i();
         int j = instant.j();
         ZoneOffset offset = zoneId.getRules().getOffset(Instant.l(i, j));
-        return new p(g.j(i, j, offset), offset, zoneId);
+        return new p(LocalDateTime.j(i, j, offset), offset, zoneId);
     }
 
     @Override // j$.time.temporal.k
@@ -41,9 +41,9 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
     @Override // j$.time.temporal.k
     public final Object c(j$.time.temporal.n nVar) {
         j$.time.temporal.m e = j$.time.temporal.j.e();
-        g gVar = this.a;
+        LocalDateTime localDateTime = this.a;
         if (nVar == e) {
-            return gVar.l();
+            return localDateTime.l();
         }
         if (nVar == j$.time.temporal.j.i() || nVar == j$.time.temporal.j.j()) {
             return this.c;
@@ -52,12 +52,12 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
             return this.b;
         }
         if (nVar == j$.time.temporal.j.f()) {
-            return gVar.m();
+            return localDateTime.m();
         }
         if (nVar != j$.time.temporal.j.d()) {
             return nVar == j$.time.temporal.j.h() ? j$.time.temporal.b.NANOS : nVar.a(this);
         }
-        gVar.l().getClass();
+        localDateTime.l().getClass();
         return j$.time.chrono.g.a;
     }
 
@@ -68,22 +68,22 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
         if (compare != 0) {
             return compare;
         }
-        g gVar = this.a;
-        int h = gVar.m().h();
-        g gVar2 = pVar.a;
-        int h2 = h - gVar2.m().h();
-        if (h2 != 0 || (h2 = gVar.compareTo(gVar2)) != 0) {
+        LocalDateTime localDateTime = this.a;
+        int h = localDateTime.m().h();
+        LocalDateTime localDateTime2 = pVar.a;
+        int h2 = h - localDateTime2.m().h();
+        if (h2 != 0 || (h2 = localDateTime.compareTo(localDateTime2)) != 0) {
             return h2;
         }
         int compareTo = this.c.getId().compareTo(pVar.c.getId());
         if (compareTo != 0) {
             return compareTo;
         }
-        gVar.l().getClass();
-        j$.time.chrono.g gVar3 = j$.time.chrono.g.a;
-        gVar2.l().getClass();
-        gVar3.getClass();
-        gVar3.getClass();
+        localDateTime.l().getClass();
+        j$.time.chrono.g gVar = j$.time.chrono.g.a;
+        localDateTime2.l().getClass();
+        gVar.getClass();
+        gVar.getClass();
         return 0;
     }
 
@@ -127,7 +127,7 @@ public final class p implements j$.time.temporal.k, Serializable, Comparable {
         return (this.a.hashCode() ^ this.b.hashCode()) ^ Integer.rotateLeft(this.c.hashCode(), 3);
     }
 
-    public final g i() {
+    public final LocalDateTime i() {
         return this.a;
     }
 

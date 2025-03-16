@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SlideView extends LinearLayout {
     public SlideView(Context context) {
         super(context);

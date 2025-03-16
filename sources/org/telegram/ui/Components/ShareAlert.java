@@ -115,7 +115,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ShareAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private AnimatorSet animatorSet;
     private FrameLayout bulletinContainer;

@@ -26,7 +26,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.BaseCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Switch extends View {
     private boolean attachedToWindow;
     private boolean bitmapsCreated;

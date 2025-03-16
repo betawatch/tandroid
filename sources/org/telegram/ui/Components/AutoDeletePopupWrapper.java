@@ -17,7 +17,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AutoDeletePopupWrapper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AutoDeletePopupWrapper {
     View backItem;
     Callback callback;

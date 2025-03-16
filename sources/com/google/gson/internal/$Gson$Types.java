@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Properties;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class $Gson$Types {
     static final Type[] EMPTY_TYPE_ARRAY = new Type[0];
 

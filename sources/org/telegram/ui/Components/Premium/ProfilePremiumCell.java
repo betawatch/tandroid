@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ProfilePremiumCell extends TextCell {
     private final int colorKey;
     private final StarsReactionsSheet.Particles particles;

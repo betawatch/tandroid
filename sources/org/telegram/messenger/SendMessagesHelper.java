@@ -7188,9 +7188,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0129  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7238,7 +7238,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             while (i8 < updates2.updates.size()) {
                 TLRPC.Update update2 = updates2.updates.get(i8);
                 boolean z3 = update2 instanceof TLRPC.TL_updateNewMessage;
-                if ((z3 || (update2 instanceof TLRPC.TL_updateNewChannelMessage) || (update2 instanceof TLRPC.TL_updateNewScheduledMessage) || (update2 instanceof TLRPC.TL_updateQuickReplyMessage)) && (getMessageFromUpdate(update2) == null || !(getMessageFromUpdate(update2).action instanceof TLRPC.TL_messageActionPaidMessage))) {
+                if (z3 || (update2 instanceof TLRPC.TL_updateNewChannelMessage) || (update2 instanceof TLRPC.TL_updateNewScheduledMessage) || (update2 instanceof TLRPC.TL_updateQuickReplyMessage)) {
                     int i10 = i9;
                     int i11 = i5 != 0 ? 1 : 0;
                     updates2.updates.remove(i8);

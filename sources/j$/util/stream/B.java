@@ -16,7 +16,7 @@ public final /* synthetic */ class B implements D {
         this.a = doubleStream;
     }
 
-    public static /* synthetic */ D h0(DoubleStream doubleStream) {
+    public static /* synthetic */ D g0(DoubleStream doubleStream) {
         if (doubleStream == null) {
             return null;
         }
@@ -24,33 +24,33 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ Object A(Supplier supplier, j$.util.function.f0 f0Var, BiConsumer biConsumer) {
-        return this.a.collect(j$.util.function.q0.a(supplier), j$.util.function.e0.a(f0Var), j$.util.function.a.a(biConsumer));
-    }
-
-    @Override // j$.util.stream.D
-    public final /* synthetic */ double E(double d, j$.util.function.i iVar) {
+    public final /* synthetic */ double D(double d, j$.util.function.i iVar) {
         return this.a.reduce(d, j$.util.function.h.a(iVar));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ Stream H(j$.util.function.p pVar) {
+    public final /* synthetic */ Stream G(j$.util.function.p pVar) {
         return Stream.VivifiedWrapper.convert(this.a.mapToObj(j$.util.function.o.a(pVar)));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ D M(j$.util.function.v vVar) {
-        return h0(this.a.map(vVar == null ? null : vVar.a));
+    public final /* synthetic */ D L(j$.util.function.v vVar) {
+        return g0(this.a.map(vVar == null ? null : vVar.a));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ IntStream R(j$.util.function.r rVar) {
+    public final /* synthetic */ IntStream Q(j$.util.function.r rVar) {
         return IntStream.VivifiedWrapper.convert(this.a.mapToInt(rVar == null ? null : rVar.a));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ D T(j$.util.function.q qVar) {
-        return h0(this.a.filter(qVar == null ? null : qVar.a));
+    public final /* synthetic */ D S(j$.util.function.q qVar) {
+        return g0(this.a.filter(qVar == null ? null : qVar.a));
+    }
+
+    @Override // j$.util.stream.D
+    public final /* synthetic */ D a(j$.util.function.m mVar) {
+        return g0(this.a.peek(j$.util.function.l.a(mVar)));
     }
 
     @Override // j$.util.stream.D
@@ -59,18 +59,13 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ D b(j$.util.function.m mVar) {
-        return h0(this.a.peek(j$.util.function.l.a(mVar)));
+    public final /* synthetic */ boolean b0(j$.util.function.q qVar) {
+        return this.a.anyMatch(qVar == null ? null : qVar.a);
     }
 
     @Override // j$.util.stream.D
     public final /* synthetic */ Stream boxed() {
         return Stream.VivifiedWrapper.convert(this.a.boxed());
-    }
-
-    @Override // j$.util.stream.D
-    public final /* synthetic */ boolean c0(j$.util.function.q qVar) {
-        return this.a.anyMatch(qVar == null ? null : qVar.a);
     }
 
     @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
@@ -84,13 +79,18 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ D distinct() {
-        return h0(this.a.distinct());
+    public final /* synthetic */ void d0(j$.util.function.m mVar) {
+        this.a.forEachOrdered(j$.util.function.l.a(mVar));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ void e0(j$.util.function.m mVar) {
-        this.a.forEachOrdered(j$.util.function.l.a(mVar));
+    public final /* synthetic */ D distinct() {
+        return g0(this.a.distinct());
+    }
+
+    @Override // j$.util.stream.D
+    public final /* synthetic */ boolean e0(j$.util.function.q qVar) {
+        return this.a.allMatch(qVar == null ? null : qVar.a);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
@@ -99,11 +99,6 @@ public final /* synthetic */ class B implements D {
             obj = ((B) obj).a;
         }
         return doubleStream.equals(obj);
-    }
-
-    @Override // j$.util.stream.D
-    public final /* synthetic */ boolean f0(j$.util.function.q qVar) {
-        return this.a.allMatch(qVar == null ? null : qVar.a);
     }
 
     @Override // j$.util.stream.D
@@ -118,6 +113,11 @@ public final /* synthetic */ class B implements D {
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
+    }
+
+    @Override // j$.util.stream.D
+    public final /* synthetic */ void i(j$.util.function.m mVar) {
+        this.a.forEach(j$.util.function.l.a(mVar));
     }
 
     @Override // j$.util.stream.BaseStream
@@ -137,18 +137,13 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ void j(j$.util.function.m mVar) {
-        this.a.forEach(j$.util.function.l.a(mVar));
-    }
-
-    @Override // j$.util.stream.D
-    public final /* synthetic */ boolean k(j$.util.function.q qVar) {
+    public final /* synthetic */ boolean j(j$.util.function.q qVar) {
         return this.a.noneMatch(qVar == null ? null : qVar.a);
     }
 
     @Override // j$.util.stream.D
     public final /* synthetic */ D limit(long j) {
-        return h0(this.a.limit(j));
+        return g0(this.a.limit(j));
     }
 
     @Override // j$.util.stream.D
@@ -163,47 +158,47 @@ public final /* synthetic */ class B implements D {
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-        return f.h0(this.a.onClose(runnable));
+        return f.g0(this.a.onClose(runnable));
     }
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream parallel() {
-        return f.h0(this.a.parallel());
+        return f.g0(this.a.parallel());
     }
 
     @Override // j$.util.stream.D, j$.util.stream.BaseStream
     public final /* synthetic */ D parallel() {
-        return h0(this.a.parallel());
+        return g0(this.a.parallel());
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ D r(j$.util.function.p pVar) {
-        return h0(this.a.flatMap(j$.util.function.o.a(pVar)));
+    public final /* synthetic */ D q(j$.util.function.p pVar) {
+        return g0(this.a.flatMap(j$.util.function.o.a(pVar)));
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ LongStream s(j$.util.function.u uVar) {
-        return i0.h0(this.a.mapToLong(j$.util.function.t.a(uVar)));
+    public final /* synthetic */ LongStream r(j$.util.function.u uVar) {
+        return i0.g0(this.a.mapToLong(j$.util.function.t.a(uVar)));
     }
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream sequential() {
-        return f.h0(this.a.sequential());
+        return f.g0(this.a.sequential());
     }
 
     @Override // j$.util.stream.D, j$.util.stream.BaseStream
     public final /* synthetic */ D sequential() {
-        return h0(this.a.sequential());
+        return g0(this.a.sequential());
     }
 
     @Override // j$.util.stream.D
     public final /* synthetic */ D skip(long j) {
-        return h0(this.a.skip(j));
+        return g0(this.a.skip(j));
     }
 
     @Override // j$.util.stream.D
     public final /* synthetic */ D sorted() {
-        return h0(this.a.sorted());
+        return g0(this.a.sorted());
     }
 
     /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfDouble] */
@@ -235,11 +230,16 @@ public final /* synthetic */ class B implements D {
 
     @Override // j$.util.stream.BaseStream
     public final /* synthetic */ BaseStream unordered() {
-        return f.h0(this.a.unordered());
+        return f.g0(this.a.unordered());
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.j y(j$.util.function.i iVar) {
+    public final /* synthetic */ j$.util.j x(j$.util.function.i iVar) {
         return j$.util.A.q(this.a.reduce(j$.util.function.h.a(iVar)));
+    }
+
+    @Override // j$.util.stream.D
+    public final /* synthetic */ Object z(Supplier supplier, j$.util.function.f0 f0Var, BiConsumer biConsumer) {
+        return this.a.collect(j$.util.function.q0.a(supplier), j$.util.function.e0.a(f0Var), j$.util.function.a.a(biConsumer));
     }
 }

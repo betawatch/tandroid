@@ -314,9 +314,9 @@ public class VoIPPreNotificationService {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x027d  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x027a  */
     /* JADX WARN: Type inference failed for: r9v12 */
     /* JADX WARN: Type inference failed for: r9v14 */
     /*
@@ -540,10 +540,10 @@ public class VoIPPreNotificationService {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00ec A[Catch: all -> 0x002d, TryCatch #1 {all -> 0x002d, Exception -> 0x007c, blocks: (B:13:0x0027, B:15:0x002b, B:17:0x0030, B:19:0x0046, B:22:0x0052, B:24:0x0069, B:25:0x0080, B:27:0x0086, B:29:0x00a1, B:30:0x00d5, B:32:0x00ec, B:33:0x0101, B:36:0x010a, B:38:0x0110, B:40:0x011e, B:43:0x0135, B:44:0x0144, B:51:0x0118, B:55:0x008b, B:57:0x008f, B:60:0x009c, B:64:0x00c9, B:66:0x00d0, B:67:0x004c), top: B:12:0x0027 }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00ea A[Catch: all -> 0x002d, TryCatch #1 {all -> 0x002d, Exception -> 0x007b, blocks: (B:13:0x0027, B:15:0x002b, B:17:0x0030, B:19:0x0046, B:22:0x0052, B:24:0x0069, B:25:0x007f, B:27:0x0085, B:29:0x00a0, B:30:0x00d3, B:32:0x00ea, B:33:0x00fe, B:36:0x0107, B:38:0x010d, B:40:0x011b, B:43:0x0131, B:44:0x0140, B:51:0x0115, B:55:0x008a, B:57:0x008e, B:60:0x009b, B:64:0x00c7, B:66:0x00ce, B:67:0x004c), top: B:12:0x0027 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00fc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

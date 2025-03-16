@@ -3,7 +3,7 @@ package com.microsoft.appcenter.distribute.download;
 import android.net.Uri;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface ReleaseDownloader {
 
     public interface Listener {

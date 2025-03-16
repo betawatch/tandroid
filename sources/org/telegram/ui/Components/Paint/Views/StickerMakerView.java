@@ -74,7 +74,7 @@ import org.telegram.ui.Components.ThanosEffect;
 import org.telegram.ui.Stories.recorder.DownloadButton;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerMakerView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final TextView actionTextView;
     private final Path areaPath;

@@ -5,6 +5,7 @@ import com.google.android.datatransport.TransportFactory;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.components.Component;
 import com.google.firebase.components.ComponentContainer;
+import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.components.Dependency;
 import com.google.firebase.events.Subscriber;
@@ -16,9 +17,12 @@ import com.google.firebase.platforminfo.UserAgentPublisher;
 import java.util.Arrays;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
-    static final /* synthetic */ FirebaseMessaging lambda$getComponents$0$FirebaseMessagingRegistrar(ComponentContainer componentContainer) {
+    private static final String LIBRARY_NAME = "fire-fcm";
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(ComponentContainer componentContainer) {
         FirebaseApp firebaseApp = (FirebaseApp) componentContainer.get(FirebaseApp.class);
         ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(componentContainer.get(FirebaseInstanceIdInternal.class));
         return new FirebaseMessaging(firebaseApp, null, componentContainer.getProvider(UserAgentPublisher.class), componentContainer.getProvider(HeartBeatInfo.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), (TransportFactory) componentContainer.get(TransportFactory.class), (Subscriber) componentContainer.get(Subscriber.class));
@@ -26,6 +30,13 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
-        return Arrays.asList(Component.builder(FirebaseMessaging.class).add(Dependency.required(FirebaseApp.class)).add(Dependency.optional(FirebaseInstanceIdInternal.class)).add(Dependency.optionalProvider(UserAgentPublisher.class)).add(Dependency.optionalProvider(HeartBeatInfo.class)).add(Dependency.optional(TransportFactory.class)).add(Dependency.required(FirebaseInstallationsApi.class)).add(Dependency.required(Subscriber.class)).factory(FirebaseMessagingRegistrar$$Lambda$0.$instance).alwaysEager().build(), LibraryVersionComponent.create("fire-fcm", "22.0.0"));
+        return Arrays.asList(Component.builder(FirebaseMessaging.class).name(LIBRARY_NAME).add(Dependency.required(FirebaseApp.class)).add(Dependency.optional(FirebaseInstanceIdInternal.class)).add(Dependency.optionalProvider(UserAgentPublisher.class)).add(Dependency.optionalProvider(HeartBeatInfo.class)).add(Dependency.optional(TransportFactory.class)).add(Dependency.required(FirebaseInstallationsApi.class)).add(Dependency.required(Subscriber.class)).factory(new ComponentFactory() { // from class: com.google.firebase.messaging.FirebaseMessagingRegistrar$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                FirebaseMessaging lambda$getComponents$0;
+                lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(componentContainer);
+                return lambda$getComponents$0;
+            }
+        }).alwaysEager().build(), LibraryVersionComponent.create(LIBRARY_NAME, "23.4.0"));
     }
 }

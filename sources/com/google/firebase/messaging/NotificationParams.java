@@ -11,7 +11,7 @@ import java.util.MissingFormatArgumentException;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class NotificationParams {
     private final Bundle data;
 
@@ -73,14 +73,7 @@ public class NotificationParams {
         try {
             return Integer.valueOf(Integer.parseInt(string));
         } catch (NumberFormatException unused) {
-            String userFriendlyKey = userFriendlyKey(str);
-            StringBuilder sb = new StringBuilder(String.valueOf(userFriendlyKey).length() + 38 + String.valueOf(string).length());
-            sb.append("Couldn't parse value of ");
-            sb.append(userFriendlyKey);
-            sb.append("(");
-            sb.append(string);
-            sb.append(") into an int");
-            Log.w("NotificationParams", sb.toString());
+            Log.w("NotificationParams", "Couldn't parse value of " + userFriendlyKey(str) + "(" + string + ") into an int");
             return null;
         }
     }
@@ -93,20 +86,13 @@ public class NotificationParams {
         try {
             return new JSONArray(string);
         } catch (JSONException unused) {
-            String userFriendlyKey = userFriendlyKey(str);
-            StringBuilder sb = new StringBuilder(String.valueOf(userFriendlyKey).length() + 50 + String.valueOf(string).length());
-            sb.append("Malformed JSON for key ");
-            sb.append(userFriendlyKey);
-            sb.append(": ");
-            sb.append(string);
-            sb.append(", falling back to default");
-            Log.w("NotificationParams", sb.toString());
+            Log.w("NotificationParams", "Malformed JSON for key " + userFriendlyKey(str) + ": " + string + ", falling back to default");
             return null;
         }
     }
 
     int[] getLightSettings() {
-        String sb;
+        String str;
         JSONArray jSONArray = getJSONArray("gcm.n.light_settings");
         if (jSONArray == null) {
             return null;
@@ -121,25 +107,12 @@ public class NotificationParams {
             iArr[2] = jSONArray.optInt(2);
             return iArr;
         } catch (IllegalArgumentException e) {
-            String valueOf = String.valueOf(jSONArray);
-            String message = e.getMessage();
-            StringBuilder sb2 = new StringBuilder(valueOf.length() + 60 + String.valueOf(message).length());
-            sb2.append("LightSettings is invalid: ");
-            sb2.append(valueOf);
-            sb2.append(". ");
-            sb2.append(message);
-            sb2.append(". Skipping setting LightSettings");
-            sb = sb2.toString();
-            Log.w("NotificationParams", sb);
+            str = "LightSettings is invalid: " + jSONArray + ". " + e.getMessage() + ". Skipping setting LightSettings";
+            Log.w("NotificationParams", str);
             return null;
         } catch (JSONException unused) {
-            String valueOf2 = String.valueOf(jSONArray);
-            StringBuilder sb3 = new StringBuilder(valueOf2.length() + 58);
-            sb3.append("LightSettings is invalid: ");
-            sb3.append(valueOf2);
-            sb3.append(". Skipping setting LightSettings");
-            sb = sb3.toString();
-            Log.w("NotificationParams", sb);
+            str = "LightSettings is invalid: " + jSONArray + ". Skipping setting LightSettings";
+            Log.w("NotificationParams", str);
             return null;
         }
     }
@@ -156,7 +129,7 @@ public class NotificationParams {
     }
 
     public Object[] getLocalizationArgsForKey(String str) {
-        JSONArray jSONArray = getJSONArray(String.valueOf(str).concat("_loc_args"));
+        JSONArray jSONArray = getJSONArray(str + "_loc_args");
         if (jSONArray == null) {
             return null;
         }
@@ -169,7 +142,7 @@ public class NotificationParams {
     }
 
     public String getLocalizationResourceForKey(String str) {
-        return getString(String.valueOf(str).concat("_loc_key"));
+        return getString(str + "_loc_key");
     }
 
     public String getLocalizedString(Resources resources, String str, String str2) {
@@ -179,13 +152,7 @@ public class NotificationParams {
         }
         int identifier = resources.getIdentifier(localizationResourceForKey, "string", str);
         if (identifier == 0) {
-            String userFriendlyKey = userFriendlyKey(String.valueOf(str2).concat("_loc_key"));
-            StringBuilder sb = new StringBuilder(String.valueOf(userFriendlyKey).length() + 49 + String.valueOf(str2).length());
-            sb.append(userFriendlyKey);
-            sb.append(" resource not found: ");
-            sb.append(str2);
-            sb.append(" Default value will be used.");
-            Log.w("NotificationParams", sb.toString());
+            Log.w("NotificationParams", userFriendlyKey(str2 + "_loc_key") + " resource not found: " + str2 + " Default value will be used.");
             return null;
         }
         Object[] localizationArgsForKey = getLocalizationArgsForKey(str2);
@@ -195,15 +162,7 @@ public class NotificationParams {
         try {
             return resources.getString(identifier, localizationArgsForKey);
         } catch (MissingFormatArgumentException e) {
-            String userFriendlyKey2 = userFriendlyKey(str2);
-            String arrays = Arrays.toString(localizationArgsForKey);
-            StringBuilder sb2 = new StringBuilder(String.valueOf(userFriendlyKey2).length() + 58 + String.valueOf(arrays).length());
-            sb2.append("Missing format argument for ");
-            sb2.append(userFriendlyKey2);
-            sb2.append(": ");
-            sb2.append(arrays);
-            sb2.append(" Default value will be used.");
-            Log.w("NotificationParams", sb2.toString(), e);
+            Log.w("NotificationParams", "Missing format argument for " + userFriendlyKey(str2) + ": " + Arrays.toString(localizationArgsForKey) + " Default value will be used.", e);
             return null;
         }
     }
@@ -216,14 +175,7 @@ public class NotificationParams {
         try {
             return Long.valueOf(Long.parseLong(string));
         } catch (NumberFormatException unused) {
-            String userFriendlyKey = userFriendlyKey(str);
-            StringBuilder sb = new StringBuilder(String.valueOf(userFriendlyKey).length() + 38 + String.valueOf(string).length());
-            sb.append("Couldn't parse value of ");
-            sb.append(userFriendlyKey);
-            sb.append("(");
-            sb.append(string);
-            sb.append(") into a long");
-            Log.w("NotificationParams", sb.toString());
+            Log.w("NotificationParams", "Couldn't parse value of " + userFriendlyKey(str) + "(" + string + ") into a long");
             return null;
         }
     }
@@ -240,12 +192,7 @@ public class NotificationParams {
         if (integer.intValue() >= 0) {
             return integer;
         }
-        String valueOf = String.valueOf(integer);
-        StringBuilder sb = new StringBuilder(valueOf.length() + 67);
-        sb.append("notificationCount is invalid: ");
-        sb.append(valueOf);
-        sb.append(". Skipping setting notificationCount.");
-        Log.w("FirebaseMessaging", sb.toString());
+        Log.w("FirebaseMessaging", "notificationCount is invalid: " + integer + ". Skipping setting notificationCount.");
         return null;
     }
 
@@ -257,12 +204,7 @@ public class NotificationParams {
         if (integer.intValue() >= -2 && integer.intValue() <= 2) {
             return integer;
         }
-        String valueOf = String.valueOf(integer);
-        StringBuilder sb = new StringBuilder(valueOf.length() + 72);
-        sb.append("notificationPriority is invalid ");
-        sb.append(valueOf);
-        sb.append(". Skipping setting notificationPriority.");
-        Log.w("FirebaseMessaging", sb.toString());
+        Log.w("FirebaseMessaging", "notificationPriority is invalid " + integer + ". Skipping setting notificationPriority.");
         return null;
     }
 
@@ -296,12 +238,7 @@ public class NotificationParams {
             }
             return jArr;
         } catch (NumberFormatException | JSONException unused) {
-            String valueOf = String.valueOf(jSONArray);
-            StringBuilder sb = new StringBuilder(valueOf.length() + 74);
-            sb.append("User defined vibrateTimings is invalid: ");
-            sb.append(valueOf);
-            sb.append(". Skipping setting vibrateTimings.");
-            Log.w("NotificationParams", sb.toString());
+            Log.w("NotificationParams", "User defined vibrateTimings is invalid: " + jSONArray + ". Skipping setting vibrateTimings.");
             return null;
         }
     }
@@ -314,12 +251,7 @@ public class NotificationParams {
         if (integer.intValue() >= -1 && integer.intValue() <= 1) {
             return integer;
         }
-        String valueOf = String.valueOf(integer);
-        StringBuilder sb = new StringBuilder(valueOf.length() + 53);
-        sb.append("visibility is invalid: ");
-        sb.append(valueOf);
-        sb.append(". Skipping setting visibility.");
-        Log.w("NotificationParams", sb.toString());
+        Log.w("NotificationParams", "visibility is invalid: " + integer + ". Skipping setting visibility.");
         return null;
     }
 

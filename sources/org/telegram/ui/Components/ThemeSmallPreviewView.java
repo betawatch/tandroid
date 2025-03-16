@@ -44,7 +44,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatBackgroundDrawable;
 import org.telegram.ui.Components.ChatThemeBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ThemeSmallPreviewView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final float BUBBLE_HEIGHT;
     private final float BUBBLE_WIDTH;

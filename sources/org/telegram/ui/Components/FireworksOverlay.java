@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FireworksOverlay extends View {
     private static int[] colors;
     private static final int fallParticlesCount;

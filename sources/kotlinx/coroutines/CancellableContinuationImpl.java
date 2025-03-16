@@ -286,6 +286,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         }
     }
 
+    @Override // kotlinx.coroutines.CancellableContinuation
     public boolean cancel(Throwable th) {
         Object obj;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;

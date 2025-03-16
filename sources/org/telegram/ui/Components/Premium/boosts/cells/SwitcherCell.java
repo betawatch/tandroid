@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextCheckCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SwitcherCell extends TextCheckCell {
     public static int TYPE_ADDITION_PRIZE = 1;
     public static int TYPE_WINNERS;

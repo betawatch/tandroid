@@ -45,16 +45,16 @@ final class o2 extends c {
     @Override // j$.util.stream.e
     protected final Object a() {
         if (c()) {
-            x0 u0 = this.j.u0(R2.SIZED.e(this.j.c) ? this.j.n0(this.b) : -1L, this.k);
-            e2 y0 = this.j.y0(this.a.r0(), u0);
+            x0 t0 = this.j.t0(R2.SIZED.e(this.j.c) ? this.j.m0(this.b) : -1L, this.k);
+            e2 x0 = this.j.x0(this.a.q0(), t0);
             b bVar = this.a;
-            bVar.i0(this.b, bVar.D0(y0));
-            return u0.b();
+            bVar.h0(this.b, bVar.C0(x0));
+            return t0.b();
         }
         b bVar2 = this.a;
-        x0 u02 = bVar2.u0(-1L, this.k);
-        bVar2.C0(this.b, u02);
-        F0 b = u02.b();
+        x0 t02 = bVar2.t0(-1L, this.k);
+        bVar2.B0(this.b, t02);
+        F0 b = t02.b();
         this.n = b.count();
         this.o = true;
         this.b = null;
@@ -70,13 +70,13 @@ final class o2 extends c {
     protected final void g() {
         this.i = true;
         if (this.o) {
-            e(t0.L(this.j.p0()));
+            e(t0.L(this.j.o0()));
         }
     }
 
     @Override // j$.util.stream.c
     protected final Object i() {
-        return t0.L(this.j.p0());
+        return t0.L(this.j.o0());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00df, code lost:
@@ -97,7 +97,7 @@ final class o2 extends c {
             if (this.i) {
                 this.n = 0L;
             } else if (this.n != 0) {
-                I = ((o2) this.d).n == 0 ? (F0) ((o2) this.e).b() : t0.I(this.j.p0(), (F0) ((o2) this.d).b(), (F0) ((o2) this.e).b());
+                I = ((o2) this.d).n == 0 ? (F0) ((o2) this.e).b() : t0.I(this.j.o0(), (F0) ((o2) this.d).b(), (F0) ((o2) this.e).b());
                 F0 f0 = I;
                 if (c()) {
                     f0 = f0.t(this.l, this.m >= 0 ? Math.min(f0.count(), this.l + this.m) : this.n, this.k);
@@ -105,7 +105,7 @@ final class o2 extends c {
                 e(f0);
                 this.o = true;
             }
-            I = t0.L(this.j.p0());
+            I = t0.L(this.j.o0());
             F0 f02 = I;
             if (c()) {
             }

@@ -16,7 +16,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Paint.RenderView;
 import org.telegram.ui.Components.Paint.Swatch;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintWeightChooserView extends View {
     private AnimatedFloat animatedMax;
     private AnimatedFloat animatedMin;

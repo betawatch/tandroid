@@ -7,7 +7,7 @@ import androidx.core.view.GestureDetectorCompat;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SpoilersClickDetector {
     private GestureDetectorCompat gestureDetector;
     private int horizontalPadding;

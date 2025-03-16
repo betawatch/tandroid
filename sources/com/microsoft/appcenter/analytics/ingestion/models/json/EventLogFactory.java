@@ -9,7 +9,7 @@ import com.microsoft.appcenter.ingestion.models.one.PartAUtils;
 import java.util.Collection;
 import java.util.LinkedList;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class EventLogFactory extends AbstractLogFactory {
     @Override // com.microsoft.appcenter.ingestion.models.json.LogFactory
     public EventLog create() {

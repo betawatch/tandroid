@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedEmojiSpan extends ReplacementSpan {
     private static boolean lockPositionChanging;
     private boolean animateChanges;

@@ -32,7 +32,7 @@ import org.telegram.ui.ChatActivityContainer;
 import org.telegram.ui.Components.SharedMediaLayout;
 import org.telegram.ui.Stories.StoriesController;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HashtagActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ChatActivityContainer chatContainer;
     private FrameLayout contentView;

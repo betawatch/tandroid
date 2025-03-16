@@ -41,7 +41,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ReactionsEffectOverlay {
     public static ReactionsEffectOverlay currentOverlay;
     public static ReactionsEffectOverlay currentShortOverlay;
@@ -59,7 +59,6 @@ public class ReactionsEffectOverlay {
     private final AnimationView effectImageView;
     private final AnimationView emojiImageView;
     private final AnimationView emojiStaticImageView;
-    private final BaseFragment fragment;
     private final long groupId;
     private ReactionsContainerLayout.ReactionHolderView holderView;
     boolean isFinished;
@@ -738,28 +737,28 @@ public class ReactionsEffectOverlay {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x03dc  */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x04c1  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x04da  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x04e9  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x069b  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x06da  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x06ff A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0703  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0608  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x03f9  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x02cc  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02df  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x03da  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x04d8  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x04e7  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0699  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x06d8  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x06fd A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0701  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0606  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x04d4  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x03f7  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x02c2  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x02ca  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02dd  */
     /* JADX WARN: Type inference failed for: r14v13 */
     /* JADX WARN: Type inference failed for: r14v14, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r14v15 */
@@ -811,7 +810,6 @@ public class ReactionsEffectOverlay {
         ArrayList<TLRPC.MessagePeerReaction> arrayList;
         TLRPC.TL_messageReactions tL_messageReactions;
         this.holderView = null;
-        this.fragment = baseFragment;
         this.isStories = z;
         boolean z2 = view instanceof ChatMessageCell;
         if (z2) {

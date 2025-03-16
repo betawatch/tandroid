@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintTypeface {
     public static final List BUILT_IN_FONTS;
     public static final PaintTypeface COURIER_NEW_BOLD;
@@ -359,7 +359,7 @@ public class PaintTypeface {
         });
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a9, code lost:
     
         if (r2 == null) goto L40;
      */
@@ -367,7 +367,7 @@ public class PaintTypeface {
     
         r1 = r9.getFile();
      */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00b3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

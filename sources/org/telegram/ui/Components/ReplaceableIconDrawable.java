@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReplaceableIconDrawable extends Drawable implements Animator.AnimatorListener {
     private ValueAnimator animation;
     private ColorFilter colorFilter;

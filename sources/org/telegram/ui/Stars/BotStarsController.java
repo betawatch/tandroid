@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChannelMonetizationLayout;
 import org.telegram.ui.Stars.BotStarsController;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BotStarsController {
     private static volatile BotStarsController[] Instance = new BotStarsController[4];
     private static final Object[] lockObjects = new Object[4];

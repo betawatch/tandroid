@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ServiceStarter {
     private static ServiceStarter instance;
     private String firebaseMessagingServiceClassName = null;
@@ -25,7 +25,7 @@ public class ServiceStarter {
         String resolveServiceClassName = resolveServiceClassName(context, intent);
         if (resolveServiceClassName != null) {
             if (Log.isLoggable("FirebaseMessaging", 3)) {
-                Log.d("FirebaseMessaging", resolveServiceClassName.length() != 0 ? "Restricting intent to a specific service: ".concat(resolveServiceClassName) : new String("Restricting intent to a specific service: "));
+                Log.d("FirebaseMessaging", "Restricting intent to a specific service: " + resolveServiceClassName);
             }
             intent.setClassName(context.getPackageName(), resolveServiceClassName);
         }
@@ -42,11 +42,7 @@ public class ServiceStarter {
             Log.e("FirebaseMessaging", "Error while delivering the message: ServiceIntent not found.");
             return 404;
         } catch (IllegalStateException e) {
-            String valueOf = String.valueOf(e);
-            StringBuilder sb = new StringBuilder(valueOf.length() + 45);
-            sb.append("Failed to start service while in background: ");
-            sb.append(valueOf);
-            Log.e("FirebaseMessaging", sb.toString());
+            Log.e("FirebaseMessaging", "Failed to start service while in background: " + e);
             return 402;
         } catch (SecurityException e2) {
             Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e2);
@@ -82,23 +78,14 @@ public class ServiceStarter {
             if (resolveService != null && (serviceInfo = resolveService.serviceInfo) != null) {
                 if (context.getPackageName().equals(serviceInfo.packageName) && (str = serviceInfo.name) != null) {
                     if (str.startsWith(".")) {
-                        String valueOf = String.valueOf(context.getPackageName());
-                        String valueOf2 = String.valueOf(serviceInfo.name);
-                        str2 = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
+                        str2 = context.getPackageName() + serviceInfo.name;
                     } else {
                         str2 = serviceInfo.name;
                     }
                     this.firebaseMessagingServiceClassName = str2;
                     return this.firebaseMessagingServiceClassName;
                 }
-                String str4 = serviceInfo.packageName;
-                String str5 = serviceInfo.name;
-                StringBuilder sb = new StringBuilder(String.valueOf(str4).length() + 94 + String.valueOf(str5).length());
-                sb.append("Error resolving target intent service, skipping classname enforcement. Resolved service was: ");
-                sb.append(str4);
-                sb.append("/");
-                sb.append(str5);
-                Log.e("FirebaseMessaging", sb.toString());
+                Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
                 return null;
             }
             Log.e("FirebaseMessaging", "Failed to resolve target intent service, skipping classname enforcement");

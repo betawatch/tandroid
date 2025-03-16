@@ -25,7 +25,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Paint.Views.EditTextOutline;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintingOverlay extends FrameLayout {
     private Drawable backgroundDrawable;
     public boolean drawChildren;
@@ -214,8 +214,8 @@ public class PaintingOverlay extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x01e9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x01e8 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

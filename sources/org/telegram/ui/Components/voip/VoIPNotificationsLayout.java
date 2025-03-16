@@ -31,7 +31,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.StaticLayoutEx;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIPNotificationsLayout extends LinearLayout {
     VoIPBackgroundProvider backgroundProvider;
     boolean lockAnimation;

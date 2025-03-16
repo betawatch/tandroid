@@ -15,7 +15,7 @@ import org.telegram.ui.Components.Paint.PaintTypeface;
 import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintTypefaceListView extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private Path mask;
     private Consumer maskProvider;

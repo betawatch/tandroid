@@ -28,7 +28,7 @@ import javax.net.ssl.SSLSocketFactory;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StripeApiHandler {
     private static final SSLSocketFactory SSL_SOCKET_FACTORY = new StripeSSLSocketFactory();
 

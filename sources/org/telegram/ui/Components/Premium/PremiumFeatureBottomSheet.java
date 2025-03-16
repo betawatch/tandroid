@@ -51,7 +51,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ThemePreviewActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumFeatureBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     ActionBar actionBar;
     private final BaseFragment baseFragment;

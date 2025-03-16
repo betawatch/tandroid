@@ -23,7 +23,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.boosts.cells.BaseCell;
 import org.telegram.ui.Components.StatusBadgeComponent;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelectorUserCell extends BaseCell {
     private TL_stories.TL_myBoost boost;
     private TLRPC.Chat chat;

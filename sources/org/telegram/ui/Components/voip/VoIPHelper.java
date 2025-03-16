@@ -55,7 +55,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.GroupCallActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class VoIPHelper {
     public static long lastCallTime;
 

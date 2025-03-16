@@ -1,8 +1,8 @@
 package com.google.firebase.messaging.reporting;
 
-import com.google.android.gms.internal.firebase_messaging.zzx;
+import com.google.firebase.encoders.proto.ProtoEnum;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class MessagingClientEvent {
     private static final MessagingClientEvent DEFAULT_INSTANCE = new Builder().build();
     private final String analytics_label_;
@@ -106,7 +106,7 @@ public final class MessagingClientEvent {
         }
     }
 
-    public enum Event implements zzx {
+    public enum Event implements ProtoEnum {
         UNKNOWN_EVENT(0),
         MESSAGE_DELIVERED(1),
         MESSAGE_OPEN(2);
@@ -117,13 +117,13 @@ public final class MessagingClientEvent {
             this.number_ = i;
         }
 
-        @Override // com.google.android.gms.internal.firebase_messaging.zzx
+        @Override // com.google.firebase.encoders.proto.ProtoEnum
         public int getNumber() {
             return this.number_;
         }
     }
 
-    public enum MessageType implements zzx {
+    public enum MessageType implements ProtoEnum {
         UNKNOWN(0),
         DATA_MESSAGE(1),
         TOPIC(2),
@@ -135,13 +135,13 @@ public final class MessagingClientEvent {
             this.number_ = i;
         }
 
-        @Override // com.google.android.gms.internal.firebase_messaging.zzx
+        @Override // com.google.firebase.encoders.proto.ProtoEnum
         public int getNumber() {
             return this.number_;
         }
     }
 
-    public enum SDKPlatform implements zzx {
+    public enum SDKPlatform implements ProtoEnum {
         UNKNOWN_OS(0),
         ANDROID(1),
         IOS(2),
@@ -153,7 +153,7 @@ public final class MessagingClientEvent {
             this.number_ = i;
         }
 
-        @Override // com.google.android.gms.internal.firebase_messaging.zzx
+        @Override // com.google.firebase.encoders.proto.ProtoEnum
         public int getNumber() {
             return this.number_;
         }

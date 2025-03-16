@@ -28,7 +28,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     private float currentOffsetY;
     private MessageObject currentPrimaryObject;
@@ -445,37 +445,41 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:39:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0085  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void setSelectedMessages(List<MessageObject> list) {
-        boolean z;
         this.selectedMessages = list;
-        if (!this.parentFragment.isReport() && !this.parentFragment.isSecretChat() && ((this.parentFragment.getCurrentChatInfo() == null || !(this.parentFragment.getCurrentChatInfo().available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
-            Iterator<MessageObject> it = list.iterator();
+        boolean z = true;
+        if (this.parentFragment.getChatMode() != 1 && this.parentFragment.getChatMode() != 5 && this.parentFragment.getChatMode() != 6 && !this.parentFragment.isReport() && !this.parentFragment.isSecretChat() && ((this.parentFragment.getCurrentChatInfo() == null || !(this.parentFragment.getCurrentChatInfo().available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j = 0;
             boolean z2 = false;
-            while (true) {
-                z = true;
-                if (!it.hasNext()) {
-                    break;
+            for (MessageObject messageObject : list) {
+                if (isMessageTypeAllowed(messageObject)) {
+                    if (!z2) {
+                        j = messageObject.getGroupId();
+                        z2 = true;
+                    } else if (j == messageObject.getGroupId() && j != 0) {
+                    }
                 }
-                MessageObject next = it.next();
-                if (!isMessageTypeAllowed(next)) {
-                    break;
+            }
+            if (z == this.isVisible) {
+                this.isVisible = z;
+                this.hiddenByScroll = false;
+                animateVisible(z);
+                return;
+            } else {
+                if (z) {
+                    this.currentPrimaryObject = findPrimaryObject();
+                    return;
                 }
-                if (!z2) {
-                    j = next.getGroupId();
-                    z2 = true;
-                } else if (j != next.getGroupId() || j == 0) {
-                    break;
-                }
+                return;
             }
         }
         z = false;
-        if (z != this.isVisible) {
-            this.isVisible = z;
-            this.hiddenByScroll = false;
-            animateVisible(z);
-        } else if (z) {
-            this.currentPrimaryObject = findPrimaryObject();
+        if (z == this.isVisible) {
         }
     }
 }

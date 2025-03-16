@@ -2,6 +2,9 @@ package org.telegram.messenger;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.os.Debug;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -20,6 +23,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Locale;
+import java.util.Map;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
@@ -29,8 +34,8 @@ import org.telegram.ui.LaunchActivity;
 
 /* loaded from: classes.dex */
 public class FileLog {
-    private static volatile FileLog Instance = null;
     public static boolean databaseIsMalformed = false;
+    private static long dumpedHeap = 0;
     private static HashSet<String> excludeRequests = null;
     private static ExclusionStrategy exclusionStrategy = null;
     private static Gson gson = null;
@@ -39,6 +44,8 @@ public class FileLog {
     private static HashSet<String> privateFields = null;
     private static final String tag = "tmessages";
     private boolean initied;
+    public static final boolean LOG_ANRS = BuildVars.DEBUG_VERSION;
+    private static volatile FileLog Instance = null;
     private OutputStreamWriter streamWriter = null;
     private FastDateFormat dateFormat = null;
     private FastDateFormat fileDateFormat = null;
@@ -48,6 +55,48 @@ public class FileLog {
     private File tonlibFile = null;
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
+
+    /* loaded from: classes3.dex */
+    public class ANRDetector {
+        private final long TIMEOUT_MS = 5000;
+        private final Handler mainHandler = new Handler(Looper.getMainLooper());
+        private boolean isUIThreadResponsive = true;
+
+        public ANRDetector(final Runnable runnable) {
+            new Thread(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    FileLog.ANRDetector.this.lambda$new$1(runnable);
+                }
+            }).start();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$new$0() {
+            this.isUIThreadResponsive = true;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$new$1(Runnable runnable) {
+            while (true) {
+                this.isUIThreadResponsive = false;
+                this.mainHandler.post(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        FileLog.ANRDetector.this.lambda$new$0();
+                    }
+                });
+                try {
+                    Thread.sleep(5000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (!this.isUIThreadResponsive) {
+                    runnable.run();
+                }
+            }
+        }
+    }
 
     /* loaded from: classes3.dex */
     public static class IgnoreSentException extends Exception {
@@ -162,7 +211,7 @@ public class FileLog {
             ensureInitied();
             Log.d(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$d$6(str);
@@ -174,6 +223,38 @@ public class FileLog {
 
     public static void disableGson(boolean z) {
         gsonDisabled = z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void dumpANR() {
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
+            Thread key = entry.getKey();
+            StackTraceElement[] value = entry.getValue();
+            sb.append("Thread: ");
+            sb.append(key.getName());
+            sb.append("\n");
+            for (StackTraceElement stackTraceElement : value) {
+                sb.append("\tat ");
+                sb.append(stackTraceElement);
+                sb.append("\n");
+            }
+            sb.append("\n\n");
+        }
+        e("ANR thread dump\n" + sb.toString());
+        dumpMemory();
+    }
+
+    private void dumpMemory() {
+        if (System.currentTimeMillis() - dumpedHeap < 30000) {
+            return;
+        }
+        dumpedHeap = System.currentTimeMillis();
+        try {
+            Debug.dumpHprofData(new File(AndroidUtilities.getLogsDir(), getInstance().dateFormat.format(System.currentTimeMillis()) + "_heap.hprof").getAbsolutePath());
+        } catch (Exception e) {
+            e(e);
+        }
     }
 
     public static void dumpResponseAndRequest(final int i, TLObject tLObject, TLObject tLObject2, TLRPC.TL_error tL_error, final long j, final long j2, final int i2) {
@@ -200,7 +281,7 @@ public class FileLog {
                 }
                 final String str3 = str2;
                 final long currentTimeMillis = System.currentTimeMillis();
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis, str, str3);
@@ -216,7 +297,7 @@ public class FileLog {
             str2 = sb.toString();
             final String str32 = str2;
             final long currentTimeMillis2 = System.currentTimeMillis();
-            getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
+            getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis2, str, str32);
@@ -271,7 +352,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str, th);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda3
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$e$2(str, th);
@@ -307,7 +388,7 @@ public class FileLog {
             ensureInitied();
             th.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda4
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$e$4(th);
@@ -329,13 +410,16 @@ public class FileLog {
 
     public static void fatal(final Throwable th, boolean z) {
         if (BuildVars.LOGS_ENABLED) {
+            if (th instanceof OutOfMemoryError) {
+                getInstance().dumpMemory();
+            }
             if (z && BuildVars.DEBUG_VERSION && needSent(th)) {
                 AndroidUtilities.appCenterLog(th);
             }
             ensureInitied();
             th.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda5
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$fatal$5(th);
@@ -580,6 +664,14 @@ public class FileLog {
             this.tlStreamWriter.flush();
         } catch (Exception e2) {
             e2.printStackTrace();
+        }
+        if (LOG_ANRS) {
+            new ANRDetector(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    FileLog.this.dumpANR();
+                }
+            });
         }
         this.initied = true;
     }

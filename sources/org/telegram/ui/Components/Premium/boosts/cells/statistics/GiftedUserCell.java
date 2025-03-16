@@ -18,7 +18,7 @@ import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GiftedUserCell extends UserCell {
     private FrameLayout badgeLayout;
     private TextView badgeTextView;

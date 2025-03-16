@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.web.WebInstantView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextPaintImageReceiverSpan extends ReplacementSpan {
     private boolean alignTop;
     private int height;

@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.PhotoAlbumPickerActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WallpaperUpdater {
     private String currentPicturePath;
     private File currentWallpaperPath;

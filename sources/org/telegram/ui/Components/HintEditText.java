@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.util.TypedValue;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HintEditText extends EditTextBoldCursor {
     protected TextPaint hintPaint;
     private String hintText;

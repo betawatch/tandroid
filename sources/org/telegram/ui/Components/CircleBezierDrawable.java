@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import java.util.Random;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CircleBezierDrawable {
     private final float L;
     private final int N;

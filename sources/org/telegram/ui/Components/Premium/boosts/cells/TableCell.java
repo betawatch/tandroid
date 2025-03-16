@@ -35,7 +35,7 @@ import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TableCell extends FrameLayout {
     private final TextView dateNameTextView;
     private final TextView dateTextView;

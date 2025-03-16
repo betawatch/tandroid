@@ -5,7 +5,7 @@ import java.io.ObjectStreamClass;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class UnsafeAllocator {
     public static final UnsafeAllocator INSTANCE = create();
 

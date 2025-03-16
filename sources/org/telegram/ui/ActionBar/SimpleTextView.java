@@ -135,11 +135,11 @@ public class SimpleTextView extends View implements Drawable.Callback {
         setImportantForAccessibility(1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -155,7 +155,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
             return;
         }
         if (layout2.getLineCount() > 0) {
-            this.textWidth = (int) Math.max(Math.ceil(this.layout.getLineWidth(0)), Math.ceil(this.layout.getLineRight(0)));
+            this.textWidth = (int) Math.max(Math.ceil(this.layout.getLineWidth(0)), Math.ceil(this.layout.getLineRight(0) - this.layout.getLineLeft(0)));
             Layout layout3 = this.fullLayout;
             if (layout3 == null) {
                 if (this.maxLines <= 1 || this.layout.getLineCount() <= 0) {

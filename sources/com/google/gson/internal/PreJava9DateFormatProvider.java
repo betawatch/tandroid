@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class PreJava9DateFormatProvider {
     private static String getDatePartOfDateTimePattern(int i) {
         if (i == 0) {

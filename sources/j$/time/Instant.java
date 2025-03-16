@@ -1,5 +1,6 @@
 package j$.time;
 
+import j$.time.format.DateTimeFormatter;
 import j$.time.temporal.q;
 import j$.util.A;
 import java.io.Serializable;
@@ -60,6 +61,10 @@ public final class Instant implements j$.time.temporal.k, Comparable<Instant>, S
     @Override // j$.time.temporal.k
     public final q a(j$.time.temporal.l lVar) {
         return j$.time.temporal.j.c(this, lVar);
+    }
+
+    public OffsetDateTime atOffset(ZoneOffset zoneOffset) {
+        return OffsetDateTime.g(this, zoneOffset);
     }
 
     @Override // j$.time.temporal.k
@@ -174,6 +179,6 @@ public final class Instant implements j$.time.temporal.k, Comparable<Instant>, S
     }
 
     public final String toString() {
-        return j$.time.format.a.f.a(this);
+        return DateTimeFormatter.f.a(this);
     }
 }

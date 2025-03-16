@@ -9,24 +9,24 @@ final class y extends A {
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void e0(j$.util.function.m mVar) {
-        j$.util.D G0;
+    public final void d0(j$.util.function.m mVar) {
+        j$.util.D F0;
         if (isParallel()) {
-            super.e0(mVar);
+            super.d0(mVar);
         } else {
-            G0 = A.G0(A0());
-            G0.e(mVar);
+            F0 = A.F0(z0());
+            F0.e(mVar);
         }
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void j(j$.util.function.m mVar) {
-        j$.util.D G0;
+    public final void i(j$.util.function.m mVar) {
+        j$.util.D F0;
         if (isParallel()) {
-            super.j(mVar);
+            super.i(mVar);
         } else {
-            G0 = A.G0(A0());
-            G0.e(mVar);
+            F0 = A.F0(z0());
+            F0.e(mVar);
         }
     }
 
@@ -43,12 +43,12 @@ final class y extends A {
     }
 
     @Override // j$.util.stream.b
-    final boolean x0() {
+    final boolean w0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 y0(int i, e2 e2Var) {
+    final e2 x0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.Components.FilterGLThread;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoEditTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     private VideoPlayer currentVideoPlayer;
     private VideoEditTextureViewDelegate delegate;

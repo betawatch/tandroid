@@ -26,7 +26,7 @@ import org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
     private GiftInfoAdapter adapter;
     private final TLRPC.TL_payments_checkedGiftCode giftCode;

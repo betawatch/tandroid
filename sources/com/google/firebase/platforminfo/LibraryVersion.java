@@ -1,6 +1,6 @@
 package com.google.firebase.platforminfo;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class LibraryVersion {
     LibraryVersion() {
     }

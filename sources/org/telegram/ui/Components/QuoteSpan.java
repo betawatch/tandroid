@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class QuoteSpan implements LeadingMarginSpan {
     public static int COLLAPSE_LINES = 3;
     public boolean adaptLineHeight = true;

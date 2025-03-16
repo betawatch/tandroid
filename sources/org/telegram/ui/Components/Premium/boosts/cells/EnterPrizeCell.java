@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EnterPrizeCell extends LinearLayout {
     private AfterTextChangedListener afterTextChangedListener;
     private final EditTextCaption editText;

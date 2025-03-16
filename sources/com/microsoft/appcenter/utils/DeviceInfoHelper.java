@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DeviceInfoHelper {
     private static WrapperSdk sWrapperSdk;
 

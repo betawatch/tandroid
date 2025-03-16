@@ -4,7 +4,7 @@ import com.microsoft.appcenter.ingestion.models.LogWithProperties;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class LogWithNameAndProperties extends LogWithProperties {
     private String name;
 

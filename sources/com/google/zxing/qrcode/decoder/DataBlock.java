@@ -2,7 +2,7 @@ package com.google.zxing.qrcode.decoder;
 
 import com.google.zxing.qrcode.decoder.Version;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class DataBlock {
     private final byte[] codewords;
     private final int numDataCodewords;

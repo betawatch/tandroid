@@ -1,6 +1,6 @@
 package com.google.zxing.common;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class PerspectiveTransform {
     private final float a11;
     private final float a12;

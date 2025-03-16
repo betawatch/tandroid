@@ -20,7 +20,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.CounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CounterView extends View {
     public CounterDrawable counterDrawable;
     private final Theme.ResourcesProvider resourcesProvider;

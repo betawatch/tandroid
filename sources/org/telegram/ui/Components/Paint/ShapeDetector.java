@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.Components.Paint.Brush;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ShapeDetector {
     private static final double diagonal;
     private static final double halfDiagonal;

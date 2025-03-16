@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SlotsDrawable extends RLottieDrawable {
     private ReelValue center;
     private int[] frameCounts;

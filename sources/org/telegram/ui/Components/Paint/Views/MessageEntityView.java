@@ -48,7 +48,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.PreviewView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MessageEntityView extends EntityView {
     private final BlurringShader.BlurManager blurManager;
     private boolean clipVideoMessageForBitmap;
@@ -1503,12 +1503,12 @@ public abstract class MessageEntityView extends EntityView {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009b  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0073  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

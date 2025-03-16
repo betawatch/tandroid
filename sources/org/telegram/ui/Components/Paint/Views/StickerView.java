@@ -21,7 +21,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.Rect;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerView extends EntityView {
     private int anchor;
     private Size baseSize;

@@ -57,7 +57,7 @@ import org.telegram.ui.Components.voip.RTMPStreamPipOverlay;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.RendererCommon;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCenterDelegate {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda0
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter

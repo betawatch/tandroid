@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.heartbeatinfo.DefaultHeartBeatInfo;
+import com.google.firebase.heartbeatinfo.DefaultHeartBeatController;
 import com.google.firebase.platforminfo.DefaultUserAgentPublisher;
 import com.google.firebase.platforminfo.KotlinDetector;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
@@ -50,9 +50,9 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public List getComponents() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(DefaultUserAgentPublisher.component());
-        arrayList.add(DefaultHeartBeatInfo.component());
+        arrayList.add(DefaultHeartBeatController.component());
         arrayList.add(LibraryVersionComponent.create("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(LibraryVersionComponent.create("fire-core", "20.0.0"));
+        arrayList.add(LibraryVersionComponent.create("fire-core", "20.4.2"));
         arrayList.add(LibraryVersionComponent.create("device-name", safeValue(Build.PRODUCT)));
         arrayList.add(LibraryVersionComponent.create("device-model", safeValue(Build.DEVICE)));
         arrayList.add(LibraryVersionComponent.create("device-brand", safeValue(Build.BRAND)));

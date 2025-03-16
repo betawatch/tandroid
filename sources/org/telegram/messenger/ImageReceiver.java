@@ -581,8 +581,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         imageReceiver.drawDrawable(canvas2, drawable2, i4, bitmapShader2, i5, i6, i7, backgroundThreadDrawHolder2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00f4 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00f5 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00f2 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00f3 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -927,32 +927,32 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         return draw(canvas, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x023f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0230, code lost:
     
-        if (r37.useRoundForThumb == false) goto L122;
+        if (r37.useRoundForThumb == false) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0241, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x0232, code lost:
     
-        if (r6 != null) goto L122;
+        if (r6 != null) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x0243, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0234, code lost:
     
         updateDrawableRadius(r11);
      */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x014f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0164 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0175 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:18:0x0112, B:23:0x0135, B:27:0x013f, B:28:0x01a7, B:30:0x01b1, B:33:0x01c1, B:44:0x01e4, B:51:0x032d, B:53:0x033f, B:56:0x034a, B:139:0x02e4, B:140:0x0308, B:142:0x031f, B:148:0x0323, B:151:0x0358, B:153:0x035c, B:154:0x0362, B:155:0x0379, B:162:0x0155, B:165:0x0166, B:167:0x0175, B:168:0x0182, B:170:0x0186, B:173:0x018c, B:174:0x0191, B:177:0x0125, B:180:0x012b, B:182:0x0132, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0182 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:18:0x0112, B:23:0x0135, B:27:0x013f, B:28:0x01a7, B:30:0x01b1, B:33:0x01c1, B:44:0x01e4, B:51:0x032d, B:53:0x033f, B:56:0x034a, B:139:0x02e4, B:140:0x0308, B:142:0x031f, B:148:0x0323, B:151:0x0358, B:153:0x035c, B:154:0x0362, B:155:0x0379, B:162:0x0155, B:165:0x0166, B:167:0x0175, B:168:0x0182, B:170:0x0186, B:173:0x018c, B:174:0x0191, B:177:0x0125, B:180:0x012b, B:182:0x0132, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x013b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x01b1 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:18:0x0112, B:23:0x0135, B:27:0x013f, B:28:0x01a7, B:30:0x01b1, B:33:0x01c1, B:44:0x01e4, B:51:0x032d, B:53:0x033f, B:56:0x034a, B:139:0x02e4, B:140:0x0308, B:142:0x031f, B:148:0x0323, B:151:0x0358, B:153:0x035c, B:154:0x0362, B:155:0x0379, B:162:0x0155, B:165:0x0166, B:167:0x0175, B:168:0x0182, B:170:0x0186, B:173:0x018c, B:174:0x0191, B:177:0x0125, B:180:0x012b, B:182:0x0132, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x01c1 A[Catch: Exception -> 0x008c, TRY_LEAVE, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:18:0x0112, B:23:0x0135, B:27:0x013f, B:28:0x01a7, B:30:0x01b1, B:33:0x01c1, B:44:0x01e4, B:51:0x032d, B:53:0x033f, B:56:0x034a, B:139:0x02e4, B:140:0x0308, B:142:0x031f, B:148:0x0323, B:151:0x0358, B:153:0x035c, B:154:0x0362, B:155:0x0379, B:162:0x0155, B:165:0x0166, B:167:0x0175, B:168:0x0182, B:170:0x0186, B:173:0x018c, B:174:0x0191, B:177:0x0125, B:180:0x012b, B:182:0x0132, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x037f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0398  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x03a9 A[LOOP:0: B:77:0x03a1->B:79:0x03a9, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0269 A[Catch: Exception -> 0x0212, TryCatch #2 {Exception -> 0x0212, blocks: (B:41:0x01de, B:46:0x020c, B:47:0x0217, B:50:0x021d, B:98:0x0269, B:100:0x026d, B:103:0x0272, B:105:0x0281, B:107:0x0294, B:109:0x0298, B:110:0x0279, B:113:0x023d, B:116:0x0243, B:117:0x0246, B:123:0x0258, B:126:0x025e, B:127:0x029b, B:132:0x02a7, B:133:0x02c1, B:135:0x02c4, B:137:0x02d4), top: B:40:0x01de }] */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x033f  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0141 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0156 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0167 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:48:0x031e, B:50:0x0330, B:53:0x033b, B:136:0x02d5, B:137:0x02f9, B:139:0x0310, B:145:0x0314, B:148:0x0349, B:150:0x034d, B:151:0x0353, B:152:0x036a, B:159:0x0147, B:162:0x0158, B:164:0x0167, B:165:0x0174, B:167:0x0178, B:170:0x017e, B:171:0x0183, B:174:0x0117, B:177:0x011d, B:179:0x0124, B:181:0x0090, B:183:0x00c2, B:188:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0174 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:48:0x031e, B:50:0x0330, B:53:0x033b, B:136:0x02d5, B:137:0x02f9, B:139:0x0310, B:145:0x0314, B:148:0x0349, B:150:0x034d, B:151:0x0353, B:152:0x036a, B:159:0x0147, B:162:0x0158, B:164:0x0167, B:165:0x0174, B:167:0x0178, B:170:0x017e, B:171:0x0183, B:174:0x0117, B:177:0x011d, B:179:0x0124, B:181:0x0090, B:183:0x00c2, B:188:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x012d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01a3 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:48:0x031e, B:50:0x0330, B:53:0x033b, B:136:0x02d5, B:137:0x02f9, B:139:0x0310, B:145:0x0314, B:148:0x0349, B:150:0x034d, B:151:0x0353, B:152:0x036a, B:159:0x0147, B:162:0x0158, B:164:0x0167, B:165:0x0174, B:167:0x0178, B:170:0x017e, B:171:0x0183, B:174:0x0117, B:177:0x011d, B:179:0x0124, B:181:0x0090, B:183:0x00c2, B:188:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x01b3 A[Catch: Exception -> 0x008c, TRY_LEAVE, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:48:0x031e, B:50:0x0330, B:53:0x033b, B:136:0x02d5, B:137:0x02f9, B:139:0x0310, B:145:0x0314, B:148:0x0349, B:150:0x034d, B:151:0x0353, B:152:0x036a, B:159:0x0147, B:162:0x0158, B:164:0x0167, B:165:0x0174, B:167:0x0178, B:170:0x017e, B:171:0x0183, B:174:0x0117, B:177:0x011d, B:179:0x0124, B:181:0x0090, B:183:0x00c2, B:188:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0370 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0380  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0389  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x039a A[LOOP:0: B:74:0x0392->B:76:0x039a, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x025a A[Catch: Exception -> 0x0203, TryCatch #2 {Exception -> 0x0203, blocks: (B:38:0x01d0, B:43:0x01fd, B:44:0x0208, B:47:0x020e, B:95:0x025a, B:97:0x025e, B:100:0x0263, B:102:0x0272, B:104:0x0285, B:106:0x0289, B:107:0x026a, B:110:0x022e, B:113:0x0234, B:114:0x0237, B:120:0x0249, B:123:0x024f, B:124:0x028c, B:129:0x0298, B:130:0x02b2, B:132:0x02b5, B:134:0x02c5), top: B:37:0x01d0 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -991,8 +991,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         BackgroundThreadDrawHolder backgroundThreadDrawHolder2;
         boolean z8;
         float f4;
-        boolean z9;
         int[] iArr3;
+        boolean z9;
         float f5;
         Drawable drawable8;
         boolean z10;
@@ -1085,15 +1085,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 drawable4 = drawable16;
                 drawable5 = drawable17;
             }
-            int[] iArr6 = !this.useRoundRadius ? this.emptyRoundRadius : iArr;
+            iArr2 = !this.useRoundRadius ? this.emptyRoundRadius : iArr;
             if (animation != null) {
-                animation.setRoundRadius(iArr6);
-            }
-            if (lottieAnimation == null || z11) {
-                iArr2 = iArr6;
-            } else {
-                iArr2 = iArr6;
-                lottieAnimation.setCurrentParentView(this.parentView);
+                animation.setRoundRadius(iArr2);
             }
         } catch (Exception e) {
             e = e;
@@ -1104,10 +1098,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             z4 = this.forcePreview;
             if (z4 && drawable2 != null && !z3) {
                 i2 = this.imageOrientation;
-                i3 = this.imageInvert;
-                z5 = z3;
                 bitmapShader6 = bitmapShader;
+                i3 = this.imageInvert;
                 drawable6 = drawable2;
+                z5 = z3;
             } else if (z4 && drawable3 != null && (!z3 || drawable2 != null)) {
                 i2 = this.imageOrientation;
                 i3 = this.imageInvert;
@@ -1116,14 +1110,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 z5 = false;
             } else if (drawable5 == null && !z2) {
                 i2 = this.imageOrientation;
-                i3 = this.imageInvert;
                 z5 = z3;
+                i3 = this.imageInvert;
                 drawable6 = drawable5;
                 bitmapShader6 = bitmapShader3;
             } else if (drawable4 != null) {
                 i2 = this.thumbOrientation;
-                i3 = this.thumbInvert;
                 z5 = z3;
+                i3 = this.thumbInvert;
                 drawable6 = drawable4;
                 bitmapShader6 = bitmapShader4;
             } else if (drawable instanceof BitmapDrawable) {
@@ -1132,8 +1126,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                     bitmapShader5 = this.staticThumbShader;
                 }
                 i2 = this.thumbOrientation;
-                i3 = this.thumbInvert;
                 z5 = z3;
+                i3 = this.thumbInvert;
                 bitmapShader6 = bitmapShader5;
                 drawable6 = drawable;
             } else {
@@ -1149,10 +1143,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (this.crossfadeAlpha != 0) {
                     if (f2 == 1.0f || (!(drawable6 == drawable3 || drawable6 == drawable2) || drawable == null)) {
                         f4 = f;
+                        iArr3 = iArr2;
                         drawable7 = drawable6;
                         z9 = z5;
                         z7 = z11;
-                        iArr3 = iArr2;
                         f5 = 1.0f;
                         drawable8 = drawable5;
                     } else {
@@ -1254,11 +1248,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                             float f13 = this.imageX;
                             float f14 = this.imageY;
                             rectF.set(f13, f14, this.imageW + f13, this.imageH + f14);
-                            int[] iArr7 = iArr3;
-                            for (int i7 = 0; i7 < iArr7.length; i7++) {
+                            int[] iArr6 = iArr3;
+                            for (int i7 = 0; i7 < iArr6.length; i7++) {
                                 float[] fArr = radii;
                                 int i8 = i7 * 2;
-                                float f15 = iArr7[i7];
+                                float f15 = iArr6[i7];
                                 fArr[i8] = f15;
                                 fArr[i8 + 1] = f15;
                             }
@@ -2769,15 +2763,15 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0094, code lost:
     
         if (r8 != false) goto L47;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00a7, code lost:
     
         r4.recycle();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00a5, code lost:
     
         if (r4.getParents().isEmpty() != false) goto L47;
      */
@@ -3288,9 +3282,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0344  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0367  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x032f  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0343  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0366  */
     /* JADX WARN: Type inference failed for: r8v2 */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.graphics.BitmapShader, java.lang.String] */
     /* JADX WARN: Type inference failed for: r8v6 */

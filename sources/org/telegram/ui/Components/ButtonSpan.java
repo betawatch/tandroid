@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ButtonSpan extends ReplacementSpan {
     private final Paint backgroundPaint = new Paint(1);
     private ButtonBounce bounce;

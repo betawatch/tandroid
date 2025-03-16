@@ -10581,7 +10581,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
                                                             messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10649,7 +10649,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10716,7 +10716,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10836,7 +10836,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10883,7 +10883,7 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10940,7 +10940,7 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -10977,7 +10977,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11032,7 +11032,7 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11066,7 +11066,7 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11107,7 +11107,7 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11182,7 +11182,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11215,7 +11215,7 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11251,7 +11251,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11286,7 +11286,7 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11342,7 +11342,7 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11405,7 +11405,7 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11482,7 +11482,7 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
                         messageDrawableArr222222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
@@ -11574,7 +11574,7 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
             messageDrawableArr2222222[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);

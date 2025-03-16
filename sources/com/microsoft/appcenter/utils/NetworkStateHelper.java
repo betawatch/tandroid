@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class NetworkStateHelper implements Closeable {
     private static NetworkStateHelper sSharedInstance;
     private final ConnectivityManager mConnectivityManager;

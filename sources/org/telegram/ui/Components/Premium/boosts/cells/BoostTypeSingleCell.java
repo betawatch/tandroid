@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BoostTypeSingleCell extends BoostTypeCell {
     public BoostTypeSingleCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context, resourcesProvider);

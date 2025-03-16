@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RenderState {
     private int allocatedCount;
     public float alpha;

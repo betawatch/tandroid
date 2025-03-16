@@ -32,7 +32,7 @@ import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CacheChart;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CacheChart extends View {
     private static final int[] DEFAULT_COLORS;
     private static final int[] DEFAULT_PARTICLES;

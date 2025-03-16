@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AnalyticsValidator extends AbstractChannelListener {
     /* JADX WARN: Multi-variable type inference failed */
     private static TypedProperty copyProperty(TypedProperty typedProperty, String str) {

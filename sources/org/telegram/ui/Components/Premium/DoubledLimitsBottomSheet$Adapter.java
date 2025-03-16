@@ -20,7 +20,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DoubledLimitsBottomSheet$Adapter extends RecyclerListView.SelectionAdapter {
     ViewGroup containerView;
     boolean drawHeader;

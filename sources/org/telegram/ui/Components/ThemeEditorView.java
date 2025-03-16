@@ -66,7 +66,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.WallpaperUpdater;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ThemeEditorView {
     private static volatile ThemeEditorView Instance;
     private ArrayList currentThemeDesription;
@@ -282,10 +282,10 @@ public class ThemeEditorView {
             private final int paramValueSliderWidth;
             private Paint valueSliderPaint;
 
-            /* JADX WARN: Removed duplicated region for block: B:12:0x014d  */
-            /* JADX WARN: Removed duplicated region for block: B:15:0x0152  */
-            /* JADX WARN: Removed duplicated region for block: B:17:0x012e  */
-            /* JADX WARN: Removed duplicated region for block: B:9:0x012c  */
+            /* JADX WARN: Removed duplicated region for block: B:12:0x014c  */
+            /* JADX WARN: Removed duplicated region for block: B:15:0x0151  */
+            /* JADX WARN: Removed duplicated region for block: B:17:0x012d  */
+            /* JADX WARN: Removed duplicated region for block: B:9:0x012b  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -1796,8 +1796,8 @@ public class ThemeEditorView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0177  */
     /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

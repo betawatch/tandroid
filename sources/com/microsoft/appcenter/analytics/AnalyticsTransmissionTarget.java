@@ -9,7 +9,7 @@ import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AnalyticsTransmissionTarget {
     private Channel mChannel;
     Context mContext;
@@ -55,10 +55,6 @@ public class AnalyticsTransmissionTarget {
 
     public PropertyConfigurator getPropertyConfigurator() {
         return this.mPropertyConfigurator;
-    }
-
-    String getTransmissionTargetToken() {
-        return this.mTransmissionTargetToken;
     }
 
     void initInBackground(Context context, Channel channel) {

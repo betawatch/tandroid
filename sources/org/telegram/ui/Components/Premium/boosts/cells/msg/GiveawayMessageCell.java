@@ -45,7 +45,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.Premium.boosts.BoostDialogs;
 import org.telegram.ui.Components.StaticLayoutEx;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GiveawayMessageCell {
     private static final Map monthsToEmoticon;
     private int additionPrizeHeight;

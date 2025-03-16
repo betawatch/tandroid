@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.Paint.Brush;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ShapeInput {
     private Point center;
     private Runnable invalidate;

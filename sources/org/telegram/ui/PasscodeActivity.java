@@ -530,7 +530,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             if (value == 1) {
                 i3 = 60;
             } else if (value == 2) {
-                i3 = NotificationCenter.storiesListUpdated;
+                i3 = NotificationCenter.storiesUpdated;
             } else if (value == 3) {
                 i3 = 3600;
             } else if (value == 4) {

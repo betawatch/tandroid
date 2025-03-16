@@ -4,7 +4,7 @@ import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SLConfigDescriptor extends BaseDescriptor {
     int predefined;
 

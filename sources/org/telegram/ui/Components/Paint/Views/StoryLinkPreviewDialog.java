@@ -48,7 +48,7 @@ import org.telegram.ui.Components.Paint.Views.LinkPreview;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.PreviewView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryLinkPreviewDialog extends Dialog {
     private final FrameLayout actionBarContainer;
     private final ImageView backgroundView;

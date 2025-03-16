@@ -6,7 +6,7 @@ import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentificationJni;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final /* synthetic */ class zzb implements ComponentFactory {
     static final ComponentFactory zza = new zzb();
 

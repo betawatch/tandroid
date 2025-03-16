@@ -2,7 +2,7 @@ package com.google.mlkit.common;
 
 import com.google.android.gms.common.internal.Preconditions;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MlKitException extends Exception {
     private final int zza;
 

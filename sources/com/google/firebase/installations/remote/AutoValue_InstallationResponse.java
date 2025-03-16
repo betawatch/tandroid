@@ -2,7 +2,7 @@ package com.google.firebase.installations.remote;
 
 import com.google.firebase.installations.remote.InstallationResponse;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_InstallationResponse extends InstallationResponse {
     private final TokenResult authToken;
     private final String fid;

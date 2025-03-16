@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ApplicationLifecycleListener implements Application.ActivityLifecycleCallbacks {
     private Handler mHandler;
     private int mStartedCounter = 0;
@@ -24,6 +24,7 @@ public class ApplicationLifecycleListener implements Application.ActivityLifecyc
         }
     };
 
+    /* loaded from: classes.dex */
     public interface ApplicationLifecycleCallbacks {
         void onApplicationEnterBackground();
 

@@ -21,7 +21,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorBtnCell;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
     private final ButtonWithCounterView actionButton;
     private UniversalAdapter adapter;

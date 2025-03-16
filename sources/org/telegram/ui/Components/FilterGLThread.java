@@ -27,7 +27,7 @@ import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.Components.FilterShaders;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FilterGLThread extends DispatchQueue {
     private final BlurringShader.BlurManager blurManager;
     private boolean blurred;

@@ -9,7 +9,7 @@ import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
 import java.util.Objects;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class TypeToken<T> {
     private final int hashCode;
     private final Class rawType;

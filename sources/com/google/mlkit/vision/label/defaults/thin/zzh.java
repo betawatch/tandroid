@@ -29,7 +29,7 @@ import com.google.mlkit.vision.common.internal.ImageUtils;
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzh extends MLTask {
     private static final ImageUtils zzc = ImageUtils.getInstance();
     boolean zza = true;

@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SpeedLineParticles$Drawable {
     public final int count;
     private int lastColor;

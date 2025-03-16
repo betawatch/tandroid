@@ -2,7 +2,7 @@ package com.google.firebase.remoteconfig;
 
 import com.google.firebase.remoteconfig.internal.ConfigFetchHandler;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteConfigSettings {
     private final long fetchTimeoutInSeconds;
     private final long minimumFetchInterval;

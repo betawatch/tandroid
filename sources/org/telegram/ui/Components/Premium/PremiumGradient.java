@@ -23,7 +23,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumGradient {
     private static PremiumGradient instance;
     private final PremiumGradientTools goldGradient;

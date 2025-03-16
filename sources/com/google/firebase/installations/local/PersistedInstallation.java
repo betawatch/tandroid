@@ -10,9 +10,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class PersistedInstallation {
-    private final File dataFile;
+    private File dataFile;
     private final FirebaseApp firebaseApp;
 
     public enum RegistrationStatus {
@@ -24,15 +24,28 @@ public class PersistedInstallation {
     }
 
     public PersistedInstallation(FirebaseApp firebaseApp) {
-        this.dataFile = new File(firebaseApp.getApplicationContext().getFilesDir(), "PersistedInstallation." + firebaseApp.getPersistenceKey() + ".json");
         this.firebaseApp = firebaseApp;
+    }
+
+    private File getDataFile() {
+        if (this.dataFile == null) {
+            synchronized (this) {
+                try {
+                    if (this.dataFile == null) {
+                        this.dataFile = new File(this.firebaseApp.getApplicationContext().getFilesDir(), "PersistedInstallation." + this.firebaseApp.getPersistenceKey() + ".json");
+                    }
+                } finally {
+                }
+            }
+        }
+        return this.dataFile;
     }
 
     private JSONObject readJSONFromFile() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM];
         try {
-            FileInputStream fileInputStream = new FileInputStream(this.dataFile);
+            FileInputStream fileInputStream = new FileInputStream(getDataFile());
             while (true) {
                 try {
                     int read = fileInputStream.read(bArr, 0, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
@@ -73,7 +86,7 @@ public class PersistedInstallation {
             fileOutputStream.close();
         } catch (IOException | JSONException unused) {
         }
-        if (createTempFile.renameTo(this.dataFile)) {
+        if (createTempFile.renameTo(getDataFile())) {
             return persistedInstallationEntry;
         }
         throw new IOException("unable to rename the tmpfile to PersistedInstallation");

@@ -11,9 +11,8 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class Store {
-    final Context context;
     final SharedPreferences store;
 
     static class Token {
@@ -36,11 +35,7 @@ class Store {
                 jSONObject.put("timestamp", j);
                 return jSONObject.toString();
             } catch (JSONException e) {
-                String valueOf = String.valueOf(e);
-                StringBuilder sb = new StringBuilder(valueOf.length() + 24);
-                sb.append("Failed to encode token: ");
-                sb.append(valueOf);
-                Log.w("FirebaseMessaging", sb.toString());
+                Log.w("FirebaseMessaging", "Failed to encode token: " + e);
                 return null;
             }
         }
@@ -56,11 +51,7 @@ class Store {
                 JSONObject jSONObject = new JSONObject(str);
                 return new Token(jSONObject.getString("token"), jSONObject.getString("appVersion"), jSONObject.getLong("timestamp"));
             } catch (JSONException e) {
-                String valueOf = String.valueOf(e);
-                StringBuilder sb = new StringBuilder(valueOf.length() + 23);
-                sb.append("Failed to parse token: ");
-                sb.append(valueOf);
-                Log.w("FirebaseMessaging", sb.toString());
+                Log.w("FirebaseMessaging", "Failed to parse token: " + e);
                 return null;
             }
         }
@@ -71,13 +62,12 @@ class Store {
     }
 
     public Store(Context context) {
-        this.context = context;
         this.store = context.getSharedPreferences("com.google.android.gms.appid", 0);
-        checkForRestore("com.google.android.gms.appid-no-backup");
+        checkForRestore(context, "com.google.android.gms.appid-no-backup");
     }
 
-    private void checkForRestore(String str) {
-        File file = new File(ContextCompat.getNoBackupFilesDir(this.context), "com.google.android.gms.appid-no-backup");
+    private void checkForRestore(Context context, String str) {
+        File file = new File(ContextCompat.getNoBackupFilesDir(context), str);
         if (file.exists()) {
             return;
         }
@@ -89,19 +79,13 @@ class Store {
             deleteAll();
         } catch (IOException e) {
             if (Log.isLoggable("FirebaseMessaging", 3)) {
-                String valueOf = String.valueOf(e.getMessage());
-                Log.d("FirebaseMessaging", valueOf.length() != 0 ? "Error creating file in no backup dir: ".concat(valueOf) : new String("Error creating file in no backup dir: "));
+                Log.d("FirebaseMessaging", "Error creating file in no backup dir: " + e.getMessage());
             }
         }
     }
 
     private String createTokenKey(String str, String str2) {
-        StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 5 + String.valueOf(str2).length());
-        sb.append(str);
-        sb.append("|T|");
-        sb.append(str2);
-        sb.append("|*");
-        return sb.toString();
+        return str + "|T|" + str2 + "|*";
     }
 
     public synchronized void deleteAll() {

@@ -382,31 +382,33 @@ public abstract class NanoHTTPD {
                 try {
                     try {
                         try {
-                            bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
-                            z = false;
-                            this.splitbyte = 0;
-                            this.rlen = 0;
-                            this.inputStream.mark(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
-                        } catch (ResponseException e) {
-                            NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
+                            try {
+                                bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+                                z = false;
+                                this.splitbyte = 0;
+                                this.rlen = 0;
+                                this.inputStream.mark(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                            } catch (ResponseException e) {
+                                NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
+                                outputStream = this.outputStream;
+                                NanoHTTPD.safeClose(outputStream);
+                                NanoHTTPD.safeClose(response);
+                                this.tempFileManager.clear();
+                            }
+                        } catch (IOException e2) {
+                            NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e2.getMessage()).send(this.outputStream);
                             outputStream = this.outputStream;
                             NanoHTTPD.safeClose(outputStream);
                             NanoHTTPD.safeClose(response);
                             this.tempFileManager.clear();
                         }
-                    } catch (SocketException e2) {
-                        throw e2;
                     } catch (SocketTimeoutException e3) {
                         throw e3;
                     }
-                } catch (SSLException e4) {
-                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SSL PROTOCOL FAILURE: " + e4.getMessage()).send(this.outputStream);
-                    outputStream = this.outputStream;
-                    NanoHTTPD.safeClose(outputStream);
-                    NanoHTTPD.safeClose(response);
-                    this.tempFileManager.clear();
-                } catch (IOException e5) {
-                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e5.getMessage()).send(this.outputStream);
+                } catch (SocketException e4) {
+                    throw e4;
+                } catch (SSLException e5) {
+                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SSL PROTOCOL FAILURE: " + e5.getMessage()).send(this.outputStream);
                     outputStream = this.outputStream;
                     NanoHTTPD.safeClose(outputStream);
                     NanoHTTPD.safeClose(response);
@@ -605,11 +607,11 @@ public abstract class NanoHTTPD {
             NO_CONTENT(NotificationCenter.groupPackUpdated, "No Content"),
             PARTIAL_CONTENT(NotificationCenter.customStickerCreated, "Partial Content"),
             MULTI_STATUS(NotificationCenter.premiumFloodWaitReceived, "Multi-Status"),
-            REDIRECT(NotificationCenter.storiesDraftsUpdated, "Moved Permanently"),
-            FOUND(NotificationCenter.chatlistFolderUpdate, "Found"),
-            REDIRECT_SEE_OTHER(NotificationCenter.uploadStoryProgress, "See Other"),
-            NOT_MODIFIED(NotificationCenter.uploadStoryEnd, "Not Modified"),
-            TEMPORARY_REDIRECT(NotificationCenter.onReceivedChannelDifference, "Temporary Redirect"),
+            REDIRECT(NotificationCenter.storiesListUpdated, "Moved Permanently"),
+            FOUND(NotificationCenter.storiesDraftsUpdated, "Found"),
+            REDIRECT_SEE_OTHER(NotificationCenter.chatlistFolderUpdate, "See Other"),
+            NOT_MODIFIED(NotificationCenter.uploadStoryProgress, "Not Modified"),
+            TEMPORARY_REDIRECT(NotificationCenter.stealthModeChanged, "Temporary Redirect"),
             BAD_REQUEST(400, "Bad Request"),
             UNAUTHORIZED(401, "Unauthorized"),
             FORBIDDEN(403, "Forbidden"),

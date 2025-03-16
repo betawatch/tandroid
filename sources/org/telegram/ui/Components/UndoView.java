@@ -55,7 +55,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.Premium.boosts.BoostRepository;
 import org.telegram.ui.PaymentFormActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UndoView extends FrameLayout {
     public static int ACTION_RINGTONE_ADDED = 83;
     private float additionalTranslationY;
@@ -573,21 +573,21 @@ public class UndoView extends FrameLayout {
         showWithAction(j, i, (Object) null, (Object) null, runnable, runnable2);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:534:0x0e7d. Please report as an issue. */
+    /* JADX WARN: Failed to find 'out' block for switch in B:534:0x0e78. Please report as an issue. */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:325:0x0647  */
     /* JADX WARN: Removed duplicated region for block: B:332:0x065c  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x07a9  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x07dd  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x162f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x1656  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x0e09  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x1741  */
-    /* JADX WARN: Removed duplicated region for block: B:582:0x160f  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x07a8  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x07dc  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x1628  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x164f  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x0e04  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x173a  */
+    /* JADX WARN: Removed duplicated region for block: B:582:0x1608  */
     /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x169c  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0816  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x07ce  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x1695  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0815  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x07cd  */
     /* JADX WARN: Type inference failed for: r3v250, types: [java.lang.CharSequence] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

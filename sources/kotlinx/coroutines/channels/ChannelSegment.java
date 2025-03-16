@@ -1,0 +1,165 @@
+package kotlinx.coroutines.channels;
+
+import java.util.concurrent.atomic.AtomicReferenceArray;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.Waiter;
+import kotlinx.coroutines.internal.OnUndeliveredElementKt;
+import kotlinx.coroutines.internal.Segment;
+import kotlinx.coroutines.internal.Symbol;
+
+/* loaded from: classes3.dex */
+public final class ChannelSegment extends Segment {
+    private final BufferedChannel _channel;
+    private final AtomicReferenceArray data;
+
+    public ChannelSegment(long j, ChannelSegment channelSegment, BufferedChannel bufferedChannel, int i) {
+        super(j, channelSegment, i);
+        this._channel = bufferedChannel;
+        this.data = new AtomicReferenceArray(BufferedChannelKt.SEGMENT_SIZE * 2);
+    }
+
+    private final void setElementLazy(int i, Object obj) {
+        this.data.lazySet(i * 2, obj);
+    }
+
+    public final boolean casState$kotlinx_coroutines_core(int i, Object obj, Object obj2) {
+        return ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(this.data, (i * 2) + 1, obj, obj2);
+    }
+
+    public final void cleanElement$kotlinx_coroutines_core(int i) {
+        setElementLazy(i, null);
+    }
+
+    public final Object getAndSetState$kotlinx_coroutines_core(int i, Object obj) {
+        return this.data.getAndSet((i * 2) + 1, obj);
+    }
+
+    public final BufferedChannel getChannel() {
+        BufferedChannel bufferedChannel = this._channel;
+        Intrinsics.checkNotNull(bufferedChannel);
+        return bufferedChannel;
+    }
+
+    public final Object getElement$kotlinx_coroutines_core(int i) {
+        return this.data.get(i * 2);
+    }
+
+    @Override // kotlinx.coroutines.internal.Segment
+    public int getNumberOfSlots() {
+        return BufferedChannelKt.SEGMENT_SIZE;
+    }
+
+    public final Object getState$kotlinx_coroutines_core(int i) {
+        return this.data.get((i * 2) + 1);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0063, code lost:
+    
+        cleanElement$kotlinx_coroutines_core(r4);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0066, code lost:
+    
+        if (r0 == false) goto L65;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0068, code lost:
+    
+        r4 = getChannel().onUndeliveredElement;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x006e, code lost:
+    
+        if (r4 == null) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0070, code lost:
+    
+        kotlinx.coroutines.internal.OnUndeliveredElementKt.callUndeliveredElement(r4, r5, r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0073, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:?, code lost:
+    
+        return;
+     */
+    @Override // kotlinx.coroutines.internal.Segment
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onCancellation(int i, Throwable th, CoroutineContext coroutineContext) {
+        Function1 function1;
+        Symbol symbol;
+        Symbol symbol2;
+        Symbol symbol3;
+        Symbol symbol4;
+        Symbol symbol5;
+        int i2 = BufferedChannelKt.SEGMENT_SIZE;
+        boolean z = i >= i2;
+        if (z) {
+            i -= i2;
+        }
+        Object element$kotlinx_coroutines_core = getElement$kotlinx_coroutines_core(i);
+        while (true) {
+            Object state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core(i);
+            if (!(state$kotlinx_coroutines_core instanceof Waiter) && !(state$kotlinx_coroutines_core instanceof WaiterEB)) {
+                symbol = BufferedChannelKt.INTERRUPTED_SEND;
+                if (state$kotlinx_coroutines_core == symbol) {
+                    break;
+                }
+                symbol2 = BufferedChannelKt.INTERRUPTED_RCV;
+                if (state$kotlinx_coroutines_core == symbol2) {
+                    break;
+                }
+                symbol3 = BufferedChannelKt.RESUMING_BY_EB;
+                if (state$kotlinx_coroutines_core != symbol3) {
+                    symbol4 = BufferedChannelKt.RESUMING_BY_RCV;
+                    if (state$kotlinx_coroutines_core != symbol4) {
+                        symbol5 = BufferedChannelKt.DONE_RCV;
+                        if (state$kotlinx_coroutines_core == symbol5 || state$kotlinx_coroutines_core == BufferedChannelKt.BUFFERED || state$kotlinx_coroutines_core == BufferedChannelKt.getCHANNEL_CLOSED()) {
+                            return;
+                        }
+                        throw new IllegalStateException(("unexpected state: " + state$kotlinx_coroutines_core).toString());
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                if (casState$kotlinx_coroutines_core(i, state$kotlinx_coroutines_core, z ? BufferedChannelKt.INTERRUPTED_SEND : BufferedChannelKt.INTERRUPTED_RCV)) {
+                    cleanElement$kotlinx_coroutines_core(i);
+                    onCancelledRequest(i, !z);
+                    if (!z || (function1 = getChannel().onUndeliveredElement) == null) {
+                        return;
+                    }
+                    OnUndeliveredElementKt.callUndeliveredElement(function1, element$kotlinx_coroutines_core, coroutineContext);
+                    return;
+                }
+            }
+        }
+    }
+
+    public final void onCancelledRequest(int i, boolean z) {
+        if (z) {
+            getChannel().waitExpandBufferCompletion$kotlinx_coroutines_core((this.id * BufferedChannelKt.SEGMENT_SIZE) + i);
+        }
+        onSlotCleaned();
+    }
+
+    public final Object retrieveElement$kotlinx_coroutines_core(int i) {
+        Object element$kotlinx_coroutines_core = getElement$kotlinx_coroutines_core(i);
+        cleanElement$kotlinx_coroutines_core(i);
+        return element$kotlinx_coroutines_core;
+    }
+
+    public final void setState$kotlinx_coroutines_core(int i, Object obj) {
+        this.data.set((i * 2) + 1, obj);
+    }
+
+    public final void storeElement$kotlinx_coroutines_core(int i, Object obj) {
+        setElementLazy(i, obj);
+    }
+}

@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ScrollSlidingTabStrip;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ScrollSlidingTabStrip extends HorizontalScrollView {
     public static float EXPANDED_WIDTH = 64.0f;
     private boolean animateFromPosition;
@@ -979,7 +979,7 @@ public abstract class ScrollSlidingTabStrip extends HorizontalScrollView {
         this.imageReceiversPlayingNum = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01eb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

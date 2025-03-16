@@ -63,7 +63,7 @@ import org.telegram.ui.Components.PasscodeView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PasscodeView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] ids = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
     private final int BUTTON_SIZE;
@@ -1876,15 +1876,15 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
         onShow(z, z2, -1, -1, null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x009f, code lost:
     
         if ((r15.backgroundDrawable instanceof org.telegram.ui.Components.BackgroundGradientDrawable) != false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
     
         r5 = r15.backgroundFrameLayout;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x00c7, code lost:
     
         if (r5 != null) goto L41;
      */

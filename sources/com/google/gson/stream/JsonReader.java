@@ -10,7 +10,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Objects;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class JsonReader implements Closeable {
     private final Reader in;
     private int[] pathIndices;

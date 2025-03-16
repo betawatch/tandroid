@@ -5,7 +5,7 @@ import com.microsoft.appcenter.ingestion.models.json.ModelFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class StackFrameFactory implements ModelFactory {
     private static final StackFrameFactory sInstance = new StackFrameFactory();
 

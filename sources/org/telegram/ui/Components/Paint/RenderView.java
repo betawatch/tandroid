@@ -30,7 +30,7 @@ import org.telegram.ui.Components.Paint.Painting;
 import org.telegram.ui.Components.Paint.RenderView;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RenderView extends TextureView {
     private Bitmap bitmap;
     private Bitmap blurBitmap;

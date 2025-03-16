@@ -39,7 +39,7 @@ import org.telegram.ui.Components.ProfileGalleryView;
 import org.telegram.ui.PinchToZoomHelper;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ProfileGalleryView extends CircularViewPager implements NotificationCenter.NotificationCenterDelegate {
     private ViewPagerAdapter adapter;
     private final Callback callback;

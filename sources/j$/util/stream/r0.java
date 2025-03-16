@@ -16,7 +16,7 @@ final class r0 implements w3 {
     @Override // j$.util.stream.w3
     public final Object a(b bVar, Spliterator spliterator) {
         p0 p0Var = (p0) this.b.get();
-        bVar.C0(spliterator, p0Var);
+        bVar.B0(spliterator, p0Var);
         return Boolean.valueOf(p0Var.b);
     }
 

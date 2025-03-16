@@ -478,8 +478,8 @@ public class Camera2Session {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003c A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003c, B:19:0x004f, B:22:0x0048), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0048 A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003c, B:19:0x004f, B:22:0x0048), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003b A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x003b, B:19:0x004e, B:22:0x0047), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0047 A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x003b, B:19:0x004e, B:22:0x0047), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -710,8 +710,8 @@ public class Camera2Session {
         return getJpegOrientation();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003c A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003c, B:19:0x004f, B:22:0x0048), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0048 A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003c, B:19:0x004f, B:22:0x0048), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003b A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x003b, B:19:0x004e, B:22:0x0047), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0047 A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x003b, B:19:0x004e, B:22:0x0047), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -1,59 +1,98 @@
 package j$.time;
 
-/* loaded from: classes2.dex */
-abstract /* synthetic */ class j {
-    static final /* synthetic */ int[] a;
+import j$.time.temporal.q;
+import org.telegram.messenger.NotificationCenter;
 
-    static {
-        int[] iArr = new int[k.values().length];
-        a = iArr;
-        try {
-            iArr[k.FEBRUARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+/* loaded from: classes2.dex */
+public enum j implements j$.time.temporal.k {
+    JANUARY,
+    FEBRUARY,
+    MARCH,
+    APRIL,
+    MAY,
+    JUNE,
+    JULY,
+    AUGUST,
+    SEPTEMBER,
+    OCTOBER,
+    NOVEMBER,
+    DECEMBER;
+
+    private static final j[] a = values();
+
+    public static j h(int i) {
+        if (i >= 1 && i <= 12) {
+            return a[i - 1];
         }
-        try {
-            a[k.APRIL.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        throw new c("Invalid value for MonthOfYear: " + i);
+    }
+
+    @Override // j$.time.temporal.k
+    public final q a(j$.time.temporal.l lVar) {
+        return lVar == j$.time.temporal.a.MONTH_OF_YEAR ? lVar.a() : j$.time.temporal.j.c(this, lVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final long b(j$.time.temporal.l lVar) {
+        if (lVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+            return ordinal() + 1;
         }
-        try {
-            a[k.JUNE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        if (!(lVar instanceof j$.time.temporal.a)) {
+            return lVar.b(this);
         }
-        try {
-            a[k.SEPTEMBER.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
+        throw new j$.time.temporal.p("Unsupported field: " + lVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final Object c(j$.time.temporal.n nVar) {
+        return nVar == j$.time.temporal.j.d() ? j$.time.chrono.g.a : nVar == j$.time.temporal.j.h() ? j$.time.temporal.b.MONTHS : j$.time.temporal.j.b(this, nVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final int d(j$.time.temporal.a aVar) {
+        return aVar == j$.time.temporal.a.MONTH_OF_YEAR ? ordinal() + 1 : j$.time.temporal.j.a(this, aVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final boolean e(j$.time.temporal.l lVar) {
+        return lVar instanceof j$.time.temporal.a ? lVar == j$.time.temporal.a.MONTH_OF_YEAR : lVar != null && lVar.c(this);
+    }
+
+    public final int f(boolean z) {
+        switch (i.a[ordinal()]) {
+            case 1:
+                return 32;
+            case 2:
+                return (z ? 1 : 0) + 91;
+            case 3:
+                return (z ? 1 : 0) + NotificationCenter.recordStartError;
+            case 4:
+                return (z ? 1 : 0) + NotificationCenter.themeAccentListUpdated;
+            case 5:
+                return (z ? 1 : 0) + NotificationCenter.uploadStoryEnd;
+            case 6:
+                return 1;
+            case 7:
+                return (z ? 1 : 0) + 60;
+            case 8:
+                return (z ? 1 : 0) + 121;
+            case 9:
+                return (z ? 1 : 0) + NotificationCenter.didStartedMultiGiftsSelector;
+            case 10:
+                return (z ? 1 : 0) + NotificationCenter.starTransactionsLoaded;
+            case 11:
+                return (z ? 1 : 0) + NotificationCenter.emojiPreviewThemesChanged;
+            default:
+                return (z ? 1 : 0) + 335;
         }
-        try {
-            a[k.NOVEMBER.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[k.JANUARY.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[k.MARCH.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[k.MAY.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
-        try {
-            a[k.JULY.ordinal()] = 9;
-        } catch (NoSuchFieldError unused9) {
-        }
-        try {
-            a[k.AUGUST.ordinal()] = 10;
-        } catch (NoSuchFieldError unused10) {
-        }
-        try {
-            a[k.OCTOBER.ordinal()] = 11;
-        } catch (NoSuchFieldError unused11) {
-        }
-        try {
-            a[k.DECEMBER.ordinal()] = 12;
-        } catch (NoSuchFieldError unused12) {
-        }
+    }
+
+    public final int g(boolean z) {
+        int i = i.a[ordinal()];
+        return i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : z ? 29 : 28;
+    }
+
+    public final j i() {
+        return a[((((int) 1) + 12) + ordinal()) % 12];
     }
 }

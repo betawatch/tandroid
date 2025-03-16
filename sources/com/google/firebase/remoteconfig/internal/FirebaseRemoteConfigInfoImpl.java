@@ -3,7 +3,7 @@ package com.google.firebase.remoteconfig.internal;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteConfigInfoImpl implements FirebaseRemoteConfigInfo {
     private final FirebaseRemoteConfigSettings configSettings;
     private final int lastFetchStatus;

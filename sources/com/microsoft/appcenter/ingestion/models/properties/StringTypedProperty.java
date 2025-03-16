@@ -3,7 +3,7 @@ package com.microsoft.appcenter.ingestion.models.properties;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class StringTypedProperty extends TypedProperty {
     private String value;
 

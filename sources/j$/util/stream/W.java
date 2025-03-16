@@ -37,7 +37,7 @@ final class W extends Y1 {
                 IntStream intStream = (IntStream) ((IntFunction) ((v) this.c).n).apply(i);
                 if (intStream != null) {
                     try {
-                        intStream.sequential().K(new U(1, this));
+                        intStream.sequential().J(new U(1, this));
                     } catch (Throwable th) {
                         try {
                             intStream.close();

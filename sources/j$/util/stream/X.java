@@ -11,7 +11,7 @@ final class X extends g0 {
     }
 
     @Override // j$.util.stream.b
-    final e2 y0(int i, e2 e2Var) {
+    final e2 x0(int i, e2 e2Var) {
         switch (this.m) {
             case 0:
                 return new V(0, e2Var);

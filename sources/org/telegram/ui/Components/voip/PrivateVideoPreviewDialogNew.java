@@ -48,7 +48,7 @@ import org.telegram.ui.Components.MotionBackgroundDrawable;
 import org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew;
 import org.webrtc.RendererCommon;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implements VoIPService.StateListener {
     private ActionBar actionBar;
     private final MotionBackgroundDrawable bgBlueViolet;

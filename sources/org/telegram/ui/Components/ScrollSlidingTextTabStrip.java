@@ -22,7 +22,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView {
     private int activeTextColorKey;
     private int allTextWidth;

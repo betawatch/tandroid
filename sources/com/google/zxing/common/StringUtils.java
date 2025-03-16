@@ -4,7 +4,7 @@ import com.google.zxing.DecodeHintType;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StringUtils {
     private static final boolean ASSUME_SHIFT_JIS;
     private static final String PLATFORM_DEFAULT_ENCODING;

@@ -12,7 +12,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Slice {
     private final RectF bounds;
     private File file;

@@ -53,7 +53,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SearchTagsList extends BlurredFrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static AlertDialog currentDialog;
     private ValueAnimator actionBarTagsAnimator;

@@ -18,7 +18,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.voip.ImageWithWavesView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ImageWithWavesView extends FrameLayout {
     private final boolean allowAnimations;
     private AnimatorSet animatorSet;

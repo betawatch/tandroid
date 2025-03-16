@@ -36,7 +36,7 @@ import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Text;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LinkPreview extends View {
     private boolean animated;
     public int backgroundColor;

@@ -11,17 +11,46 @@ import android.util.Log;
 import com.google.android.gms.common.util.concurrent.NamedThreadFactory;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
+import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /* loaded from: classes.dex */
 public abstract class CloudMessagingReceiver extends BroadcastReceiver {
-    private final ExecutorService zza = com.google.android.gms.internal.cloudmessaging.zza.zza().zza(new NamedThreadFactory("firebase-iid-executor"), com.google.android.gms.internal.cloudmessaging.zzf.zza);
+    private static SoftReference zza;
 
-    private final int zza(Context context, Intent intent) {
+    private final int zzb(Context context, Intent intent) {
+        Task zzc;
+        if (intent.getExtras() == null) {
+            return 500;
+        }
+        CloudMessage cloudMessage = new CloudMessage(intent);
+        if (TextUtils.isEmpty(cloudMessage.getMessageId())) {
+            zzc = Tasks.forResult(null);
+        } else {
+            Bundle bundle = new Bundle();
+            bundle.putString("google.message_id", cloudMessage.getMessageId());
+            Integer zza2 = cloudMessage.zza();
+            if (zza2 != null) {
+                bundle.putInt("google.product_id", zza2.intValue());
+            }
+            bundle.putBoolean("supports_message_handled", true);
+            zzc = zzu.zzb(context).zzc(2, bundle);
+        }
+        int onMessageReceive = onMessageReceive(context, cloudMessage);
+        try {
+            Tasks.await(zzc, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e.toString()));
+        }
+        return onMessageReceive;
+    }
+
+    private final int zzc(Context context, Intent intent) {
         PendingIntent pendingIntent = (PendingIntent) intent.getParcelableExtra("pending_intent");
         if (pendingIntent != null) {
             try {
@@ -36,11 +65,8 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
         } else {
             extras = new Bundle();
         }
-        if ("com.google.firebase.messaging.NOTIFICATION_OPEN".equals(intent.getAction())) {
-            onNotificationOpen(context, extras);
-            return -1;
-        }
-        if ("com.google.firebase.messaging.NOTIFICATION_DISMISS".equals(intent.getAction())) {
+        String action = intent.getAction();
+        if (action == "com.google.firebase.messaging.NOTIFICATION_DISMISS" || (action != null && action.equals("com.google.firebase.messaging.NOTIFICATION_DISMISS"))) {
             onNotificationDismissed(context, extras);
             return -1;
         }
@@ -48,42 +74,27 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
         return 500;
     }
 
-    private final int zzb(Context context, Intent intent) {
-        Task zza;
-        if (intent.getExtras() == null) {
-            return 500;
-        }
-        String stringExtra = intent.getStringExtra("google.message_id");
-        if (TextUtils.isEmpty(stringExtra)) {
-            zza = Tasks.forResult(null);
-        } else {
-            Bundle bundle = new Bundle();
-            bundle.putString("google.message_id", stringExtra);
-            zza = zze.zza(context).zza(2, bundle);
-        }
-        int onMessageReceive = onMessageReceive(context, new CloudMessage(intent));
-        try {
-            Tasks.await(zza, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            String valueOf = String.valueOf(e);
-            StringBuilder sb = new StringBuilder(valueOf.length() + 20);
-            sb.append("Message ack failed: ");
-            sb.append(valueOf);
-            Log.w("CloudMessagingReceiver", sb.toString());
-        }
-        return onMessageReceive;
-    }
-
     protected Executor getBroadcastExecutor() {
-        return this.zza;
+        ExecutorService executorService;
+        synchronized (CloudMessagingReceiver.class) {
+            try {
+                SoftReference softReference = zza;
+                executorService = softReference != null ? (ExecutorService) softReference.get() : null;
+                if (executorService == null) {
+                    com.google.android.gms.internal.cloudmessaging.zze.zza();
+                    executorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new NamedThreadFactory("firebase-iid-executor")));
+                    zza = new SoftReference(executorService);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return executorService;
     }
 
     protected abstract int onMessageReceive(Context context, CloudMessage cloudMessage);
 
     protected abstract void onNotificationDismissed(Context context, Bundle bundle);
-
-    protected void onNotificationOpen(Context context, Bundle bundle) {
-    }
 
     @Override // android.content.BroadcastReceiver
     public final void onReceive(final Context context, final Intent intent) {
@@ -92,24 +103,10 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
         }
         final boolean isOrderedBroadcast = isOrderedBroadcast();
         final BroadcastReceiver.PendingResult goAsync = goAsync();
-        getBroadcastExecutor().execute(new Runnable(this, intent, context, isOrderedBroadcast, goAsync) { // from class: com.google.android.gms.cloudmessaging.zzd
-            private final CloudMessagingReceiver zza;
-            private final Intent zzb;
-            private final Context zzc;
-            private final boolean zzd;
-            private final BroadcastReceiver.PendingResult zze;
-
-            {
-                this.zza = this;
-                this.zzb = intent;
-                this.zzc = context;
-                this.zzd = isOrderedBroadcast;
-                this.zze = goAsync;
-            }
-
+        getBroadcastExecutor().execute(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzf
             @Override // java.lang.Runnable
             public final void run() {
-                this.zza.zza(this.zzb, this.zzc, this.zzd, this.zze);
+                CloudMessagingReceiver.this.zza(intent, context, isOrderedBroadcast, goAsync);
             }
         });
     }
@@ -118,9 +115,9 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
         try {
             Parcelable parcelableExtra = intent.getParcelableExtra("wrapped_intent");
             Intent intent2 = parcelableExtra instanceof Intent ? (Intent) parcelableExtra : null;
-            int zza = intent2 != null ? zza(context, intent2) : zzb(context, intent);
+            int zzc = intent2 != null ? zzc(context, intent2) : zzb(context, intent);
             if (z) {
-                pendingResult.setResultCode(zza);
+                pendingResult.setResultCode(zzc);
             }
             pendingResult.finish();
         } catch (Throwable th) {

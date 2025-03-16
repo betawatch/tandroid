@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MlKitInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {

@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Adapters.MessagesSearchAdapter;
 import org.telegram.ui.Stories.StoriesController;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class HashtagsSearchAdapter extends UniversalAdapter {
     private final boolean[] cashtag;
     private final int currentAccount;

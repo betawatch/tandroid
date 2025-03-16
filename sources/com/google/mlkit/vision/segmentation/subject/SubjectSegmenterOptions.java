@@ -5,7 +5,7 @@ import com.google.android.gms.internal.mlkit_vision_subject_segmentation.zzrx;
 import com.google.android.gms.internal.mlkit_vision_subject_segmentation.zzrz;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SubjectSegmenterOptions {
     private final boolean zza;
     private final boolean zzb;

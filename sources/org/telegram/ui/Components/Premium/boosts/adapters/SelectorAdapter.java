@@ -30,7 +30,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.StickerEmptyView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelectorAdapter extends AdapterWithDiffUtils {
     private HashMap chatsParticipantsCount = new HashMap();
     private final Context context;

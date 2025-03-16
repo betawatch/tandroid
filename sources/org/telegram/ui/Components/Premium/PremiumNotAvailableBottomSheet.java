@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumNotAvailableBottomSheet extends BottomSheet {
     public PremiumNotAvailableBottomSheet(BaseFragment baseFragment) {
         super(baseFragment.getParentActivity(), false);

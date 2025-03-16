@@ -1315,8 +1315,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:46:0x0184 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:54:? A[Catch: all -> 0x015f, SYNTHETIC, TRY_LEAVE, TryCatch #14 {all -> 0x015f, blocks: (B:53:0x018d, B:52:0x018a, B:94:0x0158, B:111:0x0167, B:47:0x0184), top: B:7:0x0015, inners: #0 }] */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0183 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:54:? A[Catch: all -> 0x015e, SYNTHETIC, TRY_LEAVE, TryCatch #14 {all -> 0x015e, blocks: (B:53:0x018c, B:52:0x0189, B:94:0x0157, B:111:0x0166, B:47:0x0183), top: B:7:0x0015, inners: #0 }] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -3118,167 +3118,6 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             FileLog.e(e);
             return false;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x01a4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x017c  */
-    /* JADX WARN: Type inference failed for: r7v2, types: [android.graphics.Bitmap] */
-    /* JADX WARN: Type inference failed for: r9v0 */
-    /* JADX WARN: Type inference failed for: r9v1, types: [java.io.FileOutputStream] */
-    /* JADX WARN: Type inference failed for: r9v2 */
-    /* JADX WARN: Type inference failed for: r9v3, types: [java.io.FileOutputStream] */
-    /* JADX WARN: Type inference failed for: r9v4, types: [java.io.FileOutputStream, java.io.OutputStream] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private ChromecastMediaVariations getCurrentChromecastMedia() {
-        ?? r9;
-        Exception e;
-        MessageObject messageObject = this.playingMessageObject;
-        File file = null;
-        if (messageObject == null) {
-            return null;
-        }
-        String musicTitle = messageObject.getMusicTitle();
-        String musicAuthor = this.playingMessageObject.getMusicAuthor();
-        TLRPC.Document document = this.playingMessageObject.getDocument();
-        if (this.playingMessageObject.isRoundVideo() || this.playingMessageObject.isVideo() || this.playingMessageObject.isMusic()) {
-            MessageObject messageObject2 = this.playingMessageObject;
-            File file2 = (!messageObject2.attachPathExists || messageObject2.messageOwner == null) ? null : new File(this.playingMessageObject.messageOwner.attachPath);
-            if (file2 == null || !file2.exists()) {
-                file2 = FileLoader.getInstance(this.playingMessageObject.currentAccount).getPathToMessage(this.playingMessageObject.messageOwner);
-            }
-            if (file2 != null && file2.exists()) {
-                String mimeType = this.playingMessageObject.getMimeType();
-                Uri parse = Uri.parse("file://" + file2.getAbsolutePath());
-                MediaMetadata mediaMetadata = new MediaMetadata();
-                AudioInfo audioInfo = this.audioInfo;
-                if (audioInfo != null) {
-                    if (!TextUtils.isEmpty(audioInfo.getTitle())) {
-                        mediaMetadata.putString("com.google.android.gms.cast.metadata.TITLE", this.audioInfo.getTitle());
-                    }
-                    if (!TextUtils.isEmpty(this.audioInfo.getArtist())) {
-                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ARTIST", this.audioInfo.getArtist());
-                    }
-                    if (!TextUtils.isEmpty(this.audioInfo.getAlbum())) {
-                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ALBUM_TITLE", this.audioInfo.getAlbum());
-                    }
-                    if (!TextUtils.isEmpty(this.audioInfo.getAlbumArtist())) {
-                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ALBUM_ARTIST", this.audioInfo.getAlbumArtist());
-                    }
-                    if (!TextUtils.isEmpty(this.audioInfo.getComposer())) {
-                        mediaMetadata.putString("com.google.android.gms.cast.metadata.COMPOSER", this.audioInfo.getComposer());
-                    }
-                    if (this.audioInfo.getDisc() != 0) {
-                        mediaMetadata.putInt("com.google.android.gms.cast.metadata.DISC_NUMBER", this.audioInfo.getDisc());
-                    }
-                    if (this.audioInfo.getTrack() != 0) {
-                        mediaMetadata.putInt("com.google.android.gms.cast.metadata.TRACK_NUMBER", this.audioInfo.getTrack());
-                    }
-                    if (this.audioInfo.getCover() != null) {
-                        File coverFile = this.audioInfo.getCoverFile();
-                        if (coverFile == null || !coverFile.exists()) {
-                            File makeCacheFile = StoryEntry.makeCacheFile(UserConfig.selectedAccount, "jpg");
-                            try {
-                                ?? cover = this.audioInfo.getCover();
-                                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
-                                r9 = new FileOutputStream(makeCacheFile);
-                                try {
-                                    cover.compress(compressFormat, 80, r9);
-                                    try {
-                                        r9.close();
-                                    } catch (Exception e2) {
-                                        e = e2;
-                                        FileLog.e(e);
-                                        file = makeCacheFile;
-                                        this.audioInfo.setCoverFile(file);
-                                        coverFile = file;
-                                        if (coverFile != null) {
-                                        }
-                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
-                                    }
-                                    file = makeCacheFile;
-                                } catch (Exception e3) {
-                                    e = e3;
-                                    try {
-                                        FileLog.e(e);
-                                        if (r9 != 0) {
-                                            try {
-                                                r9.close();
-                                            } catch (Exception e4) {
-                                                makeCacheFile = null;
-                                                e = e4;
-                                                FileLog.e(e);
-                                                file = makeCacheFile;
-                                                this.audioInfo.setCoverFile(file);
-                                                coverFile = file;
-                                                if (coverFile != null) {
-                                                    mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
-                                                }
-                                                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
-                                            }
-                                        }
-                                        this.audioInfo.setCoverFile(file);
-                                        coverFile = file;
-                                        if (coverFile != null) {
-                                        }
-                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
-                                    } catch (Throwable th) {
-                                        th = th;
-                                        file = r9;
-                                        r9 = file;
-                                        if (r9 != 0) {
-                                            try {
-                                                r9.close();
-                                            } catch (Exception e5) {
-                                                FileLog.e(e5);
-                                            }
-                                        }
-                                        throw th;
-                                    }
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    if (r9 != 0) {
-                                    }
-                                    throw th;
-                                }
-                            } catch (Exception e6) {
-                                e = e6;
-                                r9 = 0;
-                            } catch (Throwable th3) {
-                                th = th3;
-                                r9 = file;
-                                if (r9 != 0) {
-                                }
-                                throw th;
-                            }
-                            this.audioInfo.setCoverFile(file);
-                            coverFile = file;
-                        }
-                        if (coverFile != null && coverFile.exists()) {
-                            mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
-                        }
-                    }
-                }
-                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
-            }
-        }
-        VideoPlayer videoPlayer = this.videoPlayer;
-        if (videoPlayer != null) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(document != null ? document.id : this.playingMessageObject.getId());
-            sb.append("");
-            return videoPlayer.getCurrentChromecastMedia(sb.toString(), musicTitle, musicAuthor);
-        }
-        VideoPlayer videoPlayer2 = this.audioPlayer;
-        if (videoPlayer2 == null) {
-            return null;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(document != null ? document.id : this.playingMessageObject.getId());
-        sb2.append("");
-        return videoPlayer2.getCurrentChromecastMedia(sb2.toString(), musicTitle, musicAuthor);
     }
 
     public static String getFileName(Uri uri) {
@@ -7263,6 +7102,167 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return this.audioInfo;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x01a4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x017c  */
+    /* JADX WARN: Type inference failed for: r7v2, types: [android.graphics.Bitmap] */
+    /* JADX WARN: Type inference failed for: r9v0 */
+    /* JADX WARN: Type inference failed for: r9v1, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r9v2 */
+    /* JADX WARN: Type inference failed for: r9v3, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r9v4, types: [java.io.FileOutputStream, java.io.OutputStream] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ChromecastMediaVariations getCurrentChromecastMedia() {
+        ?? r9;
+        Exception e;
+        MessageObject messageObject = this.playingMessageObject;
+        File file = null;
+        if (messageObject == null) {
+            return null;
+        }
+        String musicTitle = messageObject.getMusicTitle();
+        String musicAuthor = this.playingMessageObject.getMusicAuthor();
+        TLRPC.Document document = this.playingMessageObject.getDocument();
+        if (this.playingMessageObject.isRoundVideo() || this.playingMessageObject.isVideo() || this.playingMessageObject.isMusic()) {
+            MessageObject messageObject2 = this.playingMessageObject;
+            File file2 = (!messageObject2.attachPathExists || messageObject2.messageOwner == null) ? null : new File(this.playingMessageObject.messageOwner.attachPath);
+            if (file2 == null || !file2.exists()) {
+                file2 = FileLoader.getInstance(this.playingMessageObject.currentAccount).getPathToMessage(this.playingMessageObject.messageOwner);
+            }
+            if (file2 != null && file2.exists()) {
+                String mimeType = this.playingMessageObject.getMimeType();
+                Uri parse = Uri.parse("file://" + file2.getAbsolutePath());
+                MediaMetadata mediaMetadata = new MediaMetadata();
+                AudioInfo audioInfo = this.audioInfo;
+                if (audioInfo != null) {
+                    if (!TextUtils.isEmpty(audioInfo.getTitle())) {
+                        mediaMetadata.putString("com.google.android.gms.cast.metadata.TITLE", this.audioInfo.getTitle());
+                    }
+                    if (!TextUtils.isEmpty(this.audioInfo.getArtist())) {
+                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ARTIST", this.audioInfo.getArtist());
+                    }
+                    if (!TextUtils.isEmpty(this.audioInfo.getAlbum())) {
+                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ALBUM_TITLE", this.audioInfo.getAlbum());
+                    }
+                    if (!TextUtils.isEmpty(this.audioInfo.getAlbumArtist())) {
+                        mediaMetadata.putString("com.google.android.gms.cast.metadata.ALBUM_ARTIST", this.audioInfo.getAlbumArtist());
+                    }
+                    if (!TextUtils.isEmpty(this.audioInfo.getComposer())) {
+                        mediaMetadata.putString("com.google.android.gms.cast.metadata.COMPOSER", this.audioInfo.getComposer());
+                    }
+                    if (this.audioInfo.getDisc() != 0) {
+                        mediaMetadata.putInt("com.google.android.gms.cast.metadata.DISC_NUMBER", this.audioInfo.getDisc());
+                    }
+                    if (this.audioInfo.getTrack() != 0) {
+                        mediaMetadata.putInt("com.google.android.gms.cast.metadata.TRACK_NUMBER", this.audioInfo.getTrack());
+                    }
+                    if (this.audioInfo.getCover() != null) {
+                        File coverFile = this.audioInfo.getCoverFile();
+                        if (coverFile == null || !coverFile.exists()) {
+                            File makeCacheFile = StoryEntry.makeCacheFile(UserConfig.selectedAccount, "jpg");
+                            try {
+                                ?? cover = this.audioInfo.getCover();
+                                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
+                                r9 = new FileOutputStream(makeCacheFile);
+                                try {
+                                    cover.compress(compressFormat, 80, r9);
+                                    try {
+                                        r9.close();
+                                    } catch (Exception e2) {
+                                        e = e2;
+                                        FileLog.e(e);
+                                        file = makeCacheFile;
+                                        this.audioInfo.setCoverFile(file);
+                                        coverFile = file;
+                                        if (coverFile != null) {
+                                        }
+                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                    }
+                                    file = makeCacheFile;
+                                } catch (Exception e3) {
+                                    e = e3;
+                                    try {
+                                        FileLog.e(e);
+                                        if (r9 != 0) {
+                                            try {
+                                                r9.close();
+                                            } catch (Exception e4) {
+                                                makeCacheFile = null;
+                                                e = e4;
+                                                FileLog.e(e);
+                                                file = makeCacheFile;
+                                                this.audioInfo.setCoverFile(file);
+                                                coverFile = file;
+                                                if (coverFile != null) {
+                                                    mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
+                                                }
+                                                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                            }
+                                        }
+                                        this.audioInfo.setCoverFile(file);
+                                        coverFile = file;
+                                        if (coverFile != null) {
+                                        }
+                                        return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+                                    } catch (Throwable th) {
+                                        th = th;
+                                        file = r9;
+                                        r9 = file;
+                                        if (r9 != 0) {
+                                            try {
+                                                r9.close();
+                                            } catch (Exception e5) {
+                                                FileLog.e(e5);
+                                            }
+                                        }
+                                        throw th;
+                                    }
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                    if (r9 != 0) {
+                                    }
+                                    throw th;
+                                }
+                            } catch (Exception e6) {
+                                e = e6;
+                                r9 = 0;
+                            } catch (Throwable th3) {
+                                th = th3;
+                                r9 = file;
+                                if (r9 != 0) {
+                                }
+                                throw th;
+                            }
+                            this.audioInfo.setCoverFile(file);
+                            coverFile = file;
+                        }
+                        if (coverFile != null && coverFile.exists()) {
+                            mediaMetadata.addImage(new WebImage(Uri.parse(ChromecastFileServer.getUrlToSource(ChromecastFileServer.getHost(), ChromecastController.getInstance().setCover(coverFile)))));
+                        }
+                    }
+                }
+                return ChromecastMediaVariations.of(ChromecastMedia.Builder.fromUri(parse, "/player_" + this.playingMessageObject.getId(), mimeType).setTitle(musicTitle).setSubtitle(musicAuthor).setMetadata(mediaMetadata).build());
+            }
+        }
+        VideoPlayer videoPlayer = this.videoPlayer;
+        if (videoPlayer != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(document != null ? document.id : this.playingMessageObject.getId());
+            sb.append("");
+            return videoPlayer.getCurrentChromecastMedia(sb.toString(), musicTitle, musicAuthor);
+        }
+        VideoPlayer videoPlayer2 = this.audioPlayer;
+        if (videoPlayer2 == null) {
+            return null;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(document != null ? document.id : this.playingMessageObject.getId());
+        sb2.append("");
+        return videoPlayer2.getCurrentChromecastMedia(sb2.toString(), musicTitle, musicAuthor);
+    }
+
     public VideoConvertMessage getCurrentForegroundConverMessage() {
         return this.currentForegroundConvertingVideo;
     }
@@ -7813,16 +7813,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:16|(3:20|21|(8:25|(1:27)|28|29|30|31|(1:33)|35))|39|40|29|30|31|(0)|35) */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00bf, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(9:16|(3:20|21|(8:25|(1:27)|28|29|30|31|(3:33|(1:35)|36)|38))|43|44|29|30|31|(0)|38) */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00c7, code lost:
     
         r8 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00cd, code lost:
     
         org.telegram.messenger.FileLog.e(r8);
      */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00b0 A[Catch: Exception -> 0x00bf, TRY_LEAVE, TryCatch #0 {Exception -> 0x00bf, blocks: (B:31:0x00a9, B:33:0x00b0), top: B:30:0x00a9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00b1 A[Catch: Exception -> 0x00c7, TryCatch #0 {Exception -> 0x00c7, blocks: (B:31:0x00aa, B:33:0x00b1, B:35:0x00bb, B:36:0x00c9), top: B:30:0x00aa }] */
     /* renamed from: pauseMessage, reason: merged with bridge method [inline-methods] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -7871,7 +7871,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         NotificationCenter.getInstance(this.playingMessageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, Integer.valueOf(this.playingMessageObject.getId()));
                         CastSync.check(1);
                         if (!this.ignorePlayerUpdate) {
-                            ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                            if (ChromecastController.getInstance().isCasting()) {
+                                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+                            }
                             CastSync.setPlaying(false);
                         }
                         return true;
@@ -7909,12 +7911,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return playMessage(messageObject, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:234:0x04d7  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x059e  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x05d6  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x04f0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x04ce  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x04b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x04d7  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x05d6  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x04f0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x04ce  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x04b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r10v4 */
     /* JADX WARN: Type inference failed for: r10v5, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r10v6 */
@@ -8438,15 +8440,18 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         try {
             CastSync.check(1);
+            if (this.ignorePlayerUpdate) {
+                return true;
+            }
+            if (ChromecastController.getInstance().isCasting()) {
+                ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
+            }
+            CastSync.setPlaying(true);
+            return true;
         } catch (Exception e6) {
             FileLog.e(e6);
-        }
-        if (this.ignorePlayerUpdate) {
             return true;
         }
-        ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(getCurrentChromecastMedia());
-        CastSync.setPlaying(true);
-        return true;
     }
 
     public void playMessageAtIndex(int i) {

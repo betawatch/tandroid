@@ -16,7 +16,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Paint.PersistColorPalette;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class PaintColorsListView extends RecyclerListView {
     private static Paint checkerboardPaint = new Paint(1);
     private static Paint checkerboardPaintWhite = new Paint(1);

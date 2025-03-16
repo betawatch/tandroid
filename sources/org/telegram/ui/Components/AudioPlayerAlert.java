@@ -73,6 +73,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.audioinfo.AudioInfo;
+import org.telegram.messenger.chromecast.ChromecastController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -99,7 +100,7 @@ import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     private static final float[] speeds = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
     private int TAG;
@@ -2178,7 +2179,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                     return lambda$onSubItemClick$11;
                 }
             });
-            this.parentActivity.lambda$runLinkRequest$95(dialogsActivity);
+            this.parentActivity.lambda$runLinkRequest$93(dialogsActivity);
         } else {
             if (i == 2) {
                 try {
@@ -2219,6 +2220,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             if (i != 4) {
                 if (i != 5) {
                     if (i == 6) {
+                        ChromecastController.getInstance().setCurrentMediaAndCastIfNeeded(MediaController.getInstance().getCurrentChromecastMedia());
                         this.castItemButton.performClick();
                         return;
                     }

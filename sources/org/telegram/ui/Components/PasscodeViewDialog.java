@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.DrawerLayoutContainer;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PasscodeViewDialog extends Dialog {
     public final Context context;
     public final PasscodeView passcodeView;

@@ -58,7 +58,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ReactionsLayoutInBubble {
     private static int animationUniq;
     private int animateFromTotalHeight;

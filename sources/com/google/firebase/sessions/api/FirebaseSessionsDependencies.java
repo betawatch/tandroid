@@ -1,0 +1,220 @@
+package com.google.firebase.sessions.api;
+
+import android.util.Log;
+import com.google.firebase.sessions.api.SessionSubscriber;
+import j$.util.DesugarCollections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.ResultKt;
+import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.sync.Mutex;
+import kotlinx.coroutines.sync.MutexKt;
+
+/* loaded from: classes3.dex */
+public final class FirebaseSessionsDependencies {
+    public static final FirebaseSessionsDependencies INSTANCE = new FirebaseSessionsDependencies();
+    private static final Map dependencies = DesugarCollections.synchronizedMap(new LinkedHashMap());
+
+    private static final class Dependency {
+        private final Mutex mutex;
+        private SessionSubscriber subscriber;
+
+        public Dependency(Mutex mutex, SessionSubscriber sessionSubscriber) {
+            Intrinsics.checkNotNullParameter(mutex, "mutex");
+            this.mutex = mutex;
+            this.subscriber = sessionSubscriber;
+        }
+
+        public /* synthetic */ Dependency(Mutex mutex, SessionSubscriber sessionSubscriber, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(mutex, (i & 2) != 0 ? null : sessionSubscriber);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (!(obj instanceof Dependency)) {
+                return false;
+            }
+            Dependency dependency = (Dependency) obj;
+            return Intrinsics.areEqual(this.mutex, dependency.mutex) && Intrinsics.areEqual(this.subscriber, dependency.subscriber);
+        }
+
+        public final Mutex getMutex() {
+            return this.mutex;
+        }
+
+        public final SessionSubscriber getSubscriber() {
+            return this.subscriber;
+        }
+
+        public int hashCode() {
+            int hashCode = this.mutex.hashCode() * 31;
+            SessionSubscriber sessionSubscriber = this.subscriber;
+            return hashCode + (sessionSubscriber == null ? 0 : sessionSubscriber.hashCode());
+        }
+
+        public final void setSubscriber(SessionSubscriber sessionSubscriber) {
+            this.subscriber = sessionSubscriber;
+        }
+
+        public String toString() {
+            return "Dependency(mutex=" + this.mutex + ", subscriber=" + this.subscriber + ')';
+        }
+    }
+
+    private FirebaseSessionsDependencies() {
+    }
+
+    private final Dependency getDependency(SessionSubscriber.Name name) {
+        Map dependencies2 = dependencies;
+        Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
+        Object obj = dependencies2.get(name);
+        if (obj != null) {
+            Intrinsics.checkNotNullExpressionValue(obj, "dependencies.getOrElse(s…load time.\"\n      )\n    }");
+            return (Dependency) obj;
+        }
+        throw new IllegalStateException("Cannot get dependency " + name + ". Dependencies should be added at class load time.");
+    }
+
+    public static final void register(SessionSubscriber subscriber) {
+        Intrinsics.checkNotNullParameter(subscriber, "subscriber");
+        SessionSubscriber.Name sessionSubscriberName = subscriber.getSessionSubscriberName();
+        Dependency dependency = INSTANCE.getDependency(sessionSubscriberName);
+        if (dependency.getSubscriber() != null) {
+            Log.d("SessionsDependencies", "Subscriber " + sessionSubscriberName + " already registered.");
+            return;
+        }
+        dependency.setSubscriber(subscriber);
+        Log.d("SessionsDependencies", "Subscriber " + sessionSubscriberName + " registered.");
+        Mutex.DefaultImpls.unlock$default(dependency.getMutex(), null, 1, null);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void addDependency(SessionSubscriber.Name subscriberName) {
+        StringBuilder sb;
+        String str;
+        Intrinsics.checkNotNullParameter(subscriberName, "subscriberName");
+        if (subscriberName == SessionSubscriber.Name.PERFORMANCE) {
+            throw new IllegalArgumentException("Incompatible versions of Firebase Perf and Firebase Sessions.\nA safe combination would be:\n  firebase-sessions:1.1.0\n  firebase-crashlytics:18.5.0\n  firebase-perf:20.5.0\nFor more information contact Firebase Support.");
+        }
+        Map dependencies2 = dependencies;
+        if (dependencies2.containsKey(subscriberName)) {
+            sb = new StringBuilder();
+            sb.append("Dependency ");
+            sb.append(subscriberName);
+            str = " already added.";
+        } else {
+            Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
+            dependencies2.put(subscriberName, new Dependency(MutexKt.Mutex(true), null, 2, 0 == true ? 1 : 0));
+            sb = new StringBuilder();
+            sb.append("Dependency to ");
+            sb.append(subscriberName);
+            str = " added.";
+        }
+        sb.append(str);
+        Log.d("SessionsDependencies", sb.toString());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b3 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x009f -> B:10:0x00a0). Please report as a decompilation issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object getRegisteredSubscribers$com_google_firebase_firebase_sessions(Continuation continuation) {
+        FirebaseSessionsDependencies$getRegisteredSubscribers$1 firebaseSessionsDependencies$getRegisteredSubscribers$1;
+        Object coroutine_suspended;
+        int i;
+        int mapCapacity;
+        Iterator it;
+        Map map;
+        if (continuation instanceof FirebaseSessionsDependencies$getRegisteredSubscribers$1) {
+            firebaseSessionsDependencies$getRegisteredSubscribers$1 = (FirebaseSessionsDependencies$getRegisteredSubscribers$1) continuation;
+            int i2 = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                firebaseSessionsDependencies$getRegisteredSubscribers$1.label = i2 - Integer.MIN_VALUE;
+                Object obj = firebaseSessionsDependencies$getRegisteredSubscribers$1.result;
+                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    Map dependencies2 = dependencies;
+                    Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
+                    mapCapacity = MapsKt__MapsJVMKt.mapCapacity(dependencies2.size());
+                    LinkedHashMap linkedHashMap = new LinkedHashMap(mapCapacity);
+                    it = dependencies2.entrySet().iterator();
+                    map = linkedHashMap;
+                    if (it.hasNext()) {
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    Object key = firebaseSessionsDependencies$getRegisteredSubscribers$1.L$5;
+                    map = (Map) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$4;
+                    Mutex mutex = (Mutex) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$3;
+                    SessionSubscriber.Name name = (SessionSubscriber.Name) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$2;
+                    it = (Iterator) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$1;
+                    Map map2 = (Map) firebaseSessionsDependencies$getRegisteredSubscribers$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                    try {
+                        SessionSubscriber subscriber$com_google_firebase_firebase_sessions = INSTANCE.getSubscriber$com_google_firebase_firebase_sessions(name);
+                        mutex.unlock(null);
+                        map.put(key, subscriber$com_google_firebase_firebase_sessions);
+                        map = map2;
+                        if (it.hasNext()) {
+                            Map.Entry entry = (Map.Entry) it.next();
+                            key = entry.getKey();
+                            name = (SessionSubscriber.Name) entry.getKey();
+                            mutex = ((Dependency) entry.getValue()).getMutex();
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$0 = map;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$1 = it;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$2 = name;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$3 = mutex;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$4 = map;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.L$5 = key;
+                            firebaseSessionsDependencies$getRegisteredSubscribers$1.label = 1;
+                            if (mutex.lock(null, firebaseSessionsDependencies$getRegisteredSubscribers$1) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            map2 = map;
+                            SessionSubscriber subscriber$com_google_firebase_firebase_sessions2 = INSTANCE.getSubscriber$com_google_firebase_firebase_sessions(name);
+                            mutex.unlock(null);
+                            map.put(key, subscriber$com_google_firebase_firebase_sessions2);
+                            map = map2;
+                            if (it.hasNext()) {
+                                return map;
+                            }
+                        }
+                    } catch (Throwable th) {
+                        mutex.unlock(null);
+                        throw th;
+                    }
+                }
+            }
+        }
+        firebaseSessionsDependencies$getRegisteredSubscribers$1 = new FirebaseSessionsDependencies$getRegisteredSubscribers$1(this, continuation);
+        Object obj2 = firebaseSessionsDependencies$getRegisteredSubscribers$1.result;
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
+        if (i != 0) {
+        }
+    }
+
+    public final SessionSubscriber getSubscriber$com_google_firebase_firebase_sessions(SessionSubscriber.Name subscriberName) {
+        Intrinsics.checkNotNullParameter(subscriberName, "subscriberName");
+        SessionSubscriber subscriber = getDependency(subscriberName).getSubscriber();
+        if (subscriber != null) {
+            return subscriber;
+        }
+        throw new IllegalStateException("Subscriber " + subscriberName + " has not been registered.");
+    }
+}

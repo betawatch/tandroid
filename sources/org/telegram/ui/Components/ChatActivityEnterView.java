@@ -185,7 +185,7 @@ import org.telegram.ui.bots.BotWebViewSheet;
 import org.telegram.ui.bots.ChatActivityBotWebViewButton;
 import org.telegram.ui.bots.WebViewRequestProps;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatActivityEnterView extends BlurredFrameLayout implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, StickersAlert.StickersAlertDelegate, SuggestEmojiView.AnchorViewDelegate {
     private final Property ATTACH_LAYOUT_ALPHA;
     private final Property ATTACH_LAYOUT_TRANSLATION_X;
@@ -3336,8 +3336,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             int i = R.raw.chat_audio_record_delete_2;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
             this.drawable = rLottieDrawable;
-            rLottieDrawable.setCurrentParentView(this);
-            this.drawable.setInvalidateOnProgressSet(true);
+            rLottieDrawable.setInvalidateOnProgressSet(true);
             updateColors();
         }
 
@@ -7600,7 +7599,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$95(new PremiumPreviewFragment(null));
+            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
         }
     }
 
@@ -10311,49 +10310,20 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         this.emojiButton.setAlpha(this.emojiButtonPaddingAlpha * this.emojiButtonAlpha);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x003e, code lost:
-    
-        if (r6.getVisibility() == 0) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00a5, code lost:
-    
-        r6 = 98.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0048, code lost:
-    
-        if (r6.getVisibility() == 0) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0052, code lost:
-    
-        if (r6.getTag() != null) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x008f, code lost:
-    
-        if (r6.getVisibility() == 0) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0099, code lost:
-    
-        if (r6.getVisibility() == 0) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00a3, code lost:
-    
-        if (r6.getTag() != null) goto L66;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void updateFieldRight(int i) {
-        int dp;
         ImageView imageView;
-        LinearLayout linearLayout;
+        ImageView imageView2;
         float f;
+        ImageView imageView3;
+        LinearLayout linearLayout;
         int max;
         FrameLayout frameLayout;
-        ImageView imageView2;
-        LinearLayout linearLayout2;
         this.lastAttachVisible = i;
         EditTextCaption editTextCaption = this.messageEditText;
         if (editTextCaption == null || this.editingMessageObject != null) {
@@ -10361,68 +10331,46 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) editTextCaption.getLayoutParams();
         int i2 = layoutParams.rightMargin;
-        if (i == 1) {
-            ImageView imageView3 = this.botButton;
-            if (imageView3 == null || imageView3.getVisibility() != 0 || (imageView2 = this.scheduledButton) == null || imageView2.getVisibility() != 0 || (linearLayout2 = this.attachLayout) == null || linearLayout2.getVisibility() != 0) {
-                ImageView imageView4 = this.botButton;
-                if (imageView4 != null) {
-                }
-                ImageView imageView5 = this.notifyButton;
-                if (imageView5 != null) {
-                }
-                ImageView imageView6 = this.scheduledButton;
-                if (imageView6 != null) {
+        if (i == 1 || i == 2) {
+            ImageView imageView4 = this.botButton;
+            if (imageView4 == null || imageView4.getVisibility() != 0 || (imageView3 = this.scheduledButton) == null || imageView3.getVisibility() != 0 || (linearLayout = this.attachLayout) == null || linearLayout.getVisibility() != 0) {
+                ImageView imageView5 = this.botButton;
+                if ((imageView5 != null && imageView5.getVisibility() == 0) || (((imageView = this.notifyButton) != null && imageView.getVisibility() == 0) || ((imageView2 = this.scheduledButton) != null && imageView2.getTag() != null))) {
+                    f = 98.0f;
                 }
                 f = 50.0f;
+            } else {
+                f = 146.0f;
             }
-            f = 146.0f;
-        } else {
-            if (i == 2) {
-                if (i2 != AndroidUtilities.dp(2.0f)) {
-                    ImageView imageView7 = this.botButton;
-                    if (imageView7 == null || imageView7.getVisibility() != 0 || (imageView = this.scheduledButton) == null || imageView.getVisibility() != 0 || (linearLayout = this.attachLayout) == null || linearLayout.getVisibility() != 0) {
-                        ImageView imageView8 = this.botButton;
-                        if (imageView8 != null) {
-                        }
-                        ImageView imageView9 = this.notifyButton;
-                        if (imageView9 != null) {
-                        }
-                        ImageView imageView10 = this.scheduledButton;
-                        if (imageView10 != null) {
-                        }
-                    }
-                    f = 146.0f;
-                }
-                max = Math.max(layoutParams.rightMargin, Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)));
-                layoutParams.rightMargin = max;
-                if (i2 != max) {
-                    this.messageEditText.setLayoutParams(layoutParams);
-                }
-                frameLayout = this.recordedAudioPanel;
-                if (frameLayout != null) {
-                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
-                    layoutParams2.rightMargin = this.editingMessageObject == null ? Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)) : 0;
-                    this.recordedAudioPanel.setLayoutParams(layoutParams2);
-                    return;
-                }
+            layoutParams.rightMargin = AndroidUtilities.dp(f);
+            max = Math.max(layoutParams.rightMargin, Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)));
+            layoutParams.rightMargin = max;
+            if (i2 != max) {
+                this.messageEditText.setLayoutParams(layoutParams);
+            }
+            frameLayout = this.recordedAudioPanel;
+            if (frameLayout != null) {
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
+                layoutParams2.rightMargin = this.editingMessageObject == null ? Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)) : 0;
+                this.recordedAudioPanel.setLayoutParams(layoutParams2);
                 return;
             }
-            ImageView imageView11 = this.scheduledButton;
-            if (imageView11 == null || imageView11.getTag() == null) {
-                dp = AndroidUtilities.dp(2.0f);
-                layoutParams.rightMargin = dp;
-                max = Math.max(layoutParams.rightMargin, Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)));
-                layoutParams.rightMargin = max;
-                if (i2 != max) {
-                }
-                frameLayout = this.recordedAudioPanel;
-                if (frameLayout != null) {
-                }
-            }
-            f = 50.0f;
+            return;
         }
-        dp = AndroidUtilities.dp(f);
-        layoutParams.rightMargin = dp;
+        ImageView imageView6 = this.scheduledButton;
+        if (imageView6 == null || imageView6.getTag() == null) {
+            f = 2.0f;
+            layoutParams.rightMargin = AndroidUtilities.dp(f);
+            max = Math.max(layoutParams.rightMargin, Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)));
+            layoutParams.rightMargin = max;
+            if (i2 != max) {
+            }
+            frameLayout = this.recordedAudioPanel;
+            if (frameLayout != null) {
+            }
+        }
+        f = 50.0f;
+        layoutParams.rightMargin = AndroidUtilities.dp(f);
         max = Math.max(layoutParams.rightMargin, Math.max(0, this.sendButton.width() - AndroidUtilities.dp(48.0f)));
         layoutParams.rightMargin = max;
         if (i2 != max) {
@@ -14220,23 +14168,23 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         editTextCaption.setHintText(string2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x009b, code lost:
     
         if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r7.parentFragment.getDialogId(), true) == false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00dd, code lost:
     
         r0 = r7.parentFragment;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x00e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00df, code lost:
     
         if (r0 == null) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00e5, code lost:
     
         if (r0.getChatMode() != 0) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00db, code lost:
     
         if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.parentFragment.getDialogId(), true) != false) goto L30;
      */
@@ -14317,8 +14265,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x03d3  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x03d6  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x03d2  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x03d5  */
     /* JADX WARN: Type inference failed for: r4v135 */
     /* JADX WARN: Type inference failed for: r4v77 */
     /* JADX WARN: Type inference failed for: r4v78, types: [android.view.ViewGroup] */
@@ -14541,19 +14489,19 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 try {
                     wakeLock.release();
                     layoutParams = null;
-                    try {
-                        this.wakeLock = null;
-                    } catch (Exception e2) {
-                        e = e2;
-                        FileLog.e(e);
-                        AndroidUtilities.unlockOrientation(this.parentActivity);
-                        this.wasSendTyping = false;
-                        if (this.recordInterfaceState != 0) {
-                        }
-                    }
+                } catch (Exception e2) {
+                    e = e2;
+                    layoutParams = null;
+                }
+                try {
+                    this.wakeLock = null;
                 } catch (Exception e3) {
                     e = e3;
-                    layoutParams = null;
+                    FileLog.e(e);
+                    AndroidUtilities.unlockOrientation(this.parentActivity);
+                    this.wasSendTyping = false;
+                    if (this.recordInterfaceState != 0) {
+                    }
                 }
             } else {
                 layoutParams = null;

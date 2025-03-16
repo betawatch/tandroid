@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EmojiColorPickerWindow extends PopupWindow {
     private static final ViewTreeObserver.OnScrollChangedListener NOP = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.Components.EmojiColorPickerWindow$$ExternalSyntheticLambda0
         @Override // android.view.ViewTreeObserver.OnScrollChangedListener

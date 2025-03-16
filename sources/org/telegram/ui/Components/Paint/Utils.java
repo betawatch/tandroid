@@ -5,7 +5,7 @@ import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.Log;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Utils {
     public static void HasGLError() {
         int glGetError = GLES20.glGetError();

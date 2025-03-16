@@ -13,7 +13,7 @@ import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.util.UUID;
 import org.json.JSONException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class DistributeUtils {
     static String computeReleaseHash(PackageInfo packageInfo) {
         return HashUtils.sha256(packageInfo.packageName + ":" + packageInfo.versionName + ":" + DeviceInfoHelper.getVersionCode(packageInfo));

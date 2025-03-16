@@ -5,200 +5,285 @@ import android.os.PowerManager;
 import android.os.WorkSource;
 import android.text.TextUtils;
 import android.util.Log;
+import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.providers.PooledExecutorsProvider;
-import com.google.android.gms.common.stats.StatsUtils;
-import com.google.android.gms.common.stats.WakeLockTracker;
+import com.google.android.gms.common.util.Clock;
+import com.google.android.gms.common.util.DefaultClock;
 import com.google.android.gms.common.util.Strings;
 import com.google.android.gms.common.util.WorkSourceUtil;
-import java.util.Collections;
+import com.google.android.gms.internal.stats.zzh;
+import com.google.android.gms.internal.stats.zzi;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: classes.dex */
 public class WakeLock {
-    private static ScheduledExecutorService zzn;
-    private static volatile zza zzo = new com.google.android.gms.stats.zza();
-    private final Object zza;
-    private final PowerManager.WakeLock zzb;
-    private WorkSource zzc;
-    private final int zzd;
-    private final String zze;
-    private final String zzf;
-    private final String zzg;
-    private final Context zzh;
-    private boolean zzi;
-    private final Map zzj;
+    private static final long zzb = TimeUnit.DAYS.toMillis(366);
+    private static volatile ScheduledExecutorService zzc = null;
+    private static final Object zzd = new Object();
+    private static volatile zzd zze = new zzb();
+    com.google.android.gms.internal.stats.zzb zza;
+    private final Object zzf;
+    private final PowerManager.WakeLock zzg;
+    private int zzh;
+    private Future zzi;
+    private long zzj;
     private final Set zzk;
-    private int zzl;
-    private AtomicInteger zzm;
-
-    public interface zza {
-    }
+    private boolean zzl;
+    private int zzm;
+    private Clock zzn;
+    private WorkSource zzo;
+    private final String zzp;
+    private final String zzq;
+    private final Context zzr;
+    private final Map zzs;
+    private AtomicInteger zzt;
+    private final ScheduledExecutorService zzu;
 
     public WakeLock(Context context, int i, String str) {
-        this(context, i, str, null, context == null ? null : context.getPackageName());
-    }
-
-    private WakeLock(Context context, int i, String str, String str2, String str3) {
-        this(context, i, str, null, str3, null);
-    }
-
-    private WakeLock(Context context, int i, String str, String str2, String str3, String str4) {
-        this.zza = this;
-        this.zzi = true;
-        this.zzj = new HashMap();
-        this.zzk = Collections.synchronizedSet(new HashSet());
-        this.zzm = new AtomicInteger(0);
+        String packageName = context.getPackageName();
+        this.zzf = new Object();
+        this.zzh = 0;
+        this.zzk = new HashSet();
+        this.zzl = true;
+        this.zzn = DefaultClock.getInstance();
+        this.zzs = new HashMap();
+        this.zzt = new AtomicInteger(0);
         Preconditions.checkNotNull(context, "WakeLock: context must not be null");
         Preconditions.checkNotEmpty(str, "WakeLock: wakeLockName must not be empty");
-        this.zzd = i;
-        this.zzf = null;
-        this.zzg = null;
-        Context applicationContext = context.getApplicationContext();
-        this.zzh = applicationContext;
+        this.zzr = context.getApplicationContext();
+        this.zzq = str;
+        this.zza = null;
         if ("com.google.android.gms".equals(context.getPackageName())) {
-            this.zze = str;
+            this.zzp = str;
         } else {
             String valueOf = String.valueOf(str);
-            this.zze = valueOf.length() != 0 ? "*gcore*:".concat(valueOf) : new String("*gcore*:");
+            this.zzp = valueOf.length() != 0 ? "*gcore*:".concat(valueOf) : new String("*gcore*:");
         }
-        PowerManager.WakeLock newWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(i, str);
-        this.zzb = newWakeLock;
+        PowerManager powerManager = (PowerManager) context.getSystemService("power");
+        if (powerManager == null) {
+            StringBuilder sb = new StringBuilder(29);
+            sb.append((CharSequence) "expected a non-null reference", 0, 29);
+            throw new zzi(sb.toString());
+        }
+        PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(i, str);
+        this.zzg = newWakeLock;
         if (WorkSourceUtil.hasWorkSourcePermission(context)) {
-            WorkSource fromPackage = WorkSourceUtil.fromPackage(context, Strings.isEmptyOrWhitespace(str3) ? context.getPackageName() : str3);
-            this.zzc = fromPackage;
-            if (fromPackage != null && WorkSourceUtil.hasWorkSourcePermission(applicationContext)) {
-                WorkSource workSource = this.zzc;
-                if (workSource != null) {
-                    workSource.add(fromPackage);
-                } else {
-                    this.zzc = fromPackage;
-                }
+            WorkSource fromPackage = WorkSourceUtil.fromPackage(context, Strings.isEmptyOrWhitespace(packageName) ? context.getPackageName() : packageName);
+            this.zzo = fromPackage;
+            if (fromPackage != null) {
+                zze(newWakeLock, fromPackage);
+            }
+        }
+        ScheduledExecutorService scheduledExecutorService = zzc;
+        if (scheduledExecutorService == null) {
+            synchronized (zzd) {
                 try {
-                    newWakeLock.setWorkSource(this.zzc);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
-                    Log.wtf("WakeLock", e.toString());
+                    scheduledExecutorService = zzc;
+                    if (scheduledExecutorService == null) {
+                        zzh.zza();
+                        scheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1));
+                        zzc = scheduledExecutorService;
+                    }
+                } finally {
                 }
             }
         }
-        if (zzn == null) {
-            zzn = PooledExecutorsProvider.getInstance().newSingleThreadScheduledExecutor();
-        }
+        this.zzu = scheduledExecutorService;
     }
 
-    private final String zza(String str) {
-        return (!this.zzi || TextUtils.isEmpty(str)) ? this.zzf : str;
-    }
-
-    private final List zza() {
-        return WorkSourceUtil.getNames(this.zzc);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zza(int i) {
-        if (this.zzb.isHeld()) {
+    public static /* synthetic */ void zza(WakeLock wakeLock) {
+        synchronized (wakeLock.zzf) {
             try {
-                this.zzb.release();
-            } catch (RuntimeException e) {
-                if (!e.getClass().equals(RuntimeException.class)) {
-                    throw e;
+                if (wakeLock.isHeld()) {
+                    Log.e("WakeLock", String.valueOf(wakeLock.zzp).concat(" ** IS FORCE-RELEASED ON TIMEOUT **"));
+                    wakeLock.zzc();
+                    if (wakeLock.isHeld()) {
+                        wakeLock.zzh = 1;
+                        wakeLock.zzd(0);
+                    }
                 }
-                Log.e("WakeLock", String.valueOf(this.zze).concat(" was already released!"), e);
+            } catch (Throwable th) {
+                throw th;
             }
-            this.zzb.isHeld();
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0061, code lost:
+    private final String zzb(String str) {
+        if (this.zzl) {
+            TextUtils.isEmpty(null);
+        }
+        return null;
+    }
+
+    private final void zzc() {
+        if (this.zzk.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList(this.zzk);
+        this.zzk.clear();
+        if (arrayList.size() <= 0) {
+            return;
+        }
+        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
+        throw null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0087, code lost:
     
-        if (r16.zzl == 0) goto L24;
+        if (r5.zza != null) goto L30;
      */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0036 A[Catch: all -> 0x0020, TryCatch #0 {all -> 0x0020, blocks: (B:4:0x0013, B:6:0x001b, B:9:0x0032, B:11:0x0036, B:13:0x0040, B:14:0x0063, B:15:0x0083, B:23:0x004e, B:24:0x005b, B:26:0x005f, B:28:0x0023, B:30:0x002b), top: B:3:0x0013 }] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005f A[Catch: all -> 0x0020, TryCatch #0 {all -> 0x0020, blocks: (B:4:0x0013, B:6:0x001b, B:9:0x0032, B:11:0x0036, B:13:0x0040, B:14:0x0063, B:15:0x0083, B:23:0x004e, B:24:0x005b, B:26:0x005f, B:28:0x0023, B:30:0x002b), top: B:3:0x0013 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void acquire(long j) {
-        this.zzm.incrementAndGet();
-        String zza2 = zza((String) null);
-        synchronized (this.zza) {
+    private final void zzd(int i) {
+        synchronized (this.zzf) {
             try {
-                if (this.zzj.isEmpty()) {
-                    if (this.zzl > 0) {
+                if (isHeld()) {
+                    if (this.zzl) {
+                        int i2 = this.zzh - 1;
+                        this.zzh = i2;
+                        if (i2 > 0) {
+                            return;
+                        }
+                    } else {
+                        this.zzh = 0;
                     }
-                    if (this.zzi) {
-                        Integer[] numArr = (Integer[]) this.zzj.get(zza2);
-                        if (numArr == null) {
-                            this.zzj.put(zza2, new Integer[]{1});
-                            WakeLockTracker.getInstance().registerEvent(this.zzh, StatsUtils.getEventKey(this.zzb, zza2), 7, this.zze, zza2, null, this.zzd, zza(), j);
-                            this.zzl++;
-                        } else {
-                            numArr[0] = Integer.valueOf(numArr[0].intValue() + 1);
+                    zzc();
+                    Iterator it = this.zzs.values().iterator();
+                    while (it.hasNext()) {
+                        ((zzc) it.next()).zza = 0;
+                    }
+                    this.zzs.clear();
+                    Future future = this.zzi;
+                    if (future != null) {
+                        future.cancel(false);
+                        this.zzi = null;
+                        this.zzj = 0L;
+                    }
+                    this.zzm = 0;
+                    if (this.zzg.isHeld()) {
+                        try {
+                            try {
+                                this.zzg.release();
+                            } catch (RuntimeException e) {
+                                if (!e.getClass().equals(RuntimeException.class)) {
+                                    throw e;
+                                }
+                                Log.e("WakeLock", String.valueOf(this.zzp).concat(" failed to release!"), e);
+                            }
+                        } finally {
+                            if (this.zza != null) {
+                                this.zza = null;
+                            }
+                        }
+                    } else {
+                        Log.e("WakeLock", String.valueOf(this.zzp).concat(" should be held!"));
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    private static void zze(PowerManager.WakeLock wakeLock, WorkSource workSource) {
+        try {
+            wakeLock.setWorkSource(workSource);
+        } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+            Log.wtf("WakeLock", e.toString());
+        }
+    }
+
+    public void acquire(long j) {
+        this.zzt.incrementAndGet();
+        long max = Math.max(Math.min(Long.MAX_VALUE, zzb), 1L);
+        if (j > 0) {
+            max = Math.min(j, max);
+        }
+        synchronized (this.zzf) {
+            try {
+                if (!isHeld()) {
+                    this.zza = com.google.android.gms.internal.stats.zzb.zza(false, null);
+                    this.zzg.acquire();
+                    this.zzn.elapsedRealtime();
+                }
+                this.zzh++;
+                this.zzm++;
+                zzb(null);
+                zzc zzcVar = (zzc) this.zzs.get(null);
+                if (zzcVar == null) {
+                    zzcVar = new zzc(null);
+                    this.zzs.put(null, zzcVar);
+                }
+                zzcVar.zza++;
+                long elapsedRealtime = this.zzn.elapsedRealtime();
+                long j2 = Long.MAX_VALUE - elapsedRealtime > max ? elapsedRealtime + max : Long.MAX_VALUE;
+                if (j2 > this.zzj) {
+                    this.zzj = j2;
+                    Future future = this.zzi;
+                    if (future != null) {
+                        future.cancel(false);
+                    }
+                    this.zzi = this.zzu.schedule(new Runnable() { // from class: com.google.android.gms.stats.zza
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            WakeLock.zza(WakeLock.this);
+                        }
+                    }, max, TimeUnit.MILLISECONDS);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public boolean isHeld() {
+        boolean z;
+        synchronized (this.zzf) {
+            z = this.zzh > 0;
+        }
+        return z;
+    }
+
+    public void release() {
+        if (this.zzt.decrementAndGet() < 0) {
+            Log.e("WakeLock", String.valueOf(this.zzp).concat(" release without a matched acquire!"));
+        }
+        synchronized (this.zzf) {
+            try {
+                zzb(null);
+                if (this.zzs.containsKey(null)) {
+                    zzc zzcVar = (zzc) this.zzs.get(null);
+                    if (zzcVar != null) {
+                        int i = zzcVar.zza - 1;
+                        zzcVar.zza = i;
+                        if (i == 0) {
+                            this.zzs.remove(null);
                         }
                     }
-                    if (!this.zzi) {
-                    }
+                } else {
+                    Log.w("WakeLock", String.valueOf(this.zzp).concat(" counter does not exist"));
                 }
-                if (!this.zzb.isHeld()) {
-                    this.zzj.clear();
-                    this.zzl = 0;
-                }
-                if (this.zzi) {
-                }
-                if (!this.zzi) {
-                }
+                zzd(0);
             } catch (Throwable th) {
                 throw th;
             }
         }
-        this.zzb.acquire();
-        if (j > 0) {
-            zzn.schedule(new zzb(this), j, TimeUnit.MILLISECONDS);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0055, code lost:
-    
-        if (r12.zzl == 1) goto L22;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void release() {
-        Integer[] numArr;
-        if (this.zzm.decrementAndGet() < 0) {
-            Log.e("WakeLock", String.valueOf(this.zze).concat(" release without a matched acquire!"));
-        }
-        String zza2 = zza((String) null);
-        synchronized (this.zza) {
-            try {
-                if (this.zzi && (numArr = (Integer[]) this.zzj.get(zza2)) != null) {
-                    if (numArr[0].intValue() == 1) {
-                        this.zzj.remove(zza2);
-                        WakeLockTracker.getInstance().registerEvent(this.zzh, StatsUtils.getEventKey(this.zzb, zza2), 8, this.zze, zza2, null, this.zzd, zza());
-                        this.zzl--;
-                    } else {
-                        numArr[0] = Integer.valueOf(numArr[0].intValue() - 1);
-                    }
-                }
-                if (!this.zzi) {
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        zza(0);
     }
 
     public void setReferenceCounted(boolean z) {
-        this.zzb.setReferenceCounted(z);
-        this.zzi = z;
+        synchronized (this.zzf) {
+            this.zzl = z;
+        }
     }
 }

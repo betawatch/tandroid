@@ -33,7 +33,7 @@ final class e0 extends Z1 {
                 LongStream longStream = (LongStream) ((LongFunction) ((w) this.c).n).apply(j);
                 if (longStream != null) {
                     try {
-                        longStream.sequential().d(new c0(1, this));
+                        longStream.sequential().c(new c0(1, this));
                     } catch (Throwable th) {
                         try {
                             longStream.close();

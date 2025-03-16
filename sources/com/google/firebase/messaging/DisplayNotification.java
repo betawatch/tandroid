@@ -12,21 +12,20 @@ import androidx.core.app.NotificationCompat;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.CommonNotificationBuilder;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class DisplayNotification {
     private final Context context;
-    private final Executor networkIoExecutor;
+    private final ExecutorService networkIoExecutor;
     private final NotificationParams params;
 
-    public DisplayNotification(Context context, NotificationParams notificationParams, Executor executor) {
-        this.networkIoExecutor = executor;
+    public DisplayNotification(Context context, NotificationParams notificationParams, ExecutorService executorService) {
+        this.networkIoExecutor = executorService;
         this.context = context;
         this.params = notificationParams;
     }
@@ -40,18 +39,12 @@ class DisplayNotification {
         }
         int myPid = Process.myPid();
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) this.context.getSystemService("activity")).getRunningAppProcesses();
-        if (runningAppProcesses != null) {
-            Iterator<ActivityManager.RunningAppProcessInfo> it = runningAppProcesses.iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                ActivityManager.RunningAppProcessInfo next = it.next();
-                if (next.pid == myPid) {
-                    if (next.importance == 100) {
-                        return true;
-                    }
-                }
+        if (runningAppProcesses == null) {
+            return false;
+        }
+        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
+            if (runningAppProcessInfo.pid == myPid) {
+                return runningAppProcessInfo.importance == 100;
             }
         }
         return false;
@@ -85,11 +78,7 @@ class DisplayNotification {
             imageDownload.close();
             Thread.currentThread().interrupt();
         } catch (ExecutionException e) {
-            String valueOf = String.valueOf(e.getCause());
-            StringBuilder sb = new StringBuilder(valueOf.length() + 26);
-            sb.append("Failed to download image: ");
-            sb.append(valueOf);
-            Log.w("FirebaseMessaging", sb.toString());
+            Log.w("FirebaseMessaging", "Failed to download image: " + e.getCause());
         } catch (TimeoutException unused2) {
             Log.w("FirebaseMessaging", "Failed to download image in time, showing notification without it");
             imageDownload.close();

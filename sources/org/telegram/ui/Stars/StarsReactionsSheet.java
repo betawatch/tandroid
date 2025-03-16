@@ -86,7 +86,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StarsReactionsSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private final BalanceCloud balanceCloud;
     private final Space beforeTitleSpace;
@@ -411,7 +411,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.storiesListUpdated);
+            this.sliderParticles = new Particles(0, NotificationCenter.storiesUpdated);
             this.textParticles = new Particles(2, 30);
             this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradientMatrix = new Matrix();

@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ThemePreviewDrawable extends BitmapDrawable {
     private DocumentObject.ThemeDocument themeDocument;
 
@@ -177,7 +177,7 @@ public class ThemePreviewDrawable extends BitmapDrawable {
             drawable6.setBounds(width2, intrinsicHeight2, drawable6.getIntrinsicWidth() + width2, drawable6.getIntrinsicHeight() + intrinsicHeight2);
             drawable6.draw(canvas);
         }
-        messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.storiesReadUpdated);
+        messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.onReceivedChannelDifference);
         messageDrawableArr[1].setTop(0, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
         messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);

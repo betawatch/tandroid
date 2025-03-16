@@ -35,13 +35,13 @@ public class M4AInfo extends AudioInfo {
         	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
         	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
         */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0274 A[Catch: Exception -> 0x0256, TryCatch #1 {Exception -> 0x0256, blocks: (B:136:0x023a, B:138:0x0251, B:141:0x0269, B:143:0x0274, B:145:0x028b, B:146:0x02a4, B:148:0x02a8, B:152:0x02a2, B:154:0x0258, B:156:0x0260), top: B:135:0x023a }] */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0266 A[Catch: Exception -> 0x0248, TryCatch #0 {Exception -> 0x0248, blocks: (B:136:0x022c, B:138:0x0243, B:141:0x025b, B:143:0x0266, B:145:0x027d, B:146:0x0296, B:148:0x029a, B:152:0x0294, B:154:0x024a, B:156:0x0252), top: B:135:0x022c }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     void data(org.telegram.messenger.audioinfo.m4a.MP4Atom r8) {
         /*
-            Method dump skipped, instructions count: 822
+            Method dump skipped, instructions count: 808
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.audioinfo.m4a.M4AInfo.data(org.telegram.messenger.audioinfo.m4a.MP4Atom):void");

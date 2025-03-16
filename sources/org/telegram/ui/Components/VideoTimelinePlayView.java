@@ -19,7 +19,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class VideoTimelinePlayView extends View {
     public static int TYPE_LEFT = 0;
     public static int TYPE_PROGRESS = 2;

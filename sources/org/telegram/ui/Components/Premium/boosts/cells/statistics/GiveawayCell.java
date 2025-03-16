@@ -10,7 +10,7 @@ import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.Premium.boosts.BoostRepository;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GiveawayCell extends UserCell {
     private CounterDrawable counterDrawable;
     private TL_stories.PrepaidGiveaway prepaidGiveaway;

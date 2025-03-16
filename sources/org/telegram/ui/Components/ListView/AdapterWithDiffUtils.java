@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import java.util.ArrayList;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AdapterWithDiffUtils extends RecyclerListView.SelectionAdapter {
     DiffUtilsCallback callback = new DiffUtilsCallback();
 

@@ -8,7 +8,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Exception implements Model {
     private List frames;
     private List innerExceptions;

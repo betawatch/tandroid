@@ -29,7 +29,7 @@ final class c3 extends T2 implements j$.util.D {
         mVar.getClass();
         h();
         b3 b3Var = new b3(mVar, 1);
-        this.b.C0(this.d, b3Var);
+        this.b.B0(this.d, b3Var);
         this.i = true;
     }
 
@@ -37,7 +37,7 @@ final class c3 extends T2 implements j$.util.D {
     final void j() {
         H2 h2 = new H2();
         this.h = h2;
-        this.e = this.b.D0(new b3(h2, 0));
+        this.e = this.b.C0(new b3(h2, 0));
         this.f = new a(this, 3);
     }
 

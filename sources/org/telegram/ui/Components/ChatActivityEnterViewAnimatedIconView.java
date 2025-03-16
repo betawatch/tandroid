@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Cells.ShareDialogCell$RepostStoryDrawable$$ExternalSyntheticLambda0;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
     private TransitState animatingState;
     private State currentState;

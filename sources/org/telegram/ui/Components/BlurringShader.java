@@ -40,7 +40,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.BlurringShader;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BlurringShader {
     private Bitmap bitmap;
     private boolean bitmapAvailable;

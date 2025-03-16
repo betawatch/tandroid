@@ -39,7 +39,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TableView extends android.widget.TableLayout {
     private final Paint backgroundPaint;
     private final Paint borderPaint;

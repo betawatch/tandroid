@@ -84,7 +84,7 @@ import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertLocationLayout;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private LocationActivityAdapter adapter;
     private AnimatorSet animatorSet;
@@ -268,7 +268,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             ofFloat.setDuration(360L);
             ofFloat.start();
             this.views.put(iMarker, frameLayout);
-            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.storiesListUpdated, null);
+            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.storiesUpdated, null);
         }
 
         public void removeInfoView(IMapsProvider.IMarker iMarker) {

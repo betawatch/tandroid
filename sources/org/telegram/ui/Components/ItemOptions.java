@@ -47,7 +47,7 @@ import org.telegram.ui.Components.MessagePreviewView;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ItemOptions {
     private ActionBarPopupWindow actionBarPopupWindow;
     private boolean allowCenter;
@@ -1061,6 +1061,30 @@ public class ItemOptions {
     public ItemOptions forceTop(boolean z) {
         this.forceTop = z;
         return this;
+    }
+
+    public View getItemAt(int i) {
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = this.lastLayout;
+        if (actionBarPopupWindowLayout == null && this.layout == null) {
+            return null;
+        }
+        if (actionBarPopupWindowLayout == this.layout) {
+            return actionBarPopupWindowLayout.getItemAt(i);
+        }
+        int i2 = 0;
+        while (i2 < this.layout.getChildCount() - 1) {
+            View childAt = i2 == this.layout.getChildCount() + (-1) ? this.lastLayout : this.layout.getChildAt(i2);
+            if (childAt instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
+                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = (ActionBarPopupWindow.ActionBarPopupWindowLayout) childAt;
+                View itemAt = actionBarPopupWindowLayout2.getItemAt(i);
+                if (itemAt != null) {
+                    return itemAt;
+                }
+                i -= actionBarPopupWindowLayout2.getItemsCount();
+            }
+            i2++;
+        }
+        return null;
     }
 
     public int getItemsCount() {

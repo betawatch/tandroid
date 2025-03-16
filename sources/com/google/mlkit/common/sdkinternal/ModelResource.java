@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ModelResource {
     private final AtomicInteger zza = new AtomicInteger(0);
     private final AtomicBoolean zzb = new AtomicBoolean(false);

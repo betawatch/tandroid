@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.net.URL;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface HttpClient extends Closeable {
 
     public interface CallTemplate {

@@ -158,13 +158,13 @@ public class TextureRenderer {
     private final RectF roundDst = new RectF();
     private boolean firstFrame = true;
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x04d3  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x05a6  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x05ad  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0544  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x04a7  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x024f  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x04d2  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x05a5  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x05ac  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0543  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x04a6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1723,22 +1723,22 @@ public class TextureRenderer {
         editTextOutline.setBreakStrategy(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x002f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x002e, code lost:
     
         r10 = org.telegram.messenger.video.TextureRenderer.VERTEX_SHADER_MASK;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x002d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x002c, code lost:
     
         if (r8 != null) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x001d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x001c, code lost:
     
         if (r8 != null) goto L20;
      */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0424  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x042c  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x042f  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0427  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x041a  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0422  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0425  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x041d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

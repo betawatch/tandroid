@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SpoilerEffect2 {
     private static HashMap instance;
     private final double MAX_DELTA;

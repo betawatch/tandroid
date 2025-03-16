@@ -1094,39 +1094,39 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x03a7  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x047b  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x049d  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0630  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0648  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0692  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x06b8  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0950  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00ee  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x09d9  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x09e0  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x095e  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x063d  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x055a  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x048d  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0454  */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x021d  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0248  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x032e  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0320  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x034c  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x03a4  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x044e  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0488  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x049b  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x062e  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0646  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0690  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x06b6  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0962  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00f0  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x09eb  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x09f2  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0970  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x063b  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0558  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x048a  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0451  */
+    /* JADX WARN: Removed duplicated region for block: B:312:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x0213  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x031f  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x032f  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0331  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0321  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x034b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1464,16 +1464,22 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 if (z2) {
                     if (!this.verticalButtons) {
                         TextPaint textPaint = new TextPaint();
-                        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+                        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
                         CharSequence charSequence2 = this.positiveButtonText;
-                        int measureText = charSequence2 != null ? (int) (0 + textPaint.measureText(charSequence2, 0, charSequence2.length()) + AndroidUtilities.dp(10.0f)) : 0;
-                        CharSequence charSequence3 = this.negativeButtonText;
-                        if (charSequence3 != null) {
-                            measureText = (int) (measureText + textPaint.measureText(charSequence3, 0, charSequence3.length()) + AndroidUtilities.dp(10.0f));
+                        int measureText = charSequence2 != null ? (int) (0 + textPaint.measureText(charSequence2, 0, charSequence2.length()) + AndroidUtilities.dp(24.0f)) : 0;
+                        if (this.negativeButtonText != null) {
+                            if (measureText > 0) {
+                                measureText += AndroidUtilities.dp(8.0f);
+                            }
+                            CharSequence charSequence3 = this.negativeButtonText;
+                            measureText = (int) (measureText + textPaint.measureText(charSequence3, 0, charSequence3.length()) + AndroidUtilities.dp(24.0f));
                         }
-                        CharSequence charSequence4 = this.neutralButtonText;
-                        if (charSequence4 != null) {
-                            measureText = (int) (measureText + textPaint.measureText(charSequence4, 0, charSequence4.length()) + AndroidUtilities.dp(10.0f));
+                        if (this.neutralButtonText != null) {
+                            if (measureText > 0) {
+                                measureText += AndroidUtilities.dp(8.0f);
+                            }
+                            CharSequence charSequence4 = this.neutralButtonText;
+                            measureText = (int) (measureText + textPaint.measureText(charSequence4, 0, charSequence4.length()) + AndroidUtilities.dp(24.0f));
                         }
                         if (measureText > AndroidUtilities.displaySize.x - AndroidUtilities.dp(110.0f)) {
                             this.verticalButtons = true;

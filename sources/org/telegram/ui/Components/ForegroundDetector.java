@@ -19,7 +19,7 @@ public abstract class ForegroundDetector implements Application.ActivityLifecycl
     private long enterBackgroundTime = 0;
     private CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface Listener {
     }
 

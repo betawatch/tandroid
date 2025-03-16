@@ -13,7 +13,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractBox implements Box {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static Logger LOG = Logger.getLogger(AbstractBox.class);

@@ -9,7 +9,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.ui.GroupCallActivity;
 import org.telegram.ui.GroupCallTabletGridAdapter;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class GroupCallGridCell extends FrameLayout {
     public boolean attached;
     public GroupCallTabletGridAdapter gridAdapter;

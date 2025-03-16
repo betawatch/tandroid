@@ -2,7 +2,7 @@ package com.google.gson;
 
 import java.util.Objects;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FormattingStyle {
     public static final FormattingStyle COMPACT = new FormattingStyle("", "", false);
     public static final FormattingStyle PRETTY = new FormattingStyle("\n", "  ", true);

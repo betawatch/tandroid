@@ -36,7 +36,7 @@ import org.telegram.ui.ContentPreviewViewer;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.EmojiBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StickersDialogs {
     private static int getThemedColor(int i, Theme.ResourcesProvider resourcesProvider) {
         return Theme.getColor(i, resourcesProvider);

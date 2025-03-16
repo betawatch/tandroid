@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.Premium;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class DoubledLimitsBottomSheet$Limit {
     final int current;
     final int defaultLimit;

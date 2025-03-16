@@ -6,7 +6,7 @@ import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.Landmark;
 import org.telegram.ui.Components.Size;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoFace {
     private float angle;
     private org.telegram.ui.Components.Point chinPoint;

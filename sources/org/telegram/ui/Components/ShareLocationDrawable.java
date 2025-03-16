@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ShareLocationDrawable extends Drawable {
     private int currentType;
     private Drawable drawable;

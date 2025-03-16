@@ -10,7 +10,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class StripeSSLSocketFactory extends SSLSocketFactory {
     private final boolean tlsv11Supported;
     private final boolean tlsv12Supported;

@@ -48,7 +48,7 @@ import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertContactsLayout;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private PhonebookShareAlertDelegate delegate;
     private EmptyTextProgressView emptyView;

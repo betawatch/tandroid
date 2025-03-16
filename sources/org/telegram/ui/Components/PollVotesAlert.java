@@ -66,7 +66,7 @@ import org.telegram.ui.Components.PollVotesAlert;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PollVotesAlert extends BottomSheet {
     public static final Property USER_CELL_PROPERTY = new AnimationProperties.FloatProperty("placeholderAlpha") { // from class: org.telegram.ui.Components.PollVotesAlert.1
         @Override // android.util.Property

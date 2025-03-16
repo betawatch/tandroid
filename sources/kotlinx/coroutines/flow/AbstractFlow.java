@@ -1,0 +1,75 @@
+package kotlinx.coroutines.flow;
+
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlinx.coroutines.flow.internal.SafeCollector;
+
+/* loaded from: classes3.dex */
+public abstract class AbstractFlow implements Flow {
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    @Override // kotlinx.coroutines.flow.Flow
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object collect(FlowCollector flowCollector, Continuation continuation) {
+        AbstractFlow$collect$1 abstractFlow$collect$1;
+        Object coroutine_suspended;
+        int i;
+        Throwable th;
+        SafeCollector safeCollector;
+        if (continuation instanceof AbstractFlow$collect$1) {
+            abstractFlow$collect$1 = (AbstractFlow$collect$1) continuation;
+            int i2 = abstractFlow$collect$1.label;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                abstractFlow$collect$1.label = i2 - Integer.MIN_VALUE;
+                Object obj = abstractFlow$collect$1.result;
+                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = abstractFlow$collect$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    SafeCollector safeCollector2 = new SafeCollector(flowCollector, abstractFlow$collect$1.getContext());
+                    try {
+                        abstractFlow$collect$1.L$0 = safeCollector2;
+                        abstractFlow$collect$1.label = 1;
+                        if (collectSafely(safeCollector2, abstractFlow$collect$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        safeCollector = safeCollector2;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        safeCollector = safeCollector2;
+                        safeCollector.releaseIntercepted();
+                        throw th;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    safeCollector = (SafeCollector) abstractFlow$collect$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                    } catch (Throwable th3) {
+                        th = th3;
+                        safeCollector.releaseIntercepted();
+                        throw th;
+                    }
+                }
+                safeCollector.releaseIntercepted();
+                return Unit.INSTANCE;
+            }
+        }
+        abstractFlow$collect$1 = new AbstractFlow$collect$1(this, continuation);
+        Object obj2 = abstractFlow$collect$1.result;
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = abstractFlow$collect$1.label;
+        if (i != 0) {
+        }
+        safeCollector.releaseIntercepted();
+        return Unit.INSTANCE;
+    }
+
+    public abstract Object collectSafely(FlowCollector flowCollector, Continuation continuation);
+}

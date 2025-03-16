@@ -9,7 +9,7 @@ import androidx.core.math.MathUtils;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BlurVisibilityDrawable extends Drawable {
     private Bitmap bitmap;
     private float bitmapScale;

@@ -13,7 +13,7 @@ import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ArrayTypeAdapter extends TypeAdapter {
     public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.ArrayTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

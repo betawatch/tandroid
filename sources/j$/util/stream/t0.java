@@ -24,57 +24,57 @@ public abstract /* synthetic */ class t0 implements w3 {
     }
 
     public static F0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
-        long n0 = bVar.n0(spliterator);
-        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        long m0 = bVar.m0(spliterator);
+        if (m0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
             F0 f0 = (F0) new K0(spliterator, intFunction, bVar).invoke();
             return z ? N(f0, intFunction) : f0;
         }
-        if (n0 >= 2147483639) {
+        if (m0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) intFunction.apply((int) n0);
+        Object[] objArr = (Object[]) intFunction.apply((int) m0);
         new p1(spliterator, bVar, objArr).invoke();
         return new I0(objArr);
     }
 
     public static z0 F(b bVar, Spliterator spliterator, boolean z) {
-        long n0 = bVar.n0(spliterator);
-        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        long m0 = bVar.m0(spliterator);
+        if (m0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
             z0 z0Var = (z0) new K0(0, spliterator, bVar).invoke();
             return z ? O(z0Var) : z0Var;
         }
-        if (n0 >= 2147483639) {
+        if (m0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        double[] dArr = new double[(int) n0];
+        double[] dArr = new double[(int) m0];
         new m1(spliterator, bVar, dArr).invoke();
         return new R0(dArr);
     }
 
     public static B0 G(b bVar, Spliterator spliterator, boolean z) {
-        long n0 = bVar.n0(spliterator);
-        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        long m0 = bVar.m0(spliterator);
+        if (m0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
             B0 b0 = (B0) new K0(1, spliterator, bVar).invoke();
             return z ? P(b0) : b0;
         }
-        if (n0 >= 2147483639) {
+        if (m0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        int[] iArr = new int[(int) n0];
+        int[] iArr = new int[(int) m0];
         new n1(spliterator, bVar, iArr).invoke();
         return new a1(iArr);
     }
 
     public static D0 H(b bVar, Spliterator spliterator, boolean z) {
-        long n0 = bVar.n0(spliterator);
-        if (n0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        long m0 = bVar.m0(spliterator);
+        if (m0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
             D0 d0 = (D0) new K0(2, spliterator, bVar).invoke();
             return z ? Q(d0) : d0;
         }
-        if (n0 >= 2147483639) {
+        if (m0 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        long[] jArr = new long[(int) n0];
+        long[] jArr = new long[(int) m0];
         new o1(spliterator, bVar, jArr).invoke();
         return new j1(jArr);
     }
@@ -472,7 +472,7 @@ public abstract /* synthetic */ class t0 implements w3 {
     public Object a(b bVar, Spliterator spliterator) {
         N1 d0 = d0();
         bVar.getClass();
-        bVar.h0(spliterator, bVar.D0(d0));
+        bVar.g0(spliterator, bVar.C0(d0));
         return d0.get();
     }
 

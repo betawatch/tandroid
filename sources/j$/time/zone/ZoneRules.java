@@ -2,8 +2,8 @@ package j$.time.zone;
 
 import j$.time.Instant;
 import j$.time.LocalDate;
+import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
-import j$.time.g;
 import j$.util.A;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.Serializable;
@@ -72,7 +72,7 @@ public final class ZoneRules implements Serializable {
         if (i2 < 1800) {
             return aVarArr3;
         }
-        long k = g.i(i2 - 1).k(this.b[0]);
+        long k = LocalDateTime.i(i2 - 1).k(this.b[0]);
         int offset = timeZone.getOffset(k * 1000);
         long j3 = 31968000 + k;
         while (k < j3) {

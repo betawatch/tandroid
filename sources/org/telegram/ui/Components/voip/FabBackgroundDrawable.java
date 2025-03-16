@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FabBackgroundDrawable extends Drawable {
     private Paint bgPaint = new Paint(1);
     private Bitmap shadowBitmap;

@@ -123,7 +123,7 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public Object get() {
         switch (this.a) {
             case 0:
-                return ((b) this.b).t0();
+                return ((b) this.b).s0();
             default:
                 return (Spliterator) this.b;
         }

@@ -76,7 +76,7 @@ import org.telegram.ui.GroupCallActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.LocationActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     private static final float[] speeds = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
     private final int account;
@@ -868,7 +868,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x01b3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1587,7 +1587,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 FragmentContextView.lambda$openSharingLocation$14(LocationController.SharingLocationInfo.this, dialogId, messageMedia, i, z, i2, j);
             }
         });
-        launchActivity.lambda$runLinkRequest$95(locationActivity);
+        launchActivity.lambda$runLinkRequest$93(locationActivity);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0034, code lost:
@@ -2064,8 +2064,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.playbackSpeedButton.setTag(null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x012f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

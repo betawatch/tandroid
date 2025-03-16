@@ -9,12 +9,12 @@ final class zzc implements Parcelable.Creator {
     }
 
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new zza(parcel.readStrongBinder());
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        return new zze(parcel.readStrongBinder());
     }
 
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Object[] newArray(int i) {
-        return new zza[i];
+        return new zze[i];
     }
 }

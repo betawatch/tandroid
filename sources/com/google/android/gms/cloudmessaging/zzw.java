@@ -1,18 +1,11 @@
 package com.google.android.gms.cloudmessaging;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.SuccessContinuation;
-import com.google.android.gms.tasks.Task;
-
 /* loaded from: classes.dex */
-final /* synthetic */ class zzw implements SuccessContinuation {
-    static final SuccessContinuation zza = new zzw();
-
-    private zzw() {
-    }
-
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public final Task then(Object obj) {
-        return Rpc.zza((Bundle) obj);
+public abstract /* synthetic */ class zzw {
+    public static /* synthetic */ boolean zza(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
+        }
+        return true;
     }
 }

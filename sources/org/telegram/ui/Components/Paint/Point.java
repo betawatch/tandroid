@@ -2,7 +2,7 @@ package org.telegram.ui.Components.Paint;
 
 import android.graphics.PointF;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Point {
     public boolean edge;
     public double x;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.INavigationLayout;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class NavigationExt {
 
     public interface FragmentConsumer {

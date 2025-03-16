@@ -23,7 +23,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LoadingSpan;
 import org.telegram.ui.Components.RadioButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StarGiveawayOptionCell extends FrameLayout {
     private final AnimatedFloat animatedStarsCount;
     private TL_stars.TL_starsGiveawayOption currentOption;

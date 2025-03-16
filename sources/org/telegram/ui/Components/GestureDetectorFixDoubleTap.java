@@ -10,7 +10,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GestureDetectorFixDoubleTap {
     private final GestureDetectorCompatImpl mImpl;
 

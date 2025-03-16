@@ -19,7 +19,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupedPhotosListView extends View implements GestureDetector.OnGestureListener {
     private boolean animateAllLine;
     private boolean animateBackground;

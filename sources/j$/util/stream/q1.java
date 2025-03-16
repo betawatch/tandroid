@@ -67,7 +67,7 @@ abstract class q1 extends CountedCompleter implements e2 {
             q1Var.a(trySplit, q1Var.d, estimateSize).fork();
             q1Var = q1Var.a(spliterator, q1Var.d + estimateSize, q1Var.e - estimateSize);
         }
-        q1Var.b.C0(spliterator, q1Var);
+        q1Var.b.B0(spliterator, q1Var);
         q1Var.propagateCompletion();
     }
 

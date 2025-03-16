@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIpCoverView extends View {
     private final boolean allowAnimations;
     private final VoIPBackgroundProvider backgroundProvider;

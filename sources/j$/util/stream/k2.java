@@ -17,21 +17,21 @@ final class k2 extends g0 {
     }
 
     @Override // j$.util.stream.b
-    final F0 v0(Spliterator spliterator, IntFunction intFunction, b bVar) {
+    final F0 u0(Spliterator spliterator, IntFunction intFunction, b bVar) {
         long j;
         long j2;
-        long n0 = bVar.n0(spliterator);
-        if (n0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            return t0.H(bVar, t0.y(bVar.q0(), spliterator, this.m, this.n), true);
+        long m0 = bVar.m0(spliterator);
+        if (m0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            return t0.H(bVar, t0.y(bVar.p0(), spliterator, this.m, this.n), true);
         }
-        if (R2.ORDERED.d(bVar.r0())) {
+        if (R2.ORDERED.d(bVar.q0())) {
             return (F0) new o2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
         }
-        j$.util.J j3 = (j$.util.J) bVar.E0(spliterator);
+        j$.util.J j3 = (j$.util.J) bVar.D0(spliterator);
         long j4 = this.m;
         long j5 = this.n;
-        if (j4 <= n0) {
-            j = j5 >= 0 ? Math.min(j5, n0 - j4) : n0 - j4;
+        if (j4 <= m0) {
+            j = j5 >= 0 ? Math.min(j5, m0 - j4) : m0 - j4;
             j2 = 0;
         } else {
             j = j5;
@@ -41,23 +41,23 @@ final class k2 extends g0 {
     }
 
     @Override // j$.util.stream.b
-    final Spliterator w0(b bVar, Spliterator spliterator) {
+    final Spliterator v0(b bVar, Spliterator spliterator) {
         long j;
         long j2;
-        long n0 = bVar.n0(spliterator);
+        long m0 = bVar.m0(spliterator);
         long j3 = this.n;
-        if (n0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-            j$.util.J j4 = (j$.util.J) bVar.E0(spliterator);
+        if (m0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+            j$.util.J j4 = (j$.util.J) bVar.D0(spliterator);
             long j5 = this.m;
             return new j3(j4, j5, t0.x(j5, j3));
         }
-        if (R2.ORDERED.d(bVar.r0())) {
+        if (R2.ORDERED.d(bVar.q0())) {
             return ((F0) new o2(this, bVar, spliterator, new Q1(4), this.m, this.n).invoke()).spliterator();
         }
-        j$.util.J j6 = (j$.util.J) bVar.E0(spliterator);
+        j$.util.J j6 = (j$.util.J) bVar.D0(spliterator);
         long j7 = this.m;
-        if (j7 <= n0) {
-            long j8 = n0 - j7;
+        if (j7 <= m0) {
+            long j8 = m0 - j7;
             if (j3 >= 0) {
                 j8 = Math.min(j3, j8);
             }
@@ -71,7 +71,7 @@ final class k2 extends g0 {
     }
 
     @Override // j$.util.stream.b
-    final e2 y0(int i, e2 e2Var) {
+    final e2 x0(int i, e2 e2Var) {
         return new j2(this, e2Var);
     }
 }

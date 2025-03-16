@@ -2,7 +2,7 @@ package com.google.zxing;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class RGBLuminanceSource extends LuminanceSource {
     private final int dataHeight;
     private final int dataWidth;

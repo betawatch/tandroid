@@ -77,7 +77,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReactionsContainerLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final Property TRANSITION_PROGRESS_VALUE = new Property(Float.class, "transitionProgress") { // from class: org.telegram.ui.Components.ReactionsContainerLayout.1
         @Override // android.util.Property
@@ -869,37 +869,37 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:39:0x0137, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:39:0x0134, code lost:
         
             if (r28.hasEnterAnimation != false) goto L50;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:40:0x0198, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:40:0x0194, code lost:
         
             r17 = r1;
             r18 = r2;
             r19 = r4;
             r22 = r16;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:45:0x018f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:45:0x018b, code lost:
         
             r17 = r1;
             r18 = r2;
             r19 = r4;
             r22 = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:51:0x0176, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:51:0x0172, code lost:
         
             if (r28.hasEnterAnimation != false) goto L45;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:52:0x0178, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:52:0x0174, code lost:
         
             r4 = "60_60_firstframe";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:53:0x017b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:53:0x0177, code lost:
         
             r4 = "60_60_firstframe";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x018c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x0188, code lost:
         
             if (r28.hasEnterAnimation != false) goto L45;
          */

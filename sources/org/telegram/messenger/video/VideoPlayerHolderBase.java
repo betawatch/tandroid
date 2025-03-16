@@ -447,23 +447,23 @@ public class VideoPlayerHolderBase {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0065, code lost:
     
         if (r2 != null) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00a6, code lost:
     
         r1.videoPlayer.setTextureView(r1.textureView);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a0, code lost:
     
         r1.videoPlayer.setSurfaceView(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x009e, code lost:
     
         if (r2 != null) goto L42;
      */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

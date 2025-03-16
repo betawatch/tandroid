@@ -149,6 +149,12 @@ final class zzcf implements ObjectEncoderContext {
     }
 
     @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) {
+        zza(fieldDescriptor, d, true);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
     public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, int i) {
         zzd(fieldDescriptor, i, true);
         return this;
@@ -163,6 +169,12 @@ final class zzcf implements ObjectEncoderContext {
     @Override // com.google.firebase.encoders.ObjectEncoderContext
     public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, Object obj) {
         zzc(fieldDescriptor, obj, true);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, boolean z) {
+        zzd(fieldDescriptor, z ? 1 : 0, true);
         return this;
     }
 

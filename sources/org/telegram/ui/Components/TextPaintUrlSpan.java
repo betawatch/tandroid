@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextPaintUrlSpan extends MetricAffectingSpan {
     private String currentUrl;
     private TextPaint textPaint;

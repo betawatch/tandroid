@@ -9,8 +9,6 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class WorkSourceUtil {
@@ -186,34 +184,6 @@ public abstract class WorkSourceUtil {
         WorkSource workSource = new WorkSource();
         add(workSource, i, str);
         return workSource;
-    }
-
-    public static String getName(WorkSource workSource, int i) {
-        Method method = zzf;
-        if (method == null) {
-            return null;
-        }
-        try {
-            return (String) method.invoke(workSource, Integer.valueOf(i));
-        } catch (Exception e) {
-            Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e);
-            return null;
-        }
-    }
-
-    public static List getNames(WorkSource workSource) {
-        ArrayList arrayList = new ArrayList();
-        int size = workSource == null ? 0 : size(workSource);
-        if (size != 0) {
-            for (int i = 0; i < size; i++) {
-                String name = getName(workSource, i);
-                if (!Strings.isEmptyOrWhitespace(name)) {
-                    Preconditions.checkNotNull(name);
-                    arrayList.add(name);
-                }
-            }
-        }
-        return arrayList;
     }
 
     public static boolean hasWorkSourcePermission(Context context) {

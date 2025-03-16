@@ -16,7 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class SyncTask implements Runnable {
     private final FirebaseMessaging firebaseMessaging;
     private final long nextDelaySeconds;
@@ -60,10 +60,7 @@ class SyncTask implements Runnable {
     }
 
     static boolean isDebugLogEnabled() {
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            return true;
-        }
-        return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
+        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 
     Context getContext() {
@@ -90,12 +87,7 @@ class SyncTask implements Runnable {
             return true;
         } catch (IOException e) {
             if (GmsRpc.isErrorMessageForRetryableError(e.getMessage())) {
-                String message = e.getMessage();
-                StringBuilder sb = new StringBuilder(String.valueOf(message).length() + 52);
-                sb.append("Token retrieval failed: ");
-                sb.append(message);
-                sb.append(". Will retry token retrieval");
-                str = sb.toString();
+                str = "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval";
             } else {
                 if (e.getMessage() != null) {
                     throw e;
@@ -119,37 +111,36 @@ class SyncTask implements Runnable {
         try {
             try {
                 this.firebaseMessaging.setSyncScheduledOrRunning(true);
-                if (!this.firebaseMessaging.isGmsCorePresent()) {
-                    this.firebaseMessaging.setSyncScheduledOrRunning(false);
-                    if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
-                        return;
-                    }
-                } else if (!ServiceStarter.getInstance().hasAccessNetworkStatePermission(getContext()) || isDeviceConnected()) {
-                    if (maybeRefreshToken()) {
-                        this.firebaseMessaging.setSyncScheduledOrRunning(false);
-                    } else {
-                        this.firebaseMessaging.syncWithDelaySecondsInternal(this.nextDelaySeconds);
-                    }
-                    if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
-                        return;
-                    }
-                } else {
-                    new ConnectivityChangeReceiver(this).registerReceiver();
-                    if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
-                        return;
-                    }
-                }
             } catch (IOException e) {
-                String message = e.getMessage();
-                StringBuilder sb = new StringBuilder(String.valueOf(message).length() + 93);
-                sb.append("Topic sync or token retrieval failed on hard failure exceptions: ");
-                sb.append(message);
-                sb.append(". Won't retry the operation.");
-                Log.e("FirebaseMessaging", sb.toString());
+                Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
                 this.firebaseMessaging.setSyncScheduledOrRunning(false);
                 if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
                     return;
                 }
+            }
+            if (!this.firebaseMessaging.isGmsCorePresent()) {
+                this.firebaseMessaging.setSyncScheduledOrRunning(false);
+                if (ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
+                    this.syncWakeLock.release();
+                    return;
+                }
+                return;
+            }
+            if (ServiceStarter.getInstance().hasAccessNetworkStatePermission(getContext()) && !isDeviceConnected()) {
+                new ConnectivityChangeReceiver(this).registerReceiver();
+                if (ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
+                    this.syncWakeLock.release();
+                    return;
+                }
+                return;
+            }
+            if (maybeRefreshToken()) {
+                this.firebaseMessaging.setSyncScheduledOrRunning(false);
+            } else {
+                this.firebaseMessaging.syncWithDelaySecondsInternal(this.nextDelaySeconds);
+            }
+            if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
+                return;
             }
             this.syncWakeLock.release();
         } catch (Throwable th) {

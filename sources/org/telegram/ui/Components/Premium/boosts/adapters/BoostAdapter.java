@@ -38,7 +38,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SlideChooseView;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BoostAdapter extends AdapterWithDiffUtils {
     private EnterPrizeCell.AfterTextChangedListener afterTextChangedListener;
     private ChatCell.ChatDeleteListener chatDeleteListener;

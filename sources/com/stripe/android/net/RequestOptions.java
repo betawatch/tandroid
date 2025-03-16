@@ -1,6 +1,6 @@
 package com.stripe.android.net;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class RequestOptions {
     private final String mApiVersion;
     private final String mIdempotencyKey;

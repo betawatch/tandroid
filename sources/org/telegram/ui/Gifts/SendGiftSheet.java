@@ -63,7 +63,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.PreviewView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SendGiftSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private final TLRPC.MessageAction action;
     private final ChatActionCell actionCell;

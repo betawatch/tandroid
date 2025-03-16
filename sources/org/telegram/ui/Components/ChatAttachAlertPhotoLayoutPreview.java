@@ -63,7 +63,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAlertLayout {
     private static HashMap photoRotate = new HashMap();
     private ValueAnimator draggingAnimator;
@@ -182,7 +182,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             return 1000.0f / f;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:223:0x0741, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:223:0x073f, code lost:
         
             if (r4[2] > r4[3]) goto L187;
          */
@@ -190,8 +190,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         
             if (r1 != r13) goto L32;
          */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x07de  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x081d A[LOOP:2: B:75:0x081b->B:76:0x081d, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x07dc  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x081b A[LOOP:2: B:75:0x0819->B:76:0x081b, LOOP_END] */
         /* JADX WARN: Type inference failed for: r14v17 */
         /* JADX WARN: Type inference failed for: r14v19, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r14v2 */

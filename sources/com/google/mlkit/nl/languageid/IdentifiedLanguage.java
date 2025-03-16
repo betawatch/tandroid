@@ -3,7 +3,7 @@ package com.google.mlkit.nl.languageid;
 import com.google.android.gms.internal.mlkit_language_id.zzh;
 import java.util.Arrays;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class IdentifiedLanguage {
     private final String zza;
     private final float zzb;

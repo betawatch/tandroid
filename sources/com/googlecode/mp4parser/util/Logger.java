@@ -1,6 +1,6 @@
 package com.googlecode.mp4parser.util;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Logger {
     public static Logger getLogger(Class cls) {
         return System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik") ? new AndroidLogger(cls.getSimpleName()) : new JuliLogger(cls.getSimpleName());

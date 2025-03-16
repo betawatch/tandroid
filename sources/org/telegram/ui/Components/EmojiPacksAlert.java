@@ -79,7 +79,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private static Pattern urlPattern;
     private Adapter adapter;
@@ -2710,7 +2710,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$95(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
         }
     }
 

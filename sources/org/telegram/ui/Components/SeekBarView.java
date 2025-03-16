@@ -33,7 +33,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SeekBarView extends FrameLayout {
     private static Path tmpPath;
     private static float[] tmpRadii;

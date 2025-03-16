@@ -5,10 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.collection.ArrayMap;
 import androidx.core.os.UserManagerCompat;
 import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
@@ -23,16 +20,21 @@ import com.google.firebase.components.ComponentDiscovery;
 import com.google.firebase.components.ComponentDiscoveryService;
 import com.google.firebase.components.ComponentRuntime;
 import com.google.firebase.components.Lazy;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import com.google.firebase.concurrent.UiExecutor;
 import com.google.firebase.events.Publisher;
+import com.google.firebase.heartbeatinfo.DefaultHeartBeatController;
 import com.google.firebase.inject.Provider;
 import com.google.firebase.internal.DataCollectionConfigStorage;
+import com.google.firebase.provider.FirebaseInitProvider;
+import com.google.firebase.tracing.ComponentMonitor;
+import com.google.firebase.tracing.FirebaseTrace;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,15 +43,19 @@ public class FirebaseApp {
     private final Context applicationContext;
     private final ComponentRuntime componentRuntime;
     private final Lazy dataCollectionConfigStorage;
+    private final Provider defaultHeartBeatController;
     private final String name;
     private final FirebaseOptions options;
     private static final Object LOCK = new Object();
-    private static final Executor UI_EXECUTOR = new UiExecutor();
     static final Map INSTANCES = new ArrayMap();
     private final AtomicBoolean automaticResourceManagementEnabled = new AtomicBoolean(false);
     private final AtomicBoolean deleted = new AtomicBoolean();
     private final List backgroundStateChangeListeners = new CopyOnWriteArrayList();
     private final List lifecycleListeners = new CopyOnWriteArrayList();
+
+    public interface BackgroundStateChangeListener {
+        void onBackgroundStateChanged(boolean z);
+    }
 
     private static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
         private static AtomicReference INSTANCE = new AtomicReference();
@@ -86,18 +92,6 @@ public class FirebaseApp {
                     throw th;
                 }
             }
-        }
-    }
-
-    private static class UiExecutor implements Executor {
-        private static final Handler HANDLER = new Handler(Looper.getMainLooper());
-
-        private UiExecutor() {
-        }
-
-        @Override // java.util.concurrent.Executor
-        public void execute(Runnable runnable) {
-            HANDLER.post(runnable);
         }
     }
 
@@ -143,7 +137,19 @@ public class FirebaseApp {
         this.applicationContext = (Context) Preconditions.checkNotNull(context);
         this.name = Preconditions.checkNotEmpty(str);
         this.options = (FirebaseOptions) Preconditions.checkNotNull(firebaseOptions);
-        this.componentRuntime = ComponentRuntime.builder(UI_EXECUTOR).addLazyComponentRegistrars(ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy()).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponent(Component.of(context, Context.class, new Class[0])).addComponent(Component.of(this, FirebaseApp.class, new Class[0])).addComponent(Component.of(firebaseOptions, FirebaseOptions.class, new Class[0])).build();
+        StartupTime startupTime = FirebaseInitProvider.getStartupTime();
+        FirebaseTrace.pushTrace("Firebase");
+        FirebaseTrace.pushTrace("ComponentDiscovery");
+        List discoverLazy = ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy();
+        FirebaseTrace.popTrace();
+        FirebaseTrace.pushTrace("Runtime");
+        ComponentRuntime.Builder processor = ComponentRuntime.builder(UiExecutor.INSTANCE).addLazyComponentRegistrars(discoverLazy).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponentRegistrar(new ExecutorsRegistrar()).addComponent(Component.of(context, Context.class, new Class[0])).addComponent(Component.of(this, FirebaseApp.class, new Class[0])).addComponent(Component.of(firebaseOptions, FirebaseOptions.class, new Class[0])).setProcessor(new ComponentMonitor());
+        if (UserManagerCompat.isUserUnlocked(context) && FirebaseInitProvider.isCurrentlyInitializing()) {
+            processor.addComponent(Component.of(startupTime, StartupTime.class, new Class[0]));
+        }
+        ComponentRuntime build = processor.build();
+        this.componentRuntime = build;
+        FirebaseTrace.popTrace();
         this.dataCollectionConfigStorage = new Lazy(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
@@ -152,6 +158,14 @@ public class FirebaseApp {
                 return lambda$new$0;
             }
         });
+        this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
+        addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
+            @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
+            public final void onBackgroundStateChanged(boolean z) {
+                FirebaseApp.this.lambda$new$1(z);
+            }
+        });
+        FirebaseTrace.popTrace();
     }
 
     private void checkNotDeleted() {
@@ -166,6 +180,7 @@ public class FirebaseApp {
                 if (firebaseApp == null) {
                     throw new IllegalStateException("Default FirebaseApp is not initialized in this process " + ProcessUtils.getMyProcessName() + ". Make sure to call FirebaseApp.initializeApp(Context) first.");
                 }
+                ((DefaultHeartBeatController) firebaseApp.defaultHeartBeatController.get()).registerHeartBeat();
             } catch (Throwable th) {
                 throw th;
             }
@@ -182,6 +197,7 @@ public class FirebaseApp {
         }
         Log.i("FirebaseApp", "Device unlocked: initializing all Firebase APIs for app " + getName());
         this.componentRuntime.initializeEagerComponents(isDefaultApp());
+        ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
     }
 
     public static FirebaseApp initializeApp(Context context) {
@@ -229,6 +245,14 @@ public class FirebaseApp {
         return new DataCollectionConfigStorage(context, getPersistenceKey(), (Publisher) this.componentRuntime.get(Publisher.class));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(boolean z) {
+        if (z) {
+            return;
+        }
+        ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
+    }
+
     private static String normalize(String str) {
         return str.trim();
     }
@@ -237,10 +261,23 @@ public class FirebaseApp {
     public void notifyBackgroundStateChangeListeners(boolean z) {
         Log.d("FirebaseApp", "Notifying background state change listeners.");
         Iterator it = this.backgroundStateChangeListeners.iterator();
-        if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
+        while (it.hasNext()) {
+            ((BackgroundStateChangeListener) it.next()).onBackgroundStateChanged(z);
         }
+    }
+
+    public void addBackgroundStateChangeListener(BackgroundStateChangeListener backgroundStateChangeListener) {
+        checkNotDeleted();
+        if (this.automaticResourceManagementEnabled.get() && BackgroundDetector.getInstance().isInBackground()) {
+            backgroundStateChangeListener.onBackgroundStateChanged(true);
+        }
+        this.backgroundStateChangeListeners.add(backgroundStateChangeListener);
+    }
+
+    public void addLifecycleEventListener(FirebaseAppLifecycleListener firebaseAppLifecycleListener) {
+        checkNotDeleted();
+        Preconditions.checkNotNull(firebaseAppLifecycleListener);
+        this.lifecycleListeners.add(firebaseAppLifecycleListener);
     }
 
     public boolean equals(Object obj) {

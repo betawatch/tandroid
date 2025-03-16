@@ -7,7 +7,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Components.CombinedDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextInfoCell extends TextInfoPrivacyCell {
     private final Theme.ResourcesProvider resourcesProvider;
 

@@ -2734,7 +2734,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 4) {
-            return NotificationCenter.storiesListUpdated;
+            return NotificationCenter.storiesUpdated;
         }
         if (i == 5) {
             return 900;

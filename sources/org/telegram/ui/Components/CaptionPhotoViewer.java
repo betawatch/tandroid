@@ -27,7 +27,7 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CaptionPhotoViewer extends CaptionContainerView {
     private final int SHOW_ONCE;
     private final ImageView addPhotoButton;

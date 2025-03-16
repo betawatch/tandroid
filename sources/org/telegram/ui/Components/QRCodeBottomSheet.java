@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class QRCodeBottomSheet extends BottomSheet {
     private TextView button2TextView;
     private final TextView buttonTextView;

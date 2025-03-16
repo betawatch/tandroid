@@ -198,9 +198,9 @@ public abstract class BaseFragment {
         }
     }
 
-    /* loaded from: classes4.dex */
     public interface AttachedSheet {
 
+        /* loaded from: classes4.dex */
         public abstract /* synthetic */ class -CC {
             public static void $default$setLastVisible(AttachedSheet attachedSheet, boolean z) {
             }

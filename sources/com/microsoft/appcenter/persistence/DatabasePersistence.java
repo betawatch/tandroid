@@ -30,7 +30,7 @@ import java.util.Set;
 import java.util.UUID;
 import org.json.JSONException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DatabasePersistence extends Persistence {
     static final ContentValues SCHEMA = getContentValues("", "", "", "", "", 0);
     private final Context mContext;

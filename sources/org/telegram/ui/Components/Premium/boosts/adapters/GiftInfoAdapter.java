@@ -29,7 +29,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class GiftInfoAdapter extends RecyclerListView.SelectionAdapter {
     private BaseFragment baseFragment;
     private FrameLayout container;

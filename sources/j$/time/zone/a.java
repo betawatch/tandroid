@@ -1,18 +1,18 @@
 package j$.time.zone;
 
 import j$.time.Instant;
+import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
-import j$.time.g;
 import java.io.Serializable;
 
 /* loaded from: classes2.dex */
 public final class a implements Comparable, Serializable {
-    private final g a;
+    private final LocalDateTime a;
     private final ZoneOffset b;
     private final ZoneOffset c;
 
     a(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = g.j(j, 0, zoneOffset);
+        this.a = LocalDateTime.j(j, 0, zoneOffset);
         this.b = zoneOffset;
         this.c = zoneOffset2;
     }

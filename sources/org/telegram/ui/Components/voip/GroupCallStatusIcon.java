@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class GroupCallStatusIcon {
     Callback callback;
     RLottieImageView iconView;

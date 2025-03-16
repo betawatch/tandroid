@@ -20,7 +20,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class GmsRpc {
     private final FirebaseApp app;
     private final FirebaseInstallationsApi firebaseInstallations;
@@ -47,16 +47,12 @@ class GmsRpc {
     }
 
     private Task extractResponseWhenComplete(Task task) {
-        return task.continueWith(GmsRpc$$Lambda$0.$instance, new Continuation(this) { // from class: com.google.firebase.messaging.GmsRpc$$Lambda$1
-            private final GmsRpc arg$1;
-
-            {
-                this.arg$1 = this;
-            }
-
+        return task.continueWith(new EnhancedIntentService$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
-            public Object then(Task task2) {
-                return this.arg$1.lambda$extractResponseWhenComplete$0$GmsRpc(task2);
+            public final Object then(Task task2) {
+                String lambda$extractResponseWhenComplete$0;
+                lambda$extractResponseWhenComplete$0 = GmsRpc.this.lambda$extractResponseWhenComplete$0(task2);
+                return lambda$extractResponseWhenComplete$0;
             }
         });
     }
@@ -88,11 +84,7 @@ class GmsRpc {
         if (string3 != null) {
             throw new IOException(string3);
         }
-        String valueOf = String.valueOf(bundle);
-        StringBuilder sb = new StringBuilder(valueOf.length() + 21);
-        sb.append("Unexpected response: ");
-        sb.append(valueOf);
-        Log.w("FirebaseMessaging", sb.toString(), new Throwable());
+        Log.w("FirebaseMessaging", "Unexpected response: " + bundle, new Throwable());
         throw new IOException("SERVICE_NOT_AVAILABLE");
     }
 
@@ -100,18 +92,22 @@ class GmsRpc {
         return "SERVICE_NOT_AVAILABLE".equals(str) || "INTERNAL_SERVER_ERROR".equals(str) || "InternalServerError".equals(str);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x00a3 A[ADDED_TO_REGION] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ String lambda$extractResponseWhenComplete$0(Task task) {
+        return handleResponse((Bundle) task.getResult(IOException.class));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x00c0 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private Bundle setDefaultAttributesToBundle(String str, String str2, String str3, Bundle bundle) {
+    private void setDefaultAttributesToBundle(String str, String str2, Bundle bundle) {
         HeartBeatInfo heartBeatInfo;
-        UserAgentPublisher userAgentPublisher;
         HeartBeatInfo.HeartBeat heartBeatCode;
-        bundle.putString("scope", str3);
-        bundle.putString("sender", str2);
-        bundle.putString("subtype", str2);
-        bundle.putString("appid", str);
+        bundle.putString("scope", str2);
+        bundle.putString("sender", str);
+        bundle.putString("subtype", str);
         bundle.putString("gmp_app_id", this.app.getOptions().getApplicationId());
         bundle.putString("gmsv", Integer.toString(this.metadata.getGmsVersionCode()));
         bundle.putString("osv", Integer.toString(Build.VERSION.SDK_INT));
@@ -128,61 +124,59 @@ class GmsRpc {
         } catch (InterruptedException e) {
             e = e;
             Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("cliv", "fcm-22.0.0");
+            bundle.putString("appid", (String) Tasks.await(this.firebaseInstallations.getId()));
+            bundle.putString("cliv", "fcm-23.4.0");
             heartBeatInfo = (HeartBeatInfo) this.heartbeatInfo.get();
-            userAgentPublisher = (UserAgentPublisher) this.userAgentPublisher.get();
-            if (heartBeatInfo != null) {
-                bundle.putString("Firebase-Client-Log-Type", Integer.toString(heartBeatCode.getCode()));
-                bundle.putString("Firebase-Client", userAgentPublisher.getUserAgent());
+            UserAgentPublisher userAgentPublisher = (UserAgentPublisher) this.userAgentPublisher.get();
+            if (heartBeatInfo == null) {
+                return;
+            } else {
+                return;
             }
-            return bundle;
         } catch (ExecutionException e2) {
             e = e2;
             Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("cliv", "fcm-22.0.0");
+            bundle.putString("appid", (String) Tasks.await(this.firebaseInstallations.getId()));
+            bundle.putString("cliv", "fcm-23.4.0");
             heartBeatInfo = (HeartBeatInfo) this.heartbeatInfo.get();
-            userAgentPublisher = (UserAgentPublisher) this.userAgentPublisher.get();
-            if (heartBeatInfo != null) {
+            UserAgentPublisher userAgentPublisher2 = (UserAgentPublisher) this.userAgentPublisher.get();
+            if (heartBeatInfo == null) {
             }
-            return bundle;
         }
-        bundle.putString("cliv", "fcm-22.0.0");
+        bundle.putString("appid", (String) Tasks.await(this.firebaseInstallations.getId()));
+        bundle.putString("cliv", "fcm-23.4.0");
         heartBeatInfo = (HeartBeatInfo) this.heartbeatInfo.get();
-        userAgentPublisher = (UserAgentPublisher) this.userAgentPublisher.get();
-        if (heartBeatInfo != null && userAgentPublisher != null && (heartBeatCode = heartBeatInfo.getHeartBeatCode("fire-iid")) != HeartBeatInfo.HeartBeat.NONE) {
-            bundle.putString("Firebase-Client-Log-Type", Integer.toString(heartBeatCode.getCode()));
-            bundle.putString("Firebase-Client", userAgentPublisher.getUserAgent());
+        UserAgentPublisher userAgentPublisher22 = (UserAgentPublisher) this.userAgentPublisher.get();
+        if (heartBeatInfo == null || userAgentPublisher22 == null || (heartBeatCode = heartBeatInfo.getHeartBeatCode("fire-iid")) == HeartBeatInfo.HeartBeat.NONE) {
+            return;
         }
-        return bundle;
+        bundle.putString("Firebase-Client-Log-Type", Integer.toString(heartBeatCode.getCode()));
+        bundle.putString("Firebase-Client", userAgentPublisher22.getUserAgent());
     }
 
-    private Task startRpc(String str, String str2, String str3, Bundle bundle) {
-        setDefaultAttributesToBundle(str, str2, str3, bundle);
-        return this.rpc.send(bundle);
+    private Task startRpc(String str, String str2, Bundle bundle) {
+        try {
+            setDefaultAttributesToBundle(str, str2, bundle);
+            return this.rpc.send(bundle);
+        } catch (InterruptedException | ExecutionException e) {
+            return Tasks.forException(e);
+        }
     }
 
-    Task getToken(String str) {
-        return extractResponseWhenComplete(startRpc(str, Metadata.getDefaultSenderId(this.app), "*", new Bundle()));
+    Task getToken() {
+        return extractResponseWhenComplete(startRpc(Metadata.getDefaultSenderId(this.app), "*", new Bundle()));
     }
 
-    final /* synthetic */ String lambda$extractResponseWhenComplete$0$GmsRpc(Task task) {
-        return handleResponse((Bundle) task.getResult(IOException.class));
-    }
-
-    Task subscribeToTopic(String str, String str2, String str3) {
+    Task subscribeToTopic(String str, String str2) {
         Bundle bundle = new Bundle();
-        String valueOf = String.valueOf(str3);
-        bundle.putString("gcm.topic", valueOf.length() != 0 ? "/topics/".concat(valueOf) : new String("/topics/"));
-        String valueOf2 = String.valueOf(str3);
-        return extractResponseWhenComplete(startRpc(str, str2, valueOf2.length() != 0 ? "/topics/".concat(valueOf2) : new String("/topics/"), bundle));
+        bundle.putString("gcm.topic", "/topics/" + str2);
+        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
     }
 
-    Task unsubscribeFromTopic(String str, String str2, String str3) {
+    Task unsubscribeFromTopic(String str, String str2) {
         Bundle bundle = new Bundle();
-        String valueOf = String.valueOf(str3);
-        bundle.putString("gcm.topic", valueOf.length() != 0 ? "/topics/".concat(valueOf) : new String("/topics/"));
+        bundle.putString("gcm.topic", "/topics/" + str2);
         bundle.putString("delete", "1");
-        String valueOf2 = String.valueOf(str3);
-        return extractResponseWhenComplete(startRpc(str, str2, valueOf2.length() != 0 ? "/topics/".concat(valueOf2) : new String("/topics/"), bundle));
+        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
     }
 }

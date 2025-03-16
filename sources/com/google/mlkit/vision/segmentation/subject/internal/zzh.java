@@ -1,6 +1,6 @@
 package com.google.mlkit.vision.segmentation.subject.internal;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class zzh {
     public static final /* synthetic */ zzh zza = new zzh();
 

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BagRandomizer {
     private final List bag;
     private int currentIndex;

@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     protected ActionBar actionBar;
     protected boolean actionBarIgnoreTouchEvents;

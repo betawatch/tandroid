@@ -2460,9 +2460,50 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002c, code lost:
+    
+        if (r0.admin_rights.manage_call != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x006a, code lost:
+    
+        if (r9.currentChat.creator != false) goto L31;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0064, code lost:
+    
+        if ((r3 instanceof org.telegram.tgnet.TLRPC.TL_chatParticipantCreator) == false) goto L31;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public /* synthetic */ void lambda$createMenu$15(TLRPC.ChannelParticipant channelParticipant, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, Runnable runnable) {
+        TLRPC.ChatParticipants chatParticipants;
         this.selectedParticipant = channelParticipant;
         if (channelParticipant != null) {
+            if (channelParticipant.peer instanceof TLRPC.TL_peerUser) {
+                if (ChatObject.isChannel(this.currentChat)) {
+                    TLRPC.ChannelParticipant adminInChannel = getMessagesController().getAdminInChannel(channelParticipant.peer.user_id, this.currentChat.id);
+                    if (adminInChannel != null) {
+                        if (!(adminInChannel instanceof TLRPC.TL_channelParticipantCreator)) {
+                        }
+                    }
+                } else {
+                    TLRPC.ChatFull chatFull = getMessagesController().getChatFull(this.currentChat.id);
+                    if (chatFull != null && (chatParticipants = chatFull.participants) != null) {
+                        int size = chatParticipants.participants.size();
+                        int i = 0;
+                        while (true) {
+                            if (i >= size) {
+                                break;
+                            }
+                            TLRPC.ChatParticipant chatParticipant = chatFull.participants.participants.get(i);
+                            if (chatParticipant.user_id != channelParticipant.peer.user_id) {
+                                i++;
+                            } else if (!(chatParticipant instanceof TLRPC.TL_chatParticipantAdmin)) {
+                            }
+                        }
+                    }
+                }
+            }
             if (ChatObject.canUserDoAction(this.currentChat, channelParticipant, 6) || ChatObject.canUserDoAction(this.currentChat, channelParticipant, 7)) {
                 arrayList.add(LocaleController.getString(R.string.Restrict));
                 arrayList2.add(Integer.valueOf(R.drawable.msg_block2));

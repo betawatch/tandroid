@@ -43,7 +43,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.StickersAlert;
 import org.telegram.ui.Components.TrendingStickersLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TrendingStickersLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final TrendingStickersAdapter adapter;
     private final int currentAccount;

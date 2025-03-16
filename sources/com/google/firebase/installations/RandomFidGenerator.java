@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class RandomFidGenerator {
     private static final byte FID_4BIT_PREFIX = Byte.parseByte("01110000", 2);
     private static final byte REMOVE_PREFIX_MASK = Byte.parseByte("00001111", 2);

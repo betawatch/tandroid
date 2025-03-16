@@ -44,7 +44,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.StaticLayoutEx;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GiveawayResultsMessageCell {
     private AvatarDrawable[] avatarDrawables;
     private ImageReceiver[] avatarImageReceivers;

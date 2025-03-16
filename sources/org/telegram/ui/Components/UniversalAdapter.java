@@ -54,7 +54,7 @@ import org.telegram.ui.StatisticActivity;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UniversalAdapter extends AdapterWithDiffUtils {
     private boolean allowReorder;
     private boolean applyBackground;

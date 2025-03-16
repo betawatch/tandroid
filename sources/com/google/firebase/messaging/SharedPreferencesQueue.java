@@ -7,30 +7,31 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SharedPreferencesQueue {
+    private final String itemSeparator;
+    private final String queueName;
     private final SharedPreferences sharedPreferences;
     private final Executor syncExecutor;
-    private final ArrayDeque internalQueue = new ArrayDeque();
+    final ArrayDeque internalQueue = new ArrayDeque();
     private boolean bulkOperation = false;
-    private final String queueName = "topic_operation_queue";
-    private final String itemSeparator = ",";
 
     private SharedPreferencesQueue(SharedPreferences sharedPreferences, String str, String str2, Executor executor) {
         this.sharedPreferences = sharedPreferences;
+        this.queueName = str;
+        this.itemSeparator = str2;
         this.syncExecutor = executor;
     }
 
     private boolean checkAndSyncState(boolean z) {
-        if (!z || this.bulkOperation) {
-            return z;
+        if (z && !this.bulkOperation) {
+            syncStateAsync();
         }
-        syncStateAsync();
-        return true;
+        return z;
     }
 
     static SharedPreferencesQueue createInstance(SharedPreferences sharedPreferences, String str, String str2, Executor executor) {
-        SharedPreferencesQueue sharedPreferencesQueue = new SharedPreferencesQueue(sharedPreferences, "topic_operation_queue", ",", executor);
+        SharedPreferencesQueue sharedPreferencesQueue = new SharedPreferencesQueue(sharedPreferences, str, str2, executor);
         sharedPreferencesQueue.initQueue();
         return sharedPreferencesQueue;
     }
@@ -57,24 +58,17 @@ final class SharedPreferencesQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: syncState, reason: merged with bridge method [inline-methods] */
-    public void bridge$lambda$0$SharedPreferencesQueue() {
+    public void syncState() {
         synchronized (this.internalQueue) {
             this.sharedPreferences.edit().putString(this.queueName, serialize()).commit();
         }
     }
 
     private void syncStateAsync() {
-        this.syncExecutor.execute(new Runnable(this) { // from class: com.google.firebase.messaging.SharedPreferencesQueue$$Lambda$0
-            private final SharedPreferencesQueue arg$1;
-
-            {
-                this.arg$1 = this;
-            }
-
+        this.syncExecutor.execute(new Runnable() { // from class: com.google.firebase.messaging.SharedPreferencesQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
-            public void run() {
-                this.arg$1.bridge$lambda$0$SharedPreferencesQueue();
+            public final void run() {
+                SharedPreferencesQueue.this.syncState();
             }
         });
     }
@@ -88,12 +82,11 @@ final class SharedPreferencesQueue {
     }
 
     public boolean remove(Object obj) {
-        boolean remove;
+        boolean checkAndSyncState;
         synchronized (this.internalQueue) {
-            remove = this.internalQueue.remove(obj);
-            checkAndSyncState(remove);
+            checkAndSyncState = checkAndSyncState(this.internalQueue.remove(obj));
         }
-        return remove;
+        return checkAndSyncState;
     }
 
     public String serialize() {

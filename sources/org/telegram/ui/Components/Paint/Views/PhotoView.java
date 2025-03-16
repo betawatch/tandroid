@@ -44,7 +44,7 @@ import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Size;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoView extends EntityView {
     private int anchor;
     public Size baseSize;

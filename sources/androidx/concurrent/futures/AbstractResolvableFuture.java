@@ -554,7 +554,8 @@ public abstract class AbstractResolvableFuture implements ListenableFuture {
         return "remaining delay=[" + ((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS) + " ms]";
     }
 
-    protected boolean set(Object obj) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public boolean set(Object obj) {
         if (obj == null) {
             obj = NULL;
         }
@@ -565,7 +566,8 @@ public abstract class AbstractResolvableFuture implements ListenableFuture {
         return true;
     }
 
-    protected boolean setException(Throwable th) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public boolean setException(Throwable th) {
         if (!ATOMIC_HELPER.casValue(this, null, new Failure((Throwable) checkNotNull(th)))) {
             return false;
         }
@@ -602,5 +604,10 @@ public abstract class AbstractResolvableFuture implements ListenableFuture {
         sb.append(str2);
         sb.append("]");
         return sb.toString();
+    }
+
+    protected final boolean wasInterrupted() {
+        Object obj = this.value;
+        return (obj instanceof Cancellation) && ((Cancellation) obj).wasInterrupted;
     }
 }

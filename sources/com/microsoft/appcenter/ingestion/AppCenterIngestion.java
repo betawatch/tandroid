@@ -9,7 +9,7 @@ import com.microsoft.appcenter.ingestion.models.json.LogSerializer;
 import java.util.HashMap;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AppCenterIngestion implements Ingestion {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;

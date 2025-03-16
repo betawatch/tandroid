@@ -3,7 +3,7 @@ package com.google.gson.internal;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class NumberLimits {
     private static void checkNumberStringLength(String str) {
         if (str.length() <= 10000) {

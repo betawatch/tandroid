@@ -5,7 +5,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class GiftPremiumBottomSheet$GiftTier {
     private int discount;
     public final TLRPC.TL_premiumGiftCodeOption giftCodeOption;

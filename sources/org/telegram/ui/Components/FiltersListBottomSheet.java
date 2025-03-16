@@ -40,7 +40,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.DialogsActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FiltersListBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private ListAdapter adapter;
     private FiltersListBottomSheetDelegate delegate;

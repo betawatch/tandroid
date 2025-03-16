@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ParticipantsTypeCell extends BaseCell {
     public static int TYPE_ALL = 0;
     public static int TYPE_NEW = 1;

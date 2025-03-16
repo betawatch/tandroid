@@ -2288,7 +2288,7 @@ public abstract class PreviewView extends FrameLayout {
             if (!z) {
                 return;
             }
-            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.storiesListUpdated : 120)) {
+            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.storiesUpdated : 120)) {
                 return;
             }
         }
@@ -2368,7 +2368,7 @@ public abstract class PreviewView extends FrameLayout {
             if (!z) {
                 return;
             }
-            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.storiesListUpdated : 120)) {
+            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.storiesUpdated : 120)) {
                 return;
             }
         }

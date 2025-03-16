@@ -17,7 +17,7 @@ import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.io.File;
 import java.util.ArrayList;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class HttpConnectionReleaseDownloader extends AbstractReleaseDownloader {
     private HttpConnectionCheckTask mCheckTask;
     private HttpConnectionDownloadFileTask mDownloadTask;

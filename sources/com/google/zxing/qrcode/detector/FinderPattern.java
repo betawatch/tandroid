@@ -2,7 +2,7 @@ package com.google.zxing.qrcode.detector;
 
 import com.google.zxing.ResultPoint;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FinderPattern extends ResultPoint {
     private final int count;
     private final float estimatedModuleSize;

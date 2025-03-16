@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FilterShaders {
     private BlurProgram blurProgram;
     private boolean blurTextureCreated;
@@ -797,12 +797,12 @@ public class FilterShaders {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0161 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x015c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x002e  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0026  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -8,7 +8,7 @@ import java.util.UUID;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractErrorLog extends AbstractLog {
     private Date appLaunchTimestamp;
     private String architecture;

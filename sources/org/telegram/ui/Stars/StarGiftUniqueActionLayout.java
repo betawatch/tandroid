@@ -30,7 +30,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StarGiftUniqueActionLayout {
     TLRPC.TL_messageActionStarGiftUnique action;
     private boolean attached;

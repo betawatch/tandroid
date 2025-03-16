@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.voip.ImageWithWavesView;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class AcceptDeclineView extends View {
     private Paint acceptCirclePaint;
     private FabBackgroundDrawable acceptDrawable;

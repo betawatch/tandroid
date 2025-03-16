@@ -3,7 +3,7 @@ package com.google.firebase.installations.local;
 import com.google.firebase.installations.local.PersistedInstallation;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEntry {
     private final String authToken;
     private final long expiresInSecs;

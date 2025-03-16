@@ -38,7 +38,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Gson {
     static final Strictness DEFAULT_STRICTNESS = null;
     final List builderFactories;

@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ButtonBounce {
     private Runnable additionalInvalidate;
     private ValueAnimator animator;

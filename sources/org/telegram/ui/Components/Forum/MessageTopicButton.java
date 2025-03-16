@@ -36,7 +36,7 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.StaticLayoutEx;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MessageTopicButton {
     private AvatarDrawable avatarDrawable;
     private int avatarSize;

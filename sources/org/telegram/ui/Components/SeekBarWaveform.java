@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.SeekBar;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SeekBarWaveform {
     private static Paint paintInner;
     private static Paint paintOuter;

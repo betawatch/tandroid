@@ -7,7 +7,7 @@ import com.google.mlkit.common.sdkinternal.ExecutorSelector;
 import com.google.mlkit.nl.languageid.LanguageIdentifierImpl;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentificationJni;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final /* synthetic */ class zza implements ComponentFactory {
     static final ComponentFactory zza = new zza();
 

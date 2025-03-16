@@ -42,7 +42,7 @@ import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.ThanosEffect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ThanosEffect extends TextureView {
     private static Boolean nothanos;
     public boolean destroyed;

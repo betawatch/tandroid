@@ -96,13 +96,18 @@ public abstract class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
 
     public static Map toMap(Map map) {
         Map emptyMap;
+        Map mutableMap;
         Intrinsics.checkNotNullParameter(map, "<this>");
         int size = map.size();
-        if (size != 0) {
-            return size != 1 ? toMutableMap(map) : MapsKt__MapsJVMKt.toSingletonMap(map);
+        if (size == 0) {
+            emptyMap = emptyMap();
+            return emptyMap;
         }
-        emptyMap = emptyMap();
-        return emptyMap;
+        if (size == 1) {
+            return MapsKt__MapsJVMKt.toSingletonMap(map);
+        }
+        mutableMap = toMutableMap(map);
+        return mutableMap;
     }
 
     public static final Map toMap(Pair[] pairArr, Map destination) {
@@ -112,7 +117,7 @@ public abstract class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
         return destination;
     }
 
-    public static final Map toMutableMap(Map map) {
+    public static Map toMutableMap(Map map) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         return new LinkedHashMap(map);
     }

@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RoundStatusDrawable extends StatusDrawable {
     private Paint currentPaint;
     private float progress;

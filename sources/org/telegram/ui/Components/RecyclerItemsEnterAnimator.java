@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.Components.RecyclerItemsEnterAnimator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RecyclerItemsEnterAnimator {
     boolean alwaysCheckItemsAlpha;
     boolean invalidateAlpha;

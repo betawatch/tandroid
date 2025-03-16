@@ -13,7 +13,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Reactions.HwEmojis;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EllipsizeSpanAnimator {
     boolean attachedToWindow;
     private final AnimatorSet ellAnimator;
@@ -40,7 +40,7 @@ public class EllipsizeSpanAnimator {
         this.ellipsizedViews = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.ellAnimator = animatorSet;
-        animatorSet.playTogether(createEllipsizeAnimator(textAlphaSpanArr[0], 0, NotificationCenter.proxyCheckDone, 0, NotificationCenter.storiesListUpdated), createEllipsizeAnimator(textAlphaSpanArr[1], 0, NotificationCenter.proxyCheckDone, 150, NotificationCenter.storiesListUpdated), createEllipsizeAnimator(textAlphaSpanArr[2], 0, NotificationCenter.proxyCheckDone, NotificationCenter.storiesListUpdated, NotificationCenter.storiesListUpdated), createEllipsizeAnimator(textAlphaSpanArr[0], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), createEllipsizeAnimator(textAlphaSpanArr[1], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), createEllipsizeAnimator(textAlphaSpanArr[2], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.playTogether(createEllipsizeAnimator(textAlphaSpanArr[0], 0, NotificationCenter.proxyCheckDone, 0, NotificationCenter.storiesUpdated), createEllipsizeAnimator(textAlphaSpanArr[1], 0, NotificationCenter.proxyCheckDone, 150, NotificationCenter.storiesUpdated), createEllipsizeAnimator(textAlphaSpanArr[2], 0, NotificationCenter.proxyCheckDone, NotificationCenter.storiesUpdated, NotificationCenter.storiesUpdated), createEllipsizeAnimator(textAlphaSpanArr[0], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), createEllipsizeAnimator(textAlphaSpanArr[1], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), createEllipsizeAnimator(textAlphaSpanArr[2], NotificationCenter.proxyCheckDone, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.EllipsizeSpanAnimator.1
             private Runnable restarter = new Runnable() { // from class: org.telegram.ui.Components.EllipsizeSpanAnimator.1.1
                 @Override // java.lang.Runnable

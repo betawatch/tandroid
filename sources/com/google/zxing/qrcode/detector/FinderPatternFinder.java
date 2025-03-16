@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FinderPatternFinder {
     private static final EstimatedModuleComparator moduleComparator = new EstimatedModuleComparator();
     private boolean hasSkipped;

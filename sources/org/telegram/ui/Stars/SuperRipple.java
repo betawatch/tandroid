@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationBadge;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SuperRipple extends ISuperRipple {
     public final int MAX_COUNT;
     public final float[] centerX;

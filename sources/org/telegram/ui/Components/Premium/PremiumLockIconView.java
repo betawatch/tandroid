@@ -19,7 +19,7 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumLockIconView extends ImageView {
     public static int TYPE_GIFT_LOCK = 3;
     public static int TYPE_GIFT_PIN = 4;

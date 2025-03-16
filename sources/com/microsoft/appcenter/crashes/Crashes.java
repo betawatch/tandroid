@@ -60,17 +60,20 @@ public class Crashes extends AbstractAppCenterService {
     private UncaughtExceptionHandler mUncaughtExceptionHandler;
     private final Map mUnprocessedErrorReports;
 
+    /* loaded from: classes3.dex */
     private interface CallbackProcessor {
         void onCallBack(ErrorReport errorReport);
 
         boolean shouldDeleteThrowable();
     }
 
+    /* loaded from: classes3.dex */
     private static class DefaultCrashesListener extends AbstractCrashesListener {
         private DefaultCrashesListener() {
         }
     }
 
+    /* loaded from: classes3.dex */
     private static class ErrorLogReport {
         private final ManagedErrorLog log;
         private final ErrorReport report;
@@ -81,6 +84,7 @@ public class Crashes extends AbstractAppCenterService {
         }
     }
 
+    /* loaded from: classes3.dex */
     private interface ExceptionModelBuilder {
         Exception buildExceptionModel();
     }

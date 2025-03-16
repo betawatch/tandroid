@@ -2,14 +2,22 @@ package com.google.firebase.components;
 
 /* loaded from: classes.dex */
 public final class Dependency {
-    private final Class anInterface;
+    private final Qualified anInterface;
     private final int injection;
     private final int type;
 
-    private Dependency(Class cls, int i, int i2) {
-        this.anInterface = (Class) Preconditions.checkNotNull(cls, "Null dependency anInterface.");
+    private Dependency(Qualified qualified, int i, int i2) {
+        this.anInterface = (Qualified) Preconditions.checkNotNull(qualified, "Null dependency anInterface.");
         this.type = i;
         this.injection = i2;
+    }
+
+    private Dependency(Class cls, int i, int i2) {
+        this(Qualified.unqualified(cls), i, i2);
+    }
+
+    public static Dependency deferred(Class cls) {
+        return new Dependency(cls, 0, 2);
     }
 
     private static String describeInjection(int i) {
@@ -33,8 +41,16 @@ public final class Dependency {
         return new Dependency(cls, 0, 1);
     }
 
+    public static Dependency required(Qualified qualified) {
+        return new Dependency(qualified, 1, 0);
+    }
+
     public static Dependency required(Class cls) {
         return new Dependency(cls, 1, 0);
+    }
+
+    public static Dependency requiredProvider(Qualified qualified) {
+        return new Dependency(qualified, 1, 1);
     }
 
     public static Dependency requiredProvider(Class cls) {
@@ -50,10 +66,10 @@ public final class Dependency {
             return false;
         }
         Dependency dependency = (Dependency) obj;
-        return this.anInterface == dependency.anInterface && this.type == dependency.type && this.injection == dependency.injection;
+        return this.anInterface.equals(dependency.anInterface) && this.type == dependency.type && this.injection == dependency.injection;
     }
 
-    public Class getInterface() {
+    public Qualified getInterface() {
         return this.anInterface;
     }
 

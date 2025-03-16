@@ -54,6 +54,7 @@ import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
+import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda58;
 
 /* loaded from: classes5.dex */
 public class HintView2 extends View {
@@ -174,12 +175,7 @@ public class HintView2 extends View {
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.show = new AnimatedFloat(this, 350L, cubicBezierInterpolator);
         this.iconMargin = AndroidUtilities.dp(2.0f);
-        this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                HintView2.this.hide();
-            }
-        };
+        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda58(this);
         this.bounceT = 1.0f;
         this.bounce = new ButtonBounce(this, 2.0f, 5.0f);
         this.boundsWithArrow = new Rect();
@@ -208,7 +204,7 @@ public class HintView2 extends View {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.bounceAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda2
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     HintView2.this.lambda$bounceShow$0(valueAnimator2);
@@ -241,7 +237,7 @@ public class HintView2 extends View {
                 obtainNewPath.setCurrentLayout(this.textLayout, spanStart, 0.0f);
                 this.textLayout.getSelectionPath(spanStart, spanEnd, obtainNewPath);
                 invalidate();
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda3
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
                         HintView2.this.lambda$checkTouchLinks$1(linkSpanDrawable, hitLink);
@@ -619,7 +615,7 @@ public class HintView2 extends View {
     private void prepareBlur() {
         if (this.useBlur) {
             this.drawingMyBlur = true;
-            AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda1
+            AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.HintView2$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     HintView2.this.lambda$prepareBlur$2((Bitmap) obj);

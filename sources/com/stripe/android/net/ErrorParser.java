@@ -4,7 +4,7 @@ import com.stripe.android.util.StripeJsonUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class ErrorParser {
 
     static class StripeError {

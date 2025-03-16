@@ -39,7 +39,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LimitPreviewView extends LinearLayout {
     private boolean animateIncrease;
     private int animateIncreaseWidth;

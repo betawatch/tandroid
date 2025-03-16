@@ -2,7 +2,7 @@ package com.microsoft.appcenter.distribute;
 
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class ErrorDetails {
     private String code;
 

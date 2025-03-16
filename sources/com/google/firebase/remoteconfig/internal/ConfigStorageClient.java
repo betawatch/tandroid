@@ -9,7 +9,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ConfigStorageClient {
     private static final Map clientInstances = new HashMap();
     private final Context context;

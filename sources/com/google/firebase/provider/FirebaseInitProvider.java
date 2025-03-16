@@ -9,14 +9,27 @@ import android.net.Uri;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.StartupTime;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FirebaseInitProvider extends ContentProvider {
+    private static StartupTime startupTime = StartupTime.now();
+    private static AtomicBoolean currentlyInitializing = new AtomicBoolean(false);
+
     private static void checkContentProviderAuthority(ProviderInfo providerInfo) {
         Preconditions.checkNotNull(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
         if ("com.google.firebase.firebaseinitprovider".equals(providerInfo.authority)) {
             throw new IllegalStateException("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
         }
+    }
+
+    public static StartupTime getStartupTime() {
+        return startupTime;
+    }
+
+    public static boolean isCurrentlyInitializing() {
+        return currentlyInitializing.get();
     }
 
     @Override // android.content.ContentProvider
@@ -42,8 +55,15 @@ public class FirebaseInitProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public boolean onCreate() {
-        Log.i("FirebaseInitProvider", FirebaseApp.initializeApp(getContext()) == null ? "FirebaseApp initialization unsuccessful" : "FirebaseApp initialization successful");
-        return false;
+        try {
+            currentlyInitializing.set(true);
+            Log.i("FirebaseInitProvider", FirebaseApp.initializeApp(getContext()) == null ? "FirebaseApp initialization unsuccessful" : "FirebaseApp initialization successful");
+            currentlyInitializing.set(false);
+            return false;
+        } catch (Throwable th) {
+            currentlyInitializing.set(false);
+            throw th;
+        }
     }
 
     @Override // android.content.ContentProvider

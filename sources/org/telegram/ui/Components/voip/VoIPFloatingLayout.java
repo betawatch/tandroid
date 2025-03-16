@@ -26,7 +26,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class VoIPFloatingLayout extends FrameLayout {
     private final float FLOATING_MODE_SCALE;
     private boolean active;

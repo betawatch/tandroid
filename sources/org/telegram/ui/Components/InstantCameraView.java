@@ -105,7 +105,7 @@ import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class InstantCameraView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static int A;
     private static final int[] ALLOW_BIG_CAMERA_WHITELIST = {285904780, -1394191079};
@@ -2369,11 +2369,11 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             this.eglConfig = null;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:143:0x0262, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:143:0x0260, code lost:
         
             if (r3 != null) goto L152;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:145:0x0294, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:145:0x0292, code lost:
         
             if ((r17.audioBufferInfo.flags & 4) == 0) goto L204;
          */
@@ -2381,15 +2381,15 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         
             return;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:151:0x028b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:151:0x0289, code lost:
         
             r3.releaseOutputBuffer(r2, false);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:160:0x0284, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:160:0x0282, code lost:
         
             if (r3 != null) goto L152;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:162:0x0289, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:162:0x0287, code lost:
         
             if (r3 != null) goto L152;
          */

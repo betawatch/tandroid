@@ -9,20 +9,32 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 /* loaded from: classes.dex */
 public final class CloudMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CloudMessage> CREATOR = new zzb();
-    private Intent zza;
+    final Intent zza;
 
     public CloudMessage(Intent intent) {
         this.zza = intent;
     }
 
-    public final Intent getIntent() {
+    public Intent getIntent() {
         return this.zza;
     }
 
+    public String getMessageId() {
+        String stringExtra = this.zza.getStringExtra("google.message_id");
+        return stringExtra == null ? this.zza.getStringExtra("message_id") : stringExtra;
+    }
+
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
+    public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeParcelable(parcel, 1, this.zza, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    final Integer zza() {
+        if (this.zza.hasExtra("google.product_id")) {
+            return Integer.valueOf(this.zza.getIntExtra("google.product_id", 0));
+        }
+        return null;
     }
 }

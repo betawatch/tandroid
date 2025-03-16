@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class RemoteMessageCreator implements Parcelable.Creator {
     static void writeToParcel(RemoteMessage remoteMessage, Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);

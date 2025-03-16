@@ -2,7 +2,7 @@ package com.stripe.android.model;
 
 import java.util.Date;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Token {
     private final Card mCard;
     private final Date mCreated;

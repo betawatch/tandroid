@@ -46,7 +46,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ScrimOptions extends Dialog {
     private Bitmap blurBitmap;
     private Paint blurBitmapPaint;

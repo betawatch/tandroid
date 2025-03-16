@@ -13,7 +13,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MatrixParticlesDrawable {
     MatrixTextParticle[][] matrixTextParticles;
     ArrayList[] particles;
@@ -52,7 +52,7 @@ public class MatrixParticlesDrawable {
                 this.index = this.nextIndex;
                 this.lastUpdateTime = j;
                 this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
-                this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.storiesListUpdated) + 150;
+                this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.storiesUpdated) + 150;
             }
         }
 
@@ -60,7 +60,7 @@ public class MatrixParticlesDrawable {
             this.index = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.lastUpdateTime = j;
-            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.storiesListUpdated) + 150;
+            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.storiesUpdated) + 150;
         }
     }
 

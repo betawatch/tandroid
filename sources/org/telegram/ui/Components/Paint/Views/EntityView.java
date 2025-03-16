@@ -27,7 +27,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Rect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class EntityView extends FrameLayout {
     private static final List STICKY_ANGLES = Arrays.asList(-90, 0, 90, Integer.valueOf(NotificationCenter.updateBotMenuButton));
     private float angle;

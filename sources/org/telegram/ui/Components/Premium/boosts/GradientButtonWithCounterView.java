@@ -9,7 +9,7 @@ import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GradientButtonWithCounterView extends ButtonWithCounterView {
     private final CellFlickerDrawable flickerDrawable;
     private boolean incGradient;

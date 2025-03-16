@@ -748,14 +748,14 @@ public class DataSettingsActivity extends BaseFragment {
                                     final boolean contains = absolutePath3.contains(str4);
                                     if (!z2 || contains) {
                                         str3 = str4;
-                                        formatString = contains ? LocaleController.formatString("StoragePathFreeInternal", R.string.StoragePathFreeInternal, AndroidUtilities.formatFileSize(file.getFreeSpace())) : LocaleController.formatString("StoragePathFreeExternal", R.string.StoragePathFreeExternal, AndroidUtilities.formatFileSize(file.getFreeSpace()));
+                                        formatString = contains ? LocaleController.formatString(R.string.StoragePathFreeInternal, AndroidUtilities.formatFileSize(file.getFreeSpace())) : LocaleController.formatString(R.string.StoragePathFreeExternal, AndroidUtilities.formatFileSize(file.getFreeSpace()));
                                     } else {
                                         int i7 = R.string.StoragePathFreeValueExternal;
                                         str3 = str4;
                                         Object[] objArr = new Object[r7];
                                         objArr[0] = AndroidUtilities.formatFileSize(file.getFreeSpace());
                                         objArr[1] = absolutePath3;
-                                        formatString = LocaleController.formatString("StoragePathFreeValueExternal", i7, objArr);
+                                        formatString = LocaleController.formatString(i7, objArr);
                                     }
                                     languageCell.setValue(LocaleController.getString(contains ? R.string.InternalStorage : R.string.SdCard), formatString);
                                     languageCell.setLanguageSelected(absolutePath3.startsWith(absolutePath), false);

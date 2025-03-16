@@ -75,7 +75,7 @@ import org.telegram.ui.TwoStepVerificationSetupActivity;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BotStarsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ButtonWithCounterView adsButton;
     private ChatAvatarContainer avatarContainer;

@@ -57,7 +57,7 @@ import org.telegram.ui.Components.SeekBarView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FloatingDebugView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private LinearLayout bigLayout;
     private List debugItems;
@@ -481,8 +481,8 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

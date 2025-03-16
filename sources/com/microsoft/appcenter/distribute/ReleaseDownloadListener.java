@@ -12,7 +12,7 @@ import com.microsoft.appcenter.utils.HandlerUtils;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class ReleaseDownloadListener implements ReleaseDownloader.Listener {
     private final Context mContext;
     private ProgressDialog mProgressDialog;

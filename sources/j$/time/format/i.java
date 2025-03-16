@@ -1,75 +1,90 @@
 package j$.time.format;
 
-import j$.time.ZoneOffset;
-
 /* loaded from: classes2.dex */
-final class i implements g {
-    i() {
+final class i implements f {
+    static final long[] f = {0, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L};
+    final j$.time.temporal.l a;
+    final int b;
+    final int c;
+    private final x d;
+    final int e;
+
+    i(j$.time.temporal.l lVar, int i, int i2, x xVar) {
+        this.a = lVar;
+        this.b = i;
+        this.c = i2;
+        this.d = xVar;
+        this.e = 0;
     }
 
-    @Override // j$.time.format.g
-    public final boolean a(s sVar, StringBuilder sb) {
-        Long e = sVar.e(j$.time.temporal.a.INSTANT_SECONDS);
-        j$.time.temporal.k d = sVar.d();
-        j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
-        Long valueOf = d.e(aVar) ? Long.valueOf(sVar.d().b(aVar)) : null;
-        int i = 0;
+    protected i(j$.time.temporal.l lVar, int i, int i2, x xVar, int i3) {
+        this.a = lVar;
+        this.b = i;
+        this.c = i2;
+        this.d = xVar;
+        this.e = i3;
+    }
+
+    @Override // j$.time.format.f
+    public final boolean a(r rVar, StringBuilder sb) {
+        j$.time.temporal.l lVar = this.a;
+        Long e = rVar.e(lVar);
         if (e == null) {
             return false;
         }
         long longValue = e.longValue();
-        int f = aVar.f(valueOf != null ? valueOf.longValue() : 0L);
-        if (longValue >= -62167219200L) {
-            long j = longValue - 253402300800L;
-            long j2 = j$.com.android.tools.r8.a.j(j, 315569520000L) + 1;
-            j$.time.g j3 = j$.time.g.j(j$.com.android.tools.r8.a.i(j, 315569520000L) - 62167219200L, 0, ZoneOffset.f);
-            if (j2 > 0) {
+        v b = rVar.b();
+        String l = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
+        int length = l.length();
+        int i = this.c;
+        if (length > i) {
+            throw new j$.time.c("Field " + lVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i);
+        }
+        b.getClass();
+        int i2 = this.b;
+        x xVar = this.d;
+        if (longValue >= 0) {
+            int i3 = c.a[xVar.ordinal()];
+            if (i3 == 1 ? !(i2 >= 19 || longValue < f[i2]) : i3 == 2) {
                 sb.append('+');
-                sb.append(j2);
-            }
-            sb.append(j3);
-            if (j3.g() == 0) {
-                sb.append(":00");
             }
         } else {
-            long j4 = longValue + 62167219200L;
-            long j5 = j4 / 315569520000L;
-            long j6 = j4 % 315569520000L;
-            j$.time.g j7 = j$.time.g.j(j6 - 62167219200L, 0, ZoneOffset.f);
-            int length = sb.length();
-            sb.append(j7);
-            if (j7.g() == 0) {
-                sb.append(":00");
-            }
-            if (j5 < 0) {
-                if (j7.h() == -10000) {
-                    sb.replace(length, length + 2, Long.toString(j5 - 1));
-                } else if (j6 == 0) {
-                    sb.insert(length, j5);
-                } else {
-                    sb.insert(length + 1, Math.abs(j5));
-                }
+            int i4 = c.a[xVar.ordinal()];
+            if (i4 == 1 || i4 == 2 || i4 == 3) {
+                sb.append('-');
+            } else if (i4 == 4) {
+                throw new j$.time.c("Field " + lVar + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
             }
         }
-        if (f > 0) {
-            sb.append('.');
-            int i2 = 100000000;
-            while (true) {
-                if (f <= 0 && i % 3 == 0 && i >= -2) {
-                    break;
-                }
-                int i3 = f / i2;
-                sb.append((char) (i3 + 48));
-                f -= i3 * i2;
-                i2 /= 10;
-                i++;
-            }
+        for (int i5 = 0; i5 < i2 - l.length(); i5++) {
+            sb.append('0');
         }
-        sb.append('Z');
+        sb.append(l);
         return true;
     }
 
+    final i c() {
+        if (this.e == -1) {
+            return this;
+        }
+        return new i(this.a, this.b, this.c, this.d, -1);
+    }
+
+    final i d(int i) {
+        return new i(this.a, this.b, this.c, this.d, this.e + i);
+    }
+
     public final String toString() {
-        return "Instant()";
+        j$.time.temporal.l lVar = this.a;
+        x xVar = this.d;
+        int i = this.c;
+        int i2 = this.b;
+        if (i2 == 1 && i == 19 && xVar == x.NORMAL) {
+            return "Value(" + lVar + ")";
+        }
+        if (i2 == i && xVar == x.NOT_NEGATIVE) {
+            return "Value(" + lVar + "," + i2 + ")";
+        }
+        return "Value(" + lVar + "," + i2 + "," + i + "," + xVar + ")";
     }
 }

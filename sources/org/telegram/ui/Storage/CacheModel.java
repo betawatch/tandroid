@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.ui.CacheControlActivity;
 import org.telegram.ui.Storage.CacheModel;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CacheModel {
     public boolean allDocumentsSelected;
     public boolean allMusicSelected;

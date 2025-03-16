@@ -38,7 +38,7 @@ import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
 import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HeaderCell extends FrameLayout {
     private ValueAnimator goldenAnimator;
     private final GLIconTextureView iconTextureView;

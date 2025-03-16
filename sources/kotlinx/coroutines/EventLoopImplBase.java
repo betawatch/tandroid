@@ -389,6 +389,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         return true;
     }
 
+    @Override // kotlinx.coroutines.EventLoop
     public long processNextEvent() {
         ThreadSafeHeapNode threadSafeHeapNode;
         if (processUnconfinedEvent()) {

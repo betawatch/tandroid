@@ -144,7 +144,7 @@ import org.telegram.ui.bots.BotWebViewMenuContainer$ActionBarColorsAnimating;
 import org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout;
 import org.telegram.ui.web.BotWebViewContainer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, BottomSheet.BottomSheetDelegateInterface {
     public final Property ATTACH_ALERT_LAYOUT_TRANSLATION;
     private final Property ATTACH_ALERT_PROGRESS;
@@ -3114,13 +3114,16 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
         };
         this.buttonsRecyclerView = recyclerListView;
+        recyclerListView.setClipChildren(true);
+        this.buttonsRecyclerView.setClipToPadding(true);
+        RecyclerListView recyclerListView2 = this.buttonsRecyclerView;
         ButtonsAdapter buttonsAdapter = new ButtonsAdapter(context);
         this.buttonsAdapter = buttonsAdapter;
-        recyclerListView.setAdapter(buttonsAdapter);
-        RecyclerListView recyclerListView2 = this.buttonsRecyclerView;
+        recyclerListView2.setAdapter(buttonsAdapter);
+        RecyclerListView recyclerListView3 = this.buttonsRecyclerView;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 0, false);
         this.buttonsLayoutManager = linearLayoutManager;
-        recyclerListView2.setLayoutManager(linearLayoutManager);
+        recyclerListView3.setLayoutManager(linearLayoutManager);
         this.buttonsRecyclerView.setVerticalScrollBarEnabled(false);
         this.buttonsRecyclerView.setHorizontalScrollBarEnabled(false);
         this.buttonsRecyclerView.setItemAnimator(null);

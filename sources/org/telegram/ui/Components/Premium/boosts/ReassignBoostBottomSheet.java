@@ -54,7 +54,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
     private final ButtonWithCounterView actionButton;
     private final List allUsedBoosts;

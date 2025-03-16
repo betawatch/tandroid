@@ -14,4 +14,8 @@ abstract class CharsKt__CharJVMKt {
     public static final int digitOf(char c, int i) {
         return Character.digit((int) c, i);
     }
+
+    public static final boolean isWhitespace(char c) {
+        return Character.isWhitespace(c) || Character.isSpaceChar(c);
+    }
 }

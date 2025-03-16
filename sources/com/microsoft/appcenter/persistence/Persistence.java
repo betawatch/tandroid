@@ -6,7 +6,7 @@ import java.io.Closeable;
 import java.util.Collection;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Persistence implements Closeable {
     private LogSerializer mLogSerializer;
 

@@ -7,13 +7,12 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Shader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.SharedConfig;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SpoilerEffectBitmapFactory {
     private static SpoilerEffectBitmapFactory factory;
     Bitmap backgroundBitmap;
@@ -123,8 +122,7 @@ public class SpoilerEffectBitmapFactory {
                     int i6 = i2 * i4;
                     spoilerEffect.setBounds(i5, i6 - AndroidUtilities.dp(5.0f), i5 + i2 + AndroidUtilities.dp(3.0f), i6 + i2 + AndroidUtilities.dp(5.0f));
                     spoilerEffect.drawPoints = true;
-                    spoilerEffect.particlePoints = (float[][]) Array.newInstance((Class<?>) Float.TYPE, SpoilerEffect.ALPHAS.length, dp * 2);
-                    spoilerEffect.setMaxParticlesCount(dp);
+                    spoilerEffect.setMaxParticlesCount(Math.min(SpoilerEffect.MAX_PARTICLES_PER_ENTITY * 5, dp));
                     spoilerEffect.setColor(-1);
                     this.shaderSpoilerEffects.add(spoilerEffect);
                 }

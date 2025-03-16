@@ -31,7 +31,7 @@ import org.telegram.ui.GradientClip;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StarReactionsOverlay extends View {
     private float accumulatedRippleIntensity;
     private BaseCell cell;

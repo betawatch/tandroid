@@ -6,7 +6,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.WrappedResourceProvider;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DarkFragmentWrapper extends BaseFragment {
     private final BaseFragment parentFragment;
 

@@ -2,10 +2,12 @@ package com.google.firebase.components;
 
 import android.util.Log;
 import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentRuntime;
 import com.google.firebase.dynamicloading.ComponentLoader;
 import com.google.firebase.events.Publisher;
 import com.google.firebase.events.Subscriber;
+import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,24 +22,27 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
 /* loaded from: classes.dex */
-public class ComponentRuntime extends AbstractComponentContainer implements ComponentLoader {
+public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     private static final Provider EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda0
         @Override // com.google.firebase.inject.Provider
         public final Object get() {
             return Collections.emptySet();
         }
     };
+    private final ComponentRegistrarProcessor componentRegistrarProcessor;
     private final Map components;
     private final AtomicReference eagerComponentsInitializedWith;
     private final EventBus eventBus;
     private final Map lazyInstanceMap;
     private final Map lazySetMap;
+    private Set processedCoroutineDispatcherInterfaces;
     private final List unprocessedRegistrarProviders;
 
     public static final class Builder {
         private final Executor defaultExecutor;
         private final List lazyRegistrars = new ArrayList();
         private final List additionalComponents = new ArrayList();
+        private ComponentRegistrarProcessor componentRegistrarProcessor = ComponentRegistrarProcessor.NOOP;
 
         Builder(Executor executor) {
             this.defaultExecutor = executor;
@@ -71,17 +76,24 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         }
 
         public ComponentRuntime build() {
-            return new ComponentRuntime(this.defaultExecutor, this.lazyRegistrars, this.additionalComponents);
+            return new ComponentRuntime(this.defaultExecutor, this.lazyRegistrars, this.additionalComponents, this.componentRegistrarProcessor);
+        }
+
+        public Builder setProcessor(ComponentRegistrarProcessor componentRegistrarProcessor) {
+            this.componentRegistrarProcessor = componentRegistrarProcessor;
+            return this;
         }
     }
 
-    private ComponentRuntime(Executor executor, Iterable iterable, Collection collection) {
+    private ComponentRuntime(Executor executor, Iterable iterable, Collection collection, ComponentRegistrarProcessor componentRegistrarProcessor) {
         this.components = new HashMap();
         this.lazyInstanceMap = new HashMap();
         this.lazySetMap = new HashMap();
+        this.processedCoroutineDispatcherInterfaces = new HashSet();
         this.eagerComponentsInitializedWith = new AtomicReference();
         EventBus eventBus = new EventBus(executor);
         this.eventBus = eventBus;
+        this.componentRegistrarProcessor = componentRegistrarProcessor;
         ArrayList arrayList = new ArrayList();
         arrayList.add(Component.of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
         arrayList.add(Component.of(this, ComponentLoader.class, new Class[0]));
@@ -108,12 +120,31 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
                 try {
                     ComponentRegistrar componentRegistrar = (ComponentRegistrar) ((Provider) it.next()).get();
                     if (componentRegistrar != null) {
-                        list.addAll(componentRegistrar.getComponents());
+                        list.addAll(this.componentRegistrarProcessor.processRegistrar(componentRegistrar));
                         it.remove();
                     }
                 } catch (InvalidRegistrarException e) {
                     it.remove();
                     Log.w("ComponentDiscovery", "Invalid component registrar.", e);
+                }
+            }
+            Iterator it2 = list.iterator();
+            while (it2.hasNext()) {
+                Object[] array = ((Component) it2.next()).getProvidedInterfaces().toArray();
+                int length = array.length;
+                int i = 0;
+                while (true) {
+                    if (i < length) {
+                        Object obj = array[i];
+                        if (obj.toString().contains("kotlinx.coroutines.CoroutineDispatcher")) {
+                            if (this.processedCoroutineDispatcherInterfaces.contains(obj.toString())) {
+                                it2.remove();
+                                break;
+                            }
+                            this.processedCoroutineDispatcherInterfaces.add(obj.toString());
+                        }
+                        i++;
+                    }
                 }
             }
             if (this.components.isEmpty()) {
@@ -123,9 +154,9 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
                 arrayList2.addAll(list);
                 CycleDetector.detect(arrayList2);
             }
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                final Component component = (Component) it2.next();
+            Iterator it3 = list.iterator();
+            while (it3.hasNext()) {
+                final Component component = (Component) it3.next();
                 this.components.put(component, new Lazy(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda1
                     @Override // com.google.firebase.inject.Provider
                     public final Object get() {
@@ -139,9 +170,9 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
             arrayList.addAll(processSetComponents());
             processDependencies();
         }
-        Iterator it3 = arrayList.iterator();
-        while (it3.hasNext()) {
-            ((Runnable) it3.next()).run();
+        Iterator it4 = arrayList.iterator();
+        while (it4.hasNext()) {
+            ((Runnable) it4.next()).run();
         }
         maybeInitializeEagerComponents();
     }
@@ -180,13 +211,13 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
 
     private void processDependencies() {
         Map map;
-        Class cls;
+        Qualified qualified;
         Provider empty;
         for (Component component : this.components.keySet()) {
             for (Dependency dependency : component.getDependencies()) {
                 if (dependency.isSet() && !this.lazySetMap.containsKey(dependency.getInterface())) {
                     map = this.lazySetMap;
-                    cls = dependency.getInterface();
+                    qualified = dependency.getInterface();
                     empty = LazySet.fromCollection(Collections.emptySet());
                 } else if (this.lazyInstanceMap.containsKey(dependency.getInterface())) {
                     continue;
@@ -196,11 +227,11 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
                     }
                     if (!dependency.isSet()) {
                         map = this.lazyInstanceMap;
-                        cls = dependency.getInterface();
+                        qualified = dependency.getInterface();
                         empty = OptionalProvider.empty();
                     }
                 }
-                map.put(cls, empty);
+                map.put(qualified, empty);
             }
         }
     }
@@ -212,9 +243,9 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
             Component component = (Component) it.next();
             if (component.isValue()) {
                 final Provider provider = (Provider) this.components.get(component);
-                for (Class cls : component.getProvidedInterfaces()) {
-                    if (this.lazyInstanceMap.containsKey(cls)) {
-                        final OptionalProvider optionalProvider = (OptionalProvider) ((Provider) this.lazyInstanceMap.get(cls));
+                for (Qualified qualified : component.getProvidedInterfaces()) {
+                    if (this.lazyInstanceMap.containsKey(qualified)) {
+                        final OptionalProvider optionalProvider = (OptionalProvider) ((Provider) this.lazyInstanceMap.get(qualified));
                         arrayList.add(new Runnable() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -222,7 +253,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
                             }
                         });
                     } else {
-                        this.lazyInstanceMap.put(cls, provider);
+                        this.lazyInstanceMap.put(qualified, provider);
                     }
                 }
             }
@@ -237,11 +268,11 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
             Component component = (Component) entry.getKey();
             if (!component.isValue()) {
                 Provider provider = (Provider) entry.getValue();
-                for (Class cls : component.getProvidedInterfaces()) {
-                    if (!hashMap.containsKey(cls)) {
-                        hashMap.put(cls, new HashSet());
+                for (Qualified qualified : component.getProvidedInterfaces()) {
+                    if (!hashMap.containsKey(qualified)) {
+                        hashMap.put(qualified, new HashSet());
                     }
-                    ((Set) hashMap.get(cls)).add(provider);
+                    ((Set) hashMap.get(qualified)).add(provider);
                 }
             }
         }
@@ -257,21 +288,48 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
                     });
                 }
             } else {
-                this.lazySetMap.put((Class) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
+                this.lazySetMap.put((Qualified) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
             }
         }
         return arrayList;
     }
 
-    @Override // com.google.firebase.components.AbstractComponentContainer, com.google.firebase.components.ComponentContainer
-    public /* bridge */ /* synthetic */ Object get(Class cls) {
-        return super.get(cls);
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Object get(Qualified qualified) {
+        return ComponentContainer.-CC.$default$get(this, qualified);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public synchronized Provider getProvider(Class cls) {
-        Preconditions.checkNotNull(cls, "Null interface requested.");
-        return (Provider) this.lazyInstanceMap.get(cls);
+    public /* synthetic */ Object get(Class cls) {
+        Object obj;
+        obj = get(Qualified.unqualified(cls));
+        return obj;
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public Deferred getDeferred(Qualified qualified) {
+        Provider provider = getProvider(qualified);
+        return provider == null ? OptionalProvider.empty() : provider instanceof OptionalProvider ? (OptionalProvider) provider : OptionalProvider.of(provider);
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Deferred getDeferred(Class cls) {
+        Deferred deferred;
+        deferred = getDeferred(Qualified.unqualified(cls));
+        return deferred;
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public synchronized Provider getProvider(Qualified qualified) {
+        Preconditions.checkNotNull(qualified, "Null interface requested.");
+        return (Provider) this.lazyInstanceMap.get(qualified);
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Provider getProvider(Class cls) {
+        Provider provider;
+        provider = getProvider(Qualified.unqualified(cls));
+        return provider;
     }
 
     public void initializeEagerComponents(boolean z) {
@@ -284,14 +342,21 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         }
     }
 
-    @Override // com.google.firebase.components.AbstractComponentContainer, com.google.firebase.components.ComponentContainer
-    public /* bridge */ /* synthetic */ Set setOf(Class cls) {
-        return super.setOf(cls);
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Set setOf(Qualified qualified) {
+        return ComponentContainer.-CC.$default$setOf(this, qualified);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public synchronized Provider setOfProvider(Class cls) {
-        LazySet lazySet = (LazySet) this.lazySetMap.get(cls);
+    public /* synthetic */ Set setOf(Class cls) {
+        Set of;
+        of = setOf(Qualified.unqualified(cls));
+        return of;
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public synchronized Provider setOfProvider(Qualified qualified) {
+        LazySet lazySet = (LazySet) this.lazySetMap.get(qualified);
         if (lazySet != null) {
             return lazySet;
         }

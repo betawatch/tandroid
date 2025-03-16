@@ -62,7 +62,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ChatCustomReactionsEditActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private UpdateReactionsButton actionButton;
     private FrameLayout actionButtonContainer;

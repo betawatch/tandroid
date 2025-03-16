@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Objects;
 import java.util.regex.Pattern;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class TopicOperation {
     private static final Pattern TOPIC_NAME_REGEXP = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
     private final String operation;
@@ -15,11 +15,7 @@ final class TopicOperation {
     private TopicOperation(String str, String str2) {
         this.topic = normalizeTopicOrThrow(str2, str);
         this.operation = str;
-        StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 1 + String.valueOf(str2).length());
-        sb.append(str);
-        sb.append("!");
-        sb.append(str2);
-        this.serializedString = sb.toString();
+        this.serializedString = str + "!" + str2;
     }
 
     static TopicOperation from(String str) {

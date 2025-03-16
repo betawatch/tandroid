@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BoostTypeCell extends BaseCell {
     public static int TYPE_GIVEAWAY = 0;
     public static int TYPE_PREMIUM = 2;

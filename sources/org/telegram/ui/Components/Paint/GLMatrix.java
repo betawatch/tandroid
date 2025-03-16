@@ -2,7 +2,7 @@ package org.telegram.ui.Components.Paint;
 
 import android.graphics.Matrix;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class GLMatrix {
     public static float[] LoadGraphicsMatrix(Matrix matrix) {
         float[] fArr = new float[9];

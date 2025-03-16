@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class ResumeFromBackgroundTask extends AsyncTask {
     private final Context mContext;
     private final long mDownloadedId;

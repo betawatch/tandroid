@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.encoder;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class MaskUtil {
     static int applyMaskPenaltyRule1(ByteMatrix byteMatrix) {
         return applyMaskPenaltyRule1Internal(byteMatrix, true) + applyMaskPenaltyRule1Internal(byteMatrix, false);

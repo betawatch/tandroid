@@ -65,7 +65,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.PinchToZoomHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MessagePreviewView extends FrameLayout {
     Runnable changeBoundsRunnable;
     final ChatActivity chatActivity;

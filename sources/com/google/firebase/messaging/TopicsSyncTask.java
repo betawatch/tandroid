@@ -10,9 +10,8 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class TopicsSyncTask implements Runnable {
     private static final Object TOPIC_SYNC_TASK_LOCK = new Object();
     private static Boolean hasAccessNetworkStatePermission;
@@ -67,11 +66,7 @@ class TopicsSyncTask implements Runnable {
     }
 
     private static String createPermissionMissingLog(String str) {
-        StringBuilder sb = new StringBuilder(str.length() + NotificationCenter.filePreparingFailed);
-        sb.append("Missing Permission: ");
-        sb.append(str);
-        sb.append(". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        return sb.toString();
+        return "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest";
     }
 
     private static boolean hasAccessNetworkStatePermission(Context context) {
@@ -94,11 +89,10 @@ class TopicsSyncTask implements Runnable {
             return bool.booleanValue();
         }
         boolean z = context.checkCallingOrSelfPermission(str) == 0;
-        if (z || !Log.isLoggable("FirebaseMessaging", 3)) {
-            return z;
+        if (!z && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", createPermissionMissingLog(str));
         }
-        Log.d("FirebaseMessaging", createPermissionMissingLog(str));
-        return false;
+        return z;
     }
 
     private static boolean hasWakeLockPermission(Context context) {
@@ -118,95 +112,90 @@ class TopicsSyncTask implements Runnable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public synchronized boolean isDeviceConnected() {
+        boolean z;
         try {
             ConnectivityManager connectivityManager = (ConnectivityManager) this.context.getSystemService("connectivity");
             NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
             if (activeNetworkInfo != null) {
-                if (activeNetworkInfo.isConnected()) {
-                    return true;
-                }
+                z = activeNetworkInfo.isConnected();
             }
-            return false;
         } catch (Throwable th) {
             throw th;
         }
+        return z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isLoggable() {
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            return true;
-        }
-        return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
+        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 
     @Override // java.lang.Runnable
     public void run() {
+        PowerManager.WakeLock wakeLock;
         if (hasWakeLockPermission(this.context)) {
             this.syncWakeLock.acquire(Constants.WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS);
         }
         try {
             try {
-                this.topicsSubscriber.setSyncScheduledOrRunning(true);
-                if (!this.metadata.isGmscorePresent()) {
-                    this.topicsSubscriber.setSyncScheduledOrRunning(false);
+                try {
+                    this.topicsSubscriber.setSyncScheduledOrRunning(true);
+                } catch (Throwable th) {
                     if (hasWakeLockPermission(this.context)) {
                         try {
                             this.syncWakeLock.release();
-                            return;
                         } catch (RuntimeException unused) {
                             Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                            return;
                         }
                     }
-                    return;
+                    throw th;
                 }
-                if (hasAccessNetworkStatePermission(this.context) && !isDeviceConnected()) {
-                    new ConnectivityChangeReceiver(this).registerReceiver();
-                    if (hasWakeLockPermission(this.context)) {
-                        try {
-                            this.syncWakeLock.release();
-                            return;
-                        } catch (RuntimeException unused2) {
-                            Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                            return;
-                        }
-                    }
+            } catch (IOException e) {
+                Log.e("FirebaseMessaging", "Failed to sync topics. Won't retry sync. " + e.getMessage());
+                this.topicsSubscriber.setSyncScheduledOrRunning(false);
+                if (!hasWakeLockPermission(this.context)) {
                     return;
-                }
-                if (this.topicsSubscriber.syncTopics()) {
-                    this.topicsSubscriber.setSyncScheduledOrRunning(false);
                 } else {
-                    this.topicsSubscriber.syncWithDelaySecondsInternal(this.nextDelaySeconds);
+                    wakeLock = this.syncWakeLock;
                 }
+            }
+            if (!this.metadata.isGmscorePresent()) {
+                this.topicsSubscriber.setSyncScheduledOrRunning(false);
                 if (hasWakeLockPermission(this.context)) {
                     try {
                         this.syncWakeLock.release();
+                        return;
+                    } catch (RuntimeException unused2) {
+                        Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
+                        return;
+                    }
+                }
+                return;
+            }
+            if (hasAccessNetworkStatePermission(this.context) && !isDeviceConnected()) {
+                new ConnectivityChangeReceiver(this).registerReceiver();
+                if (hasWakeLockPermission(this.context)) {
+                    try {
+                        this.syncWakeLock.release();
+                        return;
                     } catch (RuntimeException unused3) {
                         Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
+                        return;
                     }
                 }
-            } catch (Throwable th) {
-                if (hasWakeLockPermission(this.context)) {
-                    try {
-                        this.syncWakeLock.release();
-                    } catch (RuntimeException unused4) {
-                        Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                    }
-                }
-                throw th;
+                return;
             }
-        } catch (IOException e) {
-            String valueOf = String.valueOf(e.getMessage());
-            Log.e("FirebaseMessaging", valueOf.length() != 0 ? "Failed to sync topics. Won't retry sync. ".concat(valueOf) : new String("Failed to sync topics. Won't retry sync. "));
-            this.topicsSubscriber.setSyncScheduledOrRunning(false);
+            if (this.topicsSubscriber.syncTopics()) {
+                this.topicsSubscriber.setSyncScheduledOrRunning(false);
+            } else {
+                this.topicsSubscriber.syncWithDelaySecondsInternal(this.nextDelaySeconds);
+            }
             if (hasWakeLockPermission(this.context)) {
-                try {
-                    this.syncWakeLock.release();
-                } catch (RuntimeException unused5) {
-                    Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
-                }
+                wakeLock = this.syncWakeLock;
+                wakeLock.release();
             }
+        } catch (RuntimeException unused4) {
+            Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
         }
     }
 }

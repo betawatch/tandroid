@@ -4,7 +4,7 @@ import android.content.Context;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CircularViewPager extends ViewPager {
     private Adapter adapter;
 

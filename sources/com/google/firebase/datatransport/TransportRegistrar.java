@@ -9,11 +9,14 @@ import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.components.Dependency;
-import java.util.Collections;
+import com.google.firebase.platforminfo.LibraryVersionComponent;
+import java.util.Arrays;
 import java.util.List;
 
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
+    private static final String LIBRARY_NAME = "fire-transport";
+
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ TransportFactory lambda$getComponents$0(ComponentContainer componentContainer) {
         TransportRuntime.initialize((Context) componentContainer.get(Context.class));
@@ -22,13 +25,13 @@ public class TransportRegistrar implements ComponentRegistrar {
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
-        return Collections.singletonList(Component.builder(TransportFactory.class).add(Dependency.required(Context.class)).factory(new ComponentFactory() { // from class: com.google.firebase.datatransport.TransportRegistrar$$ExternalSyntheticLambda0
+        return Arrays.asList(Component.builder(TransportFactory.class).name(LIBRARY_NAME).add(Dependency.required(Context.class)).factory(new ComponentFactory() { // from class: com.google.firebase.datatransport.TransportRegistrar$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
                 TransportFactory lambda$getComponents$0;
                 lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(componentContainer);
                 return lambda$getComponents$0;
             }
-        }).build());
+        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "18.1.8"));
     }
 }

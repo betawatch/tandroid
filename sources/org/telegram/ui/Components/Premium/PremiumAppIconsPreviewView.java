@@ -18,7 +18,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 import org.telegram.ui.LauncherIconController;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PremiumAppIconsPreviewView extends FrameLayout implements PagerHeaderView {
     private AdaptiveIconImageView bottomLeftIcon;
     private AdaptiveIconImageView bottomRightIcon;

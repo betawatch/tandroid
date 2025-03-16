@@ -9,11 +9,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.Waiter;
+import kotlinx.coroutines.channels.ChannelSegment$$ExternalSyntheticBackportWithForwarding0;
 import kotlinx.coroutines.internal.ConcurrentLinkedListKt;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.SegmentOrClosed;
 import kotlinx.coroutines.internal.Symbol;
-import kotlinx.coroutines.scheduling.WorkQueue$$ExternalSyntheticBackportWithForwarding0;
 
 /* loaded from: classes3.dex */
 public class SemaphoreImpl {
@@ -98,13 +98,13 @@ public class SemaphoreImpl {
         SemaphoreSegment semaphoreSegment2 = (SemaphoreSegment) SegmentOrClosed.getSegment-impl(findSegmentInternal);
         i2 = SemaphoreKt.SEGMENT_SIZE;
         int i3 = (int) (andIncrement % i2);
-        if (WorkQueue$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i3, null, waiter)) {
+        if (ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i3, null, waiter)) {
             waiter.invokeOnCancellation(semaphoreSegment2, i3);
             return true;
         }
         symbol = SemaphoreKt.PERMIT;
         symbol2 = SemaphoreKt.TAKEN;
-        if (!WorkQueue$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i3, symbol, symbol2)) {
+        if (!ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i3, symbol, symbol2)) {
             return false;
         }
         if (waiter instanceof CancellableContinuation) {
@@ -216,7 +216,7 @@ public class SemaphoreImpl {
         }
         symbol3 = SemaphoreKt.PERMIT;
         symbol4 = SemaphoreKt.BROKEN;
-        return !WorkQueue$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i4, symbol3, symbol4);
+        return !ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i4, symbol3, symbol4);
     }
 
     protected final void acquire(CancellableContinuation cancellableContinuation) {

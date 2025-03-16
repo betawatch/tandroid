@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EditCoverButton extends View {
     private final Drawable arrowDrawable;
     private final PhotoViewerBlurDrawable blur;

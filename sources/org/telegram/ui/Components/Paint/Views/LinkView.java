@@ -17,7 +17,7 @@ import org.telegram.ui.Components.Paint.Views.LinkPreview;
 import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Rect;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LinkView extends EntityView {
     private int currentColor;
     private int currentType;

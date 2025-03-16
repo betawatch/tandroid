@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuSlider;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PopupSwipeBackLayout extends FrameLayout {
     private int currentForegroundIndex;
     private GestureDetectorCompat detector;

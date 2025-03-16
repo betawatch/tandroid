@@ -49,7 +49,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SuggestEmojiView;
 import org.telegram.ui.ContentPreviewViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SuggestEmojiView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private Adapter adapter;
     private Integer arrowToEnd;

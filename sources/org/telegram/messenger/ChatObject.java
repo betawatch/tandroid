@@ -957,7 +957,7 @@ public class ChatObject {
             this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.id), Boolean.FALSE);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:179:0x03d9  */
+        /* JADX WARN: Removed duplicated region for block: B:179:0x03d7  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */

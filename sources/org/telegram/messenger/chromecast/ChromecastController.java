@@ -219,6 +219,10 @@ public class ChromecastController implements SessionManagerListener {
         }
     }
 
+    public boolean isCasting() {
+        return this.state.getClient() != null;
+    }
+
     @Override // com.google.android.gms.cast.framework.SessionManagerListener
     public void onSessionEnded(CastSession castSession, int i) {
         Log.d("CAST_SESSION", "onSessionEnded " + castSession.getSessionId() + " " + i);

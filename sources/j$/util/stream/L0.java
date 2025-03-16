@@ -26,8 +26,8 @@ class L0 extends e {
 
     @Override // j$.util.stream.e
     protected final Object a() {
-        x0 x0Var = (x0) this.i.apply(this.h.n0(this.b));
-        this.h.C0(this.b, x0Var);
+        x0 x0Var = (x0) this.i.apply(this.h.m0(this.b));
+        this.h.B0(this.b, x0Var);
         return x0Var.b();
     }
 

@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MlKitThreadPool extends zzbg {
     private static final ThreadLocal zza = new ThreadLocal();
     private final ThreadPoolExecutor zzb;

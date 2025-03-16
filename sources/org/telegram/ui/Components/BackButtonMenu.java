@@ -34,7 +34,7 @@ import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BackButtonMenu {
 
     public static class PulledDialog {

@@ -54,7 +54,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.ChatAttachAlertContactsLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhonebookShareAlert extends BottomSheet {
     private ActionBar actionBar;
     private AnimatorSet actionBarAnimation;
@@ -1099,23 +1099,23 @@ public class PhonebookShareAlert extends BottomSheet {
                     contentValues.put("data3", str);
                 }
 
-                /* JADX WARN: Code restructure failed: missing block: B:61:0x019d, code lost:
+                /* JADX WARN: Code restructure failed: missing block: B:61:0x0195, code lost:
                 
                     if ("OTHER".equalsIgnoreCase(r1) != false) goto L60;
                  */
-                /* JADX WARN: Code restructure failed: missing block: B:62:0x019f, code lost:
+                /* JADX WARN: Code restructure failed: missing block: B:62:0x0197, code lost:
                 
                     r0 = 3;
                  */
-                /* JADX WARN: Code restructure failed: missing block: B:75:0x0256, code lost:
+                /* JADX WARN: Code restructure failed: missing block: B:75:0x024d, code lost:
                 
                     if ("OTHER".equalsIgnoreCase(r1) != false) goto L60;
                  */
-                /* JADX WARN: Removed duplicated region for block: B:126:0x02e7  */
-                /* JADX WARN: Removed duplicated region for block: B:129:0x02ec  */
-                /* JADX WARN: Removed duplicated region for block: B:13:0x0090  */
-                /* JADX WARN: Removed duplicated region for block: B:72:0x0242  */
-                /* JADX WARN: Removed duplicated region for block: B:8:0x0057 A[LOOP:0: B:6:0x0047->B:8:0x0057, LOOP_END] */
+                /* JADX WARN: Removed duplicated region for block: B:126:0x02dd  */
+                /* JADX WARN: Removed duplicated region for block: B:129:0x02e2  */
+                /* JADX WARN: Removed duplicated region for block: B:13:0x008d  */
+                /* JADX WARN: Removed duplicated region for block: B:72:0x0239  */
+                /* JADX WARN: Removed duplicated region for block: B:8:0x0055 A[LOOP:0: B:6:0x0045->B:8:0x0055, LOOP_END] */
                 @Override // android.content.DialogInterface.OnClickListener
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.

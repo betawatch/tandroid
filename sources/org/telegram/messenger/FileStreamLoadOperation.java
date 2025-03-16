@@ -158,8 +158,8 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x013c  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x012c  */
     @Override // com.google.android.exoplayer2.upstream.DataSource
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -252,8 +252,8 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         return this.bytesRemaining;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0034 A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d4, B:52:0x00dc, B:55:0x00e4, B:58:0x010e, B:13:0x0022, B:79:0x0115, B:82:0x011a, B:84:0x0120, B:36:0x009b, B:41:0x00b4, B:44:0x00c9), top: B:87:0x0017, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d4, B:52:0x00dc, B:55:0x00e4, B:58:0x010e, B:13:0x0022, B:79:0x0115, B:82:0x011a, B:84:0x0120, B:36:0x009b, B:41:0x00b4, B:44:0x00c9), top: B:87:0x0017, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0034 A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d3, B:52:0x00db, B:55:0x00e3, B:58:0x010d, B:13:0x0022, B:79:0x0114, B:82:0x0119, B:84:0x011f, B:36:0x009b, B:41:0x00b3, B:44:0x00c8), top: B:87:0x0017, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d3, B:52:0x00db, B:55:0x00e3, B:58:0x010d, B:13:0x0022, B:79:0x0114, B:82:0x0119, B:84:0x011f, B:36:0x009b, B:41:0x00b3, B:44:0x00c8), top: B:87:0x0017, inners: #0 }] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x009b A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:71:0x0015 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:72:0x0094 A[EXC_TOP_SPLITTER, SYNTHETIC] */

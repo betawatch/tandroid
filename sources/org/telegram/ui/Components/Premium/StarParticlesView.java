@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.GLIconSettingsView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StarParticlesView extends View {
     private LinearGradient clipGradient;
     private Matrix clipGradientMatrix;

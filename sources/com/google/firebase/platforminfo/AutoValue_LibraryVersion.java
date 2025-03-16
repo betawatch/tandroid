@@ -1,6 +1,6 @@
 package com.google.firebase.platforminfo;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_LibraryVersion extends LibraryVersion {
     private final String libraryName;
     private final String version;

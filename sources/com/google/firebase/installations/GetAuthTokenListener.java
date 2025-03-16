@@ -3,7 +3,7 @@ package com.google.firebase.installations;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class GetAuthTokenListener implements StateListener {
     private final TaskCompletionSource resultTaskCompletionSource;
     private final Utils utils;

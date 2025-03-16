@@ -3,7 +3,7 @@ package com.google.zxing;
 import java.util.EnumMap;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Result {
     private final BarcodeFormat format;
     private final int numBits;

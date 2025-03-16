@@ -86,7 +86,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.FilteredSearchView;
 import org.telegram.ui.PhotoPickerActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLayout {
     private float additionalTranslationY;
     private boolean allowMusic;
@@ -1713,19 +1713,19 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x017e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x017b, code lost:
     
         if (r3 == null) goto L112;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0229 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0226 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r3v11, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v12, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v13 */
     /* JADX WARN: Type inference failed for: r3v14 */
-    /* JADX WARN: Type inference failed for: r3v15 */
-    /* JADX WARN: Type inference failed for: r3v4 */
-    /* JADX WARN: Type inference failed for: r3v6, types: [java.io.BufferedReader] */
+    /* JADX WARN: Type inference failed for: r3v16 */
+    /* JADX WARN: Type inference failed for: r3v4, types: [java.io.BufferedReader] */
+    /* JADX WARN: Type inference failed for: r3v5 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1808,37 +1808,37 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                             }
                         }
                     }
-                } catch (Throwable th2) {
-                    th = th2;
-                    r32 = bufferedReader;
-                    if (r32 != 0) {
-                        try {
-                            r32.close();
-                        } catch (Exception e3) {
-                            FileLog.e(e3);
+                } catch (Exception e3) {
+                    e = e3;
+                    r3 = bufferedReader;
+                    try {
+                        FileLog.e(e);
+                        r33 = r3;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        r1 = r3;
+                        r32 = r1;
+                        if (r32 != 0) {
+                            try {
+                                r32.close();
+                            } catch (Exception e4) {
+                                FileLog.e(e4);
+                            }
                         }
+                        throw th;
                     }
-                    throw th;
                 }
-            } catch (Exception e4) {
-                e = e4;
-                r3 = bufferedReader;
                 try {
-                    FileLog.e(e);
-                    r33 = r3;
-                } catch (Throwable th3) {
-                    th = th3;
-                    r1 = r3;
-                    r32 = r1;
-                    if (r32 != 0) {
-                    }
-                    throw th;
+                    break;
+                } catch (Exception e5) {
+                    FileLog.e(e5);
                 }
-            }
-            try {
-                break;
-            } catch (Exception e5) {
-                FileLog.e(e5);
+            } catch (Throwable th3) {
+                th = th3;
+                r32 = bufferedReader;
+                if (r32 != 0) {
+                }
+                throw th;
             }
         }
         r33.close();

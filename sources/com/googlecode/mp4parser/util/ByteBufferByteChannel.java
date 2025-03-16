@@ -3,7 +3,7 @@ package com.googlecode.mp4parser.util;
 import java.nio.ByteBuffer;
 import java.nio.channels.ByteChannel;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ByteBufferByteChannel implements ByteChannel {
     ByteBuffer byteBuffer;
 

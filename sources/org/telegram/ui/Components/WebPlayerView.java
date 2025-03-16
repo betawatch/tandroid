@@ -69,7 +69,7 @@ import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.Components.WebPlayerView;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerDelegate, AudioManager.OnAudioFocusChangeListener {
     private static int lastContainerId = 4001;
     private boolean allowInlineAnimation;
@@ -1070,103 +1070,103 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Code restructure failed: missing block: B:121:0x0267, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:121:0x0260, code lost:
         
             r2 = r23.result;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:122:0x026c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:122:0x0265, code lost:
         
             if (r2[0] != null) goto L103;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:123:0x026e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:123:0x0267, code lost:
         
             if (r10 == null) goto L103;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:124:0x0270, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:124:0x0269, code lost:
         
             r2[0] = r10;
             r2[1] = "other";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:125:0x0277, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:125:0x0270, code lost:
         
             r2 = r2[0];
          */
-        /* JADX WARN: Code restructure failed: missing block: B:126:0x0279, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:126:0x0272, code lost:
         
             if (r2 == null) goto L109;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:127:0x027b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:127:0x0274, code lost:
         
             if (r0 != false) goto L110;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:129:0x0281, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:129:0x027a, code lost:
         
             if (r2.contains("/s/") == false) goto L109;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:130:0x0287, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:130:0x0280, code lost:
         
             if (r3 == null) goto L109;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:131:0x0289, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:131:0x0282, code lost:
         
             r0 = r23.result[0].indexOf("/s/");
             r2 = r23.result[0].indexOf(47, r0 + 10);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:132:0x029e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:132:0x0297, code lost:
         
             if (r0 == (-1)) goto L176;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:133:0x02a0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:133:0x0299, code lost:
         
             if (r2 != (-1)) goto L115;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:134:0x02a2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:134:0x029b, code lost:
         
             r2 = r23.result[0].length();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:135:0x02aa, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:135:0x02a3, code lost:
         
             r23.sig = r23.result[0].substring(r0, r2);
             r0 = org.telegram.ui.Components.WebPlayerView.jsPattern.matcher(r3);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:136:0x02c0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:136:0x02b9, code lost:
         
             if (r0.find() == false) goto L123;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:200:0x02c2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:200:0x02bb, code lost:
         
             r0 = new org.json.JSONTokener(r0.group(1)).nextValue();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:201:0x02d2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:201:0x02cb, code lost:
         
             if ((r0 instanceof java.lang.String) == false) goto L123;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:203:0x02d6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:203:0x02cf, code lost:
         
             r2 = (java.lang.String) r0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:205:0x02d8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:205:0x02d1, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:206:0x02d9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:206:0x02d2, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:208:0x0284, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:208:0x027d, code lost:
         
             r6 = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:209:0x0444, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:209:0x043b, code lost:
         
             r7 = r0;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:152:0x0369 A[RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:153:0x036b  */
-        /* JADX WARN: Removed duplicated region for block: B:162:0x03d4  */
-        /* JADX WARN: Removed duplicated region for block: B:171:0x044b A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:181:0x0395 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:152:0x0361 A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:153:0x0363  */
+        /* JADX WARN: Removed duplicated region for block: B:162:0x03cc  */
+        /* JADX WARN: Removed duplicated region for block: B:171:0x0442 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:181:0x038d A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* JADX WARN: Type inference failed for: r16v0 */
         /* JADX WARN: Type inference failed for: r16v1 */
         /* JADX WARN: Type inference failed for: r16v2, types: [java.lang.String] */
@@ -2194,15 +2194,15 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         return downloadUrlContent(asyncTask, str, null, true);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x016c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x016b, code lost:
     
         if (r3 == (-1)) goto L102;
      */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0196 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0127 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0181 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0195 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0126 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0180 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2218,60 +2218,60 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         try {
             url = new URL(str);
             uRLConnection = url.openConnection();
-        } catch (Throwable th) {
-            th = th;
-            uRLConnection = null;
-        }
-        try {
-            uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
-            if (z) {
-                uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
-            }
-            uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
-            uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-            uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
-            if (hashMap != null) {
-                for (Map.Entry entry : hashMap.entrySet()) {
-                    uRLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
+            try {
+                uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+                if (z) {
+                    uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
                 }
-            }
-            uRLConnection.setConnectTimeout(5000);
-            uRLConnection.setReadTimeout(5000);
-            if (uRLConnection instanceof HttpURLConnection) {
-                HttpURLConnection httpURLConnection = (HttpURLConnection) uRLConnection;
-                httpURLConnection.setInstanceFollowRedirects(true);
-                int responseCode = httpURLConnection.getResponseCode();
-                if (responseCode == 302 || responseCode == 301 || responseCode == 303) {
-                    String headerField = httpURLConnection.getHeaderField("Location");
-                    String headerField2 = httpURLConnection.getHeaderField("Set-Cookie");
-                    url = new URL(headerField);
-                    uRLConnection = url.openConnection();
-                    uRLConnection.setRequestProperty("Cookie", headerField2);
-                    uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
-                    if (z) {
-                        uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
+                uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
+                uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+                uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+                if (hashMap != null) {
+                    for (Map.Entry entry : hashMap.entrySet()) {
+                        uRLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
                     }
-                    uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
-                    uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-                    uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
-                    if (hashMap != null) {
-                        for (Map.Entry entry2 : hashMap.entrySet()) {
-                            uRLConnection.addRequestProperty((String) entry2.getKey(), (String) entry2.getValue());
+                }
+                uRLConnection.setConnectTimeout(5000);
+                uRLConnection.setReadTimeout(5000);
+                if (uRLConnection instanceof HttpURLConnection) {
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) uRLConnection;
+                    httpURLConnection.setInstanceFollowRedirects(true);
+                    int responseCode = httpURLConnection.getResponseCode();
+                    if (responseCode == 302 || responseCode == 301 || responseCode == 303) {
+                        String headerField = httpURLConnection.getHeaderField("Location");
+                        String headerField2 = httpURLConnection.getHeaderField("Set-Cookie");
+                        url = new URL(headerField);
+                        uRLConnection = url.openConnection();
+                        uRLConnection.setRequestProperty("Cookie", headerField2);
+                        uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+                        if (z) {
+                            uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
+                        }
+                        uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
+                        uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+                        uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+                        if (hashMap != null) {
+                            for (Map.Entry entry2 : hashMap.entrySet()) {
+                                uRLConnection.addRequestProperty((String) entry2.getKey(), (String) entry2.getValue());
+                            }
                         }
                     }
                 }
+                uRLConnection.connect();
+            } catch (Throwable th) {
+                th = th;
+                boolean z5 = !(th instanceof SocketTimeoutException) ? !(!(th instanceof UnknownHostException) && (!(th instanceof SocketException) ? (th instanceof FileNotFoundException) : !(th.getMessage() == null || !th.getMessage().contains("ECONNRESET")))) : ApplicationLoader.isNetworkOnline();
+                FileLog.e(th);
+                z2 = z5;
+                inputStream = null;
+                if (z2) {
+                }
+                if (z3) {
+                }
             }
-            uRLConnection.connect();
         } catch (Throwable th2) {
             th = th2;
-            boolean z5 = !(th instanceof SocketTimeoutException) ? !(!(th instanceof UnknownHostException) && (!(th instanceof SocketException) ? (th instanceof FileNotFoundException) : !(th.getMessage() == null || !th.getMessage().contains("ECONNRESET")))) : ApplicationLoader.isNetworkOnline();
-            FileLog.e(th);
-            z2 = z5;
-            inputStream = null;
-            if (z2) {
-            }
-            if (z3) {
-            }
+            uRLConnection = null;
         }
         if (z) {
             try {
@@ -2439,19 +2439,19 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         return this.isInline || this.switchingInlineMode;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x00b7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0099 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x019f  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x024f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0111 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00f3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x00d5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x00b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0097 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0198  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x024d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01b6  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x010f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00f1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x00d3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -5,8 +5,9 @@ final class AutoValue_Event extends Event {
     private final Integer code;
     private final Object payload;
     private final Priority priority;
+    private final ProductData productData;
 
-    AutoValue_Event(Integer num, Object obj, Priority priority) {
+    AutoValue_Event(Integer num, Object obj, Priority priority, ProductData productData) {
         this.code = num;
         if (obj == null) {
             throw new NullPointerException("Null payload");
@@ -16,6 +17,7 @@ final class AutoValue_Event extends Event {
             throw new NullPointerException("Null priority");
         }
         this.priority = priority;
+        this.productData = productData;
     }
 
     public boolean equals(Object obj) {
@@ -29,7 +31,15 @@ final class AutoValue_Event extends Event {
         Integer num = this.code;
         if (num != null ? num.equals(event.getCode()) : event.getCode() == null) {
             if (this.payload.equals(event.getPayload()) && this.priority.equals(event.getPriority())) {
-                return true;
+                ProductData productData = this.productData;
+                ProductData productData2 = event.getProductData();
+                if (productData == null) {
+                    if (productData2 == null) {
+                        return true;
+                    }
+                } else if (productData.equals(productData2)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -50,12 +60,19 @@ final class AutoValue_Event extends Event {
         return this.priority;
     }
 
+    @Override // com.google.android.datatransport.Event
+    public ProductData getProductData() {
+        return this.productData;
+    }
+
     public int hashCode() {
         Integer num = this.code;
-        return (((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.payload.hashCode()) * 1000003) ^ this.priority.hashCode();
+        int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.payload.hashCode()) * 1000003) ^ this.priority.hashCode()) * 1000003;
+        ProductData productData = this.productData;
+        return hashCode ^ (productData != null ? productData.hashCode() : 0);
     }
 
     public String toString() {
-        return "Event{code=" + this.code + ", payload=" + this.payload + ", priority=" + this.priority + "}";
+        return "Event{code=" + this.code + ", payload=" + this.payload + ", priority=" + this.priority + ", productData=" + this.productData + "}";
     }
 }

@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatNotificationsPopupWrapper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatNotificationsPopupWrapper {
     View backItem;
     Callback callback;

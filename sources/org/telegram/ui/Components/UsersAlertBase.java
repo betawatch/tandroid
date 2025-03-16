@@ -39,7 +39,7 @@ import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UsersAlertBase;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class UsersAlertBase extends BottomSheet {
     public static final Property COLOR_PROGRESS = new AnimationProperties.FloatProperty("colorProgress") { // from class: org.telegram.ui.Components.UsersAlertBase.3
         @Override // android.util.Property

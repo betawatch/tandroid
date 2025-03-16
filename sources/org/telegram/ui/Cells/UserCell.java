@@ -712,14 +712,14 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         this.selfAsSavedMessages = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x03e9  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x03fd  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0412  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0432  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x03f1  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0405  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x041a  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x043a  */
     /* JADX WARN: Removed duplicated region for block: B:134:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0403  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x03ec  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0243 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x040b  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x03f4  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x024b A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -728,6 +728,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         TLRPC.Chat chat;
         TLRPC.FileLocation fileLocation;
         String str;
+        String removeRTL;
         SimpleTextView simpleTextView;
         int i2;
         TLRPC.UserStatus userStatus;
@@ -772,7 +773,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             if (z || this.currentName != null || this.lastName == null || (i & MessagesController.UPDATE_MASK_NAME) == 0) {
                 str = null;
             } else {
-                str = AndroidUtilities.removeDiacritics(user != null ? UserObject.getUserName(user) : chat == null ? "" : chat.title);
+                str = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(user != null ? UserObject.getUserName(user) : chat == null ? "" : chat.title));
                 if (!str.equals(this.lastName)) {
                     z = true;
                 }
@@ -862,21 +863,26 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         } else {
             if (user != null) {
                 if (str == null) {
-                    str = UserObject.getUserName(user);
+                    removeRTL = UserObject.getUserName(user);
+                    this.lastName = removeRTL;
+                    charSequence2 = this.lastName;
+                    if (charSequence2 != null) {
+                        try {
+                            charSequence2 = Emoji.replaceEmoji(charSequence2, this.nameTextView.getPaint().getFontMetricsInt(), false);
+                        } catch (Exception unused) {
+                        }
+                    }
                 }
             } else if (chat == null) {
                 this.lastName = "";
                 charSequence2 = this.lastName;
                 if (charSequence2 != null) {
-                    try {
-                        charSequence2 = Emoji.replaceEmoji(charSequence2, this.nameTextView.getPaint().getFontMetricsInt(), false);
-                    } catch (Exception unused) {
-                    }
                 }
             } else if (str == null) {
                 str = chat.title;
             }
-            this.lastName = AndroidUtilities.removeDiacritics(str);
+            removeRTL = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(str));
+            this.lastName = removeRTL;
             charSequence2 = this.lastName;
             if (charSequence2 != null) {
             }

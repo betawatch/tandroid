@@ -30,7 +30,7 @@ import org.telegram.ui.Components.CreateGroupCallBottomSheet;
 import org.telegram.ui.Components.JoinCallAlert;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CreateGroupCallBottomSheet extends BottomSheetWithRecyclerListView {
     private final boolean canRtmpStream;
     private final List chats;

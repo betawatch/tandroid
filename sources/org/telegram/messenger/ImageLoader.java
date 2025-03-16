@@ -425,21 +425,21 @@ public class ImageLoader {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Code restructure failed: missing block: B:104:0x0133, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:104:0x0132, code lost:
         
             if (r2 == null) goto L107;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:123:0x0119, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:123:0x0118, code lost:
         
             if ((r3 instanceof java.io.FileNotFoundException) != false) goto L93;
          */
-        /* JADX WARN: Removed duplicated region for block: B:101:0x0124 A[Catch: all -> 0x0128, TRY_LEAVE, TryCatch #8 {all -> 0x0128, blocks: (B:99:0x0120, B:101:0x0124), top: B:98:0x0120 }] */
-        /* JADX WARN: Removed duplicated region for block: B:105:0x012b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:112:0x00fb A[Catch: all -> 0x00f9, TryCatch #15 {all -> 0x00f9, blocks: (B:91:0x00ee, B:93:0x00f2, B:96:0x011b, B:97:0x011d, B:112:0x00fb, B:115:0x0100, B:117:0x0104, B:119:0x010a, B:122:0x0117), top: B:90:0x00ee }] */
-        /* JADX WARN: Removed duplicated region for block: B:129:0x013b A[Catch: all -> 0x013f, TRY_LEAVE, TryCatch #17 {all -> 0x013f, blocks: (B:127:0x0137, B:129:0x013b), top: B:126:0x0137 }] */
-        /* JADX WARN: Removed duplicated region for block: B:135:0x014c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:139:0x0142 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:93:0x00f2 A[Catch: all -> 0x00f9, TryCatch #15 {all -> 0x00f9, blocks: (B:91:0x00ee, B:93:0x00f2, B:96:0x011b, B:97:0x011d, B:112:0x00fb, B:115:0x0100, B:117:0x0104, B:119:0x010a, B:122:0x0117), top: B:90:0x00ee }] */
+        /* JADX WARN: Removed duplicated region for block: B:101:0x0123 A[Catch: all -> 0x0127, TRY_LEAVE, TryCatch #8 {all -> 0x0127, blocks: (B:99:0x011f, B:101:0x0123), top: B:98:0x011f }] */
+        /* JADX WARN: Removed duplicated region for block: B:105:0x012a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:112:0x00fa A[Catch: all -> 0x00f8, TryCatch #15 {all -> 0x00f8, blocks: (B:91:0x00ed, B:93:0x00f1, B:96:0x011a, B:97:0x011c, B:112:0x00fa, B:115:0x00ff, B:117:0x0103, B:119:0x0109, B:122:0x0116), top: B:90:0x00ed }] */
+        /* JADX WARN: Removed duplicated region for block: B:129:0x013a A[Catch: all -> 0x013e, TRY_LEAVE, TryCatch #17 {all -> 0x013e, blocks: (B:127:0x0136, B:129:0x013a), top: B:126:0x0136 }] */
+        /* JADX WARN: Removed duplicated region for block: B:135:0x014b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:139:0x0141 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:93:0x00f1 A[Catch: all -> 0x00f8, TryCatch #15 {all -> 0x00f8, blocks: (B:91:0x00ed, B:93:0x00f1, B:96:0x011a, B:97:0x011c, B:112:0x00fa, B:115:0x00ff, B:117:0x0103, B:119:0x0109, B:122:0x0116), top: B:90:0x00ed }] */
         @Override // android.os.AsyncTask
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1149,108 +1149,108 @@ public class ImageLoader {
 
         /* JADX WARN: Can't wrap try/catch for region: R(10:925|(2:927|(8:929|930|931|(1:933)(1:946)|934|(2:940|(1:942))|(1:944)|17))|949|930|931|(0)(0)|934|(4:936|938|940|(0))|(0)|17) */
         /* JADX WARN: Can't wrap try/catch for region: R(15:71|(7:72|73|74|75|(1:77)(1:119)|78|79)|(3:81|82|(7:84|85|86|(1:113)(1:89)|(3:98|(1:112)(4:101|(1:105)|106|(1:110))|111)(1:93)|94|(1:96)(1:97)))|118|85|86|(0)|113|(0)|98|(0)|112|111|94|(0)(0)) */
-        /* JADX WARN: Can't wrap try/catch for region: R(26:329|(1:924)(1:336)|337|(3:339|(1:922)|343)(1:923)|344|(22:346|(3:348|(1:350)(1:911)|351)(4:912|(2:914|(2:916|917))(1:919)|918|917)|352|353|(1:355)|356|357|358|(22:360|(5:362|363|364|365|366)(1:876)|367|368|(1:370)(2:856|(1:858)(2:859|(1:861)(2:862|(1:864)(1:865))))|371|372|373|374|(1:376)(2:847|(1:849))|377|378|(1:846)(10:382|383|(2:808|(13:816|817|(1:839)(1:821)|(1:823)|824|825|826|827|(4:832|833|834|(1:836))|837|833|834|(0))(4:810|(1:812)(1:815)|813|814))(2:(4:799|800|801|802)(1:387)|388)|389|(1:798)(1:393)|394|395|(1:397)|398|(1:790)(3:404|(2:405|(1:408)(1:407))|409))|410|411|412|(3:667|668|855)(6:414|(1:416)(1:666)|(3:658|659|(4:661|(1:665)|419|ae6))|418|419|ae6)|458|(3:461|(1:463)(1:465)|464)|(2:471|(1:473))|474|(2:(1:486)|17)(2:(1:481)|17))(12:877|(10:879|880|881|(1:883)(1:904)|884|886|887|(1:889)|890|(4:892|(2:893|(1:896)(1:895))|897|898)(1:901))(1:908)|899|412|(0)(0)|458|(3:461|(0)(0)|464)|(4:467|469|471|(0))|474|(1:476)|(0)|17)|791|792|793|411|412|(0)(0)|458|(0)|(0)|474|(0)|(0)|17)|921|353|(0)|356|357|358|(0)(0)|791|792|793|411|412|(0)(0)|458|(0)|(0)|474|(0)|(0)|17) */
-        /* JADX WARN: Code restructure failed: missing block: B:115:0x020d, code lost:
+        /* JADX WARN: Can't wrap try/catch for region: R(26:329|(1:924)(1:336)|337|(3:339|(1:922)|343)(1:923)|344|(22:346|(3:348|(1:350)(1:911)|351)(4:912|(2:914|(2:916|917))(1:919)|918|917)|352|353|(1:355)|356|357|358|(22:360|(5:362|363|364|365|366)(1:876)|367|368|(1:370)(2:856|(1:858)(2:859|(1:861)(2:862|(1:864)(1:865))))|371|372|373|374|(1:376)(2:847|(1:849))|377|378|(1:846)(10:382|383|(2:808|(13:816|817|(1:839)(1:821)|(1:823)|824|825|826|827|(4:832|833|834|(1:836))|837|833|834|(0))(4:810|(1:812)(1:815)|813|814))(2:(4:799|800|801|802)(1:387)|388)|389|(1:798)(1:393)|394|395|(1:397)|398|(1:790)(3:404|(2:405|(1:408)(1:407))|409))|410|411|412|(3:667|668|850)(6:414|(1:416)(1:666)|(3:658|659|(4:661|(1:665)|419|ae0))|418|419|ae0)|458|(3:461|(1:463)(1:465)|464)|(2:471|(1:473))|474|(2:(1:486)|17)(2:(1:481)|17))(12:877|(10:879|880|881|(1:883)(1:904)|884|886|887|(1:889)|890|(4:892|(2:893|(1:896)(1:895))|897|898)(1:901))(1:908)|899|412|(0)(0)|458|(3:461|(0)(0)|464)|(4:467|469|471|(0))|474|(1:476)|(0)|17)|791|792|793|411|412|(0)(0)|458|(0)|(0)|474|(0)|(0)|17)|921|353|(0)|356|357|358|(0)(0)|791|792|793|411|412|(0)(0)|458|(0)|(0)|474|(0)|(0)|17) */
+        /* JADX WARN: Code restructure failed: missing block: B:115:0x020b, code lost:
         
             r0 = e;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:268:0x04e7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:268:0x04e5, code lost:
         
             if (r40.this$0.isAnimatedAvatar(r40.cacheImage.filter) != false) goto L279;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:269:0x042c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:269:0x042a, code lost:
         
             r9 = false;
             r0 = r0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:303:0x0429, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:303:0x0427, code lost:
         
             if (r40.this$0.isAnimatedAvatar(r40.cacheImage.filter) != false) goto L279;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:604:0x0b9f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:604:0x0b99, code lost:
         
             if (r4.contains("exif") != false) goto L710;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:795:0x082c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:795:0x0827, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:796:0x082d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:796:0x0828, code lost:
         
             r39 = r6;
             r6 = r4;
             r4 = r39;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:909:0x05f2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:909:0x05ee, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:910:0x05f3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:910:0x05ef, code lost:
         
             r25 = r11;
             r26 = r12;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:920:0x059a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:920:0x0596, code lost:
         
             if (r0.startsWith("http") == false) goto L360;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:947:0x0e56, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:947:0x0e4e, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:948:0x0e57, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:948:0x0e4f, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r2 = null;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08d4: MOVE (r8 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:778:0x08d4 */
-        /* JADX WARN: Removed duplicated region for block: B:100:0x0244 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:137:0x02c1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08ce: MOVE (r8 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:778:0x08ce */
+        /* JADX WARN: Removed duplicated region for block: B:100:0x0242 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:137:0x02bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* JADX WARN: Removed duplicated region for block: B:144:? A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:200:0x030a  */
-        /* JADX WARN: Removed duplicated region for block: B:217:0x033b  */
-        /* JADX WARN: Removed duplicated region for block: B:245:0x0483  */
-        /* JADX WARN: Removed duplicated region for block: B:247:0x048d  */
-        /* JADX WARN: Removed duplicated region for block: B:250:0x0496  */
-        /* JADX WARN: Removed duplicated region for block: B:253:0x04a5  */
-        /* JADX WARN: Removed duplicated region for block: B:258:0x04ed  */
-        /* JADX WARN: Removed duplicated region for block: B:264:0x0507  */
-        /* JADX WARN: Removed duplicated region for block: B:265:0x04d1  */
-        /* JADX WARN: Removed duplicated region for block: B:270:0x04a8  */
-        /* JADX WARN: Removed duplicated region for block: B:271:0x0499  */
-        /* JADX WARN: Removed duplicated region for block: B:272:0x048f  */
-        /* JADX WARN: Removed duplicated region for block: B:273:0x0485  */
-        /* JADX WARN: Removed duplicated region for block: B:318:0x036a  */
-        /* JADX WARN: Removed duplicated region for block: B:320:0x036f  */
-        /* JADX WARN: Removed duplicated region for block: B:355:0x05b3  */
-        /* JADX WARN: Removed duplicated region for block: B:360:0x05c3 A[Catch: all -> 0x05f2, TryCatch #8 {all -> 0x05f2, blocks: (B:358:0x05bd, B:360:0x05c3, B:362:0x05cc), top: B:357:0x05bd }] */
-        /* JADX WARN: Removed duplicated region for block: B:414:0x0a98  */
-        /* JADX WARN: Removed duplicated region for block: B:421:0x0ae7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:446:0x0b6d  */
-        /* JADX WARN: Removed duplicated region for block: B:451:0x0c84  */
-        /* JADX WARN: Removed duplicated region for block: B:460:0x0da3 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:463:0x0db1  */
-        /* JADX WARN: Removed duplicated region for block: B:465:0x0db3  */
-        /* JADX WARN: Removed duplicated region for block: B:467:0x0dc8  */
-        /* JADX WARN: Removed duplicated region for block: B:473:0x0de7  */
-        /* JADX WARN: Removed duplicated region for block: B:476:0x0df1  */
-        /* JADX WARN: Removed duplicated region for block: B:486:0x0e0f  */
-        /* JADX WARN: Removed duplicated region for block: B:488:0x0ca3 A[Catch: all -> 0x0c78, TryCatch #16 {all -> 0x0c78, blocks: (B:452:0x0c86, B:454:0x0c90, B:456:0x0c96, B:488:0x0ca3, B:490:0x0ca9, B:496:0x0cc0, B:502:0x0cd0, B:504:0x0cd6, B:505:0x0cdb, B:506:0x0ce8, B:508:0x0cf0, B:510:0x0cde, B:512:0x0ce4, B:515:0x0cf8, B:517:0x0d06, B:518:0x0d11, B:589:0x0c74), top: B:588:0x0c74 }] */
+        /* JADX WARN: Removed duplicated region for block: B:200:0x0308  */
+        /* JADX WARN: Removed duplicated region for block: B:217:0x0339  */
+        /* JADX WARN: Removed duplicated region for block: B:245:0x0481  */
+        /* JADX WARN: Removed duplicated region for block: B:247:0x048b  */
+        /* JADX WARN: Removed duplicated region for block: B:250:0x0494  */
+        /* JADX WARN: Removed duplicated region for block: B:253:0x04a3  */
+        /* JADX WARN: Removed duplicated region for block: B:258:0x04eb  */
+        /* JADX WARN: Removed duplicated region for block: B:264:0x0505  */
+        /* JADX WARN: Removed duplicated region for block: B:265:0x04cf  */
+        /* JADX WARN: Removed duplicated region for block: B:270:0x04a6  */
+        /* JADX WARN: Removed duplicated region for block: B:271:0x0497  */
+        /* JADX WARN: Removed duplicated region for block: B:272:0x048d  */
+        /* JADX WARN: Removed duplicated region for block: B:273:0x0483  */
+        /* JADX WARN: Removed duplicated region for block: B:318:0x0368  */
+        /* JADX WARN: Removed duplicated region for block: B:320:0x036d  */
+        /* JADX WARN: Removed duplicated region for block: B:355:0x05af  */
+        /* JADX WARN: Removed duplicated region for block: B:360:0x05bf A[Catch: all -> 0x05ee, TryCatch #7 {all -> 0x05ee, blocks: (B:358:0x05b9, B:360:0x05bf, B:362:0x05c8), top: B:357:0x05b9 }] */
+        /* JADX WARN: Removed duplicated region for block: B:414:0x0a92  */
+        /* JADX WARN: Removed duplicated region for block: B:421:0x0ae1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:446:0x0b67  */
+        /* JADX WARN: Removed duplicated region for block: B:451:0x0c7d  */
+        /* JADX WARN: Removed duplicated region for block: B:460:0x0d9c A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:463:0x0daa  */
+        /* JADX WARN: Removed duplicated region for block: B:465:0x0dac  */
+        /* JADX WARN: Removed duplicated region for block: B:467:0x0dc1  */
+        /* JADX WARN: Removed duplicated region for block: B:473:0x0ddf  */
+        /* JADX WARN: Removed duplicated region for block: B:476:0x0de9  */
+        /* JADX WARN: Removed duplicated region for block: B:486:0x0e07  */
+        /* JADX WARN: Removed duplicated region for block: B:488:0x0c9c A[Catch: all -> 0x0c71, TryCatch #10 {all -> 0x0c71, blocks: (B:452:0x0c7f, B:454:0x0c89, B:456:0x0c8f, B:488:0x0c9c, B:490:0x0ca2, B:496:0x0cb9, B:502:0x0cc9, B:504:0x0ccf, B:505:0x0cd4, B:506:0x0ce1, B:508:0x0ce9, B:510:0x0cd7, B:512:0x0cdd, B:515:0x0cf1, B:517:0x0cff, B:518:0x0d0a, B:589:0x0c6d), top: B:588:0x0c6d }] */
         /* JADX WARN: Removed duplicated region for block: B:55:0x0154  */
-        /* JADX WARN: Removed duplicated region for block: B:643:0x0c7f  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x02a9 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:667:0x084a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:836:0x0702 A[Catch: all -> 0x06f6, TryCatch #14 {all -> 0x06f6, blocks: (B:389:0x0729, B:393:0x0737, B:398:0x0752, B:405:0x0762, B:409:0x076c, B:798:0x0743, B:827:0x06e6, B:829:0x06ec, B:834:0x06fb, B:836:0x0702, B:812:0x0712, B:814:0x0723, B:815:0x071d), top: B:383:0x0667 }] */
-        /* JADX WARN: Removed duplicated region for block: B:877:0x07a8  */
-        /* JADX WARN: Removed duplicated region for block: B:88:0x022d A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:91:0x0235 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:933:0x0e4e  */
-        /* JADX WARN: Removed duplicated region for block: B:942:0x0e7c  */
-        /* JADX WARN: Removed duplicated region for block: B:944:0x0e84  */
-        /* JADX WARN: Removed duplicated region for block: B:946:0x0e50  */
-        /* JADX WARN: Removed duplicated region for block: B:96:0x0271  */
-        /* JADX WARN: Removed duplicated region for block: B:97:0x028e  */
+        /* JADX WARN: Removed duplicated region for block: B:643:0x0c78  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x02a7 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:667:0x0845 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:836:0x06fd A[Catch: all -> 0x06f1, TryCatch #13 {all -> 0x06f1, blocks: (B:389:0x0724, B:393:0x0732, B:398:0x074d, B:405:0x075d, B:409:0x0767, B:798:0x073e, B:827:0x06e1, B:829:0x06e7, B:834:0x06f6, B:836:0x06fd, B:812:0x070d, B:814:0x071e, B:815:0x0718), top: B:383:0x0663 }] */
+        /* JADX WARN: Removed duplicated region for block: B:877:0x07a3  */
+        /* JADX WARN: Removed duplicated region for block: B:88:0x022b A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:91:0x0233 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:933:0x0e46  */
+        /* JADX WARN: Removed duplicated region for block: B:942:0x0e73  */
+        /* JADX WARN: Removed duplicated region for block: B:944:0x0e7b  */
+        /* JADX WARN: Removed duplicated region for block: B:946:0x0e48  */
+        /* JADX WARN: Removed duplicated region for block: B:96:0x026f  */
+        /* JADX WARN: Removed duplicated region for block: B:97:0x028c  */
         /* JADX WARN: Type inference failed for: r0v129 */
         /* JADX WARN: Type inference failed for: r0v370 */
         /* JADX WARN: Type inference failed for: r0v371 */
@@ -1339,8 +1339,6 @@ public class ImageLoader {
             int intValue;
             ?? intValue2;
             SecureDocumentKey secureDocumentKey5;
-            int length;
-            byte[] bArr2;
             boolean z16;
             int i7;
             Bitmap thumbnail;
@@ -1393,7 +1391,7 @@ public class ImageLoader {
             BitmapsCache.CacheOptions cacheOptions2;
             BitmapsCache.CacheOptions cacheOptions3;
             RLottieDrawable rLottieDrawable2;
-            byte[] bArr3;
+            byte[] bArr2;
             boolean z34;
             boolean z35;
             synchronized (this.sync) {
@@ -1542,8 +1540,8 @@ public class ImageLoader {
                                         try {
                                             randomAccessFile2 = new RandomAccessFile(this.cacheImage.finalFilePath, "r");
                                             try {
-                                                bArr3 = this.cacheImage.type == 1 ? ImageLoader.headerThumb : ImageLoader.header;
-                                                randomAccessFile2.readFully(bArr3, 0, 2);
+                                                bArr2 = this.cacheImage.type == 1 ? ImageLoader.headerThumb : ImageLoader.header;
+                                                randomAccessFile2.readFully(bArr2, 0, 2);
                                             } catch (Exception e) {
                                                 e = e;
                                                 z32 = false;
@@ -1620,8 +1618,8 @@ public class ImageLoader {
                                             if (randomAccessFile2 == null) {
                                             }
                                         }
-                                        if (bArr3[0] == 31) {
-                                            if (bArr3[1] == -117) {
+                                        if (bArr2[0] == 31) {
+                                            if (bArr2[1] == -117) {
                                                 z33 = true;
                                                 randomAccessFile2.close();
                                                 if (!((!z28 || z30) ? false : z31) || z28 || z30) {
@@ -1964,32 +1962,32 @@ public class ImageLoader {
                                                                         if (secureDocumentKey != null) {
                                                                             try {
                                                                                 RandomAccessFile randomAccessFile3 = new RandomAccessFile(file3, "r");
-                                                                                int length2 = (int) randomAccessFile3.length();
-                                                                                byte[] bArr4 = (byte[]) ImageLoader.bytesLocal.get();
-                                                                                if (bArr4 == null || bArr4.length < length2) {
-                                                                                    bArr4 = null;
+                                                                                int length = (int) randomAccessFile3.length();
+                                                                                byte[] bArr3 = (byte[]) ImageLoader.bytesLocal.get();
+                                                                                if (bArr3 == null || bArr3.length < length) {
+                                                                                    bArr3 = null;
                                                                                 }
-                                                                                if (bArr4 == null) {
-                                                                                    bArr4 = new byte[length2];
-                                                                                    ImageLoader.bytesLocal.set(bArr4);
+                                                                                if (bArr3 == null) {
+                                                                                    bArr3 = new byte[length];
+                                                                                    ImageLoader.bytesLocal.set(bArr3);
                                                                                 }
-                                                                                randomAccessFile3.readFully(bArr4, 0, length2);
+                                                                                randomAccessFile3.readFully(bArr3, 0, length);
                                                                                 randomAccessFile3.close();
-                                                                                EncryptedFileInputStream.decryptBytesWithKeyFile(bArr4, 0, length2, secureDocumentKey);
+                                                                                EncryptedFileInputStream.decryptBytesWithKeyFile(bArr3, 0, length, secureDocumentKey);
                                                                                 l2 = l;
                                                                                 z3 = z;
-                                                                                byte[] computeSHA256 = Utilities.computeSHA256(bArr4, 0, length2);
+                                                                                byte[] computeSHA256 = Utilities.computeSHA256(bArr3, 0, length);
                                                                                 if (bArr != null && Arrays.equals(computeSHA256, bArr)) {
                                                                                     z20 = false;
-                                                                                    int i25 = bArr4[0] & 255;
-                                                                                    int i26 = length2 - i25;
+                                                                                    int i25 = bArr3[0] & 255;
+                                                                                    int i26 = length - i25;
                                                                                     if (!z20) {
-                                                                                        BitmapFactory.decodeByteArray(bArr4, i25, i26, options);
+                                                                                        BitmapFactory.decodeByteArray(bArr3, i25, i26, options);
                                                                                     }
                                                                                 }
                                                                                 z20 = true;
-                                                                                int i252 = bArr4[0] & 255;
-                                                                                int i262 = length2 - i252;
+                                                                                int i252 = bArr3[0] & 255;
+                                                                                int i262 = length - i252;
                                                                                 if (!z20) {
                                                                                 }
                                                                             } catch (Throwable th7) {
@@ -2215,40 +2213,40 @@ public class ImageLoader {
                                                         try {
                                                             if (options.inPurgeable || secureDocumentKey != null) {
                                                                 RandomAccessFile randomAccessFile4 = new RandomAccessFile(file3, "r");
-                                                                int length3 = (int) randomAccessFile4.length();
-                                                                byte[] bArr5 = (byte[]) ImageLoader.bytesThumbLocal.get();
-                                                                if (bArr5 == null || bArr5.length < length3) {
-                                                                    bArr5 = null;
+                                                                int length2 = (int) randomAccessFile4.length();
+                                                                byte[] bArr4 = (byte[]) ImageLoader.bytesThumbLocal.get();
+                                                                if (bArr4 == null || bArr4.length < length2) {
+                                                                    bArr4 = null;
                                                                 }
-                                                                if (bArr5 == null) {
-                                                                    bArr5 = new byte[length3];
-                                                                    ImageLoader.bytesThumbLocal.set(bArr5);
+                                                                if (bArr4 == null) {
+                                                                    bArr4 = new byte[length2];
+                                                                    ImageLoader.bytesThumbLocal.set(bArr4);
                                                                 }
-                                                                randomAccessFile4.readFully(bArr5, 0, length3);
+                                                                randomAccessFile4.readFully(bArr4, 0, length2);
                                                                 randomAccessFile4.close();
                                                                 if (secureDocumentKey != null) {
-                                                                    EncryptedFileInputStream.decryptBytesWithKeyFile(bArr5, 0, length3, secureDocumentKey);
+                                                                    EncryptedFileInputStream.decryptBytesWithKeyFile(bArr4, 0, length2, secureDocumentKey);
                                                                     bitmap3 = bitmap2;
                                                                     z10 = z6;
-                                                                    byte[] computeSHA2562 = Utilities.computeSHA256(bArr5, 0, length3);
+                                                                    byte[] computeSHA2562 = Utilities.computeSHA256(bArr4, 0, length2);
                                                                     if (bArr != null && Arrays.equals(computeSHA2562, bArr)) {
                                                                         z11 = false;
-                                                                        i3 = bArr5[0] & 255;
-                                                                        length3 -= i3;
+                                                                        i3 = bArr4[0] & 255;
+                                                                        length2 -= i3;
                                                                     }
                                                                     z11 = true;
-                                                                    i3 = bArr5[0] & 255;
-                                                                    length3 -= i3;
+                                                                    i3 = bArr4[0] & 255;
+                                                                    length2 -= i3;
                                                                 } else {
                                                                     bitmap3 = bitmap2;
                                                                     z10 = z6;
                                                                     if (z38) {
-                                                                        EncryptedFileInputStream.decryptBytesWithKeyFile(bArr5, 0, length3, this.cacheImage.encryptionKeyPath);
+                                                                        EncryptedFileInputStream.decryptBytesWithKeyFile(bArr4, 0, length2, this.cacheImage.encryptionKeyPath);
                                                                     }
                                                                     z11 = false;
                                                                     i3 = 0;
                                                                 }
-                                                                bitmap2 = !z11 ? BitmapFactory.decodeByteArray(bArr5, i3, length3, options) : bitmap3;
+                                                                bitmap2 = !z11 ? BitmapFactory.decodeByteArray(bArr4, i3, length2, options) : bitmap3;
                                                             } else {
                                                                 FileInputStream encryptedFileInputStream2 = z38 ? new EncryptedFileInputStream(file3, this.cacheImage.encryptionKeyPath) : new FileInputStream(file3);
                                                                 bitmap2 = BitmapFactory.decodeStream(encryptedFileInputStream2, null, options);
@@ -2627,63 +2625,73 @@ public class ImageLoader {
                                                                             if (bitmap2 == null) {
                                                                                 try {
                                                                                     RandomAccessFile randomAccessFile5 = new RandomAccessFile(file3, "r");
-                                                                                    length = (int) randomAccessFile5.length();
-                                                                                    bArr2 = (byte[]) ImageLoader.bytesLocal.get();
-                                                                                    if (bArr2 == null || bArr2.length < length) {
-                                                                                        bArr2 = null;
+                                                                                    int length3 = (int) randomAccessFile5.length();
+                                                                                    byte[] bArr5 = (byte[]) ImageLoader.bytesLocal.get();
+                                                                                    if (bArr5 == null || bArr5.length < length3) {
+                                                                                        bArr5 = null;
                                                                                     }
-                                                                                    if (bArr2 == null) {
-                                                                                        bArr2 = new byte[length];
-                                                                                        ImageLoader.bytesLocal.set(bArr2);
+                                                                                    if (bArr5 == null) {
+                                                                                        bArr5 = new byte[length3];
+                                                                                        ImageLoader.bytesLocal.set(bArr5);
                                                                                     }
-                                                                                    randomAccessFile5.readFully(bArr2, 0, length);
+                                                                                    randomAccessFile5.readFully(bArr5, 0, length3);
                                                                                     randomAccessFile5.close();
-                                                                                } catch (Throwable th26) {
-                                                                                    th = th26;
-                                                                                    secureDocumentKey = secureDocumentKey5;
-                                                                                    i2 = intValue;
-                                                                                }
-                                                                                try {
-                                                                                    if (secureDocumentKey != null) {
-                                                                                        EncryptedFileInputStream.decryptBytesWithKeyFile(bArr2, 0, length, secureDocumentKey);
-                                                                                        secureDocumentKey = secureDocumentKey5;
-                                                                                        i2 = intValue;
-                                                                                        byte[] computeSHA2563 = Utilities.computeSHA256(bArr2, 0, length);
-                                                                                        if (bArr != null && Arrays.equals(computeSHA2563, bArr)) {
-                                                                                            z16 = false;
-                                                                                            i7 = bArr2[0] & 255;
-                                                                                            length -= i7;
-                                                                                        }
-                                                                                        z16 = true;
-                                                                                        i7 = bArr2[0] & 255;
-                                                                                        length -= i7;
-                                                                                    } else {
-                                                                                        secureDocumentKey = secureDocumentKey5;
-                                                                                        i2 = intValue;
-                                                                                        if (z38) {
-                                                                                            EncryptedFileInputStream.decryptBytesWithKeyFile(bArr2, 0, length, this.cacheImage.encryptionKeyPath);
-                                                                                        }
-                                                                                        z16 = false;
-                                                                                        i7 = 0;
-                                                                                    }
-                                                                                    if (!z16) {
-                                                                                        bitmap2 = BitmapFactory.decodeByteArray(bArr2, i7, length, options);
-                                                                                    }
-                                                                                } catch (Throwable th27) {
-                                                                                    th = th27;
                                                                                     try {
-                                                                                        FileLog.e(th);
-                                                                                        if (bitmap2 != null) {
+                                                                                        if (secureDocumentKey != null) {
+                                                                                            EncryptedFileInputStream.decryptBytesWithKeyFile(bArr5, 0, length3, secureDocumentKey);
+                                                                                            secureDocumentKey = secureDocumentKey5;
+                                                                                            i2 = intValue;
+                                                                                            byte[] computeSHA2563 = Utilities.computeSHA256(bArr5, 0, length3);
+                                                                                            if (bArr != null && Arrays.equals(computeSHA2563, bArr)) {
+                                                                                                z16 = false;
+                                                                                                i7 = bArr5[0] & 255;
+                                                                                                length3 -= i7;
+                                                                                            }
+                                                                                            z16 = true;
+                                                                                            i7 = bArr5[0] & 255;
+                                                                                            length3 -= i7;
+                                                                                        } else {
+                                                                                            secureDocumentKey = secureDocumentKey5;
+                                                                                            i2 = intValue;
+                                                                                            if (z38) {
+                                                                                                EncryptedFileInputStream.decryptBytesWithKeyFile(bArr5, 0, length3, this.cacheImage.encryptionKeyPath);
+                                                                                            }
+                                                                                            z16 = false;
+                                                                                            i7 = 0;
                                                                                         }
-                                                                                    } catch (Throwable th28) {
-                                                                                        th = th28;
-                                                                                        z14 = false;
-                                                                                        z8 = th instanceof FileNotFoundException;
-                                                                                        secureDocumentKey2 = secureDocumentKey;
-                                                                                        z7 = z14;
-                                                                                        z9 = true;
-                                                                                        FileLog.e(th, z8 ^ z9);
-                                                                                        secureDocumentKey4 = secureDocumentKey2;
+                                                                                        if (!z16) {
+                                                                                            bitmap2 = BitmapFactory.decodeByteArray(bArr5, i7, length3, options);
+                                                                                        }
+                                                                                    } catch (Throwable th26) {
+                                                                                        th = th26;
+                                                                                        try {
+                                                                                            FileLog.e(th);
+                                                                                            if (bitmap2 != null) {
+                                                                                            }
+                                                                                        } catch (Throwable th27) {
+                                                                                            th = th27;
+                                                                                            z14 = false;
+                                                                                            z8 = th instanceof FileNotFoundException;
+                                                                                            secureDocumentKey2 = secureDocumentKey;
+                                                                                            z7 = z14;
+                                                                                            z9 = true;
+                                                                                            FileLog.e(th, z8 ^ z9);
+                                                                                            secureDocumentKey4 = secureDocumentKey2;
+                                                                                            i5 = i2;
+                                                                                            r0 = secureDocumentKey4;
+                                                                                            Thread.interrupted();
+                                                                                            if (BuildVars.LOGS_ENABLED) {
+                                                                                            }
+                                                                                            if (bitmap2 != null) {
+                                                                                            }
+                                                                                            cacheImage = this.cacheImage;
+                                                                                            if (cacheImage == null) {
+                                                                                            }
+                                                                                            if (bitmap2 != null) {
+                                                                                            }
+                                                                                            themePreviewDrawable = null;
+                                                                                            onPostExecute(themePreviewDrawable);
+                                                                                        }
                                                                                         i5 = i2;
                                                                                         r0 = secureDocumentKey4;
                                                                                         Thread.interrupted();
@@ -2699,20 +2707,10 @@ public class ImageLoader {
                                                                                         themePreviewDrawable = null;
                                                                                         onPostExecute(themePreviewDrawable);
                                                                                     }
-                                                                                    i5 = i2;
-                                                                                    r0 = secureDocumentKey4;
-                                                                                    Thread.interrupted();
-                                                                                    if (BuildVars.LOGS_ENABLED) {
-                                                                                    }
-                                                                                    if (bitmap2 != null) {
-                                                                                    }
-                                                                                    cacheImage = this.cacheImage;
-                                                                                    if (cacheImage == null) {
-                                                                                    }
-                                                                                    if (bitmap2 != null) {
-                                                                                    }
-                                                                                    themePreviewDrawable = null;
-                                                                                    onPostExecute(themePreviewDrawable);
+                                                                                } catch (Throwable th28) {
+                                                                                    th = th28;
+                                                                                    secureDocumentKey = secureDocumentKey5;
+                                                                                    i2 = intValue;
                                                                                 }
                                                                             } else {
                                                                                 secureDocumentKey = secureDocumentKey5;
@@ -3158,42 +3156,42 @@ public class ImageLoader {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Code restructure failed: missing block: B:54:0x0122, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:54:0x0121, code lost:
         
             if (r5 != (-1)) goto L96;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x0124, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x0123, code lost:
         
             r0 = r11.fileSize;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:57:0x0126, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x0125, code lost:
         
-            if (r0 == 0) goto L117;
+            if (r0 == 0) goto L113;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:58:0x0128, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x0127, code lost:
         
             r3 = r0;
             reportProgress(r3, r3);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:74:0x012f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:74:0x012e, code lost:
         
             r0 = e;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:75:0x0130, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:75:0x012f, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:77:0x012d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:77:0x012c, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:78:0x0134, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:78:0x0133, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00a9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x013d A[Catch: all -> 0x0143, TRY_LEAVE, TryCatch #3 {all -> 0x0143, blocks: (B:61:0x0139, B:63:0x013d), top: B:60:0x0139 }] */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x0149 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00a8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:63:0x013c A[Catch: all -> 0x0142, TRY_LEAVE, TryCatch #1 {all -> 0x0142, blocks: (B:61:0x0138, B:63:0x013c), top: B:60:0x0138 }] */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x0148 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         @Override // android.os.AsyncTask
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -3439,80 +3437,80 @@ public class ImageLoader {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Can't wrap try/catch for region: R(18:0|1|(9:101|102|(6:104|(1:106)|107|(1:109)|110|(16:112|114|115|4|(6:35|36|(1:44)|46|(3:50|51|(1:59))|(14:64|65|66|(2:67|(1:97)(3:69|70|(3:72|(3:74|75|76)(1:78)|77)(1:79)))|7|8|(1:10)|12|13|(1:15)|(2:27|28)|(1:23)|24|25)(0))(0)|6|7|8|(0)|12|13|(0)|(0)|(3:19|21|23)|24|25))|140|(1:146)|107|(0)|110|(0))|3|4|(0)(0)|6|7|8|(0)|12|13|(0)|(0)|(0)|24|25|(1:(0))) */
-        /* JADX WARN: Code restructure failed: missing block: B:122:0x00b5, code lost:
+        /* JADX WARN: Can't wrap try/catch for region: R(18:0|1|(9:101|102|(6:104|(1:106)|107|(1:109)|110|(16:112|114|115|4|(6:35|36|(1:44)|46|(3:50|51|(1:59))|(4:64|65|66|(2:67|(1:97)(3:69|70|(3:72|(3:74|75|76)(1:78)|77)(1:79))))(0))(0)|6|7|8|(1:10)|12|13|(1:15)|(2:27|28)|(1:23)|24|25))|140|(1:146)|107|(0)|110|(0))|3|4|(0)(0)|6|7|8|(0)|12|13|(0)|(0)|(3:19|21|23)|24|25|(1:(0))) */
+        /* JADX WARN: Code restructure failed: missing block: B:122:0x00b4, code lost:
         
             if (org.telegram.messenger.ApplicationLoader.isNetworkOnline() != false) goto L42;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:125:0x00d3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:125:0x00d2, code lost:
         
             r12.canRetry = false;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:133:0x00d1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:133:0x00d0, code lost:
         
             if (r13.getMessage().contains("ECONNRESET") != false) goto L42;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:33:0x0196, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:33:0x0195, code lost:
         
             r1 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:34:0x0197, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:34:0x0196, code lost:
         
             org.telegram.messenger.FileLog.e(r1);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:81:0x016f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:81:0x016e, code lost:
         
             if (r7 != (-1)) goto L112;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:83:0x0171, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:83:0x0170, code lost:
         
             r2 = r12.imageSize;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:84:0x0175, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:84:0x0174, code lost:
         
             if (r2 == 0) goto L143;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:85:0x0177, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:85:0x0176, code lost:
         
             reportProgress(r2, r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:87:0x017f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:87:0x017e, code lost:
         
             r2 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:88:0x0180, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:88:0x017f, code lost:
         
             r0 = r2;
             r2 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:89:0x0182, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:89:0x0181, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:90:0x0185, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:90:0x0184, code lost:
         
             r0 = r2;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:92:0x017b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:92:0x017a, code lost:
         
             r2 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:93:0x017c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:93:0x017b, code lost:
         
             r0 = r2;
             r2 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:94:0x0187, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:94:0x0186, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
         /* JADX WARN: Removed duplicated region for block: B:109:0x0065  */
-        /* JADX WARN: Removed duplicated region for block: B:10:0x0190 A[Catch: all -> 0x0196, TRY_LEAVE, TryCatch #4 {all -> 0x0196, blocks: (B:8:0x018c, B:10:0x0190), top: B:7:0x018c }] */
-        /* JADX WARN: Removed duplicated region for block: B:112:0x008f A[Catch: all -> 0x0020, TRY_LEAVE, TryCatch #0 {all -> 0x0020, blocks: (B:102:0x0009, B:104:0x0017, B:107:0x005f, B:110:0x0066, B:112:0x008f, B:140:0x0024, B:144:0x0034, B:146:0x0042), top: B:101:0x0009 }] */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x019e A[Catch: all -> 0x01a2, TRY_LEAVE, TryCatch #2 {all -> 0x01a2, blocks: (B:13:0x019a, B:15:0x019e), top: B:12:0x019a }] */
-        /* JADX WARN: Removed duplicated region for block: B:19:0x01af  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x01a5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x00f0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x018f A[Catch: all -> 0x0195, TRY_LEAVE, TryCatch #4 {all -> 0x0195, blocks: (B:8:0x018b, B:10:0x018f), top: B:7:0x018b }] */
+        /* JADX WARN: Removed duplicated region for block: B:112:0x008f A[Catch: all -> 0x0020, TRY_LEAVE, TryCatch #1 {all -> 0x0020, blocks: (B:102:0x0009, B:104:0x0017, B:107:0x005f, B:110:0x0066, B:112:0x008f, B:140:0x0024, B:144:0x0034, B:146:0x0042), top: B:101:0x0009 }] */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x019d A[Catch: all -> 0x01a1, TRY_LEAVE, TryCatch #2 {all -> 0x01a1, blocks: (B:13:0x0199, B:15:0x019d), top: B:12:0x0199 }] */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x01ae  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x01a4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x00ef A[EXC_TOP_SPLITTER, SYNTHETIC] */
         @Override // android.os.AsyncTask
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -3643,41 +3641,28 @@ public class ImageLoader {
                                 } catch (Throwable th3) {
                                     th = th3;
                                 }
-                                randomAccessFile = this.fileOutputStream;
-                                if (randomAccessFile != null) {
-                                    randomAccessFile.close();
-                                    this.fileOutputStream = null;
-                                }
-                                httpURLConnection2 = this.httpConnection;
-                                if (httpURLConnection2 != null) {
-                                    httpURLConnection2.disconnect();
-                                }
-                                if (inputStream2 != null) {
-                                    try {
-                                        inputStream2.close();
-                                    } catch (Throwable th4) {
-                                        FileLog.e(th4);
-                                    }
-                                }
-                                if (z2 && (file = (cacheImage = this.cacheImage).tempFilePath) != null && !file.renameTo(cacheImage.finalFilePath)) {
-                                    CacheImage cacheImage2 = this.cacheImage;
-                                    cacheImage2.finalFilePath = cacheImage2.tempFilePath;
-                                }
-                                return Boolean.valueOf(z2);
                             }
                         }
                         z2 = false;
                         randomAccessFile = this.fileOutputStream;
                         if (randomAccessFile != null) {
+                            randomAccessFile.close();
+                            this.fileOutputStream = null;
                         }
                         httpURLConnection2 = this.httpConnection;
                         if (httpURLConnection2 != null) {
+                            httpURLConnection2.disconnect();
                         }
                         if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (Throwable th4) {
+                                FileLog.e(th4);
+                            }
                         }
-                        if (z2) {
-                            CacheImage cacheImage22 = this.cacheImage;
-                            cacheImage22.finalFilePath = cacheImage22.tempFilePath;
+                        if (z2 && (file = (cacheImage = this.cacheImage).tempFilePath) != null && !file.renameTo(cacheImage.finalFilePath)) {
+                            CacheImage cacheImage2 = this.cacheImage;
+                            cacheImage2.finalFilePath = cacheImage2.tempFilePath;
                         }
                         return Boolean.valueOf(z2);
                     }
@@ -3720,6 +3705,8 @@ public class ImageLoader {
             if (inputStream2 != null) {
             }
             if (z2) {
+                CacheImage cacheImage22 = this.cacheImage;
+                cacheImage22.finalFilePath = cacheImage22.tempFilePath;
             }
             return Boolean.valueOf(z2);
         }
@@ -3845,12 +3832,12 @@ public class ImageLoader {
             });
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:59:0x00c7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:59:0x00c6, code lost:
         
             if (r11.info.big != false) goto L33;
          */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x00f9 A[Catch: all -> 0x000a, TryCatch #0 {all -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0056, B:13:0x0060, B:15:0x0068, B:16:0x0084, B:18:0x008a, B:19:0x00f1, B:22:0x00f9, B:24:0x00fd, B:28:0x010a, B:30:0x011b, B:32:0x0125, B:33:0x0129, B:36:0x013d, B:38:0x0140, B:39:0x0148, B:43:0x0145, B:45:0x016e, B:49:0x0095, B:52:0x00c9, B:56:0x00a9, B:58:0x00bb, B:60:0x00cf, B:62:0x00d5, B:64:0x00dd, B:66:0x00e5, B:68:0x00ed, B:69:0x0073, B:70:0x0172), top: B:2:0x0002, inners: #1 }] */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00fd A[Catch: all -> 0x000a, TryCatch #0 {all -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0056, B:13:0x0060, B:15:0x0068, B:16:0x0084, B:18:0x008a, B:19:0x00f1, B:22:0x00f9, B:24:0x00fd, B:28:0x010a, B:30:0x011b, B:32:0x0125, B:33:0x0129, B:36:0x013d, B:38:0x0140, B:39:0x0148, B:43:0x0145, B:45:0x016e, B:49:0x0095, B:52:0x00c9, B:56:0x00a9, B:58:0x00bb, B:60:0x00cf, B:62:0x00d5, B:64:0x00dd, B:66:0x00e5, B:68:0x00ed, B:69:0x0073, B:70:0x0172), top: B:2:0x0002, inners: #1 }] */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x00f8 A[Catch: all -> 0x000a, TryCatch #0 {all -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0055, B:13:0x005f, B:15:0x0067, B:16:0x0083, B:18:0x0089, B:19:0x00f0, B:22:0x00f8, B:24:0x00fc, B:28:0x0109, B:30:0x011a, B:32:0x0124, B:33:0x0128, B:36:0x013c, B:38:0x013f, B:39:0x0147, B:43:0x0144, B:45:0x016d, B:49:0x0094, B:52:0x00c8, B:56:0x00a8, B:58:0x00ba, B:60:0x00ce, B:62:0x00d4, B:64:0x00dc, B:66:0x00e4, B:68:0x00ec, B:69:0x0072, B:70:0x0171), top: B:2:0x0002, inners: #1 }] */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00fc A[Catch: all -> 0x000a, TryCatch #0 {all -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0055, B:13:0x005f, B:15:0x0067, B:16:0x0083, B:18:0x0089, B:19:0x00f0, B:22:0x00f8, B:24:0x00fc, B:28:0x0109, B:30:0x011a, B:32:0x0124, B:33:0x0128, B:36:0x013c, B:38:0x013f, B:39:0x0147, B:43:0x0144, B:45:0x016d, B:49:0x0094, B:52:0x00c8, B:56:0x00a8, B:58:0x00ba, B:60:0x00ce, B:62:0x00d4, B:64:0x00dc, B:66:0x00e4, B:68:0x00ec, B:69:0x0072, B:70:0x0171), top: B:2:0x0002, inners: #1 }] */
         @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4753,25 +4740,25 @@ public class ImageLoader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x030e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0307, code lost:
     
         if (r5 == false) goto L150;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x03f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x03f2, code lost:
     
         if (r1.equals(r6) != false) goto L201;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x01b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:270:0x01b6, code lost:
     
         if (r8.exists() == false) goto L70;
      */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0431  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0442  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0213  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x042a  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x043b  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0223  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6185,9 +6172,9 @@ public class ImageLoader {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6380,18 +6367,18 @@ public class ImageLoader {
         this.lottieMemCache.evictAll();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0167, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x0165, code lost:
     
         if (r2.canWrite() == false) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:171:0x0161, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x015f, code lost:
     
         if (r2.mkdirs() != false) goto L69;
      */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x019d A[Catch: Exception -> 0x00af, TryCatch #0 {Exception -> 0x00af, blocks: (B:8:0x0054, B:10:0x0060, B:12:0x006e, B:15:0x0076, B:17:0x007d, B:19:0x00ac, B:23:0x00b2, B:25:0x00be, B:28:0x00c7, B:30:0x00ca, B:34:0x00eb, B:35:0x00cf, B:38:0x00ee, B:181:0x012f, B:47:0x0190, B:49:0x019d, B:51:0x01a8, B:53:0x01b0, B:55:0x01b8, B:58:0x01c4, B:60:0x01cf, B:64:0x01d2, B:151:0x034e, B:153:0x030c, B:155:0x02cb, B:157:0x028a, B:159:0x0249, B:68:0x0353, B:89:0x03be, B:91:0x038a, B:92:0x03cc, B:161:0x0215, B:184:0x012c, B:41:0x013b, B:43:0x0143, B:46:0x0188, B:162:0x0150, B:164:0x0156, B:167:0x0163, B:169:0x0169, B:170:0x015d, B:191:0x03c2, B:193:0x03c6, B:142:0x030f, B:144:0x0321, B:146:0x0328, B:148:0x0337, B:133:0x02ce, B:135:0x02e0, B:137:0x02e7, B:139:0x02f6, B:124:0x028d, B:126:0x029f, B:128:0x02a6, B:130:0x02b5, B:71:0x0359, B:73:0x0367, B:75:0x036d, B:77:0x0376, B:115:0x024c, B:117:0x025e, B:119:0x0265, B:121:0x0274, B:97:0x01e4, B:99:0x01f4, B:101:0x01fa, B:103:0x0201, B:80:0x038d, B:82:0x039b, B:84:0x03a1, B:86:0x03aa, B:106:0x0218, B:108:0x0228, B:110:0x022e, B:112:0x0235), top: B:7:0x0054, inners: #1, #2, #3, #4, #5, #6, #9, #10 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0376 A[Catch: Exception -> 0x0389, TRY_LEAVE, TryCatch #4 {Exception -> 0x0389, blocks: (B:71:0x0359, B:73:0x0367, B:75:0x036d, B:77:0x0376), top: B:70:0x0359, outer: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03aa A[Catch: Exception -> 0x03bd, TRY_LEAVE, TryCatch #9 {Exception -> 0x03bd, blocks: (B:80:0x038d, B:82:0x039b, B:84:0x03a1, B:86:0x03aa), top: B:79:0x038d, outer: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x019b A[Catch: Exception -> 0x00ad, TryCatch #0 {Exception -> 0x00ad, blocks: (B:8:0x0053, B:10:0x005f, B:12:0x006d, B:15:0x0075, B:17:0x007c, B:19:0x00aa, B:23:0x00b0, B:25:0x00bc, B:28:0x00c5, B:30:0x00c8, B:34:0x00e9, B:35:0x00cd, B:38:0x00ec, B:181:0x012d, B:47:0x018e, B:49:0x019b, B:51:0x01a6, B:53:0x01ae, B:55:0x01b6, B:58:0x01c2, B:60:0x01cd, B:64:0x01d0, B:151:0x034a, B:153:0x0309, B:155:0x02c8, B:157:0x0287, B:159:0x0246, B:68:0x034f, B:89:0x03ba, B:91:0x0386, B:92:0x03c7, B:161:0x0212, B:184:0x012a, B:41:0x0139, B:43:0x0141, B:46:0x0186, B:162:0x014e, B:164:0x0154, B:167:0x0161, B:169:0x0167, B:170:0x015b, B:191:0x03be, B:193:0x03c2, B:142:0x030c, B:144:0x031e, B:146:0x0325, B:148:0x0334, B:97:0x01e1, B:99:0x01f1, B:101:0x01f7, B:103:0x01fe, B:80:0x0389, B:82:0x0397, B:84:0x039d, B:86:0x03a6, B:133:0x02cb, B:135:0x02dd, B:137:0x02e4, B:139:0x02f3, B:124:0x028a, B:126:0x029c, B:128:0x02a3, B:130:0x02b2, B:115:0x0249, B:117:0x025b, B:119:0x0262, B:121:0x0271, B:71:0x0355, B:73:0x0363, B:75:0x0369, B:77:0x0372, B:106:0x0215, B:108:0x0225, B:110:0x022b, B:112:0x0232), top: B:7:0x0053, inners: #1, #3, #6, #7, #8, #9, #10, #11 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0372 A[Catch: Exception -> 0x0385, TRY_LEAVE, TryCatch #10 {Exception -> 0x0385, blocks: (B:71:0x0355, B:73:0x0363, B:75:0x0369, B:77:0x0372), top: B:70:0x0355, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x03a6 A[Catch: Exception -> 0x03b9, TRY_LEAVE, TryCatch #6 {Exception -> 0x03b9, blocks: (B:80:0x0389, B:82:0x0397, B:84:0x039d, B:86:0x03a6), top: B:79:0x0389, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01e1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6454,48 +6441,48 @@ public class ImageLoader {
                             File publicStorageDir = getPublicStorageDir();
                             try {
                                 file = new File(publicStorageDir, "Telegram");
-                                try {
-                                    file.mkdirs();
-                                } catch (Exception e2) {
-                                    e = e2;
-                                    FileLog.e(e);
-                                    file2 = new File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "Telegram");
-                                    this.telegramPath = file2;
-                                    file2.mkdirs();
-                                    if (!this.telegramPath.isDirectory()) {
-                                    }
-                                    if (this.telegramPath.isDirectory()) {
-                                    }
-                                    if (file != null) {
-                                        try {
-                                            file4 = new File(file, "Telegram Images");
-                                            file4.mkdir();
-                                            if (file4.isDirectory()) {
-                                                sparseArray.put(100, file4);
-                                                if (BuildVars.LOGS_ENABLED) {
-                                                }
-                                            }
-                                        } catch (Exception e3) {
-                                            FileLog.e(e3);
-                                        }
-                                        try {
-                                            file3 = new File(file, "Telegram Video");
-                                            file3.mkdir();
-                                            if (file3.isDirectory()) {
-                                                sparseArray.put(101, file3);
-                                                if (BuildVars.LOGS_ENABLED) {
-                                                }
-                                            }
-                                        } catch (Exception e4) {
-                                            FileLog.e(e4);
-                                        }
-                                    }
-                                    SharedConfig.checkSaveToGalleryFiles();
-                                    return sparseArray;
-                                }
-                            } catch (Exception e5) {
+                            } catch (Exception e2) {
                                 file = publicStorageDir;
-                                e = e5;
+                                e = e2;
+                            }
+                            try {
+                                file.mkdirs();
+                            } catch (Exception e3) {
+                                e = e3;
+                                FileLog.e(e);
+                                file2 = new File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "Telegram");
+                                this.telegramPath = file2;
+                                file2.mkdirs();
+                                if (!this.telegramPath.isDirectory()) {
+                                }
+                                if (this.telegramPath.isDirectory()) {
+                                }
+                                if (file != null) {
+                                    try {
+                                        file4 = new File(file, "Telegram Images");
+                                        file4.mkdir();
+                                        if (file4.isDirectory()) {
+                                            sparseArray.put(100, file4);
+                                            if (BuildVars.LOGS_ENABLED) {
+                                            }
+                                        }
+                                    } catch (Exception e4) {
+                                        FileLog.e(e4);
+                                    }
+                                    try {
+                                        file3 = new File(file, "Telegram Video");
+                                        file3.mkdir();
+                                        if (file3.isDirectory()) {
+                                            sparseArray.put(101, file3);
+                                            if (BuildVars.LOGS_ENABLED) {
+                                            }
+                                        }
+                                    } catch (Exception e5) {
+                                        FileLog.e(e5);
+                                    }
+                                }
+                                SharedConfig.checkSaveToGalleryFiles();
+                                return sparseArray;
                             }
                         } else {
                             file = null;
@@ -6789,17 +6776,17 @@ public class ImageLoader {
      */
     /* JADX WARN: Removed duplicated region for block: B:100:0x01e1  */
     /* JADX WARN: Removed duplicated region for block: B:104:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x03b6  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x041c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x0437 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x0452 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0473 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x0491 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x04ab  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x04f6  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0551  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x04eb  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0419 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0434 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x044f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0470 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x048e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x04f3  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x054e  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x04e8  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0412  */
     /* JADX WARN: Removed duplicated region for block: B:275:0x01e4  */
     /* JADX WARN: Removed duplicated region for block: B:276:0x01dd  */
     /* JADX WARN: Removed duplicated region for block: B:279:0x01b0  */

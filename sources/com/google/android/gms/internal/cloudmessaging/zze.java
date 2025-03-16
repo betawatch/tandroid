@@ -1,15 +1,17 @@
 package com.google.android.gms.internal.cloudmessaging;
 
-import android.os.Handler;
-import android.os.Looper;
-
 /* loaded from: classes.dex */
-public class zze extends Handler {
-    public zze(Looper looper) {
-        super(looper);
+public abstract class zze {
+    private static final zzb zza;
+    private static volatile zzb zzb;
+
+    static {
+        zzd zzdVar = new zzd(null);
+        zza = zzdVar;
+        zzb = zzdVar;
     }
 
-    public zze(Looper looper, Handler.Callback callback) {
-        super(looper, callback);
+    public static zzb zza() {
+        return zzb;
     }
 }

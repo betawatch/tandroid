@@ -164,7 +164,7 @@ public class CameraSession {
         if (r2.getSupportedFocusModes().contains("continuous-picture") != false) goto L27;
      */
     /* JADX WARN: Removed duplicated region for block: B:37:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00cf A[Catch: all -> 0x000d, TryCatch #3 {all -> 0x000d, blocks: (B:3:0x0002, B:6:0x0008, B:7:0x0015, B:9:0x0024, B:11:0x002a, B:13:0x0068, B:15:0x006e, B:17:0x0074, B:18:0x0077, B:21:0x0090, B:22:0x0093, B:24:0x009a, B:26:0x00a0, B:27:0x00a9, B:29:0x00ad, B:31:0x00b6, B:34:0x00c5, B:48:0x00c0, B:35:0x00c7, B:38:0x00d1, B:40:0x00d4, B:46:0x00cf, B:52:0x00a6, B:54:0x0084, B:59:0x0011), top: B:2:0x0002, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00ce A[Catch: all -> 0x000d, TryCatch #3 {all -> 0x000d, blocks: (B:3:0x0002, B:6:0x0008, B:7:0x0015, B:9:0x0024, B:11:0x002a, B:13:0x0068, B:15:0x006e, B:17:0x0074, B:18:0x0077, B:21:0x0090, B:22:0x0093, B:24:0x009a, B:26:0x00a0, B:27:0x00a9, B:29:0x00ad, B:31:0x00b6, B:34:0x00c5, B:48:0x00c0, B:35:0x00c7, B:38:0x00d0, B:40:0x00d3, B:46:0x00ce, B:52:0x00a6, B:54:0x0084, B:59:0x0011), top: B:2:0x0002, inners: #0 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -275,11 +275,11 @@ public class CameraSession {
         this.isVideo = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00e8, code lost:
     
         if (((360 - r7.displayOrientation) % 360) == r4) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00bc, code lost:
     
         if (r3.getSupportedFocusModes().contains("auto") != false) goto L28;
      */
@@ -534,9 +534,9 @@ public class CameraSession {
         configurePhotoCamera();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0060  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

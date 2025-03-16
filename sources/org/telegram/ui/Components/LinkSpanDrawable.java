@@ -31,7 +31,7 @@ import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LinkSpanDrawable {
     private static final ArrayList pathCache = new ArrayList();
     private final Path circlePath;

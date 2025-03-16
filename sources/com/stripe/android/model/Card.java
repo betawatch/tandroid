@@ -3,7 +3,7 @@ package com.stripe.android.model;
 import com.stripe.android.util.DateUtils;
 import com.stripe.android.util.StripeTextUtils;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Card {
     private String addressCity;
     private String addressCountry;
