@@ -6356,6 +6356,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$8(ViewPage viewPage, View view, int i, float f, float f2) {
+        if (view instanceof GraySectionCell) {
+            return;
+        }
         boolean z = view instanceof DialogCell;
         if (z) {
             DialogCell dialogCell = (DialogCell) view;

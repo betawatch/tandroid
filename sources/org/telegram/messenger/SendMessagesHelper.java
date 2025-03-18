@@ -7673,7 +7673,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         performSendDelayedMessage(delayedMessage, -1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:333:0x082b  */
+    /* JADX WARN: Removed duplicated region for block: B:335:0x082d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7703,6 +7703,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final TLRPC.InputMedia inputMedia3;
         TLRPC.InputPeer inputPeer3;
         VideoEditedInfo videoEditedInfo;
+        TLRPC.PhotoSize photoSize4;
         int i3 = delayedMessage.type;
         int i4 = ConnectionsManager.FileTypePhoto;
         if (i3 == 0) {
@@ -7720,7 +7721,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 putToUploadingMessages(delayedMessage.obj);
             }
             String file = FileLoader.getInstance(this.currentAccount).getPathToAttach(delayedMessage.photoSize).toString();
-            if (delayedMessage.sendEncryptedRequest != null && delayedMessage.photoSize.location.dc_id != 0) {
+            if (delayedMessage.sendEncryptedRequest != null && (photoSize4 = delayedMessage.photoSize) != null && photoSize4.location.dc_id != 0) {
                 File file2 = new File(file);
                 if (!file2.exists()) {
                     file = FileLoader.getInstance(this.currentAccount).getPathToAttach(delayedMessage.photoSize, true).toString();
@@ -7999,12 +8000,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     putToDelayedMessages(str11, delayedMessage);
                     delayedMessage.extraHashMap.put(messageObject8, str11);
                     delayedMessage.extraHashMap.put(str11 + "_i", messageObject8);
-                    TLRPC.PhotoSize photoSize4 = delayedMessage.photoSize;
-                    if (photoSize4 != null && photoSize4.location != null) {
+                    TLRPC.PhotoSize photoSize5 = delayedMessage.photoSize;
+                    if (photoSize5 != null && photoSize5.location != null) {
                         delayedMessage.extraHashMap.put(str11 + "_t", delayedMessage.photoSize);
                     }
-                    TLRPC.PhotoSize photoSize5 = delayedMessage.coverPhotoSize;
-                    if (photoSize5 != null && photoSize5.location != null) {
+                    TLRPC.PhotoSize photoSize6 = delayedMessage.coverPhotoSize;
+                    if (photoSize6 != null && photoSize6.location != null) {
                         delayedMessage.extraHashMap.put(str11 + "_ct", delayedMessage.coverPhotoSize);
                     }
                     if (!delayedMessage.videoEditedInfo.alreadyScheduledConverting) {
@@ -8052,12 +8053,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 delayedMessage.extraHashMap.put(messageObject8, str13);
                                 delayedMessage.extraHashMap.put(str13, inputMedia);
                                 delayedMessage.extraHashMap.put(str13 + "_i", messageObject8);
-                                TLRPC.PhotoSize photoSize6 = delayedMessage.photoSize;
-                                if (photoSize6 != null && photoSize6.location != null) {
+                                TLRPC.PhotoSize photoSize7 = delayedMessage.photoSize;
+                                if (photoSize7 != null && photoSize7.location != null) {
                                     delayedMessage.extraHashMap.put(str13 + "_t", delayedMessage.photoSize);
                                 }
-                                TLRPC.PhotoSize photoSize7 = delayedMessage.coverPhotoSize;
-                                if (photoSize7 != null && photoSize7.location != null) {
+                                TLRPC.PhotoSize photoSize8 = delayedMessage.coverPhotoSize;
+                                if (photoSize8 != null && photoSize8.location != null) {
                                     String str14 = FileLoader.getDirectory(4) + "/" + delayedMessage.coverPhotoSize.location.volume_id + "_" + delayedMessage.coverPhotoSize.location.local_id + ".jpg";
                                     delayedMessage.extraHashMap.put(str13 + "_ct", delayedMessage.coverPhotoSize);
                                     delayedMessage.extraHashMap.put(str14 + "_doc", str13);
@@ -8082,8 +8083,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     sb4.append(".jpg");
                                     String sb5 = sb4.toString();
                                     putToDelayedMessages(sb5, delayedMessage);
-                                    TLRPC.PhotoSize photoSize8 = delayedMessage.coverPhotoSize;
-                                    if (photoSize8 != null && photoSize8.location != null) {
+                                    TLRPC.PhotoSize photoSize9 = delayedMessage.coverPhotoSize;
+                                    if (photoSize9 != null && photoSize9.location != null) {
                                         String str15 = FileLoader.getDirectory(4) + "/" + delayedMessage.coverPhotoSize.location.volume_id + "_" + delayedMessage.coverPhotoSize.location.local_id + ".jpg";
                                         delayedMessage.extraHashMap.put(str13 + "_ct", delayedMessage.coverPhotoSize);
                                         delayedMessage.extraHashMap.put(str15 + "_doc", str13);
@@ -8143,8 +8144,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         delayedMessage.extraHashMap.put(messageObject, str13);
                         delayedMessage.extraHashMap.put(str13, tL_messages_sendEncryptedMultiMedia.files.get(size));
                         delayedMessage.extraHashMap.put(str13 + "_i", messageObject);
-                        TLRPC.PhotoSize photoSize9 = delayedMessage.photoSize;
-                        if (photoSize9 != null && photoSize9.location != null) {
+                        TLRPC.PhotoSize photoSize10 = delayedMessage.photoSize;
+                        if (photoSize10 != null && photoSize10.location != null) {
                             delayedMessage.extraHashMap.put(str13 + "_t", delayedMessage.photoSize);
                         }
                         VideoEditedInfo videoEditedInfo8 = messageObject.videoEditedInfo;

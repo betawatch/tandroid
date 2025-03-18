@@ -25,6 +25,7 @@ public class HttpGetFileTask extends AsyncTask {
     private Exception exception;
     private File file;
     private long max_size = -1;
+    private String overrideExt;
     private Utilities.Callback progressCallback;
 
     public HttpGetFileTask(Utilities.Callback callback, Utilities.Callback callback2) {
@@ -43,61 +44,64 @@ public class HttpGetFileTask extends AsyncTask {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x012e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x0133, code lost:
     
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x0132, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x0137, code lost:
     
-        if (r17.progressCallback == null) goto L154;
+        if (r17.progressCallback == null) goto L158;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0134, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x0139, code lost:
     
         org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda1(r17));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x013c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x0141, code lost:
     
-        if (r10 == null) goto L92;
+        if (r10 == null) goto L96;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x013e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:148:0x0143, code lost:
     
         r10.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x0145, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x014a, code lost:
     
         r15.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x0148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x014d, code lost:
     
         r11.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x014f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x0154, code lost:
     
-        if (isCancelled() == false) goto L96;
+        if (isCancelled() == false) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:153:?, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x0154, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x0159, code lost:
     
         return r17.file;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x00e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x00e6, code lost:
     
         r17.file.delete();
      */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x015a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0163 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x017c A[LOOP:0: B:2:0x0009->B:35:0x017c, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0186 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x015f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0168 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0181 A[LOOP:0: B:2:0x0009->B:35:0x0181, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x018b A[SYNTHETIC] */
     @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public File doInBackground(String... strArr) {
+        BufferedInputStream bufferedInputStream;
         Throwable th;
+        FileOutputStream fileOutputStream;
         Throwable th2;
+        FileChannel channel;
         Throwable th3;
         int i = 0;
         String str = strArr[0];
@@ -152,13 +156,17 @@ public class HttpGetFileTask extends AsyncTask {
                     return null;
                 }
                 if (this.file == null) {
-                    this.file = StoryEntry.makeCacheFile(UserConfig.selectedAccount, MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType()));
+                    String str2 = this.overrideExt;
+                    if (str2 == null) {
+                        str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
+                    }
+                    this.file = StoryEntry.makeCacheFile(UserConfig.selectedAccount, str2);
                 }
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(errorStream, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                bufferedInputStream = new BufferedInputStream(errorStream, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
                 try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(this.file, z);
+                    fileOutputStream = new FileOutputStream(this.file, z);
                     try {
-                        FileChannel channel = fileOutputStream.getChannel();
+                        channel = fileOutputStream.getChannel();
                         try {
                             byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM];
                             while (true) {
@@ -169,103 +177,105 @@ public class HttpGetFileTask extends AsyncTask {
                                 try {
                                     channel.write(ByteBuffer.wrap(bArr, i, read));
                                     j2 += read;
-                                    if (isCancelled()) {
-                                        try {
+                                    try {
+                                        if (isCancelled()) {
                                             try {
                                                 break;
                                             } catch (Exception e2) {
                                                 FileLog.e(e2);
-                                                try {
-                                                    channel.close();
-                                                    try {
-                                                        fileOutputStream.close();
-                                                        try {
-                                                            bufferedInputStream.close();
-                                                            return null;
-                                                        } catch (Exception e3) {
-                                                            e = e3;
-                                                            j = 0;
-                                                            if (!(e instanceof ProtocolException)) {
-                                                            }
+                                            }
+                                        } else {
+                                            if (contentLengthLong > 0) {
+                                                final float clamp01 = Utilities.clamp01(j2 / contentLengthLong);
+                                                if (this.progressCallback != null) {
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda0
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            HttpGetFileTask.this.lambda$doInBackground$0(clamp01);
                                                         }
-                                                    } catch (Throwable th4) {
-                                                        th = th4;
-                                                        j = 0;
-                                                        try {
-                                                            bufferedInputStream.close();
-                                                            throw th;
-                                                        } catch (Throwable th5) {
-                                                            th.addSuppressed(th5);
-                                                            throw th;
-                                                        }
-                                                    }
-                                                } catch (Throwable th6) {
-                                                    th2 = th6;
-                                                    j = 0;
-                                                    try {
-                                                        fileOutputStream.close();
-                                                        throw th2;
-                                                    } catch (Throwable th7) {
-                                                        th2.addSuppressed(th7);
-                                                        throw th2;
-                                                    }
+                                                    });
                                                 }
                                             }
-                                        } catch (Throwable th8) {
-                                            th3 = th8;
-                                            j = 0;
-                                            if (channel != null) {
-                                                throw th3;
-                                            }
-                                            try {
-                                                channel.close();
-                                                throw th3;
-                                            } catch (Throwable th9) {
-                                                th3.addSuppressed(th9);
-                                                throw th3;
-                                            }
+                                            i = 0;
                                         }
-                                    } else {
-                                        if (contentLengthLong > 0) {
-                                            final float clamp01 = Utilities.clamp01(j2 / contentLengthLong);
-                                            if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda0
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        HttpGetFileTask.this.lambda$doInBackground$0(clamp01);
-                                                    }
-                                                });
-                                            }
+                                    } catch (Throwable th4) {
+                                        th3 = th4;
+                                        j = 0;
+                                        if (channel != null) {
+                                            throw th3;
                                         }
-                                        i = 0;
+                                        try {
+                                            channel.close();
+                                            throw th3;
+                                        } catch (Throwable th5) {
+                                            th3.addSuppressed(th5);
+                                            throw th3;
+                                        }
                                     }
-                                } catch (Throwable th10) {
-                                    th = th10;
+                                } catch (Throwable th6) {
+                                    th = th6;
                                     j = 0;
                                     th3 = th;
                                     if (channel != null) {
                                     }
                                 }
                             }
-                        } catch (Throwable th11) {
-                            th = th11;
+                        } catch (Throwable th7) {
+                            th = th7;
                         }
-                    } catch (Throwable th12) {
-                        th2 = th12;
+                    } catch (Throwable th8) {
+                        th2 = th8;
+                        try {
+                            fileOutputStream.close();
+                            throw th2;
+                        } catch (Throwable th9) {
+                            th2.addSuppressed(th9);
+                            throw th2;
+                        }
                     }
-                } catch (Throwable th13) {
-                    th = th13;
-                    bufferedInputStream.close();
-                    throw th;
+                } catch (Throwable th10) {
+                    th = th10;
+                    try {
+                        bufferedInputStream.close();
+                        throw th;
+                    } catch (Throwable th11) {
+                        th.addSuppressed(th11);
+                        throw th;
+                    }
                 }
-            } catch (Exception e4) {
-                e = e4;
+            } catch (Exception e3) {
+                e = e3;
                 if (!(e instanceof ProtocolException)) {
                 }
             }
         }
         this.exception = new RuntimeException("too many retries");
         return null;
+        try {
+            channel.close();
+            try {
+                fileOutputStream.close();
+                try {
+                    bufferedInputStream.close();
+                    return null;
+                } catch (Exception e4) {
+                    e = e4;
+                    j = 0;
+                    if (!(e instanceof ProtocolException)) {
+                    }
+                }
+            } catch (Throwable th12) {
+                th = th12;
+                j = 0;
+                bufferedInputStream.close();
+                throw th;
+            }
+        } catch (Throwable th13) {
+            th2 = th13;
+            j = 0;
+            fileOutputStream.close();
+            throw th2;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -287,6 +297,11 @@ public class HttpGetFileTask extends AsyncTask {
 
     public HttpGetFileTask setMaxSize(long j) {
         this.max_size = j;
+        return this;
+    }
+
+    public HttpGetFileTask setOverrideExtension(String str) {
+        this.overrideExt = str;
         return this;
     }
 }

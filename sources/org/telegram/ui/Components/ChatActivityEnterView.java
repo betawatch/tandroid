@@ -10174,7 +10174,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x00b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x00b2, code lost:
     
         if (r0 != null) goto L47;
      */
@@ -10254,10 +10254,11 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     AndroidUtilities.updateViewVisibilityAnimated(this.botButton, z6, 0.1f, true);
                 }
             }
-            updateFieldRight(2);
-            LinearLayout linearLayout = this.attachLayout;
             ImageView imageView8 = this.botButton;
-            linearLayout.setPivotX(AndroidUtilities.dp(((imageView8 == null || imageView8.getVisibility() == 8) && ((imageView2 = this.notifyButton) == null || imageView2.getVisibility() == 8)) ? 48.0f : 96.0f));
+            updateFieldRight((imageView8 == null || imageView8.getVisibility() != 0) ? this.lastAttachVisible : 2);
+            LinearLayout linearLayout = this.attachLayout;
+            ImageView imageView9 = this.botButton;
+            linearLayout.setPivotX(AndroidUtilities.dp(((imageView9 == null || imageView9.getVisibility() == 8) && ((imageView2 = this.notifyButton) == null || imageView2.getVisibility() == 8)) ? 48.0f : 96.0f));
         }
     }
 

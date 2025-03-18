@@ -118,25 +118,27 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0370  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0389  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x038c  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0373  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0379  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0386  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0393  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0396  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0388  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x037c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ProfileGiftsContainer(final BaseFragment baseFragment, Context context, final int i, final long j, final Theme.ResourcesProvider resourcesProvider) {
+    public ProfileGiftsContainer(final BaseFragment baseFragment, Context context, final int i, long j, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
         int i2;
         String str;
+        TLRPC.EncryptedChat encryptedChat;
         this.checkboxRequestId = -1;
         this.visibleHeight = AndroidUtilities.displaySize.y;
         this.fragment = baseFragment;
         this.currentAccount = i;
-        this.dialogId = j;
-        StarsController.getInstance(i).invalidateProfileGifts(j);
-        StarsController.GiftsList profileGiftsList = StarsController.getInstance(i).getProfileGiftsList(j);
+        this.dialogId = (!DialogObject.isEncryptedDialog(j) || (encryptedChat = MessagesController.getInstance(i).getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(j)))) == null) ? j : encryptedChat.user_id;
+        StarsController.getInstance(i).invalidateProfileGifts(this.dialogId);
+        StarsController.GiftsList profileGiftsList = StarsController.getInstance(i).getProfileGiftsList(this.dialogId);
         this.list = profileGiftsList;
         profileGiftsList.shown = true;
         profileGiftsList.resetFilters();
@@ -321,42 +323,42 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ProfileGiftsContainer.this.lambda$new$3(resourcesProvider, i, j, view2);
+                ProfileGiftsContainer.this.lambda$new$3(resourcesProvider, i, view2);
             }
         });
         Boolean bool = profileGiftsList.chat_notifications_enabled;
         if (bool != null) {
             checkBox2.setChecked(bool.booleanValue(), false);
         }
-        TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(j));
-        boolean z = j < 0 || !(user == null || UserObject.isUserSelf(user) || UserObject.isBot(user));
+        TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(this.dialogId));
+        final boolean z = this.dialogId < 0 || !(user == null || UserObject.isUserSelf(user) || UserObject.isBot(user));
         ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
         this.button = buttonWithCounterView;
         StringBuilder sb = new StringBuilder();
         sb.append("G ");
-        if (!z) {
-            i2 = R.string.ProfileGiftsSend;
-        } else {
-            if (j >= 0) {
-                str = LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j));
+        if (z) {
+            long j2 = this.dialogId;
+            if (j2 >= 0) {
+                str = LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j2));
                 sb.append(str);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb.toString());
                 spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
                 buttonWithCounterView.setText(spannableStringBuilder, false);
                 frameLayout2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-                final boolean z2 = z;
                 buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        ProfileGiftsContainer.this.lambda$new$4(z2, i, j, view2);
+                        ProfileGiftsContainer.this.lambda$new$4(z, i, view2);
                     }
                 });
                 buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
-                linearLayout2.setVisibility(canSwitchNotify() ? 0 : 8);
+                linearLayout2.setVisibility(!canSwitchNotify() ? 0 : 8);
                 this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
                 addView(frameLayout3, LayoutHelper.createFrame(-1, 200, 87));
             }
             i2 = R.string.ProfileGiftsSendChannel;
+        } else {
+            i2 = R.string.ProfileGiftsSend;
         }
         str = LocaleController.getString(i2);
         sb.append(str);
@@ -364,15 +366,14 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
         buttonWithCounterView.setText(spannableStringBuilder2, false);
         frameLayout2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-        final boolean z22 = z;
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ProfileGiftsContainer.this.lambda$new$4(z22, i, j, view2);
+                ProfileGiftsContainer.this.lambda$new$4(z, i, view2);
             }
         });
         buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
-        linearLayout2.setVisibility(canSwitchNotify() ? 0 : 8);
+        linearLayout2.setVisibility(!canSwitchNotify() ? 0 : 8);
         this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
         addView(frameLayout3, LayoutHelper.createFrame(-1, 200, 87));
     }
@@ -411,8 +412,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(final Theme.ResourcesProvider resourcesProvider, int i, long j, View view) {
-        this.checkbox.setChecked(!r9.isChecked(), true);
+    public /* synthetic */ void lambda$new$3(final Theme.ResourcesProvider resourcesProvider, int i, View view) {
+        this.checkbox.setChecked(!r7.isChecked(), true);
         boolean isChecked = this.checkbox.isChecked();
         BulletinFactory.of(this.bulletinContainer, resourcesProvider).createSimpleBulletinDetail(isChecked ? R.raw.silent_unmute : R.raw.silent_mute, LocaleController.getString(isChecked ? R.string.Gift2ChannelNotifyChecked : R.string.Gift2ChannelNotifyNotChecked)).show();
         this.list.chat_notifications_enabled = Boolean.valueOf(isChecked);
@@ -421,9 +422,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             this.checkboxRequestId = -1;
         }
         TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
-        togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(j);
+        togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(this.dialogId);
         togglechatstargiftnotifications.enabled = isChecked;
-        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
+        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ProfileGiftsContainer.this.lambda$new$2(resourcesProvider, tLObject, tL_error);
@@ -432,9 +433,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(boolean z, int i, long j, View view) {
+    public /* synthetic */ void lambda$new$4(boolean z, int i, View view) {
         if (z) {
-            new GiftSheet(getContext(), i, j, null, null).setBirthday(BirthdayController.getInstance(i).isToday(j)).show();
+            new GiftSheet(getContext(), i, this.dialogId, null, null).setBirthday(BirthdayController.getInstance(i).isToday(this.dialogId)).show();
         } else {
             UserSelectorBottomSheet.open(2, 0L, BirthdayController.getInstance(i).getState());
         }
@@ -803,13 +804,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 if (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique) {
                     if (canReorder() && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
                         boolean z = savedStarGift.pinned_to_top;
-                        makeOptions.add(z ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z ? R.string.Gift2Unpin : R.string.Gift2Pin), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
+                        makeOptions.add(z ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z ? R.string.Gift2Unpin : R.string.Gift2Pin), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ProfileGiftsContainer.this.lambda$onItemLongPress$5(savedStarGift, giftCell, view);
                             }
                         });
-                        makeOptions.addIf(savedStarGift.pinned_to_top, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
+                        makeOptions.addIf(savedStarGift.pinned_to_top, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ProfileGiftsContainer.this.lambda$onItemLongPress$6();
@@ -825,20 +826,20 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     }
                     if (StarGiftSheet.isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(tL_starGiftUnique.owner_id))) {
                         boolean isWorn = StarGiftSheet.isWorn(this.currentAccount, tL_starGiftUnique);
-                        makeOptions.add(isWorn ? R.drawable.menu_takeoff : R.drawable.menu_wear, LocaleController.getString(isWorn ? R.string.Gift2Unwear : R.string.Gift2Wear), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
+                        makeOptions.add(isWorn ? R.drawable.menu_takeoff : R.drawable.menu_wear, LocaleController.getString(isWorn ? R.string.Gift2Unwear : R.string.Gift2Wear), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ProfileGiftsContainer.this.lambda$onItemLongPress$7(savedStarGift);
                             }
                         });
                     }
-                    makeOptions.addIf(str != null, R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
+                    makeOptions.addIf(str != null, R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
                         @Override // java.lang.Runnable
                         public final void run() {
                             ProfileGiftsContainer.this.lambda$onItemLongPress$8(str);
                         }
                     });
-                    makeOptions.addIf(str != null, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
+                    makeOptions.addIf(str != null, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
                         @Override // java.lang.Runnable
                         public final void run() {
                             ProfileGiftsContainer.this.lambda$onItemLongPress$9(savedStarGift);
@@ -847,7 +848,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 if (StarGiftSheet.isMineWithActions(this.currentAccount, this.dialogId)) {
                     boolean z2 = savedStarGift.unsaved;
-                    makeOptions.add(z2 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z2 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
+                    makeOptions.add(z2 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z2 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
                         @Override // java.lang.Runnable
                         public final void run() {
                             ProfileGiftsContainer.this.lambda$onItemLongPress$10(savedStarGift, giftCell);
@@ -856,7 +857,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 TL_stars.StarGift starGift2 = savedStarGift.gift;
                 if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
-                    makeOptions.addIf(DialogObject.getPeerDialogId(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == UserConfig.getInstance(this.currentAccount).getClientUserId(), R.drawable.menu_transfer, LocaleController.getString(R.string.Gift2TransferOption), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
+                    makeOptions.addIf(DialogObject.getPeerDialogId(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == UserConfig.getInstance(this.currentAccount).getClientUserId(), R.drawable.menu_transfer, LocaleController.getString(R.string.Gift2TransferOption), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
                         @Override // java.lang.Runnable
                         public final void run() {
                             ProfileGiftsContainer.this.lambda$onItemLongPress$11(savedStarGift);

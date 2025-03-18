@@ -518,6 +518,14 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         this.requestPeerType = requestPeerType;
     }
 
+    private MessagesController.DialogFilter getCurrentFilter() {
+        int i = this.dialogsType;
+        if (i == 7 || i == 8) {
+            return MessagesController.getInstance(this.currentAccount).selectedDialogFilter[this.dialogsType - 7];
+        }
+        return null;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBindViewHolder$4() {
         this.parentFragment.setScrollDisabled(false);
@@ -635,16 +643,16 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         });
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:126:0x03a2 A[LOOP:3: B:126:0x03a2->B:136:0x03c9, LOOP_START, PHI: r4
-      0x03a2: PHI (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:125:0x03a0, B:136:0x03c9] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x03cb A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x03a8 A[LOOP:2: B:112:0x03a8->B:122:0x03cf, LOOP_START, PHI: r4
+      0x03a8: PHI (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:111:0x03a6, B:122:0x03cf] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x03d1 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x02e5  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02fb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void updateItemList() {
-        MessagesController.DialogFilter dialogFilter;
+        DialogsActivity dialogsActivity;
         ArrayList arrayList;
         ItemInternal itemInternal;
         ArrayList arrayList2;
@@ -704,8 +712,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 this.onlineContacts = null;
             }
-            DialogsActivity dialogsActivity = this.parentFragment;
-            if (dialogsActivity != null && dialogsActivity.isReplyTo && dialogsActivity.replyMessageAuthor != 0) {
+            MessagesController.DialogFilter currentFilter = getCurrentFilter();
+            if ((currentFilter == null || currentFilter.isDefault()) && (dialogsActivity = this.parentFragment) != null && dialogsActivity.isReplyTo && dialogsActivity.replyMessageAuthor != 0) {
                 this.itemInternals.add(new ItemInternal(20));
                 int i6 = 0;
                 while (true) {
@@ -727,9 +735,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
             this.hasChatlistHint = false;
             int i7 = this.dialogsType;
-            if ((i7 == 7 || i7 == 8) && (dialogFilter = messagesController.selectedDialogFilter[i7 - 7]) != null && dialogFilter.isChatlist()) {
-                messagesController.checkChatlistFolderUpdate(dialogFilter.id, false);
-                TL_chatlists.TL_chatlists_chatlistUpdates chatlistFolderUpdates = messagesController.getChatlistFolderUpdates(dialogFilter.id);
+            if ((i7 == 7 || i7 == 8) && currentFilter != null && currentFilter.isChatlist()) {
+                messagesController.checkChatlistFolderUpdate(currentFilter.id, false);
+                TL_chatlists.TL_chatlists_chatlistUpdates chatlistFolderUpdates = messagesController.getChatlistFolderUpdates(currentFilter.id);
                 if (chatlistFolderUpdates != null && chatlistFolderUpdates.missing_peers.size() > 0) {
                     this.hasChatlistHint = true;
                     this.itemInternals.add(new ItemInternal(chatlistFolderUpdates));
@@ -1044,7 +1052,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
         int itemViewType = viewHolder.getItemViewType();
-        return (itemViewType == 1 || itemViewType == 5 || itemViewType == 3 || itemViewType == 8 || itemViewType == 7 || itemViewType == 10 || itemViewType == 11 || itemViewType == 13 || itemViewType == 15 || itemViewType == 16 || itemViewType == 18 || itemViewType == 19) ? false : true;
+        return (itemViewType == 1 || itemViewType == 5 || itemViewType == 3 || itemViewType == 8 || itemViewType == 7 || itemViewType == 10 || itemViewType == 11 || itemViewType == 13 || itemViewType == 15 || itemViewType == 16 || itemViewType == 18 || itemViewType == 19 || itemViewType == 20) ? false : true;
     }
 
     public void moveDialogs(RecyclerListView recyclerListView, int i, int i2) {
@@ -1100,6 +1108,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         String str4;
         TLRPC.Chat chat3;
         DialogsActivity dialogsActivity;
+        MessagesController.DialogFilter currentFilter;
         HeaderCell headerCell;
         int i4;
         String string2;
@@ -1172,11 +1181,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     dialogCell.setDialogSelected(dialog.id == this.openedDialogId);
                 }
                 dialogCell.setChecked(this.selectedDialogs.contains(Long.valueOf(dialog.id)), false);
-                if (i == 1 && (dialogsActivity = this.parentFragment) != null && dialogsActivity.isReplyTo) {
-                    long j = dialogsActivity.replyMessageAuthor;
-                    if (j != 0 && dialog.top_message == 0) {
-                        str5 = DialogObject.getStatus(j);
-                    }
+                if (i == 1 && (dialogsActivity = this.parentFragment) != null && dialogsActivity.isReplyTo && dialogsActivity.replyMessageAuthor != 0 && dialog.top_message == 0 && ((currentFilter = getCurrentFilter()) == null || currentFilter.isDefault())) {
+                    str5 = DialogObject.getStatus(this.parentFragment.replyMessageAuthor);
                 }
                 dialogCell.setCustomMessage(str5);
                 dialogCell.setDialog(dialog, this.dialogsType, this.folderId);

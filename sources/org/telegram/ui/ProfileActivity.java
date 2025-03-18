@@ -3315,6 +3315,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             put(89, ProfileActivity.this.botPermissionEmojiStatus, sparseIntArray);
             put(90, ProfileActivity.this.botPermissionBiometry, sparseIntArray);
             put(91, ProfileActivity.this.botPermissionsDivider, sparseIntArray);
+            put(92, ProfileActivity.this.channelDividerRow, sparseIntArray);
         }
 
         @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -11674,6 +11675,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processOnClickOrPress$60(boolean[] zArr, final String str, final int i, final String[] strArr, final String str2, float f, float f2, View view) {
+        ViewGroup view2;
         if (getParentActivity() == null) {
             return;
         }
@@ -11685,14 +11687,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             Path path = new Path();
 
             @Override // android.view.ViewGroup
-            protected boolean drawChild(Canvas canvas, View view2, long j) {
+            protected boolean drawChild(Canvas canvas, View view3, long j) {
                 canvas.save();
                 this.path.rewind();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(view2.getLeft(), view2.getTop(), view2.getRight(), view2.getBottom());
+                rectF.set(view3.getLeft(), view3.getTop(), view3.getRight(), view3.getBottom());
                 this.path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
                 canvas.clipPath(this.path);
-                boolean drawChild = super.drawChild(canvas, view2, j);
+                boolean drawChild = super.drawChild(canvas, view3, j);
                 canvas.restore();
                 return drawChild;
             }
@@ -11703,8 +11705,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             final int i3 = i2;
             ActionBarMenuItem.addItem(actionBarPopupWindowLayout, iArr[i2], charSequenceArr[i2], z, this.resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda107
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    ProfileActivity.this.lambda$processOnClickOrPress$59(atomicReference, i3, str, i, strArr, str2, view2);
+                public final void onClick(View view3) {
+                    ProfileActivity.this.lambda$processOnClickOrPress$59(atomicReference, i3, str, i, strArr, str2, view3);
                 }
             });
             i2++;
@@ -11723,14 +11725,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         atomicReference.set(actionBarPopupWindow);
         float f3 = f;
         float f4 = f2;
-        for (View view2 = view; view2 != getFragmentView(); view2 = (View) view2.getParent()) {
-            f3 += view2.getX();
-            f4 += view2.getY();
+        for (View view3 = view; view3 != null && view3 != getFragmentView(); view3 = (View) view3.getParent()) {
+            f3 += view3.getX();
+            f4 += view3.getY();
         }
-        if (AndroidUtilities.isTablet()) {
-            ViewGroup view3 = this.parentLayout.getView();
-            f3 += view3.getX() + view3.getPaddingLeft();
-            f4 += view3.getY() + view3.getPaddingTop();
+        if (AndroidUtilities.isTablet() && (view2 = this.parentLayout.getView()) != null) {
+            f3 += view2.getX() + view2.getPaddingLeft();
+            f4 += view2.getY() + view2.getPaddingTop();
         }
         actionBarPopupWindow.showAtLocation(getFragmentView(), 0, (int) (f3 - (actionBarPopupWindowLayout.getMeasuredWidth() / 2.0f)), (int) f4);
         actionBarPopupWindow.dimBehind();
@@ -13088,11 +13089,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         StringBuilder sb2;
         String str;
         int i2;
+        ViewGroup view2;
         String str2;
         TLRPC.UserFull userFull;
         TLRPC.UserFull userFull2;
         final String str3;
-        View view2 = view;
+        ViewGroup view3;
+        View view4 = view;
         String str4 = "";
         if (i == this.usernameRow || i == this.setUsernameRow) {
             if (this.userId != 0) {
@@ -13111,7 +13114,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             final TLRPC.TL_username tL_username = findUsername;
             if (this.userId != 0) {
-                if (editRow(view2, i)) {
+                if (editRow(view4, i)) {
                     return true;
                 }
                 if (tL_username != null && !tL_username.editable) {
@@ -13189,10 +13192,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (i == this.bioRow && ((userFull = this.userInfo) == null || TextUtils.isEmpty(userFull.about))) {
                     return false;
                 }
-                if (editRow(view2, i)) {
+                if (editRow(view4, i)) {
                     return true;
                 }
-                if ((view2 instanceof AboutLinkCell) && ((AboutLinkCell) view2).onClick()) {
+                if ((view4 instanceof AboutLinkCell) && ((AboutLinkCell) view4).onClick()) {
                     return false;
                 }
                 if (i == this.locationRow) {
@@ -13258,7 +13261,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 str3 = OpeningHoursActivity.toString(this.currentAccount, userFull2.user, tL_businessWorkHours);
             } else {
-                if (i != this.bizLocationRow || editRow(view2, i)) {
+                if (i != this.bizLocationRow || editRow(view4, i)) {
                     return true;
                 }
                 TLRPC.TL_businessLocation tL_businessLocation = this.userInfo.business_location;
@@ -13272,14 +13275,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 Path path = new Path();
 
                 @Override // android.view.ViewGroup
-                protected boolean drawChild(Canvas canvas, View view3, long j) {
+                protected boolean drawChild(Canvas canvas, View view5, long j) {
                     canvas.save();
                     this.path.rewind();
                     RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(view3.getLeft(), view3.getTop(), view3.getRight(), view3.getBottom());
+                    rectF.set(view5.getLeft(), view5.getTop(), view5.getRight(), view5.getBottom());
                     this.path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
                     canvas.clipPath(this.path);
-                    boolean drawChild = super.drawChild(canvas, view3, j);
+                    boolean drawChild = super.drawChild(canvas, view5, j);
                     canvas.restore();
                     return drawChild;
                 }
@@ -13287,8 +13290,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             actionBarPopupWindowLayout.setFitItems(true);
             ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_copy, LocaleController.getString(R.string.Copy), false, this.resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda67
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view3) {
-                    ProfileActivity.this.lambda$processOnClickOrPress$63(atomicReference, str3, i, view3);
+                public final void onClick(View view5) {
+                    ProfileActivity.this.lambda$processOnClickOrPress$63(atomicReference, str3, i, view5);
                 }
             });
             ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
@@ -13304,13 +13307,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             atomicReference.set(actionBarPopupWindow);
             float f3 = f;
             float f4 = f2;
-            while (view2 != getFragmentView()) {
-                f3 += view2.getX();
-                f4 += view2.getY();
-                view2 = (View) view2.getParent();
+            while (view4 != null && view4 != getFragmentView()) {
+                f3 += view4.getX();
+                f4 += view4.getY();
+                view4 = (View) view4.getParent();
             }
-            if (AndroidUtilities.isTablet()) {
-                ViewGroup view3 = this.parentLayout.getView();
+            if (AndroidUtilities.isTablet() && (view3 = this.parentLayout.getView()) != null) {
                 f3 += view3.getX() + view3.getPaddingLeft();
                 f4 += view3.getY() + view3.getPaddingTop();
             }
@@ -13318,7 +13320,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             actionBarPopupWindow.dimBehind();
             return true;
         }
-        if (editRow(view2, i)) {
+        if (editRow(view4, i)) {
             return true;
         }
         final TLRPC.User user2 = getMessagesController().getUser(Long.valueOf(this.userId));
@@ -13368,14 +13370,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             Path path = new Path();
 
             @Override // android.view.ViewGroup
-            protected boolean drawChild(Canvas canvas, View view4, long j) {
+            protected boolean drawChild(Canvas canvas, View view5, long j) {
                 canvas.save();
                 this.path.rewind();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(view4.getLeft(), view4.getTop(), view4.getRight(), view4.getBottom());
+                rectF.set(view5.getLeft(), view5.getTop(), view5.getRight(), view5.getBottom());
                 this.path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
                 canvas.clipPath(this.path);
-                boolean drawChild = super.drawChild(canvas, view4, j);
+                boolean drawChild = super.drawChild(canvas, view5, j);
                 canvas.restore();
                 return drawChild;
             }
@@ -13385,8 +13387,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             final int intValue = ((Integer) arrayList2.get(i3)).intValue();
             ActionBarMenuItem.addItem(actionBarPopupWindowLayout2, ((Integer) arrayList3.get(i3)).intValue(), (CharSequence) arrayList.get(i3), false, this.resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda72
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view4) {
-                    ProfileActivity.this.lambda$processOnClickOrPress$56(atomicReference2, intValue, user2, view4);
+                public final void onClick(View view5) {
+                    ProfileActivity.this.lambda$processOnClickOrPress$56(atomicReference2, intValue, user2, view5);
                 }
             });
         }
@@ -13413,8 +13415,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             textView.setText(spannableStringBuilder);
             textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda73
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view4) {
-                    ProfileActivity.lambda$processOnClickOrPress$57(view4);
+                public final void onClick(View view5) {
+                    ProfileActivity.lambda$processOnClickOrPress$57(view5);
                 }
             });
             int i5 = R.id.fit_width_tag;
@@ -13438,15 +13440,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         atomicReference2.set(actionBarPopupWindow2);
         float f5 = f;
         float f6 = f2;
-        while (view2 != getFragmentView() && view2 != null) {
-            f5 += view2.getX();
-            f6 += view2.getY();
-            view2 = (View) view2.getParent();
+        while (view4 != getFragmentView() && view4 != null) {
+            f5 += view4.getX();
+            f6 += view4.getY();
+            view4 = (View) view4.getParent();
         }
-        if (AndroidUtilities.isTablet()) {
-            ViewGroup view4 = this.parentLayout.getView();
-            f5 += view4.getX() + view4.getPaddingLeft();
-            f6 += view4.getY() + view4.getPaddingTop();
+        if (AndroidUtilities.isTablet() && (view2 = this.parentLayout.getView()) != null) {
+            f5 += view2.getX() + view2.getPaddingLeft();
+            f6 += view2.getY() + view2.getPaddingTop();
         }
         actionBarPopupWindow2.showAtLocation(getFragmentView(), 0, (int) (f5 - (actionBarPopupWindowLayout2.getMeasuredWidth() / 2.0f)), (int) f6);
         actionBarPopupWindow2.dimBehind();
