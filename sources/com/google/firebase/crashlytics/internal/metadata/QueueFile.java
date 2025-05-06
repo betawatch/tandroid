@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class QueueFile implements Closeable {
     private static final Logger LOGGER = Logger.getLogger(QueueFile.class.getName());
     private final byte[] buffer = new byte[16];

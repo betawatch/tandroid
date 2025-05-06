@@ -8,7 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CachedSettingsIo {
     private final File cachedSettingsFile;
 

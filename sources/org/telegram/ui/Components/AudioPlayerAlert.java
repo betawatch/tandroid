@@ -33,6 +33,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -154,6 +155,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     int rewindingForwardPressedCount;
     float rewindingProgress;
     int rewindingState;
+    private ValueAnimator rightPaddingAnimator;
     private int scrollOffsetY;
     private boolean scrollToSong;
     private ActionBarMenuItem searchItem;
@@ -470,20 +472,20 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
 
         @Override // org.telegram.ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
         protected TextView createTextView() {
-            final TextView textView = new TextView(this.val$context);
-            textView.setTextColor(AudioPlayerAlert.this.getThemedColor(Theme.key_player_time));
-            textView.setTextSize(1, 13.0f);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setSingleLine(true);
-            textView.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
-            textView.setBackground(Theme.createRadSelectorDrawable(AudioPlayerAlert.this.getThemedColor(Theme.key_listSelector), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
-            textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$9$$ExternalSyntheticLambda0
+            final MarqueeTextView marqueeTextView = new MarqueeTextView(this.val$context);
+            marqueeTextView.setTextColor(AudioPlayerAlert.this.getThemedColor(Theme.key_player_time));
+            marqueeTextView.setTextSize(1, 13.0f);
+            marqueeTextView.setEllipsize(TextUtils.TruncateAt.END);
+            marqueeTextView.setSingleLine(true);
+            marqueeTextView.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+            marqueeTextView.setBackground(Theme.createRadSelectorDrawable(AudioPlayerAlert.this.getThemedColor(Theme.key_listSelector), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
+            marqueeTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$9$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AudioPlayerAlert.9.this.lambda$createTextView$0(textView, view);
+                    AudioPlayerAlert.9.this.lambda$createTextView$0(marqueeTextView, view);
                 }
             });
-            return textView;
+            return marqueeTextView;
         }
     }
 
@@ -497,6 +499,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         private LinearGradient gradientShader;
         private final int gradientSize;
         private final RectF rectF;
+        private int rightPadding;
         private int stableOffest;
         private final TextView[] textViews;
 
@@ -544,7 +547,22 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TextView[] textViewArr = this.textViews;
             boolean z2 = true;
             int i = view == textViewArr[0] ? 0 : 1;
-            if (this.stableOffest <= 0 || textViewArr[this.activeIndex].getAlpha() == 1.0f || this.textViews[this.activeIndex].getLayout() == null) {
+            if (this.stableOffest > 0) {
+                int length = textViewArr.length;
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= length) {
+                        break;
+                    }
+                    TextView textView = textViewArr[i2];
+                    if ((textView instanceof MarqueeTextView) && ((MarqueeTextView) textView).isNeedMarquee()) {
+                        this.stableOffest = -1;
+                        break;
+                    }
+                    i2++;
+                }
+            }
+            if (this.stableOffest <= 0 || this.textViews[this.activeIndex].getAlpha() == 1.0f || this.textViews[this.activeIndex].getLayout() == null) {
                 z = false;
             } else {
                 float primaryHorizontal = this.textViews[this.activeIndex].getLayout().getPrimaryHorizontal(0);
@@ -567,23 +585,27 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             if (this.clipProgress[i] <= 0.0f && !z) {
                 return super.drawChild(canvas, view, j);
             }
-            float width = view.getWidth();
-            float height = view.getHeight();
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, width, height, null, 31);
+            float min = Math.min(view.getWidth(), getWidth());
+            float min2 = Math.min(view.getHeight(), getHeight());
+            int saveLayer = canvas.saveLayer(0.0f, 0.0f, min, min2, null, 31);
             boolean drawChild = super.drawChild(canvas, view, j);
-            float f = width * (1.0f - this.clipProgress[i]);
+            float f = min * (1.0f - this.clipProgress[i]);
             float f2 = f + this.gradientSize;
             this.gradientMatrix.setTranslate(f, 0.0f);
             this.gradientShader.setLocalMatrix(this.gradientMatrix);
-            canvas.drawRect(f, 0.0f, f2, height, this.gradientPaint);
-            if (width > f2) {
-                canvas.drawRect(f2, 0.0f, width, height, this.erasePaint);
+            canvas.drawRect(f, 0.0f, f2, min2, this.gradientPaint);
+            if (min > f2) {
+                canvas.drawRect(f2, 0.0f, min, min2, this.erasePaint);
             }
             if (z) {
                 canvas.drawRect(this.rectF, this.erasePaint);
             }
             canvas.restoreToCount(saveLayer);
             return drawChild;
+        }
+
+        public int getCustomPaddingRight() {
+            return this.rightPadding;
         }
 
         public TextView getNextTextView() {
@@ -600,6 +622,16 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             LinearGradient linearGradient = new LinearGradient(this.gradientSize, 0.0f, 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP);
             this.gradientShader = linearGradient;
             this.gradientPaint.setShader(linearGradient);
+        }
+
+        public void setCustomPaddingRight(int i) {
+            this.rightPadding = i;
+            for (TextView textView : this.textViews) {
+                if (textView instanceof MarqueeTextView) {
+                    ((MarqueeTextView) textView).setCustomPaddingRight(i);
+                }
+            }
+            invalidate();
         }
 
         public void setText(CharSequence charSequence) {
@@ -1387,8 +1419,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
 
             @Override // org.telegram.ui.Components.AudioPlayerAlert.CoverContainer
             protected void onImageUpdated(ImageReceiver imageReceiver) {
+                Bitmap bitmap = imageReceiver.getBitmap();
+                AudioPlayerAlert.this.setCustomPaddingRight(((bitmap == null || !imageReceiver.hasImageLoaded()) && !imageReceiver.hasBitmapImage()) ? 0 : AndroidUtilities.dp(64.0f), true);
                 if (AudioPlayerAlert.this.blurredView.getTag() != null) {
-                    AudioPlayerAlert.this.bigAlbumConver.setImageBitmap(imageReceiver.getBitmap());
+                    AudioPlayerAlert.this.bigAlbumConver.setImageBitmap(bitmap);
                 }
             }
 
@@ -1411,20 +1445,20 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         ClippingTextViewSwitcher clippingTextViewSwitcher = new ClippingTextViewSwitcher(context) { // from class: org.telegram.ui.Components.AudioPlayerAlert.8
             @Override // org.telegram.ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
             protected TextView createTextView() {
-                TextView textView = new TextView(context);
-                textView.setTextColor(AudioPlayerAlert.this.getThemedColor(Theme.key_player_actionBarTitle));
-                textView.setTextSize(1, 17.0f);
-                textView.setTypeface(AndroidUtilities.bold());
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setSingleLine(true);
-                return textView;
+                MarqueeTextView marqueeTextView = new MarqueeTextView(context);
+                marqueeTextView.setTextColor(AudioPlayerAlert.this.getThemedColor(Theme.key_player_actionBarTitle));
+                marqueeTextView.setTextSize(1, 17.0f);
+                marqueeTextView.setTypeface(AndroidUtilities.bold());
+                marqueeTextView.setEllipsize(TextUtils.TruncateAt.END);
+                marqueeTextView.setSingleLine(true);
+                return marqueeTextView;
             }
         };
         this.titleTextView = clippingTextViewSwitcher;
-        this.playerLayout.addView(clippingTextViewSwitcher, LayoutHelper.createFrame(-1, -2.0f, 51, 20.0f, 20.0f, 72.0f, 0.0f));
+        this.playerLayout.addView(clippingTextViewSwitcher, LayoutHelper.createFrame(-1, -2.0f, 51, 20.0f, 20.0f, 20.0f, 0.0f));
         9 r2 = new 9(context, context);
         this.authorTextView = r2;
-        this.playerLayout.addView(r2, LayoutHelper.createFrame(-1, -2.0f, 51, 14.0f, 47.0f, 72.0f, 0.0f));
+        this.playerLayout.addView(r2, LayoutHelper.createFrame(-1, -2.0f, 51, 14.0f, 47.0f, 20.0f, 0.0f));
         SeekBarView seekBarView = new SeekBarView(context, resourcesProvider) { // from class: org.telegram.ui.Components.AudioPlayerAlert.10
             @Override // org.telegram.ui.Components.SeekBarView
             boolean onTouch(MotionEvent motionEvent) {
@@ -2132,13 +2166,19 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$336();
+        dialogsActivity.lambda$onBackPressed$338();
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onSubItemClick$12(Uri uri) {
         BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createDownloadBulletin(BulletinFactory.FileType.AUDIO).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCustomPaddingRight$14(ValueAnimator valueAnimator) {
+        this.titleTextView.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+        this.authorTextView.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2350,6 +2390,39 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setCustomPaddingRight(int i, boolean z) {
+        ValueAnimator valueAnimator = this.rightPaddingAnimator;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.rightPaddingAnimator = null;
+        }
+        if (this.titleTextView.getCustomPaddingRight() == i) {
+            return;
+        }
+        if (!z) {
+            this.titleTextView.setCustomPaddingRight(i);
+            this.authorTextView.setCustomPaddingRight(i);
+            return;
+        }
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.titleTextView.getCustomPaddingRight(), i);
+        this.rightPaddingAnimator = ofInt;
+        if (i == 0) {
+            ofInt.setStartDelay(200L);
+            this.rightPaddingAnimator.setDuration(100L);
+        } else {
+            ofInt.setDuration(200L);
+        }
+        this.rightPaddingAnimator.setInterpolator(new DecelerateInterpolator());
+        this.rightPaddingAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda17
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                AudioPlayerAlert.this.lambda$setCustomPaddingRight$14(valueAnimator2);
+            }
+        });
+        this.rightPaddingAnimator.start();
+    }
+
     private void setMenuItemChecked(ActionBarMenuSubItem actionBarMenuSubItem, boolean z) {
         int i = z ? Theme.key_player_buttonActive : Theme.key_actionBarDefaultSubmenuItem;
         actionBarMenuSubItem.setTextColor(getThemedColor(i));
@@ -2453,33 +2526,33 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         CoverContainer coverContainer = this.coverContainer;
         BackupImageView nextImageView = z ? coverContainer.getNextImageView() : coverContainer.getImageView();
         AudioInfo audioInfo = MediaController.getInstance().getAudioInfo();
-        if (audioInfo == null || audioInfo.getCover() == null) {
-            this.currentFile = FileLoader.getAttachFileName(messageObject.getDocument());
-            this.currentAudioFinishedLoading = false;
-            String artworkUrl = messageObject.getArtworkUrl(false);
-            ImageLocation artworkThumbImageLocation = getArtworkThumbImageLocation(messageObject);
-            if (!TextUtils.isEmpty(artworkUrl)) {
-                imageLocation = ImageLocation.getForPath(artworkUrl);
-                j = 0;
-                i = 1;
-            } else if (artworkThumbImageLocation != null) {
-                j = 0;
-                i = 1;
-                imageLocation = null;
-            } else {
-                nextImageView.setImageDrawable(null);
-                nextImageView.invalidate();
-            }
-            nextImageView.setImage(imageLocation, null, artworkThumbImageLocation, null, null, j, i, messageObject);
-            nextImageView.invalidate();
-        } else {
-            nextImageView.setImageBitmap(audioInfo.getCover());
-            this.currentFile = null;
-            this.currentAudioFinishedLoading = true;
-        }
         if (z) {
             this.coverContainer.switchImageViews();
         }
+        if (audioInfo != null && audioInfo.getCover() != null) {
+            nextImageView.setImageBitmap(audioInfo.getCover());
+            this.currentFile = null;
+            this.currentAudioFinishedLoading = true;
+            return;
+        }
+        this.currentFile = FileLoader.getAttachFileName(messageObject.getDocument());
+        this.currentAudioFinishedLoading = false;
+        String artworkUrl = messageObject.getArtworkUrl(false);
+        ImageLocation artworkThumbImageLocation = getArtworkThumbImageLocation(messageObject);
+        if (!TextUtils.isEmpty(artworkUrl)) {
+            imageLocation = ImageLocation.getForPath(artworkUrl);
+            j = 0;
+            i = 1;
+        } else if (artworkThumbImageLocation == null) {
+            nextImageView.setImageDrawable(null);
+            nextImageView.invalidate();
+        } else {
+            j = 0;
+            i = 1;
+            imageLocation = null;
+        }
+        nextImageView.setImage(imageLocation, null, artworkThumbImageLocation, null, null, j, i, messageObject);
+        nextImageView.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

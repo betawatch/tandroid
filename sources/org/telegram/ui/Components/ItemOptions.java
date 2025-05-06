@@ -50,7 +50,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
 public class ItemOptions {
-    private ActionBarPopupWindow actionBarPopupWindow;
+    public ActionBarPopupWindow actionBarPopupWindow;
     private boolean allowCenter;
     private boolean allowMoveScrim;
     private int animateToHeight;
@@ -80,6 +80,7 @@ public class ItemOptions {
     private LinearLayout linearLayout;
     private int maxHeight;
     private int minWidthDp;
+    public boolean needsFocus;
     private float offsetX;
     private float offsetY;
     public boolean onTopOfScrim;
@@ -97,6 +98,7 @@ public class ItemOptions {
     private Integer textColor;
     private float translateX;
     private float translateY;
+    public boolean useScrollView;
     private android.graphics.Rect viewAdditionalOffsets;
 
     public class DimView extends View {
@@ -371,7 +373,7 @@ public class ItemOptions {
         this.resourcesProvider = resourcesProvider;
     }
 
-    private ItemOptions(BaseFragment baseFragment, View view, boolean z) {
+    private ItemOptions(BaseFragment baseFragment, View view, boolean z, boolean z2) {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
@@ -387,6 +389,7 @@ public class ItemOptions {
         this.scrimView = view;
         this.dimAlpha = ((double) AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider))) > 0.705d ? 102 : 51;
         this.swipeback = z;
+        this.useScrollView = z2;
         init();
     }
 
@@ -459,7 +462,7 @@ public class ItemOptions {
     }
 
     private void init() {
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, R.drawable.popup_fixed_alert2, this.resourcesProvider, this.swipeback ? 1 : 0) { // from class: org.telegram.ui.Components.ItemOptions.1
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, R.drawable.popup_fixed_alert2, this.resourcesProvider, (this.swipeback ? 1 : 0) | (!this.useScrollView ? 4 : 0)) { // from class: org.telegram.ui.Components.ItemOptions.1
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
                 if (this == ItemOptions.this.layout && ItemOptions.this.maxHeight > 0) {
@@ -597,11 +600,15 @@ public class ItemOptions {
     }
 
     public static ItemOptions makeOptions(BaseFragment baseFragment, View view) {
-        return new ItemOptions(baseFragment, view, false);
+        return new ItemOptions(baseFragment, view, false, true);
     }
 
     public static ItemOptions makeOptions(BaseFragment baseFragment, View view, boolean z) {
-        return new ItemOptions(baseFragment, view, z);
+        return new ItemOptions(baseFragment, view, z, true);
+    }
+
+    public static ItemOptions makeOptions(BaseFragment baseFragment, View view, boolean z, boolean z2) {
+        return new ItemOptions(baseFragment, view, z, !z2);
     }
 
     public ActionBarMenuSubItem add() {
@@ -1267,6 +1274,11 @@ public class ItemOptions {
         return itemOptions;
     }
 
+    public ItemOptions needsFocus() {
+        this.needsFocus = true;
+        return this;
+    }
+
     public void openSwipeback(ItemOptions itemOptions) {
         dontDismiss();
         this.lastLayout.getSwipeBack().openForeground(itemOptions.foregroundIndex);
@@ -1506,9 +1518,9 @@ public class ItemOptions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0350  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0390  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x03ac  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0361  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x03a1  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x03bd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1666,8 +1678,9 @@ public class ItemOptions {
             actionBarPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.ItemOptions.5
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public void onDismiss() {
-                    ItemOptions.this.actionBarPopupWindow = null;
-                    ItemOptions.this.dismissDim(viewGroup2);
+                    ItemOptions itemOptions = ItemOptions.this;
+                    itemOptions.actionBarPopupWindow = null;
+                    itemOptions.dismissDim(viewGroup2);
                     if (ItemOptions.this.dismissListener != null) {
                         ItemOptions.this.dismissListener.run();
                         ItemOptions.this.dismissListener = null;
@@ -1678,8 +1691,13 @@ public class ItemOptions {
             this.actionBarPopupWindow.setFocusable(true);
             this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
             this.actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-            this.actionBarPopupWindow.setInputMethodMode(2);
-            this.actionBarPopupWindow.setSoftInputMode(0);
+            if (this.needsFocus) {
+                this.actionBarPopupWindow.setInputMethodMode(1);
+                this.actionBarPopupWindow.setSoftInputMode(32);
+            } else {
+                this.actionBarPopupWindow.setInputMethodMode(2);
+                this.actionBarPopupWindow.setSoftInputMode(0);
+            }
             if (AndroidUtilities.isTablet()) {
                 f6 += viewGroup2.getPaddingTop();
                 f7 -= viewGroup2.getPaddingLeft();

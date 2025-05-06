@@ -8,7 +8,7 @@ import com.google.firebase.encoders.ObjectEncoderContext;
 import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AutoCrashlyticsReportEncoder implements Configurator {
     public static final Configurator CONFIG = new AutoCrashlyticsReportEncoder();
 

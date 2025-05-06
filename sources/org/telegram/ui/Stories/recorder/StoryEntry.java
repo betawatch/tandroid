@@ -293,7 +293,7 @@ public class StoryEntry {
         long j = photoEntry.duration * 1000;
         storyEntry.duration = j;
         storyEntry.left = 0.0f;
-        storyEntry.right = Math.min(1.0f, 59500.0f / j);
+        storyEntry.right = Math.min(1.0f, 59000.0f / j);
         if (storyEntry.isVideo && storyEntry.thumbPath == null) {
             storyEntry.thumbPath = "vthumb://" + photoEntry.imageId;
         }
@@ -674,6 +674,8 @@ public class StoryEntry {
         long j;
         long j2;
         long j3;
+        long j4;
+        long j5;
         int i;
         ArrayList arrayList;
         String str2 = str;
@@ -717,14 +719,14 @@ public class StoryEntry {
                 if (z) {
                     Iterator<VideoEditedInfo.Part> it = parts.iterator();
                     VideoEditedInfo.Part part = null;
-                    long j4 = 0;
+                    long j6 = 0;
                     while (it.hasNext()) {
                         VideoEditedInfo.Part next = it.next();
                         if (next.isVideo) {
-                            long j5 = next.duration;
-                            if (j5 > j4) {
+                            long j7 = next.duration;
+                            if (j7 > j6) {
                                 part = next;
-                                j4 = j5;
+                                j6 = j7;
                             }
                         }
                     }
@@ -732,10 +734,10 @@ public class StoryEntry {
                         float f2 = part.duration;
                         float f3 = part.right;
                         float f4 = part.left;
-                        long j6 = (long) ((f3 - f4) * f2);
-                        this.duration = j6;
-                        videoEditedInfo.originalDuration = j6;
-                        videoEditedInfo.estimatedDuration = j6;
+                        long j8 = (long) ((f3 - f4) * f2);
+                        this.duration = j8;
+                        videoEditedInfo.originalDuration = j8;
+                        videoEditedInfo.estimatedDuration = j8;
                         j3 = -(part.offset + ((long) (f4 * f2)));
                         part.offset = j3;
                         Iterator<VideoEditedInfo.Part> it2 = videoEditedInfo.collageParts.iterator();
@@ -820,15 +822,15 @@ public class StoryEntry {
                     videoEditedInfo.bitrate = Utilities.clamp(i3, 3000000, 500000);
                     FileLog.d("story bitrate, original = " + videoEditedInfo.originalBitrate + " => " + videoEditedInfo.bitrate);
                     int i4 = iArr[0][4];
-                    long j7 = (long) i4;
-                    this.duration = j7;
-                    videoEditedInfo.originalDuration = j7 * 1000;
-                    float f5 = j7;
-                    long j8 = ((long) (this.left * f5)) * 1000;
-                    videoEditedInfo.startTime = j8;
-                    long j9 = ((long) (this.right * f5)) * 1000;
-                    videoEditedInfo.endTime = j9;
-                    videoEditedInfo.estimatedDuration = j9 - j8;
+                    long j9 = (long) i4;
+                    this.duration = j9;
+                    videoEditedInfo.originalDuration = j9 * 1000;
+                    float f5 = j9;
+                    long j10 = ((long) (this.left * f5)) * 1000;
+                    videoEditedInfo.startTime = j10;
+                    long j11 = ((long) (this.right * f5)) * 1000;
+                    videoEditedInfo.endTime = j11;
+                    videoEditedInfo.estimatedDuration = j11 - j10;
                     videoEditedInfo.volume = this.videoVolume;
                     videoEditedInfo.muted = this.muted;
                     videoEditedInfo.estimatedSize = (long) (r1[5] + (((i4 / 1000.0f) * extractRealEncoderBitrate) / 8.0f));
@@ -845,15 +847,15 @@ public class StoryEntry {
             videoEditedInfo.originalBitrate = -1;
             FileLog.d("story bitrate, original = " + videoEditedInfo.originalBitrate + " => " + videoEditedInfo.bitrate);
             int i42 = iArr[0][4];
-            long j72 = (long) i42;
-            this.duration = j72;
-            videoEditedInfo.originalDuration = j72 * 1000;
-            float f52 = j72;
-            long j82 = ((long) (this.left * f52)) * 1000;
-            videoEditedInfo.startTime = j82;
-            long j92 = ((long) (this.right * f52)) * 1000;
-            videoEditedInfo.endTime = j92;
-            videoEditedInfo.estimatedDuration = j92 - j82;
+            long j92 = (long) i42;
+            this.duration = j92;
+            videoEditedInfo.originalDuration = j92 * 1000;
+            float f52 = j92;
+            long j102 = ((long) (this.left * f52)) * 1000;
+            videoEditedInfo.startTime = j102;
+            long j112 = ((long) (this.right * f52)) * 1000;
+            videoEditedInfo.endTime = j112;
+            videoEditedInfo.estimatedDuration = j112 - j102;
             videoEditedInfo.volume = this.videoVolume;
             videoEditedInfo.muted = this.muted;
             videoEditedInfo.estimatedSize = (long) (r1[5] + (((i42 / 1000.0f) * extractRealEncoderBitrate) / 8.0f));
@@ -899,9 +901,21 @@ public class StoryEntry {
             mixedSoundInfo2.volume = this.roundVolume;
             float f8 = this.roundLeft;
             float f9 = this.roundDuration;
-            mixedSoundInfo2.audioOffset = ((long) (f8 * f9)) * 1000;
-            mixedSoundInfo2.startTime = this.isVideo ? ((long) (this.roundOffset - (this.left * this.duration))) * 1000 : 0L;
-            mixedSoundInfo2.startTime += j3;
+            long j12 = ((long) (f8 * f9)) * 1000;
+            mixedSoundInfo2.audioOffset = j12;
+            if (this.isVideo) {
+                mixedSoundInfo2.startTime = ((long) (this.roundOffset - (this.left * this.duration))) * 1000;
+                j5 = 0;
+            } else {
+                j5 = 0;
+                mixedSoundInfo2.startTime = 0L;
+            }
+            long j13 = mixedSoundInfo2.startTime + j3;
+            mixedSoundInfo2.startTime = j13;
+            if (j13 < j5) {
+                mixedSoundInfo2.audioOffset = j12 - j13;
+                mixedSoundInfo2.startTime = j5;
+            }
             mixedSoundInfo2.duration = ((long) ((this.roundRight - f8) * f9)) * 1000;
             videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo2);
         }
@@ -911,9 +925,21 @@ public class StoryEntry {
             mixedSoundInfo3.volume = this.audioVolume;
             float f10 = this.audioLeft;
             float f11 = this.audioDuration;
-            mixedSoundInfo3.audioOffset = ((long) (f10 * f11)) * 1000;
-            mixedSoundInfo3.startTime = this.isVideo ? ((long) (this.audioOffset - (this.left * this.duration))) * 1000 : 0L;
-            mixedSoundInfo3.startTime += j3;
+            long j14 = ((long) (f10 * f11)) * 1000;
+            mixedSoundInfo3.audioOffset = j14;
+            if (this.isVideo) {
+                mixedSoundInfo3.startTime = ((long) (this.audioOffset - (this.left * this.duration))) * 1000;
+                j4 = 0;
+            } else {
+                j4 = 0;
+                mixedSoundInfo3.startTime = 0L;
+            }
+            long j15 = mixedSoundInfo3.startTime + j3;
+            mixedSoundInfo3.startTime = j15;
+            if (j15 < j4) {
+                mixedSoundInfo3.audioOffset = j14 - j15;
+                mixedSoundInfo3.startTime = j4;
+            }
             mixedSoundInfo3.duration = ((long) ((this.audioRight - f10) * f11)) * 1000;
             videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo3);
         }
@@ -1144,7 +1170,7 @@ public class StoryEntry {
         Canvas canvas2 = new Canvas(createBitmap);
         if (this.backgroundFile != null) {
             try {
-                Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda2
+                Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                     public final Bitmap decode(BitmapFactory.Options options) {
                         Bitmap lambda$buildBitmap$0;
@@ -1195,7 +1221,7 @@ public class StoryEntry {
                             }
                             if (file != null) {
                                 try {
-                                    scaledBitmap2 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda3
+                                    scaledBitmap2 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
                                         @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                         public final Bitmap decode(BitmapFactory.Options options) {
                                             Bitmap lambda$buildBitmap$1;
@@ -1268,7 +1294,7 @@ public class StoryEntry {
                         }
                         if (file2 != null) {
                             try {
-                                scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda4
+                                scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
                                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                     public final Bitmap decode(BitmapFactory.Options options) {
                                         Bitmap lambda$buildBitmap$2;
@@ -1323,7 +1349,7 @@ public class StoryEntry {
                             z = false;
                         }
                         try {
-                            Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
+                            Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
                                 @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                 public final Bitmap decode(BitmapFactory.Options options) {
                                     Bitmap lambda$buildBitmap$3;
@@ -1351,7 +1377,7 @@ public class StoryEntry {
                     }
                     if (this.messageFile != null) {
                         try {
-                            Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
+                            Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
                                 @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                 public final Bitmap decode(BitmapFactory.Options options) {
                                     Bitmap lambda$buildBitmap$4;
@@ -1374,7 +1400,7 @@ public class StoryEntry {
                         return bitmap2;
                     }
                     try {
-                        Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
+                        Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
                             @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                             public final Bitmap decode(BitmapFactory.Options options) {
                                 Bitmap lambda$buildBitmap$5;
@@ -1522,6 +1548,10 @@ public class StoryEntry {
     }
 
     public StoryEntry copy() {
+        return copy(false);
+    }
+
+    public StoryEntry copy(boolean z) {
         StoryEntry storyEntry = new StoryEntry();
         storyEntry.draftId = this.draftId;
         storyEntry.isDraft = this.isDraft;
@@ -1551,6 +1581,11 @@ public class StoryEntry {
         storyEntry.isVideo = this.isVideo;
         storyEntry.file = this.file;
         storyEntry.fileDeletable = this.fileDeletable;
+        if (this.fileDeletable) {
+            File makeCacheFile = makeCacheFile(this.currentAccount, ext(this.file));
+            storyEntry.file = makeCacheFile;
+            AndroidUtilities.copyFileSafe(this.file, makeCacheFile);
+        }
         storyEntry.thumbPath = this.thumbPath;
         storyEntry.muted = this.muted;
         storyEntry.left = this.left;
@@ -1578,12 +1613,54 @@ public class StoryEntry {
         storyEntry.scheduleDate = this.scheduleDate;
         storyEntry.blurredVideoThumb = this.blurredVideoThumb;
         storyEntry.uploadThumbFile = this.uploadThumbFile;
+        File file = this.uploadThumbFile;
+        if (file != null && file.exists()) {
+            File makeCacheFile2 = makeCacheFile(this.currentAccount, ext(this.uploadThumbFile));
+            storyEntry.uploadThumbFile = makeCacheFile2;
+            AndroidUtilities.copyFileSafe(this.uploadThumbFile, makeCacheFile2);
+        }
         storyEntry.draftThumbFile = this.draftThumbFile;
+        File file2 = this.draftThumbFile;
+        if (file2 != null && file2.exists()) {
+            File makeCacheFile3 = makeCacheFile(this.currentAccount, ext(this.draftThumbFile));
+            storyEntry.draftThumbFile = makeCacheFile3;
+            AndroidUtilities.copyFileSafe(this.draftThumbFile, makeCacheFile3);
+        }
         storyEntry.paintFile = this.paintFile;
+        File file3 = this.paintFile;
+        if (file3 != null && file3.exists()) {
+            File makeCacheFile4 = makeCacheFile(this.currentAccount, ext(this.paintFile));
+            storyEntry.paintFile = makeCacheFile4;
+            AndroidUtilities.copyFileSafe(this.paintFile, makeCacheFile4);
+        }
         storyEntry.messageFile = this.messageFile;
+        File file4 = this.messageFile;
+        if (file4 != null && file4.exists()) {
+            File makeCacheFile5 = makeCacheFile(this.currentAccount, ext(this.messageFile));
+            storyEntry.messageFile = makeCacheFile5;
+            AndroidUtilities.copyFileSafe(this.messageFile, makeCacheFile5);
+        }
         storyEntry.backgroundFile = this.backgroundFile;
+        File file5 = this.backgroundFile;
+        if (file5 != null && file5.exists()) {
+            File makeCacheFile6 = makeCacheFile(this.currentAccount, ext(this.backgroundFile));
+            storyEntry.backgroundFile = makeCacheFile6;
+            AndroidUtilities.copyFileSafe(this.backgroundFile, makeCacheFile6);
+        }
         storyEntry.paintBlurFile = this.paintBlurFile;
+        File file6 = this.paintBlurFile;
+        if (file6 != null && file6.exists()) {
+            File makeCacheFile7 = makeCacheFile(this.currentAccount, ext(this.paintBlurFile));
+            storyEntry.paintBlurFile = makeCacheFile7;
+            AndroidUtilities.copyFileSafe(this.paintBlurFile, makeCacheFile7);
+        }
         storyEntry.paintEntitiesFile = this.paintEntitiesFile;
+        File file7 = this.paintEntitiesFile;
+        if (file7 != null && file7.exists()) {
+            File makeCacheFile8 = makeCacheFile(this.currentAccount, ext(this.paintEntitiesFile));
+            storyEntry.paintEntitiesFile = makeCacheFile8;
+            AndroidUtilities.copyFileSafe(this.paintEntitiesFile, makeCacheFile8);
+        }
         storyEntry.averageDuration = this.averageDuration;
         storyEntry.mediaEntities = new ArrayList();
         if (this.mediaEntities != null) {
@@ -1594,6 +1671,12 @@ public class StoryEntry {
         storyEntry.stickers = this.stickers;
         storyEntry.editStickers = this.editStickers;
         storyEntry.filterFile = this.filterFile;
+        File file8 = this.filterFile;
+        if (file8 != null && file8.exists()) {
+            File makeCacheFile9 = makeCacheFile(this.currentAccount, ext(this.filterFile));
+            storyEntry.filterFile = makeCacheFile9;
+            AndroidUtilities.copyFileSafe(this.filterFile, makeCacheFile9);
+        }
         storyEntry.filterState = this.filterState;
         storyEntry.thumbBitmap = this.thumbBitmap;
         storyEntry.fromCamera = this.fromCamera;
@@ -1615,7 +1698,39 @@ public class StoryEntry {
         storyEntry.collage = this.collage;
         storyEntry.videoLoop = this.videoLoop;
         storyEntry.videoOffset = this.videoOffset;
+        storyEntry.videoVolume = this.videoVolume;
         return storyEntry;
+    }
+
+    public ArrayList cutIntoEntries() {
+        if (this.isVideo && !isCollage() && !this.isEdit) {
+            long j = this.duration;
+            if (j > 0 && !this.isRepost) {
+                long j2 = (long) ((this.right - this.left) * j);
+                if (j2 < 68999) {
+                    return null;
+                }
+                ArrayList arrayList = new ArrayList();
+                this.right = this.left + (59000.0f / this.duration);
+                arrayList.add(this);
+                long j3 = 59000;
+                while (j3 < j2) {
+                    if (Math.min(59000L, j2 - j3) < 1000) {
+                        break;
+                    }
+                    StoryEntry copy = copy(true);
+                    float f = this.left;
+                    float f2 = this.duration;
+                    copy.left = f + (j3 / f2);
+                    copy.right = this.left + ((r8 + j3) / f2);
+                    copy.caption = "";
+                    j3 += 59000;
+                    arrayList.add(copy);
+                }
+                return arrayList;
+            }
+        }
+        return null;
     }
 
     public void decodeBounds(String str) {
@@ -1644,9 +1759,7 @@ public class StoryEntry {
     }
 
     public void destroy(boolean z) {
-        Bitmap bitmap = this.blurredVideoThumb;
-        if (bitmap != null && !bitmap.isRecycled()) {
-            this.blurredVideoThumb.recycle();
+        if (this.blurredVideoThumb != null) {
             this.blurredVideoThumb = null;
         }
         File file = this.uploadThumbFile;
@@ -1698,11 +1811,7 @@ public class StoryEntry {
                 this.roundThumb = null;
             }
         }
-        Bitmap bitmap2 = this.thumbPathBitmap;
-        if (bitmap2 != null) {
-            bitmap2.recycle();
-            this.thumbPathBitmap = null;
-        }
+        this.thumbPathBitmap = null;
         if (this.collageContent != null) {
             for (int i = 0; i < this.collageContent.size(); i++) {
                 ((StoryEntry) this.collageContent.get(i)).destroy(z);
@@ -1721,7 +1830,7 @@ public class StoryEntry {
             return;
         }
         if (this.isVideo && Build.VERSION.SDK_INT >= 24) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryEntry.this.lambda$detectHDR$13(callback);
@@ -1737,6 +1846,19 @@ public class StoryEntry {
     public File getOriginalFile() {
         File file = this.filterFile;
         return file != null ? file : this.file;
+    }
+
+    public int getTotalCount() {
+        if (this.isVideo && !isCollage() && !this.isEdit) {
+            long j = this.duration;
+            if (j > 0 && !this.isRepost) {
+                if (((long) ((this.right - this.left) * j)) < 68999) {
+                    return 1;
+                }
+                return (int) Math.ceil(r2 / 59000.0f);
+            }
+        }
+        return 1;
     }
 
     public void getVideoEditedInfo(final Utilities.Callback callback) {
@@ -1835,7 +1957,7 @@ public class StoryEntry {
                 if (bitmap == null) {
                     return;
                 } else {
-                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
+                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda2
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             StoryEntry.this.lambda$setupGradient$7(bitmap, runnable, (int[]) obj);
@@ -1847,7 +1969,7 @@ public class StoryEntry {
                 if (bitmap == null) {
                     return;
                 } else {
-                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
+                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             StoryEntry.this.lambda$setupGradient$8(runnable, (int[]) obj);
@@ -1891,6 +2013,19 @@ public class StoryEntry {
         }
         matrix.postScale(f2, f2);
         matrix.postTranslate((this.resultWidth - (f * f2)) / 2.0f, (this.resultHeight - (i3 * f2)) / 2.0f);
+    }
+
+    public void setupMultipleStoriesSelector() {
+        if (!this.isVideo || isCollage() || this.isEdit || this.isRepost || this.duration <= 69000 || !UserConfig.getInstance(this.currentAccount).isPremium()) {
+            return;
+        }
+        long j = this.duration - 59000;
+        long min = j > 10000 ? Math.min(59000L, j) + 59000 : 59000L;
+        long j2 = this.duration - min;
+        if (j2 > 10000) {
+            min += Math.min(59000L, j2);
+        }
+        this.right = Math.min(1.0f, min / this.duration);
     }
 
     public void updateFilter(PhotoFilterView photoFilterView, final Runnable runnable) {

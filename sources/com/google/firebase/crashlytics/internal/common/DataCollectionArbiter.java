@@ -11,7 +11,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DataCollectionArbiter {
     private Boolean crashlyticsDataCollectionEnabled;
     TaskCompletionSource dataCollectionEnabledTask;

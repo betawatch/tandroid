@@ -63,7 +63,7 @@ public class SlideIntChooseView extends FrameLayout {
             options.style = i;
             options.min = i2;
             options.max = i3;
-            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
+            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
                     CharSequence lambda$make$0;
@@ -79,7 +79,7 @@ public class SlideIntChooseView extends FrameLayout {
             options.style = i;
             options.min = i2;
             options.max = i3;
-            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
+            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
                     CharSequence lambda$make$1;

@@ -26,7 +26,7 @@ import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CrashlyticsReportPersistence {
     private final AtomicInteger eventCounter = new AtomicInteger(0);
     private final FileStore fileStore;

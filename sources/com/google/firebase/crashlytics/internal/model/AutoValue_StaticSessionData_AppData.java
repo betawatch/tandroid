@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppData {
     private final String appIdentifier;
     private final int deliveryMechanism;

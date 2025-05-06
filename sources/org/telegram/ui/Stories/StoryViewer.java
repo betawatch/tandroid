@@ -16,6 +16,7 @@ import android.graphics.RectF;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.view.GestureDetector;
@@ -32,7 +33,6 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import java.util.ArrayList;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotWebViewVibrationEffect;
@@ -1293,7 +1293,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 StoryViewer storyViewer3 = StoryViewer.this;
                 if (storyViewer3.progressToOpen >= 0.9f) {
                     Uri uri2 = storyViewer3.lastUri;
-                    boolean equals = Objects.equals(uri2 == null ? null : uri2.getAuthority(), uri == null ? null : uri.getAuthority());
+                    boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
                     if (equals && (videoPlayerHolder = (storyViewer2 = StoryViewer.this).playerHolder) != null) {
                         if (equals) {
                             storyViewer2.currentPlayerScope = videoPlayerSharedScope;

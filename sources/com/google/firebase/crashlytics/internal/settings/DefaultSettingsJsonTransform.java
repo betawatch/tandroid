@@ -4,7 +4,7 @@ import com.google.firebase.crashlytics.internal.common.CurrentTimeProvider;
 import com.google.firebase.crashlytics.internal.settings.Settings;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class DefaultSettingsJsonTransform implements SettingsJsonTransform {
     DefaultSettingsJsonTransform() {
     }

@@ -603,7 +603,7 @@ public abstract class NanoHTTPD {
             SWITCH_PROTOCOL(101, "Switching Protocols"),
             OK(NotificationCenter.storyQualityUpdate, "OK"),
             CREATED(NotificationCenter.openBoostForUsersDialog, "Created"),
-            ACCEPTED(202, "Accepted"),
+            ACCEPTED(NotificationCenter.groupRestrictionsUnlockedByBoosts, "Accepted"),
             NO_CONTENT(NotificationCenter.groupPackUpdated, "No Content"),
             PARTIAL_CONTENT(NotificationCenter.customStickerCreated, "Partial Content"),
             MULTI_STATUS(NotificationCenter.premiumFloodWaitReceived, "Multi-Status"),

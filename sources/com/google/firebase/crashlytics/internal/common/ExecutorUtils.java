@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ExecutorUtils {
     private static void addDelayedShutdownHook(String str, ExecutorService executorService) {
         addDelayedShutdownHook(str, executorService, 2L, TimeUnit.SECONDS);

@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Session {
     private final CrashlyticsReport.Session.Application app;
     private final String appQualitySessionId;

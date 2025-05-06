@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class UserMetadata {
     private final CrashlyticsBackgroundWorker backgroundWorker;
     private final MetaDataStore metaDataStore;

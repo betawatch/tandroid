@@ -61,6 +61,8 @@ public class NativeInstance {
 
     public static native void destroyVideoCapturer(long j);
 
+    public static native String[] getAllVersions();
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onAudioLevelsUpdated$1(int[] iArr, float[] fArr, boolean[] zArr) {
         this.audioLevelsCallback.run(iArr, fArr, zArr);

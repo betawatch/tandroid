@@ -112,7 +112,7 @@ public enum zziv implements zzag {
     zzbb(NotificationCenter.liveLocationsCacheChanged),
     zzbc(NotificationCenter.storyQualityUpdate),
     zzbd(NotificationCenter.openBoostForUsersDialog),
-    zzbe(202),
+    zzbe(NotificationCenter.groupRestrictionsUnlockedByBoosts),
     zzbf(203),
     zzbg(NotificationCenter.groupPackUpdated),
     zzbh(NotificationCenter.timezonesUpdated),

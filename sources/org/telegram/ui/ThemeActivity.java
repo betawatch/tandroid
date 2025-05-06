@@ -248,7 +248,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         */
         public void onItemClick(int i) {
             if (i == -1) {
-                ThemeActivity.this.lambda$onBackPressed$336();
+                ThemeActivity.this.lambda$onBackPressed$338();
                 return;
             }
             if (i == 1) {

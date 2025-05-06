@@ -11,7 +11,7 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class HttpGetRequest {
     private final Map headers = new HashMap();
     private final Map queryParams;

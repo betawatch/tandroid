@@ -28,7 +28,7 @@ import com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsRepor
 import java.nio.charset.Charset;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CrashlyticsReport {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
 

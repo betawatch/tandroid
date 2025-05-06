@@ -20,7 +20,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SettingsController implements SettingsProvider {
     private final CachedSettingsIo cachedSettingsIo;
     private final Context context;

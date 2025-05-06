@@ -43,7 +43,7 @@ public abstract class TranslateButton extends FrameLayout {
     private final Drawable translateDrawable;
     public final SpannableString translateIcon;
 
-    public TranslateButton(Context context, final int i, long j, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
+    public TranslateButton(Context context, final int i, final long j, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.accusative = new boolean[1];
         this.currentAccount = i;
@@ -80,7 +80,7 @@ public abstract class TranslateButton extends FrameLayout {
         this.menuView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TranslateButton.this.lambda$new$1(i, view);
+                TranslateButton.this.lambda$new$1(i, j, view);
             }
         });
         addView(this.menuView, LayoutHelper.createFrame(32, 32.0f, 21, 0.0f, 0.0f, 8.0f, 0.0f));
@@ -97,8 +97,9 @@ public abstract class TranslateButton extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        if (UserConfig.getInstance(i).isPremium()) {
+    public /* synthetic */ void lambda$new$1(int i, long j, View view) {
+        TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
+        if (UserConfig.getInstance(i).isPremium() || (chat != null && chat.autotranslation)) {
             onMenuClick();
         } else {
             onCloseClick();
@@ -288,9 +289,9 @@ public abstract class TranslateButton extends FrameLayout {
             }
         }
         actionBarPopupWindowLayout.addView(new ActionBarPopupWindow.GapView(getContext(), this.resourcesProvider), LayoutHelper.createLinear(-1, 8));
-        if (languageName != null) {
+        if (UserConfig.getInstance(this.currentAccount).isPremium() && languageName != null) {
             ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
-            actionBarMenuSubItem6.setTextAndIcon(this.accusative[0] ? LocaleController.formatString("DoNotTranslateLanguage", R.string.DoNotTranslateLanguage, languageName) : LocaleController.formatString("DoNotTranslateLanguageOther", R.string.DoNotTranslateLanguageOther, languageName), R.drawable.msg_block2);
+            actionBarMenuSubItem6.setTextAndIcon(this.accusative[0] ? LocaleController.formatString(R.string.DoNotTranslateLanguage, languageName) : LocaleController.formatString(R.string.DoNotTranslateLanguageOther, languageName), R.drawable.msg_block2);
             actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -334,17 +335,32 @@ public abstract class TranslateButton extends FrameLayout {
     }
 
     public void updateText() {
+        AnimatedTextView animatedTextView;
+        CharSequence concat;
         TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
-        if (translateController.isTranslatingDialog(this.dialogId)) {
-            this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString(R.string.ShowOriginalButton)));
+        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
+        boolean isTranslatingDialog = translateController.isTranslatingDialog(this.dialogId);
+        long j = this.dialogId;
+        if (isTranslatingDialog) {
+            String languageName = TranslateAlert2.languageName(translateController.getDialogDetectedLanguage(j));
+            if (TextUtils.isEmpty(languageName)) {
+                this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString(R.string.ShowOriginalButton)));
+                this.menuView.setImageResource((!UserConfig.getInstance(this.currentAccount).isPremium() || (chat != null && chat.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
+            } else {
+                animatedTextView = this.textView;
+                concat = TextUtils.concat(this.translateIcon, " ", LocaleController.formatString(R.string.ShowOriginalButtonLanguage, languageName));
+            }
         } else {
-            String dialogTranslateTo = translateController.getDialogTranslateTo(this.dialogId);
+            String dialogTranslateTo = translateController.getDialogTranslateTo(j);
             if (dialogTranslateTo == null) {
                 dialogTranslateTo = "en";
             }
-            String languageName = TranslateAlert2.languageName(dialogTranslateTo, this.accusative);
-            this.textView.setText(TextUtils.concat(this.translateIcon, " ", this.accusative[0] ? LocaleController.formatString("TranslateToButton", R.string.TranslateToButton, languageName) : LocaleController.formatString("TranslateToButtonOther", R.string.TranslateToButtonOther, languageName)));
+            String languageName2 = TranslateAlert2.languageName(dialogTranslateTo, this.accusative);
+            String formatString = this.accusative[0] ? LocaleController.formatString(R.string.TranslateToButton, languageName2) : LocaleController.formatString(R.string.TranslateToButtonOther, languageName2);
+            animatedTextView = this.textView;
+            concat = TextUtils.concat(this.translateIcon, " ", formatString);
         }
-        this.menuView.setImageResource(UserConfig.getInstance(this.currentAccount).isPremium() ? R.drawable.msg_mini_customize : R.drawable.msg_close);
+        animatedTextView.setText(concat);
+        this.menuView.setImageResource((!UserConfig.getInstance(this.currentAccount).isPremium() || (chat != null && chat.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
     }
 }

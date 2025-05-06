@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.metadata;
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import java.io.File;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LogFileManager {
     private static final NoopLogStore NOOP_LOG_STORE = new NoopLogStore();
     private FileLogStore currentLog;

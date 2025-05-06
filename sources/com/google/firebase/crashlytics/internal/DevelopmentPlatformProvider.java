@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DevelopmentPlatformProvider {
     private final Context context;
     private DevelopmentPlatform developmentPlatform = null;

@@ -1255,7 +1255,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         if (chat != null) {
             this.currentBoostLevel = chat.level;
         }
-        MessagesController.getInstance(this.currentAccount).getBoostsController().getBoostsStats(this.dialogId, new Consumer() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda27
+        MessagesController.getInstance(this.currentAccount).getBoostsController().getBoostsStats(this.dialogId, new Consumer() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda29
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
                 ChannelMonetizationLayout.this.lambda$initLevel$30((TL_stories.TL_premium_boostsStatus) obj);
@@ -1279,7 +1279,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             if (i == -1) {
                 return;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getBroadcastRevenueStats, new RequestDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda28
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getBroadcastRevenueStats, new RequestDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda30
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ChannelMonetizationLayout.this.lambda$initLevel$33(tLObject, tL_error);
@@ -1427,7 +1427,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         int i2;
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$336();
+            twoStepVerificationActivity.lambda$onBackPressed$338();
             if (tLObject instanceof TL_stats.TL_broadcastRevenueWithdrawalUrl) {
                 Browser.openUrl(getContext(), ((TL_stats.TL_broadcastRevenueWithdrawalUrl) tLObject).url);
             } else if (tLObject instanceof TLRPC.TL_payments_starsRevenueWithdrawalUrl) {
@@ -1449,7 +1449,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$336();
+                twoStepVerificationActivity.lambda$onBackPressed$338();
             }
             BulletinFactory.showError(tL_error);
             return;
@@ -1600,7 +1600,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             return;
         }
         if (this.starsBalanceEditTextValue < MessagesController.getInstance(i).starsRevenueWithdrawalMin) {
-            BulletinFactory.of(baseFragment).createSimpleBulletin(getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) MessagesController.getInstance(i).starsRevenueWithdrawalMin, new Object[0]), new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda23
+            BulletinFactory.of(baseFragment).createSimpleBulletin(getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) MessagesController.getInstance(i).starsRevenueWithdrawalMin, new Object[0]), new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChannelMonetizationLayout.this.lambda$new$8(i);
@@ -1609,14 +1609,14 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             return;
         }
         final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-        twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda24
+        twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda26
             @Override // org.telegram.ui.TwoStepVerificationActivity.TwoStepVerificationActivityDelegate
             public final void didEnterPassword(TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
                 ChannelMonetizationLayout.this.lambda$new$9(twoStepVerificationActivity, inputCheckPasswordSRP);
             }
         });
         this.starsBalanceButton.setLoading(true);
-        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda25
+        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 ChannelMonetizationLayout.this.lambda$new$10(baseFragment, twoStepVerificationActivity);
@@ -1685,14 +1685,14 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             return false;
         }
         final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-        twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda21
+        twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda23
             @Override // org.telegram.ui.TwoStepVerificationActivity.TwoStepVerificationActivityDelegate
             public final void didEnterPassword(TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
                 ChannelMonetizationLayout.this.lambda$new$16(twoStepVerificationActivity, inputCheckPasswordSRP);
             }
         });
         this.starsBalanceButton.setLoading(true);
-        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda22
+        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
                 ChannelMonetizationLayout.this.lambda$new$17(baseFragment, twoStepVerificationActivity);
@@ -1757,14 +1757,14 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         ButtonWithCounterView buttonWithCounterView = this.starsBalanceButton;
         if (buttonWithCounterView == null || !buttonWithCounterView.isLoading()) {
             final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-            twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda19
+            twoStepVerificationActivity.setDelegate(1, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda21
                 @Override // org.telegram.ui.TwoStepVerificationActivity.TwoStepVerificationActivityDelegate
                 public final void didEnterPassword(TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
                     ChannelMonetizationLayout.this.lambda$new$4(twoStepVerificationActivity, inputCheckPasswordSRP);
                 }
             });
             this.balanceButton.setLoading(true);
-            twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda20
+            twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChannelMonetizationLayout.this.lambda$new$5(baseFragment, twoStepVerificationActivity);
@@ -2020,7 +2020,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
         tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(-this.dialogId);
         tL_channels_restrictSponsoredMessages.restricted = this.switchOffValue;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_restrictSponsoredMessages, new RequestDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda26
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_restrictSponsoredMessages, new RequestDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda28
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ChannelMonetizationLayout.this.lambda$sendCpmUpdate$37(tLObject, tL_error);
@@ -2240,7 +2240,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             final TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal2 = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
             if ((tL_broadcastRevenueTransactionWithdrawal2.flags & 2) != 0) {
                 buttonWithCounterView.setText(LocaleController.getString(R.string.MonetizationTransactionDetailWithdrawButton), false);
-                buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda29
+                buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda18
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         ChannelMonetizationLayout.lambda$showTransactionSheet$38(context, tL_broadcastRevenueTransactionWithdrawal2, view);
@@ -2254,7 +2254,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         }
         buttonWithCounterView.setText(LocaleController.getString(R.string.OK), false);
         final BottomSheet bottomSheet3 = bottomSheet2;
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda30
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 BottomSheet.this.lambda$new$0();
@@ -2360,7 +2360,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             }
         } catch (Throwable th) {
             FileLog.e(th);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda18
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChannelMonetizationLayout.this.lambda$onNestedScroll$42();

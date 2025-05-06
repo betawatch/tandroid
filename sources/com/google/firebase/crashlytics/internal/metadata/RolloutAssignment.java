@@ -5,7 +5,7 @@ import com.google.firebase.encoders.DataEncoder;
 import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class RolloutAssignment {
     public static final DataEncoder ROLLOUT_ASSIGNMENT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoRolloutAssignmentEncoder.CONFIG).build();
 

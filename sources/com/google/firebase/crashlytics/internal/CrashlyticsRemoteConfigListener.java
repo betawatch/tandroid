@@ -9,7 +9,7 @@ import java.util.Set;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CrashlyticsRemoteConfigListener implements RolloutsStateSubscriber {
     private final UserMetadata userMetadata;
 

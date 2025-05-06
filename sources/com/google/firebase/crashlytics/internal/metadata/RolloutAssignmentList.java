@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class RolloutAssignmentList {
     private final int maxEntries;
     private final List rolloutsState = new ArrayList();

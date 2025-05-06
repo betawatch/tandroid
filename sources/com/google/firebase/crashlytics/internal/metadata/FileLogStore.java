@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.metadata;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 interface FileLogStore {
     void closeLogFile();
 

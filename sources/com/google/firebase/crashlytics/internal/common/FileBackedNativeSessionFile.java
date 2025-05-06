@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class FileBackedNativeSessionFile implements NativeSessionFile {
     private final String dataTransportFilename;
     private final File file;

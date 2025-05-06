@@ -14,7 +14,7 @@ import com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsR
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import java.nio.charset.Charset;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DataTransportCrashlyticsReportSender {
     private final ReportQueue reportQueue;
     private final Transformer transportTransform;

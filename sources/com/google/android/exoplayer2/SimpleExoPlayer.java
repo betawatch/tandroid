@@ -10,8 +10,10 @@ import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.util.ConditionVariable;
+import com.google.android.exoplayer2.video.VideoListener;
 import com.google.android.exoplayer2.video.VideoSize;
 import java.util.List;
+import kotlin.NotImplementedError;
 import org.telegram.messenger.DispatchQueue;
 
 /* loaded from: classes.dex */
@@ -51,6 +53,11 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public void addMediaItems(int i, List list) {
         blockUntilConstructorFinished();
         this.player.addMediaItems(i, list);
+    }
+
+    @Override // com.google.android.exoplayer2.ExoPlayer
+    public void addVideoListener(VideoListener videoListener) {
+        throw new NotImplementedError();
     }
 
     @Override // com.google.android.exoplayer2.Player

@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.Session.Event {
     private final CrashlyticsReport.Session.Event.Application app;
     private final CrashlyticsReport.Session.Event.Device device;

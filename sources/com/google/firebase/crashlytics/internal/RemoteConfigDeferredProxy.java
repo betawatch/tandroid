@@ -5,7 +5,7 @@ import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
 import com.google.firebase.remoteconfig.interop.FirebaseRemoteConfigInterop;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class RemoteConfigDeferredProxy {
     private final Deferred remoteConfigInteropDeferred;
 

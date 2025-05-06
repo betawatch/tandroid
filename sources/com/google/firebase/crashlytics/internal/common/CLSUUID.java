@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class CLSUUID {
     private static String _clsId;
     private static final AtomicLong _sequenceNumber = new AtomicLong(0);

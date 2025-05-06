@@ -1462,7 +1462,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    NotificationsSettingsActivity.this.lambda$onBackPressed$336();
+                    NotificationsSettingsActivity.this.lambda$onBackPressed$338();
                 }
             }
         });

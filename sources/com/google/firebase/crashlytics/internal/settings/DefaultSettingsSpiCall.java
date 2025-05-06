@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class DefaultSettingsSpiCall implements SettingsSpiCall {
     private final Logger logger;
     private final HttpRequestFactory requestFactory;

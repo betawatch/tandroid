@@ -131,6 +131,7 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     private int videoChangeFrameRateStrategy;
     private DecoderCounters videoDecoderCounters;
     private Format videoFormat;
+    private final ArrayList videoListeners;
     private Object videoOutput;
     private int videoScalingMode;
     private VideoSize videoSize;
@@ -364,7 +365,7 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
         @Override // android.view.TextureView.SurfaceTextureListener
         public boolean onSurfaceTextureDestroyed(final SurfaceTexture surfaceTexture) {
-            Iterator it = Player.videoListeners.iterator();
+            Iterator it = ExoPlayerImpl.this.videoListeners.iterator();
             while (it.hasNext()) {
                 if (((VideoListener) it.next()).onSurfaceDestroyed(surfaceTexture)) {
                     return false;
@@ -424,7 +425,7 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
         /* renamed from: onSurfaceTextureUpdatedInternal, reason: merged with bridge method [inline-methods] */
         public void lambda$onSurfaceTextureUpdated$9(SurfaceTexture surfaceTexture) {
-            Iterator it = Player.videoListeners.iterator();
+            Iterator it = ExoPlayerImpl.this.videoListeners.iterator();
             while (it.hasNext()) {
                 ((VideoListener) it.next()).onSurfaceTextureUpdated(surfaceTexture);
             }
@@ -601,6 +602,7 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
     public ExoPlayerImpl(ExoPlayer.Builder builder, Player player) {
         final ExoPlayerImpl exoPlayerImpl = this;
+        exoPlayerImpl.videoListeners = new ArrayList();
         ConditionVariable conditionVariable = new ConditionVariable();
         exoPlayerImpl.constructorFinished = conditionVariable;
         try {
@@ -1600,6 +1602,11 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline));
         this.internalPlayer.addMediaSources(min, addMediaSourceHolders, this.shuffleOrder);
         updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, -9223372036854775807L, -1, false);
+    }
+
+    @Override // com.google.android.exoplayer2.ExoPlayer
+    public void addVideoListener(VideoListener videoListener) {
+        this.videoListeners.add(videoListener);
     }
 
     public void clearVideoSurface() {

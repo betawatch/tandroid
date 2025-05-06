@@ -612,7 +612,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ContactAddActivity.this.lambda$onBackPressed$336();
+                    ContactAddActivity.this.lambda$onBackPressed$338();
                     return;
                 }
                 if (i2 != 1 || ContactAddActivity.this.firstNameField.getText().length() == 0) {
@@ -627,7 +627,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 MessagesController.getNotificationsSettings(((BaseFragment) ContactAddActivity.this).currentAccount).edit().putInt("dialog_bar_vis3" + ContactAddActivity.this.user_id, 3).commit();
                 ContactAddActivity.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
                 ContactAddActivity.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(ContactAddActivity.this.user_id));
-                ContactAddActivity.this.lambda$onBackPressed$336();
+                ContactAddActivity.this.lambda$onBackPressed$338();
                 if (ContactAddActivity.this.delegate != null) {
                     ContactAddActivity.this.delegate.didAddToContacts();
                 }

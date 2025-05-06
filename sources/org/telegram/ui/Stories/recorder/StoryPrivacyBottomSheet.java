@@ -129,6 +129,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
     private int shiftDp;
     private HashMap smallChatsParticipantsCount;
     private boolean startedFromSendAsMessage;
+    private int storiesCount;
     private int storyPeriod;
     private ViewPagerFixed viewPager;
     private ArrayList warnUsers;
@@ -2294,10 +2295,15 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             return f;
         }
 
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0051  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public void updateButton(boolean z) {
             ButtonWithCounterView buttonWithCounterView;
             ButtonWithCounterView buttonWithCounterView2;
             ButtonWithCounterView buttonWithCounterView3;
+            String formatPluralStringComma;
             int i;
             int i2 = this.pageType;
             int i3 = 8;
@@ -2309,14 +2315,22 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 if (StoryPrivacyBottomSheet.this.isEdit) {
                     buttonWithCounterView3 = this.button;
                     i = R.string.StoryPrivacyButtonSave;
-                } else {
+                } else if (StoryPrivacyBottomSheet.this.storiesCount == 1) {
                     buttonWithCounterView3 = this.button;
                     i = R.string.StoryPrivacyButtonPost;
+                } else {
+                    buttonWithCounterView3 = this.button;
+                    formatPluralStringComma = LocaleController.formatPluralStringComma("StoryPrivacyButtonPostMultiple", StoryPrivacyBottomSheet.this.storiesCount);
+                    buttonWithCounterView3.setText(formatPluralStringComma, z);
+                    buttonWithCounterView2 = this.button2;
+                    if (StoryPrivacyBottomSheet.this.sendAsMessageEnabled) {
+                        i3 = 0;
+                    }
                 }
-                buttonWithCounterView3.setText(LocaleController.getString(i), z);
+                formatPluralStringComma = LocaleController.getString(i);
+                buttonWithCounterView3.setText(formatPluralStringComma, z);
                 buttonWithCounterView2 = this.button2;
                 if (StoryPrivacyBottomSheet.this.sendAsMessageEnabled) {
-                    i3 = 0;
                 }
             } else {
                 if (i2 == 1) {
@@ -4349,6 +4363,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         this.keepOnMyPage = false;
         this.allowCover = true;
         this.canChangePeer = true;
+        this.storiesCount = 1;
         this.messageUsers = new ArrayList();
         this.activePage = 1;
         this.selectedType = 4;
@@ -4397,6 +4412,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         this.keepOnMyPage = false;
         this.allowCover = true;
         this.canChangePeer = true;
+        this.storiesCount = 1;
         this.messageUsers = new ArrayList();
         this.activePage = 1;
         this.selectedType = 4;
@@ -5064,6 +5080,19 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
     public StoryPrivacyBottomSheet setCanChangePeer(boolean z) {
         this.canChangePeer = z;
+        return this;
+    }
+
+    public StoryPrivacyBottomSheet setCount(int i) {
+        this.storiesCount = i;
+        ViewPagerFixed viewPagerFixed = this.viewPager;
+        if (viewPagerFixed != null) {
+            for (View view : viewPagerFixed.getViewPages()) {
+                if (view instanceof Page) {
+                    ((Page) view).updateButton(false);
+                }
+            }
+        }
         return this;
     }
 

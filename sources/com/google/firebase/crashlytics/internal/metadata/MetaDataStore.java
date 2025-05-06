@@ -20,7 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class MetaDataStore {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private final FileStore fileStore;

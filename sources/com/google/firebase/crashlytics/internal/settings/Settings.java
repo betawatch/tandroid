@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.settings;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Settings {
     public final int cacheDuration;
     public final long expiresAtMillis;

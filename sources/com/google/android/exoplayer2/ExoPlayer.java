@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Clock;
 import com.google.android.exoplayer2.util.Util;
+import com.google.android.exoplayer2.video.VideoListener;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import org.telegram.messenger.DispatchQueue;
@@ -231,6 +232,8 @@ public interface ExoPlayer extends Player {
     }
 
     void addAnalyticsListener(AnalyticsListener analyticsListener);
+
+    void addVideoListener(VideoListener videoListener);
 
     Renderer getRenderer(int i);
 

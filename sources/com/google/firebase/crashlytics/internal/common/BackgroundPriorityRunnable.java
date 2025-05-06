@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.common;
 
 import android.os.Process;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BackgroundPriorityRunnable implements Runnable {
     protected abstract void onRun();
 

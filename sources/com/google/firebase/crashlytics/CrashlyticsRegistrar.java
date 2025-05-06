@@ -16,7 +16,7 @@ import com.google.firebase.sessions.api.SessionSubscriber;
 import java.util.Arrays;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     static {
         FirebaseSessionsDependencies.INSTANCE.addDependency(SessionSubscriber.Name.CRASHLYTICS);

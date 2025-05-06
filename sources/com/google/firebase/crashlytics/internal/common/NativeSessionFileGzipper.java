@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.zip.GZIPOutputStream;
 import org.telegram.messenger.LiteMode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class NativeSessionFileGzipper {
     private static void gzipInputStream(InputStream inputStream, File file) {
         if (inputStream == null) {

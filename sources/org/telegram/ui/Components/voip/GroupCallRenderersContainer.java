@@ -35,7 +35,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.pip.PipNativeApiController;
+import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
@@ -480,7 +480,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
                 return;
             }
         }
-        if (PipNativeApiController.checkAnyPipPermissions(groupCallActivity.getParentActivity())) {
+        if (PipUtils.checkAnyPipPermissions(groupCallActivity.getParentActivity())) {
             RTMPStreamPipOverlay.show(groupCallActivity.getParentActivity());
             groupCallActivity.lambda$new$0();
         } else if (Build.VERSION.SDK_INT >= 21) {

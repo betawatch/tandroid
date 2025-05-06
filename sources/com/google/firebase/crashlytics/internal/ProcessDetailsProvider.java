@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ProcessDetailsProvider {
     public static final ProcessDetailsProvider INSTANCE = new ProcessDetailsProvider();
 

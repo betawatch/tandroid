@@ -1069,7 +1069,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 break;
             }
             if (z) {
-                baseFragment.lambda$onBackPressed$336();
+                baseFragment.lambda$onBackPressed$338();
                 z = false;
             } else {
                 baseFragment.removeSelfFromStack();
@@ -1417,7 +1417,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                         List fragmentStack = parentLayout.getFragmentStack();
                         if (fragmentStack.size() >= 2 && (fragmentStack.get(fragmentStack.size() - 2) instanceof FiltersSetupActivity)) {
                             filtersSetupActivity = (FiltersSetupActivity) fragmentStack.get(fragmentStack.size() - 2);
-                            lastFragment.lambda$onBackPressed$336();
+                            lastFragment.lambda$onBackPressed$338();
                         }
                     }
                     undoView = filtersSetupActivity.getUndoView();

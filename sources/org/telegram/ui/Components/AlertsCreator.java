@@ -85,7 +85,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.pip.PipNativeApiController;
+import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
@@ -106,7 +106,7 @@ import org.telegram.ui.Cells.CheckBoxCell;
 import org.telegram.ui.Cells.RadioColorCell;
 import org.telegram.ui.Cells.TextColorCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda305;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda309;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.LinkSpanDrawable;
@@ -2666,7 +2666,7 @@ public abstract class AlertsCreator {
                     lambda$createDeleteMessagesAlert$166 = AlertsCreator.lambda$createDeleteMessagesAlert$166(clientUserId, (TLObject) obj);
                     return lambda$createDeleteMessagesAlert$166;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda305()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda309()));
             if (!arrayList2.isEmpty()) {
                 if (channelParticipantArr != null) {
                     DeleteMessagesBottomSheet deleteMessagesBottomSheet = new DeleteMessagesBottomSheet(baseFragment, chat, arrayList, arrayList2, channelParticipantArr, j, i, i2, runnable);
@@ -5825,7 +5825,7 @@ public abstract class AlertsCreator {
         if (activity == null || Build.VERSION.SDK_INT < 23) {
             return;
         }
-        if (z && PipNativeApiController.checkPermissions(activity) == -2) {
+        if (z && PipUtils.checkPermissions(activity) == -2) {
             try {
                 activity.startActivity(new Intent("android.settings.PICTURE_IN_PICTURE_SETTINGS", Uri.parse("package:" + activity.getPackageName())));
                 return;
@@ -6350,7 +6350,7 @@ public abstract class AlertsCreator {
         }
         if (baseFragment instanceof ThemePreviewActivity) {
             Theme.applyPreviousTheme();
-            baseFragment.lambda$onBackPressed$336();
+            baseFragment.lambda$onBackPressed$338();
         }
         if (themeAccent == null) {
             processCreate(editTextBoldCursor, alertDialog, baseFragment);

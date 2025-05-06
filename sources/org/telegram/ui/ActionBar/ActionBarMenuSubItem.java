@@ -36,7 +36,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
     public RLottieImageView imageView;
     private int itemHeight;
     public Runnable openSwipeBackLayout;
-    private final Theme.ResourcesProvider resourcesProvider;
+    protected final Theme.ResourcesProvider resourcesProvider;
     private ImageView rightIcon;
     private int selectorColor;
     int selectorRad;
@@ -45,30 +45,8 @@ public class ActionBarMenuSubItem extends FrameLayout {
     public AnimatedEmojiSpan.TextViewEmojis textView;
     boolean top;
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x00ec, code lost:
-    
-        if (org.telegram.messenger.LocaleController.isRTL == false) goto L34;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0111, code lost:
-    
-        r6 = org.telegram.messenger.AndroidUtilities.dp(34.0f);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x010f, code lost:
-    
-        r6 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x010d, code lost:
-    
-        if (org.telegram.messenger.LocaleController.isRTL != false) goto L34;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public ActionBarMenuSubItem(Context context, int i, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        AnimatedEmojiSpan.TextViewEmojis textViewEmojis;
-        int dp;
-        int i2;
         this.selectorRad = 6;
         this.itemHeight = 48;
         this.resourcesProvider = resourcesProvider;
@@ -84,9 +62,9 @@ public class ActionBarMenuSubItem extends FrameLayout {
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         this.imageView.setColorFilter(new PorterDuffColorFilter(this.iconColor, PorterDuff.Mode.MULTIPLY));
         addView(this.imageView, LayoutHelper.createFrame(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
-        AnimatedEmojiSpan.TextViewEmojis textViewEmojis2 = new AnimatedEmojiSpan.TextViewEmojis(context);
-        this.textView = textViewEmojis2;
-        textViewEmojis2.setLines(1);
+        AnimatedEmojiSpan.TextViewEmojis textViewEmojis = new AnimatedEmojiSpan.TextViewEmojis(context);
+        this.textView = textViewEmojis;
+        textViewEmojis.setLines(1);
         this.textView.setSingleLine(true);
         this.textView.setGravity(3);
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -94,25 +72,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
         this.textView.setTextSize(1, 16.0f);
         addView(this.textView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         this.checkViewLeft = LocaleController.isRTL;
-        if (i > 0) {
-            CheckBox2 checkBox2 = new CheckBox2(context, 26, resourcesProvider);
-            this.checkView = checkBox2;
-            checkBox2.setDrawUnchecked(false);
-            this.checkView.setColor(-1, -1, Theme.key_radioBackgroundChecked);
-            this.checkView.setDrawBackgroundAsArc(-1);
-            if (i == 1) {
-                boolean z3 = LocaleController.isRTL;
-                this.checkViewLeft = !z3;
-                addView(this.checkView, LayoutHelper.createFrame(26, -1, (z3 ? 5 : 3) | 16));
-                textViewEmojis = this.textView;
-                dp = !LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0;
-            } else {
-                addView(this.checkView, LayoutHelper.createFrame(26, -1, (LocaleController.isRTL ? 3 : 5) | 16));
-                textViewEmojis = this.textView;
-                dp = LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0;
-            }
-            textViewEmojis.setPadding(dp, 0, i2, 0);
-        }
+        makeCheckView(i);
     }
 
     public ActionBarMenuSubItem(Context context, boolean z, boolean z2) {
@@ -167,6 +127,50 @@ public class ActionBarMenuSubItem extends FrameLayout {
 
     public AnimatedEmojiSpan.TextViewEmojis getTextView() {
         return this.textView;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x004b, code lost:
+    
+        if (org.telegram.messenger.LocaleController.isRTL == false) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0071, code lost:
+    
+        r2 = org.telegram.messenger.AndroidUtilities.dp(34.0f);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x006f, code lost:
+    
+        r2 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x006d, code lost:
+    
+        if (org.telegram.messenger.LocaleController.isRTL != false) goto L25;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void makeCheckView(int i) {
+        AnimatedEmojiSpan.TextViewEmojis textViewEmojis;
+        int dp;
+        int i2;
+        if (i > 0) {
+            CheckBox2 checkBox2 = new CheckBox2(getContext(), 26, this.resourcesProvider);
+            this.checkView = checkBox2;
+            checkBox2.setDrawUnchecked(false);
+            this.checkView.setColor(-1, -1, Theme.key_radioBackgroundChecked);
+            this.checkView.setDrawBackgroundAsArc(-1);
+            if (i == 1) {
+                boolean z = LocaleController.isRTL;
+                this.checkViewLeft = !z;
+                addView(this.checkView, LayoutHelper.createFrame(26, -1, (z ? 5 : 3) | 16));
+                textViewEmojis = this.textView;
+                dp = !LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0;
+            } else {
+                addView(this.checkView, LayoutHelper.createFrame(26, -1, (LocaleController.isRTL ? 3 : 5) | 16));
+                textViewEmojis = this.textView;
+                dp = LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0;
+            }
+            textViewEmojis.setPadding(dp, 0, i2, 0);
+        }
     }
 
     @Override // android.view.View

@@ -25,7 +25,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CrashlyticsCore {
     private final AnalyticsEventLogger analyticsEventLogger;
     private final FirebaseApp app;

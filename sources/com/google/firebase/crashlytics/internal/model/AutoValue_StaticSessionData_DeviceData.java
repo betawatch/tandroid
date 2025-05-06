@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_StaticSessionData_DeviceData extends StaticSessionData.DeviceData {
     private final int arch;
     private final int availableProcessors;

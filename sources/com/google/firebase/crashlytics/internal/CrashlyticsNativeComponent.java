@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal;
 
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CrashlyticsNativeComponent {
     NativeSessionFileProvider getSessionFileProvider(String str);
 

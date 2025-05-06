@@ -11,16 +11,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
+import android.graphics.SurfaceTexture;
 import android.os.Build;
 import android.util.Property;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -41,9 +44,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.pip.PictureInPictureContentViewProvider;
-import org.telegram.messenger.pip.PipNativeApiController;
 import org.telegram.messenger.pip.PipSource;
+import org.telegram.messenger.pip.source.IPipSourceDelegate;
+import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.ui.Components.PipVideoOverlay;
@@ -53,7 +56,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
 /* loaded from: classes5.dex */
-public class PipVideoOverlay implements PictureInPictureContentViewProvider {
+public class PipVideoOverlay implements IPipSourceDelegate {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter
         public final float get(Object obj) {
@@ -107,11 +110,13 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
     private PipConfig pipConfig;
     private int pipHeight;
     private PipSource pipSource;
+    public TextureView pipTextureView;
     private int pipWidth;
     private float pipX;
     private SpringAnimation pipXSpring;
     private float pipY;
     private SpringAnimation pipYSpring;
+    private View placeholderView;
     private ImageView playPauseButton;
     private boolean postedDismissControls;
     private ScaleGestureDetector scaleGestureDetector;
@@ -120,6 +125,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
     private VideoProgressView videoProgressView;
     private WindowManager.LayoutParams windowLayoutParams;
     private WindowManager windowManager;
+    private boolean windowViewSkipRender;
     private float minScaleFactor = 0.75f;
     private float maxScaleFactor = 1.4f;
     private float scaleFactor = 1.0f;
@@ -167,7 +173,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
             layoutParams2.height = suggestedHeight;
             pipVideoOverlay2.pipHeight = suggestedHeight;
             try {
-                PipVideoOverlay.this.windowManager.updateViewLayout(PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
+                AndroidUtilities.updateViewLayout(PipVideoOverlay.this.windowManager, PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
             } catch (IllegalArgumentException unused) {
             }
         }
@@ -202,7 +208,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
             PipVideoOverlay.this.isScrollDisallowed = true;
             PipVideoOverlay.this.windowLayoutParams.width = (int) (PipVideoOverlay.this.getSuggestedWidth() * PipVideoOverlay.this.maxScaleFactor);
             PipVideoOverlay.this.windowLayoutParams.height = (int) (PipVideoOverlay.this.getSuggestedHeight() * PipVideoOverlay.this.maxScaleFactor);
-            PipVideoOverlay.this.windowManager.updateViewLayout(PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
+            AndroidUtilities.updateViewLayout(PipVideoOverlay.this.windowManager, PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
             return true;
         }
 
@@ -390,7 +396,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
                     }
                     PipVideoOverlay.this.windowLayoutParams.y = (int) PipVideoOverlay.this.pipY;
                     PipVideoOverlay.this.getPipConfig().setPipY(PipVideoOverlay.this.pipY);
-                    PipVideoOverlay.this.windowManager.updateViewLayout(PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
+                    AndroidUtilities.updateViewLayout(PipVideoOverlay.this.windowManager, PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
                 }
             }
             return true;
@@ -648,6 +654,22 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         return rect;
     }
 
+    public static PipSource getPipSource() {
+        PipVideoOverlay pipVideoOverlay = instance;
+        if (pipVideoOverlay != null) {
+            return pipVideoOverlay.pipSource;
+        }
+        return null;
+    }
+
+    public static TextureView getPipTextureView() {
+        PipVideoOverlay pipVideoOverlay = instance;
+        if (pipVideoOverlay != null) {
+            return pipVideoOverlay.pipTextureView;
+        }
+        return null;
+    }
+
     private float getRatio() {
         if (this.aspectRatio == null) {
             this.aspectRatio = Float.valueOf(this.mVideoHeight / this.mVideoWidth);
@@ -794,7 +816,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         pipVideoOverlay.pipX = f;
         layoutParams.x = (int) f;
         try {
-            pipVideoOverlay.windowManager.updateViewLayout(pipVideoOverlay.contentView, layoutParams);
+            AndroidUtilities.updateViewLayout(pipVideoOverlay.windowManager, pipVideoOverlay.contentView, layoutParams);
         } catch (IllegalArgumentException unused) {
             pipVideoOverlay.pipXSpring.cancel();
         }
@@ -806,7 +828,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         pipVideoOverlay.pipY = f;
         layoutParams.y = (int) f;
         try {
-            pipVideoOverlay.windowManager.updateViewLayout(pipVideoOverlay.contentView, layoutParams);
+            AndroidUtilities.updateViewLayout(pipVideoOverlay.windowManager, pipVideoOverlay.contentView, layoutParams);
         } catch (IllegalArgumentException unused) {
             pipVideoOverlay.pipYSpring.cancel();
         }
@@ -952,11 +974,11 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
             pipSource.destroy();
             instance.pipSource = null;
         }
-        if (videoPlayer != null && PipNativeApiController.checkPermissions(photoViewer.getParentActivity()) == 1) {
+        if (videoPlayer != null && PipUtils.checkPermissions(photoViewer.getParentActivity()) == 1) {
             PipVideoOverlay pipVideoOverlay = instance;
-            PipSource.Builder contentView = new PipSource.Builder(photoViewer.getParentActivity(), instance).setTagPrefix("photo-viewer-pip-" + videoPlayer.playerId).setPriority(1).setContentView(instance.contentView);
+            PipSource.Builder placeholderView = new PipSource.Builder(photoViewer.getParentActivity(), instance).setTagPrefix("photo-viewer-pip-" + videoPlayer.playerId).setPriority(1).setCornerRadius(AndroidUtilities.dp(10.0f)).setContentView(instance.contentView).setPlaceholderView(instance.placeholderView);
             PipVideoOverlay pipVideoOverlay2 = instance;
-            pipVideoOverlay.pipSource = contentView.setContentRatio(pipVideoOverlay2.mVideoWidth, pipVideoOverlay2.mVideoHeight).setPlayer(videoPlayer.player).setNeedMediaSession(true).build();
+            pipVideoOverlay.pipSource = placeholderView.setContentRatio(pipVideoOverlay2.mVideoWidth, pipVideoOverlay2.mVideoHeight).setPlayer(videoPlayer.player).setNeedMediaSession(true).build();
         }
         instance.updatePlayButtonInternal();
     }
@@ -973,10 +995,10 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         return instance.showInternal(z, activity, view, photoViewerWebView, i, i2, z2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x02d1  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0314  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x02ef  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x02e6  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x031e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0329  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0304  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -986,7 +1008,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         WindowManager.LayoutParams layoutParams;
         float dp2;
         PhotoViewerWebView photoViewerWebView2;
-        final boolean z3 = z || PipNativeApiController.checkPermissions(ApplicationLoader.applicationContext) == 1;
+        final boolean z3 = z || PipUtils.checkPermissions(ApplicationLoader.applicationContext) == 1;
         if (this.isVisible) {
             return false;
         }
@@ -1018,7 +1040,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
                 PipVideoOverlay.this.lambda$showInternal$8(dynamicAnimation, z4, f2, f3);
             }
         });
-        Context context = ApplicationLoader.applicationContext;
+        Context context = z3 ? activity : ApplicationLoader.applicationContext;
         int scaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(context, new 3());
         this.scaleGestureDetector = scaleGestureDetector;
@@ -1111,7 +1133,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
                 }
                 PipVideoOverlay.this.windowLayoutParams.width = PipVideoOverlay.this.pipWidth = (int) (r0.getSuggestedWidth() * PipVideoOverlay.this.scaleFactor);
                 PipVideoOverlay.this.windowLayoutParams.height = PipVideoOverlay.this.pipHeight = (int) (r0.getSuggestedHeight() * PipVideoOverlay.this.scaleFactor);
-                PipVideoOverlay.this.windowManager.updateViewLayout(PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
+                AndroidUtilities.updateViewLayout(PipVideoOverlay.this.windowManager, PipVideoOverlay.this.contentView, PipVideoOverlay.this.windowLayoutParams);
                 SpringForce spring = ((SpringAnimation) PipVideoOverlay.this.pipXSpring.setStartValue(PipVideoOverlay.this.pipX)).getSpring();
                 float suggestedWidth = PipVideoOverlay.this.pipX + ((PipVideoOverlay.this.getSuggestedWidth() * PipVideoOverlay.this.scaleFactor) / 2.0f);
                 float f2 = AndroidUtilities.displaySize.x;
@@ -1133,6 +1155,9 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         PipVideoViewGroup pipVideoViewGroup = new PipVideoViewGroup(context) { // from class: org.telegram.ui.Components.PipVideoOverlay.6
             @Override // android.view.View
             public void draw(Canvas canvas) {
+                if (PipVideoOverlay.this.windowViewSkipRender) {
+                    return;
+                }
                 canvas.save();
                 canvas.scale(PipVideoOverlay.this.pipWidth / PipVideoOverlay.this.contentFrameLayout.getWidth(), PipVideoOverlay.this.pipHeight / PipVideoOverlay.this.contentFrameLayout.getHeight());
                 super.draw(canvas);
@@ -1167,6 +1192,9 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
             ((ViewGroup) this.innerView.getParent()).removeView(this.innerView);
         }
         this.contentFrameLayout.addView(this.innerView, LayoutHelper.createFrame(-1, -1.0f));
+        View view2 = new View(context);
+        this.placeholderView = view2;
+        this.contentFrameLayout.addView(view2, LayoutHelper.createFrame(-1, -1.0f));
         this.videoForwardDrawable.setDelegate(new VideoForwardDrawable.VideoForwardDrawableDelegate() { // from class: org.telegram.ui.Components.PipVideoOverlay.8
             @Override // org.telegram.ui.Components.VideoForwardDrawable.VideoForwardDrawableDelegate
             public void invalidate() {
@@ -1213,9 +1241,9 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         }, true, false);
         this.controlsView.setWillNotDraw(false);
         this.controlsView.setAlpha(0.0f);
-        View view2 = new View(context);
-        view2.setBackgroundColor(1275068416);
-        this.controlsView.addView(view2, LayoutHelper.createFrame(-1, -1.0f));
+        View view3 = new View(context);
+        view3.setBackgroundColor(1275068416);
+        this.controlsView.addView(view3, LayoutHelper.createFrame(-1, -1.0f));
         int dp3 = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.pip_video_close);
@@ -1228,7 +1256,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         imageView.setPadding(dp3, dp3, dp3, dp3);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
+            public final void onClick(View view4) {
                 PipVideoOverlay.dismissAndDestroy();
             }
         });
@@ -1242,8 +1270,8 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         imageView2.setPadding(dp3, dp3, dp3, dp3);
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                PipVideoOverlay.this.lambda$showInternal$10(z3, view3);
+            public final void onClick(View view4) {
+                PipVideoOverlay.this.lambda$showInternal$10(z3, view4);
             }
         });
         this.controlsView.addView(imageView2, LayoutHelper.createFrame(38, f2, 5, 0.0f, f3, 48, 0.0f));
@@ -1253,12 +1281,12 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         this.playPauseButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(i5)));
         this.playPauseButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                PipVideoOverlay.this.lambda$showInternal$11(view3);
+            public final void onClick(View view4) {
+                PipVideoOverlay.this.lambda$showInternal$11(view4);
             }
         });
-        View view3 = this.innerView;
-        boolean z4 = (view3 instanceof WebView) || (view3 instanceof PhotoViewerWebView);
+        View view4 = this.innerView;
+        boolean z4 = (view4 instanceof WebView) || (view4 instanceof PhotoViewerWebView);
         this.isWebView = z4;
         this.playPauseButton.setVisibility((!z4 || ((photoViewerWebView2 = this.photoViewerWebView) != null && photoViewerWebView2.isControllable())) ? 0 : 8);
         this.controlsView.addView(this.playPauseButton, LayoutHelper.createFrame(38, 38, 17));
@@ -1267,7 +1295,7 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         this.controlsView.addView(videoProgressView, LayoutHelper.createFrame(-1, -1.0f));
         this.contentFrameLayout.addView(this.controlsView, LayoutHelper.createFrame(-1, -1.0f));
         this.windowManager = (WindowManager) (z3 ? activity : ApplicationLoader.applicationContext).getSystemService("window");
-        WindowManager.LayoutParams createWindowLayoutParams = PipNativeApiController.createWindowLayoutParams(context, z3);
+        WindowManager.LayoutParams createWindowLayoutParams = PipUtils.createWindowLayoutParams(context, z3);
         this.windowLayoutParams = createWindowLayoutParams;
         int i6 = this.pipWidth;
         createWindowLayoutParams.width = i6;
@@ -1385,45 +1413,6 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         imageView.setImageResource(i);
     }
 
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void attachContentToWindow() {
-        this.contentFrameLayout.addView(this.innerView, 0, LayoutHelper.createFrame(-1, -1.0f));
-        this.contentView.setVisibility(0);
-        PhotoViewer photoViewer = this.photoViewer;
-        if (photoViewer == null || photoViewer.getVideoPlayer() == null) {
-            return;
-        }
-        VideoPlayer videoPlayer = this.photoViewer.getVideoPlayer();
-        videoPlayer.setSurfaceView(null);
-        videoPlayer.setTextureView(null);
-        videoPlayer.setTextureView(this.photoViewer.changedTextureView);
-    }
-
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public View detachContentFromWindow() {
-        PhotoViewer photoViewer = this.photoViewer;
-        if (photoViewer != null && photoViewer.getVideoPlayer() != null) {
-            VideoPlayer videoPlayer = this.photoViewer.getVideoPlayer();
-            videoPlayer.setSurfaceView(null);
-            videoPlayer.setTextureView(null);
-        }
-        this.contentView.setVisibility(8);
-        this.contentFrameLayout.removeView(this.innerView);
-        return this.innerView;
-    }
-
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void onAttachContentToPip() {
-        PhotoViewer photoViewer = this.photoViewer;
-        if (photoViewer == null || photoViewer.getVideoPlayer() == null) {
-            return;
-        }
-        VideoPlayer videoPlayer = this.photoViewer.getVideoPlayer();
-        videoPlayer.setSurfaceView(null);
-        videoPlayer.setTextureView(null);
-        videoPlayer.setTextureView(this.photoViewer.changedTextureView);
-    }
-
     protected void onLongClick() {
         PhotoViewer photoViewer = this.photoViewer;
         if (photoViewer != null) {
@@ -1455,14 +1444,100 @@ public class PipVideoOverlay implements PictureInPictureContentViewProvider {
         }
     }
 
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void prepareDetachContentFromPip() {
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public View pipCreatePictureInPictureView() {
+        TextureView textureView = new TextureView(this.contentView.getContext());
+        this.pipTextureView = textureView;
+        textureView.setVisibility(4);
+        this.pipTextureView.setOpaque(false);
+        this.pipTextureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: org.telegram.ui.Components.PipVideoOverlay.10
+            @Override // android.view.TextureView.SurfaceTextureListener
+            public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+            }
+
+            @Override // android.view.TextureView.SurfaceTextureListener
+            public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+                PipVideoOverlay.this.photoViewer.changedTextureView.setSurfaceTexture(surfaceTexture);
+                return false;
+            }
+
+            @Override // android.view.TextureView.SurfaceTextureListener
+            public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+            }
+
+            @Override // android.view.TextureView.SurfaceTextureListener
+            public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+            }
+        });
+        return this.pipTextureView;
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public Bitmap pipCreatePictureInPictureViewBitmap() {
+        TextureView textureView = this.pipTextureView;
+        if (textureView == null || !textureView.isAvailable()) {
+            return null;
+        }
+        return this.pipTextureView.getBitmap();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public Bitmap pipCreatePrimaryWindowViewBitmap() {
+        TextureView textureView;
         PhotoViewer photoViewer = this.photoViewer;
-        if (photoViewer == null || photoViewer.getVideoPlayer() == null) {
+        if (photoViewer == null || (textureView = photoViewer.changedTextureView) == null || !textureView.isAvailable()) {
+            return null;
+        }
+        return this.photoViewer.changedTextureView.getBitmap();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public void pipHidePrimaryWindowView(Runnable runnable) {
+        PhotoViewer photoViewer = this.photoViewer;
+        if (photoViewer != null && photoViewer.getVideoPlayer() != null) {
+            this.photoViewer.pipFirstFrameCallback = runnable;
+        }
+        this.windowManager.removeView(this.contentView);
+        this.windowViewSkipRender = true;
+        this.contentView.invalidate();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public boolean pipIsAvailable() {
+        PhotoViewer photoViewer = this.photoViewer;
+        return photoViewer != null && photoViewer.pipIsAvailable();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public /* synthetic */ void pipRenderBackground(Canvas canvas) {
+        IPipSourceDelegate.-CC.$default$pipRenderBackground(this, canvas);
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public /* synthetic */ void pipRenderForeground(Canvas canvas) {
+        IPipSourceDelegate.-CC.$default$pipRenderForeground(this, canvas);
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public void pipShowPrimaryWindowView(Runnable runnable) {
+        PipSource pipSource = this.pipSource;
+        if (pipSource != null && pipSource.params.isValid()) {
+            WindowManager.LayoutParams layoutParams = this.windowLayoutParams;
+            int width = this.pipSource.params.getWidth();
+            this.pipWidth = width;
+            layoutParams.width = width;
+            WindowManager.LayoutParams layoutParams2 = this.windowLayoutParams;
+            int height = this.pipSource.params.getHeight();
+            this.pipHeight = height;
+            layoutParams2.height = height;
+        }
+        this.windowManager.addView(this.contentView, this.windowLayoutParams);
+        this.windowViewSkipRender = false;
+        this.contentView.invalidate();
+        PhotoViewer photoViewer = this.photoViewer;
+        if ((photoViewer != null ? photoViewer.getVideoPlayer() : null) == null) {
             return;
         }
-        VideoPlayer videoPlayer = this.photoViewer.getVideoPlayer();
-        videoPlayer.setSurfaceView(null);
-        videoPlayer.setTextureView(null);
+        this.photoViewer.pipFirstFrameCallback = runnable;
     }
 }

@@ -839,7 +839,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
 
         private void scrapOrRecycleView(Recycler recycler, int i, View view) {
             ViewHolder childViewHolderInt = RecyclerView.getChildViewHolderInt(view);
-            if (childViewHolderInt.shouldIgnore()) {
+            if (childViewHolderInt == null || childViewHolderInt.shouldIgnore()) {
                 return;
             }
             if (childViewHolderInt.isInvalid() && !childViewHolderInt.isRemoved() && !this.mRecyclerView.mAdapter.hasStableIds()) {

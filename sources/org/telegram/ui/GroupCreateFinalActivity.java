@@ -619,7 +619,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupCreateFinalActivity.this.lambda$onBackPressed$336();
+                    GroupCreateFinalActivity.this.lambda$onBackPressed$338();
                 }
             }
         });

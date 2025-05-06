@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StaticSessionData {
 
     public static abstract class AppData {

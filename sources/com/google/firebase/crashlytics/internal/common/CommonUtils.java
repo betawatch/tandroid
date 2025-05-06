@@ -27,7 +27,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CommonUtils {
     private static final char[] HEX_VALUES = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class BytesBackedNativeSessionFile implements NativeSessionFile {
     private final byte[] bytes;
     private final String dataTransportFilename;

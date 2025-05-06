@@ -2235,8 +2235,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.currentSheetAnimationType = 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0151  */
     @Override // android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2262,6 +2262,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     }
                 });
             } else if (!this.allowCustomAnimation || !onCustomCloseAnimation()) {
+                AndroidUtilities.hideKeyboard(this.container);
                 this.currentSheetAnimationType = 2;
                 ValueAnimator valueAnimator = this.navigationBarAnimation;
                 if (valueAnimator != null) {

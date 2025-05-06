@@ -1,7 +1,6 @@
 package com.google.android.exoplayer2;
 
 import com.google.android.exoplayer2.Timeline;
-import com.google.android.exoplayer2.video.VideoListener;
 import com.google.common.collect.ImmutableList;
 import org.telegram.tgnet.ConnectionsManager;
 
@@ -68,11 +67,6 @@ public abstract class BasePlayer implements Player {
     @Override // com.google.android.exoplayer2.Player
     public final void addMediaItem(int i, MediaItem mediaItem) {
         addMediaItems(i, ImmutableList.of((Object) mediaItem));
-    }
-
-    @Override // com.google.android.exoplayer2.Player
-    public /* synthetic */ void addVideoListener(VideoListener videoListener) {
-        Player.videoListeners.add(videoListener);
     }
 
     @Override // com.google.android.exoplayer2.Player

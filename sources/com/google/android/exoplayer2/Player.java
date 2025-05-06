@@ -13,7 +13,6 @@ import com.google.android.exoplayer2.text.CueGroup;
 import com.google.android.exoplayer2.trackselection.TrackSelectionParameters;
 import com.google.android.exoplayer2.util.FlagSet;
 import com.google.android.exoplayer2.util.Util;
-import com.google.android.exoplayer2.video.VideoListener;
 import com.google.android.exoplayer2.video.VideoSize;
 import com.google.common.base.Objects;
 import java.util.ArrayList;
@@ -21,10 +20,6 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public interface Player {
-    public static final ArrayList videoListeners = new ArrayList();
-
-    public abstract /* synthetic */ class -CC {
-    }
 
     public static final class Commands implements Bundleable {
         private final FlagSet flags;
@@ -416,8 +411,6 @@ public interface Player {
     void addMediaItem(int i, MediaItem mediaItem);
 
     void addMediaItems(int i, List list);
-
-    void addVideoListener(VideoListener videoListener);
 
     void clearMediaItems();
 

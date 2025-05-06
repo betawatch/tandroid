@@ -3165,7 +3165,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case 202:
+            case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 202 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 4;

@@ -7,7 +7,7 @@ import com.google.firebase.inject.Provider;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CrashlyticsNativeComponentDeferredProxy implements CrashlyticsNativeComponent {
     private static final NativeSessionFileProvider MISSING_NATIVE_SESSION_FILE_PROVIDER = new MissingNativeSessionFileProvider();
     private final AtomicReference availableNativeComponent = new AtomicReference(null);

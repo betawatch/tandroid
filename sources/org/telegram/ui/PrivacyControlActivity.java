@@ -2166,7 +2166,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 }
             }
         }
-        lambda$onBackPressed$336();
+        lambda$onBackPressed$338();
     }
 
     private boolean hasChanges() {
@@ -2402,7 +2402,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$28(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$336();
+        lambda$onBackPressed$338();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2831,7 +2831,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$finished$12(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$336();
+        lambda$onBackPressed$338();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3254,7 +3254,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                     public void onItemClick(int i3) {
                         if (i3 == -1) {
                             if (PrivacyControlActivity.this.checkDiscard()) {
-                                PrivacyControlActivity.this.lambda$onBackPressed$336();
+                                PrivacyControlActivity.this.lambda$onBackPressed$338();
                             }
                         } else if (i3 == 1) {
                             PrivacyControlActivity.this.processDone();
@@ -3319,7 +3319,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             public void onItemClick(int i32) {
                 if (i32 == -1) {
                     if (PrivacyControlActivity.this.checkDiscard()) {
-                        PrivacyControlActivity.this.lambda$onBackPressed$336();
+                        PrivacyControlActivity.this.lambda$onBackPressed$338();
                     }
                 } else if (i32 == 1) {
                     PrivacyControlActivity.this.processDone();

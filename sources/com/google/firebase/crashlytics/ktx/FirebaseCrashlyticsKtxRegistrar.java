@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseCrashlyticsKtxRegistrar implements ComponentRegistrar {
     public static final Companion Companion = new Companion(null);
 

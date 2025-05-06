@@ -11,6 +11,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SurfaceTexture;
@@ -72,7 +73,9 @@ public abstract class PreviewView extends FrameLayout {
     private float angle;
     private VideoPlayer audioPlayer;
     private Bitmap bitmap;
+    private final Rect bitmapDst;
     private final Paint bitmapPaint;
+    private final Rect bitmapSrc;
     private final BlurringShader.BlurManager blurManager;
     private CollageLayoutView2 collage;
     private CropEditor cropEditorDrawing;
@@ -316,30 +319,32 @@ public abstract class PreviewView extends FrameLayout {
 
     public PreviewView(Context context, BlurringShader.BlurManager blurManager, TextureViewHolder textureViewHolder) {
         super(context);
+        this.bitmapSrc = new Rect();
+        this.bitmapDst = new Rect();
         Paint paint = new Paint(1);
         this.snapPaint = paint;
-        this.slowerSeek = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda3
+        this.slowerSeek = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 PreviewView.this.lambda$new$0();
             }
         };
-        this.updateProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                PreviewView.this.lambda$new$8();
-            }
-        };
-        this.updateAudioProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                PreviewView.this.lambda$new$9();
-            }
-        };
-        this.updateRoundProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda6
+        this.updateProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 PreviewView.this.lambda$new$10();
+            }
+        };
+        this.updateAudioProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                PreviewView.this.lambda$new$11();
+            }
+        };
+        this.updateRoundProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                PreviewView.this.lambda$new$12();
             }
         };
         this.wallpaperDrawableCrossfade = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -533,10 +538,10 @@ public abstract class PreviewView extends FrameLayout {
         motionBackgroundDrawable.setColors(i4, i6, i8, i10, 0, true);
         motionBackgroundDrawable.setPhase(i2);
         final int patternColor = motionBackgroundDrawable.getPatternColor();
-        emojiThemes.loadWallpaper(z ? 1 : 0, new ResultCallback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda1
+        emojiThemes.loadWallpaper(z ? 1 : 0, new ResultCallback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.ResultCallback
             public final void onComplete(Object obj) {
-                PreviewView.lambda$getBackgroundDrawableFromTheme$11(EmojiThemes.this, z, z, motionBackgroundDrawable, patternColor, (Pair) obj);
+                PreviewView.lambda$getBackgroundDrawableFromTheme$13(EmojiThemes.this, z, z, motionBackgroundDrawable, patternColor, (Pair) obj);
             }
 
             @Override // org.telegram.tgnet.ResultCallback
@@ -553,7 +558,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBackgroundDrawableFromTheme$11(EmojiThemes emojiThemes, boolean z, boolean z2, MotionBackgroundDrawable motionBackgroundDrawable, int i, Pair pair) {
+    public static /* synthetic */ void lambda$getBackgroundDrawableFromTheme$13(EmojiThemes emojiThemes, boolean z, boolean z2, MotionBackgroundDrawable motionBackgroundDrawable, int i, Pair pair) {
         if (pair == null) {
             return;
         }
@@ -590,7 +595,7 @@ public abstract class PreviewView extends FrameLayout {
             }
         }
         Utilities.stackBlurBitmap(createBitmap, 1);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda13
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 Utilities.Callback.this.run(createBitmap);
@@ -606,33 +611,6 @@ public abstract class PreviewView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$10() {
-        if (this.roundPlayer == null || this.videoPlayer != null || isCollage() || this.timelineView == null) {
-            return;
-        }
-        long currentPosition = this.roundPlayer.getCurrentPosition();
-        StoryEntry storyEntry = this.entry;
-        if (storyEntry != null) {
-            float f = currentPosition;
-            float f2 = storyEntry.roundLeft;
-            float f3 = storyEntry.roundDuration;
-            if ((f < f2 * f3 || f > storyEntry.roundRight * f3) && System.currentTimeMillis() - this.seekedLastTime > 500) {
-                this.seekedLastTime = System.currentTimeMillis();
-                VideoPlayer videoPlayer = this.roundPlayer;
-                long j = (long) (this.entry.roundLeft * r1.roundDuration);
-                videoPlayer.seekTo(j);
-                updateAudioPlayer(true);
-                currentPosition = j;
-            }
-        }
-        this.timelineView.setProgress(currentPosition);
-        if (this.roundPlayer.isPlaying()) {
-            AndroidUtilities.cancelRunOnUIThread(this.updateRoundProgressRunnable);
-            AndroidUtilities.runOnUIThread(this.updateRoundProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8() {
         VideoPlayer videoPlayer = this.videoPlayer;
         if (videoPlayer == null || this.timelineView == null) {
             return;
@@ -664,7 +642,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9() {
+    public /* synthetic */ void lambda$new$11() {
         if (this.audioPlayer == null || this.videoPlayer != null || this.roundPlayer != null || this.timelineView == null || isCollage()) {
             return;
         }
@@ -690,7 +668,34 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$4(int i, int[] iArr) {
+    public /* synthetic */ void lambda$new$12() {
+        if (this.roundPlayer == null || this.videoPlayer != null || isCollage() || this.timelineView == null) {
+            return;
+        }
+        long currentPosition = this.roundPlayer.getCurrentPosition();
+        StoryEntry storyEntry = this.entry;
+        if (storyEntry != null) {
+            float f = currentPosition;
+            float f2 = storyEntry.roundLeft;
+            float f3 = storyEntry.roundDuration;
+            if ((f < f2 * f3 || f > storyEntry.roundRight * f3) && System.currentTimeMillis() - this.seekedLastTime > 500) {
+                this.seekedLastTime = System.currentTimeMillis();
+                VideoPlayer videoPlayer = this.roundPlayer;
+                long j = (long) (this.entry.roundLeft * r1.roundDuration);
+                videoPlayer.seekTo(j);
+                updateAudioPlayer(true);
+                currentPosition = j;
+            }
+        }
+        this.timelineView.setProgress(currentPosition);
+        if (this.roundPlayer.isPlaying()) {
+            AndroidUtilities.cancelRunOnUIThread(this.updateRoundProgressRunnable);
+            AndroidUtilities.runOnUIThread(this.updateRoundProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setupGradient$6(int i, int[] iArr) {
         StoryEntry storyEntry = this.entry;
         int i2 = iArr[0];
         this.gradientTop = i2;
@@ -711,7 +716,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$5(int i, int[] iArr) {
+    public /* synthetic */ void lambda$setupGradient$7(int i, int[] iArr) {
         StoryEntry storyEntry = this.entry;
         int i2 = iArr[0];
         this.gradientTop = i2;
@@ -749,7 +754,99 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupVideoPlayer$6() {
+    public /* synthetic */ void lambda$setupImage$4(Bitmap[] bitmapArr, StoryEntry storyEntry, boolean[] zArr) {
+        BlurringShader.BlurManager blurManager;
+        Bitmap bitmap = this.bitmap;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            this.bitmap.recycle();
+        }
+        Bitmap bitmap2 = bitmapArr[0];
+        this.bitmap = bitmap2;
+        if (storyEntry != null && !storyEntry.isDraft && storyEntry.isVideo && bitmap2 != null) {
+            storyEntry.width = bitmap2.getWidth();
+            storyEntry.height = this.bitmap.getHeight();
+            storyEntry.setupMatrix();
+        }
+        if (zArr[0] && storyEntry != null && (blurManager = this.blurManager) != null && this.bitmap != null) {
+            blurManager.resetBitmap();
+            this.blurManager.setFallbackBlur(storyEntry.buildBitmap(0.2f, this.bitmap), 0);
+            Runnable runnable = this.invalidateBlur;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+        setupGradient();
+        invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x008e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ void lambda$setupImage$5(final StoryEntry storyEntry) {
+        long j;
+        final long j2;
+        String str;
+        Bitmap loadThumbnail;
+        final Bitmap[] bitmapArr = new Bitmap[1];
+        final boolean[] zArr = {true};
+        if (storyEntry != null) {
+            int measuredWidth = getMeasuredWidth() <= 0 ? AndroidUtilities.displaySize.x : getMeasuredWidth();
+            int i = (int) ((measuredWidth * 16) / 9.0f);
+            if (storyEntry.isVideo) {
+                Bitmap bitmap = storyEntry.blurredVideoThumb;
+                if (bitmap != null) {
+                    bitmapArr[0] = bitmap;
+                }
+                if (bitmapArr[0] == null && (str = storyEntry.thumbPath) != null && str.startsWith("vthumb://")) {
+                    j = Long.parseLong(storyEntry.thumbPath.substring(9));
+                    if (bitmapArr[0] == null && Build.VERSION.SDK_INT >= 29) {
+                        try {
+                            loadThumbnail = getContext().getContentResolver().loadThumbnail(ContentUris.withAppendedId(storyEntry.isVideo ? MediaStore.Video.Media.EXTERNAL_CONTENT_URI : MediaStore.Images.Media.EXTERNAL_CONTENT_URI, j), new Size(measuredWidth, i), null);
+                            bitmapArr[0] = loadThumbnail;
+                        } catch (Exception unused) {
+                        }
+                    }
+                    j2 = j;
+                    if (j2 >= 0 && storyEntry.isVideo && storyEntry.thumbPath == null) {
+                        invalidate();
+                        return;
+                    } else if (bitmapArr[0] == null) {
+                        File originalFile = storyEntry.getOriginalFile();
+                        if (originalFile == null) {
+                            return;
+                        }
+                        final String path = originalFile.getPath();
+                        bitmapArr[0] = StoryEntry.getScaledBitmap(new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda12
+                            @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
+                            public final Bitmap decode(BitmapFactory.Options options) {
+                                Bitmap lambda$setupImage$3;
+                                lambda$setupImage$3 = PreviewView.this.lambda$setupImage$3(storyEntry, j2, path, options);
+                                return lambda$setupImage$3;
+                            }
+                        }, measuredWidth, i, false, false);
+                        zArr[0] = false;
+                    }
+                }
+            }
+            j = -1;
+            j2 = j;
+            if (j2 >= 0) {
+            }
+            if (bitmapArr[0] == null) {
+            }
+        }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda13
+            @Override // java.lang.Runnable
+            public final void run() {
+                PreviewView.this.lambda$setupImage$4(bitmapArr, storyEntry, zArr);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setupVideoPlayer$8() {
         VideoEditTextureView videoEditTextureView = this.textureView;
         if (videoEditTextureView != null) {
             videoEditTextureView.release();
@@ -759,7 +856,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupVideoPlayer$7(StoryEntry.HDRInfo hDRInfo) {
+    public /* synthetic */ void lambda$setupVideoPlayer$9(StoryEntry.HDRInfo hDRInfo) {
         VideoEditTextureView videoEditTextureView = this.textureView;
         if (videoEditTextureView != null) {
             videoEditTextureView.setHDRInfo(hDRInfo);
@@ -781,24 +878,27 @@ public abstract class PreviewView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void setupGradient() {
         Utilities.Callback callback;
+        if (this.entry == null) {
+            return;
+        }
         final int measuredHeight = getMeasuredHeight() > 0 ? getMeasuredHeight() : AndroidUtilities.displaySize.y;
         StoryEntry storyEntry = this.entry;
         if (storyEntry.gradientTopColor == 0 || storyEntry.gradientBottomColor == 0) {
             Bitmap bitmap = this.bitmap;
             if (bitmap != null) {
-                callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda10
+                callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        PreviewView.this.lambda$setupGradient$4(measuredHeight, (int[]) obj);
+                        PreviewView.this.lambda$setupGradient$6(measuredHeight, (int[]) obj);
                     }
                 };
             } else {
                 bitmap = this.thumbBitmap;
                 if (bitmap != null) {
-                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda11
+                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda10
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            PreviewView.this.lambda$setupGradient$5(measuredHeight, (int[]) obj);
+                            PreviewView.this.lambda$setupGradient$7(measuredHeight, (int[]) obj);
                         }
                     };
                 } else {
@@ -827,103 +927,13 @@ public abstract class PreviewView extends FrameLayout {
         invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00e2  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private void setupImage(final StoryEntry storyEntry) {
-        BlurringShader.BlurManager blurManager;
-        long j;
-        final long j2;
-        Bitmap bitmap;
-        String str;
-        Bitmap loadThumbnail;
-        Bitmap bitmap2 = this.bitmap;
-        if (bitmap2 != null && !bitmap2.isRecycled()) {
-            this.bitmap.recycle();
-        }
-        this.bitmap = null;
-        Bitmap bitmap3 = this.thumbBitmap;
-        if (bitmap3 != null && !bitmap3.isRecycled()) {
-            this.thumbBitmap.recycle();
-        }
-        this.thumbBitmap = null;
-        if (storyEntry != null) {
-            int measuredWidth = getMeasuredWidth() <= 0 ? AndroidUtilities.displaySize.x : getMeasuredWidth();
-            int i = (int) ((measuredWidth * 16) / 9.0f);
-            if (storyEntry.isVideo) {
-                Bitmap bitmap4 = storyEntry.blurredVideoThumb;
-                if (bitmap4 != null) {
-                    this.bitmap = bitmap4;
-                }
-                if (this.bitmap == null && (str = storyEntry.thumbPath) != null && str.startsWith("vthumb://")) {
-                    j = Long.parseLong(storyEntry.thumbPath.substring(9));
-                    if (this.bitmap == null && Build.VERSION.SDK_INT >= 29) {
-                        try {
-                            loadThumbnail = getContext().getContentResolver().loadThumbnail(ContentUris.withAppendedId(storyEntry.isVideo ? MediaStore.Video.Media.EXTERNAL_CONTENT_URI : MediaStore.Images.Media.EXTERNAL_CONTENT_URI, j), new Size(measuredWidth, i), null);
-                            this.bitmap = loadThumbnail;
-                        } catch (Exception unused) {
-                        }
-                    }
-                    j2 = j;
-                    if (j2 >= 0 && storyEntry.isVideo && storyEntry.thumbPath == null) {
-                        invalidate();
-                        return;
-                    }
-                    bitmap = this.bitmap;
-                    if (bitmap != null) {
-                        File originalFile = storyEntry.getOriginalFile();
-                        if (originalFile == null) {
-                            return;
-                        }
-                        final String path = originalFile.getPath();
-                        Bitmap scaledBitmap = StoryEntry.getScaledBitmap(new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda7
-                            @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
-                            public final Bitmap decode(BitmapFactory.Options options) {
-                                Bitmap lambda$setupImage$3;
-                                lambda$setupImage$3 = PreviewView.this.lambda$setupImage$3(storyEntry, j2, path, options);
-                                return lambda$setupImage$3;
-                            }
-                        }, measuredWidth, i, false, true);
-                        this.bitmap = scaledBitmap;
-                        BlurringShader.BlurManager blurManager2 = this.blurManager;
-                        if (blurManager2 == null || scaledBitmap == null) {
-                            return;
-                        }
-                        blurManager2.resetBitmap();
-                        this.blurManager.setFallbackBlur(storyEntry.buildBitmap(0.2f, this.bitmap), 0);
-                        Runnable runnable = this.invalidateBlur;
-                        if (runnable != null) {
-                            runnable.run();
-                            return;
-                        }
-                        return;
-                    }
-                    if (!storyEntry.isDraft && storyEntry.isVideo) {
-                        storyEntry.width = bitmap.getWidth();
-                        storyEntry.height = this.bitmap.getHeight();
-                        storyEntry.setupMatrix();
-                    }
-                }
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda6
+            @Override // java.lang.Runnable
+            public final void run() {
+                PreviewView.this.lambda$setupImage$5(storyEntry);
             }
-            j = -1;
-            j2 = j;
-            if (j2 >= 0) {
-            }
-            bitmap = this.bitmap;
-            if (bitmap != null) {
-            }
-        }
-        if (storyEntry != null && (blurManager = this.blurManager) != null && this.bitmap != null) {
-            blurManager.resetBitmap();
-            this.blurManager.setFallbackBlur(storyEntry.buildBitmap(0.2f, this.bitmap), 0);
-            Runnable runnable2 = this.invalidateBlur;
-            if (runnable2 != null) {
-                runnable2.run();
-            }
-        }
-        invalidate();
+        });
     }
 
     private boolean tapTouchEvent(MotionEvent motionEvent) {
@@ -1151,7 +1161,7 @@ public abstract class PreviewView extends FrameLayout {
                 canvas.scale(getWidth() / this.entry.resultWidth, getHeight() / this.entry.resultHeight);
                 canvas.concat(this.entry.matrix);
                 if (this.entry.crop != null) {
-                    canvas.translate(r2.width / 2.0f, r2.height / 2.0f);
+                    canvas.translate(r7.width / 2.0f, r7.height / 2.0f);
                     canvas.rotate(-this.entry.orientation);
                     StoryEntry storyEntry = this.entry;
                     int i = storyEntry.width;
@@ -1171,7 +1181,7 @@ public abstract class PreviewView extends FrameLayout {
                     canvas.scale(f6, f6);
                     MediaController.CropState cropState2 = this.entry.crop;
                     canvas.translate(cropState2.cropPx * f4, cropState2.cropPy * f5);
-                    canvas.rotate(this.entry.crop.cropRotate + r2.transformRotation);
+                    canvas.rotate(this.entry.crop.cropRotate + r7.transformRotation);
                     if (this.entry.crop.mirrored) {
                         canvas.scale(-1.0f, 1.0f);
                     }
@@ -1217,9 +1227,12 @@ public abstract class PreviewView extends FrameLayout {
                     StoryEntry storyEntry4 = this.entry;
                     canvas.translate((-storyEntry4.width) / 2.0f, (-storyEntry4.height) / 2.0f);
                 }
-                canvas.scale(this.entry.width / this.bitmap.getWidth(), this.entry.height / this.bitmap.getHeight());
                 this.bitmapPaint.setAlpha((int) ((1.0f - f) * 255.0f));
-                canvas.drawBitmap(this.bitmap, 0.0f, 0.0f, this.bitmapPaint);
+                this.bitmapSrc.set(0, 0, this.bitmap.getWidth(), this.bitmap.getHeight());
+                Rect rect = this.bitmapDst;
+                StoryEntry storyEntry5 = this.entry;
+                rect.set(0, 0, storyEntry5.width, storyEntry5.height);
+                canvas.drawBitmap(this.bitmap, this.bitmapSrc, this.bitmapDst, this.bitmapPaint);
                 canvas.restore();
             }
         }
@@ -1365,7 +1378,7 @@ public abstract class PreviewView extends FrameLayout {
                 }
             }
         }
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda12
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 PreviewView.lambda$getCoverBitmap$2(dp, dp2, dp3, bitmapArr, callback);
@@ -1476,7 +1489,7 @@ public abstract class PreviewView extends FrameLayout {
         boolean z = storyEntry.isVideo;
         setupImage(storyEntry);
         if (z && storyEntry.gradientTopColor == 0 && storyEntry.gradientBottomColor == 0) {
-            storyEntry.setupGradient(new PreviewView$$ExternalSyntheticLambda2(this));
+            storyEntry.setupGradient(new PreviewView$$ExternalSyntheticLambda1(this));
         } else {
             setupGradient();
         }
@@ -1588,7 +1601,7 @@ public abstract class PreviewView extends FrameLayout {
                 setupCollage(null);
                 setupVideoPlayer(storyEntry, runnable, j);
                 if (storyEntry.gradientTopColor == 0 && storyEntry.gradientBottomColor == 0) {
-                    storyEntry.setupGradient(new PreviewView$$ExternalSyntheticLambda2(this));
+                    storyEntry.setupGradient(new PreviewView$$ExternalSyntheticLambda1(this));
                 }
             } else {
                 setupCollage(null);
@@ -1905,8 +1918,10 @@ public abstract class PreviewView extends FrameLayout {
                     StoryEntry storyEntry3 = this.entry;
                     duration = storyEntry3.isVideo ? getDuration() : storyEntry3.audioDuration;
                 }
+                TimelineView timelineView = this.timelineView;
+                int maxCount = timelineView != null ? timelineView.getMaxCount() : 1;
                 StoryEntry storyEntry4 = this.entry;
-                storyEntry4.audioRight = storyEntry4.audioDuration != 0 ? Math.min(1.0f, Math.min(duration, 59000L) / this.entry.audioDuration) : 1.0f;
+                storyEntry4.audioRight = storyEntry4.audioDuration != 0 ? Math.min(1.0f, Math.min(duration, maxCount * 59000) / this.entry.audioDuration) : 1.0f;
             }
         }
         setupAudio(this.entry, z);
@@ -2088,10 +2103,10 @@ public abstract class PreviewView extends FrameLayout {
                 VideoEditTextureView videoEditTextureView = this.textureView;
                 if (videoEditTextureView != null) {
                     videoEditTextureView.clearAnimation();
-                    this.textureView.animate().alpha(0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda9
+                    this.textureView.animate().alpha(0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda8
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PreviewView.this.lambda$setupVideoPlayer$6();
+                            PreviewView.this.lambda$setupVideoPlayer$8();
                         }
                     }).start();
                 }
@@ -2137,10 +2152,10 @@ public abstract class PreviewView extends FrameLayout {
         } else {
             textureViewHolder2.setTextureView(this.textureView);
         }
-        storyEntry.detectHDR(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda8
+        storyEntry.detectHDR(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                PreviewView.this.lambda$setupVideoPlayer$7((StoryEntry.HDRInfo) obj);
+                PreviewView.this.lambda$setupVideoPlayer$9((StoryEntry.HDRInfo) obj);
             }
         });
         this.videoPlayer.preparePlayer(Uri.fromFile(storyEntry.getOriginalFile()), "other");
@@ -2281,7 +2296,7 @@ public abstract class PreviewView extends FrameLayout {
             }
         }
         z2 = false;
-        long j3 = (currentPosition - storyEntry2.audioOffset) + ((long) (f2 * f3));
+        long j3 = currentPosition - (storyEntry2.audioOffset - ((long) (f2 * f3)));
         if (this.audioPlayer.isPlaying() != z2) {
             this.audioPlayer.setPlayWhenReady(z2);
         } else {

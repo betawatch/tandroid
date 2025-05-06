@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import java.io.File;
 import java.io.IOException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class CrashlyticsFileMarker {
     private final FileStore fileStore;
     private final String markerName;

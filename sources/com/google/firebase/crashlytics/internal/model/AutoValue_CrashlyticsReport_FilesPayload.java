@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_CrashlyticsReport_FilesPayload extends CrashlyticsReport.FilesPayload {
     private final List files;
     private final String orgId;

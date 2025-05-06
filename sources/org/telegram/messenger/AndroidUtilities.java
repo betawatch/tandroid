@@ -34,6 +34,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -75,6 +76,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
@@ -113,6 +115,8 @@ import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyn
 import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.tasks.OnSuccessListener;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -156,6 +160,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.zip.GZIPOutputStream;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -1375,6 +1380,15 @@ public class AndroidUtilities {
         }
     }
 
+    public static boolean copyFileSafe(File file, File file2) {
+        try {
+            return copyFile(file, file2);
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
+        }
+    }
+
     public static void createEmptyFile(File file) {
         try {
             if (file.exists()) {
@@ -1444,6 +1458,21 @@ public class AndroidUtilities {
                 }
             });
         }
+    }
+
+    public static void doOnPreDraw(View view, final Runnable runnable) {
+        final ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
+        final boolean[] zArr = new boolean[1];
+        final ViewTreeObserver.OnPreDrawListener[] onPreDrawListenerArr = {r2};
+        ViewTreeObserver.OnPreDrawListener onPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda30
+            @Override // android.view.ViewTreeObserver.OnPreDrawListener
+            public final boolean onPreDraw() {
+                boolean lambda$doOnPreDraw$24;
+                lambda$doOnPreDraw$24 = AndroidUtilities.lambda$doOnPreDraw$24(viewTreeObserver, onPreDrawListenerArr, zArr, runnable);
+                return lambda$doOnPreDraw$24;
+            }
+        };
+        viewTreeObserver.addOnPreDrawListener(onPreDrawListener);
     }
 
     public static boolean doSafe(Utilities.Callback0Return<Boolean> callback0Return) {
@@ -3292,6 +3321,38 @@ public class AndroidUtilities {
         }
     }
 
+    public static boolean gzip(File file, File file2) {
+        try {
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            try {
+                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(new BufferedOutputStream(new FileOutputStream(file2)));
+                try {
+                    byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+                    while (true) {
+                        int read = bufferedInputStream.read(bArr);
+                        if (read == -1) {
+                            gZIPOutputStream.close();
+                            bufferedInputStream.close();
+                            return true;
+                        }
+                        gZIPOutputStream.write(bArr, 0, read);
+                    }
+                } finally {
+                }
+            } catch (Throwable th) {
+                try {
+                    bufferedInputStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
+        } catch (FileNotFoundException | IOException e) {
+            FileLog.e(e);
+            return false;
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ef A[Catch: Exception -> 0x010b, TRY_LEAVE, TryCatch #0 {Exception -> 0x010b, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0031, B:19:0x003a, B:21:0x0042, B:24:0x0052, B:26:0x0058, B:28:0x005e, B:30:0x0064, B:32:0x0082, B:33:0x0086, B:34:0x008a, B:35:0x00dc, B:36:0x00e9, B:38:0x00ef, B:48:0x0107, B:54:0x0093, B:56:0x00a3, B:58:0x00ab, B:60:0x00b3, B:62:0x00b9, B:64:0x00c1, B:66:0x00c9, B:68:0x00d3, B:69:0x00d7), top: B:5:0x000a }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00f9  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x00fe  */
@@ -3606,6 +3667,14 @@ public class AndroidUtilities {
             }
         }
         return isHonor.booleanValue();
+    }
+
+    public static boolean isInAirplaneMode(Context context) {
+        try {
+            return Settings.Global.getInt(context.getContentResolver(), "airplane_mode_on", 0) != 0;
+        } catch (Exception unused) {
+            return false;
+        }
     }
 
     public static boolean isInPictureInPictureMode(Activity activity) {
@@ -3928,9 +3997,33 @@ public class AndroidUtilities {
         }
     }
 
+    public static boolean isWifiEnabled(Context context) {
+        try {
+            WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService("wifi");
+            if (wifiManager != null) {
+                return wifiManager.isWifiEnabled();
+            }
+            return false;
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Boolean lambda$addLinksSafe$7(SpannableStringBuilder spannableStringBuilder, int i, boolean z, boolean z2) {
         return Boolean.valueOf(addLinks(spannableStringBuilder, i, z, z2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$doOnPreDraw$24(ViewTreeObserver viewTreeObserver, ViewTreeObserver.OnPreDrawListener[] onPreDrawListenerArr, boolean[] zArr, Runnable runnable) {
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.removeOnPreDrawListener(onPreDrawListenerArr[0]);
+        }
+        if (!zArr[0]) {
+            zArr[0] = true;
+            runnable.run();
+        }
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5765,21 +5858,15 @@ public class AndroidUtilities {
     public static void resetPictureInPictureParams(Activity activity) {
         PictureInPictureParams build;
         int i = Build.VERSION.SDK_INT;
-        if (i < 26 || activity == null || activity.isDestroyed()) {
-            return;
-        }
-        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
-        builder.setSourceRectHint(null);
-        builder.setAspectRatio(null);
-        if (i >= 31) {
-            builder.setSeamlessResizeEnabled(false);
-            builder.setAutoEnterEnabled(false);
-        }
-        try {
+        if (i >= 26) {
+            PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
+            builder.setSourceRectHint(null);
+            builder.setAspectRatio(null);
+            if (i >= 31) {
+                builder.setAutoEnterEnabled(false);
+            }
             build = builder.build();
-            activity.setPictureInPictureParams(build);
-        } catch (Throwable th) {
-            FileLog.e(th);
+            setPictureInPictureParams(activity, build);
         }
     }
 
@@ -6065,6 +6152,21 @@ public class AndroidUtilities {
         return (i & 65535) | (i2 << 16);
     }
 
+    public static void setPictureInPictureParams(Activity activity, PictureInPictureParams pictureInPictureParams) {
+        if (activity == null || activity.isDestroyed()) {
+            return;
+        }
+        if (pictureInPictureParams == null) {
+            resetPictureInPictureParams(activity);
+            return;
+        }
+        try {
+            activity.setPictureInPictureParams(pictureInPictureParams);
+        } catch (Throwable th) {
+            FileLog.e(th);
+        }
+    }
+
     public static void setPreferredMaxRefreshRate(Window window) {
         WindowManager windowManager;
         if (Build.VERSION.SDK_INT < 21 || window == null || (windowManager = window.getWindowManager()) == null) {
@@ -6308,7 +6410,7 @@ public class AndroidUtilities {
             ((ValueAnimator) tag).cancel();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda30
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda29
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 AndroidUtilities.lambda$shakeView$12(view, valueAnimator);
@@ -6630,6 +6732,13 @@ public class AndroidUtilities {
             }
         });
         duration.start();
+    }
+
+    public static void updateViewLayout(WindowManager windowManager, View view, ViewGroup.LayoutParams layoutParams) {
+        if (windowManager == null || view == null || view.getParent() == null) {
+            return;
+        }
+        windowManager.updateViewLayout(view, layoutParams);
     }
 
     public static void updateViewShow(View view, boolean z) {

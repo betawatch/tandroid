@@ -6,7 +6,7 @@ import android.os.Build;
 import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AppData {
     public final String buildId;
     public final List buildIdInfoList;

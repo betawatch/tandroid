@@ -124,7 +124,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
     public interface Delegate {
 
         public abstract /* synthetic */ class -CC {
-            public static long $default$getMaxVideoDuration(Delegate delegate) {
+            public static long $default$getMaxVisibleVideoDuration(Delegate delegate) {
                 return 60000L;
             }
 
@@ -136,6 +136,8 @@ public class RecordControl extends View implements FlashViews.Invertable {
         boolean canRecordAudio();
 
         long getMaxVideoDuration();
+
+        long getMaxVisibleVideoDuration();
 
         void onCheckClick();
 
@@ -409,8 +411,8 @@ public class RecordControl extends View implements FlashViews.Invertable {
         super.onDetachedFromWindow();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0863  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0895  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x086e  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x08a0  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -562,7 +564,8 @@ public class RecordControl extends View implements FlashViews.Invertable {
         float f39 = this.recording ? 0.0f : 1.0f - f3;
         Delegate delegate = this.delegate;
         long maxVideoDuration = delegate != null ? delegate.getMaxVideoDuration() : 60000L;
-        float min = Math.min((currentTimeMillis / (maxVideoDuration >= 0 ? maxVideoDuration : 60000L)) * 360.0f, 360.0f);
+        Delegate delegate2 = this.delegate;
+        float min = Math.min((currentTimeMillis / ((delegate2 != null ? delegate2.getMaxVisibleVideoDuration() : 60000L) >= 0 ? r40 : 60000L)) * 360.0f, 360.0f);
         float f40 = this.recordingLoadingT.set(this.recordingLoading);
         this.outlineFilledPaint.setStrokeWidth(lerp5);
         this.outlineFilledPaint.setAlpha((int) (Math.max(f40 * 0.7f, 1.0f - f39) * 255.0f));

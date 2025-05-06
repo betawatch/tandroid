@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Outline;
 import android.graphics.Point;
@@ -31,9 +32,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.pip.PictureInPictureContentViewProvider;
-import org.telegram.messenger.pip.PipNativeApiController;
 import org.telegram.messenger.pip.PipSource;
+import org.telegram.messenger.pip.source.IPipSourceDelegate;
+import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -42,9 +43,10 @@ import org.telegram.ui.Components.voip.VoIPPiPView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPFragment;
 import org.webrtc.EglBase;
+import org.webrtc.RendererCommon;
 
 /* loaded from: classes5.dex */
-public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureContentViewProvider, NotificationCenter.NotificationCenterDelegate {
+public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegate, NotificationCenter.NotificationCenterDelegate {
     public static int bottomInset = 0;
     private static VoIPPiPView expandedInstance = null;
     private static VoIPPiPView instance = null;
@@ -61,12 +63,14 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
     ValueAnimator expandAnimator;
     public boolean expanded;
     private boolean expandedAnimationInProgress;
+    private Runnable firstFrameCallback;
     FloatingView floatingView;
     AnimatorSet moveToBoundsAnimator;
     boolean moving;
     public final int parentHeight;
     public final int parentWidth;
     private PipSource pipSource;
+    private VoIPTextureView pipTextureView;
     float progressToCameraMini;
     long startTime;
     float startX;
@@ -75,6 +79,7 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
     public WindowManager.LayoutParams windowLayoutParams;
     private WindowManager windowManager;
     public FrameLayout windowView;
+    private boolean windowViewSkipRender;
     public int xOffset;
     public int yOffset;
     ValueAnimator.AnimatorUpdateListener animatorToCameraMiniUpdater = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda0
@@ -99,11 +104,9 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             VoIPPiPView voIPPiPView = VoIPPiPView.this;
             voIPPiPView.windowLayoutParams.x = (int) floatValue;
-            if (voIPPiPView.windowView.getParent() != null) {
-                WindowManager windowManager = VoIPPiPView.this.windowManager;
-                VoIPPiPView voIPPiPView2 = VoIPPiPView.this;
-                windowManager.updateViewLayout(voIPPiPView2.windowView, voIPPiPView2.windowLayoutParams);
-            }
+            WindowManager windowManager = voIPPiPView.windowManager;
+            VoIPPiPView voIPPiPView2 = VoIPPiPView.this;
+            AndroidUtilities.updateViewLayout(windowManager, voIPPiPView2.windowView, voIPPiPView2.windowLayoutParams);
         }
     };
     private ValueAnimator.AnimatorUpdateListener updateYlistener = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView.3
@@ -112,11 +115,22 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             VoIPPiPView voIPPiPView = VoIPPiPView.this;
             voIPPiPView.windowLayoutParams.y = (int) floatValue;
-            if (voIPPiPView.windowView.getParent() != null) {
-                WindowManager windowManager = VoIPPiPView.this.windowManager;
-                VoIPPiPView voIPPiPView2 = VoIPPiPView.this;
-                windowManager.updateViewLayout(voIPPiPView2.windowView, voIPPiPView2.windowLayoutParams);
+            WindowManager windowManager = voIPPiPView.windowManager;
+            VoIPPiPView voIPPiPView2 = VoIPPiPView.this;
+            AndroidUtilities.updateViewLayout(windowManager, voIPPiPView2.windowView, voIPPiPView2.windowLayoutParams);
+        }
+    };
+    private final RendererCommon.RendererEvents rendererEvents = new RendererCommon.RendererEvents() { // from class: org.telegram.ui.Components.voip.VoIPPiPView.6
+        @Override // org.webrtc.RendererCommon.RendererEvents
+        public void onFirstFrameRendered() {
+            if (VoIPPiPView.this.firstFrameCallback != null) {
+                VoIPPiPView.this.firstFrameCallback.run();
+                VoIPPiPView.this.firstFrameCallback = null;
             }
+        }
+
+        @Override // org.webrtc.RendererCommon.RendererEvents
+        public void onFrameResolutionChanged(int i, int i2, int i3) {
         }
     };
 
@@ -367,7 +381,7 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
                 return;
             }
             voIPPiPView2.currentUserTextureView.renderer.init(eglBase.getEglBaseContext(), null);
-            voIPPiPView2.callingUserTextureView.renderer.init(VideoCapturerDevice.eglBase.getEglBaseContext(), null);
+            voIPPiPView2.callingUserTextureView.renderer.init(VideoCapturerDevice.eglBase.getEglBaseContext(), VoIPPiPView.this.rendererEvents);
             if (VoIPService.getSharedInstance() != null) {
                 VoIPService.getSharedInstance().setSinks(voIPPiPView2.currentUserTextureView.renderer, voIPPiPView2.callingUserTextureView.renderer);
             }
@@ -400,7 +414,7 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
 
         /* JADX WARN: Code restructure failed: missing block: B:12:0x0035, code lost:
         
-            if (r6 != 3) goto L66;
+            if (r6 != 3) goto L64;
          */
         @Override // android.view.View
         /*
@@ -443,11 +457,9 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
                             layoutParams.y = (int) (layoutParams.y + f2);
                             voIPPiPView3.startX = rawX;
                             voIPPiPView3.startY = rawY;
-                            if (voIPPiPView3.windowView.getParent() != null) {
-                                WindowManager windowManager = VoIPPiPView.this.windowManager;
-                                VoIPPiPView voIPPiPView4 = VoIPPiPView.this;
-                                windowManager.updateViewLayout(voIPPiPView4.windowView, voIPPiPView4.windowLayoutParams);
-                            }
+                            WindowManager windowManager = voIPPiPView3.windowManager;
+                            VoIPPiPView voIPPiPView4 = VoIPPiPView.this;
+                            AndroidUtilities.updateViewLayout(windowManager, voIPPiPView4.windowView, voIPPiPView4.windowLayoutParams);
                         }
                     }
                 }
@@ -725,9 +737,7 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
         WindowManager.LayoutParams layoutParams = this.windowLayoutParams;
         layoutParams.x = (int) ((f * (((f3 - dp) - dp2) - f5)) - (this.xOffset - dp));
         layoutParams.y = (int) ((f2 * (((f4 - dp3) - dp4) - f6)) - (this.yOffset - dp3));
-        if (this.windowView.getParent() != null) {
-            this.windowManager.updateViewLayout(this.windowView, this.windowLayoutParams);
-        }
+        AndroidUtilities.updateViewLayout(this.windowManager, this.windowView, layoutParams);
     }
 
     public static void show(Activity activity, int i, int i2, int i3, int i4) {
@@ -746,7 +756,7 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
         NotificationCenter.getGlobalInstance().addObserver(instance, NotificationCenter.didEndCall);
         windowManager.addView(instance.windowView, createWindowLayoutParams);
         instance.currentUserTextureView.renderer.init(VideoCapturerDevice.eglBase.getEglBaseContext(), null);
-        instance.callingUserTextureView.renderer.init(VideoCapturerDevice.eglBase.getEglBaseContext(), null);
+        instance.callingUserTextureView.renderer.init(VideoCapturerDevice.eglBase.getEglBaseContext(), instance.rendererEvents);
         if (i4 == 0) {
             instance.windowView.setScaleX(0.5f);
             instance.windowView.setScaleY(0.5f);
@@ -765,9 +775,10 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
                 sharedInstance2.setBackgroundSinks(voIPPiPView3.currentUserTextureView.renderer, voIPPiPView3.callingUserTextureView.renderer);
             }
         }
-        if (PipNativeApiController.checkPermissions(activity) == 1) {
+        VoIPService sharedInstance3 = VoIPService.getSharedInstance();
+        if (sharedInstance3 != null && sharedInstance3.getRemoteVideoState() == 2 && PipUtils.checkPermissions(activity) == 1) {
             VoIPPiPView voIPPiPView4 = instance;
-            voIPPiPView4.pipSource = new PipSource.Builder(activity, voIPPiPView4).setTagPrefix("voip-pip").setPriority(1).setContentView(instance.windowView).build();
+            voIPPiPView4.pipSource = new PipSource.Builder(activity, voIPPiPView4).setTagPrefix("voip-pip").setPriority(1).setContentView(instance.callingUserTextureView.renderer).setPlaceholderView(instance.callingUserTextureView.getPlaceholderView()).build();
         }
     }
 
@@ -799,34 +810,10 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
         }
     }
 
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void attachContentToWindow() {
-        this.windowView.setVisibility(0);
-        this.floatingView.addView(this.callingUserTextureView, 0);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            sharedInstance.setSinks(this.currentUserTextureView.renderer, this.callingUserTextureView.renderer);
-        }
-    }
-
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public View detachContentFromWindow() {
-        this.windowView.setVisibility(8);
-        this.floatingView.removeView(this.callingUserTextureView);
-        return this.callingUserTextureView;
-    }
-
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.didEndCall) {
             finish();
-        }
-    }
-
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void onAttachContentToPip() {
-        if (VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().setSinks(this.currentUserTextureView.renderer, this.callingUserTextureView.renderer);
         }
     }
 
@@ -846,6 +833,22 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public void onMediaStateUpdated(int i, int i2) {
+        PipSource pipSource;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null || sharedInstance.getRemoteVideoState() != 2) {
+            PipSource pipSource2 = this.pipSource;
+            if (pipSource2 != null) {
+                pipSource2.destroy();
+                pipSource = null;
+                this.pipSource = pipSource;
+            }
+        } else {
+            Context context = instance.windowView.getContext();
+            if (this.pipSource == null && PipUtils.checkPermissions(context) == 1 && (context instanceof Activity)) {
+                pipSource = new PipSource.Builder((Activity) context, this).setTagPrefix("voip-pip").setPriority(1).setContentView(this.callingUserTextureView.renderer).setPlaceholderView(this.callingUserTextureView.getPlaceholderView()).build();
+                this.pipSource = pipSource;
+            }
+        }
         updateViewState();
     }
 
@@ -913,7 +916,98 @@ public class VoIPPiPView implements VoIPService.StateListener, PictureInPictureC
     public void onVideoAvailableChange(boolean z) {
     }
 
-    @Override // org.telegram.messenger.pip.PictureInPictureContentViewProvider
-    public void prepareDetachContentFromPip() {
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public View pipCreatePictureInPictureView() {
+        VoIPTextureView voIPTextureView = new VoIPTextureView(this.callingUserTextureView.getContext(), false, true, false, false);
+        this.pipTextureView = voIPTextureView;
+        voIPTextureView.renderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
+        this.pipTextureView.renderer.setEnableHardwareScaler(true);
+        this.pipTextureView.renderer.setRotateTextureWithScreen(true);
+        VoIPTextureView voIPTextureView2 = this.pipTextureView;
+        voIPTextureView2.scaleType = VoIPTextureView.SCALE_TYPE_FIT;
+        voIPTextureView2.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new RendererCommon.RendererEvents() { // from class: org.telegram.ui.Components.voip.VoIPPiPView.5
+            @Override // org.webrtc.RendererCommon.RendererEvents
+            public void onFirstFrameRendered() {
+                if (VoIPPiPView.this.firstFrameCallback != null) {
+                    VoIPPiPView.this.firstFrameCallback.run();
+                    VoIPPiPView.this.firstFrameCallback = null;
+                }
+            }
+
+            @Override // org.webrtc.RendererCommon.RendererEvents
+            public void onFrameResolutionChanged(int i, int i2, int i3) {
+            }
+        });
+        View view = this.pipTextureView.backgroundView;
+        if (view != null) {
+            view.setVisibility(8);
+        }
+        return this.pipTextureView;
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public Bitmap pipCreatePictureInPictureViewBitmap() {
+        VoIPTextureView voIPTextureView = this.pipTextureView;
+        if (voIPTextureView == null || !voIPTextureView.renderer.isAvailable()) {
+            return null;
+        }
+        return this.pipTextureView.renderer.getBitmap();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public Bitmap pipCreatePrimaryWindowViewBitmap() {
+        VoIPTextureView voIPTextureView = this.callingUserTextureView;
+        if (voIPTextureView == null || !voIPTextureView.renderer.isAvailable()) {
+            return null;
+        }
+        return this.callingUserTextureView.renderer.getBitmap();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public void pipHidePrimaryWindowView(Runnable runnable) {
+        this.firstFrameCallback = runnable;
+        VoIPTextureView voIPTextureView = this.callingUserTextureView;
+        if (voIPTextureView != null) {
+            voIPTextureView.renderer.clearFirstFrame();
+        }
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            sharedInstance.setSinks(this.currentUserTextureView.renderer, this.pipTextureView.renderer);
+        }
+        this.windowViewSkipRender = true;
+        this.windowManager.removeView(this.windowView);
+        this.windowView.invalidate();
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public /* synthetic */ boolean pipIsAvailable() {
+        return IPipSourceDelegate.-CC.$default$pipIsAvailable(this);
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public /* synthetic */ void pipRenderBackground(Canvas canvas) {
+        IPipSourceDelegate.-CC.$default$pipRenderBackground(this, canvas);
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public /* synthetic */ void pipRenderForeground(Canvas canvas) {
+        IPipSourceDelegate.-CC.$default$pipRenderForeground(this, canvas);
+    }
+
+    @Override // org.telegram.messenger.pip.source.IPipSourceDelegate
+    public void pipShowPrimaryWindowView(Runnable runnable) {
+        this.firstFrameCallback = runnable;
+        this.windowManager.addView(this.windowView, this.windowLayoutParams);
+        VoIPTextureView voIPTextureView = this.pipTextureView;
+        if (voIPTextureView != null) {
+            voIPTextureView.renderer.release();
+            this.pipTextureView = null;
+        }
+        this.windowViewSkipRender = false;
+        this.windowView.invalidate();
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            sharedInstance.setSinks(this.currentUserTextureView.renderer, this.callingUserTextureView.renderer);
+        }
     }
 }

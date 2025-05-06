@@ -19,6 +19,8 @@ import org.telegram.messenger.FileLoadOperation;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.FileUploadOperation;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -1276,6 +1278,30 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$uploadFile$19(NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+        getNotificationCenter().removeObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploaded);
+        getNotificationCenter().removeObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploadFailed);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$uploadFile$20(String str, Utilities.Callback callback, Runnable runnable, int i, int i2, Object[] objArr) {
+        TLRPC.InputFile inputFile;
+        if (i == NotificationCenter.fileUploaded) {
+            if (objArr[0] != str) {
+                return;
+            } else {
+                inputFile = (TLRPC.InputFile) objArr[1];
+            }
+        } else if (i != NotificationCenter.fileUploadFailed || objArr[0] != str) {
+            return;
+        } else {
+            inputFile = null;
+        }
+        callback.run(inputFile);
+        runnable.run();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$uploadFile$5(boolean z, String str, long j, int i, boolean z2, boolean z3) {
         long j2;
         LinkedList<FileUploadOperation> linkedList;
@@ -2196,7 +2222,7 @@ public class FileLoader extends BaseController {
             return;
         }
         if (z2) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FileLoader$$ExternalSyntheticLambda18
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FileLoader$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
                 public final void run() {
                     FileLoader.this.lambda$removeLoadingVideo$1(document, z);
@@ -2291,6 +2317,24 @@ public class FileLoader extends BaseController {
             i2 = fileLocation.dc_id + (fileLocation.local_id << 16);
         }
         this.filePathDatabase.putPath(j, i2, i, 1, str);
+    }
+
+    public void uploadFile(final String str, final Utilities.Callback<TLRPC.InputFile> callback) {
+        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.FileLoader$$ExternalSyntheticLambda18
+            @Override // java.lang.Runnable
+            public final void run() {
+                FileLoader.this.lambda$uploadFile$19(r2);
+            }
+        };
+        final NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = {new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.FileLoader$$ExternalSyntheticLambda19
+            @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+            public final void didReceivedNotification(int i, int i2, Object[] objArr) {
+                FileLoader.lambda$uploadFile$20(str, callback, runnable, i, i2, objArr);
+            }
+        }};
+        getNotificationCenter().addObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploaded);
+        getNotificationCenter().addObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploadFailed);
+        uploadFile(str, false, false, ConnectionsManager.FileTypeFile);
     }
 
     public void uploadFile(String str, boolean z, boolean z2, int i) {
