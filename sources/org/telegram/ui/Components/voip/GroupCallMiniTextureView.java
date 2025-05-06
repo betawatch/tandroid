@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageLoader;
@@ -44,7 +45,6 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -93,7 +93,6 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
     LinearGradient gradientShader;
     int gridItemsCount;
     public boolean hasVideo;
-    private Runnable hideRunnable;
     ImageReceiver imageReceiver;
     boolean inPinchToZoom;
     FrameLayout infoContainer;
@@ -917,12 +916,8 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateAttachState$2(boolean z, View view) {
-        if (z) {
-            this.parentContainer.removeView(view);
-        }
-        view.setVisibility(8);
-        this.hideRunnable = null;
+    public /* synthetic */ void lambda$updateAttachState$2(View view) {
+        this.parentContainer.removeView(view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1210,10 +1205,6 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
     public String getName() {
         long peerId = MessageObject.getPeerId(this.participant.participant.peer);
         return DialogObject.isUserDialog(peerId) ? UserObject.getUserName(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().getUser(Long.valueOf(peerId))) : AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().getChat(Long.valueOf(-peerId)).title;
-    }
-
-    public GroupCallGridCell getPrimaryView() {
-        return this.primaryView;
     }
 
     public void getRenderBufferBitmap(GlGenericDrawer.TextureCallback textureCallback) {
@@ -1518,11 +1509,6 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         this.tabletGridView = groupCallGridCell2;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i) {
-        super.setVisibility(i);
-    }
-
     public void setZoom(boolean z, float f, float f2, float f3, float f4, float f5) {
         if (this.pinchScale == f && this.pinchCenterX == f2 && this.pinchCenterY == f3 && this.pinchTranslationX == f4 && this.pinchTranslationY == f5) {
             return;
@@ -1588,88 +1574,80 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         this.flipAnimator.start();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:251:0x034a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x0340, code lost:
     
-        if (r10 != null) goto L219;
+        if (r10 != null) goto L210;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:315:0x0191, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:303:0x0172, code lost:
     
-        if (org.telegram.messenger.voip.VoIPService.getSharedInstance().getVideoState(r23.participant.presentation) == 2) goto L125;
+        if (org.telegram.messenger.voip.VoIPService.getSharedInstance().getVideoState(r23.participant.presentation) == 2) goto L113;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x01a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:304:0x0187, code lost:
     
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:323:0x01cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:311:0x01ae, code lost:
     
-        if (r4 != false) goto L134;
+        if (r4 != false) goto L122;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:353:0x022b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:353:0x017d, code lost:
     
-        if (getVisibility() == 8) goto L145;
+        if (r4 != r11.videoNotAvailableParticipant) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x019c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:355:0x0185, code lost:
     
-        if (r4 != r11.videoNotAvailableParticipant) goto L126;
+        if (org.telegram.messenger.ChatObject.Call.videoIsActive(r10, r4.presentation, r11) == false) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:361:0x01a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:357:0x0151, code lost:
     
-        if (org.telegram.messenger.ChatObject.Call.videoIsActive(r10, r4.presentation, r11) == false) goto L126;
+        if (r4 != null) goto L99;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:363:0x0170, code lost:
-    
-        if (r4 != null) goto L111;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0082, code lost:
     
         if (r23.participant != r10.videoNotAvailableParticipant) goto L47;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0381  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0387  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x03a2  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x03ec  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x040b  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x04c3  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x04d4 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x04dc  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x04e6  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x054f  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x052a  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x055c  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0582  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x058f  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x05a5  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x05ca  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x064e  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0684  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0660  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x0598  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x0434  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0482  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x0458  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x03f6  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x02ca  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x017f  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x01db  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0194  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02b6  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x02e0  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0359  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0374  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0377  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x037d  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0398  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x03e2  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0401  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x04ca A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x04d2  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x04dc  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0545  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0520  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0552  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0578  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0585  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x059b  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x05c0  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0644  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x067a  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0656  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x058e  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x042a  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x044e  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x03ec  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x02c0  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x02ac  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x02d6  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x036a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1677,7 +1655,6 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         ChatObject.VideoParticipant participant;
         TLRPC.GroupCallParticipant groupCallParticipant;
         GroupCallStatusIcon groupCallStatusIcon;
-        Runnable runnable;
         boolean z2;
         boolean z3;
         int i;
@@ -1698,12 +1675,11 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo2;
         ValueAnimator valueAnimator;
         float f2;
-        final boolean z7;
         GroupCallRenderersContainer groupCallRenderersContainer;
         ValueAnimator valueAnimator2;
         ChatObject.VideoParticipant videoParticipant3;
         GroupCallGridCell groupCallGridCell;
-        boolean z8 = false;
+        boolean z7 = false;
         if (this.forceDetached) {
             return;
         }
@@ -1714,9 +1690,9 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         if (this.participant == null && ((groupCallGridCell = this.primaryView) != null || this.secondaryView != null || this.tabletGridView != null)) {
             this.participant = (groupCallGridCell == null && (groupCallGridCell = this.tabletGridView) == null) ? this.secondaryView.getVideoParticipant() : groupCallGridCell.getParticipant();
         }
-        boolean z9 = this.attached;
-        if (z9 && !this.showingInFullscreen) {
-            boolean z10 = VoIPService.getSharedInstance() == null;
+        boolean z8 = this.attached;
+        if (z8 && !this.showingInFullscreen) {
+            boolean z9 = VoIPService.getSharedInstance() == null;
             if (!GroupCallActivity.paused && (videoParticipant3 = this.participant) != null) {
                 if (this.secondaryView == null) {
                     if (ChatObject.Call.videoIsActive(videoParticipant3.participant, videoParticipant3.presentation, this.call)) {
@@ -1725,51 +1701,33 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                         }
                     }
                 }
-                if (!z10 || (this.primaryView == null && this.secondaryView == null && this.tabletGridView == null && !this.showingAsScrimView && !this.animateToScrimView)) {
+                if (!z9 || (this.primaryView == null && this.secondaryView == null && this.tabletGridView == null && !this.showingAsScrimView && !this.animateToScrimView)) {
                     this.attached = false;
                     saveThumb();
-                    z7 = SharedConfig.getDevicePerformanceClass() > 0;
-                    if (this.textureView.currentAnimation == null || !z10) {
+                    if (this.textureView.currentAnimation == null || !z9) {
                         groupCallRenderersContainer = this.parentContainer;
                         if (groupCallRenderersContainer.inLayout) {
-                            if (z7) {
-                                groupCallRenderersContainer.removeView(this);
-                            }
-                            setVisibility(8);
+                            groupCallRenderersContainer.removeView(this);
                         } else {
-                            Runnable runnable2 = this.hideRunnable;
-                            if (runnable2 != null) {
-                                AndroidUtilities.cancelRunOnUIThread(runnable2);
-                                this.hideRunnable = null;
-                            }
-                            Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallMiniTextureView$$ExternalSyntheticLambda1
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallMiniTextureView$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    GroupCallMiniTextureView.this.lambda$updateAttachState$2(z7, this);
+                                    GroupCallMiniTextureView.this.lambda$updateAttachState$2(this);
                                 }
-                            };
-                            this.hideRunnable = runnable3;
-                            AndroidUtilities.runOnUIThread(runnable3);
+                            });
                         }
-                        if (z7) {
-                            this.parentContainer.detach(this);
-                            release();
-                        }
+                        this.parentContainer.detach(this);
+                        release();
                     } else {
-                        if (z7) {
-                            this.parentContainer.detach(this);
-                        }
+                        this.parentContainer.detach(this);
                         animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.GroupCallMiniTextureView.4
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 this.setScaleX(1.0f);
                                 this.setScaleY(1.0f);
                                 this.setAlpha(1.0f);
-                                if (z7) {
-                                    GroupCallMiniTextureView.this.parentContainer.removeView(this);
-                                    GroupCallMiniTextureView.this.release();
-                                }
-                                this.setVisibility(8);
+                                GroupCallMiniTextureView.this.parentContainer.removeView(this);
+                                GroupCallMiniTextureView.this.release();
                             }
                         }).setDuration(150L).start();
                     }
@@ -1790,27 +1748,25 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                     }
                 }
             }
-            z10 = true;
-            if (!z10) {
+            z9 = true;
+            if (!z9) {
             }
             this.attached = false;
             saveThumb();
-            if (SharedConfig.getDevicePerformanceClass() > 0) {
-            }
             if (this.textureView.currentAnimation == null) {
             }
             groupCallRenderersContainer = this.parentContainer;
             if (groupCallRenderersContainer.inLayout) {
             }
-            if (z7) {
-            }
+            this.parentContainer.detach(this);
+            release();
             if (this.participant.participant.self) {
             }
             invalidate();
             valueAnimator2 = this.noVideoStubAnimator;
             if (valueAnimator2 != null) {
             }
-        } else if (!z9) {
+        } else if (!z8) {
             if (VoIPService.getSharedInstance() == null) {
                 return;
             }
@@ -1830,7 +1786,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                         } else {
                             if (VoIPService.getSharedInstance() != null) {
                             }
-                            boolean z11 = false;
+                            boolean z10 = false;
                         }
                         if (!this.showingInFullscreen) {
                             VoIPService sharedInstance2 = VoIPService.getSharedInstance();
@@ -1839,6 +1795,13 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                 VoIPService sharedInstance3 = VoIPService.getSharedInstance();
                                 ChatObject.VideoParticipant videoParticipant7 = this.participant;
                                 if (!sharedInstance3.isFullscreen(videoParticipant7.participant, videoParticipant7.presentation)) {
+                                }
+                            }
+                        }
+                        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                            for (int i3 = 0; i3 < this.attachedRenderers.size(); i3++) {
+                                if (((GroupCallMiniTextureView) this.attachedRenderers.get(i3)).participant.equals(this.participant)) {
+                                    throw new RuntimeException("try add two same renderers");
                                 }
                             }
                         }
@@ -1853,16 +1816,10 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                         this.statusIcon.setCallback(this);
                         this.statusIcon.setImageView(this.micIconView);
                         updateIconColor(false);
-                        runnable = this.hideRunnable;
-                        if (runnable != null) {
-                            AndroidUtilities.cancelRunOnUIThread(runnable);
-                            this.hideRunnable = null;
-                        }
-                        if (getParent() != null) {
+                        if (getParent() == null) {
                             this.parentContainer.addView(this, LayoutHelper.createFrame(46, 46, 51));
                             this.parentContainer.attach(this);
                         }
-                        setVisibility(0);
                         this.checkScale = true;
                         this.animateEnter = false;
                         animate().setListener(null).cancel();
@@ -1900,14 +1857,14 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                             this.micIconView.setVisibility(0);
                         }
                         if (this.attached) {
-                            boolean z12 = GroupCallActivity.isTabletMode && (!this.parentContainer.inFullscreenMode || (this.secondaryView == null && this.primaryView == null));
+                            boolean z11 = GroupCallActivity.isTabletMode && (!this.parentContainer.inFullscreenMode || (this.secondaryView == null && this.primaryView == null));
                             if (!this.showingInFullscreen) {
                                 GroupCallFullscreenAdapter.GroupCallUserCell groupCallUserCell2 = this.secondaryView;
                                 if (groupCallUserCell2 == null || this.primaryView != null || this.parentContainer.inFullscreenMode) {
                                     if (!this.showingAsScrimView) {
                                         if (groupCallUserCell2 == null || this.primaryView != null) {
                                             GroupCallGridCell groupCallGridCell3 = this.tabletGridView;
-                                            if (groupCallGridCell3 == null || !z12) {
+                                            if (groupCallGridCell3 == null || !z11) {
                                                 GroupCallGridCell groupCallGridCell4 = this.primaryView;
                                                 if ((groupCallGridCell4 != null && groupCallUserCell2 == null) || !this.isFullscreenMode) {
                                                     if (groupCallGridCell4 != null) {
@@ -1974,8 +1931,8 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                                 ChatObject.Call call3 = this.call;
                                                 if (call3.canStreamVideo || this.participant == call3.videoNotAvailableParticipant) {
                                                     z5 = true;
-                                                    boolean z13 = (z2 || this.secondaryView == null || this.showingInFullscreen || z5) ? false : true;
-                                                    if (z5 != this.hasVideo && !z13) {
+                                                    boolean z12 = (z2 || this.secondaryView == null || this.showingInFullscreen || z5) ? false : true;
+                                                    if (z5 != this.hasVideo && !z12) {
                                                         this.hasVideo = z5;
                                                         valueAnimator = this.noVideoStubAnimator;
                                                         if (valueAnimator != null) {
@@ -1983,9 +1940,9 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                                             this.noVideoStubAnimator.cancel();
                                                         }
                                                         if (z2) {
-                                                            boolean z14 = this.hasVideo;
-                                                            this.progressToNoVideoStub = z14 ? 0.0f : 1.0f;
-                                                            this.noVideoStubLayout.setVisibility(z14 ? 8 : 0);
+                                                            boolean z13 = this.hasVideo;
+                                                            this.progressToNoVideoStub = z13 ? 0.0f : 1.0f;
+                                                            this.noVideoStubLayout.setVisibility(z13 ? 8 : 0);
                                                             this.noVideoStubLayout.setAlpha(this.progressToNoVideoStub);
                                                             this.textureView.invalidate();
                                                         } else {
@@ -2028,10 +1985,10 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                                     z6 = videoParticipant8.presentation;
                                                     TLRPC.GroupCallParticipant groupCallParticipant2 = videoParticipant8.participant;
                                                     if (z6 ? !((tL_groupCallParticipantVideo = groupCallParticipant2.video) == null || !tL_groupCallParticipantVideo.paused) : !((tL_groupCallParticipantVideo2 = groupCallParticipant2.presentation) == null || !tL_groupCallParticipantVideo2.paused)) {
-                                                        z8 = true;
+                                                        z7 = true;
                                                     }
-                                                    if (this.videoIsPaused != z8) {
-                                                        this.videoIsPaused = z8;
+                                                    if (this.videoIsPaused != z7) {
+                                                        this.videoIsPaused = z7;
                                                         this.textureView.renderer.animate().alpha(this.videoIsPaused ? 0.0f : 1.0f).setDuration(250L).start();
                                                         this.textureView.invalidate();
                                                     }
@@ -2121,7 +2078,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                             z6 = videoParticipant82.presentation;
                                             TLRPC.GroupCallParticipant groupCallParticipant22 = videoParticipant82.participant;
                                             if (z6) {
-                                                if (this.videoIsPaused != z8) {
+                                                if (this.videoIsPaused != z7) {
                                                 }
                                                 if (GroupCallActivity.paused) {
                                                 }
@@ -2131,7 +2088,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                                 }
                                                 updateIconColor(true);
                                             } else {
-                                                if (this.videoIsPaused != z8) {
+                                                if (this.videoIsPaused != z7) {
                                                 }
                                                 if (GroupCallActivity.paused) {
                                                 }
@@ -2305,6 +2262,8 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                 }
                 if (!this.showingInFullscreen) {
                 }
+                if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                }
                 this.attached = true;
                 if (this.activity.statusIconPool.size() <= 0) {
                 }
@@ -2312,12 +2271,8 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                 this.statusIcon.setCallback(this);
                 this.statusIcon.setImageView(this.micIconView);
                 updateIconColor(false);
-                runnable = this.hideRunnable;
-                if (runnable != null) {
+                if (getParent() == null) {
                 }
-                if (getParent() != null) {
-                }
-                setVisibility(0);
                 this.checkScale = true;
                 this.animateEnter = false;
                 animate().setListener(null).cancel();

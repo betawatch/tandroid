@@ -1226,7 +1226,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             GroupCallMiniTextureView renderer;
             final VoIPTextureView voIPTextureView;
             try {
-                if (GroupCallActivity.this.renderersContainer == null || GroupCallActivity.this.renderersContainer.inFullscreenMode || (findGroupCallGridCell = GroupCallActivity.this.findGroupCallGridCell()) == null || !findGroupCallGridCell.isAttachedToWindow() || (renderer = findGroupCallGridCell.getRenderer()) == null || (voIPTextureView = renderer.textureView) == null) {
+                if (GroupCallActivity.this.renderersContainer == null || GroupCallActivity.this.renderersContainer.inFullscreenMode || (findGroupCallGridCell = GroupCallActivity.this.findGroupCallGridCell()) == null || (renderer = findGroupCallGridCell.getRenderer()) == null || (voIPTextureView = renderer.textureView) == null) {
                     return;
                 }
                 GroupCallActivity.updateTextureLightningQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.GroupCallActivity$2$$ExternalSyntheticLambda0
@@ -3689,7 +3689,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     textView.setTextSize(1, 13.0f);
                     textView.setGravity(1);
                     textView.setPadding(0, 0, 0, AndroidUtilities.dp(10.0f));
-                    textView.setText(ChatObject.isChannelOrGiga(GroupCallActivity.this.currentChat) ? LocaleController.formatString(R.string.VoipChannelVideoNotAvailableAdmin, LocaleController.formatPluralString("Participants", GroupCallActivity.this.accountInstance.getMessagesController().groupCallVideoMaxParticipants, new Object[0])) : LocaleController.formatString(R.string.VoipVideoNotAvailableAdmin, LocaleController.formatPluralString("Members", GroupCallActivity.this.accountInstance.getMessagesController().groupCallVideoMaxParticipants, new Object[0])));
+                    textView.setText(ChatObject.isChannelOrGiga(GroupCallActivity.this.currentChat) ? LocaleController.formatString("VoipChannelVideoNotAvailableAdmin", R.string.VoipChannelVideoNotAvailableAdmin, LocaleController.formatPluralString("Participants", GroupCallActivity.this.accountInstance.getMessagesController().groupCallVideoMaxParticipants, new Object[0])) : LocaleController.formatString("VoipVideoNotAvailableAdmin", R.string.VoipVideoNotAvailableAdmin, LocaleController.formatPluralString("Members", GroupCallActivity.this.accountInstance.getMessagesController().groupCallVideoMaxParticipants, new Object[0])));
                     groupCallGridCell = textView;
                 } else if (i != 7) {
                     view = new View(this.mContext);
@@ -4719,16 +4719,16 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 private RectF rect = new RectF();
                 HashMap listCells = new HashMap();
 
-                /* JADX WARN: Removed duplicated region for block: B:114:0x0469  */
-                /* JADX WARN: Removed duplicated region for block: B:117:0x049b  */
-                /* JADX WARN: Removed duplicated region for block: B:121:0x0530  */
-                /* JADX WARN: Removed duplicated region for block: B:124:0x05a0  */
-                /* JADX WARN: Removed duplicated region for block: B:128:0x05b4 A[LOOP:5: B:126:0x05b1->B:128:0x05b4, LOOP_END] */
-                /* JADX WARN: Removed duplicated region for block: B:132:0x05fa  */
-                /* JADX WARN: Removed duplicated region for block: B:137:0x05a9  */
-                /* JADX WARN: Removed duplicated region for block: B:138:0x0562  */
-                /* JADX WARN: Removed duplicated region for block: B:139:0x04be  */
-                /* JADX WARN: Removed duplicated region for block: B:142:0x06b2  */
+                /* JADX WARN: Removed duplicated region for block: B:111:0x0462  */
+                /* JADX WARN: Removed duplicated region for block: B:114:0x0494  */
+                /* JADX WARN: Removed duplicated region for block: B:118:0x0529  */
+                /* JADX WARN: Removed duplicated region for block: B:121:0x0599  */
+                /* JADX WARN: Removed duplicated region for block: B:125:0x05ad A[LOOP:5: B:123:0x05aa->B:125:0x05ad, LOOP_END] */
+                /* JADX WARN: Removed duplicated region for block: B:129:0x05f3  */
+                /* JADX WARN: Removed duplicated region for block: B:134:0x05a2  */
+                /* JADX WARN: Removed duplicated region for block: B:135:0x055b  */
+                /* JADX WARN: Removed duplicated region for block: B:136:0x04b7  */
+                /* JADX WARN: Removed duplicated region for block: B:139:0x06ab  */
                 @Override // android.view.ViewGroup, android.view.View
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -4791,16 +4791,14 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                         this.listCells.clear();
                         for (int i13 = 0; i13 < GroupCallActivity.this.listView.getChildCount(); i13++) {
                             View childAt2 = GroupCallActivity.this.listView.getChildAt(i13);
-                            if (childAt2.isAttachedToWindow()) {
-                                if ((childAt2 instanceof GroupCallGridCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
-                                    GroupCallGridCell groupCallGridCell = (GroupCallGridCell) childAt2;
-                                    if (groupCallGridCell.getRenderer() != GroupCallActivity.this.renderersContainer.fullscreenTextureView) {
-                                        this.listCells.put(groupCallGridCell.getParticipant(), childAt2);
-                                    }
-                                } else if ((childAt2 instanceof GroupCallUserCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
-                                    GroupCallUserCell groupCallUserCell5 = (GroupCallUserCell) childAt2;
-                                    this.listCells.put(groupCallUserCell5.getParticipant(), groupCallUserCell5);
+                            if ((childAt2 instanceof GroupCallGridCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
+                                GroupCallGridCell groupCallGridCell = (GroupCallGridCell) childAt2;
+                                if (groupCallGridCell.getRenderer() != GroupCallActivity.this.renderersContainer.fullscreenTextureView) {
+                                    this.listCells.put(groupCallGridCell.getParticipant(), childAt2);
                                 }
+                            } else if ((childAt2 instanceof GroupCallUserCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
+                                GroupCallUserCell groupCallUserCell5 = (GroupCallUserCell) childAt2;
+                                this.listCells.put(groupCallUserCell5.getParticipant(), groupCallUserCell5);
                             }
                         }
                         for (int i14 = 0; i14 < GroupCallActivity.this.fullscreenUsersListView.getChildCount(); i14++) {
@@ -5834,7 +5832,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                         for (int i12 = 0; i12 < getChildCount(); i12++) {
                             View childAt = getChildAt(i12);
                             if (childAt instanceof GroupCallGridCell) {
-                                GroupCallActivity.this.attachRenderer((GroupCallGridCell) childAt, childAt.isAttachedToWindow() && i11 == 0);
+                                GroupCallActivity.this.attachRenderer((GroupCallGridCell) childAt, i11 == 0);
                             }
                         }
                     }
@@ -6891,16 +6889,16 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             private RectF rect = new RectF();
             HashMap listCells = new HashMap();
 
-            /* JADX WARN: Removed duplicated region for block: B:114:0x0469  */
-            /* JADX WARN: Removed duplicated region for block: B:117:0x049b  */
-            /* JADX WARN: Removed duplicated region for block: B:121:0x0530  */
-            /* JADX WARN: Removed duplicated region for block: B:124:0x05a0  */
-            /* JADX WARN: Removed duplicated region for block: B:128:0x05b4 A[LOOP:5: B:126:0x05b1->B:128:0x05b4, LOOP_END] */
-            /* JADX WARN: Removed duplicated region for block: B:132:0x05fa  */
-            /* JADX WARN: Removed duplicated region for block: B:137:0x05a9  */
-            /* JADX WARN: Removed duplicated region for block: B:138:0x0562  */
-            /* JADX WARN: Removed duplicated region for block: B:139:0x04be  */
-            /* JADX WARN: Removed duplicated region for block: B:142:0x06b2  */
+            /* JADX WARN: Removed duplicated region for block: B:111:0x0462  */
+            /* JADX WARN: Removed duplicated region for block: B:114:0x0494  */
+            /* JADX WARN: Removed duplicated region for block: B:118:0x0529  */
+            /* JADX WARN: Removed duplicated region for block: B:121:0x0599  */
+            /* JADX WARN: Removed duplicated region for block: B:125:0x05ad A[LOOP:5: B:123:0x05aa->B:125:0x05ad, LOOP_END] */
+            /* JADX WARN: Removed duplicated region for block: B:129:0x05f3  */
+            /* JADX WARN: Removed duplicated region for block: B:134:0x05a2  */
+            /* JADX WARN: Removed duplicated region for block: B:135:0x055b  */
+            /* JADX WARN: Removed duplicated region for block: B:136:0x04b7  */
+            /* JADX WARN: Removed duplicated region for block: B:139:0x06ab  */
             @Override // android.view.ViewGroup, android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -6963,16 +6961,14 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     this.listCells.clear();
                     for (int i132 = 0; i132 < GroupCallActivity.this.listView.getChildCount(); i132++) {
                         View childAt2 = GroupCallActivity.this.listView.getChildAt(i132);
-                        if (childAt2.isAttachedToWindow()) {
-                            if ((childAt2 instanceof GroupCallGridCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
-                                GroupCallGridCell groupCallGridCell = (GroupCallGridCell) childAt2;
-                                if (groupCallGridCell.getRenderer() != GroupCallActivity.this.renderersContainer.fullscreenTextureView) {
-                                    this.listCells.put(groupCallGridCell.getParticipant(), childAt2);
-                                }
-                            } else if ((childAt2 instanceof GroupCallUserCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
-                                GroupCallUserCell groupCallUserCell5 = (GroupCallUserCell) childAt2;
-                                this.listCells.put(groupCallUserCell5.getParticipant(), groupCallUserCell5);
+                        if ((childAt2 instanceof GroupCallGridCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
+                            GroupCallGridCell groupCallGridCell = (GroupCallGridCell) childAt2;
+                            if (groupCallGridCell.getRenderer() != GroupCallActivity.this.renderersContainer.fullscreenTextureView) {
+                                this.listCells.put(groupCallGridCell.getParticipant(), childAt2);
                             }
+                        } else if ((childAt2 instanceof GroupCallUserCell) && GroupCallActivity.this.listView.getChildAdapterPosition(childAt2) >= 0) {
+                            GroupCallUserCell groupCallUserCell5 = (GroupCallUserCell) childAt2;
+                            this.listCells.put(groupCallUserCell5.getParticipant(), groupCallUserCell5);
                         }
                     }
                     for (int i142 = 0; i142 < GroupCallActivity.this.fullscreenUsersListView.getChildCount(); i142++) {
@@ -7860,7 +7856,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     for (int i122 = 0; i122 < getChildCount(); i122++) {
                         View childAt = getChildAt(i122);
                         if (childAt instanceof GroupCallGridCell) {
-                            GroupCallActivity.this.attachRenderer((GroupCallGridCell) childAt, childAt.isAttachedToWindow() && i112 == 0);
+                            GroupCallActivity.this.attachRenderer((GroupCallGridCell) childAt, i112 == 0);
                         }
                     }
                 }
@@ -9134,7 +9130,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
     public GroupCallGridCell findGroupCallGridCell() {
         for (int i = 0; i < this.listView.getChildCount(); i++) {
             View childAt = this.listView.getChildAt(i);
-            if (childAt.isAttachedToWindow() && (childAt instanceof GroupCallGridCell) && this.listView.getChildAdapterPosition(childAt) >= 0) {
+            if ((childAt instanceof GroupCallGridCell) && this.listView.getChildAdapterPosition(childAt) >= 0) {
                 return (GroupCallGridCell) childAt;
             }
         }
@@ -13525,15 +13521,15 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x010a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void updateTitle(boolean z) {
-        int i;
+        String str;
         AudioPlayerAlert.ClippingTextViewSwitcher clippingTextViewSwitcher;
-        String string;
+        int i;
         AudioPlayerAlert.ClippingTextViewSwitcher clippingTextViewSwitcher2;
         int i2;
         ChatObject.Call call = this.call;
@@ -13563,11 +13559,11 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     actionBar.setTitle(this.call.call.title);
                 }
                 clippingTextViewSwitcher = this.titleTextView;
-                string = this.call.call.title;
-                clippingTextViewSwitcher.setText(string, z);
+                str = this.call.call.title;
+                clippingTextViewSwitcher.setText(str, z);
             }
             SimpleTextView titleTextView = this.actionBar.getTitleTextView();
-            if (this.call.recording) {
+            if (!this.call.recording) {
                 if (titleTextView.getRightDrawable() != null) {
                     titleTextView.setRightDrawable((Drawable) null);
                     this.titleTextView.getTextView().setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
@@ -13589,18 +13585,17 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         TLRPC.Chat chat = this.currentChat;
         if (chat == null || chat.title.equals(this.actionBar.getTitle())) {
             if (this.currentChat == null) {
-                ActionBar actionBar2 = this.actionBar;
-                i = R.string.ConferenceChat;
-                actionBar2.setTitle(LocaleController.getString(i));
+                str = "Group call";
+                this.actionBar.setTitle("Group call");
                 clippingTextViewSwitcher = this.titleTextView;
             }
             SimpleTextView titleTextView2 = this.actionBar.getTitleTextView();
-            if (this.call.recording) {
+            if (!this.call.recording) {
             }
         } else {
-            ActionBar actionBar3 = this.actionBar;
+            ActionBar actionBar2 = this.actionBar;
             if (z) {
-                actionBar3.setTitleAnimated(this.currentChat.title, true, 180L);
+                actionBar2.setTitleAnimated(this.currentChat.title, true, 180L);
                 this.actionBar.getTitleTextView().setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCallActivity$$ExternalSyntheticLambda53
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -13608,27 +13603,23 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     }
                 });
             } else {
-                actionBar3.setTitle(this.currentChat.title);
+                actionBar2.setTitle(this.currentChat.title);
             }
             if (!ChatObject.isChannelOrGiga(this.currentChat)) {
                 clippingTextViewSwitcher = this.titleTextView;
                 i = R.string.VoipGroupVoiceChat;
             } else if (isRtmpStream()) {
                 clippingTextViewSwitcher = this.titleTextView;
-                string = this.currentChat.title;
-                clippingTextViewSwitcher.setText(string, z);
-                SimpleTextView titleTextView22 = this.actionBar.getTitleTextView();
-                if (this.call.recording) {
-                }
+                str = this.currentChat.title;
             } else {
                 clippingTextViewSwitcher = this.titleTextView;
                 i = R.string.VoipChannelVoiceChat;
             }
+            str = LocaleController.getString(i);
         }
-        string = LocaleController.getString(i);
-        clippingTextViewSwitcher.setText(string, z);
-        SimpleTextView titleTextView222 = this.actionBar.getTitleTextView();
-        if (this.call.recording) {
+        clippingTextViewSwitcher.setText(str, z);
+        SimpleTextView titleTextView22 = this.actionBar.getTitleTextView();
+        if (!this.call.recording) {
         }
     }
 
