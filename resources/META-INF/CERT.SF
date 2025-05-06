@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.4.2
-SHA-256-Digest-Manifest: rnFFkL3689JGM7At/PUEpFSkD03PDBouT1Ve1Hbfu50=
+SHA-256-Digest-Manifest: derqMrw3g0AWBztEDx7iP9Ji8QKDoNOHqW9zbuHrEmY=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: +di1MaxVYF/Yfq7CxlmxpJ57cARLvQ6emvTVaEcWVqE=
+SHA-256-Digest: +a4AN6n8aiRN+2CnrO9Tuzytw3MwnTPf44y5WABjQ3M=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: 2TpdbTK3Kqamv4TArXLgsRkCb7TmXpqayJR+Uaixff4=
@@ -191,7 +191,7 @@ Name: assets/day.attheme
 SHA-256-Digest: 775k0SFxdCx9/BwniTINPU9ZzTjH95iW0lbwnbvceSI=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: dA5tnMrmyL/ghNSJrJ8MBW1Z1No7da5oZkm4r2X1qLs=
+SHA-256-Digest: qtdwWPU6cMtWu2CllAeYl0DIDABDvnhypXYr2odvkRA=
 
 Name: assets/dexopt/baseline.profm
 SHA-256-Digest: b8iU6aRkcGIAAq5sFlMiRlQT+/yhFs98GdloWFCHoY0=
@@ -11081,7 +11081,7 @@ Name: classes4.dex
 SHA-256-Digest: UNMBXKjk73hnwsvue7GYhomU79JELiAwANvzu26VjP8=
 
 Name: classes5.dex
-SHA-256-Digest: YSgFTj8vVL25mT5BCBeP5/f9yVzcRyzFo4rbvvOwaUY=
+SHA-256-Digest: lLe0IJaA7pz3BHfaBvWjDLslArZqt3Ii9hXJk+HjeoU=
 
 Name: client_analytics.proto
 SHA-256-Digest: EsiOhXZ9ARjm/oKvt02rDTapjzIdPYgYWzazsNC7GXU=
@@ -31118,7 +31118,7 @@ Name: res/zzd.png
 SHA-256-Digest: fKYm9UEdWiZxhTsaLotiH3kIaFraxCH03Jtb4Gw7lL4=
 
 Name: resources.arsc
-SHA-256-Digest: H2xCUDJ8ILvayhqiE2M4iRUbqehMFSS2P1W8IoeuoqI=
+SHA-256-Digest: qRiZGIBaiaacaXVnMKtvqvnCiZtIJCRJIFNWmT4TrPI=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=
