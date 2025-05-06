@@ -1,77 +1,19 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-final class x1 implements N1, b2 {
-    private double a;
-    final /* synthetic */ double b;
-    final /* synthetic */ j$.util.function.i c;
+final class x1 extends u0 {
+    final /* synthetic */ j$.util.function.i h;
+    final /* synthetic */ double i;
 
-    x1(double d, j$.util.function.i iVar) {
-        this.b = d;
-        this.c = iVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    x1(S2 s2, j$.util.function.i iVar, double d) {
+        super(s2);
+        this.h = iVar;
+        this.i = d;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.m
-    public final void accept(double d) {
-        this.a = this.c.applyAsDouble(this.a, d);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        r((Double) obj);
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.function.Supplier
-    public final Object get() {
-        return Double.valueOf(this.a);
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        accept(((x1) n1).a);
-    }
-
-    @Override // j$.util.function.m
-    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
-        return j$.com.android.tools.r8.a.b(this, mVar);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.e2
-    public final void n(long j) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.b2
-    public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+    @Override // j$.util.stream.u0
+    public final O1 d0() {
+        return new y1(this.i, this.h);
     }
 }

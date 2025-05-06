@@ -409,8 +409,8 @@ public class RecordControl extends View implements FlashViews.Invertable {
         super.onDetachedFromWindow();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0841  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0873  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0863  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0895  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -504,7 +504,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
             f6 = lerp4;
             f7 = f32;
             f9 = lerp3;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
         } else {
             rectF = rectF4;
             f6 = lerp4;
@@ -515,7 +515,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         }
         float f34 = f6;
         canvas.scale(f34, f34, this.cx, this.cy);
-        this.mainPaint.setAlpha(NotificationCenter.proxyCheckDone);
+        this.mainPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
         RectF rectF5 = rectF;
         canvas.drawRoundRect(rectF5, f9, f9, this.mainPaint);
         if (f > 0.0f) {
@@ -552,7 +552,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         this.outlinePaint.setAlpha((int) (AndroidUtilities.lerp(1.0f, 0.3f, f5) * 255.0f * f33));
         canvas.drawCircle(this.cx, this.cy, lerp6, this.outlinePaint);
         if ((f25 > 0.0f) && (f5 > 0.0f)) {
-            this.outlinePaint.setAlpha(NotificationCenter.proxyCheckDone);
+            this.outlinePaint.setAlpha(NotificationCenter.didSetNewWallpapper);
             rectF2 = rectF5;
             canvas.drawArc(rectF5, -90.0f, f25 * 360.0f, false, this.outlinePaint);
         } else {
@@ -620,6 +620,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
                 canvas.save();
                 canvas.scale(scale2, scale2, this.leftCx, this.cy);
                 canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
+                canvas.rotate(-getRotation(), this.leftCx, this.cy);
                 this.unlockDrawable.draw(canvas);
                 canvas.restore();
             }
@@ -630,6 +631,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         if (scale3 > 0.0f) {
             canvas.save();
             canvas.scale(scale3, scale3, this.leftCx, this.cy);
+            canvas.rotate(-getRotation(), this.leftCx, this.cy);
             this.galleryImage.draw(canvas);
             canvas.restore();
         }
@@ -638,7 +640,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
             canvas.save();
             float scale4 = this.flipButton.getScale(f13) * f45 * f33;
             canvas.scale(scale4, scale4, this.rightCx, this.cy);
-            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate), this.rightCx, this.cy);
+            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
             canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
             this.flipDrawableBlack.draw(canvas);
             canvas.restore();
@@ -647,7 +649,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
             canvas.save();
             float scale5 = this.flipButton.getScale(f13) * (1.0f - f45) * f33;
             canvas.scale(scale5, scale5, this.rightCx, this.cy);
-            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate), this.rightCx, this.cy);
+            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
             canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
             this.flipDrawableWhite.draw(canvas);
             canvas.restore();
@@ -660,7 +662,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         }
         float f47 = this.lockedT.set((this.longpressRecording || !this.recording) ? 0.0f : 1.0f);
         if (f14 > 0.0f) {
-            this.redPaint.setAlpha(NotificationCenter.proxyCheckDone);
+            this.redPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
             canvas.drawCircle(this.touchX, this.cy, f14, this.redPaint);
             float f48 = this.touchX;
             float clamp3 = Utilities.clamp(1.0f - ((Math.abs(clamp2) * f4) / 1.3f), 1.0f, 0.0f);
@@ -761,13 +763,14 @@ public class RecordControl extends View implements FlashViews.Invertable {
                         canvas.save();
                         canvas.scale(scale, scale, this.leftCx, this.cy);
                         canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
+                        canvas.rotate(-getRotation(), this.leftCx, this.cy);
                         this.lockDrawable.draw(canvas);
                         canvas.restore();
                     }
                     float scale6 = this.flipButton.getScale(0.2f) * f33;
                     canvas.save();
                     canvas.scale(scale6, scale6, this.rightCx, this.cy);
-                    canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate), this.rightCx, this.cy);
+                    canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
                     canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
                     this.flipDrawableBlack.draw(canvas);
                     canvas.restore();
@@ -793,7 +796,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         float scale62 = this.flipButton.getScale(0.2f) * f33;
         canvas.save();
         canvas.scale(scale62, scale62, this.rightCx, this.cy);
-        canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate), this.rightCx, this.cy);
+        canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
         canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
         this.flipDrawableBlack.draw(canvas);
         canvas.restore();

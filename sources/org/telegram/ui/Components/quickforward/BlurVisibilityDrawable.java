@@ -21,7 +21,7 @@ public class BlurVisibilityDrawable extends Drawable {
     private int top;
     private int width;
     private final Paint emptyPaint = new Paint(2);
-    private int alpha = NotificationCenter.proxyCheckDone;
+    private int alpha = NotificationCenter.didSetNewWallpapper;
 
     public interface DrawRunnable {
         void draw(Canvas canvas, int i);
@@ -59,7 +59,7 @@ public class BlurVisibilityDrawable extends Drawable {
     public void draw(Canvas canvas) {
         int i = this.alpha;
         if (i == 255) {
-            drawNormal(canvas, NotificationCenter.proxyCheckDone);
+            drawNormal(canvas, NotificationCenter.didSetNewWallpapper);
             return;
         }
         if (i == 0) {
@@ -71,8 +71,8 @@ public class BlurVisibilityDrawable extends Drawable {
         double d3 = d2 / ((1.0d - d2) * 6.0d);
         double d4 = 1.0d + d3;
         double sqrt = ((-d4) + Math.sqrt((d4 * d4) - (((-d3) * 4.0d) * (-d2)))) / ((-2.0d) * d3);
-        int clamp = MathUtils.clamp((int) (d3 * sqrt * 255.0d), 0, NotificationCenter.proxyCheckDone);
-        drawBlur(canvas, MathUtils.clamp((int) (sqrt * 255.0d), 0, NotificationCenter.proxyCheckDone));
+        int clamp = MathUtils.clamp((int) (d3 * sqrt * 255.0d), 0, NotificationCenter.didSetNewWallpapper);
+        drawBlur(canvas, MathUtils.clamp((int) (sqrt * 255.0d), 0, NotificationCenter.didSetNewWallpapper));
         drawNormal(canvas, clamp);
     }
 
@@ -122,7 +122,7 @@ public class BlurVisibilityDrawable extends Drawable {
         this.canvas.translate(f2, f2);
         float f3 = 1.0f / f;
         this.canvas.scale(f3, f3);
-        this.drawRunnable.draw(this.canvas, NotificationCenter.proxyCheckDone);
+        this.drawRunnable.draw(this.canvas, NotificationCenter.didSetNewWallpapper);
         Utilities.stackBlurBitmap(this.bitmap, (int) f2);
         this.canvas.restore();
     }

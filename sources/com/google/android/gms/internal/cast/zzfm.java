@@ -8,7 +8,7 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.t0;
+import j$.util.stream.u0;
 import java.io.Serializable;
 import java.util.AbstractCollection;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
     @Override // java.util.Collection, j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
         Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
+        e0 = u0.e0(Collection.-EL.b(this), true);
         return e0;
     }
 

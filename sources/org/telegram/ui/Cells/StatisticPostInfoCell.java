@@ -206,9 +206,9 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:10:0x00e3  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0119  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x012e A[LOOP:0: B:15:0x012c->B:16:0x012e, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x01ce  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x01bc  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01be  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0100  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x00c9  */
     /*
@@ -257,7 +257,7 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
                 this.message.setText(AndroidUtilities.trim(AndroidUtilities.replaceNewLines(spannableStringBuilder), null));
                 this.views.setText(String.format(LocaleController.getPluralString("Views", recentPostInfo.getViews()), AndroidUtilities.formatWholeNumber(recentPostInfo.getViews(), 0)));
                 Date date = new Date(recentPostInfo.getDate() * 1000);
-                this.date.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
+                this.date.setText(LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
                 this.shares.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getForwards(), 0));
                 this.likes.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getReactions(), 0));
                 this.shares.setVisibility(recentPostInfo.getForwards() == 0 ? 0 : 8);
@@ -283,7 +283,7 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         this.message.setText(AndroidUtilities.trim(AndroidUtilities.replaceNewLines(spannableStringBuilder2), null));
         this.views.setText(String.format(LocaleController.getPluralString("Views", recentPostInfo.getViews()), AndroidUtilities.formatWholeNumber(recentPostInfo.getViews(), 0)));
         Date date2 = new Date(recentPostInfo.getDate() * 1000);
-        this.date.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
+        this.date.setText(LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
         this.shares.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getForwards(), 0));
         this.likes.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getReactions(), 0));
         this.shares.setVisibility(recentPostInfo.getForwards() == 0 ? 0 : 8);

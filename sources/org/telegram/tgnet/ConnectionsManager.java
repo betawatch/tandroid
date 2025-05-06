@@ -870,7 +870,7 @@ public class ConnectionsManager extends BaseController {
                 str11 = "mainconfig" + this.currentAccount;
             }
             this.forceTryIpV6 = context.getSharedPreferences(str11, 0).getBoolean("forceTryIpV6", false);
-            init(SharedConfig.buildVersion(), 200, BuildVars.APP_ID, str3, str10, str2, str4, str9, file2, FileLog.getNetworkLogPath(), regId, certificateSHA256Fingerprint, rawOffset, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() == null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
+            init(SharedConfig.buildVersion(), 202, BuildVars.APP_ID, str3, str10, str2, str4, str9, file2, FileLog.getNetworkLogPath(), regId, certificateSHA256Fingerprint, rawOffset, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() == null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
         }
         sb = new StringBuilder();
         sb.append(str6);
@@ -897,7 +897,7 @@ public class ConnectionsManager extends BaseController {
         if (this.currentAccount != 0) {
         }
         this.forceTryIpV6 = context.getSharedPreferences(str112, 0).getBoolean("forceTryIpV6", false);
-        init(SharedConfig.buildVersion(), 200, BuildVars.APP_ID, str3, str10, str2, str4, str9, file2, FileLog.getNetworkLogPath(), regId2, certificateSHA256Fingerprint2, rawOffset2, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() == null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
+        init(SharedConfig.buildVersion(), 202, BuildVars.APP_ID, str3, str10, str2, str4, str9, file2, FileLog.getNetworkLogPath(), regId2, certificateSHA256Fingerprint2, rawOffset2, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() == null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
     }
 
     public static int generateClassGuid() {
@@ -1263,8 +1263,8 @@ public class ConnectionsManager extends BaseController {
                 sb.append(" messageId = 0x");
                 sb.append(Long.toHexString(j4));
                 FileLog.d(sb.toString());
+                FileLog.dumpResponseAndRequest(this.currentAccount, tLObject, tLObject2, tL_error, j4, j, i4);
             }
-            FileLog.dumpResponseAndRequest(this.currentAccount, tLObject, tLObject2, tL_error, j4, j, i4);
             final TLObject tLObject3 = tLObject2;
             final TLRPC.TL_error tL_error3 = tL_error;
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda23

@@ -3,34 +3,30 @@ package j$.util.stream;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class I1 implements N1, c2 {
-    private boolean a;
-    private int b;
+final class I1 implements O1, c2 {
+    private int a;
+    final /* synthetic */ int b;
     final /* synthetic */ j$.util.function.A c;
 
-    I1(j$.util.function.A a) {
+    I1(int i, j$.util.function.A a) {
+        this.b = i;
         this.c = a;
     }
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final void accept(int i) {
-        if (this.a) {
-            this.a = false;
-        } else {
-            i = this.c.applyAsInt(this.b, i);
-        }
-        this.b = i;
+        this.a = this.c.applyAsInt(this.a, i);
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
@@ -47,16 +43,12 @@ final class I1 implements N1, c2 {
 
     @Override // j$.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.k.a() : j$.util.k.d(this.b);
+        return Integer.valueOf(this.a);
     }
 
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        I1 i1 = (I1) n1;
-        if (i1.a) {
-            return;
-        }
-        accept(i1.b);
+    @Override // j$.util.stream.O1
+    public final void h(O1 o1) {
+        accept(((I1) o1).a);
     }
 
     @Override // j$.util.function.E
@@ -70,13 +62,12 @@ final class I1 implements N1, c2 {
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        this.a = true;
-        this.b = 0;
+        this.a = this.b;
     }
 
     @Override // j$.util.stream.c2
     public final /* synthetic */ void o(Integer num) {
-        t0.g(this, num);
+        u0.g(this, num);
     }
 
     @Override // j$.util.stream.e2

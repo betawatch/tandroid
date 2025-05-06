@@ -157,4 +157,13 @@ class WebRtcAudioEffects {
         Logging.e(TAG, "Platform NS state can't be modified while recording");
         return false;
     }
+
+    public boolean toggleNS(boolean z) {
+        if (this.ns == null) {
+            Logging.e(TAG, "Attempting to enable or disable nonexistent NoiseSuppressor.");
+            return false;
+        }
+        Logging.d(TAG, "toggleNS(" + z + ")");
+        return this.ns.setEnabled(z) == 0;
+    }
 }

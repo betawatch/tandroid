@@ -620,7 +620,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         } catch (Exception e) {
             FileLog.e(e);
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -673,7 +673,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    InviteContactsActivity.this.lambda$onBackPressed$335();
+                    InviteContactsActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

@@ -12,19 +12,19 @@ abstract class K implements x3 {
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 

@@ -76,9 +76,9 @@ public class Bitmaps {
             options.inMutable = true;
             byte[] bArr = jpegData.get();
             bArr[76] = (byte) (i2 >> 8);
-            bArr[77] = (byte) (i2 & NotificationCenter.proxyCheckDone);
+            bArr[77] = (byte) (i2 & NotificationCenter.didSetNewWallpapper);
             bArr[78] = (byte) (i >> 8);
-            bArr[79] = (byte) (i & NotificationCenter.proxyCheckDone);
+            bArr[79] = (byte) (i & NotificationCenter.didSetNewWallpapper);
             createBitmap = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
             Utilities.pinBitmap(createBitmap);
             createBitmap.setHasAlpha(true);

@@ -4,7 +4,7 @@ import com.google.firebase.encoders.EncodingException;
 import com.google.firebase.encoders.FieldDescriptor;
 import com.google.firebase.encoders.ValueEncoderContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class ProtobufValueEncoderContext implements ValueEncoderContext {
     private FieldDescriptor field;
     private final ProtobufDataEncoderContext objEncoderCtx;

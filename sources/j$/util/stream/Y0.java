@@ -1,40 +1,24 @@
 package j$.util.stream;
 
-import j$.util.function.IntFunction;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class Y0 implements F0 {
+final class Y0 extends Z0 {
     Y0() {
     }
 
-    @Override // j$.util.stream.F0
-    public F0 a(int i) {
-        throw new IndexOutOfBoundsException();
+    @Override // j$.util.stream.G0
+    public final /* bridge */ /* synthetic */ void forEach(Consumer consumer) {
     }
 
-    @Override // j$.util.stream.F0
-    public final long count() {
-        return 0L;
+    @Override // j$.util.stream.G0
+    public final /* bridge */ /* synthetic */ void i(Object[] objArr, int i) {
     }
 
-    public final void d(Object obj, int i) {
-    }
-
-    public final void g(Object obj) {
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ int p() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.F0
-    public final Object[] s(IntFunction intFunction) {
-        return (Object[]) intFunction.apply(0);
-    }
-
-    @Override // j$.util.stream.F0
-    public /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
-        return t0.w(this, j, j2, intFunction);
+    @Override // j$.util.stream.G0
+    public final Spliterator spliterator() {
+        return Spliterators.e();
     }
 }

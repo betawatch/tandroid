@@ -930,6 +930,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell, float f, float f2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell, f, f2);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didStartVideoStream(MessageObject messageObject) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didStartVideoStream(this, messageObject);
             }
@@ -1821,7 +1826,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ChannelAdminLogActivity.14
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view2) {
-                                ChannelAdminLogActivity.this.lambda$onBackPressed$335();
+                                ChannelAdminLogActivity.this.lambda$onBackPressed$336();
                             }
 
                             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -2868,7 +2873,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = 200;
+        tL_channels_getParticipants.limit = NotificationCenter.storyQualityUpdate;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3761,7 +3766,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChannelAdminLogActivity.this.lambda$onBackPressed$335();
+                    ChannelAdminLogActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

@@ -1,74 +1,38 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import j$.util.function.BiConsumer;
+import j$.util.function.BiFunction;
 import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class v1 extends O1 implements N1, d2 {
-    final /* synthetic */ Supplier b;
-    final /* synthetic */ j$.util.function.l0 c;
-    final /* synthetic */ j$.util.function.f d;
+final class v1 extends u0 {
+    public final /* synthetic */ int h;
+    final /* synthetic */ Object i;
+    final /* synthetic */ Object j;
+    final /* synthetic */ Object k;
 
-    v1(Supplier supplier, j$.util.function.l0 l0Var, j$.util.function.f fVar) {
-        this.b = supplier;
-        this.c = l0Var;
-        this.d = fVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v1(S2 s2, Object obj, Object obj2, Object obj3, int i) {
+        super(s2);
+        this.h = i;
+        this.i = obj;
+        this.k = obj2;
+        this.j = obj3;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.m
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.e2
-    public final void accept(long j) {
-        this.c.accept(this.a, j);
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        j((Long) obj);
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.function.T
-    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
-        return j$.com.android.tools.r8.a.d(this, t);
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        this.a = this.d.apply(this.a, ((v1) n1).a);
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.e2
-    public final void n(long j) {
-        this.a = this.b.get();
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // j$.util.stream.u0
+    public final O1 d0() {
+        switch (this.h) {
+            case 0:
+                return new w1((Supplier) this.j, (j$.util.function.l0) this.k, (j$.util.function.f) this.i);
+            case 1:
+                return new B1((Supplier) this.j, (j$.util.function.f0) this.k, (j$.util.function.f) this.i);
+            case 2:
+                return new C1(this.j, (BiFunction) this.k, (j$.util.function.f) this.i);
+            case 3:
+                return new G1((Supplier) this.j, (BiConsumer) this.k, (BiConsumer) this.i);
+            default:
+                return new K1((Supplier) this.j, (j$.util.function.i0) this.k, (j$.util.function.f) this.i);
+        }
     }
 }

@@ -13,19 +13,19 @@ public abstract class a2 implements e2 {
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 

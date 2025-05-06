@@ -27,6 +27,6 @@ final class M extends Q implements b2 {
 
     @Override // j$.util.stream.b2
     public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+        u0.e(this, d);
     }
 }

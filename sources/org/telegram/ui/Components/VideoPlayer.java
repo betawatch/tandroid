@@ -137,7 +137,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
     private boolean mixedPlayWhenReady;
     private Runnable onQualityChangeListener;
     public ExoPlayer player;
-    private int playerId;
+    public final int playerId;
     ProgressiveMediaSource.Factory progressiveMediaSourceFactory;
     private int repeatCount;
     private final ArrayList seekFinishedListeners;
@@ -355,7 +355,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
             if (Math.abs(min - 360) < 55) {
                 return 360;
             }
-            return Math.abs(min + (-240)) < 55 ? NotificationCenter.didReplacedPhotoInMemCache : Math.abs(min + (-144)) < 55 ? NotificationCenter.messagePlayingProgressDidChanged : min;
+            return Math.abs(min + (-240)) < 55 ? NotificationCenter.closeOtherAppActivities : Math.abs(min + (-144)) < 55 ? NotificationCenter.messagePlayingProgressDidChanged : min;
         }
 
         public String toString() {
@@ -887,6 +887,11 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
                 @Override // com.google.android.exoplayer2.Player.Listener
                 public /* synthetic */ void onSeekProcessed() {
                     Player.Listener.-CC.$default$onSeekProcessed(this);
+                }
+
+                @Override // com.google.android.exoplayer2.Player.Listener
+                public /* synthetic */ void onShuffleModeEnabledChanged(boolean z) {
+                    Player.Listener.-CC.$default$onShuffleModeEnabledChanged(this, z);
                 }
 
                 @Override // com.google.android.exoplayer2.Player.Listener
@@ -2242,6 +2247,16 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
         if (videoPlayerDelegate != null) {
             videoPlayerDelegate.onSeekStarted(eventTime);
         }
+    }
+
+    @Override // com.google.android.exoplayer2.analytics.AnalyticsListener
+    public /* synthetic */ void onShuffleModeChanged(AnalyticsListener.EventTime eventTime, boolean z) {
+        AnalyticsListener.-CC.$default$onShuffleModeChanged(this, eventTime, z);
+    }
+
+    @Override // com.google.android.exoplayer2.Player.Listener
+    public /* synthetic */ void onShuffleModeEnabledChanged(boolean z) {
+        Player.Listener.-CC.$default$onShuffleModeEnabledChanged(this, z);
     }
 
     @Override // com.google.android.exoplayer2.analytics.AnalyticsListener

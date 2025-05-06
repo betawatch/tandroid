@@ -37,11 +37,11 @@ final class o extends a2 {
                 this.a.r((e2) obj);
                 return;
             case 1:
-                ((Consumer) ((u) this.c).n).r(obj);
+                ((Consumer) ((v) this.c).n).r(obj);
                 this.a.r((e2) obj);
                 return;
             case 2:
-                if (((Predicate) ((u) this.c).n).test(obj)) {
+                if (((Predicate) ((v) this.c).n).test(obj)) {
                     this.a.r((e2) obj);
                     return;
                 }
@@ -50,13 +50,13 @@ final class o extends a2 {
                 this.a.r((e2) ((T1) this.c).n.apply(obj));
                 return;
             case 4:
-                this.a.accept(((ToIntFunction) ((v) this.c).n).applyAsInt(obj));
+                this.a.accept(((ToIntFunction) ((w) this.c).n).applyAsInt(obj));
                 return;
             case 5:
-                this.a.accept(((ToLongFunction) ((w) this.c).n).applyAsLong(obj));
+                this.a.accept(((ToLongFunction) ((x) this.c).n).applyAsLong(obj));
                 return;
             case 6:
-                this.a.accept(((ToDoubleFunction) ((t) this.c).n).applyAsDouble(obj));
+                this.a.accept(((ToDoubleFunction) ((u) this.c).n).applyAsDouble(obj));
                 return;
             default:
                 Stream stream = (Stream) ((T1) this.c).n.apply(obj);

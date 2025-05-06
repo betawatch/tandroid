@@ -104,6 +104,8 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.pip.PictureInPictureActivityHandler;
+import org.telegram.messenger.pip.PipNativeApiController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -159,6 +161,7 @@ import org.telegram.ui.Components.PasscodeView;
 import org.telegram.ui.Components.PasscodeViewDialog;
 import org.telegram.ui.Components.PhonebookShareAlert;
 import org.telegram.ui.Components.PipRoundVideoView;
+import org.telegram.ui.Components.PipVideoOverlay;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.Components.Premium.boosts.BoostPagerBottomSheet;
 import org.telegram.ui.Components.RLottieDrawable;
@@ -173,6 +176,7 @@ import org.telegram.ui.Components.TermsOfServiceView;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.spoilers.SpoilerEffect2;
+import org.telegram.ui.Components.voip.RTMPStreamPipOverlay;
 import org.telegram.ui.Components.voip.VoIPHelper;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
@@ -196,7 +200,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
 /* loaded from: classes4.dex */
-public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate {
+public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, PictureInPictureActivityHandler {
     public static LaunchActivity instance;
     public static boolean isActive;
     public static boolean isResumed;
@@ -232,6 +236,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private ArrayList importingStickers;
     private ArrayList importingStickersEmoji;
     private String importingStickersSoftware;
+    private boolean isStarted;
     private SideMenultItemAnimator itemAnimator;
     private RelativeLayout launchLayout;
     private ActionBarLayout layersActionBarLayout;
@@ -254,6 +259,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private boolean passcodeSaveIntentIsNew;
     private boolean passcodeSaveIntentIsRestore;
     private ArrayList photoPathsArray;
+    private FrameLayout pipNativeWrapper;
     private Dialog proxyErrorDialog;
     private ActionBarLayout rightActionBarLayout;
     private View rippleAbove;
@@ -300,6 +306,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             return Consumer.-CC.$default$andThen(this, consumer);
         }
     };
+    private boolean firstAppUpdateCheck = true;
 
     class 15 implements TermsOfServiceView.TermsOfServiceViewDelegate {
         15() {
@@ -692,9 +699,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         } else {
             j = UserConfig.getInstance(this.currentAccount).clientUserId;
         }
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant = (TLRPC.TL_groupCallParticipant) call.participants.get(j);
-        boolean z4 = (tL_groupCallParticipant == null || tL_groupCallParticipant.can_self_unmute || !tL_groupCallParticipant.muted) ? false : true;
-        if (z4 && tL_groupCallParticipant.raise_hand_rating != 0) {
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.get(j);
+        boolean z4 = (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted) ? false : true;
+        if (z4 && groupCallParticipant.raise_hand_rating != 0) {
             z2 = true;
         }
         this.wasMutedByAdminRaisedHand = z2;
@@ -883,6 +890,26 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         return arrayList2;
     }
 
+    public static BaseFragment findFragment(Class cls) {
+        INavigationLayout actionBarLayout;
+        INavigationLayout iNavigationLayout;
+        BubbleActivity bubbleActivity = BubbleActivity.instance;
+        if (bubbleActivity != null && (iNavigationLayout = bubbleActivity.actionBarLayout) != null) {
+            return iNavigationLayout.findFragment(cls);
+        }
+        LaunchActivity launchActivity = instance;
+        if (launchActivity == null || launchActivity.sheetFragmentsStack.isEmpty()) {
+            LaunchActivity launchActivity2 = instance;
+            if (launchActivity2 == null || launchActivity2.getActionBarLayout() == null) {
+                return null;
+            }
+            actionBarLayout = instance.getActionBarLayout();
+        } else {
+            actionBarLayout = (INavigationLayout) instance.sheetFragmentsStack.get(r0.size() - 1);
+        }
+        return actionBarLayout.findFragment(cls);
+    }
+
     private BaseFragment getClientNotActivatedFragment() {
         return LoginActivity.loadCurrentState(false, this.currentAccount).getInt("currentViewNum", 0) != 0 ? new LoginActivity() : new IntroActivity();
     }
@@ -985,9 +1012,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    private boolean handleIntent(android.content.Intent r111, boolean r112, boolean r113, boolean r114, org.telegram.messenger.browser.Browser.Progress r115, boolean r116, boolean r117) {
+    private boolean handleIntent(android.content.Intent r112, boolean r113, boolean r114, boolean r115, org.telegram.messenger.browser.Browser.Progress r116, boolean r117, boolean r118) {
         /*
-            Method dump skipped, instructions count: 14002
+            Method dump skipped, instructions count: 14216
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.handleIntent(android.content.Intent, boolean, boolean, boolean, org.telegram.messenger.browser.Browser$Progress, boolean, boolean):boolean");
@@ -1080,7 +1107,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkAppUpdate$128(Browser.Progress progress) {
+    public /* synthetic */ void lambda$checkAppUpdate$128(Browser.Progress progress, boolean z, BetaUpdate betaUpdate) {
         BaseFragment lastFragment;
         BetaUpdate update = ApplicationLoader.applicationLoaderInstance.getUpdate();
         if (progress != null) {
@@ -1089,7 +1116,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 BulletinFactory.of(lastFragment).createSimpleBulletin(R.raw.chats_infotip, LocaleController.getString(R.string.YourVersionIsLatest)).show();
             }
         }
-        if (update != null) {
+        if (update == null || ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            return;
+        }
+        if (z || betaUpdate == null || update.higherThan(betaUpdate)) {
             ApplicationLoader.applicationLoaderInstance.showCustomUpdateAppPopup(this, update, this.currentAccount);
         }
     }
@@ -1738,6 +1768,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 mediaActivity = new MediaActivity(bundle6, null);
                             }
                             lambda$runLinkRequest$93(mediaActivity);
+                            return;
+                        }
+                        if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
+                            AccountFrozenAlert.show(this.currentAccount);
                             return;
                         }
                         i2 = R.string.TelegramFeaturesUrl;
@@ -2404,7 +2438,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     public final void accept(Object obj) {
                         runnable2.run();
                     }
-                }, null, progress != null ? new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4(progress) : null);
+                }, null, progress != null ? new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7(progress) : null);
                 return;
             } else if (tL_messages_botApp.request_write_access || z4) {
                 AlertsCreator.createBotLaunchAlert(baseFragment3, atomicBoolean, user, runnable2);
@@ -3110,7 +3144,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$66(TLRPC.TL_error tL_error, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, TLObject tLObject, final Long l3, final String str28, final String str29, final TLRPC.User user, final Runnable runnable) {
         LaunchActivity launchActivity;
-        ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4 chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4;
+        ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7 chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7;
         if (tL_error != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda143
                 @Override // java.lang.Runnable
@@ -3145,13 +3179,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
             };
             if (progress != null) {
-                chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4 = new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4(progress);
+                chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7 = new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7(progress);
                 launchActivity = this;
             } else {
                 launchActivity = this;
-                chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4 = null;
+                chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7 = null;
             }
-            WebAppDisclaimerAlert.show(launchActivity, consumer, null, chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda4);
+            WebAppDisclaimerAlert.show(launchActivity, consumer, null, chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda7);
         }
     }
 
@@ -6161,6 +6195,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         } : null);
     }
 
+    @Override // org.telegram.messenger.pip.PictureInPictureActivityHandler
+    public void addActivityPipView(View view) {
+        this.frameLayout.setVisibility(8);
+        this.pipNativeWrapper.addView(view, LayoutHelper.createFrame(-1, -1.0f));
+    }
+
     public void addOnUserLeaveHintListener(Runnable runnable) {
         this.onUserLeaveHintListeners.add(runnable);
     }
@@ -6215,10 +6255,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (ApplicationLoader.isStandaloneBuild() || ApplicationLoader.isBetaBuild()) {
             if (z || BuildVars.CHECK_UPDATES) {
                 if (ApplicationLoader.applicationLoaderInstance.isCustomUpdate()) {
+                    final BetaUpdate update = ApplicationLoader.applicationLoaderInstance.getUpdate();
+                    final boolean z2 = this.firstAppUpdateCheck;
+                    this.firstAppUpdateCheck = false;
                     ApplicationLoader.applicationLoaderInstance.checkUpdate(z, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda37
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LaunchActivity.this.lambda$checkAppUpdate$128(progress);
+                            LaunchActivity.this.lambda$checkAppUpdate$128(progress, z2, update);
                         }
                     });
                     return;
@@ -6926,7 +6969,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                         View view2 = this.rippleAbove;
                         if (view2 != null && view2.getBackground() != null) {
-                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.proxyCheckDone);
+                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.didSetNewWallpapper);
                         }
                         this.frameLayout.removeView(this.themeSwitchImageView);
                         ImageView imageView = new ImageView(this);
@@ -7200,7 +7243,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     chatActivity2 = chatActivity;
                     z3 = true;
                     if (dialogsActivity != null && chatActivity2 == null && !z3) {
-                        dialogsActivity.lambda$onBackPressed$335();
+                        dialogsActivity.lambda$onBackPressed$336();
                     }
                 }
             }
@@ -7420,7 +7463,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             chatActivity2 = chatActivity;
             if (dialogsActivity != null) {
-                dialogsActivity.lambda$onBackPressed$335();
+                dialogsActivity.lambda$onBackPressed$336();
             }
         }
         this.photoPathsArray = null;
@@ -7709,13 +7752,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         return INavigationLayout.INavigationLayoutDelegate.-CC.$default$needPresentFragment(this, baseFragment, z, z2, iNavigationLayout);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x0292, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x0294, code lost:
     
-        if (org.telegram.ui.LaunchActivity.mainFragmentsStack.size() == 1) goto L143;
+        if (org.telegram.ui.LaunchActivity.mainFragmentsStack.size() == 1) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x02ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x02ad, code lost:
     
-        if ((r9.get(0) instanceof org.telegram.ui.LoginActivity) == false) goto L142;
+        if ((r9.get(0) instanceof org.telegram.ui.LoginActivity) == false) goto L143;
      */
     @Override // org.telegram.ui.ActionBar.INavigationLayout.INavigationLayoutDelegate
     /*
@@ -7805,7 +7848,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 return false;
             }
             ActionBarLayout actionBarLayout10 = this.layersActionBarLayout;
-            if (iNavigationLayout != actionBarLayout10) {
+            if (actionBarLayout10 != null && iNavigationLayout != actionBarLayout10) {
                 actionBarLayout10.getView().setVisibility(0);
                 this.drawerLayoutContainer.setAllowOpenDrawer(false, true);
                 int i = 0;
@@ -8003,13 +8046,16 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 return;
             }
             if (AndroidUtilities.isTablet()) {
-                if (this.layersActionBarLayout.getView().getVisibility() == 0) {
+                ActionBarLayout actionBarLayout2 = this.layersActionBarLayout;
+                if (actionBarLayout2 != null && actionBarLayout2.getView().getVisibility() == 0) {
                     actionBarLayout = this.layersActionBarLayout;
                     actionBarLayout.onBackPressed();
-                } else if (this.rightActionBarLayout.getView().getVisibility() == 0 && !this.rightActionBarLayout.getFragmentStack().isEmpty()) {
+                }
+                ActionBarLayout actionBarLayout3 = this.rightActionBarLayout;
+                if (actionBarLayout3 != null && actionBarLayout3.getView().getVisibility() == 0 && !this.rightActionBarLayout.getFragmentStack().isEmpty()) {
                     BaseFragment baseFragment = this.rightActionBarLayout.getFragmentStack().get(this.rightActionBarLayout.getFragmentStack().size() - 1);
                     if (baseFragment.onBackPressed()) {
-                        baseFragment.lambda$onBackPressed$335();
+                        baseFragment.lambda$onBackPressed$336();
                         return;
                     }
                     return;
@@ -8051,7 +8097,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x042f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x0440, code lost:
     
         if (r15.actionBarLayout.addFragmentToStack(r0) != false) goto L101;
      */
@@ -8136,8 +8182,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.frameLayout = frameLayout;
         frameLayout.setClipToPadding(false);
         this.frameLayout.setClipChildren(false);
+        FrameLayout frameLayout2 = new FrameLayout(this);
+        this.pipNativeWrapper = frameLayout2;
         char c = 65535;
-        setContentView(this.frameLayout, new ViewGroup.LayoutParams(-1, -1));
+        frameLayout2.addView(this.frameLayout, new ViewGroup.LayoutParams(-1, -1));
+        setContentView(this.pipNativeWrapper, new ViewGroup.LayoutParams(-1, -1));
         if (i3 >= 21) {
             ImageView imageView = new ImageView(this);
             this.themeSwitchImageView = imageView;
@@ -8163,11 +8212,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             this.frameLayout.addView(view, LayoutHelper.createFrame(48, 48.0f));
             this.themeSwitchSunView.setVisibility(8);
         }
-        FrameLayout frameLayout2 = this.frameLayout;
+        FrameLayout frameLayout3 = this.frameLayout;
         BottomSheetTabsOverlay bottomSheetTabsOverlay = new BottomSheetTabsOverlay(this);
         this.bottomSheetTabsOverlay = bottomSheetTabsOverlay;
-        frameLayout2.addView(bottomSheetTabsOverlay);
-        FrameLayout frameLayout3 = this.frameLayout;
+        frameLayout3.addView(bottomSheetTabsOverlay);
+        FrameLayout frameLayout4 = this.frameLayout;
         FireworksOverlay fireworksOverlay = new FireworksOverlay(this) { // from class: org.telegram.ui.LaunchActivity.5
             {
                 setVisibility(8);
@@ -8186,7 +8235,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         };
         this.fireworksOverlay = fireworksOverlay;
-        frameLayout3.addView(fireworksOverlay);
+        frameLayout4.addView(fireworksOverlay);
         setupActionBarLayout();
         this.sideMenuContainer = new FrameLayout(this);
         RecyclerListView recyclerListView = new RecyclerListView(this) { // from class: org.telegram.ui.LaunchActivity.6
@@ -8726,6 +8775,28 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         SpoilerEffect2.pause(true);
     }
 
+    @Override // androidx.activity.ComponentActivity, android.app.Activity
+    public void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
+        PipNativeApiController.onPictureInPictureModeChanged(this, z);
+        super.onPictureInPictureModeChanged(z, configuration);
+        if (z || this.isStarted) {
+            return;
+        }
+        if (RTMPStreamPipOverlay.isVisible()) {
+            RTMPStreamPipOverlay.dismiss();
+        }
+        if (PipVideoOverlay.isVisible()) {
+            PipVideoOverlay.dismiss();
+        }
+        GroupCallActivity.onLeaveClick(this, null, false, true);
+        if (PhotoViewer.getPipInstance() != null) {
+            PhotoViewer.getPipInstance().destroyPhotoViewer();
+        }
+        if (PhotoViewer.hasInstance()) {
+            PhotoViewer.getInstance().closePhoto(false, false);
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.INavigationLayout.INavigationLayoutDelegate
     public boolean onPreIme() {
         if (SecretMediaViewer.hasInstance() && SecretMediaViewer.getInstance().isVisible()) {
@@ -8962,6 +9033,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     protected void onStart() {
         super.onStart();
+        this.isStarted = true;
         Browser.bindCustomTabsService(this);
         ApplicationLoader.mainInterfaceStopped = false;
         GroupCallPip.updateVisibility(this);
@@ -8974,6 +9046,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     protected void onStop() {
         super.onStop();
+        this.isStarted = false;
         Browser.unbindCustomTabsService(this);
         ApplicationLoader.mainInterfaceStopped = true;
         GroupCallPip.updateVisibility(this);
@@ -9004,6 +9077,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (actionBarLayout != null) {
             actionBarLayout.onUserLeaveHint();
         }
+        PipNativeApiController.onUserLeaveHint(this);
     }
 
     public void openMessage(final long j, final int i, final String str, final Browser.Progress progress, int i2, final int i3) {
@@ -9074,6 +9148,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             actionBarLayout = this.actionBarLayout;
         }
         actionBarLayout.rebuildAllFragmentViews(z, z);
+    }
+
+    @Override // org.telegram.messenger.pip.PictureInPictureActivityHandler
+    public void removeActivityPipView(View view) {
+        this.pipNativeWrapper.removeView(view);
+        this.frameLayout.setVisibility(this.pipNativeWrapper.getChildCount() > 1 ? 8 : 0);
     }
 
     public void removeOnUserLeaveHintListener(Runnable runnable) {

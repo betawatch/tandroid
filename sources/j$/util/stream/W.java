@@ -18,23 +18,23 @@ final class W extends Y1 {
     public final void accept(int i) {
         switch (this.b) {
             case 0:
-                ((j$.util.function.E) ((v) this.c).n).accept(i);
+                ((j$.util.function.E) ((w) this.c).n).accept(i);
                 this.a.accept(i);
                 return;
             case 1:
-                this.a.accept(((j$.util.function.L) ((v) this.c).n).a.applyAsInt(i));
+                this.a.accept(((j$.util.function.L) ((w) this.c).n).a.applyAsInt(i));
                 return;
             case 2:
-                this.a.r((e2) ((IntFunction) ((u) this.c).n).apply(i));
+                this.a.r((e2) ((IntFunction) ((v) this.c).n).apply(i));
                 return;
             case 3:
-                this.a.accept(((j$.util.function.K) ((w) this.c).n).applyAsLong(i));
+                this.a.accept(((j$.util.function.K) ((x) this.c).n).applyAsLong(i));
                 return;
             case 4:
-                this.a.accept(((j$.util.function.H) ((t) this.c).n).a.applyAsDouble(i));
+                this.a.accept(((j$.util.function.H) ((u) this.c).n).a.applyAsDouble(i));
                 return;
             case 5:
-                IntStream intStream = (IntStream) ((IntFunction) ((v) this.c).n).apply(i);
+                IntStream intStream = (IntStream) ((IntFunction) ((w) this.c).n).apply(i);
                 if (intStream != null) {
                     try {
                         intStream.sequential().J(new U(1, this));
@@ -53,7 +53,7 @@ final class W extends Y1 {
                 }
                 return;
             default:
-                if (((j$.util.function.G) ((v) this.c).n).a.test(i)) {
+                if (((j$.util.function.G) ((w) this.c).n).a.test(i)) {
                     this.a.accept(i);
                     return;
                 }

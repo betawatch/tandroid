@@ -2,7 +2,7 @@ package androidx.media;
 
 import android.media.VolumeProvider;
 import android.os.Build;
-import android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline8;
+import android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline11;
 
 /* loaded from: classes.dex */
 public abstract class VolumeProviderCompat {
@@ -87,7 +87,7 @@ public abstract class VolumeProviderCompat {
     public final void setCurrentVolume(int i) {
         this.mCurrentVolume = i;
         if (Build.VERSION.SDK_INT >= 21) {
-            Api21Impl.setCurrentVolume(MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline8.m(getVolumeProvider()), i);
+            Api21Impl.setCurrentVolume(MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline11.m(getVolumeProvider()), i);
         }
         Callback callback = this.mCallback;
         if (callback != null) {

@@ -36,7 +36,7 @@ final class T extends CountedCompleter {
             j = e.f(estimateSize);
             this.d = j;
         }
-        boolean d = R2.SHORT_CIRCUIT.d(this.c.q0());
+        boolean d = R2.SHORT_CIRCUIT.d(this.c.p0());
         e2 e2Var = this.b;
         boolean z = false;
         T t = this;
@@ -61,7 +61,7 @@ final class T extends CountedCompleter {
             t = t2;
             estimateSize = spliterator.estimateSize();
         }
-        t.c.g0(spliterator, e2Var);
+        t.c.f0(spliterator, e2Var);
         t.a = null;
         t.propagateCompletion();
     }

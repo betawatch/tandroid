@@ -17,7 +17,7 @@ public final /* synthetic */ class c0 implements j$.util.function.T {
                 this.b.accept(j);
                 break;
             default:
-                ((e0) this.b).a.accept(j);
+                ((f0) this.b).a.accept(j);
                 break;
         }
     }

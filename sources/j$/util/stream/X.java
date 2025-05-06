@@ -1,7 +1,7 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class X extends g0 {
+final class X extends h0 {
     public final /* synthetic */ int m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -11,7 +11,7 @@ final class X extends g0 {
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         switch (this.m) {
             case 0:
                 return new V(0, e2Var);

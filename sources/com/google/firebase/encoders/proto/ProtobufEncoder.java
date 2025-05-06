@@ -12,7 +12,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ProtobufEncoder {
     private final ObjectEncoder fallbackEncoder;
     private final Map objectEncoders;

@@ -32,7 +32,7 @@ public class ImageReceiverSpan extends ReplacementSpan {
         }
     };
     private boolean shadowEnabled = true;
-    private int shadowPaintAlpha = NotificationCenter.proxyCheckDone;
+    private int shadowPaintAlpha = NotificationCenter.didSetNewWallpapper;
 
     public ImageReceiverSpan(View view, int i, float f) {
         this.currentAccount = i;

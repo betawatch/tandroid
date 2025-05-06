@@ -81,6 +81,10 @@ public final class TreeTypeAdapter extends SerializationDelegatingTypeAdapter {
         return delegateAdapter;
     }
 
+    public static TypeAdapterFactory newFactoryWithMatchRawType(TypeToken typeToken, Object obj) {
+        return new SingleTypeFactory(obj, typeToken, typeToken.getType() == typeToken.getRawType(), null);
+    }
+
     public static TypeAdapterFactory newTypeHierarchyFactory(Class cls, Object obj) {
         return new SingleTypeFactory(obj, null, false, cls);
     }

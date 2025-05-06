@@ -216,23 +216,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.proxyCheckDone, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, 0, NotificationCenter.proxyCheckDone)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.proxyCheckDone)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, NotificationCenter.didSetNewWallpapper)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didSetNewWallpapper)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = Collections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.proxyCheckDone, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.proxyCheckDone, 0, NotificationCenter.proxyCheckDone)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.proxyCheckDone)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, NotificationCenter.didSetNewWallpapper)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didSetNewWallpapper)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = Collections.unmodifiableMap(hashMap2);
     }

@@ -264,6 +264,14 @@ public final class MediaDescriptionCompat implements Parcelable {
         return 0;
     }
 
+    public CharSequence getDescription() {
+        return this.mDescription;
+    }
+
+    public Bundle getExtras() {
+        return this.mExtras;
+    }
+
     public Bitmap getIconBitmap() {
         return this.mIcon;
     }
@@ -304,6 +312,14 @@ public final class MediaDescriptionCompat implements Parcelable {
         MediaDescription build = Api21Impl.build(createBuilder);
         this.mDescriptionFwk = build;
         return build;
+    }
+
+    public String getMediaId() {
+        return this.mMediaId;
+    }
+
+    public Uri getMediaUri() {
+        return this.mMediaUri;
     }
 
     public CharSequence getSubtitle() {

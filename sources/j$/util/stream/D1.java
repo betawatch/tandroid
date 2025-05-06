@@ -1,34 +1,78 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.Supplier;
+import j$.util.Optional;
+import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class D1 extends t0 {
-    final /* synthetic */ j$.util.function.f h;
-    final /* synthetic */ BiConsumer i;
-    final /* synthetic */ Supplier j;
-    final /* synthetic */ Collector k;
+final class D1 implements O1 {
+    private boolean a;
+    private Object b;
+    final /* synthetic */ j$.util.function.f c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    D1(S2 s2, j$.util.function.f fVar, BiConsumer biConsumer, Supplier supplier, Collector collector) {
-        super(s2);
-        this.h = fVar;
-        this.i = biConsumer;
-        this.j = supplier;
-        this.k = collector;
+    D1(j$.util.function.f fVar) {
+        this.c = fVar;
     }
 
-    @Override // j$.util.stream.t0, j$.util.stream.w3
-    public final int d() {
-        if (this.k.characteristics().contains(h.UNORDERED)) {
-            return R2.r;
+    @Override // j$.util.stream.e2, j$.util.function.m
+    public final /* synthetic */ void accept(double d) {
+        u0.b();
+        throw null;
+    }
+
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void accept(int i) {
+        u0.k();
+        throw null;
+    }
+
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void accept(long j) {
+        u0.l();
+        throw null;
+    }
+
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final void r(Object obj) {
+        if (this.a) {
+            this.a = false;
+        } else {
+            obj = this.c.apply(this.b, obj);
         }
-        return 0;
+        this.b = obj;
     }
 
-    @Override // j$.util.stream.t0
-    public final N1 d0() {
-        return new E1(this.j, this.i, this.h);
+    @Override // j$.util.function.Consumer
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer.-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.function.Supplier
+    public final Object get() {
+        return this.a ? Optional.empty() : Optional.of(this.b);
+    }
+
+    @Override // j$.util.stream.O1
+    public final void h(O1 o1) {
+        D1 d1 = (D1) o1;
+        if (d1.a) {
+            return;
+        }
+        r(d1.b);
+    }
+
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void m() {
+    }
+
+    @Override // j$.util.stream.e2
+    public final void n(long j) {
+        this.a = true;
+        this.b = null;
+    }
+
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ boolean q() {
+        return false;
     }
 }

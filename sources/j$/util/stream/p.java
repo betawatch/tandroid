@@ -13,39 +13,39 @@ final class p extends V1 {
         super(bVar, i, 0);
     }
 
-    static J0 E0(b bVar, Spliterator spliterator) {
-        l lVar = new l(17);
-        l lVar2 = new l(18);
-        return new J0((Collection) new u1(S2.REFERENCE, new l(19), lVar2, lVar, 3).c(bVar, spliterator));
+    static K0 D0(b bVar, Spliterator spliterator) {
+        l lVar = new l(21);
+        l lVar2 = new l(22);
+        return new K0((Collection) new v1(S2.REFERENCE, new l(23), lVar2, lVar, 3).c(bVar, spliterator));
     }
 
     @Override // j$.util.stream.b
-    final F0 u0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        if (R2.DISTINCT.d(bVar.q0())) {
-            return bVar.i0(spliterator, false, intFunction);
+    final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
+        if (R2.DISTINCT.d(bVar.p0())) {
+            return bVar.h0(spliterator, false, intFunction);
         }
-        if (R2.ORDERED.d(bVar.q0())) {
-            return E0(bVar, spliterator);
+        if (R2.ORDERED.d(bVar.p0())) {
+            return D0(bVar, spliterator);
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        new P(new k0(5, atomicBoolean, concurrentHashMap), false).c(bVar, spliterator);
+        new P(new l0(5, atomicBoolean, concurrentHashMap), false).c(bVar, spliterator);
         Collection keySet = concurrentHashMap.keySet();
         if (atomicBoolean.get()) {
             HashSet hashSet = new HashSet(keySet);
             hashSet.add(null);
             keySet = hashSet;
         }
-        return new J0(keySet);
+        return new K0(keySet);
     }
 
     @Override // j$.util.stream.b
-    final Spliterator v0(b bVar, Spliterator spliterator) {
-        return R2.DISTINCT.d(bVar.q0()) ? bVar.D0(spliterator) : R2.ORDERED.d(bVar.q0()) ? E0(bVar, spliterator).spliterator() : new a3(bVar.D0(spliterator));
+    final Spliterator u0(b bVar, Spliterator spliterator) {
+        return R2.DISTINCT.d(bVar.p0()) ? bVar.C0(spliterator) : R2.ORDERED.d(bVar.p0()) ? D0(bVar, spliterator).spliterator() : new a3(bVar.C0(spliterator));
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         e2Var.getClass();
         return R2.DISTINCT.d(i) ? e2Var : R2.SORTED.d(i) ? new n(e2Var) : new o(e2Var);
     }

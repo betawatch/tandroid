@@ -42,11 +42,11 @@ public abstract class CodedOutputStream extends ByteOutput {
         final void bufferFixed32NoTag(int i) {
             byte[] bArr = this.buffer;
             int i2 = this.position;
-            bArr[i2] = (byte) (i & NotificationCenter.proxyCheckDone);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.proxyCheckDone);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.proxyCheckDone);
+            bArr[i2] = (byte) (i & NotificationCenter.didSetNewWallpapper);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.didSetNewWallpapper);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.didSetNewWallpapper);
             this.position = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.proxyCheckDone);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.didSetNewWallpapper);
             this.totalBytesWritten += 4;
         }
 
@@ -57,11 +57,11 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i + 1] = (byte) ((j >> 8) & 255);
             bArr[i + 2] = (byte) ((j >> 16) & 255);
             bArr[i + 3] = (byte) (255 & (j >> 24));
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.proxyCheckDone);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.proxyCheckDone);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.didSetNewWallpapper);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.didSetNewWallpapper);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.didSetNewWallpapper);
             this.position = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.proxyCheckDone);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.didSetNewWallpapper);
             this.totalBytesWritten += 8;
         }
 

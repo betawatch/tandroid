@@ -196,6 +196,18 @@ public final class ListenerSet {
         this.listeners.clear();
     }
 
+    public void remove(Object obj) {
+        verifyCurrentThread();
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ListenerHolder listenerHolder = (ListenerHolder) it.next();
+            if (listenerHolder.listener.equals(obj)) {
+                listenerHolder.release(this.iterationFinishedEvent);
+                this.listeners.remove(listenerHolder);
+            }
+        }
+    }
+
     public void sendEvent(int i, Event event) {
         queueEvent(i, event);
         flushEvents();

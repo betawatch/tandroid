@@ -86,6 +86,23 @@ public interface IMediaSession extends IInterface {
             }
 
             @Override // android.support.v4.media.session.IMediaSession
+            public List getQueue() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(29, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        return Stub.getDefaultImpl().getQueue();
+                    }
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(MediaSessionCompat.QueueItem.CREATOR);
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
             public void pause() {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();

@@ -1061,7 +1061,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    LiteModeSettingsActivity.this.lambda$onBackPressed$335();
+                    LiteModeSettingsActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

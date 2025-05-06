@@ -671,7 +671,7 @@ public class ReactionsEffectOverlay {
             AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
             if (animatedEmojiDrawable != null) {
                 animatedEmojiDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.animatedEmojiDrawable.setAlpha(NotificationCenter.proxyCheckDone);
+                this.animatedEmojiDrawable.setAlpha(NotificationCenter.didSetNewWallpapper);
                 this.animatedEmojiDrawable.draw(canvas);
             } else {
                 AnimatedEmojiEffect animatedEmojiEffect = this.emojiEffect;

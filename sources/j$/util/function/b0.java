@@ -19,7 +19,7 @@ public final /* synthetic */ class b0 implements LongUnaryOperator {
 
     @Override // java.util.function.LongUnaryOperator
     public final /* synthetic */ LongUnaryOperator andThen(LongUnaryOperator longUnaryOperator) {
-        return a(this.a.a(a0.b(longUnaryOperator)));
+        return a(this.a.a(a0.c(longUnaryOperator)));
     }
 
     @Override // java.util.function.LongUnaryOperator
@@ -29,7 +29,7 @@ public final /* synthetic */ class b0 implements LongUnaryOperator {
 
     @Override // java.util.function.LongUnaryOperator
     public final /* synthetic */ LongUnaryOperator compose(LongUnaryOperator longUnaryOperator) {
-        return a(this.a.c(a0.b(longUnaryOperator)));
+        return a(this.a.b(a0.c(longUnaryOperator)));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

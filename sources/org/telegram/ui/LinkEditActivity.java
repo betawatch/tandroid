@@ -355,7 +355,7 @@ public class LinkEditActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$9(AlertDialog alertDialog, int i) {
         this.callback.revokeLink(this.inviteToEdit);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -404,7 +404,7 @@ public class LinkEditActivity extends BaseFragment {
         if (callback != null) {
             callback.onLinkCreated(tLObject);
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -435,7 +435,7 @@ public class LinkEditActivity extends BaseFragment {
         if (callback != null) {
             callback.onLinkEdited(this.inviteToEdit, tLObject);
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -531,7 +531,7 @@ public class LinkEditActivity extends BaseFragment {
                     tL_messages_exportChatInvite.flags |= 32;
                     TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = new TL_stars.TL_starsSubscriptionPricing();
                     tL_messages_exportChatInvite.subscription_pricing = tL_starsSubscriptionPricing;
-                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.storiesUpdated : 2592000;
+                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.onDatabaseReset : 2592000;
                     tL_messages_exportChatInvite.subscription_pricing.amount = j;
                 }
                 ConnectionsManager connectionsManager2 = getConnectionsManager();
@@ -599,7 +599,7 @@ public class LinkEditActivity extends BaseFragment {
                         z = true;
                     }
                     if (z) {
-                        lambda$onBackPressed$335();
+                        lambda$onBackPressed$336();
                         return;
                     }
                     this.loading = true;
@@ -723,7 +723,7 @@ public class LinkEditActivity extends BaseFragment {
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i9) {
                     if (i9 == -1) {
-                        LinkEditActivity.this.lambda$onBackPressed$335();
+                        LinkEditActivity.this.lambda$onBackPressed$336();
                         AndroidUtilities.hideKeyboard(LinkEditActivity.this.usesEditText);
                     }
                 }
@@ -2352,7 +2352,7 @@ public class LinkEditActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i93) {
                 if (i93 == -1) {
-                    LinkEditActivity.this.lambda$onBackPressed$335();
+                    LinkEditActivity.this.lambda$onBackPressed$336();
                     AndroidUtilities.hideKeyboard(LinkEditActivity.this.usesEditText);
                 }
             }
@@ -2770,10 +2770,10 @@ public class LinkEditActivity extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$335() {
+    public void lambda$onBackPressed$336() {
         this.scrollView.getLayoutParams().height = this.scrollView.getHeight();
         this.finished = true;
-        super.lambda$onBackPressed$335();
+        super.lambda$onBackPressed$336();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

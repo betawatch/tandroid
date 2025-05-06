@@ -10,18 +10,13 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -114,33 +109,6 @@ public class UserInfoCell extends View implements NotificationCenter.Notificatio
         this.rowsKeysWidth = Math.max(this.rowsKeysWidth, row.key.getCurrentWidth());
         this.rowsValuesWidth = Math.max(this.rowsValuesWidth, row.value.getCurrentWidth() + (z ? AndroidUtilities.dp(38.0f) : 0));
         return row;
-    }
-
-    private CharSequence countryText(String str) {
-        String str2;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String languageFlag = LocaleController.getLanguageFlag(str);
-        if (!TextUtils.isEmpty(languageFlag)) {
-            spannableStringBuilder.append((CharSequence) languageFlag).append((CharSequence) " ");
-        }
-        try {
-            str2 = new Locale("", str).getDisplayCountry(LocaleController.getInstance().getCurrentLocale());
-        } catch (Exception e) {
-            FileLog.e(e);
-            str2 = null;
-        }
-        if (str != null && str.equalsIgnoreCase("ft")) {
-            str2 = LocaleController.getString(R.string.ContactInfoPhoneFragment);
-        }
-        if (TextUtils.isEmpty(str2)) {
-            spannableStringBuilder.append((CharSequence) str);
-        } else {
-            spannableStringBuilder.append((CharSequence) str2);
-        }
-        TextPaint textPaint = new TextPaint();
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        return Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), true);
     }
 
     public static String displayDate(String str) {
@@ -366,8 +334,8 @@ public class UserInfoCell extends View implements NotificationCenter.Notificatio
         return this.groupsBounce.isPressed() || this.fullBounce.isPressed();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01ea  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -390,7 +358,7 @@ public class UserInfoCell extends View implements NotificationCenter.Notificatio
         this.subtitle = text2;
         this.height += text2.getHeight() + AndroidUtilities.dp(11.0f);
         if (peerSettings != null && peerSettings.phone_country != null) {
-            addRow(LocaleController.getString(R.string.ContactInfoPhone), countryText(peerSettings.phone_country), false);
+            addRow(LocaleController.getString(R.string.ContactInfoPhone), LocaleController.getCountryWithFlag(peerSettings.phone_country, 12, R.string.ContactInfoPhoneFragment), false);
         }
         if (peerSettings != null && peerSettings.registration_month != null) {
             addRow(LocaleController.getString(R.string.ContactInfoRegistration), displayDate(peerSettings.registration_month), false);

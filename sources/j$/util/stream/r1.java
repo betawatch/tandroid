@@ -2,112 +2,92 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-final class r1 extends O2 implements F0, x0 {
-    r1() {
+abstract class r1 extends CountedCompleter implements e2 {
+    protected final Spliterator a;
+    protected final b b;
+    protected final long c;
+    protected long d;
+    protected long e;
+    protected int f;
+    protected int g;
+
+    r1(int i, Spliterator spliterator, b bVar) {
+        this.a = spliterator;
+        this.b = bVar;
+        this.c = e.f(spliterator.estimateSize());
+        this.d = 0L;
+        this.e = i;
     }
 
-    @Override // j$.util.stream.F0
-    public final F0 a(int i) {
-        throw new IndexOutOfBoundsException();
+    r1(r1 r1Var, Spliterator spliterator, long j, long j2, int i) {
+        super(r1Var);
+        this.a = spliterator;
+        this.b = r1Var.b;
+        this.c = r1Var.c;
+        this.d = j;
+        this.e = j2;
+        if (j < 0 || j2 < 0 || (j + j2) - 1 >= i) {
+            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j), Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)));
+        }
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.m
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
+    abstract r1 a(Spliterator spliterator, long j, long j2);
+
+    public /* synthetic */ void accept(double d) {
+        u0.b();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
+    public /* synthetic */ void accept(int i) {
+        u0.k();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
+    public /* synthetic */ void accept(long j) {
+        u0.l();
         throw null;
     }
 
-    @Override // j$.util.stream.O2, j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        super.r(obj);
+    @Override // j$.util.function.Consumer
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.x0
-    public final F0 b() {
-        return this;
-    }
-
-    @Override // j$.util.stream.O2, j$.util.stream.F0
-    public final void forEach(Consumer consumer) {
-        super.forEach(consumer);
-    }
-
-    @Override // j$.util.stream.F0
-    public final void i(Object[] objArr, int i) {
-        long j = i;
-        long count = count() + j;
-        if (count > objArr.length || count < j) {
-            throw new IndexOutOfBoundsException("does not fit");
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.a;
+        r1 r1Var = this;
+        while (spliterator.estimateSize() > r1Var.c && (trySplit = spliterator.trySplit()) != null) {
+            r1Var.setPendingCount(1);
+            long estimateSize = trySplit.estimateSize();
+            r1Var.a(trySplit, r1Var.d, estimateSize).fork();
+            r1Var = r1Var.a(spliterator, r1Var.d + estimateSize, r1Var.e - estimateSize);
         }
-        if (this.c == 0) {
-            System.arraycopy(this.e, 0, objArr, i, this.b);
-            return;
-        }
-        for (int i2 = 0; i2 < this.c; i2++) {
-            Object[] objArr2 = this.f[i2];
-            System.arraycopy(objArr2, 0, objArr, i, objArr2.length);
-            i += this.f[i2].length;
-        }
-        int i3 = this.b;
-        if (i3 > 0) {
-            System.arraycopy(this.e, 0, objArr, i, i3);
-        }
+        r1Var.b.A0(spliterator, r1Var);
+        r1Var.propagateCompletion();
     }
 
     @Override // j$.util.stream.e2
-    public final void m() {
+    public final /* synthetic */ void m() {
     }
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        clear();
-        u(j);
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ int p() {
-        return 0;
+        long j2 = this.e;
+        if (j > j2) {
+            throw new IllegalStateException("size passed to Sink.begin exceeds array length");
+        }
+        int i = (int) this.d;
+        this.f = i;
+        this.g = i + ((int) j2);
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ boolean q() {
         return false;
-    }
-
-    @Override // j$.util.stream.F0
-    public final Object[] s(IntFunction intFunction) {
-        long count = count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        Object[] objArr = (Object[]) intFunction.apply((int) count);
-        i(objArr, 0);
-        return objArr;
-    }
-
-    @Override // j$.util.stream.O2, java.lang.Iterable
-    public final Spliterator spliterator() {
-        return super.spliterator();
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
-        return t0.w(this, j, j2, intFunction);
     }
 }

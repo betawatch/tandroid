@@ -1312,7 +1312,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     public final void run(Object obj) {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$3(j, (TLRPC.TL_channels_channelParticipants) obj);
                     }
-                }, 200);
+                }, NotificationCenter.storyQualityUpdate);
             } else {
                 MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).loadFullChat(j, 0, true);
             }
@@ -3408,7 +3408,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             float scrollY = getScrollY();
-            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.proxyCheckDone, 31);
+            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didSetNewWallpapper, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             float f = this.topGradientAlpha.set(canScrollVertically(-1));

@@ -392,7 +392,7 @@ public class CheckBoxBase {
                         int save = canvas.save();
                         canvas.translate(i6 - dp2, centerY - dp2);
                         i8 = i6;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.proxyCheckDone, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.didSetNewWallpapper, 31);
                         Paint paint5 = (Paint) this.circlePaintProvider.provide(null);
                         int i21 = this.backgroundType;
                         if (i21 == 12 || i21 == 13) {
@@ -542,6 +542,10 @@ public class CheckBoxBase {
         f5 = f;
         if (f3 > 0.0f) {
         }
+    }
+
+    public boolean getDrawUnchecked() {
+        return this.drawUnchecked;
     }
 
     public float getProgress() {

@@ -22,6 +22,7 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -97,6 +98,16 @@ public class VoIPPreNotificationService {
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
+        public TLRPC.GroupCall getGroupCall() {
+            return null;
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public ArrayList<TLRPC.GroupCallParticipant> getGroupParticipants() {
+            return null;
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
         public TL_phone.PhoneCall getPrivateCall() {
             return this.call;
         }
@@ -104,6 +115,20 @@ public class VoIPPreNotificationService {
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public TLRPC.User getUser() {
             return MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.userId));
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public boolean isCallingVideo() {
+            TL_phone.PhoneCall phoneCall = this.call;
+            if (phoneCall != null) {
+                return phoneCall.video;
+            }
+            return false;
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public boolean isConference() {
+            return false;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -137,7 +162,7 @@ public class VoIPPreNotificationService {
             receivedcall.peer = tL_inputPhoneCall;
             tL_inputPhoneCall.id = phoneCall.id;
             tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-            ConnectionsManager.getInstance(i).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda12
+            ConnectionsManager.getInstance(i).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPPreNotificationService.lambda$acknowledge$3(context, runnable, tLObject, tL_error);
@@ -209,7 +234,7 @@ public class VoIPPreNotificationService {
         discardcall.connection_id = 0L;
         discardcall.reason = i != 2 ? i != 3 ? i != 4 ? new TLRPC.TL_phoneCallDiscardReasonHangup() : new TLRPC.TL_phoneCallDiscardReasonBusy() : new TLRPC.TL_phoneCallDiscardReasonMissed() : new TLRPC.TL_phoneCallDiscardReasonDisconnect();
         FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda13
+        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPPreNotificationService.lambda$decline$4(intExtra, tLObject, tL_error);
@@ -271,7 +296,7 @@ public class VoIPPreNotificationService {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$acknowledge$3(final Context context, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda11
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPPreNotificationService.lambda$acknowledge$2(TLObject.this, tL_error, context, runnable);
@@ -531,7 +556,7 @@ public class VoIPPreNotificationService {
             final long longExtra = intent.getLongExtra("user_id", 0L);
             final boolean z = phoneCall.video;
             currentState = new State(intExtra, longExtra, phoneCall);
-            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda9
+            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPPreNotificationService.lambda$show$1(intent, phoneCall, context, intExtra, longExtra, z);
@@ -547,7 +572,7 @@ public class VoIPPreNotificationService {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static void startRinging(Context context, int i, long j) {
+    public static void startRinging(Context context, int i, long j) {
         String str;
         int i2;
         String str2;
@@ -575,7 +600,7 @@ public class VoIPPreNotificationService {
                 }
                 MediaPlayer mediaPlayer2 = new MediaPlayer();
                 ringtonePlayer = mediaPlayer2;
-                mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda10
+                mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda2
                     @Override // android.media.MediaPlayer.OnPreparedListener
                     public final void onPrepared(MediaPlayer mediaPlayer3) {
                         VoIPPreNotificationService.lambda$startRinging$0(mediaPlayer3);
@@ -631,7 +656,6 @@ public class VoIPPreNotificationService {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static void stopRinging() {
         synchronized (sync) {
             try {

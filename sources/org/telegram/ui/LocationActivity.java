@@ -225,7 +225,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$addInfoView$0(VenueLocation venueLocation, boolean z, int i) {
             LocationActivity.this.delegate.didSelectLocation(venueLocation.venue, LocationActivity.this.locationType, z, i, 0L);
-            LocationActivity.this.lambda$onBackPressed$335();
+            LocationActivity.this.lambda$onBackPressed$336();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -239,7 +239,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 });
             } else {
                 LocationActivity.this.delegate.didSelectLocation(venueLocation.venue, LocationActivity.this.locationType, true, 0, 0L);
-                LocationActivity.this.lambda$onBackPressed$335();
+                LocationActivity.this.lambda$onBackPressed$336();
             }
         }
 
@@ -319,7 +319,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             ofFloat.setDuration(360L);
             ofFloat.start();
             this.views.put(iMarker, frameLayout);
-            LocationActivity.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.storiesUpdated, null);
+            LocationActivity.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.onDatabaseReset, null);
         }
 
         public void removeInfoView(IMapsProvider.IMarker iMarker) {
@@ -1061,7 +1061,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         }
         alertDialogArr[0] = null;
         this.delegate.didSelectLocation(tL_messageMediaVenue, 4, true, 0, 0L);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1082,13 +1082,13 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$15(TLRPC.TL_messageMediaGeo tL_messageMediaGeo, boolean z, int i) {
         this.delegate.didSelectLocation(tL_messageMediaGeo, this.locationType, z, i, 0L);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$16(Object obj, boolean z, int i) {
         this.delegate.didSelectLocation((TLRPC.TL_messageMediaVenue) obj, this.locationType, z, i, 0L);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1210,7 +1210,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             return;
         }
         this.delegate.didSelectLocation(tL_messageMediaVenue, 4, true, 0, 0L);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1360,7 +1360,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$26(TLRPC.TL_messageMediaVenue tL_messageMediaVenue, boolean z, int i) {
         this.delegate.didSelectLocation(tL_messageMediaVenue, this.locationType, z, i, 0L);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1383,7 +1383,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 return;
             } else {
                 this.delegate.didSelectLocation(item, this.locationType, true, 0, 0L);
-                lambda$onBackPressed$335();
+                lambda$onBackPressed$336();
                 return;
             }
         }
@@ -1643,7 +1643,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             FileLog.e(e);
         }
         this.hasScreenshot = true;
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2332,7 +2332,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         tL_messageMediaGeoLive.flags = i3 | 9;
         this.delegate.didSelectLocation(tL_messageMediaGeoLive, this.locationType, true, 0, 0L);
         if (i2 <= 0) {
-            lambda$onBackPressed$335();
+            lambda$onBackPressed$336();
             return;
         }
         this.proximitySheet.setRadiusSet();
@@ -2661,7 +2661,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                         public void onItemClick(int i12) {
                             if (i12 == -1) {
-                                LocationActivity.this.lambda$onBackPressed$335();
+                                LocationActivity.this.lambda$onBackPressed$336();
                                 return;
                             }
                             if (i12 != 1) {
@@ -3690,7 +3690,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i122) {
                     if (i122 == -1) {
-                        LocationActivity.this.lambda$onBackPressed$335();
+                        LocationActivity.this.lambda$onBackPressed$336();
                         return;
                     }
                     if (i122 != 1) {
@@ -4071,7 +4071,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i122) {
                 if (i122 == -1) {
-                    LocationActivity.this.lambda$onBackPressed$335();
+                    LocationActivity.this.lambda$onBackPressed$336();
                     return;
                 }
                 if (i122 != 1) {

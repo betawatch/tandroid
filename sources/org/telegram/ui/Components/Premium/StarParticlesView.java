@@ -240,18 +240,18 @@ public class StarParticlesView extends View {
                 }
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:11:0x006f  */
-            /* JADX WARN: Removed duplicated region for block: B:14:0x0083  */
-            /* JADX WARN: Removed duplicated region for block: B:42:0x0223  */
-            /* JADX WARN: Removed duplicated region for block: B:45:0x023b  */
-            /* JADX WARN: Removed duplicated region for block: B:48:0x02a2  */
-            /* JADX WARN: Removed duplicated region for block: B:59:0x02ff  */
-            /* JADX WARN: Removed duplicated region for block: B:62:0x0305  */
-            /* JADX WARN: Removed duplicated region for block: B:79:0x02b3  */
-            /* JADX WARN: Removed duplicated region for block: B:80:0x024e  */
-            /* JADX WARN: Removed duplicated region for block: B:84:0x014d  */
-            /* JADX WARN: Removed duplicated region for block: B:8:0x0056  */
-            /* JADX WARN: Removed duplicated region for block: B:95:0x0058  */
+            /* JADX WARN: Removed duplicated region for block: B:11:0x0073  */
+            /* JADX WARN: Removed duplicated region for block: B:14:0x0087  */
+            /* JADX WARN: Removed duplicated region for block: B:42:0x0231  */
+            /* JADX WARN: Removed duplicated region for block: B:45:0x0249  */
+            /* JADX WARN: Removed duplicated region for block: B:48:0x02b0  */
+            /* JADX WARN: Removed duplicated region for block: B:58:0x030c  */
+            /* JADX WARN: Removed duplicated region for block: B:61:0x0312  */
+            /* JADX WARN: Removed duplicated region for block: B:78:0x02c1  */
+            /* JADX WARN: Removed duplicated region for block: B:79:0x025c  */
+            /* JADX WARN: Removed duplicated region for block: B:83:0x015b  */
+            /* JADX WARN: Removed duplicated region for block: B:8:0x005a  */
+            /* JADX WARN: Removed duplicated region for block: B:94:0x005c  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -318,13 +318,11 @@ public class StarParticlesView extends View {
                                 float f8 = 2.14748365E9f;
                                 for (int i4 = 0; i4 < Drawable.this.particles.size(); i4++) {
                                     Drawable drawable5 = Drawable.this;
-                                    boolean z = drawable5.startFromCenter;
-                                    Particle particle = (Particle) drawable5.particles.get(i4);
-                                    if (z) {
-                                        f4 = particle.x2 - abs7;
+                                    if (drawable5.startFromCenter) {
+                                        f4 = ((Particle) drawable5.particles.get(i4)).x2 - abs7;
                                         f5 = ((Particle) Drawable.this.particles.get(i4)).y2;
                                     } else {
-                                        f4 = particle.x - abs7;
+                                        f4 = ((Particle) drawable5.particles.get(i4)).x - abs7;
                                         f5 = ((Particle) Drawable.this.particles.get(i4)).y;
                                     }
                                     float f9 = f5 - abs8;
@@ -385,7 +383,7 @@ public class StarParticlesView extends View {
                         }
                         this.first = false;
                     }
-                    abs = (int) Math.floor((r0 * (Drawable.this.stars.length - 1)) + 1.0f);
+                    abs = (int) Math.floor((r1 * (Drawable.this.stars.length - 2)) + 1.0f);
                 } else {
                     abs = Math.abs(Utilities.fastRandom.nextInt() % Drawable.this.stars.length);
                 }
@@ -524,7 +522,7 @@ public class StarParticlesView extends View {
                     this.svg[i2] = true;
                 } else if (i3 == 28) {
                     if (i2 == 0) {
-                        this.stars[i2] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.proxyCheckDone));
+                        this.stars[i2] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.didSetNewWallpapper));
                         this.flip[i2] = true;
                     }
                     Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
@@ -561,13 +559,13 @@ public class StarParticlesView extends View {
                                 mainGradientPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
                             if (this.forceMaxAlpha) {
-                                mainGradientPaint.setAlpha(NotificationCenter.proxyCheckDone);
+                                mainGradientPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
                             } else {
                                 mainGradientPaint.setAlpha(this.useBlur ? 60 : 120);
                             }
                             canvas.drawPath(path, mainGradientPaint);
                             mainGradientPaint.setPathEffect(null);
-                            mainGradientPaint.setAlpha(NotificationCenter.proxyCheckDone);
+                            mainGradientPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
                         }
                         if (!this.useBlur) {
                             Utilities.stackBlurBitmap(createBitmap, 2);
@@ -614,7 +612,7 @@ public class StarParticlesView extends View {
         }
 
         protected int getPathColor(int i) {
-            return this.type == 100 ? ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 200) : Theme.getColor(this.colorKey, this.resourcesProvider);
+            return this.type == 100 ? ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.storyQualityUpdate) : Theme.getColor(this.colorKey, this.resourcesProvider);
         }
 
         public void init() {
@@ -702,7 +700,7 @@ public class StarParticlesView extends View {
     }
 
     public StarParticlesView(Context context) {
-        this(context, SharedConfig.getDevicePerformanceClass() == 2 ? 200 : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50);
+        this(context, SharedConfig.getDevicePerformanceClass() == 2 ? NotificationCenter.storyQualityUpdate : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50);
     }
 
     public StarParticlesView(Context context, int i) {
@@ -760,7 +758,7 @@ public class StarParticlesView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.clipGradientPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
         }
         this.drawable.onDraw(canvas);
         if (this.clipGradientPaint != null) {

@@ -21,7 +21,7 @@ final class F implements w3 {
     @Override // j$.util.stream.w3
     public final Object a(b bVar, Spliterator spliterator) {
         x3 x3Var = (x3) this.d.get();
-        bVar.B0(spliterator, x3Var);
+        bVar.A0(spliterator, x3Var);
         Object obj = x3Var.get();
         return obj != null ? obj : this.b;
     }

@@ -140,7 +140,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1) {
-                PasscodeActivity.this.lambda$onBackPressed$335();
+                PasscodeActivity.this.lambda$onBackPressed$336();
                 return;
             }
             if (i == 1) {
@@ -512,7 +512,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             i2++;
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -530,7 +530,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             if (value == 1) {
                 i3 = 60;
             } else if (value == 2) {
-                i3 = NotificationCenter.storiesUpdated;
+                i3 = NotificationCenter.onDatabaseReset;
             } else if (value == 3) {
                 i3 = 3600;
             } else if (value == 4) {
@@ -707,7 +707,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         if (z) {
             presentFragment(new PasscodeActivity(0), true);
         } else {
-            lambda$onBackPressed$335();
+            lambda$onBackPressed$336();
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
     }
@@ -1151,7 +1151,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
                 if (i5 == -1) {
-                    PasscodeActivity.this.lambda$onBackPressed$335();
+                    PasscodeActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

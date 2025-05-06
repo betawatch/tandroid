@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private final ObjectEncoder fallbackEncoder;
     private final Map objectEncoders;

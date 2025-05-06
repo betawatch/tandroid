@@ -2,7 +2,7 @@ package com.google.firebase.encoders.proto;
 
 import java.io.OutputStream;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class LengthCountingOutputStream extends OutputStream {
     private long length = 0;
 

@@ -98,6 +98,36 @@ public interface IMediaControllerCallback extends IInterface {
             }
 
             @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onQueueChanged(List list) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+                    obtain.writeTypedList(list);
+                    if (this.mRemote.transact(5, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                        return;
+                    }
+                    Stub.getDefaultImpl().onQueueChanged(list);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onRepeatModeChanged(int i) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+                    obtain.writeInt(i);
+                    if (this.mRemote.transact(9, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                        return;
+                    }
+                    Stub.getDefaultImpl().onRepeatModeChanged(i);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
             public void onSessionDestroyed() {
                 Parcel obtain = Parcel.obtain();
                 try {
@@ -106,6 +136,21 @@ public interface IMediaControllerCallback extends IInterface {
                         return;
                     }
                     Stub.getDefaultImpl().onSessionDestroyed();
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onShuffleModeChanged(int i) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+                    obtain.writeInt(i);
+                    if (this.mRemote.transact(12, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                        return;
+                    }
+                    Stub.getDefaultImpl().onShuffleModeChanged(i);
                 } finally {
                     obtain.recycle();
                 }

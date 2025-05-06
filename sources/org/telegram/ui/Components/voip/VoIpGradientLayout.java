@@ -6,9 +6,11 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import java.util.Objects;
@@ -26,12 +28,12 @@ public class VoIpGradientLayout extends FrameLayout {
     private int alphaOrangeRed;
     private final VoIPBackgroundProvider backgroundProvider;
     private ValueAnimator badConnectionAnimator;
-    private final MotionBackgroundDrawable bgBlueGreen;
-    private final MotionBackgroundDrawable bgBlueGreenDark;
-    private final MotionBackgroundDrawable bgBlueGreenLight;
-    private final MotionBackgroundDrawable bgBlueViolet;
-    private final MotionBackgroundDrawable bgBlueVioletDark;
-    private final MotionBackgroundDrawable bgBlueVioletLight;
+    private final Drawable bgBlueGreen;
+    private final Drawable bgBlueGreenDark;
+    private final Drawable bgBlueGreenLight;
+    private final Drawable bgBlueViolet;
+    private final Drawable bgBlueVioletDark;
+    private final Drawable bgBlueVioletLight;
     private final MotionBackgroundDrawable bgGreen;
     private final MotionBackgroundDrawable bgGreenDark;
     private final MotionBackgroundDrawable bgGreenDarkReveal;
@@ -58,7 +60,33 @@ public class VoIpGradientLayout extends FrameLayout {
         BAD_CONNECTION
     }
 
-    public VoIpGradientLayout(Context context, final VoIPBackgroundProvider voIPBackgroundProvider) {
+    private class PureColorDrawable extends Drawable {
+        private final int color;
+
+        public PureColorDrawable(int i) {
+            this.color = i;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+            canvas.drawColor(this.color);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getOpacity() {
+            return -2;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i) {
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
+        }
+    }
+
+    public VoIpGradientLayout(Context context, boolean z, final VoIPBackgroundProvider voIPBackgroundProvider) {
         super(context);
         this.alphaBlueViolet = 0;
         this.alphaBlueGreen = 0;
@@ -73,36 +101,36 @@ public class VoIpGradientLayout extends FrameLayout {
         this.lockDrawing = false;
         this.backgroundProvider = voIPBackgroundProvider;
         this.allowAnimations = LiteMode.isEnabled(512);
-        this.bgBlueViolet = new MotionBackgroundDrawable(-4958504, -8304404, -14637865, -12612630, 0, false, true);
-        this.bgBlueGreen = new MotionBackgroundDrawable(-12224791, -12879119, -16207709, -15226140, 0, false, true);
+        this.bgBlueViolet = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-4958504, -8304404, -14637865, -12612630, 0, false, true);
+        this.bgBlueGreen = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-12224791, -12879119, -16207709, -15226140, 0, false, true);
         this.bgGreen = new MotionBackgroundDrawable(-16275028, -16270749, -5649306, -10833593, 0, false, true);
         this.bgOrangeRed = new MotionBackgroundDrawable(-1545896, -1613425, -2387892, -2198984, 0, false, true);
-        MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable(-5818672, -9819171, -15755831, -14124319, 0, false, true);
-        this.bgBlueVioletDark = motionBackgroundDrawable;
-        MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable(-13803306, -13866273, -16738923, -16608823, 0, false, true);
-        this.bgBlueGreenDark = motionBackgroundDrawable2;
-        MotionBackgroundDrawable motionBackgroundDrawable3 = new MotionBackgroundDrawable(-16741490, -16673972, -7357129, -13525721, 0, false, true);
-        this.bgGreenDark = motionBackgroundDrawable3;
-        MotionBackgroundDrawable motionBackgroundDrawable4 = new MotionBackgroundDrawable(-1949911, -1691537, -3705322, -2663914, 0, false, true);
-        this.bgOrangeRedDark = motionBackgroundDrawable4;
-        MotionBackgroundDrawable motionBackgroundDrawable5 = new MotionBackgroundDrawable(-2726657, -7186179, -13778695, -11034113, 0, false, true);
-        this.bgBlueVioletLight = motionBackgroundDrawable5;
-        MotionBackgroundDrawable motionBackgroundDrawable6 = new MotionBackgroundDrawable(-11170817, -10507265, -16458548, -14105857, 0, false, true);
-        this.bgBlueGreenLight = motionBackgroundDrawable6;
-        MotionBackgroundDrawable motionBackgroundDrawable7 = new MotionBackgroundDrawable(-16723243, -16129415, -3674272, -9578153, 0, false, true);
-        this.bgGreenLight = motionBackgroundDrawable7;
-        MotionBackgroundDrawable motionBackgroundDrawable8 = new MotionBackgroundDrawable(-34714, -32091, -85931, -29103, 0, false, true);
-        this.bgOrangeRedLight = motionBackgroundDrawable8;
+        Drawable pureColorDrawable = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-5818672, -9819171, -15755831, -14124319, 0, false, true);
+        this.bgBlueVioletDark = pureColorDrawable;
+        Drawable pureColorDrawable2 = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-13803306, -13866273, -16738923, -16608823, 0, false, true);
+        this.bgBlueGreenDark = pureColorDrawable2;
+        MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable(-16741490, -16673972, -7357129, -13525721, 0, false, true);
+        this.bgGreenDark = motionBackgroundDrawable;
+        MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable(-1949911, -1691537, -3705322, -2663914, 0, false, true);
+        this.bgOrangeRedDark = motionBackgroundDrawable2;
+        Drawable pureColorDrawable3 = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-2726657, -7186179, -13778695, -11034113, 0, false, true);
+        this.bgBlueVioletLight = pureColorDrawable3;
+        Drawable pureColorDrawable4 = z ? new PureColorDrawable(-15130842) : new MotionBackgroundDrawable(-11170817, -10507265, -16458548, -14105857, 0, false, true);
+        this.bgBlueGreenLight = pureColorDrawable4;
+        MotionBackgroundDrawable motionBackgroundDrawable3 = new MotionBackgroundDrawable(-16723243, -16129415, -3674272, -9578153, 0, false, true);
+        this.bgGreenLight = motionBackgroundDrawable3;
+        MotionBackgroundDrawable motionBackgroundDrawable4 = new MotionBackgroundDrawable(-34714, -32091, -85931, -29103, 0, false, true);
+        this.bgOrangeRedLight = motionBackgroundDrawable4;
         this.bgGreenLightReveal = new MotionBackgroundDrawable(-16723243, -16129415, -3674272, -9578153, 0, false, true);
         this.bgGreenDarkReveal = new MotionBackgroundDrawable(-16741490, -16673972, -7357129, -13525721, 0, false, true);
+        pureColorDrawable.setBounds(0, 0, 80, 80);
+        pureColorDrawable2.setBounds(0, 0, 80, 80);
         motionBackgroundDrawable.setBounds(0, 0, 80, 80);
         motionBackgroundDrawable2.setBounds(0, 0, 80, 80);
+        pureColorDrawable3.setBounds(0, 0, 80, 80);
+        pureColorDrawable4.setBounds(0, 0, 80, 80);
         motionBackgroundDrawable3.setBounds(0, 0, 80, 80);
         motionBackgroundDrawable4.setBounds(0, 0, 80, 80);
-        motionBackgroundDrawable5.setBounds(0, 0, 80, 80);
-        motionBackgroundDrawable6.setBounds(0, 0, 80, 80);
-        motionBackgroundDrawable7.setBounds(0, 0, 80, 80);
-        motionBackgroundDrawable8.setBounds(0, 0, 80, 80);
         setWillNotDraw(false);
         setLayerType(2, null);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -189,9 +217,9 @@ public class VoIpGradientLayout extends FrameLayout {
             this.callingAnimator.cancel();
             this.callingAnimator = null;
         }
-        this.alphaGreen = NotificationCenter.proxyCheckDone;
+        this.alphaGreen = NotificationCenter.didSetNewWallpapper;
         this.connectedAnimatorSet = new AnimatorSet();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, NotificationCenter.proxyCheckDone, 0);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, 0);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -200,7 +228,7 @@ public class VoIpGradientLayout extends FrameLayout {
         });
         ofInt.setRepeatCount(-1);
         ofInt.setRepeatMode(1);
-        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.proxyCheckDone, 0, 0);
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.didSetNewWallpapper, 0, 0);
         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -332,20 +360,20 @@ public class VoIpGradientLayout extends FrameLayout {
             Objects.requireNonNull(this.backgroundProvider);
             Objects.requireNonNull(this.backgroundProvider);
             canvas.scale(1.12f, 1.12f, width, height);
-            this.bgGreen.setAlpha(NotificationCenter.proxyCheckDone);
+            this.bgGreen.setAlpha(NotificationCenter.didSetNewWallpapper);
             this.bgGreen.draw(canvas);
             this.clipPath.rewind();
             this.clipPath.addCircle(this.clipCx / 4.0f, this.clipCy / 4.0f, this.clipRadius / 4.0f, direction);
             this.backgroundProvider.getRevealCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealCanvas().save();
             this.backgroundProvider.getRevealCanvas().clipPath(this.clipPath);
-            this.bgGreenLightReveal.setAlpha(NotificationCenter.proxyCheckDone);
+            this.bgGreenLightReveal.setAlpha(NotificationCenter.didSetNewWallpapper);
             this.bgGreenLightReveal.draw(this.backgroundProvider.getRevealCanvas());
             this.backgroundProvider.getRevealCanvas().restore();
             this.backgroundProvider.getRevealDrakCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealDrakCanvas().save();
             this.backgroundProvider.getRevealDrakCanvas().clipPath(this.clipPath);
-            this.bgGreenDarkReveal.setAlpha(NotificationCenter.proxyCheckDone);
+            this.bgGreenDarkReveal.setAlpha(NotificationCenter.didSetNewWallpapper);
             this.bgGreenDarkReveal.draw(this.backgroundProvider.getRevealDrakCanvas());
             this.backgroundProvider.getRevealDrakCanvas().restore();
         }
@@ -392,7 +420,7 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.proxyCheckDone);
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.didSetNewWallpapper);
         this.badConnectionAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -459,8 +487,8 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        this.alphaBlueGreen = NotificationCenter.proxyCheckDone;
-        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.proxyCheckDone, 0, NotificationCenter.proxyCheckDone);
+        this.alphaBlueGreen = NotificationCenter.didSetNewWallpapper;
+        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.didSetNewWallpapper, 0, NotificationCenter.didSetNewWallpapper);
         this.callingAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener

@@ -32,6 +32,10 @@ public class CheckBox2 extends View {
         return this.checkBoxBase;
     }
 
+    public boolean getDrawUnchecked() {
+        return this.checkBoxBase.getDrawUnchecked();
+    }
+
     public float getProgress() {
         return this.checkBoxBase.getProgress();
     }

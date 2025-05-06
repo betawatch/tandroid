@@ -437,7 +437,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$43(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -447,7 +447,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$45(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -770,7 +770,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         } else {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-this.currentChat.id), null, this.currentChat, Boolean.valueOf(z));
     }
 
@@ -1006,7 +1006,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$46() {
         this.progressDialog.dismiss();
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1185,7 +1185,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 }
             }
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
@@ -1935,7 +1935,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             public void onItemClick(int i8) {
                 if (i8 == -1) {
                     if (ChatEditActivity.this.checkDiscard()) {
-                        ChatEditActivity.this.lambda$onBackPressed$335();
+                        ChatEditActivity.this.lambda$onBackPressed$336();
                     }
                 } else if (i8 == 1) {
                     ChatEditActivity.this.processDone();
@@ -2224,7 +2224,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.descriptionTextView.setEnabled(this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat));
         EditTextBoldCursor editTextBoldCursor5 = this.descriptionTextView;
         editTextBoldCursor5.setFocusable(editTextBoldCursor5.isEnabled());
-        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.proxyCheckDone)});
+        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.didSetNewWallpapper)});
         this.descriptionTextView.setHint(LocaleController.getString("DescriptionOptionalPlaceholder", R.string.DescriptionOptionalPlaceholder));
         this.descriptionTextView.setCursorColor(Theme.getColor(i10));
         this.descriptionTextView.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -2982,7 +2982,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x024e, code lost:
     
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:?, code lost:
     

@@ -21,7 +21,7 @@ public class GroupCallStatusIcon {
     boolean lastRaisedHand;
     RLottieDrawable micDrawable;
     private boolean mutedByMe;
-    TLRPC.TL_groupCallParticipant participant;
+    TLRPC.GroupCallParticipant participant;
     RLottieDrawable shakeHandDrawable;
     boolean updateRunnableScheduled;
     private Runnable shakeHandCallback = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallStatusIcon$$ExternalSyntheticLambda0
@@ -78,9 +78,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.didReplacedPhotoInMemCache;
+            i = NotificationCenter.closeOtherAppActivities;
             if (nextInt < 64) {
-                i2 = NotificationCenter.didReplacedPhotoInMemCache;
+                i2 = NotificationCenter.closeOtherAppActivities;
                 i = 120;
             } else {
                 i2 = 420;
@@ -121,8 +121,8 @@ public class GroupCallStatusIcon {
     }
 
     public boolean isMutedByAdmin() {
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant = this.participant;
-        return (tL_groupCallParticipant == null || !tL_groupCallParticipant.muted || tL_groupCallParticipant.can_self_unmute) ? false : true;
+        TLRPC.GroupCallParticipant groupCallParticipant = this.participant;
+        return (groupCallParticipant == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute) ? false : true;
     }
 
     public boolean isMutedByMe() {
@@ -166,8 +166,8 @@ public class GroupCallStatusIcon {
         updateIcon(false);
     }
 
-    public void setParticipant(TLRPC.TL_groupCallParticipant tL_groupCallParticipant, boolean z) {
-        this.participant = tL_groupCallParticipant;
+    public void setParticipant(TLRPC.GroupCallParticipant groupCallParticipant, boolean z) {
+        this.participant = groupCallParticipant;
         updateIcon(z);
     }
 
@@ -177,19 +177,19 @@ public class GroupCallStatusIcon {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void updateIcon(boolean z) {
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant;
+        TLRPC.GroupCallParticipant groupCallParticipant;
         boolean customEndFrame;
         boolean z2;
-        if (this.iconView == null || (tL_groupCallParticipant = this.participant) == null || this.micDrawable == null) {
+        if (this.iconView == null || (groupCallParticipant = this.participant) == null || this.micDrawable == null) {
             return;
         }
-        boolean z3 = tL_groupCallParticipant.muted_by_you && !tL_groupCallParticipant.self;
+        boolean z3 = groupCallParticipant.muted_by_you && !groupCallParticipant.self;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant2 = this.participant;
-        boolean z4 = elapsedRealtime - tL_groupCallParticipant2.lastVoiceUpdateTime < 500 ? tL_groupCallParticipant2.hasVoiceDelayed : tL_groupCallParticipant2.hasVoice;
-        boolean z5 = !tL_groupCallParticipant2.self ? (!tL_groupCallParticipant2.muted || (this.isSpeaking && z4)) && !z3 : VoIPService.getSharedInstance() == null || !VoIPService.getSharedInstance().isMicMute() || (this.isSpeaking && z4);
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant3 = this.participant;
-        boolean z6 = ((tL_groupCallParticipant3.muted && !this.isSpeaking) || z3) && !(((z2 = tL_groupCallParticipant3.can_self_unmute) && !z3) || z2 || tL_groupCallParticipant3.raise_hand_rating == 0);
+        TLRPC.GroupCallParticipant groupCallParticipant2 = this.participant;
+        boolean z4 = elapsedRealtime - groupCallParticipant2.lastVoiceUpdateTime < 500 ? groupCallParticipant2.hasVoiceDelayed : groupCallParticipant2.hasVoice;
+        boolean z5 = !groupCallParticipant2.self ? (!groupCallParticipant2.muted || (this.isSpeaking && z4)) && !z3 : VoIPService.getSharedInstance() == null || !VoIPService.getSharedInstance().isMicMute() || (this.isSpeaking && z4);
+        TLRPC.GroupCallParticipant groupCallParticipant3 = this.participant;
+        boolean z6 = ((groupCallParticipant3.muted && !this.isSpeaking) || z3) && !(((z2 = groupCallParticipant3.can_self_unmute) && !z3) || z2 || groupCallParticipant3.raise_hand_rating == 0);
         if (z6) {
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             long j = this.participant.lastRaiseHandDate;

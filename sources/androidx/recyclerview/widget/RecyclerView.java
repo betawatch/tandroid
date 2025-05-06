@@ -439,12 +439,11 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         }
 
         public final void dispatchAnimationsFinished() {
-            if (this.mFinishedListeners.size() <= 0) {
-                this.mFinishedListeners.clear();
-            } else {
-                RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(this.mFinishedListeners.get(0));
-                throw null;
+            int size = this.mFinishedListeners.size();
+            for (int i = 0; i < size; i++) {
+                ((ItemAnimatorFinishedListener) this.mFinishedListeners.get(i)).onAnimationsFinished();
             }
+            this.mFinishedListeners.clear();
         }
 
         public abstract void endAnimation(ViewHolder viewHolder);

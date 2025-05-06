@@ -240,7 +240,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             if (f3 > 0.01f || !GradientHeaderActivity.this.drawActionBarShadow()) {
                 return;
             }
-            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.proxyCheckDone, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
+            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.didSetNewWallpapper, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -457,7 +457,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(50) { // from class: org.telegram.ui.GradientHeaderActivity.8.1
                     @Override // org.telegram.ui.Components.Premium.StarParticlesView.Drawable
                     protected int getPathColor(int i) {
-                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), 200);
+                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.storyQualityUpdate);
                     }
                 };
                 this.drawable = drawable;
@@ -551,7 +551,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GradientHeaderActivity.this.lambda$onBackPressed$335();
+                    GradientHeaderActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

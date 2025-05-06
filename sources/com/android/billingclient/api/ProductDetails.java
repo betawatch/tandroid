@@ -58,6 +58,10 @@ public final class ProductDetails {
             this.zzj = optJSONObject3 != null ? new zzbh(optJSONObject3) : null;
         }
 
+        public String getFormattedPrice() {
+            return this.zza;
+        }
+
         public long getPriceAmountMicros() {
             return this.zzb;
         }

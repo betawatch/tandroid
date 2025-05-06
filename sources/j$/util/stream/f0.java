@@ -1,54 +1,78 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.LongFunction;
 
 /* loaded from: classes2.dex */
-final class f0 extends h0 {
-    f0(Spliterator spliterator, int i) {
-        super(spliterator, i);
+final class f0 extends Z1 {
+    public final /* synthetic */ int b;
+    final /* synthetic */ b c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f0(b bVar, e2 e2Var, int i) {
+        super(e2Var);
+        this.b = i;
+        this.c = bVar;
     }
 
-    @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void T(j$.util.function.T t) {
-        j$.util.J F0;
-        if (isParallel()) {
-            super.T(t);
-        } else {
-            F0 = h0.F0(z0());
-            F0.e(t);
+    @Override // j$.util.stream.e2
+    public final void accept(long j) {
+        switch (this.b) {
+            case 0:
+                this.a.accept(((j$.util.function.c0) ((x) this.c).n).applyAsLong(j));
+                return;
+            case 1:
+                this.a.r((e2) ((LongFunction) ((v) this.c).n).apply(j));
+                return;
+            case 2:
+                this.a.accept(((j$.util.function.Y) ((w) this.c).n).a.applyAsInt(j));
+                return;
+            case 3:
+                this.a.accept(((j$.util.function.X) ((u) this.c).n).a.applyAsDouble(j));
+                return;
+            case 4:
+                LongStream longStream = (LongStream) ((LongFunction) ((x) this.c).n).apply(j);
+                if (longStream != null) {
+                    try {
+                        longStream.sequential().c(new c0(1, this));
+                    } catch (Throwable th) {
+                        try {
+                            longStream.close();
+                        } catch (Throwable th2) {
+                            th.addSuppressed(th2);
+                        }
+                        throw th;
+                    }
+                }
+                if (longStream != null) {
+                    longStream.close();
+                    return;
+                }
+                return;
+            case 5:
+                if (((j$.util.function.W) ((x) this.c).n).a.test(j)) {
+                    this.a.accept(j);
+                    return;
+                }
+                return;
+            default:
+                ((j$.util.function.T) ((x) this.c).n).accept(j);
+                this.a.accept(j);
+                return;
         }
     }
 
-    @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void c(j$.util.function.T t) {
-        j$.util.J F0;
-        if (isParallel()) {
-            super.c(t);
-        } else {
-            F0 = h0.F0(z0());
-            F0.e(t);
+    @Override // j$.util.stream.Z1, j$.util.stream.e2
+    public void n(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.n(-1L);
+                break;
+            case 5:
+                this.a.n(-1L);
+                break;
+            default:
+                super.n(j);
+                break;
         }
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream parallel() {
-        parallel();
-        return this;
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream sequential() {
-        sequential();
-        return this;
-    }
-
-    @Override // j$.util.stream.b
-    final boolean w0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
-        throw new UnsupportedOperationException();
     }
 }

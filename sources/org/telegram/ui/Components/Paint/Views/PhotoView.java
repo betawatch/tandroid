@@ -147,7 +147,7 @@ public class PhotoView extends EntityView {
             canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
             canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
             canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);
@@ -177,7 +177,7 @@ public class PhotoView extends EntityView {
         }
     }
 
-    public PhotoView(Context context, Point point, float f, float f2, Size size, String str, int i, int i2) {
+    public PhotoView(Context context, Point point, float f, float f2, Size size, final String str, int i, int i2) {
         super(context, point);
         this.anchor = -1;
         this.mirrored = false;
@@ -200,10 +200,17 @@ public class PhotoView extends EntityView {
         this.segmentedT = new AnimatedFloat(frameLayoutDrawer, 0L, 350L, cubicBezierInterpolator);
         this.orientation = i;
         this.invert = i2;
-        Bitmap decodeFile = BitmapFactory.decodeFile(str);
-        this.bitmap = decodeFile;
-        if (decodeFile != null) {
-            lambda$segmentImage$1(decodeFile);
+        Bitmap scaledBitmap = StoryEntry.getScaledBitmap(new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda0
+            @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
+            public final Bitmap decode(BitmapFactory.Options options) {
+                Bitmap decodeFile;
+                decodeFile = BitmapFactory.decodeFile(str, options);
+                return decodeFile;
+            }
+        }, 1920, 1920, false, false);
+        this.bitmap = scaledBitmap;
+        if (scaledBitmap != null) {
+            lambda$segmentImage$2(scaledBitmap);
         }
         updatePosition();
     }
@@ -280,20 +287,20 @@ public class PhotoView extends EntityView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$segmentImage$0(SubjectSegmentationResult subjectSegmentationResult) {
+    public /* synthetic */ void lambda$segmentImage$1(SubjectSegmentationResult subjectSegmentationResult) {
         this.segmentingLoaded = true;
         this.segmentingLoading = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$segmentImage$2(final Bitmap bitmap, Exception exc) {
+    public /* synthetic */ void lambda$segmentImage$3(final Bitmap bitmap, Exception exc) {
         this.segmentingLoading = false;
         FileLog.e(exc);
         if (isWaitingMlKitError(exc) && isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoView.this.lambda$segmentImage$1(bitmap);
+                    PhotoView.this.lambda$segmentImage$2(bitmap);
                 }
             }, 2000L);
         } else {
@@ -321,7 +328,7 @@ public class PhotoView extends EntityView {
         if (this.bitmap == null) {
             return;
         }
-        this.bitmapPaint.setAlpha(NotificationCenter.proxyCheckDone);
+        this.bitmapPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
         canvas.drawBitmap(this.bitmap, 0.0f, 0.0f, this.bitmapPaint);
     }
 
@@ -393,7 +400,7 @@ public class PhotoView extends EntityView {
         canvas.rotate(this.orientation);
         canvas.translate((-bitmap2.getWidth()) / 2.0f, (-bitmap2.getHeight()) / 2.0f);
         rectF.set(0.0f, 0.0f, bitmap2.getWidth(), bitmap2.getHeight());
-        canvas.saveLayerAlpha(rectF, NotificationCenter.proxyCheckDone, 31);
+        canvas.saveLayerAlpha(rectF, NotificationCenter.didSetNewWallpapper, 31);
         canvas.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
         Paint paint = new Paint(3);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
@@ -511,21 +518,21 @@ public class PhotoView extends EntityView {
     }
 
     /* renamed from: segmentImage, reason: merged with bridge method [inline-methods] */
-    public void lambda$segmentImage$1(final Bitmap bitmap) {
+    public void lambda$segmentImage$2(final Bitmap bitmap) {
         if (this.segmentingLoaded || this.segmentingLoading || bitmap == null || Build.VERSION.SDK_INT < 24) {
             return;
         }
         SubjectSegmenter client = SubjectSegmentation.getClient(new SubjectSegmenterOptions.Builder().enableForegroundBitmap().build());
         this.segmentingLoading = true;
-        client.process(InputImage.fromBitmap(bitmap, this.orientation)).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda0
+        client.process(InputImage.fromBitmap(bitmap, this.orientation)).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                PhotoView.this.lambda$segmentImage$0((SubjectSegmentationResult) obj);
+                PhotoView.this.lambda$segmentImage$1((SubjectSegmentationResult) obj);
             }
-        }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda1
+        }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.OnFailureListener
             public final void onFailure(Exception exc) {
-                PhotoView.this.lambda$segmentImage$2(bitmap, exc);
+                PhotoView.this.lambda$segmentImage$3(bitmap, exc);
             }
         });
     }
@@ -584,7 +591,7 @@ public class PhotoView extends EntityView {
             }
             if (this.segmentedImage != null) {
                 Size size = this.baseSize;
-                canvas.saveLayerAlpha(0.0f, 0.0f, size.width, size.height, NotificationCenter.proxyCheckDone, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, size.width, size.height, NotificationCenter.didSetNewWallpapper, 31);
                 drawSegmented(canvas);
                 canvas.save();
                 long currentTimeMillis = System.currentTimeMillis();

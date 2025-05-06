@@ -2,11 +2,12 @@ package com.google.firebase.encoders.proto;
 
 import com.google.firebase.encoders.proto.Protobuf;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AtProtobuf {
     private Protobuf.IntEncoding intEncoding = Protobuf.IntEncoding.DEFAULT;
     private int tag;
 
+    /* loaded from: classes.dex */
     private static final class ProtobufImpl implements Protobuf {
         private final Protobuf.IntEncoding intEncoding;
         private final int tag;

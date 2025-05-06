@@ -276,7 +276,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
     public /* synthetic */ void lambda$createView$1() {
         this.uidArray.clear();
         updateRows();
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -395,7 +395,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         this.uidArray.remove(l);
         updateRows();
         if (this.uidArray.isEmpty()) {
-            lambda$onBackPressed$335();
+            lambda$onBackPressed$336();
         }
     }
 
@@ -519,7 +519,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PrivacyUsersActivity.this.lambda$onBackPressed$335();
+                    PrivacyUsersActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

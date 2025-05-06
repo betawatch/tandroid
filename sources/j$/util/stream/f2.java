@@ -32,7 +32,7 @@ final class f2 extends a2 {
 
     @Override // j$.util.stream.a2, j$.util.stream.e2
     public final void n(long j) {
-        this.a.n(t0.z(j, this.d.m, this.c));
+        this.a.n(u0.z(j, this.d.m, this.c));
     }
 
     @Override // j$.util.stream.a2, j$.util.stream.e2

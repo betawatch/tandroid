@@ -27,7 +27,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzf = zzmVar.zzf(zzlVar, i, i2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzf, NotificationCenter.wallpapersDidLoad);
+        zzgVar.zze(zzf, NotificationCenter.conferenceEmojiUpdated);
         this.zza.zzj = false;
     }
 
@@ -45,7 +45,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzg = zzmVar.zzg(zzlVar, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzg, NotificationCenter.pushMessagesUpdated);
+        zzgVar.zze(zzg, NotificationCenter.appConfigUpdated);
         this.zza.zzj = false;
         this.zza.zzh = null;
     }

@@ -16,7 +16,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class HeartBeatInfoStorage {
     private final SharedPreferences firebaseSharedPreferences;
 

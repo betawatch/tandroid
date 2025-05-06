@@ -1,54 +1,24 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-
 /* loaded from: classes2.dex */
 final class y extends A {
-    y(Spliterator spliterator, int i) {
-        super(spliterator, i);
-    }
+    public final /* synthetic */ int m;
 
-    @Override // j$.util.stream.A, j$.util.stream.D
-    public final void d0(j$.util.function.m mVar) {
-        j$.util.D F0;
-        if (isParallel()) {
-            super.d0(mVar);
-        } else {
-            F0 = A.F0(z0());
-            F0.e(mVar);
-        }
-    }
-
-    @Override // j$.util.stream.A, j$.util.stream.D
-    public final void i(j$.util.function.m mVar) {
-        j$.util.D F0;
-        if (isParallel()) {
-            super.i(mVar);
-        } else {
-            F0 = A.F0(z0());
-            F0.e(mVar);
-        }
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ D parallel() {
-        parallel();
-        return this;
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ D sequential() {
-        sequential();
-        return this;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y(b bVar, int i, int i2) {
+        super(bVar, i, 1);
+        this.m = i2;
     }
 
     @Override // j$.util.stream.b
-    final boolean w0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
-        throw new UnsupportedOperationException();
+    final e2 w0(int i, e2 e2Var) {
+        switch (this.m) {
+            case 0:
+                return e2Var;
+            case 1:
+                return new V(1, e2Var);
+            default:
+                return new e0(e2Var);
+        }
     }
 }

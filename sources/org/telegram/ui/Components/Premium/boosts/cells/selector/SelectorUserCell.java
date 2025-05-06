@@ -5,6 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
@@ -22,42 +23,143 @@ import org.telegram.ui.Components.CheckBox2;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.boosts.cells.BaseCell;
 import org.telegram.ui.Components.StatusBadgeComponent;
+import org.telegram.ui.Components.UItem;
 
 /* loaded from: classes5.dex */
 public class SelectorUserCell extends BaseCell {
+    private final ImageView audioView;
     private TL_stories.TL_myBoost boost;
     private TLRPC.Chat chat;
     private final CheckBox2 checkBox;
+    private boolean hasAudioView;
+    private boolean hasVideoView;
     private final boolean[] isOnline;
     private final ImageView optionsView;
+    private boolean showCallButtons;
     StatusBadgeComponent statusBadgeComponent;
     private TLRPC.User user;
+    private final ImageView videoView;
+
+    public static class Factory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new Factory());
+        }
+
+        public static UItem make(TLRPC.User user) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.object = user;
+            return ofFactory;
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z) {
+            SelectorUserCell selectorUserCell = (SelectorUserCell) view;
+            selectorUserCell.setUser((TLRPC.User) uItem.object);
+            selectorUserCell.setChecked(uItem.checked, false);
+            selectorUserCell.setDivider(z);
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public SelectorUserCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            return new SelectorUserCell(context, true, false, resourcesProvider, false);
+        }
+    }
 
     public SelectorUserCell(Context context, boolean z, Theme.ResourcesProvider resourcesProvider, boolean z2) {
+        this(context, z, false, resourcesProvider, z2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00dc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public SelectorUserCell(Context context, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider, boolean z3) {
         super(context, resourcesProvider);
         this.isOnline = new boolean[1];
+        this.showCallButtons = true;
         this.statusBadgeComponent = new StatusBadgeComponent(this);
         this.titleTextView.setTypeface(AndroidUtilities.bold());
         this.radioButton.setVisibility(8);
-        if (z) {
+        if (z2) {
             CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider);
             this.checkBox = checkBox2;
-            checkBox2.setColor(z2 ? Theme.key_checkbox : Theme.key_dialogRoundCheckBox, Theme.key_checkboxDisabled, Theme.key_dialogRoundCheckBoxCheck);
-            checkBox2.setDrawUnchecked(true);
-            checkBox2.setDrawBackgroundAsArc(10);
-            addView(checkBox2);
-            checkBox2.setChecked(false, false);
-            checkBox2.setLayoutParams(LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
-            updateLayouts();
+            checkBox2.setColor(Theme.key_dialogRoundCheckBox, Theme.key_dialogBackground, Theme.key_checkboxCheck);
+            checkBox2.setDrawUnchecked(false);
+            checkBox2.setDrawBackgroundAsArc(3);
+            boolean z4 = LocaleController.isRTL;
+            addView(checkBox2, LayoutHelper.createFrame(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 40.0f, 33.0f, z4 ? 39.0f : 0.0f, 0.0f));
         } else {
-            this.checkBox = null;
+            if (!z) {
+                this.checkBox = null;
+                ImageView imageView = new ImageView(context);
+                this.optionsView = imageView;
+                ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+                imageView.setScaleType(scaleType);
+                imageView.setImageResource(R.drawable.ic_ab_other);
+                int color = Theme.getColor(Theme.key_chat_inMenu, resourcesProvider);
+                PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+                imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
+                addView(imageView, LayoutHelper.createFrame(32, 32.0f, (!LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+                ImageView imageView2 = new ImageView(context);
+                this.audioView = imageView2;
+                imageView2.setScaleType(scaleType);
+                imageView2.setImageResource(R.drawable.menu_phone);
+                int i = Theme.key_featuredStickers_addButton;
+                imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, resourcesProvider), mode));
+                boolean z5 = LocaleController.isRTL;
+                addView(imageView2, LayoutHelper.createFrame(32, 32.0f, (!z5 ? 3 : 5) | 16, !z5 ? 52.0f : 12.0f, 0.0f, !z5 ? 12.0f : 52.0f, 0.0f));
+                imageView2.setVisibility(8);
+                ImageView imageView3 = new ImageView(context);
+                this.videoView = imageView3;
+                imageView3.setScaleType(scaleType);
+                imageView3.setImageResource(R.drawable.menu_videocall);
+                imageView3.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, resourcesProvider), mode));
+                addView(imageView3, LayoutHelper.createFrame(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+                imageView3.setVisibility(8);
+            }
+            CheckBox2 checkBox22 = new CheckBox2(context, 21, resourcesProvider);
+            this.checkBox = checkBox22;
+            checkBox22.setColor(z3 ? Theme.key_checkbox : Theme.key_dialogRoundCheckBox, Theme.key_checkboxDisabled, Theme.key_dialogRoundCheckBoxCheck);
+            checkBox22.setDrawUnchecked(true);
+            checkBox22.setDrawBackgroundAsArc(10);
+            addView(checkBox22);
+            checkBox22.setChecked(false, false);
+            checkBox22.setLayoutParams(LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
         }
-        ImageView imageView = new ImageView(context);
-        this.optionsView = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.ic_ab_other);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_inMenu, resourcesProvider), PorterDuff.Mode.SRC_IN));
-        addView(imageView, LayoutHelper.createFrame(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        updateLayouts();
+        ImageView imageView4 = new ImageView(context);
+        this.optionsView = imageView4;
+        ImageView.ScaleType scaleType2 = ImageView.ScaleType.CENTER;
+        imageView4.setScaleType(scaleType2);
+        imageView4.setImageResource(R.drawable.ic_ab_other);
+        int color2 = Theme.getColor(Theme.key_chat_inMenu, resourcesProvider);
+        PorterDuff.Mode mode2 = PorterDuff.Mode.SRC_IN;
+        imageView4.setColorFilter(new PorterDuffColorFilter(color2, mode2));
+        addView(imageView4, LayoutHelper.createFrame(32, 32.0f, (!LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        ImageView imageView22 = new ImageView(context);
+        this.audioView = imageView22;
+        imageView22.setScaleType(scaleType2);
+        imageView22.setImageResource(R.drawable.menu_phone);
+        int i2 = Theme.key_featuredStickers_addButton;
+        imageView22.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, resourcesProvider), mode2));
+        boolean z52 = LocaleController.isRTL;
+        addView(imageView22, LayoutHelper.createFrame(32, 32.0f, (!z52 ? 3 : 5) | 16, !z52 ? 52.0f : 12.0f, 0.0f, !z52 ? 12.0f : 52.0f, 0.0f));
+        imageView22.setVisibility(8);
+        ImageView imageView32 = new ImageView(context);
+        this.videoView = imageView32;
+        imageView32.setScaleType(scaleType2);
+        imageView32.setImageResource(R.drawable.menu_videocall);
+        imageView32.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, resourcesProvider), mode2));
+        addView(imageView32, LayoutHelper.createFrame(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        imageView32.setVisibility(8);
     }
 
     public static String buildCountDownTime(long j) {
@@ -76,6 +178,16 @@ public class SelectorUserCell extends BaseCell {
         return sb.toString();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCallButtonsVisible$0() {
+        this.audioView.setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCallButtonsVisible$1() {
+        this.videoView.setVisibility(8);
+    }
+
     public TL_stories.TL_myBoost getBoost() {
         return this.boost;
     }
@@ -90,7 +202,8 @@ public class SelectorUserCell extends BaseCell {
 
     @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
     protected boolean needCheck() {
-        return this.checkBox != null;
+        CheckBox2 checkBox2 = this.checkBox;
+        return checkBox2 != null && checkBox2.getDrawUnchecked();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -115,18 +228,68 @@ public class SelectorUserCell extends BaseCell {
         this.imageView.setForUserOrChat(this.chat, this.avatarDrawable);
         this.titleTextView.setText(this.chat.title);
         this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
-        setSubtitle(LocaleController.formatString("BoostExpireOn", R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_myBoost.expires * 1000))));
+        setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_myBoost.expires * 1000))));
         int i = tL_myBoost.cooldown_until_date;
         if (i <= 0) {
             this.titleTextView.setAlpha(1.0f);
             this.subtitleTextView.setAlpha(1.0f);
             setCheckboxAlpha(1.0f, false);
         } else {
-            setSubtitle(LocaleController.formatString("BoostingAvailableIn", R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
+            setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
             this.titleTextView.setAlpha(0.65f);
             this.subtitleTextView.setAlpha(0.65f);
             setCheckboxAlpha(0.3f, false);
         }
+    }
+
+    public void setCallButtons(View.OnClickListener onClickListener, View.OnClickListener onClickListener2) {
+        boolean z = onClickListener != null;
+        this.hasAudioView = z;
+        this.audioView.setVisibility((z && this.showCallButtons) ? 0 : 8);
+        this.audioView.setOnClickListener(onClickListener);
+        boolean z2 = onClickListener2 != null;
+        this.hasVideoView = z2;
+        this.videoView.setVisibility((z2 && this.showCallButtons) ? 0 : 8);
+        this.videoView.setOnClickListener(onClickListener2);
+    }
+
+    public void setCallButtonsVisible(boolean z, boolean z2) {
+        if (this.showCallButtons == z) {
+            return;
+        }
+        this.showCallButtons = z;
+        float f = 0.0f;
+        if (z2) {
+            this.audioView.setVisibility(0);
+            this.audioView.animate().alpha((z && this.hasAudioView) ? 1.0f : 0.0f).withEndAction((z && this.hasAudioView) ? null : new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SelectorUserCell.this.lambda$setCallButtonsVisible$0();
+                }
+            }).start();
+            this.videoView.setVisibility(0);
+            ViewPropertyAnimator animate = this.videoView.animate();
+            if (z && this.hasVideoView) {
+                f = 1.0f;
+            }
+            animate.alpha(f).withEndAction((z && this.hasVideoView) ? null : new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SelectorUserCell.this.lambda$setCallButtonsVisible$1();
+                }
+            }).start();
+            return;
+        }
+        this.audioView.animate().cancel();
+        this.audioView.setAlpha((z && this.hasAudioView) ? 1.0f : 0.0f);
+        this.audioView.setVisibility((z && this.hasAudioView) ? 0 : 8);
+        this.videoView.animate().cancel();
+        ImageView imageView = this.videoView;
+        if (z && this.hasVideoView) {
+            f = 1.0f;
+        }
+        imageView.setAlpha(f);
+        this.videoView.setVisibility((z && this.hasVideoView) ? 0 : 8);
     }
 
     public void setChat(TLRPC.Chat chat, int i) {
@@ -229,13 +392,13 @@ public class SelectorUserCell extends BaseCell {
     public void updateTimer() {
         int i = this.boost.cooldown_until_date;
         if (i > 0) {
-            setSubtitle(LocaleController.formatString("BoostingAvailableIn", R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
+            setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
             this.titleTextView.setAlpha(0.65f);
             this.subtitleTextView.setAlpha(0.65f);
             setCheckboxAlpha(0.3f, false);
             return;
         }
-        setSubtitle(LocaleController.formatString("BoostExpireOn", R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(this.boost.expires * 1000))));
+        setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(this.boost.expires * 1000))));
         if (this.titleTextView.getAlpha() < 1.0f) {
             this.titleTextView.animate().alpha(1.0f).start();
             this.subtitleTextView.animate().alpha(1.0f).start();

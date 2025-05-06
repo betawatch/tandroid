@@ -25,7 +25,7 @@ import java.util.zip.GZIPOutputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DefaultHeartBeatController implements HeartBeatController, HeartBeatInfo {
     private final Context applicationContext;
     private final Executor backgroundExecutor;

@@ -27,6 +27,6 @@ final class N extends Q implements c2 {
 
     @Override // j$.util.stream.c2
     public final /* synthetic */ void o(Integer num) {
-        t0.g(this, num);
+        u0.g(this, num);
     }
 }

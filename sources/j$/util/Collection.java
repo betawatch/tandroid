@@ -4,7 +4,7 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.t0;
+import j$.util.stream.u0;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.SortedSet;
@@ -30,7 +30,7 @@ public interface Collection<E> {
         }
 
         public static Stream $default$stream(java.util.Collection collection) {
-            return t0.e0(-EL.b(collection), false);
+            return u0.e0(-EL.b(collection), false);
         }
     }
 

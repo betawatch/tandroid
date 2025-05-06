@@ -151,7 +151,7 @@ abstract class g implements l {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, NotificationCenter.giftsToUserSent, NotificationCenter.onEmojiInteractionsReceived, 0, 91, NotificationCenter.didStartedMultiGiftsSelector, NotificationCenter.emojiPreviewThemesChanged};
+        a = new int[]{0, 90, NotificationCenter.giftsToUserSent, NotificationCenter.appUpdateLoading, 0, 91, NotificationCenter.didStartedMultiGiftsSelector, NotificationCenter.onDatabaseMigration};
     }
 
     g(String str, int i) {

@@ -11,7 +11,7 @@ import com.google.firebase.messaging.FcmBroadcastProcessor;
 import com.google.firebase.messaging.MessagingAnalytics;
 import java.util.concurrent.ExecutionException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
     private static Intent createServiceIntent(Context context, String str, Bundle bundle) {
         return new Intent(str).putExtras(bundle);

@@ -370,6 +370,8 @@ public final class MediaControllerCompat {
 
         PlaybackStateCompat getPlaybackState();
 
+        List getQueue();
+
         PendingIntent getSessionActivity();
 
         TransportControls getTransportControls();
@@ -446,7 +448,7 @@ public final class MediaControllerCompat {
 
         MediaControllerImplApi21(Context context, MediaSessionCompat.Token token) {
             this.mSessionToken = token;
-            this.mControllerFwk = new MediaController(context, MediaControllerCompat$MediaControllerImplApi21$$ExternalSyntheticApiModelOutline5.m(token.getToken()));
+            this.mControllerFwk = new MediaController(context, MediaControllerCompat$MediaControllerImplApi21$$ExternalSyntheticApiModelOutline6.m(token.getToken()));
             if (token.getExtraBinder() == null) {
                 requestExtraBinder();
             }
@@ -479,6 +481,16 @@ public final class MediaControllerCompat {
             playbackState = this.mControllerFwk.getPlaybackState();
             if (playbackState != null) {
                 return PlaybackStateCompat.fromPlaybackState(playbackState);
+            }
+            return null;
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public List getQueue() {
+            List queue;
+            queue = this.mControllerFwk.getQueue();
+            if (queue != null) {
+                return MediaSessionCompat.QueueItem.fromQueueItemList(queue);
             }
             return null;
         }
@@ -592,6 +604,16 @@ public final class MediaControllerCompat {
                 return this.mBinder.getPlaybackState();
             } catch (RemoteException e) {
                 Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
+                return null;
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public List getQueue() {
+            try {
+                return this.mBinder.getQueue();
+            } catch (RemoteException e) {
+                Log.e("MediaControllerCompat", "Dead object in getQueue.", e);
                 return null;
             }
         }
@@ -788,6 +810,10 @@ public final class MediaControllerCompat {
 
     public PlaybackStateCompat getPlaybackState() {
         return this.mImpl.getPlaybackState();
+    }
+
+    public List getQueue() {
+        return this.mImpl.getQueue();
     }
 
     public PendingIntent getSessionActivity() {

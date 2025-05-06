@@ -10,7 +10,7 @@ public final /* synthetic */ class a0 implements c0 {
         this.a = longUnaryOperator;
     }
 
-    public static /* synthetic */ c0 b(LongUnaryOperator longUnaryOperator) {
+    public static /* synthetic */ c0 c(LongUnaryOperator longUnaryOperator) {
         if (longUnaryOperator == null) {
             return null;
         }
@@ -19,7 +19,7 @@ public final /* synthetic */ class a0 implements c0 {
 
     @Override // j$.util.function.c0
     public final /* synthetic */ c0 a(c0 c0Var) {
-        return b(this.a.andThen(b0.a(c0Var)));
+        return c(this.a.andThen(b0.a(c0Var)));
     }
 
     @Override // j$.util.function.c0
@@ -28,8 +28,8 @@ public final /* synthetic */ class a0 implements c0 {
     }
 
     @Override // j$.util.function.c0
-    public final /* synthetic */ c0 c(c0 c0Var) {
-        return b(this.a.compose(b0.a(c0Var)));
+    public final /* synthetic */ c0 b(c0 c0Var) {
+        return c(this.a.compose(b0.a(c0Var)));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

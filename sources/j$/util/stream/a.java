@@ -33,10 +33,10 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 6:
-                t0.b();
+                u0.b();
                 throw null;
             default:
-                t0.b();
+                u0.b();
                 throw null;
         }
     }
@@ -45,10 +45,10 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 6:
-                t0.k();
+                u0.k();
                 throw null;
             default:
-                t0.k();
+                u0.k();
                 throw null;
         }
     }
@@ -57,10 +57,10 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public /* synthetic */ void accept(long j) {
         switch (this.a) {
             case 6:
-                t0.l();
+                u0.l();
                 throw null;
             default:
-                t0.l();
+                u0.l();
                 throw null;
         }
     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
 
     @Override // j$.util.function.LongFunction
     public Object apply(long j) {
-        return t0.D(j, (IntFunction) this.b);
+        return u0.D(j, (IntFunction) this.b);
     }
 
     public boolean f() {
@@ -123,7 +123,7 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public Object get() {
         switch (this.a) {
             case 0:
-                return ((b) this.b).s0();
+                return ((b) this.b).r0();
             default:
                 return (Spliterator) this.b;
         }

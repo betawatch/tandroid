@@ -889,7 +889,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             post(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.access$10000(ChatActivityEnterView.this);
+                    ChatActivityEnterView.access$9900(ChatActivityEnterView.this);
                 }
             });
         }
@@ -2847,8 +2847,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 int i2 = (int) (ChatActivityEnterView.this.slideToCancelProgress >= 0.93f ? ((ChatActivityEnterView.this.slideToCancelProgress - 0.93f) / 0.07f) * 255.0f : 0.0f);
                 drawable3.setAlpha(i2);
                 drawable3.draw(canvas);
-                drawable3.setAlpha(NotificationCenter.proxyCheckDone);
-                i = NotificationCenter.proxyCheckDone - i2;
+                drawable3.setAlpha(NotificationCenter.didSetNewWallpapper);
+                i = NotificationCenter.didSetNewWallpapper - i2;
             } else if (ChatActivityEnterView.this.canceledByGesture) {
                 return;
             }
@@ -3720,7 +3720,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             boolean z;
             Canvas canvas2;
             RectF rectF;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.proxyCheckDone, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
             updateColors();
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
             int measuredWidth = (getMeasuredWidth() - (getMeasuredHeight() / 2)) - (drawable.getIntrinsicWidth() / 2);
@@ -4523,7 +4523,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.proxyCheckDone);
+                this.textPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -5058,7 +5058,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             this.attachButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i3), mode2));
             this.attachButton.setImageResource(R.drawable.msg_input_attach2);
             if (i4 >= 21) {
-                this.attachButton.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
+                this.attachButton.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
             }
             this.attachLayout.addView(this.attachButton, LayoutHelper.createLinear(48, 48));
             this.attachButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda5
@@ -5068,6 +5068,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
             });
             this.attachButton.setContentDescription(LocaleController.getString("AccDescrAttachButton", R.string.AccDescrAttachButton));
+            updateFieldRight(1);
         }
         if (this.audioToSend != null) {
             createRecordAudioPanel();
@@ -5222,11 +5223,6 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         createMessageEditText();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$10000(ChatActivityEnterView chatActivityEnterView) {
-        chatActivityEnterView.checkBirthdayHint();
-    }
-
     static /* synthetic */ float access$5316(ChatActivityEnterView chatActivityEnterView, float f) {
         float f2 = chatActivityEnterView.tooltipAlpha + f;
         chatActivityEnterView.tooltipAlpha = f2;
@@ -5249,6 +5245,11 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         float f2 = chatActivityEnterView.slideToCancelLockProgress - f;
         chatActivityEnterView.slideToCancelLockProgress = f2;
         return f2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void access$9900(ChatActivityEnterView chatActivityEnterView) {
+        chatActivityEnterView.checkBirthdayHint();
     }
 
     public static CharSequence applyMessageEntities(ArrayList arrayList, CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt) {
@@ -7734,7 +7735,10 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             edit.putBoolean("show_gift_for_" + this.parentFragment.getDialogId(), false);
         }
         edit.apply();
-        AndroidUtilities.updateViewVisibilityAnimated(this.giftButton, false);
+        TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
+        if ((getParentFragment().getCurrentUserInfo() == null || !getParentFragment().getCurrentUserInfo().display_gifts_button) && (userFull == null || !userFull.display_gifts_button)) {
+            AndroidUtilities.updateViewVisibilityAnimated(this.giftButton, false);
+        }
         final TLRPC.User currentUser = getParentFragment().getCurrentUser();
         if (currentUser == null) {
             return;
@@ -8182,7 +8186,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
         TLRPC.User user = this.accountInstance.getMessagesController().getUser(Long.valueOf(j));
         if (user == null) {
-            dialogsActivity.lambda$onBackPressed$335();
+            dialogsActivity.lambda$onBackPressed$336();
             return true;
         }
         long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
@@ -8204,7 +8208,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$335();
+        dialogsActivity.lambda$onBackPressed$336();
         return true;
     }
 
@@ -8242,7 +8246,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        dialogsActivity.lambda$onBackPressed$335();
+        dialogsActivity.lambda$onBackPressed$336();
         return true;
     }
 
@@ -9630,52 +9634,6 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean sendMessageInternal(final boolean z, final int i, final long j, final boolean z2) {
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda34
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatActivityEnterView.this.lambda$sendMessageInternal$47(z, z2, i, j);
-            }
-        };
-        if (!z2) {
-            runnable.run();
-            return false;
-        }
-        boolean ensurePaidMessageConfirmation = AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, this.dialog_id, getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda35
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ChatActivityEnterView.this.lambda$sendMessageInternal$48(z, i, (Long) obj);
-            }
-        }, j);
-        if (ensurePaidMessageConfirmation && this.sendButtonVisible) {
-            if (isInVideoMode()) {
-                if (this.delegate.isVideoRecordingPaused()) {
-                    return ensurePaidMessageConfirmation;
-                }
-                SlideTextView slideTextView = this.slideText;
-                if (slideTextView != null) {
-                    slideTextView.setEnabled(false);
-                }
-                this.delegate.toggleVideoRecordingPause();
-            } else {
-                if (MediaController.getInstance().isRecordingPaused()) {
-                    return ensurePaidMessageConfirmation;
-                }
-                if (this.sendButtonVisible) {
-                    this.calledRecordRunnable = true;
-                }
-                MediaController.getInstance().toggleRecordingPause(this.voiceOnce);
-                this.delegate.needStartRecordAudio(0);
-                SlideTextView slideTextView2 = this.slideText;
-                if (slideTextView2 != null) {
-                    slideTextView2.setEnabled(false);
-                }
-            }
-        }
-        return ensurePaidMessageConfirmation;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void setBirthdayHintText() {
         HintView2 hintView2 = this.birthdayHint;
         if (hintView2 == null) {
@@ -10174,7 +10132,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x00b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x00b2, code lost:
     
         if (r0 != null) goto L47;
      */
@@ -10187,6 +10145,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     */
     private void updateBotButton(boolean z) {
         ImageView imageView;
+        int i;
         ImageView imageView2;
         ImageView imageView3;
         if (this.isChat) {
@@ -10255,10 +10214,21 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
             }
             ImageView imageView8 = this.botButton;
-            updateFieldRight((imageView8 == null || imageView8.getVisibility() != 0) ? this.lastAttachVisible : 2);
-            LinearLayout linearLayout = this.attachLayout;
-            ImageView imageView9 = this.botButton;
-            linearLayout.setPivotX(AndroidUtilities.dp(((imageView9 == null || imageView9.getVisibility() == 8) && ((imageView2 = this.notifyButton) == null || imageView2.getVisibility() == 8)) ? 48.0f : 96.0f));
+            if (imageView8 != null && imageView8.getVisibility() == 0) {
+                EditTextCaption editTextCaption = this.messageEditText;
+                if (TextUtils.isEmpty(editTextCaption == null ? "" : AndroidUtilities.getTrimmedString(editTextCaption.getTextToUse()))) {
+                    i = 2;
+                    updateFieldRight(i);
+                    LinearLayout linearLayout = this.attachLayout;
+                    ImageView imageView9 = this.botButton;
+                    linearLayout.setPivotX(AndroidUtilities.dp(((imageView9 != null || imageView9.getVisibility() == 8) && ((imageView2 = this.notifyButton) == null || imageView2.getVisibility() == 8)) ? 48.0f : 96.0f));
+                }
+            }
+            i = this.lastAttachVisible;
+            updateFieldRight(i);
+            LinearLayout linearLayout2 = this.attachLayout;
+            ImageView imageView92 = this.botButton;
+            linearLayout2.setPivotX(AndroidUtilities.dp(((imageView92 != null || imageView92.getVisibility() == 8) && ((imageView2 = this.notifyButton) == null || imageView2.getVisibility() == 8)) ? 48.0f : 96.0f));
         }
     }
 
@@ -11467,7 +11437,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.proxyCheckDone, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.didSetNewWallpapper, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {
@@ -12702,6 +12672,51 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
 
     public boolean seekbarVisible() {
         return !this.recordIsCanceled && this.transformToSeekbar > 0.0f;
+    }
+
+    protected boolean sendMessageInternal(final boolean z, final int i, final long j, final boolean z2) {
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda34
+            @Override // java.lang.Runnable
+            public final void run() {
+                ChatActivityEnterView.this.lambda$sendMessageInternal$47(z, z2, i, j);
+            }
+        };
+        if (!z2) {
+            runnable.run();
+            return false;
+        }
+        boolean ensurePaidMessageConfirmation = AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, this.dialog_id, getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda35
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ChatActivityEnterView.this.lambda$sendMessageInternal$48(z, i, (Long) obj);
+            }
+        }, j);
+        if (ensurePaidMessageConfirmation && this.sendButtonVisible) {
+            if (isInVideoMode()) {
+                if (this.delegate.isVideoRecordingPaused()) {
+                    return ensurePaidMessageConfirmation;
+                }
+                SlideTextView slideTextView = this.slideText;
+                if (slideTextView != null) {
+                    slideTextView.setEnabled(false);
+                }
+                this.delegate.toggleVideoRecordingPause();
+            } else {
+                if (MediaController.getInstance().isRecordingPaused()) {
+                    return ensurePaidMessageConfirmation;
+                }
+                if (this.sendButtonVisible) {
+                    this.calledRecordRunnable = true;
+                }
+                MediaController.getInstance().toggleRecordingPause(this.voiceOnce);
+                this.delegate.needStartRecordAudio(0);
+                SlideTextView slideTextView2 = this.slideText;
+                if (slideTextView2 != null) {
+                    slideTextView2.setEnabled(false);
+                }
+            }
+        }
+        return ensurePaidMessageConfirmation;
     }
 
     public void setAdjustPanLayoutHelper(AdjustPanLayoutHelper adjustPanLayoutHelper) {
@@ -14169,25 +14184,25 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         editTextCaption.setHintText(string2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x009b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x009f, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r7.parentFragment.getDialogId(), true) == false) goto L26;
+        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L32;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ff, code lost:
     
-        r0 = r7.parentFragment;
+        if (r0.getChatMode() == 0) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x00df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00d7, code lost:
     
-        if (r0 == null) goto L35;
+        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00e5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00e1, code lost:
     
-        if (r0.getChatMode() != 0) goto L35;
+        if (r2.display_gifts_button == false) goto L56;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x00f5, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r7.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.parentFragment.getDialogId(), true) != false) goto L30;
+        if (r0.disallow_unique_stargifts != false) goto L56;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -14195,11 +14210,30 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     public void updateGiftButton(boolean z) {
         boolean z2;
         HintView2 hintView2;
-        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && getParentFragment().getCurrentUser() != null && !BuildVars.IS_BILLING_UNAVAILABLE && !UserObject.isUserSelf(getParentFragment().getCurrentUser()) && !UserObject.isBot(getParentFragment().getCurrentUser()) && !MessagesController.isSupportUser(getParentFragment().getCurrentUser()) && getParentFragment().getCurrentUserInfo() != null) {
+        TLRPC.UserFull currentUserInfo = getParentFragment() == null ? null : getParentFragment().getCurrentUserInfo();
+        TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
+        TLRPC.User currentUser = getParentFragment() != null ? getParentFragment().getCurrentUser() : null;
+        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && currentUser != null && !BuildVars.IS_BILLING_UNAVAILABLE && !UserObject.isUserSelf(currentUser) && !UserObject.isBot(currentUser) && !MessagesController.isSupportUser(currentUser) && currentUserInfo != null) {
             z2 = true;
-            if (!getParentFragment().getCurrentUser().premium && MessagesController.getInstance(this.currentAccount).giftAttachMenuIcon && MessagesController.getInstance(this.currentAccount).giftTextFieldIcon) {
+            if (!currentUser.premium && MessagesController.getInstance(this.currentAccount).giftAttachMenuIcon && MessagesController.getInstance(this.currentAccount).giftTextFieldIcon) {
             }
-            if (BirthdayController.isToday(getParentFragment().getCurrentUserInfo().birthday)) {
+            if (BirthdayController.isToday(currentUserInfo.birthday)) {
+            }
+            if (!currentUserInfo.display_gifts_button) {
+                if (userFull != null) {
+                }
+            }
+            TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = currentUserInfo.disallowed_stargifts;
+            if (disallowedGiftsSettings != null) {
+                if (disallowedGiftsSettings.disallow_premium_gifts) {
+                    if (disallowedGiftsSettings.disallow_limited_stargifts) {
+                        if (disallowedGiftsSettings.disallow_unlimited_stargifts) {
+                        }
+                    }
+                }
+            }
+            ChatActivity chatActivity = this.parentFragment;
+            if (chatActivity != null) {
             }
         }
         z2 = false;

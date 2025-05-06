@@ -255,7 +255,7 @@ public class UndoView extends FrameLayout {
 
     private boolean isTooltipAction() {
         int i = this.currentAction;
-        return i == 6 || i == 3 || i == 5 || i == 7 || i == 8 || i == 87 || i == 9 || i == 10 || i == 13 || i == 14 || i == 19 || i == 20 || i == 21 || i == 22 || i == 23 || i == 30 || i == 31 || i == 32 || i == 33 || i == 34 || i == 35 || i == 36 || i == 74 || i == 37 || i == 38 || i == 39 || i == 40 || i == 42 || i == 43 || i == 77 || i == 44 || i == 78 || i == 79 || i == 100 || i == 101 || i == ACTION_RINGTONE_ADDED;
+        return i == 6 || i == 3 || i == 5 || i == 7 || i == 8 || i == 87 || i == 9 || i == 10 || i == 13 || i == 14 || i == 19 || i == 20 || i == 21 || i == 22 || i == 23 || i == 30 || i == 31 || i == 32 || i == 102 || i == 33 || i == 34 || i == 35 || i == 36 || i == 74 || i == 37 || i == 38 || i == 39 || i == 40 || i == 42 || i == 43 || i == 77 || i == 44 || i == 78 || i == 79 || i == 100 || i == 101 || i == ACTION_RINGTONE_ADDED;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -573,22 +573,22 @@ public class UndoView extends FrameLayout {
         showWithAction(j, i, (Object) null, (Object) null, runnable, runnable2);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:534:0x0e78. Please report as an issue. */
+    /* JADX WARN: Failed to find 'out' block for switch in B:541:0x0e86. Please report as an issue. */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0647  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x065c  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x07a8  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x07dc  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x1628  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x164f  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x0e04  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x173a  */
-    /* JADX WARN: Removed duplicated region for block: B:582:0x1608  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x061e  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x0633  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x07b6  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x07ea  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x1636  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x165d  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x0e12  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x1748  */
+    /* JADX WARN: Removed duplicated region for block: B:589:0x1616  */
     /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x1695  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0815  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x07cd  */
-    /* JADX WARN: Type inference failed for: r3v250, types: [java.lang.CharSequence] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x16a3  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0823  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x07db  */
+    /* JADX WARN: Type inference failed for: r3v253, types: [java.lang.CharSequence] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -748,10 +748,10 @@ public class UndoView extends FrameLayout {
                     TLRPC.Chat chat = (TLRPC.Chat) obj2;
                     if (obj instanceof TLRPC.User) {
                         TLRPC.User user2 = (TLRPC.User) obj;
-                        formatString8 = ChatObject.isChannelOrGiga(chat) ? LocaleController.formatString("VoipChannelUserJoined", R.string.VoipChannelUserJoined, UserObject.getFirstName(user2)) : LocaleController.formatString("VoipChatUserJoined", R.string.VoipChatUserJoined, UserObject.getFirstName(user2));
+                        formatString8 = ChatObject.isChannelOrGiga(chat) ? LocaleController.formatString(R.string.VoipChannelUserJoined, UserObject.getFirstName(user2)) : LocaleController.formatString(R.string.VoipChatUserJoined, UserObject.getFirstName(user2));
                     } else if (obj instanceof TLRPC.Chat) {
                         TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                        formatString8 = ChatObject.isChannelOrGiga(chat) ? LocaleController.formatString("VoipChannelChatJoined", R.string.VoipChannelChatJoined, chat2.title) : LocaleController.formatString("VoipChatChatJoined", R.string.VoipChatChatJoined, chat2.title);
+                        formatString8 = ChatObject.isChannelOrGiga(chat) ? LocaleController.formatString(R.string.VoipChannelChatJoined, chat2.title) : LocaleController.formatString(R.string.VoipChatChatJoined, chat2.title);
                     } else {
                         replaceTags2 = "";
                         AvatarDrawable avatarDrawable2 = new AvatarDrawable();
@@ -861,8 +861,9 @@ public class UndoView extends FrameLayout {
                                         }
                                     } else if (i == 36) {
                                         formatString5 = LocaleController.formatString("VoipGroupUserCanNowSpeakForYou", R.string.VoipGroupUserCanNowSpeakForYou, obj instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) obj) : ((TLRPC.Chat) obj).title);
-                                    } else if (i == 32) {
-                                        replaceTags2 = AndroidUtilities.replaceTags(LocaleController.formatString("VoipGroupRemovedFromGroup", R.string.VoipGroupRemovedFromGroup, obj instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                    } else if (i == 32 || i == 102) {
+                                        String firstName = obj instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) obj) : ((TLRPC.Chat) obj).title;
+                                        replaceTags2 = AndroidUtilities.replaceTags(i == 102 ? LocaleController.formatString(R.string.VoipConferenceKicked, firstName) : LocaleController.formatString(R.string.VoipGroupRemovedFromGroup, firstName));
                                         i13 = R.raw.voip_group_removed;
                                     } else {
                                         if (i == 9 || i == 10) {
@@ -915,16 +916,16 @@ public class UndoView extends FrameLayout {
                                                             }
                                                             if (DialogObject.isUserDialog(longValue)) {
                                                                 TLRPC.User user5 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(longValue));
-                                                                String firstName = UserObject.getFirstName(user5);
+                                                                String firstName2 = UserObject.getFirstName(user5);
                                                                 if (UserObject.isUserSelf(user5)) {
                                                                     i14 = R.string.SavedMessages;
                                                                 } else {
                                                                     if (UserObject.isReplyUser(user5)) {
                                                                         i14 = R.string.RepliesTitle;
                                                                     }
-                                                                    formatSpannable = i != 20 ? LocaleController.formatSpannable(R.string.FilterUserAddedToExisting, firstName, replaceAnimatedEmoji) : LocaleController.formatSpannable(R.string.FilterUserRemovedFrom, firstName, replaceAnimatedEmoji);
+                                                                    formatSpannable = i != 20 ? LocaleController.formatSpannable(R.string.FilterUserAddedToExisting, firstName2, replaceAnimatedEmoji) : LocaleController.formatSpannable(R.string.FilterUserRemovedFrom, firstName2, replaceAnimatedEmoji);
                                                                 }
-                                                                firstName = LocaleController.getString(i14);
+                                                                firstName2 = LocaleController.getString(i14);
                                                                 if (i != 20) {
                                                                 }
                                                             } else {

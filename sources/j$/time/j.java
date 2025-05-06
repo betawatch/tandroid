@@ -67,9 +67,9 @@ public enum j implements j$.time.temporal.k {
             case 3:
                 return (z ? 1 : 0) + NotificationCenter.recordStartError;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.themeAccentListUpdated;
+                return (z ? 1 : 0) + NotificationCenter.themeListUpdated;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.uploadStoryEnd;
+                return (z ? 1 : 0) + NotificationCenter.chatlistFolderUpdate;
             case 6:
                 return 1;
             case 7:
@@ -81,7 +81,7 @@ public enum j implements j$.time.temporal.k {
             case 10:
                 return (z ? 1 : 0) + NotificationCenter.starTransactionsLoaded;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.emojiPreviewThemesChanged;
+                return (z ? 1 : 0) + NotificationCenter.onDatabaseMigration;
             default:
                 return (z ? 1 : 0) + 335;
         }

@@ -6,7 +6,7 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.t0;
+import j$.util.stream.u0;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
@@ -178,10 +178,10 @@ public final class h extends b implements Set, j$.util.Set {
         Stream e02;
         switch (this.b) {
             case 0:
-                e0 = t0.e0(Collection.-EL.b(this), true);
+                e0 = u0.e0(Collection.-EL.b(this), true);
                 return e0;
             default:
-                e02 = t0.e0(Collection.-EL.b(this), true);
+                e02 = u0.e0(Collection.-EL.b(this), true);
                 return e02;
         }
     }
@@ -192,10 +192,10 @@ public final class h extends b implements Set, j$.util.Set {
         Stream e02;
         switch (this.b) {
             case 0:
-                e0 = t0.e0(Collection.-EL.b(this), true);
+                e0 = u0.e0(Collection.-EL.b(this), true);
                 return Stream.Wrapper.convert(e0);
             default:
-                e02 = t0.e0(Collection.-EL.b(this), true);
+                e02 = u0.e0(Collection.-EL.b(this), true);
                 return Stream.Wrapper.convert(e02);
         }
     }

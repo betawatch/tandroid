@@ -7,7 +7,7 @@ final class S1 extends V1 {
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         return e2Var;
     }
 }

@@ -17,7 +17,7 @@ public final /* synthetic */ class q implements j$.util.function.m {
                 this.b.accept(d);
                 break;
             default:
-                ((s) this.b).a.accept(d);
+                ((t) this.b).a.accept(d);
                 break;
         }
     }

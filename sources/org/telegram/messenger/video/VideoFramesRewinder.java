@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -67,7 +68,7 @@ public class VideoFramesRewinder {
         int i;
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
-            this.maxFramesCount = 200;
+            this.maxFramesCount = NotificationCenter.storyQualityUpdate;
             i = 580;
         } else if (devicePerformanceClass != 2) {
             this.maxFramesCount = 100;

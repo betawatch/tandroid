@@ -42,6 +42,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -681,7 +682,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 for (i24 = 0; i24 < i23; i24 += r14) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) groupCalculator.posArray.get(i24);
                     if (groupedMessagePosition15.minX == 0) {
-                        groupedMessagePosition15.spanSize += 200;
+                        groupedMessagePosition15.spanSize += NotificationCenter.storyQualityUpdate;
                     }
                     if ((groupedMessagePosition15.flags & 2) != 0) {
                         groupedMessagePosition15.edge = r14;

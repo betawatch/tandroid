@@ -12,7 +12,7 @@ final class S extends CountedCompleter {
     private final ConcurrentHashMap d;
     private final e2 e;
     private final S f;
-    private F0 g;
+    private G0 g;
 
     S(S s, Spliterator spliterator, S s2) {
         super(s);
@@ -66,11 +66,11 @@ final class S extends CountedCompleter {
             s2.fork();
         }
         if (s.getPendingCount() > 0) {
-            E e = new E(4);
+            r rVar = new r(8);
             b bVar = s.a;
-            x0 t0 = bVar.t0(bVar.m0(spliterator), e);
-            s.a.B0(spliterator, t0);
-            s.g = t0.b();
+            y0 s0 = bVar.s0(bVar.l0(spliterator), rVar);
+            s.a.A0(spliterator, s0);
+            s.g = s0.b();
             s.b = null;
         }
         s.tryComplete();
@@ -78,14 +78,14 @@ final class S extends CountedCompleter {
 
     @Override // java.util.concurrent.CountedCompleter
     public final void onCompletion(CountedCompleter countedCompleter) {
-        F0 f0 = this.g;
-        if (f0 != null) {
-            f0.forEach(this.e);
+        G0 g0 = this.g;
+        if (g0 != null) {
+            g0.forEach(this.e);
             this.g = null;
         } else {
             Spliterator spliterator = this.b;
             if (spliterator != null) {
-                this.a.B0(spliterator, this.e);
+                this.a.A0(spliterator, this.e);
                 this.b = null;
             }
         }

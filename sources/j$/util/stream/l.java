@@ -5,13 +5,15 @@ import j$.util.function.Function;
 import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Supplier;
-import j$.util.function.ToDoubleFunction;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l implements Function, j$.util.function.f0, BiConsumer, Supplier, LongFunction, IntFunction, j$.util.function.i, j$.util.function.p, j$.util.function.u, ToDoubleFunction {
+public final /* synthetic */ class l implements Function, j$.util.function.f0, BiConsumer, Supplier, LongFunction, IntFunction, j$.util.function.i, j$.util.function.p, j$.util.function.u {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i) {
@@ -61,9 +63,15 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
                 ((Collection) obj).add(obj2);
                 break;
             case 18:
+                ((List) obj).add(obj2);
+                break;
+            case 20:
+                ((Set) obj).add(obj2);
+                break;
+            case 22:
                 ((LinkedHashSet) obj).add(obj2);
                 break;
-            case 19:
+            case 23:
                 ((LinkedHashSet) obj).addAll((LinkedHashSet) obj2);
                 break;
             default:
@@ -83,7 +91,11 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
                 break;
             case 18:
                 break;
-            case 19:
+            case 20:
+                break;
+            case 22:
+                break;
+            case 23:
                 break;
         }
         return BiConsumer.-CC.$default$andThen(this, biConsumer);
@@ -101,23 +113,18 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
 
     @Override // j$.util.function.IntFunction
     public Object apply(int i) {
-        switch (this.a) {
-            case 12:
-                return new Object[i];
-            default:
-                return new Double[i];
-        }
+        return new Object[i];
     }
 
     @Override // j$.util.function.LongFunction
     public Object apply(long j) {
         switch (this.a) {
             case 9:
-                return t0.J(j);
+                return u0.J(j);
             case 10:
-                return t0.R(j);
+                return u0.R(j);
             default:
-                return t0.T(j);
+                return u0.T(j);
         }
     }
 
@@ -129,17 +136,7 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
 
     @Override // j$.util.function.i
     public double applyAsDouble(double d, double d2) {
-        switch (this.a) {
-            case 20:
-                return Math.min(d, d2);
-            default:
-                return Math.max(d, d2);
-        }
-    }
-
-    @Override // j$.util.function.ToDoubleFunction
-    public double applyAsDouble(Object obj) {
-        return ((Double) obj).doubleValue();
+        return Math.min(d, d2);
     }
 
     @Override // j$.util.function.u
@@ -169,10 +166,9 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
             case 12:
             case 14:
             case 18:
-            case 19:
             case 20:
             default:
-                return new double[3];
+                return new double[4];
             case 13:
                 return new j$.util.f();
             case 15:
@@ -180,9 +176,11 @@ public final /* synthetic */ class l implements Function, j$.util.function.f0, B
             case 16:
                 return new j$.util.i();
             case 17:
-                return new LinkedHashSet();
+                return new ArrayList();
+            case 19:
+                return new HashSet();
             case 21:
-                return new double[4];
+                return new LinkedHashSet();
         }
     }
 }

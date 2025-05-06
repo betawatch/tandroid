@@ -1921,7 +1921,7 @@ public class ManageLinksActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ManageLinksActivity.this.lambda$onBackPressed$335();
+                    ManageLinksActivity.this.lambda$onBackPressed$336();
                 }
             }
         });
@@ -2019,7 +2019,7 @@ public class ManageLinksActivity extends BaseFragment implements NotificationCen
             if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                 removeSelfFromStack();
             } else {
-                lambda$onBackPressed$335();
+                lambda$onBackPressed$336();
             }
         }
     }

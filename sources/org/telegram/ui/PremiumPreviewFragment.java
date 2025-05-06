@@ -1158,6 +1158,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             baseFragment.showDialog(new PremiumNotAvailableBottomSheet(baseFragment));
             return;
         }
+        int currentAccount = baseFragment == null ? UserConfig.selectedAccount : baseFragment.getCurrentAccount();
+        if (MessagesController.getInstance(currentAccount).isFrozen()) {
+            AccountFrozenAlert.show(currentAccount);
+            return;
+        }
         if (subscriptionTier == null) {
             TLRPC.TL_help_premiumPromo premiumPromo = baseFragment.getAccountInstance().getMediaDataController().getPremiumPromo();
             if (premiumPromo != null) {
@@ -1499,20 +1504,20 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$buyPremium$11(TLObject tLObject, BaseFragment baseFragment, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, SubscriptionTier subscriptionTier, BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchasePremium tL_payments_canPurchasePremium) {
+    public static /* synthetic */ void lambda$buyPremium$11(TLObject tLObject, BaseFragment baseFragment, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, SubscriptionTier subscriptionTier, BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             BillingController.getInstance().launchBillingFlow(baseFragment.getParentActivity(), baseFragment.getAccountInstance(), tL_inputStorePaymentPremiumSubscription, Collections.singletonList(BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(BillingController.PREMIUM_PRODUCT_DETAILS).setOfferToken(subscriptionTier.getOfferDetails().getOfferToken()).build()), subscriptionUpdateParams, false);
         } else {
-            AlertsCreator.processError(baseFragment.getCurrentAccount(), tL_error, baseFragment, tL_payments_canPurchasePremium, new Object[0]);
+            AlertsCreator.processError(baseFragment.getCurrentAccount(), tL_error, baseFragment, tL_payments_canPurchaseStore, new Object[0]);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$buyPremium$12(final BaseFragment baseFragment, final TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, final SubscriptionTier subscriptionTier, final BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, final TLRPC.TL_payments_canPurchasePremium tL_payments_canPurchasePremium, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda21
+    public static /* synthetic */ void lambda$buyPremium$12(final BaseFragment baseFragment, final TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, final SubscriptionTier subscriptionTier, final BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                PremiumPreviewFragment.lambda$buyPremium$11(TLObject.this, baseFragment, tL_inputStorePaymentPremiumSubscription, subscriptionTier, subscriptionUpdateParams, tL_error, tL_payments_canPurchasePremium);
+                PremiumPreviewFragment.lambda$buyPremium$11(TLObject.this, baseFragment, tL_inputStorePaymentPremiumSubscription, subscriptionTier, subscriptionUpdateParams, tL_error, tL_payments_canPurchaseStore);
             }
         });
     }
@@ -1557,16 +1562,16 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     PremiumPreviewFragment.lambda$buyPremium$10(runnable, (BillingResult) obj);
                 }
             });
-            final TLRPC.TL_payments_canPurchasePremium tL_payments_canPurchasePremium = new TLRPC.TL_payments_canPurchasePremium();
+            final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
             final TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription2 = new TLRPC.TL_inputStorePaymentPremiumSubscription();
             if (subscriptionUpdateParams != null) {
                 tL_inputStorePaymentPremiumSubscription2.upgrade = true;
             }
-            tL_payments_canPurchasePremium.purpose = tL_inputStorePaymentPremiumSubscription2;
-            baseFragment.getConnectionsManager().sendRequest(tL_payments_canPurchasePremium, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda20
+            tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
+            baseFragment.getConnectionsManager().sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda20
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    PremiumPreviewFragment.lambda$buyPremium$12(BaseFragment.this, tL_inputStorePaymentPremiumSubscription2, subscriptionTier, subscriptionUpdateParams, tL_payments_canPurchasePremium, tLObject, tL_error);
+                    PremiumPreviewFragment.lambda$buyPremium$12(BaseFragment.this, tL_inputStorePaymentPremiumSubscription2, subscriptionTier, subscriptionUpdateParams, tL_payments_canPurchaseStore, tLObject, tL_error);
                 }
             });
         }
@@ -1619,7 +1624,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         } else if (tL_error == null) {
             return;
         } else {
-            runnable = new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda22
+            runnable = new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda21
                 @Override // java.lang.Runnable
                 public final void run() {
                     PremiumPreviewFragment.lambda$buyPremium$8(BaseFragment.this, tL_error, tL_payments_assignPlayMarketTransaction);
@@ -2753,7 +2758,9 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         AndroidUtilities.updateViewVisibilityAnimated(this.buttonDivider, true, 1.0f, false);
         this.buttonContainer.addView(this.premiumButtonView, LayoutHelper.createFrame(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         this.buttonContainer.setBackgroundColor(getThemedColor(i2));
-        this.contentView.addView(this.buttonContainer, LayoutHelper.createFrame(-1, 68, 80));
+        if (getUserConfig().isClientActivated()) {
+            this.contentView.addView(this.buttonContainer, LayoutHelper.createFrame(-1, 68, 80));
+        }
         this.fragmentView = this.contentView;
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
@@ -2762,7 +2769,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PremiumPreviewFragment.this.lambda$onBackPressed$335();
+                    PremiumPreviewFragment.this.lambda$onBackPressed$336();
                 }
             }
         });

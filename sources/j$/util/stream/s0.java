@@ -1,48 +1,33 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.atomic.AtomicReference;
+import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class s0 extends c {
-    private final r0 j;
+final class s0 implements w3 {
+    final r0 a;
+    final Supplier b;
 
-    s0(r0 r0Var, b bVar, Spliterator spliterator) {
-        super(bVar, spliterator);
-        this.j = r0Var;
+    s0(S2 s2, r0 r0Var, Supplier supplier) {
+        this.a = r0Var;
+        this.b = supplier;
     }
 
-    s0(s0 s0Var, Spliterator spliterator) {
-        super(s0Var, spliterator);
-        this.j = s0Var.j;
+    @Override // j$.util.stream.w3
+    public final Object a(b bVar, Spliterator spliterator) {
+        q0 q0Var = (q0) this.b.get();
+        bVar.A0(spliterator, q0Var);
+        return Boolean.valueOf(q0Var.b);
     }
 
-    @Override // j$.util.stream.e
-    protected final Object a() {
-        boolean z;
-        b bVar = this.a;
-        p0 p0Var = (p0) this.j.b.get();
-        bVar.B0(this.b, p0Var);
-        boolean z2 = p0Var.b;
-        z = this.j.a.b;
-        if (z2 == z) {
-            Boolean valueOf = Boolean.valueOf(z2);
-            AtomicReference atomicReference = this.h;
-            while (!atomicReference.compareAndSet(null, valueOf) && atomicReference.get() == null) {
-            }
-        }
-        return null;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // j$.util.stream.w3
+    public final Object c(b bVar, Spliterator spliterator) {
+        return (Boolean) new t0(this, bVar, spliterator).invoke();
     }
 
-    @Override // j$.util.stream.e
-    protected final e d(Spliterator spliterator) {
-        return new s0(this, spliterator);
-    }
-
-    @Override // j$.util.stream.c
-    protected final Object i() {
-        boolean z;
-        z = this.j.a.b;
-        return Boolean.valueOf(!z);
+    @Override // j$.util.stream.w3
+    public final int d() {
+        return R2.u | R2.r;
     }
 }

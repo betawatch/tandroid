@@ -231,8 +231,8 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             setState(2);
             return;
         }
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant = (TLRPC.TL_groupCallParticipant) sharedInstance.groupCall.participants.get(sharedInstance.getSelfId());
-        if (tL_groupCallParticipant == null || tL_groupCallParticipant.can_self_unmute || !tL_groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.get(sharedInstance.getSelfId());
+        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
             setState(sharedInstance.isMicMute() ? 1 : 0);
             return;
         }
@@ -456,7 +456,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                                                 } else if (i == 1) {
                                                     paint = this.paint;
                                                 } else {
-                                                    this.paint.setAlpha(NotificationCenter.proxyCheckDone);
+                                                    this.paint.setAlpha(NotificationCenter.didSetNewWallpapper);
                                                     canvas.save();
                                                     canvas.scale(f6, f6, measuredWidth, measuredHeight);
                                                     canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(32.0f), this.paint);

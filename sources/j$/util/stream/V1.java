@@ -11,7 +11,7 @@ abstract class V1 extends W1 {
     }
 
     @Override // j$.util.stream.b
-    final boolean w0() {
+    final boolean v0() {
         switch (this.l) {
             case 0:
                 return true;

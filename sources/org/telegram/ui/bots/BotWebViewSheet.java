@@ -91,7 +91,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda275;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda273;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -1226,7 +1226,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         FrameLayout frameLayout = new FrameLayout(context);
         this.bulletinContainer = frameLayout;
         WindowView windowView4 = this.windowView;
-        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, 200, 55);
+        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, NotificationCenter.storyQualityUpdate, 55);
         this.bulletinContainerLayoutParams = createFrame3;
         windowView4.addView(frameLayout, createFrame3);
         this.actionBarShadow = ContextCompat.getDrawable(getContext(), R.drawable.header_shadow).mutate();
@@ -1993,7 +1993,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda275(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda273(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2047,7 +2047,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             }
         });
         if (this.actionBarColor != Theme.getColor(Theme.key_windowBackgroundWhite)) {
-            int i = AndroidUtilities.computePerceivedBrightness(this.actionBarColor) >= 0.721f ? -15198183 : -1;
+            int i = AndroidUtilities.computePerceivedBrightness(this.actionBarColor) >= 0.721f ? -1 : -15198183;
             int i2 = AndroidUtilities.computePerceivedBrightness(i) >= 0.721f ? -16777216 : -1;
             int multAlpha = Theme.multAlpha(i2, 0.85f);
             int multAlpha2 = Theme.multAlpha(i2, 0.1f);
@@ -2619,7 +2619,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
             this.verifiedDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            this.verifiedDrawable.setAlpha(NotificationCenter.proxyCheckDone);
+            this.verifiedDrawable.setAlpha(NotificationCenter.didSetNewWallpapper);
             this.actionBar.getTitleTextView().setDrawablePadding(AndroidUtilities.dp(2.0f));
             this.actionBar.getTitleTextView().setRightDrawable(new Drawable() { // from class: org.telegram.ui.bots.BotWebViewSheet.9
                 @Override // android.graphics.drawable.Drawable

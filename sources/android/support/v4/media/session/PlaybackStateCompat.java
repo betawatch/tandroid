@@ -232,6 +232,27 @@ public final class PlaybackStateCompat implements Parcelable {
             return this;
         }
 
+        public Builder setActiveQueueItemId(long j) {
+            this.mActiveItemId = j;
+            return this;
+        }
+
+        public Builder setBufferedPosition(long j) {
+            this.mBufferedPosition = j;
+            return this;
+        }
+
+        public Builder setErrorMessage(int i, CharSequence charSequence) {
+            this.mErrorCode = i;
+            this.mErrorMessage = charSequence;
+            return this;
+        }
+
+        public Builder setExtras(Bundle bundle) {
+            this.mExtras = bundle;
+            return this;
+        }
+
         public Builder setState(int i, long j, float f) {
             return setState(i, j, f, SystemClock.elapsedRealtime());
         }
@@ -320,6 +341,10 @@ public final class PlaybackStateCompat implements Parcelable {
             return 0;
         }
 
+        public String getAction() {
+            return this.mAction;
+        }
+
         public Object getCustomAction() {
             PlaybackState.CustomAction customAction = this.mCustomActionFwk;
             if (customAction != null || Build.VERSION.SDK_INT < 21) {
@@ -377,7 +402,7 @@ public final class PlaybackStateCompat implements Parcelable {
         if (obj == null || Build.VERSION.SDK_INT < 21) {
             return null;
         }
-        PlaybackState m = MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline6.m(obj);
+        PlaybackState m = MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline9.m(obj);
         List<PlaybackState.CustomAction> customActions = Api21Impl.getCustomActions(m);
         if (customActions != null) {
             ArrayList arrayList2 = new ArrayList(customActions.size());
@@ -405,6 +430,10 @@ public final class PlaybackStateCompat implements Parcelable {
 
     public long getActions() {
         return this.mActions;
+    }
+
+    public long getActiveQueueItemId() {
+        return this.mActiveItemId;
     }
 
     public long getLastPositionUpdateTime() {

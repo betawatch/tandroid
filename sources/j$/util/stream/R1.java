@@ -9,23 +9,23 @@ final class R1 extends a2 {
     final /* synthetic */ b d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public R1(t tVar, e2 e2Var) {
+    public R1(u uVar, e2 e2Var) {
         super(e2Var);
-        this.d = tVar;
+        this.d = uVar;
         this.c = new q(0, e2Var);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public R1(v vVar, e2 e2Var) {
-        super(e2Var);
-        this.d = vVar;
-        this.c = new U(0, e2Var);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public R1(w wVar, e2 e2Var) {
         super(e2Var);
         this.d = wVar;
+        this.c = new U(0, e2Var);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public R1(x xVar, e2 e2Var) {
+        super(e2Var);
+        this.d = xVar;
         this.c = new c0(0, e2Var);
     }
 
@@ -34,7 +34,7 @@ final class R1 extends a2 {
     public final void r(Object obj) {
         switch (this.b) {
             case 0:
-                LongStream longStream = (LongStream) ((Function) ((w) this.d).n).apply(obj);
+                LongStream longStream = (LongStream) ((Function) ((x) this.d).n).apply(obj);
                 if (longStream != null) {
                     try {
                         longStream.sequential().c((c0) this.c);
@@ -53,7 +53,7 @@ final class R1 extends a2 {
                 }
                 return;
             case 1:
-                IntStream intStream = (IntStream) ((Function) ((v) this.d).n).apply(obj);
+                IntStream intStream = (IntStream) ((Function) ((w) this.d).n).apply(obj);
                 if (intStream != null) {
                     try {
                         intStream.sequential().J((U) this.c);
@@ -72,21 +72,21 @@ final class R1 extends a2 {
                 }
                 return;
             default:
-                D d = (D) ((Function) ((t) this.d).n).apply(obj);
-                if (d != null) {
+                E e = (E) ((Function) ((u) this.d).n).apply(obj);
+                if (e != null) {
                     try {
-                        d.sequential().i((q) this.c);
+                        e.sequential().i((q) this.c);
                     } catch (Throwable th5) {
                         try {
-                            d.close();
+                            e.close();
                         } catch (Throwable th6) {
                             th5.addSuppressed(th6);
                         }
                         throw th5;
                     }
                 }
-                if (d != null) {
-                    d.close();
+                if (e != null) {
+                    e.close();
                     return;
                 }
                 return;

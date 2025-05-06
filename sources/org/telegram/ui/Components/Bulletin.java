@@ -884,7 +884,7 @@ public class Bulletin {
         protected void dispatchDraw(Canvas canvas) {
             Bulletin bulletin = this.bulletin;
             if (bulletin == null || !bulletin.allowBlurAnimation) {
-                dispatchDrawImpl(canvas, false, NotificationCenter.proxyCheckDone);
+                dispatchDrawImpl(canvas, false, NotificationCenter.didSetNewWallpapper);
                 return;
             }
             if (this.blurVisibilityDrawable == null) {
@@ -898,7 +898,7 @@ public class Bulletin {
             if (!this.blurVisibilityDrawable.hasBitmap()) {
                 this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
             }
-            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.proxyCheckDone));
+            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.didSetNewWallpapper));
             this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.blurVisibilityDrawable.draw(canvas);
         }
@@ -986,6 +986,9 @@ public class Bulletin {
             Delegate delegate;
             if (this.bulletin == null || !(((delegate = this.delegate) == null || delegate.bottomOffsetAnimated()) && this.bulletin.bottomOffsetSpring != null && this.bulletin.bottomOffsetSpring.isRunning())) {
                 Delegate delegate2 = this.delegate;
+                if (delegate2 == null) {
+                    return 0.0f;
+                }
                 Bulletin bulletin = this.bulletin;
                 bottomOffset = delegate2.getBottomOffset(bulletin != null ? bulletin.tag : 0);
             } else {
@@ -1098,8 +1101,10 @@ public class Bulletin {
         }
 
         public void setTop(boolean z) {
-            this.top = z;
-            updateSize();
+            if (this.top != z) {
+                this.top = z;
+                updateSize();
+            }
         }
 
         public void updatePosition() {
@@ -1187,7 +1192,7 @@ public class Bulletin {
             this.textView.setTextSize(1, 15.0f);
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
             this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
             setTextColor(getThemedColor(Theme.key_undo_infoColor));
             setBackground(getThemedColor(Theme.key_undo_background));
@@ -2473,6 +2478,11 @@ public class Bulletin {
             return;
         }
         layout.updatePosition();
+    }
+
+    public Bulletin allowBlur() {
+        this.allowBlurAnimation = true;
+        return this;
     }
 
     public Layout getLayout() {

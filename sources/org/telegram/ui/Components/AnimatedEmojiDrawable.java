@@ -502,7 +502,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.proxyCheckDone;
+            this.alpha = NotificationCenter.didSetNewWallpapper;
             this.bounds = new android.graphics.Rect();
             this.parentView = view;
             animatedFloat.setParent(view);
@@ -892,7 +892,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.proxyCheckDone;
+        private int alpha = NotificationCenter.didSetNewWallpapper;
         private Drawable drawable;
         int height;
         int width;
@@ -954,6 +954,13 @@ public class AnimatedEmojiDrawable extends Drawable {
         }
     }
 
+    public AnimatedEmojiDrawable(int i, int i2) {
+        this.cacheType = i;
+        this.currentAccount = i2;
+        updateSize();
+        updateLiteModeValues();
+    }
+
     public AnimatedEmojiDrawable(int i, int i2, long j) {
         this.currentAccount = i2;
         this.cacheType = i;
@@ -999,7 +1006,8 @@ public class AnimatedEmojiDrawable extends Drawable {
         if (this.imageReceiver == null) {
             1 r0 = new 1();
             this.imageReceiver = r0;
-            r0.setAllowLoadingOnAttachedOnly(true);
+            r0.setCurrentAccount(this.currentAccount);
+            this.imageReceiver.setAllowLoadingOnAttachedOnly(true);
             if (this.cacheType == 12) {
                 this.imageReceiver.ignoreNotifications = true;
             }
@@ -1466,7 +1474,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                     this.sizedp = 14;
                     return;
                 }
-                abs = 34;
+                abs = i == 21 ? 90 : 34;
             }
             abs = (int) (((abs2 + Math.abs(textPaint.descent())) * 1.15f) / AndroidUtilities.density);
         }
@@ -1669,6 +1677,11 @@ public class AnimatedEmojiDrawable extends Drawable {
             }
             imageReceiver.setCurrentTime(j);
         }
+    }
+
+    public void setupDocument(TLRPC.Document document) {
+        this.document = document;
+        initDocument(false);
     }
 
     public void setupEmojiThumb(String str) {

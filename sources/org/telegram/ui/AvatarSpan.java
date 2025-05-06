@@ -44,7 +44,7 @@ public class AvatarSpan extends ReplacementSpan {
                 AvatarSpan.this.imageReceiver.onDetachedFromWindow();
             }
         };
-        this.shadowPaintAlpha = NotificationCenter.proxyCheckDone;
+        this.shadowPaintAlpha = NotificationCenter.didSetNewWallpapper;
         this.currentAccount = i;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.imageReceiver = imageReceiver;

@@ -1,47 +1,26 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.LongFunction;
-import java.util.concurrent.CountedCompleter;
+import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-class L0 extends e {
-    protected final b h;
-    protected final LongFunction i;
-    protected final j$.util.function.f j;
-
-    L0(L0 l0, Spliterator spliterator) {
-        super(l0, spliterator);
-        this.h = l0.h;
-        this.i = l0.i;
-        this.j = l0.j;
-    }
-
-    L0(b bVar, Spliterator spliterator, LongFunction longFunction, j$.util.function.f fVar) {
-        super(bVar, spliterator);
-        this.h = bVar;
-        this.i = longFunction;
-        this.j = fVar;
-    }
-
-    @Override // j$.util.stream.e
-    protected final Object a() {
-        x0 x0Var = (x0) this.i.apply(this.h.m0(this.b));
-        this.h.B0(this.b, x0Var);
-        return x0Var.b();
-    }
-
-    @Override // j$.util.stream.e
-    protected final e d(Spliterator spliterator) {
-        return new L0(this, spliterator);
-    }
-
-    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        e eVar = this.d;
-        if (eVar != null) {
-            e((F0) this.j.apply((F0) ((L0) eVar).b(), (F0) ((L0) this.e).b()));
+final class L0 extends M0 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public L0(int i, Spliterator spliterator, b bVar) {
+        super(bVar, spliterator, new l(9), new k(3));
+        switch (i) {
+            case 1:
+                super(bVar, spliterator, new l(10), new k(4));
+                break;
+            case 2:
+                super(bVar, spliterator, new l(11), new k(5));
+                break;
+            default:
+                break;
         }
-        super.onCompletion(countedCompleter);
+    }
+
+    L0(Spliterator spliterator, IntFunction intFunction, b bVar) {
+        super(bVar, spliterator, new a(intFunction, 1), new k(6));
     }
 }

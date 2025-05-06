@@ -6,7 +6,6 @@ import android.os.SystemClock;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.BuildVars;
 
 /* loaded from: classes5.dex */
 public class ThreadUtils {
@@ -76,7 +75,7 @@ public class ThreadUtils {
     }
 
     public static void checkIsOnMainThread() {
-        if (BuildVars.DEBUG_PRIVATE_VERSION && Thread.currentThread() != Looper.getMainLooper().getThread()) {
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
             throw new IllegalStateException("Not on main thread!");
         }
     }

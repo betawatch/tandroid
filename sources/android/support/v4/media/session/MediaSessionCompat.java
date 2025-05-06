@@ -28,6 +28,7 @@ import android.os.RemoteException;
 import android.os.ResultReceiver;
 import android.os.SystemClock;
 import android.support.v4.media.MediaDescriptionCompat;
+import android.support.v4.media.MediaDescriptionCompat$$ExternalSyntheticApiModelOutline0;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.MediaMetadataCompat$$ExternalSyntheticApiModelOutline0;
 import android.support.v4.media.RatingCompat;
@@ -47,6 +48,7 @@ import androidx.versionedparcelable.VersionedParcelable;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
@@ -64,7 +66,7 @@ public class MediaSessionCompat {
         CallbackHandler mCallbackHandler;
         final Object mLock = new Object();
         private boolean mMediaPlayPausePendingOnHandler;
-        WeakReference mSessionImpl;
+        WeakReference<MediaSessionImpl> mSessionImpl;
 
         private class CallbackHandler extends Handler {
             CallbackHandler(Looper looper) {
@@ -78,7 +80,7 @@ public class MediaSessionCompat {
                 CallbackHandler callbackHandler;
                 if (message.what == 1) {
                     synchronized (Callback.this.mLock) {
-                        mediaSessionImpl = (MediaSessionImpl) Callback.this.mSessionImpl.get();
+                        mediaSessionImpl = Callback.this.mSessionImpl.get();
                         callback = Callback.this;
                         callbackHandler = callback.mCallbackHandler;
                     }
@@ -450,7 +452,7 @@ public class MediaSessionCompat {
             } else {
                 this.mCallbackFwk = null;
             }
-            this.mSessionImpl = new WeakReference(null);
+            this.mSessionImpl = new WeakReference<>(null);
         }
 
         void handleMediaPlayPauseIfPendingOnHandler(MediaSessionImpl mediaSessionImpl, Handler handler) {
@@ -496,7 +498,7 @@ public class MediaSessionCompat {
                 return false;
             }
             synchronized (this.mLock) {
-                mediaSessionImpl = (MediaSessionImpl) this.mSessionImpl.get();
+                mediaSessionImpl = this.mSessionImpl.get();
                 callbackHandler = this.mCallbackHandler;
             }
             if (mediaSessionImpl == null || callbackHandler == null || (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) == null || keyEvent.getAction() != 0) {
@@ -554,6 +556,10 @@ public class MediaSessionCompat {
         public void onRemoveQueueItem(MediaDescriptionCompat mediaDescriptionCompat) {
         }
 
+        @Deprecated
+        public void onRemoveQueueItemAt(int i) {
+        }
+
         public void onRewind() {
         }
 
@@ -593,7 +599,7 @@ public class MediaSessionCompat {
         void setSessionImpl(MediaSessionImpl mediaSessionImpl, Handler handler) {
             synchronized (this.mLock) {
                 try {
-                    this.mSessionImpl = new WeakReference(mediaSessionImpl);
+                    this.mSessionImpl = new WeakReference<>(mediaSessionImpl);
                     CallbackHandler callbackHandler = this.mCallbackHandler;
                     CallbackHandler callbackHandler2 = null;
                     if (callbackHandler != null) {
@@ -635,6 +641,8 @@ public class MediaSessionCompat {
 
         void setExtras(Bundle bundle);
 
+        void setFlags(int i);
+
         void setMediaButtonReceiver(PendingIntent pendingIntent);
 
         void setMetadata(MediaMetadataCompat mediaMetadataCompat);
@@ -645,7 +653,13 @@ public class MediaSessionCompat {
 
         void setPlaybackToRemote(VolumeProviderCompat volumeProviderCompat);
 
+        void setQueue(List list);
+
+        void setRepeatMode(int i);
+
         void setSessionActivity(PendingIntent pendingIntent);
+
+        void setShuffleMode(int i);
     }
 
     static class MediaSessionImplApi18 extends MediaSessionImplBase {
@@ -1184,6 +1198,7 @@ public class MediaSessionCompat {
             this.mSessionFwk.setExtras(bundle);
         }
 
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
         public void setFlags(int i) {
             this.mSessionFwk.setFlags(i | 3);
         }
@@ -1211,7 +1226,7 @@ public class MediaSessionCompat {
                 }
                 this.mExtraControllerCallbacks.finishBroadcast();
             }
-            this.mSessionFwk.setPlaybackState(playbackStateCompat == null ? null : MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline6.m(playbackStateCompat.getPlaybackState()));
+            this.mSessionFwk.setPlaybackState(playbackStateCompat == null ? null : MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline9.m(playbackStateCompat.getPlaybackState()));
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
@@ -1226,12 +1241,63 @@ public class MediaSessionCompat {
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
         public void setPlaybackToRemote(VolumeProviderCompat volumeProviderCompat) {
-            this.mSessionFwk.setPlaybackToRemote(MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline8.m(volumeProviderCompat.getVolumeProvider()));
+            this.mSessionFwk.setPlaybackToRemote(MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline11.m(volumeProviderCompat.getVolumeProvider()));
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setQueue(List list) {
+            ArrayList arrayList;
+            MediaSession mediaSession;
+            this.mQueue = list;
+            if (list == null) {
+                mediaSession = this.mSessionFwk;
+                arrayList = null;
+            } else {
+                arrayList = new ArrayList(list.size());
+                Iterator it = list.iterator();
+                while (it.hasNext()) {
+                    arrayList.add(MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline6.m(((QueueItem) it.next()).getQueueItem()));
+                }
+                mediaSession = this.mSessionFwk;
+            }
+            mediaSession.setQueue(arrayList);
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setRepeatMode(int i) {
+            if (this.mRepeatMode != i) {
+                this.mRepeatMode = i;
+                synchronized (this.mLock) {
+                    for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                        try {
+                            ((IMediaControllerCallback) this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast)).onRepeatModeChanged(i);
+                        } catch (RemoteException unused) {
+                        }
+                    }
+                    this.mExtraControllerCallbacks.finishBroadcast();
+                }
+            }
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
         public void setSessionActivity(PendingIntent pendingIntent) {
             this.mSessionFwk.setSessionActivity(pendingIntent);
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setShuffleMode(int i) {
+            if (this.mShuffleMode != i) {
+                this.mShuffleMode = i;
+                synchronized (this.mLock) {
+                    for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                        try {
+                            ((IMediaControllerCallback) this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast)).onShuffleModeChanged(i);
+                        } catch (RemoteException unused) {
+                        }
+                    }
+                    this.mExtraControllerCallbacks.finishBroadcast();
+                }
+            }
         }
     }
 
@@ -1912,6 +1978,30 @@ public class MediaSessionCompat {
             }
         }
 
+        private void sendQueue(List list) {
+            synchronized (this.mLock) {
+                for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                    try {
+                        ((IMediaControllerCallback) this.mControllerCallbacks.getBroadcastItem(beginBroadcast)).onQueueChanged(list);
+                    } catch (RemoteException unused) {
+                    }
+                }
+                this.mControllerCallbacks.finishBroadcast();
+            }
+        }
+
+        private void sendRepeatMode(int i) {
+            synchronized (this.mLock) {
+                for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                    try {
+                        ((IMediaControllerCallback) this.mControllerCallbacks.getBroadcastItem(beginBroadcast)).onRepeatModeChanged(i);
+                    } catch (RemoteException unused) {
+                    }
+                }
+                this.mControllerCallbacks.finishBroadcast();
+            }
+        }
+
         private void sendSessionDestroyed() {
             synchronized (this.mLock) {
                 for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
@@ -1922,6 +2012,18 @@ public class MediaSessionCompat {
                 }
                 this.mControllerCallbacks.finishBroadcast();
                 this.mControllerCallbacks.kill();
+            }
+        }
+
+        private void sendShuffleMode(int i) {
+            synchronized (this.mLock) {
+                for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                    try {
+                        ((IMediaControllerCallback) this.mControllerCallbacks.getBroadcastItem(beginBroadcast)).onShuffleModeChanged(i);
+                    } catch (RemoteException unused) {
+                    }
+                }
+                this.mControllerCallbacks.finishBroadcast();
             }
         }
 
@@ -2238,6 +2340,13 @@ public class MediaSessionCompat {
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setFlags(int i) {
+            synchronized (this.mLock) {
+                this.mFlags = i | 3;
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
         public void setMediaButtonReceiver(PendingIntent pendingIntent) {
         }
 
@@ -2300,12 +2409,34 @@ public class MediaSessionCompat {
             volumeProviderCompat.setCallback(this.mVolumeCallback);
         }
 
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setQueue(List list) {
+            this.mQueue = list;
+            sendQueue(list);
+        }
+
         abstract void setRccState(PlaybackStateCompat playbackStateCompat);
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setRepeatMode(int i) {
+            if (this.mRepeatMode != i) {
+                this.mRepeatMode = i;
+                sendRepeatMode(i);
+            }
+        }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
         public void setSessionActivity(PendingIntent pendingIntent) {
             synchronized (this.mLock) {
                 this.mSessionActivity = pendingIntent;
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setShuffleMode(int i) {
+            if (this.mShuffleMode != i) {
+                this.mShuffleMode = i;
+                sendShuffleMode(i);
             }
         }
 
@@ -2393,11 +2524,15 @@ public class MediaSessionCompat {
             this.mId = parcel.readLong();
         }
 
+        public QueueItem(MediaDescriptionCompat mediaDescriptionCompat, long j) {
+            this(null, mediaDescriptionCompat, j);
+        }
+
         public static QueueItem fromQueueItem(Object obj) {
             if (obj == null || Build.VERSION.SDK_INT < 21) {
                 return null;
             }
-            MediaSession.QueueItem m = MediaSessionCompat$QueueItem$$ExternalSyntheticApiModelOutline0.m(obj);
+            MediaSession.QueueItem m = MediaSessionCompat$MediaSessionImplApi21$$ExternalSyntheticApiModelOutline6.m(obj);
             return new QueueItem(m, MediaDescriptionCompat.fromMediaDescription(Api21Impl.getDescription(m)), Api21Impl.getQueueId(m));
         }
 
@@ -2420,6 +2555,20 @@ public class MediaSessionCompat {
 
         public MediaDescriptionCompat getDescription() {
             return this.mDescription;
+        }
+
+        public long getQueueId() {
+            return this.mId;
+        }
+
+        public Object getQueueItem() {
+            MediaSession.QueueItem queueItem = this.mItemFwk;
+            if (queueItem != null || Build.VERSION.SDK_INT < 21) {
+                return queueItem;
+            }
+            MediaSession.QueueItem createQueueItem = Api21Impl.createQueueItem(MediaDescriptionCompat$$ExternalSyntheticApiModelOutline0.m(this.mDescription.getMediaDescription()), this.mId);
+            this.mItemFwk = createQueueItem;
+            return createQueueItem;
         }
 
         public String toString() {
@@ -2561,6 +2710,10 @@ public class MediaSessionCompat {
                 parcel.writeStrongBinder((IBinder) this.mInner);
             }
         }
+    }
+
+    public MediaSessionCompat(Context context, String str) {
+        this(context, str, null, null);
     }
 
     public MediaSessionCompat(Context context, String str, ComponentName componentName, PendingIntent pendingIntent) {
@@ -2708,6 +2861,10 @@ public class MediaSessionCompat {
         this.mImpl.setExtras(bundle);
     }
 
+    public void setFlags(int i) {
+        this.mImpl.setFlags(i);
+    }
+
     public void setMetadata(MediaMetadataCompat mediaMetadataCompat) {
         this.mImpl.setMetadata(mediaMetadataCompat);
     }
@@ -2727,7 +2884,33 @@ public class MediaSessionCompat {
         this.mImpl.setPlaybackToRemote(volumeProviderCompat);
     }
 
+    public void setQueue(List list) {
+        if (list != null) {
+            HashSet hashSet = new HashSet();
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                QueueItem queueItem = (QueueItem) it.next();
+                if (queueItem == null) {
+                    throw new IllegalArgumentException("queue shouldn't have null items");
+                }
+                if (hashSet.contains(Long.valueOf(queueItem.getQueueId()))) {
+                    Log.e("MediaSessionCompat", "Found duplicate queue id: " + queueItem.getQueueId(), new IllegalArgumentException("id of each queue item should be unique"));
+                }
+                hashSet.add(Long.valueOf(queueItem.getQueueId()));
+            }
+        }
+        this.mImpl.setQueue(list);
+    }
+
+    public void setRepeatMode(int i) {
+        this.mImpl.setRepeatMode(i);
+    }
+
     public void setSessionActivity(PendingIntent pendingIntent) {
         this.mImpl.setSessionActivity(pendingIntent);
+    }
+
+    public void setShuffleMode(int i) {
+        this.mImpl.setShuffleMode(i);
     }
 }

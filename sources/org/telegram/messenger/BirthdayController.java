@@ -222,10 +222,7 @@ public class BirthdayController {
     }
 
     public static boolean isToday(TLRPC.UserFull userFull) {
-        if (userFull == null) {
-            return false;
-        }
-        return isToday(userFull.birthday);
+        return (userFull == null || !isToday(userFull.birthday) || UserObject.areGiftsDisabled(userFull)) ? false : true;
     }
 
     public static boolean isToday(TL_account.TL_birthday tL_birthday) {
@@ -355,6 +352,6 @@ public class BirthdayController {
             return true;
         }
         TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(j);
-        return userFull != null && isToday(userFull.birthday);
+        return (userFull == null || !isToday(userFull.birthday) || UserObject.areGiftsDisabled(userFull)) ? false : true;
     }
 }

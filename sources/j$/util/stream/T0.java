@@ -1,51 +1,34 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
 import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class T0 extends H2 implements z0, u0 {
-    T0() {
+final class T0 extends S0 implements v0 {
+    T0(long j) {
+        super(j);
     }
 
-    @Override // j$.util.stream.H2
-    /* renamed from: A */
-    public final j$.util.D spliterator() {
-        return super.spliterator();
-    }
-
-    @Override // j$.util.stream.F0
-    /* renamed from: B, reason: merged with bridge method [inline-methods] */
-    public final /* synthetic */ void i(Double[] dArr, int i) {
-        t0.n(this, dArr, i);
-    }
-
-    @Override // j$.util.stream.E0, j$.util.stream.F0
-    public final E0 a(int i) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* bridge */ /* synthetic */ F0 a(int i) {
-        a(i);
-        throw null;
-    }
-
-    @Override // j$.util.stream.H2, j$.util.function.m
+    @Override // j$.util.stream.e2, j$.util.function.m
     public final void accept(double d) {
-        super.accept(d);
+        int i = this.b;
+        double[] dArr = this.a;
+        if (i >= dArr.length) {
+            throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(dArr.length)));
+        }
+        this.b = 1 + i;
+        dArr[i] = d;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
@@ -60,44 +43,43 @@ final class T0 extends H2 implements z0, u0 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.x0
-    public final F0 b() {
+    @Override // j$.util.stream.v0, j$.util.stream.y0
+    public final A0 b() {
+        int i = this.b;
+        double[] dArr = this.a;
+        if (i >= dArr.length) {
+            return this;
+        }
+        throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(dArr.length)));
+    }
+
+    @Override // j$.util.stream.y0
+    public final /* bridge */ /* synthetic */ G0 b() {
+        b();
         return this;
     }
 
-    @Override // j$.util.stream.u0, j$.util.stream.x0
-    public final z0 b() {
-        return this;
-    }
-
-    @Override // j$.util.stream.N2, j$.util.stream.E0
-    public final void d(Object obj, int i) {
-        super.d((double[]) obj, i);
-    }
-
-    @Override // j$.util.stream.N2, j$.util.stream.E0
-    public final Object e() {
-        return (double[]) super.e();
-    }
-
-    @Override // j$.util.stream.N2, j$.util.stream.E0
-    public final void g(Object obj) {
-        super.g((j$.util.function.m) obj);
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2
     public final void m() {
+        int i = this.b;
+        double[] dArr = this.a;
+        if (i < dArr.length) {
+            throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(dArr.length)));
+        }
     }
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        clear();
-        x(j);
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ int p() {
-        return 0;
+        double[] dArr = this.a;
+        if (j != dArr.length) {
+            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j), Integer.valueOf(dArr.length)));
+        }
+        this.b = 0;
     }
 
     @Override // j$.util.stream.e2
@@ -107,26 +89,12 @@ final class T0 extends H2 implements z0, u0 {
 
     @Override // j$.util.stream.b2
     public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+        u0.e(this, d);
     }
 
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ Object[] s(IntFunction intFunction) {
-        return t0.m(this, intFunction);
-    }
-
-    @Override // j$.util.stream.H2, j$.util.stream.N2, java.lang.Iterable
-    public final j$.util.M spliterator() {
-        return super.spliterator();
-    }
-
-    @Override // j$.util.stream.H2, j$.util.stream.N2, java.lang.Iterable
-    public final Spliterator spliterator() {
-        return super.spliterator();
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
-        return t0.t(this, j, j2);
+    @Override // j$.util.stream.S0
+    public final String toString() {
+        double[] dArr = this.a;
+        return String.format("DoubleFixedNodeBuilder[%d][%s]", Integer.valueOf(dArr.length - this.b), Arrays.toString(dArr));
     }
 }

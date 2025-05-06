@@ -32,7 +32,7 @@ class MediaRouteVolumeSlider extends AppCompatSeekBar {
     @Override // androidx.appcompat.widget.AppCompatSeekBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     protected void drawableStateChanged() {
         super.drawableStateChanged();
-        int i = isEnabled() ? NotificationCenter.proxyCheckDone : (int) (this.mDisabledAlpha * 255.0f);
+        int i = isEnabled() ? NotificationCenter.didSetNewWallpapper : (int) (this.mDisabledAlpha * 255.0f);
         Drawable drawable = this.mThumb;
         int i2 = this.mProgressAndThumbColor;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;

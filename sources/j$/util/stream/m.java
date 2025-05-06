@@ -13,13 +13,13 @@ final class m implements Collector {
     private final Function d;
     private final Set e;
 
-    m(Supplier supplier, l lVar, k kVar, Set set) {
+    m(Supplier supplier, BiConsumer biConsumer, j$.util.function.f fVar, Set set) {
         Set set2 = Collectors.a;
-        l lVar2 = new l(0);
+        l lVar = new l(0);
         this.a = supplier;
-        this.b = lVar;
-        this.c = kVar;
-        this.d = lVar2;
+        this.b = biConsumer;
+        this.c = fVar;
+        this.d = lVar;
         this.e = set;
     }
 

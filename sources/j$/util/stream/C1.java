@@ -1,45 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Optional;
+import j$.util.function.BiFunction;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class C1 implements N1 {
-    private boolean a;
-    private Object b;
-    final /* synthetic */ j$.util.function.f c;
+final class C1 extends P1 implements O1 {
+    final /* synthetic */ Object b;
+    final /* synthetic */ BiFunction c;
+    final /* synthetic */ j$.util.function.f d;
 
-    C1(j$.util.function.f fVar) {
-        this.c = fVar;
+    C1(Object obj, BiFunction biFunction, j$.util.function.f fVar) {
+        this.b = obj;
+        this.c = biFunction;
+        this.d = fVar;
     }
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
     @Override // j$.util.function.Consumer
     /* renamed from: accept */
     public final void r(Object obj) {
-        if (this.a) {
-            this.a = false;
-        } else {
-            obj = this.c.apply(this.b, obj);
-        }
-        this.b = obj;
+        this.a = this.c.apply(this.a, obj);
     }
 
     @Override // j$.util.function.Consumer
@@ -47,18 +44,9 @@ final class C1 implements N1 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.Supplier
-    public final Object get() {
-        return this.a ? Optional.empty() : Optional.of(this.b);
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        C1 c1 = (C1) n1;
-        if (c1.a) {
-            return;
-        }
-        r(c1.b);
+    @Override // j$.util.stream.O1
+    public final void h(O1 o1) {
+        this.a = this.d.apply(this.a, ((C1) o1).a);
     }
 
     @Override // j$.util.stream.e2
@@ -67,8 +55,7 @@ final class C1 implements N1 {
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        this.a = true;
-        this.b = null;
+        this.a = this.b;
     }
 
     @Override // j$.util.stream.e2

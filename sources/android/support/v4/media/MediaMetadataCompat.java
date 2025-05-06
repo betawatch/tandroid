@@ -12,6 +12,7 @@ import android.support.v4.media.session.MediaSessionCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.ArrayMap;
+import java.util.Set;
 
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
@@ -78,6 +79,15 @@ public final class MediaMetadataCompat implements Parcelable {
             throw new IllegalArgumentException("The " + str + " key cannot be used to put a long");
         }
 
+        public Builder putRating(String str, RatingCompat ratingCompat) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 3) {
+                this.mBundle.putParcelable(str, (Parcelable) ratingCompat.getRating());
+                return this;
+            }
+            throw new IllegalArgumentException("The " + str + " key cannot be used to put a Rating");
+        }
+
         public Builder putString(String str, String str2) {
             ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
             if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 1) {
@@ -85,6 +95,15 @@ public final class MediaMetadataCompat implements Parcelable {
                 return this;
             }
             throw new IllegalArgumentException("The " + str + " key cannot be used to put a String");
+        }
+
+        public Builder putText(String str, CharSequence charSequence) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 1) {
+                this.mBundle.putCharSequence(str, charSequence);
+                return this;
+            }
+            throw new IllegalArgumentException("The " + str + " key cannot be used to put a CharSequence");
         }
     }
 
@@ -293,6 +312,14 @@ public final class MediaMetadataCompat implements Parcelable {
 
     public CharSequence getText(String str) {
         return this.mBundle.getCharSequence(str);
+    }
+
+    public Set keySet() {
+        return this.mBundle.keySet();
+    }
+
+    public int size() {
+        return this.mBundle.size();
     }
 
     @Override // android.os.Parcelable

@@ -112,7 +112,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
         } else if (legacyStreamType == 7) {
             i |= 1;
         }
-        return i & NotificationCenter.onEmojiInteractionsReceived;
+        return i & NotificationCenter.appUpdateLoading;
     }
 
     public int getLegacyStreamType() {

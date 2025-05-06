@@ -8,6 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -40,6 +41,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.CanvasButton;
 import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Premium.PremiumGradient;
@@ -52,7 +54,13 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
     CanvasButton actionButton;
     private StaticLayout actionLayout;
     private int actionLeft;
+    private TLRPC.TL_sponsoredPeer ad;
+    private Paint adBackgroundPaint;
+    private final ButtonBounce adBounce;
+    private final RectF adBounds;
+    private Text adText;
     private boolean allowBotOpenButton;
+    private boolean allowEmojiStatus;
     private AvatarDrawable avatarDrawable;
     public ImageReceiver avatarImage;
     public StoriesUtilities.AvatarStoryParams avatarStoryParams;
@@ -68,6 +76,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
     private CharSequence currentName;
     private boolean customPaints;
     private long dialog_id;
+    public boolean dontDrawAvatar;
     private boolean drawCheck;
     private boolean drawCount;
     private boolean drawNameLock;
@@ -87,6 +96,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
     private int nameTop;
     private int nameWidth;
     private Utilities.Callback onOpenButtonClick;
+    private Utilities.Callback2 onSponsoredOptionsClick;
     private boolean openBot;
     private final Paint openButtonBackgroundPaint;
     private final ButtonBounce openButtonBounce;
@@ -124,7 +134,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.premiumBlockedT = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.starsBlockedT = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.avatarStoryParams = new StoriesUtilities.AvatarStoryParams(false);
+        this.adBounds = new RectF();
+        this.adBounce = new ButtonBounce(this);
         this.rect = new RectF();
+        this.allowEmojiStatus = true;
         this.openButtonBounce = new ButtonBounce(this);
         this.openButtonBackgroundPaint = new Paint(1);
         this.openButtonRect = new RectF();
@@ -234,6 +247,20 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             }
         }
         this.statusLeft = !LocaleController.isRTL ? AndroidUtilities.dp(AndroidUtilities.leftBaseline) : AndroidUtilities.dp(11.0f);
+        if (this.ad != null) {
+            if (this.adText == null) {
+                SpannableStringBuilder append = new SpannableStringBuilder(LocaleController.getString(R.string.SearchAd)).append((CharSequence) " i");
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.ic_ab_other);
+                coloredImageSpan.setScale(0.55f, 0.55f);
+                coloredImageSpan.spaceScaleX = 0.7f;
+                coloredImageSpan.translate(-AndroidUtilities.dp(2.0f), 0.0f);
+                append.setSpan(coloredImageSpan, append.length() - 1, append.length(), 33);
+                this.adText = new Text(append, 12.0f);
+            }
+            if (this.adBackgroundPaint == null) {
+                this.adBackgroundPaint = new Paint(1);
+            }
+        }
         CharSequence charSequence2 = this.currentName;
         if (charSequence2 == null) {
             TLRPC.Chat chat2 = this.chat;
@@ -290,6 +317,13 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.nameWidth = dp3;
         if (this.drawNameLock) {
             this.nameWidth -= AndroidUtilities.dp(6.0f) + Theme.dialogs_lockDrawable.getIntrinsicWidth();
+        }
+        if (this.ad != null) {
+            int currentWidth = ((int) this.adText.getCurrentWidth()) + AndroidUtilities.dp(20.66f);
+            this.nameWidth -= currentWidth;
+            if (LocaleController.isRTL) {
+                this.nameLeft += currentWidth;
+            }
         }
         if (this.contact != null) {
             TextPaint textPaint6 = Theme.dialogs_countTextPaint;
@@ -598,14 +632,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.botVerificationDrawable.detach();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:65:0x02ac  */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     protected void onDraw(Canvas canvas) {
         long j;
-        float f;
         int i;
         int lineRight;
         float dp;
@@ -673,16 +702,36 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 double d4 = this.nameLeft + this.nameWidth;
                 double ceil2 = Math.ceil(lineWidth2);
                 Double.isNaN(d4);
-                double d5 = d4 - ceil2;
                 double dp3 = AndroidUtilities.dp(3.0f);
                 Double.isNaN(dp3);
-                double d6 = d5 - dp3;
+                double d5 = (d4 - ceil2) - dp3;
                 double intrinsicWidth2 = this.statusDrawable.getIntrinsicWidth();
                 Double.isNaN(intrinsicWidth2);
-                lineRight = (int) (d6 - intrinsicWidth2);
+                lineRight = (int) (d5 - intrinsicWidth2);
             }
             BaseCell.setDrawableBounds(this.statusDrawable, lineRight, this.nameTop + ((this.nameLayout.getHeight() - this.statusDrawable.getIntrinsicHeight()) / 2.0f));
             this.statusDrawable.draw(canvas);
+        }
+        if (this.ad != null && this.adText != null && this.adBackgroundPaint != null) {
+            int color = Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider);
+            this.adBackgroundPaint.setColor(Theme.multAlpha(color, 0.1f));
+            int width = ((int) this.adText.getWidth()) + AndroidUtilities.dp(12.66f);
+            int dp4 = AndroidUtilities.dp(17.33f);
+            int dp5 = LocaleController.isRTL ? AndroidUtilities.dp(12.0f) : (getWidth() - AndroidUtilities.dp(12.0f)) - width;
+            float f = dp5;
+            this.adBounds.set(f, this.nameTop, dp5 + width, r13 + dp4);
+            this.adBounds.inset(-AndroidUtilities.dp(6.0f), -AndroidUtilities.dp(6.0f));
+            canvas.save();
+            float scale = this.adBounce.getScale(0.1f);
+            canvas.scale(scale, scale, this.adBounds.centerX(), this.adBounds.centerY());
+            canvas.translate(f, this.nameTop);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f2 = dp4;
+            rectF.set(0.0f, 0.0f, width, f2);
+            float f3 = f2 / 2.0f;
+            canvas.drawRoundRect(rectF, f3, f3, this.adBackgroundPaint);
+            this.adText.draw(canvas, AndroidUtilities.dp(6.33f), f3, color, 1.0f);
+            canvas.restore();
         }
         if (this.statusLayout != null) {
             canvas.save();
@@ -692,9 +741,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         if (this.countLayout != null) {
             this.rect.set(this.countLeft - AndroidUtilities.dp(5.5f), this.countTop, r1 + this.countWidth + AndroidUtilities.dp(11.0f), this.countTop + AndroidUtilities.dp(23.0f));
-            RectF rectF = this.rect;
-            float f2 = AndroidUtilities.density * 11.5f;
-            canvas.drawRoundRect(rectF, f2, f2, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialog_id, 0L) ? Theme.dialogs_countGrayPaint : Theme.dialogs_countPaint);
+            RectF rectF2 = this.rect;
+            float f4 = AndroidUtilities.density * 11.5f;
+            canvas.drawRoundRect(rectF2, f4, f4, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialog_id, 0L) ? Theme.dialogs_countGrayPaint : Theme.dialogs_countPaint);
             canvas.save();
             canvas.translate(this.countLeft, this.countTop + AndroidUtilities.dp(4.0f));
             this.countLayout.draw(canvas);
@@ -702,10 +751,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         if (this.actionLayout != null) {
             this.actionButton.setColor(Theme.getColor(Theme.key_chats_unreadCounter), Theme.getColor(Theme.key_chats_unreadCounterText));
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(this.actionLeft, this.countTop, r9 + this.actionLayout.getWidth(), this.countTop + AndroidUtilities.dp(23.0f));
-            rectF2.inset(-AndroidUtilities.dp(16.0f), -AndroidUtilities.dp(4.0f));
-            this.actionButton.setRect(rectF2);
+            RectF rectF3 = AndroidUtilities.rectTmp;
+            rectF3.set(this.actionLeft, this.countTop, r5 + this.actionLayout.getWidth(), this.countTop + AndroidUtilities.dp(23.0f));
+            rectF3.inset(-AndroidUtilities.dp(16.0f), -AndroidUtilities.dp(4.0f));
+            this.actionButton.setRect(rectF3);
             this.actionButton.setRounded(true);
             this.actionButton.draw(canvas);
             canvas.save();
@@ -713,60 +762,58 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             this.actionLayout.draw(canvas);
             canvas.restore();
         }
-        TLRPC.User user = this.user;
-        if (user != null) {
-            j = user.id;
-        } else {
-            TLRPC.Chat chat = this.chat;
-            if (chat == null) {
-                this.avatarImage.setImageCoords(this.avatarStoryParams.originalAvatarRect);
-                this.avatarImage.draw(canvas);
-                f = this.premiumBlockedT.set(this.premiumBlocked);
-                if (f > 0.0f) {
-                    float centerY = this.avatarImage.getCenterY() + AndroidUtilities.dp(14.0f);
-                    float centerX = this.avatarImage.getCenterX() + AndroidUtilities.dp(16.0f);
-                    canvas.save();
-                    Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
-                    canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(11.33f) * f, Theme.dialogs_onlineCirclePaint);
-                    if (this.premiumGradient == null) {
-                        this.premiumGradient = new PremiumGradient.PremiumGradientTools(Theme.key_premiumGradient1, Theme.key_premiumGradient2, -1, -1, -1, this.resourcesProvider);
-                    }
-                    this.premiumGradient.gradientMatrix((int) (centerX - AndroidUtilities.dp(10.0f)), (int) (centerY - AndroidUtilities.dp(10.0f)), (int) (AndroidUtilities.dp(10.0f) + centerX), (int) (AndroidUtilities.dp(10.0f) + centerY), 0.0f, 0.0f);
-                    canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f) * f, this.premiumGradient.paint);
-                    if (this.lockDrawable == null) {
-                        Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
-                        this.lockDrawable = mutate;
-                        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                    }
-                    this.lockDrawable.setBounds((int) (centerX - (((r6.getIntrinsicWidth() / 2.0f) * 0.875f) * f)), (int) (centerY - (((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f) * f)), (int) (centerX + ((this.lockDrawable.getIntrinsicWidth() / 2.0f) * 0.875f * f)), (int) (centerY + ((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f * f)));
-                    this.lockDrawable.setAlpha((int) (f * 255.0f));
-                    this.lockDrawable.draw(canvas);
-                    canvas.restore();
+        if (!this.dontDrawAvatar) {
+            TLRPC.User user = this.user;
+            if (user != null) {
+                j = user.id;
+            } else {
+                TLRPC.Chat chat = this.chat;
+                if (chat != null) {
+                    j = -chat.id;
+                } else {
+                    this.avatarImage.setImageCoords(this.avatarStoryParams.originalAvatarRect);
+                    this.avatarImage.draw(canvas);
                 }
-                if (this.openBot || this.openButtonText == null) {
-                }
-                float dp4 = AndroidUtilities.dp(28.0f) + this.openButtonText.getCurrentWidth();
-                float dp5 = LocaleController.isRTL ? AndroidUtilities.dp(15.0f) : (getWidth() - dp4) - AndroidUtilities.dp(15.0f);
-                float dp6 = AndroidUtilities.dp(28.0f);
-                this.openButtonBackgroundPaint.setColor(Theme.getColor(Theme.key_featuredStickers_addButton));
-                this.openButtonRect.set(dp5, (getHeight() - dp6) / 2.0f, dp4 + dp5, (getHeight() + dp6) / 2.0f);
-                canvas.save();
-                float scale = this.openButtonBounce.getScale(0.06f);
-                canvas.scale(scale, scale, this.openButtonRect.centerX(), this.openButtonRect.centerY());
-                RectF rectF3 = this.openButtonRect;
-                canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, this.openButtonRect.height() / 2.0f, this.openButtonBackgroundPaint);
-                this.openButtonText.draw(canvas, dp5 + AndroidUtilities.dp(14.0f), getHeight() / 2.0f, -1, 1.0f);
-                canvas.restore();
-                return;
             }
-            j = -chat.id;
+            StoriesUtilities.drawAvatarWithStory(j, canvas, this.avatarImage, this.avatarStoryParams);
         }
-        StoriesUtilities.drawAvatarWithStory(j, canvas, this.avatarImage, this.avatarStoryParams);
-        f = this.premiumBlockedT.set(this.premiumBlocked);
-        if (f > 0.0f) {
+        float f5 = this.premiumBlockedT.set(this.premiumBlocked);
+        if (f5 > 0.0f) {
+            float centerY = this.avatarImage.getCenterY() + AndroidUtilities.dp(14.0f);
+            float centerX = this.avatarImage.getCenterX() + AndroidUtilities.dp(16.0f);
+            canvas.save();
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
+            canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(11.33f) * f5, Theme.dialogs_onlineCirclePaint);
+            if (this.premiumGradient == null) {
+                this.premiumGradient = new PremiumGradient.PremiumGradientTools(Theme.key_premiumGradient1, Theme.key_premiumGradient2, -1, -1, -1, this.resourcesProvider);
+            }
+            this.premiumGradient.gradientMatrix((int) (centerX - AndroidUtilities.dp(10.0f)), (int) (centerY - AndroidUtilities.dp(10.0f)), (int) (AndroidUtilities.dp(10.0f) + centerX), (int) (AndroidUtilities.dp(10.0f) + centerY), 0.0f, 0.0f);
+            canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f) * f5, this.premiumGradient.paint);
+            if (this.lockDrawable == null) {
+                Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
+                this.lockDrawable = mutate;
+                mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            }
+            this.lockDrawable.setBounds((int) (centerX - (((r4.getIntrinsicWidth() / 2.0f) * 0.875f) * f5)), (int) (centerY - (((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f) * f5)), (int) (centerX + ((this.lockDrawable.getIntrinsicWidth() / 2.0f) * 0.875f * f5)), (int) (centerY + ((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f * f5)));
+            this.lockDrawable.setAlpha((int) (f5 * 255.0f));
+            this.lockDrawable.draw(canvas);
+            canvas.restore();
         }
-        if (this.openBot) {
+        if (!this.openBot || this.openButtonText == null) {
+            return;
         }
+        float dp6 = AndroidUtilities.dp(28.0f) + this.openButtonText.getCurrentWidth();
+        float dp7 = LocaleController.isRTL ? AndroidUtilities.dp(15.0f) : (getWidth() - dp6) - AndroidUtilities.dp(15.0f);
+        float dp8 = AndroidUtilities.dp(28.0f);
+        this.openButtonBackgroundPaint.setColor(Theme.getColor(Theme.key_featuredStickers_addButton));
+        this.openButtonRect.set(dp7, (getHeight() - dp8) / 2.0f, dp6 + dp7, (getHeight() + dp8) / 2.0f);
+        canvas.save();
+        float scale2 = this.openButtonBounce.getScale(0.06f);
+        canvas.scale(scale2, scale2, this.openButtonRect.centerX(), this.openButtonRect.centerY());
+        RectF rectF4 = this.openButtonRect;
+        canvas.drawRoundRect(rectF4, rectF4.height() / 2.0f, this.openButtonRect.height() / 2.0f, this.openButtonBackgroundPaint);
+        this.openButtonText.draw(canvas, dp7 + AndroidUtilities.dp(14.0f), getHeight() / 2.0f, -1, 1.0f);
+        canvas.restore();
     }
 
     @Override // android.view.View
@@ -826,15 +873,20 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(60.0f) + (this.useSeparator ? 1 : 0));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x004a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x004a, code lost:
     
-        if (r6.getAction() == 3) goto L18;
+        if (r8.getAction() == 3) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x009c, code lost:
+    
+        if (r8.getAction() == 3) goto L43;
      */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean onTouchEvent(MotionEvent motionEvent) {
+        ButtonBounce buttonBounce;
         if (this.openBot && this.onOpenButtonClick != null && this.user != null) {
             boolean contains = this.openButtonRect.contains(motionEvent.getX(), motionEvent.getY());
             if (motionEvent.getAction() != 0 && motionEvent.getAction() != 2) {
@@ -843,15 +895,36 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                         this.onOpenButtonClick.run(this.user);
                     }
                 }
-                this.openButtonBounce.setPressed(false);
+                buttonBounce = this.openButtonBounce;
+                buttonBounce.setPressed(false);
                 return true;
             }
             this.openButtonBounce.setPressed(contains);
             if (contains || this.openButtonBounce.isPressed()) {
                 return true;
             }
+            if (this.user == null) {
+            }
+            return true;
         }
-        if (!(this.user == null && this.chat == null) && this.avatarStoryParams.checkOnTouchEvent(motionEvent, this)) {
+        if (this.ad != null && this.onSponsoredOptionsClick != null) {
+            boolean contains2 = this.adBounds.contains(motionEvent.getX(), motionEvent.getY());
+            if (motionEvent.getAction() != 0 && motionEvent.getAction() != 2) {
+                if (motionEvent.getAction() == 1) {
+                    if (this.adBounce.isPressed()) {
+                        this.onSponsoredOptionsClick.run(this, this.ad);
+                    }
+                }
+                buttonBounce = this.adBounce;
+                buttonBounce.setPressed(false);
+                return true;
+            }
+            this.adBounce.setPressed(contains2);
+            if (contains2 || this.adBounce.isPressed()) {
+                return true;
+            }
+        }
+        if ((this.user == null || this.chat != null) && this.avatarStoryParams.checkOnTouchEvent(motionEvent, this)) {
             return true;
         }
         CanvasButton canvasButton = this.actionButton;
@@ -859,6 +932,14 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             return super.onTouchEvent(motionEvent);
         }
         return true;
+    }
+
+    public void setAd(TLRPC.TL_sponsoredPeer tL_sponsoredPeer) {
+        this.ad = tL_sponsoredPeer;
+    }
+
+    public void setAllowEmojiStatus(boolean z) {
+        this.allowEmojiStatus = z;
     }
 
     public void setChecked(boolean z, boolean z2) {
@@ -915,6 +996,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.drawCount = z;
         this.savedMessages = z2;
         update(0);
+    }
+
+    public void setOnSponsoredOptionsClick(Utilities.Callback2<ProfileSearchCell, TLRPC.TL_sponsoredPeer> callback2) {
+        this.onSponsoredOptionsClick = callback2;
     }
 
     public void setOpenBotButton(boolean z) {
@@ -1085,15 +1170,16 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         TLRPC.EmojiStatus emojiStatus;
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable2 = this.statusDrawable;
         swapAnimatedEmojiDrawable2.center = LocaleController.isRTL;
-        if (z) {
+        boolean z3 = this.allowEmojiStatus;
+        if (z3 && z) {
             swapAnimatedEmojiDrawable2.set(new CombinedDrawable(Theme.dialogs_verifiedDrawable, Theme.dialogs_verifiedCheckDrawable, 0, 0), z2);
             this.statusDrawable.setColor(null);
         } else {
-            if (user != null && !this.savedMessages && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            if (z3 && user != null && !this.savedMessages && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
                 swapAnimatedEmojiDrawable = this.statusDrawable;
                 emojiStatus = user.emoji_status;
-            } else if (chat == null || this.savedMessages || DialogObject.getEmojiStatusDocumentId(chat.emoji_status) == 0) {
-                if (user == null || this.savedMessages || !MessagesController.getInstance(this.currentAccount).isPremiumUser(user)) {
+            } else if (!this.allowEmojiStatus || chat == null || this.savedMessages || DialogObject.getEmojiStatusDocumentId(chat.emoji_status) == 0) {
+                if (!this.allowEmojiStatus || user == null || this.savedMessages || !MessagesController.getInstance(this.currentAccount).isPremiumUser(user)) {
                     this.statusDrawable.set((Drawable) null, z2);
                 } else {
                     this.statusDrawable.set(PremiumGradient.getInstance().premiumStarDrawableMini, z2);
@@ -1107,7 +1193,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             this.statusDrawable.setColor(Integer.valueOf(Theme.getColor(Theme.key_chats_verifiedBackground, this.resourcesProvider)));
         }
         long botVerificationIcon = user != null ? DialogObject.getBotVerificationIcon(user) : chat != null ? DialogObject.getBotVerificationIcon(chat) : 0L;
-        if (botVerificationIcon == 0) {
+        if (botVerificationIcon == 0 || this.savedMessages) {
             this.botVerificationDrawable.set((Drawable) null, z2);
         } else {
             this.botVerificationDrawable.set(botVerificationIcon, z2);

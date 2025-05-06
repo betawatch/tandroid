@@ -1,217 +1,73 @@
 package j$.util.stream;
 
-import j$.util.Optional;
 import j$.util.function.BiConsumer;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
-import j$.util.function.LongFunction;
-import j$.util.function.Predicate;
 import j$.util.function.Supplier;
-import j$.util.function.ToIntFunction;
-import j$.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class E implements Predicate, IntFunction, ToIntFunction, j$.util.function.K, j$.util.function.A, j$.util.function.i0, BiConsumer, Supplier, j$.util.function.l0, j$.util.function.O, ToLongFunction, LongFunction, j$.util.function.c0, Consumer {
-    public final /* synthetic */ int a;
+public interface E extends BaseStream {
+    double D(double d, j$.util.function.i iVar);
 
-    public /* synthetic */ E(int i) {
-        this.a = i;
-    }
+    Stream G(j$.util.function.p pVar);
 
-    @Override // j$.util.function.c0
-    public j$.util.function.c0 a(j$.util.function.c0 c0Var) {
-        c0Var.getClass();
-        return new j$.util.function.Z(this, c0Var, 0);
-    }
+    E L(j$.util.function.v vVar);
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public void r(Object obj) {
-    }
+    IntStream Q(j$.util.function.r rVar);
 
-    @Override // j$.util.function.i0
-    public void accept(Object obj, int i) {
-        switch (this.a) {
-            case 10:
-                ((j$.util.g) obj).accept(i);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + i;
-                break;
-        }
-    }
+    E S(j$.util.function.q qVar);
 
-    @Override // j$.util.function.l0
-    public void accept(Object obj, long j) {
-        switch (this.a) {
-            case 17:
-                ((j$.util.i) obj).accept(j);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + j;
-                break;
-        }
-    }
+    E a(j$.util.function.m mVar);
 
-    @Override // j$.util.function.BiConsumer
-    public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 11:
-                ((j$.util.g) obj).a((j$.util.g) obj2);
-                break;
-            case 16:
-                long[] jArr = (long[]) obj;
-                long[] jArr2 = (long[]) obj2;
-                jArr[0] = jArr[0] + jArr2[0];
-                jArr[1] = jArr[1] + jArr2[1];
-                break;
-            case 21:
-                ((j$.util.i) obj).a((j$.util.i) obj2);
-                break;
-            default:
-                long[] jArr3 = (long[]) obj;
-                long[] jArr4 = (long[]) obj2;
-                jArr3[0] = jArr3[0] + jArr4[0];
-                jArr3[1] = jArr3[1] + jArr4[1];
-                break;
-        }
-    }
+    boolean a0(j$.util.function.q qVar);
 
-    @Override // j$.util.function.Predicate
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        switch (this.a) {
-        }
-        return Predicate.-CC.$default$and(this, predicate);
-    }
+    j$.util.j average();
 
-    @Override // j$.util.function.BiConsumer
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        switch (this.a) {
-            case 11:
-                break;
-            case 16:
-                break;
-            case 21:
-                break;
-        }
-        return BiConsumer.-CC.$default$andThen(this, biConsumer);
-    }
+    Stream boxed();
 
-    @Override // j$.util.function.Consumer
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
+    void c0(j$.util.function.m mVar);
 
-    @Override // j$.util.function.IntFunction
-    public Object apply(int i) {
-        switch (this.a) {
-            case 4:
-                return new Object[i];
-            case 5:
-                return new Integer[i];
-            case 6:
-            case 7:
-            default:
-                return new Long[i];
-            case 8:
-                return Integer.valueOf(i);
-        }
-    }
+    long count();
 
-    @Override // j$.util.function.LongFunction
-    public Object apply(long j) {
-        return Long.valueOf(j);
-    }
+    boolean d0(j$.util.function.q qVar);
 
-    @Override // j$.util.function.A
-    public int applyAsInt(int i, int i2) {
-        switch (this.a) {
-            case 9:
-                return Math.min(i, i2);
-            case 12:
-                return i + i2;
-            default:
-                return Math.max(i, i2);
-        }
-    }
+    E distinct();
 
-    @Override // j$.util.function.ToIntFunction
-    public int applyAsInt(Object obj) {
-        return ((Integer) obj).intValue();
-    }
+    j$.util.j findAny();
 
-    @Override // j$.util.function.K
-    public long applyAsLong(int i) {
-        return 1L;
-    }
+    j$.util.j findFirst();
 
-    @Override // j$.util.function.c0
-    public long applyAsLong(long j) {
-        return 1L;
-    }
+    void i(j$.util.function.m mVar);
 
-    @Override // j$.util.function.O
-    public long applyAsLong(long j, long j2) {
-        switch (this.a) {
-            case 18:
-                return j + j2;
-            case 19:
-                return Math.min(j, j2);
-            default:
-                return Math.max(j, j2);
-        }
-    }
+    j$.util.p iterator();
 
-    @Override // j$.util.function.ToLongFunction
-    public long applyAsLong(Object obj) {
-        return ((Long) obj).longValue();
-    }
+    boolean j(j$.util.function.q qVar);
 
-    @Override // j$.util.function.c0
-    public j$.util.function.c0 c(j$.util.function.c0 c0Var) {
-        c0Var.getClass();
-        return new j$.util.function.Z(this, c0Var, 1);
-    }
+    E limit(long j);
 
-    @Override // j$.util.function.Supplier
-    public Object get() {
-        switch (this.a) {
-            case 14:
-                return new long[2];
-            default:
-                return new long[2];
-        }
-    }
+    j$.util.j max();
 
-    @Override // j$.util.function.Predicate
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate.-CC.$default$negate(this);
-    }
+    j$.util.j min();
 
-    @Override // j$.util.function.Predicate
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        switch (this.a) {
-        }
-        return Predicate.-CC.$default$or(this, predicate);
-    }
+    E parallel();
 
-    @Override // j$.util.function.Predicate
-    public boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((Optional) obj).isPresent();
-            case 1:
-                return ((j$.util.j) obj).c();
-            case 2:
-                return ((j$.util.l) obj).c();
-            default:
-                return ((j$.util.k) obj).c();
-        }
-    }
+    E q(j$.util.function.p pVar);
+
+    LongStream r(j$.util.function.u uVar);
+
+    E sequential();
+
+    E skip(long j);
+
+    E sorted();
+
+    j$.util.D spliterator();
+
+    double sum();
+
+    j$.util.f summaryStatistics();
+
+    double[] toArray();
+
+    j$.util.j x(j$.util.function.i iVar);
+
+    Object z(Supplier supplier, j$.util.function.f0 f0Var, BiConsumer biConsumer);
 }

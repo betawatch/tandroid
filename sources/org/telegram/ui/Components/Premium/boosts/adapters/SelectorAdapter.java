@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.exoplayer2.util.Consumer;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
@@ -32,17 +33,20 @@ import org.telegram.ui.Components.StickerEmptyView;
 
 /* loaded from: classes5.dex */
 public class SelectorAdapter extends AdapterWithDiffUtils {
-    private HashMap chatsParticipantsCount = new HashMap();
     private final Context context;
     private boolean isGreenSelector;
     private List items;
     private RecyclerListView listView;
     public boolean needChecks;
+    public boolean needChecks2;
     private final Theme.ResourcesProvider resourcesProvider;
     private GraySectionCell topSectionCell;
     private View.OnClickListener topSectionClickListener;
+    private HashMap chatsParticipantsCount = new HashMap();
+    private boolean callButtonsVisible = true;
 
     public static class Item extends AdapterWithDiffUtils.Item {
+        public View.OnClickListener audioCall;
         public View.OnClickListener callback;
         public TLRPC.Chat chat;
         public boolean checked;
@@ -57,6 +61,7 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
         public CharSequence text;
         public int type;
         public TLRPC.User user;
+        public View.OnClickListener videoCall;
         public View view;
 
         private Item(int i, boolean z) {
@@ -216,6 +221,12 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
             return 0L;
         }
 
+        public Item withCall(View.OnClickListener onClickListener, View.OnClickListener onClickListener2) {
+            this.audioCall = onClickListener;
+            this.videoCall = onClickListener2;
+            return this;
+        }
+
         public Item withOptions(View.OnClickListener onClickListener) {
             this.options = onClickListener;
             return this;
@@ -244,6 +255,13 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
     public /* synthetic */ void lambda$new$0(HashMap hashMap) {
         this.chatsParticipantsCount.clear();
         this.chatsParticipantsCount.putAll(hashMap);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setCallButtonsVisible$1(boolean z, View view) {
+        if (view instanceof SelectorUserCell) {
+            ((SelectorUserCell) view).setCallButtonsVisible(z, true);
+        }
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -346,6 +364,8 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
                 selectorUserCell.setDivider(false);
             }
             selectorUserCell.setOptions(item.options);
+            selectorUserCell.setCallButtons(item.audioCall, item.videoCall);
+            selectorUserCell.setCallButtonsVisible(this.callButtonsVisible, false);
             return;
         }
         if (itemViewType == 6) {
@@ -411,7 +431,7 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
         if (i == -1) {
             view = new View(this.context);
         } else if (i == 3) {
-            view = new SelectorUserCell(this.context, this.needChecks, this.resourcesProvider, this.isGreenSelector);
+            view = new SelectorUserCell(this.context, this.needChecks, this.needChecks2, this.resourcesProvider, this.isGreenSelector);
         } else if (i == 5) {
             StickerEmptyView stickerEmptyView = new StickerEmptyView(this.context, null, 1, this.resourcesProvider);
             stickerEmptyView.title.setText(LocaleController.getString(R.string.NoResult));
@@ -435,6 +455,27 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
         return new RecyclerListView.Holder(view);
     }
 
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder viewHolder) {
+        super.onViewAttachedToWindow(viewHolder);
+        View view = viewHolder.itemView;
+        if (view instanceof SelectorUserCell) {
+            ((SelectorUserCell) view).setCallButtonsVisible(this.callButtonsVisible, false);
+        }
+    }
+
+    public void setCallButtonsVisible(final boolean z) {
+        if (this.callButtonsVisible != z) {
+            this.callButtonsVisible = z;
+            AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.SelectorAdapter$$ExternalSyntheticLambda1
+                @Override // com.google.android.exoplayer2.util.Consumer
+                public final void accept(Object obj) {
+                    SelectorAdapter.lambda$setCallButtonsVisible$1(z, (View) obj);
+                }
+            });
+        }
+    }
+
     public void setData(List list, RecyclerListView recyclerListView) {
         this.items = list;
         this.listView = recyclerListView;
@@ -442,6 +483,10 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
 
     public void setGreenSelector(boolean z) {
         this.isGreenSelector = z;
+    }
+
+    public void setNeedChecks2(boolean z) {
+        this.needChecks2 = z;
     }
 
     public void setTopSectionClickListener(View.OnClickListener onClickListener) {

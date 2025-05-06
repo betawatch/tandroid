@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public abstract class zzga {
@@ -34,7 +35,7 @@ public abstract class zzga {
                 if (obj instanceof String) {
                     String str2 = (String) obj;
                     if (!str2.startsWith("http") && str2.length() > 200) {
-                        str2 = String.valueOf(str2.substring(0, 200)).concat("[...]");
+                        str2 = String.valueOf(str2.substring(0, NotificationCenter.storyQualityUpdate)).concat("[...]");
                     }
                     int length = str2.length();
                     StringBuilder sb = new StringBuilder(length);

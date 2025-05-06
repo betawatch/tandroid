@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2;
 
+import android.os.Looper;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.TextureView;
@@ -9,6 +10,8 @@ import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.util.ConditionVariable;
+import com.google.android.exoplayer2.video.VideoSize;
+import java.util.List;
 import org.telegram.messenger.DispatchQueue;
 
 /* loaded from: classes.dex */
@@ -45,9 +48,27 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public void addMediaItems(int i, List list) {
+        blockUntilConstructorFinished();
+        this.player.addMediaItems(i, list);
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public void clearVideoTextureView(TextureView textureView) {
         blockUntilConstructorFinished();
         this.player.clearVideoTextureView(textureView);
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public Looper getApplicationLooper() {
+        blockUntilConstructorFinished();
+        return this.player.getApplicationLooper();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public Player.Commands getAvailableCommands() {
+        blockUntilConstructorFinished();
+        return this.player.getAvailableCommands();
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -111,6 +132,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public long getMaxSeekToPreviousPosition() {
+        blockUntilConstructorFinished();
+        return this.player.getMaxSeekToPreviousPosition();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public boolean getPlayWhenReady() {
         blockUntilConstructorFinished();
         return this.player.getPlayWhenReady();
@@ -153,6 +180,18 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public long getSeekBackIncrement() {
+        blockUntilConstructorFinished();
+        return this.player.getSeekBackIncrement();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public long getSeekForwardIncrement() {
+        blockUntilConstructorFinished();
+        return this.player.getSeekForwardIncrement();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public boolean getShuffleModeEnabled() {
         blockUntilConstructorFinished();
         return this.player.getShuffleModeEnabled();
@@ -171,6 +210,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public VideoSize getVideoSize() {
+        blockUntilConstructorFinished();
+        return this.player.getVideoSize();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public float getVolume() {
         blockUntilConstructorFinished();
         return this.player.getVolume();
@@ -180,6 +225,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public boolean isPlayingAd() {
         blockUntilConstructorFinished();
         return this.player.isPlayingAd();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public void moveMediaItems(int i, int i2, int i3) {
+        blockUntilConstructorFinished();
+        this.player.moveMediaItems(i, i2, i3);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -196,6 +247,18 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public void release(boolean z) {
         blockUntilConstructorFinished();
         this.player.release();
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public void removeListener(Player.Listener listener) {
+        blockUntilConstructorFinished();
+        this.player.removeListener(listener);
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public void removeMediaItems(int i, int i2) {
+        blockUntilConstructorFinished();
+        this.player.removeMediaItems(i, i2);
     }
 
     @Override // com.google.android.exoplayer2.BasePlayer
@@ -241,6 +304,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // com.google.android.exoplayer2.Player
+    public void setShuffleModeEnabled(boolean z) {
+        blockUntilConstructorFinished();
+        this.player.setShuffleModeEnabled(z);
+    }
+
+    @Override // com.google.android.exoplayer2.Player
     public void setVideoSurface(Surface surface) {
         blockUntilConstructorFinished();
         this.player.setVideoSurface(surface);
@@ -266,5 +335,11 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
 
     @Override // com.google.android.exoplayer2.ExoPlayer
     public void setWorkerQueue(DispatchQueue dispatchQueue) {
+    }
+
+    @Override // com.google.android.exoplayer2.Player
+    public void stop() {
+        blockUntilConstructorFinished();
+        this.player.stop();
     }
 }

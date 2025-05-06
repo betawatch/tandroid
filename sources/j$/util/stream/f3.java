@@ -28,10 +28,10 @@ public final /* synthetic */ class f3 implements d2 {
     public final /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 0:
-                t0.b();
+                u0.b();
                 throw null;
             default:
-                t0.b();
+                u0.b();
                 throw null;
         }
     }
@@ -40,10 +40,10 @@ public final /* synthetic */ class f3 implements d2 {
     public final /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 0:
-                t0.k();
+                u0.k();
                 throw null;
             default:
-                t0.k();
+                u0.k();
                 throw null;
         }
     }
@@ -91,10 +91,10 @@ public final /* synthetic */ class f3 implements d2 {
     public final /* synthetic */ void j(Long l) {
         switch (this.a) {
             case 0:
-                t0.i(this, l);
+                u0.i(this, l);
                 break;
             default:
-                t0.i(this, l);
+                u0.i(this, l);
                 break;
         }
     }

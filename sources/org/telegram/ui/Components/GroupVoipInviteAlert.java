@@ -21,6 +21,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
@@ -699,7 +700,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
         ListAdapter listAdapter = new ListAdapter(context);
         this.listViewAdapter = listAdapter;
         recyclerListView.setAdapter(listAdapter);
-        loadChatParticipants(0, 200);
+        loadChatParticipants(0, NotificationCenter.storyQualityUpdate);
         updateRows();
         setColorProgress(0.0f);
     }
@@ -1069,7 +1070,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
                 this.delayResults = 2;
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
                 this.contactsEndReached = true;
-                loadChatParticipants(0, 200, false);
+                loadChatParticipants(0, NotificationCenter.storyQualityUpdate, false);
                 tL_channels_getParticipants.filter.q = "";
                 tL_channels_getParticipants.offset = i;
                 tL_channels_getParticipants.limit = i2;

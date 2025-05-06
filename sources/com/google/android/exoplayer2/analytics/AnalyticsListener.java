@@ -197,6 +197,9 @@ public interface AnalyticsListener {
         public static void $default$onSeekStarted(AnalyticsListener analyticsListener, EventTime eventTime) {
         }
 
+        public static void $default$onShuffleModeChanged(AnalyticsListener analyticsListener, EventTime eventTime, boolean z) {
+        }
+
         public static void $default$onSkipSilenceEnabledChanged(AnalyticsListener analyticsListener, EventTime eventTime, boolean z) {
         }
 
@@ -432,6 +435,8 @@ public interface AnalyticsListener {
     void onSeekProcessed(EventTime eventTime);
 
     void onSeekStarted(EventTime eventTime);
+
+    void onShuffleModeChanged(EventTime eventTime, boolean z);
 
     void onSkipSilenceEnabledChanged(EventTime eventTime, boolean z);
 

@@ -26,67 +26,57 @@ abstract class W1 extends b implements Stream {
         super(bVar, i);
     }
 
-    @Override // j$.util.stream.b
-    final Spliterator A0(b bVar, Supplier supplier, boolean z) {
-        return new u3(bVar, supplier, z);
-    }
-
     @Override // j$.util.stream.Stream
     public final Stream M(Consumer consumer) {
         consumer.getClass();
-        return new u(this, consumer);
+        return new v(this, consumer);
     }
 
     @Override // j$.util.stream.Stream
     public final boolean N(Predicate predicate) {
-        return ((Boolean) j0(t0.b0(predicate, q0.ALL))).booleanValue();
+        return ((Boolean) i0(u0.b0(predicate, r0.ALL))).booleanValue();
     }
 
     @Override // j$.util.stream.Stream
     public final LongStream P(Function function) {
         function.getClass();
-        return new w(this, R2.p | R2.n | R2.t, function, 6);
+        return new x(this, R2.p | R2.n | R2.t, function, 6);
     }
 
     @Override // j$.util.stream.Stream
-    public final boolean W(Predicate predicate) {
-        return ((Boolean) j0(t0.b0(predicate, q0.NONE))).booleanValue();
-    }
-
-    @Override // j$.util.stream.Stream
-    public final D a0(ToDoubleFunction toDoubleFunction) {
+    public final E Z(ToDoubleFunction toDoubleFunction) {
         toDoubleFunction.getClass();
-        return new t(this, R2.p | R2.n, toDoubleFunction, 6);
+        return new u(this, R2.p | R2.n, toDoubleFunction, 6);
     }
 
     @Override // j$.util.stream.Stream
     public final boolean anyMatch(Predicate predicate) {
-        return ((Boolean) j0(t0.b0(predicate, q0.ANY))).booleanValue();
+        return ((Boolean) i0(u0.b0(predicate, r0.ANY))).booleanValue();
     }
 
     @Override // j$.util.stream.Stream
     public final IntStream b(Function function) {
         function.getClass();
-        return new v(this, R2.p | R2.n | R2.t, function, 7);
+        return new w(this, R2.p | R2.n | R2.t, function, 7);
     }
 
     @Override // j$.util.stream.Stream
     public final Object collect(Collector collector) {
-        Object j0;
-        if (isParallel() && collector.characteristics().contains(h.CONCURRENT) && (!r0() || collector.characteristics().contains(h.UNORDERED))) {
-            j0 = collector.supplier().get();
-            forEach(new k0(6, collector.accumulator(), j0));
+        Object i0;
+        if (isParallel() && collector.characteristics().contains(h.CONCURRENT) && (!q0() || collector.characteristics().contains(h.UNORDERED))) {
+            i0 = collector.supplier().get();
+            forEach(new l0(6, collector.accumulator(), i0));
         } else {
             collector.getClass();
             Supplier supplier = collector.supplier();
-            j0 = j0(new D1(S2.REFERENCE, collector.combiner(), collector.accumulator(), supplier, collector));
+            i0 = i0(new E1(S2.REFERENCE, collector.combiner(), collector.accumulator(), supplier, collector));
         }
-        return collector.characteristics().contains(h.IDENTITY_FINISH) ? j0 : collector.finisher().apply(j0);
+        return collector.characteristics().contains(h.IDENTITY_FINISH) ? i0 : collector.finisher().apply(i0);
     }
 
     @Override // j$.util.stream.Stream
     public final long count() {
-        return ((h0) mapToLong(new Q1(1))).sum();
+        return ((i0) mapToLong(new d0(5))).sum();
     }
 
     @Override // j$.util.stream.Stream
@@ -96,34 +86,34 @@ abstract class W1 extends b implements Stream {
 
     public void e(Consumer consumer) {
         consumer.getClass();
-        j0(new P(consumer, true));
+        i0(new P(consumer, true));
     }
 
     @Override // j$.util.stream.Stream
-    public final Object f0(Object obj, j$.util.function.f fVar) {
+    public final Object e0(Object obj, j$.util.function.f fVar) {
         fVar.getClass();
-        return j0(new u1(S2.REFERENCE, fVar, fVar, obj, 2));
+        return i0(new v1(S2.REFERENCE, fVar, fVar, obj, 2));
     }
 
     @Override // j$.util.stream.Stream
     public final Stream filter(Predicate predicate) {
         predicate.getClass();
-        return new u(this, R2.t, predicate, 4);
+        return new v(this, R2.t, predicate, 4);
     }
 
     @Override // j$.util.stream.Stream
     public final Optional findAny() {
-        return (Optional) j0(new F(false, S2.REFERENCE, Optional.empty(), new E(0), new l(5)));
+        return (Optional) i0(new F(false, S2.REFERENCE, Optional.empty(), new r(4), new l(5)));
     }
 
     @Override // j$.util.stream.Stream
     public final Optional findFirst() {
-        return (Optional) j0(new F(true, S2.REFERENCE, Optional.empty(), new E(0), new l(5)));
+        return (Optional) i0(new F(true, S2.REFERENCE, Optional.empty(), new r(4), new l(5)));
     }
 
     public void forEach(Consumer consumer) {
         consumer.getClass();
-        j0(new P(consumer, false));
+        i0(new P(consumer, false));
     }
 
     @Override // j$.util.stream.Stream
@@ -131,10 +121,10 @@ abstract class W1 extends b implements Stream {
         supplier.getClass();
         biConsumer.getClass();
         biConsumer2.getClass();
-        return j0(new u1(S2.REFERENCE, biConsumer2, biConsumer, supplier, 3));
+        return i0(new v1(S2.REFERENCE, biConsumer2, biConsumer, supplier, 3));
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    @Override // j$.util.stream.BaseStream, j$.util.stream.E
     public final Iterator iterator() {
         return Spliterators.i(spliterator());
     }
@@ -142,7 +132,12 @@ abstract class W1 extends b implements Stream {
     @Override // j$.util.stream.Stream
     public final IntStream k(ToIntFunction toIntFunction) {
         toIntFunction.getClass();
-        return new v(this, R2.p | R2.n, toIntFunction, 6);
+        return new w(this, R2.p | R2.n, toIntFunction, 6);
+    }
+
+    @Override // j$.util.stream.b
+    final G0 k0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return u0.E(bVar, spliterator, z, intFunction);
     }
 
     @Override // j$.util.stream.Stream
@@ -151,17 +146,18 @@ abstract class W1 extends b implements Stream {
         return new T1(this, R2.p | R2.n | R2.t, function, 1);
     }
 
-    @Override // j$.util.stream.b
-    final F0 l0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
-        return t0.E(bVar, spliterator, z, intFunction);
-    }
-
     @Override // j$.util.stream.Stream
     public final Stream limit(long j) {
         if (j >= 0) {
-            return t0.c0(this, 0L, j);
+            return u0.c0(this, 0L, j);
         }
         throw new IllegalArgumentException(Long.toString(j));
+    }
+
+    @Override // j$.util.stream.b
+    final void m0(Spliterator spliterator, e2 e2Var) {
+        while (!e2Var.q() && spliterator.s(e2Var)) {
+        }
     }
 
     @Override // j$.util.stream.Stream
@@ -173,7 +169,7 @@ abstract class W1 extends b implements Stream {
     @Override // j$.util.stream.Stream
     public final LongStream mapToLong(ToLongFunction toLongFunction) {
         toLongFunction.getClass();
-        return new w(this, R2.p | R2.n, toLongFunction, 7);
+        return new x(this, R2.p | R2.n, toLongFunction, 7);
     }
 
     @Override // j$.util.stream.Stream
@@ -189,26 +185,30 @@ abstract class W1 extends b implements Stream {
     }
 
     @Override // j$.util.stream.b
-    final void n0(Spliterator spliterator, e2 e2Var) {
-        while (!e2Var.q() && spliterator.s(e2Var)) {
-        }
+    final S2 n0() {
+        return S2.REFERENCE;
+    }
+
+    @Override // j$.util.stream.Stream
+    public final boolean noneMatch(Predicate predicate) {
+        return ((Boolean) i0(u0.b0(predicate, r0.NONE))).booleanValue();
     }
 
     @Override // j$.util.stream.Stream
     public final Optional o(j$.util.function.f fVar) {
         fVar.getClass();
-        return (Optional) j0(new y1(S2.REFERENCE, fVar, 1));
+        return (Optional) i0(new z1(S2.REFERENCE, fVar, 1));
     }
 
     @Override // j$.util.stream.b
-    final S2 o0() {
-        return S2.REFERENCE;
+    final y0 s0(long j, IntFunction intFunction) {
+        return u0.D(j, intFunction);
     }
 
     @Override // j$.util.stream.Stream
     public final Stream skip(long j) {
         if (j >= 0) {
-            return j == 0 ? this : t0.c0(this, j, -1L);
+            return j == 0 ? this : u0.c0(this, j, -1L);
         }
         throw new IllegalArgumentException(Long.toString(j));
     }
@@ -223,36 +223,36 @@ abstract class W1 extends b implements Stream {
         return new z2(this, comparator);
     }
 
-    @Override // j$.util.stream.b
-    final x0 t0(long j, IntFunction intFunction) {
-        return t0.D(j, intFunction);
-    }
-
     @Override // j$.util.stream.Stream
     public final Object[] toArray() {
-        return toArray(new Q1(0));
+        return toArray(new d0(4));
     }
 
     @Override // j$.util.stream.Stream
     public final Object[] toArray(IntFunction intFunction) {
-        return t0.N(k0(intFunction), intFunction).s(intFunction);
+        return u0.N(j0(intFunction), intFunction).s(intFunction);
     }
 
     @Override // j$.util.stream.Stream
     public final Object u(Object obj, BiFunction biFunction, j$.util.function.f fVar) {
         biFunction.getClass();
         fVar.getClass();
-        return j0(new u1(S2.REFERENCE, fVar, biFunction, obj, 2));
+        return i0(new v1(S2.REFERENCE, fVar, biFunction, obj, 2));
     }
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        return !r0() ? this : new S1(this, R2.r);
+        return !q0() ? this : new S1(this, R2.r);
     }
 
     @Override // j$.util.stream.Stream
-    public final D w(Function function) {
+    public final E w(Function function) {
         function.getClass();
-        return new t(this, R2.p | R2.n | R2.t, function, 7);
+        return new u(this, R2.p | R2.n | R2.t, function, 7);
+    }
+
+    @Override // j$.util.stream.b
+    final Spliterator z0(b bVar, Supplier supplier, boolean z) {
+        return new u3(bVar, supplier, z);
     }
 }

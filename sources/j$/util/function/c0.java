@@ -6,5 +6,5 @@ public interface c0 {
 
     long applyAsLong(long j);
 
-    c0 c(c0 c0Var);
+    c0 b(c0 c0Var);
 }

@@ -29,6 +29,19 @@ public interface INavigationLayout {
             ((BaseFragment) fragmentStack.get(fragmentStack.size() - 1)).dismissCurrentDialog();
         }
 
+        public static BaseFragment $default$findFragment(INavigationLayout iNavigationLayout, Class cls) {
+            if (iNavigationLayout.getFragmentStack().isEmpty()) {
+                return null;
+            }
+            for (int size = iNavigationLayout.getFragmentStack().size() - 1; size >= 0; size--) {
+                BaseFragment baseFragment = (BaseFragment) iNavigationLayout.getFragmentStack().get(size);
+                if (baseFragment != null && !baseFragment.isFinishing() && !baseFragment.isRemovingFromStack() && cls.isInstance(baseFragment)) {
+                    return baseFragment;
+                }
+            }
+            return null;
+        }
+
         public static BaseFragment $default$getBackgroundFragment(INavigationLayout iNavigationLayout) {
             if (iNavigationLayout.getFragmentStack().size() <= 1) {
                 return null;
@@ -317,6 +330,8 @@ public interface INavigationLayout {
     void drawHeaderShadow(Canvas canvas, int i, int i2);
 
     void expandPreviewFragment();
+
+    BaseFragment findFragment(Class cls);
 
     void finishPreviewFragment();
 

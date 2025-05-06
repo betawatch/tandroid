@@ -361,7 +361,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkChangesBeforeExit$15(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -418,7 +418,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         }
         this.actionButton.setLoading(false);
         if (tL_error.text.equals("CHAT_NOT_MODIFIED")) {
-            lambda$onBackPressed$335();
+            lambda$onBackPressed$336();
         } else {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
@@ -460,7 +460,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         }, new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
-                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$335();
+                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$336();
             }
         });
     }
@@ -697,7 +697,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
                 if (i != -1 || ChatCustomReactionsEditActivity.this.checkChangesBeforeExit()) {
                     return;
                 }
-                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$335();
+                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$336();
             }
         });
         ScrollView scrollView = new ScrollView(context);
@@ -1009,7 +1009,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
             if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                 removeSelfFromStack();
             } else {
-                lambda$onBackPressed$335();
+                lambda$onBackPressed$336();
             }
         }
     }

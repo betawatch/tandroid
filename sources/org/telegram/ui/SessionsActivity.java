@@ -1321,7 +1321,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    SessionsActivity.this.lambda$onBackPressed$335();
+                    SessionsActivity.this.lambda$onBackPressed$336();
                 }
             }
         });

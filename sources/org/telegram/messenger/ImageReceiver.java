@@ -1195,14 +1195,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 i6 = i5;
                                                 drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i6 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.proxyCheckDone);
+                                                    drawable.setAlpha(NotificationCenter.didSetNewWallpapper);
                                                 }
                                             }
                                             i5 = (int) ((f5 - min) * f3 * 255.0f);
                                             i6 = i5;
                                             drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i6 != 255) {
-                                                drawable.setAlpha(NotificationCenter.proxyCheckDone);
+                                                drawable.setAlpha(NotificationCenter.didSetNewWallpapper);
                                             }
                                         }
                                     }
@@ -2622,6 +2622,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             }
         }
         return false;
+    }
+
+    public boolean isLottieRunning() {
+        RLottieDrawable lottieAnimation = getLottieAnimation();
+        return lottieAnimation != null && lottieAnimation.isRunning();
     }
 
     public boolean isNeedsQualityThumb() {
@@ -4209,6 +4214,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public void startAnimation() {
+        startAnimation(false);
+    }
+
+    public void startAnimation(boolean z) {
         AnimatedFileDrawable animation = getAnimation();
         if (animation != null) {
             animation.setUseSharedQueue(this.useSharedAnimationQueue);
@@ -4219,7 +4228,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if (lottieAnimation == null || lottieAnimation.isRunning()) {
             return;
         }
-        lottieAnimation.restart();
+        lottieAnimation.restart(z);
     }
 
     public void startCrossfadeFromStaticThumb(Bitmap bitmap) {
@@ -4262,7 +4271,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if ((drawable == null || (bitmapShader = this.thumbShader) == null) && ((drawable = this.staticThumbDrawable) == null || (bitmapShader = this.staticThumbShader) == null)) {
             return false;
         }
-        drawDrawable(null, drawable, NotificationCenter.proxyCheckDone, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable, NotificationCenter.didSetNewWallpapper, bitmapShader, 0, 0, 0, null);
         return true;
     }
 }

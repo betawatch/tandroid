@@ -182,9 +182,9 @@ public class UpdateLayout extends IUpdateLayout {
         this.updateLayout.addView(this.updateSizeTextView, LayoutHelper.createFrame(-2, -2.0f, 21, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b9 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00bf A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00c0  */
     @Override // org.telegram.ui.IUpdateLayout
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -227,7 +227,7 @@ public class UpdateLayout extends IUpdateLayout {
         } else {
             if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
                 this.updateLayoutIcon.setIcon(3, true, z);
-                this.updateLayoutIcon.setProgress(0.0f, false);
+                this.updateLayoutIcon.setProgress(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
                 formatString = LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f)));
                 setUpdateText(formatString, z);
                 if (this.updateSizeTextView.getTag() == null) {

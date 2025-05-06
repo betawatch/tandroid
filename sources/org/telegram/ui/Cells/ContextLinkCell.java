@@ -558,7 +558,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         if (!this.mediaWebpage) {
             if (!this.drawLinkImageView || PhotoViewer.isShowingImage(this.inlineResult)) {
                 letterDrawable = this.letterDrawable;
-                i2 = NotificationCenter.proxyCheckDone;
+                i2 = NotificationCenter.didSetNewWallpapper;
             } else {
                 letterDrawable = this.letterDrawable;
                 i2 = (int) ((1.0f - this.linkImageView.getCurrentAlpha()) * 255.0f);

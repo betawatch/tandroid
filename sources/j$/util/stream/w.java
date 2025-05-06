@@ -1,7 +1,7 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class w extends g0 {
+final class w extends a0 {
     public final /* synthetic */ int m;
     final /* synthetic */ Object n;
 
@@ -13,31 +13,31 @@ final class w extends g0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(b bVar, j$.util.function.T t) {
+    public w(b bVar, j$.util.function.E e) {
         super(bVar, 0, 1);
-        this.m = 5;
-        this.n = t;
+        this.m = 1;
+        this.n = e;
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         switch (this.m) {
             case 0:
-                return new s(this, e2Var, 3);
+                return new t(this, e2Var, 2);
             case 1:
-                return new W(this, e2Var, 3);
+                return new W(this, e2Var, 0);
             case 2:
-                return new e0(this, e2Var, 0);
+                return new W(this, e2Var, 1);
             case 3:
-                return new e0(this, e2Var, 4);
+                return new W(this, e2Var, 5);
             case 4:
-                return new e0(this, e2Var, 5);
+                return new W(this, e2Var, 6);
             case 5:
-                return new e0(this, e2Var, 6);
+                return new f0(this, e2Var, 2);
             case 6:
-                return new R1(this, e2Var);
+                return new o(this, e2Var, 4);
             default:
-                return new o(this, e2Var, 5);
+                return new R1(this, e2Var);
         }
     }
 }

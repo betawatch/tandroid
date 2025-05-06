@@ -1,56 +1,57 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
 import java.util.ArrayDeque;
 
 /* loaded from: classes2.dex */
-final class h1 extends i1 {
+abstract class h1 extends j1 implements j$.util.M {
     h1(F0 f0) {
         super(f0);
     }
 
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
+    @Override // j$.util.M
+    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final void e(Object obj) {
         if (this.a == null) {
             return;
         }
         if (this.d != null) {
-            while (s(consumer)) {
+            while (p(obj)) {
             }
             return;
         }
         Spliterator spliterator = this.c;
         if (spliterator != null) {
-            spliterator.a(consumer);
+            ((j$.util.M) spliterator).e(obj);
             return;
         }
         ArrayDeque f = f();
         while (true) {
-            F0 b = i1.b(f);
-            if (b == null) {
+            F0 f0 = (F0) j1.b(f);
+            if (f0 == null) {
                 this.a = null;
                 return;
             }
-            b.forEach(consumer);
+            f0.g(obj);
         }
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        F0 b;
+    @Override // j$.util.M
+    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final boolean p(Object obj) {
+        F0 f0;
         if (!h()) {
             return false;
         }
-        boolean s = this.d.s(consumer);
-        if (!s) {
-            if (this.c == null && (b = i1.b(this.e)) != null) {
-                Spliterator spliterator = b.spliterator();
+        boolean p = ((j$.util.M) this.d).p(obj);
+        if (!p) {
+            if (this.c == null && (f0 = (F0) j1.b(this.e)) != null) {
+                j$.util.M spliterator = f0.spliterator();
                 this.d = spliterator;
-                return spliterator.s(consumer);
+                return spliterator.p(obj);
             }
             this.a = null;
         }
-        return s;
+        return p;
     }
 }

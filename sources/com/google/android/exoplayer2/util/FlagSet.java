@@ -49,6 +49,15 @@ public final class FlagSet {
         return this.flags.get(i);
     }
 
+    public boolean containsAny(int... iArr) {
+        for (int i : iArr) {
+            if (contains(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;

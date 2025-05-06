@@ -1,61 +1,45 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-final class Q0 extends H0 {
+abstract class Q0 extends I0 implements F0 {
     Q0(F0 f0, F0 f02) {
         super(f0, f02);
     }
 
     @Override // j$.util.stream.F0
-    public final void forEach(Consumer consumer) {
-        this.a.forEach(consumer);
-        this.b.forEach(consumer);
+    public final void d(Object obj, int i) {
+        G0 g0 = this.a;
+        ((F0) g0).d(obj, i);
+        ((F0) this.b).d(obj, i + ((int) ((F0) g0).count()));
     }
 
     @Override // j$.util.stream.F0
-    public final void i(Object[] objArr, int i) {
-        objArr.getClass();
-        F0 f0 = this.a;
-        f0.i(objArr, i);
-        this.b.i(objArr, i + ((int) f0.count()));
-    }
-
-    @Override // j$.util.stream.F0
-    public final Object[] s(IntFunction intFunction) {
+    public final Object e() {
         long count = count();
         if (count >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) intFunction.apply((int) count);
-        i(objArr, 0);
-        return objArr;
+        Object c = c((int) count);
+        d(c, 0);
+        return c;
     }
 
     @Override // j$.util.stream.F0
-    public final Spliterator spliterator() {
-        return new h1(this);
+    public final void g(Object obj) {
+        ((F0) this.a).g(obj);
+        ((F0) this.b).g(obj);
     }
 
-    @Override // j$.util.stream.F0
-    public final F0 t(long j, long j2, IntFunction intFunction) {
-        if (j == 0 && j2 == count()) {
-            return this;
-        }
-        long count = this.a.count();
-        if (j >= count) {
-            return this.b.t(j - count, j2 - count, intFunction);
-        }
-        if (j2 <= count) {
-            return this.a.t(j, j2, intFunction);
-        }
-        return t0.I(S2.REFERENCE, this.a.t(j, count, intFunction), this.b.t(0L, j2 - count, intFunction));
+    @Override // j$.util.stream.G0
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return u0.m(this, intFunction);
     }
 
     public final String toString() {
-        return count() < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(count()));
+        long count = count();
+        String name = getClass().getName();
+        return count < 32 ? String.format("%s[%s.%s]", name, this.a, this.b) : String.format("%s[size=%d]", name, Long.valueOf(count()));
     }
 }

@@ -282,7 +282,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 avatarHolderView3.setAlpha(0.0f);
                 avatarHolderView3.setScaleX(0.1f);
                 avatarHolderView3.setScaleY(0.1f);
-                avatarHolderView3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(cubicBezierInterpolator).setDuration(200).start();
+                avatarHolderView3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(cubicBezierInterpolator).setDuration(NotificationCenter.storyQualityUpdate).start();
                 if (size == 0) {
                     avatarHolderView3.boostIconView.setScaleY(1.0f);
                     avatarHolderView3.boostIconView.setScaleX(1.0f);
@@ -305,7 +305,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 if (avatarHolderView != null) {
                     avatarHolderView.setTag("REMOVED");
                     ViewPropertyAnimator interpolator2 = avatarHolderView.animate().alpha(f).translationXBy(AndroidUtilities.dp(23.0f)).scaleX(f2).scaleY(f2).setInterpolator(cubicBezierInterpolator);
-                    long j2 = 200;
+                    long j2 = NotificationCenter.storyQualityUpdate;
                     interpolator2.setDuration(j2).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet.TopCell.1
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
@@ -338,23 +338,25 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             this.addedChats.addAll(arrayList2);
             this.avatarsContainer.animate().cancel();
             if (this.addedChats.isEmpty() || this.addedChats.size() == 1) {
-                i = 200;
+                i = NotificationCenter.storyQualityUpdate;
                 translationX = this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f);
             } else {
                 translationX = this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(AndroidUtilities.dp(11.5f) * (this.addedChats.size() - 1));
-                i = 200;
+                i = NotificationCenter.storyQualityUpdate;
             }
             translationX.setDuration(i).start();
             this.toAvatar.animate().cancel();
             this.avatarsWrapper.animate().cancel();
             if (this.addedChats.isEmpty()) {
                 dp = 0.0f;
-                j = 200;
-                this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f).setDuration(j).start();
+                ViewPropertyAnimator translationX2 = this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f);
+                j = NotificationCenter.storyQualityUpdate;
+                translationX2.setDuration(j).start();
                 interpolator = this.toAvatar.animate().setInterpolator(cubicBezierInterpolator);
             } else {
-                j = 200;
-                this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.dp(48.0f)).setDuration(j).start();
+                ViewPropertyAnimator translationX3 = this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.dp(48.0f));
+                j = NotificationCenter.storyQualityUpdate;
+                translationX3.setDuration(j).start();
                 interpolator = this.toAvatar.animate().setInterpolator(cubicBezierInterpolator);
                 dp = AndroidUtilities.dp(48.0f);
             }

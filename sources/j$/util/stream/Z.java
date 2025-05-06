@@ -10,45 +10,45 @@ final class Z extends b0 {
 
     @Override // j$.util.stream.b0, j$.util.stream.IntStream
     public final void A(j$.util.function.E e) {
-        j$.util.G F0;
+        j$.util.G E0;
         if (isParallel()) {
             super.A(e);
         } else {
-            F0 = b0.F0(z0());
-            F0.e(e);
+            E0 = b0.E0(y0());
+            E0.e(e);
         }
     }
 
     @Override // j$.util.stream.b0, j$.util.stream.IntStream
     public final void J(j$.util.function.E e) {
-        j$.util.G F0;
+        j$.util.G E0;
         if (isParallel()) {
             super.J(e);
         } else {
-            F0 = b0.F0(z0());
-            F0.e(e);
+            E0 = b0.E0(y0());
+            E0.e(e);
         }
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.E
     public final /* bridge */ /* synthetic */ IntStream parallel() {
         parallel();
         return this;
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.E
     public final /* bridge */ /* synthetic */ IntStream sequential() {
         sequential();
         return this;
     }
 
     @Override // j$.util.stream.b
-    final boolean w0() {
+    final boolean v0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

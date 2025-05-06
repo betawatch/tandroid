@@ -14,9 +14,9 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     void T(j$.util.function.T t);
 
-    Object X(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer);
+    Object W(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer);
 
-    D asDoubleStream();
+    E asDoubleStream();
 
     j$.util.j average();
 
@@ -34,7 +34,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     j$.util.l g(j$.util.function.O o);
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    @Override // j$.util.stream.BaseStream, j$.util.stream.E
     j$.util.x iterator();
 
     LongStream limit(long j);
@@ -49,21 +49,21 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     LongStream n(LongFunction longFunction);
 
-    D p(j$.util.function.X x);
+    E p(j$.util.function.X x);
 
-    @Override // j$.util.stream.BaseStream
+    @Override // j$.util.stream.BaseStream, j$.util.stream.E
     LongStream parallel();
 
     boolean s(j$.util.function.W w);
 
-    @Override // j$.util.stream.BaseStream
+    @Override // j$.util.stream.BaseStream, j$.util.stream.E
     LongStream sequential();
 
     LongStream skip(long j);
 
     LongStream sorted();
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    @Override // j$.util.stream.BaseStream, j$.util.stream.E
     j$.util.J spliterator();
 
     long sum();

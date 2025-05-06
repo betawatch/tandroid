@@ -980,6 +980,11 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     @Override // com.google.android.exoplayer2.analytics.AnalyticsListener
+    public /* synthetic */ void onShuffleModeChanged(AnalyticsListener.EventTime eventTime, boolean z) {
+        AnalyticsListener.-CC.$default$onShuffleModeChanged(this, eventTime, z);
+    }
+
+    @Override // com.google.android.exoplayer2.analytics.AnalyticsListener
     public /* synthetic */ void onSkipSilenceEnabledChanged(AnalyticsListener.EventTime eventTime, boolean z) {
         AnalyticsListener.-CC.$default$onSkipSilenceEnabledChanged(this, eventTime, z);
     }

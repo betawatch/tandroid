@@ -416,6 +416,11 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell2, float f, float f2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell2, f, f2);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didStartVideoStream(MessageObject messageObject) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didStartVideoStream(this, messageObject);
             }
@@ -985,10 +990,10 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
         }
         if (topicsFragment != null) {
-            topicsFragment.lambda$onBackPressed$335();
+            topicsFragment.lambda$onBackPressed$336();
             dialogsActivity.removeSelfFromStack();
         } else {
-            dialogsActivity.lambda$onBackPressed$335();
+            dialogsActivity.lambda$onBackPressed$336();
         }
         return true;
     }

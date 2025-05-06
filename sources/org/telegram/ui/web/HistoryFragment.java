@@ -67,7 +67,7 @@ public class HistoryFragment extends UniversalFragment {
         public void onItemClick(int i) {
             if (i == -1) {
                 if (!((BaseFragment) HistoryFragment.this).actionBar.isActionModeShowed()) {
-                    HistoryFragment.this.lambda$onBackPressed$335();
+                    HistoryFragment.this.lambda$onBackPressed$336();
                     return;
                 }
                 ((BaseFragment) HistoryFragment.this).actionBar.hideActionMode();
@@ -340,7 +340,7 @@ public class HistoryFragment extends UniversalFragment {
             if (this.actionBar.isActionModeShowed()) {
                 clickSelect(uItem, view);
             } else {
-                lambda$onBackPressed$335();
+                lambda$onBackPressed$336();
                 this.whenClicked.run((BrowserHistory.Entry) uItem.object2);
             }
         }

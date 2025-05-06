@@ -14,7 +14,7 @@ final class U1 extends W1 {
         if (isParallel()) {
             super.e(consumer);
         } else {
-            z0().a(consumer);
+            y0().a(consumer);
         }
     }
 
@@ -23,17 +23,17 @@ final class U1 extends W1 {
         if (isParallel()) {
             super.forEach(consumer);
         } else {
-            z0().a(consumer);
+            y0().a(consumer);
         }
     }
 
     @Override // j$.util.stream.b
-    final boolean w0() {
+    final boolean v0() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 x0(int i, e2 e2Var) {
+    final e2 w0(int i, e2 e2Var) {
         throw new UnsupportedOperationException();
     }
 }

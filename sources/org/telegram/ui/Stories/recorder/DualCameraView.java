@@ -329,6 +329,13 @@ public abstract class DualCameraView extends CameraView {
         updateDualPosition();
     }
 
+    private void setupToScreenMatrix() {
+        this.toScreen.reset();
+        this.toScreen.postTranslate(1.0f, -1.0f);
+        this.toScreen.postScale(getMeasuredWidth() / 2.0f, (-getMeasuredHeight()) / 2.0f);
+        this.toScreen.invert(this.toGL);
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:102:0x02b1, code lost:
     
         if (r17.atBottom != false) goto L111;
@@ -657,13 +664,15 @@ public abstract class DualCameraView extends CameraView {
         onCameraError();
     }
 
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return (motionEvent.getAction() == 0 && isAtDual(motionEvent.getX(), motionEvent.getY())) ? touchEvent(motionEvent) : super.onInterceptTouchEvent(motionEvent);
+    }
+
     @Override // org.telegram.messenger.camera.CameraView, android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.toScreen.reset();
-        this.toScreen.postTranslate(1.0f, -1.0f);
-        this.toScreen.postScale(getMeasuredWidth() / 2.0f, (-getMeasuredHeight()) / 2.0f);
-        this.toScreen.invert(this.toGL);
+        setupToScreenMatrix();
     }
 
     protected abstract void onSavedDualCameraSuccess();

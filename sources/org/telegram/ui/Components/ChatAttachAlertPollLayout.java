@@ -1613,12 +1613,12 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             charSequence = this.questionString;
-            i3 = NotificationCenter.proxyCheckDone;
+            i3 = NotificationCenter.didSetNewWallpapper;
             if (charSequence != null) {
-                i2 = NotificationCenter.proxyCheckDone;
+                i2 = NotificationCenter.didSetNewWallpapper;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.proxyCheckDone;
+                i4 = NotificationCenter.didSetNewWallpapper;
                 i2 = i4;
                 i5 = 0;
             }
@@ -1644,12 +1644,12 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                 return;
             }
             charSequence = this.solutionString;
-            i3 = 200;
+            i3 = NotificationCenter.storyQualityUpdate;
             if (charSequence != null) {
-                i2 = 200;
+                i2 = NotificationCenter.storyQualityUpdate;
                 i5 = charSequence.length();
             } else {
-                i4 = 200;
+                i4 = NotificationCenter.storyQualityUpdate;
                 i2 = i4;
                 i5 = 0;
             }

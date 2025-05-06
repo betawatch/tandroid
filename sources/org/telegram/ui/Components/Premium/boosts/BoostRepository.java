@@ -539,9 +539,9 @@ public abstract class BoostRepository {
         double pow = Math.pow(10.0d, 6.0d);
         Double.isNaN(priceAmountMicros);
         tL_inputStorePaymentPremiumGiftCode.amount = (long) ((priceAmountMicros / pow) * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)));
-        TLRPC.TL_payments_canPurchasePremium tL_payments_canPurchasePremium = new TLRPC.TL_payments_canPurchasePremium();
-        tL_payments_canPurchasePremium.purpose = tL_inputStorePaymentPremiumGiftCode;
-        connectionsManager.sendRequest(tL_payments_canPurchasePremium, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda28
+        TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
+        tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
+        connectionsManager.sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda28
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$payGiftCodeByGoogle$10(Utilities.Callback.this, list, billingResult, callback2, baseFragment, tL_inputStorePaymentPremiumGiftCode, tLObject, tL_error);
@@ -700,9 +700,9 @@ public abstract class BoostRepository {
         double pow = Math.pow(10.0d, 6.0d);
         Double.isNaN(priceAmountMicros);
         tL_inputStorePaymentPremiumGiveaway.amount = (long) ((priceAmountMicros / pow) * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)));
-        TLRPC.TL_payments_canPurchasePremium tL_payments_canPurchasePremium = new TLRPC.TL_payments_canPurchasePremium();
-        tL_payments_canPurchasePremium.purpose = tL_inputStorePaymentPremiumGiveaway;
-        connectionsManager.sendRequest(tL_payments_canPurchasePremium, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda23
+        TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
+        tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiveaway;
+        connectionsManager.sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda23
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$payGiveAwayByGoogle$23(Utilities.Callback.this, list, billingResult, callback2, baseFragment, tL_inputStorePaymentPremiumGiveaway, tLObject, tL_error);

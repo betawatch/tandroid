@@ -941,6 +941,18 @@ public abstract class TypeAdapters {
         };
     }
 
+    public static TypeAdapterFactory newFactory(final TypeToken typeToken, final TypeAdapter typeAdapter) {
+        return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.TypeAdapters.30
+            @Override // com.google.gson.TypeAdapterFactory
+            public TypeAdapter create(Gson gson, TypeToken typeToken2) {
+                if (typeToken2.equals(TypeToken.this)) {
+                    return typeAdapter;
+                }
+                return null;
+            }
+        };
+    }
+
     public static TypeAdapterFactory newFactory(final Class cls, final TypeAdapter typeAdapter) {
         return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.TypeAdapters.31
             @Override // com.google.gson.TypeAdapterFactory

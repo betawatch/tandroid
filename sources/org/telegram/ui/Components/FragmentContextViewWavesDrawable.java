@@ -373,7 +373,7 @@ public class FragmentContextViewWavesDrawable {
                             i3 = (int) (255.0f * f18);
                         } else {
                             paint = this.paint;
-                            i3 = NotificationCenter.proxyCheckDone;
+                            i3 = NotificationCenter.didSetNewWallpapper;
                         }
                         paint.setAlpha(i3);
                         if (i2 == 1 && z3) {
@@ -425,7 +425,7 @@ public class FragmentContextViewWavesDrawable {
     /* JADX WARN: Multi-variable type inference failed */
     public void updateState(boolean z) {
         int i;
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant;
+        TLRPC.GroupCallParticipant groupCallParticipant;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
             int callState = sharedInstance.getCallState();
@@ -434,7 +434,7 @@ public class FragmentContextViewWavesDrawable {
                 return;
             }
             ChatObject.Call call = sharedInstance.groupCall;
-            if (call == null || (((tL_groupCallParticipant = (TLRPC.TL_groupCallParticipant) call.participants.get(sharedInstance.getSelfId())) == null || tL_groupCallParticipant.can_self_unmute || !tL_groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream)) {
+            if (call == null || (((groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.get(sharedInstance.getSelfId())) == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream)) {
                 i = sharedInstance.isMicMute();
             } else {
                 sharedInstance.setMicMute(true, false, false);

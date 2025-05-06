@@ -31,7 +31,7 @@ final class l2 extends X1 {
 
     @Override // j$.util.stream.X1, j$.util.stream.e2
     public final void n(long j) {
-        this.a.n(t0.z(j, this.d.m, this.c));
+        this.a.n(u0.z(j, this.d.m, this.c));
     }
 
     @Override // j$.util.stream.X1, j$.util.stream.e2

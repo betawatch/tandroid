@@ -3,6 +3,7 @@ package j$.util.stream;
 import j$.util.function.BiFunction;
 import j$.util.function.Function;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /* loaded from: classes2.dex */
@@ -29,13 +30,23 @@ public final /* synthetic */ class k implements j$.util.function.f {
                 collection.addAll((Collection) obj2);
                 return collection;
             case 1:
-                return new M0((z0) obj, (z0) obj2);
+                List list = (List) obj;
+                Set set2 = Collectors.a;
+                list.addAll((List) obj2);
+                return list;
             case 2:
-                return new N0((B0) obj, (B0) obj2);
+                Set set3 = (Set) obj;
+                Set set4 = Collectors.a;
+                set3.addAll((Set) obj2);
+                return set3;
             case 3:
-                return new O0((D0) obj, (D0) obj2);
+                return new N0((A0) obj, (A0) obj2);
+            case 4:
+                return new O0((C0) obj, (C0) obj2);
+            case 5:
+                return new P0((E0) obj, (E0) obj2);
             default:
-                return new Q0((F0) obj, (F0) obj2);
+                return new R0((G0) obj, (G0) obj2);
         }
     }
 }

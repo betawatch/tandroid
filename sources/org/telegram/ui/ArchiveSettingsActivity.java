@@ -35,7 +35,7 @@ import org.telegram.ui.Components.RecyclerListView;
 public class ArchiveSettingsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ListAdapter adapter;
     private RecyclerListView listView;
-    private TLRPC.TL_globalPrivacySettings settings;
+    private TLRPC.GlobalPrivacySettings settings;
     private boolean changed = false;
     private int shiftDp = -3;
     private final ArrayList oldItems = new ArrayList();
@@ -173,13 +173,13 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
         }
         int i2 = ((ItemInner) this.items.get(i)).id;
         if (i2 == 1) {
-            TLRPC.TL_globalPrivacySettings tL_globalPrivacySettings = this.settings;
-            z = !tL_globalPrivacySettings.keep_archived_unmuted;
-            tL_globalPrivacySettings.keep_archived_unmuted = z;
+            TLRPC.GlobalPrivacySettings globalPrivacySettings = this.settings;
+            z = !globalPrivacySettings.keep_archived_unmuted;
+            globalPrivacySettings.keep_archived_unmuted = z;
         } else if (i2 == 4) {
-            TLRPC.TL_globalPrivacySettings tL_globalPrivacySettings2 = this.settings;
-            z = !tL_globalPrivacySettings2.keep_archived_folders;
-            tL_globalPrivacySettings2.keep_archived_folders = z;
+            TLRPC.GlobalPrivacySettings globalPrivacySettings2 = this.settings;
+            z = !globalPrivacySettings2.keep_archived_folders;
+            globalPrivacySettings2.keep_archived_folders = z;
         } else {
             if (i2 != 7) {
                 return;
@@ -202,9 +202,9 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 return;
             }
-            TLRPC.TL_globalPrivacySettings tL_globalPrivacySettings3 = this.settings;
-            z = !tL_globalPrivacySettings3.archive_and_mute_new_noncontact_peers;
-            tL_globalPrivacySettings3.archive_and_mute_new_noncontact_peers = z;
+            TLRPC.GlobalPrivacySettings globalPrivacySettings3 = this.settings;
+            z = !globalPrivacySettings3.archive_and_mute_new_noncontact_peers;
+            globalPrivacySettings3.archive_and_mute_new_noncontact_peers = z;
         }
         ((TextCheckCell) view).setChecked(z);
         this.changed = true;
@@ -249,7 +249,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ArchiveSettingsActivity.this.lambda$onBackPressed$335();
+                    ArchiveSettingsActivity.this.lambda$onBackPressed$336();
                 }
             }
         });
@@ -284,7 +284,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
             }
         });
         getContactsController().loadGlobalPrivacySetting();
-        TLRPC.TL_globalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
+        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
         this.settings = globalPrivacySettings;
         if (globalPrivacySettings == null) {
             this.settings = new TLRPC.TL_globalPrivacySettings();
@@ -304,7 +304,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
             }
             return;
         }
-        TLRPC.TL_globalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
+        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
         this.settings = globalPrivacySettings;
         if (globalPrivacySettings == null) {
             this.settings = new TLRPC.TL_globalPrivacySettings();

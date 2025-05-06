@@ -1,50 +1,43 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
-import j$.util.function.ToLongFunction;
+import j$.util.Spliterator;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Q1 implements IntFunction, ToLongFunction, Consumer {
-    public final /* synthetic */ int a;
+final class Q1 extends e {
+    private final u0 h;
 
-    private final void a(Object obj) {
+    Q1(Q1 q1, Spliterator spliterator) {
+        super(q1, spliterator);
+        this.h = q1.h;
     }
 
-    private final void c(Object obj) {
+    Q1(u0 u0Var, b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
+        this.h = u0Var;
     }
 
-    @Override // j$.util.function.Consumer
-    public void accept(Object obj) {
-        int i = this.a;
+    @Override // j$.util.stream.e
+    protected final Object a() {
+        b bVar = this.a;
+        O1 d0 = this.h.d0();
+        bVar.A0(this.b, d0);
+        return d0;
     }
 
-    @Override // j$.util.function.Consumer
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
+    @Override // j$.util.stream.e
+    protected final e d(Spliterator spliterator) {
+        return new Q1(this, spliterator);
+    }
+
+    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        e eVar = this.d;
+        if (eVar != null) {
+            O1 o1 = (O1) ((Q1) eVar).b();
+            o1.h((O1) ((Q1) this.e).b());
+            e(o1);
         }
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.function.IntFunction
-    public Object apply(int i) {
-        switch (this.a) {
-            case 0:
-                return new Object[i];
-            case 1:
-            default:
-                return new Double[i];
-            case 2:
-                return new Object[i];
-            case 3:
-                return new Integer[i];
-            case 4:
-                return new Long[i];
-        }
-    }
-
-    @Override // j$.util.function.ToLongFunction
-    public long applyAsLong(Object obj) {
-        return 1L;
+        super.onCompletion(countedCompleter);
     }
 }

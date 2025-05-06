@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.util;
 
 import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0;
+import com.google.android.exoplayer2.ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.common.base.Ascii;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -102,7 +102,7 @@ public abstract class MimeTypes {
         if (arrayList.size() <= 0) {
             return null;
         }
-        RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
+        ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
         throw null;
     }
 
@@ -284,7 +284,7 @@ public abstract class MimeTypes {
         if (arrayList.size() <= 0) {
             return -1;
         }
-        RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
+        ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
         throw null;
     }
 

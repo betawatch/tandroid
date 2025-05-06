@@ -13,13 +13,13 @@ public abstract class Y1 implements c2 {
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
@@ -51,7 +51,7 @@ public abstract class Y1 implements c2 {
 
     @Override // j$.util.stream.c2
     public final /* synthetic */ void o(Integer num) {
-        t0.g(this, num);
+        u0.g(this, num);
     }
 
     @Override // j$.util.stream.e2

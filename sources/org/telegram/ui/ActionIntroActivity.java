@@ -26,6 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
@@ -241,7 +242,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        ActionIntroActivity.this.lambda$onBackPressed$335();
+                        ActionIntroActivity.this.lambda$onBackPressed$336();
                     }
                 }
             });
@@ -739,7 +740,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         int i13 = this.currentType;
         if (i13 == 0) {
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.channel_create, 200, 200);
+            this.imageView.setAnimation(R.raw.channel_create, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
             this.titleTextView.setText(LocaleController.getString(R.string.ChannelAlertTitle));
             this.descriptionText.setText(LocaleController.getString(R.string.ChannelAlertText));
             textView2 = this.buttonTextView;
@@ -756,7 +757,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     this.imageView.playAnimation();
                 } else if (i13 == 6) {
                     this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    this.imageView.setAnimation(R.raw.utyan_passcode, 200, 200);
+                    this.imageView.setAnimation(R.raw.utyan_passcode, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
                     this.imageView.setFocusable(false);
                     this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
@@ -777,7 +778,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             }
             this.subtitleTextView.setVisibility(0);
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.utyan_change_number, 200, 200);
+            this.imageView.setAnimation(R.raw.utyan_change_number, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

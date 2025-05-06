@@ -6,6 +6,8 @@ import com.google.gson.internal.bind.DefaultDateTypeAdapter;
 import com.google.gson.internal.bind.TreeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.internal.sql.SqlTypesSupport;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,6 +73,10 @@ public final class GsonBuilder {
         }
     }
 
+    private static boolean isTypeObjectOrJsonElement(Type type) {
+        return (type instanceof Class) && (type == Object.class || JsonElement.class.isAssignableFrom((Class) type));
+    }
+
     public GsonBuilder addSerializationExclusionStrategy(ExclusionStrategy exclusionStrategy) {
         Objects.requireNonNull(exclusionStrategy);
         this.excluder = this.excluder.withExclusionStrategy(exclusionStrategy, true, false);
@@ -86,6 +92,22 @@ public final class GsonBuilder {
         arrayList.addAll(arrayList2);
         addTypeAdaptersForDate(this.datePattern, this.dateStyle, this.timeStyle, arrayList);
         return new Gson(this.excluder, this.fieldNamingPolicy, new HashMap(this.instanceCreators), this.serializeNulls, this.complexMapKeySerialization, this.generateNonExecutableJson, this.escapeHtmlChars, this.formattingStyle, this.strictness, this.serializeSpecialFloatingPointValues, this.useJdkUnsafe, this.longSerializationPolicy, this.datePattern, this.dateStyle, this.timeStyle, new ArrayList(this.factories), new ArrayList(this.hierarchyFactories), arrayList, this.objectToNumberStrategy, this.numberToNumberStrategy, new ArrayList(this.reflectionFilters));
+    }
+
+    public GsonBuilder registerTypeAdapter(Type type, Object obj) {
+        Objects.requireNonNull(type);
+        boolean z = obj instanceof JsonSerializer;
+        $Gson$Preconditions.checkArgument(z || (obj instanceof TypeAdapter));
+        if (isTypeObjectOrJsonElement(type)) {
+            throw new IllegalArgumentException("Cannot override built-in adapter for " + type);
+        }
+        if (z) {
+            this.factories.add(TreeTypeAdapter.newFactoryWithMatchRawType(TypeToken.get(type), obj));
+        }
+        if (obj instanceof TypeAdapter) {
+            this.factories.add(TypeAdapters.newFactory(TypeToken.get(type), (TypeAdapter) obj));
+        }
+        return this;
     }
 
     public GsonBuilder registerTypeAdapterFactory(TypeAdapterFactory typeAdapterFactory) {

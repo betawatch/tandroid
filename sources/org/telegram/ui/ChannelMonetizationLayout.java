@@ -1427,7 +1427,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         int i2;
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$335();
+            twoStepVerificationActivity.lambda$onBackPressed$336();
             if (tLObject instanceof TL_stats.TL_broadcastRevenueWithdrawalUrl) {
                 Browser.openUrl(getContext(), ((TL_stats.TL_broadcastRevenueWithdrawalUrl) tLObject).url);
             } else if (tLObject instanceof TLRPC.TL_payments_starsRevenueWithdrawalUrl) {
@@ -1449,7 +1449,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$335();
+                twoStepVerificationActivity.lambda$onBackPressed$336();
             }
             BulletinFactory.showError(tL_error);
             return;

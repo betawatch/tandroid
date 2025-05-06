@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.detector;
 
-import androidx.recyclerview.widget.RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0;
+import com.google.android.exoplayer2.ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.ResultPoint;
@@ -163,7 +163,7 @@ public class Detector {
 
     public final DetectorResult detect(Map map) {
         if (map != null) {
-            RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
+            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
         }
         return processFinderPatternInfo(new FinderPatternFinder(this.image, null).find(map));
     }

@@ -90,7 +90,6 @@ import org.telegram.ui.Components.StickerEmptyView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.GroupCreateActivity;
-import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 
 /* loaded from: classes4.dex */
@@ -220,7 +219,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
             BaseFragment baseFragment = (BaseFragment) ((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().size() - 2);
             if (!(baseFragment instanceof ChatEditActivity)) {
-                ChatUsersActivity.this.lambda$onBackPressed$335();
+                ChatUsersActivity.this.lambda$onBackPressed$336();
                 return;
             }
             baseFragment.removeSelfFromStack();
@@ -229,7 +228,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatEditActivity chatEditActivity = new ChatEditActivity(bundle);
             chatEditActivity.setInfo(ChatUsersActivity.this.info);
             ((BaseFragment) ChatUsersActivity.this).parentLayout.addFragmentToStack(chatEditActivity, ((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().size() - 1);
-            ChatUsersActivity.this.lambda$onBackPressed$335();
+            ChatUsersActivity.this.lambda$onBackPressed$336();
             chatEditActivity.showConvertTooltip();
         }
 
@@ -530,7 +529,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$3(Integer num, Integer num2) {
             if (num.intValue() == 0) {
-                return StarsIntroActivity.replaceStars(LocaleController.formatPluralStringComma("Stars", num2.intValue()));
+                return LocaleController.formatPluralStringComma("Stars", num2.intValue());
             }
             return "" + num2;
         }
@@ -1254,7 +1253,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 17:
                     SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.priceRow) {
-                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, 200, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
+                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.storyQualityUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback2Return
                             public final Object run(Object obj, Object obj2) {
                                 CharSequence lambda$onBindViewHolder$3;
@@ -2734,7 +2733,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 4) {
-            return NotificationCenter.storiesUpdated;
+            return NotificationCenter.onDatabaseReset;
         }
         if (i == 5) {
             return 900;
@@ -2809,7 +2808,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$24(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3603,7 +3602,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$22() {
-        loadChatParticipants(0, 200);
+        loadChatParticipants(0, NotificationCenter.storyQualityUpdate);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3996,20 +3995,20 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                             tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                             tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                             this.contactsEndReached = true;
-                            arrayList.addAll(loadChatParticipantsRequests(0, 200, false));
+                            arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.storyQualityUpdate, false));
                         }
                     } else if (!this.contactsEndReached) {
                         this.delayResults = 3;
                         tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                         tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                         this.contactsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, 200, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.storyQualityUpdate, false));
                     } else if (this.botsEndReached) {
                         tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsRecent();
                     } else {
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsBots();
                         this.botsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, 200, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.storyQualityUpdate, false));
                     }
                 } else if (i3 == 3) {
                     tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsBanned();
@@ -4242,7 +4241,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         if (indexOf >= 0) {
                             ChatUsersActivity.this.info.participants.participants.set(indexOf, tL_chatParticipantAdmin);
                         }
-                        ChatUsersActivity.this.loadChatParticipants(0, 200);
+                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.storyQualityUpdate);
                     }
                     i5++;
                 }
@@ -4344,7 +4343,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
             messagesController2.toggleChannelSignatures(j3, z5, z);
         }
-        lambda$onBackPressed$335();
+        lambda$onBackPressed$336();
     }
 
     private void removeParticipant(long j) {
@@ -4354,7 +4353,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (chatUsersActivityDelegate != null) {
                 chatUsersActivityDelegate.didKickParticipant(j);
             }
-            lambda$onBackPressed$335();
+            lambda$onBackPressed$336();
         }
     }
 
@@ -5054,7 +5053,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     public void onItemClick(int i6) {
                         if (i6 == -1) {
                             if (ChatUsersActivity.this.checkDiscard()) {
-                                ChatUsersActivity.this.lambda$onBackPressed$335();
+                                ChatUsersActivity.this.lambda$onBackPressed$336();
                             }
                         } else if (i6 == 1) {
                             ChatUsersActivity.this.processDone();
@@ -5294,7 +5293,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             public void onItemClick(int i62) {
                 if (i62 == -1) {
                     if (ChatUsersActivity.this.checkDiscard()) {
-                        ChatUsersActivity.this.lambda$onBackPressed$335();
+                        ChatUsersActivity.this.lambda$onBackPressed$336();
                     }
                 } else if (i62 == 1) {
                     ChatUsersActivity.this.processDone();
@@ -5368,7 +5367,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     removeSelfFromStack();
                     return;
                 } else {
-                    lambda$onBackPressed$335();
+                    lambda$onBackPressed$336();
                     return;
                 }
             }
@@ -5509,7 +5508,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         super.onFragmentCreate();
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.dialogDeleted);
-        loadChatParticipants(0, 200);
+        loadChatParticipants(0, NotificationCenter.storyQualityUpdate);
         return true;
     }
 

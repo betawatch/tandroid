@@ -43,6 +43,7 @@ import androidx.core.graphics.ColorUtils;
 import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
@@ -64,6 +65,7 @@ import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
+import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
@@ -529,6 +531,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
 
         public Builder(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
             this.red = new boolean[3];
+            if (context == null && (context = AndroidUtilities.findActivity(LaunchActivity.instance)) == null) {
+                context = ApplicationLoader.applicationContext;
+            }
             this.alertDialog = createAlertDialog(context, i, resourcesProvider);
         }
 
@@ -980,7 +985,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation[i] = new AnimatorSet();
         BitmapDrawable bitmapDrawable = this.shadow[i];
         if (bitmapDrawable != null) {
-            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.proxyCheckDone : 0));
+            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.didSetNewWallpapper : 0));
         }
         this.shadowAnimation[i].setDuration(150L);
         this.shadowAnimation[i].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialog.8

@@ -65,7 +65,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
         RLottieImageView muteButton;
         String name;
         int nameWidth;
-        TLRPC.TL_groupCallParticipant participant;
+        TLRPC.GroupCallParticipant participant;
         long peerId;
         float progress;
         GroupCallMiniTextureView renderer;
@@ -236,7 +236,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 if (this.muteButton.getDrawable() != null) {
                     this.muteButton.getDrawable().setAlpha((int) (this.progress * 255.0f * getAlpha()));
                     this.muteButton.draw(canvas);
-                    this.muteButton.getDrawable().setAlpha(NotificationCenter.proxyCheckDone);
+                    this.muteButton.getDrawable().setAlpha(NotificationCenter.didSetNewWallpapper);
                 }
                 canvas.restore();
             }
@@ -246,7 +246,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             return this.avatarImageView;
         }
 
-        public TLRPC.TL_groupCallParticipant getParticipant() {
+        public TLRPC.GroupCallParticipant getParticipant() {
             return this.participant;
         }
 
@@ -358,7 +358,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public void setParticipant(ChatObject.VideoParticipant videoParticipant, TLRPC.TL_groupCallParticipant tL_groupCallParticipant) {
+        public void setParticipant(ChatObject.VideoParticipant videoParticipant, TLRPC.GroupCallParticipant groupCallParticipant) {
             ImageLocation forChat;
             BackupImageView backupImageView;
             AvatarDrawable avatarDrawable;
@@ -366,9 +366,9 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             boolean z;
             GroupCallStatusIcon groupCallStatusIcon;
             this.videoParticipant = videoParticipant;
-            this.participant = tL_groupCallParticipant;
+            this.participant = groupCallParticipant;
             long j = this.peerId;
-            long peerId = MessageObject.getPeerId(tL_groupCallParticipant.peer);
+            long peerId = MessageObject.getPeerId(groupCallParticipant.peer);
             this.peerId = peerId;
             boolean z2 = false;
             MessagesController messagesController = AccountInstance.getInstance(GroupCallFullscreenAdapter.this.currentAccount).getMessagesController();
@@ -400,7 +400,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 }
                 z = j != this.peerId;
                 if (videoParticipant != null) {
-                    if (GroupCallFullscreenAdapter.this.renderersContainer.fullscreenPeerId == MessageObject.getPeerId(tL_groupCallParticipant.peer)) {
+                    if (GroupCallFullscreenAdapter.this.renderersContainer.fullscreenPeerId == MessageObject.getPeerId(groupCallParticipant.peer)) {
                         z2 = true;
                     }
                 } else if (GroupCallFullscreenAdapter.this.renderersContainer.fullscreenParticipant != null) {
@@ -410,7 +410,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                     }
                     groupCallStatusIcon = this.statusIcon;
                     if (groupCallStatusIcon != null) {
-                        groupCallStatusIcon.setParticipant(tL_groupCallParticipant, z);
+                        groupCallStatusIcon.setParticipant(groupCallParticipant, z);
                         updateState(z);
                         return;
                     }
@@ -445,7 +445,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 this.avatarImageView.setTranslationY(0.0f);
                 this.avatarImageView.setScaleX(1.0f);
                 this.avatarImageView.setScaleY(1.0f);
-                this.backgroundPaint.setAlpha(NotificationCenter.proxyCheckDone);
+                this.backgroundPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
                 invalidate();
                 GroupCallMiniTextureView groupCallMiniTextureView = this.renderer;
                 if (groupCallMiniTextureView != null) {
@@ -563,21 +563,21 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant;
+        TLRPC.GroupCallParticipant groupCallParticipant;
         ChatObject.VideoParticipant videoParticipant;
         GroupCallUserCell groupCallUserCell = (GroupCallUserCell) viewHolder.itemView;
         ChatObject.VideoParticipant videoParticipant2 = groupCallUserCell.videoParticipant;
         if (i < this.videoParticipants.size()) {
             videoParticipant = (ChatObject.VideoParticipant) this.videoParticipants.get(i);
-            tL_groupCallParticipant = ((ChatObject.VideoParticipant) this.videoParticipants.get(i)).participant;
+            groupCallParticipant = ((ChatObject.VideoParticipant) this.videoParticipants.get(i)).participant;
         } else {
             if (i - this.videoParticipants.size() >= this.participants.size()) {
                 return;
             }
-            tL_groupCallParticipant = (TLRPC.TL_groupCallParticipant) this.participants.get(i - this.videoParticipants.size());
+            groupCallParticipant = (TLRPC.GroupCallParticipant) this.participants.get(i - this.videoParticipants.size());
             videoParticipant = null;
         }
-        groupCallUserCell.setParticipant(videoParticipant, tL_groupCallParticipant);
+        groupCallUserCell.setParticipant(videoParticipant, groupCallParticipant);
         boolean z = false;
         if (videoParticipant2 != null && !videoParticipant2.equals(videoParticipant) && groupCallUserCell.attached && groupCallUserCell.getRenderer() != null) {
             groupCallUserCell.attachRenderer(false);
@@ -683,9 +683,9 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 int size = i - arrayList2.size();
                 int size2 = i2 - GroupCallFullscreenAdapter.this.videoParticipants.size();
                 if (size2 < 0 || size2 >= GroupCallFullscreenAdapter.this.participants.size() || size < 0 || size >= arrayList.size()) {
-                    return MessageObject.getPeerId((i < arrayList2.size() ? ((ChatObject.VideoParticipant) arrayList2.get(i)).participant : (TLRPC.TL_groupCallParticipant) arrayList.get(size)).peer) == MessageObject.getPeerId((i2 < GroupCallFullscreenAdapter.this.videoParticipants.size() ? ((ChatObject.VideoParticipant) GroupCallFullscreenAdapter.this.videoParticipants.get(i2)).participant : (TLRPC.TL_groupCallParticipant) GroupCallFullscreenAdapter.this.participants.get(size2)).peer);
+                    return MessageObject.getPeerId((i < arrayList2.size() ? ((ChatObject.VideoParticipant) arrayList2.get(i)).participant : (TLRPC.GroupCallParticipant) arrayList.get(size)).peer) == MessageObject.getPeerId((i2 < GroupCallFullscreenAdapter.this.videoParticipants.size() ? ((ChatObject.VideoParticipant) GroupCallFullscreenAdapter.this.videoParticipants.get(i2)).participant : (TLRPC.GroupCallParticipant) GroupCallFullscreenAdapter.this.participants.get(size2)).peer);
                 }
-                return MessageObject.getPeerId(((TLRPC.TL_groupCallParticipant) arrayList.get(size)).peer) == MessageObject.getPeerId(((TLRPC.TL_groupCallParticipant) GroupCallFullscreenAdapter.this.participants.get(size2)).peer);
+                return MessageObject.getPeerId(((TLRPC.GroupCallParticipant) arrayList.get(size)).peer) == MessageObject.getPeerId(((TLRPC.GroupCallParticipant) GroupCallFullscreenAdapter.this.participants.get(size2)).peer);
             }
 
             @Override // androidx.recyclerview.widget.DiffUtil.Callback

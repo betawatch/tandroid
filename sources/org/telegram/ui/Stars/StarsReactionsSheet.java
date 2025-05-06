@@ -18,6 +18,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.transition.ChangeBounds;
 import android.transition.TransitionManager;
 import android.util.Property;
@@ -28,7 +29,6 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Space;
 import android.widget.TextView;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
@@ -57,6 +57,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -89,7 +90,6 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 /* loaded from: classes5.dex */
 public class StarsReactionsSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private final BalanceCloud balanceCloud;
-    private final Space beforeTitleSpace;
     private final ButtonWithCounterView buttonView;
     private ChatActivity chatActivity;
     private final CheckBox2 checkBox;
@@ -411,7 +411,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.storiesUpdated);
+            this.sliderParticles = new Particles(0, NotificationCenter.onDatabaseReset);
             this.textParticles = new Particles(2, 30);
             this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradientMatrix = new Matrix();
@@ -883,7 +883,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
                         this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
                         this.anonymousAvatarDrawable.draw(canvas);
-                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.proxyCheckDone);
+                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.didSetNewWallpapper);
                     }
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
@@ -1238,15 +1238,11 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         int i6 = Theme.key_windowBackgroundWhiteBlackText;
         textView.setTextColor(Theme.getColor(i6));
         textView.setTextSize(1, 20.0f);
-        textView.setGravity(19);
+        textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.StarsReactionTitle2));
         textView.setTypeface(AndroidUtilities.bold());
-        textView.setMaxLines(2);
-        Space space = new Space(context);
-        this.beforeTitleSpace = space;
-        linearLayout2.addView(space, LayoutHelper.createLinear(0, 0, 1.0f, 119));
-        linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 0.0f, 19, 18, 0, 6, 0));
-        linearLayout2.addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f, 119));
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        linearLayout2.addView(textView, LayoutHelper.createLinear(-1, -2, 1.0f, 119, 2, 0, 2, 0));
         updateCanSwitchPeer(false);
         ImageView imageView2 = new ImageView(context);
         this.closeView = imageView2;
@@ -1260,7 +1256,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 StarsReactionsSheet.this.lambda$new$1(view);
             }
         });
-        linearLayout2.addView(imageView2, LayoutHelper.createLinear(48, 48, 0.0f, 53, 48, 6, 6, 0));
+        linearLayout2.addView(imageView2, LayoutHelper.createLinear(48, 48, 0.0f, 53, 0, 6, 6, 0));
         LinearLayout linearLayout3 = new LinearLayout(context);
         linearLayout3.setOrientation(1);
         this.topLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, z ? 179.0f : 45.0f, 0.0f, 15.0f));
@@ -1363,7 +1359,6 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         updateSenders(0L);
         buttonWithCounterView.setText(StarsIntroActivity.replaceStars(LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(50L, ',')), this.starRef), true);
         TLRPC.MessageReactor messageReactor4 = messageReactor;
-        int i7 = 2;
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -1391,7 +1386,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.layout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 17, 14, 14, 14, 12));
         }
         setCustomView(this.layout);
-        GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, i7) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
+        GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 2) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
             @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView
             protected void startIdleAnimation() {
             }
@@ -1408,8 +1403,8 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.slider.setValue(50);
         if (arrayList != null) {
             long j3 = 0;
-            for (int i8 = 0; i8 < arrayList.size(); i8++) {
-                long j4 = ((TLRPC.MessageReactor) arrayList.get(i8)).count;
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                long j4 = ((TLRPC.MessageReactor) arrayList.get(i7)).count;
                 if (j4 > j3) {
                     j3 = j4;
                 }
@@ -1752,6 +1747,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         if (messageObject == null || chatActivity == null || this.iconAnimator != null) {
             return;
         }
+        if (MessagesController.getInstance(i).isFrozen()) {
+            AccountFrozenAlert.show(i);
+            return;
+        }
         final long value = this.slider.getValue();
         final StarsController starsController = StarsController.getInstance(i);
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda10
@@ -1821,7 +1820,6 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
 
     private void updateCanSwitchPeer(boolean z) {
         if ((this.dialogSelectorLayout.getVisibility() == 0) != canSwitchPeer()) {
-            this.beforeTitleSpace.setVisibility(canSwitchPeer() ? 0 : 8);
             this.dialogSelectorLayout.setVisibility(canSwitchPeer() ? 0 : 8);
             if (z) {
                 if (canSwitchPeer()) {

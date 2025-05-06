@@ -45,16 +45,16 @@ final class o2 extends c {
     @Override // j$.util.stream.e
     protected final Object a() {
         if (c()) {
-            x0 t0 = this.j.t0(R2.SIZED.e(this.j.c) ? this.j.m0(this.b) : -1L, this.k);
-            e2 x0 = this.j.x0(this.a.q0(), t0);
+            y0 s0 = this.j.s0(R2.SIZED.e(this.j.c) ? this.j.l0(this.b) : -1L, this.k);
+            e2 w0 = this.j.w0(this.a.p0(), s0);
             b bVar = this.a;
-            bVar.h0(this.b, bVar.C0(x0));
-            return t0.b();
+            bVar.g0(this.b, bVar.B0(w0));
+            return s0.b();
         }
         b bVar2 = this.a;
-        x0 t02 = bVar2.t0(-1L, this.k);
-        bVar2.B0(this.b, t02);
-        F0 b = t02.b();
+        y0 s02 = bVar2.s0(-1L, this.k);
+        bVar2.A0(this.b, s02);
+        G0 b = s02.b();
         this.n = b.count();
         this.o = true;
         this.b = null;
@@ -70,13 +70,13 @@ final class o2 extends c {
     protected final void g() {
         this.i = true;
         if (this.o) {
-            e(t0.L(this.j.o0()));
+            e(u0.L(this.j.n0()));
         }
     }
 
     @Override // j$.util.stream.c
     protected final Object i() {
-        return t0.L(this.j.o0());
+        return u0.L(this.j.n0());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00df, code lost:
@@ -90,26 +90,26 @@ final class o2 extends c {
     */
     public final void onCompletion(CountedCompleter countedCompleter) {
         o2 o2Var;
-        F0 I;
+        G0 I;
         e eVar = this.d;
         if (!(eVar == null)) {
             this.n = ((o2) eVar).n + ((o2) this.e).n;
             if (this.i) {
                 this.n = 0L;
             } else if (this.n != 0) {
-                I = ((o2) this.d).n == 0 ? (F0) ((o2) this.e).b() : t0.I(this.j.o0(), (F0) ((o2) this.d).b(), (F0) ((o2) this.e).b());
-                F0 f0 = I;
+                I = ((o2) this.d).n == 0 ? (G0) ((o2) this.e).b() : u0.I(this.j.n0(), (G0) ((o2) this.d).b(), (G0) ((o2) this.e).b());
+                G0 g0 = I;
                 if (c()) {
-                    f0 = f0.t(this.l, this.m >= 0 ? Math.min(f0.count(), this.l + this.m) : this.n, this.k);
+                    g0 = g0.t(this.l, this.m >= 0 ? Math.min(g0.count(), this.l + this.m) : this.n, this.k);
                 }
-                e(f0);
+                e(g0);
                 this.o = true;
             }
-            I = t0.L(this.j.o0());
-            F0 f02 = I;
+            I = u0.L(this.j.n0());
+            G0 g02 = I;
             if (c()) {
             }
-            e(f02);
+            e(g02);
             this.o = true;
         }
         if (this.m >= 0 && !c()) {

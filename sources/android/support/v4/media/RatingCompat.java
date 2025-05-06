@@ -163,6 +163,68 @@ public final class RatingCompat implements Parcelable {
         return this.mRatingStyle;
     }
 
+    public float getPercentRating() {
+        if (this.mRatingStyle == 6 && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
+    }
+
+    public Object getRating() {
+        Rating newUnratedRating;
+        if (this.mRatingObj == null) {
+            if (isRated()) {
+                int i = this.mRatingStyle;
+                switch (i) {
+                    case 1:
+                        newUnratedRating = Api19Impl.newHeartRating(hasHeart());
+                        break;
+                    case 2:
+                        newUnratedRating = Api19Impl.newThumbRating(isThumbUp());
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        newUnratedRating = Api19Impl.newStarRating(i, getStarRating());
+                        break;
+                    case 6:
+                        newUnratedRating = Api19Impl.newPercentageRating(getPercentRating());
+                        break;
+                    default:
+                        return null;
+                }
+            } else {
+                newUnratedRating = Api19Impl.newUnratedRating(this.mRatingStyle);
+            }
+            this.mRatingObj = newUnratedRating;
+        }
+        return this.mRatingObj;
+    }
+
+    public int getRatingStyle() {
+        return this.mRatingStyle;
+    }
+
+    public float getStarRating() {
+        int i = this.mRatingStyle;
+        if ((i == 3 || i == 4 || i == 5) && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
+    }
+
+    public boolean hasHeart() {
+        return this.mRatingStyle == 1 && this.mRatingValue == 1.0f;
+    }
+
+    public boolean isRated() {
+        return this.mRatingValue >= 0.0f;
+    }
+
+    public boolean isThumbUp() {
+        return this.mRatingStyle == 2 && this.mRatingValue == 1.0f;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Rating:style=");

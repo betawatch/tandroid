@@ -2,7 +2,7 @@ package com.google.firebase.heartbeatinfo;
 
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class HeartBeatResult {
     public static HeartBeatResult create(String str, List list) {
         return new AutoValue_HeartBeatResult(str, list);

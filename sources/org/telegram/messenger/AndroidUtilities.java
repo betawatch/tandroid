@@ -4,8 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.AppOpsManager;
 import android.app.Dialog;
 import android.app.KeyguardManager;
+import android.app.PictureInPictureParams;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ContentUris;
@@ -36,6 +38,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.os.Process;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.provider.CallLog;
@@ -103,8 +106,8 @@ import androidx.dynamicanimation.animation.SpringForce;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.viewpager.widget.ViewPager;
+import com.google.android.exoplayer2.ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline52;
 import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline53;
 import com.google.android.exoplayer2.util.Consumer;
@@ -586,7 +589,7 @@ public class AndroidUtilities {
         checkDisplaySize(ApplicationLoader.applicationContext, null);
         documentIcons = new int[]{R.drawable.media_doc_blue, R.drawable.media_doc_green, R.drawable.media_doc_red, R.drawable.media_doc_yellow};
         documentMediaIcons = new int[]{R.drawable.media_doc_blue_b, R.drawable.media_doc_green_b, R.drawable.media_doc_red_b, R.drawable.media_doc_yellow_b};
-        sUrlMatchFilter = new Linkify.MatchFilter() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda42
+        sUrlMatchFilter = new Linkify.MatchFilter() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda49
             @Override // android.text.util.Linkify.MatchFilter
             public final boolean acceptMatch(CharSequence charSequence, int i, int i2) {
                 boolean lambda$static$6;
@@ -648,7 +651,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.proxyCheckDone) << 16) | (-16777216) | ((i2 & NotificationCenter.proxyCheckDone) << 8) | (i3 & NotificationCenter.proxyCheckDone);
+        return ((i & NotificationCenter.didSetNewWallpapper) << 16) | (-16777216) | ((i2 & NotificationCenter.didSetNewWallpapper) << 8) | (i3 & NotificationCenter.didSetNewWallpapper);
     }
 
     public static float[] RGBtoHSB(int i, int i2, int i3) {
@@ -736,7 +739,7 @@ public class AndroidUtilities {
             return false;
         }
         final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(spannable);
-        boolean doSafe = doSafe(new Utilities.Callback0Return() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda35
+        boolean doSafe = doSafe(new Utilities.Callback0Return() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda42
             @Override // org.telegram.messenger.Utilities.Callback0Return
             public final Object run() {
                 Boolean lambda$addLinksSafe$7;
@@ -1017,7 +1020,7 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.proxyCheckDone, (i >> 8) & NotificationCenter.proxyCheckDone, i & NotificationCenter.proxyCheckDone);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.didSetNewWallpapper, (i >> 8) & NotificationCenter.didSetNewWallpapper, i & NotificationCenter.didSetNewWallpapper);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
@@ -1218,6 +1221,10 @@ public class AndroidUtilities {
             }
         }
         return true;
+    }
+
+    public static boolean checkPipPermissions(Context context) {
+        return context.getPackageManager().hasSystemFeature("android.software.picture_in_picture") && ((AppOpsManager) context.getSystemService("appops")).checkOpNoThrow("android:picture_in_picture", Process.myUid(), context.getPackageName()) == 0;
     }
 
     protected static float cleanValue(float f, float f2) {
@@ -1440,7 +1447,7 @@ public class AndroidUtilities {
     }
 
     public static boolean doSafe(Utilities.Callback0Return<Boolean> callback0Return) {
-        return doSafe(callback0Return, 200);
+        return doSafe(callback0Return, NotificationCenter.storyQualityUpdate);
     }
 
     public static boolean doSafe(final Utilities.Callback0Return<Boolean> callback0Return, int i) {
@@ -1449,7 +1456,7 @@ public class AndroidUtilities {
         try {
             try {
                 try {
-                    future = newSingleThreadExecutor.submit(new Callable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda36
+                    future = newSingleThreadExecutor.submit(new Callable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda43
                         @Override // java.util.concurrent.Callable
                         public final Object call() {
                             Boolean lambda$doSafe$8;
@@ -1588,8 +1595,8 @@ public class AndroidUtilities {
                 TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
                 Method declaredMethod = Class.forName(telephonyManager.getClass().getName()).getDeclaredMethod("getITelephony", null);
                 declaredMethod.setAccessible(true);
-                RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(declaredMethod.invoke(telephonyManager, null));
-                RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(declaredMethod.invoke(telephonyManager, null));
+                ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(declaredMethod.invoke(telephonyManager, null));
+                ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(declaredMethod.invoke(telephonyManager, null));
                 throw null;
             } catch (Throwable th) {
                 FileLog.e(th);
@@ -1880,7 +1887,7 @@ public class AndroidUtilities {
     }
 
     public static SpannableStringBuilder formatSpannable(CharSequence charSequence, CharSequence... charSequenceArr) {
-        return charSequence.toString().contains("%s") ? formatSpannableSimple(charSequence, charSequenceArr) : formatSpannable(charSequence, new GenericProvider() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda25
+        return charSequence.toString().contains("%s") ? formatSpannableSimple(charSequence, charSequenceArr) : formatSpannable(charSequence, new GenericProvider() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda32
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
                 String lambda$formatSpannable$15;
@@ -1891,7 +1898,7 @@ public class AndroidUtilities {
     }
 
     public static SpannableStringBuilder formatSpannableSimple(CharSequence charSequence, CharSequence... charSequenceArr) {
-        return formatSpannable(charSequence, new GenericProvider() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda45
+        return formatSpannable(charSequence, new GenericProvider() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda52
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
                 String lambda$formatSpannableSimple$14;
@@ -2185,7 +2192,39 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.proxyCheckDone, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.didSetNewWallpapper, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+    }
+
+    public static Bitmap getBitmapFromRaw(int i) {
+        InputStream inputStream;
+        Bitmap bitmap = null;
+        try {
+            inputStream = ApplicationLoader.applicationContext.getResources().openRawResource(i);
+            try {
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (Throwable th) {
+                th = th;
+                try {
+                    FileLog.e(th);
+                    inputStream.close();
+                    return bitmap;
+                } catch (Throwable th2) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException unused) {
+                    }
+                    throw th2;
+                }
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            inputStream = null;
+        }
+        try {
+            inputStream.close();
+        } catch (IOException unused2) {
+        }
+        return bitmap;
     }
 
     public static void getBitmapFromSurface(Surface surface, Bitmap bitmap) {
@@ -2193,7 +2232,7 @@ public class AndroidUtilities {
             return;
         }
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        PixelCopy.request(surface, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda46
+        PixelCopy.request(surface, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda53
             @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
             public final void onPixelCopyFinished(int i) {
                 countDownLatch.countDown();
@@ -2211,7 +2250,7 @@ public class AndroidUtilities {
             return;
         }
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        PixelCopy.request(surfaceView, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda40
+        PixelCopy.request(surfaceView, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda47
             @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
             public final void onPixelCopyFinished(int i) {
                 countDownLatch.countDown();
@@ -2228,7 +2267,7 @@ public class AndroidUtilities {
         if (surfaceView == null || ApplicationLoader.applicationHandler == null || !surfaceView.getHolder().getSurface().isValid()) {
             return;
         }
-        PixelCopy.request(surfaceView, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda37
+        PixelCopy.request(surfaceView, bitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda44
             @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
             public final void onPixelCopyFinished(int i) {
                 runnable.run();
@@ -2520,7 +2559,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.proxyCheckDone, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.didSetNewWallpapper, i4 / i, i3 / i, i2 / i);
     }
 
     public static String getHostAuthority(Uri uri) {
@@ -2561,7 +2600,7 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.appUpdateAvailable;
+            int i2 = NotificationCenter.webRtcSpeakerAmplitudeEvent;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
@@ -3244,7 +3283,7 @@ public class AndroidUtilities {
 
     public static void googleVoiceClientService_performAction(final Intent intent, boolean z, Bundle bundle) {
         if (z) {
-            runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda41
+            runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda48
                 @Override // java.lang.Runnable
                 public final void run() {
                     AndroidUtilities.lambda$googleVoiceClientService_performAction$2(intent);
@@ -3409,7 +3448,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.proxyCheckDone, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.didSetNewWallpapper, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -3569,6 +3608,17 @@ public class AndroidUtilities {
         return isHonor.booleanValue();
     }
 
+    public static boolean isInPictureInPictureMode(Activity activity) {
+        boolean isInPictureInPictureMode;
+        if (Build.VERSION.SDK_INT >= 24) {
+            isInPictureInPictureMode = activity.isInPictureInPictureMode();
+            if (isInPictureInPictureMode) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static boolean isInternalUri(int i) {
         return isInternalUri(null, i);
     }
@@ -3650,7 +3700,7 @@ public class AndroidUtilities {
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
             builder.setMessage(LocaleController.getString(ApplicationLoader.getMapsProvider().getInstallMapsString()));
-            builder.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda34
+            builder.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda41
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     AndroidUtilities.lambda$isMapsInstalled$10(mapsAppPackageName, baseFragment, alertDialog, i);
@@ -3977,7 +4027,7 @@ public class AndroidUtilities {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$recycleBitmaps$1(final ArrayList arrayList) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda38
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 AndroidUtilities.lambda$recycleBitmaps$0(arrayList);
@@ -4065,7 +4115,7 @@ public class AndroidUtilities {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showProxyAlert$17(final TextDetailSettingsCell textDetailSettingsCell, final long j) {
-        runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda27
+        runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
                 AndroidUtilities.lambda$showProxyAlert$16(j, textDetailSettingsCell);
@@ -4211,6 +4261,17 @@ public class AndroidUtilities {
 
     public static float lerpAngle(float f, float f2, float f3) {
         return ((f + ((((((f2 - f) + 360.0f) + 180.0f) % 360.0f) - 180.0f) * f3)) + 360.0f) % 360.0f;
+    }
+
+    public static void lerpCentered(Rect rect, Rect rect2, float f, Rect rect3) {
+        if (rect3 == null) {
+            return;
+        }
+        float lerp = lerp(rect.centerX(), rect2.centerX(), f);
+        float lerp2 = lerp(rect.centerY(), rect2.centerY(), f);
+        float lerp3 = lerp(rect.width(), rect2.width(), Math.min(1.0f, f)) / 2.0f;
+        float lerp4 = lerp(rect.height(), rect2.height(), Math.min(1.0f, f)) / 2.0f;
+        rect3.set((int) (lerp - lerp3), (int) (lerp2 - lerp4), (int) (lerp + lerp3), (int) (lerp2 + lerp4));
     }
 
     public static void lerpCentered(RectF rectF, RectF rectF2, float f, RectF rectF3) {
@@ -4713,7 +4774,7 @@ public class AndroidUtilities {
             return;
         }
         if (recyclerView.isComputingLayout()) {
-            recyclerView.post(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda44
+            recyclerView.post(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda51
                 @Override // java.lang.Runnable
                 public final void run() {
                     AndroidUtilities.lambda$notifyDataSetChanged$23(RecyclerView.this);
@@ -5062,7 +5123,7 @@ public class AndroidUtilities {
         int i;
         int i2;
         int i3;
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda26
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda33
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$pruneOverlaps$9;
@@ -5173,7 +5234,7 @@ public class AndroidUtilities {
                 arrayList.add(new WeakReference(bitmap));
             }
         }
-        runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda28
+        runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 AndroidUtilities.lambda$recycleBitmaps$1(arrayList);
@@ -5701,6 +5762,27 @@ public class AndroidUtilities {
         altFocusableClassGuid = i;
     }
 
+    public static void resetPictureInPictureParams(Activity activity) {
+        PictureInPictureParams build;
+        int i = Build.VERSION.SDK_INT;
+        if (i < 26 || activity == null || activity.isDestroyed()) {
+            return;
+        }
+        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
+        builder.setSourceRectHint(null);
+        builder.setAspectRatio(null);
+        if (i >= 31) {
+            builder.setSeamlessResizeEnabled(false);
+            builder.setAutoEnterEnabled(false);
+        }
+        try {
+            build = builder.build();
+            activity.setPictureInPictureParams(build);
+        } catch (Throwable th) {
+            FileLog.e(th);
+        }
+    }
+
     public static void resetTabletFlag() {
         if (wasTablet == null) {
             wasTablet = Boolean.valueOf(isTabletInternal());
@@ -5827,7 +5909,7 @@ public class AndroidUtilities {
             Field declaredField = baseFragment.getClass().getDeclaredField("listView");
             declaredField.setAccessible(true);
             final RecyclerListView recyclerListView = (RecyclerListView) declaredField.get(baseFragment);
-            recyclerListView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda29
+            recyclerListView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda36
                 @Override // org.telegram.ui.Components.RecyclerListView.IntReturnCallback
                 public final int run() {
                     int lambda$scrollToFragmentRow$21;
@@ -5955,7 +6037,7 @@ public class AndroidUtilities {
             }
             navigationBarColor = window.getNavigationBarColor();
             ofArgb = ValueAnimator.ofArgb(navigationBarColor, i);
-            ofArgb.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda33
+            ofArgb.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda40
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     AndroidUtilities.lambda$setNavigationBarColor$20(AndroidUtilities.IntColorCallback.this, window, valueAnimator2);
@@ -6200,7 +6282,7 @@ public class AndroidUtilities {
                 waitingForSms = z;
                 if (z) {
                     try {
-                        SmsRetriever.getClient(ApplicationLoader.applicationContext).startSmsRetriever().addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda39
+                        SmsRetriever.getClient(ApplicationLoader.applicationContext).startSmsRetriever().addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda46
                             @Override // com.google.android.gms.tasks.OnSuccessListener
                             public final void onSuccess(Object obj) {
                                 AndroidUtilities.lambda$setWaitingForSms$11((Void) obj);
@@ -6226,7 +6308,7 @@ public class AndroidUtilities {
             ((ValueAnimator) tag).cancel();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda23
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda30
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 AndroidUtilities.lambda$shakeView$12(view, valueAnimator);
@@ -6267,7 +6349,7 @@ public class AndroidUtilities {
         }
         view.setTag(i2, Float.valueOf(view.getTranslationX()));
         final float translationX = view.getTranslationX();
-        SpringAnimation springAnimation = (SpringAnimation) ((SpringAnimation) new SpringAnimation(view, DynamicAnimation.TRANSLATION_X, translationX).setSpring(new SpringForce(translationX).setStiffness(600.0f)).setStartVelocity((-dp) * 100)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda24
+        SpringAnimation springAnimation = (SpringAnimation) ((SpringAnimation) new SpringAnimation(view, DynamicAnimation.TRANSLATION_X, translationX).setSpring(new SpringForce(translationX).setStiffness(600.0f)).setStartVelocity((-dp) * 100)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda31
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
                 AndroidUtilities.lambda$shakeViewSpring$13(runnable, view, translationX, dynamicAnimation, z, f3, f4);
@@ -6404,7 +6486,7 @@ public class AndroidUtilities {
                 linearLayout.addView(textDetailSettingsCell, LayoutHelper.createLinear(-1, -2));
                 if (i3 == 5) {
                     try {
-                        ConnectionsManager.getInstance(UserConfig.selectedAccount).checkProxy(str, Integer.parseInt(str2), str3, str4, str5, new RequestTimeDelegate() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda30
+                        ConnectionsManager.getInstance(UserConfig.selectedAccount).checkProxy(str, Integer.parseInt(str2), str3, str4, str5, new RequestTimeDelegate() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda37
                             @Override // org.telegram.tgnet.RequestTimeDelegate
                             public final void run(long j) {
                                 AndroidUtilities.lambda$showProxyAlert$17(TextDetailSettingsCell.this, j);
@@ -6428,7 +6510,7 @@ public class AndroidUtilities {
         int i4 = Theme.key_dialogTextBlue2;
         textView2.setTextColor(Theme.getColor(i4));
         pickerBottomLayout.cancelButton.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda31
+        pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 dismissRunnable.run();
@@ -6438,7 +6520,7 @@ public class AndroidUtilities {
         pickerBottomLayout.doneButton.setPadding(dp(18.0f), 0, dp(18.0f), 0);
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
         pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString(R.string.ConnectingConnectProxy).toUpperCase());
-        pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda32
+        pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 AndroidUtilities.lambda$showProxyAlert$19(str, str2, str5, str4, str3, activity, dismissRunnable, view2);
@@ -6541,7 +6623,7 @@ public class AndroidUtilities {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
         final AtomicBoolean atomicBoolean = new AtomicBoolean();
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda43
+        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda50
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 AndroidUtilities.lambda$updateImageViewImageAnimated$22(imageView, atomicBoolean, drawable, valueAnimator);

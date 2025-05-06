@@ -10,7 +10,7 @@ abstract class a0 extends b0 {
         this.l = i2;
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.E
     public final /* bridge */ /* synthetic */ IntStream parallel() {
         switch (this.l) {
             case 0:
@@ -23,7 +23,7 @@ abstract class a0 extends b0 {
         return this;
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.E
     public final /* bridge */ /* synthetic */ IntStream sequential() {
         switch (this.l) {
             case 0:
@@ -37,7 +37,7 @@ abstract class a0 extends b0 {
     }
 
     @Override // j$.util.stream.b
-    final boolean w0() {
+    final boolean v0() {
         switch (this.l) {
             case 0:
                 return true;

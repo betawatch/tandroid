@@ -27,6 +27,6 @@ final class O extends Q implements d2 {
 
     @Override // j$.util.stream.d2
     public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
+        u0.i(this, l);
     }
 }

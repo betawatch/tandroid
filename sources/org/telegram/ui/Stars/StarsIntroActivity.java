@@ -82,6 +82,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -2962,7 +2963,11 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$2(Context context, View view) {
-        new StarsOptionsSheet(context, this.resourceProvider).show();
+        if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
+            AccountFrozenAlert.show(this.currentAccount);
+        } else {
+            new StarsOptionsSheet(context, this.resourceProvider).show();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4453,7 +4458,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             return null;
         }
         SpannableStringBuilder spannableStringBuilder = !(charSequence instanceof SpannableStringBuilder) ? new SpannableStringBuilder(charSequence) : (SpannableStringBuilder) charSequence;
-        SpannableString spannableString = new SpannableString("⭐ ");
+        SpannableString spannableString = new SpannableString("⭐ ");
         if (coloredImageSpanArr == null || (coloredImageSpan = coloredImageSpanArr[0]) == null) {
             coloredImageSpan = new ColoredImageSpan(R.drawable.msg_premium_liststar);
             if (coloredImageSpanArr != null) {
@@ -5439,44 +5444,44 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0ad1  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0b5d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0b6f  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0b72  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0b80  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0bdf  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0c13  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0ca4  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0cd4  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0cf6  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0cde  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0caf  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x074b  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x044c  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x04a0  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x04b9  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x04d4  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0521  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0531  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x04fb  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x04bc  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x04a3  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0355  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x030f  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0224  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0237  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0add  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0b69 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0b7b  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0b7e  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0b8c  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0beb  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0c1f  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0cb0  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0ce0  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0d02  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0cea  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0cbb  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0757  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x04a0  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x04d4  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0521  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0531  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x04fb  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x04bc  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x0355  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x031d  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x0237  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x030c  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x031a  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x034b  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x0397  */
     /* JADX WARN: Removed duplicated region for block: B:53:0x0594  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x09e5  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x09f3  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0a04  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0a9e  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0ad7 A[LOOP:0: B:78:0x0a4d->B:88:0x0ad7, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0ae4 A[EDGE_INSN: B:89:0x0ae4->B:90:0x0ae4 BREAK  A[LOOP:0: B:78:0x0a4d->B:88:0x0ad7], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x09f1  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x09ff  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0a10  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0aaa  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0ae3 A[LOOP:0: B:78:0x0a59->B:88:0x0ae3, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0af0 A[EDGE_INSN: B:89:0x0af0->B:90:0x0af0 BREAK  A[LOOP:0: B:78:0x0a59->B:88:0x0ae3], SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r12v11 */
     /* JADX WARN: Type inference failed for: r12v18 */
     /* JADX WARN: Type inference failed for: r4v50 */
@@ -5831,7 +5836,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                                                                 public final void run() {
                                                                     StarsIntroActivity.lambda$showTransactionSheet$33(bottomSheetArr2, starsTransaction, peerDialogId3);
                                                                 }
-                                                            }, (user4 == null || UserObject.isDeleted(user4)) ? null : LocaleController.getString(R.string.Gift2ButtonSendGift), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda31
+                                                            }, (user4 == null || UserObject.isDeleted(user4) || UserObject.areGiftsDisabled(peerDialogId3)) ? null : LocaleController.getString(R.string.Gift2ButtonSendGift), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda31
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     StarsIntroActivity.lambda$showTransactionSheet$34(context, i, peerDialogId3, bottomSheetArr4);
@@ -5862,7 +5867,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                                                             public final void run() {
                                                                 StarsIntroActivity.lambda$showTransactionSheet$37(bottomSheetArr2, starsTransaction, peerDialogId3);
                                                             }
-                                                        }, (user4 == null || UserObject.isDeleted(user4)) ? null : LocaleController.getString(R.string.Gift2ButtonSendGift), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda5
+                                                        }, (user4 == null || UserObject.isDeleted(user4) || UserObject.areGiftsDisabled(peerDialogId3)) ? null : LocaleController.getString(R.string.Gift2ButtonSendGift), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda5
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
                                                                 StarsIntroActivity.lambda$showTransactionSheet$38(context, i, peerDialogId3, bottomSheetArr5);
@@ -7091,8 +7096,13 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
             if (i2 != -3) {
                 if (i2 == -4) {
-                    presentFragment(new ChannelAffiliateProgramsFragment(getUserConfig().getClientUserId()));
-                    return;
+                    if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
+                        AccountFrozenAlert.show(this.currentAccount);
+                        return;
+                    } else {
+                        presentFragment(new ChannelAffiliateProgramsFragment(getUserConfig().getClientUserId()));
+                        return;
+                    }
                 }
                 if (uItem.instanceOf(StarTierView.Factory.class)) {
                     if (uItem.object instanceof TL_stars.TL_starsTopupOption) {

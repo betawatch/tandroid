@@ -102,6 +102,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -534,6 +535,15 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.invalidate();
                 this.chatActivityEnterViewAnimateFromTop = PeerStoriesView.this.chatActivityEnterView.getBackgroundTop();
             }
+        }
+
+        @Override // org.telegram.ui.Components.ChatActivityEnterView
+        protected boolean sendMessageInternal(boolean z, int i, long j, boolean z2) {
+            if (!MessagesController.getInstance(PeerStoriesView.this.currentAccount).isFrozen()) {
+                return super.sendMessageInternal(z, i, j, z2);
+            }
+            AccountFrozenAlert.show(PeerStoriesView.this.currentAccount);
+            return false;
         }
 
         @Override // org.telegram.ui.Components.ChatActivityEnterView
@@ -1195,7 +1205,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
             this.progressToAudio = new AnimatedFloat(this, 150L, cubicBezierInterpolator);
             this.progressToFullBlackoutA = new AnimatedFloat(this, 150L, cubicBezierInterpolator);
-            this.loadingDrawable = new CellFlickerDrawable(32, 102, NotificationCenter.didReplacedPhotoInMemCache);
+            this.loadingDrawable = new CellFlickerDrawable(32, 102, NotificationCenter.closeOtherAppActivities);
             AnimatedFloat animatedFloat = new AnimatedFloat(this);
             this.loadingDrawableAlpha2 = animatedFloat;
             AnimatedFloat animatedFloat2 = new AnimatedFloat(this);
@@ -1486,7 +1496,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.invalidate();
             }
             float hideInterfaceAlpha = PeerStoriesView.this.getHideInterfaceAlpha();
-            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.proxyCheckDone);
+            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.didSetNewWallpapper);
             this.val$sharedResources.topOverlayGradient.draw(canvas);
             PeerStoriesView peerStoriesView8 = PeerStoriesView.this;
             if (peerStoriesView8.isSelf || !peerStoriesView8.BIG_SCREEN || PeerStoriesView.this.storyCaptionView.getVisibility() == 0) {
@@ -3959,7 +3969,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     canvas.translate((getMeasuredWidth() - PeerStoriesView.this.repostCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                     float f = PeerStoriesView.this.repostCounterProgress.set(PeerStoriesView.this.repostCounterVisible ? 1.0f : 0.0f);
                     canvas.scale(f, f, PeerStoriesView.this.repostCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.proxyCheckDone);
+                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.didSetNewWallpapper);
                     PeerStoriesView.this.repostCounter.draw(canvas);
                     canvas.restore();
                 }
@@ -3994,7 +4004,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 canvas.translate((getMeasuredWidth() - PeerStoriesView.this.reactionsCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                 float f = PeerStoriesView.this.reactionsCounterProgress.set(PeerStoriesView.this.reactionsCounterVisible ? 1.0f : 0.0f);
                 canvas.scale(f, f, PeerStoriesView.this.reactionsCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.proxyCheckDone);
+                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.didSetNewWallpapper);
                 PeerStoriesView.this.reactionsCounter.draw(canvas);
                 canvas.restore();
             }
@@ -4185,6 +4195,10 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean applyMessageToChat(final Runnable runnable) {
+        if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
+            AccountFrozenAlert.show(this.currentAccount);
+            return true;
+        }
         int i = SharedConfig.stealthModeSendMessageConfirm;
         if (i <= 0 || !this.stealthModeIsActive) {
             runnable.run();
@@ -4236,7 +4250,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     this.headerView.titleView.setRightDrawable((Drawable) null);
                 } else {
                     Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                    mutate.setAlpha(NotificationCenter.proxyCheckDone);
+                    mutate.setAlpha(NotificationCenter.didSetNewWallpapper);
                     CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, null);
                     combinedDrawable.setFullsize(true);
                     combinedDrawable.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -4267,7 +4281,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             this.headerView.titleView.setText(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
             if (chat != null && chat.verified) {
                 Drawable mutate2 = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                mutate2.setAlpha(NotificationCenter.proxyCheckDone);
+                mutate2.setAlpha(NotificationCenter.didSetNewWallpapper);
                 CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate2, null);
                 combinedDrawable2.setFullsize(true);
                 combinedDrawable2.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -6047,7 +6061,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             if (this.reactionsLongpressTooltip == null) {
                 HintView2 joint = new HintView2(getContext(), 3).setJoint(1.0f, -22.0f);
                 this.reactionsLongpressTooltip = joint;
-                joint.setBgColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(-16777216, -1, 0.13f), NotificationCenter.didReplacedPhotoInMemCache));
+                joint.setBgColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(-16777216, -1, 0.13f), NotificationCenter.closeOtherAppActivities));
                 this.reactionsLongpressTooltip.setBounce(false);
                 this.reactionsLongpressTooltip.setText(LocaleController.getString(R.string.ReactionLongTapHint));
                 this.reactionsLongpressTooltip.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));

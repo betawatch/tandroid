@@ -23,7 +23,7 @@ final class a3 implements Spliterator, Consumer {
 
     @Override // j$.util.Spliterator
     public final void a(Consumer consumer) {
-        this.a.a(new k0(4, this, consumer));
+        this.a.a(new l0(4, this, consumer));
     }
 
     @Override // j$.util.function.Consumer

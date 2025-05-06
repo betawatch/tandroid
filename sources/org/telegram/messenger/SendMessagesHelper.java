@@ -6863,7 +6863,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLObject != null) {
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$335();
+                twoStepVerificationActivity.lambda$onBackPressed$336();
             }
             long fromChatId = messageObject.getFromChatId();
             long j = messageObject.messageOwner.via_bot_id;
@@ -7030,7 +7030,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             } else {
                 if (twoStepVerificationActivity != null) {
                     twoStepVerificationActivity.needHideProgress();
-                    twoStepVerificationActivity.lambda$onBackPressed$335();
+                    twoStepVerificationActivity.lambda$onBackPressed$336();
                     return;
                 }
                 return;
@@ -15053,7 +15053,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             message2.from_id = tL_peerUser;
             tL_peerUser.user_id = getUserConfig().getClientUserId();
-            message2.flags |= NotificationCenter.screenStateChanged;
+            message2.flags |= NotificationCenter.closeSearchByActiveAction;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             message2.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 16;

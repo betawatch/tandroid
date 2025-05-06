@@ -32,7 +32,7 @@ final class l3 extends m3 implements Spliterator {
             return;
         }
         while (j2 > this.d) {
-            this.c.s(new Q1(7));
+            this.c.s(new d0(11));
             this.d++;
         }
         while (this.d < this.e) {
@@ -75,7 +75,7 @@ final class l3 extends m3 implements Spliterator {
             if (j3 <= j) {
                 break;
             }
-            this.c.s(new Q1(6));
+            this.c.s(new d0(10));
             this.d++;
         }
         if (j >= this.e) {

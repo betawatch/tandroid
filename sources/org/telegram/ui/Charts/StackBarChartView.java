@@ -213,7 +213,7 @@ public class StackBarChartView extends BaseChartView {
             for (int i6 = 0; i6 < size; i6++) {
                 LineViewData lineViewData3 = (LineViewData) this.lines.get(i6);
                 lineViewData3.paint.setStrokeWidth(max * f8);
-                lineViewData3.paint.setAlpha(NotificationCenter.proxyCheckDone);
+                lineViewData3.paint.setAlpha(NotificationCenter.didSetNewWallpapper);
                 canvas.drawLines(lineViewData3.linesPath, 0, lineViewData3.linesPathBottomSize, lineViewData3.paint);
             }
         }

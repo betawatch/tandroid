@@ -136,6 +136,16 @@ public class Vector<T extends TLObject> extends TLObject {
         return arrayList;
     }
 
+    public static ArrayList<byte[]> deserializeByteArray(final InputSerializedData inputSerializedData, boolean z) {
+        Objects.requireNonNull(inputSerializedData);
+        return deserialize(inputSerializedData, new Utilities.CallbackReturn() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda6
+            @Override // org.telegram.messenger.Utilities.CallbackReturn
+            public final Object run(Object obj) {
+                return InputSerializedData.this.readByteArray(((Boolean) obj).booleanValue());
+            }
+        }, z);
+    }
+
     public static ArrayList<Integer> deserializeInt(final InputSerializedData inputSerializedData, boolean z) {
         Objects.requireNonNull(inputSerializedData);
         return deserialize(inputSerializedData, new Utilities.CallbackReturn() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda1
@@ -199,7 +209,7 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static void serializeString(final OutputSerializedData outputSerializedData, ArrayList<String> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new Utilities.Callback() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda6
+        serialize(outputSerializedData, new Utilities.Callback() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 OutputSerializedData.this.writeString((String) obj);

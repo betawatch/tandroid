@@ -501,6 +501,25 @@ final class MediaSourceList {
         return this.isPrepared;
     }
 
+    public Timeline moveMediaSourceRange(int i, int i2, int i3, ShuffleOrder shuffleOrder) {
+        Assertions.checkArgument(i >= 0 && i <= i2 && i2 <= getSize() && i3 >= 0);
+        this.shuffleOrder = shuffleOrder;
+        if (i == i2 || i == i3) {
+            return createTimeline();
+        }
+        int min = Math.min(i, i3);
+        int max = Math.max(((i2 - i) + i3) - 1, i2 - 1);
+        int i4 = ((MediaSourceHolder) this.mediaSourceHolders.get(min)).firstWindowIndexInChild;
+        Util.moveItems(this.mediaSourceHolders, i, i2, i3);
+        while (min <= max) {
+            MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) this.mediaSourceHolders.get(min);
+            mediaSourceHolder.firstWindowIndexInChild = i4;
+            i4 += mediaSourceHolder.mediaSource.getTimeline().getWindowCount();
+            min++;
+        }
+        return createTimeline();
+    }
+
     public void prepare(TransferListener transferListener) {
         Assertions.checkState(!this.isPrepared);
         this.mediaTransferListener = transferListener;

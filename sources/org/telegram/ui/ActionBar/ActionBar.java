@@ -842,8 +842,8 @@ public class ActionBar extends FrameLayout {
         return (onTouchListener != null && onTouchListener.onTouch(this, motionEvent)) || super.onInterceptTouchEvent(motionEvent);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0244  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0248  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -856,7 +856,7 @@ public class ActionBar extends FrameLayout {
         int i8;
         int currentActionBarHeight;
         SimpleTextView simpleTextView;
-        int currentActionBarHeight2;
+        int dp;
         int i9 = this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0;
         ImageView imageView = this.backButtonImageView;
         if (imageView == null || imageView.getVisibility() == 8) {
@@ -866,14 +866,18 @@ public class ActionBar extends FrameLayout {
             imageView2.layout(0, i9, imageView2.getMeasuredWidth(), this.backButtonImageView.getMeasuredHeight() + i9);
             f = AndroidUtilities.isTablet() ? 80.0f : 72.0f;
         }
-        int dp = AndroidUtilities.dp(f);
+        int dp2 = AndroidUtilities.dp(f);
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null && actionBarMenu.getVisibility() != 8) {
-            int dp2 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f) : (i3 - i) - this.menu.getMeasuredWidth();
+            int dp3 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f) : (i3 - i) - this.menu.getMeasuredWidth();
             ActionBarMenu actionBarMenu2 = this.menu;
-            actionBarMenu2.layout(dp2, i9, actionBarMenu2.getMeasuredWidth() + dp2, this.menu.getMeasuredHeight() + i9);
+            actionBarMenu2.layout(dp3, i9, actionBarMenu2.getMeasuredWidth() + dp3, this.menu.getMeasuredHeight() + i9);
         }
-        for (int i10 = 0; i10 < 2; i10++) {
+        int i10 = 0;
+        while (true) {
+            if (i10 >= 2) {
+                break;
+            }
             SimpleTextView simpleTextView2 = this.titleTextView[i10];
             if (simpleTextView2 != null && simpleTextView2.getVisibility() != 8) {
                 boolean z2 = this.fromBottom;
@@ -886,66 +890,63 @@ public class ActionBar extends FrameLayout {
                         currentActionBarHeight = getCurrentActionBarHeight();
                         simpleTextView = this.titleTextView[i10];
                     } else {
-                        currentActionBarHeight2 = (((getCurrentActionBarHeight() / 2) - this.titleTextView[i10].getTextHeight()) / 2) + AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 3.0f : 2.0f);
+                        dp = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 3.0f : 2.0f) + (((getCurrentActionBarHeight() / 2) - this.titleTextView[i10].getTextHeight()) / 2) + AndroidUtilities.dp(2.0f);
                         SimpleTextView simpleTextView4 = this.titleTextView[i10];
-                        int i11 = currentActionBarHeight2 + i9;
-                        simpleTextView4.layout(dp, i11 - simpleTextView4.getPaddingTop(), this.titleTextView[i10].getMeasuredWidth() + dp, ((i11 + this.titleTextView[i10].getTextHeight()) - this.titleTextView[i10].getPaddingTop()) + this.titleTextView[i10].getPaddingBottom());
+                        int i11 = dp + i9;
+                        simpleTextView4.layout(dp2, i11 - simpleTextView4.getPaddingTop(), this.titleTextView[i10].getMeasuredWidth() + dp2, ((i11 + this.titleTextView[i10].getTextHeight()) - this.titleTextView[i10].getPaddingTop()) + this.titleTextView[i10].getPaddingBottom());
                     }
                 }
-                currentActionBarHeight2 = (currentActionBarHeight - simpleTextView.getTextHeight()) / 2;
+                dp = (currentActionBarHeight - simpleTextView.getTextHeight()) / 2;
                 SimpleTextView simpleTextView42 = this.titleTextView[i10];
-                int i112 = currentActionBarHeight2 + i9;
-                simpleTextView42.layout(dp, i112 - simpleTextView42.getPaddingTop(), this.titleTextView[i10].getMeasuredWidth() + dp, ((i112 + this.titleTextView[i10].getTextHeight()) - this.titleTextView[i10].getPaddingTop()) + this.titleTextView[i10].getPaddingBottom());
+                int i112 = dp + i9;
+                simpleTextView42.layout(dp2, i112 - simpleTextView42.getPaddingTop(), this.titleTextView[i10].getMeasuredWidth() + dp2, ((i112 + this.titleTextView[i10].getTextHeight()) - this.titleTextView[i10].getPaddingTop()) + this.titleTextView[i10].getPaddingBottom());
             }
+            i10++;
         }
         SimpleTextView simpleTextView5 = this.subtitleTextView;
         if (simpleTextView5 != null && simpleTextView5.getVisibility() != 8) {
-            int currentActionBarHeight3 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.subtitleTextView.getTextHeight()) / 2);
-            if (!AndroidUtilities.isTablet()) {
-                int i12 = getResources().getConfiguration().orientation;
-            }
-            int dp3 = currentActionBarHeight3 - AndroidUtilities.dp(1.0f);
+            int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.subtitleTextView.getTextHeight()) / 2)) - AndroidUtilities.dp(2.0f);
             SimpleTextView simpleTextView6 = this.subtitleTextView;
-            int i13 = dp3 + i9;
-            simpleTextView6.layout(dp, i13, simpleTextView6.getMeasuredWidth() + dp, this.subtitleTextView.getTextHeight() + i13);
+            int i12 = currentActionBarHeight2 + i9;
+            simpleTextView6.layout(dp2, i12, simpleTextView6.getMeasuredWidth() + dp2, this.subtitleTextView.getTextHeight() + i12);
         }
         SimpleTextView simpleTextView7 = this.additionalSubtitleTextView;
         if (simpleTextView7 != null && simpleTextView7.getVisibility() != 8) {
-            int currentActionBarHeight4 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubtitleTextView.getTextHeight()) / 2);
+            int currentActionBarHeight3 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubtitleTextView.getTextHeight()) / 2);
             if (!AndroidUtilities.isTablet()) {
-                int i14 = getResources().getConfiguration().orientation;
+                int i13 = getResources().getConfiguration().orientation;
             }
-            int dp4 = currentActionBarHeight4 - AndroidUtilities.dp(1.0f);
+            int dp4 = currentActionBarHeight3 - AndroidUtilities.dp(1.0f);
             SimpleTextView simpleTextView8 = this.additionalSubtitleTextView;
-            int i15 = dp4 + i9;
-            simpleTextView8.layout(dp, i15, simpleTextView8.getMeasuredWidth() + dp, this.additionalSubtitleTextView.getTextHeight() + i15);
+            int i14 = dp4 + i9;
+            simpleTextView8.layout(dp2, i14, simpleTextView8.getMeasuredWidth() + dp2, this.additionalSubtitleTextView.getTextHeight() + i14);
         }
         BackupImageView backupImageView = this.avatarSearchImageView;
         if (backupImageView != null) {
             backupImageView.layout(AndroidUtilities.dp(64.0f), ((getCurrentActionBarHeight() - this.avatarSearchImageView.getMeasuredHeight()) / 2) + i9, AndroidUtilities.dp(64.0f) + this.avatarSearchImageView.getMeasuredWidth(), i9 + ((getCurrentActionBarHeight() + this.avatarSearchImageView.getMeasuredHeight()) / 2));
         }
         int childCount = getChildCount();
-        for (int i16 = 0; i16 < childCount; i16++) {
-            View childAt = getChildAt(i16);
+        for (int i15 = 0; i15 < childCount; i15++) {
+            View childAt = getChildAt(i15);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
                 if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                     int measuredWidth = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
-                    int i17 = layoutParams.gravity;
-                    if (i17 == -1) {
-                        i17 = 51;
+                    int i16 = layoutParams.gravity;
+                    if (i16 == -1) {
+                        i16 = 51;
                     }
-                    int i18 = i17 & 112;
-                    int i19 = i17 & 7;
-                    if (i19 == 1) {
+                    int i17 = i16 & 112;
+                    int i18 = i16 & 7;
+                    if (i18 == 1) {
                         i5 = (((i3 - i) - measuredWidth) / 2) + layoutParams.leftMargin;
-                    } else if (i19 != 5) {
+                    } else if (i18 != 5) {
                         i6 = layoutParams.leftMargin;
-                        if (i18 != 16) {
+                        if (i17 != 16) {
                             i7 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
-                        } else if (i18 != 80) {
+                        } else if (i17 != 80) {
                             i8 = layoutParams.topMargin;
                             childAt.layout(i6, i8, measuredWidth + i6, measuredHeight + i8);
                         } else {
@@ -957,7 +958,7 @@ public class ActionBar extends FrameLayout {
                         i5 = i3 - measuredWidth;
                     }
                     i6 = i5 - layoutParams.rightMargin;
-                    if (i18 != 16) {
+                    if (i17 != 16) {
                     }
                     i8 = i7 - layoutParams.bottomMargin;
                     childAt.layout(i6, i8, measuredWidth + i6, measuredHeight + i8);

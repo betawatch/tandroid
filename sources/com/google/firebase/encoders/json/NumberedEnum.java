@@ -1,6 +1,6 @@
 package com.google.firebase.encoders.json;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface NumberedEnum {
     int getNumber();
 }

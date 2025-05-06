@@ -1,42 +1,41 @@
 package j$.util.stream;
 
-import j$.util.function.BiFunction;
 import j$.util.function.Consumer;
+import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class B1 extends O1 implements N1 {
-    final /* synthetic */ Object b;
-    final /* synthetic */ BiFunction c;
+final class B1 extends P1 implements O1, b2 {
+    final /* synthetic */ Supplier b;
+    final /* synthetic */ j$.util.function.f0 c;
     final /* synthetic */ j$.util.function.f d;
 
-    B1(Object obj, BiFunction biFunction, j$.util.function.f fVar) {
-        this.b = obj;
-        this.c = biFunction;
+    B1(Supplier supplier, j$.util.function.f0 f0Var, j$.util.function.f fVar) {
+        this.b = supplier;
+        this.c = f0Var;
         this.d = fVar;
     }
 
     @Override // j$.util.stream.e2, j$.util.function.m
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+    public final void accept(double d) {
+        this.c.accept(this.a, d);
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
     @Override // j$.util.function.Consumer
     /* renamed from: accept */
-    public final void r(Object obj) {
-        this.a = this.c.apply(this.a, obj);
+    public final /* bridge */ /* synthetic */ void r(Object obj) {
+        r((Double) obj);
     }
 
     @Override // j$.util.function.Consumer
@@ -44,9 +43,14 @@ final class B1 extends O1 implements N1 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        this.a = this.d.apply(this.a, ((B1) n1).a);
+    @Override // j$.util.stream.O1
+    public final void h(O1 o1) {
+        this.a = this.d.apply(this.a, ((B1) o1).a);
+    }
+
+    @Override // j$.util.function.m
+    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
+        return j$.com.android.tools.r8.a.b(this, mVar);
     }
 
     @Override // j$.util.stream.e2
@@ -55,11 +59,16 @@ final class B1 extends O1 implements N1 {
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        this.a = this.b;
+        this.a = this.b.get();
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ boolean q() {
         return false;
+    }
+
+    @Override // j$.util.stream.b2
+    public final /* synthetic */ void r(Double d) {
+        u0.e(this, d);
     }
 }

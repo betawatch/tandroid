@@ -36,7 +36,7 @@ public final /* synthetic */ class Z implements c0 {
     }
 
     @Override // j$.util.function.c0
-    public final c0 c(c0 c0Var) {
+    public final c0 b(c0 c0Var) {
         switch (this.a) {
             case 0:
                 c0Var.getClass();

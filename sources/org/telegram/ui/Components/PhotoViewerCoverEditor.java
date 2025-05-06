@@ -211,7 +211,7 @@ public class PhotoViewerCoverEditor extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
         if (this.gallerySheet == null) {
-            GallerySheet gallerySheet = new GallerySheet(context, resourcesProvider, this.aspectRatio);
+            GallerySheet gallerySheet = new GallerySheet(context, resourcesProvider, LocaleController.getString(R.string.VideoChooseCover), true, this.aspectRatio);
             this.gallerySheet = gallerySheet;
             gallerySheet.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerCoverEditor$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable

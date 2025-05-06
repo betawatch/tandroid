@@ -25,7 +25,7 @@ final class h3 extends k3 implements j$.util.D {
 
     @Override // j$.util.stream.k3
     protected final Object f() {
-        return new y0(1);
+        return new z0(1);
     }
 
     @Override // j$.util.Spliterator

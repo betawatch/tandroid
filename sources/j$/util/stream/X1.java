@@ -13,13 +13,13 @@ public abstract class X1 implements b2 {
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
@@ -56,6 +56,6 @@ public abstract class X1 implements b2 {
 
     @Override // j$.util.stream.b2
     public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+        u0.e(this, d);
     }
 }

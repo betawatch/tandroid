@@ -14,22 +14,22 @@ abstract class Q implements w3, x3 {
     @Override // j$.util.stream.w3
     public final Object a(b bVar, Spliterator spliterator) {
         bVar.getClass();
-        bVar.g0(spliterator, bVar.C0(this));
+        bVar.f0(spliterator, bVar.B0(this));
         return null;
     }
 
     public /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     public /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     public /* synthetic */ void accept(long j) {
-        t0.l();
+        u0.l();
         throw null;
     }
 
@@ -40,7 +40,7 @@ abstract class Q implements w3, x3 {
 
     @Override // j$.util.stream.w3
     public final Object c(b bVar, Spliterator spliterator) {
-        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.C0(this))).invoke();
+        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.B0(this))).invoke();
         return null;
     }
 

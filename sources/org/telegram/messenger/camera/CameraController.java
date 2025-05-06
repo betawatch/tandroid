@@ -304,7 +304,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.appUpdateAvailable;
+                    return NotificationCenter.webRtcSpeakerAmplitudeEvent;
                 }
                 i5 += 12;
                 i6 -= 12;

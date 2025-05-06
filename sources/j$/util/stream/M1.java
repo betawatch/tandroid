@@ -3,35 +3,31 @@ package j$.util.stream;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class M1 implements N1, d2 {
-    private boolean a;
-    private long b;
+final class M1 implements O1, d2 {
+    private long a;
+    final /* synthetic */ long b;
     final /* synthetic */ j$.util.function.O c;
 
-    M1(j$.util.function.O o) {
+    M1(long j, j$.util.function.O o) {
+        this.b = j;
         this.c = o;
     }
 
     @Override // j$.util.stream.e2, j$.util.function.m
     public final /* synthetic */ void accept(double d) {
-        t0.b();
+        u0.b();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        u0.k();
         throw null;
     }
 
     @Override // j$.util.stream.e2
     public final void accept(long j) {
-        if (this.a) {
-            this.a = false;
-        } else {
-            j = this.c.applyAsLong(this.b, j);
-        }
-        this.b = j;
+        this.a = this.c.applyAsLong(this.a, j);
     }
 
     @Override // j$.util.function.Consumer
@@ -52,21 +48,17 @@ final class M1 implements N1, d2 {
 
     @Override // j$.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.l.a() : j$.util.l.d(this.b);
+        return Long.valueOf(this.a);
     }
 
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        M1 m1 = (M1) n1;
-        if (m1.a) {
-            return;
-        }
-        accept(m1.b);
+    @Override // j$.util.stream.O1
+    public final void h(O1 o1) {
+        accept(((M1) o1).a);
     }
 
     @Override // j$.util.stream.d2
     public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
+        u0.i(this, l);
     }
 
     @Override // j$.util.stream.e2
@@ -75,8 +67,7 @@ final class M1 implements N1, d2 {
 
     @Override // j$.util.stream.e2
     public final void n(long j) {
-        this.a = true;
-        this.b = 0L;
+        this.a = this.b;
     }
 
     @Override // j$.util.stream.e2

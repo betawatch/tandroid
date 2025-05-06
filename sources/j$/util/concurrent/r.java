@@ -6,7 +6,7 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.t0;
+import j$.util.stream.u0;
 import java.util.Iterator;
 
 /* loaded from: classes2.dex */
@@ -64,14 +64,14 @@ final class r extends b implements Collection {
     @Override // java.util.Collection, j$.util.Collection
     public final /* synthetic */ Stream parallelStream() {
         Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
+        e0 = u0.e0(Collection.-EL.b(this), true);
         return e0;
     }
 
     @Override // java.util.Collection
     public final /* synthetic */ java.util.stream.Stream parallelStream() {
         Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
+        e0 = u0.e0(Collection.-EL.b(this), true);
         return Stream.Wrapper.convert(e0);
     }
 

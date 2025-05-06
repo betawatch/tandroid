@@ -4,6 +4,7 @@ import j$.util.Spliterators;
 import j$.util.function.Consumer;
 import java.util.Arrays;
 import java.util.Iterator;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
 class H2 extends N2 implements j$.util.function.m {
@@ -61,7 +62,7 @@ class H2 extends N2 implements j$.util.function.m {
         if (dArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(dArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, 200)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, NotificationCenter.storyQualityUpdate)));
     }
 
     @Override // j$.util.stream.N2

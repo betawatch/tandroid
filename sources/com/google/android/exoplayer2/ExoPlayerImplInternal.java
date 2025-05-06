@@ -6,7 +6,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Pair;
-import androidx.recyclerview.widget.RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.exoplayer2.DefaultMediaClock;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.MediaSourceList;
@@ -108,6 +107,17 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
     }
 
     private static class MoveMediaItemsMessage {
+        public final int fromIndex;
+        public final int newFromIndex;
+        public final ShuffleOrder shuffleOrder;
+        public final int toIndex;
+
+        public MoveMediaItemsMessage(int i, int i2, int i3, ShuffleOrder shuffleOrder) {
+            this.fromIndex = i;
+            this.toIndex = i2;
+            this.newFromIndex = i3;
+            this.shuffleOrder = shuffleOrder;
+        }
     }
 
     private static final class PendingMessageInfo implements Comparable {
@@ -1154,7 +1164,7 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
 
     private void moveMediaItemsInternal(MoveMediaItemsMessage moveMediaItemsMessage) {
         this.playbackInfoUpdate.incrementPendingOperationAcks(1);
-        throw null;
+        handleMediaSourceListInfoRefreshed(this.mediaSourceList.moveMediaSourceRange(moveMediaItemsMessage.fromIndex, moveMediaItemsMessage.toIndex, moveMediaItemsMessage.newFromIndex, moveMediaItemsMessage.shuffleOrder), false);
     }
 
     private void notifyTrackSelectionDiscontinuity() {
@@ -2221,6 +2231,10 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
         }
     }
 
+    public void addMediaSources(int i, List list, ShuffleOrder shuffleOrder) {
+        this.handler.obtainMessage(18, i, 0, new MediaSourceListUpdateMessage(list, shuffleOrder, -1, -9223372036854775807L)).sendToTarget();
+    }
+
     public void experimentalSetForegroundModeTimeoutMs(long j) {
         this.setForegroundModeTimeoutMs = j;
     }
@@ -2296,8 +2310,7 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
                     addMediaItemsInternal((MediaSourceListUpdateMessage) message.obj, message.arg1);
                     break;
                 case 19:
-                    RecyclerView$ItemAnimator$$ExternalSyntheticThrowCCEIfNotNull0.m(message.obj);
-                    moveMediaItemsInternal(null);
+                    moveMediaItemsInternal((MoveMediaItemsMessage) message.obj);
                     break;
                 case 20:
                     removeMediaItemsInternal(message.arg1, message.arg2, (ShuffleOrder) message.obj);
@@ -2375,6 +2388,10 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
         }
         maybeNotifyPlaybackInfoChanged();
         return true;
+    }
+
+    public void moveMediaSources(int i, int i2, int i3, ShuffleOrder shuffleOrder) {
+        this.handler.obtainMessage(19, new MoveMediaItemsMessage(i, i2, i3, shuffleOrder)).sendToTarget();
     }
 
     @Override // com.google.android.exoplayer2.source.SequenceableLoader.Callback
@@ -2458,6 +2475,10 @@ final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callb
 
     public void setSeekParameters(SeekParameters seekParameters) {
         this.handler.obtainMessage(5, seekParameters).sendToTarget();
+    }
+
+    public void setShuffleModeEnabled(boolean z) {
+        this.handler.obtainMessage(12, z ? 1 : 0, 0).sendToTarget();
     }
 
     public void stop() {

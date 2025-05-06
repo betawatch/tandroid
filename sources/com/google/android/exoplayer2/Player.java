@@ -1,6 +1,7 @@
 package com.google.android.exoplayer2;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.TextureView;
@@ -9,6 +10,7 @@ import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.metadata.Metadata;
 import com.google.android.exoplayer2.text.CueGroup;
+import com.google.android.exoplayer2.trackselection.TrackSelectionParameters;
 import com.google.android.exoplayer2.util.FlagSet;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.exoplayer2.video.VideoListener;
@@ -83,6 +85,10 @@ public interface Player {
             return builder.build();
         }
 
+        public boolean contains(int i) {
+            return this.flags.contains(i);
+        }
+
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -116,6 +122,14 @@ public interface Player {
             this.flags = flagSet;
         }
 
+        public boolean contains(int i) {
+            return this.flags.contains(i);
+        }
+
+        public boolean containsAny(int... iArr) {
+            return this.flags.containsAny(iArr);
+        }
+
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -135,6 +149,9 @@ public interface Player {
 
         public abstract /* synthetic */ class -CC {
             public static void $default$onAudioAttributesChanged(Listener listener, AudioAttributes audioAttributes) {
+            }
+
+            public static void $default$onAudioSessionIdChanged(Listener listener, int i) {
             }
 
             public static void $default$onAvailableCommandsChanged(Listener listener, Commands commands) {
@@ -164,6 +181,9 @@ public interface Player {
             public static void $default$onLoadingChanged(Listener listener, boolean z) {
             }
 
+            public static void $default$onMaxSeekToPreviousPositionChanged(Listener listener, long j) {
+            }
+
             public static void $default$onMediaItemTransition(Listener listener, MediaItem mediaItem, int i) {
             }
 
@@ -191,6 +211,12 @@ public interface Player {
             public static void $default$onPlayerErrorChanged(Listener listener, PlaybackException playbackException) {
             }
 
+            public static void $default$onPlayerStateChanged(Listener listener, boolean z, int i) {
+            }
+
+            public static void $default$onPlaylistMetadataChanged(Listener listener, MediaMetadata mediaMetadata) {
+            }
+
             public static void $default$onPositionDiscontinuity(Listener listener, int i) {
             }
 
@@ -203,7 +229,16 @@ public interface Player {
             public static void $default$onRepeatModeChanged(Listener listener, int i) {
             }
 
+            public static void $default$onSeekBackIncrementChanged(Listener listener, long j) {
+            }
+
+            public static void $default$onSeekForwardIncrementChanged(Listener listener, long j) {
+            }
+
             public static void $default$onSeekProcessed(Listener listener) {
+            }
+
+            public static void $default$onShuffleModeEnabledChanged(Listener listener, boolean z) {
             }
 
             public static void $default$onSkipSilenceEnabledChanged(Listener listener, boolean z) {
@@ -213,6 +248,9 @@ public interface Player {
             }
 
             public static void $default$onTimelineChanged(Listener listener, Timeline timeline, int i) {
+            }
+
+            public static void $default$onTrackSelectionParametersChanged(Listener listener, TrackSelectionParameters trackSelectionParameters) {
             }
 
             public static void $default$onTracksChanged(Listener listener, Tracks tracks) {
@@ -274,6 +312,8 @@ public interface Player {
         void onRepeatModeChanged(int i);
 
         void onSeekProcessed();
+
+        void onShuffleModeEnabledChanged(boolean z);
 
         void onSkipSilenceEnabledChanged(boolean z);
 
@@ -373,9 +413,19 @@ public interface Player {
 
     void addListener(Listener listener);
 
+    void addMediaItem(int i, MediaItem mediaItem);
+
+    void addMediaItems(int i, List list);
+
     void addVideoListener(VideoListener videoListener);
 
+    void clearMediaItems();
+
     void clearVideoTextureView(TextureView textureView);
+
+    Looper getApplicationLooper();
+
+    Commands getAvailableCommands();
 
     long getBufferedPosition();
 
@@ -384,6 +434,8 @@ public interface Player {
     int getCurrentAdGroupIndex();
 
     int getCurrentAdIndexInAdGroup();
+
+    MediaItem getCurrentMediaItem();
 
     int getCurrentMediaItemIndex();
 
@@ -397,6 +449,8 @@ public interface Player {
 
     long getDuration();
 
+    long getMaxSeekToPreviousPosition();
+
     boolean getPlayWhenReady();
 
     PlaybackParameters getPlaybackParameters();
@@ -409,15 +463,23 @@ public interface Player {
 
     int getRepeatMode();
 
+    long getSeekBackIncrement();
+
+    long getSeekForwardIncrement();
+
     boolean getShuffleModeEnabled();
 
     long getTotalBufferedDuration();
+
+    VideoSize getVideoSize();
 
     float getVolume();
 
     boolean hasNextMediaItem();
 
     boolean hasPreviousMediaItem();
+
+    boolean isCommandAvailable(int i);
 
     boolean isCurrentMediaItemDynamic();
 
@@ -429,6 +491,10 @@ public interface Player {
 
     boolean isPlayingAd();
 
+    void moveMediaItem(int i, int i2);
+
+    void moveMediaItems(int i, int i2, int i3);
+
     void pause();
 
     void play();
@@ -437,13 +503,33 @@ public interface Player {
 
     void release();
 
+    void removeListener(Listener listener);
+
+    void removeMediaItem(int i);
+
+    void removeMediaItems(int i, int i2);
+
+    void seekBack();
+
+    void seekForward();
+
+    void seekTo(int i, long j);
+
     void seekTo(long j);
+
+    void seekToDefaultPosition(int i);
+
+    void seekToNext();
+
+    void seekToPrevious();
 
     void setPlayWhenReady(boolean z);
 
     void setPlaybackParameters(PlaybackParameters playbackParameters);
 
     void setRepeatMode(int i);
+
+    void setShuffleModeEnabled(boolean z);
 
     void setVideoSurface(Surface surface);
 
@@ -452,4 +538,6 @@ public interface Player {
     void setVideoTextureView(TextureView textureView);
 
     void setVolume(float f);
+
+    void stop();
 }
