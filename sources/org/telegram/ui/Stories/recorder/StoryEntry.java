@@ -618,7 +618,7 @@ public class StoryEntry {
                     hDRInfo.colorRange = trackFormat.getInteger("color-range");
                 }
                 this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
+                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.this.lambda$detectHDR$12(callback);
@@ -627,7 +627,7 @@ public class StoryEntry {
             } catch (Exception e) {
                 FileLog.e(e);
                 this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
+                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.this.lambda$detectHDR$12(callback);
@@ -637,7 +637,7 @@ public class StoryEntry {
             AndroidUtilities.runOnUIThread(runnable);
         } catch (Throwable th) {
             this.hdrInfo = this.hdrInfo;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryEntry.this.lambda$detectHDR$12(callback);
@@ -1877,7 +1877,7 @@ public class StoryEntry {
         final String absolutePath = file == null ? null : file.getAbsolutePath();
         final int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, isCollage() ? this.collageContent.size() : 0), 11);
         iArr[0] = new int[11];
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda12
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 StoryEntry.this.lambda$getVideoEditedInfo$9(absolutePath, iArr, callback);
@@ -1888,7 +1888,7 @@ public class StoryEntry {
                 runnable.run();
                 return;
             } else {
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.lambda$getVideoEditedInfo$11(absolutePath, iArr, runnable);
@@ -1902,7 +1902,7 @@ public class StoryEntry {
             strArr[i2] = ((StoryEntry) this.collageContent.get(i2)).file == null ? null : ((StoryEntry) this.collageContent.get(i2)).file.getAbsolutePath();
             iArr[i2] = new int[11];
         }
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 StoryEntry.lambda$getVideoEditedInfo$10(strArr, iArr, runnable);

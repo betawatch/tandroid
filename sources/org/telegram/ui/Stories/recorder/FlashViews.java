@@ -116,7 +116,7 @@ public class FlashViews {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.invert, f);
         this.animator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda5
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 FlashViews.this.lambda$flashTo$4(valueAnimator2);
@@ -200,7 +200,7 @@ public class FlashViews {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$flash$1(final Runnable runnable) {
         setScreenBrightness(-1.0f);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda4
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 FlashViews.this.lambda$flash$0(runnable);
@@ -210,7 +210,7 @@ public class FlashViews {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$flash$2(Utilities.Callback callback) {
-        callback.run(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda8
+        callback.run(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 FlashViews.this.lambda$flash$1((Runnable) obj);
@@ -220,7 +220,7 @@ public class FlashViews {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$flash$3(final Utilities.Callback callback) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 FlashViews.this.lambda$flash$2(callback);
@@ -291,7 +291,7 @@ public class FlashViews {
 
     public void flash(final Utilities.Callback callback) {
         setScreenBrightness(intensityValue());
-        flashTo(1.0f, 320L, new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda6
+        flashTo(1.0f, 320L, new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 FlashViews.this.lambda$flash$3(callback);

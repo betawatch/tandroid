@@ -131,7 +131,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     private final LinkSpanDrawable.LinksTextView beforeTableTextView;
     private final FrameLayout bottomBulletinContainer;
     private final View bottomView;
-    private Utilities.Callback boughtGift;
+    private Utilities.Callback2 boughtGift;
     private final ButtonWithCounterView button;
     private final FrameLayout buttonContainer;
     private final View buttonShadow;
@@ -3125,24 +3125,24 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBuyPressed$118(Browser.Progress progress, TL_stars.TL_starGiftUnique tL_starGiftUnique, Boolean bool, String str) {
+    public /* synthetic */ void lambda$onBuyPressed$118(Browser.Progress progress, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, Boolean bool, String str) {
         progress.end();
         if (bool.booleanValue()) {
-            Utilities.Callback callback = this.boughtGift;
-            if (callback != null) {
-                callback.run(tL_starGiftUnique);
+            Utilities.Callback2 callback2 = this.boughtGift;
+            if (callback2 != null) {
+                callback2.run(tL_starGiftUnique, Long.valueOf(j));
             }
             lambda$new$0();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBuyPressed$119(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final Browser.Progress progress) {
+    public /* synthetic */ void lambda$onBuyPressed$119(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final long j, final Browser.Progress progress) {
         progress.init();
-        StarsController.getInstance(this.currentAccount).buyResellingGift(tL_starGiftUnique, this.dialogId, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda80
+        StarsController.getInstance(this.currentAccount).buyResellingGift(tL_starGiftUnique, j, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda83
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                StarGiftSheet.this.lambda$onBuyPressed$118(progress, tL_starGiftUnique, (Boolean) obj, (String) obj2);
+                StarGiftSheet.this.lambda$onBuyPressed$118(progress, tL_starGiftUnique, j, (Boolean) obj, (String) obj2);
             }
         });
     }
@@ -3656,7 +3656,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openUpgrade$75(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda81
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda80
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$openUpgrade$74(tLObject, tL_error);
@@ -4029,7 +4029,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$toggleShow$65(final TLRPC.Document document, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda83
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda82
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$toggleShow$64(tLObject, document, z, tL_error);
@@ -4325,7 +4325,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 } else {
                     this.button.setText(LocaleController.getString(R.string.Confirm), true);
                 }
-                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda82
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda81
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         StarGiftSheet.this.lambda$openUpgradeAfter$76(view);
@@ -4807,10 +4807,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     public void onBuyPressed() {
         final TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
-        openBuyAlert(this.dialogId, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda42
+        final long clientUserId = (this.slugStarGift == null || !this.resale) ? UserConfig.getInstance(this.currentAccount).getClientUserId() : this.dialogId;
+        openBuyAlert(clientUserId, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda42
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StarGiftSheet.this.lambda$onBuyPressed$119(uniqueGift, (Browser.Progress) obj);
+                StarGiftSheet.this.lambda$onBuyPressed$119(uniqueGift, clientUserId, (Browser.Progress) obj);
             }
         });
     }
@@ -6247,8 +6248,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.actionBar.setTitle(getTitle());
     }
 
-    public StarGiftSheet setOnBoughtGift(Utilities.Callback callback) {
-        this.boughtGift = callback;
+    public StarGiftSheet setOnBoughtGift(Utilities.Callback2 callback2) {
+        this.boughtGift = callback2;
         return this;
     }
 
