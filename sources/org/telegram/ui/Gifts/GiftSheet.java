@@ -2348,12 +2348,12 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0324, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x033b, code lost:
     
-        if (r8.giftsLoading != false) goto L163;
+        if (r8.giftsLoading != false) goto L168;
      */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x032b  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x032e  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0345  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2461,6 +2461,11 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             if ((disallowedGiftsSettings7 == null || !disallowedGiftsSettings7.disallow_unique_stargifts) && z2) {
                 this.TAB_MY_GIFTS = arrayList4.size();
                 arrayList4.add(LocaleController.getString(R.string.Gift2TabMine));
+            }
+            TLRPC.DisallowedGiftsSettings disallowedGiftsSettings8 = this.userSettings;
+            if (disallowedGiftsSettings8 == null || !disallowedGiftsSettings8.disallow_limited_stargifts) {
+                this.TAB_LIMITED = arrayList4.size();
+                arrayList4.add(LocaleController.getString(R.string.Gift2TabLimited));
             }
             if (z3) {
                 this.TAB_RESALE = arrayList4.size();

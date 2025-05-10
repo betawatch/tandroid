@@ -804,6 +804,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         public void reload() {
             cancel();
             this.last_offset = null;
+            this.gifts.clear();
             load(true);
             Utilities.Callback callback = this.onUpdate;
             if (callback != null) {
