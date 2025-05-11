@@ -364,6 +364,9 @@ public class TLRPC {
                 case TL_channelAdminLogEventActionChangeAvailableReactions.constructor /* -1102180616 */:
                     tL_channelAdminLogEventActionStopPoll = new TL_channelAdminLogEventActionChangeAvailableReactions();
                     break;
+                case TL_channelAdminLogEventActionToggleAutotranslation.constructor /* -988285058 */:
+                    tL_channelAdminLogEventActionStopPoll = new TL_channelAdminLogEventActionToggleAutotranslation();
+                    break;
                 case TL_channelAdminLogEventActionToggleNoForwards.constructor /* -886388890 */:
                     tL_channelAdminLogEventActionStopPoll = new TL_channelAdminLogEventActionToggleNoForwards();
                     break;
@@ -9823,6 +9826,22 @@ public class TLRPC {
 
     public static class TL_channelAdminLogEventActionToggleAntiSpam extends ChannelAdminLogEventAction {
         public static final int constructor = 1693675004;
+        public boolean new_value;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.new_value = inputSerializedData.readBool(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeBool(this.new_value);
+        }
+    }
+
+    public static class TL_channelAdminLogEventActionToggleAutotranslation extends ChannelAdminLogEventAction {
+        public static final int constructor = -988285058;
         public boolean new_value;
 
         @Override // org.telegram.tgnet.TLObject

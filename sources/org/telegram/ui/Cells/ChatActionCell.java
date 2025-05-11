@@ -2084,51 +2084,52 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         this.reactionsLayoutInBubble.onDetachFromWindow();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:312:0x0320, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:315:0x0320, code lost:
     
         if (r0.getCurrentImageProgress() == 1.0f) goto L95;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x035f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:317:0x035f, code lost:
     
         r42.radialProgress.setIcon(3, true, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x0358, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:319:0x0358, code lost:
     
         r42.radialProgress.setIcon(4, true, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:320:0x0356, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:323:0x0356, code lost:
     
         if (r0 == 1.0f) goto L95;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0532  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0547  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x09d3  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x09da  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x09e9  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x09f6  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0a3c  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0ada  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0b01  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0b52  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0b9c  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0c26  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0c5c  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x0c99  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0d02  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0cc8  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0cd4  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0cd8  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0ccc  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0c9e  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0c72  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0bf8  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0ae9  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0a0a  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0826  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x051d  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0456  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x04a9  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0538  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x054b  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0a0c  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0a13  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0a22  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0a2f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0a75  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0b13  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0b3a  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0b8b  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0bd5  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0c5f  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0c95  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0cd2  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0d3b  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0d01  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0d0d  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0d11  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0d05  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0cd7  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0cab  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0c31  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0b22  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0a43  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x085f  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x0523  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x045c  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0430  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x043d  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x04af  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2322,13 +2323,17 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             }
             if (!this.starGiftLayout.has() && isButtonLayout(messageObject)) {
                 canvas.save();
-                float dp6 = ((this.previousWidth - this.giftRectSize) / f) + AndroidUtilities.dp(8.0f);
+                float f16 = (this.previousWidth - this.giftRectSize) / f;
+                if (messageObject.type != 22) {
+                    f16 += AndroidUtilities.dp(8.0f);
+                }
+                float f17 = f16;
                 if (isNewStyleButtonLayout()) {
-                    float f16 = this.textY + this.textHeight + (this.giftRectSize * 0.075f);
+                    float f18 = this.textY + this.textHeight + (this.giftRectSize * 0.075f);
                     if (messageObject.type != 21) {
                         i6 = this.stickerSize;
                     }
-                    dp = f16 + i6 + AndroidUtilities.dp(4.0f);
+                    dp = f18 + i6 + AndroidUtilities.dp(4.0f);
                     if (messageObject.type == 21) {
                         dp += AndroidUtilities.dp(f2);
                     }
@@ -2341,7 +2346,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     RectF rectF = this.backgroundRect;
                     dp = (rectF != null ? rectF.top : this.textY + this.textHeight + AndroidUtilities.dp(4.0f)) + (AndroidUtilities.dp(f2) * 2) + i6;
                 }
-                canvas.translate(dp6, dp);
+                canvas.translate(f17, dp);
                 if (this.giftPremiumTitleLayout == null) {
                     canvas.save();
                     canvas.translate(((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumTitleLayout.getWidth()) / f, 0.0f);
@@ -2360,15 +2365,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     dp2 = dp - AndroidUtilities.dp(4.0f);
                 }
                 canvas.restore();
-                float dp7 = dp2 + AndroidUtilities.dp(4.0f);
+                float dp6 = dp2 + AndroidUtilities.dp(4.0f);
                 if (messageObject.type == 18) {
-                    dp7 += AndroidUtilities.dp(f);
+                    dp6 += AndroidUtilities.dp(f);
                 }
                 canvas.save();
-                canvas.translate(dp6, dp7);
+                canvas.translate(f17, dp6);
                 if (messageObject.type != 22) {
                     if (this.radialProgress.getTransitionProgress() != 1.0f || this.radialProgress.getIcon() != 4) {
-                        f4 = dp6;
+                        f4 = f17;
                         if (this.settingWallpaperLayout == null) {
                             TextPaint textPaint5 = new TextPaint();
                             this.settingWallpaperPaint = textPaint5;
@@ -2405,68 +2410,70 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         if (this.radialProgress.getIcon() == 4) {
                             float transitionProgress = this.radialProgress.getTransitionProgress();
                             int color = this.giftTextPaint.getColor();
-                            float f17 = 1.0f - transitionProgress;
-                            this.settingWallpaperPaint.setAlpha((int) (Color.alpha(color) * f17));
+                            float f19 = 1.0f - transitionProgress;
+                            this.settingWallpaperPaint.setAlpha((int) (Color.alpha(color) * f19));
                             this.giftTextPaint.setAlpha((int) (Color.alpha(color) * transitionProgress));
                             TextPaint textPaint8 = this.giftTextPaint;
                             textPaint8.linkColor = textPaint8.getColor();
                             if (this.giftPremiumText != null) {
-                                float f18 = (transitionProgress * 0.2f) + 0.8f;
+                                float f20 = (transitionProgress * 0.2f) + 0.8f;
                                 canvas.save();
-                                TextLayout textLayout4 = this.giftPremiumText;
-                                canvas.scale(f18, f18, textLayout4.width / 2.0f, textLayout4.layout.getHeight() / 2.0f);
-                                TextLayout textLayout5 = this.giftPremiumText;
-                                canvas.translate((textLayout5.width - textLayout5.layout.getWidth()) / 2.0f, 0.0f);
-                                this.giftPremiumText.x = ((r1.width - r1.layout.getWidth()) / 2.0f) + f4;
-                                this.giftPremiumText.y = dp7;
+                                canvas.scale(f20, f20, this.giftRectSize / 2.0f, this.giftPremiumText.layout.getHeight() / 2.0f);
+                                canvas.translate((this.giftRectSize - this.giftPremiumText.layout.getWidth()) / 2.0f, 0.0f);
+                                this.giftPremiumText.x = ((this.giftRectSize - r1.layout.getWidth()) / 2.0f) + f4;
+                                this.giftPremiumText.y = dp6;
                                 int color2 = this.giftTextPaint.getColor();
-                                TextLayout textLayout6 = this.giftPremiumText;
+                                TextLayout textLayout4 = this.giftPremiumText;
                                 f3 = f4;
                                 i = color;
-                                SpoilerEffect.renderWithRipple(this, false, color2, 0, textLayout6.patchedLayout, 1, textLayout6.layout, textLayout6.spoilers, canvas, false);
-                                TextLayout textLayout7 = this.giftPremiumText;
-                                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout7.layout, textLayout7.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
+                                SpoilerEffect.renderWithRipple(this, false, color2, 0, textLayout4.patchedLayout, 1, textLayout4.layout, textLayout4.spoilers, canvas, false);
+                                TextLayout textLayout5 = this.giftPremiumText;
+                                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout5.layout, textLayout5.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
                                 canvas.restore();
                             } else {
                                 i = color;
                                 f3 = f4;
                             }
-                            this.giftTextPaint.setAlpha((int) (Color.alpha(i) * f17));
+                            this.giftTextPaint.setAlpha((int) (Color.alpha(i) * f19));
                             TextPaint textPaint9 = this.giftTextPaint;
                             textPaint9.linkColor = textPaint9.getColor();
-                            float f19 = (f17 * 0.2f) + 0.8f;
+                            float f21 = (f19 * 0.2f) + 0.8f;
                             canvas.save();
-                            canvas.scale(f19, f19, this.settingWallpaperLayout.getWidth() / 2.0f, this.settingWallpaperLayout.getHeight() / 2.0f);
+                            canvas.scale(f21, f21, this.giftRectSize / 2.0f, this.settingWallpaperLayout.getHeight() / 2.0f);
+                            canvas.translate((this.giftRectSize - this.settingWallpaperLayout.getWidth()) / 2.0f, 0.0f);
                             SpoilerEffect.layoutDrawMaybe(this.settingWallpaperLayout, canvas);
                             canvas.restore();
                             canvas.save();
                             canvas.translate(0.0f, this.settingWallpaperLayout.getHeight() + AndroidUtilities.dp(4.0f));
-                            canvas.scale(f19, f19, this.settingWallpaperProgressTextLayout.getWidth() / 2.0f, this.settingWallpaperProgressTextLayout.getHeight() / 2.0f);
+                            canvas.scale(f21, f21, this.giftRectSize / 2.0f, this.settingWallpaperProgressTextLayout.getHeight() / 2.0f);
+                            canvas.translate((this.giftRectSize - this.settingWallpaperProgressTextLayout.getWidth()) / 2.0f, 0.0f);
                             SpoilerEffect.layoutDrawMaybe(this.settingWallpaperProgressTextLayout, canvas);
                             canvas.restore();
                             int i8 = i;
                             this.giftTextPaint.setColor(i8);
                             this.giftTextPaint.linkColor = i8;
                         } else {
-                            this.settingWallpaperLayout.draw(canvas);
                             canvas.save();
-                            canvas.translate(0.0f, this.settingWallpaperLayout.getHeight() + AndroidUtilities.dp(4.0f));
+                            canvas.translate((this.giftRectSize - this.settingWallpaperLayout.getWidth()) / 2.0f, 0.0f);
+                            this.settingWallpaperLayout.draw(canvas);
+                            canvas.restore();
+                            canvas.save();
+                            canvas.translate((this.giftRectSize - this.settingWallpaperProgressTextLayout.getWidth()) / 2.0f, this.settingWallpaperLayout.getHeight() + AndroidUtilities.dp(4.0f));
                             SpoilerEffect.layoutDrawMaybe(this.settingWallpaperProgressTextLayout, canvas);
                         }
                     } else if (this.giftPremiumText != null) {
                         canvas.save();
-                        TextLayout textLayout8 = this.giftPremiumText;
-                        canvas.translate((textLayout8.width - textLayout8.layout.getWidth()) / f, 0.0f);
-                        this.giftPremiumText.x = ((r1.width - r1.layout.getWidth()) / f) + dp6;
-                        this.giftPremiumText.y = dp7;
+                        canvas.translate((this.giftRectSize - this.giftPremiumText.layout.getWidth()) / f, 0.0f);
+                        this.giftPremiumText.x = ((this.giftRectSize - r1.layout.getWidth()) / f) + f17;
+                        this.giftPremiumText.y = dp6;
                         int color3 = this.giftTextPaint.getColor();
-                        TextLayout textLayout9 = this.giftPremiumText;
-                        f4 = dp6;
-                        SpoilerEffect.renderWithRipple(this, false, color3, 0, textLayout9.patchedLayout, 1, textLayout9.layout, textLayout9.spoilers, canvas, false);
-                        TextLayout textLayout10 = this.giftPremiumText;
-                        AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout10.layout, textLayout10.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
+                        TextLayout textLayout6 = this.giftPremiumText;
+                        f4 = f17;
+                        SpoilerEffect.renderWithRipple(this, false, color3, 0, textLayout6.patchedLayout, 1, textLayout6.layout, textLayout6.spoilers, canvas, false);
+                        TextLayout textLayout7 = this.giftPremiumText;
+                        AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout7.layout, textLayout7.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
                     } else {
-                        f4 = dp6;
+                        f4 = f17;
                         f6 = 1.0f;
                         f5 = 0.0f;
                         canvas.restore();
@@ -2516,28 +2523,28 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         }
                         z = messageObject.settingAvatar;
                         if (z) {
-                            float f20 = this.progressToProgress;
-                            if (f20 != f6) {
-                                this.progressToProgress = f20 + 0.10666667f;
+                            float f22 = this.progressToProgress;
+                            if (f22 != f6) {
+                                this.progressToProgress = f22 + 0.10666667f;
                                 clamp = Utilities.clamp(this.progressToProgress, f6, f5);
                                 this.progressToProgress = clamp;
                                 if (clamp != f5) {
                                     if (this.progressView == null) {
                                         this.progressView = new RadialProgressView(getContext());
                                     }
-                                    int dp8 = AndroidUtilities.dp(f2);
+                                    int dp7 = AndroidUtilities.dp(f2);
                                     canvas.save();
-                                    float f21 = this.progressToProgress;
-                                    canvas.scale(f21, f21, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
-                                    this.progressView.setSize(dp8);
+                                    float f23 = this.progressToProgress;
+                                    canvas.scale(f23, f23, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
+                                    this.progressView.setSize(dp7);
                                     this.progressView.setProgressColor(Theme.getColor(Theme.key_chat_serviceText));
                                     this.progressView.draw(canvas, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
                                     canvas.restore();
                                 }
                                 if (this.progressToProgress != f6 && this.giftPremiumButtonLayout != null) {
                                     canvas.save();
-                                    float f22 = f6 - this.progressToProgress;
-                                    canvas.scale(f22, f22, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
+                                    float f24 = f6 - this.progressToProgress;
+                                    canvas.scale(f24, f24, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
                                     canvas.translate(f4, this.giftButtonRect.top + AndroidUtilities.dp(8.0f));
                                     canvas.translate(((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumButtonLayout.getWidth()) / 2.0f, f5);
                                     this.giftPremiumButtonLayout.draw(canvas);
@@ -2572,16 +2579,16 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 if (this.backgroundRect != null && this.giftRibbonPath != null && this.giftRibbonText != null) {
                                     themedPaint = getThemedPaint("paintChatActionBackground");
                                     Paint themedPaint2 = getThemedPaint("paintChatActionBackgroundDarken");
-                                    float dp9 = (this.backgroundRect.right - AndroidUtilities.dp(65.0f)) + AndroidUtilities.dp(2.0f);
-                                    float dp10 = this.backgroundRect.top - AndroidUtilities.dp(2.0f);
+                                    float dp8 = (this.backgroundRect.right - AndroidUtilities.dp(65.0f)) + AndroidUtilities.dp(2.0f);
+                                    float dp9 = this.backgroundRect.top - AndroidUtilities.dp(2.0f);
                                     resourcesProvider2 = this.themeDelegate;
                                     if (resourcesProvider2 == null) {
-                                        resourcesProvider2.applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, this.viewTranslationX + dp9, this.viewTop + AndroidUtilities.dp(4.0f) + dp10);
+                                        resourcesProvider2.applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, this.viewTranslationX + dp8, this.viewTop + AndroidUtilities.dp(4.0f) + dp9);
                                     } else {
-                                        Theme.applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, this.viewTranslationX + dp9, this.viewTop + AndroidUtilities.dp(4.0f) + dp10);
+                                        Theme.applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, this.viewTranslationX + dp8, this.viewTop + AndroidUtilities.dp(4.0f) + dp9);
                                     }
                                     canvas.save();
-                                    canvas.translate(dp9, dp10);
+                                    canvas.translate(dp8, dp9);
                                     ColorFilter colorFilter = themedPaint.getColorFilter();
                                     PathEffect pathEffect = themedPaint.getPathEffect();
                                     Theme.ResourcesProvider resourcesProvider3 = this.themeDelegate;
@@ -2614,9 +2621,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             }
                         }
                         if (!z) {
-                            float f23 = this.progressToProgress;
-                            if (f23 != f5) {
-                                this.progressToProgress = f23 - 0.10666667f;
+                            float f25 = this.progressToProgress;
+                            if (f25 != f5) {
+                                this.progressToProgress = f25 - 0.10666667f;
                             }
                         }
                         clamp = Utilities.clamp(this.progressToProgress, f6, f5);
@@ -2625,8 +2632,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         }
                         if (this.progressToProgress != f6) {
                             canvas.save();
-                            float f222 = f6 - this.progressToProgress;
-                            canvas.scale(f222, f222, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
+                            float f242 = f6 - this.progressToProgress;
+                            canvas.scale(f242, f242, this.giftButtonRect.centerX(), this.giftButtonRect.centerY());
                             canvas.translate(f4, this.giftButtonRect.top + AndroidUtilities.dp(8.0f));
                             canvas.translate(((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumButtonLayout.getWidth()) / 2.0f, f5);
                             this.giftPremiumButtonLayout.draw(canvas);
@@ -2638,13 +2645,13 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         if (this.backgroundRect != null) {
                             themedPaint = getThemedPaint("paintChatActionBackground");
                             Paint themedPaint22 = getThemedPaint("paintChatActionBackgroundDarken");
-                            float dp92 = (this.backgroundRect.right - AndroidUtilities.dp(65.0f)) + AndroidUtilities.dp(2.0f);
-                            float dp102 = this.backgroundRect.top - AndroidUtilities.dp(2.0f);
+                            float dp82 = (this.backgroundRect.right - AndroidUtilities.dp(65.0f)) + AndroidUtilities.dp(2.0f);
+                            float dp92 = this.backgroundRect.top - AndroidUtilities.dp(2.0f);
                             resourcesProvider2 = this.themeDelegate;
                             if (resourcesProvider2 == null) {
                             }
                             canvas.save();
-                            canvas.translate(dp92, dp102);
+                            canvas.translate(dp82, dp92);
                             ColorFilter colorFilter2 = themedPaint.getColorFilter();
                             PathEffect pathEffect3 = themedPaint.getPathEffect();
                             Theme.ResourcesProvider resourcesProvider32 = this.themeDelegate;
@@ -2711,10 +2718,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     if (this.backgroundRect != null) {
                     }
                 } else {
-                    f3 = dp6;
-                    TextLayout textLayout11 = this.giftPremiumText;
-                    if (textLayout11 != null) {
-                        float height2 = textLayout11.layout.getHeight();
+                    f3 = f17;
+                    TextLayout textLayout8 = this.giftPremiumText;
+                    if (textLayout8 != null) {
+                        float height2 = textLayout8.layout.getHeight();
                         if (f10 < 1.0f) {
                             height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f10);
                             RectF rectF2 = AndroidUtilities.rectTmp;
@@ -2723,18 +2730,18 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         } else {
                             canvas.save();
                         }
-                        float f24 = height2;
+                        float f26 = height2;
                         canvas.translate(((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumText.layout.getWidth()) / 2.0f, 0.0f);
                         this.giftPremiumText.x = f3 + (((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumText.layout.getWidth()) / 2.0f);
-                        TextLayout textLayout12 = this.giftPremiumText;
-                        textLayout12.y = dp7;
-                        int color4 = textLayout12.paint.getColor();
-                        TextLayout textLayout13 = this.giftPremiumText;
+                        TextLayout textLayout9 = this.giftPremiumText;
+                        textLayout9.y = dp6;
+                        int color4 = textLayout9.paint.getColor();
+                        TextLayout textLayout10 = this.giftPremiumText;
                         f4 = f3;
                         f5 = 0.0f;
-                        SpoilerEffect.renderWithRipple(this, false, color4, 0, textLayout13.patchedLayout, 1, textLayout13.layout, textLayout13.spoilers, canvas, false);
-                        TextLayout textLayout14 = this.giftPremiumText;
-                        AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout14.layout, textLayout14.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
+                        SpoilerEffect.renderWithRipple(this, false, color4, 0, textLayout10.patchedLayout, 1, textLayout10.layout, textLayout10.spoilers, canvas, false);
+                        TextLayout textLayout11 = this.giftPremiumText;
+                        AnimatedEmojiSpan.drawAnimatedEmojis(canvas, textLayout11.layout, textLayout11.emoji, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, getAdaptiveEmojiColorFilter(this.giftTextPaint.getColor()));
                         f6 = 1.0f;
                         if (f10 < 1.0f && this.giftPremiumTextMore != null) {
                             canvas.save();
@@ -2744,12 +2751,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             canvas.translate((-((this.giftRectSize - AndroidUtilities.dp(f2)) - this.giftPremiumText.layout.getWidth())) / 2.0f, 0.0f);
                             RectF rectF3 = AndroidUtilities.rectTmp;
                             rectF3.set((this.giftPremiumTextMoreX - this.giftPremiumTextMore.getCurrentWidth()) + AndroidUtilities.dp(8.0f), (this.giftPremiumTextMoreY - this.giftPremiumTextMoreH) - AndroidUtilities.dp(6.0f), this.giftPremiumTextMoreX + AndroidUtilities.dp(6.0f), this.giftPremiumTextMoreY);
-                            float f25 = 1.0f - f10;
-                            this.giftPremiumTextClip.clipOut(canvas, rectF3, f25);
+                            float f27 = 1.0f - f10;
+                            this.giftPremiumTextClip.clipOut(canvas, rectF3, f27);
                             rectF3.set((this.giftPremiumTextMoreX - this.giftPremiumTextMore.getCurrentWidth()) - AndroidUtilities.dp(f2), (this.giftPremiumTextMoreY - this.giftPremiumTextMoreH) - AndroidUtilities.dp(6.0f), (this.giftPremiumTextMoreX - this.giftPremiumTextMore.getCurrentWidth()) + AndroidUtilities.dp(8.0f), this.giftPremiumTextMoreY);
-                            this.giftPremiumTextClip.draw(canvas, rectF3, 2, f25);
-                            rectF3.set(0.0f, f24 - AndroidUtilities.dp(12.0f), getWidth(), f24);
-                            this.giftPremiumTextClip.draw(canvas, rectF3, 3, f25 * 4.0f * (1.0f - f25));
+                            this.giftPremiumTextClip.draw(canvas, rectF3, 2, f27);
+                            rectF3.set(0.0f, f26 - AndroidUtilities.dp(12.0f), getWidth(), f26);
+                            this.giftPremiumTextClip.draw(canvas, rectF3, 3, f27 * 4.0f * (1.0f - f27));
                             canvas.restore();
                         }
                         canvas.restore();
@@ -2841,18 +2848,21 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         f2 = 16.0f;
         if (!this.starGiftLayout.has()) {
             canvas.save();
-            float dp62 = ((this.previousWidth - this.giftRectSize) / f) + AndroidUtilities.dp(8.0f);
+            float f162 = (this.previousWidth - this.giftRectSize) / f;
+            if (messageObject.type != 22) {
+            }
+            float f172 = f162;
             if (isNewStyleButtonLayout()) {
             }
-            canvas.translate(dp62, dp);
+            canvas.translate(f172, dp);
             if (this.giftPremiumTitleLayout == null) {
             }
             canvas.restore();
-            float dp72 = dp2 + AndroidUtilities.dp(4.0f);
+            float dp62 = dp2 + AndroidUtilities.dp(4.0f);
             if (messageObject.type == 18) {
             }
             canvas.save();
-            canvas.translate(dp62, dp72);
+            canvas.translate(f172, dp62);
             if (messageObject.type != 22) {
             }
             f4 = f3;
