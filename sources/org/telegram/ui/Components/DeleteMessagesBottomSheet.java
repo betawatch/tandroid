@@ -454,7 +454,7 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
         } else {
             this.banOrRestrict = new Action(2, new ArrayList(0));
         }
-        if (this.banOrRestrict != null && !this.restrict && mainSettings.getBoolean("delete_banOrRestrict", false)) {
+        if (this.banOrRestrict != null && !this.restrict && mainSettings.getBoolean("delete_ban", false)) {
             this.banOrRestrict.setAllChecks(true, false);
         }
         this.adapter.update(false);
