@@ -157,7 +157,7 @@ public class ChatbotsActivity extends BaseFragment {
         if (!this.shownUsernamePermissionsAlert && i == PERMISSION_PROFILE_USERNAME && z) {
             negativeButton = new AlertDialog.Builder(getContext(), getResourceProvider()).setTitle(LocaleController.getString(R.string.BusinessBotPermissionsWarning)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessBotPermissionsUsernamesWarningText, UserObject.getPublicUsername(this.selectedBot)))).setNegativeButton(LocaleController.getString(R.string.Cancel), null);
             string = LocaleController.getString(R.string.Allow);
-            onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda24
+            onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda25
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     ChatbotsActivity.this.lambda$checkAlert$4(runnable, alertDialog, i2);
@@ -169,7 +169,7 @@ public class ChatbotsActivity extends BaseFragment {
         } else {
             negativeButton = new AlertDialog.Builder(getContext(), getResourceProvider()).setTitle(LocaleController.getString(R.string.BusinessBotPermissionsWarning)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessBotPermissionsGiftsWarningText, UserObject.getPublicUsername(this.selectedBot)))).setNegativeButton(LocaleController.getString(R.string.Cancel), null);
             string = LocaleController.getString(R.string.Allow);
-            onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda25
+            onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda26
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     ChatbotsActivity.this.lambda$checkAlert$5(runnable, alertDialog, i2);
@@ -311,7 +311,7 @@ public class ChatbotsActivity extends BaseFragment {
             arrayList.add(asExpandableSwitch3.setChecked(z).setCollapsed(!this.expandedGiftsSection).setClickCallback(new View.OnClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda20
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatbotsActivity.this.lambda$fillItems$9(view);
+                    ChatbotsActivity.this.lambda$fillItems$10(view);
                 }
             }));
             if (this.expandedGiftsSection) {
@@ -324,7 +324,7 @@ public class ChatbotsActivity extends BaseFragment {
             arrayList.add(UItem.asExpandableSwitch(PERMISSION_STORIES, LocaleController.getString(R.string.BusinessBotPermissionsStories), "").setChecked(this.rights.manage_stories).setClickCallback(new View.OnClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatbotsActivity.this.lambda$fillItems$10(view);
+                    ChatbotsActivity.this.lambda$fillItems$11(view);
                 }
             }));
             arrayList.add(UItem.asShadow(-4, null));
@@ -377,6 +377,27 @@ public class ChatbotsActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$fillItems$10(View view) {
+        TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
+        if (!tL_businessBotRights.view_gifts || !tL_businessBotRights.sell_gifts || !tL_businessBotRights.change_gift_settings || !tL_businessBotRights.transfer_and_upgrade_gifts || !tL_businessBotRights.transfer_stars) {
+            checkAlert(PERMISSION_GIFTS_SELL, true, new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda24
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatbotsActivity.this.lambda$fillItems$9();
+                }
+            });
+            return;
+        }
+        tL_businessBotRights.transfer_stars = false;
+        tL_businessBotRights.transfer_and_upgrade_gifts = false;
+        tL_businessBotRights.change_gift_settings = false;
+        tL_businessBotRights.sell_gifts = false;
+        tL_businessBotRights.view_gifts = false;
+        this.listView.adapter.update(true);
+        checkDone(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$fillItems$11(View view) {
         this.rights.manage_stories = !r3.manage_stories;
         this.listView.adapter.update(true);
         checkDone(true);
@@ -432,21 +453,13 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$9(View view) {
+    public /* synthetic */ void lambda$fillItems$9() {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
-        if (tL_businessBotRights.view_gifts && tL_businessBotRights.sell_gifts && tL_businessBotRights.change_gift_settings && tL_businessBotRights.transfer_and_upgrade_gifts && tL_businessBotRights.transfer_stars) {
-            tL_businessBotRights.transfer_stars = false;
-            tL_businessBotRights.transfer_and_upgrade_gifts = false;
-            tL_businessBotRights.change_gift_settings = false;
-            tL_businessBotRights.sell_gifts = false;
-            tL_businessBotRights.view_gifts = false;
-        } else {
-            tL_businessBotRights.transfer_stars = true;
-            tL_businessBotRights.transfer_and_upgrade_gifts = true;
-            tL_businessBotRights.change_gift_settings = true;
-            tL_businessBotRights.sell_gifts = true;
-            tL_businessBotRights.view_gifts = true;
-        }
+        tL_businessBotRights.transfer_stars = true;
+        tL_businessBotRights.transfer_and_upgrade_gifts = true;
+        tL_businessBotRights.change_gift_settings = true;
+        tL_businessBotRights.sell_gifts = true;
+        tL_businessBotRights.view_gifts = true;
         this.listView.adapter.update(true);
         checkDone(true);
     }
@@ -472,17 +485,17 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$22(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$onBackPressed$23(AlertDialog alertDialog, int i) {
         processDone();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$23(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$onBackPressed$24(AlertDialog alertDialog, int i) {
         lambda$onBackPressed$338();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$11(View view) {
+    public /* synthetic */ void lambda$onClick$12(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.edit_username;
         tL_businessBotRights.edit_username = z;
@@ -492,7 +505,7 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$12(View view) {
+    public /* synthetic */ void lambda$onClick$13(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.view_gifts;
         tL_businessBotRights.view_gifts = z;
@@ -502,7 +515,7 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$13(View view) {
+    public /* synthetic */ void lambda$onClick$14(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.sell_gifts;
         tL_businessBotRights.sell_gifts = z;
@@ -512,7 +525,7 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$14(View view) {
+    public /* synthetic */ void lambda$onClick$15(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.change_gift_settings;
         tL_businessBotRights.change_gift_settings = z;
@@ -522,7 +535,7 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$15(View view) {
+    public /* synthetic */ void lambda$onClick$16(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.transfer_and_upgrade_gifts;
         tL_businessBotRights.transfer_and_upgrade_gifts = z;
@@ -532,7 +545,7 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$16(View view) {
+    public /* synthetic */ void lambda$onClick$17(View view) {
         TL_account.TL_businessBotRights tL_businessBotRights = this.rights;
         boolean z = !tL_businessBotRights.transfer_stars;
         tL_businessBotRights.transfer_stars = z;
@@ -542,19 +555,19 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$17() {
+    public /* synthetic */ void lambda$onClick$18() {
         this.rights.manage_stories = !r0.manage_stories;
         this.listView.adapter.update(true);
         checkDone(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$18(TLObject tLObject) {
+    public /* synthetic */ void lambda$processDone$19(TLObject tLObject) {
         MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$19(TLRPC.TL_error tL_error, final TLObject tLObject, int[] iArr, ArrayList arrayList) {
+    public /* synthetic */ void lambda$processDone$20(TLRPC.TL_error tL_error, final TLObject tLObject, int[] iArr, ArrayList arrayList) {
         if (tL_error != null) {
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
@@ -566,10 +579,10 @@ public class ChatbotsActivity extends BaseFragment {
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda26
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatbotsActivity.this.lambda$processDone$18(tLObject);
+                    ChatbotsActivity.this.lambda$processDone$19(tLObject);
                 }
             });
         }
@@ -583,17 +596,17 @@ public class ChatbotsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$20(final int[] iArr, final ArrayList arrayList, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$processDone$21(final int[] iArr, final ArrayList arrayList, final TLObject tLObject, final TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                ChatbotsActivity.this.lambda$processDone$19(tL_error, tLObject, iArr, arrayList);
+                ChatbotsActivity.this.lambda$processDone$20(tL_error, tLObject, iArr, arrayList);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setValue$21(TL_account.connectedBots connectedbots) {
+    public /* synthetic */ void lambda$setValue$22(TL_account.connectedBots connectedbots) {
         UniversalAdapter universalAdapter;
         this.currentValue = connectedbots;
         TL_account.TL_connectedBot tL_connectedBot = (connectedbots == null || connectedbots.connected_bots.isEmpty()) ? null : this.currentValue.connected_bots.get(0);
@@ -691,7 +704,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda9
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$11(view);
+                                        ChatbotsActivity.this.lambda$onClick$12(view);
                                     }
                                 };
                             } else if (i2 == PERMISSION_GIFTS) {
@@ -703,7 +716,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda10
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$12(view);
+                                        ChatbotsActivity.this.lambda$onClick$13(view);
                                     }
                                 };
                             } else if (i2 == PERMISSION_GIFTS_SELL) {
@@ -711,7 +724,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda11
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$13(view);
+                                        ChatbotsActivity.this.lambda$onClick$14(view);
                                     }
                                 };
                             } else if (i2 == PERMISSION_GIFTS_SETTINGS) {
@@ -719,7 +732,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda12
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$14(view);
+                                        ChatbotsActivity.this.lambda$onClick$15(view);
                                     }
                                 };
                             } else if (i2 == PERMISSION_GIFTS_TRANSFER) {
@@ -727,7 +740,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda13
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$15(view);
+                                        ChatbotsActivity.this.lambda$onClick$16(view);
                                     }
                                 };
                             } else if (i2 == PERMISSION_GIFTS_TRANSFER_STARS) {
@@ -735,7 +748,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda14
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$16(view);
+                                        ChatbotsActivity.this.lambda$onClick$17(view);
                                     }
                                 };
                             } else {
@@ -746,7 +759,7 @@ public class ChatbotsActivity extends BaseFragment {
                                 runnable = new Runnable() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda15
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatbotsActivity.this.lambda$onClick$17();
+                                        ChatbotsActivity.this.lambda$onClick$18();
                                     }
                                 };
                             }
@@ -823,7 +836,7 @@ public class ChatbotsActivity extends BaseFragment {
                 getConnectionsManager().sendRequest((TLObject) arrayList.get(i), new RequestDelegate() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda16
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        ChatbotsActivity.this.lambda$processDone$20(iArr, arrayList, tLObject, tL_error);
+                        ChatbotsActivity.this.lambda$processDone$21(iArr, arrayList, tLObject, tL_error);
                     }
                 });
             }
@@ -853,7 +866,7 @@ public class ChatbotsActivity extends BaseFragment {
         BusinessChatbotController.getInstance(this.currentAccount).load(new Utilities.Callback() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChatbotsActivity.this.lambda$setValue$21((TL_account.connectedBots) obj);
+                ChatbotsActivity.this.lambda$setValue$22((TL_account.connectedBots) obj);
             }
         });
     }
@@ -1065,13 +1078,13 @@ public class ChatbotsActivity extends BaseFragment {
         builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                ChatbotsActivity.this.lambda$onBackPressed$22(alertDialog, i);
+                ChatbotsActivity.this.lambda$onBackPressed$23(alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.ChatbotsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                ChatbotsActivity.this.lambda$onBackPressed$23(alertDialog, i);
+                ChatbotsActivity.this.lambda$onBackPressed$24(alertDialog, i);
             }
         });
         showDialog(builder.create());
