@@ -3005,6 +3005,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         public StaticLayout lastViewsLayout;
         public boolean messageEntering;
         private boolean moveCaption;
+        public boolean needsStopClipping;
         public float photoImageFromCenterX;
         public float photoImageFromCenterY;
         public float photoImageFromHeight;
@@ -3029,51 +3030,51 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         public TransitionParams() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:135:0x0343, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:135:0x0347, code lost:
         
             if (r7 == (r8 == null ? 0 : r8.textWidth)) goto L144;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:143:0x03a2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:143:0x03a6, code lost:
         
             if (r24.lastDrawingSideMenuEnabled != r24.this$0.isSideMenuEnabled) goto L178;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:326:0x0373, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:326:0x0377, code lost:
         
             if (r24.lastDrawingCaptionY == r24.this$0.captionY) goto L179;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:336:0x03c2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:336:0x03c6, code lost:
         
             if (r24.lastDrawingCaptionY == r24.this$0.captionY) goto L179;
          */
-        /* JADX WARN: Removed duplicated region for block: B:151:0x0471  */
-        /* JADX WARN: Removed duplicated region for block: B:160:0x04c0  */
-        /* JADX WARN: Removed duplicated region for block: B:163:0x04cd  */
-        /* JADX WARN: Removed duplicated region for block: B:186:0x056b  */
-        /* JADX WARN: Removed duplicated region for block: B:189:0x0580  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x05d8  */
-        /* JADX WARN: Removed duplicated region for block: B:196:0x05e4  */
-        /* JADX WARN: Removed duplicated region for block: B:199:0x05f0  */
-        /* JADX WARN: Removed duplicated region for block: B:202:0x05fe  */
-        /* JADX WARN: Removed duplicated region for block: B:205:0x060b  */
-        /* JADX WARN: Removed duplicated region for block: B:208:0x061c  */
-        /* JADX WARN: Removed duplicated region for block: B:211:0x062d  */
-        /* JADX WARN: Removed duplicated region for block: B:215:0x063c  */
-        /* JADX WARN: Removed duplicated region for block: B:218:0x0649  */
-        /* JADX WARN: Removed duplicated region for block: B:221:0x0656  */
-        /* JADX WARN: Removed duplicated region for block: B:224:0x0664  */
-        /* JADX WARN: Removed duplicated region for block: B:227:0x0673  */
-        /* JADX WARN: Removed duplicated region for block: B:232:0x06ab  */
-        /* JADX WARN: Removed duplicated region for block: B:235:0x06b8  */
-        /* JADX WARN: Removed duplicated region for block: B:247:0x06ed  */
-        /* JADX WARN: Removed duplicated region for block: B:254:0x0706  */
-        /* JADX WARN: Removed duplicated region for block: B:259:0x0717  */
-        /* JADX WARN: Removed duplicated region for block: B:269:0x0586  */
-        /* JADX WARN: Removed duplicated region for block: B:281:0x04d4  */
-        /* JADX WARN: Removed duplicated region for block: B:289:0x03f5  */
-        /* JADX WARN: Removed duplicated region for block: B:292:0x03fb  */
-        /* JADX WARN: Removed duplicated region for block: B:309:0x0460  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x00e9  */
-        /* JADX WARN: Removed duplicated region for block: B:50:0x010f  */
+        /* JADX WARN: Removed duplicated region for block: B:151:0x0475  */
+        /* JADX WARN: Removed duplicated region for block: B:160:0x04c4  */
+        /* JADX WARN: Removed duplicated region for block: B:163:0x04d1  */
+        /* JADX WARN: Removed duplicated region for block: B:186:0x056f  */
+        /* JADX WARN: Removed duplicated region for block: B:189:0x0584  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x05dc  */
+        /* JADX WARN: Removed duplicated region for block: B:196:0x05e8  */
+        /* JADX WARN: Removed duplicated region for block: B:199:0x05f4  */
+        /* JADX WARN: Removed duplicated region for block: B:202:0x0602  */
+        /* JADX WARN: Removed duplicated region for block: B:205:0x060f  */
+        /* JADX WARN: Removed duplicated region for block: B:208:0x0620  */
+        /* JADX WARN: Removed duplicated region for block: B:211:0x0631  */
+        /* JADX WARN: Removed duplicated region for block: B:215:0x0640  */
+        /* JADX WARN: Removed duplicated region for block: B:218:0x064d  */
+        /* JADX WARN: Removed duplicated region for block: B:221:0x065a  */
+        /* JADX WARN: Removed duplicated region for block: B:224:0x0668  */
+        /* JADX WARN: Removed duplicated region for block: B:227:0x0677  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x06af  */
+        /* JADX WARN: Removed duplicated region for block: B:235:0x06bc  */
+        /* JADX WARN: Removed duplicated region for block: B:247:0x06f1  */
+        /* JADX WARN: Removed duplicated region for block: B:254:0x070a  */
+        /* JADX WARN: Removed duplicated region for block: B:259:0x071b  */
+        /* JADX WARN: Removed duplicated region for block: B:269:0x058a  */
+        /* JADX WARN: Removed duplicated region for block: B:281:0x04d8  */
+        /* JADX WARN: Removed duplicated region for block: B:289:0x03f9  */
+        /* JADX WARN: Removed duplicated region for block: B:292:0x03ff  */
+        /* JADX WARN: Removed duplicated region for block: B:309:0x0464  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x00eb  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x0111  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -3093,6 +3094,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (!this.wasDraw) {
                 return false;
             }
+            this.needsStopClipping = false;
             this.animateDrawingSideMenuEnabled = false;
             boolean z4 = this.lastDrawingSideMenuEnabled;
             ChatMessageCell chatMessageCell4 = ChatMessageCell.this;
@@ -3226,6 +3228,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             int i6 = chatMessageCell9.topicSeparatorTopPadding;
             int i7 = this.lastDrawnMonoforumPadding;
             if (i6 != i7) {
+                this.needsStopClipping = true;
                 this.animateMonoforumPaddingFrom = i7;
                 this.animateMonoforumPadding = true;
                 z = true;
@@ -3846,6 +3849,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.animateSign = false;
             this.animateSmallImage = false;
             this.animateMonoforumPadding = false;
+            this.needsStopClipping = false;
             this.animateLinkAbove = false;
             this.animateMediaAbove = false;
             this.animateRecommendationsExpanded = false;
@@ -3982,6 +3986,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (chatMessageSharedResources == null) {
             this.sharedResources = new ChatMessageSharedResources(context);
         }
+        setClipChildren(false);
+        setClipToPadding(false);
         this.backgroundDrawable = new MessageBackgroundDrawable(this);
         ImageReceiver imageReceiver = new ImageReceiver();
         this.avatarImage = imageReceiver;
@@ -19595,45 +19601,45 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         drawMessageText(f6, f2, canvas, arrayList, messageObject == null ? 0.0f : messageObject.textXOffset, z, f, false, z2, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x10b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:524:0x10a7, code lost:
     
         if (r6.type == 0) goto L675;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x10c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:526:0x10bd, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r42.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) != false) goto L679;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:528:0x10d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:528:0x10cb, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r42.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L679;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:530:0x10bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x10af, code lost:
     
         if (android.text.TextUtils.isEmpty(r6.caption) == false) goto L675;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:549:0x1124, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:549:0x1118, code lost:
     
         if (r6.type == 0) goto L698;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:551:0x113a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:551:0x112e, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r42.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) != false) goto L702;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:553:0x1148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:553:0x113c, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r42.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L702;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:555:0x112c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:555:0x1120, code lost:
     
         if (android.text.TextUtils.isEmpty(r6.caption) == false) goto L698;
      */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0ce1  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0cee  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0d44  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0da4  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0dab  */
-    /* JADX WARN: Removed duplicated region for block: B:688:0x0be4  */
-    /* JADX WARN: Removed duplicated region for block: B:690:0x0bf2  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0cd5  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0ce2  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0d38  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0d98  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0d9f  */
+    /* JADX WARN: Removed duplicated region for block: B:688:0x0bd8  */
+    /* JADX WARN: Removed duplicated region for block: B:690:0x0be6  */
     /* JADX WARN: Removed duplicated region for block: B:911:0x02ef  */
     /* JADX WARN: Removed duplicated region for block: B:914:0x02ff  */
     /* JADX WARN: Removed duplicated region for block: B:918:0x030b  */
@@ -19909,7 +19915,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 TransitionParams transitionParams4 = this.transitionParams;
                 this.nameY = f24 + transitionParams4.deltaTop;
                 float f25 = transitionParams4.animateSign ? this.transitionParams.animateNameX + ((this.nameX - this.transitionParams.animateNameX) * this.transitionParams.animateChangeProgress) : this.nameX;
-                float paddingTop = (this.nameY - getPaddingTop()) + getTopicSeparatorTopPadding();
+                float f26 = this.nameY;
                 TransitionParams transitionParams5 = this.transitionParams;
                 if (transitionParams5.animateDrawAvatar) {
                     boolean z5 = this.drawNameAvatar;
@@ -19932,7 +19938,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     str = "paintChatActionBackground";
                     f7 = f2;
                     f6 = f3;
-                    this.avatarImage.setImageCoords(dp8, (AndroidUtilities.dp(13.0f) * (1.0f - lerp)) + paddingTop, AndroidUtilities.dp(26.0f) * lerp, AndroidUtilities.dp(26.0f) * lerp);
+                    this.avatarImage.setImageCoords(dp8, (AndroidUtilities.dp(13.0f) * (1.0f - lerp)) + f26, AndroidUtilities.dp(26.0f) * lerp, AndroidUtilities.dp(26.0f) * lerp);
                     this.avatarImage.setAlpha(f5);
                     this.avatarImage.draw(canvas);
                     this.avatarImage.setImageCoords(imageX, imageY, imageWidth, imageHeight);
@@ -19946,7 +19952,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     f7 = f2;
                 }
                 float dp9 = f25 + (AndroidUtilities.dp(32.33f) * f5);
-                float dp10 = this.adminLayout == null ? paddingTop + (AndroidUtilities.dp(5.0f) * f5) : paddingTop - (AndroidUtilities.dp(2.33f) * f5);
+                float dp10 = this.adminLayout == null ? f26 + (AndroidUtilities.dp(5.0f) * f5) : f26 - (AndroidUtilities.dp(2.33f) * f5);
                 if (!this.currentMessageObject.isSponsored()) {
                     int multAlpha = Theme.multAlpha(Theme.chat_namePaint.getColor(), 0.12f);
                     Drawable drawable = this.nameLayoutSelector;
@@ -19975,12 +19981,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             Theme.setSelectorDrawableColor(drawable2, multAlpha, true);
                         }
                         boolean z6 = this.currentNameStatus instanceof Drawable;
-                        float f26 = z6 ? 1.5f : 0.0f;
-                        float f27 = z6 ? -5.0f : 0.0f;
+                        float f27 = z6 ? 1.5f : 0.0f;
+                        float f28 = z6 ? -5.0f : 0.0f;
                         Drawable drawable3 = this.nameStatusSelector;
                         int dp11 = (int) (this.nameOffsetX + dp9 + (this.viaNameWidth > 0 ? r9 - AndroidUtilities.dp(32.0f) : this.nameLayoutWidth));
-                        float f28 = 3.33f - f26;
-                        drawable3.setBounds(dp11, (int) (dp10 - AndroidUtilities.dp(f28)), (int) (this.nameOffsetX + dp9 + (this.viaNameWidth > 0 ? r13 - AndroidUtilities.dp(32.0f) : this.nameLayoutWidth) + AndroidUtilities.dp(f27 + 24.0f)), (int) (this.nameLayout.getHeight() + dp10 + AndroidUtilities.dp(f28)));
+                        float f29 = 3.33f - f27;
+                        drawable3.setBounds(dp11, (int) (dp10 - AndroidUtilities.dp(f29)), (int) (this.nameOffsetX + dp9 + (this.viaNameWidth > 0 ? r13 - AndroidUtilities.dp(32.0f) : this.nameLayoutWidth) + AndroidUtilities.dp(f28 + 24.0f)), (int) (this.nameLayout.getHeight() + dp10 + AndroidUtilities.dp(f29)));
                         this.nameStatusSelector.setAlpha(i16);
                         this.nameStatusSelector.draw(canvas);
                     }
@@ -20026,11 +20032,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         f8 -= AndroidUtilities.dp(48.0f);
                     }
                 }
-                float f29 = f8 + this.transitionParams.deltaRight;
+                float f30 = f8 + this.transitionParams.deltaRight;
                 if (this.adminLayout != null) {
                     Theme.chat_adminPaint.setColor(getThemedColor(this.currentMessageObject.shouldDrawWithoutBackground() ? Theme.key_chat_stickerReplyNameText : this.currentMessageObject.isOutOwner() ? isDrawSelectionBackground() ? Theme.key_chat_outAdminSelectedText : Theme.key_chat_outAdminText : isDrawSelectionBackground() ? Theme.key_chat_inAdminSelectedText : Theme.key_chat_inAdminText));
                     canvas.save();
-                    float dp12 = (f29 - AndroidUtilities.dp(11.0f)) - this.adminLayout.getLineWidth(0);
+                    float dp12 = (f30 - AndroidUtilities.dp(11.0f)) - this.adminLayout.getLineWidth(0);
                     float dp13 = this.nameY + AndroidUtilities.dp(0.5f);
                     float lerp2 = AndroidUtilities.lerp(dp12, dp9, f5);
                     float dp14 = dp13 + (AndroidUtilities.dp(14.0f) * f5);
@@ -20108,13 +20114,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 }
                                 f19 = f20 - Math.max(0.0f, (Math.max(AndroidUtilities.dp(14.0f) + i19, z8 ? Math.max(this.replyNameWidth, this.replyTextWidth) + AndroidUtilities.dp(14.0f) : 0) + f20) - AndroidUtilities.displaySize.x);
                             } else {
-                                float f30 = 11.0f;
+                                float f31 = 11.0f;
                                 if (this.currentMessageObject.needDrawForwarded()) {
                                     int i20 = this.backgroundDrawableLeft;
                                     if (!this.mediaBackground && !this.drawPinnedBottom) {
-                                        f30 = 17.0f;
+                                        f31 = 17.0f;
                                     }
-                                    f19 = i20 + AndroidUtilities.dp(f30) + getExtraTextX();
+                                    f19 = i20 + AndroidUtilities.dp(f31) + getExtraTextX();
                                     this.forwardNameX = f19;
                                 } else {
                                     f19 = this.transitionParams.animateForwardNameX;
@@ -20266,17 +20272,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         int intrinsicWidth = this.psaHelpX + (drawable6.getIntrinsicWidth() / 2);
                                         int intrinsicHeight = this.psaHelpY + (drawable6.getIntrinsicHeight() / 2);
                                         if (this.psaButtonVisible) {
-                                            float f31 = this.psaButtonProgress;
-                                            if (f31 < 1.0f) {
-                                                f17 = AnimationProperties.overshootInterpolator.getInterpolation(f31);
+                                            float f32 = this.psaButtonProgress;
+                                            if (f32 < 1.0f) {
+                                                f17 = AnimationProperties.overshootInterpolator.getInterpolation(f32);
                                                 int intrinsicWidth2 = ((int) (drawable6.getIntrinsicWidth() * f17)) / 2;
                                                 int intrinsicHeight2 = ((int) (drawable6.getIntrinsicHeight() * f17)) / 2;
                                                 drawable6.setBounds(intrinsicWidth - intrinsicWidth2, intrinsicHeight - intrinsicHeight2, intrinsicWidth + intrinsicWidth2, intrinsicHeight + intrinsicHeight2);
                                                 drawable6.draw(canvas);
                                                 if (Build.VERSION.SDK_INT >= 21 && this.selectorDrawable[0] != null && this.selectorDrawableMaskType[0] == 3) {
                                                     canvas.save();
-                                                    float f32 = this.psaButtonProgress;
-                                                    canvas.scale(f32, f32, this.selectorDrawable[0].getBounds().centerX(), this.selectorDrawable[0].getBounds().centerY());
+                                                    float f33 = this.psaButtonProgress;
+                                                    canvas.scale(f33, f33, this.selectorDrawable[0].getBounds().centerX(), this.selectorDrawable[0].getBounds().centerY());
                                                     this.selectorDrawable[0].draw(canvas);
                                                     canvas.restore();
                                                 }
@@ -20289,17 +20295,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         drawable6.draw(canvas);
                                         if (Build.VERSION.SDK_INT >= 21) {
                                             canvas.save();
-                                            float f322 = this.psaButtonProgress;
-                                            canvas.scale(f322, f322, this.selectorDrawable[0].getBounds().centerX(), this.selectorDrawable[0].getBounds().centerY());
+                                            float f332 = this.psaButtonProgress;
+                                            canvas.scale(f332, f332, this.selectorDrawable[0].getBounds().centerX(), this.selectorDrawable[0].getBounds().centerY());
                                             this.selectorDrawable[0].draw(canvas);
                                             canvas.restore();
                                         }
                                     }
                                     boolean z10 = this.psaButtonVisible;
                                     if (z10) {
-                                        float f33 = this.psaButtonProgress;
-                                        if (f33 < 1.0f) {
-                                            this.psaButtonProgress = f33 + (j / 180.0f);
+                                        float f34 = this.psaButtonProgress;
+                                        if (f34 < 1.0f) {
+                                            this.psaButtonProgress = f34 + (j / 180.0f);
                                             invalidate();
                                             if (this.psaButtonProgress > 1.0f) {
                                                 this.psaButtonProgress = 1.0f;
@@ -20309,9 +20315,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     }
                                     long j3 = j;
                                     if (!z10) {
-                                        float f34 = this.psaButtonProgress;
-                                        if (f34 > 0.0f) {
-                                            this.psaButtonProgress = f34 - (j3 / 180.0f);
+                                        float f35 = this.psaButtonProgress;
+                                        if (f35 > 0.0f) {
+                                            this.psaButtonProgress = f35 - (j3 / 180.0f);
                                             invalidate();
                                             if (this.psaButtonProgress < 0.0f) {
                                                 this.psaButtonProgress = 0.0f;
@@ -20462,28 +20468,28 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
             }
             if (z8) {
-                float f35 = this.replyStartX;
-                float f36 = this.replyStartY;
+                float f36 = this.replyStartX;
+                float f37 = this.replyStartY;
                 MessageObject.GroupedMessages groupedMessages4 = this.currentMessagesGroup;
                 if (groupedMessages4 != null) {
                     MessageObject.GroupedMessages.TransitionParams transitionParams7 = groupedMessages4.transitionParams;
                     if (transitionParams7.backgroundChangeBounds) {
-                        f35 += transitionParams7.offsetLeft;
+                        f36 += transitionParams7.offsetLeft;
                     }
                 }
                 TransitionParams transitionParams8 = this.transitionParams;
                 if (transitionParams8.animateBackgroundBoundsInner) {
-                    f35 += this.isRoundVideo ? (this.currentMessageObject.isOutOwner() ? 0.0f : this.transitionParams.deltaLeft) + this.transitionParams.deltaRight : transitionParams8.deltaLeft;
+                    f36 += this.isRoundVideo ? (this.currentMessageObject.isOutOwner() ? 0.0f : this.transitionParams.deltaLeft) + this.transitionParams.deltaRight : transitionParams8.deltaLeft;
                     TransitionParams transitionParams9 = this.transitionParams;
-                    f36 = AndroidUtilities.lerp(transitionParams9.animateFromReplyY, this.replyStartY, transitionParams9.animateChangeProgress);
+                    f37 = AndroidUtilities.lerp(transitionParams9.animateFromReplyY, this.replyStartY, transitionParams9.animateChangeProgress);
                 }
-                float f37 = f36;
-                float f38 = !z ? f10 : f35;
+                float f38 = f37;
+                float f39 = !z ? f10 : f36;
                 boolean z11 = (this.currentMessageObject == null || (chatMessageCellDelegate = this.delegate) == null || !chatMessageCellDelegate.isProgressLoading(this, 0)) ? false : true;
                 if (this.replyPressedFloat == null) {
                     this.replyPressedFloat = new AnimatedFloat(this);
                 }
-                float f39 = this.replyPressedFloat.set((this.replySelectorPressed || z11) ? 1.0f : 0.0f);
+                float f40 = this.replyPressedFloat.set((this.replySelectorPressed || z11) ? 1.0f : 0.0f);
                 if (this.replyLine == null) {
                     this.replyLine = new ReplyMessageLine(this);
                 }
@@ -20506,14 +20512,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                         canvas.save();
                         float scale3 = this.replyBounce.getScale(0.0125f);
-                        int i24 = (int) f38;
-                        this.rect.set(i24 - AndroidUtilities.dp(7.0f), f37 - AndroidUtilities.dp(3.0f), (i24 - AndroidUtilities.dp(4.0f)) + Math.max(this.replyNameWidth, this.replyTextWidth), AndroidUtilities.dp(3.0f) + f37 + this.replyHeight);
-                        float f40 = this.replyBounceX;
+                        int i24 = (int) f39;
+                        this.rect.set(i24 - AndroidUtilities.dp(7.0f), f38 - AndroidUtilities.dp(3.0f), (i24 - AndroidUtilities.dp(4.0f)) + Math.max(this.replyNameWidth, this.replyTextWidth), AndroidUtilities.dp(3.0f) + f38 + this.replyHeight);
+                        float f41 = this.replyBounceX;
                         RectF rectF3 = this.rect;
-                        float clamp = Utilities.clamp(f40, rectF3.right, rectF3.left);
-                        float f41 = this.replyBounceY;
+                        float clamp = Utilities.clamp(f41, rectF3.right, rectF3.left);
+                        float f42 = this.replyBounceY;
                         RectF rectF4 = this.rect;
-                        canvas.scale(scale3, scale3, clamp, Utilities.clamp(f41, rectF4.bottom, rectF4.top));
+                        canvas.scale(scale3, scale3, clamp, Utilities.clamp(f42, rectF4.bottom, rectF4.top));
                         applyServiceShaderMatrix();
                         int alpha8 = getThemedPaint(str2).getAlpha();
                         getThemedPaint(str2).setAlpha((int) (alpha8 * this.timeAlpha * f7));
@@ -20540,11 +20546,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (!this.hasReplyQuote) {
                                 i7 = isDrawSelectionBackground() ? Theme.key_chat_outReplyMediaMessageSelectedText : Theme.key_chat_outReplyMediaMessageText;
                                 themedColor = getThemedColor(i7);
-                                f39 = (f39 * 0.4f) + 0.6f;
+                                f40 = (f40 * 0.4f) + 0.6f;
                             }
                         }
-                        Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), f39));
-                        Theme.chat_replyTextPaint.linkColor = ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), Utilities.clamp(f39 * 2.0f, 1.0f, 0.0f));
+                        Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), f40));
+                        Theme.chat_replyTextPaint.linkColor = ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), Utilities.clamp(f40 * 2.0f, 1.0f, 0.0f));
                     }
                     Theme.chat_replyTextPaint.setColor(Theme.chat_replyNamePaint.getColor());
                     TextPaint textPaint4 = Theme.chat_replyTextPaint;
@@ -20562,11 +20568,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (!this.hasReplyQuote) {
                                 i7 = isDrawSelectionBackground() ? Theme.key_chat_inReplyMediaMessageSelectedText : Theme.key_chat_inReplyMediaMessageText;
                                 themedColor = getThemedColor(i7);
-                                f39 = (f39 * 0.4f) + 0.6f;
+                                f40 = (f40 * 0.4f) + 0.6f;
                             }
                         }
-                        Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), f39));
-                        Theme.chat_replyTextPaint.linkColor = ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), Utilities.clamp(f39 * 2.0f, 1.0f, 0.0f));
+                        Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), f40));
+                        Theme.chat_replyTextPaint.linkColor = ColorUtils.blendARGB(themedColor, Theme.adaptHue(themedColor, Theme.chat_replyNamePaint.getColor()), Utilities.clamp(f40 * 2.0f, 1.0f, 0.0f));
                     }
                     Theme.chat_replyTextPaint.setColor(Theme.chat_replyNamePaint.getColor());
                     TextPaint textPaint42 = Theme.chat_replyTextPaint;
@@ -20576,7 +20582,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 Theme.chat_quoteTextPaint.setColor(Theme.chat_replyTextPaint.getColor());
                 Theme.chat_quoteTextPaint.linkColor = Theme.chat_replyTextPaint.linkColor;
                 float dp21 = AndroidUtilities.dp(10.0f);
-                this.forwardNameX = (f38 - this.replyTextOffset) + dp21 + (this.needReplyImage ? r1 + AndroidUtilities.dp(25.0f) : 0);
+                this.forwardNameX = (f39 - this.replyTextOffset) + dp21 + (this.needReplyImage ? r1 + AndroidUtilities.dp(25.0f) : 0);
                 MessageObject.GroupedMessagePosition groupedMessagePosition3 = this.currentPosition;
                 if ((groupedMessagePosition3 == null || (groupedMessagePosition3.minY == 0 && groupedMessagePosition3.minX == 0)) && (!this.enterTransitionInProgress || this.currentMessageObject.isVoice())) {
                     float alpha10 = (this.transitionParams.ignoreAlpha ? 1.0f : getAlpha()) * f7;
@@ -20589,17 +20595,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     float min = Math.min(4.0f, SharedConfig.bubbleRadius);
                     if (this.currentMessageObject.shouldDrawWithoutBackground()) {
-                        float f42 = z ? 6.0f : 4.0f;
-                        this.replySelectorRect.set(f38 - AndroidUtilities.dp(7.0f), f37 - AndroidUtilities.dp(3.0f), (Math.max(this.replyNameWidth, this.replyTextWidth) + f38) - AndroidUtilities.dp(4.0f), this.replyHeight + f37 + AndroidUtilities.dp(3.0f));
+                        float f43 = z ? 6.0f : 4.0f;
+                        this.replySelectorRect.set(f39 - AndroidUtilities.dp(7.0f), f38 - AndroidUtilities.dp(3.0f), (Math.max(this.replyNameWidth, this.replyTextWidth) + f39) - AndroidUtilities.dp(4.0f), this.replyHeight + f38 + AndroidUtilities.dp(3.0f));
                         if (i6 > 0) {
                             RectF rectF6 = this.replySelectorRect;
                             rectF6.right = Math.max(rectF6.right, i6);
                         }
                         f11 = dp21;
-                        f13 = f42;
+                        f13 = f43;
                         f12 = f13;
                     } else {
-                        float f43 = (this.drawTopic || this.drawNameLayout || (this.drawForwardedName && this.forwardedNameLayout[0] != null)) ? min : (this.currentMessageObject.isOutOwner() && this.drawPinnedTop) ? SharedConfig.bubbleRadius / 3.0f : SharedConfig.bubbleRadius * 0.6f;
+                        float f44 = (this.drawTopic || this.drawNameLayout || (this.drawForwardedName && this.forwardedNameLayout[0] != null)) ? min : (this.currentMessageObject.isOutOwner() && this.drawPinnedTop) ? SharedConfig.bubbleRadius / 3.0f : SharedConfig.bubbleRadius * 0.6f;
                         if (this.currentMessagesGroup != null && (groupedMessagePosition = this.currentPosition) != null) {
                             int i26 = groupedMessagePosition.flags;
                             if ((i26 & 1) == 0 || (i26 & 2) == 0) {
@@ -20610,30 +20616,30 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     if (this.currentMessagesGroup.posArray.get(i27).minY != 0) {
                                         break;
                                     }
-                                    float f44 = dp21;
+                                    float f45 = dp21;
                                     double d2 = i28;
                                     double ceil2 = Math.ceil(((r7.pw + r7.leftSpanOffset) / 1000.0f) * minTabletSide);
                                     Double.isNaN(d2);
                                     i28 = (int) (d2 + ceil2);
                                     i27++;
-                                    dp21 = f44;
+                                    dp21 = f45;
                                 }
                                 f11 = dp21;
                                 backgroundDrawableRight = ((this.mediaBackground || !this.currentMessageObject.isOutOwner()) ? this.backgroundDrawableLeft + i28 : (this.backgroundDrawableLeft + i28) - AndroidUtilities.dp(6.0f)) - ((getExtraTextX() + AndroidUtilities.dp(8.0f)) + AndroidUtilities.lerp(AndroidUtilities.dp(this.isAvatarVisible ? 48.0f : 0.0f), AndroidUtilities.dp(64.0f), this.sideMenuAlpha));
                                 float dp22 = backgroundDrawableRight - (AndroidUtilities.dp(10 + ((this.currentMessageObject.isOutOwner() || this.mediaBackground || this.drawPinnedBottom) ? 0 : 6)) + getExtraTextX());
                                 RectF rectF7 = this.replySelectorRect;
                                 float dp23 = this.backgroundDrawableLeft + this.transitionParams.deltaLeft + AndroidUtilities.dp(10 + ((!this.currentMessageObject.isOutOwner() || this.mediaBackground || this.drawPinnedBottom) ? 0 : 6)) + getExtraTextX();
-                                float dp24 = f37 - AndroidUtilities.dp((this.mediaBackground && this.drawPinnedTop && !this.drawNameLayout) ? 2 : 0);
+                                float dp24 = f38 - AndroidUtilities.dp((this.mediaBackground && this.drawPinnedTop && !this.drawNameLayout) ? 2 : 0);
                                 if (this.drawForwardedName && this.forwardedNameLayout[0] != null && !this.drawNameLayout) {
                                     i9 = 2;
-                                    rectF7.set(dp23, dp24 - i9, dp22, this.replyHeight + f37 + AndroidUtilities.dp(4.0f));
+                                    rectF7.set(dp23, dp24 - i9, dp22, this.replyHeight + f38 + AndroidUtilities.dp(4.0f));
                                     f12 = min;
-                                    f13 = f43;
+                                    f13 = f44;
                                 }
                                 i9 = 0;
-                                rectF7.set(dp23, dp24 - i9, dp22, this.replyHeight + f37 + AndroidUtilities.dp(4.0f));
+                                rectF7.set(dp23, dp24 - i9, dp22, this.replyHeight + f38 + AndroidUtilities.dp(4.0f));
                                 f12 = min;
-                                f13 = f43;
+                                f13 = f44;
                             }
                         }
                         f11 = dp21;
@@ -20641,17 +20647,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         float dp222 = backgroundDrawableRight - (AndroidUtilities.dp(10 + ((this.currentMessageObject.isOutOwner() || this.mediaBackground || this.drawPinnedBottom) ? 0 : 6)) + getExtraTextX());
                         RectF rectF72 = this.replySelectorRect;
                         float dp232 = this.backgroundDrawableLeft + this.transitionParams.deltaLeft + AndroidUtilities.dp(10 + ((!this.currentMessageObject.isOutOwner() || this.mediaBackground || this.drawPinnedBottom) ? 0 : 6)) + getExtraTextX();
-                        float dp242 = f37 - AndroidUtilities.dp((this.mediaBackground && this.drawPinnedTop && !this.drawNameLayout) ? 2 : 0);
+                        float dp242 = f38 - AndroidUtilities.dp((this.mediaBackground && this.drawPinnedTop && !this.drawNameLayout) ? 2 : 0);
                         if (this.drawForwardedName) {
                             i9 = 2;
-                            rectF72.set(dp232, dp242 - i9, dp222, this.replyHeight + f37 + AndroidUtilities.dp(4.0f));
+                            rectF72.set(dp232, dp242 - i9, dp222, this.replyHeight + f38 + AndroidUtilities.dp(4.0f));
                             f12 = min;
-                            f13 = f43;
+                            f13 = f44;
                         }
                         i9 = 0;
-                        rectF72.set(dp232, dp242 - i9, dp222, this.replyHeight + f37 + AndroidUtilities.dp(4.0f));
+                        rectF72.set(dp232, dp242 - i9, dp222, this.replyHeight + f38 + AndroidUtilities.dp(4.0f));
                         f12 = min;
-                        f13 = f43;
+                        f13 = f44;
                     }
                     if (z) {
                         if (this.replyBounce == null) {
@@ -20662,12 +20668,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                         canvas.save();
                         float scale4 = this.replyBounce.getScale(0.0125f);
-                        float f45 = this.replyBounceX;
+                        float f46 = this.replyBounceX;
                         RectF rectF8 = this.replySelectorRect;
-                        float clamp2 = Utilities.clamp(f45, rectF8.right, rectF8.left);
-                        float f46 = this.replyBounceY;
+                        float clamp2 = Utilities.clamp(f46, rectF8.right, rectF8.left);
+                        float f47 = this.replyBounceY;
                         RectF rectF9 = this.replySelectorRect;
-                        canvas.scale(scale4, scale4, clamp2, Utilities.clamp(f46, rectF9.bottom, rectF9.top));
+                        canvas.scale(scale4, scale4, clamp2, Utilities.clamp(f47, rectF9.bottom, rectF9.top));
                     }
                     int i29 = i8;
                     this.replyLine.setLoading(z11);
@@ -20711,19 +20717,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (messageObject13 != null && messageObject13.hasValidReplyMessageObject() && this.currentMessageObject.replyMessageObject.hasMediaSpoilers()) {
                             int[] roundRadius = this.replyImageReceiver.getRoundRadius();
                             float[] fArr = this.mediaSpoilerRadii;
-                            float f47 = roundRadius[0];
-                            fArr[1] = f47;
-                            fArr[0] = f47;
-                            float f48 = roundRadius[1];
-                            fArr[3] = f48;
+                            float f48 = roundRadius[0];
+                            fArr[1] = f48;
+                            fArr[0] = f48;
+                            float f49 = roundRadius[1];
+                            fArr[3] = f49;
                             i10 = 2;
-                            fArr[2] = f48;
-                            float f49 = roundRadius[2];
-                            fArr[5] = f49;
-                            fArr[4] = f49;
-                            float f50 = roundRadius[3];
-                            fArr[7] = f50;
-                            fArr[6] = f50;
+                            fArr[2] = f49;
+                            float f50 = roundRadius[2];
+                            fArr[5] = f50;
+                            fArr[4] = f50;
+                            float f51 = roundRadius[3];
+                            fArr[7] = f51;
+                            fArr[6] = f51;
                             this.mediaSpoilerPath.rewind();
                             RectF rectF11 = AndroidUtilities.rectTmp;
                             rectF11.set(this.replyImageReceiver.getImageX(), this.replyImageReceiver.getImageY(), this.replyImageReceiver.getImageX2(), this.replyImageReceiver.getImageY2());
@@ -20775,7 +20781,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     if (this.replyNameLayout != null) {
                         canvas.save();
-                        canvas.translate(((f38 + f16) - this.replyNameOffset) + f11 + (this.needReplyImage ? f14 + AndroidUtilities.dp(3.0f) : 0.0f), f37 + dp25);
+                        canvas.translate(((f39 + f16) - this.replyNameOffset) + f11 + (this.needReplyImage ? f14 + AndroidUtilities.dp(3.0f) : 0.0f), f38 + dp25);
                         this.replyNameLayout.draw(canvas);
                         canvas.restore();
                     }
@@ -20785,17 +20791,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         canvas.save();
                         canvas.clipRect(this.replySelectorRect);
                         canvas.save();
-                        float f51 = f38 + f11 + f16;
+                        float f52 = f39 + f11 + f16;
                         if (this.isReplyQuote && this.needReplyImage) {
-                            f51 -= AndroidUtilities.dp(2.0f);
+                            f52 -= AndroidUtilities.dp(2.0f);
                         }
                         if (this.needReplyImage && (!this.isReplyQuote || this.replyTextRTL)) {
-                            f51 += AndroidUtilities.dp(3.0f) + f14;
+                            f52 += AndroidUtilities.dp(3.0f) + f14;
                         }
                         if (this.replyTextRTL && this.transitionParams.animateReplyTextOffset > 0.0f) {
-                            f51 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.transitionParams.animateReplyTextLayout.getWidth();
+                            f52 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.transitionParams.animateReplyTextLayout.getWidth();
                         }
-                        canvas.translate(f51, ((f37 + dp25) - AndroidUtilities.dp(1.0f)) + Theme.chat_replyNamePaint.getTextSize() + AndroidUtilities.dp(5.0f));
+                        canvas.translate(f52, ((f38 + dp25) - AndroidUtilities.dp(1.0f)) + Theme.chat_replyNamePaint.getTextSize() + AndroidUtilities.dp(5.0f));
                         TextPaint paint = this.transitionParams.animateReplyTextLayout.getPaint();
                         int alpha11 = paint.getAlpha();
                         paint.setAlpha((int) (alpha11 * (1.0f - this.transitionParams.animateChangeProgress)));
@@ -20806,17 +20812,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     if (this.replyTextLayout != null) {
                         canvas.save();
-                        float f52 = f38 + f11 + f16;
+                        float f53 = f39 + f11 + f16;
                         if (this.isReplyQuote && this.needReplyImage) {
-                            f52 -= AndroidUtilities.dp(2.0f);
+                            f53 -= AndroidUtilities.dp(2.0f);
                         }
                         if (this.needReplyImage && (!this.isReplyQuote || this.replyTextRTL)) {
-                            f52 += f14 + AndroidUtilities.dp(3.0f);
+                            f53 += f14 + AndroidUtilities.dp(3.0f);
                         }
                         if (this.replyTextRTL && this.replyTextOffset > 0) {
-                            f52 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.replyTextLayout.getWidth();
+                            f53 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.replyTextLayout.getWidth();
                         }
-                        canvas.translate(f52, ((f37 + dp25) - AndroidUtilities.dp(1.0f)) + Theme.chat_replyNamePaint.getTextSize() + AndroidUtilities.dp(5.0f));
+                        canvas.translate(f53, ((f38 + dp25) - AndroidUtilities.dp(1.0f)) + Theme.chat_replyNamePaint.getTextSize() + AndroidUtilities.dp(5.0f));
                         TextPaint paint2 = this.replyTextLayout.getPaint();
                         int alpha12 = paint2.getAlpha();
                         paint2.setAlpha((int) (alpha12 * (this.transitionParams.animateReplyTextLayout != null ? this.transitionParams.animateChangeProgress : 1.0f)));
@@ -24850,6 +24856,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public int getObserverTag() {
         return this.TAG;
+    }
+
+    public float getPaddingTopAnimated() {
+        return getTopicSeparatorTopPadding() + this.starsPriceTopPadding;
     }
 
     public int getParentWidth() {
