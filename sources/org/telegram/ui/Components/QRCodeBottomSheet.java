@@ -92,7 +92,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         };
         frameLayout.addView(imageView, LayoutHelper.createFrame(-1, -1.0f));
         frameLayout.addView(this.iconImage, LayoutHelper.createFrame(60, 60, 17));
-        linearLayout.addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.updateAllMessages, NotificationCenter.updateAllMessages, 1, 30, 0, 30, 0));
+        linearLayout.addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.webViewResolved, NotificationCenter.webViewResolved, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
         this.help = textView;
         textView.setTextSize(1, 14.0f);
@@ -193,7 +193,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         TextView textView2 = this.button2TextView;
         if (textView2 != null) {
             textView2.setTextColor(getThemedColor(i));
-            this.button2TextView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(getThemedColor(i), Math.min(NotificationCenter.didSetNewWallpapper, Color.alpha(getThemedColor(Theme.key_listSelector)) * 2)), 7));
+            this.button2TextView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(getThemedColor(i), Math.min(NotificationCenter.suggestedLangpack, Color.alpha(getThemedColor(Theme.key_listSelector)) * 2)), 7));
         }
         TextView textView3 = this.help;
         int i2 = Theme.key_windowBackgroundWhiteGrayText;

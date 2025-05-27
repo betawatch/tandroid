@@ -61,6 +61,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.FilterCreateActivity;
 import org.telegram.ui.GradientHeaderActivity;
 import org.telegram.ui.LaunchActivity;
@@ -172,7 +173,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 Object obj = uItem.object;
                 if (obj instanceof TL_payments.connectedBotStarRef) {
                     ((BotCell) view).set((TL_payments.connectedBotStarRef) obj, uItem.red, z);
@@ -323,7 +324,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((HeaderSortCell) view).set(uItem.text, uItem.subtext);
             }
 
@@ -1459,7 +1460,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         this.iconTextureView.setStarParticlesView(this.particlesView);
-        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesSendAsUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
+        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesLimitUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
         configureHeader(LocaleController.getString(R.string.ChannelAffiliateProgramTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ChannelAffiliateProgramText)), this.aboveTitleView, null);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener

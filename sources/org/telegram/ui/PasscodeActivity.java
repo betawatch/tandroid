@@ -140,7 +140,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1) {
-                PasscodeActivity.this.lambda$onBackPressed$338();
+                PasscodeActivity.this.lambda$onBackPressed$347();
                 return;
             }
             if (i == 1) {
@@ -512,7 +512,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             i2++;
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -530,7 +530,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             if (value == 1) {
                 i3 = 60;
             } else if (value == 2) {
-                i3 = NotificationCenter.onDatabaseReset;
+                i3 = NotificationCenter.didUpdateGlobalAutoDeleteTimer;
             } else if (value == 3) {
                 i3 = 3600;
             } else if (value == 4) {
@@ -663,7 +663,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         atomicBoolean.set(!atomicBoolean.get());
         int selectionStart = this.passwordEditText.getSelectionStart();
         int selectionEnd = this.passwordEditText.getSelectionEnd();
-        this.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.messagePlayingProgressDidChanged : 128) | 1);
+        this.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.dialogsUnreadCounterChanged : 128) | 1);
         this.passwordEditText.setSelection(selectionStart, selectionEnd);
         this.passwordButton.setColorFilter(Theme.getColor(atomicBoolean.get() ? Theme.key_windowBackgroundWhiteInputFieldActivated : Theme.key_windowBackgroundWhiteHintText));
     }
@@ -707,7 +707,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         if (z) {
             presentFragment(new PasscodeActivity(0), true);
         } else {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
     }
@@ -1151,7 +1151,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
                 if (i5 == -1) {
-                    PasscodeActivity.this.lambda$onBackPressed$338();
+                    PasscodeActivity.this.lambda$onBackPressed$347();
                 }
             }
         });
@@ -1217,7 +1217,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setVisibility(isCustomKeyboardVisible() ? 0 : 8);
-        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.commonChatsLoaded));
+        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.messagesFeeUpdated));
         int i5 = this.type;
         if (i5 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Passcode));

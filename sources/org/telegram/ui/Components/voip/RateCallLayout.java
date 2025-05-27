@@ -235,8 +235,8 @@ public class RateCallLayout extends FrameLayout {
             }, i);
             this.starsContainer.addView(this.startsViews[i], LayoutHelper.createFrame(-2, -2.0f, 51, i * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.onDatabaseReset, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.openBoostForUsersDialog, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
+        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.didUpdateGlobalAutoDeleteTimer, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.storyQualityUpdate, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -264,12 +264,12 @@ public class RateCallLayout extends FrameLayout {
         if (i >= 4) {
             final RLottieImageView rLottieImageView = new RLottieImageView(context);
             int dp = AndroidUtilities.dp(133.0f);
-            rLottieImageView.setAnimation(R.raw.rate, NotificationCenter.didUpdateConnectionState, NotificationCenter.didUpdateConnectionState);
+            rLottieImageView.setAnimation(R.raw.rate, NotificationCenter.httpFileDidFailedLoad, NotificationCenter.httpFileDidFailedLoad);
             int[] iArr = new int[2];
             getLocationOnScreen(iArr);
             int i2 = iArr[0];
             int i3 = iArr[1];
-            addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.didUpdateConnectionState, 133.0f));
+            addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.httpFileDidFailedLoad, 133.0f));
             float f3 = dp / 2.0f;
             rLottieImageView.setTranslationX((f - i2) - f3);
             rLottieImageView.setTranslationY((f2 - i3) - f3);

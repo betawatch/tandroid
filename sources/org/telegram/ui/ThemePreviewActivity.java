@@ -319,7 +319,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             Theme.applyPreviousTheme();
             Theme.refreshThemeColors();
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, ThemePreviewActivity.this.applyingTheme, Boolean.valueOf(ThemePreviewActivity.this.nightTheme), null, -1);
-            ThemePreviewActivity.this.lambda$onBackPressed$338();
+            ThemePreviewActivity.this.lambda$onBackPressed$347();
         }
 
         @Override // org.telegram.ui.Components.ColorPicker.ColorPickerDelegate
@@ -361,7 +361,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 return;
             }
             if (ThemePreviewActivity.this.accent.info == null) {
-                ThemePreviewActivity.this.lambda$onBackPressed$338();
+                ThemePreviewActivity.this.lambda$onBackPressed$347();
                 MessagesController.getInstance(((BaseFragment) ThemePreviewActivity.this).currentAccount).saveThemeToServer(ThemePreviewActivity.this.accent.parentTheme, ThemePreviewActivity.this.accent);
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, ThemePreviewActivity.this.accent.parentTheme, ThemePreviewActivity.this.accent);
                 return;
@@ -440,7 +440,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 Theme.saveThemeAccents(ThemePreviewActivity.this.applyingTheme, true, false, false, true);
                 Theme.applyPreviousTheme();
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, ThemePreviewActivity.this.applyingTheme, Boolean.valueOf(ThemePreviewActivity.this.nightTheme), null, -1);
-                ThemePreviewActivity.this.lambda$onBackPressed$338();
+                ThemePreviewActivity.this.lambda$onBackPressed$347();
                 return;
             }
             if (i == 5) {
@@ -727,7 +727,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             }
         }
 
-        @Override // android.view.View
+        @Override // org.telegram.ui.Components.BackupImageView, android.view.View
         protected boolean verifyDrawable(Drawable drawable) {
             return this.background == drawable || super.verifyDrawable(drawable);
         }
@@ -1045,7 +1045,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     tL_message.message = LocaleController.getString(ThemePreviewActivity.this.currentWallpaper instanceof WallpapersListActivity.ColorWallpaper ? R.string.BackgroundColorSinglePreviewLine2 : R.string.BackgroundPreviewLine2);
                     tL_message.date = currentTimeMillis - 3540;
                     tL_message.dialog_id = 1L;
-                    tL_message.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message.flags = NotificationCenter.proxyChangedByRotation;
                     tL_message.id = 1;
                     tL_message.media = new TLRPC.TL_messageMediaEmpty();
                     tL_message.out = true;
@@ -1095,7 +1095,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 int i2 = currentTimeMillis - 3540;
                 tL_message2.date = i2;
                 tL_message2.dialog_id = 1L;
-                tL_message2.flags = NotificationCenter.messagePlayingSpeedChanged;
+                tL_message2.flags = NotificationCenter.closeSearchByActiveAction;
                 tL_message2.id = 1;
                 tL_message2.media = new TLRPC.TL_messageMediaEmpty();
                 tL_message2.out = false;
@@ -1125,7 +1125,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 tL_message5.message = user != null ? LocaleController.formatString(R.string.ChatBackgroundHint, UserObject.getFirstName(user)) : LocaleController.getString(R.string.ChannelBackgroundHint);
                 tL_message5.date = i2;
                 tL_message5.dialog_id = 1L;
-                tL_message5.flags = NotificationCenter.messagePlayingSpeedChanged;
+                tL_message5.flags = NotificationCenter.closeSearchByActiveAction;
                 tL_message5.from_id = new TLRPC.TL_peerUser();
                 tL_message5.id = 1;
                 tL_message5.media = new TLRPC.TL_messageMediaEmpty();
@@ -1155,7 +1155,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     int i3 = currentTimeMillis + (-3540);
                     tL_message6.date = i3;
                     tL_message6.dialog_id = 1L;
-                    tL_message6.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message6.flags = NotificationCenter.proxyChangedByRotation;
                     TLRPC.TL_peerUser tL_peerUser5 = new TLRPC.TL_peerUser();
                     tL_message6.from_id = tL_peerUser5;
                     tL_peerUser5.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -1170,7 +1170,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         tL_message7.message = "this is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text\nthis is very very long text";
                         tL_message7.date = currentTimeMillis - 2640;
                         tL_message7.dialog_id = 1L;
-                        tL_message7.flags = NotificationCenter.liveLocationsChanged;
+                        tL_message7.flags = NotificationCenter.proxyChangedByRotation;
                         TLRPC.TL_peerUser tL_peerUser7 = new TLRPC.TL_peerUser();
                         tL_message7.from_id = tL_peerUser7;
                         tL_peerUser7.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -1202,7 +1202,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     tL_message8.message = sb.toString();
                     tL_message8.date = currentTimeMillis - 2640;
                     tL_message8.dialog_id = 1L;
-                    tL_message8.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message8.flags = NotificationCenter.proxyChangedByRotation;
                     TLRPC.TL_peerUser tL_peerUser9 = new TLRPC.TL_peerUser();
                     tL_message8.from_id = tL_peerUser9;
                     tL_peerUser9.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -1220,7 +1220,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     tL_message9.message = LocaleController.getString(R.string.NewThemePreviewLine1);
                     tL_message9.date = i3;
                     tL_message9.dialog_id = 1L;
-                    tL_message9.flags = NotificationCenter.messagePlayingSpeedChanged;
+                    tL_message9.flags = NotificationCenter.closeSearchByActiveAction;
                     tL_message9.from_id = new TLRPC.TL_peerUser();
                     tL_message9.id = 1;
                     TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
@@ -1244,7 +1244,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     TLRPC.TL_message tL_message10 = new TLRPC.TL_message();
                     tL_message10.date = currentTimeMillis - 3480;
                     tL_message10.dialog_id = 1L;
-                    tL_message10.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message10.flags = NotificationCenter.proxyChangedByRotation;
                     tL_message10.out = false;
                     tL_message10.from_id = new TLRPC.TL_peerUser();
                     tL_message10.id = 1;
@@ -1288,7 +1288,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     int i4 = currentTimeMillis - 2640;
                     tL_message11.date = i4;
                     tL_message11.dialog_id = -1L;
-                    tL_message11.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message11.flags = NotificationCenter.proxyChangedByRotation;
                     tL_message11.id = 2147483646;
                     tL_message11.media = new TLRPC.TL_messageMediaEmpty();
                     tL_message11.out = false;
@@ -1303,7 +1303,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     tL_message12.message = "No.\nAnd every unnecessary ping of the dev delays the release for 10 days.\nEvery request for ETA delays the release for 2 weeks.";
                     tL_message12.date = i4;
                     tL_message12.dialog_id = -1L;
-                    tL_message12.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message12.flags = NotificationCenter.proxyChangedByRotation;
                     tL_message12.id = 1;
                     tL_message12.media = new TLRPC.TL_messageMediaEmpty();
                     tL_message12.out = false;
@@ -1318,7 +1318,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     tL_message13.message = "Is source code for Android coming anytime soon?";
                     tL_message13.date = currentTimeMillis - 3000;
                     tL_message13.dialog_id = -1L;
-                    tL_message13.flags = NotificationCenter.liveLocationsChanged;
+                    tL_message13.flags = NotificationCenter.proxyChangedByRotation;
                     tL_message13.id = 1;
                     tL_message13.media = new TLRPC.TL_messageMediaEmpty();
                     tL_message13.out = false;
@@ -1337,7 +1337,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 int i5 = currentTimeMillis - 3540;
                 tL_message14.date = i5;
                 tL_message14.dialog_id = 1L;
-                tL_message14.flags = NotificationCenter.liveLocationsChanged;
+                tL_message14.flags = NotificationCenter.proxyChangedByRotation;
                 TLRPC.TL_peerUser tL_peerUser16 = new TLRPC.TL_peerUser();
                 tL_message14.from_id = tL_peerUser16;
                 tL_peerUser16.user_id = UserConfig.getInstance(((BaseFragment) ThemePreviewActivity.this).currentAccount).getClientUserId();
@@ -1352,7 +1352,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 tL_message15.message = LocaleController.getString(R.string.ThemePreviewLine2);
                 tL_message15.date = currentTimeMillis - 2640;
                 tL_message15.dialog_id = 1L;
-                tL_message15.flags = NotificationCenter.liveLocationsChanged;
+                tL_message15.flags = NotificationCenter.proxyChangedByRotation;
                 TLRPC.TL_peerUser tL_peerUser18 = new TLRPC.TL_peerUser();
                 tL_message15.from_id = tL_peerUser18;
                 tL_peerUser18.user_id = UserConfig.getInstance(((BaseFragment) ThemePreviewActivity.this).currentAccount).getClientUserId();
@@ -1366,7 +1366,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_message tL_message16 = new TLRPC.TL_message();
                 tL_message16.date = currentTimeMillis - 3470;
                 tL_message16.dialog_id = 1L;
-                tL_message16.flags = NotificationCenter.liveLocationsChanged;
+                tL_message16.flags = NotificationCenter.proxyChangedByRotation;
                 tL_message16.from_id = new TLRPC.TL_peerUser();
                 tL_message16.id = 5;
                 TLRPC.TL_messageMediaDocument tL_messageMediaDocument3 = new TLRPC.TL_messageMediaDocument();
@@ -1390,7 +1390,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 tL_message17.message = LocaleController.getString(R.string.ThemePreviewLine3);
                 tL_message17.date = i5;
                 tL_message17.dialog_id = 1L;
-                tL_message17.flags = NotificationCenter.messagePlayingSpeedChanged;
+                tL_message17.flags = NotificationCenter.closeSearchByActiveAction;
                 tL_message17.from_id = new TLRPC.TL_peerUser();
                 tL_message17.id = 1;
                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader2 = new TLRPC.TL_messageReplyHeader();
@@ -1409,7 +1409,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_message tL_message18 = new TLRPC.TL_message();
                 tL_message18.date = currentTimeMillis - 3480;
                 tL_message18.dialog_id = 1L;
-                tL_message18.flags = NotificationCenter.liveLocationsChanged;
+                tL_message18.flags = NotificationCenter.proxyChangedByRotation;
                 TLRPC.TL_peerUser tL_peerUser22 = new TLRPC.TL_peerUser();
                 tL_message18.from_id = tL_peerUser22;
                 tL_peerUser22.user_id = UserConfig.getInstance(((BaseFragment) ThemePreviewActivity.this).currentAccount).getClientUserId();
@@ -1440,7 +1440,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_message tL_message19 = new TLRPC.TL_message();
                 tL_message19.date = currentTimeMillis - 3590;
                 tL_message19.dialog_id = 1L;
-                tL_message19.flags = NotificationCenter.proxyCheckDone;
+                tL_message19.flags = NotificationCenter.proxySettingsChanged;
                 tL_message19.from_id = new TLRPC.TL_peerUser();
                 tL_message19.id = 1;
                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
@@ -1456,7 +1456,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
                 tL_photoSize.size = 0;
                 tL_photoSize.w = 500;
-                tL_photoSize.h = NotificationCenter.storiesUpdated;
+                tL_photoSize.h = NotificationCenter.wallpaperSettedToUser;
                 tL_photoSize.type = "s";
                 tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
                 tL_message19.media.photo.sizes.add(tL_photoSize);
@@ -1512,7 +1512,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             return false;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:32:0x00a3  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x00a5  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1556,13 +1556,13 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                             z2 = true;
                             chatMessageCell.isChat = !this.showSecretMessages || ThemePreviewActivity.this.dialogId < 0;
                             chatMessageCell.setFullyDraw(true);
-                            chatMessageCell.setMessageObject(messageObject2, null, z, z2);
+                            chatMessageCell.setMessageObject(messageObject2, null, z, z2, false);
                         }
                     }
                     z2 = false;
                     chatMessageCell.isChat = !this.showSecretMessages || ThemePreviewActivity.this.dialogId < 0;
                     chatMessageCell.setFullyDraw(true);
-                    chatMessageCell.setMessageObject(messageObject2, null, z, z2);
+                    chatMessageCell.setMessageObject(messageObject2, null, z, z2, false);
                 }
             }
             z = false;
@@ -1572,13 +1572,13 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     z2 = true;
                     chatMessageCell.isChat = !this.showSecretMessages || ThemePreviewActivity.this.dialogId < 0;
                     chatMessageCell.setFullyDraw(true);
-                    chatMessageCell.setMessageObject(messageObject2, null, z, z2);
+                    chatMessageCell.setMessageObject(messageObject2, null, z, z2, false);
                 }
             }
             z2 = false;
             chatMessageCell.isChat = !this.showSecretMessages || ThemePreviewActivity.this.dialogId < 0;
             chatMessageCell.setFullyDraw(true);
-            chatMessageCell.setMessageObject(messageObject2, null, z, z2);
+            chatMessageCell.setMessageObject(messageObject2, null, z, z2, false);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1751,11 +1751,6 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell2) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell2);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell2);
                     }
@@ -1848,11 +1843,6 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell2);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressTopicButton(ChatMessageCell chatMessageCell2) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTopicButton(this, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2018,16 +2008,6 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean shouldRepeatSticker(MessageObject messageObject) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldRepeatSticker(this, messageObject);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell2) {
-                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell2);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ boolean shouldShowTopicButton(ChatMessageCell chatMessageCell2) {
-                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowTopicButton(this, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2397,12 +2377,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             }
             this.chat_actionBackgroundPaint.setShader(this.serviceBitmapShader);
             this.chat_actionBackgroundPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-            this.chat_actionBackgroundPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+            this.chat_actionBackgroundPaint.setAlpha(NotificationCenter.suggestedLangpack);
             this.chat_actionBackgroundSelectedPaint.setShader(this.serviceBitmapShader);
             ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
             AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.85f);
             this.chat_actionBackgroundSelectedPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-            this.chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+            this.chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.suggestedLangpack);
         }
 
         @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
@@ -3258,7 +3238,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 if (wallpaperActivityDelegate != null) {
                                     wallpaperActivityDelegate.didSetNewBackground(tL_wallPaper8);
                                 }
-                                lambda$onBackPressed$338();
+                                lambda$onBackPressed$347();
                                 if (z4) {
                                     return;
                                 }
@@ -3266,7 +3246,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 if (wallpaperActivityDelegate2 != null) {
                                     wallpaperActivityDelegate2.didSetNewBackground(tL_wallPaper8);
                                 }
-                                lambda$onBackPressed$338();
+                                lambda$onBackPressed$347();
                                 return;
                             }
                             Theme.serviceMessageColorBackup = getThemedColor(Theme.key_chat_serviceBackground);
@@ -3740,7 +3720,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (z) {
                 return;
             }
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         Theme.applyPreviousTheme();
@@ -3779,7 +3759,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         if (z) {
             return;
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     private BitmapDrawable checkBlur(Drawable drawable) {
@@ -4366,7 +4346,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             edit.commit();
         }
         BaseFragment baseFragment = (BaseFragment) getParentLayout().getFragmentStack().get(Math.max(0, getParentLayout().getFragmentStack().size() - 2));
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
         if (this.screenType == 0) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didApplyNewTheme, previousTheme, accent, Boolean.valueOf(this.deleteOnCancel));
         }
@@ -5180,7 +5160,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.valueAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.valueAnimator.setDuration(300L);
         this.valueAnimator.start();
-        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.onDatabaseReset);
+        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.didUpdateGlobalAutoDeleteTimer);
         this.backgroundImage.getImageReceiver().setImage(ImageLocation.getForDocument(tL_wallPaper.document), this.imageFilter, null, null, null, tL_wallPaper.document.size, "jpg", tL_wallPaper, 1);
         this.backgroundImage.onNewImageSet();
         this.selectedPattern = tL_wallPaper;
@@ -6721,7 +6701,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         if (ThemePreviewActivity.this.patternLayout[i24] != null) {
                             FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i24].getLayoutParams();
                             if (i24 == 0) {
-                                f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.appUpdateLoading;
+                                f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.appUpdateAvailable;
                             } else {
                                 f13 = 316.0f;
                             }
@@ -7867,7 +7847,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                     if (insideBottomSheet) {
                                         RectF rectF = AndroidUtilities.rectTmp;
                                         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+                                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
                                         Theme.applyServiceShaderMatrixForView(this, ThemePreviewActivity.this.backgroundImage, ThemePreviewActivity.this.themeDelegate);
                                         Paint paint = ThemePreviewActivity.this.themeDelegate.getPaint("paintChatActionBackground");
                                         ColorFilter colorFilter = paint.getColorFilter();
@@ -8007,7 +7987,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 };
                                 this.dimmingSliderContainer = frameLayout8;
                                 frameLayout8.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-                                this.page2.addView(this.dimmingSliderContainer, LayoutHelper.createFrame(NotificationCenter.starUserGiftsLoaded, 76, 49));
+                                this.page2.addView(this.dimmingSliderContainer, LayoutHelper.createFrame(NotificationCenter.starGiftsLoaded, 76, 49));
                                 SliderView sliderView = new SliderView(getContext(), 3) { // from class: org.telegram.ui.ThemePreviewActivity.16
                                     @Override // org.telegram.ui.Stories.recorder.SliderView, android.view.View
                                     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
@@ -8334,12 +8314,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             i14 = 316;
                                         } else {
                                             if (i12 == 0) {
-                                                i14 = NotificationCenter.appUpdateLoading;
+                                                i14 = NotificationCenter.appUpdateAvailable;
                                             }
                                             i14 = 316;
                                         }
                                         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, i14, 83);
-                                        createFrame.height = AndroidUtilities.dp(i12 == 0 ? this.screenType == 2 ? 321 : NotificationCenter.appUpdateLoading : 316.0f);
+                                        createFrame.height = AndroidUtilities.dp(i12 == 0 ? this.screenType == 2 ? 321 : NotificationCenter.appUpdateAvailable : 316.0f);
                                         if (insideBottomSheet()) {
                                             createFrame.height += AndroidUtilities.navigationBarHeight;
                                         }
@@ -8740,7 +8720,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 this.paint.setColor(ThemePreviewActivity.this.getButtonsColor(Theme.key_chat_fieldOverlayText));
                                 int i35 = 0;
                                 while (i35 < 2) {
-                                    this.paint.setAlpha(i35 == currentItem ? NotificationCenter.didSetNewWallpapper : NotificationCenter.dialogTranslate);
+                                    this.paint.setAlpha(i35 == currentItem ? NotificationCenter.suggestedLangpack : NotificationCenter.dialogIsTranslatable);
                                     canvas.drawCircle(AndroidUtilities.dp((i35 * 15) + 3), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f), this.paint);
                                     i35++;
                                 }
@@ -9333,7 +9313,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     if (ThemePreviewActivity.this.patternLayout[i242] != null) {
                         FrameLayout.LayoutParams layoutParams42 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i242].getLayoutParams();
                         if (i242 == 0) {
-                            f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.appUpdateLoading;
+                            f13 = ThemePreviewActivity.this.screenType == 2 ? 321 : NotificationCenter.appUpdateAvailable;
                         } else {
                             f13 = 316.0f;
                         }
@@ -9792,7 +9772,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (i != NotificationCenter.wallpaperSettedToUser || this.dialogId == 0) {
                 return;
             }
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         ArrayList arrayList = (ArrayList) objArr[0];

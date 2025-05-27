@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -366,8 +367,8 @@ public abstract class BackButtonMenu {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x024b  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x026c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0276 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r0v32, types: [android.graphics.drawable.BitmapDrawable] */
     /* JADX WARN: Type inference failed for: r15v0, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
     /* JADX WARN: Type inference failed for: r3v7, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
@@ -394,8 +395,8 @@ public abstract class BackButtonMenu {
         if (parentLayout == null || parentActivity == null || fragmentView == null) {
             return null;
         }
-        ArrayList stackedHistoryForTopic = j2 != 0 ? getStackedHistoryForTopic(baseFragment, j, j2) : getStackedHistoryDialogs(baseFragment, j);
-        if (stackedHistoryForTopic.size() <= 0) {
+        ArrayList stackedHistoryDialogs = (j2 == 0 || ChatObject.isMonoForum(baseFragment.getCurrentAccount(), j)) ? getStackedHistoryDialogs(baseFragment, j) : getStackedHistoryForTopic(baseFragment, j, j2);
+        if (stackedHistoryDialogs.size() <= 0) {
             return null;
         }
         ?? actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, resourcesProvider);
@@ -405,8 +406,8 @@ public abstract class BackButtonMenu {
         AtomicReference atomicReference = new AtomicReference();
         boolean z3 = false;
         int i2 = 0;
-        while (i2 < stackedHistoryForTopic.size()) {
-            PulledDialog pulledDialog2 = (PulledDialog) stackedHistoryForTopic.get(i2);
+        while (i2 < stackedHistoryDialogs.size()) {
+            PulledDialog pulledDialog2 = (PulledDialog) stackedHistoryDialogs.get(i2);
             TLRPC.Chat chat = pulledDialog2.chat;
             TLRPC.User user = pulledDialog2.user;
             final TLRPC.TL_forumTopic tL_forumTopic = pulledDialog2.topic;
@@ -419,7 +420,7 @@ public abstract class BackButtonMenu {
             frameLayout.addView(backupImageView, LayoutHelper.createFrameRelatively(32.0f, 32.0f, 8388627, 13.0f, 0.0f, 0.0f, 0.0f));
             TextView textView = new TextView(parentActivity);
             textView.setLines(1);
-            ArrayList arrayList = stackedHistoryForTopic;
+            ArrayList arrayList = stackedHistoryDialogs;
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, resourcesProvider));
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -501,7 +502,7 @@ public abstract class BackButtonMenu {
                         rect = rect2;
                         atomicReference = atomicReference3;
                         parentLayout = iNavigationLayout2;
-                        stackedHistoryForTopic = arrayList;
+                        stackedHistoryDialogs = arrayList;
                         fragmentView = view3;
                     }
                     avatarDrawable.setAvatarType(i);
@@ -531,7 +532,7 @@ public abstract class BackButtonMenu {
                     rect = rect2;
                     atomicReference = atomicReference32;
                     parentLayout = iNavigationLayout22;
-                    stackedHistoryForTopic = arrayList;
+                    stackedHistoryDialogs = arrayList;
                     fragmentView = view32;
                 } else {
                     pulledDialog = pulledDialog2;
@@ -563,7 +564,7 @@ public abstract class BackButtonMenu {
                     rect = rect2;
                     atomicReference = atomicReference322;
                     parentLayout = iNavigationLayout222;
-                    stackedHistoryForTopic = arrayList;
+                    stackedHistoryDialogs = arrayList;
                     fragmentView = view322;
                 }
             }
@@ -593,7 +594,7 @@ public abstract class BackButtonMenu {
             rect = rect2;
             atomicReference = atomicReference3222;
             parentLayout = iNavigationLayout2222;
-            stackedHistoryForTopic = arrayList;
+            stackedHistoryDialogs = arrayList;
             fragmentView = view3222;
         }
         AtomicReference atomicReference4 = atomicReference;
@@ -605,7 +606,7 @@ public abstract class BackButtonMenu {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
         atomicReference4.set(actionBarPopupWindow);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

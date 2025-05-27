@@ -69,7 +69,7 @@ public abstract class ReportAlert extends BottomSheet {
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         rLottieImageView.setAnimation(R.raw.report_police, 120, 120);
         rLottieImageView.playAnimation();
-        frameLayout.addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.audioRouteChanged, 160.0f, 49, 17.0f, 14.0f, 17.0f, 0.0f));
+        frameLayout.addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, 160.0f, 49, 17.0f, 14.0f, 17.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 24.0f);

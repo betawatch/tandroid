@@ -38,7 +38,7 @@ public abstract class ReadAllMentionsMenu {
         actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

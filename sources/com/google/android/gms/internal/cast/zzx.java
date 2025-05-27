@@ -145,7 +145,7 @@ final class zzx {
             zza2.zzd(arrayList4);
         }
         zzc.zzl((zznu) zza2.zzq());
-        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.pushMessagesUpdated);
+        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.conferenceEmojiUpdated);
     }
 
     final void zzf(CastSession castSession) {

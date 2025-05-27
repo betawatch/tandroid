@@ -81,6 +81,7 @@ public class SharedConfig {
     public static int fontSize = 0;
     public static boolean fontSizeIsDefault = false;
     public static boolean forceDisableTabletMode = false;
+    public static boolean forceForumTabs = false;
     public static boolean forwardingOptionsHintShown = false;
     private static String goodHevcEncoder = null;
     public static boolean hasCameraCache = false;
@@ -179,6 +180,7 @@ public class SharedConfig {
     public static boolean useFingerprintLock;
     public static boolean useNewBlur;
     public static boolean useSurfaceInStories;
+    public static boolean useSystemBoldFont;
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
@@ -866,13 +868,14 @@ public class SharedConfig {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0241  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x041f  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0434  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0436  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0420 A[Catch: all -> 0x00e4, TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:52:0x015a, B:54:0x016c, B:56:0x0179, B:58:0x017f, B:59:0x0181, B:61:0x0185, B:63:0x018b, B:65:0x0191, B:67:0x0195, B:71:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:40:0x042a, B:43:0x0437, B:44:0x047a, B:48:0x0420, B:77:0x01a0, B:78:0x0115, B:79:0x047c), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0244  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0179 A[Catch: all -> 0x00e4, Exception -> 0x0154, Merged into TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:52:0x015a, B:54:0x016c, B:56:0x0179, B:58:0x017f, B:59:0x0181, B:61:0x0185, B:63:0x018b, B:65:0x0191, B:67:0x0195, B:71:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:40:0x042a, B:43:0x0437, B:44:0x047a, B:48:0x0420, B:77:0x01a0, B:78:0x0115, B:79:0x047c), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x017f A[Catch: all -> 0x00e4, Exception -> 0x0154, Merged into TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:52:0x015a, B:54:0x016c, B:56:0x0179, B:58:0x017f, B:59:0x0181, B:61:0x0185, B:63:0x018b, B:65:0x0191, B:67:0x0195, B:71:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:40:0x042a, B:43:0x0437, B:44:0x047a, B:48:0x0420, B:77:0x01a0, B:78:0x0115, B:79:0x047c), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x028d A[Catch: all -> 0x00e4, TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:55:0x015a, B:57:0x016c, B:59:0x0179, B:61:0x017f, B:62:0x0181, B:64:0x0185, B:66:0x018b, B:68:0x0191, B:70:0x0195, B:74:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:39:0x028d, B:40:0x028f, B:43:0x0440, B:46:0x044d, B:47:0x0490, B:51:0x0436, B:80:0x01a0, B:81:0x0115, B:82:0x0492), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0435  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x044a  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0436 A[Catch: all -> 0x00e4, TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:55:0x015a, B:57:0x016c, B:59:0x0179, B:61:0x017f, B:62:0x0181, B:64:0x0185, B:66:0x018b, B:68:0x0191, B:70:0x0195, B:74:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:39:0x028d, B:40:0x028f, B:43:0x0440, B:46:0x044d, B:47:0x0490, B:51:0x0436, B:80:0x01a0, B:81:0x0115, B:82:0x0492), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0244  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0179 A[Catch: all -> 0x00e4, Exception -> 0x0154, Merged into TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:55:0x015a, B:57:0x016c, B:59:0x0179, B:61:0x017f, B:62:0x0181, B:64:0x0185, B:66:0x018b, B:68:0x0191, B:70:0x0195, B:74:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:39:0x028d, B:40:0x028f, B:43:0x0440, B:46:0x044d, B:47:0x0490, B:51:0x0436, B:80:0x01a0, B:81:0x0115, B:82:0x0492), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x017f A[Catch: all -> 0x00e4, Exception -> 0x0154, Merged into TryCatch #1 {all -> 0x00e4, Exception -> 0x0154, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00dd, B:12:0x00e7, B:14:0x00ef, B:16:0x00f3, B:17:0x0100, B:19:0x010e, B:20:0x0119, B:22:0x0125, B:24:0x012d, B:26:0x013f, B:27:0x0156, B:55:0x015a, B:57:0x016c, B:59:0x0179, B:61:0x017f, B:62:0x0181, B:64:0x0185, B:66:0x018b, B:68:0x0191, B:70:0x0195, B:74:0x0173, B:29:0x01a3, B:31:0x0212, B:34:0x021d, B:37:0x0246, B:39:0x028d, B:40:0x028f, B:43:0x0440, B:46:0x044d, B:47:0x0490, B:51:0x0436, B:80:0x01a0, B:81:0x0115, B:82:0x0492), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -984,6 +987,10 @@ public class SharedConfig {
                             ivFontSize = sharedPreferences.getInt("iv_font_size", fontSize);
                             allowBigEmoji = sharedPreferences.getBoolean("allowBigEmoji", true);
                             useSystemEmoji = sharedPreferences.getBoolean("useSystemEmoji", false);
+                            useSystemBoldFont = sharedPreferences.getBoolean("useSystemBoldFont", false);
+                            forceForumTabs = sharedPreferences.getBoolean("forceForumTabs", false);
+                            if (useSystemBoldFont) {
+                            }
                             streamMedia = sharedPreferences.getBoolean("streamMedia", true);
                             saveStreamMedia = sharedPreferences.getBoolean("saveStreamMedia", true);
                             pauseMusicOnRecord = sharedPreferences.getBoolean("pauseMusicOnRecord", true);
@@ -1094,6 +1101,11 @@ public class SharedConfig {
                 ivFontSize = sharedPreferences.getInt("iv_font_size", fontSize);
                 allowBigEmoji = sharedPreferences.getBoolean("allowBigEmoji", true);
                 useSystemEmoji = sharedPreferences.getBoolean("useSystemEmoji", false);
+                useSystemBoldFont = sharedPreferences.getBoolean("useSystemBoldFont", false);
+                forceForumTabs = sharedPreferences.getBoolean("forceForumTabs", false);
+                if (useSystemBoldFont) {
+                    AndroidUtilities.mediumTypeface = null;
+                }
                 streamMedia = sharedPreferences.getBoolean("streamMedia", true);
                 saveStreamMedia = sharedPreferences.getBoolean("saveStreamMedia", true);
                 pauseMusicOnRecord = sharedPreferences.getBoolean("pauseMusicOnRecord", true);
@@ -1727,6 +1739,13 @@ public class SharedConfig {
         edit.apply();
     }
 
+    public static void toggleForceForumTabs() {
+        forceForumTabs = !forceForumTabs;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("forceForumTabs", forceForumTabs);
+        edit.apply();
+    }
+
     public static void toggleInappBrowser() {
         inappBrowser = !inappBrowser;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
@@ -1888,6 +1907,14 @@ public class SharedConfig {
     public static void toggleUseNewBlur() {
         useNewBlur = !useNewBlur;
         ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit().putBoolean("useNewBlur", useNewBlur).apply();
+    }
+
+    public static void toggleUseSystemBoldFont() {
+        useSystemBoldFont = !useSystemBoldFont;
+        AndroidUtilities.mediumTypeface = null;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("useSystemBoldFont", useSystemBoldFont);
+        edit.apply();
     }
 
     public static void updateChatListSwipeSetting(int i) {

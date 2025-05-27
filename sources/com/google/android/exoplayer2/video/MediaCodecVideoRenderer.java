@@ -1421,19 +1421,19 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
                         case '|':
                         case '}':
                         case '~':
-                        case NotificationCenter.dialogTranslate /* 127 */:
+                        case NotificationCenter.dialogIsTranslatable /* 127 */:
                         case 128:
-                        case NotificationCenter.walletPendingTransactionsChanged /* 129 */:
-                        case NotificationCenter.walletSyncProgressChanged /* 130 */:
-                        case NotificationCenter.httpFileDidLoad /* 131 */:
-                        case NotificationCenter.httpFileDidFailedLoad /* 132 */:
-                        case NotificationCenter.didUpdateConnectionState /* 133 */:
-                        case NotificationCenter.fileUploaded /* 134 */:
-                        case NotificationCenter.fileUploadFailed /* 135 */:
-                        case NotificationCenter.fileUploadProgressChanged /* 136 */:
-                        case NotificationCenter.fileLoadProgressChanged /* 137 */:
-                        case NotificationCenter.fileLoaded /* 138 */:
-                        case NotificationCenter.fileLoadFailed /* 139 */:
+                        case NotificationCenter.didGenerateFingerprintKeyPair /* 129 */:
+                        case NotificationCenter.walletPendingTransactionsChanged /* 130 */:
+                        case NotificationCenter.walletSyncProgressChanged /* 131 */:
+                        case NotificationCenter.httpFileDidLoad /* 132 */:
+                        case NotificationCenter.httpFileDidFailedLoad /* 133 */:
+                        case NotificationCenter.didUpdateConnectionState /* 134 */:
+                        case NotificationCenter.fileUploaded /* 135 */:
+                        case NotificationCenter.fileUploadFailed /* 136 */:
+                        case NotificationCenter.fileUploadProgressChanged /* 137 */:
+                        case NotificationCenter.fileLoadProgressChanged /* 138 */:
+                        case NotificationCenter.fileLoaded /* 139 */:
                             return true;
                     }
                 }

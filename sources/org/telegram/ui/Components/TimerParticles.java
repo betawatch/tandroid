@@ -117,7 +117,7 @@ public class TimerParticles {
                 particle.x = f3;
                 particle.y = f4;
             }
-            double nextInt = Utilities.random.nextInt(NotificationCenter.filePreparingStarted) - 70;
+            double nextInt = Utilities.random.nextInt(NotificationCenter.fileLoadFailed) - 70;
             Double.isNaN(nextInt);
             double d5 = nextInt * d2;
             if (d5 < 0.0d) {
@@ -129,7 +129,7 @@ public class TimerParticles {
             particle.currentTime = 0.0f;
             float f6 = 20.0f;
             if (this.big) {
-                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.storyQualityUpdate) + 600;
+                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.smsJobStatusUpdate) + 600;
                 nextFloat = Utilities.random.nextFloat() * 20.0f;
                 f6 = 30.0f;
             } else {

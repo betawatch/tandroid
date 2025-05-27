@@ -497,9 +497,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i = 90;
                 } else if (rotation == 2) {
-                    i = NotificationCenter.updateBotMenuButton;
+                    i = NotificationCenter.suggestedFiltersLoaded;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.webRtcSpeakerAmplitudeEvent;
+                    i = NotificationCenter.webRtcMicAmplitudeEvent;
                 }
                 CameraCharacteristics cameraCharacteristics = this.cameraCharacteristics;
                 key = CameraCharacteristics.SENSOR_ORIENTATION;
@@ -729,9 +729,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i = 90;
                 } else if (rotation == 2) {
-                    i = NotificationCenter.updateBotMenuButton;
+                    i = NotificationCenter.suggestedFiltersLoaded;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.webRtcSpeakerAmplitudeEvent;
+                    i = NotificationCenter.webRtcMicAmplitudeEvent;
                 }
                 CameraCharacteristics cameraCharacteristics = this.cameraCharacteristics;
                 key = CameraCharacteristics.SENSOR_ORIENTATION;

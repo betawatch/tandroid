@@ -602,7 +602,7 @@ public class EmojiThemes {
                 resultCallback.onComplete(new Pair(Long.valueOf(j), null));
             }
         } else {
-            ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.filePreparingStarted), wallpaper.document);
+            ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.fileLoadFailed), wallpaper.document);
             ImageReceiver imageReceiver = new ImageReceiver();
             imageReceiver.setAllowLoadingOnAttachedOnly(false);
             imageReceiver.setImage(forDocument, "120_140", null, null, null, 1);

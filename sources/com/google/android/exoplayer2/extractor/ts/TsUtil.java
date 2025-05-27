@@ -15,7 +15,7 @@ public abstract class TsUtil {
     public static boolean isStartOfTsPacket(byte[] bArr, int i, int i2, int i3) {
         int i4 = 0;
         for (int i5 = -4; i5 <= 4; i5++) {
-            int i6 = (i5 * NotificationCenter.storiesBlocklistUpdate) + i3;
+            int i6 = (i5 * NotificationCenter.storiesEnabledUpdate) + i3;
             if (i6 < i || i6 >= i2 || bArr[i6] != 71) {
                 i4 = 0;
             } else {

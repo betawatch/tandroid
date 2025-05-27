@@ -498,6 +498,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         private final Paint gradientPaint;
         private LinearGradient gradientShader;
         private final int gradientSize;
+        private boolean isCenter;
         private final RectF rectF;
         private int rightPadding;
         private int stableOffest;
@@ -547,6 +548,9 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TextView[] textViewArr = this.textViews;
             boolean z2 = true;
             int i = view == textViewArr[0] ? 0 : 1;
+            if (this.isCenter) {
+                this.stableOffest = -1;
+            }
             if (this.stableOffest > 0) {
                 int length = textViewArr.length;
                 int i2 = 0;
@@ -616,6 +620,27 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             return this.textViews[this.activeIndex];
         }
 
+        @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+            super.onLayout(z, i, i2, i3, i4);
+            if (!this.isCenter) {
+                return;
+            }
+            int i5 = 0;
+            while (true) {
+                TextView[] textViewArr = this.textViews;
+                if (i5 >= textViewArr.length) {
+                    return;
+                }
+                TextView textView = textViewArr[i5];
+                if (textView != null && textView.getMeasuredWidth() < getMeasuredWidth()) {
+                    int measuredWidth = (getMeasuredWidth() - textView.getMeasuredWidth()) / 2;
+                    textView.layout(measuredWidth, 0, textView.getMeasuredWidth() + measuredWidth, textView.getMeasuredHeight());
+                }
+                i5++;
+            }
+        }
+
         @Override // android.view.View
         protected void onSizeChanged(int i, int i2, int i3, int i4) {
             super.onSizeChanged(i, i2, i3, i4);
@@ -632,6 +657,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 }
             }
             invalidate();
+        }
+
+        public void setIsCenter() {
+            this.isCenter = true;
         }
 
         public void setText(CharSequence charSequence) {
@@ -1890,7 +1919,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         });
         this.playlist = MediaController.getInstance().getPlaylist();
         this.listAdapter.notifyDataSetChanged();
-        this.containerView.addView(this.playerLayout, LayoutHelper.createFrame(i2, NotificationCenter.suggestedFiltersLoaded, 83));
+        this.containerView.addView(this.playerLayout, LayoutHelper.createFrame(i2, NotificationCenter.filterSettingsUpdated, 83));
         this.containerView.addView(this.playerShadow, new FrameLayout.LayoutParams(i2, AndroidUtilities.getShadowHeight(), 83));
         ((FrameLayout.LayoutParams) this.playerShadow.getLayoutParams()).bottomMargin = AndroidUtilities.dp(179.0f);
         this.containerView.addView(this.actionBarShadow, LayoutHelper.createFrame(i2, 3.0f));
@@ -2166,7 +2195,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$338();
+        dialogsActivity.lambda$onBackPressed$347();
         return true;
     }
 
@@ -2449,7 +2478,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 fragmentView.draw(canvas);
                 canvas.translate(this.containerView.getLeft() - getLeftInset(), 0.0f);
                 this.containerView.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.updateBotMenuButton));
+                Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.suggestedFiltersLoaded));
                 this.blurredView.setBackground(new BitmapDrawable(createBitmap));
             }
             this.blurredView.setVisibility(0);

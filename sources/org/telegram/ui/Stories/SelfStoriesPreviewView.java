@@ -214,7 +214,7 @@ public abstract class SelfStoriesPreviewView extends View {
             }
         });
         this.scroller = new Scroller(context, new OvershootInterpolator());
-        this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.audioRouteChanged)});
+        this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.audioRecordTooShort)});
     }
 
     private ImageHolder findOrCreateImageReceiver(int i, ArrayList arrayList) {

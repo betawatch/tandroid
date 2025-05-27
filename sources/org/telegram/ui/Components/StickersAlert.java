@@ -477,7 +477,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             if (StickersAlert.this.delegate == null) {
                 return;
             }
-            StickersAlert.this.delegate.lambda$onStickerSelected$71(document, str, obj, null, StickersAlert.this.clearsInputField, z, i);
+            StickersAlert.this.delegate.lambda$onStickerSelected$70(document, str, obj, null, StickersAlert.this.clearsInputField, z, i);
             StickersAlert.this.lambda$new$0();
         }
 
@@ -815,7 +815,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         boolean isInScheduleMode();
 
         /* renamed from: onStickerSelected */
-        void lambda$onStickerSelected$71(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i);
+        void lambda$onStickerSelected$70(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i);
     }
 
     public interface StickersAlertInstallDelegate {
@@ -932,7 +932,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             init();
             final int i = 0;
             while (i < 6) {
-                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.onDatabaseReset);
+                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.didUpdateGlobalAutoDeleteTimer);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, -2.0f, 0.0f, 2.0f, 0.0f);
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickersAlert$StickersShaker$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -944,7 +944,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat.setRepeatMode(1);
                 ofFloat.setInterpolator(new LinearInterpolator());
                 ofFloat.setCurrentPlayTime(nextFloat);
-                long j = NotificationCenter.onDatabaseReset;
+                long j = NotificationCenter.didUpdateGlobalAutoDeleteTimer;
                 ofFloat.setDuration(j);
                 ofFloat.start();
                 float dp = AndroidUtilities.dp(0.5f);
@@ -965,7 +965,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat2.setRepeatMode(1);
                 ofFloat2.setInterpolator(new LinearInterpolator());
                 ofFloat2.setCurrentPlayTime(nextFloat);
-                double d = NotificationCenter.onDatabaseReset;
+                double d = NotificationCenter.didUpdateGlobalAutoDeleteTimer;
                 Double.isNaN(d);
                 ofFloat2.setDuration((long) (d * 1.2d));
                 ofFloat2.start();
@@ -2007,7 +2007,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$13(View view) {
         if (this.importingStickersPaths == null) {
-            this.delegate.lambda$onStickerSelected$71(this.selectedSticker, null, this.stickerSet, null, this.clearsInputField, true, 0);
+            this.delegate.lambda$onStickerSelected$70(this.selectedSticker, null, this.stickerSet, null, this.clearsInputField, true, 0);
             lambda$new$0();
         } else {
             removeSticker(this.selectedStickerPath);

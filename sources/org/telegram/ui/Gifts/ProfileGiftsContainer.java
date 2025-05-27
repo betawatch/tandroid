@@ -106,7 +106,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public void bindView(View view, UItem uItem, boolean z) {
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
             LinkSpanDrawable.LinksTextView linksTextView = (LinkSpanDrawable.LinksTextView) view;
             linksTextView.setGravity(uItem.intValue);
             linksTextView.setTextColor((int) uItem.longValue);
@@ -483,7 +483,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 linearLayout.setVisibility(i6);
                 this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-                addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.storyQualityUpdate, 87));
+                addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 87));
             }
             i2 = R.string.ProfileGiftsSendChannel;
         } else {
@@ -507,7 +507,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
         linearLayout.setVisibility(i62);
         this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-        addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.storyQualityUpdate, 87));
+        addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 87));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

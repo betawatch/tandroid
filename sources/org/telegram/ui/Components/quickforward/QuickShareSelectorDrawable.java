@@ -110,13 +110,13 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
         static {
             LinearInterpolator linearInterpolator = new LinearInterpolator();
             LINEAR_INTERPOLATOR = linearInterpolator;
-            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities);
-            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities);
-            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.updateAllMessages, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities);
-            buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.storyQualityUpdate, 560);
-            buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.storyQualityUpdate, 400, 560, true);
+            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground);
+            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground);
+            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.webViewResolved, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground);
+            buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.smsJobStatusUpdate, 560);
+            buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.smsJobStatusUpdate, 400, 560, true);
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);
-            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.starGiftOptionsLoaded, 425, 560);
+            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.starOptionsLoaded, 425, 560);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
             bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 320, 560);
             bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, 320, 560);
@@ -124,11 +124,11 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
             widthExpansion = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 460, 560);
             bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 325, 560);
             ballsRadius = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 150, 250, 560);
-            overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.storyQualityUpdate, 480, 560);
+            overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.smsJobStatusUpdate, 480, 560);
             avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, 320, 560);
             avatar2 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 90, 380, 560);
             avatar3 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 110, 440, 560);
-            avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.storyQualityUpdate, 460, 560);
+            avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.smsJobStatusUpdate, 460, 560);
         }
     }
 
@@ -610,7 +610,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        draw(canvas, NotificationCenter.didSetNewWallpapper, false);
+        draw(canvas, NotificationCenter.suggestedLangpack, false);
     }
 
     public void draw(Canvas canvas, int i, boolean z) {

@@ -134,7 +134,7 @@ public abstract class MessageEntityView extends EntityView {
             canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
             canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
             canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);
@@ -533,7 +533,7 @@ public abstract class MessageEntityView extends EntityView {
                             ChatActionCell chatActionCell = (ChatActionCell) childAt;
                             if (chatActionCell.hasGradientService()) {
                                 canvas.save();
-                                canvas.translate(chatActionCell.getX(), chatActionCell.getY());
+                                canvas.translate(chatActionCell.getX(), chatActionCell.getY() + chatActionCell.getPaddingTop());
                                 canvas.scale(chatActionCell.getScaleX(), chatActionCell.getScaleY(), chatActionCell.getMeasuredWidth() / 2.0f, chatActionCell.getMeasuredHeight() / 2.0f);
                                 chatActionCell.drawBackground(canvas, true);
                                 chatActionCell.drawReactions(canvas, true, null);
@@ -1025,7 +1025,7 @@ public abstract class MessageEntityView extends EntityView {
                 MessageObject messageObject3 = (MessageObject) MessageEntityView.this.messageObjects.get((MessageEntityView.this.messageObjects.size() - 1) - i4);
                 View view = viewHolder.itemView;
                 if (view instanceof ChatMessageCell) {
-                    ((ChatMessageCell) view).setMessageObject(messageObject3, MessageEntityView.this.groupedMessages, MessageEntityView.this.groupedMessages != null, (MessageEntityView.this.groupedMessages == null || (position = MessageEntityView.this.groupedMessages.getPosition(messageObject3)) == null || position.minY == 0) ? false : true);
+                    ((ChatMessageCell) view).setMessageObject(messageObject3, MessageEntityView.this.groupedMessages, MessageEntityView.this.groupedMessages != null, (MessageEntityView.this.groupedMessages == null || (position = MessageEntityView.this.groupedMessages.getPosition(messageObject3)) == null || position.minY == 0) ? false : true, false);
                 } else if (view instanceof ChatActionCell) {
                     ((ChatActionCell) view).setMessageObject(messageObject3);
                 }
@@ -1135,7 +1135,7 @@ public abstract class MessageEntityView extends EntityView {
                         3 r0 = 3.this;
                         PreviewView.TextureViewHolder textureViewHolder2 = textureViewHolder;
                         if ((textureViewHolder2 != null && textureViewHolder2.active && textureViewHolder2.textureViewActive) || MessageEntityView.this.clipVideoMessageForBitmap) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
                         } else {
                             canvas.save();
                         }

@@ -78,9 +78,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.closeOtherAppActivities;
+            i = NotificationCenter.invalidateMotionBackground;
             if (nextInt < 64) {
-                i2 = NotificationCenter.closeOtherAppActivities;
+                i2 = NotificationCenter.invalidateMotionBackground;
                 i = 120;
             } else {
                 i2 = 420;
@@ -197,7 +197,7 @@ public class GroupCallStatusIcon {
             if (j != 0 && j2 <= 5000) {
                 AndroidUtilities.runOnUIThread(this.checkRaiseRunnable, 5000 - j2);
             }
-            customEndFrame = this.micDrawable.setCustomEndFrame(NotificationCenter.fileUploadProgressChanged);
+            customEndFrame = this.micDrawable.setCustomEndFrame(NotificationCenter.fileUploadFailed);
         } else {
             this.iconView.setAnimation(this.micDrawable);
             this.micDrawable.setOnFinishCallback(null, 0);
@@ -211,7 +211,7 @@ public class GroupCallStatusIcon {
             if (customEndFrame) {
                 if (z6) {
                     this.micDrawable.setCurrentFrame(99);
-                    this.micDrawable.setCustomEndFrame(NotificationCenter.fileUploadProgressChanged);
+                    this.micDrawable.setCustomEndFrame(NotificationCenter.fileUploadFailed);
                 } else if (z5 && this.lastRaisedHand && !z6) {
                     this.micDrawable.setCurrentFrame(0);
                     this.micDrawable.setCustomEndFrame(36);

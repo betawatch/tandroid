@@ -76,16 +76,14 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this(context, iNavigationLayout, i, j, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x03fe  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x03fc  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x045f A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public ThemePreviewMessagesCell(Context context, INavigationLayout iNavigationLayout, int i, long j, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        String sb;
         MessageObject messageObject;
-        MessageObject messageObject2;
         int i2;
         ChatMessageCell[] chatMessageCellArr;
         this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$$ExternalSyntheticLambda0
@@ -111,6 +109,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
         this.shadowDrawable = Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow, resourcesProvider);
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+        MessageObject messageObject2 = null;
         if (i == 3) {
             boolean z = j < 0;
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -157,7 +156,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             webPage3.description = LocaleController.getString(z ? R.string.ChannelColorPreviewLinkDescription : R.string.UserColorPreviewLinkDescription);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.liveLocationsChanged;
+            tL_message.flags = NotificationCenter.proxyChangedByRotation;
             if (j == 0) {
                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                 tL_message.from_id = tL_peerUser;
@@ -188,7 +187,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             tL_message2.message = LocaleController.getString(R.string.DoubleTapPreviewMessage);
             tL_message2.date = currentTimeMillis - 3540;
             tL_message2.dialog_id = 1L;
-            tL_message2.flags = NotificationCenter.liveLocationsChanged;
+            tL_message2.flags = NotificationCenter.proxyChangedByRotation;
             TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
             tL_message2.from_id = tL_peerUser3;
             tL_peerUser3.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -220,7 +219,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             int i4 = currentTimeMillis - 3540;
             tL_message3.date = i4;
             tL_message3.dialog_id = 1L;
-            tL_message3.flags = NotificationCenter.liveLocationsChanged;
+            tL_message3.flags = NotificationCenter.proxyChangedByRotation;
             TLRPC.TL_peerUser tL_peerUser5 = new TLRPC.TL_peerUser();
             tL_message3.from_id = tL_peerUser5;
             tL_peerUser5.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -233,24 +232,23 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             MessageObject messageObject5 = new MessageObject(UserConfig.selectedAccount, tL_message3, true, false);
             TLRPC.TL_message tL_message4 = new TLRPC.TL_message();
             if (i == 0) {
-                sb = LocaleController.getString(R.string.FontSizePreviewLine2);
+                tL_message4.message = LocaleController.getString(R.string.FontSizePreviewLine2);
             } else {
                 String string = LocaleController.getString(R.string.NewThemePreviewLine3);
-                StringBuilder sb2 = new StringBuilder(string);
+                StringBuilder sb = new StringBuilder(string);
                 int indexOf2 = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
                 if (indexOf2 != -1 && lastIndexOf != -1) {
-                    sb2.replace(lastIndexOf, lastIndexOf + 1, "");
-                    sb2.replace(indexOf2, indexOf2 + 1, "");
+                    sb.replace(lastIndexOf, lastIndexOf + 1, "");
+                    sb.replace(indexOf2, indexOf2 + 1, "");
                     TLRPC.TL_messageEntityTextUrl tL_messageEntityTextUrl = new TLRPC.TL_messageEntityTextUrl();
                     tL_messageEntityTextUrl.offset = indexOf2;
                     tL_messageEntityTextUrl.length = (lastIndexOf - indexOf2) - 1;
                     tL_messageEntityTextUrl.url = "https://telegram.org";
                     tL_message4.entities.add(tL_messageEntityTextUrl);
                 }
-                sb = sb2.toString();
+                tL_message4.message = sb.toString();
             }
-            tL_message4.message = sb;
             int indexOf3 = tL_message4.message.indexOf("😎");
             if (indexOf3 >= 0) {
                 TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji2 = new TLRPC.TL_messageEntityCustomEmoji();
@@ -261,7 +259,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             }
             tL_message4.date = currentTimeMillis - 2640;
             tL_message4.dialog_id = 1L;
-            tL_message4.flags = NotificationCenter.liveLocationsChanged;
+            tL_message4.flags = NotificationCenter.proxyChangedByRotation;
             TLRPC.TL_peerUser tL_peerUser7 = new TLRPC.TL_peerUser();
             tL_message4.from_id = tL_peerUser7;
             tL_peerUser7.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -280,7 +278,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             tL_message5.message = LocaleController.getString(i == 0 ? R.string.FontSizePreviewLine1 : R.string.NewThemePreviewLine1);
             tL_message5.date = i4;
             tL_message5.dialog_id = 1L;
-            tL_message5.flags = NotificationCenter.messagePlayingSpeedChanged;
+            tL_message5.flags = NotificationCenter.closeSearchByActiveAction;
             tL_message5.from_id = new TLRPC.TL_peerUser();
             tL_message5.id = 1;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader2 = new TLRPC.TL_messageReplyHeader();
@@ -371,8 +369,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                                 return false;
                             }
                             boolean selectReaction = getMessageObject().selectReaction(ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(1.this.currentAccount).getDoubleTapReaction()), false, false);
-                            1 r1 = 1.this;
-                            r1.setMessageObject(r1.getMessageObject(), null, false, false);
+                            1 r4 = 1.this;
+                            r4.setMessageObject(r4.getMessageObject(), null, false, false, false);
                             requestLayout();
                             ReactionsEffectOverlay.removeCurrent(false);
                             if (selectReaction) {
@@ -531,11 +529,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell);
                     }
@@ -638,11 +631,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressTopicButton(ChatMessageCell chatMessageCell) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTopicButton(this, chatMessageCell);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -815,16 +803,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell) {
-                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ boolean shouldShowTopicButton(ChatMessageCell chatMessageCell) {
-                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowTopicButton(this, chatMessageCell);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void videoTimerReached() {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
                     }
@@ -834,13 +812,12 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 chatMessageCell.setFullyDraw(true);
                 MessageObject messageObject8 = i2 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
-                    this.cells[i2].setMessageObject(messageObject8, null, false, false);
+                    this.cells[i2].setMessageObject(messageObject8, null, false, false, false);
                     addView(this.cells[i2], LayoutHelper.createLinear(-1, -2));
                 }
                 i2++;
             }
         }
-        messageObject2 = null;
         i2 = 0;
         while (true) {
             chatMessageCellArr = this.cells;
@@ -959,7 +936,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         while (i < 2) {
             Drawable drawable2 = i == 0 ? this.oldBackgroundDrawable : this.backgroundDrawable;
             if (drawable2 != null) {
-                int i2 = (i != 1 || this.oldBackgroundDrawable == null || (this.parentLayout == null && !this.customAnimation)) ? NotificationCenter.didSetNewWallpapper : (int) (255.0f * themeAnimationValue);
+                int i2 = (i != 1 || this.oldBackgroundDrawable == null || (this.parentLayout == null && !this.customAnimation)) ? NotificationCenter.suggestedLangpack : (int) (255.0f * themeAnimationValue);
                 if (i2 > 0) {
                     drawable2.setAlpha(i2);
                     if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof MotionBackgroundDrawable)) {

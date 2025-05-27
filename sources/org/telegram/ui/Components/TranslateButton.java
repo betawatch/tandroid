@@ -310,7 +310,7 @@ public abstract class TranslateButton extends FrameLayout {
         });
         actionBarPopupWindowLayout.addView(actionBarMenuSubItem7);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -319,6 +319,10 @@ public abstract class TranslateButton extends FrameLayout {
         actionBarPopupWindow.setSoftInputMode(0);
         ImageView imageView = this.menuView;
         actionBarPopupWindow.showAsDropDown(imageView, 0, (-imageView.getMeasuredHeight()) - AndroidUtilities.dp(8.0f));
+    }
+
+    public void setLeftMargin(float f) {
+        this.textView.setTranslationX(f / 2.0f);
     }
 
     public void updateColors() {

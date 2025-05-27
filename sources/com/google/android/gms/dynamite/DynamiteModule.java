@@ -560,7 +560,7 @@ public final class DynamiteModule {
                 z = true;
             }
             zzf = Boolean.valueOf(z);
-            if (z && resolveContentProvider != null && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.walletPendingTransactionsChanged) == 0) {
+            if (z && resolveContentProvider != null && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.didGenerateFingerprintKeyPair) == 0) {
                 Log.i("DynamiteModule", "Non-system-image GmsCore APK, forcing V1");
                 zzd = true;
             }

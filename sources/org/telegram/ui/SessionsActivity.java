@@ -756,7 +756,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
     public /* synthetic */ void lambda$createView$1(AlertDialog.Builder builder, View view) {
         builder.getDismissRunnable().run();
         Integer num = (Integer) view.getTag();
-        int i = num.intValue() == 0 ? 7 : num.intValue() == 1 ? 90 : num.intValue() == 2 ? NotificationCenter.boostedChannelByUser : num.intValue() == 3 ? 365 : 0;
+        int i = num.intValue() == 0 ? 7 : num.intValue() == 1 ? 90 : num.intValue() == 2 ? NotificationCenter.didStartedMultiGiftsSelector : num.intValue() == 3 ? 365 : 0;
         TL_account.setAuthorizationTTL setauthorizationttl = new TL_account.setAuthorizationTTL();
         setauthorizationttl.authorization_ttl_days = i;
         this.ttlDays = i;
@@ -1321,7 +1321,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    SessionsActivity.this.lambda$onBackPressed$338();
+                    SessionsActivity.this.lambda$onBackPressed$347();
                 }
             }
         });

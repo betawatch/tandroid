@@ -84,7 +84,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 WebsiteView websiteView = (WebsiteView) view;
                 CharSequence charSequence = uItem.text;
                 ArrayList arrayList = (ArrayList) uItem.object2;
@@ -436,11 +436,11 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onClick$6(HistoryFragment[] historyFragmentArr, BrowserHistory.Entry entry) {
-        historyFragmentArr[0].lambda$onBackPressed$338();
+        historyFragmentArr[0].lambda$onBackPressed$347();
         if (this.whenHistoryClicked == null) {
             Browser.openUrl(getContext(), entry.url);
         } else {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             this.whenHistoryClicked.run(entry);
         }
     }

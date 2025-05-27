@@ -870,7 +870,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     }
                 } else if (baseFragment instanceof ProfileActivity) {
                     if (z && parentLayout.getLastFragment() == baseFragment) {
-                        baseFragment.lambda$onBackPressed$338();
+                        baseFragment.lambda$onBackPressed$347();
                     }
                     baseFragment.removeSelfFromStack();
                 }

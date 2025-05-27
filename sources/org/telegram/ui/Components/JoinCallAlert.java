@@ -440,7 +440,7 @@ public class JoinCallAlert extends BottomSheet {
             rLottieImageView.setAutoRepeat(true);
             rLottieImageView.setAnimation(R.raw.utyan_schedule, 120, 120);
             rLottieImageView.playAnimation();
-            viewGroup.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 49, 17, 8, 17, 0));
+            viewGroup.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 49, 17, 8, 17, 0));
         }
         TextView textView6 = new TextView(context);
         this.textView = textView6;

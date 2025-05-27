@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public final class GoogleMapOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleMapOptions> CREATOR = new zzab();
-    private static final Integer zza = Integer.valueOf(Color.argb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didReceiveSmsCode, NotificationCenter.pushMessagesUpdated, NotificationCenter.botDownloadsUpdate));
+    private static final Integer zza = Integer.valueOf(Color.argb(NotificationCenter.suggestedLangpack, NotificationCenter.wallpapersNeedReload, NotificationCenter.conferenceEmojiUpdated, NotificationCenter.updateStories));
     private Boolean zzb;
     private Boolean zzc;
     private int zzd;

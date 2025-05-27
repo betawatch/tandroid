@@ -35,11 +35,13 @@ public class BusinessBotButton extends FrameLayout {
     private final int currentAccount;
     private long dialogId;
     private int flags;
+    private float leftMargin;
     private String manageUrl;
     private final ImageView menuView;
     private final ClickableAnimatedTextView pauseButton;
     private boolean paused;
     private final AnimatedTextView subtitleView;
+    private final LinearLayout textLayout;
     private final AnimatedTextView titleView;
 
     public BusinessBotButton(Context context, final ChatActivity chatActivity, final Theme.ResourcesProvider resourcesProvider) {
@@ -56,6 +58,7 @@ public class BusinessBotButton extends FrameLayout {
         backupImageView.setForUserOrChat(user, avatarDrawable);
         addView(backupImageView, LayoutHelper.createFrame(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
+        this.textLayout = linearLayout;
         linearLayout.setOrientation(1);
         AnimatedTextView animatedTextView = new AnimatedTextView(context);
         this.titleView = animatedTextView;
@@ -99,7 +102,7 @@ public class BusinessBotButton extends FrameLayout {
         clickableAnimatedTextView.setOnWidthUpdatedListener(new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessBotButton.this.lambda$new$1();
+                BusinessBotButton.this.updateTextRightPadding();
             }
         });
         clickableAnimatedTextView.setText(LocaleController.getString(this.paused ? R.string.BizBotStart : R.string.BizBotStop));
@@ -113,7 +116,7 @@ public class BusinessBotButton extends FrameLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BusinessBotButton.this.lambda$new$4(chatActivity, resourcesProvider, view);
+                BusinessBotButton.this.lambda$new$3(chatActivity, resourcesProvider, view);
             }
         });
         addView(imageView, LayoutHelper.createFrame(32, 32.0f, 21, 8.0f, 0.0f, 9.0f, 0.0f));
@@ -136,13 +139,6 @@ public class BusinessBotButton extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1() {
-        float paddingLeft = this.pauseButton.getPaddingLeft() + this.pauseButton.getDrawable().getCurrentWidth() + this.pauseButton.getPaddingRight() + AndroidUtilities.dp(12.0f);
-        this.titleView.setRightPadding(paddingLeft);
-        this.subtitleView.setRightPadding(paddingLeft);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
         TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
         disablepeerconnectedbot.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(disablepeerconnectedbot, null);
@@ -152,30 +148,37 @@ public class BusinessBotButton extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
+    public /* synthetic */ void lambda$new$2() {
         Browser.openUrl(getContext(), this.manageUrl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider, View view) {
+    public /* synthetic */ void lambda$new$3(ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider, View view) {
         ItemOptions makeOptions = ItemOptions.makeOptions(chatActivity.getLayoutContainer(), resourcesProvider, this.menuView);
         makeOptions.add(R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.BizBotRemove), true, new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessBotButton.this.lambda$new$2();
+                BusinessBotButton.this.lambda$new$1();
             }
         }).makeMultiline(false);
         if (this.manageUrl != null) {
             makeOptions.add(R.drawable.msg_settings, LocaleController.getString(R.string.BizBotManage), new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessBotButton.this.lambda$new$3();
+                    BusinessBotButton.this.lambda$new$2();
                 }
             });
         }
         makeOptions.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
         makeOptions.setDimAlpha(0);
         makeOptions.show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateTextRightPadding() {
+        float paddingLeft = this.leftMargin + this.pauseButton.getPaddingLeft() + this.pauseButton.getDrawable().getCurrentWidth() + this.pauseButton.getPaddingRight() + AndroidUtilities.dp(12.0f);
+        this.titleView.setRightPadding(paddingLeft);
+        this.subtitleView.setRightPadding(paddingLeft);
     }
 
     public void set(long j, long j2, String str, int i) {
@@ -190,5 +193,12 @@ public class BusinessBotButton extends FrameLayout {
         this.titleView.setText(UserObject.getUserName(user));
         this.subtitleView.setText(LocaleController.getString(this.paused ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages));
         this.pauseButton.setText(LocaleController.getString(this.paused ? R.string.BizBotStart : R.string.BizBotStop));
+    }
+
+    public void setLeftMargin(float f) {
+        this.leftMargin = f;
+        this.avatarView.setTranslationX(f);
+        this.textLayout.setTranslationX(f);
+        updateTextRightPadding();
     }
 }

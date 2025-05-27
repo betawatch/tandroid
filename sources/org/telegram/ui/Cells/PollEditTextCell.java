@@ -46,6 +46,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
     private ChatActivityEnterViewAnimatedIconView emojiButton;
     private ImageView moveImageView;
     private boolean needDivider;
+    private final Theme.ResourcesProvider resourcesProvider;
     private boolean showNextButton;
     private EditTextBoldCursor textView;
     private SimpleTextView textView2;
@@ -56,8 +57,13 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
     }
 
     public PollEditTextCell(Context context, boolean z, int i, View.OnClickListener onClickListener) {
+        this(context, z, i, onClickListener, null);
+    }
+
+    public PollEditTextCell(Context context, boolean z, int i, View.OnClickListener onClickListener, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        EditTextCaption editTextCaption = new EditTextCaption(context, null) { // from class: org.telegram.ui.Cells.PollEditTextCell.1
+        this.resourcesProvider = resourcesProvider;
+        EditTextCaption editTextCaption = new EditTextCaption(context, resourcesProvider) { // from class: org.telegram.ui.Cells.PollEditTextCell.1
             @Override // org.telegram.ui.Components.EditTextEffects
             protected int emojiCacheType() {
                 return 3;
@@ -111,8 +117,8 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         };
         this.textView = editTextCaption;
         editTextCaption.setAllowTextEntitiesIntersection(true);
-        this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        this.textView.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
+        this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
+        this.textView.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText, resourcesProvider));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setMaxLines(i == 1 ? 4 : ConnectionsManager.DEFAULT_DATACENTER_ID);
         this.textView.setBackgroundDrawable(null);
@@ -135,7 +141,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             this.moveImageView.setImageResource(R.drawable.poll_reorder);
             ImageView imageView3 = this.moveImageView;
             int i3 = Theme.key_windowBackgroundWhiteGrayIcon;
-            int color = Theme.getColor(i3);
+            int color = Theme.getColor(i3, resourcesProvider);
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             imageView3.setColorFilter(new PorterDuffColorFilter(color, mode));
             addView(this.moveImageView, LayoutHelper.createFrame(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
@@ -143,10 +149,10 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             this.deleteImageView = imageView4;
             imageView4.setFocusable(false);
             this.deleteImageView.setScaleType(scaleType);
-            this.deleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector)));
+            this.deleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
             this.deleteImageView.setImageResource(R.drawable.poll_remove);
             this.deleteImageView.setOnClickListener(onClickListener);
-            this.deleteImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3), mode));
+            this.deleteImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3, resourcesProvider), mode));
             this.deleteImageView.setContentDescription(LocaleController.getString(R.string.Delete));
             ImageView imageView5 = this.deleteImageView;
             boolean z3 = LocaleController.isRTL;
@@ -158,7 +164,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             SimpleTextView simpleTextView2 = this.textView2;
             boolean z4 = LocaleController.isRTL;
             addView(simpleTextView2, LayoutHelper.createFrame(48, 24.0f, (z4 ? 3 : 5) | 48, z4 ? 20.0f : 0.0f, 43.0f, z4 ? 0.0f : 20.0f, 0.0f));
-            CheckBox2 checkBox2 = new CheckBox2(context, 21);
+            CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider);
             this.checkBox = checkBox2;
             checkBox2.setColor(-1, i3, Theme.key_checkboxCheck);
             this.checkBox.setContentDescription(LocaleController.getString(R.string.AccDescrQuizCorrectAnswer));
@@ -183,7 +189,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = new ChatActivityEnterViewAnimatedIconView(context);
             this.emojiButton = chatActivityEnterViewAnimatedIconView;
             chatActivityEnterViewAnimatedIconView.setAlpha(0.8f);
-            this.emojiButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.SRC_IN));
+            this.emojiButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon, resourcesProvider), PorterDuff.Mode.SRC_IN));
             this.emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, false);
             int dp = AndroidUtilities.dp(9.5f);
             this.emojiButton.setPadding(dp, dp, dp, dp);
@@ -193,7 +199,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             boolean z6 = LocaleController.isRTL;
             addView(chatActivityEnterViewAnimatedIconView2, LayoutHelper.createFrame(48, 48.0f, z6 ? 3 : 5, z6 ? i5 : 0.0f, 0.0f, z6 ? 0.0f : i5, 0.0f));
             if (Build.VERSION.SDK_INT >= 21) {
-                this.emojiButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector)));
+                this.emojiButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
             }
             this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.PollEditTextCell$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -378,7 +384,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         if (checkBox2 != null) {
             checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.newEmojiSuggestionsAvailable : 122), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.needDeleteDialog : 122), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.textView.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), this.textView.getMeasuredHeight()) + (this.needDivider ? 1 : 0));
         SimpleTextView simpleTextView2 = this.textView2;

@@ -291,7 +291,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onLongPress$0(BaseFragment baseFragment, PeriodDay periodDay) {
-                CalendarActivity.this.lambda$onBackPressed$338();
+                CalendarActivity.this.lambda$onBackPressed$347();
                 ((ChatActivity) baseFragment).jumpToDate(periodDay.date);
             }
 
@@ -330,7 +330,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                         AlertsCreator.createClearDaysDialogAlert(calendarActivity, 1, calendarActivity.getMessagesController().getUser(Long.valueOf(CalendarActivity.this.dialogId)), null, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.CalendarActivity.MonthView.2.1
                             @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                             public void run(boolean z) {
-                                CalendarActivity.this.lambda$onBackPressed$338();
+                                CalendarActivity.this.lambda$onBackPressed$347();
                                 ((ChatActivity) baseFragment).deleteHistory(CalendarActivity.this.dateSelectedStart, CalendarActivity.this.dateSelectedEnd + 86400, z);
                             }
                         }, null);
@@ -378,7 +378,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                 actionBarPopupWindowLayout.setBackgroundColor(CalendarActivity.this.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
                 ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), true, false);
                 actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.JumpToDate), R.drawable.msg_message);
-                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.audioRouteChanged);
+                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.audioRecordTooShort);
                 actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -389,7 +389,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                 if (CalendarActivity.this.canClearHistory) {
                     ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), false, false);
                     actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.SelectThisDay), R.drawable.msg_select);
-                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.audioRouteChanged);
+                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.audioRecordTooShort);
                     actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -399,7 +399,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                     actionBarPopupWindowLayout.addView(actionBarMenuSubItem2);
                     ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), false, true);
                     actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.ClearHistory), R.drawable.msg_delete);
-                    actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.audioRouteChanged);
+                    actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.audioRecordTooShort);
                     actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -453,7 +453,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                             orCreateStoryViewer.open(context, messageObject.storyItem, messageObject.getId(), CalendarActivity.this.storiesList, true, CalendarActivity.this.storiesPlaceProvider);
                         } else {
                             CalendarActivity.this.callback.onDateSelected(dayAtCoord.messageObject.getId(), dayAtCoord.startOffset);
-                            CalendarActivity.this.lambda$onBackPressed$338();
+                            CalendarActivity.this.lambda$onBackPressed$347();
                         }
                     }
                 }
@@ -504,14 +504,14 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                         if (dayAtCoord3 != null && ((BaseFragment) CalendarActivity.this).parentLayout != null && ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() >= 2) {
                             BaseFragment baseFragment = (BaseFragment) ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() - 2);
                             if (baseFragment instanceof ChatActivity) {
-                                CalendarActivity.this.lambda$onBackPressed$338();
+                                CalendarActivity.this.lambda$onBackPressed$347();
                                 chatActivity = (ChatActivity) baseFragment;
                                 chatActivity.jumpToDate(dayAtCoord3.date);
                             }
                         } else if (dayAtCoord3 != null) {
                             CalendarActivity calendarActivity5 = CalendarActivity.this;
                             if (calendarActivity5.chatActivity != null) {
-                                calendarActivity5.lambda$onBackPressed$338();
+                                calendarActivity5.lambda$onBackPressed$347();
                                 chatActivity = CalendarActivity.this.chatActivity;
                                 chatActivity.jumpToDate(dayAtCoord3.date);
                             }
@@ -1153,7 +1153,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
             AlertsCreator.createClearDaysDialogAlert(this, i, getMessagesController().getUser(Long.valueOf(this.dialogId)), null, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.CalendarActivity.8
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public void run(boolean z) {
-                    CalendarActivity.this.lambda$onBackPressed$338();
+                    CalendarActivity.this.lambda$onBackPressed$347();
                     if (((BaseFragment) CalendarActivity.this).parentLayout != null && ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() >= 2) {
                         BaseFragment baseFragment = (BaseFragment) ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() - 2);
                         if (baseFragment instanceof ChatActivity) {
@@ -1325,7 +1325,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.updateBotMenuButton));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.suggestedFiltersLoaded));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         this.blurredView.setVisibility(0);
@@ -1666,7 +1666,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (CalendarActivity.this.dateSelectedStart == 0 && CalendarActivity.this.dateSelectedEnd == 0 && !CalendarActivity.this.inSelectionMode) {
-                        CalendarActivity.this.lambda$onBackPressed$338();
+                        CalendarActivity.this.lambda$onBackPressed$347();
                         return;
                     }
                     CalendarActivity.this.inSelectionMode = false;

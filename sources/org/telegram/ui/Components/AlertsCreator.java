@@ -106,9 +106,10 @@ import org.telegram.ui.Cells.CheckBoxCell;
 import org.telegram.ui.Cells.RadioColorCell;
 import org.telegram.ui.Cells.TextColorCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda309;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.NumberPicker;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
@@ -583,7 +584,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 1.0f));
+        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 1.0f));
         animatedTextView.setPadding(0, 0, 0, 0);
         animatedTextView.setGravity(17);
         animatedTextView.setTextColor(scheduleDatePickerColors.buttonTextColor);
@@ -758,7 +759,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.25f));
+        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.25f));
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(31);
         numberPicker.setWrapSelectorWheel(false);
@@ -780,7 +781,7 @@ public abstract class AlertsCreator {
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(11);
         numberPicker2.setWrapSelectorWheel(false);
-        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda51
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i7) {
@@ -801,7 +802,7 @@ public abstract class AlertsCreator {
                 return lambda$createBirthdayPickerDialog$109;
             }
         });
-        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.25f));
+        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.25f));
         numberPicker3.setOnScrollListener(onScrollListener);
         if (tL_birthday != null) {
             numberPicker.setValue(tL_birthday.day);
@@ -1391,7 +1392,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.25f));
+        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.25f));
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(31);
         numberPicker.setWrapSelectorWheel(false);
@@ -1413,7 +1414,7 @@ public abstract class AlertsCreator {
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(11);
         numberPicker2.setWrapSelectorWheel(false);
-        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda93
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i) {
@@ -1439,7 +1440,7 @@ public abstract class AlertsCreator {
                 return lambda$createCalendarPickerDialog$138;
             }
         });
-        linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.25f));
+        linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.25f));
         numberPicker3.setOnValueChangedListener(onValueChangeListener);
         numberPicker.setValue(31);
         numberPicker2.setValue(12);
@@ -1541,7 +1542,7 @@ public abstract class AlertsCreator {
         editText.setMaxLines(4);
         editText.setRawInputType(147457);
         editText.setImeOptions(6);
-        final int i3 = j > 0 ? 70 : NotificationCenter.didSetNewWallpapper;
+        final int i3 = j > 0 ? 70 : NotificationCenter.suggestedLangpack;
         editText.setFilters(new InputFilter[]{new CodepointsLengthInputFilter(i3) { // from class: org.telegram.ui.Components.AlertsCreator.15
             @Override // org.telegram.ui.Components.CodepointsLengthInputFilter, android.text.InputFilter
             public CharSequence filter(CharSequence charSequence, int i4, int i5, Spanned spanned, int i6, int i7) {
@@ -1710,73 +1711,73 @@ public abstract class AlertsCreator {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0156, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x015c, code lost:
     
-        if (r12 != org.telegram.messenger.UserObject.VERIFY) goto L60;
+        if (org.telegram.messenger.ChatObject.isMonoForum(r29) == false) goto L64;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0168, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0174, code lost:
     
         r5 = new org.telegram.ui.Cells.CheckBoxCell(r8, 1, r32);
         r7[0] = r5;
         r5.setBackgroundDrawable(org.telegram.ui.ActionBar.Theme.getSelectorDrawable(false));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0179, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0185, code lost:
     
-        if (r29 == null) goto L63;
+        if (r29 == null) goto L67;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x017b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0187, code lost:
     
         r7[0].setText(org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.DeleteMessagesOptionAlsoChat), "", false, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x019c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x01a8, code lost:
     
         r2 = r7[0];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x01a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x01ae, code lost:
     
-        if (org.telegram.messenger.LocaleController.isRTL == false) goto L67;
+        if (org.telegram.messenger.LocaleController.isRTL == false) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x01a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x01b0, code lost:
     
         r4 = 16.0f;
         r6 = org.telegram.messenger.AndroidUtilities.dp(16.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x01b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x01bf, code lost:
     
-        if (org.telegram.messenger.LocaleController.isRTL == false) goto L72;
+        if (org.telegram.messenger.LocaleController.isRTL == false) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x01b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x01c1, code lost:
     
         r4 = org.telegram.messenger.AndroidUtilities.dp(8.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x01c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x01cc, code lost:
     
         r2.setPadding(r6, 0, r4, 0);
         r14.addView(r7[0], org.telegram.ui.Components.LayoutHelper.createFrame(-1, 48.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         r7[0].setChecked(false, false);
         r7[0].setOnClickListener(new org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda78(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x01bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x01c7, code lost:
     
         r4 = org.telegram.messenger.AndroidUtilities.dp(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x01ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x01b7, code lost:
     
         r4 = 16.0f;
         r6 = org.telegram.messenger.AndroidUtilities.dp(8.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0187, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0193, code lost:
     
         r7[0].setText(org.telegram.messenger.LocaleController.formatString("DeleteMessagesOptionAlso", org.telegram.messenger.R.string.DeleteMessagesOptionAlso, org.telegram.messenger.UserObject.getFirstName(r28)), "", false, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0166, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0172, code lost:
     
-        if (org.telegram.messenger.ChatObject.isChannelAndNotMegaGroup(r29) == false) goto L60;
+        if (org.telegram.messenger.ChatObject.isMonoForum(r29) == false) goto L64;
      */
     /* JADX WARN: Removed duplicated region for block: B:35:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:64:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0160  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1847,11 +1848,15 @@ public abstract class AlertsCreator {
             if (user != null) {
                 long j = user.id;
                 if (j != clientUserId) {
+                    if (j != UserObject.VERIFY) {
+                    }
                 }
             }
             if (chat != null) {
                 if (z) {
                     if (!ChatObject.isPublic(chat)) {
+                        if (!ChatObject.isChannelAndNotMegaGroup(chat)) {
+                        }
                     }
                 }
             }
@@ -1914,9 +1919,9 @@ public abstract class AlertsCreator {
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r1v31 boolean, still in use, count: 2, list:
-          (r1v31 boolean) from 0x028f: IF  (r1v31 boolean) != false  -> B:194:0x0291 A[HIDDEN]
-          (r1v31 boolean) from 0x0291: PHI (r1v34 boolean) = (r1v31 boolean), (r1v48 boolean) binds: [B:224:0x028f, B:193:0x0280] A[DONT_GENERATE, DONT_INLINE]
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r2v7 boolean, still in use, count: 2, list:
+          (r2v7 boolean) from 0x02a7: IF  (r2v7 boolean) != false  -> B:214:0x02a9 A[HIDDEN]
+          (r2v7 boolean) from 0x02a9: PHI (r2v10 boolean) = (r2v7 boolean), (r2v23 boolean) binds: [B:244:0x02a7, B:213:0x0298] A[DONT_GENERATE, DONT_INLINE]
         	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
         	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
         	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:114)
@@ -1926,23 +1931,23 @@ public abstract class AlertsCreator {
         	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
         */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x04a0  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:110:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x04a8  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0392  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0366  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0331  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0372  */
-    /* JADX WARN: Type inference failed for: r1v76 */
-    /* JADX WARN: Type inference failed for: r1v79, types: [java.lang.String, org.telegram.messenger.ImageLocation] */
-    /* JADX WARN: Type inference failed for: r1v81 */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x04dd  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0558  */
+    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x03b4  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0349  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0394  */
+    /* JADX WARN: Type inference failed for: r2v50 */
+    /* JADX WARN: Type inference failed for: r2v53, types: [java.lang.String, org.telegram.messenger.ImageLocation] */
+    /* JADX WARN: Type inference failed for: r2v55 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void createClearOrDeleteDialogAlert(final org.telegram.ui.ActionBar.BaseFragment r30, final boolean r31, final boolean r32, final boolean r33, final org.telegram.tgnet.TLRPC.Chat r34, final org.telegram.tgnet.TLRPC.User r35, final boolean r36, final boolean r37, final boolean r38, final org.telegram.messenger.MessagesStorage.BooleanCallback r39, final org.telegram.ui.ActionBar.Theme.ResourcesProvider r40) {
         /*
-            Method dump skipped, instructions count: 1313
+            Method dump skipped, instructions count: 1378
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Components.AlertsCreator.createClearOrDeleteDialogAlert(org.telegram.ui.ActionBar.BaseFragment, boolean, boolean, boolean, org.telegram.tgnet.TLRPC$Chat, org.telegram.tgnet.TLRPC$User, boolean, boolean, boolean, org.telegram.messenger.MessagesStorage$BooleanCallback, org.telegram.ui.ActionBar.Theme$ResourcesProvider):void");
@@ -2313,7 +2318,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker.setMinValue(0);
         numberPicker.setMaxValue(365);
         numberPicker.setWrapSelectorWheel(false);
@@ -2334,7 +2339,7 @@ public abstract class AlertsCreator {
         numberPicker.setOnValueChangedListener(onValueChangeListener);
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(23);
-        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.2f));
+        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda164
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i2) {
@@ -2355,7 +2360,7 @@ public abstract class AlertsCreator {
                 return lambda$createDatePickerDialog$102;
             }
         });
-        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.3f));
+        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.3f));
         numberPicker3.setOnValueChangedListener(onValueChangeListener);
         if (j <= 0 || j == 2147483646) {
             linearLayout = linearLayout2;
@@ -2666,7 +2671,7 @@ public abstract class AlertsCreator {
                     lambda$createDeleteMessagesAlert$166 = AlertsCreator.lambda$createDeleteMessagesAlert$166(clientUserId, (TLObject) obj);
                     return lambda$createDeleteMessagesAlert$166;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda309()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda312()));
             if (!arrayList2.isEmpty()) {
                 if (channelParticipantArr != null) {
                     DeleteMessagesBottomSheet deleteMessagesBottomSheet = new DeleteMessagesBottomSheet(baseFragment, chat, arrayList, arrayList2, channelParticipantArr, j, i, i2, runnable);
@@ -3355,7 +3360,7 @@ public abstract class AlertsCreator {
         ScheduleDatePickerColors scheduleDatePickerColors = new ScheduleDatePickerColors(resourcesProvider);
         final BottomSheet.Builder builder = new BottomSheet.Builder(context, false, resourcesProvider);
         builder.setApplyBottomPadding(false);
-        final int[] iArr = {30, 60, 120, NotificationCenter.updateBotMenuButton, 480, 1440, 2880, 4320, 5760, 7200, 8640, 10080, 20160, 30240, 44640, 89280, 133920, 178560, 223200, 267840, 525600};
+        final int[] iArr = {30, 60, 120, NotificationCenter.suggestedFiltersLoaded, 480, 1440, 2880, 4320, 5760, 7200, 8640, 10080, 20160, 30240, 44640, 89280, 133920, 178560, 223200, 267840, 525600};
         final NumberPicker numberPicker = new NumberPicker(context, resourcesProvider) { // from class: org.telegram.ui.Components.AlertsCreator.44
             @Override // org.telegram.ui.Components.NumberPicker
             protected CharSequence getContentDescription(int i) {
@@ -3424,7 +3429,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 1.0f));
+        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 1.0f));
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda121
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
             public final void onValueChange(NumberPicker numberPicker2, int i, int i2) {
@@ -3743,7 +3748,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(365);
         numberPicker2.setWrapSelectorWheel(false);
@@ -3765,7 +3770,7 @@ public abstract class AlertsCreator {
         numberPicker2.setOnValueChangedListener(onValueChangeListener);
         numberPicker3.setMinValue(0);
         numberPicker3.setMaxValue(23);
-        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.2f));
+        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.2f));
         numberPicker3.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda21
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i2) {
@@ -3786,7 +3791,7 @@ public abstract class AlertsCreator {
                 return lambda$createScheduleDatePickerDialog$95;
             }
         });
-        linearLayout3.addView(numberPicker5, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.3f));
+        linearLayout3.addView(numberPicker5, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.3f));
         numberPicker5.setOnValueChangedListener(onValueChangeListener);
         if (j2 <= 0 || j2 == 2147483646) {
             calendar = calendar2;
@@ -3892,7 +3897,7 @@ public abstract class AlertsCreator {
         }
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(view, -2, -2);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -4054,9 +4059,9 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.4f));
+        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.4f));
         linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, -2, 0.2f, 16));
-        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.4f));
+        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.4f));
         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         textView2.setGravity(17);
         textView2.setTextColor(scheduleDatePickerColors.buttonTextColor);
@@ -4174,7 +4179,7 @@ public abstract class AlertsCreator {
                 return Button.class.getName();
             }
         };
-        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout3.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker.setMinValue(0);
         numberPicker.setMaxValue(365);
         numberPicker.setWrapSelectorWheel(false);
@@ -4195,7 +4200,7 @@ public abstract class AlertsCreator {
         numberPicker.setOnValueChangedListener(onValueChangeListener);
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(23);
-        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.2f));
+        linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda150
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i3) {
@@ -4216,7 +4221,7 @@ public abstract class AlertsCreator {
                 return lambda$createStatusUntilDatePickerDialog$118;
             }
         });
-        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.3f));
+        linearLayout3.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.3f));
         numberPicker3.setOnValueChangedListener(onValueChangeListener);
         if (j <= 0 || j == 2147483646) {
             linearLayout = linearLayout2;
@@ -4471,7 +4476,7 @@ public abstract class AlertsCreator {
                 AlertsCreator.lambda$createTimePickerDialog$74(i2, i3, numberPicker, numberPicker2, i, linearLayout, (Boolean) obj);
             }
         };
-        linearLayout.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda175
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i4) {
@@ -4486,7 +4491,7 @@ public abstract class AlertsCreator {
                 AlertsCreator.lambda$createTimePickerDialog$76(Utilities.Callback.this, numberPicker3, i4, i5);
             }
         });
-        linearLayout.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcSpeakerAmplitudeEvent, 0.5f));
+        linearLayout.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.webRtcMicAmplitudeEvent, 0.5f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda177
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i4) {
@@ -4814,7 +4819,7 @@ public abstract class AlertsCreator {
         hashMap.put(10026904, "Mint");
         hashMap.put(11394989, "Moss");
         hashMap.put(3234721, "Azure");
-        hashMap.put(Integer.valueOf(NotificationCenter.didSetNewWallpapper), "Blue");
+        hashMap.put(Integer.valueOf(NotificationCenter.suggestedLangpack), "Blue");
         hashMap.put(18347, "Cobalt");
         hashMap.put(5204422, "Indigo");
         hashMap.put(96647, "Lagoon");
@@ -6350,7 +6355,7 @@ public abstract class AlertsCreator {
         }
         if (baseFragment instanceof ThemePreviewActivity) {
             Theme.applyPreviousTheme();
-            baseFragment.lambda$onBackPressed$338();
+            baseFragment.lambda$onBackPressed$347();
         }
         if (themeAccent == null) {
             processCreate(editTextBoldCursor, alertDialog, baseFragment);
@@ -8227,14 +8232,9 @@ public abstract class AlertsCreator {
         baseFragment.showDialog(create2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00af  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static void showPayForMessageAlert(final int i, final long j, final long j2, int i2, final Runnable runnable) {
-        String formatPluralStringComma;
         TLRPC.Chat chat;
+        String formatPluralStringComma;
         if (runnable == null) {
             return;
         }
@@ -8246,38 +8246,27 @@ public abstract class AlertsCreator {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         Theme.ResourcesProvider darkThemeResourceProvider = (PhotoViewer.getInstance().isVisible() || (safeLastFragment != null && safeLastFragment.hasShownSheet())) ? new DarkThemeResourceProvider() : safeLastFragment != null ? safeLastFragment.getResourceProvider() : null;
         String shortName = DialogObject.getShortName(i, j);
-        if (safeLastFragment instanceof ChatActivity) {
+        if (ChatObject.isMonoForum(i, j)) {
+            shortName = ForumUtilities.getMonoForumTitle(i, j, true);
+        } else if (safeLastFragment instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) safeLastFragment;
             if (chatActivity.isComments && chatActivity.getDialogId() == j && (chat = chatActivity.replyOriginalChat) != null) {
                 shortName = DialogObject.getShortName(i, -chat.id);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                int i3 = (int) j2;
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage1", i3, shortName)));
-                spannableStringBuilder.append((CharSequence) " ");
-                if (i2 != 1) {
-                    formatPluralStringComma = LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2One", i3);
-                } else {
-                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2Many1", (int) (i2 * j2))));
-                    spannableStringBuilder.append((CharSequence) " ");
-                    formatPluralStringComma = LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2Many2", i2);
-                }
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatPluralStringComma));
-                showAlertWithCheckbox(activity, LocaleController.getString(R.string.MessageLockedStarsConfirmTitle), spannableStringBuilder, LocaleController.getString(R.string.MessageLockedStarsConfirmMessageDontAsk), LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessagePay", i2), new Utilities.Callback() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda44
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        AlertsCreator.lambda$showPayForMessageAlert$42(i, j, j2, runnable, (Boolean) obj);
-                    }
-                }, darkThemeResourceProvider);
             }
         }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        int i32 = (int) j2;
-        spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage1", i32, shortName)));
-        spannableStringBuilder2.append((CharSequence) " ");
-        if (i2 != 1) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        int i3 = (int) j2;
+        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage1", i3, shortName)));
+        spannableStringBuilder.append((CharSequence) " ");
+        if (i2 == 1) {
+            formatPluralStringComma = LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2One", i3);
+        } else {
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2Many1", (int) (i2 * j2))));
+            spannableStringBuilder.append((CharSequence) " ");
+            formatPluralStringComma = LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessage2Many2", i2);
         }
-        spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(formatPluralStringComma));
-        showAlertWithCheckbox(activity, LocaleController.getString(R.string.MessageLockedStarsConfirmTitle), spannableStringBuilder2, LocaleController.getString(R.string.MessageLockedStarsConfirmMessageDontAsk), LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessagePay", i2), new Utilities.Callback() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda44
+        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatPluralStringComma));
+        showAlertWithCheckbox(activity, LocaleController.getString(R.string.MessageLockedStarsConfirmTitle), spannableStringBuilder, LocaleController.getString(R.string.MessageLockedStarsConfirmMessageDontAsk), LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessagePay", i2), new Utilities.Callback() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda44
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AlertsCreator.lambda$showPayForMessageAlert$42(i, j, j2, runnable, (Boolean) obj);

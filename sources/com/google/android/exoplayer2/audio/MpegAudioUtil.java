@@ -53,7 +53,7 @@ public abstract class MpegAudioUtil {
                     this.bitrate = i10;
                     i7 = (((i10 * 12) / this.sampleRate) + i9) * 4;
                 } else {
-                    int i11 = NotificationCenter.messagePlayingProgressDidChanged;
+                    int i11 = NotificationCenter.dialogsUnreadCounterChanged;
                     if (i2 != 3) {
                         int i12 = MpegAudioUtil.BITRATE_V2[i4 - 1];
                         this.bitrate = i12;
@@ -66,7 +66,7 @@ public abstract class MpegAudioUtil {
                     }
                     int i13 = i3 == 2 ? MpegAudioUtil.BITRATE_V1_L2[i4 - 1] : MpegAudioUtil.BITRATE_V1_L3[i4 - 1];
                     this.bitrate = i13;
-                    i7 = ((i13 * NotificationCenter.messagePlayingProgressDidChanged) / this.sampleRate) + i9;
+                    i7 = ((i13 * NotificationCenter.dialogsUnreadCounterChanged) / this.sampleRate) + i9;
                 }
                 this.frameSize = i7;
                 this.channels = ((i >> 6) & 3) == 3 ? 1 : 2;
@@ -103,9 +103,9 @@ public abstract class MpegAudioUtil {
             return ((((i2 == 3 ? BITRATE_V1_L1[i4 - 1] : BITRATE_V2_L1[i4 - 1]) * 12) / i6) + i7) * 4;
         }
         int i8 = i2 == 3 ? i3 == 2 ? BITRATE_V1_L2[i4 - 1] : BITRATE_V1_L3[i4 - 1] : BITRATE_V2[i4 - 1];
-        int i9 = NotificationCenter.messagePlayingProgressDidChanged;
+        int i9 = NotificationCenter.dialogsUnreadCounterChanged;
         if (i2 == 3) {
-            return ((i8 * NotificationCenter.messagePlayingProgressDidChanged) / i6) + i7;
+            return ((i8 * NotificationCenter.dialogsUnreadCounterChanged) / i6) + i7;
         }
         if (i3 == 1) {
             i9 = 72;

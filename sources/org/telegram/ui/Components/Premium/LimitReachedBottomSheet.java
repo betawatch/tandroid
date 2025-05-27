@@ -1002,7 +1002,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                                                 textView6.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, ((BottomSheet) LimitReachedBottomSheet.this).resourcesProvider));
                                                 textView6.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
                                                 textView6.setTextSize(14.0f);
-                                                addView(textView6, LayoutHelper.createLinear(NotificationCenter.storiesSendAsUpdate, -2, 1, 12, 0, 12, 20));
+                                                addView(textView6, LayoutHelper.createLinear(NotificationCenter.storiesLimitUpdate, -2, 1, 12, 0, 12, 20));
                                                 TextView textView7 = new TextView(context);
                                                 textView7.setGravity(17);
                                                 textView7.setTypeface(AndroidUtilities.bold());
@@ -2043,7 +2043,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             formatString = LocaleController.formatString("LimitReachedCommunitiesLocked", R.string.LimitReachedCommunitiesLocked, Integer.valueOf(limitParams.defaultLimit));
         } else if (i == 6) {
             limitParams.defaultLimit = 100;
-            limitParams.premiumLimit = NotificationCenter.storyQualityUpdate;
+            limitParams.premiumLimit = NotificationCenter.smsJobStatusUpdate;
             limitParams.icon = R.drawable.msg_limit_folder;
             limitParams.descriptionStr = LocaleController.formatString("LimitReachedFileSize", R.string.LimitReachedFileSize, "2 GB", "4 GB");
             limitParams.descriptionStrPremium = LocaleController.formatString("LimitReachedFileSizePremium", R.string.LimitReachedFileSizePremium, "4 GB");
@@ -3232,14 +3232,14 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             }
             lambda$new$0();
             if (!booleanValue) {
-                lastFragment2.lambda$onBackPressed$338();
+                lastFragment2.lambda$onBackPressed$347();
                 BoostDialogs.showBulletin(baseFragment2, chat, false);
                 return;
             } else {
                 if (baseFragment2 instanceof ProfileActivity) {
                     getBaseFragment().getParentLayout().removeFragmentFromStack(baseFragment2);
                 }
-                lastFragment2.lambda$onBackPressed$338();
+                lastFragment2.lambda$onBackPressed$347();
                 BoostDialogs.showBulletin(r5, chat, true);
                 return;
             }
@@ -3266,7 +3266,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             while (it.hasNext()) {
                 getBaseFragment().getParentLayout().removeFragmentFromStack((BaseFragment) it.next());
             }
-            getBaseFragment().lambda$onBackPressed$338();
+            getBaseFragment().lambda$onBackPressed$347();
             lambda$new$0();
             BoostDialogs.showBulletin(r5, chat, true);
             return;
@@ -3294,7 +3294,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
         }
         List fragmentStack3 = getBaseFragment().getParentLayout().getFragmentStack();
         r5 = fragmentStack3.size() >= 2 ? (BaseFragment) fragmentStack3.get(fragmentStack3.size() - 2) : null;
-        getBaseFragment().lambda$onBackPressed$338();
+        getBaseFragment().lambda$onBackPressed$347();
         lambda$new$0();
         if (r5 instanceof ChatActivity) {
             BoostDialogs.showBulletin(r5, chat, true);

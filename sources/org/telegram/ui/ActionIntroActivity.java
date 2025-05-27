@@ -242,7 +242,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        ActionIntroActivity.this.lambda$onBackPressed$338();
+                        ActionIntroActivity.this.lambda$onBackPressed$347();
                     }
                 }
             });
@@ -740,7 +740,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         int i13 = this.currentType;
         if (i13 == 0) {
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.channel_create, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
+            this.imageView.setAnimation(R.raw.channel_create, NotificationCenter.smsJobStatusUpdate, NotificationCenter.smsJobStatusUpdate);
             this.titleTextView.setText(LocaleController.getString(R.string.ChannelAlertTitle));
             this.descriptionText.setText(LocaleController.getString(R.string.ChannelAlertText));
             textView2 = this.buttonTextView;
@@ -757,7 +757,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     this.imageView.playAnimation();
                 } else if (i13 == 6) {
                     this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    this.imageView.setAnimation(R.raw.utyan_passcode, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
+                    this.imageView.setAnimation(R.raw.utyan_passcode, NotificationCenter.smsJobStatusUpdate, NotificationCenter.smsJobStatusUpdate);
                     this.imageView.setFocusable(false);
                     this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
@@ -778,7 +778,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             }
             this.subtitleTextView.setVisibility(0);
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.utyan_change_number, NotificationCenter.storyQualityUpdate, NotificationCenter.storyQualityUpdate);
+            this.imageView.setAnimation(R.raw.utyan_change_number, NotificationCenter.smsJobStatusUpdate, NotificationCenter.smsJobStatusUpdate);
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

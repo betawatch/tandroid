@@ -636,7 +636,7 @@ public class ReactionsLayoutInBubble {
             }
             if (z4) {
                 rectF.right += AndroidUtilities.dp(4.0f);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didSetNewWallpapper, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.suggestedLangpack, 31);
                 rectF.right -= AndroidUtilities.dp(4.0f);
             }
             if (this.particles != null) {
@@ -766,7 +766,7 @@ public class ReactionsLayoutInBubble {
                 if (view != null) {
                     view.invalidate();
                 }
-                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didSetNewWallpapper), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didSetNewWallpapper), 0.4f), getDrawServiceShaderBackground()));
+                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.suggestedLangpack), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.suggestedLangpack), 0.4f), getDrawServiceShaderBackground()));
                 canvas.save();
                 canvas.clipPath(this.tagPath);
                 this.particles.draw(canvas, this.textColor);

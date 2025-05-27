@@ -155,7 +155,7 @@ public class CameraScanActivity extends BaseFragment {
             CameraScanActivity cameraScanActivity = new CameraScanActivity(i) { // from class: org.telegram.ui.CameraScanActivity.1.1
                 @Override // org.telegram.ui.ActionBar.BaseFragment
                 /* renamed from: finishFragment */
-                public void lambda$onBackPressed$338() {
+                public void lambda$onBackPressed$347() {
                     setFinishing(true);
                     1.this.lambda$new$0();
                 }
@@ -586,7 +586,7 @@ public class CameraScanActivity extends BaseFragment {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                CameraScanActivity.this.lambda$onBackPressed$338();
+                CameraScanActivity.this.lambda$onBackPressed$347();
             }
         }, 1200L);
     }
@@ -597,7 +597,7 @@ public class CameraScanActivity extends BaseFragment {
         if (cameraScanActivityDelegate != null) {
             cameraScanActivityDelegate.didFindQr(this.recognizedText);
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -626,7 +626,7 @@ public class CameraScanActivity extends BaseFragment {
             cameraScanActivityDelegate.didFindQr(str);
         }
         if (this.currentType != 3) {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
         }
     }
 
@@ -1070,7 +1070,7 @@ public class CameraScanActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    CameraScanActivity.this.lambda$onBackPressed$338();
+                    CameraScanActivity.this.lambda$onBackPressed$347();
                 }
             }
         });
@@ -1505,7 +1505,7 @@ public class CameraScanActivity extends BaseFragment {
                 if (cameraScanActivityDelegate != null) {
                     cameraScanActivityDelegate.didFindQr(tryReadQr.text);
                 }
-                lambda$onBackPressed$338();
+                lambda$onBackPressed$347();
             }
         } catch (Throwable th) {
             FileLog.e(th);

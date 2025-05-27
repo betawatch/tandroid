@@ -602,7 +602,7 @@ public abstract class SharedAudioCell extends FrameLayout implements DownloadCon
             if (this.currentMessageObject.hasHighlightedWords()) {
                 CharSequence highlightText3 = AndroidUtilities.highlightText(Emoji.replaceEmoji(this.currentMessageObject.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), Theme.chat_msgTextPaint.getFontMetricsInt(), false), this.currentMessageObject.highlightedWords, this.resourcesProvider);
                 if (highlightText3 != null) {
-                    StaticLayout staticLayout3 = new StaticLayout(TextUtils.ellipsize(AndroidUtilities.ellipsizeCenterEnd(highlightText3, this.currentMessageObject.highlightedWords.get(0), size, this.captionTextPaint, NotificationCenter.walletSyncProgressChanged), this.captionTextPaint, size, TextUtils.TruncateAt.END), this.captionTextPaint, size + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    StaticLayout staticLayout3 = new StaticLayout(TextUtils.ellipsize(AndroidUtilities.ellipsizeCenterEnd(highlightText3, this.currentMessageObject.highlightedWords.get(0), size, this.captionTextPaint, NotificationCenter.walletPendingTransactionsChanged), this.captionTextPaint, size, TextUtils.TruncateAt.END), this.captionTextPaint, size + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     this.captionLayout = staticLayout3;
                     this.captionLayoutLeft = staticLayout3.getLineCount() > 0 ? this.captionLayout.getLineLeft(0) : 0.0f;
                     this.captionLayoutWidth = this.captionLayout.getLineCount() > 0 ? this.captionLayout.getLineWidth(0) : 0.0f;

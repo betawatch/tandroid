@@ -266,7 +266,7 @@ public abstract class SenderSelectPopup extends ActionBarPopupWindow {
         frameLayout.addView(this.recyclerView);
         this.headerShadow = new View(context);
         Drawable drawable = ContextCompat.getDrawable(context, R.drawable.header_shadow);
-        drawable.setAlpha(NotificationCenter.recordStopped);
+        drawable.setAlpha(NotificationCenter.recordStartError);
         this.headerShadow.setBackground(drawable);
         this.headerShadow.setAlpha(0.0f);
         frameLayout.addView(this.headerShadow, LayoutHelper.createFrame(-1, 4.0f));

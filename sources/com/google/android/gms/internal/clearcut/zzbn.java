@@ -164,7 +164,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    zzfd.zza(bArr, i, (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                    zzfd.zza(bArr, i, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -178,7 +178,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr3 = this.buffer;
                     int i3 = this.position;
                     this.position = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128);
+                    bArr3[i3] = (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -280,7 +280,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    zzfd.zza(bArr, i2, (byte) ((i & NotificationCenter.dialogTranslate) | 128));
+                    zzfd.zza(bArr, i2, (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
                     i >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -294,7 +294,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr3 = this.buffer;
                     int i4 = this.position;
                     this.position = i4 + 1;
-                    bArr3[i4] = (byte) ((i & NotificationCenter.dialogTranslate) | 128);
+                    bArr3[i4] = (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128);
                     i >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -496,7 +496,7 @@ public abstract class zzbn extends zzba {
         public final void zzb(long j) {
             while (((-128) & j) != 0) {
                 try {
-                    this.zzgd.put((byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                    this.zzgd.put((byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                     j >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new zzc(e);
@@ -583,7 +583,7 @@ public abstract class zzbn extends zzba {
         public final void zzo(int i) {
             while ((i & (-128)) != 0) {
                 try {
-                    this.zzgd.put((byte) ((i & NotificationCenter.dialogTranslate) | 128));
+                    this.zzgd.put((byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
                     i >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new zzc(e);
@@ -759,7 +759,7 @@ public abstract class zzbn extends zzba {
                         return;
                     } else {
                         this.zzgi = j3 + 1;
-                        zzfd.zza(j3, (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                        zzfd.zza(j3, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                         j >>>= 7;
                     }
                 }
@@ -775,7 +775,7 @@ public abstract class zzbn extends zzba {
                         return;
                     } else {
                         this.zzgi = j4 + 1;
-                        zzfd.zza(j4, (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                        zzfd.zza(j4, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                         j >>>= 7;
                     }
                 }
@@ -864,7 +864,7 @@ public abstract class zzbn extends zzba {
                 while ((i & (-128)) != 0) {
                     long j = this.zzgi;
                     this.zzgi = j + 1;
-                    zzfd.zza(j, (byte) ((i & NotificationCenter.dialogTranslate) | 128));
+                    zzfd.zza(j, (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
                     i >>>= 7;
                 }
                 long j2 = this.zzgi;
@@ -883,7 +883,7 @@ public abstract class zzbn extends zzba {
                     return;
                 } else {
                     this.zzgi = j3 + 1;
-                    zzfd.zza(j3, (byte) ((i & NotificationCenter.dialogTranslate) | 128));
+                    zzfd.zza(j3, (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
                     i >>>= 7;
                 }
             }

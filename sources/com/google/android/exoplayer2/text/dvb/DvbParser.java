@@ -212,16 +212,16 @@ final class DvbParser {
         iArr[0] = 0;
         for (int i = 1; i < 16; i++) {
             if (i < 8) {
-                iArr[i] = getColor(NotificationCenter.didSetNewWallpapper, (i & 1) != 0 ? NotificationCenter.didSetNewWallpapper : 0, (i & 2) != 0 ? NotificationCenter.didSetNewWallpapper : 0, (i & 4) != 0 ? NotificationCenter.didSetNewWallpapper : 0);
+                iArr[i] = getColor(NotificationCenter.suggestedLangpack, (i & 1) != 0 ? NotificationCenter.suggestedLangpack : 0, (i & 2) != 0 ? NotificationCenter.suggestedLangpack : 0, (i & 4) != 0 ? NotificationCenter.suggestedLangpack : 0);
             } else {
                 int i2 = i & 1;
-                int i3 = NotificationCenter.dialogTranslate;
-                int i4 = i2 != 0 ? NotificationCenter.dialogTranslate : 0;
-                int i5 = (i & 2) != 0 ? NotificationCenter.dialogTranslate : 0;
+                int i3 = NotificationCenter.dialogIsTranslatable;
+                int i4 = i2 != 0 ? NotificationCenter.dialogIsTranslatable : 0;
+                int i5 = (i & 2) != 0 ? NotificationCenter.dialogIsTranslatable : 0;
                 if ((i & 4) == 0) {
                     i3 = 0;
                 }
-                iArr[i] = getColor(NotificationCenter.didSetNewWallpapper, i4, i5, i3);
+                iArr[i] = getColor(NotificationCenter.suggestedLangpack, i4, i5, i3);
             }
         }
         return iArr;
@@ -232,37 +232,37 @@ final class DvbParser {
         int[] iArr = new int[256];
         iArr[0] = 0;
         for (int i2 = 0; i2 < 256; i2++) {
-            int i3 = NotificationCenter.didSetNewWallpapper;
+            int i3 = NotificationCenter.suggestedLangpack;
             if (i2 < 8) {
-                int i4 = (i2 & 1) != 0 ? NotificationCenter.didSetNewWallpapper : 0;
-                int i5 = (i2 & 2) != 0 ? NotificationCenter.didSetNewWallpapper : 0;
+                int i4 = (i2 & 1) != 0 ? NotificationCenter.suggestedLangpack : 0;
+                int i5 = (i2 & 2) != 0 ? NotificationCenter.suggestedLangpack : 0;
                 if ((i2 & 4) == 0) {
                     i3 = 0;
                 }
                 iArr[i2] = getColor(63, i4, i5, i3);
             } else {
-                int i6 = i2 & NotificationCenter.fileUploadProgressChanged;
-                int i7 = NotificationCenter.groupCallVisibilityChanged;
+                int i6 = i2 & NotificationCenter.fileUploadFailed;
+                int i7 = NotificationCenter.closeInCallActivity;
                 if (i6 == 0) {
-                    int i8 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.groupCallVisibilityChanged : 0);
-                    int i9 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.groupCallVisibilityChanged : 0);
+                    int i8 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.closeInCallActivity : 0);
+                    int i9 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.closeInCallActivity : 0);
                     i = (i2 & 4) == 0 ? 0 : 85;
                     if ((i2 & 64) == 0) {
                         i7 = 0;
                     }
-                    iArr[i2] = getColor(NotificationCenter.didSetNewWallpapper, i8, i9, i + i7);
+                    iArr[i2] = getColor(NotificationCenter.suggestedLangpack, i8, i9, i + i7);
                 } else if (i6 == 8) {
-                    int i10 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.groupCallVisibilityChanged : 0);
-                    int i11 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.groupCallVisibilityChanged : 0);
+                    int i10 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.closeInCallActivity : 0);
+                    int i11 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.closeInCallActivity : 0);
                     i = (i2 & 4) == 0 ? 0 : 85;
                     if ((i2 & 64) == 0) {
                         i7 = 0;
                     }
-                    iArr[i2] = getColor(NotificationCenter.dialogTranslate, i10, i11, i + i7);
+                    iArr[i2] = getColor(NotificationCenter.dialogIsTranslatable, i10, i11, i + i7);
                 } else if (i6 == 128) {
-                    iArr[i2] = getColor(NotificationCenter.didSetNewWallpapper, ((i2 & 1) != 0 ? 43 : 0) + NotificationCenter.dialogTranslate + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + NotificationCenter.dialogTranslate + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + NotificationCenter.dialogTranslate + ((i2 & 64) == 0 ? 0 : 85));
+                    iArr[i2] = getColor(NotificationCenter.suggestedLangpack, ((i2 & 1) != 0 ? 43 : 0) + NotificationCenter.dialogIsTranslatable + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + NotificationCenter.dialogIsTranslatable + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + NotificationCenter.dialogIsTranslatable + ((i2 & 64) == 0 ? 0 : 85));
                 } else if (i6 == 136) {
-                    iArr[i2] = getColor(NotificationCenter.didSetNewWallpapper, ((i2 & 1) != 0 ? 43 : 0) + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + ((i2 & 64) == 0 ? 0 : 85));
+                    iArr[i2] = getColor(NotificationCenter.suggestedLangpack, ((i2 & 1) != 0 ? 43 : 0) + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + ((i2 & 64) == 0 ? 0 : 85));
                 }
             }
         }
@@ -579,9 +579,9 @@ final class DvbParser {
             if (i3 == 0) {
                 i4 = 0;
                 readBits = 0;
-                readBits2 = NotificationCenter.didSetNewWallpapper;
+                readBits2 = NotificationCenter.suggestedLangpack;
             }
-            byte b = (byte) (255 - (readBits2 & NotificationCenter.didSetNewWallpapper));
+            byte b = (byte) (255 - (readBits2 & NotificationCenter.suggestedLangpack));
             double d = i3;
             double d2 = i4 - 128;
             Double.isNaN(d2);
@@ -592,7 +592,7 @@ final class DvbParser {
             Double.isNaN(d2);
             Double.isNaN(d3);
             Double.isNaN(d);
-            iArr[readBits4] = getColor(b, Util.constrainValue((int) (d + (1.402d * d2)), 0, NotificationCenter.didSetNewWallpapper), Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.didSetNewWallpapper), Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.didSetNewWallpapper));
+            iArr[readBits4] = getColor(b, Util.constrainValue((int) (d + (1.402d * d2)), 0, NotificationCenter.suggestedLangpack), Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.suggestedLangpack), Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.suggestedLangpack));
             i7 = i2;
             readBits3 = readBits3;
             i5 = 8;

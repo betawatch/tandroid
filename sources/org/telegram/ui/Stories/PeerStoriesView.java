@@ -829,7 +829,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onStickerSelected$0(TLRPC.TL_document tL_document, String str, Object obj, Long l) {
-            SendMessagesHelper.getInstance(PeerStoriesView.this.currentAccount).sendSticker(tL_document, str, PeerStoriesView.this.dialogId, null, null, PeerStoriesView.this.currentStory.storyItem, null, null, true, 0, false, obj, null, 0, l.longValue());
+            SendMessagesHelper.getInstance(PeerStoriesView.this.currentAccount).sendSticker(tL_document, str, PeerStoriesView.this.dialogId, null, null, PeerStoriesView.this.currentStory.storyItem, null, null, true, 0, false, obj, null, 0, l.longValue(), PeerStoriesView.this.chatActivityEnterView.getSendMonoForumPeerId());
             PeerStoriesView.this.chatActivityEnterView.addStickerToRecent(tL_document);
             PeerStoriesView.this.chatActivityEnterView.setFieldText("");
             PeerStoriesView.this.afterMessageSend(l.longValue() <= 0);
@@ -1205,7 +1205,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
             this.progressToAudio = new AnimatedFloat(this, 150L, cubicBezierInterpolator);
             this.progressToFullBlackoutA = new AnimatedFloat(this, 150L, cubicBezierInterpolator);
-            this.loadingDrawable = new CellFlickerDrawable(32, 102, NotificationCenter.closeOtherAppActivities);
+            this.loadingDrawable = new CellFlickerDrawable(32, 102, NotificationCenter.invalidateMotionBackground);
             AnimatedFloat animatedFloat = new AnimatedFloat(this);
             this.loadingDrawableAlpha2 = animatedFloat;
             AnimatedFloat animatedFloat2 = new AnimatedFloat(this);
@@ -1496,7 +1496,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.invalidate();
             }
             float hideInterfaceAlpha = PeerStoriesView.this.getHideInterfaceAlpha();
-            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.didSetNewWallpapper);
+            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.suggestedLangpack);
             this.val$sharedResources.topOverlayGradient.draw(canvas);
             PeerStoriesView peerStoriesView8 = PeerStoriesView.this;
             if (peerStoriesView8.isSelf || !peerStoriesView8.BIG_SCREEN || PeerStoriesView.this.storyCaptionView.getVisibility() == 0) {
@@ -3969,7 +3969,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     canvas.translate((getMeasuredWidth() - PeerStoriesView.this.repostCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                     float f = PeerStoriesView.this.repostCounterProgress.set(PeerStoriesView.this.repostCounterVisible ? 1.0f : 0.0f);
                     canvas.scale(f, f, PeerStoriesView.this.repostCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.didSetNewWallpapper);
+                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.suggestedLangpack);
                     PeerStoriesView.this.repostCounter.draw(canvas);
                     canvas.restore();
                 }
@@ -4004,7 +4004,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 canvas.translate((getMeasuredWidth() - PeerStoriesView.this.reactionsCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                 float f = PeerStoriesView.this.reactionsCounterProgress.set(PeerStoriesView.this.reactionsCounterVisible ? 1.0f : 0.0f);
                 canvas.scale(f, f, PeerStoriesView.this.reactionsCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.didSetNewWallpapper);
+                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.suggestedLangpack);
                 PeerStoriesView.this.reactionsCounter.draw(canvas);
                 canvas.restore();
             }
@@ -4250,7 +4250,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     this.headerView.titleView.setRightDrawable((Drawable) null);
                 } else {
                     Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                    mutate.setAlpha(NotificationCenter.didSetNewWallpapper);
+                    mutate.setAlpha(NotificationCenter.suggestedLangpack);
                     CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, null);
                     combinedDrawable.setFullsize(true);
                     combinedDrawable.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -4281,7 +4281,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             this.headerView.titleView.setText(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
             if (chat != null && chat.verified) {
                 Drawable mutate2 = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                mutate2.setAlpha(NotificationCenter.didSetNewWallpapper);
+                mutate2.setAlpha(NotificationCenter.suggestedLangpack);
                 CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate2, null);
                 combinedDrawable2.setFullsize(true);
                 combinedDrawable2.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -4658,7 +4658,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                                     photoEntry.reset();
                                 }
                             }
-                            SendMessagesHelper.prepareSendingMedia(PeerStoriesView.this.getAccountInstance(), arrayList, PeerStoriesView.this.dialogId, null, null, storyItem, null, i == i3 || z5, z2, null, z3, i2, 0, i5 == 0 ? ((SendMessagesHelper.SendingMediaInfo) arrayList.get(i4)).updateStickersOrder : false, null, null, 0, 0L, false, 0L);
+                            SendMessagesHelper.prepareSendingMedia(PeerStoriesView.this.getAccountInstance(), arrayList, PeerStoriesView.this.dialogId, null, null, storyItem, null, i == i3 || z5, z2, null, z3, i2, 0, i5 == 0 ? ((SendMessagesHelper.SendingMediaInfo) arrayList.get(i4)).updateStickersOrder : false, null, null, 0, 0L, false, 0L, PeerStoriesView.this.chatActivityEnterView.getSendMonoForumPeerId());
                             i5++;
                             selectedPhotos = selectedPhotos;
                             selectedPhotosOrder = selectedPhotosOrder;
@@ -6061,7 +6061,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             if (this.reactionsLongpressTooltip == null) {
                 HintView2 joint = new HintView2(getContext(), 3).setJoint(1.0f, -22.0f);
                 this.reactionsLongpressTooltip = joint;
-                joint.setBgColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(-16777216, -1, 0.13f), NotificationCenter.closeOtherAppActivities));
+                joint.setBgColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(-16777216, -1, 0.13f), NotificationCenter.invalidateMotionBackground));
                 this.reactionsLongpressTooltip.setBounce(false);
                 this.reactionsLongpressTooltip.setText(LocaleController.getString(R.string.ReactionLongTapHint));
                 this.reactionsLongpressTooltip.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
@@ -8820,7 +8820,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         boolean z2 = chatActivityEnterView4 != null && chatActivityEnterView4.isPopupShowing();
         float hideInterfaceAlpha = getHideInterfaceAlpha();
         if (this.BIG_SCREEN) {
-            this.inputBackgroundPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(-16777216, -1, 0.13f), ColorUtils.setAlphaComponent(-16777216, NotificationCenter.groupCallVisibilityChanged), this.progressToKeyboard));
+            this.inputBackgroundPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(-16777216, -1, 0.13f), ColorUtils.setAlphaComponent(-16777216, NotificationCenter.closeInCallActivity), this.progressToKeyboard));
             this.inputBackgroundPaint.setAlpha((int) (r11.getAlpha() * (1.0f - this.progressToDismiss) * hideInterfaceAlpha * (1.0f - this.outT)));
         } else {
             this.inputBackgroundPaint.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (140.0f * hideInterfaceAlpha * (1.0f - this.outT))));
@@ -9796,7 +9796,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 this.replyDisabledTextView.setTextColor(ColorUtils.blendARGB(-16777216, -1, 0.5f));
                 dp = dp2 + size2 + AndroidUtilities.dp(12.0f);
             } else {
-                this.replyDisabledTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.unconfirmedAuthUpdate));
+                this.replyDisabledTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.storiesSendAsUpdate));
                 dp = ((dp2 + size2) - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(40.0f);
             }
             layoutParams2.topMargin = dp;

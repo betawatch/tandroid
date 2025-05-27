@@ -139,6 +139,7 @@ import org.telegram.ui.GradientHeaderActivity;
 import org.telegram.ui.ImageReceiverSpan;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PostSuggestionsEditActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stars.StarGiftSheet;
@@ -261,7 +262,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((ExpandView) view).set(uItem, z);
             }
 
@@ -798,7 +799,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((StarTierView) view).set(uItem.intValue, uItem.text, uItem.subtext, z);
             }
 
@@ -1093,7 +1094,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
                 gLIconRenderer.updateColors();
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
-                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.groupCallVisibilityChanged, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.closeInCallActivity, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
                 StarsBalanceView starsBalanceView = new StarsBalanceView(context, i);
                 this.balanceView = starsBalanceView;
@@ -1304,21 +1305,21 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x00c2, code lost:
-        
-            if (r15 != false) goto L37;
-         */
         /* JADX WARN: Code restructure failed: missing block: B:42:0x00c4, code lost:
+        
+            if (r15 != false) goto L38;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:43:0x00c6, code lost:
         
             r15 = org.telegram.messenger.R.string.NotifyLessOptions;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:46:0x00c7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:47:0x00c9, code lost:
         
             r15 = org.telegram.messenger.R.string.NotifyMoreOptions;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x00db, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x00dd, code lost:
         
-            if (r15 != false) goto L37;
+            if (r15 != false) goto L38;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1385,7 +1386,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                         i5++;
                     }
                     boolean z3 = this.expanded;
-                    if (!z3) {
+                    if (!z3 && i4 > 0) {
                     }
                 } else {
                     this.expanded = true;
@@ -1673,7 +1674,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((StarsSubscriptionView) view).set((TL_stars.StarsSubscription) uItem.object, z);
             }
 
@@ -1888,7 +1889,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((StarsTransactionView) view).set((TL_stars.StarsTransaction) uItem.object, uItem.accent, z);
             }
 
@@ -3202,7 +3203,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
         });
         Drawable svgThumb = DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundGray, 0.3f);
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.audioRouteChanged, true, null, true);
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.audioRecordTooShort, true, null, true);
         imageReceiver.setAutoRepeat(0);
         imageReceiver.setImage(ImageLocation.getForDocument(document), "160_160_nr", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "160_160", svgThumb, document.size, "tgs", tL_messages_stickerSet, 1);
     }
@@ -3757,8 +3758,12 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 safeLastFragment.presentFragment(new PrivacyControlActivity(10));
                 return;
             }
-            Bundle bundle = new Bundle();
             long j2 = -j;
+            if (ChatObject.isChannelAndNotMegaGroup(MessagesController.getInstance(i).getChat(Long.valueOf(j2)))) {
+                safeLastFragment.presentFragment(new PostSuggestionsEditActivity(j2));
+                return;
+            }
+            Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j2);
             bundle.putInt("type", 3);
             ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
@@ -4716,7 +4721,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         gLIconTextureView.setStarParticlesView(makeParticlesView);
-        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.groupCallVisibilityChanged, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.closeInCallActivity, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         gLIconTextureView.setPaused(false);
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
@@ -5216,8 +5221,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         BackupImageView backupImageView = new BackupImageView(context);
-        setGiftImage(backupImageView.getImageReceiver(), starGift, NotificationCenter.audioRouteChanged);
-        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 17, 0, -8, 0, 10));
+        setGiftImage(backupImageView.getImageReceiver(), starGift, NotificationCenter.audioRecordTooShort);
+        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 17, 0, -8, 0, 10));
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
         textView.setTextSize(1, 20.0f);
@@ -5939,8 +5944,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 swapAnimatedEmojiDrawable.set(stargiftattributepattern.document, false);
                 r0.setOrientation(1);
                 BackupImageView backupImageView3 = new BackupImageView(context);
-                setGiftImage(backupImageView3.getImageReceiver(), starsTransaction.stargift, NotificationCenter.audioRouteChanged);
-                r0.addView(backupImageView3, LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 17, 0, 20, 0, 0));
+                setGiftImage(backupImageView3.getImageReceiver(), starsTransaction.stargift, NotificationCenter.audioRecordTooShort);
+                r0.addView(backupImageView3, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 17, 0, 20, 0, 0));
                 if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
                     ScaleStateListAnimator.apply(backupImageView3);
                     backupImageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda0
@@ -6624,7 +6629,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     i3 = 94;
                     i4 = 2;
                 } else {
-                    setGiftImage(backupImageView4.getImageReceiver(), starsTransaction.stargift, NotificationCenter.audioRouteChanged);
+                    setGiftImage(backupImageView4.getImageReceiver(), starsTransaction.stargift, NotificationCenter.audioRecordTooShort);
                 }
             } else {
                 if (!z3 && !starsTransaction.gift) {
@@ -7092,8 +7097,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 builder = builder2;
                 setGiftImage(backupImageView6, backupImageView6.getImageReceiver(), starsTransaction.stars.amount);
                 backupImageView2 = backupImageView6;
-                i2 = NotificationCenter.audioRouteChanged;
-                i3 = NotificationCenter.audioRouteChanged;
+                i2 = NotificationCenter.audioRecordTooShort;
+                i3 = NotificationCenter.audioRecordTooShort;
                 i4 = -8;
                 backupImageView = backupImageView2;
             }
@@ -7214,8 +7219,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         str3 = "/";
         str4 = "⭐️ ";
         builder = builder2;
-        i2 = NotificationCenter.audioRouteChanged;
-        i3 = NotificationCenter.audioRouteChanged;
+        i2 = NotificationCenter.audioRecordTooShort;
+        i3 = NotificationCenter.audioRecordTooShort;
         i4 = -8;
         backupImageView = backupImageView2;
         linearLayout.addView(backupImageView, LayoutHelper.createLinear(i2, i3, 17, 0, i4, 0, 10));
@@ -7449,7 +7454,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         this.iconTextureView.setStarParticlesView(this.particlesView);
-        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesSendAsUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesLimitUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         configureHeader(LocaleController.getString(R.string.TelegramStars), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TelegramStarsInfo2), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {

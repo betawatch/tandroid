@@ -62,7 +62,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda309;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -87,6 +87,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -376,7 +377,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 Object obj = uItem.object;
                 if (obj instanceof GiftPremiumBottomSheet$GiftTier) {
                     ((GiftCell) view).setPremiumGift((GiftPremiumBottomSheet$GiftTier) obj);
@@ -1446,7 +1447,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((Tabs) view).set(uItem.id, (ArrayList) uItem.object, uItem.intValue, (Utilities.Callback) uItem.object2);
             }
 
@@ -2413,7 +2414,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$18 = GiftSheet.this.lambda$fillItems$18((TL_stars.StarGift) obj);
                     return lambda$fillItems$18;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda309()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda312()));
         }
         if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList3 = this.myGifts) != null) {
             Iterator it2 = giftsList3.gifts.iterator();

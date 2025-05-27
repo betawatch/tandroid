@@ -128,7 +128,7 @@ public class SeekBarWaveform {
                     particle2.x = rectF.left + (rectF.width() * Utilities.random.nextFloat());
                     RectF rectF2 = this.emitArea;
                     particle2.y = rectF2.top + (rectF2.height() * Utilities.random.nextFloat());
-                    double nextInt = Utilities.random.nextInt(NotificationCenter.storyQualityUpdate) - 125;
+                    double nextInt = Utilities.random.nextInt(NotificationCenter.smsJobStatusUpdate) - 125;
                     Double.isNaN(nextInt);
                     double d = nextInt * 0.017453292519943295d;
                     particle2.vx = ((float) (Math.cos(d) - Math.sin(d))) * 0.8f;
@@ -618,10 +618,6 @@ public class SeekBarWaveform {
         this.toWidth = i4;
         this.fromHeights = calculateHeights((int) (i3 / AndroidUtilities.dpf2(3.0f)));
         this.toHeights = calculateHeights((int) (this.toWidth / AndroidUtilities.dpf2(3.0f)));
-    }
-
-    public void setWaveScaling(float f) {
-        this.waveScaling = f;
     }
 
     public void setWaveform(byte[] bArr) {

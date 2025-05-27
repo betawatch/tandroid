@@ -57,10 +57,10 @@ public class BackDrawable extends Drawable {
         }
         float f4 = this.currentRotation;
         if (this.alwaysClose) {
-            canvas.rotate((f4 * (this.reverseAngle ? -180 : NotificationCenter.updateBotMenuButton)) + 135.0f);
+            canvas.rotate((f4 * (this.reverseAngle ? -180 : NotificationCenter.suggestedFiltersLoaded)) + 135.0f);
             f = 1.0f;
         } else {
-            canvas.rotate((this.reverseAngle ? -225 : NotificationCenter.fileUploadFailed) * f4);
+            canvas.rotate((this.reverseAngle ? -225 : NotificationCenter.fileUploaded) * f4);
             f = f4;
         }
         float f5 = 1.0f - f;

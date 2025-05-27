@@ -964,7 +964,7 @@ public class FileLoader extends BaseController {
             }
             if (MessageObject.getMedia(message) instanceof TLRPC.TL_messageMediaPhoto) {
                 ArrayList<TLRPC.PhotoSize> arrayList2 = MessageObject.getMedia(message).photo.sizes;
-                if (arrayList2.size() > 0 && (closestPhotoSizeWithSize2 = getClosestPhotoSizeWithSize(arrayList2, AndroidUtilities.getPhotoSize(), false, null, true)) != null) {
+                if (arrayList2.size() > 0 && (closestPhotoSizeWithSize2 = getClosestPhotoSizeWithSize(arrayList2, AndroidUtilities.getPhotoSize(true), false, null, true)) != null) {
                     return getAttachFileName(closestPhotoSizeWithSize2);
                 }
             } else if (MessageObject.getMedia(message) instanceof TLRPC.TL_messageMediaWebPage) {
@@ -1995,7 +1995,7 @@ public class FileLoader extends BaseController {
                 j = j2;
             } else {
                 if (tLObject instanceof TLRPC.Photo) {
-                    return getPathToAttach(getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize()), str2, false, z2);
+                    return getPathToAttach(getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize(true)), str2, false, z2);
                 }
                 if (tLObject instanceof TLRPC.PhotoSize) {
                     TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) tLObject;
@@ -2117,7 +2117,7 @@ public class FileLoader extends BaseController {
             }
             if (MessageObject.getMedia(message) instanceof TLRPC.TL_messageMediaPhoto) {
                 ArrayList<TLRPC.PhotoSize> arrayList2 = MessageObject.getMedia(message).photo.sizes;
-                if (arrayList2.size() > 0 && (closestPhotoSizeWithSize2 = getClosestPhotoSizeWithSize(arrayList2, AndroidUtilities.getPhotoSize(), false, null, true)) != null) {
+                if (arrayList2.size() > 0 && (closestPhotoSizeWithSize2 = getClosestPhotoSizeWithSize(arrayList2, AndroidUtilities.getPhotoSize(true), false, null, true)) != null) {
                     return getPathToAttach(closestPhotoSizeWithSize2, null, z || MessageObject.getMedia(message).ttl_seconds != 0, z2);
                 }
             } else if (MessageObject.getMedia(message) instanceof TLRPC.TL_messageMediaWebPage) {

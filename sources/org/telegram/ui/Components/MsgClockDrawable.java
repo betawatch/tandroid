@@ -21,8 +21,8 @@ public class MsgClockDrawable extends Drawable {
     public MsgClockDrawable() {
         Paint paint = new Paint(1);
         this.paint = paint;
-        this.alpha = NotificationCenter.didSetNewWallpapper;
-        this.colorAlpha = NotificationCenter.didSetNewWallpapper;
+        this.alpha = NotificationCenter.suggestedLangpack;
+        this.colorAlpha = NotificationCenter.suggestedLangpack;
         paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
         this.paint.setStrokeWidth(AndroidUtilities.dp(1.0f));

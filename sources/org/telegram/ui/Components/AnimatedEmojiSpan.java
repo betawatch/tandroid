@@ -816,8 +816,8 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         return update(i, view, z, emojiGroupedSpans, z2, layoutArr);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00f8  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0100  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -860,6 +860,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
                             Spannable spannable = (Spannable) spanned;
                             spannable.removeSpan(animatedEmojiSpan);
                             animatedEmojiSpan = cloneSpan(animatedEmojiSpan, null);
+                            animatedEmojiSpanArr[i8] = animatedEmojiSpan;
                             spannable.setSpan(animatedEmojiSpan, spanStart, spanEnd, 33);
                         }
                         if (emojiGroupedSpans2 == null) {

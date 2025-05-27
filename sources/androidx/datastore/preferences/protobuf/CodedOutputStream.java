@@ -42,11 +42,11 @@ public abstract class CodedOutputStream extends ByteOutput {
         final void bufferFixed32NoTag(int i) {
             byte[] bArr = this.buffer;
             int i2 = this.position;
-            bArr[i2] = (byte) (i & NotificationCenter.didSetNewWallpapper);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.didSetNewWallpapper);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.didSetNewWallpapper);
+            bArr[i2] = (byte) (i & NotificationCenter.suggestedLangpack);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.suggestedLangpack);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.suggestedLangpack);
             this.position = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.didSetNewWallpapper);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.suggestedLangpack);
             this.totalBytesWritten += 4;
         }
 
@@ -57,11 +57,11 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i + 1] = (byte) ((j >> 8) & 255);
             bArr[i + 2] = (byte) ((j >> 16) & 255);
             bArr[i + 3] = (byte) (255 & (j >> 24));
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.didSetNewWallpapper);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.didSetNewWallpapper);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.didSetNewWallpapper);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.suggestedLangpack);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.suggestedLangpack);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.suggestedLangpack);
             this.position = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.didSetNewWallpapper);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.suggestedLangpack);
             this.totalBytesWritten += 8;
         }
 
@@ -83,7 +83,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    bArr[i2] = (byte) ((i & NotificationCenter.dialogTranslate) | 128);
+                    bArr[i2] = (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128);
                     this.totalBytesWritten++;
                     i >>>= 7;
                 }
@@ -99,7 +99,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i4 = this.position;
                 this.position = i4 + 1;
-                UnsafeUtil.putByte(bArr3, i4, (byte) ((i & NotificationCenter.dialogTranslate) | 128));
+                UnsafeUtil.putByte(bArr3, i4, (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
                 i >>>= 7;
             }
             byte[] bArr4 = this.buffer;
@@ -115,7 +115,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    bArr[i] = (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128);
+                    bArr[i] = (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128);
                     this.totalBytesWritten++;
                     j >>>= 7;
                 }
@@ -131,7 +131,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i3 = this.position;
                 this.position = i3 + 1;
-                UnsafeUtil.putByte(bArr3, i3, (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                UnsafeUtil.putByte(bArr3, i3, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                 j >>>= 7;
             }
             byte[] bArr4 = this.buffer;

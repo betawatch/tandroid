@@ -300,7 +300,7 @@ public class DataUsage2Activity extends BaseFragment {
 
                 @Override // org.telegram.ui.Components.CacheChart
                 protected int heightDp() {
-                    return NotificationCenter.botStarsUpdated;
+                    return NotificationCenter.factCheckLoaded;
                 }
 
                 @Override // org.telegram.ui.Components.CacheChart
@@ -994,7 +994,7 @@ public class DataUsage2Activity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    DataUsage2Activity.this.lambda$onBackPressed$338();
+                    DataUsage2Activity.this.lambda$onBackPressed$347();
                 }
             }
         });

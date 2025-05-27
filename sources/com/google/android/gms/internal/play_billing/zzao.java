@@ -235,7 +235,7 @@ abstract class zzao {
         int i3;
         byte b = bArr[i2];
         int i4 = i2 + 1;
-        int i5 = i & NotificationCenter.dialogTranslate;
+        int i5 = i & NotificationCenter.dialogIsTranslatable;
         if (b >= 0) {
             i3 = b << 7;
         } else {

@@ -51,6 +51,7 @@ public abstract class ChatGreetingsView extends LinearLayout {
     private TextView descriptionView;
     private boolean disableBackground;
     boolean ignoreLayot;
+    private boolean isSuggest;
     private Listener listener;
     public BackupImageView nextStickerToSendView;
     private TLRPC.Document preloadedGreetingsSticker;
@@ -379,6 +380,10 @@ public abstract class ChatGreetingsView extends LinearLayout {
             if (premiumFeaturesBlocked) {
                 return;
             }
+            TextView textView = this.premiumButtonView;
+            if ((textView == null || TextUtils.isEmpty(textView.getText())) && this.isSuggest) {
+                return;
+            }
             view = this.premiumButtonView;
             i2 = 20;
             i3 = 13;
@@ -500,10 +505,15 @@ public abstract class ChatGreetingsView extends LinearLayout {
     }
 
     public void setPremiumLock(boolean z, CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
+        setPremiumLock(z, false, charSequence, charSequence2, onClickListener);
+    }
+
+    public void setPremiumLock(boolean z, boolean z2, CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
         if (this.premiumLock == z) {
             return;
         }
         this.premiumLock = z;
+        this.isSuggest = z2;
         if (z) {
             if (this.premiumIconView == null) {
                 RLottieImageView rLottieImageView = new RLottieImageView(getContext());
@@ -511,13 +521,18 @@ public abstract class ChatGreetingsView extends LinearLayout {
                 rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
                 this.premiumIconView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.premiumIconView.setBackground(Theme.createCircleDrawable(AndroidUtilities.dp(78.0f), 469762048));
-                this.premiumIconView.setAnimation(R.raw.large_message_lock, 80, 80);
-                this.premiumIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatGreetingsView$$ExternalSyntheticLambda3
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ChatGreetingsView.this.lambda$setPremiumLock$0(view);
-                    }
-                });
+                RLottieImageView rLottieImageView2 = this.premiumIconView;
+                if (z2) {
+                    rLottieImageView2.setImageResource(R.drawable.filled_chatlist2);
+                } else {
+                    rLottieImageView2.setAnimation(R.raw.large_message_lock, 80, 80);
+                    this.premiumIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatGreetingsView$$ExternalSyntheticLambda2
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            ChatGreetingsView.this.lambda$setPremiumLock$0(view);
+                        }
+                    });
+                }
             }
             this.premiumIconView.playAnimation();
             if (this.premiumTextView == null) {
@@ -552,8 +567,8 @@ public abstract class ChatGreetingsView extends LinearLayout {
                     }
 
                     @Override // android.widget.TextView, android.view.View
-                    protected void onLayout(boolean z2, int i2, int i3, int i4, int i5) {
-                        super.onLayout(z2, i2, i3, i4, i5);
+                    protected void onLayout(boolean z3, int i2, int i3, int i4, int i5) {
+                        super.onLayout(z3, i2, i3, i4, i5);
                         StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(10);
                         this.starParticlesDrawable = drawable;
                         drawable.type = 100;
@@ -633,7 +648,7 @@ public abstract class ChatGreetingsView extends LinearLayout {
         } else {
             this.stickerToSendView.setImage(ImageLocation.getForDocument(document), createFilter(document), ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), (String) null, 0, document);
         }
-        this.stickerToSendView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatGreetingsView$$ExternalSyntheticLambda2
+        this.stickerToSendView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatGreetingsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatGreetingsView.this.lambda$setSticker$1(document, view);

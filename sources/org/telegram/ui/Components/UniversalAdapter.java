@@ -313,83 +313,97 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+        View view;
+        ViewGroup.LayoutParams createFrame;
+        ViewGroup viewGroup;
         int i2;
         int i3;
         int color;
         LinkSpanDrawable.LinksTextView textView;
         int dp;
-        View view;
+        View view2;
         CharSequence charSequence;
         int i4;
         String str;
         int i5;
         long dialogId;
-        int i6;
         boolean z;
         boolean z2;
+        DialogCell dialogCell;
+        MessageObject messageObject;
+        int i6;
+        boolean z3 = false;
+        z3 = false;
         final UItem item = getItem(i);
         UItem item2 = getItem(i + 1);
         UItem item3 = getItem(i - 1);
         if (item == null) {
-            return;
         }
         int itemViewType = viewHolder.getItemViewType();
         boolean hasDivider = hasDivider(i);
         updateColors(viewHolder);
+        TextInfoPrivacyCell textInfoPrivacyCell = null;
         if (itemViewType >= UItem.factoryViewTypeStartsWith) {
             UItem.UItemFactory findFactory = UItem.findFactory(itemViewType);
             if (findFactory != null) {
-                findFactory.bindView(viewHolder.itemView, item, hasDivider);
+                View view3 = viewHolder.itemView;
+                RecyclerListView recyclerListView = this.listView;
+                findFactory.bindView(view3, item, hasDivider, this, recyclerListView instanceof UniversalRecyclerView ? (UniversalRecyclerView) recyclerListView : null);
                 return;
             }
             return;
         }
         String str2 = "";
-        TextInfoPrivacyCell textInfoPrivacyCell = null;
         switch (itemViewType) {
             case -3:
                 FullscreenCustomFrameLayout fullscreenCustomFrameLayout = (FullscreenCustomFrameLayout) viewHolder.itemView;
                 fullscreenCustomFrameLayout.setMinusHeight(item.intValue);
-                if (fullscreenCustomFrameLayout.getChildCount() == (item.view != null) && fullscreenCustomFrameLayout.getChildAt(0) == item.view) {
-                    return;
+                if (fullscreenCustomFrameLayout.getChildCount() != (item.view != null) || fullscreenCustomFrameLayout.getChildAt(0) != item.view) {
+                    fullscreenCustomFrameLayout.removeAllViews();
+                    View view4 = item.view;
+                    if (view4 != null) {
+                        AndroidUtilities.removeFromParent(view4);
+                        view = item.view;
+                        createFrame = LayoutHelper.createFrame(-1, -1.0f);
+                        viewGroup = fullscreenCustomFrameLayout;
+                        viewGroup.addView(view, createFrame);
+                        break;
+                    }
                 }
-                fullscreenCustomFrameLayout.removeAllViews();
-                View view2 = item.view;
-                if (view2 != null) {
-                    AndroidUtilities.removeFromParent(view2);
-                    fullscreenCustomFrameLayout.addView(item.view, LayoutHelper.createFrame(-1, -1.0f));
-                    return;
-                }
-                return;
+                break;
             case -2:
             case -1:
-                FrameLayout frameLayout = (FrameLayout) viewHolder.itemView;
-                if (frameLayout.getChildCount() == (item.view != null) && frameLayout.getChildAt(0) == item.view) {
-                    return;
+                ViewGroup viewGroup2 = (FrameLayout) viewHolder.itemView;
+                if (viewGroup2.getChildCount() != (item.view != null) || viewGroup2.getChildAt(0) != item.view) {
+                    viewGroup2.removeAllViews();
+                    View view5 = item.view;
+                    if (view5 != null) {
+                        AndroidUtilities.removeFromParent(view5);
+                        createFrame = (itemViewType == -1 || itemViewType == -3) ? LayoutHelper.createFrame(-1, -1.0f) : LayoutHelper.createFrame(-2, -2.0f);
+                        view = item.view;
+                        viewGroup = viewGroup2;
+                        viewGroup.addView(view, createFrame);
+                        break;
+                    }
                 }
-                frameLayout.removeAllViews();
-                View view3 = item.view;
-                if (view3 != null) {
-                    AndroidUtilities.removeFromParent(view3);
-                    frameLayout.addView(item.view, (itemViewType == -1 || itemViewType == -3) ? LayoutHelper.createFrame(-1, -1.0f) : LayoutHelper.createFrame(-2, -2.0f));
-                    return;
-                }
-                return;
+                break;
             case 0:
             case 1:
             case 26:
                 ((HeaderCell) viewHolder.itemView).setText(item.text);
-                return;
+                break;
             case 2:
                 TopViewCell topViewCell = (TopViewCell) viewHolder.itemView;
                 int i7 = item.iconResId;
-                if (i7 != 0) {
-                    topViewCell.setEmoji(i7);
-                } else {
+                if (i7 == 0) {
                     topViewCell.setEmoji(item.subtext.toString(), item.textValue.toString());
+                } else if (item.accent) {
+                    topViewCell.setEmojiStatic(i7);
+                } else {
+                    topViewCell.setEmoji(i7);
                 }
                 topViewCell.setText(item.text);
-                return;
+                break;
             case 3:
                 TextCell textCell = (TextCell) viewHolder.itemView;
                 Object obj = item.object;
@@ -422,20 +436,21 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         }
                     }
                 }
-                if (item.accent) {
+                if (!item.accent) {
+                    if (item.red) {
+                        i2 = Theme.key_text_RedBold;
+                        i3 = Theme.key_text_RedRegular;
+                    } else {
+                        i2 = Theme.key_windowBackgroundWhiteGrayIcon;
+                        i3 = Theme.key_windowBackgroundWhiteBlackText;
+                    }
+                    textCell.setColors(i2, i3);
+                    break;
+                } else {
                     int i10 = Theme.key_windowBackgroundWhiteBlueText4;
                     textCell.setColors(i10, i10);
-                    return;
+                    break;
                 }
-                if (item.red) {
-                    i2 = Theme.key_text_RedBold;
-                    i3 = Theme.key_text_RedRegular;
-                } else {
-                    i2 = Theme.key_windowBackgroundWhiteGrayIcon;
-                    i3 = Theme.key_windowBackgroundWhiteBlackText;
-                }
-                textCell.setColors(i2, i3);
-                return;
             case 4:
             case 9:
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
@@ -446,28 +461,31 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 textCheckCell.setTextAndCheck(item.text, item.checked, hasDivider);
                 textCheckCell.itemId = item.id;
                 if (itemViewType == 9) {
-                    View view4 = viewHolder.itemView;
+                    View view6 = viewHolder.itemView;
                     color = Theme.getColor(item.checked ? Theme.key_windowBackgroundChecked : Theme.key_windowBackgroundUnchecked);
-                    view = view4;
+                    view2 = view6;
+                    view2.setBackgroundColor(color);
                     break;
-                } else {
-                    return;
                 }
+                break;
             case 5:
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) viewHolder.itemView;
                 CharSequence charSequence2 = item.subtext;
-                notificationsCheckCell.setTextAndValueAndCheck(item.text, item.subtext, item.checked, 0, charSequence2 != null && charSequence2.toString().contains("\n"), hasDivider);
-                return;
+                if (charSequence2 != null && charSequence2.toString().contains("\n")) {
+                    z3 = true;
+                }
+                notificationsCheckCell.setTextAndValueAndCheck(item.text, item.subtext, item.checked, 0, z3, hasDivider);
+                break;
             case 6:
                 ((NotificationsCheckCell) viewHolder.itemView).setTextAndValueAndCheck(item.text, item.subtext, item.checked, hasDivider);
-                return;
+                break;
             case 7:
             case 8:
             case 38:
                 if (itemViewType == 7 || itemViewType == 8) {
                     TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (TextUtils.isEmpty(item.text)) {
-                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.updateAllMessages : 12);
+                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.webViewResolved : 12);
                         textInfoPrivacyCell2.setText("");
                     } else {
                         textInfoPrivacyCell2.setFixedSize(0);
@@ -493,15 +511,15 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     collapseTextCell.setColor(item.accent ? Theme.key_windowBackgroundWhiteBlueText4 : item.red ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteBlackText);
                     textInfoPrivacyCell = collapseTextCell;
                 }
-                boolean z3 = (item3 == null || isShadow(item3.viewType)) ? false : true;
-                boolean z4 = (item2 == null || isShadow(item2.viewType)) ? false : true;
-                Drawable themedDrawableByKey = Theme.getThemedDrawableByKey(this.context, (z3 && z4) ? R.drawable.greydivider : z3 ? R.drawable.greydivider_bottom : z4 ? R.drawable.greydivider_top : R.drawable.field_carret_empty, Theme.key_windowBackgroundGrayShadow, this.resourcesProvider);
-                if (this.dialog) {
-                    textInfoPrivacyCell.setBackground(new LayerDrawable(new Drawable[]{new ColorDrawable(getThemedColor(Theme.key_dialogBackgroundGray)), themedDrawableByKey}));
-                    return;
-                } else {
+                boolean z4 = (item3 == null || isShadow(item3.viewType)) ? false : true;
+                boolean z5 = (item2 == null || isShadow(item2.viewType)) ? false : true;
+                Drawable themedDrawableByKey = Theme.getThemedDrawableByKey(this.context, (z4 && z5) ? R.drawable.greydivider : z4 ? R.drawable.greydivider_bottom : z5 ? R.drawable.greydivider_top : R.drawable.field_carret_empty, Theme.key_windowBackgroundGrayShadow, this.resourcesProvider);
+                if (!this.dialog) {
                     textInfoPrivacyCell.setBackground(themedDrawableByKey);
-                    return;
+                    break;
+                } else {
+                    textInfoPrivacyCell.setBackground(new LayerDrawable(new Drawable[]{new ColorDrawable(getThemedColor(Theme.key_dialogBackgroundGray)), themedDrawableByKey}));
+                    break;
                 }
             case 10:
                 DialogRadioCell dialogRadioCell = (DialogRadioCell) viewHolder.itemView;
@@ -517,22 +535,22 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     dialogRadioCell.setTextAndValue(item.text, item.textValue, item.checked, hasDivider);
                 }
                 dialogRadioCell.itemId = item.id;
-                return;
+                break;
             case 11:
             case 12:
                 UserCell userCell = (UserCell) viewHolder.itemView;
                 userCell.setFromUItem(this.currentAccount, item, hasDivider);
                 if (itemViewType == 12) {
                     userCell.setChecked(item.checked, false);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 13:
                 UserCell userCell2 = (UserCell) viewHolder.itemView;
                 userCell2.setFromUItem(this.currentAccount, item, hasDivider);
                 userCell2.setAddButtonVisible(!item.checked);
                 userCell2.setCloseIcon(item.clickCallback);
-                return;
+                break;
             case 14:
                 SlideChooseView slideChooseView = (SlideChooseView) viewHolder.itemView;
                 slideChooseView.setOptions(item.intValue, item.texts);
@@ -548,12 +566,12 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         SlideChooseView.Callback.-CC.$default$onTouchEnd(this);
                     }
                 });
-                return;
+                break;
             case 15:
                 SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                 slideIntChooseView.set(item.intValue, (SlideIntChooseView.Options) item.object, item.intCallback);
                 slideIntChooseView.setMinValueAllowed((int) item.longValue);
-                return;
+                break;
             case 16:
                 QuickRepliesActivity.QuickReplyView quickReplyView = (QuickRepliesActivity.QuickReplyView) viewHolder.itemView;
                 quickReplyView.setChecked(item.checked, false);
@@ -561,18 +579,18 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 Object obj4 = item.object;
                 if (obj4 instanceof QuickRepliesController.QuickReply) {
                     quickReplyView.set((QuickRepliesController.QuickReply) obj4, null, hasDivider);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 17:
                 QuickRepliesActivity.LargeQuickReplyView largeQuickReplyView = (QuickRepliesActivity.LargeQuickReplyView) viewHolder.itemView;
                 largeQuickReplyView.setChecked(item.checked, false);
                 Object obj5 = item.object;
                 if (obj5 instanceof QuickRepliesController.QuickReply) {
                     largeQuickReplyView.set((QuickRepliesController.QuickReply) obj5, hasDivider);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 18:
             case 19:
             case 20:
@@ -587,54 +605,55 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         return lambda$onBindViewHolder$2;
                     }
                 });
-                return;
+                break;
             case 24:
                 ((ChannelMonetizationLayout.ProceedOverviewCell) viewHolder.itemView).set((ChannelMonetizationLayout.ProceedOverview) item.object);
-                return;
+                break;
             case 25:
                 ((ChannelMonetizationLayout.TransactionCell) viewHolder.itemView).set((TL_stats.BroadcastRevenueTransaction) item.object, hasDivider);
-                return;
+                break;
             case 27:
                 StoryPrivacyBottomSheet.UserCell userCell3 = (StoryPrivacyBottomSheet.UserCell) viewHolder.itemView;
                 long j = userCell3.dialogId;
                 Object obj6 = item.object;
-                boolean z5 = j == (obj6 instanceof TLRPC.User ? ((TLRPC.User) obj6).id : obj6 instanceof TLRPC.Chat ? -((TLRPC.Chat) obj6).id : 0L);
+                boolean z6 = j == (obj6 instanceof TLRPC.User ? ((TLRPC.User) obj6).id : obj6 instanceof TLRPC.Chat ? -((TLRPC.Chat) obj6).id : 0L);
                 userCell3.setIsSendAs(false, true);
                 userCell3.set(item.object);
                 userCell3.checkBox.setVisibility(8);
                 userCell3.radioButton.setVisibility(0);
-                userCell3.setChecked(item.checked, z5);
+                userCell3.setChecked(item.checked, z6);
                 userCell3.setDivider(hasDivider);
-                return;
+                break;
             case 28:
                 if (item.transparent) {
                     viewHolder.itemView.setBackgroundColor(0);
                 }
                 viewHolder.itemView.setLayoutParams(new RecyclerView.LayoutParams(-1, item.intValue));
-                return;
+                break;
             case 29:
                 BusinessLinksActivity.BusinessLinkView businessLinkView = (BusinessLinksActivity.BusinessLinkView) viewHolder.itemView;
                 Object obj7 = item.object;
                 if (obj7 instanceof BusinessLinksActivity.BusinessLinkWrapper) {
                     businessLinkView.set((BusinessLinksActivity.BusinessLinkWrapper) obj7, hasDivider);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 30:
                 TextRightIconCell textRightIconCell = (TextRightIconCell) viewHolder.itemView;
                 textRightIconCell.setTextAndIcon(item.text, item.iconResId);
                 textRightIconCell.setDivider(hasDivider);
                 color = getThemedColor(Theme.key_dialogBackground);
-                view = textRightIconCell;
+                view2 = textRightIconCell;
+                view2.setBackgroundColor(color);
                 break;
             case 31:
                 GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
-                if (TextUtils.equals(graySectionCell.getText(), item.text)) {
-                    graySectionCell.setRightText(item.subtext, true, item.clickCallback);
-                    return;
-                } else {
+                if (!TextUtils.equals(graySectionCell.getText(), item.text)) {
                     graySectionCell.setText(item.text, item.subtext, item.clickCallback);
-                    return;
+                    break;
+                } else {
+                    graySectionCell.setRightText(item.subtext, true, item.clickCallback);
+                    break;
                 }
             case 32:
                 ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
@@ -676,35 +695,38 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 }
                 CharSequence charSequence3 = charSequence;
                 String str3 = str2;
-                boolean z6 = item.checked;
+                boolean z7 = item.checked;
                 Object obj9 = item.object2;
-                profileSearchCell.allowBotOpenButton(z6, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
+                profileSearchCell.allowBotOpenButton(z7, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
                 profileSearchCell.setRectangularAvatar(item.red);
                 profileSearchCell.setData(obj8, null, str3, charSequence3, false, false);
                 profileSearchCell.useSeparator = hasDivider;
-                return;
+                break;
             case 33:
-                DialogCell dialogCell = (DialogCell) viewHolder.itemView;
+                DialogCell dialogCell2 = (DialogCell) viewHolder.itemView;
                 Object obj10 = item.object;
-                MessageObject messageObject = obj10 instanceof MessageObject ? (MessageObject) obj10 : null;
-                dialogCell.useSeparator = hasDivider;
-                if (messageObject == null) {
+                MessageObject messageObject2 = obj10 instanceof MessageObject ? (MessageObject) obj10 : null;
+                dialogCell2.useSeparator = hasDivider;
+                if (messageObject2 == null) {
                     z = false;
                     z2 = false;
                     dialogId = 0;
                     messageObject = null;
                     i6 = 0;
+                    dialogCell = dialogCell2;
                 } else {
-                    dialogId = messageObject.getDialogId();
-                    i6 = messageObject.messageOwner.date;
+                    dialogId = messageObject2.getDialogId();
                     z = false;
                     z2 = false;
+                    dialogCell = dialogCell2;
+                    messageObject = messageObject2;
+                    i6 = messageObject2.messageOwner.date;
                 }
                 dialogCell.setDialog(dialogId, messageObject, i6, z, z2);
-                return;
+                break;
             case 34:
                 ((FlickerLoadingView) viewHolder.itemView).setViewType(item.intValue);
-                return;
+                break;
             case 35:
             case 36:
             case 41:
@@ -715,9 +737,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 checkBoxCell.setIcon(item.locked ? R.drawable.permission_locked : 0);
                 if (itemViewType == 36 || itemViewType == 41) {
                     checkBoxCell.setCollapseButton(item.collapsed, item.animatedText, item.clickCallback);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 37:
                 CheckBoxCell checkBoxCell2 = (CheckBoxCell) viewHolder.itemView;
                 checkBoxCell2.setPad(item.pad);
@@ -725,7 +747,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 checkBoxCell2.setChecked(item.checked, checkBoxCell2.itemId == item.id);
                 checkBoxCell2.itemId = item.id;
                 checkBoxCell2.setNeedDivider(hasDivider);
-                return;
+                break;
             case 39:
             case 40:
                 final TextCheckCell2 textCheckCell2 = (TextCheckCell2) viewHolder.itemView;
@@ -733,29 +755,26 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 textCheckCell2.id = item.id;
                 textCheckCell2.setIcon(item.locked ? R.drawable.permission_locked : 0);
                 if (itemViewType == 40) {
-                    if (TextUtils.isEmpty(item.animatedText)) {
-                        textCheckCell2.hideCollapseArrow();
-                        return;
-                    } else {
+                    if (!TextUtils.isEmpty(item.animatedText)) {
                         textCheckCell2.setCollapseArrow(item.animatedText.toString(), item.collapsed, new Runnable() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 UniversalAdapter.lambda$onBindViewHolder$3(UItem.this, textCheckCell2);
                             }
                         });
-                        return;
+                        break;
+                    } else {
+                        textCheckCell2.hideCollapseArrow();
+                        break;
                     }
                 }
-                return;
+                break;
             case 42:
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 headerCell.setText(item.animatedText, headerCell.id == item.id);
                 headerCell.id = item.id;
-                return;
-            default:
-                return;
+                break;
         }
-        view.setBackgroundColor(color);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

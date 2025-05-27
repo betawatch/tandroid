@@ -1161,7 +1161,7 @@ public abstract class StoriesUtilities {
                         paint6.setAlpha((int) ((1.0f - f) * 255.0f));
                         drawSegment(canvas, rectF, paint6, -90.0f, 90.0f, avatarStoryParams, z);
                         drawSegment(canvas, rectF, paint6, 90.0f, 270.0f, avatarStoryParams, z);
-                        paint6.setAlpha(NotificationCenter.didSetNewWallpapper);
+                        paint6.setAlpha(NotificationCenter.suggestedLangpack);
                         return;
                     }
                     float f2 = 360.0f / i;
@@ -1196,7 +1196,7 @@ public abstract class StoriesUtilities {
                             paint6.getStrokeWidth();
                             paint6.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
                             drawSegment(canvas, rectF2, paint6, f6, f7, avatarStoryParams, z);
-                            paint6.setAlpha(NotificationCenter.didSetNewWallpapper);
+                            paint6.setAlpha(NotificationCenter.suggestedLangpack);
                         }
                         i3 = i4 + 1;
                         max = i5;
@@ -1384,7 +1384,7 @@ public abstract class StoriesUtilities {
 
     public static Drawable getExpiredStoryDrawable() {
         if (expiredStoryDrawable == null) {
-            Bitmap createBitmap = Bitmap.createBitmap(360, NotificationCenter.updateBotMenuButton, Bitmap.Config.ARGB_8888);
+            Bitmap createBitmap = Bitmap.createBitmap(360, NotificationCenter.suggestedFiltersLoaded, Bitmap.Config.ARGB_8888);
             createBitmap.eraseColor(-7829368);
             Canvas canvas = new Canvas(createBitmap);
             TextPaint textPaint = new TextPaint(1);

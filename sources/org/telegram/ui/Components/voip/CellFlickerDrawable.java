@@ -84,11 +84,11 @@ public class CellFlickerDrawable {
     }
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.groupPackUpdated, NotificationCenter.audioRouteChanged);
+        this(64, 204, NotificationCenter.audioRecordTooShort);
     }
 
     public CellFlickerDrawable(int i, int i2) {
-        this(i, i2, NotificationCenter.audioRouteChanged);
+        this(i, i2, NotificationCenter.audioRecordTooShort);
     }
 
     public CellFlickerDrawable(int i, int i2, int i3) {
@@ -227,7 +227,7 @@ public class CellFlickerDrawable {
     }
 
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.groupPackUpdated);
+        setColors(i, 64, 204);
     }
 
     public void setColors(int i, int i2, int i3) {

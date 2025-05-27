@@ -747,27 +747,41 @@ public class MediaDataController extends BaseController {
         public long recordTimeCount;
         public long samplesCount;
         public int writedFrame;
+        public float left = 0.0f;
+        public float right = 1.0f;
 
         public static DraftVoice fromString(String str) {
             if (str == null) {
                 return null;
             }
             try {
-                String[] split = str.split("\n");
+                if (!str.startsWith("@")) {
+                    return null;
+                }
+                boolean z = true;
+                String[] split = str.substring(1).split("\n");
                 if (split.length < 6) {
                     return null;
                 }
                 DraftVoice draftVoice = new DraftVoice();
                 int i = 0;
                 draftVoice.path = split[0];
-                boolean z = true;
                 draftVoice.samplesCount = Long.parseLong(split[1]);
                 draftVoice.writedFrame = Integer.parseInt(split[2]);
                 draftVoice.recordTimeCount = Long.parseLong(split[3]);
-                if (Integer.parseInt(split[4]) == 0) {
-                    z = false;
+                if (split[4].contains(";")) {
+                    String[] split2 = split[4].split(";");
+                    draftVoice.once = Integer.parseInt(split2[0]) != 0;
+                    draftVoice.left = Float.parseFloat(split2[1]);
+                    draftVoice.right = Float.parseFloat(split2[2]);
+                } else {
+                    if (Integer.parseInt(split[4]) == 0) {
+                        z = false;
+                    }
+                    draftVoice.once = z;
+                    draftVoice.left = 0.0f;
+                    draftVoice.right = 1.0f;
                 }
-                draftVoice.once = z;
                 int length = split.length - 5;
                 String[] strArr = new String[length];
                 for (int i2 = 0; i2 < length; i2++) {
@@ -789,18 +803,20 @@ public class MediaDataController extends BaseController {
             }
         }
 
-        public static DraftVoice of(MediaController mediaController, String str, boolean z) {
+        public static DraftVoice of(MediaController mediaController, String str, boolean z, float f, float f2) {
             if (mediaController.recordingAudio == null) {
                 return null;
             }
             DraftVoice draftVoice = new DraftVoice();
             draftVoice.path = str;
             draftVoice.samplesCount = mediaController.samplesCount;
-            draftVoice.writedFrame = mediaController.writedFrame;
+            draftVoice.writedFrame = mediaController.writtenFrame;
             draftVoice.recordTimeCount = mediaController.recordTimeCount;
             draftVoice.id = mediaController.recordingAudio.id;
             draftVoice.recordSamples = mediaController.recordSamples;
             draftVoice.once = z;
+            draftVoice.left = f;
+            draftVoice.right = f2;
             return draftVoice;
         }
 
@@ -810,7 +826,7 @@ public class MediaDataController extends BaseController {
             while (true) {
                 short[] sArr = this.recordSamples;
                 if (i >= sArr.length) {
-                    return this.path + "\n" + this.samplesCount + "\n" + this.writedFrame + "\n" + this.recordTimeCount + "\n" + (this.once ? 1 : 0) + "\n" + new String(cArr);
+                    return "@" + this.path + "\n" + this.samplesCount + "\n" + this.writedFrame + "\n" + this.recordTimeCount + "\n" + (this.once ? 1 : 0) + ";" + this.left + ";" + this.right + "\n" + new String(cArr);
                 }
                 cArr[i] = (char) sArr[i];
                 i++;
@@ -1011,7 +1027,7 @@ public class MediaDataController extends BaseController {
                             longSparseArray = new LongSparseArray();
                             this.drafts.put(longValue, longSparseArray);
                         }
-                        longSparseArray.put(key.startsWith("t_") ? Utilities.parseInt((CharSequence) key.substring(key.lastIndexOf(95) + 1)).intValue() : 0L, TLdeserialize);
+                        longSparseArray.put(key.startsWith("t_") ? Utilities.parseLong(key.substring(key.lastIndexOf(95) + 1)).longValue() : 0L, TLdeserialize);
                     }
                     serializedData.cleanup();
                 }
@@ -1233,7 +1249,7 @@ public class MediaDataController extends BaseController {
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList) {
-        return calcDocumentsHash(arrayList, NotificationCenter.storyQualityUpdate);
+        return calcDocumentsHash(arrayList, NotificationCenter.smsJobStatusUpdate);
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList, int i) {
@@ -6404,7 +6420,7 @@ public class MediaDataController extends BaseController {
                 if (i != 3 && i != 7) {
                     i3 = i == 2 ? getMessagesController().maxFaveStickersCount : getMessagesController().maxRecentStickersCount;
                 }
-                i3 = NotificationCenter.storyQualityUpdate;
+                i3 = NotificationCenter.smsJobStatusUpdate;
             }
             database.beginTransaction();
             SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -12783,6 +12799,19 @@ public class MediaDataController extends BaseController {
             tL_draftMessageEmpty.entities = arrayList;
             tL_draftMessageEmpty.flags |= 8;
         }
+        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j));
+        if (ChatObject.isMonoForum(chat) && ChatObject.hasAdminRights(chat)) {
+            tL_draftMessageEmpty.flags |= 16;
+            TLRPC.InputReplyTo inputReplyTo5 = tL_draftMessageEmpty.reply_to;
+            if (inputReplyTo5 == null) {
+                TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                tL_draftMessageEmpty.reply_to = tL_inputReplyToMonoForum;
+                tL_inputReplyToMonoForum.monoforum_peer_id = getMessagesController().getInputPeer(j2);
+            } else {
+                inputReplyTo5.monoforum_peer_id = getMessagesController().getInputPeer(j2);
+                tL_draftMessageEmpty.reply_to.flags |= 32;
+            }
+        }
         LongSparseArray longSparseArray = (LongSparseArray) this.drafts.get(j);
         TLRPC.DraftMessage draftMessage = longSparseArray == null ? null : (TLRPC.DraftMessage) longSparseArray.get(j2);
         if (!z2) {
@@ -12795,7 +12824,7 @@ public class MediaDataController extends BaseController {
             }
         }
         saveDraft(j, j2, tL_draftMessageEmpty, message2, false);
-        if (j2 == 0 || ChatObject.isForum(this.currentAccount, j)) {
+        if (j2 == 0 || ChatObject.isForum(chat) || ChatObject.isMonoForum(chat)) {
             if (!DialogObject.isEncryptedDialog(j)) {
                 TLRPC.TL_messages_saveDraft tL_messages_saveDraft = new TLRPC.TL_messages_saveDraft();
                 TLRPC.InputPeer inputPeer = getMessagesController().getInputPeer(j);
@@ -12805,9 +12834,9 @@ public class MediaDataController extends BaseController {
                 }
                 tL_messages_saveDraft.message = tL_draftMessageEmpty.message;
                 tL_messages_saveDraft.no_webpage = tL_draftMessageEmpty.no_webpage;
-                TLRPC.InputReplyTo inputReplyTo5 = tL_draftMessageEmpty.reply_to;
-                tL_messages_saveDraft.reply_to = inputReplyTo5;
-                if (inputReplyTo5 != null) {
+                TLRPC.InputReplyTo inputReplyTo6 = tL_draftMessageEmpty.reply_to;
+                tL_messages_saveDraft.reply_to = inputReplyTo6;
+                if (inputReplyTo6 != null) {
                     tL_messages_saveDraft.flags |= 16;
                 }
                 int i = tL_draftMessageEmpty.flags;
@@ -13047,14 +13076,16 @@ public class MediaDataController extends BaseController {
         searchMessagesInChat(str, j, j2, i, i2, j3, false, user, chat, true, visibleReaction);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:104:0x03c8  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x03e2  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x03dd  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0324  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x02c9  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02cc  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0316  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x039b  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x025c  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x02d4  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0321  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -13074,7 +13105,10 @@ public class MediaDataController extends BaseController {
         TLRPC.TL_messages_search tL_messages_search;
         long j7;
         long j8;
+        long j9;
+        int i5;
         TLRPC.InputPeer inputPeer3;
+        int i6;
         boolean z5 = !z;
         if (this.reqId != 0) {
             this.loadingMoreSearchMessages = false;
@@ -13112,13 +13146,13 @@ public class MediaDataController extends BaseController {
                     this.loadingMoreSearchMessages = false;
                     return;
                 }
-                int i5 = this.lastReturnedNum - 1;
-                this.lastReturnedNum = i5;
-                if (i5 < 0) {
+                int i7 = this.lastReturnedNum - 1;
+                this.lastReturnedNum = i7;
+                if (i7 < 0) {
                     this.lastReturnedNum = 0;
                     return;
                 }
-                if (i5 >= this.searchResultMessages.size()) {
+                if (i7 >= this.searchResultMessages.size()) {
                     this.lastReturnedNum = this.searchResultMessages.size() - 1;
                 }
                 MessageObject messageObject = this.searchResultMessages.get(this.lastReturnedNum);
@@ -13126,9 +13160,9 @@ public class MediaDataController extends BaseController {
                 this.loadingMoreSearchMessages = false;
                 return;
             }
-            int i6 = this.lastReturnedNum + 1;
-            this.lastReturnedNum = i6;
-            if (i6 < this.searchResultMessages.size()) {
+            int i8 = this.lastReturnedNum + 1;
+            this.lastReturnedNum = i8;
+            if (i8 < this.searchResultMessages.size()) {
                 MessageObject messageObject2 = this.searchResultMessages.get(this.lastReturnedNum);
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatSearchResultsAvailable, Integer.valueOf(i), Integer.valueOf(messageObject2.getId()), Integer.valueOf(getMask()), Long.valueOf(messageObject2.getDialogId()), Integer.valueOf(this.lastReturnedNum), Integer.valueOf(getSearchCount()), Boolean.valueOf(z2));
                 this.loadingMoreSearchMessages = false;
@@ -13184,26 +13218,18 @@ public class MediaDataController extends BaseController {
                                 inputPeer3 = MessagesController.getInputPeer(chat);
                             }
                             if (j3 != 0) {
-                                if (j != getUserConfig().getClientUserId()) {
+                                if (j == getUserConfig().getClientUserId() || getMessagesStorage().isMonoForum(j6)) {
+                                    tL_messages_search2.saved_peer_id = getMessagesController().getInputPeer(j3);
+                                    i6 = tL_messages_search2.flags | 4;
+                                } else {
                                     tL_messages_search2.top_msg_id = (int) j3;
-                                    tL_messages_search2.flags |= 2;
-                                    if (visibleReaction != null) {
-                                        tL_messages_search2.saved_reaction.add(visibleReaction.toTLReaction());
-                                        tL_messages_search2.flags |= 8;
-                                    }
-                                    tL_messages_search2.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-                                    this.mergeReqId = getConnectionsManager().sendRequest(tL_messages_search2, new RequestDelegate() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda133
-                                        @Override // org.telegram.tgnet.RequestDelegate
-                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                            MediaDataController.this.lambda$searchMessagesInChat$119(j2, tL_messages_search2, j, i, i2, j3, user, chat, z2, visibleReaction, tLObject, tL_error);
-                                        }
-                                    }, 2);
-                                    return;
+                                    i6 = tL_messages_search2.flags | 2;
                                 }
-                                tL_messages_search2.saved_peer_id = getMessagesController().getInputPeer(j3);
-                                tL_messages_search2.flags |= 4;
+                                tL_messages_search2.flags = i6;
                             }
                             if (visibleReaction != null) {
+                                tL_messages_search2.saved_reaction.add(visibleReaction.toTLReaction());
+                                tL_messages_search2.flags |= 8;
                             }
                             tL_messages_search2.filter = new TLRPC.TL_inputMessagesFilterEmpty();
                             this.mergeReqId = getConnectionsManager().sendRequest(tL_messages_search2, new RequestDelegate() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda133
@@ -13259,8 +13285,8 @@ public class MediaDataController extends BaseController {
                     }
                     this.loadingSearchLocal = false;
                     this.loadedPredirectedSearchLocal = false;
-                    final int i7 = this.lastReqId + 1;
-                    this.lastReqId = i7;
+                    final int i9 = this.lastReqId + 1;
+                    this.lastReqId = i9;
                     z4 = j != getUserConfig().getClientUserId();
                     if (z4 || visibleReaction2 == null || !z5) {
                         tL_messages_search = tL_messages_search3;
@@ -13271,64 +13297,53 @@ public class MediaDataController extends BaseController {
                         this.searchServerResultMessages.clear();
                         this.searchServerResultMessagesMap[0].clear();
                         this.searchServerResultMessagesMap[1].clear();
-                        long j9 = j6;
+                        long j10 = j6;
                         final int savedTagCount = getMessagesController().getSavedTagCount(this.lastReplyMessageId, visibleReaction2);
                         this.messagesLocalSearchCount = TextUtils.isEmpty(tL_messages_search3.q) ? savedTagCount : 0;
                         this.loadingSearchLocal = true;
                         this.loadedPredirectedSearchLocal = false;
                         MessagesStorage messagesStorage = getMessagesStorage();
                         TLRPC.Reaction tLReaction = visibleReaction.toTLReaction();
-                        long j10 = this.lastReplyMessageId;
+                        long j11 = this.lastReplyMessageId;
                         ArrayList<MessageObject> arrayList2 = this.searchLocalResultMessages;
-                        j7 = j9;
+                        j7 = j10;
                         j8 = 0;
                         tL_messages_search = tL_messages_search3;
-                        messagesStorage.searchSavedByTag(tLReaction, j10, str2, NotificationCenter.onDatabaseReset, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda134
+                        messagesStorage.searchSavedByTag(tLReaction, j11, str2, NotificationCenter.didUpdateGlobalAutoDeleteTimer, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda134
                             @Override // org.telegram.messenger.Utilities.Callback4
                             public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-                                MediaDataController.this.lambda$searchMessagesInChat$120(i7, savedTagCount, i, j, (ArrayList) obj, (ArrayList) obj2, (ArrayList) obj3, (ArrayList) obj4);
+                                MediaDataController.this.lambda$searchMessagesInChat$120(i9, savedTagCount, i, j, (ArrayList) obj, (ArrayList) obj2, (ArrayList) obj3, (ArrayList) obj4);
                             }
                         }, true);
                     }
-                    if (this.lastReplyMessageId != j8) {
-                        if (j7 != getUserConfig().getClientUserId()) {
+                    if (this.lastReplyMessageId == j8) {
+                        j9 = j7;
+                        if (j9 == getUserConfig().getClientUserId() || getMessagesStorage().isMonoForum(j9)) {
+                            tL_messages_search.saved_peer_id = getMessagesController().getInputPeer(this.lastReplyMessageId);
+                            i5 = tL_messages_search.flags | 4;
+                        } else {
                             tL_messages_search.top_msg_id = (int) this.lastReplyMessageId;
-                            tL_messages_search.flags |= 2;
-                            if (visibleReaction2 != null) {
-                                tL_messages_search.saved_reaction.add(visibleReaction.toTLReaction());
-                                tL_messages_search.flags |= 8;
-                            }
-                            tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-                            this.lastSearchQuery = str2;
-                            final TLRPC.TL_messages_search tL_messages_search4 = tL_messages_search;
-                            final boolean z7 = z4;
-                            final String str4 = str2;
-                            final boolean z8 = z6;
-                            final long j11 = j7;
-                            this.reqId = getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda135
-                                @Override // org.telegram.tgnet.RequestDelegate
-                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    MediaDataController.this.lambda$searchMessagesInChat$123(tL_messages_search4, z7, str4, z8, i7, z2, j11, j, i, j2, j3, user, chat, tLObject, tL_error);
-                                }
-                            }, 2);
-                            return;
+                            i5 = tL_messages_search.flags | 2;
                         }
-                        tL_messages_search.saved_peer_id = getMessagesController().getInputPeer(this.lastReplyMessageId);
-                        tL_messages_search.flags |= 4;
+                        tL_messages_search.flags = i5;
+                    } else {
+                        j9 = j7;
                     }
                     if (visibleReaction2 != null) {
+                        tL_messages_search.saved_reaction.add(visibleReaction.toTLReaction());
+                        tL_messages_search.flags |= 8;
                     }
                     tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
                     this.lastSearchQuery = str2;
-                    final TLRPC.TL_messages_search tL_messages_search42 = tL_messages_search;
-                    final boolean z72 = z4;
-                    final String str42 = str2;
-                    final boolean z82 = z6;
-                    final long j112 = j7;
+                    final TLRPC.TL_messages_search tL_messages_search4 = tL_messages_search;
+                    final boolean z7 = z4;
+                    final String str4 = str2;
+                    final boolean z8 = z6;
+                    final long j12 = j9;
                     this.reqId = getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda135
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            MediaDataController.this.lambda$searchMessagesInChat$123(tL_messages_search42, z72, str42, z82, i7, z2, j112, j, i, j2, j3, user, chat, tLObject, tL_error);
+                            MediaDataController.this.lambda$searchMessagesInChat$123(tL_messages_search4, z7, str4, z8, i9, z2, j12, j, i, j2, j3, user, chat, tLObject, tL_error);
                         }
                     }, 2);
                     return;
@@ -13338,8 +13353,8 @@ public class MediaDataController extends BaseController {
                 tL_messages_search3.flags |= 1;
                 this.loadingSearchLocal = false;
                 this.loadedPredirectedSearchLocal = false;
-                final int i72 = this.lastReqId + 1;
-                this.lastReqId = i72;
+                final int i92 = this.lastReqId + 1;
+                this.lastReqId = i92;
                 if (j != getUserConfig().getClientUserId()) {
                 }
                 if (z4) {
@@ -13347,21 +13362,21 @@ public class MediaDataController extends BaseController {
                 tL_messages_search = tL_messages_search3;
                 j7 = j6;
                 j8 = 0;
-                if (this.lastReplyMessageId != j8) {
+                if (this.lastReplyMessageId == j8) {
                 }
                 if (visibleReaction2 != null) {
                 }
                 tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
                 this.lastSearchQuery = str2;
-                final TLRPC.TL_messages_search tL_messages_search422 = tL_messages_search;
-                final boolean z722 = z4;
-                final String str422 = str2;
-                final boolean z822 = z6;
-                final long j1122 = j7;
+                final TLRPC.TL_messages_search tL_messages_search42 = tL_messages_search;
+                final boolean z72 = z4;
+                final String str42 = str2;
+                final boolean z82 = z6;
+                final long j122 = j9;
                 this.reqId = getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda135
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        MediaDataController.this.lambda$searchMessagesInChat$123(tL_messages_search422, z722, str422, z822, i72, z2, j1122, j, i, j2, j3, user, chat, tLObject, tL_error);
+                        MediaDataController.this.lambda$searchMessagesInChat$123(tL_messages_search42, z72, str42, z82, i92, z2, j122, j, i, j2, j3, user, chat, tLObject, tL_error);
                     }
                 }, 2);
                 return;
@@ -13412,6 +13427,17 @@ public class MediaDataController extends BaseController {
 
     public void setDraftFolderId(long j, int i) {
         this.draftsFolderIds.put(j, Integer.valueOf(i));
+    }
+
+    public void setDraftVoiceRegion(long j, long j2, float f, float f2) {
+        DraftVoice draftVoice = getDraftVoice(j, j2);
+        if (draftVoice != null) {
+            if (Math.abs(draftVoice.left - f) >= 0.001f || Math.abs(draftVoice.right - f2) >= 0.001f) {
+                draftVoice.left = f;
+                draftVoice.right = f2;
+                ApplicationLoader.applicationContext.getSharedPreferences("2voicedrafts_" + this.currentAccount, 0).edit().putString(Objects.hash(Long.valueOf(j), Long.valueOf(j2)) + "", draftVoice.toString()).apply();
+            }
+        }
     }
 
     public void setPlaceholderImage(final BackupImageView backupImageView, String str, final String str2, final String str3) {

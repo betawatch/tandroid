@@ -1204,7 +1204,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
     public /* synthetic */ void lambda$createView$6(AlertDialog.Builder builder, View view) {
         builder.getDismissRunnable().run();
         Integer num = (Integer) view.getTag();
-        int i = num.intValue() == 0 ? 30 : num.intValue() == 1 ? 90 : num.intValue() == 2 ? NotificationCenter.didStartedMultiGiftsSelector : num.intValue() == 3 ? 365 : num.intValue() == 4 ? 548 : num.intValue() == 5 ? 730 : 0;
+        int i = num.intValue() == 0 ? 30 : num.intValue() == 1 ? 90 : num.intValue() == 2 ? NotificationCenter.giftsToUserSent : num.intValue() == 3 ? 365 : num.intValue() == 4 ? 548 : num.intValue() == 5 ? 730 : 0;
         final AlertDialog alertDialog = new AlertDialog(getParentActivity(), 3);
         alertDialog.setCanCancel(false);
         alertDialog.show();
@@ -1434,7 +1434,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PrivacySettingsActivity.this.lambda$onBackPressed$338();
+                    PrivacySettingsActivity.this.lambda$onBackPressed$347();
                 }
             }
         });

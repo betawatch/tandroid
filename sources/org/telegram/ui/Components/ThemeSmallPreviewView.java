@@ -279,7 +279,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         if (staticLayout != null) {
             return staticLayout;
         }
-        TextPaint textPaint = new TextPaint(NotificationCenter.walletPendingTransactionsChanged);
+        TextPaint textPaint = new TextPaint(NotificationCenter.didGenerateFingerprintKeyPair);
         this.noThemeTextPaint = textPaint;
         textPaint.setColor(getThemedColor(Theme.key_chat_emojiPanelTrendingDescription));
         this.noThemeTextPaint.setTextSize(AndroidUtilities.dp(noThemeStringTextSize()));
@@ -846,7 +846,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             ChatThemeBottomSheet.ChatThemeItem chatThemeItem3 = this.chatThemeItem;
             int settingsIndex = chatThemeItem3.chatTheme.getSettingsIndex(chatThemeItem3.themeIndex);
             fillOutBubblePaint(themeDrawable.outBubblePaintSecond, tlTheme.settings.get(settingsIndex).message_colors);
-            themeDrawable.outBubblePaintSecond.setAlpha(NotificationCenter.didSetNewWallpapper);
+            themeDrawable.outBubblePaintSecond.setAlpha(NotificationCenter.suggestedLangpack);
             getPreviewDrawable(tlTheme, settingsIndex);
         } else {
             ChatThemeBottomSheet.ChatThemeItem chatThemeItem4 = this.chatThemeItem;

@@ -419,7 +419,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
             this.currentPasswordHash = new byte[0];
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didRemoveTwoStepPassword, new Object[0]);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         if (tL_error != null) {
@@ -784,7 +784,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$resetPassword$11(DialogInterface dialogInterface) {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -824,7 +824,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showSetForcePasswordAlert$37(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1228,7 +1228,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                     if (twoStepVerificationActivity.otherwiseReloginDays >= 0) {
                         twoStepVerificationActivity.showSetForcePasswordAlert();
                     } else {
-                        twoStepVerificationActivity.lambda$onBackPressed$338();
+                        twoStepVerificationActivity.lambda$onBackPressed$347();
                     }
                 }
             }
@@ -1285,7 +1285,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                 this.passwordEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
                 this.passwordEditText.setBackground(null);
                 this.passwordEditText.setSingleLine(true);
-                this.passwordEditText.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                this.passwordEditText.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                 this.passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.passwordEditText.setTypeface(Typeface.DEFAULT);
                 EditTextBoldCursor editTextBoldCursor2 = this.passwordEditText;
@@ -1528,7 +1528,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         this.passwordEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         this.passwordEditText.setBackground(null);
         this.passwordEditText.setSingleLine(true);
-        this.passwordEditText.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+        this.passwordEditText.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
         this.passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         this.passwordEditText.setTypeface(Typeface.DEFAULT);
         EditTextBoldCursor editTextBoldCursor22 = this.passwordEditText;
@@ -1705,9 +1705,9 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$338() {
+    public void lambda$onBackPressed$347() {
         if (this.otherwiseReloginDays < 0) {
-            super.lambda$onBackPressed$338();
+            super.lambda$onBackPressed$347();
             return;
         }
         Bundle bundle = new Bundle();

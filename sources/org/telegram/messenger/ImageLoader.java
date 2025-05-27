@@ -980,22 +980,22 @@ public class ImageLoader {
             boolean z = true;
             if (wallPaperSettings2.second_background_color == 0) {
                 i = AndroidUtilities.getPatternColor(wallPaperSettings2.background_color);
-                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.didSetNewWallpapper));
+                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.suggestedLangpack));
             } else {
                 int i2 = wallPaperSettings2.third_background_color;
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.didSetNewWallpapper);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.suggestedLangpack);
                 if (i2 == 0) {
-                    int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didSetNewWallpapper);
+                    int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.suggestedLangpack);
                     int averageColor = AndroidUtilities.getAverageColor(alphaComponent, alphaComponent2);
                     GradientDrawable gradientDrawable = new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{alphaComponent, alphaComponent2});
                     gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                     gradientDrawable.draw(canvas);
                     i = averageColor;
                 } else {
-                    int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didSetNewWallpapper);
-                    int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.didSetNewWallpapper);
+                    int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.suggestedLangpack);
+                    int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.suggestedLangpack);
                     int i3 = wallPaper.settings.fourth_background_color;
-                    int alphaComponent5 = i3 == 0 ? 0 : ColorUtils.setAlphaComponent(i3, NotificationCenter.didSetNewWallpapper);
+                    int alphaComponent5 = i3 == 0 ? 0 : ColorUtils.setAlphaComponent(i3, NotificationCenter.suggestedLangpack);
                     int patternColor = MotionBackgroundDrawable.getPatternColor(alphaComponent, alphaComponent3, alphaComponent4, alphaComponent5);
                     MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                     motionBackgroundDrawable.setColors(alphaComponent, alphaComponent3, alphaComponent4, alphaComponent5);
@@ -1438,8 +1438,8 @@ public class ImageLoader {
                                                 min = min3;
                                                 z27 = false;
                                             } else {
-                                                min = Math.min(min3, NotificationCenter.audioRouteChanged);
-                                                min2 = Math.min(min4, NotificationCenter.audioRouteChanged);
+                                                min = Math.min(min3, NotificationCenter.audioRecordTooShort);
+                                                min2 = Math.min(min4, NotificationCenter.audioRecordTooShort);
                                                 z27 = true;
                                             }
                                             z31 = (split.length >= 3 && "pcache".equals(split[2])) || this.cacheImage.filter.contains("pcache") || !(this.cacheImage.filter.contains("nolimit") || SharedConfig.getDevicePerformanceClass() == 2);
@@ -3867,7 +3867,7 @@ public class ImageLoader {
                     min = Math.max(point.x, point.y);
                 } else {
                     Point point2 = AndroidUtilities.displaySize;
-                    min = Math.min(NotificationCenter.updateBotMenuButton, Math.min(point2.x, point2.y) / 4);
+                    min = Math.min(NotificationCenter.suggestedFiltersLoaded, Math.min(point2.x, point2.y) / 4);
                 }
                 int i = this.mediaType;
                 Bitmap bitmap = null;

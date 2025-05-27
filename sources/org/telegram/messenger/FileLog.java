@@ -287,7 +287,7 @@ public class FileLog {
         }
     }
 
-    public static void dumpResponseAndRequest(final int i, TLObject tLObject, TLObject tLObject2, TLRPC.TL_error tL_error, final long j, final long j2, final int i2) {
+    public static void dumpResponseAndRequest(final int i, TLObject tLObject, TLObject tLObject2, final TLRPC.TL_error tL_error, final long j, final long j2, final int i2) {
         StringBuilder sb;
         String json;
         if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED && tLObject != null) {
@@ -312,7 +312,7 @@ public class FileLog {
                     getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                         @Override // java.lang.Runnable
                         public final void run() {
-                            FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis, str, str3);
+                            FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis, str, str3, tL_error);
                         }
                     });
                 }
@@ -328,7 +328,7 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis2, str, str32);
+                        FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis2, str, str32, tL_error);
                     }
                 });
             } catch (Throwable th) {
@@ -527,7 +527,7 @@ public class FileLog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dumpResponseAndRequest$0(long j, long j2, int i, int i2, long j3, String str, String str2) {
+    public static /* synthetic */ void lambda$dumpResponseAndRequest$0(long j, long j2, int i, int i2, long j3, String str, String str2, TLRPC.TL_error tL_error) {
         try {
             String str3 = "requestMsgId=" + j + " requestingTime=" + (System.currentTimeMillis() - j2) + " request_token=" + i + " account=" + i2;
             getInstance().tlStreamWriter.write(getInstance().dateFormat.format(j3) + " " + str3);
@@ -537,10 +537,17 @@ public class FileLog {
             getInstance().tlStreamWriter.write(str2);
             getInstance().tlStreamWriter.write("\n\n");
             getInstance().tlStreamWriter.flush();
-            Log.d(mtproto_tag, str3);
-            Log.d(mtproto_tag, str);
-            Log.d(mtproto_tag, str2);
-            Log.d(mtproto_tag, " ");
+            if (tL_error != null) {
+                Log.e(mtproto_tag, str3);
+                Log.e(mtproto_tag, str);
+                Log.e(mtproto_tag, str2);
+                Log.e(mtproto_tag, " ");
+            } else {
+                Log.d(mtproto_tag, str3);
+                Log.d(mtproto_tag, str);
+                Log.d(mtproto_tag, str2);
+                Log.d(mtproto_tag, " ");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

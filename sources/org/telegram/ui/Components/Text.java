@@ -86,7 +86,7 @@ public class Text {
         if (!this.doNotSave) {
             float f = this.ellipsizeWidth;
             if (f >= 0.0f && this.width > f) {
-                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.didSetNewWallpapper, 31);
+                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.suggestedLangpack, 31);
             }
         }
         canvas.save();

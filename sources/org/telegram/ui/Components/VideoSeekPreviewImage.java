@@ -296,7 +296,7 @@ public abstract class VideoSeekPreviewImage extends View {
             this.pendingProgress = f;
             return;
         }
-        int max = Math.max(NotificationCenter.storyQualityUpdate, AndroidUtilities.dp(100.0f));
+        int max = Math.max(NotificationCenter.smsJobStatusUpdate, AndroidUtilities.dp(100.0f));
         final Bitmap frameAtTime = this.fileDrawable.getFrameAtTime(j, false);
         if (frameAtTime != null) {
             int width = frameAtTime.getWidth();

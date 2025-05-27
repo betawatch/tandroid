@@ -785,7 +785,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation = new AnimatorSet[2];
         this.customViewOffset = 12;
         this.dialogButtonColorKey = Theme.key_dialogButton;
-        this.topHeight = NotificationCenter.httpFileDidFailedLoad;
+        this.topHeight = NotificationCenter.httpFileDidLoad;
         this.messageTextViewClickable = true;
         this.canCacnel = true;
         this.dismissDialogByButtons = true;
@@ -985,7 +985,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation[i] = new AnimatorSet();
         BitmapDrawable bitmapDrawable = this.shadow[i];
         if (bitmapDrawable != null) {
-            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.didSetNewWallpapper : 0));
+            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.suggestedLangpack : 0));
         }
         this.shadowAnimation[i].setDuration(150L);
         this.shadowAnimation[i].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialog.8

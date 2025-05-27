@@ -540,11 +540,6 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell);
             }
@@ -777,18 +772,6 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public void didPressTopicButton(ChatMessageCell chatMessageCell) {
-                MessageObject messageObject = chatMessageCell.getMessageObject();
-                if (messageObject != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", -messageObject.getDialogId());
-                    ChatActivity chatActivity = new ChatActivity(bundle);
-                    ForumUtilities.applyTopic(chatActivity, MessagesStorage.TopicKey.of(messageObject.getDialogId(), MessageObject.getTopicId(((BaseFragment) ChannelAdminLogActivity.this).currentAccount, messageObject.messageOwner, true)));
-                    ChannelAdminLogActivity.this.presentFragment(chatActivity);
-                }
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1056,25 +1039,6 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ boolean shouldRepeatSticker(MessageObject messageObject) {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldRepeatSticker(this, messageObject);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public boolean shouldShowTopicButton(ChatMessageCell chatMessageCell) {
-                TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent;
-                MessageObject messageObject = chatMessageCell.getMessageObject();
-                if (messageObject == null || (tL_channelAdminLogEvent = messageObject.currentEvent) == null) {
-                    return false;
-                }
-                TLRPC.ChannelAdminLogEventAction channelAdminLogEventAction = tL_channelAdminLogEvent.action;
-                if ((channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionEditMessage) || (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage)) {
-                    return ChatObject.isForum(ChannelAdminLogActivity.this.currentChat);
-                }
-                return false;
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1357,15 +1321,15 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:31:0x00c8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:31:0x00c9, code lost:
         
-            if ((r0.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r0.messageOwner, true) : r6.id) != (r3.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r3.messageOwner, true) : r6.id)) goto L34;
+            if ((r3.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r3.messageOwner, true) : r6.id) != (r2.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r2.messageOwner, true) : r6.id)) goto L36;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:53:0x0147, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:54:0x014b, code lost:
         
-            if ((r0.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r0.messageOwner, true) : r3.id) != (r14.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r14.messageOwner, true) : r3.id)) goto L58;
+            if ((r3.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r3.messageOwner, true) : r2.id) != (r14.replyToForumTopic == null ? org.telegram.messenger.MessageObject.getTopicId(((org.telegram.ui.ActionBar.BaseFragment) r13.this$0).currentAccount, r14.messageOwner, true) : r2.id)) goto L60;
          */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x00d1  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x00d5  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1398,20 +1362,21 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             int itemViewType2 = getItemViewType(i - 1);
             if (!(messageObject.messageOwner.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && itemViewType == viewHolder.getItemViewType()) {
                 MessageObject messageObject2 = (MessageObject) ChannelAdminLogActivity.this.filteredMessages.get((ChannelAdminLogActivity.this.filteredMessages.size() - (i2 - this.messagesStartRow)) - 1);
-                z = messageObject2.isOutOwner() == messageObject.isOutOwner() && messageObject2.getFromChatId() == messageObject.getFromChatId() && Math.abs(messageObject2.messageOwner.date - messageObject.messageOwner.date) <= 300;
-                if (z) {
+                boolean z3 = messageObject2.isOutOwner() == messageObject.isOutOwner() && messageObject2.getFromChatId() == messageObject.getFromChatId() && Math.abs(messageObject2.messageOwner.date - messageObject.messageOwner.date) <= 300;
+                if (z3) {
                 }
+                z = z3;
                 if (itemViewType2 == viewHolder.getItemViewType()) {
                     MessageObject messageObject3 = (MessageObject) ChannelAdminLogActivity.this.filteredMessages.get(ChannelAdminLogActivity.this.filteredMessages.size() - (i - this.messagesStartRow));
                     z2 = !(messageObject3.messageOwner.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && messageObject3.isOutOwner() == messageObject.isOutOwner() && messageObject3.getFromChatId() == messageObject.getFromChatId() && Math.abs(messageObject3.messageOwner.date - messageObject.messageOwner.date) <= 300;
                     if (z2) {
                     }
-                    chatMessageCell.setMessageObject(messageObject, null, z, z2);
+                    chatMessageCell.setMessageObject(messageObject, null, z, z2, false);
                     chatMessageCell.setHighlighted(false);
                     chatMessageCell.setHighlightedText(ChannelAdminLogActivity.this.searchQuery);
                 }
                 z2 = false;
-                chatMessageCell.setMessageObject(messageObject, null, z, z2);
+                chatMessageCell.setMessageObject(messageObject, null, z, z2, false);
                 chatMessageCell.setHighlighted(false);
                 chatMessageCell.setHighlightedText(ChannelAdminLogActivity.this.searchQuery);
             }
@@ -1419,7 +1384,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             if (itemViewType2 == viewHolder.getItemViewType()) {
             }
             z2 = false;
-            chatMessageCell.setMessageObject(messageObject, null, z, z2);
+            chatMessageCell.setMessageObject(messageObject, null, z, z2, false);
             chatMessageCell.setHighlighted(false);
             chatMessageCell.setHighlightedText(ChannelAdminLogActivity.this.searchQuery);
         }
@@ -1826,7 +1791,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ChannelAdminLogActivity.14
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view2) {
-                                ChannelAdminLogActivity.this.lambda$onBackPressed$338();
+                                ChannelAdminLogActivity.this.lambda$onBackPressed$347();
                             }
 
                             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -2414,7 +2379,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         };
         this.scrimPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
         this.scrimPopupWindow.setOutsideTouchable(true);
         this.scrimPopupWindow.setClippingEnabled(true);
         this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -2873,7 +2838,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = NotificationCenter.storyQualityUpdate;
+        tL_channels_getParticipants.limit = NotificationCenter.smsJobStatusUpdate;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3766,7 +3731,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChannelAdminLogActivity.this.lambda$onBackPressed$338();
+                    ChannelAdminLogActivity.this.lambda$onBackPressed$347();
                 }
             }
         });

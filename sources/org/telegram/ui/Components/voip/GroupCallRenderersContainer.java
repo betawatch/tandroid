@@ -185,7 +185,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
         this.rightShadowDrawable = gradientDrawable2;
         view2.setBackground(gradientDrawable2);
         view2.setVisibility((call == null || !isRtmpStream()) ? 8 : 0);
-        addView(view2, LayoutHelper.createFrame(NotificationCenter.audioRouteChanged, -1, 5));
+        addView(view2, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, -1, 5));
         addView(imageView, LayoutHelper.createFrame(56, -1, 51));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -280,7 +280,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
             }
         });
         addView(this.pipView, LayoutHelper.createFrame(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
-        final ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(18.0f), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), NotificationCenter.groupPackUpdated));
+        final ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(18.0f), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), 204));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.5
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {

@@ -51,7 +51,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zzb = zzmVar.zzb(zzlVar2, z);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzb, NotificationCenter.channelConnectedBotsUpdate);
+        zzgVar.zze(zzb, NotificationCenter.channelSuggestedBotsUpdate);
         r5.zzh.zzc(this.zza.zzg);
         this.zza.zzu();
     }
@@ -77,7 +77,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar2.zzh;
         zzno zzc = zzmVar.zzc(zzlVar2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzc, NotificationCenter.channelSuggestedBotsUpdate);
+        zzgVar.zze(zzc, NotificationCenter.botDownloadsUpdate);
     }
 
     @Override // com.google.android.gms.cast.framework.SessionManagerListener
@@ -104,7 +104,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zza = zzmVar.zza(zzlVar2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zza, NotificationCenter.starUserGiftsLoaded);
+        zzgVar.zze(zza, NotificationCenter.starGiftsLoaded);
         r4.zzh.zzc(this.zza.zzg);
         this.zza.zzu();
     }
@@ -131,7 +131,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zzd = zzmVar.zzd(zzlVar2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzd, NotificationCenter.starGiftsLoaded);
+        zzgVar.zze(zzd, NotificationCenter.updateAllMessages);
     }
 
     @Override // com.google.android.gms.cast.framework.SessionManagerListener
@@ -152,7 +152,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zze = zzmVar.zze(zzlVar2, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zze, NotificationCenter.botDownloadsUpdate);
+        zzgVar.zze(zze, NotificationCenter.updateStories);
         r5.zzh.zzc(this.zza.zzg);
         this.zza.zzr();
     }

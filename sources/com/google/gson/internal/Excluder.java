@@ -24,7 +24,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     public static final Excluder DEFAULT = new Excluder();
     private boolean requireExpose;
     private double version = -1.0d;
-    private int modifiers = NotificationCenter.fileUploadProgressChanged;
+    private int modifiers = NotificationCenter.fileUploadFailed;
     private boolean serializeInnerClasses = true;
     private List serializationStrategies = Collections.emptyList();
     private List deserializationStrategies = Collections.emptyList();

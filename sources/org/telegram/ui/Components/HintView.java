@@ -549,18 +549,18 @@ public class HintView extends FrameLayout {
     public void setVisibleListener(VisibilityListener visibilityListener) {
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x01fd, code lost:
     
-        if (r2 < org.telegram.messenger.AndroidUtilities.dp(10.0f)) goto L91;
+        if (r2 < org.telegram.messenger.AndroidUtilities.dp(10.0f)) goto L87;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x024c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0230, code lost:
     
         r5 = r2 - org.telegram.messenger.AndroidUtilities.dp(10.0f);
         setTranslationX(getTranslationX() + r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x024a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x022e, code lost:
     
-        if (r2 < org.telegram.messenger.AndroidUtilities.dp(10.0f)) goto L91;
+        if (r2 < org.telegram.messenger.AndroidUtilities.dp(10.0f)) goto L87;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -590,18 +590,18 @@ public class HintView extends FrameLayout {
         int i7 = this.currentType;
         if (i7 == 0) {
             ImageReceiver photoImage = chatMessageCell.getPhotoImage();
-            dp = (int) (i6 + photoImage.getImageY());
+            i6 = (int) (i6 + photoImage.getImageY());
             int imageHeight = (int) photoImage.getImageHeight();
-            int i8 = dp + imageHeight;
+            int i8 = i6 + imageHeight;
             int measuredHeight = view.getMeasuredHeight();
-            if (dp <= getMeasuredHeight() + AndroidUtilities.dp(10.0f) || i8 > measuredHeight + (imageHeight / 4)) {
+            if (i6 <= getMeasuredHeight() + AndroidUtilities.dp(10.0f) || i8 > measuredHeight + (imageHeight / 4)) {
                 return false;
             }
             forwardNameCenterX = chatMessageCell.getNoSoundIconCenterX();
             measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, Integer.MIN_VALUE));
         } else if (i7 == 5) {
             Integer num = (Integer) obj;
-            dp = i6 + i2;
+            i6 += i2;
             this.shownY = i2;
             if (num.intValue() == -1) {
                 textView = this.textView;
@@ -642,18 +642,19 @@ public class HintView extends FrameLayout {
             measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, Integer.MIN_VALUE));
             TLRPC.User currentUser = chatMessageCell.getCurrentUser();
             if (currentUser == null || currentUser.id != 0) {
-                dp = i6 + AndroidUtilities.dp(22.0f);
+                i6 += AndroidUtilities.dp(22.0f);
                 if (!messageObject.isOutOwner() && chatMessageCell.isDrawNameLayout()) {
-                    dp += AndroidUtilities.dp(20.0f);
+                    dp = AndroidUtilities.dp(20.0f);
                 }
-                if (!messageObject.shouldDrawWithoutBackground() && chatMessageCell.isDrawTopic()) {
-                    dp = (int) (dp + AndroidUtilities.dp(5.0f) + chatMessageCell.getDrawTopicHeight());
+                if (this.isTopArrow && i6 <= getMeasuredHeight() + AndroidUtilities.dp(10.0f)) {
+                    return false;
                 }
+                forwardNameCenterX = chatMessageCell.getForwardNameCenterX();
             } else {
-                dp = i6 + ((chatMessageCell.getMeasuredHeight() - Math.max(0, chatMessageCell.getBottom() - view.getMeasuredHeight())) - AndroidUtilities.dp(50.0f));
+                dp = (chatMessageCell.getMeasuredHeight() - Math.max(0, chatMessageCell.getBottom() - view.getMeasuredHeight())) - AndroidUtilities.dp(50.0f);
             }
-            if (!this.isTopArrow && dp <= getMeasuredHeight() + AndroidUtilities.dp(10.0f)) {
-                return false;
+            i6 += dp;
+            if (this.isTopArrow) {
             }
             forwardNameCenterX = chatMessageCell.getForwardNameCenterX();
         }
@@ -665,7 +666,7 @@ public class HintView extends FrameLayout {
             setTranslationY(f + dp2);
         } else {
             float f2 = this.extraTranslationY;
-            float measuredHeight2 = dp - getMeasuredHeight();
+            float measuredHeight2 = i6 - getMeasuredHeight();
             this.translationY = measuredHeight2;
             setTranslationY(f2 + measuredHeight2);
         }

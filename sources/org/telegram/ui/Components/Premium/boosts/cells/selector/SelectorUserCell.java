@@ -24,6 +24,8 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.boosts.cells.BaseCell;
 import org.telegram.ui.Components.StatusBadgeComponent;
 import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 /* loaded from: classes5.dex */
 public class SelectorUserCell extends BaseCell {
@@ -52,7 +54,7 @@ public class SelectorUserCell extends BaseCell {
         }
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public void bindView(View view, UItem uItem, boolean z) {
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
             SelectorUserCell selectorUserCell = (SelectorUserCell) view;
             selectorUserCell.setUser((TLRPC.User) uItem.object);
             selectorUserCell.setChecked(uItem.checked, false);

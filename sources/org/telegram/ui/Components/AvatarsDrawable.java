@@ -430,7 +430,7 @@ public class AvatarsDrawable {
                     float f7 = -dp3;
                     f2 = 0.0f;
                     i5 = 2;
-                    canvas.saveLayerAlpha(f7, f7, this.width + dp3, this.height + dp3, NotificationCenter.didSetNewWallpapper, 31);
+                    canvas.saveLayerAlpha(f7, f7, this.width + dp3, this.height + dp3, NotificationCenter.suggestedLangpack, 31);
                 }
                 this.maxX = f2;
                 int i22 = -1;

@@ -204,12 +204,12 @@ public abstract class WallpaperCell extends FrameLayout {
             this.imageView.getImageReceiver().setBlendMode(null);
             this.imageView.getImageReceiver().setGradientBitmap(null);
             this.isSelected = obj == obj2;
-            String str2 = NotificationCenter.updateBotMenuButton + "_" + NotificationCenter.updateBotMenuButton;
+            String str2 = NotificationCenter.suggestedFiltersLoaded + "_" + NotificationCenter.suggestedFiltersLoaded;
             String str3 = "100_100_b";
             if (obj instanceof TLRPC.TL_wallPaper) {
                 ?? r1 = (TLRPC.TL_wallPaper) obj;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(r1.document.thumbs, AndroidUtilities.dp(100));
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(r1.document.thumbs, AndroidUtilities.dp(NotificationCenter.updateBotMenuButton));
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(r1.document.thumbs, AndroidUtilities.dp(NotificationCenter.suggestedFiltersLoaded));
                 photoSize = closestPhotoSizeWithSize2 != closestPhotoSizeWithSize ? closestPhotoSizeWithSize2 : null;
                 j = photoSize != null ? photoSize.size : r1.document.size;
                 if (!r1.pattern) {
@@ -296,7 +296,7 @@ public abstract class WallpaperCell extends FrameLayout {
                 }
                 if ("d".equals(colorWallpaper.slug)) {
                     if (colorWallpaper.defaultCache == null) {
-                        colorWallpaper.defaultCache = SvgHelper.getBitmap(R.raw.default_pattern, 100, NotificationCenter.updateBotMenuButton, -16777216);
+                        colorWallpaper.defaultCache = SvgHelper.getBitmap(R.raw.default_pattern, 100, NotificationCenter.suggestedFiltersLoaded, -16777216);
                     }
                     this.imageView.setImageBitmap(colorWallpaper.defaultCache);
                     imageReceiver = this.imageView.getImageReceiver();
@@ -328,7 +328,7 @@ public abstract class WallpaperCell extends FrameLayout {
                         return;
                     }
                     TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(100));
-                    TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(searchImage2.photo.sizes, AndroidUtilities.dp(NotificationCenter.updateBotMenuButton));
+                    TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(searchImage2.photo.sizes, AndroidUtilities.dp(NotificationCenter.suggestedFiltersLoaded));
                     photoSize = closestPhotoSizeWithSize5 != closestPhotoSizeWithSize4 ? closestPhotoSizeWithSize5 : null;
                     int i2 = photoSize != null ? photoSize.size : 0;
                     backupImageView = this.imageView;

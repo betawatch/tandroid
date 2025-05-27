@@ -61,6 +61,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
     private Float crossfadeDuration;
     private PhotoAttachPhotoCellDelegate delegate;
     private boolean hasSpoiler;
+    private boolean highQuality;
     private BackupImageView imageView;
     private float imageViewCrossfadeProgress;
     private Bitmap imageViewCrossfadeSnapshot;
@@ -84,6 +85,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
     private long stars;
     private boolean starsSelectedMultiple;
     private FrameLayout videoInfoContainer;
+    private ImageView videoPlayImageView;
     private TextView videoTextView;
     private boolean zoomOnSelect;
 
@@ -95,7 +97,6 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         super(context);
         this.zoomOnSelect = true;
         this.backgroundPaint = new Paint();
-        this.spoilerEffect = new SpoilerEffect();
         this.path = new Path();
         this.imageViewCrossfadeProgress = 1.0f;
         this.resourcesProvider = resourcesProvider;
@@ -127,7 +128,6 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         };
         this.container = frameLayout;
         addView(frameLayout, LayoutHelper.createFrame(80, 80.0f));
-        this.spoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(-1) * 0.325f)));
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.Cells.PhotoAttachPhotoCell.2
             private Paint crossfadePaint = new Paint(1);
             private long lastUpdate;
@@ -145,11 +145,11 @@ public class PhotoAttachPhotoCell extends FrameLayout {
                 } else {
                     float width = (getWidth() - this.width) / 2;
                     int height = getHeight();
-                    imageReceiver.setImageCoords(width, (height - r4) / 2, this.width, this.height);
+                    imageReceiver.setImageCoords(width, (height - r5) / 2, this.width, this.height);
                     ImageReceiver imageReceiver2 = this.blurImageReceiver;
                     float width2 = (getWidth() - this.width) / 2;
                     int height2 = getHeight();
-                    imageReceiver2.setImageCoords(width2, (height2 - r5) / 2, this.width, this.height);
+                    imageReceiver2.setImageCoords(width2, (height2 - r6) / 2, this.width, this.height);
                 }
                 imageReceiver.draw(canvas);
                 if (PhotoAttachPhotoCell.this.hasSpoiler && PhotoAttachPhotoCell.this.spoilerRevealProgress != 1.0f && (PhotoAttachPhotoCell.this.photoEntry == null || !PhotoAttachPhotoCell.this.photoEntry.isAttachSpoilerRevealed)) {
@@ -161,6 +161,10 @@ public class PhotoAttachPhotoCell extends FrameLayout {
                     }
                     this.blurImageReceiver.draw(canvas);
                     if (PhotoAttachPhotoCell.this.spoilerEffect2 == null) {
+                        if (PhotoAttachPhotoCell.this.spoilerEffect == null) {
+                            PhotoAttachPhotoCell.this.spoilerEffect = new SpoilerEffect();
+                            PhotoAttachPhotoCell.this.spoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(-1) * 0.325f)));
+                        }
                         PhotoAttachPhotoCell.this.spoilerEffect.setBounds(0, 0, getWidth(), getHeight());
                         PhotoAttachPhotoCell.this.spoilerEffect.draw(canvas);
                     }
@@ -216,8 +220,9 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         this.videoInfoContainer.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
         this.container.addView(this.videoInfoContainer, LayoutHelper.createFrame(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
+        this.videoPlayImageView = imageView;
         imageView.setImageResource(R.drawable.play_mini_video);
-        this.videoInfoContainer.addView(imageView, LayoutHelper.createFrame(-2, -2, 19));
+        this.videoInfoContainer.addView(this.videoPlayImageView, LayoutHelper.createFrame(-2, -2, 19));
         TextView textView = new TextView(context);
         this.videoTextView = textView;
         textView.setTextColor(-1);
@@ -507,6 +512,37 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         }
     }
 
+    public void setHighQuality(boolean z) {
+        TextView textView;
+        String string;
+        if (this.highQuality != z) {
+            this.highQuality = z;
+            MediaController.PhotoEntry photoEntry = this.photoEntry;
+            if (photoEntry != null) {
+                if (photoEntry.isVideo) {
+                    this.imageView.setOrientation(0, true);
+                    this.videoInfoContainer.setVisibility(0);
+                    this.videoPlayImageView.setVisibility(0);
+                    ((FrameLayout.LayoutParams) this.videoTextView.getLayoutParams()).leftMargin = AndroidUtilities.dp(13.0f);
+                    textView = this.videoTextView;
+                    string = AndroidUtilities.formatShortDuration(this.photoEntry.duration);
+                } else {
+                    if (!photoEntry.highQuality) {
+                        this.videoPlayImageView.setVisibility(8);
+                        this.videoInfoContainer.setVisibility(4);
+                        return;
+                    }
+                    this.videoInfoContainer.setVisibility(0);
+                    this.videoPlayImageView.setVisibility(8);
+                    ((FrameLayout.LayoutParams) this.videoTextView.getLayoutParams()).leftMargin = AndroidUtilities.dp(0.0f);
+                    textView = this.videoTextView;
+                    string = LocaleController.getString(R.string.ShortHighQuality);
+                }
+                textView.setText(string);
+            }
+        }
+    }
+
     public void setIsVertical(boolean z) {
         this.isVertical = z;
     }
@@ -538,16 +574,23 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         this.checkFrame.setOnClickListener(onClickListener);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00f0  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00bf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setPhotoEntry(MediaController.PhotoEntry photoEntry, boolean z, boolean z2, boolean z3) {
+        TextView textView;
+        String string;
+        MediaController.PhotoEntry photoEntry2;
+        String str;
         BackupImageView backupImageView;
         StringBuilder sb;
-        String str;
+        String str2;
         boolean z4 = false;
         this.pressed = false;
         this.photoEntry = photoEntry;
@@ -555,52 +598,83 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         if (photoEntry.isVideo) {
             this.imageView.setOrientation(0, true);
             this.videoInfoContainer.setVisibility(0);
-            this.videoTextView.setText(AndroidUtilities.formatShortDuration(this.photoEntry.duration));
+            this.videoPlayImageView.setVisibility(0);
+            ((FrameLayout.LayoutParams) this.videoTextView.getLayoutParams()).leftMargin = AndroidUtilities.dp(13.0f);
+            textView = this.videoTextView;
+            string = AndroidUtilities.formatShortDuration(this.photoEntry.duration);
         } else {
-            this.videoInfoContainer.setVisibility(4);
-        }
-        MediaController.PhotoEntry photoEntry2 = this.photoEntry;
-        String str2 = photoEntry2.coverPath;
-        if (str2 != null || (str2 = photoEntry2.thumbPath) != null) {
-            backupImageView = this.imageView;
-        } else {
-            if (photoEntry2.path == null) {
-                this.imageView.setImageDrawable(Theme.chat_attachEmptyDrawable);
-                if (z2 && PhotoViewer.isShowingImage(this.photoEntry.path)) {
+            if (!photoEntry.highQuality) {
+                this.videoPlayImageView.setVisibility(8);
+                this.videoInfoContainer.setVisibility(4);
+                photoEntry2 = this.photoEntry;
+                str = photoEntry2.coverPath;
+                if (str != null || (str = photoEntry2.thumbPath) != null) {
+                    backupImageView = this.imageView;
+                } else {
+                    if (photoEntry2.path != null) {
+                        this.imageView.setImageDrawable(Theme.chat_attachEmptyDrawable);
+                        if (z2 && PhotoViewer.isShowingImage(this.photoEntry.path)) {
+                            z4 = true;
+                        }
+                        this.imageView.getImageReceiver().setVisible(!z4, true);
+                        this.checkBox.setAlpha(z4 ? 0.0f : 1.0f);
+                        this.videoInfoContainer.setAlpha(z4 ? 0.0f : 1.0f);
+                        requestLayout();
+                        setHasSpoiler(photoEntry.hasSpoiler);
+                        setHighQuality(photoEntry.highQuality);
+                        setStarsPrice(photoEntry.starsAmount, z);
+                    }
+                    if (photoEntry2.isVideo) {
+                        backupImageView = this.imageView;
+                        sb = new StringBuilder();
+                        str2 = "vthumb://";
+                    } else {
+                        this.imageView.setOrientation(photoEntry2.orientation, photoEntry2.invert, true);
+                        backupImageView = this.imageView;
+                        sb = new StringBuilder();
+                        str2 = "thumb://";
+                    }
+                    sb.append(str2);
+                    sb.append(this.photoEntry.imageId);
+                    sb.append(":");
+                    sb.append(this.photoEntry.path);
+                    str = sb.toString();
+                }
+                backupImageView.setImage(str, null, Theme.chat_attachEmptyDrawable);
+                if (z2) {
                     z4 = true;
                 }
                 this.imageView.getImageReceiver().setVisible(!z4, true);
-                this.checkBox.setAlpha(!z4 ? 0.0f : 1.0f);
+                this.checkBox.setAlpha(z4 ? 0.0f : 1.0f);
                 this.videoInfoContainer.setAlpha(z4 ? 0.0f : 1.0f);
                 requestLayout();
                 setHasSpoiler(photoEntry.hasSpoiler);
+                setHighQuality(photoEntry.highQuality);
                 setStarsPrice(photoEntry.starsAmount, z);
             }
-            if (photoEntry2.isVideo) {
-                backupImageView = this.imageView;
-                sb = new StringBuilder();
-                str = "vthumb://";
-            } else {
-                this.imageView.setOrientation(photoEntry2.orientation, photoEntry2.invert, true);
-                backupImageView = this.imageView;
-                sb = new StringBuilder();
-                str = "thumb://";
-            }
-            sb.append(str);
-            sb.append(this.photoEntry.imageId);
-            sb.append(":");
-            sb.append(this.photoEntry.path);
-            str2 = sb.toString();
+            this.videoInfoContainer.setVisibility(0);
+            this.videoPlayImageView.setVisibility(8);
+            ((FrameLayout.LayoutParams) this.videoTextView.getLayoutParams()).leftMargin = AndroidUtilities.dp(0.0f);
+            textView = this.videoTextView;
+            string = LocaleController.getString(R.string.ShortHighQuality);
         }
-        backupImageView.setImage(str2, null, Theme.chat_attachEmptyDrawable);
+        textView.setText(string);
+        photoEntry2 = this.photoEntry;
+        str = photoEntry2.coverPath;
+        if (str != null) {
+            if (photoEntry2.path != null) {
+            }
+        }
+        backupImageView = this.imageView;
+        backupImageView.setImage(str, null, Theme.chat_attachEmptyDrawable);
         if (z2) {
-            z4 = true;
         }
         this.imageView.getImageReceiver().setVisible(!z4, true);
-        this.checkBox.setAlpha(!z4 ? 0.0f : 1.0f);
+        this.checkBox.setAlpha(z4 ? 0.0f : 1.0f);
         this.videoInfoContainer.setAlpha(z4 ? 0.0f : 1.0f);
         requestLayout();
         setHasSpoiler(photoEntry.hasSpoiler);
+        setHighQuality(photoEntry.highQuality);
         setStarsPrice(photoEntry.starsAmount, z);
     }
 
@@ -655,6 +729,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
             this.videoInfoContainer.setAlpha(z3 ? 0.0f : 1.0f);
             requestLayout();
             setHasSpoiler(false);
+            setHighQuality(false);
             setStarsPrice(0L, false);
         }
         backupImageView = this.imageView;
@@ -667,6 +742,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         this.videoInfoContainer.setAlpha(z3 ? 0.0f : 1.0f);
         requestLayout();
         setHasSpoiler(false);
+        setHighQuality(false);
         setStarsPrice(0L, false);
     }
 

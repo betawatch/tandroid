@@ -27,12 +27,12 @@ interface CameraSession {
                 return 90;
             }
             if (rotation == 2) {
-                return NotificationCenter.updateBotMenuButton;
+                return NotificationCenter.suggestedFiltersLoaded;
             }
             if (rotation != 3) {
                 return 0;
             }
-            return NotificationCenter.webRtcSpeakerAmplitudeEvent;
+            return NotificationCenter.webRtcMicAmplitudeEvent;
         }
     }
 

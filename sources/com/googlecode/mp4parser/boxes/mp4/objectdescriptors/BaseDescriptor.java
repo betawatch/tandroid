@@ -25,12 +25,12 @@ public abstract class BaseDescriptor {
     public final void parse(int i, ByteBuffer byteBuffer) {
         this.tag = i;
         int readUInt8 = IsoTypeReader.readUInt8(byteBuffer);
-        this.sizeOfInstance = readUInt8 & NotificationCenter.dialogTranslate;
+        this.sizeOfInstance = readUInt8 & NotificationCenter.dialogIsTranslatable;
         int i2 = 1;
         while ((readUInt8 >>> 7) == 1) {
             readUInt8 = IsoTypeReader.readUInt8(byteBuffer);
             i2++;
-            this.sizeOfInstance = (this.sizeOfInstance << 7) | (readUInt8 & NotificationCenter.dialogTranslate);
+            this.sizeOfInstance = (this.sizeOfInstance << 7) | (readUInt8 & NotificationCenter.dialogIsTranslatable);
         }
         this.sizeBytes = i2;
         ByteBuffer slice = byteBuffer.slice();

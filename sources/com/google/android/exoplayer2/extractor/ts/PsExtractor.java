@@ -185,15 +185,15 @@ public final class PsExtractor implements Extractor {
                     extractorInput.skipFully(1);
                     return 0;
                 }
-                int i = readInt & NotificationCenter.didSetNewWallpapper;
+                int i = readInt & NotificationCenter.suggestedLangpack;
                 PesReader pesReader = (PesReader) this.psPayloadReaders.get(i);
                 if (!this.foundAllTracks) {
                     if (pesReader == null) {
                         if (i == 189) {
                             elementaryStreamReader = new Ac3Reader();
-                        } else if ((readInt & NotificationCenter.updateStories) == 192) {
+                        } else if ((readInt & NotificationCenter.starGiftSoldOut) == 192) {
                             elementaryStreamReader = new MpegAudioReader();
-                        } else if ((readInt & NotificationCenter.closeOtherAppActivities) == 224) {
+                        } else if ((readInt & NotificationCenter.invalidateMotionBackground) == 224) {
                             elementaryStreamReader = new H262Reader();
                             this.foundVideoTrack = true;
                             this.lastTrackPosition = extractorInput.getPosition();

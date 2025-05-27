@@ -67,7 +67,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         }
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public void bindView(View view, UItem uItem, boolean z) {
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
             ((TextDetailCell) view).setTextAndValue(uItem.text, uItem.textValue, !uItem.hideDivider);
         }
 

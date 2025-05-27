@@ -146,7 +146,7 @@ public class ThemePreviewDrawable extends BitmapDrawable {
                     if (themeDocument.accent.patternIntensity >= 0.0f) {
                         paint2.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
                     }
-                    paint2.setAlpha(NotificationCenter.didSetNewWallpapper);
+                    paint2.setAlpha(NotificationCenter.suggestedLangpack);
                     float max = Math.max(560 / decodeFile.getWidth(), 678 / decodeFile.getHeight());
                     int width = (int) (decodeFile.getWidth() * max);
                     canvas.save();
@@ -177,10 +177,10 @@ public class ThemePreviewDrawable extends BitmapDrawable {
             drawable6.setBounds(width2, intrinsicHeight2, drawable6.getIntrinsicWidth() + width2, drawable6.getIntrinsicHeight() + intrinsicHeight2);
             drawable6.draw(canvas);
         }
-        messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, NotificationCenter.botStarsUpdated, createBitmap.getWidth() - 20, NotificationCenter.customTypefacesLoaded);
+        messageDrawableArr[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.factCheckLoaded, createBitmap.getWidth() - 20, NotificationCenter.uploadStoryEnd);
         messageDrawableArr[1].setTop(0, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
-        messageDrawableArr[1].setBounds(NotificationCenter.didStartedCall, 430, createBitmap.getWidth() - 20, 522);
+        messageDrawableArr[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
         messageDrawableArr[1].setTop(430, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
         messageDrawableArr[0].setBounds(20, 323, 399, 415);

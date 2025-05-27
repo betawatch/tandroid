@@ -1325,7 +1325,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$11(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1366,7 +1366,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             CallLogActivity.createCallLink(context, this.currentAccount, this.resourceProvider, new Runnable() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCreateActivity.this.lambda$onBackPressed$338();
+                    GroupCreateActivity.this.lambda$onBackPressed$347();
                 }
             });
             return;
@@ -1557,7 +1557,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         if (contactsAddActivityDelegate != null) {
             contactsAddActivityDelegate.didSelectUsers(arrayList, i);
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1662,7 +1662,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     if (groupCreateActivityDelegate != null) {
                         groupCreateActivityDelegate.didSelectUsers(this.selectedPremium != null, this.selectedMiniapps != null, arrayList2);
                     }
-                    lambda$onBackPressed$338();
+                    lambda$onBackPressed$347();
                 } else {
                     Bundle bundle2 = new Bundle();
                     int size = arrayList2.size();
@@ -1886,7 +1886,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                             public void onItemClick(int i5) {
                                 if (i5 == -1) {
                                     if (GroupCreateActivity.this.checkDiscard()) {
-                                        GroupCreateActivity.this.lambda$onBackPressed$338();
+                                        GroupCreateActivity.this.lambda$onBackPressed$347();
                                     }
                                 } else if (i5 == 1) {
                                     GroupCreateActivity.this.onDonePressed(true);
@@ -2194,7 +2194,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                             this.floatingButton.setImageResource(R.drawable.floating_check);
                         } else {
                             BackDrawable backDrawable = new BackDrawable(false);
-                            backDrawable.setArrowRotation(NotificationCenter.updateBotMenuButton);
+                            backDrawable.setArrowRotation(NotificationCenter.suggestedFiltersLoaded);
                             this.floatingButton.setImageDrawable(backDrawable);
                         }
                         if (i2 >= 21) {
@@ -2298,7 +2298,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             public void onItemClick(int i52) {
                 if (i52 == -1) {
                     if (GroupCreateActivity.this.checkDiscard()) {
-                        GroupCreateActivity.this.lambda$onBackPressed$338();
+                        GroupCreateActivity.this.lambda$onBackPressed$347();
                     }
                 } else if (i52 == 1) {
                     GroupCreateActivity.this.onDonePressed(true);

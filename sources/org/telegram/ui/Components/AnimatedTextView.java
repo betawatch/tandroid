@@ -38,6 +38,7 @@ import org.telegram.ui.Components.AnimatedTextView;
 /* loaded from: classes5.dex */
 public class AnimatedTextView extends View {
     public boolean adaptWidth;
+    private Drawable backgroundDrawable;
     private final AnimatedTextDrawable drawable;
     private boolean first;
     private int lastMaxWidth;
@@ -286,7 +287,7 @@ public class AnimatedTextView extends View {
             this.animateWave = -1.0f;
             this.moveAmplitude = 0.3f;
             this.scaleAmplitude = 0.0f;
-            this.alpha = NotificationCenter.didSetNewWallpapper;
+            this.alpha = NotificationCenter.suggestedLangpack;
             this.bounds = new android.graphics.Rect();
             this.includeFontPadding = true;
             this.centerY = true;
@@ -587,7 +588,7 @@ public class AnimatedTextView extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(this.bounds);
                 rectF.right -= this.rightPadding;
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didSetNewWallpapper, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.suggestedLangpack, 31);
             }
             canvas.save();
             android.graphics.Rect rect = this.bounds;
@@ -1263,6 +1264,11 @@ public class AnimatedTextView extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        Drawable drawable = this.backgroundDrawable;
+        if (drawable != null) {
+            drawable.setBounds(0, 0, (int) (getPaddingLeft() + this.drawable.getCurrentWidth() + getPaddingRight()), getHeight());
+            this.backgroundDrawable.draw(canvas);
+        }
         this.drawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         this.drawable.draw(canvas);
     }
@@ -1342,6 +1348,11 @@ public class AnimatedTextView extends View {
 
     public void setScaleProperty(float f) {
         this.drawable.setScaleProperty(f);
+    }
+
+    public void setSizeableBackground(Drawable drawable) {
+        this.backgroundDrawable = drawable;
+        invalidate();
     }
 
     public void setText(CharSequence charSequence) {

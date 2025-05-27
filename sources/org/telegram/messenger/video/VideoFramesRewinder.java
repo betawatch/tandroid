@@ -68,7 +68,7 @@ public class VideoFramesRewinder {
         int i;
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
-            this.maxFramesCount = NotificationCenter.storyQualityUpdate;
+            this.maxFramesCount = NotificationCenter.smsJobStatusUpdate;
             i = 580;
         } else if (devicePerformanceClass != 2) {
             this.maxFramesCount = 100;

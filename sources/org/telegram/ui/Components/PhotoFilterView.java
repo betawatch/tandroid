@@ -852,6 +852,12 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         } else {
             this.ownsTextureView = true;
             TextureView textureView = new TextureView(context) { // from class: org.telegram.ui.Components.PhotoFilterView.1
+                @Override // android.view.View
+                protected void onMeasure(int i8, int i9) {
+                    View.MeasureSpec.getSize(i8);
+                    super.onMeasure(i8, i9);
+                }
+
                 @Override // android.view.TextureView
                 public void setTransform(Matrix matrix) {
                     super.setTransform(matrix);
@@ -893,7 +899,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.toolsView = frameLayout;
-        addView(frameLayout, LayoutHelper.createFrame(-1, (!z2 ? 40 : 0) + NotificationCenter.didUpdatePremiumGiftFieldIcon, 83));
+        addView(frameLayout, LayoutHelper.createFrame(-1, (!z2 ? 40 : 0) + NotificationCenter.didUpdatePremiumGiftStickers, 83));
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setBackgroundColor(-16777216);
         this.toolsView.addView(frameLayout2, LayoutHelper.createFrame(-1, 48, 83));
@@ -1037,7 +1043,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         FrameLayout frameLayout5 = new FrameLayout(context);
         this.blurLayout = frameLayout5;
         frameLayout5.setVisibility(4);
-        this.toolsView.addView(this.blurLayout, LayoutHelper.createFrame(NotificationCenter.dialogsUnreadReactionsCounterChanged, 60.0f, 1, 0.0f, (z2 ? 0 : 40) + 40, 0.0f, 0.0f));
+        this.toolsView.addView(this.blurLayout, LayoutHelper.createFrame(NotificationCenter.chatAvailableReactionsUpdated, 60.0f, 1, 0.0f, (z2 ? 0 : 40) + 40, 0.0f, 0.0f));
         TextView textView5 = new TextView(context);
         this.blurOffButton = textView5;
         textView5.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));

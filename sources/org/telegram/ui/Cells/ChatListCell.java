@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.Theme;
@@ -79,12 +78,12 @@ public abstract class ChatListCell extends LinearLayout {
             int i = 0;
             for (int i2 = 2; i < i2; i2 = 2) {
                 int dp3 = AndroidUtilities.dp(i == 0 ? 21.0f : 53.0f);
-                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? NotificationCenter.groupPackUpdated : 90, red, green, blue));
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? 204 : 90, red, green, blue));
                 canvas.drawCircle(AndroidUtilities.dp(22.0f), dp3, AndroidUtilities.dp(11.0f), Theme.dialogs_onlineCirclePaint);
                 int i3 = 0;
                 while (true) {
                     if (i3 < (this.isThreeLines ? 3 : 2)) {
-                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? NotificationCenter.groupPackUpdated : 90, red, green, blue));
+                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? 204 : 90, red, green, blue));
                         if (this.isThreeLines) {
                             float f = i3 * 7;
                             this.rect.set(AndroidUtilities.dp(41.0f), dp3 - AndroidUtilities.dp(8.3f - f), getMeasuredWidth() - AndroidUtilities.dp(i3 == 0 ? 72.0f : 48.0f), dp3 - AndroidUtilities.dp(5.3f - f));

@@ -196,8 +196,8 @@ abstract class DecodedBitStreamParser {
             int readBits = bitSource.readBits(13);
             int i3 = (readBits % 96) | ((readBits / 96) << 8);
             int i4 = i3 + (i3 < 2560 ? 41377 : 42657);
-            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.didSetNewWallpapper);
-            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.didSetNewWallpapper);
+            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.suggestedLangpack);
+            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.suggestedLangpack);
             i2 += 2;
             i--;
         }
@@ -216,7 +216,7 @@ abstract class DecodedBitStreamParser {
         int i2 = 0;
         while (i > 0) {
             int readBits = bitSource.readBits(13);
-            int i3 = (readBits % NotificationCenter.dialogPhotosUpdate) | ((readBits / NotificationCenter.dialogPhotosUpdate) << 8);
+            int i3 = (readBits % NotificationCenter.unconfirmedAuthUpdate) | ((readBits / NotificationCenter.unconfirmedAuthUpdate) << 8);
             int i4 = i3 + (i3 < 7936 ? 33088 : 49472);
             bArr[i2] = (byte) (i4 >> 8);
             bArr[i2 + 1] = (byte) i4;
@@ -273,12 +273,12 @@ abstract class DecodedBitStreamParser {
     private static int parseECIValue(BitSource bitSource) {
         int readBits = bitSource.readBits(8);
         if ((readBits & 128) == 0) {
-            return readBits & NotificationCenter.dialogTranslate;
+            return readBits & NotificationCenter.dialogIsTranslatable;
         }
-        if ((readBits & NotificationCenter.dialogPhotosUpdate) == 128) {
+        if ((readBits & NotificationCenter.unconfirmedAuthUpdate) == 128) {
             return bitSource.readBits(8) | ((readBits & 63) << 8);
         }
-        if ((readBits & NotificationCenter.updateStories) == 192) {
+        if ((readBits & NotificationCenter.starGiftSoldOut) == 192) {
             return bitSource.readBits(16) | ((readBits & 31) << 16);
         }
         throw FormatException.getFormatInstance();

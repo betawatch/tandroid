@@ -379,7 +379,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(autoDeletePopupWrapper.windowLayout, -2, -2);
             this.popupWindow = actionBarPopupWindow2;
             actionBarPopupWindow2.setPauseNotifications(true);
-            this.popupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+            this.popupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
             this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -619,7 +619,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupCreateFinalActivity.this.lambda$onBackPressed$338();
+                    GroupCreateFinalActivity.this.lambda$onBackPressed$347();
                 }
             }
         });

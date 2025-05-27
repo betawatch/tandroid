@@ -152,10 +152,10 @@ public class VoipCoverEmoji {
         });
         long j = 350;
         ofFloat.setDuration(j);
-        long j2 = NotificationCenter.updateBotMenuButton;
+        long j2 = NotificationCenter.suggestedFiltersLoaded;
         ofFloat.setStartDelay(j2);
         ofFloat.start();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack);
         ofInt.setInterpolator(CubicBezierInterpolator.DEFAULT);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener

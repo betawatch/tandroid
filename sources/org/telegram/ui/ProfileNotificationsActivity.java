@@ -243,7 +243,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
                                             }
                                         } else {
                                             int i10 = notificationsSettings.getInt("smart_max_count_" + sharedPrefKey, 2);
-                                            int i11 = notificationsSettings.getInt("smart_delay_" + sharedPrefKey, NotificationCenter.updateBotMenuButton);
+                                            int i11 = notificationsSettings.getInt("smart_delay_" + sharedPrefKey, NotificationCenter.suggestedFiltersLoaded);
                                             if (i10 != 0) {
                                                 textSettingsCell.setTextAndValue(LocaleController.getString(R.string.SmartNotifications), LocaleController.formatString("SmartNotificationsInfo", R.string.SmartNotificationsInfo, Integer.valueOf(i10), LocaleController.formatPluralString("Minutes", i11 / 60, new Object[0])), ProfileNotificationsActivity.this.priorityRow != -1);
                                                 break;
@@ -596,7 +596,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
     public /* synthetic */ void lambda$createView$0(String str, AlertDialog alertDialog, int i) {
         this.needReset = true;
         MessagesController.getNotificationsSettings(this.currentAccount).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, false).remove(NotificationsSettingsFacade.PROPERTY_NOTIFY + str).apply();
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
         ProfileNotificationsActivityDelegate profileNotificationsActivityDelegate = this.delegate;
         if (profileNotificationsActivityDelegate != null) {
             profileNotificationsActivityDelegate.didRemoveException(this.dialogId);
@@ -737,7 +737,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
                         }
                         SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.currentAccount);
                         int i2 = notificationsSettings2.getInt("smart_max_count_" + str, 2);
-                        AlertsCreator.createSoundFrequencyPickerDialog(getParentActivity(), i2 != 0 ? i2 : 2, notificationsSettings2.getInt("smart_delay_" + str, NotificationCenter.updateBotMenuButton), new AlertsCreator.SoundFrequencyDelegate() { // from class: org.telegram.ui.ProfileNotificationsActivity$$ExternalSyntheticLambda6
+                        AlertsCreator.createSoundFrequencyPickerDialog(getParentActivity(), i2 != 0 ? i2 : 2, notificationsSettings2.getInt("smart_delay_" + str, NotificationCenter.suggestedFiltersLoaded), new AlertsCreator.SoundFrequencyDelegate() { // from class: org.telegram.ui.ProfileNotificationsActivity$$ExternalSyntheticLambda6
                             @Override // org.telegram.ui.Components.AlertsCreator.SoundFrequencyDelegate
                             public final void didSelectValues(int i3, int i4) {
                                 ProfileNotificationsActivity.this.lambda$createView$4(str, i3, i4);
@@ -870,7 +870,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
                         ProfileNotificationsActivity.this.delegate.didCreateNewException(notificationException);
                     }
                 }
-                ProfileNotificationsActivity.this.lambda$onBackPressed$338();
+                ProfileNotificationsActivity.this.lambda$onBackPressed$347();
             }
         });
         ChatAvatarContainer chatAvatarContainer2 = new ChatAvatarContainer(context, null, false, this.resourcesProvider);

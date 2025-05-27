@@ -188,7 +188,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     SizeNotifierFrameLayout sizeNotifierFrameLayout2 = SizeNotifierFrameLayout.this;
                     Drawable drawable = i == 0 ? sizeNotifierFrameLayout2.oldBackgroundDrawable : sizeNotifierFrameLayout2.backgroundDrawable;
                     if (drawable != null) {
-                        drawable.setAlpha((i != 1 || SizeNotifierFrameLayout.this.oldBackgroundDrawable == null || SizeNotifierFrameLayout.this.parentLayout == null) ? NotificationCenter.didSetNewWallpapper : (int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
+                        drawable.setAlpha((i != 1 || SizeNotifierFrameLayout.this.oldBackgroundDrawable == null || SizeNotifierFrameLayout.this.parentLayout == null) ? NotificationCenter.suggestedLangpack : (int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
                         SizeNotifierFrameLayout sizeNotifierFrameLayout3 = SizeNotifierFrameLayout.this;
                         if (i == 0 ? sizeNotifierFrameLayout3.oldBackgroundMotion : sizeNotifierFrameLayout3.backgroundMotion) {
                             f = SizeNotifierFrameLayout.this.parallaxScale;
@@ -744,7 +744,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didSetNewWallpapper);
+        paint.setAlpha(NotificationCenter.suggestedLangpack);
         if (this.blurCrossfadeProgress == 1.0f || this.selectedBlurPaint2.getShader() == null) {
             canvas.drawCircle(f2, f3, f4, paint);
             canvas.drawCircle(f2, f3, f4, this.selectedBlurPaint);
@@ -779,7 +779,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                 return;
             }
             updateBlurShaderPosition(f, z);
-            paint.setAlpha(NotificationCenter.didSetNewWallpapper);
+            paint.setAlpha(NotificationCenter.suggestedLangpack);
             if (this.blurCrossfadeProgress == 1.0f || this.selectedBlurPaint2.getShader() == null) {
                 canvas.drawRect(rect, paint);
                 canvas.drawRect(rect, this.selectedBlurPaint);
@@ -1325,7 +1325,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         if (blurQueue == null) {
             blurQueue = new DispatchQueue("BlurQueue");
         }
-        this.blurBackgroundTask.radius = (int) (((int) (Math.max(6, Math.max(dp, measuredWidth) / NotificationCenter.updateBotMenuButton) * 2.5f)) * BlurSettingsBottomSheet.blurRadius);
+        this.blurBackgroundTask.radius = (int) (((int) (Math.max(6, Math.max(dp, measuredWidth) / NotificationCenter.suggestedFiltersLoaded) * 2.5f)) * BlurSettingsBottomSheet.blurRadius);
         BlurBackgroundTask blurBackgroundTask = this.blurBackgroundTask;
         blurBackgroundTask.finalBitmap = blurBitmap;
         blurQueue.postRunnable(blurBackgroundTask);

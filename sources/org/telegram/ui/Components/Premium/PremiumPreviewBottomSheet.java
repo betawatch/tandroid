@@ -137,7 +137,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             premiumPreviewBottomSheet.enterTransitionProgress = 1.0f;
             premiumPreviewBottomSheet.iconContainer.invalidate();
             if (this.val$startEnterFromDrawable != null) {
-                ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.didSetNewWallpapper);
+                ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.suggestedLangpack);
                 final Drawable drawable = this.val$startEnterFromDrawable;
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -266,7 +266,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                     gLIconRenderer.colorKey1 = i3;
                     gLIconRenderer.colorKey2 = Theme.key_premiumGradient1;
                     gLIconRenderer.updateColors();
-                    linearLayout.addView(PremiumPreviewBottomSheet.this.iconTextureView, LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 1));
+                    linearLayout.addView(PremiumPreviewBottomSheet.this.iconTextureView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
                 } else {
                     if (view2.getParent() != null) {
                         ((ViewGroup) PremiumPreviewBottomSheet.this.overrideTitleIcon.getParent()).removeView(PremiumPreviewBottomSheet.this.overrideTitleIcon);
@@ -462,7 +462,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         this.container.addView(fireworksOverlay, LayoutHelper.createFrame(-1, -1.0f));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.bulletinContainer = frameLayout;
-        this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.filePreparingStarted, 87));
+        this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.fileLoadFailed, 87));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -622,7 +622,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
     }
 
     protected void attachIconContainer(LinearLayout linearLayout) {
-        linearLayout.addView(this.overrideTitleIcon, LayoutHelper.createLinear(NotificationCenter.filePreparingStarted, NotificationCenter.filePreparingStarted, 1.0f, 17, 10, 10, 10, 10));
+        linearLayout.addView(this.overrideTitleIcon, LayoutHelper.createLinear(NotificationCenter.fileLoadFailed, NotificationCenter.fileLoadFailed, 1.0f, 17, 10, 10, 10, 10));
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView

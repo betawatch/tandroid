@@ -29,7 +29,7 @@ final class TsBinarySearchSeeker extends BinarySearchSeeker {
             long j3 = -1;
             long j4 = -1;
             long j5 = -9223372036854775807L;
-            while (parsableByteArray.bytesLeft() >= 188 && (findSyncBytePosition2 = (findSyncBytePosition = TsUtil.findSyncBytePosition(parsableByteArray.getData(), parsableByteArray.getPosition(), limit)) + NotificationCenter.storiesBlocklistUpdate) <= limit) {
+            while (parsableByteArray.bytesLeft() >= 188 && (findSyncBytePosition2 = (findSyncBytePosition = TsUtil.findSyncBytePosition(parsableByteArray.getData(), parsableByteArray.getPosition(), limit)) + NotificationCenter.storiesEnabledUpdate) <= limit) {
                 long readPcrFromPacket = TsUtil.readPcrFromPacket(parsableByteArray, findSyncBytePosition, this.pcrPid);
                 if (readPcrFromPacket != -9223372036854775807L) {
                     long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(readPcrFromPacket);

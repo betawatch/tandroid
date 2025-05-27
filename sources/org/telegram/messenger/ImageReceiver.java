@@ -1195,14 +1195,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 i6 = i5;
                                                 drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i6 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.didSetNewWallpapper);
+                                                    drawable.setAlpha(NotificationCenter.suggestedLangpack);
                                                 }
                                             }
                                             i5 = (int) ((f5 - min) * f3 * 255.0f);
                                             i6 = i5;
                                             drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i6 != 255) {
-                                                drawable.setAlpha(NotificationCenter.didSetNewWallpapper);
+                                                drawable.setAlpha(NotificationCenter.suggestedLangpack);
                                             }
                                         }
                                     }
@@ -2314,7 +2314,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     public float getImageAspectRatio() {
         float width;
         float height;
-        if (this.imageOrientation % NotificationCenter.updateBotMenuButton != 0) {
+        if (this.imageOrientation % NotificationCenter.suggestedFiltersLoaded != 0) {
             width = this.drawRegion.height();
             height = this.drawRegion.width();
         } else {
@@ -4271,7 +4271,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if ((drawable == null || (bitmapShader = this.thumbShader) == null) && ((drawable = this.staticThumbDrawable) == null || (bitmapShader = this.staticThumbShader) == null)) {
             return false;
         }
-        drawDrawable(null, drawable, NotificationCenter.didSetNewWallpapper, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable, NotificationCenter.suggestedLangpack, bitmapShader, 0, 0, 0, null);
         return true;
     }
 }

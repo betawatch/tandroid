@@ -112,7 +112,7 @@ public class FeaturesPageView extends BaseListPageView {
                     }
                 };
                 this.starParticlesView = starParticlesView;
-                addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.storiesSendAsUpdate, 55));
+                addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.storiesLimitUpdate, 55));
                 GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 1) { // from class: org.telegram.ui.Components.Premium.FeaturesPageView.HeaderView.2
                     @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
                     protected void onAttachedToWindow() {
@@ -137,7 +137,7 @@ public class FeaturesPageView extends BaseListPageView {
                 gLIconRenderer.colorKey1 = i2;
                 gLIconRenderer.colorKey2 = Theme.key_premiumGradient1;
                 gLIconRenderer.updateColors();
-                addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 1));
+                addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
                 GLIconTextureView gLIconTextureView2 = this.iconTextureView;
                 if (gLIconTextureView2 != null) {
                     gLIconTextureView2.startEnterAnimation(-360, 100L);

@@ -82,7 +82,7 @@ public abstract class BlockingUpdateView extends FrameLayout implements Notifica
         AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, Theme.getColor(Theme.key_actionBarDefault));
         this.scrollView.setPadding(0, AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f));
         this.scrollView.setClipToPadding(false);
-        addView(this.scrollView, LayoutHelper.createFrame(-1, -1.0f, 51, 27.0f, i3 + NotificationCenter.filterSettingsUpdated, 27.0f, 130.0f));
+        addView(this.scrollView, LayoutHelper.createFrame(-1, -1.0f, 51, 27.0f, i3 + NotificationCenter.dialogFiltersUpdated, 27.0f, 130.0f));
         this.scrollView.addView(frameLayout2);
         TextView textView = new TextView(context);
         int i4 = Theme.key_windowBackgroundWhiteBlackText;

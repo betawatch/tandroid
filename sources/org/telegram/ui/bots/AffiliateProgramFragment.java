@@ -45,6 +45,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.TableView;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.GradientHeaderActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
@@ -111,7 +112,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((ColorfulTextCell) view).set(uItem.intValue, uItem.iconResId, uItem.text, uItem.subtext);
             }
 
@@ -231,7 +232,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((FeatureCell) view).set(uItem.iconResId, uItem.text, uItem.subtext);
             }
 
@@ -318,7 +319,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 size--;
             }
             if (baseFragment == null) {
-                lambda$onBackPressed$338();
+                lambda$onBackPressed$347();
                 baseFragment = parentLayout.getBackgroundFragment();
                 if (baseFragment == null) {
                     if (z) {
@@ -341,7 +342,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 parentLayout.removeFragmentFromStack((BaseFragment) fragmentStack.get(size2));
             }
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
         if (baseFragment == null) {
         }
     }
@@ -509,7 +510,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         if (userFull != null) {
             TL_payments.starRefProgram starrefprogram2 = this.program;
             starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.onDatabaseReset : 86400);
+            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.didUpdateGlobalAutoDeleteTimer : 86400);
             userFull.starref_program = starrefprogram;
             getMessagesStorage().updateUserInfo(userFull, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.bot_id), userFull);
@@ -706,7 +707,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         this.iconTextureView.setStarParticlesView(this.particlesView);
-        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesSendAsUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.storiesLimitUpdate, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         configureHeader(LocaleController.getString(R.string.BotAffiliateProgramTitle), LocaleController.getString(R.string.BotAffiliateProgramText), this.aboveTitleView, null);
         LinearLayout linearLayout = new LinearLayout(context);
         this.buttonLayout = linearLayout;

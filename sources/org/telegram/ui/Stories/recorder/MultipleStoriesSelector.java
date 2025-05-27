@@ -135,7 +135,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 EntryView entryView = (EntryView) view;
                 entryView.set(uItem.id, uItem.intValue, (StoryEntry) uItem.object);
                 entryView.setSelected(uItem.checked, false);
@@ -249,7 +249,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 this.fillPaint.setAlpha((int) (f2 * 255.0f));
                 canvas.drawCircle(this.cx, this.cy, this.r, this.fillPaint);
             }
-            this.strokePaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+            this.strokePaint.setAlpha(NotificationCenter.suggestedLangpack);
             canvas.drawCircle(this.cx, this.cy, this.r - AndroidUtilities.dp(1.0f), this.strokePaint);
             if (f2 > 0.0f) {
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.counter;
@@ -460,7 +460,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             public final void run(Object obj, Object obj2) {
                 MultipleStoriesSelector.this.whenReordered(((Integer) obj).intValue(), (ArrayList) obj2);
             }
-        });
+        }, true);
         showList(false, false);
         setWillNotDraw(false);
         paint.setStyle(Paint.Style.STROKE);
@@ -627,7 +627,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         RectF rectF = this.buttonBounds;
         drawBlur(canvas, rectF, rectF.width() / 2.0f, 1.0f);
         this.strokePaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.strokePaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+        this.strokePaint.setAlpha(NotificationCenter.suggestedLangpack);
         canvas.drawCircle(this.buttonBounds.centerX(), this.buttonBounds.centerY(), (this.buttonBounds.width() / 2.0f) - AndroidUtilities.dp(0.9f), this.strokePaint);
         Text text = this.counter;
         if (text != null) {

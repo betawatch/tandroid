@@ -304,8 +304,10 @@ public class MessageObject {
     public TLRPC.Peer sendAsPeer;
     public boolean sendPreview;
     public MediaController.PhotoEntry sendPreviewEntry;
+    public boolean sentHighQuality;
     public boolean settingAvatar;
     public boolean shouldRemoveVideoEditedInfo;
+    public boolean sideMenuEnabled;
     private boolean spoiledLoginCode;
     public String sponsoredAdditionalInfo;
     public String sponsoredButtonText;
@@ -669,7 +671,7 @@ public class MessageObject {
                 this.maxSizeWidth -= 50;
                 i = 250;
             } else {
-                i = NotificationCenter.storyQualityUpdate;
+                i = NotificationCenter.smsJobStatusUpdate;
             }
             int dp = AndroidUtilities.dp(120.0f);
             float dp2 = AndroidUtilities.dp(120.0f);
@@ -5754,6 +5756,19 @@ public class MessageObject {
         return getMediaSize(getMedia(message));
     }
 
+    public static long getMonoForumTopicId(TLRPC.Message message) {
+        TLRPC.Peer peer;
+        if (message == null || (peer = message.saved_peer_id) == null) {
+            return 0L;
+        }
+        long j = peer.chat_id;
+        if (j != 0) {
+            return -j;
+        }
+        long j2 = peer.channel_id;
+        return j2 != 0 ? -j2 : peer.user_id;
+    }
+
     public static Long getMyPaidReactionPeer(TLRPC.MessageReactions messageReactions) {
         ArrayList<TLRPC.MessageReactor> arrayList;
         long j;
@@ -6014,8 +6029,15 @@ public class MessageObject {
     }
 
     public static long getTopicId(int i, TLRPC.Message message, boolean z) {
+        return getTopicId(i, message, z, false);
+    }
+
+    public static long getTopicId(int i, TLRPC.Message message, boolean z, boolean z2) {
         int i2;
         long clientUserId = UserConfig.getInstance(i).getClientUserId();
+        if (z2) {
+            return getMonoForumTopicId(message);
+        }
         if ((message.flags & 1073741824) != 0 && DialogObject.getPeerDialogId(message.peer_id) == clientUserId) {
             i2 = message.quick_reply_shortcut_id;
         } else {
@@ -7386,9 +7408,9 @@ public class MessageObject {
         return true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1142:0x171d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1154:0x173f, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1122;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1134;
      */
     /* JADX WARN: Code restructure failed: missing block: B:35:0x00b6, code lost:
     
@@ -7423,11 +7445,11 @@ public class MessageObject {
         if (org.telegram.messenger.ChatObject.isChannelAndNotMegaGroup(r12) != false) goto L35;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1060:0x1592  */
-    /* JADX WARN: Removed duplicated region for block: B:1238:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:1072:0x15b4  */
+    /* JADX WARN: Removed duplicated region for block: B:1250:0x0036  */
     /* JADX WARN: Removed duplicated region for block: B:271:0x0590  */
     /* JADX WARN: Removed duplicated region for block: B:280:0x05ad  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x1918  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x193a  */
     /* JADX WARN: Removed duplicated region for block: B:298:0x05e9  */
     /* JADX WARN: Removed duplicated region for block: B:300:0x0602  */
     /* JADX WARN: Removed duplicated region for block: B:310:0x0622  */
@@ -7447,12 +7469,12 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:9:0x0047  */
     /* JADX WARN: Type inference failed for: r2v10 */
     /* JADX WARN: Type inference failed for: r2v19, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r2v193, types: [android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r2v195, types: [android.text.SpannableStringBuilder] */
     /* JADX WARN: Type inference failed for: r2v20 */
-    /* JADX WARN: Type inference failed for: r2v47 */
-    /* JADX WARN: Type inference failed for: r2v63 */
-    /* JADX WARN: Type inference failed for: r2v70 */
-    /* JADX WARN: Type inference failed for: r2v85 */
+    /* JADX WARN: Type inference failed for: r2v49 */
+    /* JADX WARN: Type inference failed for: r2v65 */
+    /* JADX WARN: Type inference failed for: r2v72 */
+    /* JADX WARN: Type inference failed for: r2v87 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8933,34 +8955,49 @@ public class MessageObject {
                                                                                     } else {
                                                                                         str10 = LocaleController.formatString(z10 ? R.string.ChannelThemeChangedTo : R.string.ChatThemeChangedTo, firstName2, str25);
                                                                                     }
-                                                                                } else if (!(messageAction instanceof TLRPC.TL_messageActionChatJoinedByRequest)) {
-                                                                                    if (messageAction instanceof TLRPC.TL_messageActionPaidMessagesPrice) {
-                                                                                        boolean isOutOwner = isOutOwner();
-                                                                                        long j16 = ((TLRPC.TL_messageActionPaidMessagesPrice) messageAction).stars;
-                                                                                        if (isOutOwner) {
-                                                                                            charSequence4 = LocaleController.formatPluralStringComma("PaidMessagesPriceUpdatedOut", (int) j16);
-                                                                                        } else {
-                                                                                            i2 = (int) j16;
-                                                                                            str9 = "PaidMessagesPriceUpdated";
-                                                                                        }
-                                                                                    } else if (messageAction instanceof TLRPC.TL_messageActionPaidMessagesRefunded) {
-                                                                                        TLRPC.TL_messageActionPaidMessagesRefunded tL_messageActionPaidMessagesRefunded = (TLRPC.TL_messageActionPaidMessagesRefunded) messageAction;
-                                                                                        if (isOutOwner()) {
-                                                                                            TLObject user14 = getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.peer_id));
-                                                                                            String formatPluralStringComma = LocaleController.formatPluralStringComma("PaidMessagesRefundedOut", (int) tL_messageActionPaidMessagesRefunded.stars);
-                                                                                            tLObject = user14;
-                                                                                            charSequence2 = formatPluralStringComma;
-                                                                                        } else {
-                                                                                            i2 = (int) tL_messageActionPaidMessagesRefunded.stars;
-                                                                                            str9 = "PaidMessagesRefunded";
-                                                                                        }
-                                                                                    }
-                                                                                    charSequence2 = LocaleController.formatPluralStringComma(str9, i2);
-                                                                                    tLObject = tLObject6;
-                                                                                } else if (UserObject.isUserSelf(user)) {
-                                                                                    str10 = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(this.messageOwner.peer_id.channel_id, this.currentAccount) ? R.string.RequestToJoinChannelApproved : R.string.RequestToJoinGroupApproved);
                                                                                 } else {
-                                                                                    i3 = R.string.UserAcceptedToGroupAction;
+                                                                                    if (!(messageAction instanceof TLRPC.TL_messageActionChatJoinedByRequest)) {
+                                                                                        if (messageAction instanceof TLRPC.TL_messageActionPaidMessagesPrice) {
+                                                                                            TLRPC.TL_messageActionPaidMessagesPrice tL_messageActionPaidMessagesPrice = (TLRPC.TL_messageActionPaidMessagesPrice) messageAction;
+                                                                                            if (!ChatObject.isChannel(chat12) || chat12 == null || !chat12.broadcast) {
+                                                                                                boolean isOutOwner = isOutOwner();
+                                                                                                long j16 = tL_messageActionPaidMessagesPrice.stars;
+                                                                                                if (isOutOwner) {
+                                                                                                    charSequence4 = LocaleController.formatPluralStringComma("PaidMessagesPriceUpdatedOut", (int) j16);
+                                                                                                } else {
+                                                                                                    i2 = (int) j16;
+                                                                                                    str9 = "PaidMessagesPriceUpdated";
+                                                                                                }
+                                                                                            } else if ((tL_messageActionPaidMessagesPrice.flags & 1) != 0) {
+                                                                                                long j17 = tL_messageActionPaidMessagesPrice.stars;
+                                                                                                if (j17 > 0) {
+                                                                                                    i2 = (int) j17;
+                                                                                                    str9 = "PostSuggestionsPriceUpdated";
+                                                                                                } else {
+                                                                                                    i3 = R.string.PostSuggestionsEnabledUpdated;
+                                                                                                }
+                                                                                            } else {
+                                                                                                i3 = R.string.PostSuggestionsDisabledUpdated;
+                                                                                            }
+                                                                                        } else if (messageAction instanceof TLRPC.TL_messageActionPaidMessagesRefunded) {
+                                                                                            TLRPC.TL_messageActionPaidMessagesRefunded tL_messageActionPaidMessagesRefunded = (TLRPC.TL_messageActionPaidMessagesRefunded) messageAction;
+                                                                                            if (isOutOwner()) {
+                                                                                                TLObject user14 = getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.peer_id));
+                                                                                                String formatPluralStringComma = LocaleController.formatPluralStringComma("PaidMessagesRefundedOut", (int) tL_messageActionPaidMessagesRefunded.stars);
+                                                                                                tLObject = user14;
+                                                                                                charSequence2 = formatPluralStringComma;
+                                                                                            } else {
+                                                                                                i2 = (int) tL_messageActionPaidMessagesRefunded.stars;
+                                                                                                str9 = "PaidMessagesRefunded";
+                                                                                            }
+                                                                                        }
+                                                                                        charSequence2 = LocaleController.formatPluralStringComma(str9, i2);
+                                                                                        tLObject = tLObject6;
+                                                                                    } else if (UserObject.isUserSelf(user)) {
+                                                                                        str10 = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(this.messageOwner.peer_id.channel_id, this.currentAccount) ? R.string.RequestToJoinChannelApproved : R.string.RequestToJoinGroupApproved);
+                                                                                    } else {
+                                                                                        i3 = R.string.UserAcceptedToGroupAction;
+                                                                                    }
                                                                                     charSequence2 = LocaleController.getString(i3);
                                                                                     tLObject = tLObject6;
                                                                                 }
@@ -9598,7 +9635,7 @@ public class MessageObject {
                     this.mediaExists = exists;
                 }
             }
-        } else if (i2 == 1 && FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, AndroidUtilities.getPhotoSize()) != null) {
+        } else if (i2 == 1 && FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, AndroidUtilities.getPhotoSize(true)) != null) {
             File pathToMessage = FileLoader.getInstance(this.currentAccount).getPathToMessage(this.messageOwner, z);
             if (needDrawBluredPreview()) {
                 this.mediaExists = new File(pathToMessage.getAbsolutePath() + ".enc").exists();
@@ -11743,17 +11780,26 @@ public class MessageObject {
         return getInputStickerSet(this.messageOwner);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:35:0x012e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public int getMaxMessageTextWidth() {
         int dp;
         Uri parse;
         String lastPathSegment;
+        int dp2;
+        int dp3;
         this.generatedWithMinSize = (!AndroidUtilities.isTablet() || this.eventId == 0) ? AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : getParentWidth() : AndroidUtilities.dp(530.0f);
         this.generatedWithDensity = AndroidUtilities.density;
         if (this.hasCode && !this.isSaved) {
             dp = this.generatedWithMinSize - AndroidUtilities.dp(60.0f);
-            if (needDrawAvatarInternal() && !isOutOwner() && !this.messageOwner.isThreadMessage) {
-                dp -= AndroidUtilities.dp(52.0f);
+            if (this.sideMenuEnabled) {
+                dp3 = AndroidUtilities.dp(64.0f);
+            } else if (needDrawAvatarInternal() && !isOutOwner() && !this.messageOwner.isThreadMessage) {
+                dp3 = AndroidUtilities.dp(52.0f);
             }
+            dp -= dp3;
         } else if ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaWebPage) && getMedia(this.messageOwner).webpage != null && "telegram_background".equals(getMedia(this.messageOwner).webpage.type)) {
             try {
                 parse = Uri.parse(getMedia(this.messageOwner).webpage.url);
@@ -11776,14 +11822,24 @@ public class MessageObject {
         }
         if (dp == 0) {
             dp = this.generatedWithMinSize - AndroidUtilities.dp(80.0f);
-            if (needDrawAvatarInternal() && !isOutOwner() && !this.messageOwner.isThreadMessage) {
-                dp -= AndroidUtilities.dp(52.0f);
+            if (this.sideMenuEnabled) {
+                dp2 = AndroidUtilities.dp(64.0f);
+            } else {
+                if (needDrawAvatarInternal() && !isOutOwner() && !this.messageOwner.isThreadMessage) {
+                    dp2 = AndroidUtilities.dp(52.0f);
+                }
+                if (needDrawShareButton() && (this.isSaved || !isOutOwner())) {
+                    dp -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
+                }
+                if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
+                    dp -= AndroidUtilities.dp(10.0f);
+                }
             }
-            if (needDrawShareButton() && (this.isSaved || !isOutOwner())) {
-                dp -= AndroidUtilities.dp((this.isSaved && isOutOwner()) ? 40.0f : 14.0f);
+            dp -= dp2;
+            if (needDrawShareButton()) {
+                dp -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
             }
             if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
-                dp -= AndroidUtilities.dp(10.0f);
             }
         }
         int i = this.emojiOnlyCount;
@@ -11951,6 +12007,10 @@ public class MessageObject {
         }
         TLRPC.WebDocument webDocument = ((TLRPC.TL_messageMediaInvoice) getMedia(this.messageOwner)).webPhoto;
         return webDocument != null ? webDocument.mime_type : "";
+    }
+
+    public long getMonoForumTopicId() {
+        return getMonoForumTopicId(this.messageOwner);
     }
 
     public String getMusicAuthor() {
@@ -12499,6 +12559,11 @@ public class MessageObject {
             default:
                 return Theme.chat_msgTextPaintEmoji[5];
         }
+    }
+
+    public long getTopicId() {
+        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()));
+        return getTopicId(this.currentAccount, this.messageOwner, ChatObject.isForum(chat), ChatObject.isMonoForum(chat));
     }
 
     public TLRPC.Photo getVideoCover() {
@@ -13304,7 +13369,7 @@ public class MessageObject {
         TLRPC.Message message = this.messageOwner;
         if (message.send_state != 2 || message.id >= 0) {
             if (this.scheduled && message.id > 0) {
-                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.onDatabaseReset : 60)) {
+                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.didUpdateGlobalAutoDeleteTimer : 60)) {
                 }
             }
             return false;
@@ -13712,7 +13777,7 @@ public class MessageObject {
         int i;
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
-        if (this.isRepostPreview || getDialogId() == UserObject.VERIFY) {
+        if (this.isRepostPreview || this.sideMenuEnabled || getDialogId() == UserObject.VERIFY) {
             return false;
         }
         if (this.isSaved) {
@@ -14475,6 +14540,15 @@ public class MessageObject {
         this.highestQuality = VideoPlayer.getQualityForPlayer(this.videoQualities);
         this.thumbQuality = VideoPlayer.getQualityForThumb(this.videoQualities);
         this.cachedQuality = VideoPlayer.getCachedQuality(this.videoQualities);
+    }
+
+    public boolean updateSideMenuEnabled(boolean z) {
+        if (this.sideMenuEnabled == z) {
+            return false;
+        }
+        this.sideMenuEnabled = z;
+        generateLayout(null);
+        return true;
     }
 
     public boolean updateTranslation() {

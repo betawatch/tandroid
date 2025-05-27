@@ -92,7 +92,7 @@ public final class H262Reader implements ElementaryStreamReader {
         this.prefixFlags = new boolean[4];
         this.csdBuffer = new CsdBuffer(128);
         if (userDataReader != null) {
-            this.userData = new NalUnitTargetBuffer(NotificationCenter.filterSettingsUpdated, 128);
+            this.userData = new NalUnitTargetBuffer(NotificationCenter.dialogFiltersUpdated, 128);
             parsableByteArray = new ParsableByteArray();
         } else {
             parsableByteArray = null;

@@ -99,7 +99,7 @@ public class RadioButton extends View {
             paint.setColor(rgb);
             checkedPaint.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
         float f4 = (this.size / 2) - ((f + 1.0f) * AndroidUtilities.density);
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4, paint);
         if (this.icon == null) {

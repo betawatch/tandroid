@@ -124,7 +124,7 @@ public abstract class zzea extends zzdk {
                     byte[] bArr = this.zzb;
                     int i = this.zze;
                     this.zze = i + 1;
-                    zzhn.zza(bArr, i, (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128));
+                    zzhn.zza(bArr, i, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.zzb;
@@ -138,7 +138,7 @@ public abstract class zzea extends zzdk {
                     byte[] bArr3 = this.zzb;
                     int i3 = this.zze;
                     this.zze = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) j) & NotificationCenter.dialogTranslate) | 128);
+                    bArr3[i3] = (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzb(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
@@ -200,7 +200,7 @@ public abstract class zzea extends zzdk {
                         byte[] bArr = this.zzb;
                         int i2 = this.zze;
                         this.zze = i2 + 1;
-                        bArr[i2] = (byte) ((i & NotificationCenter.dialogTranslate) | 128);
+                        bArr[i2] = (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128);
                         i >>>= 7;
                     } catch (IndexOutOfBoundsException e) {
                         throw new zzb(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);

@@ -44,6 +44,7 @@ import org.telegram.ui.Components.CheckBox2;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.Text;
@@ -265,7 +266,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         if (charSequence2 == null) {
             TLRPC.Chat chat2 = this.chat;
             if (chat2 != null) {
-                userName = chat2.title;
+                userName = chat2.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat2) : chat2.title;
             } else {
                 TLRPC.User user2 = this.user;
                 if (user2 != null) {
@@ -1034,12 +1035,17 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         return this;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0071  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void update(int i) {
         Drawable drawable;
         float f;
-        String str;
+        String monoForumTitle;
         TLRPC.Dialog dialog;
-        String str2;
+        String monoForumTitle2;
         TLRPC.User user;
         TLRPC.User user2;
         TLRPC.FileLocation fileLocation;
@@ -1078,13 +1084,17 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                     Drawable drawable5 = chatPhoto.strippedBitmap;
                     if (drawable5 != null) {
                         drawable = drawable5;
-                        avatarDrawable.setInfo(this.currentAccount, chat);
-                        this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.chat, 1), "50_50", ImageLocation.getForUserOrChat(this.chat, 2), "50_50", drawable, this.chat, 0);
+                        if (chat.monoforum) {
+                            avatarDrawable.setInfo(this.currentAccount, chat);
+                            this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.chat, 1), "50_50", ImageLocation.getForUserOrChat(this.chat, 2), "50_50", drawable, this.chat, 0);
+                        } else {
+                            ForumUtilities.setMonoForumAvatar(this.currentAccount, chat, avatarDrawable, this.avatarImage);
+                        }
                     }
                 }
                 drawable = avatarDrawable;
-                avatarDrawable.setInfo(this.currentAccount, chat);
-                this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.chat, 1), "50_50", ImageLocation.getForUserOrChat(this.chat, 2), "50_50", drawable, this.chat, 0);
+                if (chat.monoforum) {
+                }
             } else {
                 ContactsController.Contact contact = this.contact;
                 if (contact != null) {
@@ -1116,11 +1126,12 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             }
             if ((!z && (MessagesController.UPDATE_MASK_NAME & i) != 0 && this.user != null) || ((MessagesController.UPDATE_MASK_CHAT_NAME & i) != 0 && this.chat != null)) {
                 if (this.user != null) {
-                    str2 = this.user.first_name + this.user.last_name;
+                    monoForumTitle2 = this.user.first_name + this.user.last_name;
                 } else {
-                    str2 = this.chat.title;
+                    TLRPC.Chat chat3 = this.chat;
+                    monoForumTitle2 = chat3.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat3) : chat3.title;
                 }
-                if (!str2.equals(this.lastName)) {
+                if (!monoForumTitle2.equals(this.lastName)) {
                     z = true;
                 }
             }
@@ -1130,9 +1141,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         TLRPC.User user5 = this.user;
         if (user5 == null) {
-            TLRPC.Chat chat3 = this.chat;
-            if (chat3 != null) {
-                str = chat3.title;
+            TLRPC.Chat chat4 = this.chat;
+            if (chat4 != null) {
+                monoForumTitle = chat4.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat4) : chat4.title;
             }
             this.lastAvatar = fileLocation2;
             if (getMeasuredWidth() == 0 || getMeasuredHeight() != 0) {
@@ -1148,8 +1159,8 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         } else {
             this.lastStatus = 0;
         }
-        str = this.user.first_name + this.user.last_name;
-        this.lastName = str;
+        monoForumTitle = this.user.first_name + this.user.last_name;
+        this.lastName = monoForumTitle;
         this.lastAvatar = fileLocation2;
         if (getMeasuredWidth() == 0) {
         }

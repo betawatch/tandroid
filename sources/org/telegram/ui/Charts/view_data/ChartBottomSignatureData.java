@@ -5,7 +5,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes4.dex */
 public class ChartBottomSignatureData {
     public int alpha;
-    public int fixedAlpha = NotificationCenter.didSetNewWallpapper;
+    public int fixedAlpha = NotificationCenter.suggestedLangpack;
     public final int step;
     public final int stepMax;
     public final int stepMin;

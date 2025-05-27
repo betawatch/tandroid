@@ -266,11 +266,6 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell2) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell2);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell2) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell2);
             }
@@ -363,11 +358,6 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell2) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell2);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressTopicButton(ChatMessageCell chatMessageCell2) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTopicButton(this, chatMessageCell2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -536,21 +526,11 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell2) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell2);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean shouldShowTopicButton(ChatMessageCell chatMessageCell2) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowTopicButton(this, chatMessageCell2);
-            }
-
-            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void videoTimerReached() {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
             }
         });
-        chatMessageCell.setMessageObject(this.messageObject, null, false, false);
+        chatMessageCell.setMessageObject(this.messageObject, null, false, false, false);
         LinearLayout linearLayout = new LinearLayout(context);
         this.chatListView = linearLayout;
         linearLayout.setOrientation(1);
@@ -990,10 +970,10 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
         }
         if (topicsFragment != null) {
-            topicsFragment.lambda$onBackPressed$338();
+            topicsFragment.lambda$onBackPressed$347();
             dialogsActivity.removeSelfFromStack();
         } else {
-            dialogsActivity.lambda$onBackPressed$338();
+            dialogsActivity.lambda$onBackPressed$347();
         }
         return true;
     }

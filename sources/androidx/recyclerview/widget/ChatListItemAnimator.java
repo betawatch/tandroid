@@ -896,9 +896,9 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x049f  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x009d  */
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.SimpleItemAnimator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1054,11 +1054,21 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                             if (z5 || transitionParams.lastDrawingBackgroundRect.top != chatMessageCell.getBackgroundDrawableTop() || transitionParams.lastDrawingBackgroundRect.bottom != chatMessageCell.getBackgroundDrawableBottom()) {
                                 moveInfoExtended.deltaBottom = chatMessageCell.getBackgroundDrawableBottom() - transitionParams.lastDrawingBackgroundRect.bottom;
                                 moveInfoExtended.deltaTop = chatMessageCell.getBackgroundDrawableTop() - transitionParams.lastDrawingBackgroundRect.top;
-                                if (isOutOwner) {
+                                if (chatMessageCell.isSideMenuEnabled != transitionParams.lastDrawingSideMenuEnabled) {
                                     moveInfoExtended.deltaLeft = chatMessageCell.getBackgroundDrawableLeft() - transitionParams.lastDrawingBackgroundRect.left;
-                                } else {
-                                    moveInfoExtended.deltaRight = chatMessageCell.getBackgroundDrawableRight() - transitionParams.lastDrawingBackgroundRect.right;
+                                } else if (isOutOwner) {
+                                    moveInfoExtended.deltaLeft = chatMessageCell.getBackgroundDrawableLeft() - transitionParams.lastDrawingBackgroundRect.left;
+                                    moveInfoExtended.animateBackgroundOnly = true;
+                                    transitionParams.animateBackgroundBoundsInner = true;
+                                    transitionParams.animateBackgroundWidth = z5;
+                                    transitionParams.deltaLeft = -moveInfoExtended.deltaLeft;
+                                    transitionParams.deltaRight = -moveInfoExtended.deltaRight;
+                                    transitionParams.deltaTop = -moveInfoExtended.deltaTop;
+                                    transitionParams.deltaBottom = -moveInfoExtended.deltaBottom;
+                                    this.recyclerListView.setClipChildren(false);
+                                    this.recyclerListView.invalidate();
                                 }
+                                moveInfoExtended.deltaRight = chatMessageCell.getBackgroundDrawableRight() - transitionParams.lastDrawingBackgroundRect.right;
                                 moveInfoExtended.animateBackgroundOnly = true;
                                 transitionParams.animateBackgroundBoundsInner = true;
                                 transitionParams.animateBackgroundWidth = z5;

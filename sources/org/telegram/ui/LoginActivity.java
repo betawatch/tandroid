@@ -932,7 +932,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.storyQualityUpdate);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.smsJobStatusUpdate);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1062,7 +1062,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(TLObject tLObject, Bundle bundle) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$338();
+                LoginActivity.this.lambda$onBackPressed$347();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 LoginActivity.this.lambda$resendCodeFromSafetyNet$19(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
@@ -1837,7 +1837,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 int dp = AndroidUtilities.dp(16.0f);
                 this.codeField[i5].setPadding(dp, dp, dp, dp);
                 if (i == 0) {
-                    this.codeField[i5].setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                    this.codeField[i5].setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                     this.codeField[i5].setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
                 this.codeField[i5].setTypeface(Typeface.DEFAULT);
@@ -1954,7 +1954,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
                 int selectionStart = editTextBoldCursorArr[i].getSelectionStart();
                 int selectionEnd = this.codeField[i].getSelectionEnd();
-                this.codeField[i].setInputType((this.isPasswordVisible ? NotificationCenter.messagePlayingProgressDidChanged : 128) | 1);
+                this.codeField[i].setInputType((this.isPasswordVisible ? NotificationCenter.dialogsUnreadCounterChanged : 128) | 1);
                 this.codeField[i].setSelection(selectionStart, selectionEnd);
                 i++;
             }
@@ -2333,7 +2333,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.codeField.setMaxLines(1);
                     int dp = AndroidUtilities.dp(16.0f);
                     this.codeField.setPadding(dp, dp, dp, dp);
-                    this.codeField.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                    this.codeField.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                     this.codeField.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     this.codeField.setTypeface(Typeface.DEFAULT);
                     this.codeField.setGravity(!LocaleController.isRTL ? 5 : 3);
@@ -2404,7 +2404,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.codeField.setMaxLines(1);
             int dp2 = AndroidUtilities.dp(16.0f);
             this.codeField.setPadding(dp2, dp2, dp2, dp2);
-            this.codeField.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+            this.codeField.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
             this.codeField.setTransformationMethod(PasswordTransformationMethod.getInstance());
             this.codeField.setTypeface(Typeface.DEFAULT);
             this.codeField.setGravity(!LocaleController.isRTL ? 5 : 3);
@@ -6008,7 +6008,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null || LoginActivity.this.getParentActivity().isFinishing()) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.storyQualityUpdate);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.smsJobStatusUpdate);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6045,7 +6045,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             String string;
             int i;
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$338();
+                LoginActivity.this.lambda$onBackPressed$347();
                 LoginActivity.this.emailChangeFinishCallback.run();
                 return;
             }
@@ -7344,7 +7344,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$22(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$338();
+            LoginActivity.this.lambda$onBackPressed$347();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7499,7 +7499,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$338();
+            LoginActivity.this.lambda$onBackPressed$347();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8156,7 +8156,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             NotificationCenter globalInstance;
             int i;
             if (LoginActivity.this.activityMode != 0) {
-                LoginActivity.this.lambda$onBackPressed$338();
+                LoginActivity.this.lambda$onBackPressed$347();
                 return false;
             }
             int i2 = this.prevType;
@@ -8909,7 +8909,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.storyQualityUpdate));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.smsJobStatusUpdate));
             StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.LoginActivity.LoginPayView.1
                 @Override // org.telegram.ui.Components.Premium.StarParticlesView
                 protected void configure() {
@@ -8936,7 +8936,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.starParticlesView = starParticlesView;
-            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.storyQualityUpdate, 119));
+            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 119));
             GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 1) { // from class: org.telegram.ui.LoginActivity.LoginPayView.2
                 @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
                 protected void onAttachedToWindow() {
@@ -8960,7 +8960,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             gLIconRenderer.colorKey1 = i;
             gLIconRenderer.colorKey2 = Theme.key_premiumGradient1;
             gLIconRenderer.updateColors();
-            frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 1));
+            frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeeTitle));
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
@@ -10289,15 +10289,23 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     String[] split = readLine.split(";");
                     CountrySelectActivity.Country country = new CountrySelectActivity.Country();
                     country.name = split[2];
-                    country.code = split[0];
+                    String str = split[0];
+                    country.code = str;
                     country.shortname = split[1];
+                    if (!TextUtils.equals(str, "FT")) {
+                        String countryName = LocaleController.getCountryName(country.shortname);
+                        if (!TextUtils.isEmpty(countryName) && !TextUtils.equals(country.shortname, countryName)) {
+                            country.defaultName = country.name;
+                            country.name = countryName;
+                        }
+                    }
                     this.countriesArray.add(0, country);
                     List list = (List) this.codesMap.get(split[0]);
                     if (list == null) {
                         HashMap hashMap2 = this.codesMap;
-                        String str = split[0];
+                        String str2 = split[0];
                         ArrayList arrayList = new ArrayList();
-                        hashMap2.put(str, arrayList);
+                        hashMap2.put(str2, arrayList);
                         list = arrayList;
                     }
                     list.add(country);
@@ -10318,9 +10326,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                 @Override // j$.util.function.Function
                 public final Object apply(Object obj) {
-                    String str2;
-                    str2 = ((CountrySelectActivity.Country) obj).name;
-                    return str2;
+                    String str3;
+                    str3 = ((CountrySelectActivity.Country) obj).name;
+                    return str3;
                 }
 
                 @Override // j$.util.function.Function
@@ -10668,7 +10676,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (UserConfig.selectedAccount != i) {
                 ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
             }
-            LoginActivity.this.lambda$onBackPressed$338();
+            LoginActivity.this.lambda$onBackPressed$347();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11788,7 +11796,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
         }
     }
 
@@ -12272,7 +12280,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             });
             this.pendingSwitchingAccount = false;
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         if (z && z2) {
@@ -12737,7 +12745,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             timeInterpolator = null;
         } else if (z) {
             timeInterpolator = AndroidUtilities.decelerateInterpolator;
-            i32 = NotificationCenter.storyQualityUpdate;
+            i32 = NotificationCenter.smsJobStatusUpdate;
         } else {
             timeInterpolator = AndroidUtilities.accelerateInterpolator;
         }
@@ -13098,7 +13106,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i3 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
                 } else if (i3 == -1 && LoginActivity.this.onBackPressed()) {
-                    LoginActivity.this.lambda$onBackPressed$338();
+                    LoginActivity.this.lambda$onBackPressed$347();
                 }
             }
         });
@@ -13195,7 +13203,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setViewToFindFocus(this.slideViewsContainer);
-        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.commonChatsLoaded));
+        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.messagesFeeUpdated));
         this.views[0] = new PhoneView(context);
         this.views[1] = new LoginActivitySmsView(context, 1);
         this.views[2] = new LoginActivitySmsView(context, 2);

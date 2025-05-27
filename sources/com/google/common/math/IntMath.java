@@ -13,7 +13,7 @@ public abstract class IntMath {
     static final int[] powersOf10 = {1, 10, 100, MediaDataController.MAX_STYLE_RUNS_COUNT, 10000, 100000, MediaController.VIDEO_BITRATE_480, 10000000, 100000000, 1000000000};
     static final int[] halfPowersOf10 = {3, 31, 316, 3162, 31622, 316227, 3162277, 31622776, 316227766, ConnectionsManager.DEFAULT_DATACENTER_ID};
     private static final int[] factorials = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600};
-    static int[] biggestBinomials = {ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, 65536, 2345, 477, NotificationCenter.channelRecommendationsLoaded, 110, 75, 58, 49, 43, 39, 37, 35, 34, 34, 33};
+    static int[] biggestBinomials = {ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, 65536, 2345, 477, NotificationCenter.dialogPhotosUpdate, 110, 75, 58, 49, 43, 39, 37, 35, 34, 34, 33};
 
     static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;

@@ -748,7 +748,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             int i3 = num.intValue() != -1 ? 0 : 90;
             if (num.intValue() != -1) {
                 if (i > i2) {
-                    i3 = NotificationCenter.webRtcSpeakerAmplitudeEvent;
+                    i3 = NotificationCenter.webRtcMicAmplitudeEvent;
                 }
             } else if (i2 > i && i3 != 0) {
                 i3 = 0;
@@ -1112,8 +1112,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     }
 
     class 21 extends GalleryListView {
-        21(int i, Context context, Theme.ResourcesProvider resourcesProvider, MediaController.AlbumEntry albumEntry, boolean z, float f, boolean z2) {
-            super(i, context, resourcesProvider, albumEntry, z, f, z2);
+        21(int i, Context context, Theme.ResourcesProvider resourcesProvider, MediaController.AlbumEntry albumEntry, boolean z, float f, boolean z2, boolean z3) {
+            super(i, context, resourcesProvider, albumEntry, z, f, z2, z3);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1569,7 +1569,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                     this.topGradient = linearGradient;
                     this.topGradientPaint.setShader(linearGradient);
                 }
-                this.topGradientPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+                this.topGradientPaint.setAlpha(NotificationCenter.suggestedLangpack);
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(84.0f) + f);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.topGradientPaint);
@@ -3479,10 +3479,25 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
 
     /* JADX INFO: Access modifiers changed from: private */
     public void createGalleryListView(final boolean z) {
-        if (this.galleryListView != null || getContext() == null) {
+        if (this.galleryListView != null) {
+            CollageLayoutView2 collageLayoutView2 = this.collageLayoutView;
+            if ((collageLayoutView2 != null && collageLayoutView2.hasLayout()) == this.galleryListView.onlyCollaging) {
+                return;
+            }
+        }
+        if (getContext() == null) {
             return;
         }
-        21 r0 = new 21(this.currentAccount, getContext(), this.resourcesProvider, this.lastGallerySelectedAlbum, z, 1.39f, !z);
+        if (this.galleryListView != null) {
+            destroyGalleryListView();
+        }
+        int i = this.currentAccount;
+        Context context = getContext();
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        MediaController.AlbumEntry albumEntry = this.lastGallerySelectedAlbum;
+        boolean z2 = !z;
+        CollageLayoutView2 collageLayoutView22 = this.collageLayoutView;
+        21 r0 = new 21(i, context, resourcesProvider, albumEntry, z, 1.39f, z2, collageLayoutView22 != null && collageLayoutView22.hasLayout());
         this.galleryListView = r0;
         r0.allowSearch(false);
         this.galleryListView.setMultipleOnClick(this.collageLayoutView.hasLayout());

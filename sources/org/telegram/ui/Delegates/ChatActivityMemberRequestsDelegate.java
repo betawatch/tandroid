@@ -41,7 +41,8 @@ public class ChatActivityMemberRequestsDelegate {
     private int pendingRequestsCount;
     private float pendingRequestsEnterOffset;
     private TextView requestsCountTextView;
-    private FrameLayout root;
+    private LinearLayout requestsDataLayout;
+    public FrameLayout root;
     private final SizeNotifierFrameLayout sizeNotifierFrameLayout;
 
     public interface Callback {
@@ -207,8 +208,9 @@ public class ChatActivityMemberRequestsDelegate {
             });
             this.root.addView(view, LayoutHelper.createFrame(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 2.0f));
             LinearLayout linearLayout = new LinearLayout(this.fragment.getParentActivity());
+            this.requestsDataLayout = linearLayout;
             linearLayout.setOrientation(0);
-            this.root.addView(linearLayout, LayoutHelper.createFrame(-1, -1.0f, 48, 0.0f, 0.0f, 36.0f, 0.0f));
+            this.root.addView(this.requestsDataLayout, LayoutHelper.createFrame(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             AvatarsImageView avatarsImageView = new AvatarsImageView(this.fragment.getParentActivity(), false) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.1
                 @Override // org.telegram.ui.Components.AvatarsImageView, android.view.View
                 protected void onMeasure(int i, int i2) {
@@ -218,7 +220,7 @@ public class ChatActivityMemberRequestsDelegate {
             this.avatarsView = avatarsImageView;
             avatarsImageView.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
             this.avatarsView.reset();
-            linearLayout.addView(this.avatarsView, LayoutHelper.createFrame(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            this.requestsDataLayout.addView(this.avatarsView, LayoutHelper.createFrame(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(this.fragment.getParentActivity());
             this.requestsCountTextView = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -227,7 +229,7 @@ public class ChatActivityMemberRequestsDelegate {
             this.requestsCountTextView.setText((CharSequence) null);
             this.requestsCountTextView.setTextColor(this.fragment.getThemedColor(Theme.key_chat_topPanelTitle));
             this.requestsCountTextView.setTypeface(AndroidUtilities.bold());
-            linearLayout.addView(this.requestsCountTextView, LayoutHelper.createFrame(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.requestsDataLayout.addView(this.requestsCountTextView, LayoutHelper.createFrame(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(this.fragment.getParentActivity());
             this.closeView = imageView;
             if (Build.VERSION.SDK_INT >= 21) {
@@ -272,6 +274,13 @@ public class ChatActivityMemberRequestsDelegate {
         this.chatInfo = chatFull;
         if (chatFull != null) {
             setPendingRequests(chatFull.requests_pending, chatFull.recent_requesters, z);
+        }
+    }
+
+    public void setLeftMargin(float f) {
+        LinearLayout linearLayout = this.requestsDataLayout;
+        if (linearLayout != null) {
+            linearLayout.setTranslationX(f);
         }
     }
 }

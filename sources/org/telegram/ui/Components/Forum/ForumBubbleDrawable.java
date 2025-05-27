@@ -145,6 +145,7 @@ public class ForumBubbleDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
+        this.svgDrawable.setAlpha(i);
     }
 
     public void setColor(int i) {

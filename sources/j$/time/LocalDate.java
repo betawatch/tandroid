@@ -121,8 +121,8 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
             j6 = j3 - ((j5 / 400) + (((j5 / 4) + (365 * j5)) - (j5 / 100)));
         }
         int i = (int) j6;
-        int i2 = ((i * 5) + 2) / NotificationCenter.recordStopped;
-        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.uploadStoryProgress) + 5) / 10)) + 1);
+        int i2 = ((i * 5) + 2) / NotificationCenter.recordStartError;
+        return new LocalDate(j$.time.temporal.a.YEAR.f(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.chatlistFolderUpdate) + 5) / 10)) + 1);
     }
 
     private static LocalDate r(int i, int i2, int i3) {
@@ -330,7 +330,7 @@ public final class LocalDate implements j$.time.temporal.k, j$.time.chrono.b, Se
         int i = this.a;
         long j = i;
         aVar.g(j);
-        j$.time.temporal.a.DAY_OF_YEAR.g(NotificationCenter.updateBotMenuButton);
+        j$.time.temporal.a.DAY_OF_YEAR.g(NotificationCenter.suggestedFiltersLoaded);
         j$.time.chrono.g.a.getClass();
         boolean a = j$.time.chrono.g.a(j);
         j h = j.h(6);

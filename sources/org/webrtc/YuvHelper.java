@@ -56,7 +56,7 @@ public class YuvHelper {
         checkNotNull(byteBuffer2, "srcU");
         checkNotNull(byteBuffer3, "srcV");
         checkNotNull(byteBuffer4, "dst");
-        int i7 = i6 % NotificationCenter.updateBotMenuButton;
+        int i7 = i6 % NotificationCenter.suggestedFiltersLoaded;
         int i8 = i7 == 0 ? i4 : i5;
         int i9 = i7 == 0 ? i5 : i4;
         int i10 = (i9 + 1) / 2;

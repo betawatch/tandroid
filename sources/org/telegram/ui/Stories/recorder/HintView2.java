@@ -640,7 +640,7 @@ public class HintView2 extends View {
         int[] iArr = this.blurPos;
         matrix2.postTranslate(-iArr[0], -iArr[1]);
         if (this.show.get() < 1.0f && this.useScale) {
-            float lerp = 1.0f / AndroidUtilities.lerp(0.5f, 1.0f, this.show.get());
+            float lerp = 1.0f / AndroidUtilities.lerp(0.75f, 1.0f, this.show.get());
             this.blurBitmapMatrix.postScale(lerp, lerp, this.arrowX, this.arrowY);
         }
         this.blurBitmapShader.setLocalMatrix(this.blurBitmapMatrix);
@@ -701,7 +701,7 @@ public class HintView2 extends View {
         float f7 = this.useAlpha ? f2 : 1.0f;
         canvas.save();
         if (f2 < 1.0f && this.useScale) {
-            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, f2);
+            float lerp = AndroidUtilities.lerp(0.75f, 1.0f, f2);
             canvas.scale(lerp, lerp, this.arrowX, this.arrowY);
         }
         float scale = this.bounce.getScale(0.025f);
@@ -809,7 +809,7 @@ public class HintView2 extends View {
 
     protected void drawBgPath(Canvas canvas) {
         if (this.blurBackgroundPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
             canvas.drawPath(this.path, this.blurBackgroundPaint);
             canvas.drawPath(this.path, this.blurCutPaint);
             canvas.restore();

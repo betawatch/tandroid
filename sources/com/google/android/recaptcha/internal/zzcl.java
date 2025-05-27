@@ -19,7 +19,7 @@ public final class zzcl {
         this.zzb = zzckVar;
         HashMap hashMap = new HashMap();
         this.zzc = hashMap;
-        zzckVar.zze(NotificationCenter.needDeleteDialog, hashMap);
+        zzckVar.zze(NotificationCenter.configLoaded, hashMap);
     }
 
     public final zzaa zza() {
@@ -32,7 +32,7 @@ public final class zzcl {
 
     public final void zzc() {
         this.zzb.zzd();
-        this.zzb.zze(NotificationCenter.needDeleteDialog, this.zzc);
+        this.zzb.zze(NotificationCenter.configLoaded, this.zzc);
     }
 
     public final zzag zzd() {

@@ -25,7 +25,7 @@ public class StoryReactionWidgetBackground extends Drawable {
     private Paint xRefPaint;
     private final int STYLE_FILLED = 0;
     private final int STYLE_TRANSCLUENT = 1;
-    int alpha = NotificationCenter.didSetNewWallpapper;
+    int alpha = NotificationCenter.suggestedLangpack;
     float[] points = new float[15];
     Path path = new Path();
 
@@ -82,7 +82,7 @@ public class StoryReactionWidgetBackground extends Drawable {
                     this.xRefPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
                 }
                 paint = this.backgroundPaint;
-                alphaComponent = ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogTranslate);
+                alphaComponent = ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogIsTranslatable);
             }
             if (this.alpha == 255 || this.style == 1) {
                 canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, getBounds().right + (getBounds().width() * 0.2f), getBounds().bottom + (getBounds().height() * 0.2f), this.alpha, 31);

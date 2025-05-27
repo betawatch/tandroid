@@ -95,6 +95,7 @@ import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.FilterCreateActivity;
 import org.telegram.ui.PeerColorActivity;
@@ -1663,6 +1664,7 @@ public class FilterCreateActivity extends BaseFragment {
         private boolean outline;
         private CharSequence text;
         TextPaint textPaint;
+        public boolean usePaintAlpha;
         float width;
 
         public NewSpan(float f) {
@@ -1702,6 +1704,9 @@ public class FilterCreateActivity extends BaseFragment {
             TextPaint textPaint;
             float dp;
             makeLayout();
+            if (this.usePaintAlpha) {
+                paint.getAlpha();
+            }
             int i6 = this.color;
             if (i6 == 0) {
                 i6 = paint.getColor();
@@ -1765,6 +1770,38 @@ public class FilterCreateActivity extends BaseFragment {
 
         public void setTypeface(Typeface typeface) {
             this.textPaint.setTypeface(typeface);
+        }
+    }
+
+    public static class TextSpan extends ReplacementSpan {
+        Paint bgPaint = new Paint(1);
+        private int colorKey;
+        private final Theme.ResourcesProvider resourcesProvider;
+        private Text text;
+
+        public TextSpan(String str, float f, int i, Theme.ResourcesProvider resourcesProvider) {
+            this.resourcesProvider = resourcesProvider;
+            this.colorKey = i;
+            this.text = new Text(str, f, AndroidUtilities.bold());
+            this.bgPaint.setStyle(Paint.Style.FILL);
+        }
+
+        @Override // android.text.style.ReplacementSpan
+        public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+            int color = Theme.getColor(this.colorKey, this.resourcesProvider);
+            this.bgPaint.setColor(Theme.multAlpha(color, 0.15f));
+            float f2 = (i5 + i3) / 2.0f;
+            float dp = AndroidUtilities.dp(14.66f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f3 = dp / 2.0f;
+            rectF.set(f, f2 - f3, this.text.getWidth() + f + AndroidUtilities.dp(9.33f), f3 + f2);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.bgPaint);
+            this.text.draw(canvas, f + AndroidUtilities.dp(4.66f), f2, color, 1.0f);
+        }
+
+        @Override // android.text.style.ReplacementSpan
+        public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+            return (int) (AndroidUtilities.dp(9.33f) + this.text.getWidth());
         }
     }
 
@@ -2044,7 +2081,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$21(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2104,7 +2141,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$deleteFolder$14(Boolean bool) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2118,7 +2155,7 @@ public class FilterCreateActivity extends BaseFragment {
         }
         getMessagesController().removeFilter(this.filter);
         getMessagesStorage().deleteDialogFilter(this.filter);
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2266,7 +2303,7 @@ public class FilterCreateActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$23() {
         if (!this.doNotCloseWhenSave) {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         this.doNotCloseWhenSave = false;
@@ -3053,7 +3090,7 @@ public class FilterCreateActivity extends BaseFragment {
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (FilterCreateActivity.this.checkDiscard()) {
-                        FilterCreateActivity.this.lambda$onBackPressed$338();
+                        FilterCreateActivity.this.lambda$onBackPressed$347();
                     }
                 } else if (i == 1) {
                     FilterCreateActivity.this.processDone();

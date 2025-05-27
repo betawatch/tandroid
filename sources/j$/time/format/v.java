@@ -26,7 +26,7 @@ public final class v {
     }
 
     public final int hashCode() {
-        return NotificationCenter.didStartedMultiGiftsSelector;
+        return NotificationCenter.giftsToUserSent;
     }
 
     public final String toString() {

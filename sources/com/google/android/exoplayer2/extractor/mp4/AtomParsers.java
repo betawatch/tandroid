@@ -163,7 +163,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.didSetNewWallpapper;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.suggestedLangpack;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 
@@ -193,7 +193,7 @@ abstract class AtomParsers {
             }
             int readUnsignedByte = this.data.readUnsignedByte();
             this.currentByte = readUnsignedByte;
-            return (readUnsignedByte & NotificationCenter.closeOtherAppActivities) >> 4;
+            return (readUnsignedByte & NotificationCenter.invalidateMotionBackground) >> 4;
         }
     }
 
@@ -553,10 +553,10 @@ abstract class AtomParsers {
 
     private static int parseExpandableClassSize(ParsableByteArray parsableByteArray) {
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
-        int i = readUnsignedByte & NotificationCenter.dialogTranslate;
+        int i = readUnsignedByte & NotificationCenter.dialogIsTranslatable;
         while ((readUnsignedByte & 128) == 128) {
             readUnsignedByte = parsableByteArray.readUnsignedByte();
-            i = (i << 7) | (readUnsignedByte & NotificationCenter.dialogTranslate);
+            i = (i << 7) | (readUnsignedByte & NotificationCenter.dialogIsTranslatable);
         }
         return i;
     }
@@ -701,7 +701,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.closeOtherAppActivities) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.invalidateMotionBackground) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1336,9 +1336,9 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.webRtcSpeakerAmplitudeEvent;
+            i2 = NotificationCenter.webRtcMicAmplitudeEvent;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
-            i2 = NotificationCenter.updateBotMenuButton;
+            i2 = NotificationCenter.suggestedFiltersLoaded;
         }
         return new TkhdData(readInt, j, i2);
     }

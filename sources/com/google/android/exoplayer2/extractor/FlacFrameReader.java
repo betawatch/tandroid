@@ -112,7 +112,7 @@ public abstract class FlacFrameReader {
     public static int readFrameBlockSizeSamplesFromKey(ParsableByteArray parsableByteArray, int i) {
         switch (i) {
             case 1:
-                return NotificationCenter.dialogPhotosUpdate;
+                return NotificationCenter.unconfirmedAuthUpdate;
             case 2:
             case 3:
             case 4:

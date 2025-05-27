@@ -16,7 +16,7 @@ public class RecordStatusDrawable extends StatusDrawable {
     private long lastUpdateTime = 0;
     private boolean started = false;
     private RectF rect = new RectF();
-    int alpha = NotificationCenter.didSetNewWallpapper;
+    int alpha = NotificationCenter.suggestedLangpack;
 
     public RecordStatusDrawable(boolean z) {
         if (z) {

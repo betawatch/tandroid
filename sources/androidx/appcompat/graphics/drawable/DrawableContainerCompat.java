@@ -26,7 +26,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
     private Rect mHotspotBounds;
     private Drawable mLastDrawable;
     private boolean mMutated;
-    private int mAlpha = NotificationCenter.didSetNewWallpapper;
+    private int mAlpha = NotificationCenter.suggestedLangpack;
     private int mCurIndex = -1;
 
     private static class Api21Impl {
@@ -546,7 +546,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
         if (resources != null) {
             i = resources.getDisplayMetrics().densityDpi;
         }
-        return i == 0 ? NotificationCenter.audioRouteChanged : i;
+        return i == 0 ? NotificationCenter.audioRecordTooShort : i;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
@@ -568,14 +568,14 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                 if (j <= uptimeMillis) {
                     drawable2.setAlpha(this.mAlpha);
                 } else {
-                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.didSetNewWallpapper);
+                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.suggestedLangpack);
                     z2 = true;
                     drawable = this.mLastDrawable;
                     if (drawable != null) {
                         long j2 = this.mExitAnimationEnd;
                         if (j2 != 0) {
                             if (j2 > uptimeMillis) {
-                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.didSetNewWallpapper);
+                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.suggestedLangpack);
                                 if (z && z3) {
                                     scheduleSelf(this.mAnimationRunnable, uptimeMillis + 16);
                                     return;

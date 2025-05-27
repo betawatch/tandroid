@@ -30,7 +30,6 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.util.Base64;
-import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -47,6 +46,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.arch.core.util.Function;
+import androidx.collection.LongSparseArray;
 import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -563,7 +563,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersImportComplete);
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.newSuggestionsAvailable);
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.chatSwithcedToForum);
+            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.chatSwitchedForum);
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesEnabledUpdate);
         }
         int i2 = UserConfig.selectedAccount;
@@ -587,7 +587,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.newSuggestionsAvailable);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserShowLimitReachedDialog);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.chatSwithcedToForum);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.chatSwitchedForum);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesEnabledUpdate);
     }
 
@@ -2110,13 +2110,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public /* synthetic */ void lambda$openTopicRequest$32(TLRPC.TL_error tL_error, TLObject tLObject, int i, TLRPC.Chat chat, int i2, int i3, Runnable runnable, String str, int i4, ArrayList arrayList, int i5) {
         if (tL_error == null) {
             TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
-            SparseArray<TLRPC.Message> sparseArray = new SparseArray<>();
+            LongSparseArray longSparseArray = new LongSparseArray();
             for (int i6 = 0; i6 < tL_messages_forumTopics.messages.size(); i6++) {
-                sparseArray.put(tL_messages_forumTopics.messages.get(i6).id, tL_messages_forumTopics.messages.get(i6));
+                longSparseArray.put(tL_messages_forumTopics.messages.get(i6).id, tL_messages_forumTopics.messages.get(i6));
             }
             MessagesController.getInstance(i).putUsers(tL_messages_forumTopics.users, false);
             MessagesController.getInstance(i).putChats(tL_messages_forumTopics.chats, false);
-            MessagesController.getInstance(i).getTopicsController().processTopics(chat.id, tL_messages_forumTopics.topics, sparseArray, false, 2, -1);
+            MessagesController.getInstance(i).getTopicsController().processTopics(chat.id, tL_messages_forumTopics.topics, longSparseArray, false, 2, -1);
             openTopicRequest(i, i2, chat, i3, MessagesController.getInstance(i).getTopicsController().findTopic(chat.id, i2), runnable, str, i4, arrayList, i5);
         }
     }
@@ -6703,7 +6703,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     if (i == NotificationCenter.needShowPlayServicesAlert) {
                         try {
-                            ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.filePreparingStarted);
+                            ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.fileLoadFailed);
                             return;
                         } catch (Throwable unused2) {
                             return;
@@ -6943,10 +6943,15 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 }
                                 return;
                             }
-                            if (i == NotificationCenter.chatSwithcedToForum) {
-                                ForumUtilities.switchAllFragmentsInStackToForum(((Long) objArr[0]).longValue(), this.actionBarLayout);
+                            if (i == NotificationCenter.chatSwitchedForum) {
+                                long longValue = ((Long) objArr[0]).longValue();
+                                if (((Boolean) objArr[1]).booleanValue()) {
+                                    ForumUtilities.switchAllFragmentsInStackToForum(longValue, this.actionBarLayout);
+                                    return;
+                                }
                                 return;
-                            } else if (i != NotificationCenter.storiesEnabledUpdate || (drawerLayoutAdapter = this.drawerLayoutAdapter) == null) {
+                            }
+                            if (i != NotificationCenter.storiesEnabledUpdate || (drawerLayoutAdapter = this.drawerLayoutAdapter) == null) {
                                 return;
                             }
                         }
@@ -6981,7 +6986,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                         View view2 = this.rippleAbove;
                         if (view2 != null && view2.getBackground() != null) {
-                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.didSetNewWallpapper);
+                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.suggestedLangpack);
                         }
                         this.frameLayout.removeView(this.themeSwitchImageView);
                         ImageView imageView = new ImageView(this);
@@ -7118,17 +7123,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (r41.photoPathsArray.size() == 1) goto L189;
      */
     /* JADX WARN: Removed duplicated region for block: B:107:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x03f5  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0499  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x04bb A[LOOP:2: B:149:0x04b3->B:151:0x04bb, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x04e7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x04fe A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x03a9  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x03b3  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x03bd  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03b8  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x03ae  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x03f7  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x049b  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x04ae  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x04bd A[LOOP:2: B:149:0x04b5->B:151:0x04bd, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04e9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0500 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x03ab  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x03b5  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x03bf  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x03ba  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x03b0  */
     /* JADX WARN: Removed duplicated region for block: B:220:0x02e4  */
     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
     /*
@@ -7255,7 +7260,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     chatActivity2 = chatActivity;
                     z3 = true;
                     if (dialogsActivity != null && chatActivity2 == null && !z3) {
-                        dialogsActivity.lambda$onBackPressed$338();
+                        dialogsActivity.lambda$onBackPressed$347();
                     }
                 }
             }
@@ -7299,7 +7304,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                 if (str9.length() <= 1024) {
                                                 }
                                             }
-                                            SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
+                                            SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L, 0L);
                                         }
                                     }
                                     str = str6;
@@ -7338,7 +7343,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 String str11 = this.sendingText;
                                 if (str11 == null || str11.length() > 1024 || this.photoPathsArray.size() != 1) {
                                     z5 = z4;
-                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
+                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L, 0L);
                                     str = str6;
                                     z6 = false;
                                     z7 = false;
@@ -7346,7 +7351,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     z5 = z4;
                                     ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = this.sendingText;
                                     this.sendingText = null;
-                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L);
+                                    SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z9, i4, 0, false, null, null, 0, 0L, false, 0L, 0L);
                                     str = str6;
                                     z6 = false;
                                     z7 = false;
@@ -7475,7 +7480,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             chatActivity2 = chatActivity;
             if (dialogsActivity != null) {
-                dialogsActivity.lambda$onBackPressed$338();
+                dialogsActivity.lambda$onBackPressed$347();
             }
         }
         this.photoPathsArray = null;
@@ -8011,7 +8016,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (themeEditorView != null) {
             themeEditorView.onActivityResult(i, i2, intent);
         }
-        if (this.actionBarLayout.getFragmentStack().size() != 0) {
+        ActionBarLayout actionBarLayout = this.actionBarLayout;
+        if (actionBarLayout != null && actionBarLayout.getFragmentStack().size() != 0) {
             BaseFragment baseFragment = this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1);
             baseFragment.onActivityResultFragment(i, i2, intent);
             if (baseFragment.getLastStoryViewer() != null) {
@@ -8019,10 +8025,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         }
         if (AndroidUtilities.isTablet()) {
-            if (this.rightActionBarLayout.getFragmentStack().size() != 0) {
+            ActionBarLayout actionBarLayout2 = this.rightActionBarLayout;
+            if (actionBarLayout2 != null && actionBarLayout2.getFragmentStack().size() != 0) {
                 this.rightActionBarLayout.getFragmentStack().get(this.rightActionBarLayout.getFragmentStack().size() - 1).onActivityResultFragment(i, i2, intent);
             }
-            if (this.layersActionBarLayout.getFragmentStack().size() != 0) {
+            ActionBarLayout actionBarLayout3 = this.layersActionBarLayout;
+            if (actionBarLayout3 != null && actionBarLayout3.getFragmentStack().size() != 0) {
                 this.layersActionBarLayout.getFragmentStack().get(this.layersActionBarLayout.getFragmentStack().size() - 1).onActivityResultFragment(i, i2, intent);
             }
         }
@@ -8072,7 +8080,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 if (actionBarLayout3 != null && actionBarLayout3.getView().getVisibility() == 0 && !this.rightActionBarLayout.getFragmentStack().isEmpty()) {
                     BaseFragment baseFragment = this.rightActionBarLayout.getFragmentStack().get(this.rightActionBarLayout.getFragmentStack().size() - 1);
                     if (baseFragment.onBackPressed()) {
-                        baseFragment.lambda$onBackPressed$338();
+                        baseFragment.lambda$onBackPressed$347();
                         return;
                     }
                     return;

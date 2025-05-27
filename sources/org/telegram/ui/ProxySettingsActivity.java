@@ -146,7 +146,7 @@ public class ProxySettingsActivity extends BaseFragment {
             if (i != 6) {
                 return false;
             }
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return true;
         }
         int intValue = ((Integer) textView.getTag()).intValue() + 1;
@@ -608,7 +608,7 @@ public class ProxySettingsActivity extends BaseFragment {
                     edit.commit();
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxySettingsChanged, new Object[0]);
                 }
-                ProxySettingsActivity.this.lambda$onBackPressed$338();
+                ProxySettingsActivity.this.lambda$onBackPressed$347();
             }
         });
         ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, R.drawable.ic_ab_done, AndroidUtilities.dp(56.0f));
@@ -741,7 +741,7 @@ public class ProxySettingsActivity extends BaseFragment {
                     };
                 } else {
                     if (i2 == 3) {
-                        editTextBoldCursorArr[i2].setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                        editTextBoldCursorArr[i2].setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                         this.inputFields[i2].setTypeface(Typeface.DEFAULT);
                         this.inputFields[i2].setTransformationMethod(PasswordTransformationMethod.getInstance());
                     } else {

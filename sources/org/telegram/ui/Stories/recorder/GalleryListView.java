@@ -117,6 +117,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
     private Runnable onBackClickListener;
     private Utilities.Callback2 onSelectListener;
     private Utilities.Callback3 onSelectMultipleListener;
+    public final boolean onlyCollaging;
     public final boolean onlyPhotos;
     public ArrayList photos;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -1229,7 +1230,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         protected abstract void onLoadingUpdate(boolean z);
     }
 
-    public GalleryListView(int i, Context context, Theme.ResourcesProvider resourcesProvider, MediaController.AlbumEntry albumEntry, boolean z, float f, boolean z2) {
+    public GalleryListView(int i, Context context, Theme.ResourcesProvider resourcesProvider, MediaController.AlbumEntry albumEntry, boolean z, float f, boolean z2, boolean z3) {
         super(context);
         TextView textView;
         int i2;
@@ -1246,6 +1247,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         this.resourcesProvider = resourcesProvider;
         this.onlyPhotos = z;
         this.collaging = z2;
+        this.onlyCollaging = z3;
         paint.setColor(-14737633);
         paint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(-0.4f), 134217728);
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Stories.recorder.GalleryListView.1
@@ -1411,11 +1413,11 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             }
 
             @Override // org.telegram.ui.Stories.recorder.GalleryListView.SearchAdapter
-            protected void onLoadingUpdate(boolean z3) {
+            protected void onLoadingUpdate(boolean z4) {
                 if (GalleryListView.this.searchItem != null) {
-                    GalleryListView.this.searchItem.setShowSearchProgress(z3);
+                    GalleryListView.this.searchItem.setShowSearchProgress(z4);
                 }
-                GalleryListView.this.searchEmptyView.showProgress(z3, true);
+                GalleryListView.this.searchEmptyView.showProgress(z4, true);
             }
         };
         this.searchAdapterImages = searchAdapter;
@@ -1502,14 +1504,16 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, true, resourcesProvider);
             this.button1View = buttonWithCounterView;
             buttonWithCounterView.setText(LocaleController.formatPluralStringComma("StoriesCreate", 1), false);
-            linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48));
-            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda6
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    GalleryListView.this.lambda$new$6(view);
-                }
-            });
-            ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, false, resourcesProvider);
+            if (!z3) {
+                linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 0.0f, 0.0f, 0.0f, 8.0f));
+                buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda6
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        GalleryListView.this.lambda$new$6(view);
+                    }
+                });
+            }
+            ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, z3, resourcesProvider);
             this.button2View = buttonWithCounterView2;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v");
             ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_collage);
@@ -1517,7 +1521,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             spannableStringBuilder.setSpan(coloredImageSpan, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.StoriesCollage));
             buttonWithCounterView2.setText(spannableStringBuilder, false);
-            linearLayout.addView(buttonWithCounterView2, LayoutHelper.createLinear(-1, 48, 0.0f, 8.0f, 0.0f, 0.0f));
+            linearLayout.addView(buttonWithCounterView2, LayoutHelper.createLinear(-1, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1546,20 +1550,20 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             imageView.setScaleY(0.7f);
         }
         updateAlbumsDropDown();
-        if (albumEntry == null || (albumEntry == draftsAlbum && this.drafts.size() <= 0)) {
+        MediaController.AlbumEntry albumEntry2 = albumEntry;
+        if (albumEntry2 == null || (albumEntry2 == draftsAlbum && this.drafts.size() <= 0)) {
             ArrayList arrayList2 = this.dropDownAlbums;
-            this.selectedAlbum = (arrayList2 == null || arrayList2.isEmpty()) ? MediaController.allMediaAlbumEntry : (MediaController.AlbumEntry) this.dropDownAlbums.get(0);
-        } else {
-            this.selectedAlbum = albumEntry;
+            albumEntry2 = (arrayList2 == null || arrayList2.isEmpty()) ? MediaController.allMediaAlbumEntry : (MediaController.AlbumEntry) this.dropDownAlbums.get(0);
         }
+        this.selectedAlbum = albumEntry2;
         this.photos = getPhotoEntries(this.selectedAlbum);
         updateContainsDrafts();
-        MediaController.AlbumEntry albumEntry2 = this.selectedAlbum;
-        if (albumEntry2 == MediaController.allMediaAlbumEntry) {
+        MediaController.AlbumEntry albumEntry3 = this.selectedAlbum;
+        if (albumEntry3 == MediaController.allMediaAlbumEntry) {
             textView = this.dropDown;
             i2 = R.string.ChatGallery;
-        } else if (albumEntry2 != draftsAlbum) {
-            this.dropDown.setText(albumEntry2.bucketName);
+        } else if (albumEntry3 != draftsAlbum) {
+            this.dropDown.setText(albumEntry3.bucketName);
             return;
         } else {
             textView = this.dropDown;

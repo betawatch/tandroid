@@ -70,7 +70,7 @@ public final class H263Reader implements ElementaryStreamReader {
                     if (i3 != 2) {
                         i4 = 4;
                         if (i3 == 3) {
-                            if ((i & NotificationCenter.closeOtherAppActivities) == 32) {
+                            if ((i & NotificationCenter.invalidateMotionBackground) == 32) {
                                 this.volStartPosition = this.length;
                                 this.state = i4;
                             }
@@ -170,7 +170,7 @@ public final class H263Reader implements ElementaryStreamReader {
         ParsableByteArray parsableByteArray;
         this.userDataReader = userDataReader;
         if (userDataReader != null) {
-            this.userData = new NalUnitTargetBuffer(NotificationCenter.filterSettingsUpdated, 128);
+            this.userData = new NalUnitTargetBuffer(NotificationCenter.dialogFiltersUpdated, 128);
             parsableByteArray = new ParsableByteArray();
         } else {
             parsableByteArray = null;

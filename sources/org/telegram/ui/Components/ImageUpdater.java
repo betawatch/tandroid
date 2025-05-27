@@ -879,13 +879,13 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
             if (checkSelfPermission2 == 0) {
                 checkSelfPermission3 = parentActivity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO");
             }
-            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, NotificationCenter.recordStarted);
+            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, NotificationCenter.recordProgressChanged);
             return;
         }
         if (i >= 23 && parentActivity != null) {
             checkSelfPermission = parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE");
             if (checkSelfPermission != 0) {
-                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, NotificationCenter.recordStarted);
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, NotificationCenter.recordProgressChanged);
                 return;
             }
         }

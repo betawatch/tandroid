@@ -34,7 +34,7 @@ public abstract class zzfe {
                 th = th2;
                 PrintStream printStream = System.err;
                 String name = zza.class.getName();
-                StringBuilder sb = new StringBuilder(name.length() + NotificationCenter.didUpdateConnectionState);
+                StringBuilder sb = new StringBuilder(name.length() + NotificationCenter.httpFileDidFailedLoad);
                 sb.append("An error has occurred when initializing the try-with-resources desuguring strategy. The default strategy ");
                 sb.append(name);
                 sb.append("will be used. The error is: ");

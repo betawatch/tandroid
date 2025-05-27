@@ -58,6 +58,7 @@ import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.FlickerLoadingView;
 import org.telegram.ui.Components.ForegroundColorSpanThemable;
+import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
@@ -197,7 +198,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 chat = messagesController.getChat(Long.valueOf(j));
             }
             hintDialogCell.setTag(Long.valueOf(j2));
-            hintDialogCell.setDialog(j2, true, user != null ? UserObject.getFirstName(user) : chat != null ? chat.title : "");
+            hintDialogCell.setDialog(j2, true, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat) : chat.title : "");
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1537,19 +1538,19 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 TLObject tLObject = recentSearchObject.object;
                 if (tLObject instanceof TLRPC.Chat) {
                     TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                    str3 = chat.title;
-                    str2 = chat.username;
+                    str2 = chat.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat) : chat.title;
+                    str3 = ((TLRPC.Chat) recentSearchObject.object).username;
                 } else if (tLObject instanceof TLRPC.User) {
-                    str3 = UserObject.getUserName((TLRPC.User) tLObject);
-                    str2 = ((TLRPC.User) recentSearchObject.object).username;
+                    str2 = UserObject.getUserName((TLRPC.User) tLObject);
+                    str3 = ((TLRPC.User) recentSearchObject.object).username;
                 } else if (tLObject instanceof TLRPC.ChatInvite) {
-                    str3 = ((TLRPC.ChatInvite) tLObject).title;
-                    str2 = null;
+                    str2 = ((TLRPC.ChatInvite) tLObject).title;
+                    str3 = null;
                 } else {
                     str2 = null;
                     str3 = null;
                 }
-                if ((str3 != null && wordStartsWith(str3.toLowerCase(), lowerCase)) || (str2 != null && wordStartsWith(str2.toLowerCase(), lowerCase))) {
+                if ((str2 != null && wordStartsWith(str2.toLowerCase(), lowerCase)) || (str3 != null && wordStartsWith(str3.toLowerCase(), lowerCase))) {
                     this.filtered2RecentSearchObjects.add(recentSearchObject);
                 }
                 if (this.filtered2RecentSearchObjects.size() >= 5) {
@@ -2022,50 +2023,50 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         });
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x04d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:182:0x04de, code lost:
     
-        if (r27.publicPosts.isEmpty() != false) goto L199;
+        if (r27.publicPosts.isEmpty() != false) goto L202;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:219:0x057c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:222:0x0587, code lost:
     
-        if (r11.startsWith("@" + r5) != false) goto L244;
+        if (r11.startsWith("@" + r5) != false) goto L247;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x0621, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:266:0x0637, code lost:
     
-        if (r13 != null) goto L293;
+        if (r13 != null) goto L299;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0495  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x04bd  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x04e9  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x04f0  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x0520  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0528  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0549  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0587  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x066f  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x068e  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x071b  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x0725  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0747  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0728  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x071f  */
-    /* JADX WARN: Removed duplicated region for block: B:335:0x06cf  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x06ee  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x04dd  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x048c  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0363  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0368  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x046d  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x047b  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x04a0  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x04f4  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x04fb  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0510  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0533  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0554  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x0592  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0685  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x06a4  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0731  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x073b  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x075d  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x073e  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x0735  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x06e5  */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x0704  */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x04e8  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x0497  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x036e  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0373  */
     /* JADX WARN: Type inference failed for: r2v20 */
     /* JADX WARN: Type inference failed for: r2v21, types: [android.text.SpannableStringBuilder] */
     /* JADX WARN: Type inference failed for: r2v25, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r2v26 */
     /* JADX WARN: Type inference failed for: r2v6 */
     /* JADX WARN: Type inference failed for: r2v7 */
-    /* JADX WARN: Type inference failed for: r2v88 */
+    /* JADX WARN: Type inference failed for: r2v89 */
     /* JADX WARN: Type inference failed for: r6v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r7v14, types: [org.telegram.tgnet.TLRPC$Chat] */
     /* JADX WARN: Type inference failed for: r7v25 */
@@ -2201,7 +2202,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                 if (r2 == 0) {
                                     String lastFoundUsername = z3 ? this.filteredRecentQuery : this.searchAdapterHelper.getLastFoundUsername();
                                     if (!TextUtils.isEmpty(lastFoundUsername)) {
-                                        String formatName = user != null ? ContactsController.formatName(user.first_name, user.last_name) : r7 != 0 ? r7.title : null;
+                                        String formatName = user != null ? ContactsController.formatName(user.first_name, user.last_name) : r7 != 0 ? r7.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, r7) : r7.title : null;
                                         if (formatName != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(formatName, lastFoundUsername)) != -1) {
                                             spannableStringBuilder = new SpannableStringBuilder(formatName);
                                             spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase, lastFoundUsername.length() + indexOfIgnoreCase, 33);
@@ -3043,7 +3044,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                 charSequence4 = filterFromString;
                             } else {
                                 TLRPC.Chat chat6 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.delegate.getSearchForumDialogId()));
-                                str5 = LocaleController.formatString(R.string.SearchMessagesIn, chat6 == null ? "null" : chat6.title);
+                                str5 = LocaleController.formatString(R.string.SearchMessagesIn, chat6 == null ? "null" : chat6.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat6) : chat6.title);
                             }
                         } else {
                             str5 = LocaleController.getString(R.string.PhoneNumberSearch);

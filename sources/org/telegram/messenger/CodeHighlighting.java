@@ -308,11 +308,11 @@ public class CodeHighlighting {
         }
 
         public int readUint16() {
-            return (this.is.read() & NotificationCenter.didSetNewWallpapper) | ((this.is.read() & NotificationCenter.didSetNewWallpapper) << 8);
+            return (this.is.read() & NotificationCenter.suggestedLangpack) | ((this.is.read() & NotificationCenter.suggestedLangpack) << 8);
         }
 
         public int readUint8() {
-            return this.is.read() & NotificationCenter.didSetNewWallpapper;
+            return this.is.read() & NotificationCenter.suggestedLangpack;
         }
     }
 

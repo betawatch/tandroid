@@ -884,7 +884,7 @@ public class Bulletin {
         protected void dispatchDraw(Canvas canvas) {
             Bulletin bulletin = this.bulletin;
             if (bulletin == null || !bulletin.allowBlurAnimation) {
-                dispatchDrawImpl(canvas, false, NotificationCenter.didSetNewWallpapper);
+                dispatchDrawImpl(canvas, false, NotificationCenter.suggestedLangpack);
                 return;
             }
             if (this.blurVisibilityDrawable == null) {
@@ -898,7 +898,7 @@ public class Bulletin {
             if (!this.blurVisibilityDrawable.hasBitmap()) {
                 this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
             }
-            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.didSetNewWallpapper));
+            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.suggestedLangpack));
             this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.blurVisibilityDrawable.draw(canvas);
         }

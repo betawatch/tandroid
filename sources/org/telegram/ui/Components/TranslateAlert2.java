@@ -418,7 +418,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 }
             };
             actionBarPopupWindow.setPauseNotifications(true);
-            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.updateAllMessages);
+            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
             actionBarPopupWindow.setOutsideTouchable(true);
             actionBarPopupWindow.setClippingEnabled(true);
             actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -987,7 +987,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
                         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                         public void updateDrawState(TextPaint textPaint) {
-                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.didSetNewWallpapper);
+                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.suggestedLangpack);
                             if (!(uRLSpan instanceof URLSpanNoUnderline)) {
                                 textPaint.setUnderlineText(true);
                             }

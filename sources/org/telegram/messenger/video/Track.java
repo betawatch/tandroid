@@ -276,7 +276,7 @@ public class Track {
                                 } else {
                                     if (integer2 != 32) {
                                         if (integer2 == 64) {
-                                            i3 = NotificationCenter.themeListUpdated;
+                                            i3 = NotificationCenter.didSetNewTheme;
                                         }
                                         avcConfigurationBox.setBitDepthLumaMinus8(-1);
                                         avcConfigurationBox.setBitDepthChromaMinus8(-1);

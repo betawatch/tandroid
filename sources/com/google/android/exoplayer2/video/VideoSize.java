@@ -53,7 +53,7 @@ public final class VideoSize implements Bundleable {
     }
 
     public int hashCode() {
-        return ((((((this.width + NotificationCenter.botStarsTransactionsLoaded) * 31) + this.height) * 31) + this.unappliedRotationDegrees) * 31) + Float.floatToRawIntBits(this.pixelWidthHeightRatio);
+        return ((((((this.width + NotificationCenter.botStarsUpdated) * 31) + this.height) * 31) + this.unappliedRotationDegrees) * 31) + Float.floatToRawIntBits(this.pixelWidthHeightRatio);
     }
 
     @Override // com.google.android.exoplayer2.Bundleable

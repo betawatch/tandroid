@@ -682,7 +682,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 for (i24 = 0; i24 < i23; i24 += r14) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) groupCalculator.posArray.get(i24);
                     if (groupedMessagePosition15.minX == 0) {
-                        groupedMessagePosition15.spanSize += NotificationCenter.storyQualityUpdate;
+                        groupedMessagePosition15.spanSize += NotificationCenter.smsJobStatusUpdate;
                     }
                     if ((groupedMessagePosition15.flags & 2) != 0) {
                         groupedMessagePosition15.edge = r14;

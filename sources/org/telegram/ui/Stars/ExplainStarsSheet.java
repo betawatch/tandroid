@@ -26,6 +26,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.StarAppsSheet;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes5.dex */
@@ -55,7 +56,7 @@ public class ExplainStarsSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z) {
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                 ((FeatureCell) view).set(uItem.intValue, uItem.text, uItem.subtext);
             }
 
@@ -123,7 +124,7 @@ public class ExplainStarsSheet extends BottomSheetWithRecyclerListView {
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         gLIconTextureView.setStarParticlesView(makeParticlesView);
-        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.groupCallVisibilityChanged, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.closeInCallActivity, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         gLIconTextureView.setPaused(false);
         this.headerView.addView(frameLayout, LayoutHelper.createFrame(-1, 150.0f));
         TextView textView = new TextView(context);

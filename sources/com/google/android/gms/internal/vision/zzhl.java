@@ -81,7 +81,7 @@ abstract class zzhl {
 
     static int zza(int i, byte[] bArr, int i2, zzhn zzhnVar) {
         int i3;
-        int i4 = i & NotificationCenter.dialogTranslate;
+        int i4 = i & NotificationCenter.dialogIsTranslatable;
         int i5 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

@@ -964,7 +964,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomMuteBtn.setAlpha(1.0f);
         this.bottomVideoBtn.setAlpha(1.0f);
         ViewPropertyAnimator translationX = this.bottomEndCallBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f);
-        long j = NotificationCenter.storyQualityUpdate;
+        long j = NotificationCenter.smsJobStatusUpdate;
         translationX.setDuration(j).start();
         this.bottomSpeakerBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
         this.bottomMuteBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
@@ -3255,12 +3255,12 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         frameLayout.addView(this.callingUserMiniFloatingLayout);
         View view = new View(context);
         this.bottomShadow = view;
-        view.setBackground(new GradientDrawable(orientation, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogTranslate)}));
-        frameLayout.addView(this.bottomShadow, LayoutHelper.createFrame(-1, NotificationCenter.audioRouteChanged, 80));
+        view.setBackground(new GradientDrawable(orientation, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogIsTranslatable)}));
+        frameLayout.addView(this.bottomShadow, LayoutHelper.createFrame(-1, NotificationCenter.audioRecordTooShort, 80));
         View view2 = new View(context);
         this.topShadow = view2;
         view2.setBackground(new GradientDrawable(orientation, new int[]{ColorUtils.setAlphaComponent(-16777216, 102), 0}));
-        frameLayout.addView(this.topShadow, LayoutHelper.createFrame(-1, NotificationCenter.audioRouteChanged, 48));
+        frameLayout.addView(this.topShadow, LayoutHelper.createFrame(-1, NotificationCenter.audioRecordTooShort, 48));
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.VoIPFragment.4
             @Override // android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
@@ -3382,10 +3382,10 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.rateCallLayout = new RateCallLayout(context, this.backgroundProvider);
         this.endCloseLayout.setAlpha(0.0f);
         this.rateCallLayout.setVisibility(8);
-        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(NotificationCenter.groupPackUpdated, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(204, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
         frameLayout.addView(this.statusLayout, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 135.0f, 0.0f, 0.0f));
         frameLayout.addView(this.hideEmojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
-        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.storiesDraftsUpdated, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.storiesListUpdated, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
         frameLayout.addView(this.emojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.endCloseLayout, LayoutHelper.createFrame(-1, 52.0f, 5, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.rateCallLayout, LayoutHelper.createFrame(-1, -2.0f, 3, 0.0f, 380.0f, 0.0f, 0.0f));
@@ -3407,15 +3407,15 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomVideoBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomVideoBtn.setScaleX(0.0f);
         this.bottomVideoBtn.setScaleY(0.0f);
-        this.bottomVideoBtn.animate().setStartDelay(NotificationCenter.applyGroupCallVisibleParticipants).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
+        this.bottomVideoBtn.animate().setStartDelay(NotificationCenter.activeGroupCallsUpdated).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
         this.bottomMuteBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomMuteBtn.setScaleX(0.0f);
         this.bottomMuteBtn.setScaleY(0.0f);
-        this.bottomMuteBtn.animate().setStartDelay(NotificationCenter.didStartedMultiGiftsSelector).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
+        this.bottomMuteBtn.animate().setStartDelay(NotificationCenter.giftsToUserSent).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
         this.bottomEndCallBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomEndCallBtn.setScaleX(0.0f);
         this.bottomEndCallBtn.setScaleY(0.0f);
-        this.bottomEndCallBtn.animate().setStartDelay(NotificationCenter.emojiKeywordsLoaded).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
+        this.bottomEndCallBtn.animate().setStartDelay(NotificationCenter.savedMessagesForwarded).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
         this.buttonsLayout.addView(this.bottomSpeakerBtn);
         this.buttonsLayout.addView(this.bottomVideoBtn);
         this.buttonsLayout.addView(this.bottomMuteBtn);

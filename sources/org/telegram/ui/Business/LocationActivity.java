@@ -129,7 +129,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$3(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -140,7 +140,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         } else if (tLObject instanceof TLRPC.TL_boolFalse) {
             BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         } else {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
         }
     }
 
@@ -177,7 +177,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
         } else if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
         } else {
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
@@ -285,7 +285,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         boolean z = this.geo == null && TextUtils.isEmpty(this.address);
         if (!z) {
             if (!hasChanges()) {
-                lambda$onBackPressed$338();
+                lambda$onBackPressed$347();
                 return;
             }
             String str = this.address;
@@ -424,7 +424,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         int min = Math.min(2, (int) Math.ceil(f));
         BackupImageView backupImageView2 = this.mapPreview;
         TLRPC.GeoPoint geoPoint = this.geo;
-        backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.closeOtherAppActivities, 15, min)), i + "_" + NotificationCenter.closeOtherAppActivities, this.mapLoadingDrawable, 0, (Object) null);
+        backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.invalidateMotionBackground, 15, min)), i + "_" + NotificationCenter.invalidateMotionBackground, this.mapLoadingDrawable, 0, (Object) null);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -437,7 +437,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (LocationActivity.this.onBackPressed()) {
-                        LocationActivity.this.lambda$onBackPressed$338();
+                        LocationActivity.this.lambda$onBackPressed$347();
                     }
                 } else if (i == 1) {
                     LocationActivity.this.processDone();
@@ -575,7 +575,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(240.0f), 1073741824));
             }
 
-            @Override // android.view.View
+            @Override // org.telegram.ui.Components.BackupImageView, android.view.View
             protected boolean verifyDrawable(Drawable drawable) {
                 return drawable == LocationActivity.this.mapLoadingDrawable || super.verifyDrawable(drawable);
             }

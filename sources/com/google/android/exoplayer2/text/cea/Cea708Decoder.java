@@ -130,7 +130,7 @@ public final class Cea708Decoder extends CeaDecoder {
             Assertions.checkIndex(i2, 0, 4);
             Assertions.checkIndex(i3, 0, 4);
             Assertions.checkIndex(i4, 0, 4);
-            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.didSetNewWallpapper : 0 : NotificationCenter.dialogTranslate, i > 1 ? NotificationCenter.didSetNewWallpapper : 0, i2 > 1 ? NotificationCenter.didSetNewWallpapper : 0, i3 > 1 ? NotificationCenter.didSetNewWallpapper : 0);
+            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.suggestedLangpack : 0 : NotificationCenter.dialogIsTranslatable, i > 1 ? NotificationCenter.suggestedLangpack : 0, i2 > 1 ? NotificationCenter.suggestedLangpack : 0, i3 > 1 ? NotificationCenter.suggestedLangpack : 0);
         }
 
         public void append(char c) {
@@ -472,13 +472,13 @@ public final class Cea708Decoder extends CeaDecoder {
         int i3 = 1;
         switch (i) {
             case 128:
-            case NotificationCenter.walletPendingTransactionsChanged /* 129 */:
-            case NotificationCenter.walletSyncProgressChanged /* 130 */:
-            case NotificationCenter.httpFileDidLoad /* 131 */:
-            case NotificationCenter.httpFileDidFailedLoad /* 132 */:
-            case NotificationCenter.didUpdateConnectionState /* 133 */:
-            case NotificationCenter.fileUploaded /* 134 */:
-            case NotificationCenter.fileUploadFailed /* 135 */:
+            case NotificationCenter.didGenerateFingerprintKeyPair /* 129 */:
+            case NotificationCenter.walletPendingTransactionsChanged /* 130 */:
+            case NotificationCenter.walletSyncProgressChanged /* 131 */:
+            case NotificationCenter.httpFileDidLoad /* 132 */:
+            case NotificationCenter.httpFileDidFailedLoad /* 133 */:
+            case NotificationCenter.didUpdateConnectionState /* 134 */:
+            case NotificationCenter.fileUploaded /* 135 */:
                 int i4 = i - 128;
                 if (this.currentWindow != i4) {
                     this.currentWindow = i4;
@@ -487,7 +487,7 @@ public final class Cea708Decoder extends CeaDecoder {
                     break;
                 }
                 break;
-            case NotificationCenter.fileUploadProgressChanged /* 136 */:
+            case NotificationCenter.fileUploadFailed /* 136 */:
                 while (i3 <= 8) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i3].clear();
@@ -495,14 +495,14 @@ public final class Cea708Decoder extends CeaDecoder {
                     i3++;
                 }
                 break;
-            case NotificationCenter.fileLoadProgressChanged /* 137 */:
+            case NotificationCenter.fileUploadProgressChanged /* 137 */:
                 for (int i5 = 1; i5 <= 8; i5++) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i5].setVisibility(true);
                     }
                 }
                 break;
-            case NotificationCenter.fileLoaded /* 138 */:
+            case NotificationCenter.fileLoadProgressChanged /* 138 */:
                 while (i3 <= 8) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i3].setVisibility(false);
@@ -510,14 +510,14 @@ public final class Cea708Decoder extends CeaDecoder {
                     i3++;
                 }
                 break;
-            case NotificationCenter.fileLoadFailed /* 139 */:
+            case NotificationCenter.fileLoaded /* 139 */:
                 for (int i6 = 1; i6 <= 8; i6++) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i6].setVisibility(!r2.isVisible());
                     }
                 }
                 break;
-            case NotificationCenter.filePreparingStarted /* 140 */:
+            case NotificationCenter.fileLoadFailed /* 140 */:
                 while (i3 <= 8) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i3].reset();
@@ -525,16 +525,16 @@ public final class Cea708Decoder extends CeaDecoder {
                     i3++;
                 }
                 break;
-            case NotificationCenter.fileNewChunkAvailable /* 141 */:
+            case NotificationCenter.filePreparingStarted /* 141 */:
                 parsableBitArray = this.captionChannelPacketData;
                 parsableBitArray.skipBits(i2);
                 break;
-            case NotificationCenter.filePreparingFailed /* 142 */:
+            case NotificationCenter.fileNewChunkAvailable /* 142 */:
                 break;
-            case NotificationCenter.dialogsUnreadCounterChanged /* 143 */:
+            case NotificationCenter.filePreparingFailed /* 143 */:
                 resetCueBuilders();
                 break;
-            case NotificationCenter.messagePlayingProgressDidChanged /* 144 */:
+            case NotificationCenter.dialogsUnreadCounterChanged /* 144 */:
                 if (this.currentCueInfoBuilder.isDefined()) {
                     handleSetPenAttributes();
                     break;
@@ -543,7 +543,7 @@ public final class Cea708Decoder extends CeaDecoder {
                 i2 = 16;
                 parsableBitArray.skipBits(i2);
                 break;
-            case NotificationCenter.messagePlayingDidReset /* 145 */:
+            case NotificationCenter.messagePlayingProgressDidChanged /* 145 */:
                 if (this.currentCueInfoBuilder.isDefined()) {
                     handleSetPenColor();
                     break;
@@ -553,7 +553,7 @@ public final class Cea708Decoder extends CeaDecoder {
                     parsableBitArray.skipBits(i2);
                     break;
                 }
-            case NotificationCenter.messagePlayingPlayStateChanged /* 146 */:
+            case NotificationCenter.messagePlayingDidReset /* 146 */:
                 if (this.currentCueInfoBuilder.isDefined()) {
                     handleSetPenLocation();
                     break;
@@ -562,14 +562,14 @@ public final class Cea708Decoder extends CeaDecoder {
                 i2 = 16;
                 parsableBitArray.skipBits(i2);
                 break;
-            case NotificationCenter.messagePlayingDidStart /* 147 */:
-            case NotificationCenter.messagePlayingDidSeek /* 148 */:
-            case NotificationCenter.messagePlayingGoingToStop /* 149 */:
+            case NotificationCenter.messagePlayingPlayStateChanged /* 147 */:
+            case NotificationCenter.messagePlayingDidStart /* 148 */:
+            case NotificationCenter.messagePlayingDidSeek /* 149 */:
             case 150:
             default:
                 Log.w("Cea708Decoder", "Invalid C1 command: " + i);
                 break;
-            case NotificationCenter.recordStarted /* 151 */:
+            case NotificationCenter.recordProgressChanged /* 151 */:
                 if (this.currentCueInfoBuilder.isDefined()) {
                     handleSetWindowAttributes();
                     break;
@@ -579,14 +579,14 @@ public final class Cea708Decoder extends CeaDecoder {
                     parsableBitArray.skipBits(i2);
                     break;
                 }
-            case NotificationCenter.recordStartError /* 152 */:
-            case NotificationCenter.recordStopped /* 153 */:
-            case NotificationCenter.recordPaused /* 154 */:
-            case NotificationCenter.recordResumed /* 155 */:
-            case NotificationCenter.screenshotTook /* 156 */:
-            case NotificationCenter.albumsDidLoad /* 157 */:
-            case NotificationCenter.audioDidSent /* 158 */:
-            case NotificationCenter.audioRecordTooShort /* 159 */:
+            case NotificationCenter.recordStarted /* 152 */:
+            case NotificationCenter.recordStartError /* 153 */:
+            case NotificationCenter.recordStopped /* 154 */:
+            case NotificationCenter.recordPaused /* 155 */:
+            case NotificationCenter.recordResumed /* 156 */:
+            case NotificationCenter.screenshotTook /* 157 */:
+            case NotificationCenter.albumsDidLoad /* 158 */:
+            case NotificationCenter.audioDidSent /* 159 */:
                 int i7 = i - 152;
                 handleDefineWindow(i7);
                 if (this.currentWindow != i7) {
@@ -664,12 +664,12 @@ public final class Cea708Decoder extends CeaDecoder {
         if (i == 127) {
             this.currentCueInfoBuilder.append((char) 9835);
         } else {
-            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didSetNewWallpapper));
+            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.suggestedLangpack));
         }
     }
 
     private void handleG1Character(int i) {
-        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didSetNewWallpapper));
+        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.suggestedLangpack));
     }
 
     private void handleG2Character(int i) {
@@ -765,7 +765,7 @@ public final class Cea708Decoder extends CeaDecoder {
                             cueInfoBuilder = this.currentCueInfoBuilder;
                             c = 9496;
                             break;
-                        case NotificationCenter.dialogTranslate /* 127 */:
+                        case NotificationCenter.dialogIsTranslatable /* 127 */:
                             cueInfoBuilder = this.currentCueInfoBuilder;
                             c = 9484;
                             break;

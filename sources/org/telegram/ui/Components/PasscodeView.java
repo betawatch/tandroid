@@ -1979,7 +1979,7 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
             this.fingerprintImage.setVisibility(8);
         } else if (i6 == 1) {
             this.passwordEditText.setFilters(new InputFilter[0]);
-            this.passwordEditText.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+            this.passwordEditText.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
             this.numbersFrameLayout.setVisibility(8);
             this.passwordEditText.setFocusable(true);
             this.passwordEditText.setFocusableInTouchMode(true);

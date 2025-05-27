@@ -143,7 +143,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
         public void onItemClick(int i) {
             if (i == -1) {
                 if (TwoStepVerificationSetupActivity.this.otherwiseReloginDays < 0 || ((BaseFragment) TwoStepVerificationSetupActivity.this).parentLayout.getFragmentStack().size() != 1) {
-                    TwoStepVerificationSetupActivity.this.lambda$onBackPressed$338();
+                    TwoStepVerificationSetupActivity.this.lambda$onBackPressed$347();
                     return;
                 } else {
                     TwoStepVerificationSetupActivity.this.showSetForcePasswordAlert();
@@ -382,7 +382,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$17(AlertDialog alertDialog, int i) {
         onReset();
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -427,7 +427,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
             ((BaseFragment) this.fragmentsToClose.get(i2)).removeSelfFromStack();
         }
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.twoStepPasswordChanged, new Object[0]);
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -559,7 +559,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     }
                     if (!this.waitingForEmail && passwordKdfAlgo != null) {
                         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.twoStepPasswordChanged, null, passwordKdfAlgo, securePasswordKdfAlgo, bArr, str, str2, null, null);
-                        lambda$onBackPressed$338();
+                        lambda$onBackPressed$347();
                     }
                 }
             }
@@ -1029,7 +1029,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
             }
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didRemoveTwoStepPassword, new Object[0]);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return;
         }
         if (getParentActivity() == null) {
@@ -1165,7 +1165,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showSetForcePasswordAlert$51(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     private void loadPasswordInfo() {
@@ -1371,7 +1371,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                         break;
                     }
                 }
-                lambda$onBackPressed$338();
+                lambda$onBackPressed$347();
                 break;
             case 8:
                 if (this.currentPassword != null) {
@@ -1396,7 +1396,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     break;
                 }
             case 9:
-                lambda$onBackPressed$338();
+                lambda$onBackPressed$347();
                 break;
         }
     }
@@ -2223,7 +2223,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                             makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i10, Integer.MIN_VALUE);
                             f = 42.0f;
                         } else {
-                            float f3 = twoStepVerificationSetupActivity.currentType == 7 ? NotificationCenter.audioRouteChanged : NotificationCenter.filePreparingStarted;
+                            float f3 = twoStepVerificationSetupActivity.currentType == 7 ? NotificationCenter.audioRecordTooShort : NotificationCenter.fileLoadFailed;
                             TwoStepVerificationSetupActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), 1073741824));
                             TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
@@ -2254,7 +2254,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
         }
         this.fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         int i8 = this.currentType;
-        int i9 = NotificationCenter.filePreparingStarted;
+        int i9 = NotificationCenter.fileLoadFailed;
         int i10 = 120;
         switch (i8) {
             case 0:
@@ -2277,7 +2277,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.outlineTextFirstRow.setText(LocaleController.getString(this.currentType == 0 ? R.string.EnterPassword : R.string.ReEnterPassword));
                 this.editTextFirstRow.setContentDescription(LocaleController.getString(this.currentType == 0 ? R.string.EnterPassword : R.string.ReEnterPassword));
                 this.editTextFirstRow.setImeOptions(268435461);
-                this.editTextFirstRow.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                this.editTextFirstRow.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                 this.editTextFirstRow.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.editTextFirstRow.setTypeface(Typeface.DEFAULT);
                 this.needPasswordButton = this.currentType == 0;
@@ -2427,7 +2427,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.descriptionText.setVisibility(0);
                 rLottieImageView = this.imageView;
                 i = R.raw.tsv_setup_intro;
-                i10 = NotificationCenter.filePreparingStarted;
+                i10 = NotificationCenter.fileLoadFailed;
                 rLottieImageView.setAnimation(i, i9, i10);
                 this.imageView.playAnimation();
                 break;
@@ -2448,8 +2448,8 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.descriptionText.setVisibility(0);
                 rLottieImageView = this.imageView;
                 i = R.raw.wallet_allset;
-                i9 = NotificationCenter.audioRouteChanged;
-                i10 = NotificationCenter.audioRouteChanged;
+                i9 = NotificationCenter.audioRecordTooShort;
+                i10 = NotificationCenter.audioRecordTooShort;
                 rLottieImageView.setAnimation(i, i9, i10);
                 this.imageView.playAnimation();
                 break;
@@ -2468,7 +2468,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 outlineTextContainerView4.setText(LocaleController.getString(i28));
                 this.editTextFirstRow.setContentDescription(LocaleController.getString(i28));
                 this.editTextFirstRow.setImeOptions(268435462);
-                this.editTextFirstRow.setInputType(NotificationCenter.walletPendingTransactionsChanged);
+                this.editTextFirstRow.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
                 this.editTextFirstRow.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.editTextFirstRow.setTypeface(Typeface.DEFAULT);
                 rLottieImageView = this.imageView;
@@ -2484,7 +2484,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.descriptionText.setVisibility(0);
                 rLottieImageView = this.imageView;
                 i = R.raw.wallet_perfect;
-                i10 = NotificationCenter.filePreparingStarted;
+                i10 = NotificationCenter.fileLoadFailed;
                 rLottieImageView.setAnimation(i, i9, i10);
                 this.imageView.playAnimation();
                 break;
@@ -2569,9 +2569,9 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$338() {
+    public void lambda$onBackPressed$347() {
         if (this.otherwiseReloginDays < 0 || this.parentLayout.getFragmentStack().size() != 1) {
-            super.lambda$onBackPressed$338();
+            super.lambda$onBackPressed$347();
             return;
         }
         Bundle bundle = new Bundle();
@@ -2661,7 +2661,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         if (this.otherwiseReloginDays < 0 || this.parentLayout.getFragmentStack().size() != 1) {
-            lambda$onBackPressed$338();
+            lambda$onBackPressed$347();
             return true;
         }
         showSetForcePasswordAlert();

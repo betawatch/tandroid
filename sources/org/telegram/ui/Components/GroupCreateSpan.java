@@ -157,7 +157,7 @@ public class GroupCreateSpan extends View {
             this.imageReceiver.setImageCoords(!this.drawAvatarBackground ? 0.0f : AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(!z ? 28.0f : 32.0f), AndroidUtilities.dp(z ? 28.0f : 32.0f));
             if (AndroidUtilities.isTablet()) {
                 android.graphics.Point point = AndroidUtilities.displaySize;
-                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.httpFileDidFailedLoad)) / 2;
+                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.httpFileDidLoad)) / 2;
             } else {
                 min = AndroidUtilities.dp(398 - (z ? 28 : 32)) / 2;
             }

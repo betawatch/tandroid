@@ -913,7 +913,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     public boolean executeKeyEvent(KeyEvent keyEvent) {
         this.mTempRect.setEmpty();
         boolean canScroll = canScroll();
-        int i = NotificationCenter.walletSyncProgressChanged;
+        int i = NotificationCenter.walletPendingTransactionsChanged;
         if (!canScroll) {
             if (!isFocused() || keyEvent.getKeyCode() == 4) {
                 return false;
@@ -922,8 +922,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             if (findFocus == this) {
                 findFocus = null;
             }
-            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.walletSyncProgressChanged);
-            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.walletSyncProgressChanged)) ? false : true;
+            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.walletPendingTransactionsChanged);
+            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.walletPendingTransactionsChanged)) ? false : true;
         }
         if (keyEvent.getAction() != 0) {
             return false;
@@ -933,7 +933,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             return !keyEvent.isAltPressed() ? arrowScroll(33) : fullScroll(33);
         }
         if (keyCode == 20) {
-            return !keyEvent.isAltPressed() ? arrowScroll(NotificationCenter.walletSyncProgressChanged) : fullScroll(NotificationCenter.walletSyncProgressChanged);
+            return !keyEvent.isAltPressed() ? arrowScroll(NotificationCenter.walletPendingTransactionsChanged) : fullScroll(NotificationCenter.walletPendingTransactionsChanged);
         }
         if (keyCode != 62) {
             return false;
@@ -1078,7 +1078,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (action == 2 && this.mIsBeingDragged) {
             return true;
         }
-        int i = action & NotificationCenter.didSetNewWallpapper;
+        int i = action & NotificationCenter.suggestedLangpack;
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
@@ -1243,7 +1243,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     @Override // android.view.ViewGroup
     protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         if (i == 2) {
-            i = NotificationCenter.walletSyncProgressChanged;
+            i = NotificationCenter.walletPendingTransactionsChanged;
         } else if (i == 1) {
             i = 33;
         }

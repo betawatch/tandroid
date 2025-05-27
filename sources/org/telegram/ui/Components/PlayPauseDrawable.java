@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class PlayPauseDrawable extends Drawable {
-    private int alpha = NotificationCenter.didSetNewWallpapper;
+    private int alpha = NotificationCenter.suggestedLangpack;
     float duration = 300.0f;
     private long lastUpdateTime;
     private final Paint paint;
@@ -140,6 +140,10 @@ public class PlayPauseDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
         this.alpha = i;
+    }
+
+    public void setColor(int i) {
+        this.paint.setColor(i);
     }
 
     @Override // android.graphics.drawable.Drawable

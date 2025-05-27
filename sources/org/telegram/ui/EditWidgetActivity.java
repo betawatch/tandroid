@@ -404,10 +404,10 @@ public class EditWidgetActivity extends BaseFragment {
                 if (EditWidgetActivity.this.widgetType == 1) {
                     while (i2 < 2) {
                         this.cells[i2] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(R.layout.contacts_widget_item, (ViewGroup) null);
-                        linearLayout2.addView(this.cells[i2], LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, -2));
+                        linearLayout2.addView(this.cells[i2], LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, -2));
                         i2++;
                     }
-                    linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.audioRouteChanged, NotificationCenter.audioRouteChanged, 17));
+                    linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 17));
                     imageView = EditWidgetActivity.this.previewImageView;
                     i = R.drawable.contacts_widget_preview;
                 }
@@ -419,7 +419,7 @@ public class EditWidgetActivity extends BaseFragment {
                 linearLayout2.addView(this.cells[i2], LayoutHelper.createLinear(-1, -2));
                 i2++;
             }
-            linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.channelStarsUpdated, NotificationCenter.audioRouteChanged, 17));
+            linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.audioRecordTooShort, 17));
             imageView = EditWidgetActivity.this.previewImageView;
             i = R.drawable.chats_widget_preview;
             imageView.setImageResource(i);
@@ -472,7 +472,7 @@ public class EditWidgetActivity extends BaseFragment {
             while (i < 2) {
                 Drawable drawable = i == 0 ? this.oldBackgroundDrawable : this.backgroundDrawable;
                 if (drawable != null) {
-                    drawable.setAlpha((i != 1 || this.oldBackgroundDrawable == null || ((BaseFragment) EditWidgetActivity.this).parentLayout == null) ? NotificationCenter.didSetNewWallpapper : (int) (255.0f * themeAnimationValue));
+                    drawable.setAlpha((i != 1 || this.oldBackgroundDrawable == null || ((BaseFragment) EditWidgetActivity.this).parentLayout == null) ? NotificationCenter.suggestedLangpack : (int) (255.0f * themeAnimationValue));
                     if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof MotionBackgroundDrawable)) {
                         drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                         if (drawable instanceof BackgroundGradientDrawable) {
@@ -1293,7 +1293,7 @@ public class EditWidgetActivity extends BaseFragment {
                         EditWidgetActivity.this.finishActivity();
                         return;
                     } else {
-                        EditWidgetActivity.this.lambda$onBackPressed$338();
+                        EditWidgetActivity.this.lambda$onBackPressed$347();
                         return;
                     }
                 }

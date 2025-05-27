@@ -20,14 +20,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -286,7 +284,6 @@ public class CountrySelectActivity extends BaseFragment {
 
     public class CountrySearchAdapter extends RecyclerListView.SelectionAdapter {
         private List countryList = new ArrayList();
-        private Map countrySearchMap = new HashMap();
         private Context mContext;
         private ArrayList searchResult;
         private Timer searchTimer;
@@ -295,14 +292,9 @@ public class CountrySelectActivity extends BaseFragment {
             this.mContext = context;
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
-                for (Country country : (List) it.next()) {
-                    this.countryList.add(country);
-                    ArrayList arrayList = new ArrayList(Arrays.asList(country.name.split(" ")));
-                    String str = country.defaultName;
-                    if (str != null) {
-                        arrayList.addAll(Arrays.asList(str.split(" ")));
-                    }
-                    this.countrySearchMap.put(country, arrayList);
+                Iterator it2 = ((List) it.next()).iterator();
+                while (it2.hasNext()) {
+                    this.countryList.add((Country) it2.next());
                 }
             }
         }
@@ -314,19 +306,37 @@ public class CountrySelectActivity extends BaseFragment {
                 updateSearchResults(new ArrayList());
                 return;
             }
+            String translitSafe = AndroidUtilities.translitSafe(lowerCase);
             ArrayList arrayList = new ArrayList();
             for (Country country : this.countryList) {
-                Iterator it = ((List) this.countrySearchMap.get(country)).iterator();
-                while (true) {
-                    if (it.hasNext()) {
-                        if (((String) it.next()).toLowerCase().startsWith(lowerCase)) {
-                            arrayList.add(country);
-                            break;
+                String str2 = country.name;
+                if (str2 == null) {
+                    str2 = "";
+                }
+                String lowerCase2 = str2.toLowerCase();
+                String lowerCase3 = AndroidUtilities.translitSafe(country.name).toLowerCase();
+                String str3 = country.defaultName;
+                if (str3 == null) {
+                    str3 = "";
+                }
+                String lowerCase4 = str3.toLowerCase();
+                String lowerCase5 = AndroidUtilities.translitSafe(country.defaultName).toLowerCase();
+                String str4 = country.code;
+                if (str4 == null) {
+                    str4 = "";
+                }
+                String str5 = TextUtils.isEmpty(str4) ? "" : "+" + str4;
+                if (!lowerCase2.startsWith(lowerCase)) {
+                    if (!lowerCase2.contains(" " + lowerCase) && !lowerCase3.startsWith(translitSafe)) {
+                        if (!lowerCase3.contains(" " + translitSafe) && !lowerCase4.startsWith(lowerCase)) {
+                            if (!lowerCase4.contains(" " + lowerCase) && !lowerCase5.startsWith(translitSafe)) {
+                                if (!lowerCase5.contains(" " + translitSafe) && !str4.startsWith(lowerCase) && !str5.startsWith(lowerCase)) {
+                                }
+                            }
                         }
-                    } else {
-                        break;
                     }
                 }
+                arrayList.add(country);
             }
             updateSearchResults(arrayList);
         }
@@ -500,7 +510,7 @@ public class CountrySelectActivity extends BaseFragment {
         if (i < 0) {
             return;
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
         if (item == null || (countrySelectActivityDelegate = this.delegate) == null) {
             return;
         }
@@ -522,7 +532,7 @@ public class CountrySelectActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    CountrySelectActivity.this.lambda$onBackPressed$338();
+                    CountrySelectActivity.this.lambda$onBackPressed$347();
                 }
             }
         });

@@ -634,7 +634,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             if (itemViewType == 9) {
                 SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                 if (i == PrivacyControlActivity.this.priceRow) {
-                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.storyQualityUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
+                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.smsJobStatusUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.Utilities.Callback2Return
                         public final Object run(Object obj, Object obj2) {
                             CharSequence lambda$onBindViewHolder$6;
@@ -1067,7 +1067,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             tL_message.message = LocaleController.getString(R.string.PrivacyForwardsMessageLine);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.liveLocationsCacheChanged;
+            tL_message.flags = NotificationCenter.newLocationAvailable;
             tL_message.from_id = new TLRPC.TL_peerUser();
             tL_message.id = 1;
             TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
@@ -1173,11 +1173,6 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell2);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell2);
                 }
@@ -1270,11 +1265,6 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell2);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressTopicButton(ChatMessageCell chatMessageCell2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTopicButton(this, chatMessageCell2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1443,16 +1433,6 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell2);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldShowTopicButton(ChatMessageCell chatMessageCell2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowTopicButton(this, chatMessageCell2);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void videoTimerReached() {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
                 }
@@ -1460,7 +1440,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             ChatMessageCell chatMessageCell2 = this.cell;
             chatMessageCell2.isChat = false;
             chatMessageCell2.setFullyDraw(true);
-            this.cell.setMessageObject(this.messageObject, null, false, false);
+            this.cell.setMessageObject(this.messageObject, null, false, false, false);
             addView(this.cell, LayoutHelper.createLinear(-1, -2));
             HintView hintView = new HintView(context, 1, true);
             this.hintView = hintView;
@@ -2166,7 +2146,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 }
             }
         }
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     private boolean hasChanges() {
@@ -2402,7 +2382,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$28(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2831,7 +2811,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$finished$12(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$338();
+        lambda$onBackPressed$347();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3254,7 +3234,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                     public void onItemClick(int i3) {
                         if (i3 == -1) {
                             if (PrivacyControlActivity.this.checkDiscard()) {
-                                PrivacyControlActivity.this.lambda$onBackPressed$338();
+                                PrivacyControlActivity.this.lambda$onBackPressed$347();
                             }
                         } else if (i3 == 1) {
                             PrivacyControlActivity.this.processDone();
@@ -3319,7 +3299,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             public void onItemClick(int i32) {
                 if (i32 == -1) {
                     if (PrivacyControlActivity.this.checkDiscard()) {
-                        PrivacyControlActivity.this.lambda$onBackPressed$338();
+                        PrivacyControlActivity.this.lambda$onBackPressed$347();
                     }
                 } else if (i32 == 1) {
                     PrivacyControlActivity.this.processDone();

@@ -62,6 +62,7 @@ import org.telegram.ui.Components.StickerEmptyView;
 import org.telegram.ui.Components.TranslateAlert2;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.StoriesController;
@@ -181,7 +182,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
                 textView2.setTextAlignment(4);
                 textView2.setGravity(17);
                 textView2.setTypeface(AndroidUtilities.bold());
-                addView(textView2, LayoutHelper.createLinear(NotificationCenter.activeGroupCallsUpdated, -2, 17, 0, 17, 0, 12));
+                addView(textView2, LayoutHelper.createLinear(NotificationCenter.groupCallScreencastStateChanged, -2, 17, 0, 17, 0, 12));
                 ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, false, resourcesProvider);
                 this.button2View = buttonWithCounterView2;
                 buttonWithCounterView2.setMinWidth(AndroidUtilities.dp(200.0f));
@@ -796,7 +797,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
             textView.setTextAlignment(4);
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
-            stickerEmptyView.linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.activeGroupCallsUpdated, -2, 17, 0, 17, 0, 12));
+            stickerEmptyView.linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.groupCallScreencastStateChanged, -2, 17, 0, 17, 0, 12));
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, false, BotPreviewsEditContainer.this.resourcesProvider);
             this.emptyViewButton2 = buttonWithCounterView;
             buttonWithCounterView.setMinWidth(AndroidUtilities.dp(200.0f));
@@ -1296,7 +1297,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
                 }
 
                 @Override // org.telegram.ui.Components.UItem.UItemFactory
-                public void bindView(View view, UItem uItem, boolean z) {
+                public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
                     ((LanguageView) view).set((TranslateController.Language) uItem.object, z);
                 }
 

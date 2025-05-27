@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes3.dex */
 public abstract class Flags {
     public static int getPersistenceFlag(int i, boolean z) {
-        int i2 = i & NotificationCenter.didSetNewWallpapper;
+        int i2 = i & NotificationCenter.suggestedLangpack;
         if (i2 == 1 || i2 == 2) {
             return i2;
         }

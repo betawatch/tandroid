@@ -113,7 +113,7 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    TimezoneSelector.this.lambda$onBackPressed$338();
+                    TimezoneSelector.this.lambda$onBackPressed$347();
                 }
             }
         });
@@ -172,7 +172,7 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
         BackupImageView backupImageView = new BackupImageView(context);
         backupImageView.getImageReceiver().setAllowLoadingOnAttachedOnly(false);
         MediaDataController.getInstance(this.currentAccount).setPlaceholderImage(backupImageView, "RestrictedEmoji", "🌖", "130_130");
-        this.emptyView.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.walletSyncProgressChanged, NotificationCenter.walletSyncProgressChanged, 49, 0, 42, 0, 12));
+        this.emptyView.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.TimezoneNotFound));
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, this.resourceProvider));

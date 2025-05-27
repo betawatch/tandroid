@@ -2072,7 +2072,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
                 ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
                 canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.suggestedLangpack);
                 ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
                 canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
             }
@@ -2150,8 +2150,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             }
                     }
                 }
-                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.didSetNewWallpapper);
-                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.didSetNewWallpapper);
+                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.suggestedLangpack);
+                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.suggestedLangpack);
                 TLRPC.Document document = animatedAttachMenuBotIcon.icon;
                 this.imageView.getImageReceiver().setAllowStartLottieAnimation(false);
                 this.imageView.setImage(ImageLocation.getForDocument(document), String.valueOf(tL_attachMenuBot.bot_id), z ? "tgs" : "svg", DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundGray, 1.0f), tL_attachMenuBot);
@@ -2289,7 +2289,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
             ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.didSetNewWallpapper);
+            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.suggestedLangpack);
             ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
         }
@@ -3073,7 +3073,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.clipPath(this.path);
                 this.backgroundPaint2.setColor(ChatAttachAlert.this.getThemedColor(Theme.key_graySection));
                 canvas.drawPaint(this.backgroundPaint2);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didSetNewWallpapper, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.suggestedLangpack, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF, 1, 1.0f);
@@ -5511,7 +5511,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.didSetNewWallpapper, Math.max(0, (int) (f * 255.0f))));
+        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.suggestedLangpack, Math.max(0, (int) (f * 255.0f))));
         AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
         AndroidUtilities.setLightNavigationBar(getWindow(), ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);
         getContainer().invalidate();
@@ -6554,17 +6554,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01cf  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x023c  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x01ba  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0192  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01ce  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0104  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x00e0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -6617,7 +6617,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     this.plainTextEnabled = ChatObject.canSendPlain(chat);
                     this.documentsEnabled = ChatObject.canSendDocument(chat);
                 } else {
-                    this.pollsEnabled = user != null && user.bot;
+                    this.pollsEnabled = UserObject.isBot(user) || UserObject.isUserSelf(user);
                 }
             }
             if ((this.baseFragment instanceof ChatActivity) || this.avatarPicker == 2) {

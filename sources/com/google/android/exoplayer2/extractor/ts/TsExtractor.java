@@ -129,20 +129,20 @@ public final class TsExtractor implements Extractor {
                                     i3 = 36;
                                 }
                             }
-                            i3 = NotificationCenter.configLoaded;
+                            i3 = NotificationCenter.appDidLogout;
                         }
-                        i3 = NotificationCenter.fileUploadFailed;
+                        i3 = NotificationCenter.fileUploaded;
                     }
-                    i3 = NotificationCenter.walletPendingTransactionsChanged;
+                    i3 = NotificationCenter.didGenerateFingerprintKeyPair;
                 } else {
                     if (readUnsignedByte != 106) {
                         if (readUnsignedByte != 122) {
                             if (readUnsignedByte == 127) {
                                 if (parsableByteArray.readUnsignedByte() != 21) {
                                 }
-                                i3 = NotificationCenter.configLoaded;
+                                i3 = NotificationCenter.appDidLogout;
                             } else if (readUnsignedByte == 123) {
-                                i3 = NotificationCenter.fileLoaded;
+                                i3 = NotificationCenter.fileLoadProgressChanged;
                             } else if (readUnsignedByte == 10) {
                                 str = parsableByteArray.readString(3).trim();
                             } else if (readUnsignedByte == 89) {
@@ -157,12 +157,12 @@ public final class TsExtractor implements Extractor {
                                 arrayList = arrayList2;
                                 i3 = 89;
                             } else if (readUnsignedByte == 111) {
-                                i3 = NotificationCenter.proxyCheckDone;
+                                i3 = NotificationCenter.proxySettingsChanged;
                             }
                         }
-                        i3 = NotificationCenter.fileUploadFailed;
+                        i3 = NotificationCenter.fileUploaded;
                     }
-                    i3 = NotificationCenter.walletPendingTransactionsChanged;
+                    i3 = NotificationCenter.didGenerateFingerprintKeyPair;
                 }
                 parsableByteArray.skipBytes(position2 - parsableByteArray.getPosition());
             }
@@ -339,7 +339,7 @@ public final class TsExtractor implements Extractor {
         int limit = this.tsPacketBuffer.limit();
         int findSyncBytePosition = TsUtil.findSyncBytePosition(this.tsPacketBuffer.getData(), position, limit);
         this.tsPacketBuffer.setPosition(findSyncBytePosition);
-        int i = findSyncBytePosition + NotificationCenter.storiesBlocklistUpdate;
+        int i = findSyncBytePosition + NotificationCenter.storiesEnabledUpdate;
         if (i > limit) {
             int i2 = this.bytesSinceLastSync + (findSyncBytePosition - position);
             this.bytesSinceLastSync = i2;
@@ -508,7 +508,7 @@ public final class TsExtractor implements Extractor {
         int i = 0;
         while (i < 188) {
             for (int i2 = 0; i2 < 5; i2++) {
-                if (data[(i2 * NotificationCenter.storiesBlocklistUpdate) + i] != 71) {
+                if (data[(i2 * NotificationCenter.storiesEnabledUpdate) + i] != 71) {
                     break;
                 }
             }

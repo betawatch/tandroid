@@ -703,8 +703,8 @@ public class SecretVoicePlayer extends Dialog {
         AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:116:0x02e9  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02e6  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x02ea  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02e7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -807,7 +807,7 @@ public class SecretVoicePlayer extends Dialog {
                         this.radialMatrix.postScale(width4, width4);
                         this.radialMatrix.postTranslate(SecretVoicePlayer.this.rect.centerX(), SecretVoicePlayer.this.rect.centerY());
                         this.radialGradient.setLocalMatrix(this.radialMatrix);
-                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.didSetNewWallpapper, 31);
+                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.suggestedLangpack, 31);
                         super.drawBlurredPhoto(canvas);
                         canvas.save();
                         canvas.drawRect(SecretVoicePlayer.this.rect, this.radialPaint);
@@ -901,7 +901,7 @@ public class SecretVoicePlayer extends Dialog {
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
                         if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didSetNewWallpapper, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.suggestedLangpack, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
                     }
@@ -1021,11 +1021,6 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressDialogButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressDialogButton(this, chatMessageCell6);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell6) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell6);
                 }
@@ -1118,11 +1113,6 @@ public class SecretVoicePlayer extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell6) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell6);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressTopicButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTopicButton(this, chatMessageCell6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1291,16 +1281,6 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldShowDialogButton(ChatMessageCell chatMessageCell6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowDialogButton(this, chatMessageCell6);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldShowTopicButton(ChatMessageCell chatMessageCell6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldShowTopicButton(this, chatMessageCell6);
-                }
-
-                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void videoTimerReached() {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
                 }
@@ -1309,7 +1289,7 @@ public class SecretVoicePlayer extends Dialog {
             MessageObject messageObject2 = this.messageObject;
             MessageObject.GroupedMessages currentMessagesGroup = this.cell.getCurrentMessagesGroup();
             ChatMessageCell chatMessageCell7 = this.cell;
-            chatMessageCell6.setMessageObject(messageObject2, currentMessagesGroup, chatMessageCell7.pinnedBottom, chatMessageCell7.pinnedTop);
+            chatMessageCell6.setMessageObject(messageObject2, currentMessagesGroup, chatMessageCell7.pinnedBottom, chatMessageCell7.pinnedTop, false);
             if (!this.isRound) {
                 AudioVisualizerDrawable audioVisualizerDrawable = new AudioVisualizerDrawable();
                 this.audioVisualizerDrawable = audioVisualizerDrawable;

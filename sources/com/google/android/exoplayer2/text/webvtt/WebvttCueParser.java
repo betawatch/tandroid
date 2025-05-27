@@ -216,23 +216,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, NotificationCenter.didSetNewWallpapper)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didSetNewWallpapper)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.suggestedLangpack, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, 0, NotificationCenter.suggestedLangpack)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.suggestedLangpack)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = Collections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, NotificationCenter.didSetNewWallpapper, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.didSetNewWallpapper, 0, NotificationCenter.didSetNewWallpapper)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didSetNewWallpapper)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.suggestedLangpack, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, NotificationCenter.suggestedLangpack, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.suggestedLangpack, 0, NotificationCenter.suggestedLangpack)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.suggestedLangpack)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = Collections.unmodifiableMap(hashMap2);
     }

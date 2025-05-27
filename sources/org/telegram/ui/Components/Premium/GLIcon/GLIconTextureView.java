@@ -93,7 +93,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             GLIconTextureView.this.animatorSet = new AnimatorSet();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(GLIconTextureView.this.mRenderer.angleX, f);
             ofFloat.addUpdateListener(GLIconTextureView.this.xUpdater);
-            long j = NotificationCenter.updateAllMessages;
+            long j = NotificationCenter.webViewResolved;
             ofFloat.setDuration(j);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
             ofFloat.setInterpolator(cubicBezierInterpolator);
