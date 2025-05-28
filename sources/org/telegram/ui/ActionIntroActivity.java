@@ -242,7 +242,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        ActionIntroActivity.this.lambda$onBackPressed$347();
+                        ActionIntroActivity.this.lambda$onBackPressed$348();
                     }
                 }
             });

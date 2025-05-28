@@ -354,7 +354,6 @@ public class MessagesController extends BaseController implements NotificationCe
     private LongSparseArray lastScheduledServerQueryTime;
     private LongSparseArray lastServerQueryTime;
     private long lastStatusUpdateTime;
-    private final HashMap<Long, Long> lastTopicOpened;
     private long lastViewsCheckTime;
     public String linkPrefix;
     private Runnable loadAppConfigRunnable;
@@ -2575,7 +2574,6 @@ public class MessagesController extends BaseController implements NotificationCe
             }
         };
         this.commonChats = new android.util.LongSparseArray<>();
-        this.lastTopicOpened = new HashMap<>();
         ImageLoader.getInstance();
         getMessagesStorage();
         getLocationController();
@@ -15559,7 +15557,7 @@ public class MessagesController extends BaseController implements NotificationCe
             int i = this.currentAccount;
             long j = user.id;
             baseFragment2 = baseFragment3;
-            of = WebViewRequestProps.of(i, j, j, null, null, 4, 0, false, null, false, str, user, 0, z, z2);
+            of = WebViewRequestProps.of(i, j, j, null, null, 4, 0, 0L, false, null, false, str, user, 0, z, z2);
             LaunchActivity launchActivity = LaunchActivity.instance;
             if (launchActivity != null && launchActivity.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(of) != null) {
                 return;
@@ -15582,7 +15580,7 @@ public class MessagesController extends BaseController implements NotificationCe
             int i2 = this.currentAccount;
             long j2 = user.id;
             baseFragment2 = baseFragment4;
-            of = WebViewRequestProps.of(i2, j2, j2, tL_botMenuButton.text, tL_botMenuButton.url, 2, 0, false, null, false, str, user, 0, z, z2);
+            of = WebViewRequestProps.of(i2, j2, j2, tL_botMenuButton.text, tL_botMenuButton.url, 2, 0, 0L, false, null, false, str, user, 0, z, z2);
             LaunchActivity launchActivity2 = LaunchActivity.instance;
             if (launchActivity2 != null && launchActivity2.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(of) != null) {
                 return;
@@ -26061,11 +26059,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public long getForumLastTopicId(long j) {
-        Long l = this.lastTopicOpened.get(Long.valueOf(j));
-        if (l == null) {
-            return 1L;
-        }
-        return l.longValue();
+        return this.mainPreferences.getLong("forumlasttopic" + j, 1L);
     }
 
     public String getFullName(long j) {
@@ -34412,7 +34406,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void setForumLastTopicId(long j, long j2) {
-        this.lastTopicOpened.put(Long.valueOf(j), Long.valueOf(j2));
+        this.mainPreferences.edit().putLong("forumlasttopic" + j, j2).apply();
     }
 
     public void setLastCreatedDialogId(final long j, final boolean z, final boolean z2) {

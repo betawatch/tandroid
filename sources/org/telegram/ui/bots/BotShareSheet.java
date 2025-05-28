@@ -168,6 +168,11 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             public /* synthetic */ void needShowEffectOverlay(ChatActionCell chatActionCell2, TLRPC.Document document, TLRPC.VideoSize videoSize) {
                 ChatActionCell.ChatActionCellDelegate.-CC.$default$needShowEffectOverlay(this, chatActionCell2, document, videoSize);
             }
+
+            @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
+            public /* synthetic */ void onTopicClick(ChatActionCell chatActionCell2) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$onTopicClick(this, chatActionCell2);
+            }
         });
         chatActionCell.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
         ChatMessageCell chatMessageCell = new ChatMessageCell(context, i) { // from class: org.telegram.ui.bots.BotShareSheet.2
@@ -970,10 +975,10 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
         }
         if (topicsFragment != null) {
-            topicsFragment.lambda$onBackPressed$347();
+            topicsFragment.lambda$onBackPressed$348();
             dialogsActivity.removeSelfFromStack();
         } else {
-            dialogsActivity.lambda$onBackPressed$347();
+            dialogsActivity.lambda$onBackPressed$348();
         }
         return true;
     }

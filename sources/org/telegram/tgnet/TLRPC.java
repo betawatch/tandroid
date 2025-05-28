@@ -20127,6 +20127,24 @@ public class TLRPC {
         }
     }
 
+    public static class TL_channels_getMessageAuthor extends TLObject {
+        public static final int constructor = -320691994;
+        public InputChannel channel;
+        public int id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return User.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.channel.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.id);
+        }
+    }
+
     public static class TL_channels_getMessages extends TLObject {
         public static final int constructor = -1814580409;
         public InputChannel channel;
@@ -28553,7 +28571,6 @@ public class TLRPC {
         public static final int constructor = 1903173033;
         public boolean closed;
         public int date;
-        public long dialogId;
         public DraftMessage draft;
         public int flags;
         public Peer from_id;

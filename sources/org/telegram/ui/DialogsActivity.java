@@ -1355,7 +1355,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             } else {
                 baseFragment = baseFragmentArr[0];
             }
-            baseFragment.lambda$onBackPressed$347();
+            baseFragment.lambda$onBackPressed$348();
             if (dialogsActivityDelegate != null) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(-j, 0L));
@@ -1374,7 +1374,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             } else {
                 baseFragment = baseFragmentArr[0];
             }
-            baseFragment.lambda$onBackPressed$347();
+            baseFragment.lambda$onBackPressed$348();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1616,7 +1616,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (DialogsActivity.this.searchString == null) {
                 return true;
             }
-            DialogsActivity.this.lambda$onBackPressed$347();
+            DialogsActivity.this.lambda$onBackPressed$348();
             return false;
         }
 
@@ -2732,7 +2732,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     DialogsActivity.this.hideActionMode(true);
                     return;
                 } else if (DialogsActivity.this.onlySelect || DialogsActivity.this.folderId != 0) {
-                    DialogsActivity.this.lambda$onBackPressed$347();
+                    DialogsActivity.this.lambda$onBackPressed$348();
                     return;
                 } else {
                     if (((BaseFragment) DialogsActivity.this).parentLayout == null || ((BaseFragment) DialogsActivity.this).parentLayout.getDrawerLayoutContainer() == null) {
@@ -5943,7 +5943,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public /* synthetic */ void lambda$createGroupForThis$57(ChannelCreateActivity channelCreateActivity, BaseFragment baseFragment) {
         removeSelfFromStack();
         channelCreateActivity.removeSelfFromStack();
-        baseFragment.lambda$onBackPressed$347();
+        baseFragment.lambda$onBackPressed$348();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6037,7 +6037,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         DialogsActivityDelegate dialogsActivityDelegate = this.delegate;
         removeSelfFromStack();
         channelCreateActivity.removeSelfFromStack();
-        baseFragment.lambda$onBackPressed$347();
+        baseFragment.lambda$onBackPressed$348();
         if (dialogsActivityDelegate != null) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(MessagesStorage.TopicKey.of(-l.longValue(), 0L));
@@ -6488,7 +6488,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didSelectResult$123(long j, long j2, boolean z, TopicsFragment topicsFragment) {
         if (this.delegate == null) {
-            lambda$onBackPressed$347();
+            lambda$onBackPressed$348();
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -7068,7 +7068,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
         this.viewPages[0].listView.setEmptyView(null);
         this.viewPages[0].progressView.setVisibility(4);
-        lambda$onBackPressed$347();
+        lambda$onBackPressed$348();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8256,6 +8256,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                                 bundle2.putInt("chatMode", 8);
                                                 bundle2.putBoolean("isSubscriberSuggestions", !ChatObject.canManageMonoForum(this.currentAccount, chat5));
                                                 chatActivity = new ChatActivity(bundle2);
+                                                ForumUtilities.applyTopic(chatActivity, MessagesStorage.TopicKey.of(-chat5.id, getMessagesController().getForumLastTopicId(chat5.id)));
                                             } else if (ChatObject.areTabsEnabled(chat5)) {
                                                 ChatActivity chatActivity2 = new ChatActivity(bundle2);
                                                 ForumUtilities.applyTopic(chatActivity2, MessagesStorage.TopicKey.of(-chat5.id, getMessagesController().getForumLastTopicId(chat5.id)));
@@ -8789,7 +8790,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 if (this.viewPages != null && dialogs.isEmpty() && !this.hasStories) {
                     this.viewPages[0].listView.setEmptyView(null);
                     this.viewPages[0].progressView.setVisibility(4);
-                    lambda$onBackPressed$347();
+                    lambda$onBackPressed$348();
                 }
             }
             hideActionMode(z3);
@@ -14203,7 +14204,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                             if (i9 != intValue || i9 == 0) {
                                                 return;
                                             }
-                                            lambda$onBackPressed$347();
+                                            lambda$onBackPressed$348();
                                             return;
                                         }
                                         if (i == NotificationCenter.dialogFiltersUpdated) {
@@ -14501,7 +14502,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             }
             if (this.delegate == null) {
-                lambda$onBackPressed$347();
+                lambda$onBackPressed$348();
                 return;
             }
             ArrayList arrayList = new ArrayList();
@@ -14594,8 +14595,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$347() {
-        super.lambda$onBackPressed$347();
+    public void lambda$onBackPressed$348() {
+        super.lambda$onBackPressed$348();
         ItemOptions itemOptions = this.filterOptions;
         if (itemOptions != null) {
             itemOptions.dismiss();

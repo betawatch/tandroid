@@ -2179,6 +2179,9 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onTouchEvent$4() {
+            if (!MediaController.getInstance().isRecordingPaused()) {
+                MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
+            }
             if (ChatActivityEnterView.this.sendButtonVisible) {
                 ChatActivityEnterView.this.calledRecordRunnable = true;
             }
@@ -8206,7 +8209,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
         TLRPC.User user = this.accountInstance.getMessagesController().getUser(Long.valueOf(j));
         if (user == null) {
-            dialogsActivity.lambda$onBackPressed$347();
+            dialogsActivity.lambda$onBackPressed$348();
             return true;
         }
         long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
@@ -8228,7 +8231,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$347();
+        dialogsActivity.lambda$onBackPressed$348();
         return true;
     }
 
@@ -8266,7 +8269,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        dialogsActivity.lambda$onBackPressed$347();
+        dialogsActivity.lambda$onBackPressed$348();
         return true;
     }
 
@@ -8591,7 +8594,10 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         AndroidUtilities.hideKeyboard(this);
         int i = this.currentAccount;
         long j = this.dialog_id;
-        WebViewRequestProps of = WebViewRequestProps.of(i, j, j, this.botMenuWebViewTitle, this.botMenuWebViewUrl, 2, 0, false, null, false, null, null, 0, false, false);
+        String str = this.botMenuWebViewTitle;
+        String str2 = this.botMenuWebViewUrl;
+        ChatActivity chatActivity = this.parentFragment;
+        WebViewRequestProps of = WebViewRequestProps.of(i, j, j, str, str2, 2, 0, chatActivity == null ? 0L : chatActivity.getSendMonoForumPeerId(), false, null, false, null, null, 0, false, false);
         LaunchActivity launchActivity = LaunchActivity.instance;
         if (launchActivity != null && launchActivity.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(of) != null) {
             BotCommandsMenuView botCommandsMenuView = this.botCommandsMenuButton;
@@ -9592,6 +9598,10 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     }
 
     private void resetRecordedState() {
+        RecordedAudioPlayerView recordedAudioPlayerView = this.audioTimelineView;
+        if (recordedAudioPlayerView != null) {
+            recordedAudioPlayerView.setPlaying(false);
+        }
         if (this.videoToSendMessageObject != null) {
             CameraController.getInstance().cancelOnInitRunnable(this.onFinishInitCameraRunnable);
             this.delegate.needStartRecordVideo(2, true, 0, this.voiceOnce ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, this.effectId, 0L);
@@ -10800,7 +10810,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                             String str2 = keyboardButton2.url;
                             boolean z = keyboardButton2 instanceof TLRPC.TL_keyboardButtonSimpleWebView;
                             MessageObject messageObject3 = messageObject;
-                            WebViewRequestProps of2 = WebViewRequestProps.of(i2, j3, j4, str, str2, z ? 1 : 0, messageObject3 != null ? messageObject3.messageOwner.id : 0, false, null, false, null, null, 0, false, false);
+                            WebViewRequestProps of2 = WebViewRequestProps.of(i2, j3, j4, str, str2, z ? 1 : 0, messageObject3 != null ? messageObject3.messageOwner.id : 0, ChatActivityEnterView.this.parentFragment == null ? 0L : ChatActivityEnterView.this.parentFragment.getSendMonoForumPeerId(), false, null, false, null, null, 0, false, false);
                             LaunchActivity launchActivity = LaunchActivity.instance;
                             if (launchActivity != null && launchActivity.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(of2) != null) {
                                 if (ChatActivityEnterView.this.botCommandsMenuButton != null) {

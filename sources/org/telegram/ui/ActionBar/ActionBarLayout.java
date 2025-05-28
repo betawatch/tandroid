@@ -1073,7 +1073,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             if (z) {
                 List list = this.fragmentsStack;
                 if (list.get(list.size() - 1) == baseFragment) {
-                    baseFragment.lambda$onBackPressed$347();
+                    baseFragment.lambda$onBackPressed$348();
                     return;
                 }
             }

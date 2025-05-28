@@ -319,7 +319,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 size--;
             }
             if (baseFragment == null) {
-                lambda$onBackPressed$347();
+                lambda$onBackPressed$348();
                 baseFragment = parentLayout.getBackgroundFragment();
                 if (baseFragment == null) {
                     if (z) {
@@ -342,7 +342,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 parentLayout.removeFragmentFromStack((BaseFragment) fragmentStack.get(size2));
             }
         }
-        lambda$onBackPressed$347();
+        lambda$onBackPressed$348();
         if (baseFragment == null) {
         }
     }

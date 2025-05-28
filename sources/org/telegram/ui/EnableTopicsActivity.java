@@ -328,7 +328,7 @@ public class EnableTopicsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    EnableTopicsActivity.this.lambda$onBackPressed$347();
+                    EnableTopicsActivity.this.lambda$onBackPressed$348();
                 }
             }
         });

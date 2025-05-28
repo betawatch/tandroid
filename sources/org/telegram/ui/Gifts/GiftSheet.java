@@ -62,7 +62,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda317;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -2414,7 +2414,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$18 = GiftSheet.this.lambda$fillItems$18((TL_stars.StarGift) obj);
                     return lambda$fillItems$18;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda312()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda317()));
         }
         if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList3 = this.myGifts) != null) {
             Iterator it2 = giftsList3.gifts.iterator();

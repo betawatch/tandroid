@@ -3,10 +3,10 @@ package org.telegram.ui.Cells;
 import org.telegram.ui.Components.RLottieDrawable;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ChatActionCell$$ExternalSyntheticLambda7 implements Runnable {
+public final /* synthetic */ class ChatActionCell$$ExternalSyntheticLambda8 implements Runnable {
     public final /* synthetic */ RLottieDrawable f$0;
 
-    public /* synthetic */ ChatActionCell$$ExternalSyntheticLambda7(RLottieDrawable rLottieDrawable) {
+    public /* synthetic */ ChatActionCell$$ExternalSyntheticLambda8(RLottieDrawable rLottieDrawable) {
         this.f$0 = rLottieDrawable;
     }
 

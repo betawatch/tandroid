@@ -1134,9 +1134,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         this.currentAccount = i;
         this.dialogId = j;
         this.resourcesProvider = resourcesProvider;
-        this.mono = ChatObject.isMonoForum(MessagesController.getInstance(i).getChat(Long.valueOf(-j)));
+        long j2 = -j;
+        this.mono = ChatObject.isMonoForum(MessagesController.getInstance(i).getChat(Long.valueOf(j2)));
         SharedPreferences preferences = UserConfig.getInstance(i).getPreferences();
-        this.canShowProgress = !preferences.getBoolean("topics_end_reached_" + r2, false);
+        this.canShowProgress = !preferences.getBoolean("topics_end_reached_" + j2, false);
         setClipChildren(true);
         setClipToPadding(true);
         setWillNotDraw(false);
@@ -1433,6 +1434,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         imageView2.setScaleX(0.4f);
         imageView2.setScaleY(0.4f);
         imageView2.setVisibility(8);
+        MessagesController.getInstance(i).getTopicsController().loadTopics(j2, false, 3);
         if (MessagesController.getInstance(i).getMainSettings().getBoolean("topicssidetabs" + j, false)) {
             this.sidemenuT = 1.0f;
             this.sidemenuEnabled = true;

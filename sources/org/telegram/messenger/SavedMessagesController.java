@@ -97,7 +97,7 @@ public class SavedMessagesController {
         private int getDateInternal() {
             TLRPC.Message message;
             MessageObject messageObject = this.message;
-            return (messageObject == null || (message = messageObject.messageOwner) == null) ? this.localDate : ((message.flags & 32768) == 0 || message.edit_hide) ? message.date : message.edit_date;
+            return (messageObject == null || (message = messageObject.messageOwner) == null) ? this.localDate : (message.flags & 32768) != 0 ? message.edit_date : message.date;
         }
 
         public int getDate() {

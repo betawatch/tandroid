@@ -1229,6 +1229,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             public /* synthetic */ void needShowEffectOverlay(ChatActionCell chatActionCell, TLRPC.Document document, TLRPC.VideoSize videoSize) {
                 ChatActionCell.ChatActionCellDelegate.-CC.$default$needShowEffectOverlay(this, chatActionCell, document, videoSize);
             }
+
+            @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
+            public /* synthetic */ void onTopicClick(ChatActionCell chatActionCell) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$onTopicClick(this, chatActionCell);
+            }
         }
 
         public ChatActivityAdapter(Context context) {
@@ -1791,7 +1796,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ChannelAdminLogActivity.14
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view2) {
-                                ChannelAdminLogActivity.this.lambda$onBackPressed$347();
+                                ChannelAdminLogActivity.this.lambda$onBackPressed$348();
                             }
 
                             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -3731,7 +3736,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChannelAdminLogActivity.this.lambda$onBackPressed$347();
+                    ChannelAdminLogActivity.this.lambda$onBackPressed$348();
                 }
             }
         });

@@ -162,7 +162,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
         @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
         public boolean cancelButtonPressed() {
             PhotoPickerActivity.this.delegate.actionButtonPressed(true, true, 0);
-            PhotoPickerActivity.this.lambda$onBackPressed$347();
+            PhotoPickerActivity.this.lambda$onBackPressed$348();
             return true;
         }
 
@@ -408,7 +408,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
 
         @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
         public boolean canCollapseSearch() {
-            PhotoPickerActivity.this.lambda$onBackPressed$347();
+            PhotoPickerActivity.this.lambda$onBackPressed$348();
             return false;
         }
 
@@ -1475,7 +1475,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
         if (this.selectPhotoType != PhotoAlbumPickerActivity.SELECT_TYPE_WALLPAPER) {
             PhotoPickerActivityDelegate photoPickerActivityDelegate = this.delegate;
             if (photoPickerActivityDelegate == null || photoPickerActivityDelegate.canFinishFragment()) {
-                lambda$onBackPressed$347();
+                lambda$onBackPressed$348();
             }
         }
     }
@@ -1679,7 +1679,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         PhotoPickerActivity.this.delegate.onOpenInPressed();
                     }
                 }
-                PhotoPickerActivity.this.lambda$onBackPressed$347();
+                PhotoPickerActivity.this.lambda$onBackPressed$348();
             }
         });
         if (this.isDocumentsPicker) {

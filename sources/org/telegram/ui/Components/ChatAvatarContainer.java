@@ -806,6 +806,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             if (ChatObject.isMonoForum(currentChat)) {
                 long topicId = this.parentFragment.getTopicId();
                 if (!ChatObject.canManageMonoForum(this.currentAccount, currentChat) || topicId == 0) {
+                    this.avatarImageView.setAnimatedEmojiDrawable(null);
                     ForumUtilities.setMonoForumAvatar(this.currentAccount, currentChat, this.avatarDrawable, this.avatarImageView);
                 } else {
                     if (topicId > 0) {
@@ -817,6 +818,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                         this.avatarDrawable.setInfo(chat2);
                         chat = chat2;
                     }
+                    this.avatarImageView.setAnimatedEmojiDrawable(null);
                     this.avatarImageView.setForUserOrChat(chat, this.avatarDrawable);
                 }
                 backupImageView = this.avatarImageView;
@@ -830,7 +832,8 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                 if (backupImageView3 == null) {
                     return;
                 }
-                backupImageView3.setForUserOrChat(currentChat, this.avatarDrawable);
+                backupImageView3.setAnimatedEmojiDrawable(null);
+                this.avatarImageView.setForUserOrChat(currentChat, this.avatarDrawable);
                 backupImageView = this.avatarImageView;
                 if (currentChat.forum) {
                     dp = AndroidUtilities.dp(ChatObject.hasStories(currentChat) ? 11.0f : 16.0f);
@@ -869,7 +872,8 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                 this.avatarDrawable.setScaleSize(1.0f);
                 BackupImageView backupImageView4 = this.avatarImageView;
                 if (backupImageView4 != null) {
-                    backupImageView4.imageReceiver.setForUserOrChat(user, this.avatarDrawable, null, true, 3, false);
+                    backupImageView4.setAnimatedEmojiDrawable(null);
+                    this.avatarImageView.imageReceiver.setForUserOrChat(user, this.avatarDrawable, null, true, 3, false);
                     return;
                 }
                 return;
@@ -881,7 +885,8 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                 return;
             }
         }
-        backupImageView2.setImage((ImageLocation) null, (String) null, this.avatarDrawable, user);
+        backupImageView2.setAnimatedEmojiDrawable(null);
+        this.avatarImageView.setImage((ImageLocation) null, (String) null, this.avatarDrawable, user);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

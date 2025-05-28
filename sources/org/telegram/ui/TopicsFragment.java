@@ -458,7 +458,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (i == 0) {
                 TopicsFragment.this.updateChatInfo();
             } else {
-                TopicsFragment.this.lambda$onBackPressed$347();
+                TopicsFragment.this.lambda$onBackPressed$348();
             }
         }
 
@@ -533,7 +533,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int i = NotificationCenter.closeChats;
             notificationCenter.removeObserver(topicsFragment, i);
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
-            TopicsFragment.this.lambda$onBackPressed$347();
+            TopicsFragment.this.lambda$onBackPressed$348();
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
         }
 
@@ -553,7 +553,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     TopicsFragment.this.clearSelectedTopics();
                     return;
                 } else {
-                    TopicsFragment.this.lambda$onBackPressed$347();
+                    TopicsFragment.this.lambda$onBackPressed$348();
                     return;
                 }
             }
@@ -2937,7 +2937,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         bundle.putLong("chat_id", -chatActivity.getDialogId());
         chatActivity.getParentLayout().addFragmentToStack(new TopicsFragment(bundle), chatActivity.getParentLayout().getFragmentStack().size() - 1);
         chatActivity.setSwitchFromTopics(true);
-        chatActivity.lambda$onBackPressed$347();
+        chatActivity.lambda$onBackPressed$348();
     }
 
     private void setButtonType(int i) {
@@ -3211,14 +3211,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         updateChatInfo(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0295  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0242  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x025e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3233,7 +3233,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             return;
         }
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(this.chatId));
-        this.avatarContainer.setChatAvatar(chat);
+        if (ChatObject.isMonoForum(chat)) {
+            TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(chat.linked_monoforum_id));
+            if (chat2 != null) {
+                this.avatarContainer.setChatAvatar(chat2);
+            }
+        } else {
+            this.avatarContainer.setChatAvatar(chat);
+        }
         long j = -this.chatId;
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.currentAccount);
         StringBuilder sb = new StringBuilder();
@@ -4493,7 +4500,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (!this.inPreviewMode || getMessagesController().isForum(-this.chatId)) {
             return;
         }
-        lambda$onBackPressed$347();
+        lambda$onBackPressed$348();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

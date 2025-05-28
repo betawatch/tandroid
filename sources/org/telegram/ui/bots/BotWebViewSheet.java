@@ -91,7 +91,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda268;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda265;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -164,6 +164,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     private BottomSheetTabs.WebTabData lastTab;
     private int lineColor;
     private Paint linePaint;
+    private long monoforumTopicId;
     private int navBarColor;
     private final Rect navInsets;
     private boolean needCloseConfirmation;
@@ -1555,10 +1556,26 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         tL_messages_prolongWebView.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.peerId);
         tL_messages_prolongWebView.query_id = this.queryId;
         tL_messages_prolongWebView.silent = this.silent;
-        if (this.replyToMsgId != 0) {
-            tL_messages_prolongWebView.reply_to = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
-            tL_messages_prolongWebView.flags |= 1;
+        if (this.replyToMsgId == 0) {
+            if (this.monoforumTopicId != 0) {
+                TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+            }
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda48
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    BotWebViewSheet.this.lambda$new$5(tLObject, tL_error);
+                }
+            });
         }
+        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
+        tL_messages_prolongWebView.reply_to = createReplyInput;
+        if (this.monoforumTopicId != 0) {
+            createReplyInput.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+            tL_messages_prolongWebView.reply_to.flags |= 32;
+        }
+        tL_messages_prolongWebView.flags |= 1;
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda48
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -1993,7 +2010,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda268(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda265(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2575,10 +2592,11 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0256  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x03e7  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0265  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2602,6 +2620,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.peerId = webViewRequestProps.peerId;
         this.botId = webViewRequestProps.botId;
         this.replyToMsgId = webViewRequestProps.replyToMsgId;
+        this.monoforumTopicId = webViewRequestProps.monoforumTopicId;
         this.silent = webViewRequestProps.silent;
         this.buttonText = webViewRequestProps.buttonText;
         this.currentWebApp = webViewRequestProps.app;
@@ -2740,14 +2759,34 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 tL_messages_requestWebView.flags |= 2;
             }
             if (this.replyToMsgId != 0) {
-                tL_messages_requestWebView.reply_to = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
-                tL_messages_requestWebView.flags |= 1;
+                TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
+                tL_messages_requestWebView.reply_to = createReplyInput;
+                if (this.monoforumTopicId != 0) {
+                    createReplyInput.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+                    tL_messages_requestWebView.reply_to.flags |= 32;
+                }
+            } else {
+                if (this.monoforumTopicId != 0) {
+                    TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                    tL_messages_requestWebView.reply_to = tL_inputReplyToMonoForum;
+                    tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+                }
+                if (makeThemeParams != null) {
+                    TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+                    tL_messages_requestWebView.theme_params = tL_dataJSON;
+                    tL_dataJSON.data = makeThemeParams.toString();
+                    tL_messages_requestWebView.flags |= 4;
+                }
+                connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
+                requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda9
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        BotWebViewSheet.this.lambda$requestWebView$28(tLObject, tL_error);
+                    }
+                };
             }
+            tL_messages_requestWebView.flags |= 1;
             if (makeThemeParams != null) {
-                TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-                tL_messages_requestWebView.theme_params = tL_dataJSON;
-                tL_dataJSON.data = makeThemeParams.toString();
-                tL_messages_requestWebView.flags |= 4;
             }
             connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
             requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda9

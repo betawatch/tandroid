@@ -1605,7 +1605,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ResaleGiftsFragment.this.lambda$onBackPressed$347();
+                    ResaleGiftsFragment.this.lambda$onBackPressed$348();
                 }
             }
         });

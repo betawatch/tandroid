@@ -252,7 +252,7 @@ public class GroupInviteActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupInviteActivity.this.lambda$onBackPressed$347();
+                    GroupInviteActivity.this.lambda$onBackPressed$348();
                 }
             }
         });

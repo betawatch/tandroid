@@ -293,6 +293,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
 
             public static void $default$needShowEffectOverlay(ChatActionCellDelegate chatActionCellDelegate, ChatActionCell chatActionCell, TLRPC.Document document, TLRPC.VideoSize videoSize) {
             }
+
+            public static void $default$onTopicClick(ChatActionCellDelegate chatActionCellDelegate, ChatActionCell chatActionCell) {
+            }
         }
 
         boolean canDrawOutboundsContent();
@@ -324,6 +327,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         void needOpenUserProfile(long j);
 
         void needShowEffectOverlay(ChatActionCell chatActionCell, TLRPC.Document document, TLRPC.VideoSize videoSize);
+
+        void onTopicClick(ChatActionCell chatActionCell);
     }
 
     class TextLayout {
@@ -443,7 +448,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         this.giftTextPaint = new TextPaint(1);
         this.giftSubtitlePaint = new TextPaint(1);
         this.radialProgress = new RadialProgress2(this);
-        this.giftStickerDelegate = new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda2
+        this.giftStickerDelegate = new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver, boolean z2, boolean z3, boolean z4) {
                 ChatActionCell.this.lambda$new$0(imageReceiver, z2, z3, z4);
@@ -1185,7 +1190,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         messageObject.playedGiftAnimation = true;
         lottieAnimation.setCurrentFrame(0, false);
-        AndroidUtilities.runOnUIThread(new ChatActionCell$$ExternalSyntheticLambda7(lottieAnimation));
+        AndroidUtilities.runOnUIThread(new ChatActionCell$$ExternalSyntheticLambda8(lottieAnimation));
         if (messageObject.wasUnread || this.forceWasUnread) {
             messageObject.wasUnread = false;
             this.forceWasUnread = false;
@@ -1205,7 +1210,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$1() {
+    public /* synthetic */ void lambda$onTouchEvent$2() {
         this.isSpoilerRevealing = false;
         getMessageObject().isSpoilersRevealed = true;
         List list = this.giftPremiumText.spoilers;
@@ -1216,23 +1221,31 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$2() {
-        post(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda4
+    public /* synthetic */ void lambda$onTouchEvent$3() {
+        post(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActionCell.this.lambda$onTouchEvent$1();
+                ChatActionCell.this.lambda$onTouchEvent$2();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openPremiumGiftChannel$3(TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode) {
+    public /* synthetic */ void lambda$openPremiumGiftChannel$4(TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode) {
         this.delegate.didOpenPremiumGiftChannel(this, tL_messageActionGiftCode.slug, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openPremiumGiftPreview$4(TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
+    public /* synthetic */ void lambda$openPremiumGiftPreview$5(TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
         this.delegate.didOpenPremiumGift(this, tL_premiumGiftOption, str, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setMessageObject$1() {
+        ChatActionCellDelegate chatActionCellDelegate = this.delegate;
+        if (chatActionCellDelegate != null) {
+            chatActionCellDelegate.onTopicClick(this);
+        }
     }
 
     private float measureLayoutWidth(Layout layout) {
@@ -1286,10 +1299,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private void openPremiumGiftChannel() {
         if (this.delegate != null) {
             final TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode = (TLRPC.TL_messageActionGiftCode) this.currentMessageObject.messageOwner.action;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda5
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActionCell.this.lambda$openPremiumGiftChannel$3(tL_messageActionGiftCode);
+                    ChatActionCell.this.lambda$openPremiumGiftChannel$4(tL_messageActionGiftCode);
                 }
             });
         }
@@ -1303,10 +1316,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         tL_premiumGiftOption.currency = messageAction.currency;
         final String str = (!isGiftCode() || isSelfGiftCode()) ? null : ((TLRPC.TL_messageActionGiftCode) this.currentMessageObject.messageOwner.action).slug;
         if (this.delegate != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActionCell.this.lambda$openPremiumGiftPreview$4(tL_premiumGiftOption, str);
+                    ChatActionCell.this.lambda$openPremiumGiftPreview$5(tL_premiumGiftOption, str);
                 }
             });
         }
@@ -1372,7 +1385,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (this.wasLayout) {
             buildLayout();
         } else if (z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatActionCell.this.requestLayout();
@@ -3157,16 +3170,16 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x012a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x0135, code lost:
     
-        if (r5.contains(r1, r3) == false) goto L74;
+        if (r6.contains(r1, r4) == false) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x01a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x01b4, code lost:
     
-        if (r12.backgroundRect.contains(r1, r3) != false) goto L162;
+        if (r12.backgroundRect.contains(r1, r4) != false) goto L167;
      */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x03bd  */
-    /* JADX WARN: Removed duplicated region for block: B:111:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:116:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3183,7 +3196,11 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (messageObject == null) {
             return super.onTouchEvent(motionEvent);
         }
+        TopicSeparator topicSeparator = this.topicSeparator;
         boolean z2 = true;
+        if (topicSeparator != null && topicSeparator.onTouchEvent(motionEvent, false)) {
+            return true;
+        }
         if ((this.starGiftLayout.has() && this.starGiftLayout.onTouchEvent(this.starGiftLayoutX, this.starGiftLayoutY, motionEvent)) || this.reactionsLayoutInBubble.checkTouchEvent(motionEvent)) {
             return true;
         }
@@ -3367,10 +3384,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             SpoilerEffect spoilerEffect2 = this.spoilerPressed;
                             if (spoilerEffect == spoilerEffect2) {
                                 this.isSpoilerRevealing = true;
-                                spoilerEffect2.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda1
+                                spoilerEffect2.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda2
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatActionCell.this.lambda$onTouchEvent$2();
+                                        ChatActionCell.this.lambda$onTouchEvent$3();
                                     }
                                 });
                                 float sqrt = (float) Math.sqrt(Math.pow(this.giftPremiumText.layout.getWidth(), 2.0d) + Math.pow(this.giftPremiumText.layout.getHeight(), 2.0d));
@@ -3473,7 +3490,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         setMessageObject(messageObject, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x06ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x06c2, code lost:
     
         if (r1 != null) goto L310;
      */
@@ -3486,14 +3503,14 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     /* JADX WARN: Removed duplicated region for block: B:209:0x0428  */
     /* JADX WARN: Removed duplicated region for block: B:224:0x05db  */
     /* JADX WARN: Removed duplicated region for block: B:237:0x065d  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x06c5  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x06cd  */
     /* JADX WARN: Type inference failed for: r15v1 */
     /* JADX WARN: Type inference failed for: r15v2, types: [boolean] */
     /* JADX WARN: Type inference failed for: r15v3 */
     /* JADX WARN: Type inference failed for: r15v5 */
     /* JADX WARN: Type inference failed for: r1v62, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r2v142 */
     /* JADX WARN: Type inference failed for: r2v143 */
+    /* JADX WARN: Type inference failed for: r2v144 */
     /* JADX WARN: Type inference failed for: r2v31, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3948,7 +3965,14 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (this.firstInChat && this.isAllChats && this.isSideMenued && (this.isForum || this.isMonoForum)) {
                 this.topicSeparatorTopPadding = AndroidUtilities.dp(33.0f);
                 if (this.topicSeparator == null) {
-                    this.topicSeparator = new TopicSeparator(this.currentAccount, this, this.themeDelegate, true);
+                    TopicSeparator topicSeparator2 = new TopicSeparator(this.currentAccount, this, this.themeDelegate, true);
+                    this.topicSeparator = topicSeparator2;
+                    topicSeparator2.setOnClickListener(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            ChatActionCell.this.lambda$setMessageObject$1();
+                        }
+                    });
                 }
                 if (this.topicSeparator.update(this.currentMessageObject)) {
                     if (this.attachedToWindow) {

@@ -1932,9 +1932,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             return this.path;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:13:0x00a5  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x00b0  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00dd  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x00ac  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x00d9  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1967,9 +1966,6 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             } else {
                 if (((Integer) imageOrientation.first).intValue() == 0) {
                     bitmap = scaledBitmap;
-                    if (this.cropState != null) {
-                        scaledBitmap.recycle();
-                    }
                     str = this.fullPaintPath;
                     if (str != null) {
                         this.imagePath = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(ImageLoader.scaleAndSaveImage(bitmap, compressFormat, AndroidUtilities.getPhotoSize(z), AndroidUtilities.getPhotoSize(z), z ? 99 : 87, false, 101, 101), true).toString();
@@ -1983,10 +1979,10 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         }
                         try {
                             Paint paint = new Paint(3);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(scaledBitmap.getWidth(), scaledBitmap.getHeight(), Bitmap.Config.ARGB_8888);
+                            Bitmap createBitmap2 = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
                             Canvas canvas = new Canvas(createBitmap2);
-                            canvas.drawBitmap(scaledBitmap, 0.0f, 0.0f, paint);
-                            canvas.scale(scaledBitmap.getWidth() / decodeFile.getWidth(), scaledBitmap.getHeight() / decodeFile.getHeight());
+                            canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                            canvas.scale(bitmap.getWidth() / decodeFile.getWidth(), bitmap.getHeight() / decodeFile.getHeight());
                             canvas.drawBitmap(decodeFile, 0.0f, 0.0f, paint);
                             this.imagePath = PhotoViewer.getTempFileAbsolutePath();
                             createBitmap2.compress(compressFormat, z ? 99 : 87, new FileOutputStream(this.imagePath));
@@ -2006,9 +2002,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 }
                 createBitmap = Bitmaps.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
             }
+            scaledBitmap.recycle();
             bitmap = createBitmap;
-            if (this.cropState != null) {
-            }
             str = this.fullPaintPath;
             if (str != null) {
             }
@@ -9258,7 +9253,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             return;
         }
         if (z2) {
-            stopRecording(z ? 2 : 0, false, 0, false, 0L);
+            if (this.recordingAudio == null || isRecordingPaused()) {
+                stopRecording(z ? 2 : 0, false, 0, false, 0L);
+            } else {
+                toggleRecordingPause(false);
+            }
         }
         if (!this.sensorsStarted || this.ignoreOnPause) {
             return;

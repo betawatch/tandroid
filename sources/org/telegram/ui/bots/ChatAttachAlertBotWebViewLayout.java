@@ -78,6 +78,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
     private boolean isBotButtonAvailable;
     private long lastSwipeTime;
     private int measureOffsetY;
+    private long monoforumTopicId;
     private boolean needCloseConfirmation;
     private boolean needReload;
     private ActionBarMenuItem otherItem;
@@ -822,7 +823,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
 
     public ChatAttachAlertBotWebViewLayout(ChatAttachAlert chatAttachAlert, Context context, Theme.ResourcesProvider resourcesProvider) {
         super(chatAttachAlert, context, resourcesProvider);
-        this.pollRunnable = new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda5
+        this.pollRunnable = new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$2();
@@ -864,25 +865,25 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         };
         this.swipeContainer = webViewSwipeContainer;
         webViewSwipeContainer.addView(this.webViewContainer, LayoutHelper.createFrame(-1, -1.0f));
-        this.swipeContainer.setScrollListener(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda6
+        this.swipeContainer.setScrollListener(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$3();
             }
         });
-        this.swipeContainer.setScrollEndListener(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda7
+        this.swipeContainer.setScrollEndListener(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$4();
             }
         });
-        this.swipeContainer.setDelegate(new WebViewSwipeContainer.Delegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda8
+        this.swipeContainer.setDelegate(new WebViewSwipeContainer.Delegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate
             public final void onDismiss(boolean z) {
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$5(z);
             }
         });
-        this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda9
+        this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
                 Boolean lambda$new$6;
@@ -894,7 +895,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         WebProgressView webProgressView = new WebProgressView(context, resourcesProvider);
         this.progressView = webProgressView;
         addView(webProgressView, LayoutHelper.createFrame(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 84.0f));
-        this.webViewContainer.setWebViewProgressListener(new Consumer() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda10
+        this.webViewContainer.setWebViewProgressListener(new Consumer() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda9
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$8((Float) obj);
@@ -937,11 +938,31 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         tL_messages_prolongWebView.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.peerId);
         tL_messages_prolongWebView.query_id = this.queryId;
         tL_messages_prolongWebView.silent = this.silent;
-        if (this.replyToMsgId != 0) {
-            tL_messages_prolongWebView.reply_to = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
-            tL_messages_prolongWebView.flags |= 1;
+        if (this.replyToMsgId == 0) {
+            if (this.monoforumTopicId != 0) {
+                TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+            }
+            if (this.peerId < 0 && (chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-this.peerId)) != null && (peer = chatFull.default_send_as) != null) {
+                tL_messages_prolongWebView.send_as = MessagesController.getInstance(this.currentAccount).getInputPeer(peer);
+                tL_messages_prolongWebView.flags |= LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+            }
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda13
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    ChatAttachAlertBotWebViewLayout.this.lambda$new$1(tLObject, tL_error);
+                }
+            });
         }
-        if (this.peerId < 0 && (chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-this.peerId)) != null && (peer = chatFull.default_send_as) != null) {
+        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(this.currentAccount).createReplyInput(this.replyToMsgId);
+        tL_messages_prolongWebView.reply_to = createReplyInput;
+        if (this.monoforumTopicId != 0) {
+            createReplyInput.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
+            tL_messages_prolongWebView.reply_to.flags |= 32;
+        }
+        tL_messages_prolongWebView.flags |= 1;
+        if (this.peerId < 0) {
             tL_messages_prolongWebView.send_as = MessagesController.getInstance(this.currentAccount).getInputPeer(peer);
             tL_messages_prolongWebView.flags |= LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
         }
@@ -1422,7 +1443,12 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         super.requestLayout();
     }
 
-    public void requestWebView(final int i, long j, long j2, boolean z, int i2, String str) {
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00d6  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void requestWebView(final int i, long j, long j2, boolean z, int i2, String str, long j3) {
+        JSONObject makeThemeParams;
         TLRPC.ChatFull chatFull;
         TLRPC.Peer peer;
         this.currentAccount = i;
@@ -1430,6 +1456,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         this.botId = j2;
         this.silent = z;
         this.replyToMsgId = i2;
+        this.monoforumTopicId = j3;
         this.startCommand = str;
         if (this.addToHomeScreenItem != null) {
             if (MediaDataController.getInstance(i).canCreateAttachedMenuBotShortcut(j2)) {
@@ -1453,18 +1480,38 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
             tL_messages_requestWebView.start_param = str;
             tL_messages_requestWebView.flags |= 8;
         }
-        if (i2 != 0) {
-            tL_messages_requestWebView.reply_to = SendMessagesHelper.getInstance(i).createReplyInput(i2);
-            tL_messages_requestWebView.flags |= 1;
+        if (i2 == 0) {
+            if (j3 != 0) {
+                TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                tL_messages_requestWebView.reply_to = tL_inputReplyToMonoForum;
+                tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(i).getInputPeer(j3);
+            }
+            makeThemeParams = BotWebViewSheet.makeThemeParams(this.resourcesProvider);
+            if (makeThemeParams != null) {
+                TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+                tL_messages_requestWebView.theme_params = tL_dataJSON;
+                tL_dataJSON.data = makeThemeParams.toString();
+                tL_messages_requestWebView.flags |= 4;
+            }
+            ConnectionsManager.getInstance(i).sendRequest(tL_messages_requestWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda10
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    ChatAttachAlertBotWebViewLayout.this.lambda$requestWebView$13(i, tLObject, tL_error);
+                }
+            });
+            NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.webViewResultSent);
         }
-        JSONObject makeThemeParams = BotWebViewSheet.makeThemeParams(this.resourcesProvider);
+        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(i).createReplyInput(i2);
+        tL_messages_requestWebView.reply_to = createReplyInput;
+        if (j3 != 0) {
+            createReplyInput.monoforum_peer_id = MessagesController.getInstance(i).getInputPeer(j3);
+            tL_messages_requestWebView.reply_to.flags |= 32;
+        }
+        tL_messages_requestWebView.flags |= 1;
+        makeThemeParams = BotWebViewSheet.makeThemeParams(this.resourcesProvider);
         if (makeThemeParams != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_messages_requestWebView.theme_params = tL_dataJSON;
-            tL_dataJSON.data = makeThemeParams.toString();
-            tL_messages_requestWebView.flags |= 4;
         }
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_requestWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda3
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_requestWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ChatAttachAlertBotWebViewLayout.this.lambda$requestWebView$13(i, tLObject, tL_error);
@@ -1537,7 +1584,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         }
         boolean z = tL_attachMenuBot.show_in_side_menu;
         final String formatString = (z && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString("BotAttachMenuShortcatAddedAttachAndSide", R.string.BotAttachMenuShortcatAddedAttachAndSide, user.first_name) : z ? LocaleController.formatString("BotAttachMenuShortcatAddedSide", R.string.BotAttachMenuShortcatAddedSide, user.first_name) : LocaleController.formatString("BotAttachMenuShortcatAddedAttach", R.string.BotAttachMenuShortcatAddedAttach, user.first_name);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda4
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertBotWebViewLayout.this.lambda$showJustAddedBulletin$14(formatString);

@@ -253,7 +253,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    AutoDeleteMessagesActivity.this.lambda$onBackPressed$347();
+                    AutoDeleteMessagesActivity.this.lambda$onBackPressed$348();
                 }
             }
         });

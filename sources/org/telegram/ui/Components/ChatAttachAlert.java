@@ -2400,7 +2400,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         /* JADX WARN: Code restructure failed: missing block: B:21:0x0072, code lost:
         
-            if (r8.this$0.editType == 2) goto L75;
+            if (r9.this$0.editType == 2) goto L81;
          */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
@@ -2423,15 +2423,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (baseFragment instanceof ChatActivity) {
                 if (chatAttachAlert.editingMessageObject == null) {
                     TLRPC.User currentUser = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getCurrentUser() : null;
+                    BaseFragment baseFragment2 = ChatAttachAlert.this.baseFragment;
+                    TLRPC.Chat currentChat = baseFragment2 instanceof ChatActivity ? ((ChatActivity) baseFragment2).getCurrentChat() : null;
                     if (currentUser != null && ((ChatActivity) ChatAttachAlert.this.baseFragment).getMessagesController().getSendPaidMessagesStars(currentUser.id) > 0) {
                         z = true;
                     }
                     int i = this.buttonsCount;
                     this.buttonsCount = i + 1;
                     this.galleryButton = i;
-                    if ((ChatAttachAlert.this.photosEnabled || ChatAttachAlert.this.videosEnabled) && !z) {
-                        BaseFragment baseFragment2 = ChatAttachAlert.this.baseFragment;
-                        if ((baseFragment2 instanceof ChatActivity) && !((ChatActivity) baseFragment2).isInScheduleMode() && !((ChatActivity) ChatAttachAlert.this.baseFragment).isSecretChat() && ((ChatActivity) ChatAttachAlert.this.baseFragment).getChatMode() != 5) {
+                    if ((ChatAttachAlert.this.photosEnabled || ChatAttachAlert.this.videosEnabled) && !z && (currentChat == null || !ChatObject.isMonoForum(currentChat))) {
+                        BaseFragment baseFragment3 = ChatAttachAlert.this.baseFragment;
+                        if ((baseFragment3 instanceof ChatActivity) && !((ChatActivity) baseFragment3).isInScheduleMode() && !((ChatActivity) ChatAttachAlert.this.baseFragment).isSecretChat() && ((ChatActivity) ChatAttachAlert.this.baseFragment).getChatMode() != 5) {
                             ChatActivity chatActivity = (ChatActivity) ChatAttachAlert.this.baseFragment;
                             this.attachBotsStartRow = this.buttonsCount;
                             this.attachMenuBots.clear();
@@ -2467,8 +2469,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         this.buttonsCount = i5 + 1;
                         this.contactButton = i5;
                     }
-                    BaseFragment baseFragment3 = ChatAttachAlert.this.baseFragment;
-                    if ((baseFragment3 instanceof ChatActivity) && ((ChatActivity) baseFragment3).getChatMode() == 0 && currentUser != null && !z && !currentUser.bot && QuickRepliesController.getInstance(ChatAttachAlert.this.currentAccount).hasReplies()) {
+                    BaseFragment baseFragment4 = ChatAttachAlert.this.baseFragment;
+                    if ((baseFragment4 instanceof ChatActivity) && ((ChatActivity) baseFragment4).getChatMode() == 0 && currentUser != null && !z && !currentUser.bot && QuickRepliesController.getInstance(ChatAttachAlert.this.currentAccount).hasReplies()) {
                         int i6 = this.buttonsCount;
                         this.buttonsCount = i6 + 1;
                         this.quickRepliesButton = i6;
@@ -7384,9 +7386,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x002c, code lost:
     
-        if (((org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout) r16.botAttachLayouts.get(r17)).needReload() == false) goto L9;
+        if (((org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout) r18.botAttachLayouts.get(r19)).needReload() == false) goto L9;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00a3  */
     /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -7403,7 +7405,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ((ChatAttachAlertBotWebViewLayout) this.botAttachLayouts.get(j)).setDelegate(new 1(chatAttachAlertBotWebViewLayout, str, j));
             MessageObject replyingMessageObject = ((ChatActivity) this.baseFragment).getChatActivityEnterView().getReplyingMessageObject();
             j2 = j;
-            ((ChatAttachAlertBotWebViewLayout) this.botAttachLayouts.get(j)).requestWebView(this.currentAccount, ((ChatActivity) this.baseFragment).getDialogId(), j, false, replyingMessageObject != null ? replyingMessageObject.messageOwner.id : 0, str);
+            ((ChatAttachAlertBotWebViewLayout) this.botAttachLayouts.get(j)).requestWebView(this.currentAccount, ((ChatActivity) this.baseFragment).getDialogId(), j, false, replyingMessageObject != null ? replyingMessageObject.messageOwner.id : 0, str, ((ChatActivity) this.baseFragment).getSendMonoForumPeerId());
             if (this.botAttachLayouts.get(j2) == null) {
                 ((ChatAttachAlertBotWebViewLayout) this.botAttachLayouts.get(j2)).disallowSwipeOffsetAnimation();
                 showLayout((AttachAlertLayout) this.botAttachLayouts.get(j2), -j2, z2);

@@ -1062,7 +1062,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(TLObject tLObject, Bundle bundle) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$347();
+                LoginActivity.this.lambda$onBackPressed$348();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 LoginActivity.this.lambda$resendCodeFromSafetyNet$19(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
@@ -6045,7 +6045,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             String string;
             int i;
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$347();
+                LoginActivity.this.lambda$onBackPressed$348();
                 LoginActivity.this.emailChangeFinishCallback.run();
                 return;
             }
@@ -7344,7 +7344,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$22(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$347();
+            LoginActivity.this.lambda$onBackPressed$348();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7499,7 +7499,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$347();
+            LoginActivity.this.lambda$onBackPressed$348();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8156,7 +8156,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             NotificationCenter globalInstance;
             int i;
             if (LoginActivity.this.activityMode != 0) {
-                LoginActivity.this.lambda$onBackPressed$347();
+                LoginActivity.this.lambda$onBackPressed$348();
                 return false;
             }
             int i2 = this.prevType;
@@ -10676,7 +10676,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (UserConfig.selectedAccount != i) {
                 ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
             }
-            LoginActivity.this.lambda$onBackPressed$347();
+            LoginActivity.this.lambda$onBackPressed$348();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11796,7 +11796,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$347();
+            lambda$onBackPressed$348();
         }
     }
 
@@ -12280,7 +12280,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             });
             this.pendingSwitchingAccount = false;
-            lambda$onBackPressed$347();
+            lambda$onBackPressed$348();
             return;
         }
         if (z && z2) {
@@ -13106,7 +13106,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i3 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
                 } else if (i3 == -1 && LoginActivity.this.onBackPressed()) {
-                    LoginActivity.this.lambda$onBackPressed$347();
+                    LoginActivity.this.lambda$onBackPressed$348();
                 }
             }
         });

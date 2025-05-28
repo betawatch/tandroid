@@ -551,7 +551,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GradientHeaderActivity.this.lambda$onBackPressed$347();
+                    GradientHeaderActivity.this.lambda$onBackPressed$348();
                 }
             }
         });
