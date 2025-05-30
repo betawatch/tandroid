@@ -244,9 +244,9 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0303, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0315, code lost:
     
-        if (r1.isComments == false) goto L76;
+        if (r2.isComments == false) goto L80;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -288,7 +288,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             this.parentFragment = (ChatActivity) baseFragment;
         }
         ChatActivity chatActivity = this.parentFragment;
-        boolean z3 = chatActivity != null && chatActivity.getChatMode() == 0 && !UserObject.isReplyUser(this.parentFragment.getCurrentUser()) && (this.parentFragment.getCurrentUser() == null || this.parentFragment.getCurrentUser().id != UserObject.VERIFY);
+        boolean z3 = chatActivity != null && (chatActivity.getChatMode() == 0 || this.parentFragment.getChatMode() == 8) && !UserObject.isReplyUser(this.parentFragment.getCurrentUser()) && (this.parentFragment.getCurrentUser() == null || this.parentFragment.getCurrentUser().id != UserObject.VERIFY);
         this.avatarImageView = new 1(context, baseFragment, z3, resourcesProvider);
         if (z2 || (baseFragment instanceof TopicsFragment)) {
             ChatActivity chatActivity2 = this.parentFragment;
@@ -397,7 +397,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             addView(this.starFgItem);
         }
         ChatActivity chatActivity4 = this.parentFragment;
-        if (chatActivity4 != null && (chatActivity4.getChatMode() == 0 || this.parentFragment.getChatMode() == 3)) {
+        if (chatActivity4 != null && (chatActivity4.getChatMode() == 0 || this.parentFragment.getChatMode() == 8 || this.parentFragment.getChatMode() == 3)) {
             if (this.parentFragment.isThreadChat()) {
                 ChatActivity chatActivity5 = this.parentFragment;
                 if (!chatActivity5.isTopic) {
@@ -1264,128 +1264,164 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         openProfile(z, true, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0123, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x001f, code lost:
     
-        if (r12 != false) goto L65;
+        if (r17.avatarImageView.getImageReceiver().hasNotThumb() != false) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0126, code lost:
-    
-        r0 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x016b, code lost:
-    
-        r1.setPlayProfileAnimation(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x0169, code lost:
-    
-        if (r12 != false) goto L65;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x001b, code lost:
-    
-        if (r11.avatarImageView.getImageReceiver().hasNotThumb() != false) goto L11;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0055 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x01c0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void openProfile(boolean z, boolean z2, boolean z3) {
+        boolean z4;
+        TLRPC.Chat currentChat;
+        ImageReceiver imageReceiver;
+        String imageKey;
+        ImageLoader imageLoader;
+        ChatActivity chatActivity;
         long id;
-        ProfileActivity profileActivity;
+        Drawable drawable;
+        TLRPC.User user;
         if (z) {
             if (!AndroidUtilities.isTablet()) {
                 android.graphics.Point point = AndroidUtilities.displaySize;
                 if (point.x <= point.y) {
                 }
             }
-            z = false;
+            z4 = false;
+            TLRPC.User currentUser = this.parentFragment.getCurrentUser();
+            currentChat = this.parentFragment.getCurrentChat();
+            boolean z5 = currentChat == null && currentChat.monoforum;
+            if (currentChat != null && currentChat.monoforum) {
+                currentChat = this.parentFragment.getMessagesController().getChat(Long.valueOf(currentChat.linked_monoforum_id));
+                if (currentChat != null) {
+                    return;
+                }
+                if (this.parentFragment.getSendMonoForumPeerId() != 0 && (user = this.parentFragment.getMessagesController().getUser(Long.valueOf(this.parentFragment.getSendMonoForumPeerId()))) != null) {
+                    currentChat = null;
+                    currentUser = user;
+                }
+            }
+            imageReceiver = this.avatarImageView.getImageReceiver();
+            imageKey = imageReceiver.getImageKey();
+            imageLoader = ImageLoader.getInstance();
+            if (imageKey != null && !imageLoader.isInMemCache(imageKey, false)) {
+                drawable = imageReceiver.getDrawable();
+                if ((drawable instanceof BitmapDrawable) && !(drawable instanceof AnimatedFileDrawable)) {
+                    imageLoader.putImageToCache((BitmapDrawable) drawable, imageKey, false);
+                }
+            }
+            chatActivity = this.parentFragment;
+            if (!chatActivity.isComments) {
+                if (currentChat == null) {
+                    return;
+                }
+                chatActivity.presentFragment(ProfileActivity.of(-currentChat.id), z3);
+                return;
+            }
+            if (currentUser == null) {
+                if (currentChat != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", currentChat.id);
+                    if (this.parentFragment.getChatMode() != 3) {
+                        ChatActivity chatActivity2 = this.parentFragment;
+                        if (chatActivity2.isTopic) {
+                            id = chatActivity2.getThreadMessage().getId();
+                        }
+                        ProfileActivity profileActivity = new ProfileActivity(bundle, this.sharedMediaPreloader);
+                        if (!z5) {
+                            profileActivity.setChatInfo(this.parentFragment.getCurrentChatInfo());
+                        }
+                        if (z2) {
+                            profileActivity.setPlayProfileAnimation(z4 ? 2 : 1);
+                        }
+                        this.parentFragment.presentFragment(profileActivity, z3);
+                        return;
+                    }
+                    id = this.parentFragment.getSavedDialogId();
+                    bundle.putLong("topic_id", id);
+                    ProfileActivity profileActivity2 = new ProfileActivity(bundle, this.sharedMediaPreloader);
+                    if (!z5) {
+                    }
+                    if (z2) {
+                    }
+                    this.parentFragment.presentFragment(profileActivity2, z3);
+                    return;
+                }
+                return;
+            }
+            if (currentUser.id == UserObject.VERIFY) {
+                return;
+            }
+            Bundle bundle2 = new Bundle();
+            if (UserObject.isUserSelf(currentUser)) {
+                if (this.sharedMediaPreloader.hasSharedMedia()) {
+                    bundle2.putLong("dialog_id", this.parentFragment.getDialogId());
+                    if (this.parentFragment.getChatMode() == 3) {
+                        bundle2.putLong("topic_id", this.parentFragment.getSavedDialogId());
+                    }
+                    MediaActivity mediaActivity = new MediaActivity(bundle2, this.sharedMediaPreloader);
+                    mediaActivity.setChatInfo(this.parentFragment.getCurrentChatInfo());
+                    this.parentFragment.presentFragment(mediaActivity, z3);
+                    return;
+                }
+                return;
+            }
+            if (this.parentFragment.getChatMode() == 3) {
+                long savedDialogId = this.parentFragment.getSavedDialogId();
+                bundle2.putBoolean("saved", true);
+                if (savedDialogId >= 0) {
+                    bundle2.putLong("user_id", savedDialogId);
+                } else {
+                    bundle2.putLong("chat_id", -savedDialogId);
+                }
+            } else {
+                bundle2.putLong("user_id", currentUser.id);
+                if (this.timeItem != null && !z5) {
+                    bundle2.putLong("dialog_id", this.parentFragment.getDialogId());
+                }
+            }
+            bundle2.putBoolean("reportSpam", this.parentFragment.hasReportSpam());
+            bundle2.putInt("actionBarColor", getThemedColor(Theme.key_actionBarDefault));
+            ProfileActivity profileActivity3 = new ProfileActivity(bundle2, this.sharedMediaPreloader);
+            if (!z5) {
+                TLRPC.UserFull currentUserInfo = this.parentFragment.getCurrentUserInfo();
+                ChatActivity chatActivity3 = this.parentFragment;
+                profileActivity3.setUserInfo(currentUserInfo, chatActivity3.profileChannelMessageFetcher, chatActivity3.birthdayAssetsFetcher);
+            }
+            if (z2) {
+                profileActivity3.setPlayProfileAnimation(z4 ? 2 : 1);
+            }
+            this.parentFragment.presentFragment(profileActivity3, z3);
+            return;
         }
-        TLRPC.User currentUser = this.parentFragment.getCurrentUser();
-        TLRPC.Chat currentChat = this.parentFragment.getCurrentChat();
-        ImageReceiver imageReceiver = this.avatarImageView.getImageReceiver();
-        String imageKey = imageReceiver.getImageKey();
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        if (imageKey != null && !imageLoader.isInMemCache(imageKey, false)) {
-            Drawable drawable = imageReceiver.getDrawable();
-            if ((drawable instanceof BitmapDrawable) && !(drawable instanceof AnimatedFileDrawable)) {
+        z4 = z;
+        TLRPC.User currentUser2 = this.parentFragment.getCurrentUser();
+        currentChat = this.parentFragment.getCurrentChat();
+        if (currentChat == null) {
+        }
+        if (currentChat != null) {
+            currentChat = this.parentFragment.getMessagesController().getChat(Long.valueOf(currentChat.linked_monoforum_id));
+            if (currentChat != null) {
+            }
+        }
+        imageReceiver = this.avatarImageView.getImageReceiver();
+        imageKey = imageReceiver.getImageKey();
+        imageLoader = ImageLoader.getInstance();
+        if (imageKey != null) {
+            drawable = imageReceiver.getDrawable();
+            if (drawable instanceof BitmapDrawable) {
                 imageLoader.putImageToCache((BitmapDrawable) drawable, imageKey, false);
             }
         }
-        ChatActivity chatActivity = this.parentFragment;
-        if (chatActivity.isComments) {
-            if (currentChat == null) {
-                return;
-            }
-            chatActivity.presentFragment(ProfileActivity.of(-currentChat.id), z3);
-            return;
+        chatActivity = this.parentFragment;
+        if (!chatActivity.isComments) {
         }
-        int i = 2;
-        if (currentUser == null) {
-            if (currentChat != null) {
-                Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", currentChat.id);
-                if (this.parentFragment.getChatMode() != 3) {
-                    ChatActivity chatActivity2 = this.parentFragment;
-                    if (chatActivity2.isTopic) {
-                        id = chatActivity2.getThreadMessage().getId();
-                    }
-                    ProfileActivity profileActivity2 = new ProfileActivity(bundle, this.sharedMediaPreloader);
-                    profileActivity2.setChatInfo(this.parentFragment.getCurrentChatInfo());
-                    profileActivity = profileActivity2;
-                    if (z2) {
-                    }
-                    this.parentFragment.presentFragment(profileActivity, z3);
-                }
-                id = this.parentFragment.getSavedDialogId();
-                bundle.putLong("topic_id", id);
-                ProfileActivity profileActivity22 = new ProfileActivity(bundle, this.sharedMediaPreloader);
-                profileActivity22.setChatInfo(this.parentFragment.getCurrentChatInfo());
-                profileActivity = profileActivity22;
-                if (z2) {
-                }
-                this.parentFragment.presentFragment(profileActivity, z3);
-            }
-            return;
-        }
-        if (currentUser.id == UserObject.VERIFY) {
-            return;
-        }
-        Bundle bundle2 = new Bundle();
-        if (UserObject.isUserSelf(currentUser)) {
-            if (this.sharedMediaPreloader.hasSharedMedia()) {
-                bundle2.putLong("dialog_id", this.parentFragment.getDialogId());
-                if (this.parentFragment.getChatMode() == 3) {
-                    bundle2.putLong("topic_id", this.parentFragment.getSavedDialogId());
-                }
-                MediaActivity mediaActivity = new MediaActivity(bundle2, this.sharedMediaPreloader);
-                mediaActivity.setChatInfo(this.parentFragment.getCurrentChatInfo());
-                this.parentFragment.presentFragment(mediaActivity, z3);
-                return;
-            }
-            return;
-        }
-        if (this.parentFragment.getChatMode() == 3) {
-            long savedDialogId = this.parentFragment.getSavedDialogId();
-            bundle2.putBoolean("saved", true);
-            if (savedDialogId >= 0) {
-                bundle2.putLong("user_id", savedDialogId);
-            } else {
-                bundle2.putLong("chat_id", -savedDialogId);
-            }
-        } else {
-            bundle2.putLong("user_id", currentUser.id);
-            if (this.timeItem != null) {
-                bundle2.putLong("dialog_id", this.parentFragment.getDialogId());
-            }
-        }
-        bundle2.putBoolean("reportSpam", this.parentFragment.hasReportSpam());
-        bundle2.putInt("actionBarColor", getThemedColor(Theme.key_actionBarDefault));
-        profileActivity = new ProfileActivity(bundle2, this.sharedMediaPreloader);
-        TLRPC.UserFull currentUserInfo = this.parentFragment.getCurrentUserInfo();
-        ChatActivity chatActivity3 = this.parentFragment;
-        profileActivity.setUserInfo(currentUserInfo, chatActivity3.profileChannelMessageFetcher, chatActivity3.birthdayAssetsFetcher);
-        if (z2) {
-        }
-        this.parentFragment.presentFragment(profileActivity, z3);
     }
 
     protected void openSearch() {

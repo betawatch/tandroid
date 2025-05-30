@@ -8256,7 +8256,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                                 bundle2.putInt("chatMode", 8);
                                                 bundle2.putBoolean("isSubscriberSuggestions", !ChatObject.canManageMonoForum(this.currentAccount, chat5));
                                                 chatActivity = new ChatActivity(bundle2);
-                                                ForumUtilities.applyTopic(chatActivity, MessagesStorage.TopicKey.of(-chat5.id, getMessagesController().getForumLastTopicId(chat5.id)));
                                             } else if (ChatObject.areTabsEnabled(chat5)) {
                                                 ChatActivity chatActivity2 = new ChatActivity(bundle2);
                                                 ForumUtilities.applyTopic(chatActivity2, MessagesStorage.TopicKey.of(-chat5.id, getMessagesController().getForumLastTopicId(chat5.id)));

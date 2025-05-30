@@ -1083,6 +1083,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private View topViewSeparator2;
     private View topViewSeparator3;
     private int topViewWasVisible;
+    private boolean topicChangedFromMessage;
     private MessageObject topicStarterMessageObject;
     public TopicsTabsView topicsTabs;
     private int totalPinnedMessagesCount;
@@ -6152,7 +6153,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (chatActionCell == null || (messageObject = chatActionCell.getMessageObject()) == null || (topicsTabsView = ChatActivity.this.topicsTabs) == null) {
                     return;
                 }
-                topicsTabsView.selectTopic(messageObject.getMonoForumTopicId());
+                topicsTabsView.selectTopic(messageObject.getMonoForumTopicId(), true);
             }
         }
 
@@ -13467,7 +13468,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             ChatActivity chatActivity = ChatActivity.this;
             if (chatActivity.topicsTabs != null && chatActivity.threadMessageId == 0 && (chatMessageCell.isForum || chatMessageCell.isMonoForum)) {
-                ChatActivity.this.topicsTabs.selectTopic(chatMessageCell.getMessageObject().getTopicId());
+                ChatActivity.this.topicsTabs.selectTopic(chatMessageCell.getMessageObject().getTopicId(), true);
                 return;
             }
             if (ChatActivity.this.getMessagesController().isFrozen()) {
@@ -23984,16 +23985,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.lambda$createTopicsTabs$88();
             }
         });
-        this.topicsTabs.setOnTopicSelected(new Utilities.Callback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda223
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ChatActivity.this.lambda$createTopicsTabs$89((Integer) obj);
+        this.topicsTabs.setOnTopicSelected(new Utilities.Callback2() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda223
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ChatActivity.this.lambda$createTopicsTabs$89((Integer) obj, (Boolean) obj2);
             }
         });
-        this.topicsTabs.setOnDialogSelected(new Utilities.Callback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda224
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ChatActivity.this.lambda$createTopicsTabs$90((Long) obj);
+        this.topicsTabs.setOnDialogSelected(new Utilities.Callback2() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda224
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ChatActivity.this.lambda$createTopicsTabs$90((Long) obj, (Boolean) obj2);
             }
         });
         this.contentView.addView(this.topicsTabs, i, LayoutHelper.createFrame(-1, -1, 51));
@@ -26854,17 +26855,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00f9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$createTopicsTabs$89(Integer num) {
-        int i;
+    public /* synthetic */ void lambda$createTopicsTabs$89(Integer num, Boolean bool) {
+        ChatActivityEnterView chatActivityEnterView;
         TLRPC.TL_forumTopic findTopic;
         if (num.intValue() == getTopicId()) {
             return;
@@ -26876,81 +26877,84 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             topic = findTopic;
         }
         if (message != null || num.intValue() == 0) {
-            int intValue = num.intValue();
-            long topicId = getTopicId();
-            if (intValue != 0) {
-                if (topicId != 0) {
-                    this.clearOnLoadAndScrollMessageId = -1;
-                    getConnectionsManager().cancelRequestsForGuid(this.classGuid);
-                    getMessagesStorage().cancelTasksForGuid(this.classGuid);
-                    this.classGuid = ConnectionsManager.generateClassGuid();
-                    saveDraft();
-                    this.messagePreviewParams = null;
-                    i = this.clearOnLoadAndScrollMessageId;
-                    if (i < 0) {
-                        i = 0;
-                    }
-                    this.startLoadFromMessageId = i;
-                    this.firstMessagesLoaded = false;
-                    this.clearOnLoad = true;
-                    this.waitingForLoad.clear();
-                    this.justCreatedTopic = false;
-                    if (message != null || num.intValue() == 0) {
-                        this.forumTopic = null;
-                        this.threadMessageObjects = null;
-                        this.threadMessageObject = null;
-                        this.replyingMessageObject = null;
-                        this.threadMaxInboxReadId = 0;
-                        this.threadMaxOutboxReadId = 0;
-                        this.replyMaxReadId = 0;
-                        this.threadMessageId = 0L;
-                        this.replyOriginalMessageId = 0;
-                        this.replyOriginalChat = null;
-                        this.isTopic = false;
-                        this.isComments = false;
-                    } else {
-                        ArrayList arrayList = new ArrayList();
-                        arrayList.add(new MessageObject(getCurrentAccount(), message, false, false));
-                        setThreadMessages(arrayList, this.currentChat, topic.id, topic.read_inbox_max_id, topic.read_outbox_max_id, topic);
-                    }
-                    firstLoadMessages();
-                    updateTitle(true);
-                    this.avatarContainer.updateSubtitle(true);
-                    if (topic == null) {
-                        updateTopicTitleIcon();
-                    } else {
-                        this.avatarContainer.checkAndUpdateAvatar();
-                    }
-                    this.topicsTabs.setCurrentTopic(getTopicId());
-                    updateTopPanel(true);
-                    updateBottomOverlay(true);
-                    getMessagesController().setForumLastTopicId(-getDialogId(), getTopicId());
-                    reloadPinnedMessages();
-                    hideFloatingDateView(true);
-                    hideFieldPanel(true);
-                    applyDraftMaybe(true, true);
-                    if (topic != null) {
-                        getMessagesController().getTopicsController().getTopicRepliesCount(this.dialog_id, topic.id);
-                    }
-                    this.reactionsMentionCount = topic == null ? topic.unread_reactions_count : 0;
-                    updateReactionsMentionButton(false);
-                    if (this.searchItemListener == null && this.actionBar.isSearchFieldVisible()) {
-                        this.searchItemListener.onSearchPressed(null);
-                        return;
+            this.topicChangedFromMessage = bool.booleanValue();
+            if (bool.booleanValue()) {
+                int intValue = num.intValue();
+                long topicId = getTopicId();
+                if (intValue != 0) {
+                    if (topicId == 0) {
+                        topicId = num.intValue();
                     }
                 }
-                topicId = num.intValue();
+                savePositionForTopicChange(topicId);
+                getConnectionsManager().cancelRequestsForGuid(this.classGuid);
+                getMessagesStorage().cancelTasksForGuid(this.classGuid);
+                this.classGuid = ConnectionsManager.generateClassGuid();
+                saveDraft();
+                this.messagePreviewParams = null;
+                this.startLoadFromMessageId = (this.clearOnLoadAndScrollMessageId >= 0 || !bool.booleanValue()) ? 0 : this.clearOnLoadAndScrollMessageId;
+                this.firstMessagesLoaded = false;
+                this.clearOnLoad = true;
+                this.waitingForLoad.clear();
+                this.justCreatedTopic = false;
+                if (message != null || num.intValue() == 0) {
+                    this.forumTopic = null;
+                    this.threadMessageObjects = null;
+                    this.threadMessageObject = null;
+                    this.replyingMessageObject = null;
+                    this.threadMaxInboxReadId = 0;
+                    this.threadMaxOutboxReadId = 0;
+                    this.replyMaxReadId = 0;
+                    this.threadMessageId = 0L;
+                    this.replyOriginalMessageId = 0;
+                    this.replyOriginalChat = null;
+                    this.isTopic = false;
+                    this.isComments = false;
+                } else {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(new MessageObject(getCurrentAccount(), message, false, false));
+                    setThreadMessages(arrayList, this.currentChat, topic.id, topic.read_inbox_max_id, topic.read_outbox_max_id, topic);
+                }
+                firstLoadMessages();
+                updateTitle(true);
+                this.avatarContainer.updateSubtitle(true);
+                if (topic == null) {
+                    updateTopicTitleIcon();
+                } else {
+                    this.avatarContainer.checkAndUpdateAvatar();
+                }
+                this.topicsTabs.setCurrentTopic(getTopicId());
+                updateTopPanel(true);
+                updateBottomOverlay(true);
+                getMessagesController().setForumLastTopicId(-getDialogId(), getTopicId());
+                reloadPinnedMessages();
+                hideFloatingDateView(true);
+                hideFieldPanel(true);
+                applyDraftMaybe(true, true);
+                chatActivityEnterView = this.chatActivityEnterView;
+                if (chatActivityEnterView != null) {
+                    chatActivityEnterView.hidePopup(false);
+                    if (getParentActivity() != null) {
+                        AndroidUtilities.hideKeyboard(getParentActivity().getCurrentFocus());
+                    }
+                }
+                if (topic != null) {
+                    getMessagesController().getTopicsController().getTopicRepliesCount(this.dialog_id, topic.id);
+                }
+                this.reactionsMentionCount = topic == null ? topic.unread_reactions_count : 0;
+                updateReactionsMentionButton(false);
+                if (this.searchItemListener == null && this.actionBar.isSearchFieldVisible()) {
+                    this.searchItemListener.onSearchPressed(null);
+                    return;
+                }
             }
-            savePositionForTopicChange(topicId);
+            this.clearOnLoadAndScrollMessageId = -1;
             getConnectionsManager().cancelRequestsForGuid(this.classGuid);
             getMessagesStorage().cancelTasksForGuid(this.classGuid);
             this.classGuid = ConnectionsManager.generateClassGuid();
             saveDraft();
             this.messagePreviewParams = null;
-            i = this.clearOnLoadAndScrollMessageId;
-            if (i < 0) {
-            }
-            this.startLoadFromMessageId = i;
+            this.startLoadFromMessageId = (this.clearOnLoadAndScrollMessageId >= 0 || !bool.booleanValue()) ? 0 : this.clearOnLoadAndScrollMessageId;
             this.firstMessagesLoaded = false;
             this.clearOnLoad = true;
             this.waitingForLoad.clear();
@@ -26982,6 +26986,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             hideFloatingDateView(true);
             hideFieldPanel(true);
             applyDraftMaybe(true, true);
+            chatActivityEnterView = this.chatActivityEnterView;
+            if (chatActivityEnterView != null) {
+            }
             if (topic != null) {
             }
             this.reactionsMentionCount = topic == null ? topic.unread_reactions_count : 0;
@@ -26992,86 +26999,89 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0122  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$createTopicsTabs$90(Long l) {
-        int i;
+    public /* synthetic */ void lambda$createTopicsTabs$90(Long l, Boolean bool) {
+        ChatActivityEnterView chatActivityEnterView;
         if (l.longValue() == getTopicId()) {
             return;
         }
-        long longValue = l.longValue();
-        long topicId = getTopicId();
-        if (longValue != 0) {
-            if (topicId != 0) {
-                this.clearOnLoadAndScrollMessageId = -1;
-                getConnectionsManager().cancelRequestsForGuid(this.classGuid);
-                getMessagesStorage().cancelTasksForGuid(this.classGuid);
-                this.classGuid = ConnectionsManager.generateClassGuid();
-                saveDraft();
-                this.messagePreviewParams = null;
-                i = this.clearOnLoadAndScrollMessageId;
-                if (i < 0) {
-                    i = 0;
-                }
-                this.startLoadFromMessageId = i;
-                this.firstMessagesLoaded = false;
-                this.clearOnLoad = true;
-                this.waitingForLoad.clear();
-                setSavedDialog(l.longValue());
-                TLRPC.TL_forumTopic findTopic = getMessagesController().getTopicsController().findTopic(-getDialogId(), l.longValue());
-                if (l.longValue() != 0 || findTopic == null) {
-                    this.forumTopic = null;
-                    this.threadMessageObjects = null;
-                    this.threadMessageObject = null;
-                    this.replyingMessageObject = null;
-                    this.threadMaxInboxReadId = 0;
-                    this.threadMaxOutboxReadId = 0;
-                    this.replyMaxReadId = 0;
-                    this.threadMessageId = 0L;
-                    this.replyOriginalMessageId = 0;
-                    this.replyOriginalChat = null;
-                    this.isTopic = false;
-                    this.isComments = false;
-                } else {
-                    int i2 = findTopic.read_inbox_max_id;
-                    this.threadMaxInboxReadId = i2;
-                    this.threadMaxOutboxReadId = findTopic.read_outbox_max_id;
-                    this.replyMaxReadId = Math.max(1, i2);
-                    getMessagesController().getTopicsController().getTopicRepliesCount(this.dialog_id, DialogObject.getPeerDialogId(findTopic.from_id));
-                }
-                firstLoadMessages();
-                updateTitle(true);
-                this.avatarContainer.updateSubtitle(true);
-                this.avatarContainer.checkAndUpdateAvatar();
-                this.topicsTabs.setCurrentTopic(l.longValue());
-                updateBottomOverlay(true);
-                getMessagesController().setForumLastTopicId(-getDialogId(), getTopicId());
-                hideFloatingTopicView(true);
-                hideFieldPanel(true);
-                applyDraftMaybe(true, true);
-                this.reactionsMentionCount = findTopic == null ? findTopic.unread_reactions_count : 0;
-                updateReactionsMentionButton(false);
-                if (this.searchItemListener == null && this.actionBar.isSearchFieldVisible()) {
-                    this.searchItemListener.onSearchPressed(null);
-                    return;
+        this.topicChangedFromMessage = bool.booleanValue();
+        if (bool.booleanValue()) {
+            long longValue = l.longValue();
+            long topicId = getTopicId();
+            if (longValue != 0) {
+                if (topicId == 0) {
+                    topicId = l.longValue();
                 }
             }
-            topicId = l.longValue();
+            savePositionForTopicChange(topicId);
+            getConnectionsManager().cancelRequestsForGuid(this.classGuid);
+            getMessagesStorage().cancelTasksForGuid(this.classGuid);
+            this.classGuid = ConnectionsManager.generateClassGuid();
+            saveDraft();
+            this.messagePreviewParams = null;
+            this.startLoadFromMessageId = (this.clearOnLoadAndScrollMessageId >= 0 || !bool.booleanValue()) ? 0 : this.clearOnLoadAndScrollMessageId;
+            this.firstMessagesLoaded = false;
+            this.clearOnLoad = true;
+            this.waitingForLoad.clear();
+            setSavedDialog(l.longValue());
+            TLRPC.TL_forumTopic findTopic = getMessagesController().getTopicsController().findTopic(-getDialogId(), l.longValue());
+            if (l.longValue() != 0 || findTopic == null) {
+                this.forumTopic = null;
+                this.threadMessageObjects = null;
+                this.threadMessageObject = null;
+                this.replyingMessageObject = null;
+                this.threadMaxInboxReadId = 0;
+                this.threadMaxOutboxReadId = 0;
+                this.replyMaxReadId = 0;
+                this.threadMessageId = 0L;
+                this.replyOriginalMessageId = 0;
+                this.replyOriginalChat = null;
+                this.isTopic = false;
+                this.isComments = false;
+            } else {
+                int i = findTopic.read_inbox_max_id;
+                this.threadMaxInboxReadId = i;
+                this.threadMaxOutboxReadId = findTopic.read_outbox_max_id;
+                this.replyMaxReadId = Math.max(1, i);
+                getMessagesController().getTopicsController().getTopicRepliesCount(this.dialog_id, DialogObject.getPeerDialogId(findTopic.from_id));
+            }
+            firstLoadMessages();
+            updateTitle(true);
+            this.avatarContainer.updateSubtitle(true);
+            this.avatarContainer.checkAndUpdateAvatar();
+            this.topicsTabs.setCurrentTopic(l.longValue());
+            updateBottomOverlay(true);
+            getMessagesController().setForumLastTopicId(-getDialogId(), getTopicId());
+            hideFloatingTopicView(true);
+            hideFieldPanel(true);
+            chatActivityEnterView = this.chatActivityEnterView;
+            if (chatActivityEnterView != null) {
+                chatActivityEnterView.hidePopup(false);
+                if (getParentActivity() != null) {
+                    AndroidUtilities.hideKeyboard(getParentActivity().getCurrentFocus());
+                }
+            }
+            applyDraftMaybe(true, true);
+            this.reactionsMentionCount = findTopic == null ? findTopic.unread_reactions_count : 0;
+            updateReactionsMentionButton(false);
+            if (this.searchItemListener == null && this.actionBar.isSearchFieldVisible()) {
+                this.searchItemListener.onSearchPressed(null);
+                return;
+            }
         }
-        savePositionForTopicChange(topicId);
+        this.clearOnLoadAndScrollMessageId = -1;
         getConnectionsManager().cancelRequestsForGuid(this.classGuid);
         getMessagesStorage().cancelTasksForGuid(this.classGuid);
         this.classGuid = ConnectionsManager.generateClassGuid();
         saveDraft();
         this.messagePreviewParams = null;
-        i = this.clearOnLoadAndScrollMessageId;
-        if (i < 0) {
-        }
-        this.startLoadFromMessageId = i;
+        this.startLoadFromMessageId = (this.clearOnLoadAndScrollMessageId >= 0 || !bool.booleanValue()) ? 0 : this.clearOnLoadAndScrollMessageId;
         this.firstMessagesLoaded = false;
         this.clearOnLoad = true;
         this.waitingForLoad.clear();
@@ -27100,6 +27110,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         getMessagesController().setForumLastTopicId(-getDialogId(), getTopicId());
         hideFloatingTopicView(true);
         hideFieldPanel(true);
+        chatActivityEnterView = this.chatActivityEnterView;
+        if (chatActivityEnterView != null) {
+        }
         applyDraftMaybe(true, true);
         this.reactionsMentionCount = findTopic2 == null ? findTopic2.unread_reactions_count : 0;
         updateReactionsMentionButton(false);
@@ -27207,7 +27220,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     public /* synthetic */ void lambda$createView$26(Long l) {
         TopicsTabsView topicsTabsView = this.topicsTabs;
         if (topicsTabsView != null) {
-            topicsTabsView.selectTopic(l.longValue());
+            topicsTabsView.selectTopic(l.longValue(), true);
         }
     }
 
@@ -55613,6 +55626,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return false;
         }
         if (this.chatMode == 6 && BusinessLinksActivity.closeRenameAlert()) {
+            return false;
+        }
+        if (ChatObject.isMonoForum(this.currentChat) && !this.isSubscriberSuggestions && this.topicsTabs != null && getTopicId() != 0) {
+            this.topicsTabs.selectTopic(0L, this.topicChangedFromMessage);
             return false;
         }
         ChatActivity chatActivity = this.backToPreviousFragment;

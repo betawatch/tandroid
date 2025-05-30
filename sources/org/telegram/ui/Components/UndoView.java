@@ -574,22 +574,22 @@ public class UndoView extends FrameLayout {
         showWithAction(j, i, (Object) null, (Object) null, runnable, runnable2);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:541:0x0e86. Please report as an issue. */
+    /* JADX WARN: Failed to find 'out' block for switch in B:544:0x0e91. Please report as an issue. */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:322:0x061e  */
     /* JADX WARN: Removed duplicated region for block: B:329:0x0633  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x07b6  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x07ea  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x164d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x1674  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x0e12  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x175f  */
-    /* JADX WARN: Removed duplicated region for block: B:589:0x162d  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x1658  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x167f  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x0e1d  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x176a  */
+    /* JADX WARN: Removed duplicated region for block: B:592:0x1638  */
     /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x16ba  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x16c5  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x0823  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x07db  */
-    /* JADX WARN: Type inference failed for: r3v240, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v242, types: [java.lang.CharSequence] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1718,7 +1718,10 @@ public class UndoView extends FrameLayout {
                                         i9 = R.string.ChatsDeletedUndo;
                                     } else if (DialogObject.isChatDialog(longValue)) {
                                         TLRPC.Chat chat9 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-longValue));
-                                        if (!ChatObject.isChannel(chat9) || chat9.megagroup) {
+                                        if (ChatObject.isMonoForum(chat9)) {
+                                            textView2 = this.infoTextView;
+                                            i9 = R.string.MonoforumDeletedUndo;
+                                        } else if (!ChatObject.isChannel(chat9) || chat9.megagroup) {
                                             textView2 = this.infoTextView;
                                             i9 = R.string.GroupDeletedUndo;
                                         } else {

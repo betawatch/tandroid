@@ -5337,8 +5337,9 @@ public class NotificationsController extends BaseController {
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionUserJoined) == false) goto L17;
      */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01a8  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x020d  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0215  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5391,7 +5392,9 @@ public class NotificationsController extends BaseController {
                         }
                     }
                 }
-                FileLog.d("skipped message because 1");
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("skipped message because 1");
+                }
                 longSparseArray = longSparseArray3;
                 z3 = z7;
                 i3 = i5;
@@ -5512,11 +5515,21 @@ public class NotificationsController extends BaseController {
                                 } else {
                                     j10 = j3;
                                 }
-                                str = "skipped message because old message with same dialog and message ids exist: did=" + j10 + ", mid=" + id2;
+                                if (BuildVars.LOGS_ENABLED) {
+                                    str = "skipped message because old message with same dialog and message ids exist: did=" + j10 + ", mid=" + id2;
+                                    FileLog.d(str);
+                                }
+                                z8 = z5;
+                                longSparseArray2 = longSparseArray;
                             } else {
                                 long j14 = j3;
                                 if (z9) {
-                                    str = "skipped message because edited";
+                                    if (BuildVars.LOGS_ENABLED) {
+                                        str = "skipped message because edited";
+                                        FileLog.d(str);
+                                    }
+                                    z8 = z5;
+                                    longSparseArray2 = longSparseArray;
                                 } else {
                                     if (z) {
                                         getMessagesStorage().putPushMessage(messageObject3);
@@ -5526,7 +5539,12 @@ public class NotificationsController extends BaseController {
                                         if (!z) {
                                             playInChatSound();
                                         }
-                                        str = "skipped message because chat is already opened (openedDialogId = " + this.openedDialogId + ")";
+                                        if (BuildVars.LOGS_ENABLED) {
+                                            str = "skipped message because chat is already opened (openedDialogId = " + this.openedDialogId + ")";
+                                            FileLog.d(str);
+                                        }
+                                        z8 = z5;
+                                        longSparseArray2 = longSparseArray;
                                     } else {
                                         TLRPC.Message message2 = messageObject3.messageOwner;
                                         if (!message2.mentioned) {
@@ -5534,7 +5552,12 @@ public class NotificationsController extends BaseController {
                                         } else if (z3 || !(message2.action instanceof TLRPC.TL_messageActionPinMessage)) {
                                             j4 = messageObject3.getFromChatId();
                                         } else {
-                                            str = "skipped message because message is mention of pinned";
+                                            if (BuildVars.LOGS_ENABLED) {
+                                                str = "skipped message because message is mention of pinned";
+                                                FileLog.d(str);
+                                            }
+                                            z8 = z5;
+                                            longSparseArray2 = longSparseArray;
                                         }
                                         if (isPersonalMessage(messageObject3)) {
                                             this.personalCount++;
@@ -5554,20 +5577,25 @@ public class NotificationsController extends BaseController {
                                             int notifyOverride = getNotifyOverride(notificationsSettings, j4, topicId);
                                             if (notifyOverride == -1) {
                                                 z6 = isGlobalNotificationsEnabled(j15, Boolean.valueOf(z15), messageObject3.isReactionPush, messageObject3.isStoryReactionPush);
-                                                StringBuilder sb = new StringBuilder();
-                                                sb.append("NotificationsController: process new messages, isGlobalNotificationsEnabled(");
-                                                j8 = j15;
-                                                sb.append(j8);
-                                                sb.append(", ");
-                                                z4 = z15;
-                                                sb.append(z4);
-                                                sb.append(", ");
-                                                sb.append(messageObject3.isReactionPush);
-                                                sb.append(", ");
-                                                sb.append(messageObject3.isStoryReactionPush);
-                                                sb.append(") = ");
-                                                sb.append(z6);
-                                                FileLog.d(sb.toString());
+                                                if (BuildVars.LOGS_ENABLED) {
+                                                    StringBuilder sb = new StringBuilder();
+                                                    sb.append("NotificationsController: process new messages, isGlobalNotificationsEnabled(");
+                                                    j8 = j15;
+                                                    sb.append(j8);
+                                                    sb.append(", ");
+                                                    z4 = z15;
+                                                    sb.append(z4);
+                                                    sb.append(", ");
+                                                    sb.append(messageObject3.isReactionPush);
+                                                    sb.append(", ");
+                                                    sb.append(messageObject3.isStoryReactionPush);
+                                                    sb.append(") = ");
+                                                    sb.append(z6);
+                                                    FileLog.d(sb.toString());
+                                                } else {
+                                                    z4 = z15;
+                                                    j8 = j15;
+                                                }
                                             } else {
                                                 z4 = z15;
                                                 j8 = j15;
@@ -5583,7 +5611,9 @@ public class NotificationsController extends BaseController {
                                             sparseArray = sparseArray3;
                                             j8 = j4;
                                         }
-                                        FileLog.d("NotificationsController: process new messages, value is " + z6 + " (" + j8 + ", " + z4 + ", " + messageObject3.isReactionPush + ", " + messageObject3.isStoryReactionPush + ")");
+                                        if (BuildVars.LOGS_ENABLED) {
+                                            FileLog.d("NotificationsController: process new messages, value is " + z6 + " (" + j8 + ", " + z4 + ", " + messageObject3.isReactionPush + ", " + messageObject3.isStoryReactionPush + ")");
+                                        }
                                         if (z6) {
                                             if (z) {
                                                 j9 = j8;
@@ -5629,9 +5659,6 @@ public class NotificationsController extends BaseController {
                                     }
                                 }
                             }
-                            FileLog.d(str);
-                            z8 = z5;
-                            longSparseArray2 = longSparseArray;
                         } else {
                             longSparseArray = longSparseArray3;
                         }
@@ -5643,16 +5670,14 @@ public class NotificationsController extends BaseController {
                     messageObject = messageObject5;
                     if (messageObject == null) {
                     }
-                    FileLog.d(str);
-                    z8 = z5;
-                    longSparseArray2 = longSparseArray;
                 }
                 i5 = i3 + 1;
                 arrayList3 = arrayList;
                 longSparseArray3 = longSparseArray2;
                 z7 = z3;
             }
-            FileLog.d("skipped message because 1");
+            if (BuildVars.LOGS_ENABLED) {
+            }
             longSparseArray = longSparseArray3;
             z3 = z7;
             i3 = i5;
@@ -5679,11 +5704,15 @@ public class NotificationsController extends BaseController {
         }
         if (z || z10) {
             if (z9) {
-                FileLog.d("NotificationsController processNewMessages: edited branch, showOrUpdateNotification " + this.notifyCheck);
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("NotificationsController processNewMessages: edited branch, showOrUpdateNotification " + this.notifyCheck);
+                }
                 this.delayedPushMessages.clear();
                 showOrUpdateNotification(this.notifyCheck);
             } else if (z16) {
-                FileLog.d("NotificationsController processNewMessages: added branch");
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("NotificationsController processNewMessages: added branch");
+                }
                 MessageObject messageObject6 = (MessageObject) arrayList.get(0);
                 long dialogId3 = messageObject6.getDialogId();
                 long topicId2 = MessageObject.getTopicId(this.currentAccount, messageObject6.messageOwner, getMessagesController().isForum(dialogId3));
@@ -5721,7 +5750,9 @@ public class NotificationsController extends BaseController {
                 }
                 if (i8 != this.total_unread_count || z11) {
                     this.delayedPushMessages.clear();
-                    FileLog.d("NotificationsController processNewMessages: added branch: " + this.notifyCheck);
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("NotificationsController processNewMessages: added branch: " + this.notifyCheck);
+                    }
                     showOrUpdateNotification(this.notifyCheck);
                     final int size = this.pushDialogs.size();
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda26
@@ -11867,15 +11898,17 @@ public class NotificationsController extends BaseController {
     }
 
     public void processNewMessages(final ArrayList<MessageObject> arrayList, final boolean z, final boolean z2, final CountDownLatch countDownLatch) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("NotificationsController: processNewMessages msgs.size()=");
-        sb.append(arrayList == null ? "null" : Integer.valueOf(arrayList.size()));
-        sb.append(" isLast=");
-        sb.append(z);
-        sb.append(" isFcm=");
-        sb.append(z2);
-        sb.append(")");
-        FileLog.d(sb.toString());
+        if (BuildVars.LOGS_ENABLED) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("NotificationsController: processNewMessages msgs.size()=");
+            sb.append(arrayList == null ? "null" : Integer.valueOf(arrayList.size()));
+            sb.append(" isLast=");
+            sb.append(z);
+            sb.append(" isFcm=");
+            sb.append(z2);
+            sb.append(")");
+            FileLog.d(sb.toString());
+        }
         if (arrayList != null) {
             int i = 0;
             while (i < arrayList.size()) {
