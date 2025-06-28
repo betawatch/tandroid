@@ -9131,9 +9131,9 @@ public class MessageObject {
                                                                                                     if (tL_messageActionTodoAppendTasks.list.size() == 1) {
                                                                                                         formatPluralSpannable = LocaleController.formatSpannable(R.string.TodoAddedOneTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)));
                                                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() == 2) {
-                                                                                                        formatPluralSpannable = LocaleController.formatSpannable(R.string.TodoAddedTwoTaskOut, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)));
+                                                                                                        formatPluralSpannable = LocaleController.formatSpannable(R.string.TodoAddedTwoTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)));
                                                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() == 3) {
-                                                                                                        formatPluralSpannable = LocaleController.formatSpannable(R.string.TodoAddedThreeTaskOut, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2)));
+                                                                                                        formatPluralSpannable = LocaleController.formatSpannable(R.string.TodoAddedThreeTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() >= 4) {
                                                                                                         formatPluralSpannable = LocaleController.formatPluralSpannable("TodoAddedMoreTasks", tL_messageActionTodoAppendTasks.list.size() - 3, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                                                     }
@@ -9541,7 +9541,7 @@ public class MessageObject {
 
     public boolean canAppendToTodo() {
         TLRPC.MessageMedia media = getMedia(this.messageOwner);
-        if (!(media instanceof TLRPC.TL_messageMediaToDo)) {
+        if (!(media instanceof TLRPC.TL_messageMediaToDo) || isForwarded()) {
             return false;
         }
         TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) media;
@@ -9564,7 +9564,7 @@ public class MessageObject {
 
     public boolean canCompleteTodo() {
         TLRPC.MessageMedia media = getMedia(this.messageOwner);
-        if (media instanceof TLRPC.TL_messageMediaToDo) {
+        if ((media instanceof TLRPC.TL_messageMediaToDo) && !isForwarded()) {
             return isOutOwner() || ((TLRPC.TL_messageMediaToDo) media).todo.others_can_complete;
         }
         return false;
