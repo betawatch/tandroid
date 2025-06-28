@@ -7,8 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -467,7 +467,7 @@ final class zzgd implements zzgp {
                             i59 = i83;
                             i15 = i85;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                            if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096 || i72 > 17) {
+                            if ((charAt24 & 4096) == 4096 || i72 > 17) {
                                 i16 = i15;
                                 str = zzd;
                                 i17 = 1048575;
@@ -514,7 +514,7 @@ final class zzgd implements zzgp {
                     }
                     i15 = i20;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                    if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096) {
+                    if ((charAt24 & 4096) == 4096) {
                     }
                     i16 = i15;
                     str = zzd;
@@ -528,7 +528,7 @@ final class zzgd implements zzgp {
                 }
                 i15 = i82;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096) {
+                if ((charAt24 & 4096) == 4096) {
                 }
                 i16 = i15;
                 str = zzd;
@@ -541,7 +541,7 @@ final class zzgd implements zzgp {
             int i90 = i63 + 1;
             iArr2[i63] = charAt23;
             int i91 = i63 + 2;
-            iArr2[i90] = ((charAt24 & 256) != 0 ? 268435456 : 0) | ((charAt24 & 512) != 0 ? 536870912 : 0) | (i72 << 20) | objectFieldOffset;
+            iArr2[i90] = ((charAt24 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt24 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i72 << 20) | objectFieldOffset;
             i63 += 3;
             iArr2[i91] = i17 | (i19 << 20);
             zzd = str;

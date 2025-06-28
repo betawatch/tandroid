@@ -15,6 +15,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SlideIntChooseView;
 import org.telegram.ui.Components.AnimatedTextView;
@@ -63,7 +64,7 @@ public class SlideIntChooseView extends FrameLayout {
             options.style = i;
             options.min = i2;
             options.max = i3;
-            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
+            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
                     CharSequence lambda$make$0;
@@ -79,7 +80,7 @@ public class SlideIntChooseView extends FrameLayout {
             options.style = i;
             options.min = i2;
             options.max = i3;
-            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
+            options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
                     CharSequence lambda$make$1;
@@ -116,7 +117,7 @@ public class SlideIntChooseView extends FrameLayout {
 
     public SlideIntChooseView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.minValueAllowed = Integer.MIN_VALUE;
+        this.minValueAllowed = TLRPC.FLAG_31;
         this.toMaxTextEmojiSaturation = -1.0f;
         this.resourcesProvider = resourcesProvider;
         AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
@@ -348,7 +349,7 @@ public class SlideIntChooseView extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), TLRPC.FLAG_30));
         if (Build.VERSION.SDK_INT >= 29) {
             setSystemGestureExclusionRects(Arrays.asList(new Rect(0, 0, AndroidUtilities.dp(80.0f), getMeasuredHeight()), new Rect(getMeasuredWidth() - AndroidUtilities.dp(80.0f), 0, getMeasuredWidth(), getMeasuredHeight())));
         }

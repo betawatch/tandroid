@@ -37,6 +37,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.LoginActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
 /* loaded from: classes.dex */
@@ -104,7 +107,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$consumeGiftPurchase$10(TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, Purchase purchase, Runnable runnable, BillingResult billingResult, String str) {
+    public static /* synthetic */ void lambda$consumeGiftPurchase$11(TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, Purchase purchase, Runnable runnable, BillingResult billingResult, String str) {
         StringBuilder sb = new StringBuilder();
         sb.append("BillingController consumeGiftPurchase ");
         sb.append(inputStorePaymentPurpose);
@@ -206,6 +209,14 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$10(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable) {
+        if (atomicInteger.incrementAndGet() != atomicInteger2.get() || runnable == null) {
+            return;
+        }
+        runnable.run();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$4(AlertDialog[] alertDialogArr) {
         AlertDialog alertDialog = new AlertDialog(ApplicationLoader.applicationContext, 3);
         alertDialogArr[0] = alertDialog;
@@ -221,11 +232,16 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable) {
-        if (atomicInteger.incrementAndGet() != atomicInteger2.get() || runnable == null) {
-            return;
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
+        LoginActivity loginActivity = (LoginActivity) LaunchActivity.findFragment(LoginActivity.class);
+        if (loginActivity == null) {
+            loginActivity = new LoginActivity(accountInstance.getCurrentAccount());
+            BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+            if (safeLastFragment != null) {
+                safeLastFragment.presentFragment(loginActivity);
+            }
         }
-        runnable.run();
+        loginActivity.open(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -237,57 +253,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPurchasesUpdatedInternal$8(final AlertDialog[] alertDialogArr, Purchase purchase, AccountInstance accountInstance, BillingResult billingResult, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, final AtomicInteger atomicInteger, final AtomicInteger atomicInteger2, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                BillingController.lambda$onPurchasesUpdatedInternal$5(alertDialogArr);
-            }
-        });
-        this.requestingTokens.remove(purchase.getPurchaseToken());
-        if (tLObject instanceof TLRPC.Updates) {
-            FileLog.d("BillingController.onPurchasesUpdatedInternal: " + purchase.getOrderId() + " purchase is purchased and now assigned");
-            accountInstance.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-            Iterator it = purchase.getProducts().iterator();
-            while (it.hasNext()) {
-                Consumer remove = this.resultListeners.remove((String) it.next());
-                if (remove != null) {
-                    remove.accept(billingResult);
-                }
-            }
-            consumeGiftPurchase(purchase, tL_payments_assignPlayMarketTransaction.purpose, new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda10
-                @Override // java.lang.Runnable
-                public final void run() {
-                    BillingController.lambda$onPurchasesUpdatedInternal$6(atomicInteger, atomicInteger2, runnable);
-                }
-            });
-            BillingUtilities.cleanupPurchase(purchase);
-            return;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append("BillingController.onPurchasesUpdatedInternal: ");
-        sb.append(purchase.getOrderId());
-        sb.append(" purchase is purchased and failed to assign: ");
-        sb.append(tL_error == null ? null : tL_error.text);
-        FileLog.d(sb.toString());
-        Runnable runnable2 = this.onCanceled;
-        if (runnable2 != null) {
-            runnable2.run();
-            this.onCanceled = null;
-        }
-        if (tL_error != null) {
-            NotificationCenter.getGlobalInstance().postNotificationNameOnUIThread(NotificationCenter.billingConfirmPurchaseError, tL_payments_assignPlayMarketTransaction, tL_error);
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                BillingController.lambda$onPurchasesUpdatedInternal$7(atomicInteger, atomicInteger2, runnable);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$9(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable) {
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$8(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable) {
         if (atomicInteger.incrementAndGet() != atomicInteger2.get() || runnable == null) {
             return;
         }
@@ -295,7 +261,69 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onQueriedPremiumProductDetails$12() {
+    public /* synthetic */ void lambda$onPurchasesUpdatedInternal$9(final AlertDialog[] alertDialogArr, Purchase purchase, final TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, final AccountInstance accountInstance, BillingResult billingResult, final AtomicInteger atomicInteger, final AtomicInteger atomicInteger2, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda9
+            @Override // java.lang.Runnable
+            public final void run() {
+                BillingController.lambda$onPurchasesUpdatedInternal$5(alertDialogArr);
+            }
+        });
+        this.requestingTokens.remove(purchase.getPurchaseToken());
+        if (!(tLObject instanceof TLRPC.Updates)) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("BillingController.onPurchasesUpdatedInternal: ");
+            sb.append(purchase.getOrderId());
+            sb.append(" purchase is purchased and failed to assign: ");
+            sb.append(tL_error == null ? null : tL_error.text);
+            FileLog.d(sb.toString());
+            Runnable runnable2 = this.onCanceled;
+            if (runnable2 != null) {
+                runnable2.run();
+                this.onCanceled = null;
+            }
+            if (tL_error != null) {
+                NotificationCenter.getGlobalInstance().postNotificationNameOnUIThread(NotificationCenter.billingConfirmPurchaseError, tL_payments_assignPlayMarketTransaction, tL_error);
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda12
+                @Override // java.lang.Runnable
+                public final void run() {
+                    BillingController.lambda$onPurchasesUpdatedInternal$8(atomicInteger, atomicInteger2, runnable);
+                }
+            });
+            return;
+        }
+        FileLog.d("BillingController.onPurchasesUpdatedInternal: " + purchase.getOrderId() + " purchase is purchased and now assigned");
+        if (tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode) {
+            Iterator it = MessagesController.findUpdatesAndRemove((TLRPC.Updates) tLObject, TLRPC.TL_updateSentPhoneCode.class).iterator();
+            while (it.hasNext()) {
+                final TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TLRPC.TL_updateSentPhoneCode) it.next();
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda10
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        BillingController.lambda$onPurchasesUpdatedInternal$6(AccountInstance.this, tL_payments_assignPlayMarketTransaction, tL_updateSentPhoneCode);
+                    }
+                });
+            }
+        }
+        accountInstance.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
+        Iterator it2 = purchase.getProducts().iterator();
+        while (it2.hasNext()) {
+            Consumer remove = this.resultListeners.remove((String) it2.next());
+            if (remove != null) {
+                remove.accept(billingResult);
+            }
+        }
+        consumeGiftPurchase(purchase, tL_payments_assignPlayMarketTransaction.purpose, new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda11
+            @Override // java.lang.Runnable
+            public final void run() {
+                BillingController.lambda$onPurchasesUpdatedInternal$7(atomicInteger, atomicInteger2, runnable);
+            }
+        });
+        BillingUtilities.cleanupPurchase(purchase);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onQueriedPremiumProductDetails$13() {
         try {
             queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new BillingController$$ExternalSyntheticLambda3(this));
         } catch (Exception e) {
@@ -311,10 +339,10 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
             int i = this.triesLeft - 1;
             this.triesLeft = i;
             if (i > 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda12
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BillingController.this.lambda$onQueriedPremiumProductDetails$12();
+                        BillingController.this.lambda$onQueriedPremiumProductDetails$13();
                     }
                 }, i == 2 ? 1000L : 10000L);
                 return;
@@ -356,10 +384,10 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     public void consumeGiftPurchase(final Purchase purchase, final TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, final Runnable runnable) {
         if ((inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentGiftPremium) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentPremiumGiftCode) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsTopup) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsGift) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentPremiumGiveaway) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsGiveaway) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentAuthCode)) {
             FileLog.d("BillingController consumeGiftPurchase " + inputStorePaymentPurpose + " " + purchase.getOrderId() + " " + purchase.getPurchaseToken());
-            this.billingClient.consumeAsync(ConsumeParams.newBuilder().setPurchaseToken(purchase.getPurchaseToken()).build(), new ConsumeResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda13
+            this.billingClient.consumeAsync(ConsumeParams.newBuilder().setPurchaseToken(purchase.getPurchaseToken()).build(), new ConsumeResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda14
                 @Override // com.android.billingclient.api.ConsumeResponseListener
                 public final void onConsumeResponse(BillingResult billingResult, String str) {
-                    BillingController.lambda$consumeGiftPurchase$10(TLRPC.InputStorePaymentPurpose.this, purchase, runnable, billingResult, str);
+                    BillingController.lambda$consumeGiftPurchase$11(TLRPC.InputStorePaymentPurpose.this, purchase, runnable, billingResult, str);
                 }
             });
         }
@@ -435,7 +463,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
         }
         if (((inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentGiftPremium) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsTopup) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsGift)) && !z) {
             FileLog.d("BillingController.launchBillingFlow, checking consumables");
-            queryPurchases("inapp", new PurchasesResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda14
+            queryPurchases("inapp", new PurchasesResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda15
                 @Override // com.android.billingclient.api.PurchasesResponseListener
                 public final void onQueryPurchasesResponse(BillingResult billingResult, List list2) {
                     BillingController.this.lambda$launchBillingFlow$3(activity, accountInstance, inputStorePaymentPurpose, list, subscriptionUpdateParams, billingResult, list2);
@@ -467,7 +495,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                BillingController.this.lambda$onBillingServiceDisconnected$11();
+                BillingController.this.lambda$onBillingServiceDisconnected$12();
             }
         }, i);
     }
@@ -572,7 +600,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
                     billingController.consumeGiftPurchase(purchase, (TLRPC.InputStorePaymentPurpose) extractDeveloperPayload.second, new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda8
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BillingController.lambda$onPurchasesUpdatedInternal$9(atomicInteger2, atomicInteger, runnable2);
+                            BillingController.lambda$onPurchasesUpdatedInternal$10(atomicInteger2, atomicInteger, runnable2);
                         }
                     });
                 } else {
@@ -595,7 +623,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
                     accountInstance.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda7
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            BillingController.this.lambda$onPurchasesUpdatedInternal$8(alertDialogArr, purchase, accountInstance, billingResult, tL_payments_assignPlayMarketTransaction, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
+                            BillingController.this.lambda$onPurchasesUpdatedInternal$9(alertDialogArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance, billingResult, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
                         }
                     }, tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode ? 65608 : 65600);
                     billingController2 = this;
@@ -641,7 +669,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* renamed from: startConnection, reason: merged with bridge method [inline-methods] */
-    public void lambda$onBillingServiceDisconnected$11() {
+    public void lambda$onBillingServiceDisconnected$12() {
         if (isReady()) {
             return;
         }

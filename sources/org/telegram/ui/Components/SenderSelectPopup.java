@@ -157,7 +157,7 @@ public abstract class SenderSelectPopup extends ActionBarPopupWindow {
 
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), dp), View.MeasureSpec.getMode(i2)));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), dp), View.MeasureSpec.getMode(i2)));
             }
         };
         this.recyclerContainer = linearLayout;
@@ -337,7 +337,7 @@ public abstract class SenderSelectPopup extends ActionBarPopupWindow {
             layoutParams.type = 99;
             int i2 = Build.VERSION.SDK_INT;
             if (i2 >= 21) {
-                layoutParams.flags |= Integer.MIN_VALUE;
+                layoutParams.flags |= TLRPC.FLAG_31;
             }
             if (i2 >= 28) {
                 layoutParams.layoutInDisplayCutoutMode = 1;

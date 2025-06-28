@@ -137,7 +137,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                         }
                         int size2 = View.MeasureSpec.getSize(i3) - AndroidUtilities.dp(4.0f);
                         StickerCategoriesListView stickerCategoriesListView = StickerCategoriesListView.this;
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(stickerCategoriesListView.paddingWidth = Math.max(stickerCategoriesListView.dontOccupyWidth > 0 ? StickerCategoriesListView.this.dontOccupyWidth + AndroidUtilities.dp(4.0f) : 0, (int) (size - Math.min(((Adapter.this.getItemCount() - 1) * size2) + AndroidUtilities.dp(4.0f), StickerCategoriesListView.this.shownButtonsAtStart * size2))), 1073741824), i3);
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(stickerCategoriesListView.paddingWidth = Math.max(stickerCategoriesListView.dontOccupyWidth > 0 ? StickerCategoriesListView.this.dontOccupyWidth + AndroidUtilities.dp(4.0f) : 0, (int) (size - Math.min(((Adapter.this.getItemCount() - 1) * size2) + AndroidUtilities.dp(4.0f), StickerCategoriesListView.this.shownButtonsAtStart * size2))), TLRPC.FLAG_30), i3);
                     }
                 };
             } else {
@@ -271,7 +271,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         @Override // android.widget.ImageView, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i2);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(4.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(4.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
         }
 
         public void play(boolean z) {
@@ -870,7 +870,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         Drawable drawable;
         if (this.backgroundPaint != null) {
             int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            int i2 = Integer.MIN_VALUE;
+            int i2 = TLRPC.FLAG_31;
             for (int i3 = 0; i3 < getChildCount(); i3++) {
                 View childAt = getChildAt(i3);
                 if (childAt instanceof CategoryButton) {

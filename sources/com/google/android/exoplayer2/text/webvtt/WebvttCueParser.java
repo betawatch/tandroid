@@ -35,6 +35,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class WebvttCueParser {
@@ -130,9 +131,9 @@ public abstract class WebvttCueParser {
         public int lineType = 1;
         public int lineAnchor = 0;
         public float position = -3.4028235E38f;
-        public int positionAnchor = Integer.MIN_VALUE;
+        public int positionAnchor = TLRPC.FLAG_31;
         public float size = 1.0f;
-        public int verticalType = Integer.MIN_VALUE;
+        public int verticalType = TLRPC.FLAG_31;
 
         private static float computeLine(float f, int i) {
             if (f == -3.4028235E38f || i != 0 || (f >= 0.0f && f <= 1.0f)) {
@@ -640,7 +641,7 @@ public abstract class WebvttCueParser {
                 return 0;
             default:
                 Log.w("WebvttCueParser", "Invalid anchor value: " + str);
-                return Integer.MIN_VALUE;
+                return TLRPC.FLAG_31;
         }
     }
 
@@ -673,7 +674,7 @@ public abstract class WebvttCueParser {
                 return 2;
             default:
                 Log.w("WebvttCueParser", "Invalid anchor value: " + str);
-                return Integer.MIN_VALUE;
+                return TLRPC.FLAG_31;
         }
     }
 
@@ -715,6 +716,6 @@ public abstract class WebvttCueParser {
             return 1;
         }
         Log.w("WebvttCueParser", "Invalid 'vertical' value: " + str);
-        return Integer.MIN_VALUE;
+        return TLRPC.FLAG_31;
     }
 }

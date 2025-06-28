@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RectF;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.view.View;
@@ -11,9 +12,12 @@ import android.view.ViewParent;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Cells.ChatMessageCell;
 
 /* loaded from: classes5.dex */
 public class QuoteHighlight extends Path {
+    public final ChatMessageCell cell;
+    private int cornerPathEffectSize;
     private float currentOffsetX;
     private float currentOffsetY;
     public final int end;
@@ -26,6 +30,7 @@ public class QuoteHighlight extends Path {
     private final ArrayList rectangles;
     public final int start;
     private final AnimatedFloat t;
+    public final boolean todo;
 
     private static class Rect {
         public float bottom;
@@ -48,19 +53,23 @@ public class QuoteHighlight extends Path {
         this.path = new CornerPath();
         this.rectangles = new ArrayList();
         this.quotesToExpand = new ArrayList();
+        this.cell = null;
         this.t = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.ui.Components.QuoteHighlight$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                QuoteHighlight.lambda$new$0(view, viewParent);
+                QuoteHighlight.lambda$new$1(view, viewParent);
             }
         }, 350L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.id = i;
         this.start = i2;
         this.end = i3;
+        this.todo = false;
         if (arrayList == null) {
             return;
         }
-        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(4.0f)));
+        int dp = AndroidUtilities.dp(4.0f);
+        this.cornerPathEffectSize = dp;
+        paint.setPathEffect(new CornerPathEffect(dp));
         boolean z = false;
         for (int i5 = 0; i5 < arrayList.size(); i5++) {
             MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) arrayList.get(i5);
@@ -98,6 +107,29 @@ public class QuoteHighlight extends Path {
         }
     }
 
+    public QuoteHighlight(final ChatMessageCell chatMessageCell, int i, int i2) {
+        Paint paint = new Paint(1);
+        this.paint = paint;
+        this.path = new CornerPath();
+        this.rectangles = new ArrayList();
+        this.quotesToExpand = new ArrayList();
+        this.cell = chatMessageCell;
+        this.t = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.ui.Components.QuoteHighlight$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                QuoteHighlight.lambda$new$0(ChatMessageCell.this);
+            }
+        }, 350L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
+        this.id = i;
+        int i3 = -i2;
+        this.start = i3;
+        this.end = i3;
+        this.todo = true;
+        int dp = AndroidUtilities.dp(4.0f);
+        this.cornerPathEffectSize = dp;
+        paint.setPathEffect(new CornerPathEffect(dp));
+    }
+
     private void getSelectionPath(Layout layout, int i, int i2) {
         if (i == i2) {
             return;
@@ -122,8 +154,18 @@ public class QuoteHighlight extends Path {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$new$0(ChatMessageCell chatMessageCell) {
+        if (chatMessageCell != null) {
+            chatMessageCell.invalidate();
+        }
+        if (chatMessageCell.getParent() instanceof View) {
+            ((View) chatMessageCell.getParent()).invalidate();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void lambda$new$0(View view, ViewParent viewParent) {
+    public static /* synthetic */ void lambda$new$1(View view, ViewParent viewParent) {
         if (view != null) {
             view.invalidate();
         }
@@ -170,11 +212,26 @@ public class QuoteHighlight extends Path {
     public void draw(Canvas canvas, float f, float f2, android.graphics.Rect rect, float f3) {
         float f4 = this.t.set(1.0f);
         canvas.save();
-        canvas.translate(f, f2);
-        this.path.rewind();
-        for (int i = 0; i < this.rectangles.size(); i++) {
-            Rect rect2 = (Rect) this.rectangles.get(i);
-            this.path.addRect(AndroidUtilities.lerp(rect.left - f, rect2.left, f4), AndroidUtilities.lerp(rect2.first ? rect.top - f2 : rect2.prevTop, rect2.top, f4), AndroidUtilities.lerp(rect.right - f, rect2.right, f4), AndroidUtilities.lerp(rect2.last ? rect.bottom - f2 : rect2.nextBottom, rect2.bottom, f4), Path.Direction.CW);
+        if (this.todo) {
+            int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.0f), 0, f4);
+            if (this.cornerPathEffectSize != lerp) {
+                Paint paint = this.paint;
+                this.cornerPathEffectSize = lerp;
+                paint.setPathEffect(new CornerPathEffect(lerp));
+            }
+            this.path.rewind();
+            int todoIndex = this.cell.getTodoIndex(-this.start);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(this.cell.getBackgroundDrawableLeft(), this.cell.getPollButtonTop(todoIndex), this.cell.getBackgroundDrawableRight(), this.cell.getPollButtonBottom(todoIndex));
+            AndroidUtilities.lerp(rect, rectF, f4, rectF);
+            this.path.addRect(rectF, Path.Direction.CW);
+        } else {
+            canvas.translate(f, f2);
+            this.path.rewind();
+            for (int i = 0; i < this.rectangles.size(); i++) {
+                Rect rect2 = (Rect) this.rectangles.get(i);
+                this.path.addRect(AndroidUtilities.lerp(rect.left - f, rect2.left, f4), AndroidUtilities.lerp(rect2.first ? rect.top - f2 : rect2.prevTop, rect2.top, f4), AndroidUtilities.lerp(rect.right - f, rect2.right, f4), AndroidUtilities.lerp(rect2.last ? rect.bottom - f2 : rect2.nextBottom, rect2.bottom, f4), Path.Direction.CW);
+            }
         }
         this.path.closeRects();
         int alpha = this.paint.getAlpha();

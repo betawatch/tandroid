@@ -37,7 +37,6 @@ import java.util.TreeMap;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public final class HlsPlaylistParser implements ParsingLoadable.Parser {
@@ -978,7 +977,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser {
                     arrayList3 = arrayList9;
                     if (next.startsWith("#EXT-X-STREAM-INF") || startsWith) {
                         boolean contains = z2 | next.contains("CLOSED-CAPTIONS=NONE");
-                        int i6 = startsWith ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM : 0;
+                        int i6 = startsWith ? 16384 : 0;
                         int parseIntAttr = parseIntAttr(next, REGEX_BANDWIDTH);
                         ArrayList arrayList25 = arrayList11;
                         int parseOptionalIntAttr = parseOptionalIntAttr(next, REGEX_AVERAGE_BANDWIDTH, -1);
@@ -1114,12 +1113,12 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser {
         String[] split = Util.split(parseOptionalStringAttr, ",");
         int i = Util.contains(split, "public.accessibility.describes-video") ? 512 : 0;
         if (Util.contains(split, "public.accessibility.transcribes-spoken-dialog")) {
-            i |= LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+            i |= 4096;
         }
         if (Util.contains(split, "public.accessibility.describes-music-and-sound")) {
             i |= 1024;
         }
-        return Util.contains(split, "public.easy-to-read") ? i | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : i;
+        return Util.contains(split, "public.easy-to-read") ? i | 8192 : i;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

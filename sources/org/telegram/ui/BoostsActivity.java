@@ -264,7 +264,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     ViewGroup viewGroup3 = new FrameLayout(BoostsActivity.this.getContext()) { // from class: org.telegram.ui.BoostsActivity.1.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
                         }
                     };
                     TextView textView = new TextView(BoostsActivity.this.getContext());
@@ -355,7 +355,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                         @Override // android.view.View
                         protected void onMeasure(int i3, int i4) {
                             LinearLayoutManager linearLayoutManager = BoostsActivity.this.layoutManager;
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(0, linearLayoutManager instanceof FillLastLinearLayoutManager ? ((FillLastLinearLayoutManager) linearLayoutManager).getLastItemHeight() : 0), 1073741824));
+                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(0, linearLayoutManager instanceof FillLastLinearLayoutManager ? ((FillLastLinearLayoutManager) linearLayoutManager).getLastItemHeight() : 0), TLRPC.FLAG_30));
                         }
                     };
                     view3.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
@@ -775,7 +775,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         if (this.boostsStatus == null) {
             return;
         }
-        getMessagesController().getBoostsController().userCanBoostChannel(this.dialogId, this.boostsStatus, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda6
+        getMessagesController().getBoostsController().userCanBoostChannel(this.dialogId, this.boostsStatus, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda1
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
                 BoostsActivity.this.lambda$loadCanApplyBoosts$2((ChannelBoostsController.CanApplyBoost) obj);
@@ -814,7 +814,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         this.progressLayout.setAlpha(0.0f);
         if (this.boostsStatus == null) {
             this.progressLayout.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-            getMessagesController().getBoostsController().getBoostsStats(this.dialogId, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda1
+            getMessagesController().getBoostsController().getBoostsStats(this.dialogId, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda2
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
                     BoostsActivity.this.lambda$loadStatistic$1((TL_stories.TL_premium_boostsStatus) obj);
@@ -832,21 +832,21 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         }
         this.usersLoading = true;
         if (bool == null) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda3
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     BoostsActivity.this.lambda$loadUsers$5();
                 }
             });
         } else if (bool.booleanValue()) {
-            loadOnlyGifts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda4
+            loadOnlyGifts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     BoostsActivity.this.lambda$loadUsers$6();
                 }
             });
         } else {
-            loadOnlyBoosts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda5
+            loadOnlyBoosts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     BoostsActivity.this.lambda$loadUsers$7();
@@ -863,7 +863,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             LimitPreviewView limitPreviewView = new LimitPreviewView(getContext(), R.drawable.filled_limit_boost, 0, 0, this.resourceProvider);
             this.limitPreviewView = limitPreviewView;
             limitPreviewView.isStatistic = true;
-            limitPreviewView.setDarkGradientProvider(new LimitPreviewView.DarkGradientProvider() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda2
+            limitPreviewView.setDarkGradientProvider(new LimitPreviewView.DarkGradientProvider() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.Components.Premium.LimitPreviewView.DarkGradientProvider
                 public final Paint setDarkGradientLocation(float f, float f2) {
                     return BoostsActivity.this.setDarkGradientLocation(f, f2);
@@ -952,7 +952,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         List fragmentStack2 = getParentLayout().getFragmentStack();
         BaseFragment baseFragment2 = fragmentStack2.size() >= 2 ? (BaseFragment) fragmentStack2.get(fragmentStack2.size() - 2) : null;
         if (!booleanValue) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             if ((baseFragment2 instanceof ProfileActivity) || (baseFragment2 instanceof ChatActivity)) {
                 BoostDialogs.showBulletin(baseFragment2, chat, false);
                 return;
@@ -963,7 +963,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         if (baseFragment2 instanceof ProfileActivity) {
             getParentLayout().removeFragmentFromStack(baseFragment2);
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
         if (baseFragment3 instanceof ChatActivity) {
             BoostDialogs.showBulletin(baseFragment3, chat, true);
         }

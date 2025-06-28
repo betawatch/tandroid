@@ -42,7 +42,7 @@ abstract class b implements BaseStream {
         bVar.d = this;
         this.b = bVar;
         this.c = R2.h & i;
-        this.f = R2.a(i, bVar.f);
+        this.f = R2.f(i, bVar.f);
         b bVar2 = bVar.a;
         this.a = bVar2;
         if (v0()) {
@@ -66,7 +66,7 @@ abstract class b implements BaseStream {
             while (bVar != this) {
                 int i5 = bVar2.c;
                 if (bVar2.v0()) {
-                    if (R2.SHORT_CIRCUIT.d(i5)) {
+                    if (R2.SHORT_CIRCUIT.j(i5)) {
                         i5 &= R2.u ^ (-1);
                     }
                     spliterator = bVar2.u0(bVar, spliterator);
@@ -81,7 +81,7 @@ abstract class b implements BaseStream {
                     i4 = 0;
                 }
                 bVar2.e = i4;
-                bVar2.f = R2.a(i5, bVar.f);
+                bVar2.f = R2.f(i5, bVar.f);
                 i4++;
                 b bVar3 = bVar2;
                 bVar2 = bVar2.d;
@@ -89,7 +89,7 @@ abstract class b implements BaseStream {
             }
         }
         if (i != 0) {
-            this.f = R2.a(i, this.f);
+            this.f = R2.f(i, this.f);
         }
         return spliterator;
     }
@@ -129,7 +129,7 @@ abstract class b implements BaseStream {
 
     final void f0(Spliterator spliterator, e2 e2Var) {
         e2Var.getClass();
-        if (R2.SHORT_CIRCUIT.d(this.f)) {
+        if (R2.SHORT_CIRCUIT.j(this.f)) {
             g0(spliterator, e2Var);
             return;
         }
@@ -186,7 +186,7 @@ abstract class b implements BaseStream {
     abstract G0 k0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction);
 
     final long l0(Spliterator spliterator) {
-        if (R2.SIZED.d(this.f)) {
+        if (R2.SIZED.j(this.f)) {
             return spliterator.getExactSizeIfKnown();
         }
         return -1L;
@@ -226,7 +226,7 @@ abstract class b implements BaseStream {
     }
 
     final boolean q0() {
-        return R2.ORDERED.d(this.f);
+        return R2.ORDERED.j(this.f);
     }
 
     final /* synthetic */ Spliterator r0() {

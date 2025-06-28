@@ -15,7 +15,6 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -1433,7 +1432,7 @@ public class FilterShaders {
                 this.hsvBuffer = ByteBuffer.allocateDirect(i3);
             }
             if (this.cdtBuffer == null) {
-                this.cdtBuffer = ByteBuffer.allocateDirect(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                this.cdtBuffer = ByteBuffer.allocateDirect(16384);
             }
             if (this.calcBuffer == null) {
                 this.calcBuffer = ByteBuffer.allocateDirect(32896);

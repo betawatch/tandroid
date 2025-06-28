@@ -8,6 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.sync.Mutex;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class SingleProcessDataStore$readAndInit$api$1 implements InitializerApi {
@@ -50,8 +51,8 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
             if (continuation instanceof SingleProcessDataStore$readAndInit$api$1$updateData$1) {
                 singleProcessDataStore$readAndInit$api$1$updateData$1 = (SingleProcessDataStore$readAndInit$api$1$updateData$1) continuation;
                 int i2 = singleProcessDataStore$readAndInit$api$1$updateData$1.label;
-                if ((i2 & Integer.MIN_VALUE) != 0) {
-                    singleProcessDataStore$readAndInit$api$1$updateData$1.label = i2 - Integer.MIN_VALUE;
+                if ((i2 & TLRPC.FLAG_31) != 0) {
+                    singleProcessDataStore$readAndInit$api$1$updateData$1.label = i2 - TLRPC.FLAG_31;
                     Object obj2 = singleProcessDataStore$readAndInit$api$1$updateData$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = singleProcessDataStore$readAndInit$api$1$updateData$1.label;

@@ -179,7 +179,7 @@ public abstract class ProfileHoursCell extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int dp;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
         if (!this.expanded) {
             int dp2 = AndroidUtilities.dp(60.0f);
             if (this.todayLinesCount > 2 || this.switchText.getVisibility() == 0) {
@@ -187,7 +187,7 @@ public abstract class ProfileHoursCell extends LinearLayout {
             } else {
                 dp = 0;
             }
-            i2 = View.MeasureSpec.makeMeasureSpec(Math.max(dp2, dp) + (this.needDivider ? 1 : 0), 1073741824);
+            i2 = View.MeasureSpec.makeMeasureSpec(Math.max(dp2, dp) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30);
         }
         super.onMeasure(makeMeasureSpec, i2);
     }

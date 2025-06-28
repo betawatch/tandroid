@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.core.view.ViewCompat;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
@@ -148,7 +149,7 @@ public class ContentFrameLayout extends FrameLayout {
                     i8 = 0;
                     if (i8 > 0) {
                         Rect rect = this.mDecorPadding;
-                        i = View.MeasureSpec.makeMeasureSpec(Math.min(i8 - (rect.left + rect.right), View.MeasureSpec.getSize(i)), 1073741824);
+                        i = View.MeasureSpec.makeMeasureSpec(Math.min(i8 - (rect.left + rect.right), View.MeasureSpec.getSize(i)), TLRPC.FLAG_30);
                         z = true;
                         if (mode2 == Integer.MIN_VALUE) {
                             TypedValue typedValue3 = z3 ? this.mFixedHeightMajor : this.mFixedHeightMinor;
@@ -162,7 +163,7 @@ public class ContentFrameLayout extends FrameLayout {
                                     i6 = 0;
                                     if (i6 > 0) {
                                         Rect rect2 = this.mDecorPadding;
-                                        i2 = View.MeasureSpec.makeMeasureSpec(Math.min(i6 - (rect2.top + rect2.bottom), View.MeasureSpec.getSize(i2)), 1073741824);
+                                        i2 = View.MeasureSpec.makeMeasureSpec(Math.min(i6 - (rect2.top + rect2.bottom), View.MeasureSpec.getSize(i2)), TLRPC.FLAG_30);
                                     }
                                 }
                                 i6 = (int) fraction2;
@@ -172,7 +173,7 @@ public class ContentFrameLayout extends FrameLayout {
                         }
                         super.onMeasure(i, i2);
                         measuredWidth = getMeasuredWidth();
-                        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824);
+                        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30);
                         if (!z && mode == Integer.MIN_VALUE) {
                             typedValue = !z3 ? this.mMinWidthMinor : this.mMinWidthMajor;
                             if (typedValue != null && (i3 = typedValue.type) != 0) {
@@ -188,7 +189,7 @@ public class ContentFrameLayout extends FrameLayout {
                                         i4 -= rect3.left + rect3.right;
                                     }
                                     if (measuredWidth < i4) {
-                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, 1073741824);
+                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30);
                                         if (z2) {
                                             super.onMeasure(makeMeasureSpec, i2);
                                             return;
@@ -218,7 +219,7 @@ public class ContentFrameLayout extends FrameLayout {
         }
         super.onMeasure(i, i2);
         measuredWidth = getMeasuredWidth();
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30);
         if (!z) {
             if (!z3) {
             }

@@ -133,6 +133,6 @@ public class ArchiveHelp extends FrameLayout implements NotificationCenter.Notif
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(400.0f), View.MeasureSpec.getSize(i)), 1073741824), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(400.0f), View.MeasureSpec.getSize(i)), TLRPC.FLAG_30), i2);
     }
 }

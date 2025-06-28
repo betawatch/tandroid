@@ -38,6 +38,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheetTabs;
 import org.telegram.ui.ActionBar.BottomSheetTabsOverlay;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -290,7 +291,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(6.0f), f2);
             if (z) {
                 this.shadowPaint.setColor(0);
-                this.shadowPaint.setShadowLayer(AndroidUtilities.dp(30.0f), 0.0f, AndroidUtilities.dp(10.0f), Theme.multAlpha(536870912, clamp * f2 * f7));
+                this.shadowPaint.setShadowLayer(AndroidUtilities.dp(30.0f), 0.0f, AndroidUtilities.dp(10.0f), Theme.multAlpha(TLRPC.FLAG_29, clamp * f2 * f7));
                 canvas.drawRoundRect(rectF, lerp2, lerp2, this.shadowPaint);
                 this.backgroundPaint.setAlpha((int) (clamp * 255.0f));
                 canvas.drawRoundRect(rectF, lerp2, lerp2, this.backgroundPaint);
@@ -300,7 +301,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
                 canvas.save();
                 this.shadowPaint.setColor(0);
                 float f9 = clamp * f2;
-                this.shadowPaint.setShadowLayer(AndroidUtilities.dp(30.0f), 0.0f, AndroidUtilities.dp(10.0f), Theme.multAlpha(536870912, f9 * f7));
+                this.shadowPaint.setShadowLayer(AndroidUtilities.dp(30.0f), 0.0f, AndroidUtilities.dp(10.0f), Theme.multAlpha(TLRPC.FLAG_29, f9 * f7));
                 canvas.drawPath(this.clipPath, this.shadowPaint);
                 canvas.clipPath(this.clipPath);
                 float f10 = clamp * 255.0f * f2;
@@ -1359,7 +1360,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + AndroidUtilities.navigationBarHeight, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + AndroidUtilities.navigationBarHeight, TLRPC.FLAG_30));
     }
 
     public void openTabsView() {

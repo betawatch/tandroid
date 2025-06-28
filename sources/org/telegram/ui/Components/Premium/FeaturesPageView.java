@@ -183,7 +183,7 @@ public class FeaturesPageView extends BaseListPageView {
         protected void onMeasure(int i, int i2) {
             int i3 = this.height;
             if (i3 > 0) {
-                i2 = View.MeasureSpec.makeMeasureSpec(i3, 1073741824);
+                i2 = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
             }
             super.onMeasure(i, i2);
         }

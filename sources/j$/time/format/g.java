@@ -14,7 +14,7 @@ final class g implements f {
 
     g(j$.time.temporal.a aVar) {
         A.z(aVar, "field");
-        if (!aVar.a().f()) {
+        if (!aVar.f().f()) {
             throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);
         }
         this.a = aVar;
@@ -24,7 +24,7 @@ final class g implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         j$.time.temporal.l lVar = this.a;
         Long e = rVar.e(lVar);
         if (e == null) {
@@ -32,10 +32,10 @@ final class g implements f {
         }
         v b = rVar.b();
         long longValue = e.longValue();
-        j$.time.temporal.q a = lVar.a();
-        a.b(longValue, lVar);
-        BigDecimal valueOf = BigDecimal.valueOf(a.e());
-        BigDecimal add = BigDecimal.valueOf(a.d()).subtract(valueOf).add(BigDecimal.ONE);
+        j$.time.temporal.q f = lVar.f();
+        f.b(longValue, lVar);
+        BigDecimal valueOf = BigDecimal.valueOf(f.e());
+        BigDecimal add = BigDecimal.valueOf(f.d()).subtract(valueOf).add(BigDecimal.ONE);
         BigDecimal subtract = BigDecimal.valueOf(longValue).subtract(valueOf);
         RoundingMode roundingMode = RoundingMode.FLOOR;
         BigDecimal divide = subtract.divide(add, 9, roundingMode);

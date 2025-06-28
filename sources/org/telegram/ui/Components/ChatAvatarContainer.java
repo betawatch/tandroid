@@ -1187,25 +1187,25 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         SimpleTextView simpleTextView;
         int size = View.MeasureSpec.getSize(i) + this.titleTextView.getPaddingRight();
         int dp = size - AndroidUtilities.dp((this.avatarImageView.getVisibility() == 0 ? 54 : 0) + 16);
-        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), 1073741824));
-        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), Integer.MIN_VALUE));
+        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLRPC.FLAG_30));
+        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), TLRPC.FLAG_31));
         View view = this.subtitleTextView;
         if (view == null) {
             view = this.animatedSubtitleTextView;
             if (view != null) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(dp, 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30);
             }
             imageView = this.timeItem;
             if (imageView != null) {
-                imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), 1073741824));
+                imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLRPC.FLAG_30));
             }
             imageView2 = this.starBgItem;
             if (imageView2 != null) {
-                imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), 1073741824));
+                imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_30));
             }
             imageView3 = this.starFgItem;
             if (imageView3 != null) {
-                imageView3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), 1073741824));
+                imageView3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_30));
             }
             setMeasuredDimension(size, View.MeasureSpec.getSize(i2));
             i3 = this.lastWidth;
@@ -1214,12 +1214,12 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             }
             simpleTextView = (SimpleTextView) this.titleTextLargerCopyView.get();
             if (simpleTextView != null) {
-                simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(this.largerWidth - AndroidUtilities.dp((this.avatarImageView.getVisibility() == 0 ? 54 : 0) + 16), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), Integer.MIN_VALUE));
+                simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(this.largerWidth - AndroidUtilities.dp((this.avatarImageView.getVisibility() == 0 ? 54 : 0) + 16), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_31));
             }
             this.lastWidth = size;
         }
-        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(dp, Integer.MIN_VALUE);
-        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), Integer.MIN_VALUE));
+        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31);
+        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_31));
         imageView = this.timeItem;
         if (imageView != null) {
         }
@@ -1488,7 +1488,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         actionBarPopupWindowArr[0].setClippingEnabled(true);
         actionBarPopupWindowArr[0].setAnimationStyle(R.style.PopupContextAnimation);
         actionBarPopupWindowArr[0].setFocusable(true);
-        autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+        autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
         actionBarPopupWindowArr[0].setInputMethodMode(2);
         actionBarPopupWindowArr[0].getContentView().setFocusableInTouchMode(true);
         ActionBarPopupWindow actionBarPopupWindow2 = actionBarPopupWindowArr[0];

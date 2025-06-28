@@ -14,7 +14,7 @@ public final class p {
     private static final a f = new j$.time.temporal.n() { // from class: j$.time.format.a
         @Override // j$.time.temporal.n
         public final Object a(j$.time.temporal.k kVar) {
-            ZoneId zoneId = (ZoneId) kVar.c(j$.time.temporal.j.j());
+            ZoneId zoneId = (ZoneId) kVar.i(j$.time.temporal.j.j());
             if (zoneId == null || (zoneId instanceof ZoneOffset)) {
                 return null;
             }
@@ -86,7 +86,7 @@ public final class p {
     }
 
     private void k(i iVar) {
-        i c;
+        i b;
         x xVar;
         p pVar = this.a;
         int i = pVar.e;
@@ -100,25 +100,25 @@ public final class p {
         if (i2 == i3) {
             xVar = iVar.d;
             if (xVar == x.NOT_NEGATIVE) {
-                c = iVar2.d(i3);
-                d(iVar.c());
+                b = iVar2.c(i3);
+                d(iVar.b());
                 this.a.e = i;
-                this.a.c.set(i, c);
+                this.a.c.set(i, b);
             }
         }
-        c = iVar2.c();
+        b = iVar2.b();
         this.a.e = d(iVar);
-        this.a.c.set(i, c);
+        this.a.c.set(i, b);
     }
 
-    private DateTimeFormatter w(Locale locale, w wVar, j$.time.chrono.g gVar) {
+    private DateTimeFormatter w(Locale locale, w wVar, j$.time.chrono.f fVar) {
         A.z(locale, "locale");
         while (this.a.b != null) {
             p();
         }
         e eVar = new e(this.c, false);
         v vVar = v.a;
-        return new DateTimeFormatter(eVar, locale, wVar, gVar);
+        return new DateTimeFormatter(eVar, locale, wVar, fVar);
     }
 
     public final void a(DateTimeFormatter dateTimeFormatter) {
@@ -234,8 +234,8 @@ public final class p {
         d(k.LENIENT);
     }
 
-    final DateTimeFormatter u(w wVar, j$.time.chrono.g gVar) {
-        return w(Locale.getDefault(), wVar, gVar);
+    final DateTimeFormatter u(w wVar, j$.time.chrono.f fVar) {
+        return w(Locale.getDefault(), wVar, fVar);
     }
 
     public final DateTimeFormatter v(Locale locale) {

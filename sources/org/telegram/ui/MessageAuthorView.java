@@ -104,9 +104,9 @@ public abstract class MessageAuthorView extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         View view = (View) getParent();
         if (view != null && view.getWidth() > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), 1073741824);
+            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLRPC.FLAG_30);
         }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), 1073741824);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLRPC.FLAG_30);
         this.ignoreLayout = true;
         boolean z = this.flickerLoadingView.getVisibility() == 0;
         this.titleView.setVisibility(8);

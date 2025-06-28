@@ -5,11 +5,10 @@ import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.upstream.DataReader;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.io.EOFException;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public final class DummyTrackOutput implements TrackOutput {
-    private final byte[] readBuffer = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+    private final byte[] readBuffer = new byte[4096];
 
     @Override // com.google.android.exoplayer2.extractor.TrackOutput
     public void format(Format format) {

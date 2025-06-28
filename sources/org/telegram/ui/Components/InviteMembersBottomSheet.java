@@ -227,7 +227,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 view = new View(context) { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.ListAdapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i5, int i6) {
-                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + InviteMembersBottomSheet.this.additionalHeight, 1073741824));
+                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + InviteMembersBottomSheet.this.additionalHeight, TLRPC.FLAG_30));
                     }
                 };
             }
@@ -576,7 +576,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             return new RecyclerListView.Holder(i != 1 ? i != 2 ? i != 4 ? new GroupCreateSectionCell(context) : new View(context) : new View(context) { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.SearchAdapter.1
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + InviteMembersBottomSheet.this.additionalHeight + InviteMembersBottomSheet.this.searchAdditionalHeight, 1073741824));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + InviteMembersBottomSheet.this.additionalHeight + InviteMembersBottomSheet.this.searchAdditionalHeight, TLRPC.FLAG_30));
                 }
             } : new GroupCreateUserCell(context, 1, 0, false));
         }
@@ -705,7 +705,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             for (int i5 = 0; i5 < childCount; i5++) {
                 View childAt = getChildAt(i5);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), 1073741824));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
                     if (childAt != this.removingSpan && childAt.getMeasuredWidth() + i3 > dp) {
                         dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
                         i3 = 0;
@@ -906,7 +906,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
         SpansContainer spansContainer = new SpansContainer(context);
         this.spansContainer = spansContainer;
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda3
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
                 InviteMembersBottomSheet.this.lambda$new$0(j, baseFragment, longSparseArray, context, view, i3);
@@ -929,7 +929,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                     f = 56.0f;
                 }
                 inviteMembersBottomSheet.maxSize = AndroidUtilities.dp(f);
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(InviteMembersBottomSheet.this.maxSize, Integer.MIN_VALUE));
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(InviteMembersBottomSheet.this.maxSize, TLRPC.FLAG_31));
             }
         };
         this.spansScrollView = scrollView;
@@ -964,7 +964,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 }
             });
         }
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda4
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InviteMembersBottomSheet.this.lambda$new$2(context, j, view);
@@ -1239,7 +1239,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.spansEnterProgress, z2 ? 1.0f : 0.0f);
             this.spansEnterAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda2
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     InviteMembersBottomSheet.this.lambda$spansCountChanged$3(valueAnimator2);
@@ -1538,7 +1538,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 for (i2 = 0; i2 < childCount; i2++) {
                     View childAt = this.spansContainer.getChildAt(i2);
                     if (childAt instanceof GroupCreateSpan) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(i, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), 1073741824));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
                         if (childAt.getMeasuredWidth() + i4 > dp) {
                             dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
                             i4 = 0;

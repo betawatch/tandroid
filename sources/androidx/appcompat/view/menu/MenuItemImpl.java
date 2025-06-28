@@ -23,7 +23,6 @@ import androidx.appcompat.view.menu.MenuView;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.internal.view.SupportMenuItem;
 import androidx.core.view.ActionProvider;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public final class MenuItemImpl implements SupportMenuItem {
@@ -48,8 +47,8 @@ public final class MenuItemImpl implements SupportMenuItem {
     private CharSequence mTitle;
     private CharSequence mTitleCondensed;
     private CharSequence mTooltipText;
-    private int mShortcutNumericModifiers = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
-    private int mShortcutAlphabeticModifiers = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+    private int mShortcutNumericModifiers = 4096;
+    private int mShortcutAlphabeticModifiers = 4096;
     private int mIconResId = 0;
     private ColorStateList mIconTintList = null;
     private PorterDuff.Mode mIconTintMode = null;
@@ -236,7 +235,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         }
         int i2 = this.mMenu.isQwertyMode() ? this.mShortcutAlphabeticModifiers : this.mShortcutNumericModifiers;
         appendModifier(sb, i2, 65536, resources.getString(R$string.abc_menu_meta_shortcut_label));
-        appendModifier(sb, i2, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM, resources.getString(R$string.abc_menu_ctrl_shortcut_label));
+        appendModifier(sb, i2, 4096, resources.getString(R$string.abc_menu_ctrl_shortcut_label));
         appendModifier(sb, i2, 2, resources.getString(R$string.abc_menu_alt_shortcut_label));
         appendModifier(sb, i2, 1, resources.getString(R$string.abc_menu_shift_shortcut_label));
         appendModifier(sb, i2, 4, resources.getString(R$string.abc_menu_sym_shortcut_label));

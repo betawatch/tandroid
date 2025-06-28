@@ -3,6 +3,7 @@ package com.google.android.recaptcha.internal;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlinx.coroutines.sync.Mutex;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzai extends ContinuationImpl {
@@ -25,7 +26,7 @@ final class zzai extends ContinuationImpl {
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.zze = obj;
-        this.zzg |= Integer.MIN_VALUE;
+        this.zzg |= TLRPC.FLAG_31;
         return this.zzf.zza(null, null, 0L, null, null, null, null, this);
     }
 }

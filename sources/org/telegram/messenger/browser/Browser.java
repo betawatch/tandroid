@@ -618,7 +618,7 @@ public abstract class Browser {
                     if (z2 && Build.VERSION.SDK_INT >= 30) {
                         parseUri.addCategory("android.intent.category.BROWSABLE");
                         parseUri.addCategory("android.intent.category.DEFAULT");
-                        parseUri.addFlags(268435456);
+                        parseUri.addFlags(TLRPC.FLAG_28);
                         parseUri.addFlags(1024);
                     } else if (!z2 && !hasAppToOpen(context, replace)) {
                         return false;
@@ -953,7 +953,7 @@ public abstract class Browser {
         }
         if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
             Intent intent = new Intent("android.intent.action.VIEW", uri2);
-            intent.addFlags(268435456);
+            intent.addFlags(TLRPC.FLAG_28);
             ApplicationLoader.applicationContext.startActivity(intent);
             return;
         }
@@ -965,7 +965,7 @@ public abstract class Browser {
         builder.setToolbarColor(Theme.getColor(Theme.key_actionBarBrowser));
         builder.setShowTitle(true);
         try {
-            builder.setActionButton(BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout), LocaleController.getString(R.string.ShareFile), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent2, ConnectionsManager.FileTypeVideo), true);
+            builder.setActionButton(BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout), LocaleController.getString(R.string.ShareFile), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent2, 33554432), true);
             CustomTabsIntent build = builder.build();
             build.setUseNewTask();
             build.launchUrl(context, uri2);

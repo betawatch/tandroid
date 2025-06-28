@@ -2,6 +2,7 @@ package com.google.android.exoplayer2.decoder;
 
 import com.google.android.exoplayer2.util.Assertions;
 import java.util.ArrayDeque;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class SimpleDecoder implements Decoder {
@@ -67,10 +68,10 @@ public abstract class SimpleDecoder implements Decoder {
                 decoderOutputBuffer.addFlag(4);
             } else {
                 if (removeFirst.isDecodeOnly()) {
-                    decoderOutputBuffer.addFlag(Integer.MIN_VALUE);
+                    decoderOutputBuffer.addFlag(TLRPC.FLAG_31);
                 }
                 if (removeFirst.isFirstSample()) {
-                    decoderOutputBuffer.addFlag(134217728);
+                    decoderOutputBuffer.addFlag(TLRPC.FLAG_27);
                 }
                 try {
                     createUnexpectedDecodeException = decode(removeFirst, decoderOutputBuffer, z);

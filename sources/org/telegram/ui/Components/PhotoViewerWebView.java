@@ -452,7 +452,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$seekTo$1(long j, boolean z) {
         runJsCode("seekTo(" + Math.round(j / 1000.0f) + ", " + z + ");");
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 PhotoViewerWebView.this.playVideo();
@@ -811,7 +811,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
         }
         if (PipVideoOverlay.isVisible()) {
             PipVideoOverlay.dismiss();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     PhotoViewerWebView.this.openInPip();

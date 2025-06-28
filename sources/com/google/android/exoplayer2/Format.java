@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.UUID;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public final class Format implements Bundleable {
@@ -608,13 +607,13 @@ public final class Format implements Bundleable {
             if ((format.roleFlags & 2048) != 0) {
                 arrayList2.add("enhanced-intelligibility");
             }
-            if ((format.roleFlags & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0) {
+            if ((format.roleFlags & 4096) != 0) {
                 arrayList2.add("transcribes-dialog");
             }
-            if ((format.roleFlags & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0) {
+            if ((format.roleFlags & 8192) != 0) {
                 arrayList2.add("easy-read");
             }
-            if ((format.roleFlags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((format.roleFlags & 16384) != 0) {
                 arrayList2.add("trick-play");
             }
             sb.append(", roleFlags=[");

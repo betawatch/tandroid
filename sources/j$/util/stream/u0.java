@@ -4,7 +4,6 @@ import j$.util.Spliterator;
 import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class u0 implements w3 {
@@ -25,7 +24,7 @@ public abstract /* synthetic */ class u0 implements w3 {
 
     public static G0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
         long l0 = bVar.l0(spliterator);
-        if (l0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 < 0 || !spliterator.hasCharacteristics(16384)) {
             G0 g0 = (G0) new L0(spliterator, intFunction, bVar).invoke();
             return z ? N(g0, intFunction) : g0;
         }
@@ -39,7 +38,7 @@ public abstract /* synthetic */ class u0 implements w3 {
 
     public static A0 F(b bVar, Spliterator spliterator, boolean z) {
         long l0 = bVar.l0(spliterator);
-        if (l0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 < 0 || !spliterator.hasCharacteristics(16384)) {
             A0 a0 = (A0) new L0(0, spliterator, bVar).invoke();
             return z ? O(a0) : a0;
         }
@@ -53,7 +52,7 @@ public abstract /* synthetic */ class u0 implements w3 {
 
     public static C0 G(b bVar, Spliterator spliterator, boolean z) {
         long l0 = bVar.l0(spliterator);
-        if (l0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 < 0 || !spliterator.hasCharacteristics(16384)) {
             C0 c0 = (C0) new L0(1, spliterator, bVar).invoke();
             return z ? P(c0) : c0;
         }
@@ -67,7 +66,7 @@ public abstract /* synthetic */ class u0 implements w3 {
 
     public static E0 H(b bVar, Spliterator spliterator, boolean z) {
         long l0 = bVar.l0(spliterator);
-        if (l0 < 0 || !spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 < 0 || !spliterator.hasCharacteristics(16384)) {
             E0 e0 = (E0) new L0(2, spliterator, bVar).invoke();
             return z ? Q(e0) : e0;
         }
@@ -101,7 +100,7 @@ public abstract /* synthetic */ class u0 implements w3 {
     }
 
     public static E K(j$.util.D d2) {
-        return new z(d2, R2.c(d2));
+        return new z(d2, R2.i(d2));
     }
 
     static Z0 L(S2 s2) {
@@ -184,7 +183,7 @@ public abstract /* synthetic */ class u0 implements w3 {
     }
 
     public static IntStream S(j$.util.G g2) {
-        return new Z(g2, R2.c(g2));
+        return new Z(g2, R2.i(g2));
     }
 
     static x0 T(long j) {
@@ -192,7 +191,7 @@ public abstract /* synthetic */ class u0 implements w3 {
     }
 
     public static LongStream U(j$.util.J j) {
-        return new g0(j, R2.c(j));
+        return new g0(j, R2.i(j));
     }
 
     public static E V(b bVar, long j, long j2) {
@@ -261,7 +260,7 @@ public abstract /* synthetic */ class u0 implements w3 {
 
     public static Stream e0(Spliterator spliterator, boolean z) {
         spliterator.getClass();
-        return new U1(spliterator, R2.c(spliterator), z);
+        return new U1(spliterator, R2.i(spliterator), z);
     }
 
     public static void g(c2 c2Var, Integer num) {

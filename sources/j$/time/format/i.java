@@ -25,8 +25,19 @@ final class i implements f {
         this.e = i3;
     }
 
+    final i b() {
+        if (this.e == -1) {
+            return this;
+        }
+        return new i(this.a, this.b, this.c, this.d, -1);
+    }
+
+    final i c(int i) {
+        return new i(this.a, this.b, this.c, this.d, this.e + i);
+    }
+
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         j$.time.temporal.l lVar = this.a;
         Long e = rVar.e(lVar);
         if (e == null) {
@@ -61,17 +72,6 @@ final class i implements f {
         }
         sb.append(l);
         return true;
-    }
-
-    final i c() {
-        if (this.e == -1) {
-            return this;
-        }
-        return new i(this.a, this.b, this.c, this.d, -1);
-    }
-
-    final i d(int i) {
-        return new i(this.a, this.b, this.c, this.d, this.e + i);
     }
 
     public final String toString() {

@@ -30,13 +30,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.RadioColorCell;
@@ -142,7 +142,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
         }
 
         public void set(CharSequence charSequence, ArrayList arrayList, Bitmap bitmap, boolean z) {
@@ -436,11 +436,11 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onClick$6(HistoryFragment[] historyFragmentArr, BrowserHistory.Entry entry) {
-        historyFragmentArr[0].lambda$onBackPressed$348();
+        historyFragmentArr[0].lambda$onBackPressed$354();
         if (this.whenHistoryClicked == null) {
             Browser.openUrl(getContext(), entry.url);
         } else {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             this.whenHistoryClicked.run(entry);
         }
     }
@@ -732,7 +732,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
                                     final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext()) { // from class: org.telegram.ui.web.WebBrowserSettings.2
                                         @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
                                         protected void onMeasure(int i8, int i9) {
-                                            super.onMeasure(i8, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), 1073741824));
+                                            super.onMeasure(i8, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
                                         }
                                     };
                                     final Runnable runnable = new Runnable() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda10
@@ -758,7 +758,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
                                     editTextBoldCursor.setHintText(LocaleController.getString(R.string.BrowserSettingsAddHint));
                                     editTextBoldCursor.setSingleLine(true);
                                     editTextBoldCursor.setFocusable(true);
-                                    editTextBoldCursor.setInputType(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                                    editTextBoldCursor.setInputType(16384);
                                     editTextBoldCursor.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField, getResourceProvider()), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated, getResourceProvider()), Theme.getColor(Theme.key_text_RedRegular, getResourceProvider()));
                                     editTextBoldCursor.setImeOptions(6);
                                     editTextBoldCursor.setBackgroundDrawable(null);

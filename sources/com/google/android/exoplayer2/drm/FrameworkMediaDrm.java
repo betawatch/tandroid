@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class FrameworkMediaDrm implements ExoMediaDrm {
@@ -255,7 +256,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         if (TextUtils.isEmpty(adjustLicenseServerUrl) && schemeData != null && !TextUtils.isEmpty(schemeData.licenseServerUrl)) {
             adjustLicenseServerUrl = schemeData.licenseServerUrl;
         }
-        return new ExoMediaDrm.KeyRequest(adjustRequestData, adjustLicenseServerUrl, Util.SDK_INT >= 23 ? keyRequest.getRequestType() : Integer.MIN_VALUE);
+        return new ExoMediaDrm.KeyRequest(adjustRequestData, adjustLicenseServerUrl, Util.SDK_INT >= 23 ? keyRequest.getRequestType() : TLRPC.FLAG_31);
     }
 
     public String getPropertyString(String str) {

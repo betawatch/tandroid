@@ -53,6 +53,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -66,8 +67,8 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Stars.BalanceCloud;
 import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stars.StarsReactionsSheet;
 
 /* loaded from: classes4.dex */
 public class AlertDialog extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
@@ -145,7 +146,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
     private boolean[] shadowVisibility;
     private Runnable showRunnable;
     private long shownAt;
-    private StarsReactionsSheet.BalanceCloud starsBalanceCloud;
+    private BalanceCloud starsBalanceCloud;
     private CharSequence subtitle;
     private TextView subtitleTextView;
     private CharSequence title;
@@ -197,7 +198,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
 
         public void setGravity(int i) {
@@ -365,7 +366,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             float f;
             float f2;
             if (AlertDialog.this.progressViewStyle == 3) {
-                AlertDialog.this.progressViewContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), 1073741824));
+                AlertDialog.this.progressViewContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLRPC.FLAG_30));
                 setMeasuredDimension(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i2));
                 return;
             }
@@ -377,8 +378,8 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             }
             int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
             int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft - AndroidUtilities.dp(48.0f), 1073741824);
-            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingLeft, 1073741824);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft - AndroidUtilities.dp(48.0f), TLRPC.FLAG_30);
+            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_30);
             ViewGroup viewGroup = AlertDialog.this.buttonsLayout;
             if (viewGroup != null) {
                 int childCount = viewGroup.getChildCount();
@@ -395,11 +396,11 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 i3 = paddingTop;
             }
             if (AlertDialog.this.secondTitleTextView != null) {
-                AlertDialog.this.secondTitleTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(makeMeasureSpec), Integer.MIN_VALUE), i2);
+                AlertDialog.this.secondTitleTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(makeMeasureSpec), TLRPC.FLAG_31), i2);
             }
             if (AlertDialog.this.titleTextView != null) {
                 if (AlertDialog.this.secondTitleTextView != null) {
-                    AlertDialog.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(makeMeasureSpec) - AlertDialog.this.secondTitleTextView.getMeasuredWidth()) - AndroidUtilities.dp(8.0f), 1073741824), i2);
+                    AlertDialog.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(makeMeasureSpec) - AlertDialog.this.secondTitleTextView.getMeasuredWidth()) - AndroidUtilities.dp(8.0f), TLRPC.FLAG_30), i2);
                 } else {
                     AlertDialog.this.titleTextView.measure(makeMeasureSpec, i2);
                 }
@@ -415,7 +416,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 i3 -= (AlertDialog.this.subtitleTextView.getMeasuredHeight() + layoutParams4.bottomMargin) + layoutParams4.topMargin;
             }
             if (AlertDialog.this.topImageView != null) {
-                AlertDialog.this.topImageView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(AlertDialog.this.topHeight), 1073741824));
+                AlertDialog.this.topImageView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(AlertDialog.this.topHeight), TLRPC.FLAG_30));
                 i3 -= AlertDialog.this.topImageView.getMeasuredHeight();
             }
             if (AlertDialog.this.topView != null) {
@@ -427,7 +428,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     f2 = AlertDialog.this.aspectRatio;
                 }
                 int i5 = (int) (f * f2);
-                AlertDialog.this.topView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(i5, 1073741824));
+                AlertDialog.this.topView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_30));
                 AlertDialog.this.topView.getLayoutParams().height = i5;
                 i3 -= AlertDialog.this.topView.getMeasuredHeight();
             }
@@ -439,20 +440,20 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                         dp = 0;
                         layoutParams5.bottomMargin = dp;
                         int i6 = i3 - (layoutParams5.bottomMargin + layoutParams5.topMargin);
-                        AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i6, Integer.MIN_VALUE));
+                        AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_31));
                         i3 = i6 - AlertDialog.this.contentScrollView.getMeasuredHeight();
                     }
                     dp = AndroidUtilities.dp(8.0f);
                     layoutParams5.bottomMargin = dp;
                     int i62 = i3 - (layoutParams5.bottomMargin + layoutParams5.topMargin);
-                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i62, Integer.MIN_VALUE));
+                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i62, TLRPC.FLAG_31));
                     i3 = i62 - AlertDialog.this.contentScrollView.getMeasuredHeight();
                 } else if (AlertDialog.this.items != null) {
                     layoutParams5.topMargin = (AlertDialog.this.titleTextView == null && AlertDialog.this.messageTextView.getVisibility() == 8) ? AndroidUtilities.dp(8.0f) : 0;
                     dp = AndroidUtilities.dp(8.0f);
                     layoutParams5.bottomMargin = dp;
                     int i622 = i3 - (layoutParams5.bottomMargin + layoutParams5.topMargin);
-                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i622, Integer.MIN_VALUE));
+                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i622, TLRPC.FLAG_31));
                     i3 = i622 - AlertDialog.this.contentScrollView.getMeasuredHeight();
                 } else {
                     if (AlertDialog.this.messageTextView.getVisibility() == 0) {
@@ -461,27 +462,27 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                         layoutParams5.bottomMargin = dp;
                     }
                     int i6222 = i3 - (layoutParams5.bottomMargin + layoutParams5.topMargin);
-                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i6222, Integer.MIN_VALUE));
+                    AlertDialog.this.contentScrollView.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i6222, TLRPC.FLAG_31));
                     i3 = i6222 - AlertDialog.this.contentScrollView.getMeasuredHeight();
                 }
             } else {
                 if (AlertDialog.this.progressViewContainer != null) {
-                    AlertDialog.this.progressViewContainer.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE));
+                    AlertDialog.this.progressViewContainer.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31));
                     layoutParams = (LinearLayout.LayoutParams) AlertDialog.this.progressViewContainer.getLayoutParams();
                     view = AlertDialog.this.progressViewContainer;
                 } else {
                     if (AlertDialog.this.messageTextView != null) {
-                        AlertDialog.this.messageTextView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE));
+                        AlertDialog.this.messageTextView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31));
                         if (AlertDialog.this.messageTextView.getVisibility() != 8) {
                             layoutParams = (LinearLayout.LayoutParams) AlertDialog.this.messageTextView.getLayoutParams();
                             view = AlertDialog.this.messageTextView;
                         }
                     }
                     if (AlertDialog.this.lineProgressView != null) {
-                        AlertDialog.this.lineProgressView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), 1073741824));
+                        AlertDialog.this.lineProgressView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLRPC.FLAG_30));
                         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) AlertDialog.this.lineProgressView.getLayoutParams();
                         int measuredHeight = i3 - ((AlertDialog.this.lineProgressView.getMeasuredHeight() + layoutParams6.bottomMargin) + layoutParams6.topMargin);
-                        AlertDialog.this.lineProgressViewPercent.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(measuredHeight, Integer.MIN_VALUE));
+                        AlertDialog.this.lineProgressViewPercent.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(measuredHeight, TLRPC.FLAG_31));
                         LinearLayout.LayoutParams layoutParams7 = (LinearLayout.LayoutParams) AlertDialog.this.lineProgressViewPercent.getLayoutParams();
                         i3 = measuredHeight - ((AlertDialog.this.lineProgressViewPercent.getMeasuredHeight() + layoutParams7.bottomMargin) + layoutParams7.topMargin);
                     }
@@ -1177,7 +1178,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                         });
                     }
                     if (this.starsBalanceCloud == null) {
-                        StarsReactionsSheet.BalanceCloud balanceCloud = new StarsReactionsSheet.BalanceCloud(getContext(), UserConfig.selectedAccount, this.resourcesProvider);
+                        BalanceCloud balanceCloud = new BalanceCloud(getContext(), UserConfig.selectedAccount, this.resourcesProvider);
                         this.starsBalanceCloud = balanceCloud;
                         ScaleStateListAnimator.apply(balanceCloud);
                         this.starsBalanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda5
@@ -1585,9 +1586,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                         return;
                                     }
                                     if (findViewWithTag.getMeasuredWidth() < findViewWithTag2.getMeasuredWidth()) {
-                                        findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i9 - measuredWidth), 1073741824), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), 1073741824));
+                                        findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i9 - measuredWidth), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), TLRPC.FLAG_30));
                                     } else {
-                                        findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i9 - measuredWidth), 1073741824), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), 1073741824));
+                                        findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i9 - measuredWidth), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), TLRPC.FLAG_30));
                                     }
                                 }
                             }
@@ -1747,7 +1748,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 if (view3 == null && this.checkFocusable && canTextInput(view3)) {
                     layoutParams.softInputMode = 4;
                 } else {
-                    layoutParams.flags |= 131072;
+                    layoutParams.flags |= TLRPC.FLAG_17;
                 }
                 if (Build.VERSION.SDK_INT >= 28) {
                     layoutParams.layoutInDisplayCutoutMode = 0;
@@ -1848,7 +1849,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         view3 = this.customView;
         if (view3 == null) {
         }
-        layoutParams.flags |= 131072;
+        layoutParams.flags |= TLRPC.FLAG_17;
         if (Build.VERSION.SDK_INT >= 28) {
         }
         if (this.blurredBackground) {
@@ -1954,7 +1955,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             i = attributes.flags & (-131073);
         } else {
             attributes.softInputMode = 48;
-            i = attributes.flags | 131072;
+            i = attributes.flags | TLRPC.FLAG_17;
         }
         attributes.flags = i;
         window.setAttributes(attributes);

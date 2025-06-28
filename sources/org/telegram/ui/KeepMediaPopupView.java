@@ -12,6 +12,7 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
@@ -82,7 +83,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         protected void onMeasure(int i, int i2) {
             View view = (View) getParent();
             if (view != null && view.getWidth() > 0) {
-                i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), 1073741824);
+                i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLRPC.FLAG_30);
             }
             this.ignoreLayout = true;
             this.titleView.setVisibility(8);

@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class zzcb extends zzak {
@@ -144,7 +145,7 @@ public abstract class zzcb extends zzak {
         }
         int zza2 = zzdpVar.zza(this);
         if (zza2 >= 0) {
-            this.zzd = (this.zzd & Integer.MIN_VALUE) | zza2;
+            this.zzd = (this.zzd & TLRPC.FLAG_31) | zza2;
             return zza2;
         }
         throw new IllegalStateException("serialized size must be non-negative, was " + zza2);
@@ -169,7 +170,7 @@ public abstract class zzcb extends zzak {
                 if (i < 0) {
                     throw new IllegalStateException("serialized size must be non-negative, was " + i);
                 }
-                this.zzd = (this.zzd & Integer.MIN_VALUE) | i;
+                this.zzd = (this.zzd & TLRPC.FLAG_31) | i;
             }
         }
         return i;
@@ -203,7 +204,7 @@ public abstract class zzcb extends zzak {
     }
 
     final void zzq(int i) {
-        this.zzd = (this.zzd & Integer.MIN_VALUE) | ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.zzd = (this.zzd & TLRPC.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     @Override // com.google.android.gms.internal.play_billing.zzdf
@@ -225,7 +226,7 @@ public abstract class zzcb extends zzak {
     }
 
     final boolean zzt() {
-        return (this.zzd & Integer.MIN_VALUE) != 0;
+        return (this.zzd & TLRPC.FLAG_31) != 0;
     }
 
     protected abstract Object zzu(int i, Object obj, Object obj2);

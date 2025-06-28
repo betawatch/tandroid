@@ -51,7 +51,7 @@ import androidx.customview.view.AbsSavedState;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class SearchView extends LinearLayoutCompat implements CollapsibleActionView {
@@ -650,11 +650,11 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         obtainStyledAttributes.recycle();
         Intent intent = new Intent("android.speech.action.WEB_SEARCH");
         this.mVoiceWebSearchIntent = intent;
-        intent.addFlags(268435456);
+        intent.addFlags(TLRPC.FLAG_28);
         intent.putExtra("android.speech.extra.LANGUAGE_MODEL", "web_search");
         Intent intent2 = new Intent("android.speech.action.RECOGNIZE_SPEECH");
         this.mVoiceAppSearchIntent = intent2;
-        intent2.addFlags(268435456);
+        intent2.addFlags(TLRPC.FLAG_28);
         View findViewById3 = findViewById(searchAutoComplete.getDropDownAnchor());
         this.mDropDownAnchor = findViewById3;
         if (findViewById3 != null) {
@@ -671,7 +671,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
 
     private Intent createIntent(String str, Uri uri, String str2, String str3, int i, String str4) {
         Intent intent = new Intent(str);
-        intent.addFlags(268435456);
+        intent.addFlags(TLRPC.FLAG_28);
         if (uri != null) {
             intent.setData(uri);
         }
@@ -1029,7 +1029,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         this.mExpandedInActionView = true;
         int imeOptions = this.mSearchSrcTextView.getImeOptions();
         this.mCollapsedImeOptions = imeOptions;
-        this.mSearchSrcTextView.setImeOptions(imeOptions | ConnectionsManager.FileTypeVideo);
+        this.mSearchSrcTextView.setImeOptions(imeOptions | 33554432);
         this.mSearchSrcTextView.setText("");
         setIconified(false);
     }
@@ -1118,7 +1118,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
             } else if (mode == 0) {
                 size2 = getPreferredHeight();
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
         }
         i3 = this.mMaxWidth;
         if (i3 <= 0) {
@@ -1129,7 +1129,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         int size22 = View.MeasureSpec.getSize(i2);
         if (mode != Integer.MIN_VALUE) {
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size22, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size22, TLRPC.FLAG_30));
     }
 
     protected void onQueryRefine(CharSequence charSequence) {

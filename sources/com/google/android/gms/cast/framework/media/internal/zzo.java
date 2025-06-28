@@ -42,6 +42,7 @@ import com.google.android.gms.internal.cast.zzml;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzo {
@@ -246,7 +247,7 @@ final class zzo {
                     Intent intent5 = new Intent(MediaIntentReceiver.ACTION_FORWARD);
                     intent5.setComponent(this.zzg);
                     intent5.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j);
-                    this.zzv = new NotificationCompat.Action.Builder(zzw.zza(this.zze, j), this.zzn.getString(zzw.zzb(this.zze, j)), PendingIntent.getBroadcast(this.zzb, 0, intent5, zzdy.zza | 134217728)).build();
+                    this.zzv = new NotificationCompat.Action.Builder(zzw.zza(this.zze, j), this.zzn.getString(zzw.zzb(this.zze, j)), PendingIntent.getBroadcast(this.zzb, 0, intent5, zzdy.zza | TLRPC.FLAG_27)).build();
                 }
                 return this.zzv;
             case 4:
@@ -255,7 +256,7 @@ final class zzo {
                     Intent intent6 = new Intent(MediaIntentReceiver.ACTION_REWIND);
                     intent6.setComponent(this.zzg);
                     intent6.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j2);
-                    this.zzw = new NotificationCompat.Action.Builder(zzw.zzc(this.zze, j2), this.zzn.getString(zzw.zzd(this.zze, j2)), PendingIntent.getBroadcast(this.zzb, 0, intent6, zzdy.zza | 134217728)).build();
+                    this.zzw = new NotificationCompat.Action.Builder(zzw.zzc(this.zze, j2), this.zzn.getString(zzw.zzd(this.zze, j2)), PendingIntent.getBroadcast(this.zzb, 0, intent6, zzdy.zza | TLRPC.FLAG_27)).build();
                 }
                 return this.zzw;
             case 5:
@@ -303,7 +304,7 @@ final class zzo {
             intent.setComponent(componentName);
             TaskStackBuilder create = TaskStackBuilder.create(this.zzb);
             create.addNextIntentWithParentStack(intent);
-            pendingIntent = create.getPendingIntent(1, zzdy.zza | 134217728);
+            pendingIntent = create.getPendingIntent(1, zzdy.zza | TLRPC.FLAG_27);
         }
         if (pendingIntent != null) {
             visibility.setContentIntent(pendingIntent);

@@ -14,6 +14,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
@@ -23,7 +25,9 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +37,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -47,6 +52,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.ActionBar.AlertDialog;
@@ -65,6 +71,7 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlertPollLayout;
 import org.telegram.ui.Components.CombinedDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.HintView;
@@ -79,22 +86,25 @@ import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 /* loaded from: classes4.dex */
 public class PollCreateActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate {
     private int addAnswerRow;
-    private boolean anonymousPoll;
+    private int allowAddingRow;
+    private int allowMarkingRow;
     private int anonymousRow;
     private int answerHeaderRow;
+    private int[] answerIds;
     private int answerSectionRow;
     private int answerStartRow;
-    private CharSequence[] answers;
-    private boolean[] answersChecks;
-    private int answersCount;
+    private final CharSequence[] answers;
+    private final boolean[] answersChecks;
     private PollEditTextCell currentCell;
     private PollCreateActivityDelegate delegate;
     private boolean destroyed;
     private ActionBarMenuItem doneItem;
+    private TLRPC.MessageMedia editing;
     private int emojiPadding;
     private EmojiView emojiView;
     public boolean emojiViewVisible;
     public boolean emojiViewWasVisible;
+    private boolean firstRequestField;
     private boolean hintShowed;
     private HintView hintView;
     private boolean isAnimatePopupClosing;
@@ -112,7 +122,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     private final int maxAnswersCount;
     private boolean multipleChoise;
     private int multipleRow;
-    private Runnable openKeyboardRunnable;
+    private int oldAnswersCount;
+    private boolean onlyAdding;
     private ChatActivity parentFragment;
     private int questionHeaderRow;
     private int questionRow;
@@ -121,7 +132,6 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     private int quizOnly;
     private boolean quizPoll;
     private int quizRow;
-    private int requestFieldFocusAtPosition;
     private int rowCount;
     private int settingsHeaderRow;
     private int settingsSectionRow;
@@ -130,110 +140,214 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     private int solutionRow;
     private CharSequence solutionString;
     private SuggestEmojiView suggestEmojiPanel;
+    private final boolean todo;
     private boolean waitingForKeyboardOpen;
     boolean wasEmojiSearchOpened;
+    private int answersCount = 1;
+    private boolean anonymousPoll = true;
+    private boolean allowAdding = false;
+    private boolean allowMarking = true;
+    private int shiftDp = AndroidUtilities.dp(3.0f);
+    private int requestFieldFocusAtPosition = -1;
+    private Runnable openKeyboardRunnable = new Runnable() { // from class: org.telegram.ui.PollCreateActivity.1
+        @Override // java.lang.Runnable
+        public void run() {
+            if (PollCreateActivity.this.currentCell != null) {
+                EditTextBoldCursor editField = PollCreateActivity.this.currentCell.getEditField();
+                if (PollCreateActivity.this.destroyed || editField == null || !PollCreateActivity.this.waitingForKeyboardOpen || PollCreateActivity.this.keyboardVisible || AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) {
+                    return;
+                }
+                editField.requestFocus();
+                AndroidUtilities.showKeyboard(editField);
+                AndroidUtilities.cancelRunOnUIThread(PollCreateActivity.this.openKeyboardRunnable);
+                AndroidUtilities.runOnUIThread(PollCreateActivity.this.openKeyboardRunnable, 100L);
+            }
+        }
+    };
 
     class 2 extends ActionBar.ActionBarMenuOnItemClick {
         2() {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i) {
-            PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$348();
+        public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, boolean z, int i) {
+            PollCreateActivity.this.delegate.sendPoll(tL_messageMediaToDo, null, z, i);
+            PollCreateActivity.this.lambda$onBackPressed$354();
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i) {
+            PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
+            PollCreateActivity.this.lambda$onBackPressed$354();
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
+            final HashMap hashMap;
+            PollCreateActivityDelegate pollCreateActivityDelegate;
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll;
+            int i2;
             if (i != -1) {
                 if (i != 1) {
                     return;
                 }
-                if (PollCreateActivity.this.quizPoll && PollCreateActivity.this.doneItem.getAlpha() != 1.0f) {
-                    int i2 = 0;
-                    for (int i3 = 0; i3 < PollCreateActivity.this.answersChecks.length; i3++) {
-                        if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i3])) && PollCreateActivity.this.answersChecks[i3]) {
-                            i2++;
+                if (PollCreateActivity.this.todo) {
+                    CharSequence[] charSequenceArr = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.questionString)};
+                    ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr, true);
+                    CharSequence charSequence = charSequenceArr[0];
+                    int size = entities.size();
+                    for (int i3 = 0; i3 < size; i3++) {
+                        TLRPC.MessageEntity messageEntity = entities.get(i3);
+                        if (messageEntity.offset + messageEntity.length > charSequence.length()) {
+                            messageEntity.length = charSequence.length() - messageEntity.offset;
                         }
                     }
-                    if (i2 <= 0) {
-                        PollCreateActivity.this.showQuizHint();
+                    final TLRPC.TL_messageMediaToDo tL_messageMediaToDo = new TLRPC.TL_messageMediaToDo();
+                    TLRPC.TodoList todoList = new TLRPC.TodoList();
+                    tL_messageMediaToDo.todo = todoList;
+                    todoList.others_can_append = PollCreateActivity.this.allowAdding;
+                    tL_messageMediaToDo.todo.others_can_complete = PollCreateActivity.this.allowMarking;
+                    tL_messageMediaToDo.todo.title = new TLRPC.TL_textWithEntities();
+                    tL_messageMediaToDo.todo.title.text = charSequence.toString();
+                    tL_messageMediaToDo.todo.title.entities = entities;
+                    if (PollCreateActivity.this.answerIds != null) {
+                        i2 = 0;
+                        for (int i4 = 0; i4 < PollCreateActivity.this.answerIds.length; i4++) {
+                            i2 = Math.max(i2, PollCreateActivity.this.answerIds[i4]);
+                        }
+                    } else {
+                        i2 = 0;
+                    }
+                    for (int i5 = 0; i5 < PollCreateActivity.this.answers.length; i5++) {
+                        if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i5]))) {
+                            CharSequence[] charSequenceArr2 = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i5])};
+                            ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr2, true);
+                            CharSequence charSequence2 = charSequenceArr2[0];
+                            int size2 = entities2.size();
+                            for (int i6 = 0; i6 < size2; i6++) {
+                                TLRPC.MessageEntity messageEntity2 = entities2.get(i6);
+                                if (messageEntity2.offset + messageEntity2.length > charSequence2.length()) {
+                                    messageEntity2.length = charSequence2.length() - messageEntity2.offset;
+                                }
+                            }
+                            TLRPC.TodoItem todoItem = new TLRPC.TodoItem();
+                            TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+                            todoItem.title = tL_textWithEntities;
+                            tL_textWithEntities.text = charSequence2.toString();
+                            todoItem.title.entities = entities2;
+                            if (PollCreateActivity.this.answerIds == null || i5 >= PollCreateActivity.this.answerIds.length) {
+                                i2++;
+                                todoItem.id = i2;
+                            } else {
+                                todoItem.id = PollCreateActivity.this.answerIds[i5];
+                            }
+                            tL_messageMediaToDo.todo.list.add(todoItem);
+                        }
+                    }
+                    if (PollCreateActivity.this.parentFragment.isInScheduleMode()) {
+                        AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.parentFragment.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda0
+                            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                            public final void didSelectDate(boolean z, int i7) {
+                                PollCreateActivity.2.this.lambda$onItemClick$0(tL_messageMediaToDo, z, i7);
+                            }
+                        });
                         return;
+                    } else {
+                        hashMap = null;
+                        tL_messageMediaPoll = tL_messageMediaToDo;
+                        pollCreateActivityDelegate = PollCreateActivity.this.delegate;
                     }
-                    return;
-                }
-                CharSequence[] charSequenceArr = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.questionString)};
-                ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr, true);
-                CharSequence charSequence = charSequenceArr[0];
-                int size = entities.size();
-                for (int i4 = 0; i4 < size; i4++) {
-                    TLRPC.MessageEntity messageEntity = entities.get(i4);
-                    if (messageEntity.offset + messageEntity.length > charSequence.length()) {
-                        messageEntity.length = charSequence.length() - messageEntity.offset;
-                    }
-                }
-                final TLRPC.TL_messageMediaPoll tL_messageMediaPoll = new TLRPC.TL_messageMediaPoll();
-                TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-                tL_messageMediaPoll.poll = tL_poll;
-                tL_poll.multiple_choice = PollCreateActivity.this.multipleChoise;
-                tL_messageMediaPoll.poll.quiz = PollCreateActivity.this.quizPoll;
-                tL_messageMediaPoll.poll.public_voters = !PollCreateActivity.this.anonymousPoll;
-                tL_messageMediaPoll.poll.question = new TLRPC.TL_textWithEntities();
-                tL_messageMediaPoll.poll.question.text = charSequence.toString();
-                tL_messageMediaPoll.poll.question.entities = entities;
-                SerializedData serializedData = new SerializedData(PollCreateActivity.this.maxAnswersCount);
-                for (int i5 = 0; i5 < PollCreateActivity.this.answers.length; i5++) {
-                    if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i5]))) {
-                        CharSequence[] charSequenceArr2 = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i5])};
-                        ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr2, true);
-                        CharSequence charSequence2 = charSequenceArr2[0];
-                        int size2 = entities2.size();
-                        for (int i6 = 0; i6 < size2; i6++) {
-                            TLRPC.MessageEntity messageEntity2 = entities2.get(i6);
-                            if (messageEntity2.offset + messageEntity2.length > charSequence2.length()) {
-                                messageEntity2.length = charSequence2.length() - messageEntity2.offset;
+                } else {
+                    if (PollCreateActivity.this.quizPoll && PollCreateActivity.this.doneItem.getAlpha() != 1.0f) {
+                        int i7 = 0;
+                        for (int i8 = 0; i8 < PollCreateActivity.this.answersChecks.length; i8++) {
+                            if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i8])) && PollCreateActivity.this.answersChecks[i8]) {
+                                i7++;
                             }
                         }
-                        TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
-                        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-                        tL_pollAnswer.text = tL_textWithEntities;
-                        tL_textWithEntities.text = charSequence2.toString();
-                        tL_pollAnswer.text.entities = entities2;
-                        tL_pollAnswer.option = new byte[]{(byte) (tL_messageMediaPoll.poll.answers.size() + 48)};
-                        tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
-                        if ((PollCreateActivity.this.multipleChoise || PollCreateActivity.this.quizPoll) && PollCreateActivity.this.answersChecks[i5]) {
-                            serializedData.writeByte(tL_pollAnswer.option[0]);
+                        if (i7 <= 0) {
+                            PollCreateActivity.this.showQuizHint();
+                            return;
+                        }
+                        return;
+                    }
+                    CharSequence[] charSequenceArr3 = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.questionString)};
+                    ArrayList<TLRPC.MessageEntity> entities3 = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr3, true);
+                    CharSequence charSequence3 = charSequenceArr3[0];
+                    int size3 = entities3.size();
+                    for (int i9 = 0; i9 < size3; i9++) {
+                        TLRPC.MessageEntity messageEntity3 = entities3.get(i9);
+                        if (messageEntity3.offset + messageEntity3.length > charSequence3.length()) {
+                            messageEntity3.length = charSequence3.length() - messageEntity3.offset;
                         }
                     }
-                }
-                final HashMap hashMap = new HashMap();
-                hashMap.put("answers", Utilities.bytesToHex(serializedData.toByteArray()));
-                tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
-                CharSequence fixedString = ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.solutionString);
-                if (fixedString != null) {
-                    tL_messageMediaPoll.results.solution = fixedString.toString();
-                    ArrayList<TLRPC.MessageEntity> entities3 = PollCreateActivity.this.getMediaDataController().getEntities(new CharSequence[]{fixedString}, true);
-                    if (entities3 != null && !entities3.isEmpty()) {
-                        tL_messageMediaPoll.results.solution_entities = entities3;
-                    }
-                    if (!TextUtils.isEmpty(tL_messageMediaPoll.results.solution)) {
-                        tL_messageMediaPoll.results.flags |= 16;
-                    }
-                }
-                if (PollCreateActivity.this.parentFragment.isInScheduleMode()) {
-                    AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda0
-                        @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                        public final void didSelectDate(boolean z, int i7) {
-                            PollCreateActivity.2.this.lambda$onItemClick$0(tL_messageMediaPoll, hashMap, z, i7);
+                    final TLRPC.TL_messageMediaPoll tL_messageMediaPoll2 = new TLRPC.TL_messageMediaPoll();
+                    TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
+                    tL_messageMediaPoll2.poll = tL_poll;
+                    tL_poll.multiple_choice = PollCreateActivity.this.multipleChoise;
+                    tL_messageMediaPoll2.poll.quiz = PollCreateActivity.this.quizPoll;
+                    tL_messageMediaPoll2.poll.public_voters = !PollCreateActivity.this.anonymousPoll;
+                    tL_messageMediaPoll2.poll.question = new TLRPC.TL_textWithEntities();
+                    tL_messageMediaPoll2.poll.question.text = charSequence3.toString();
+                    tL_messageMediaPoll2.poll.question.entities = entities3;
+                    SerializedData serializedData = new SerializedData(PollCreateActivity.this.maxAnswersCount);
+                    for (int i10 = 0; i10 < PollCreateActivity.this.answers.length; i10++) {
+                        if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i10]))) {
+                            CharSequence[] charSequenceArr4 = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i10])};
+                            ArrayList<TLRPC.MessageEntity> entities4 = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(charSequenceArr4, true);
+                            CharSequence charSequence4 = charSequenceArr4[0];
+                            int size4 = entities4.size();
+                            for (int i11 = 0; i11 < size4; i11++) {
+                                TLRPC.MessageEntity messageEntity4 = entities4.get(i11);
+                                if (messageEntity4.offset + messageEntity4.length > charSequence4.length()) {
+                                    messageEntity4.length = charSequence4.length() - messageEntity4.offset;
+                                }
+                            }
+                            TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+                            TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
+                            tL_pollAnswer.text = tL_textWithEntities2;
+                            tL_textWithEntities2.text = charSequence4.toString();
+                            tL_pollAnswer.text.entities = entities4;
+                            tL_pollAnswer.option = new byte[]{(byte) (tL_messageMediaPoll2.poll.answers.size() + 48)};
+                            tL_messageMediaPoll2.poll.answers.add(tL_pollAnswer);
+                            if ((PollCreateActivity.this.multipleChoise || PollCreateActivity.this.quizPoll) && PollCreateActivity.this.answersChecks[i10]) {
+                                serializedData.writeByte(tL_pollAnswer.option[0]);
+                            }
                         }
-                    });
-                    return;
+                    }
+                    hashMap = new HashMap();
+                    hashMap.put("answers", Utilities.bytesToHex(serializedData.toByteArray()));
+                    tL_messageMediaPoll2.results = new TLRPC.TL_pollResults();
+                    CharSequence fixedString = ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.solutionString);
+                    if (fixedString != null) {
+                        tL_messageMediaPoll2.results.solution = fixedString.toString();
+                        ArrayList<TLRPC.MessageEntity> entities5 = MediaDataController.getInstance(((BaseFragment) PollCreateActivity.this).currentAccount).getEntities(new CharSequence[]{fixedString}, true);
+                        if (entities5 != null && !entities5.isEmpty()) {
+                            tL_messageMediaPoll2.results.solution_entities = entities5;
+                        }
+                        if (!TextUtils.isEmpty(tL_messageMediaPoll2.results.solution)) {
+                            tL_messageMediaPoll2.results.flags |= 16;
+                        }
+                    }
+                    if (PollCreateActivity.this.parentFragment.isInScheduleMode()) {
+                        AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.parentFragment.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda1
+                            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                            public final void didSelectDate(boolean z, int i12) {
+                                PollCreateActivity.2.this.lambda$onItemClick$1(tL_messageMediaPoll2, hashMap, z, i12);
+                            }
+                        });
+                        return;
+                    } else {
+                        tL_messageMediaPoll = tL_messageMediaPoll2;
+                        pollCreateActivityDelegate = PollCreateActivity.this.delegate;
+                    }
                 }
-                PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0);
+                pollCreateActivityDelegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0);
             } else if (!PollCreateActivity.this.checkDiscard()) {
                 return;
             }
-            PollCreateActivity.this.lambda$onBackPressed$348();
+            PollCreateActivity.this.lambda$onBackPressed$354();
         }
     }
 
@@ -432,11 +546,11 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:27:0x00ee, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:46:0x013d, code lost:
         
-            if (r1.isEmojiSearchOpened != false) goto L20;
+            if (r1.isEmojiSearchOpened != false) goto L36;
          */
-        /* JADX WARN: Removed duplicated region for block: B:19:0x0106  */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x0155  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -453,13 +567,29 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 return;
             }
             int i = adapterPosition - PollCreateActivity.this.answerStartRow;
+            if (PollCreateActivity.this.onlyAdding && i < PollCreateActivity.this.oldAnswersCount) {
+                PollCreateActivity pollCreateActivity2 = PollCreateActivity.this;
+                AndroidUtilities.shakeViewSpring(pollEditTextCell, pollCreateActivity2.shiftDp = -pollCreateActivity2.shiftDp);
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                return;
+            }
             PollCreateActivity.this.listAdapter.notifyItemRemoved(adapterPosition);
             int i2 = i + 1;
             System.arraycopy(PollCreateActivity.this.answers, i2, PollCreateActivity.this.answers, i, (PollCreateActivity.this.answers.length - 1) - i);
             System.arraycopy(PollCreateActivity.this.answersChecks, i2, PollCreateActivity.this.answersChecks, i, (PollCreateActivity.this.answersChecks.length - 1) - i);
             PollCreateActivity.this.answers[PollCreateActivity.this.answers.length - 1] = null;
+            int i3 = 0;
             PollCreateActivity.this.answersChecks[PollCreateActivity.this.answersChecks.length - 1] = false;
-            PollCreateActivity.access$3810(PollCreateActivity.this);
+            PollCreateActivity.access$4810(PollCreateActivity.this);
+            if (PollCreateActivity.this.answerIds != null) {
+                int i4 = PollCreateActivity.this.answersCount;
+                int[] iArr = new int[i4];
+                while (i3 < i4) {
+                    iArr[i3] = PollCreateActivity.this.answerIds[i3 >= i ? i3 - 1 : i3];
+                    i3++;
+                }
+                PollCreateActivity.this.answerIds = iArr;
+            }
             if (PollCreateActivity.this.answersCount == PollCreateActivity.this.answers.length - 1) {
                 PollCreateActivity.this.listAdapter.notifyItemInserted((PollCreateActivity.this.answerStartRow + PollCreateActivity.this.answers.length) - 1);
             }
@@ -555,22 +685,31 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             if (i == PollCreateActivity.this.solutionRow) {
                 return 7;
             }
-            return (i == PollCreateActivity.this.anonymousRow || i == PollCreateActivity.this.multipleRow || i == PollCreateActivity.this.quizRow) ? 6 : 5;
+            return (i == PollCreateActivity.this.anonymousRow || i == PollCreateActivity.this.multipleRow || i == PollCreateActivity.this.quizRow || i == PollCreateActivity.this.allowAddingRow || i == PollCreateActivity.this.allowMarkingRow) ? 6 : 5;
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             int adapterPosition = viewHolder.getAdapterPosition();
-            return adapterPosition == PollCreateActivity.this.addAnswerRow || adapterPosition == PollCreateActivity.this.anonymousRow || adapterPosition == PollCreateActivity.this.multipleRow || (PollCreateActivity.this.quizOnly == 0 && adapterPosition == PollCreateActivity.this.quizRow);
+            if (adapterPosition == PollCreateActivity.this.questionRow || adapterPosition == PollCreateActivity.this.allowAddingRow || adapterPosition == PollCreateActivity.this.allowMarkingRow) {
+                return !PollCreateActivity.this.onlyAdding;
+            }
+            if (PollCreateActivity.this.onlyAdding && adapterPosition >= PollCreateActivity.this.answerStartRow && adapterPosition < PollCreateActivity.this.answerStartRow + PollCreateActivity.this.answersCount) {
+                return adapterPosition - PollCreateActivity.this.answerStartRow >= PollCreateActivity.this.oldAnswersCount;
+            }
+            if (adapterPosition == PollCreateActivity.this.addAnswerRow || adapterPosition == PollCreateActivity.this.anonymousRow || adapterPosition == PollCreateActivity.this.multipleRow) {
+                return true;
+            }
+            return PollCreateActivity.this.quizOnly == 0 && adapterPosition == PollCreateActivity.this.quizRow;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:35:0x0102, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x0187, code lost:
         
-            if (r6.this$0.quizRow == (-1)) goto L39;
+            if (r6.this$0.quizRow == (-1)) goto L48;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x011f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:62:0x01a4, code lost:
         
-            if (r6.this$0.quizRow != (-1)) goto L38;
+            if (r6.this$0.quizRow != (-1)) goto L60;
          */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
@@ -580,15 +719,15 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             int i2;
             String string;
             boolean z;
-            String formatString;
+            String formatPluralStringComma;
             int i3;
             int itemViewType = viewHolder.getItemViewType();
             if (itemViewType == 0) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == PollCreateActivity.this.questionHeaderRow) {
-                    i2 = R.string.PollQuestion;
+                    i2 = PollCreateActivity.this.todo ? R.string.TodoTitle : R.string.PollQuestion;
                 } else if (i == PollCreateActivity.this.answerHeaderRow) {
-                    i2 = PollCreateActivity.this.quizOnly == 1 ? R.string.QuizAnswers : R.string.AnswerOptions;
+                    i2 = PollCreateActivity.this.quizOnly == 1 ? R.string.QuizAnswers : PollCreateActivity.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions;
                 } else if (i != PollCreateActivity.this.settingsHeaderRow) {
                     return;
                 } else {
@@ -599,25 +738,34 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             }
             if (itemViewType == 6) {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
-                if (i == PollCreateActivity.this.anonymousRow) {
-                    string = LocaleController.getString(R.string.PollAnonymous);
-                    z = PollCreateActivity.this.anonymousPoll;
-                    if (PollCreateActivity.this.multipleRow == -1) {
-                    }
-                    r0 = true;
+                textCheckCell.setEnabled(!PollCreateActivity.this.onlyAdding);
+                textCheckCell.getCheckBox().setAlpha(!PollCreateActivity.this.onlyAdding ? 1.0f : 0.6f);
+                if (i == PollCreateActivity.this.allowAddingRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.TodoAllowAddingTasks), PollCreateActivity.this.allowAdding, true);
                 } else {
-                    if (i != PollCreateActivity.this.multipleRow) {
-                        if (i == PollCreateActivity.this.quizRow) {
-                            textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollQuiz), PollCreateActivity.this.quizPoll, false);
-                            textCheckCell.setEnabled(PollCreateActivity.this.quizOnly == 0, null);
+                    if (i == PollCreateActivity.this.allowMarkingRow) {
+                        string = LocaleController.getString(R.string.TodoAllowMarkingDone);
+                        z = PollCreateActivity.this.allowMarking;
+                    } else if (i == PollCreateActivity.this.anonymousRow) {
+                        string = LocaleController.getString(R.string.PollAnonymous);
+                        z = PollCreateActivity.this.anonymousPoll;
+                        if (PollCreateActivity.this.multipleRow == -1) {
+                        }
+                        r0 = true;
+                    } else {
+                        if (i != PollCreateActivity.this.multipleRow) {
+                            if (i == PollCreateActivity.this.quizRow) {
+                                textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollQuiz), PollCreateActivity.this.quizPoll, false);
+                                textCheckCell.setEnabled(PollCreateActivity.this.quizOnly == 0, null);
+                                return;
+                            }
                             return;
                         }
-                        return;
+                        string = LocaleController.getString(R.string.PollMultiple);
+                        z = PollCreateActivity.this.multipleChoise;
                     }
-                    string = LocaleController.getString(R.string.PollMultiple);
-                    z = PollCreateActivity.this.multipleChoise;
+                    textCheckCell.setTextAndCheck(string, z, r0);
                 }
-                textCheckCell.setTextAndCheck(string, z, r0);
                 textCheckCell.setEnabled(true, null);
                 return;
             }
@@ -633,12 +781,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 drawable.setColorFilter(new PorterDuffColorFilter(color, mode));
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), mode));
-                textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
+                textCell.setTextAndIcon((CharSequence) LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoNewTask : R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
                 return;
             }
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
             textInfoPrivacyCell.setFixedSize(0);
-            textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             if (i == PollCreateActivity.this.solutionInfoRow) {
                 i3 = R.string.AddAnExplanationInfo;
             } else if (i == PollCreateActivity.this.settingsSectionRow) {
@@ -650,13 +798,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 i3 = R.string.QuizInfo;
             } else {
                 if (PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount > 0) {
-                    formatString = LocaleController.formatString("AddAnOptionInfo", R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount, new Object[0]));
-                    textInfoPrivacyCell.setText(formatString);
+                    formatPluralStringComma = PollCreateActivity.this.todo ? LocaleController.formatPluralStringComma("TodoNewTaskInfo", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount) : LocaleController.formatString("AddAnOptionInfo", R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount, new Object[0]));
+                    textInfoPrivacyCell.setText(formatPluralStringComma);
                 }
-                i3 = R.string.AddAnOptionInfoMax;
+                i3 = PollCreateActivity.this.todo ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax;
             }
-            formatString = LocaleController.getString(i3);
-            textInfoPrivacyCell.setText(formatString);
+            formatPluralStringComma = LocaleController.getString(i3);
+            textInfoPrivacyCell.setText(formatPluralStringComma);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -694,6 +842,28 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             /* renamed from: onEmojiButtonClicked */
                             public void lambda$new$1(PollEditTextCell pollEditTextCell3) {
                                 PollCreateActivity.this.onEmojiClicked(pollEditTextCell3);
+                            }
+
+                            @Override // org.telegram.ui.Cells.PollEditTextCell
+                            public boolean onPastedMultipleLines(ArrayList arrayList) {
+                                if (arrayList.isEmpty()) {
+                                    return false;
+                                }
+                                this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                                int i2 = 0;
+                                while (!arrayList.isEmpty() && i2 < PollCreateActivity.this.maxAnswersCount) {
+                                    for (int length = PollCreateActivity.this.answers.length - 1; length > i2; length--) {
+                                        PollCreateActivity.this.answers[length] = PollCreateActivity.this.answers[length - 1];
+                                    }
+                                    PollCreateActivity.this.answers[i2] = (CharSequence) arrayList.remove(0);
+                                    PollCreateActivity.access$4808(PollCreateActivity.this);
+                                    i2++;
+                                }
+                                PollCreateActivity.this.updateRows();
+                                PollCreateActivity pollCreateActivity = PollCreateActivity.this;
+                                pollCreateActivity.requestFieldFocusAtPosition = (pollCreateActivity.answerStartRow + i2) - 1;
+                                PollCreateActivity.this.listAdapter.notifyDataSetChanged();
+                                return true;
                             }
                         };
                         pollEditTextCell2.createErrorTextView();
@@ -799,6 +969,29 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             /* renamed from: onEmojiButtonClicked */
                             public void lambda$new$1(PollEditTextCell pollEditTextCell4) {
                                 PollCreateActivity.this.onEmojiClicked(pollEditTextCell4);
+                            }
+
+                            @Override // org.telegram.ui.Cells.PollEditTextCell
+                            public boolean onPastedMultipleLines(ArrayList arrayList) {
+                                int childAdapterPosition;
+                                if (arrayList.isEmpty() || (childAdapterPosition = PollCreateActivity.this.listView.getChildAdapterPosition(this) - PollCreateActivity.this.answerStartRow) < 0) {
+                                    return false;
+                                }
+                                this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                                int i2 = childAdapterPosition + 1;
+                                while (!arrayList.isEmpty() && i2 < PollCreateActivity.this.maxAnswersCount) {
+                                    for (int length = PollCreateActivity.this.answers.length - 1; length > i2; length--) {
+                                        PollCreateActivity.this.answers[length] = PollCreateActivity.this.answers[length - 1];
+                                    }
+                                    PollCreateActivity.this.answers[i2] = (CharSequence) arrayList.remove(0);
+                                    PollCreateActivity.access$4808(PollCreateActivity.this);
+                                    i2++;
+                                }
+                                PollCreateActivity.this.updateRows();
+                                PollCreateActivity pollCreateActivity = PollCreateActivity.this;
+                                pollCreateActivity.requestFieldFocusAtPosition = (pollCreateActivity.answerStartRow + i2) - 1;
+                                PollCreateActivity.this.listAdapter.notifyDataSetChanged();
+                                return true;
                             }
 
                             @Override // org.telegram.ui.Cells.PollEditTextCell
@@ -943,26 +1136,39 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onViewAttachedToWindow(RecyclerView.ViewHolder viewHolder) {
-            PollEditTextCell pollEditTextCell;
-            String str;
-            int i;
             int itemViewType = viewHolder.getItemViewType();
             if (itemViewType == 4) {
-                pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
+                PollEditTextCell pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
                 pollEditTextCell.setTag(1);
-                str = PollCreateActivity.this.questionString != null ? PollCreateActivity.this.questionString : "";
-                i = R.string.QuestionHint;
+                pollEditTextCell.setTextAndHint(PollCreateActivity.this.questionString != null ? PollCreateActivity.this.questionString : "", LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoTitlePlaceholder : R.string.QuestionHint), false);
+                pollEditTextCell.setTag(null);
+                pollEditTextCell.setEnabled(!PollCreateActivity.this.onlyAdding);
+                pollEditTextCell.textView.setEnabled(!PollCreateActivity.this.onlyAdding);
+                pollEditTextCell.textView.setTextColor(Theme.multAlpha(PollCreateActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PollCreateActivity.this.onlyAdding ? 0.6f : 1.0f));
             } else {
                 if (itemViewType == 5) {
                     int adapterPosition = viewHolder.getAdapterPosition();
                     PollEditTextCell pollEditTextCell2 = (PollEditTextCell) viewHolder.itemView;
                     pollEditTextCell2.setTag(1);
-                    pollEditTextCell2.setTextAndHint(PollCreateActivity.this.answers[adapterPosition - PollCreateActivity.this.answerStartRow], LocaleController.getString(R.string.OptionHint), true);
+                    int i = adapterPosition - PollCreateActivity.this.answerStartRow;
+                    boolean z = !PollCreateActivity.this.onlyAdding || i >= PollCreateActivity.this.oldAnswersCount;
+                    pollEditTextCell2.textView.setEnabled(z);
+                    pollEditTextCell2.textView.setTextColor(Theme.multAlpha(PollCreateActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteBlackText), z ? 1.0f : 0.6f));
+                    pollEditTextCell2.setTextAndHint(PollCreateActivity.this.answers[i], LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoTaskPlaceholder : R.string.OptionHint), true);
                     pollEditTextCell2.setTag(null);
-                    if (PollCreateActivity.this.requestFieldFocusAtPosition == adapterPosition) {
+                    ImageView imageView = pollEditTextCell2.deleteImageView;
+                    if (imageView != null) {
+                        imageView.setVisibility(z ? 0 : 8);
+                    }
+                    ImageView imageView2 = pollEditTextCell2.moveImageView;
+                    if (imageView2 != null) {
+                        imageView2.setAlpha(z ? 1.0f : 0.45f);
+                    }
+                    if (!PollCreateActivity.this.firstRequestField && PollCreateActivity.this.requestFieldFocusAtPosition == adapterPosition) {
                         EditTextBoldCursor textView = pollEditTextCell2.getTextView();
                         textView.requestFocus();
                         AndroidUtilities.showKeyboard(textView);
+                        PollCreateActivity.this.firstRequestField = false;
                         PollCreateActivity.this.requestFieldFocusAtPosition = -1;
                     }
                     PollCreateActivity.this.setTextLeft(viewHolder.itemView, adapterPosition);
@@ -971,13 +1177,11 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 if (itemViewType != 7) {
                     return;
                 }
-                pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
-                pollEditTextCell.setTag(1);
-                str = PollCreateActivity.this.solutionString != null ? PollCreateActivity.this.solutionString : "";
-                i = R.string.AddAnExplanation;
+                PollEditTextCell pollEditTextCell3 = (PollEditTextCell) viewHolder.itemView;
+                pollEditTextCell3.setTag(1);
+                pollEditTextCell3.setTextAndHint(PollCreateActivity.this.solutionString != null ? PollCreateActivity.this.solutionString : "", LocaleController.getString(R.string.AddAnExplanation), false);
+                pollEditTextCell3.setTag(null);
             }
-            pollEditTextCell.setTextAndHint(str, LocaleController.getString(i), false);
-            pollEditTextCell.setTag(null);
             PollCreateActivity.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
         }
 
@@ -1008,6 +1212,11 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             CharSequence charSequence = PollCreateActivity.this.answers[i3];
             PollCreateActivity.this.answers[i3] = PollCreateActivity.this.answers[i4];
             PollCreateActivity.this.answers[i4] = charSequence;
+            if (PollCreateActivity.this.answerIds != null) {
+                int i5 = PollCreateActivity.this.answerIds[i3];
+                PollCreateActivity.this.answerIds[i3] = PollCreateActivity.this.answerIds[i4];
+                PollCreateActivity.this.answerIds[i4] = i5;
+            }
             boolean z = PollCreateActivity.this.answersChecks[i3];
             PollCreateActivity.this.answersChecks[i3] = PollCreateActivity.this.answersChecks[i4];
             PollCreateActivity.this.answersChecks[i4] = z;
@@ -1016,11 +1225,15 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     public interface PollCreateActivityDelegate {
-        void sendPoll(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i);
+        void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i);
     }
 
     public class TouchHelperCallback extends ItemTouchHelper.Callback {
         public TouchHelperCallback() {
+        }
+
+        private boolean canMove(int i) {
+            return !PollCreateActivity.this.onlyAdding || i - PollCreateActivity.this.answerStartRow >= PollCreateActivity.this.oldAnswersCount;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -1031,7 +1244,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() != 5 ? ItemTouchHelper.Callback.makeMovementFlags(0, 0) : ItemTouchHelper.Callback.makeMovementFlags(3, 0);
+            return (viewHolder.getItemViewType() == 5 && canMove(viewHolder.getAdapterPosition())) ? ItemTouchHelper.Callback.makeMovementFlags(3, 0) : ItemTouchHelper.Callback.makeMovementFlags(0, 0);
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -1046,7 +1259,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2) {
-            if (viewHolder.getItemViewType() != viewHolder2.getItemViewType()) {
+            if (viewHolder.getItemViewType() != viewHolder2.getItemViewType() || !canMove(viewHolder.getAdapterPosition()) || !canMove(viewHolder2.getAdapterPosition())) {
                 return false;
             }
             PollCreateActivity.this.listAdapter.swapElements(viewHolder.getAdapterPosition(), viewHolder2.getAdapterPosition());
@@ -1067,29 +1280,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
     }
 
-    public PollCreateActivity(ChatActivity chatActivity, Boolean bool) {
-        int i = getMessagesController().pollAnswersMax;
+    public PollCreateActivity(ChatActivity chatActivity, boolean z, Boolean bool) {
+        this.todo = z;
+        int i = z ? getMessagesController().todoItemsMax : getMessagesController().pollAnswersMax;
         this.maxAnswersCount = i;
         this.answers = new CharSequence[i];
         this.answersChecks = new boolean[i];
-        this.answersCount = 1;
-        this.anonymousPoll = true;
-        this.requestFieldFocusAtPosition = -1;
-        this.openKeyboardRunnable = new Runnable() { // from class: org.telegram.ui.PollCreateActivity.1
-            @Override // java.lang.Runnable
-            public void run() {
-                if (PollCreateActivity.this.currentCell != null) {
-                    EditTextBoldCursor editField = PollCreateActivity.this.currentCell.getEditField();
-                    if (PollCreateActivity.this.destroyed || editField == null || !PollCreateActivity.this.waitingForKeyboardOpen || PollCreateActivity.this.keyboardVisible || AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) {
-                        return;
-                    }
-                    editField.requestFocus();
-                    AndroidUtilities.showKeyboard(editField);
-                    AndroidUtilities.cancelRunOnUIThread(PollCreateActivity.this.openKeyboardRunnable);
-                    AndroidUtilities.runOnUIThread(PollCreateActivity.this.openKeyboardRunnable, 100L);
-                }
-            }
-        };
         this.parentFragment = chatActivity;
         this.isPremium = AccountInstance.getInstance(this.currentAccount).getUserConfig().isPremium();
         if (bool != null) {
@@ -1099,7 +1295,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
     }
 
-    static /* synthetic */ int access$3810(PollCreateActivity pollCreateActivity) {
+    static /* synthetic */ int access$4808(PollCreateActivity pollCreateActivity) {
+        int i = pollCreateActivity.answersCount;
+        pollCreateActivity.answersCount = i + 1;
+        return i;
+    }
+
+    static /* synthetic */ int access$4810(PollCreateActivity pollCreateActivity) {
         int i = pollCreateActivity.answersCount;
         pollCreateActivity.answersCount = i - 1;
         return i;
@@ -1107,17 +1309,43 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public void addNewField() {
+        int i;
         resetSuggestEmojiPanel();
         boolean[] zArr = this.answersChecks;
-        int i = this.answersCount;
-        zArr[i] = false;
-        int i2 = i + 1;
-        this.answersCount = i2;
-        if (i2 == this.answers.length) {
+        int i2 = this.answersCount;
+        zArr[i2] = false;
+        int i3 = i2 + 1;
+        this.answersCount = i3;
+        if (this.answerIds != null) {
+            int[] iArr = new int[i3];
+            int i4 = 0;
+            int i5 = 0;
+            while (true) {
+                int[] iArr2 = this.answerIds;
+                if (i4 >= iArr2.length) {
+                    break;
+                }
+                i5 = Math.max(i5, iArr2[i4]);
+                i4++;
+            }
+            for (int i6 = 0; i6 < i3; i6++) {
+                int[] iArr3 = this.answerIds;
+                if (i6 < iArr3.length) {
+                    i = iArr3[i6];
+                } else {
+                    i = i5 + 1;
+                    i5 = i;
+                }
+                iArr[i6] = i;
+            }
+            this.answerIds = iArr;
+        }
+        if (this.answersCount == this.answers.length) {
             this.listAdapter.notifyItemRemoved(this.addAnswerRow);
         }
         this.listAdapter.notifyItemInserted(this.addAnswerRow);
         updateRows();
+        this.firstRequestField = false;
         this.requestFieldFocusAtPosition = (this.answerStartRow + this.answersCount) - 1;
         this.listAdapter.notifyItemChanged(this.answerSectionRow);
     }
@@ -1127,7 +1355,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PollCreateActivity.this.lambda$animateEmojiViewTranslationY$2(f, f2, valueAnimator);
+                PollCreateActivity.this.lambda$animateEmojiViewTranslationY$3(f, f2, valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PollCreateActivity.6
@@ -1143,30 +1371,52 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean checkDiscard() {
-        boolean isEmpty = TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.questionString));
-        if (isEmpty) {
-            for (int i = 0; i < this.answersCount && (isEmpty = TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.answers[i]))); i++) {
+        TLRPC.MessageMedia messageMedia = this.editing;
+        boolean z = false;
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TodoList todoList = ((TLRPC.TL_messageMediaToDo) messageMedia).todo;
+            int i = 0;
+            for (int i2 = 0; i2 < Math.min(this.answersCount, this.answers.length); i2++) {
+                if (!TextUtils.isEmpty(this.answers[i2])) {
+                    i++;
+                }
             }
+            boolean z2 = (this.onlyAdding || TextUtils.equals(todoList.title.text, ChatAttachAlertPollLayout.getFixedString(this.questionString))) && i == todoList.list.size();
+            if (z2) {
+                for (int i3 = 0; i3 < i; i3++) {
+                    if (!TextUtils.equals(this.answers[i3].toString(), todoList.list.get(i3).title.text)) {
+                        break;
+                    }
+                }
+            }
+            z = z2;
+        } else {
+            boolean isEmpty = TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.questionString));
+            if (isEmpty) {
+                for (int i4 = 0; i4 < this.answersCount && (isEmpty = TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.answers[i4]))); i4++) {
+                }
+            }
+            z = isEmpty;
         }
-        if (!isEmpty) {
+        if (!z) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString(R.string.CancelPollAlertTitle));
-            builder.setMessage(LocaleController.getString(R.string.CancelPollAlertText));
+            builder.setTitle(LocaleController.getString(this.todo ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle));
+            builder.setMessage(LocaleController.getString(this.todo ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText));
             builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i2) {
-                    PollCreateActivity.this.lambda$checkDiscard$1(alertDialog, i2);
+                public final void onClick(AlertDialog alertDialog, int i5) {
+                    PollCreateActivity.this.lambda$checkDiscard$2(alertDialog, i5);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
             showDialog(builder.create());
         }
-        return isEmpty;
+        return z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00a3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1200,7 +1450,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 }
                 i3++;
             }
-            if (i4 >= 2 && (!this.quizPoll || i >= 1)) {
+            if (i4 >= (this.todo ? 1 : 2) && (!this.quizPoll || i >= 1)) {
                 z = true;
                 this.doneItem.setEnabled((this.quizPoll && i == 0) || z);
                 this.doneItem.setAlpha(z ? 1.0f : 0.5f);
@@ -1271,7 +1521,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        PollCreateActivity.this.lambda$hideEmojiPopup$4(valueAnimator);
+                        PollCreateActivity.this.lambda$hideEmojiPopup$5(valueAnimator);
                     }
                 });
                 this.isAnimatePopupClosing = true;
@@ -1291,17 +1541,17 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateEmojiViewTranslationY$2(float f, float f2, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateEmojiViewTranslationY$3(float f, float f2, ValueAnimator valueAnimator) {
         this.emojiView.setTranslationY(AndroidUtilities.lerp(f, f2, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDiscard$1(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+    public /* synthetic */ void lambda$checkDiscard$2(AlertDialog alertDialog, int i) {
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view, int i) {
+    public /* synthetic */ void lambda$createView$1(View view, int i) {
         boolean z;
         if (i == this.addAnswerRow) {
             addNewField();
@@ -1314,60 +1564,84 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             if (suggestEmojiView != null) {
                 suggestEmojiView.forceClose();
             }
+            if (this.onlyAdding) {
+                int i2 = -this.shiftDp;
+                this.shiftDp = i2;
+                AndroidUtilities.shakeViewSpring(textCheckCell, i2);
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                return;
+            }
             if (i == this.anonymousRow) {
                 z = !this.anonymousPoll;
                 this.anonymousPoll = z;
-            } else if (i == this.multipleRow) {
-                z = !this.multipleChoise;
-                this.multipleChoise = z;
-                if (z && this.quizPoll) {
-                    int i2 = this.solutionRow;
-                    this.quizPoll = false;
-                    updateRows();
-                    RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(this.quizRow);
-                    if (findViewHolderForAdapterPosition != null) {
-                        ((TextCheckCell) findViewHolderForAdapterPosition.itemView).setChecked(false);
-                    } else {
-                        this.listAdapter.notifyItemChanged(this.quizRow);
-                    }
-                    this.listAdapter.notifyItemRangeRemoved(i2, 2);
-                }
             } else {
-                if (this.quizOnly != 0) {
-                    return;
-                }
-                z = !this.quizPoll;
-                this.quizPoll = z;
-                int i3 = this.solutionRow;
-                updateRows();
-                if (this.quizPoll) {
-                    this.listAdapter.notifyItemRangeInserted(this.solutionRow, 2);
-                } else {
-                    this.listAdapter.notifyItemRangeRemoved(i3, 2);
-                }
-                if (this.quizPoll && this.multipleChoise) {
-                    this.multipleChoise = false;
-                    RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.multipleRow);
-                    if (findViewHolderForAdapterPosition2 != null) {
-                        ((TextCheckCell) findViewHolderForAdapterPosition2.itemView).setChecked(false);
-                    } else {
-                        this.listAdapter.notifyItemChanged(this.multipleRow);
+                int i3 = this.allowAddingRow;
+                if (i == i3) {
+                    z = !this.allowAdding;
+                    this.allowAdding = z;
+                } else if (i == this.allowMarkingRow) {
+                    boolean z3 = !this.allowMarking;
+                    this.allowMarking = z3;
+                    updateRows();
+                    int i4 = this.allowAddingRow;
+                    if (i4 >= 0 && i3 < 0) {
+                        this.listAdapter.notifyItemInserted(i4);
+                    } else if (i3 >= 0 && i4 < 0) {
+                        this.listAdapter.notifyItemRemoved(i3);
                     }
-                }
-                if (this.quizPoll) {
-                    int i4 = 0;
-                    boolean z3 = false;
-                    while (true) {
-                        boolean[] zArr = this.answersChecks;
-                        if (i4 >= zArr.length) {
-                            break;
+                    z = z3;
+                } else if (i == this.multipleRow) {
+                    z = !this.multipleChoise;
+                    this.multipleChoise = z;
+                    if (z && this.quizPoll) {
+                        int i5 = this.solutionRow;
+                        this.quizPoll = false;
+                        updateRows();
+                        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(this.quizRow);
+                        if (findViewHolderForAdapterPosition != null) {
+                            ((TextCheckCell) findViewHolderForAdapterPosition.itemView).setChecked(false);
+                        } else {
+                            this.listAdapter.notifyItemChanged(this.quizRow);
                         }
-                        if (z3) {
-                            zArr[i4] = false;
-                        } else if (zArr[i4]) {
-                            z3 = true;
+                        this.listAdapter.notifyItemRangeRemoved(i5, 2);
+                    }
+                } else {
+                    if (this.quizOnly != 0) {
+                        return;
+                    }
+                    z = !this.quizPoll;
+                    this.quizPoll = z;
+                    int i6 = this.solutionRow;
+                    updateRows();
+                    if (this.quizPoll) {
+                        this.listAdapter.notifyItemRangeInserted(this.solutionRow, 2);
+                    } else {
+                        this.listAdapter.notifyItemRangeRemoved(i6, 2);
+                    }
+                    if (this.quizPoll && this.multipleChoise) {
+                        this.multipleChoise = false;
+                        RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.multipleRow);
+                        if (findViewHolderForAdapterPosition2 != null) {
+                            ((TextCheckCell) findViewHolderForAdapterPosition2.itemView).setChecked(false);
+                        } else {
+                            this.listAdapter.notifyItemChanged(this.multipleRow);
                         }
-                        i4++;
+                    }
+                    if (this.quizPoll) {
+                        int i7 = 0;
+                        boolean z4 = false;
+                        while (true) {
+                            boolean[] zArr = this.answersChecks;
+                            if (i7 >= zArr.length) {
+                                break;
+                            }
+                            if (z4) {
+                                zArr[i7] = false;
+                            } else if (zArr[i7]) {
+                                z4 = true;
+                            }
+                            i7++;
+                        }
                     }
                 }
             }
@@ -1375,14 +1649,14 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 this.hintView.hide();
             }
             this.listView.getChildCount();
-            for (int i5 = this.answerStartRow; i5 < this.answerStartRow + this.answersCount; i5++) {
-                RecyclerView.ViewHolder findViewHolderForAdapterPosition3 = this.listView.findViewHolderForAdapterPosition(i5);
+            for (int i8 = this.answerStartRow; i8 < this.answerStartRow + this.answersCount; i8++) {
+                RecyclerView.ViewHolder findViewHolderForAdapterPosition3 = this.listView.findViewHolderForAdapterPosition(i8);
                 if (findViewHolderForAdapterPosition3 != null) {
                     View view2 = findViewHolderForAdapterPosition3.itemView;
                     if (view2 instanceof PollEditTextCell) {
                         PollEditTextCell pollEditTextCell = (PollEditTextCell) view2;
                         pollEditTextCell.setShowCheckBox(this.quizPoll, true);
-                        pollEditTextCell.setChecked(this.answersChecks[i5 - this.answerStartRow], z2);
+                        pollEditTextCell.setChecked(this.answersChecks[i8 - this.answerStartRow], z2);
                         if (pollEditTextCell.getTop() > AndroidUtilities.dp(40.0f) && i == this.quizRow && !this.hintShowed) {
                             this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
                             this.hintShowed = true;
@@ -1396,12 +1670,18 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideEmojiPopup$4(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$hideEmojiPopup$5(ValueAnimator valueAnimator) {
         this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showEmojiPopup$3(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void lambda$onBecomeFullyVisible$0(EditTextBoldCursor editTextBoldCursor) {
+        editTextBoldCursor.requestFocus();
+        AndroidUtilities.showKeyboard(editTextBoldCursor);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showEmojiPopup$4(ValueAnimator valueAnimator) {
         this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
@@ -1591,7 +1871,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PollCreateActivity.this.lambda$showEmojiPopup$3(valueAnimator);
+                    PollCreateActivity.this.lambda$showEmojiPopup$4(valueAnimator);
                 }
             });
             ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PollCreateActivity.7
@@ -1628,63 +1908,87 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateRows() {
-        this.questionHeaderRow = 0;
-        this.questionRow = 1;
-        this.questionSectionRow = 2;
-        this.rowCount = 4;
-        this.answerHeaderRow = 3;
+        this.questionHeaderRow = -1;
+        this.questionRow = -1;
+        this.questionSectionRow = -1;
+        this.answerHeaderRow = -1;
+        this.solutionRow = -1;
+        this.solutionInfoRow = -1;
+        this.answerStartRow = -1;
+        this.addAnswerRow = -1;
+        this.anonymousRow = -1;
+        this.multipleRow = -1;
+        this.allowAddingRow = -1;
+        this.allowMarkingRow = -1;
+        this.quizRow = -1;
+        this.settingsSectionRow = -1;
+        this.settingsHeaderRow = -1;
+        this.rowCount = 0;
+        boolean z = this.todo;
+        if (!z || !this.onlyAdding) {
+            this.questionHeaderRow = 0;
+            this.questionRow = 1;
+            this.questionSectionRow = 2;
+            this.rowCount = 4;
+            this.answerHeaderRow = 3;
+        }
         int i = this.answersCount;
         if (i != 0) {
-            this.answerStartRow = 4;
-            this.rowCount = 4 + i;
-        } else {
-            this.answerStartRow = -1;
+            int i2 = this.rowCount;
+            this.answerStartRow = i2;
+            this.rowCount = i2 + i;
         }
         if (i != this.answers.length) {
-            int i2 = this.rowCount;
-            this.rowCount = i2 + 1;
-            this.addAnswerRow = i2;
-        } else {
-            this.addAnswerRow = -1;
+            int i3 = this.rowCount;
+            this.rowCount = i3 + 1;
+            this.addAnswerRow = i3;
         }
-        int i3 = this.rowCount;
-        this.answerSectionRow = i3;
-        this.rowCount = i3 + 2;
-        this.settingsHeaderRow = i3 + 1;
+        int i4 = this.rowCount;
+        int i5 = i4 + 1;
+        this.rowCount = i5;
+        this.answerSectionRow = i4;
+        if (z && this.onlyAdding) {
+            return;
+        }
+        int i6 = i4 + 2;
+        this.rowCount = i6;
+        this.settingsHeaderRow = i5;
+        if (z) {
+            int i7 = i4 + 3;
+            this.rowCount = i7;
+            this.allowMarkingRow = i6;
+            if (this.allowMarking) {
+                this.rowCount = i4 + 4;
+                this.allowAddingRow = i7;
+                return;
+            }
+            return;
+        }
         TLRPC.Chat currentChat = this.parentFragment.getCurrentChat();
         if (!ChatObject.isChannel(currentChat) || currentChat.megagroup) {
-            int i4 = this.rowCount;
-            this.rowCount = i4 + 1;
-            this.anonymousRow = i4;
-        } else {
-            this.anonymousRow = -1;
+            int i8 = this.rowCount;
+            this.rowCount = i8 + 1;
+            this.anonymousRow = i8;
         }
-        int i5 = this.quizOnly;
-        if (i5 != 1) {
-            int i6 = this.rowCount;
-            this.rowCount = i6 + 1;
-            this.multipleRow = i6;
-        } else {
-            this.multipleRow = -1;
+        int i9 = this.quizOnly;
+        if (i9 != 1) {
+            int i10 = this.rowCount;
+            this.rowCount = i10 + 1;
+            this.multipleRow = i10;
         }
-        if (i5 == 0) {
-            int i7 = this.rowCount;
-            this.rowCount = i7 + 1;
-            this.quizRow = i7;
-        } else {
-            this.quizRow = -1;
+        if (i9 == 0) {
+            int i11 = this.rowCount;
+            this.rowCount = i11 + 1;
+            this.quizRow = i11;
         }
-        int i8 = this.rowCount;
-        int i9 = i8 + 1;
-        this.rowCount = i9;
-        this.settingsSectionRow = i8;
-        if (!this.quizPoll) {
-            this.solutionRow = -1;
-            this.solutionInfoRow = -1;
-        } else {
-            this.solutionRow = i9;
-            this.rowCount = i8 + 3;
-            this.solutionInfoRow = i8 + 2;
+        int i12 = this.rowCount;
+        int i13 = i12 + 1;
+        this.rowCount = i13;
+        this.settingsSectionRow = i12;
+        if (this.quizPoll) {
+            this.solutionRow = i13;
+            this.rowCount = i12 + 3;
+            this.solutionInfoRow = i12 + 2;
         }
     }
 
@@ -1708,8 +2012,19 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     public View createView(Context context) {
         ActionBar actionBar;
         int i;
+        String upperCase;
+        this.actionBar.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
+        ActionBar actionBar2 = this.actionBar;
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        actionBar2.setItemsColor(getThemedColor(i2), false);
+        this.actionBar.setItemsColor(getThemedColor(i2), true);
+        this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
+        this.actionBar.setTitleColor(getThemedColor(i2));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        if (this.quizOnly == 1) {
+        if (this.todo) {
+            actionBar = this.actionBar;
+            i = this.onlyAdding ? R.string.TodoAddTasksTitle : R.string.TodoEditTitle;
+        } else if (this.quizOnly == 1) {
             actionBar = this.actionBar;
             i = R.string.NewQuiz;
         } else {
@@ -1722,7 +2037,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new 2());
-        this.doneItem = this.actionBar.createMenu().addItem(1, LocaleController.getString(R.string.Create).toUpperCase());
+        ActionBarMenu createMenu = this.actionBar.createMenu();
+        if (this.todo) {
+            upperCase = LocaleController.getString(this.onlyAdding ? R.string.TodoAddTasksButton : R.string.TodoEditTasksButton);
+        } else {
+            upperCase = LocaleController.getString(R.string.Create).toUpperCase();
+        }
+        this.doneItem = createMenu.addItem(1, upperCase);
         this.listAdapter = new ListAdapter(context);
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.PollCreateActivity.3
             private boolean ignoreLayout;
@@ -1736,75 +2057,75 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                int i6;
+            protected void onLayout(boolean z, int i3, int i4, int i5, int i6) {
                 int i7;
                 int i8;
                 int i9;
+                int i10;
                 int childCount = getChildCount();
                 int measureKeyboardHeight = measureKeyboardHeight();
                 int emojiPadding = (measureKeyboardHeight > AndroidUtilities.dp(20.0f) || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : PollCreateActivity.this.getEmojiPadding();
                 setBottomClip(emojiPadding);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = getChildAt(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = getChildAt(i11);
                     if (childAt.getVisibility() != 8) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                         int measuredWidth = childAt.getMeasuredWidth();
                         int measuredHeight = childAt.getMeasuredHeight();
-                        int i11 = layoutParams.gravity;
-                        if (i11 == -1) {
-                            i11 = 51;
+                        int i12 = layoutParams.gravity;
+                        if (i12 == -1) {
+                            i12 = 51;
                         }
-                        int i12 = i11 & 112;
-                        int i13 = i11 & 7;
-                        if (i13 == 1) {
-                            i6 = (((i4 - i2) - measuredWidth) / 2) + layoutParams.leftMargin;
-                        } else if (i13 != 5) {
-                            i7 = layoutParams.leftMargin;
-                            if (i12 == 16) {
-                                if (i12 == 48) {
-                                    i9 = layoutParams.topMargin + getPaddingTop();
-                                } else if (i12 != 80) {
-                                    i9 = layoutParams.topMargin;
+                        int i13 = i12 & 112;
+                        int i14 = i12 & 7;
+                        if (i14 == 1) {
+                            i7 = (((i5 - i3) - measuredWidth) / 2) + layoutParams.leftMargin;
+                        } else if (i14 != 5) {
+                            i8 = layoutParams.leftMargin;
+                            if (i13 == 16) {
+                                if (i13 == 48) {
+                                    i10 = layoutParams.topMargin + getPaddingTop();
+                                } else if (i13 != 80) {
+                                    i10 = layoutParams.topMargin;
                                 } else {
-                                    i8 = ((i5 - emojiPadding) - i3) - measuredHeight;
+                                    i9 = ((i6 - emojiPadding) - i4) - measuredHeight;
                                 }
                                 if (PollCreateActivity.this.emojiView != null && PollCreateActivity.this.emojiView == childAt) {
-                                    i9 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() : getMeasuredHeight() + measureKeyboardHeight) - childAt.getMeasuredHeight();
+                                    i10 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() : getMeasuredHeight() + measureKeyboardHeight) - childAt.getMeasuredHeight();
                                 }
-                                childAt.layout(i7, i9, measuredWidth + i7, measuredHeight + i9);
+                                childAt.layout(i8, i10, measuredWidth + i8, measuredHeight + i10);
                             } else {
-                                i8 = ((((i5 - emojiPadding) - i3) - measuredHeight) / 2) + layoutParams.topMargin;
+                                i9 = ((((i6 - emojiPadding) - i4) - measuredHeight) / 2) + layoutParams.topMargin;
                             }
-                            i9 = i8 - layoutParams.bottomMargin;
+                            i10 = i9 - layoutParams.bottomMargin;
                             if (PollCreateActivity.this.emojiView != null) {
-                                i9 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() : getMeasuredHeight() + measureKeyboardHeight) - childAt.getMeasuredHeight();
+                                i10 = (!AndroidUtilities.isTablet() ? getMeasuredHeight() : getMeasuredHeight() + measureKeyboardHeight) - childAt.getMeasuredHeight();
                             }
-                            childAt.layout(i7, i9, measuredWidth + i7, measuredHeight + i9);
+                            childAt.layout(i8, i10, measuredWidth + i8, measuredHeight + i10);
                         } else {
-                            i6 = i4 - measuredWidth;
+                            i7 = i5 - measuredWidth;
                         }
-                        i7 = i6 - layoutParams.rightMargin;
-                        if (i12 == 16) {
+                        i8 = i7 - layoutParams.rightMargin;
+                        if (i13 == 16) {
                         }
-                        i9 = i8 - layoutParams.bottomMargin;
+                        i10 = i9 - layoutParams.bottomMargin;
                         if (PollCreateActivity.this.emojiView != null) {
                         }
-                        childAt.layout(i7, i9, measuredWidth + i7, measuredHeight + i9);
+                        childAt.layout(i8, i10, measuredWidth + i8, measuredHeight + i10);
                     }
                 }
                 notifyHeightChanged();
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i2, int i3) {
+            protected void onMeasure(int i3, int i4) {
                 int makeMeasureSpec;
                 int paddingTop;
-                int size = View.MeasureSpec.getSize(i2);
-                int size2 = View.MeasureSpec.getSize(i3);
+                int size = View.MeasureSpec.getSize(i3);
+                int size2 = View.MeasureSpec.getSize(i4);
                 setMeasuredDimension(size, size2);
                 int paddingTop2 = size2 - getPaddingTop();
-                measureChildWithMargins(((BaseFragment) PollCreateActivity.this).actionBar, i2, 0, i3, 0);
+                measureChildWithMargins(((BaseFragment) PollCreateActivity.this).actionBar, i3, 0, i4, 0);
                 int measureKeyboardHeight = measureKeyboardHeight();
                 if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
                     PollCreateActivity pollCreateActivity = PollCreateActivity.this;
@@ -1819,25 +2140,25 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     emojiPadding = AndroidUtilities.dp(120.0f);
                 }
                 int childCount = getChildCount();
-                for (int i4 = 0; i4 < childCount; i4++) {
-                    View childAt = getChildAt(i4);
+                for (int i5 = 0; i5 < childCount; i5++) {
+                    View childAt = getChildAt(i5);
                     if (childAt != null && childAt.getVisibility() != 8 && childAt != ((BaseFragment) PollCreateActivity.this).actionBar) {
                         if (PollCreateActivity.this.emojiView != null && PollCreateActivity.this.emojiView == childAt) {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, 1073741824));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
                         } else if (PollCreateActivity.this.listView == childAt) {
-                            childAt.measure(i2, View.MeasureSpec.makeMeasureSpec(paddingTop2 - emojiPadding, 1073741824));
+                            childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(paddingTop2 - emojiPadding, TLRPC.FLAG_30));
                         } else {
-                            measureChildWithMargins(childAt, i2, 0, i3, 0);
+                            measureChildWithMargins(childAt, i3, 0, i4, 0);
                         }
                     }
                 }
@@ -1857,7 +2178,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         this.fragmentView = sizeNotifierFrameLayout2;
         sizeNotifierFrameLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.PollCreateActivity.4
+        this.listView = new RecyclerListView(context) { // from class: org.telegram.ui.PollCreateActivity.4
             @Override // androidx.recyclerview.widget.RecyclerView
             protected void requestChildOnScreen(View view, View view2) {
                 if (view instanceof PollEditTextCell) {
@@ -1871,8 +2192,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 return super.requestChildRectangleOnScreen(view, rect, z);
             }
         };
-        this.listView = recyclerListView;
-        recyclerListView.setVerticalScrollBarEnabled(false);
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
+        defaultItemAnimator.setSupportsChangeAnimations(false);
+        defaultItemAnimator.setDelayAnimations(false);
+        defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+        defaultItemAnimator.setDurations(350L);
+        this.listView.setItemAnimator(defaultItemAnimator);
+        this.listView.setVerticalScrollBarEnabled(false);
         ((DefaultItemAnimator) this.listView.getItemAnimator()).setDelayAnimations(false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         this.layoutManager = linearLayoutManager;
@@ -1880,22 +2206,22 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(this.listView);
         frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
         this.listView.setAdapter(this.listAdapter);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda4
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                PollCreateActivity.this.lambda$createView$0(view, i2);
+            public final void onItemClick(View view, int i3) {
+                PollCreateActivity.this.lambda$createView$1(view, i3);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.PollCreateActivity.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i2) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int i3) {
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
+            public void onScrolled(RecyclerView recyclerView, int i3, int i4) {
                 SuggestEmojiView suggestEmojiView;
                 float y;
-                if (i3 != 0 && PollCreateActivity.this.hintView != null) {
+                if (i4 != 0 && PollCreateActivity.this.hintView != null) {
                     PollCreateActivity.this.hintView.hide();
                 }
                 if (PollCreateActivity.this.suggestEmojiPanel == null || !PollCreateActivity.this.suggestEmojiPanel.isShown()) {
@@ -2020,12 +2346,62 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    protected boolean hideKeyboardOnShow() {
+        return this.requestFieldFocusAtPosition < 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isLightStatusBar() {
+        if (getLastStoryViewer() != null && getLastStoryViewer().isShown()) {
+            return false;
+        }
+        int color = Theme.getColor(Theme.key_windowBackgroundWhite);
+        if (this.actionBar.isActionModeShowed()) {
+            color = Theme.getColor(Theme.key_actionBarActionModeDefault);
+        }
+        return ColorUtils.calculateLuminance(color) > 0.699999988079071d;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         if (!this.emojiViewVisible) {
             return checkDiscard();
         }
         hideEmojiPopup(true);
         return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onBecomeFullyVisible() {
+        View view;
+        super.onBecomeFullyVisible();
+        if (!this.firstRequestField || this.requestFieldFocusAtPosition < 0) {
+            return;
+        }
+        int i = 0;
+        while (true) {
+            if (i >= this.listView.getChildCount()) {
+                view = null;
+                break;
+            }
+            view = this.listView.getChildAt(i);
+            if (this.listView.getChildAdapterPosition(view) == this.requestFieldFocusAtPosition) {
+                break;
+            } else {
+                i++;
+            }
+        }
+        if (view instanceof PollEditTextCell) {
+            final EditTextBoldCursor textView = ((PollEditTextCell) view).getTextView();
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    PollCreateActivity.lambda$onBecomeFullyVisible$0(EditTextBoldCursor.this);
+                }
+            }, 300L);
+            this.requestFieldFocusAtPosition = -1;
+        }
+        this.firstRequestField = false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -2148,5 +2524,57 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     public void setDelegate(PollCreateActivityDelegate pollCreateActivityDelegate) {
         this.delegate = pollCreateActivityDelegate;
+    }
+
+    public void setEditing(TLRPC.MessageMedia messageMedia, boolean z) {
+        setEditing(messageMedia, z, -1);
+    }
+
+    public void setEditing(TLRPC.MessageMedia messageMedia, boolean z, int i) {
+        int i2;
+        this.editing = messageMedia;
+        this.onlyAdding = z;
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+            TextPaint textPaint = new TextPaint(1);
+            textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_messageMediaToDo.todo.title.text);
+            this.questionString = spannableStringBuilder;
+            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false);
+            this.questionString = replaceEmoji;
+            this.questionString = MessageObject.replaceAnimatedEmoji(replaceEmoji, tL_messageMediaToDo.todo.title.entities, textPaint.getFontMetricsInt());
+            int size = tL_messageMediaToDo.todo.list.size();
+            this.answersCount = size;
+            this.oldAnswersCount = size;
+            this.answerIds = new int[size];
+            int i3 = 0;
+            while (true) {
+                i2 = this.answersCount;
+                if (i3 >= i2) {
+                    break;
+                }
+                TLRPC.TL_textWithEntities tL_textWithEntities = tL_messageMediaToDo.todo.list.get(i3).title;
+                this.answers[i3] = new SpannableStringBuilder(tL_textWithEntities.text);
+                CharSequence[] charSequenceArr = this.answers;
+                charSequenceArr[i3] = Emoji.replaceEmoji(charSequenceArr[i3], textPaint.getFontMetricsInt(), false);
+                CharSequence[] charSequenceArr2 = this.answers;
+                charSequenceArr2[i3] = MessageObject.replaceAnimatedEmoji(charSequenceArr2[i3], tL_textWithEntities.entities, textPaint.getFontMetricsInt());
+                this.answerIds[i3] = tL_messageMediaToDo.todo.list.get(i3).id;
+                i3++;
+            }
+            TLRPC.TodoList todoList = tL_messageMediaToDo.todo;
+            this.allowMarking = todoList.others_can_complete;
+            this.allowAdding = todoList.others_can_append;
+            if (this.onlyAdding) {
+                this.answersCount = i2 + 1;
+                updateRows();
+                this.firstRequestField = true;
+                int i4 = this.answerStartRow;
+                if (i < 0) {
+                    i = this.answersCount - 1;
+                }
+                this.requestFieldFocusAtPosition = i4 + i;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class Palette {
@@ -280,7 +281,7 @@ public final class Palette {
 
     private Swatch findDominantSwatch() {
         int size = this.mSwatches.size();
-        int i = Integer.MIN_VALUE;
+        int i = TLRPC.FLAG_31;
         Swatch swatch = null;
         for (int i2 = 0; i2 < size; i2++) {
             Swatch swatch2 = (Swatch) this.mSwatches.get(i2);

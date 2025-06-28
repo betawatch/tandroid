@@ -487,7 +487,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_chat");
             action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
             if (!(context instanceof Activity)) {
-                action.addFlags(268435456);
+                action.addFlags(TLRPC.FLAG_28);
             }
             context.startActivity(action);
             dismiss();
@@ -696,7 +696,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             protected void onMeasure(int i2, int i3) {
                 setMeasuredDimension(View.MeasureSpec.getSize(i2), View.MeasureSpec.getSize(i3));
                 if (RTMPStreamPipOverlay.this.contentFrameLayout.getParent() == this) {
-                    RTMPStreamPipOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipHeight, 1073741824));
+                    RTMPStreamPipOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipHeight, TLRPC.FLAG_30));
                 }
             }
         };

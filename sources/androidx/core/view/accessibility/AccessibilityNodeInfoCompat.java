@@ -18,8 +18,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.FileLoaderPriorityQueue;
-import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class AccessibilityNodeInfoCompat {
@@ -65,16 +64,16 @@ public class AccessibilityNodeInfoCompat {
         public static final AccessibilityActionCompat ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY = new AccessibilityActionCompat(512, null, AccessibilityViewCommand.MoveAtGranularityArguments.class);
         public static final AccessibilityActionCompat ACTION_NEXT_HTML_ELEMENT = new AccessibilityActionCompat(1024, null, AccessibilityViewCommand.MoveHtmlArguments.class);
         public static final AccessibilityActionCompat ACTION_PREVIOUS_HTML_ELEMENT = new AccessibilityActionCompat(2048, null, AccessibilityViewCommand.MoveHtmlArguments.class);
-        public static final AccessibilityActionCompat ACTION_SCROLL_FORWARD = new AccessibilityActionCompat(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM, null);
-        public static final AccessibilityActionCompat ACTION_SCROLL_BACKWARD = new AccessibilityActionCompat(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM, null);
-        public static final AccessibilityActionCompat ACTION_COPY = new AccessibilityActionCompat(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM, null);
+        public static final AccessibilityActionCompat ACTION_SCROLL_FORWARD = new AccessibilityActionCompat(4096, null);
+        public static final AccessibilityActionCompat ACTION_SCROLL_BACKWARD = new AccessibilityActionCompat(8192, null);
+        public static final AccessibilityActionCompat ACTION_COPY = new AccessibilityActionCompat(16384, null);
         public static final AccessibilityActionCompat ACTION_PASTE = new AccessibilityActionCompat(32768, null);
         public static final AccessibilityActionCompat ACTION_CUT = new AccessibilityActionCompat(65536, null);
-        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(131072, null, AccessibilityViewCommand.SetSelectionArguments.class);
-        public static final AccessibilityActionCompat ACTION_EXPAND = new AccessibilityActionCompat(262144, null);
-        public static final AccessibilityActionCompat ACTION_COLLAPSE = new AccessibilityActionCompat(524288, null);
-        public static final AccessibilityActionCompat ACTION_DISMISS = new AccessibilityActionCompat(FileLoaderPriorityQueue.PRIORITY_VALUE_MAX, null);
-        public static final AccessibilityActionCompat ACTION_SET_TEXT = new AccessibilityActionCompat(2097152, null, AccessibilityViewCommand.SetTextArguments.class);
+        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(TLRPC.FLAG_17, null, AccessibilityViewCommand.SetSelectionArguments.class);
+        public static final AccessibilityActionCompat ACTION_EXPAND = new AccessibilityActionCompat(TLRPC.FLAG_18, null);
+        public static final AccessibilityActionCompat ACTION_COLLAPSE = new AccessibilityActionCompat(TLRPC.FLAG_19, null);
+        public static final AccessibilityActionCompat ACTION_DISMISS = new AccessibilityActionCompat(1048576, null);
+        public static final AccessibilityActionCompat ACTION_SET_TEXT = new AccessibilityActionCompat(TLRPC.FLAG_21, null, AccessibilityViewCommand.SetTextArguments.class);
 
         static {
             AccessibilityNodeInfo.AccessibilityAction accessibilityAction;
@@ -465,23 +464,23 @@ public class AccessibilityNodeInfoCompat {
                 return "ACTION_NEXT_HTML_ELEMENT";
             case 2048:
                 return "ACTION_PREVIOUS_HTML_ELEMENT";
-            case LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM /* 4096 */:
+            case 4096:
                 return "ACTION_SCROLL_FORWARD";
-            case LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM /* 8192 */:
+            case 8192:
                 return "ACTION_SCROLL_BACKWARD";
-            case LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM /* 16384 */:
+            case 16384:
                 return "ACTION_COPY";
             case 32768:
                 return "ACTION_PASTE";
             case 65536:
                 return "ACTION_CUT";
-            case 131072:
+            case TLRPC.FLAG_17 /* 131072 */:
                 return "ACTION_SET_SELECTION";
-            case 262144:
+            case TLRPC.FLAG_18 /* 262144 */:
                 return "ACTION_EXPAND";
-            case 524288:
+            case TLRPC.FLAG_19 /* 524288 */:
                 return "ACTION_COLLAPSE";
-            case 2097152:
+            case TLRPC.FLAG_21 /* 2097152 */:
                 return "ACTION_SET_TEXT";
             case R.id.accessibilityActionMoveWindow:
                 return "ACTION_MOVE_WINDOW";

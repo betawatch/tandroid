@@ -120,11 +120,11 @@ public class AccountSelectCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.checkImageView != null || (this.infoTextView != null && getLayoutParams().width != -2)) {
-            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
         } else if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-            i = View.MeasureSpec.makeMeasureSpec(width(), Integer.MIN_VALUE);
+            i = View.MeasureSpec.makeMeasureSpec(width(), TLRPC.FLAG_31);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
     }
 
     public void setAccount(int i, boolean z) {

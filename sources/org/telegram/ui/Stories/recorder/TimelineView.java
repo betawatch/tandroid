@@ -45,6 +45,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.BlurringShader;
@@ -1124,7 +1125,7 @@ public class TimelineView extends View {
         paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(1.0f), 436207616);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         textPaint.setColor(-1);
-        textPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(2.0f), 1073741824);
+        textPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(2.0f), TLRPC.FLAG_30);
         textPaint.setTypeface(AndroidUtilities.bold());
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         paint3.setColor(-16777216);
@@ -2350,7 +2351,7 @@ public class TimelineView extends View {
             if (this.blurManager.hasRenderNode()) {
                 this.backgroundBlur.drawRect(canvas2);
             } else if (paint10 == null) {
-                canvas2.drawColor(1073741824);
+                canvas2.drawColor(TLRPC.FLAG_30);
                 if (this.collageWaveforms.isEmpty() && (blurManager2 = this.blurManager) != null && blurManager2.hasRenderNode()) {
                     float f43 = this.timelineWaveformMax.set(WaveformPath.getMaxBar(this.collageWaveforms));
                     WaveformPath waveformPath = this.timelineWaveformPath;
@@ -2480,7 +2481,7 @@ public class TimelineView extends View {
                             this.backgroundBlur.drawRect(canvas2);
                             canvas2.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
                         } else if (paint8 == null) {
-                            canvas2.drawColor(1073741824);
+                            canvas2.drawColor(TLRPC.FLAG_30);
                         } else {
                             paint9 = paint8;
                             canvas2.drawRect(this.videoBounds, paint9);
@@ -2649,7 +2650,7 @@ public class TimelineView extends View {
                                 this.backgroundBlur.drawRect(canvas2);
                                 canvas2.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
                             } else if (paint == null) {
-                                canvas2.drawColor(1073741824);
+                                canvas2.drawColor(TLRPC.FLAG_30);
                             } else {
                                 paint7 = paint;
                                 canvas2.drawRect(track5.bounds, paint7);
@@ -2790,7 +2791,7 @@ public class TimelineView extends View {
                             this.backgroundBlur.drawRect(canvas2);
                             canvas2.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
                         } else if (paint == null) {
-                            canvas2.drawColor(1073741824);
+                            canvas2.drawColor(TLRPC.FLAG_30);
                         } else {
                             f31 = f107;
                             paint6 = paint;
@@ -2904,7 +2905,7 @@ public class TimelineView extends View {
                     this.backgroundBlur.drawRect(canvas2);
                     multAlpha = Theme.multAlpha(AndroidUtilities.DARK_STATUS_BAR_OVERLAY, f126);
                 } else if (paint3 == null) {
-                    multAlpha = Theme.multAlpha(1073741824, f126);
+                    multAlpha = Theme.multAlpha(TLRPC.FLAG_30, f126);
                 } else {
                     paint4 = paint3;
                     canvas2.drawRect(this.audioBounds, paint4);

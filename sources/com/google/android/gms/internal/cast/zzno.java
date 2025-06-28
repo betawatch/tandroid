@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class zzno extends zztp implements zzuy {
@@ -93,7 +93,7 @@ public final class zzno extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzf(zzno zznoVar, int i) {
-        zznoVar.zzd |= Integer.MIN_VALUE;
+        zznoVar.zzd |= TLRPC.FLAG_31;
         zznoVar.zzQ = i;
     }
 
@@ -121,7 +121,7 @@ public final class zzno extends zztp implements zzuy {
     static /* synthetic */ void zzj(zzno zznoVar, zzmy zzmyVar) {
         zzmyVar.getClass();
         zznoVar.zzaf = zzmyVar;
-        zznoVar.zze |= LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+        zznoVar.zze |= 4096;
     }
 
     static /* synthetic */ void zzk(zzno zznoVar, long j) {
@@ -136,7 +136,7 @@ public final class zzno extends zztp implements zzuy {
 
     static /* synthetic */ void zzm(zzno zznoVar, String str) {
         str.getClass();
-        zznoVar.zzd |= LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+        zznoVar.zzd |= 16384;
         zznoVar.zzt = str;
     }
 
@@ -152,7 +152,7 @@ public final class zzno extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzp(zzno zznoVar, String str) {
-        zznoVar.zzd |= 262144;
+        zznoVar.zzd |= TLRPC.FLAG_18;
         zznoVar.zzx = str;
     }
 

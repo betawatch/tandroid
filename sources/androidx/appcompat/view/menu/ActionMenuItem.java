@@ -14,7 +14,6 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.internal.view.SupportMenuItem;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public class ActionMenuItem implements SupportMenuItem {
@@ -31,8 +30,8 @@ public class ActionMenuItem implements SupportMenuItem {
     private CharSequence mTitle;
     private CharSequence mTitleCondensed;
     private CharSequence mTooltipText;
-    private int mShortcutNumericModifiers = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
-    private int mShortcutAlphabeticModifiers = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+    private int mShortcutNumericModifiers = 4096;
+    private int mShortcutAlphabeticModifiers = 4096;
     private ColorStateList mIconTintList = null;
     private PorterDuff.Mode mIconTintMode = null;
     private boolean mHasIconTint = false;

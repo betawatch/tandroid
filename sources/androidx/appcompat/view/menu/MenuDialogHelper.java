@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import androidx.appcompat.R$layout;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.menu.MenuPresenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 class MenuDialogHelper implements DialogInterface.OnKeyListener, DialogInterface.OnClickListener, DialogInterface.OnDismissListener, MenuPresenter.Callback {
@@ -104,7 +105,7 @@ class MenuDialogHelper implements DialogInterface.OnKeyListener, DialogInterface
         if (iBinder != null) {
             attributes.token = iBinder;
         }
-        attributes.flags |= 131072;
+        attributes.flags |= TLRPC.FLAG_17;
         this.mDialog.show();
     }
 }

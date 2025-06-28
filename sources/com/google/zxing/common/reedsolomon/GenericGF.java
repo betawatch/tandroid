@@ -1,6 +1,5 @@
 package com.google.zxing.common.reedsolomon;
 
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
@@ -18,7 +17,7 @@ public final class GenericGF {
     private final int primitive;
     private final int size;
     private final GenericGFPoly zero;
-    public static final GenericGF AZTEC_DATA_12 = new GenericGF(4201, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM, 1);
+    public static final GenericGF AZTEC_DATA_12 = new GenericGF(4201, 4096, 1);
     public static final GenericGF AZTEC_DATA_10 = new GenericGF(1033, 1024, 1);
 
     static {

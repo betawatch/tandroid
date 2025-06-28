@@ -556,12 +556,12 @@ public class ProximitySheet extends FrameLayout {
         getRootView();
         getWindowVisibleDisplayFrame(this.rect);
         setMeasuredDimension(size, size2);
-        this.containerView.measure(View.MeasureSpec.makeMeasureSpec((this.backgroundPaddingLeft * 2) + size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, Integer.MIN_VALUE));
+        this.containerView.measure(View.MeasureSpec.makeMeasureSpec((this.backgroundPaddingLeft * 2) + size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
         int childCount = getChildCount();
         for (int i3 = 0; i3 < childCount; i3++) {
             View childAt = getChildAt(i3);
             if (childAt.getVisibility() != 8 && childAt != this.containerView) {
-                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(size, 1073741824), 0, View.MeasureSpec.makeMeasureSpec(size2, 1073741824), 0);
+                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30), 0);
             }
         }
     }
@@ -647,7 +647,7 @@ public class ProximitySheet extends FrameLayout {
     public void show() {
         this.dismissed = false;
         cancelSheetAnimation();
-        this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+        this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
         startOpenAnimation();
         updateText(true, false);
     }

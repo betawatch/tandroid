@@ -39,7 +39,6 @@ import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -219,7 +218,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
             BaseFragment baseFragment = (BaseFragment) ((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().size() - 2);
             if (!(baseFragment instanceof ChatEditActivity)) {
-                ChatUsersActivity.this.lambda$onBackPressed$348();
+                ChatUsersActivity.this.lambda$onBackPressed$354();
                 return;
             }
             baseFragment.removeSelfFromStack();
@@ -228,7 +227,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatEditActivity chatEditActivity = new ChatEditActivity(bundle);
             chatEditActivity.setInfo(ChatUsersActivity.this.info);
             ((BaseFragment) ChatUsersActivity.this).parentLayout.addFragmentToStack(chatEditActivity, ((BaseFragment) ChatUsersActivity.this).parentLayout.getFragmentStack().size() - 1);
-            ChatUsersActivity.this.lambda$onBackPressed$348();
+            ChatUsersActivity.this.lambda$onBackPressed$354();
             chatEditActivity.showConvertTooltip();
         }
 
@@ -2808,7 +2807,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$24(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4290,7 +4289,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             int i3 = this.selectedSlowmode;
             if (i3 != this.initialSlowmode && (chatFull = this.info) != null) {
                 chatFull.slowmode_seconds = getSecondsForIndex(i3);
-                this.info.flags |= 131072;
+                this.info.flags |= TLRPC.FLAG_17;
                 getMessagesController().setChannelSlowMode(this.chatId, this.info.slowmode_seconds);
             }
             boolean z2 = this.enablePrice;
@@ -4308,7 +4307,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 TLRPC.Chat chat3 = getMessagesController().getChat(Long.valueOf(this.chatId));
                 if (chat3 != null) {
                     if (this.enablePrice) {
-                        chat3.flags2 |= LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                        chat3.flags2 |= 16384;
                         j2 = this.starsPrice;
                     } else {
                         chat3.flags2 &= -16385;
@@ -4343,7 +4342,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
             messagesController2.toggleChannelSignatures(j3, z5, z);
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     private void removeParticipant(long j) {
@@ -4353,7 +4352,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (chatUsersActivityDelegate != null) {
                 chatUsersActivityDelegate.didKickParticipant(j);
             }
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         }
     }
 
@@ -5053,7 +5052,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     public void onItemClick(int i6) {
                         if (i6 == -1) {
                             if (ChatUsersActivity.this.checkDiscard()) {
-                                ChatUsersActivity.this.lambda$onBackPressed$348();
+                                ChatUsersActivity.this.lambda$onBackPressed$354();
                             }
                         } else if (i6 == 1) {
                             ChatUsersActivity.this.processDone();
@@ -5293,7 +5292,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             public void onItemClick(int i62) {
                 if (i62 == -1) {
                     if (ChatUsersActivity.this.checkDiscard()) {
-                        ChatUsersActivity.this.lambda$onBackPressed$348();
+                        ChatUsersActivity.this.lambda$onBackPressed$354();
                     }
                 } else if (i62 == 1) {
                     ChatUsersActivity.this.processDone();
@@ -5367,7 +5366,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     removeSelfFromStack();
                     return;
                 } else {
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                     return;
                 }
             }

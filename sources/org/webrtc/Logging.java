@@ -5,7 +5,6 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes5.dex */
@@ -58,8 +57,8 @@ public class Logging {
         TRACE_TIMER(512),
         TRACE_STREAM(1024),
         TRACE_DEBUG(2048),
-        TRACE_INFO(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM),
-        TRACE_TERSEINFO(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM),
+        TRACE_INFO(4096),
+        TRACE_TERSEINFO(8192),
         TRACE_ALL(65535);
 
         public final int level;

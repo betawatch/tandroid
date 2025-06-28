@@ -570,7 +570,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
         }
 
         public void setAdaptiveEmojiColor(int i, int i2, boolean z) {
@@ -1445,7 +1445,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
         }
 
         public void setGalleryWallpaper(TLRPC.WallPaper wallPaper) {
@@ -1824,7 +1824,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             });
         }
         if (iArr[r2] == 0) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             this.button.setLoading(r2);
             return;
         }
@@ -1906,7 +1906,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
         int i2 = i + 1;
         iArr[0] = i2;
         if (i2 == iArr2[0]) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             showBulletin();
             this.button.setLoading(false);
         }
@@ -2216,7 +2216,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showUnsavedAlert$14(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2365,7 +2365,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
                 } else {
                     ChannelColorActivity channelColorActivity = ChannelColorActivity.this;
                     if (channelColorActivity.currentLevel < channelColorActivity.minLevelRequired() || !ChannelColorActivity.this.hasUnsavedChanged()) {
-                        ChannelColorActivity.this.lambda$onBackPressed$348();
+                        ChannelColorActivity.this.lambda$onBackPressed$354();
                     } else {
                         ChannelColorActivity.this.showUnsavedAlert();
                     }
@@ -2500,7 +2500,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
                 if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                     removeSelfFromStack();
                 } else {
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                 }
             }
         }

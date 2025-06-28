@@ -338,7 +338,7 @@ public class ChannelBoostLayout extends FrameLayout {
                         ViewGroup viewGroup3 = new FrameLayout(ChannelBoostLayout.this.getContext()) { // from class: org.telegram.ui.ChannelBoostLayout.1.3
                             @Override // android.widget.FrameLayout, android.view.View
                             protected void onMeasure(int i2, int i3) {
-                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
                             }
                         };
                         TextView textView = new TextView(ChannelBoostLayout.this.getContext());

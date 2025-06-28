@@ -1021,7 +1021,7 @@ public class GroupMedia {
         this.clipPath.addRoundRect(this.clipRect, f9, f9, Path.Direction.CW);
         canvas.save();
         canvas.clipPath(this.clipPath);
-        canvas.drawColor(Theme.multAlpha(1073741824, timeAlpha));
+        canvas.drawColor(Theme.multAlpha(TLRPC.FLAG_30, timeAlpha));
         this.priceText.draw(canvas, (((this.x + this.width) - dp3) - dp5) + AndroidUtilities.dp(5.66f), this.y + dp5 + f9, -1, timeAlpha);
         canvas.restore();
     }
@@ -1031,7 +1031,7 @@ public class GroupMedia {
         this.clipPath.rewind();
         this.clipPath.addRoundRect(rectF, f, f, Path.Direction.CW);
         canvas.clipPath(this.clipPath);
-        canvas.drawColor(1073741824);
+        canvas.drawColor(TLRPC.FLAG_30);
         canvas.restore();
     }
 
@@ -1153,7 +1153,7 @@ public class GroupMedia {
                     canvas.save();
                     canvas.clipPath(this.clipPath);
                     drawBlurred(canvas, f);
-                    canvas.drawColor(Theme.multAlpha(1073741824, 1.0f));
+                    canvas.drawColor(Theme.multAlpha(TLRPC.FLAG_30, 1.0f));
                     mediaHolder2.durationText.draw(canvas, this.x + mediaHolder2.l + dp3 + AndroidUtilities.dp(5.66f), this.y + mediaHolder2.t + dp3 + f10, -1, 1.0f);
                     canvas.restore();
                 }

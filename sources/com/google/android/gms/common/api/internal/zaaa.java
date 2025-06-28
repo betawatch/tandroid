@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.locks.Lock;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zaaa implements zaca {
@@ -206,7 +207,7 @@ final class zaaa implements zaca {
         if (this.zah == null) {
             return null;
         }
-        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), this.zah.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | 134217728);
+        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), this.zah.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | TLRPC.FLAG_27);
     }
 
     @Override // com.google.android.gms.common.api.internal.zaca

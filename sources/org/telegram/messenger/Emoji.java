@@ -65,7 +65,7 @@ public class Emoji {
 
     public static abstract class EmojiDrawable extends Drawable {
         public boolean fullSize = false;
-        int placeholderColor = 268435456;
+        int placeholderColor = TLRPC.FLAG_28;
 
         public boolean isLoaded() {
             return false;

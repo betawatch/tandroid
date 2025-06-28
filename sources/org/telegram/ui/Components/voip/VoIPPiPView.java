@@ -37,6 +37,7 @@ import org.telegram.messenger.pip.source.IPipSourceDelegate;
 import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.voip.VoIPPiPView;
@@ -626,7 +627,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
         layoutParams.format = -3;
         layoutParams.type = AndroidUtilities.checkInlinePermissions(context) ? Build.VERSION.SDK_INT >= 26 ? 2038 : 2003 : 99;
         if (Build.VERSION.SDK_INT >= 21) {
-            layoutParams.flags |= Integer.MIN_VALUE;
+            layoutParams.flags |= TLRPC.FLAG_31;
         }
         layoutParams.flags = 16778120;
         return layoutParams;

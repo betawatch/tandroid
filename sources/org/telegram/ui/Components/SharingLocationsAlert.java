@@ -19,6 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SharingLiveLocationCell;
@@ -79,7 +80,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
 
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + 1, 1073741824));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + 1, TLRPC.FLAG_30));
                     }
                 };
                 sharingLiveLocationCell.setWillNotDraw(false);
@@ -154,7 +155,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
                     SharingLocationsAlert.this.listView.setPadding(0, i4, 0, AndroidUtilities.dp(8.0f));
                     SharingLocationsAlert.this.ignoreLayout = false;
                 }
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), TLRPC.FLAG_30));
             }
 
             @Override // android.view.View

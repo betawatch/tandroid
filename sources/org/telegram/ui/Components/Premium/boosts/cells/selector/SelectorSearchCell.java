@@ -149,7 +149,7 @@ public abstract class SelectorSearchCell extends ScrollView {
             while (i4 < childCount) {
                 View childAt = getChildAt(i4);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), 1073741824));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLRPC.FLAG_30));
                     boolean contains = this.removingSpans.contains(childAt);
                     if (!contains && childAt.getMeasuredWidth() + i5 > dp) {
                         dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(4.0f);
@@ -213,7 +213,7 @@ public abstract class SelectorSearchCell extends ScrollView {
             if (dp - i6 < i7) {
                 dp3 += AndroidUtilities.dp(36.0f);
             }
-            SelectorSearchCell.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), 1073741824));
+            SelectorSearchCell.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
             SelectorSearchCell.this.editText.setHintVisible(SelectorSearchCell.this.editText.getMeasuredWidth() > SelectorSearchCell.this.hintTextWidth, true);
             if (!this.animationStarted) {
                 int dp5 = dp3 + AndroidUtilities.dp(38.0f);
@@ -596,7 +596,7 @@ public abstract class SelectorSearchCell extends ScrollView {
 
     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), Integer.MIN_VALUE));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLRPC.FLAG_31));
     }
 
     @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent

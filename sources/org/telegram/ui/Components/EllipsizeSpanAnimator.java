@@ -20,9 +20,16 @@ public class EllipsizeSpanAnimator {
     private final TextAlphaSpan[] ellSpans;
     public ArrayList ellipsizedViews;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    static class TextAlphaSpan extends CharacterStyle {
-        private int alpha = 0;
+    public static class TextAlphaSpan extends CharacterStyle {
+        private int alpha;
+
+        public TextAlphaSpan() {
+            this.alpha = 0;
+        }
+
+        public TextAlphaSpan(int i) {
+            this.alpha = i;
+        }
 
         public void setAlpha(int i) {
             this.alpha = i;

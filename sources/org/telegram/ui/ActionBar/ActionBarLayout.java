@@ -49,6 +49,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheetTabs;
@@ -345,7 +346,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
                 View childAt = getChildAt(i8);
                 if (childAt instanceof ActionBar) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     i3 = childAt.getMeasuredHeight();
                     break;
                 }
@@ -612,7 +613,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     }
                     this.startColorsProvider.saveColors(themeAnimationSettings.resourcesProvider);
                 }
-                ArrayList themeDescriptions3 = baseFragment.getThemeDescriptions();
+                ArrayList<ThemeDescription> themeDescriptions3 = baseFragment.getThemeDescriptions();
                 addStartDescriptions(themeDescriptions3);
                 Dialog dialog2 = baseFragment.visibleDialog;
                 if (dialog2 instanceof BottomSheet) {
@@ -1073,7 +1074,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             if (z) {
                 List list = this.fragmentsStack;
                 if (list.get(list.size() - 1) == baseFragment) {
-                    baseFragment.lambda$onBackPressed$348();
+                    baseFragment.lambda$onBackPressed$354();
                     return;
                 }
             }
@@ -1143,7 +1144,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     int blendARGB = ColorUtils.blendARGB(valueOf.intValue(), valueOf2.intValue(), MathUtils.clamp(ActionBarLayout.this.animationProgress * 4.0f, 0.0f, 1.0f));
                     if (ActionBarLayout.this.sheetFragment != null && ActionBarLayout.this.sheetFragment.sheetsStack != null) {
                         for (int i2 = 0; i2 < ActionBarLayout.this.sheetFragment.sheetsStack.size(); i2++) {
-                            BaseFragment.AttachedSheet attachedSheet = (BaseFragment.AttachedSheet) ActionBarLayout.this.sheetFragment.sheetsStack.get(i2);
+                            BaseFragment.AttachedSheet attachedSheet = ActionBarLayout.this.sheetFragment.sheetsStack.get(i2);
                             if (attachedSheet.attachedToParent()) {
                                 blendARGB = attachedSheet.getNavigationBarColor(blendARGB);
                             }
@@ -2059,6 +2060,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
+    public boolean isInPassivePreviewMode() {
+        return (this.inPreviewMode && this.previewMenu == null) || this.transitionAnimationPreviewMode;
+    }
+
+    @Override // org.telegram.ui.ActionBar.INavigationLayout
     public boolean isInPreviewMode() {
         return this.inPreviewMode || this.transitionAnimationPreviewMode;
     }
@@ -2327,7 +2333,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         } else {
             int measureKeyboardHeight = measureKeyboardHeight();
             baseFragment.setKeyboardHeightFromParent(measureKeyboardHeight);
-            i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + measureKeyboardHeight, 1073741824);
+            i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + measureKeyboardHeight, TLRPC.FLAG_30);
         }
         super.onMeasure(i, i2);
     }
@@ -2623,7 +2629,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.containerViewBack.addView(view);
         if (actionBarPopupWindowLayout != null) {
             this.containerViewBack.addView(actionBarPopupWindowLayout);
-            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), Integer.MIN_VALUE));
+            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
             i = actionBarPopupWindowLayout.getMeasuredHeight() + AndroidUtilities.dp(24.0f);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) actionBarPopupWindowLayout.getLayoutParams();
             layoutParams.width = -2;

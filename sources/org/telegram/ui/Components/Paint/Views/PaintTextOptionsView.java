@@ -19,6 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.LayoutHelper;
@@ -302,10 +303,10 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
             View childAt = getChildAt(i3);
             TypefaceCell typefaceCell = this.typefaceCell;
             if (childAt == typefaceCell) {
-                typefaceCell.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(size2, Integer.MIN_VALUE));
+                typefaceCell.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
             } else {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, 1073741824), View.MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824));
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLRPC.FLAG_30));
                 paddingLeft -= (childAt.getMeasuredWidth() + layoutParams.leftMargin) + layoutParams.rightMargin;
             }
         }

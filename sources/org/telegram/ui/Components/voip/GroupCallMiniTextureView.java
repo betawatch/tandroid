@@ -1323,28 +1323,28 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
             if (GroupCallActivity.isTabletMode) {
                 int size3 = View.MeasureSpec.getSize(i) - AndroidUtilities.dp(328.0f);
                 size2 = View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(4.0f);
-                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size3, 1073741824);
+                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size3, TLRPC.FLAG_30);
             } else if (GroupCallActivity.isLandscapeMode) {
                 int size4 = View.MeasureSpec.getSize(i);
                 if (!this.call.call.rtmp_stream) {
                     size4 -= AndroidUtilities.dp(92.0f);
                 }
-                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size4, 1073741824);
+                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size4, TLRPC.FLAG_30);
                 size2 = View.MeasureSpec.getSize(i2);
             } else {
                 i3 = View.MeasureSpec.getSize(i2);
                 if (!this.call.call.rtmp_stream) {
                     i3 -= AndroidUtilities.dp(92.0f);
                 }
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
-                super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, 1073741824));
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+                super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
             }
-            super.onMeasure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+            super.onMeasure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
         } else {
             if (this.showingAsScrimView) {
                 this.overlayIconAlpha = 1.0f;
                 int min = Math.min(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i2)) - (AndroidUtilities.dp(14.0f) * 2);
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(min, 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30);
                 i3 = min + getPaddingBottom();
             } else if (this.useSpanSize) {
                 this.overlayIconAlpha = 1.0f;
@@ -1373,7 +1373,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                     float dp4 = this.screencastIcon.getVisibility() != 0 ? f4 - AndroidUtilities.dp(28.0f) : f4;
                     updateSize((int) dp4);
                     layoutParams2.width = (int) (dp4 - (layoutParams2.leftMargin * 2));
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) f4, 1073741824);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) f4, TLRPC.FLAG_30);
                     i3 = (int) f;
                 }
                 size = dp;
@@ -1387,13 +1387,13 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                 }
                 updateSize((int) dp4);
                 layoutParams22.width = (int) (dp4 - (layoutParams22.leftMargin * 2));
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) f42, 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) f42, TLRPC.FLAG_30);
                 i3 = (int) f;
             } else {
                 this.overlayIconAlpha = 0.0f;
                 super.onMeasure(i, i2);
             }
-            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, 1073741824));
+            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
         }
         int size5 = View.MeasureSpec.getSize(i2) + (View.MeasureSpec.getSize(i) << 16);
         if (this.lastSize != size5) {

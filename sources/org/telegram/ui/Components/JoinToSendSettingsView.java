@@ -33,7 +33,7 @@ public class JoinToSendSettingsView extends LinearLayout {
         super(context);
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         TLRPC.TL_chatAdminRights tL_chatAdminRights2;
-        this.MAXSPEC = View.MeasureSpec.makeMeasureSpec(999999, Integer.MIN_VALUE);
+        this.MAXSPEC = View.MeasureSpec.makeMeasureSpec(999999, TLRPC.FLAG_31);
         this.currentChat = chat;
         this.isJoinToSend = chat.join_to_send;
         this.isJoinRequest = chat.join_request;
@@ -210,7 +210,7 @@ public class JoinToSendSettingsView extends LinearLayout {
         this.joinRequestCell.measure(i, this.MAXSPEC);
         this.joinToSendInfoCell.measure(i, this.MAXSPEC);
         this.joinRequestInfoCell.measure(i, this.MAXSPEC);
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(calcHeight(), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(calcHeight(), TLRPC.FLAG_30));
     }
 
     public void setChat(TLRPC.Chat chat) {

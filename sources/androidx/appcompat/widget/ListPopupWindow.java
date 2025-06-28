@@ -25,6 +25,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.widget.PopupWindowCompat;
 import java.lang.reflect.Method;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class ListPopupWindow implements ShowableListMenu {
@@ -234,8 +235,9 @@ public abstract class ListPopupWindow implements ShowableListMenu {
         int makeMeasureSpec;
         int measureHeightOfChildrenCompat;
         int i3;
-        int i4 = Integer.MIN_VALUE;
-        if (this.mDropDownList == null) {
+        DropDownListView dropDownListView = this.mDropDownList;
+        int i4 = TLRPC.FLAG_31;
+        if (dropDownListView == null) {
             Context context = this.mContext;
             this.mShowDropDownRunnable = new Runnable() { // from class: androidx.appcompat.widget.ListPopupWindow.2
                 @Override // java.lang.Runnable
@@ -260,11 +262,11 @@ public abstract class ListPopupWindow implements ShowableListMenu {
             this.mDropDownList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: androidx.appcompat.widget.ListPopupWindow.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView adapterView, View view, int i5, long j) {
-                    DropDownListView dropDownListView;
-                    if (i5 == -1 || (dropDownListView = ListPopupWindow.this.mDropDownList) == null) {
+                    DropDownListView dropDownListView2;
+                    if (i5 == -1 || (dropDownListView2 = ListPopupWindow.this.mDropDownList) == null) {
                         return;
                     }
-                    dropDownListView.setListSelectionHidden(false);
+                    dropDownListView2.setListSelectionHidden(false);
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
@@ -294,7 +296,7 @@ public abstract class ListPopupWindow implements ShowableListMenu {
                 }
                 int i6 = this.mDropDownWidth;
                 if (i6 >= 0) {
-                    i3 = Integer.MIN_VALUE;
+                    i3 = TLRPC.FLAG_31;
                 } else {
                     i6 = 0;
                     i3 = 0;
@@ -335,9 +337,9 @@ public abstract class ListPopupWindow implements ShowableListMenu {
         }
         int i8 = this.mDropDownWidth;
         if (i8 != -2) {
-            i4 = 1073741824;
+            i4 = TLRPC.FLAG_30;
             if (i8 != -1) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, TLRPC.FLAG_30);
                 measureHeightOfChildrenCompat = this.mDropDownList.measureHeightOfChildrenCompat(makeMeasureSpec, 0, -1, maxAvailableHeight - i, -1);
                 if (measureHeightOfChildrenCompat > 0) {
                     i += i2 + this.mDropDownList.getPaddingTop() + this.mDropDownList.getPaddingBottom();

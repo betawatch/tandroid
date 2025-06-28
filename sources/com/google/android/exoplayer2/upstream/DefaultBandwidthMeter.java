@@ -1979,7 +1979,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case '[':
             case NotificationCenter.httpFileDidFailedLoad /* 133 */:
             case NotificationCenter.recordStartError /* 153 */:
-            case 204:
+            case NotificationCenter.chatWasBoostedByUser /* 204 */:
             case NotificationCenter.updateStories /* 225 */:
             case NotificationCenter.conferenceEmojiUpdated /* 233 */:
                 // fill-array-data instruction
@@ -2956,7 +2956,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case 164:
+            case NotificationCenter.groupCallSpeakingUsersUpdated /* 164 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 2;
@@ -2965,7 +2965,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 3;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.groupCallScreencastStateChanged /* 165 */:
+            case 165:
             case NotificationCenter.emojiKeywordsLoaded /* 199 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
@@ -3183,7 +3183,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.timezonesUpdated /* 206 */:
+            case 206:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 1;

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
@@ -515,7 +514,10 @@ public abstract class CodedOutputStream extends ByteOutput {
     }
 
     static int computePreferredBufferSize(int i) {
-        return i > 4096 ? LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : i;
+        if (i > 4096) {
+            return 4096;
+        }
+        return i;
     }
 
     public static int computeRawMessageSetExtensionSize(int i, ByteString byteString) {

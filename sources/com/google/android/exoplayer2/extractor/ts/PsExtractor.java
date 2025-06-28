@@ -14,7 +14,6 @@ import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import java.util.Map;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
@@ -113,7 +112,7 @@ public final class PsExtractor implements Extractor {
 
     public PsExtractor(TimestampAdjuster timestampAdjuster) {
         this.timestampAdjuster = timestampAdjuster;
-        this.psPacketBuffer = new ParsableByteArray(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+        this.psPacketBuffer = new ParsableByteArray(4096);
         this.psPayloadReaders = new SparseArray();
         this.durationReader = new PsDurationReader();
     }

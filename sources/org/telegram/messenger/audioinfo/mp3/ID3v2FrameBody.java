@@ -1,7 +1,6 @@
 package org.telegram.messenger.audioinfo.mp3;
 
 import java.io.InputStream;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.audioinfo.util.RangeInputStream;
 
 /* loaded from: classes3.dex */
@@ -10,7 +9,7 @@ public class ID3v2FrameBody {
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         public Buffer initialValue() {
-            return new Buffer(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+            return new Buffer(4096);
         }
     };
     private final ID3v2DataInput data;

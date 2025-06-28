@@ -6,8 +6,8 @@ import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
-import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 abstract class ByteStreams {
@@ -102,13 +102,7 @@ abstract class ByteStreams {
     }
 
     private static int saturatedCast(long j) {
-        if (j > 2147483647L) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        if (j < -2147483648L) {
-            return Integer.MIN_VALUE;
-        }
-        return (int) j;
+        return j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLRPC.FLAG_31 : (int) j;
     }
 
     public static byte[] toByteArray(InputStream inputStream) {
@@ -116,7 +110,7 @@ abstract class ByteStreams {
     }
 
     private static byte[] toByteArrayInternal(InputStream inputStream, Queue queue, int i) {
-        int min = Math.min(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM, Math.max(128, Integer.highestOneBit(i) * 2));
+        int min = Math.min(8192, Math.max(128, Integer.highestOneBit(i) * 2));
         while (i < 2147483639) {
             int min2 = Math.min(min, 2147483639 - i);
             byte[] bArr = new byte[min2];

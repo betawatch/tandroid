@@ -66,7 +66,6 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
@@ -726,7 +725,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     GLES20.glViewport(0, 0, i5, this.array[0]);
                     if (z3) {
                         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-                        GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                        GLES20.glClear(16384);
                     }
                     CameraView.this.shapeValue = this.shape.set(this.shapeTo);
                     float f3 = CameraView.this.lastCrossfadeValue = this.crossfade.set(0.0f);
@@ -1808,7 +1807,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             boolean z = CameraView.this.dual;
             if (z) {
                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-                GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                GLES20.glClear(16384);
             }
             float f3 = CameraView.this.lastCrossfadeValue;
             boolean z2 = f3 > 0.0f;
@@ -1987,7 +1986,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 if (minBufferSize <= 0) {
                     minBufferSize = 3584;
                 }
-                int i = 49152 < minBufferSize ? ((minBufferSize / 2048) + 1) * LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : 49152;
+                int i = 49152 < minBufferSize ? ((minBufferSize / 2048) + 1) * 4096 : 49152;
                 for (int i2 = 0; i2 < 3; i2++) {
                     this.buffers.add(new InstantCameraView.AudioBufferInfo());
                 }

@@ -11,6 +11,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.nio.ByteBuffer;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class FfmpegAudioDecoder extends SimpleDecoder {
@@ -38,7 +39,7 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
         byte[] extraData = getExtraData(format.sampleMimeType, format.initializationData);
         this.extraData = extraData;
         this.encoding = z ? 4 : 2;
-        this.outputBufferSize = z ? OUTPUT_BUFFER_SIZE_32BIT : 65536;
+        this.outputBufferSize = z ? 131072 : 65536;
         long ffmpegInitialize = ffmpegInitialize(str, extraData, z, format.sampleRate, format.channelCount);
         this.nativeContext = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
@@ -140,11 +141,11 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
             return new FfmpegDecoderException("Error decoding (see logcat).");
         }
         if (ffmpegDecode == -1) {
-            simpleDecoderOutputBuffer.setFlags(Integer.MIN_VALUE);
+            simpleDecoderOutputBuffer.setFlags(TLRPC.FLAG_31);
             return null;
         }
         if (ffmpegDecode == 0) {
-            simpleDecoderOutputBuffer.setFlags(Integer.MIN_VALUE);
+            simpleDecoderOutputBuffer.setFlags(TLRPC.FLAG_31);
             return null;
         }
         if (!this.hasOutputFormat) {

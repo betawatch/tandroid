@@ -10,6 +10,7 @@ import androidx.appcompat.R$id;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends LinearLayoutCompat {
@@ -18,7 +19,7 @@ public class AlertDialogLayout extends LinearLayoutCompat {
     }
 
     private void forceUniformWidth(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30);
         for (int i3 = 0; i3 < i; i3++) {
             View childAt = getChildAt(i3);
             if (childAt.getVisibility() != 8) {
@@ -113,7 +114,7 @@ public class AlertDialogLayout extends LinearLayoutCompat {
                 i8 -= min;
                 i4 += min;
             }
-            view2.measure(i, View.MeasureSpec.makeMeasureSpec(i4, 1073741824));
+            view2.measure(i, View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
             paddingTop = i9 + view2.getMeasuredHeight();
             i3 = View.combineMeasuredStates(i3, view2.getMeasuredState());
         }

@@ -27,7 +27,6 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 final class HlsMediaChunk extends MediaChunk {
@@ -158,7 +157,7 @@ final class HlsMediaChunk extends MediaChunk {
                     try {
                         try {
                         } catch (EOFException e) {
-                            if ((this.trackFormat.roleFlags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) == 0) {
+                            if ((this.trackFormat.roleFlags & 16384) == 0) {
                                 throw e;
                             }
                             this.extractor.onTruncatedSegmentParsed();

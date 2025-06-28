@@ -17,6 +17,7 @@ import android.os.Build;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
 import android.transition.ChangeBounds;
 import android.transition.Transition;
 import android.transition.TransitionManager;
@@ -63,6 +64,7 @@ import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
@@ -197,6 +199,7 @@ public class ActionBarMenuItem extends FrameLayout {
         private View.OnClickListener overrideClickListener;
         public CharSequence text;
         private Integer textColor;
+        public int textSizeDp;
         private View view;
         public View viewToSwipeBack;
         public int viewType;
@@ -210,110 +213,124 @@ public class ActionBarMenuItem extends FrameLayout {
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0073, code lost:
         
-            if (r13.iconColor != null) goto L28;
+            if (r13.iconColor != null) goto L29;
          */
         /* JADX WARN: Code restructure failed: missing block: B:21:0x011a, code lost:
         
             r0.setColors(r14.intValue(), r13.iconColor.intValue());
             r0 = r0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:34:0x0118, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:35:0x0118, code lost:
         
-            if (r13.iconColor != null) goto L28;
+            if (r13.iconColor != null) goto L29;
          */
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v10 */
-        /* JADX WARN: Type inference failed for: r0v11 */
-        /* JADX WARN: Type inference failed for: r0v2, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarMenuSubItem] */
-        /* JADX WARN: Type inference failed for: r0v5, types: [org.telegram.ui.ActionBar.ActionBarMenuSubItem] */
-        /* JADX WARN: Type inference failed for: r0v6, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarMenuSubItem] */
-        /* JADX WARN: Type inference failed for: r3v11, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
-        /* JADX WARN: Type inference failed for: r3v4, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public View add(final ActionBarMenuItem actionBarMenuItem) {
+            LinearLayout.LayoutParams createLinear;
             Integer num;
-            ActionBarPopupWindow.GapView gapView;
-            ?? r0;
+            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
+            View view;
+            View view2;
+            ActionBarMenuSubItem actionBarMenuSubItem;
             actionBarMenuItem.createPopupLayout();
             if (this.view != null) {
                 actionBarMenuItem.popupLayout.addView(this.view);
             } else {
                 int i = this.viewType;
                 if (i == 0) {
-                    ?? actionBarMenuSubItem = new ActionBarMenuSubItem(actionBarMenuItem.getContext(), this.needCheck, false, false, actionBarMenuItem.resourcesProvider);
-                    actionBarMenuSubItem.setTextAndIcon(this.text, this.icon, this.iconDrawable);
-                    actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.dp(196.0f));
-                    actionBarMenuSubItem.setTag(Integer.valueOf(this.id));
-                    actionBarMenuItem.popupLayout.addView(actionBarMenuSubItem);
-                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) actionBarMenuSubItem.getLayoutParams();
+                    ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(actionBarMenuItem.getContext(), this.needCheck, false, false, actionBarMenuItem.resourcesProvider);
+                    actionBarMenuSubItem2.setTextAndIcon(this.text, this.icon, this.iconDrawable);
+                    actionBarMenuSubItem2.setMinimumWidth(AndroidUtilities.dp(196.0f));
+                    actionBarMenuSubItem2.setTag(Integer.valueOf(this.id));
+                    actionBarMenuItem.popupLayout.addView(actionBarMenuSubItem2);
+                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) actionBarMenuSubItem2.getLayoutParams();
                     if (LocaleController.isRTL) {
                         layoutParams.gravity = 5;
                     }
                     layoutParams.width = -1;
                     layoutParams.height = AndroidUtilities.dp(48.0f);
-                    actionBarMenuSubItem.setLayoutParams(layoutParams);
-                    actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda0
+                    actionBarMenuSubItem2.setLayoutParams(layoutParams);
+                    actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            ActionBarMenuItem.Item.this.lambda$add$0(actionBarMenuItem, view);
+                        public final void onClick(View view3) {
+                            ActionBarMenuItem.Item.this.lambda$add$0(actionBarMenuItem, view3);
                         }
                     });
                     num = this.textColor;
-                    gapView = actionBarMenuSubItem;
+                    view2 = actionBarMenuSubItem2;
                     if (num != null) {
-                        r0 = actionBarMenuSubItem;
-                        gapView = actionBarMenuSubItem;
+                        actionBarMenuSubItem = actionBarMenuSubItem2;
+                        view2 = actionBarMenuSubItem2;
                     }
-                    this.view = gapView;
+                    this.view = view2;
                 } else {
                     if (i == 1) {
-                        ActionBarPopupWindow.GapView gapView2 = new ActionBarPopupWindow.GapView(actionBarMenuItem.getContext(), actionBarMenuItem.resourcesProvider, Theme.key_actionBarDefaultSubmenuSeparator);
-                        gapView2.setTag(R.id.fit_width_tag, 1);
-                        actionBarMenuItem.popupLayout.addView((View) gapView2, LayoutHelper.createLinear(-1, 8));
-                        gapView = gapView2;
+                        View gapView = new ActionBarPopupWindow.GapView(actionBarMenuItem.getContext(), actionBarMenuItem.resourcesProvider, Theme.key_actionBarDefaultSubmenuSeparator);
+                        gapView.setTag(R.id.fit_width_tag, 1);
+                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = actionBarMenuItem.popupLayout;
+                        createLinear = LayoutHelper.createLinear(-1, 8);
+                        view = gapView;
+                        actionBarPopupWindowLayout = actionBarPopupWindowLayout2;
                     } else if (i == 2) {
-                        final ?? actionBarMenuSubItem2 = new ActionBarMenuSubItem(actionBarMenuItem.getContext(), false, false, false, actionBarMenuItem.resourcesProvider);
-                        actionBarMenuSubItem2.setTextAndIcon(this.text, this.icon, this.iconDrawable);
-                        actionBarMenuSubItem2.setMinimumWidth(AndroidUtilities.dp(196.0f));
-                        actionBarMenuSubItem2.setRightIcon(R.drawable.msg_arrowright);
-                        actionBarMenuSubItem2.getRightIcon().setVisibility(this.rightIconVisibility);
-                        actionBarMenuItem.popupLayout.addView(actionBarMenuSubItem2);
-                        LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) actionBarMenuSubItem2.getLayoutParams();
+                        final ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(actionBarMenuItem.getContext(), false, false, false, actionBarMenuItem.resourcesProvider);
+                        actionBarMenuSubItem3.setTextAndIcon(this.text, this.icon, this.iconDrawable);
+                        actionBarMenuSubItem3.setMinimumWidth(AndroidUtilities.dp(196.0f));
+                        actionBarMenuSubItem3.setRightIcon(R.drawable.msg_arrowright);
+                        actionBarMenuSubItem3.getRightIcon().setVisibility(this.rightIconVisibility);
+                        actionBarMenuItem.popupLayout.addView(actionBarMenuSubItem3);
+                        LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) actionBarMenuSubItem3.getLayoutParams();
                         if (LocaleController.isRTL) {
                             layoutParams2.gravity = 5;
                         }
                         layoutParams2.width = -1;
                         layoutParams2.height = AndroidUtilities.dp(48.0f);
-                        actionBarMenuSubItem2.setLayoutParams(layoutParams2);
+                        actionBarMenuSubItem3.setLayoutParams(layoutParams2);
                         final int addViewToSwipeBack = actionBarMenuItem.popupLayout.addViewToSwipeBack(this.viewToSwipeBack);
-                        actionBarMenuSubItem2.openSwipeBackLayout = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda1
+                        actionBarMenuSubItem3.openSwipeBackLayout = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ActionBarMenuItem.Item.lambda$add$1(ActionBarMenuItem.this, addViewToSwipeBack);
                             }
                         };
-                        actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda2
+                        actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$Item$$ExternalSyntheticLambda2
                             @Override // android.view.View.OnClickListener
-                            public final void onClick(View view) {
+                            public final void onClick(View view3) {
                                 ActionBarMenuSubItem.this.openSwipeBack();
                             }
                         });
                         actionBarMenuItem.popupLayout.swipeBackGravityRight = true;
                         num = this.textColor;
-                        gapView = actionBarMenuSubItem2;
+                        view2 = actionBarMenuSubItem3;
                         if (num != null) {
-                            r0 = actionBarMenuSubItem2;
-                            gapView = actionBarMenuSubItem2;
+                            actionBarMenuSubItem = actionBarMenuSubItem3;
+                            view2 = actionBarMenuSubItem3;
                         }
+                        this.view = view2;
+                    } else if (i == 3) {
+                        LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(actionBarMenuItem.getContext());
+                        linksTextView.setTag(R.id.fit_width_tag, 1);
+                        linksTextView.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+                        linksTextView.setTextSize(1, this.textSizeDp);
+                        linksTextView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
+                        linksTextView.setMovementMethod(LinkMovementMethod.getInstance());
+                        linksTextView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
+                        linksTextView.setText(this.text);
+                        linksTextView.setMaxWidth(AndroidUtilities.dp(200.0f));
+                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout3 = actionBarMenuItem.popupLayout;
+                        createLinear = LayoutHelper.createLinear(-1, -2, 0.0f, 0, 0, 8, 0, 0);
+                        view = linksTextView;
+                        actionBarPopupWindowLayout = actionBarPopupWindowLayout3;
                     }
-                    this.view = gapView;
+                    actionBarPopupWindowLayout.addView(view, createLinear);
+                    view2 = view;
+                    this.view = view2;
                 }
             }
-            View view = this.view;
-            if (view != null) {
-                view.setVisibility(this.visibility);
+            View view3 = this.view;
+            if (view3 != null) {
+                view3.setVisibility(this.visibility);
                 View.OnClickListener onClickListener = this.overrideClickListener;
                 if (onClickListener != null) {
                     this.view.setOnClickListener(onClickListener);
@@ -346,6 +363,14 @@ public class ActionBarMenuItem extends FrameLayout {
             item.iconDrawable = drawable;
             item.text = str;
             item.viewToSwipeBack = view;
+            return item;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static Item asText(CharSequence charSequence, int i) {
+            Item item = new Item(3);
+            item.text = charSequence;
+            item.textSizeDp = i;
             return item;
         }
 
@@ -424,6 +449,8 @@ public class ActionBarMenuItem extends FrameLayout {
             View view = this.view;
             if (view instanceof ActionBarMenuSubItem) {
                 ((ActionBarMenuSubItem) view).setText(charSequence);
+            } else if (view instanceof TextView) {
+                ((TextView) view).setText(charSequence);
             }
         }
 
@@ -798,7 +825,7 @@ public class ActionBarMenuItem extends FrameLayout {
                     duration = new AnimatorSet().setDuration(180L);
                     duration.setInterpolator(new DecelerateInterpolator());
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda13
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda15
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             ActionBarMenuItem.this.lambda$checkClearButton$15(valueAnimator);
@@ -840,7 +867,7 @@ public class ActionBarMenuItem extends FrameLayout {
                 duration = new AnimatorSet().setDuration(180L);
                 duration.setInterpolator(new DecelerateInterpolator());
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
-                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda14
+                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda16
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ActionBarMenuItem.this.lambda$checkClearButton$16(valueAnimator);
@@ -1072,7 +1099,7 @@ public class ActionBarMenuItem extends FrameLayout {
             this.searchField.setSingleLine(true);
             this.searchField.setBackgroundResource(0);
             this.searchField.setPadding(0, 0, 0, 0);
-            this.searchField.setInputType(this.searchField.getInputType() | 524288);
+            this.searchField.setInputType(this.searchField.getInputType() | TLRPC.FLAG_19);
             if (Build.VERSION.SDK_INT < 23) {
                 this.searchField.setCustomSelectionActionModeCallback(new ActionMode.Callback() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem.10
                     @Override // android.view.ActionMode.Callback
@@ -1095,7 +1122,7 @@ public class ActionBarMenuItem extends FrameLayout {
                     }
                 });
             }
-            this.searchField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda10
+            this.searchField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda12
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView3, int i4, KeyEvent keyEvent) {
                     boolean lambda$checkCreateSearchField$13;
@@ -1215,7 +1242,7 @@ public class ActionBarMenuItem extends FrameLayout {
             this.clearButton.setRotation(45.0f);
             this.clearButton.setScaleX(0.0f);
             this.clearButton.setScaleY(0.0f);
-            this.clearButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda11
+            this.clearButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     ActionBarMenuItem.this.lambda$checkCreateSearchField$14(view2);
@@ -1235,7 +1262,7 @@ public class ActionBarMenuItem extends FrameLayout {
         this.location = new int[2];
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), R.drawable.popup_fixed_alert2, this.resourcesProvider, 1);
         this.popupLayout = actionBarPopupWindowLayout;
-        actionBarPopupWindowLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda8
+        actionBarPopupWindowLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda10
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$createPopupLayout$1;
@@ -1243,7 +1270,7 @@ public class ActionBarMenuItem extends FrameLayout {
                 return lambda$createPopupLayout$1;
             }
         });
-        this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda9
+        this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
             public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                 ActionBarMenuItem.this.lambda$createPopupLayout$2(keyEvent);
@@ -1841,7 +1868,7 @@ public class ActionBarMenuItem extends FrameLayout {
         layoutParams.width = -1;
         layoutParams.height = AndroidUtilities.dp(48.0f);
         textView.setLayoutParams(layoutParams);
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda16
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ActionBarMenuItem.this.lambda$addSubItem$4(view);
@@ -1894,7 +1921,7 @@ public class ActionBarMenuItem extends FrameLayout {
         view.setLayoutParams(new LinearLayout.LayoutParams(i2, i3));
         this.popupLayout.addView(view);
         view.setTag(Integer.valueOf(i));
-        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda15
+        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ActionBarMenuItem.this.lambda$addSubItem$3(view2);
@@ -1923,13 +1950,13 @@ public class ActionBarMenuItem extends FrameLayout {
         layoutParams.height = AndroidUtilities.dp(48.0f);
         actionBarMenuSubItem.setLayoutParams(layoutParams);
         final int addViewToSwipeBack = this.popupLayout.addViewToSwipeBack(view);
-        actionBarMenuSubItem.openSwipeBackLayout = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda6
+        actionBarMenuSubItem.openSwipeBackLayout = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 ActionBarMenuItem.this.lambda$addSwipeBackItem$7(addViewToSwipeBack);
             }
         };
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda7
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ActionBarMenuSubItem.this.openSwipeBack();
@@ -2009,7 +2036,7 @@ public class ActionBarMenuItem extends FrameLayout {
         if (actionBarPopupWindow == null || !actionBarPopupWindow.isShowing()) {
             return;
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
         updateOrShowPopup(true, true);
     }
 
@@ -2126,6 +2153,10 @@ public class ActionBarMenuItem extends FrameLayout {
 
     public Item lazilyAddSwipeBackItem(int i, Drawable drawable, String str, View view) {
         return putLazyItem(Item.asSwipeBackItem(i, drawable, str, view));
+    }
+
+    public Item lazilyAddText(CharSequence charSequence, int i) {
+        return putLazyItem(Item.asText(charSequence, i));
     }
 
     protected void onDismiss() {
@@ -2431,7 +2462,7 @@ public class ActionBarMenuItem extends FrameLayout {
     public void setOnMenuDismiss(final Utilities.Callback<Boolean> callback) {
         ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
         if (actionBarPopupWindow != null) {
-            actionBarPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda12
+            actionBarPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda14
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public final void onDismiss() {
                     ActionBarMenuItem.this.lambda$setOnMenuDismiss$11(callback);
@@ -2843,7 +2874,7 @@ public class ActionBarMenuItem extends FrameLayout {
                         ActionBarMenuItem.this.lambda$toggleSubMenu$10();
                     }
                 });
-                actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+                actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.popupLayout.getSwipeBack() != null && (childAt = this.popupLayout.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = childAt.getMeasuredWidth() + AndroidUtilities.dp(16.0f);
                 }

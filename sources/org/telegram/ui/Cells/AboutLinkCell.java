@@ -37,6 +37,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -268,7 +269,7 @@ public abstract class AboutLinkCell extends FrameLayout {
         int dp = AndroidUtilities.dp(76.0f);
         COLLAPSED_HEIGHT = dp;
         MAX_OPEN_HEIGHT = dp;
-        MOST_SPEC = View.MeasureSpec.makeMeasureSpec(999999, Integer.MIN_VALUE);
+        MOST_SPEC = View.MeasureSpec.makeMeasureSpec(999999, TLRPC.FLAG_31);
     }
 
     public AboutLinkCell(Context context, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
@@ -770,7 +771,7 @@ public abstract class AboutLinkCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         checkTextLayout(View.MeasureSpec.getSize(i) - AndroidUtilities.dp(46.0f), false);
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateHeight(), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateHeight(), TLRPC.FLAG_30));
     }
 
     @Override // android.view.View

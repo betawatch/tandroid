@@ -41,6 +41,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.BlurringShader;
@@ -1394,13 +1395,13 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
                     float f = i6;
                     float f2 = i5;
                     float min = Math.min(1.0f, Math.max(f / size, f2 / size2));
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (f * min), 1073741824);
-                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (f2 * min), 1073741824);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (f * min), TLRPC.FLAG_30);
+                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (f2 * min), TLRPC.FLAG_30);
                     childAt.measure(makeMeasureSpec, makeMeasureSpec2);
                 }
             }
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
-            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size2, 1073741824);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
             childAt.measure(makeMeasureSpec, makeMeasureSpec2);
         }
     }

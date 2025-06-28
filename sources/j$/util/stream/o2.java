@@ -45,7 +45,7 @@ final class o2 extends c {
     @Override // j$.util.stream.e
     protected final Object a() {
         if (c()) {
-            y0 s0 = this.j.s0(R2.SIZED.e(this.j.c) ? this.j.l0(this.b) : -1L, this.k);
+            y0 s0 = this.j.s0(R2.SIZED.k(this.j.c) ? this.j.l0(this.b) : -1L, this.k);
             e2 w0 = this.j.w0(this.a.p0(), s0);
             b bVar = this.a;
             bVar.g0(this.b, bVar.B0(w0));

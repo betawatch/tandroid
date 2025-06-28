@@ -10,6 +10,7 @@ import com.google.android.exoplayer2.Bundleable;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.base.Objects;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class Cue implements Bundleable {
@@ -82,17 +83,17 @@ public final class Cue implements Bundleable {
             this.textAlignment = null;
             this.multiRowAlignment = null;
             this.line = -3.4028235E38f;
-            this.lineType = Integer.MIN_VALUE;
-            this.lineAnchor = Integer.MIN_VALUE;
+            this.lineType = TLRPC.FLAG_31;
+            this.lineAnchor = TLRPC.FLAG_31;
             this.position = -3.4028235E38f;
-            this.positionAnchor = Integer.MIN_VALUE;
-            this.textSizeType = Integer.MIN_VALUE;
+            this.positionAnchor = TLRPC.FLAG_31;
+            this.textSizeType = TLRPC.FLAG_31;
             this.textSize = -3.4028235E38f;
             this.size = -3.4028235E38f;
             this.bitmapHeight = -3.4028235E38f;
             this.windowColorSet = false;
             this.windowColor = -16777216;
-            this.verticalType = Integer.MIN_VALUE;
+            this.verticalType = TLRPC.FLAG_31;
         }
 
         private Builder(Cue cue) {

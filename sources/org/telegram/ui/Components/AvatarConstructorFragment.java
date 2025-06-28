@@ -538,7 +538,7 @@ public class AvatarConstructorFragment extends BaseFragment {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AvatarConstructorFragment.this.gradientBackgroundItemWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AvatarConstructorFragment.this.gradientBackgroundItemWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
 
         public void setCustom(boolean z) {
@@ -740,7 +740,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             if (!AvatarConstructorFragment.this.isLandscapeMode) {
-                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(140.0f), 1073741824);
+                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(140.0f), TLRPC.FLAG_30);
             }
             super.onMeasure(i, i2);
         }
@@ -838,7 +838,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             return;
         }
         if (!this.wasChanged) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
@@ -872,7 +872,7 @@ public class AvatarConstructorFragment extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$discardEditor$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -972,7 +972,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             delegate.onDone(previewView.backgroundGradient, previewView.documentId, previewView.document, previewView);
         }
         if (this.finishOnDone) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         }
     }
 
@@ -1148,7 +1148,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         }) { // from class: org.telegram.ui.Components.AvatarConstructorFragment.13
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLRPC.FLAG_30));
             }
         };
         BackgroundGradient backgroundGradient2 = this.previewView.backgroundGradient;

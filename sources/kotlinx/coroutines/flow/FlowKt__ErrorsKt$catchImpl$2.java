@@ -5,6 +5,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.internal.Ref$ObjectRef;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
@@ -30,8 +31,8 @@ final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
         if (continuation instanceof FlowKt__ErrorsKt$catchImpl$2$emit$1) {
             flowKt__ErrorsKt$catchImpl$2$emit$1 = (FlowKt__ErrorsKt$catchImpl$2$emit$1) continuation;
             int i2 = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                flowKt__ErrorsKt$catchImpl$2$emit$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                flowKt__ErrorsKt$catchImpl$2$emit$1.label = i2 - TLRPC.FLAG_31;
                 Object obj2 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;

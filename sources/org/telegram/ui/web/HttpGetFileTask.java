@@ -14,7 +14,6 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.recorder.StoryEntry;
@@ -162,13 +161,13 @@ public class HttpGetFileTask extends AsyncTask {
                     }
                     this.file = StoryEntry.makeCacheFile(UserConfig.selectedAccount, str2);
                 }
-                bufferedInputStream = new BufferedInputStream(errorStream, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                bufferedInputStream = new BufferedInputStream(errorStream, 16384);
                 try {
                     fileOutputStream = new FileOutputStream(this.file, z);
                     try {
                         channel = fileOutputStream.getChannel();
                         try {
-                            byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM];
+                            byte[] bArr = new byte[16384];
                             while (true) {
                                 int read = bufferedInputStream.read(bArr);
                                 if (read == -1) {

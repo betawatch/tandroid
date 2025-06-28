@@ -426,7 +426,7 @@ public abstract class MessageEntityView extends EntityView {
                 int boundsRight;
                 MessageEntityView.this.listView.measure(i4, View.MeasureSpec.makeMeasureSpec(0, 0));
                 if (MessageEntityView.this.textureView != null) {
-                    MessageEntityView.this.textureView.measure(View.MeasureSpec.makeMeasureSpec(MessageEntityView.this.listView.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(MessageEntityView.this.listView.getMeasuredHeight(), 1073741824));
+                    MessageEntityView.this.textureView.measure(View.MeasureSpec.makeMeasureSpec(MessageEntityView.this.listView.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(MessageEntityView.this.listView.getMeasuredHeight(), TLRPC.FLAG_30));
                 }
                 int measuredWidth = MessageEntityView.this.listView.getMeasuredWidth();
                 int i6 = 0;

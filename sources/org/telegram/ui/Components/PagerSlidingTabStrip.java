@@ -18,8 +18,9 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.viewpager.widget.ViewPager;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.Theme$$ExternalSyntheticApiModelOutline2;
+import org.telegram.ui.ActionBar.Theme$$ExternalSyntheticApiModelOutline0;
 
 /* loaded from: classes5.dex */
 public class PagerSlidingTabStrip extends HorizontalScrollView {
@@ -186,7 +187,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         };
         imageView.setFocusable(true);
         if (Build.VERSION.SDK_INT >= 21) {
-            RippleDrawable m = Theme$$ExternalSyntheticApiModelOutline2.m(Theme.createSelectorDrawable(getThemedColor(Theme.key_chat_emojiBottomPanelIcon), 1, AndroidUtilities.dp(18.0f)));
+            RippleDrawable m = Theme$$ExternalSyntheticApiModelOutline0.m(Theme.createSelectorDrawable(getThemedColor(Theme.key_chat_emojiBottomPanelIcon), 1, AndroidUtilities.dp(18.0f)));
             Theme.setRippleDrawableForceSoftware(m);
             imageView.setBackground(m);
         }
@@ -391,7 +392,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         if (!this.shouldExpand || View.MeasureSpec.getMode(i) == 0) {
             return;
         }
-        this.tabsContainer.measure(getMeasuredWidth() | 1073741824, i2);
+        this.tabsContainer.measure(getMeasuredWidth() | TLRPC.FLAG_30, i2);
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View

@@ -247,13 +247,13 @@ public class LiteMode {
 
     private static int preprocessFlag(int i) {
         if ((i & FLAG_ANIMATED_EMOJI_KEYBOARD) > 0) {
-            i = (i & (-16389)) | (UserConfig.hasPremiumOnAccounts() ? 4 : FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            i = (i & (-16389)) | (UserConfig.hasPremiumOnAccounts() ? 4 : 16384);
         }
         if ((i & FLAG_ANIMATED_EMOJI_REACTIONS) > 0) {
-            i = (i & (-8201)) | (UserConfig.hasPremiumOnAccounts() ? 8 : FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            i = (i & (-8201)) | (UserConfig.hasPremiumOnAccounts() ? 8 : 8192);
         }
         if ((i & FLAG_ANIMATED_EMOJI_CHAT) > 0) {
-            return (i & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+            return (i & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : 4096);
         }
         return i;
     }

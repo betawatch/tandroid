@@ -180,7 +180,7 @@ public abstract class TranscribeButton {
         this.outIconDrawable = rLottieDrawable;
         rLottieDrawable.setCurrentFrame(0);
         this.outIconDrawable.setCallback(chatMessageCell);
-        this.outIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda1
+        this.outIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 TranscribeButton.this.lambda$new$0();
@@ -192,7 +192,7 @@ public abstract class TranscribeButton {
         rLottieDrawable2.setCurrentFrame(0);
         this.inIconDrawable.setCallback(chatMessageCell);
         this.inIconDrawable.setMasterParent(chatMessageCell);
-        this.inIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda2
+        this.inIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 TranscribeButton.this.lambda$new$1();
@@ -363,7 +363,7 @@ public abstract class TranscribeButton {
                 }
                 messageObject.messageOwner.voiceTranscriptionFinal = true;
                 MessagesStorage.getInstance(messageObject.currentAccount).updateMessageVoiceTranscription(messageObject.getDialogId(), messageObject.getId(), str, messageObject.messageOwner);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         TranscribeButton.lambda$finishTranscription$8(MessageObject.this, j, str);
@@ -592,7 +592,7 @@ public abstract class TranscribeButton {
         message.voiceTranscriptionForce = true;
         MessagesStorage.getInstance(messageObject.currentAccount).updateMessageVoiceTranscriptionOpen(messageObject.getDialogId(), messageObject.getId(), messageObject.messageOwner);
         if (z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     TranscribeButton.lambda$showOffTranscribe$9(MessageObject.this);

@@ -4,6 +4,7 @@ import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.decoder.DecoderOutputBuffer;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
@@ -38,7 +39,7 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
             this.supplementalData = null;
             return;
         }
-        addFlag(268435456);
+        addFlag(TLRPC.FLAG_28);
         int limit = byteBuffer.limit();
         ByteBuffer byteBuffer2 = this.supplementalData;
         if (byteBuffer2 == null || byteBuffer2.capacity() < limit) {

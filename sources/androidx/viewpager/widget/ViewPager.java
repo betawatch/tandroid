@@ -41,9 +41,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class ViewPager extends ViewGroup {
@@ -186,10 +186,10 @@ public class ViewPager extends ViewGroup {
             accessibilityNodeInfoCompat.setClassName(ViewPager.class.getName());
             accessibilityNodeInfoCompat.setScrollable(canScroll());
             if (ViewPager.this.canScrollHorizontally(1)) {
-                accessibilityNodeInfoCompat.addAction(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+                accessibilityNodeInfoCompat.addAction(4096);
             }
             if (ViewPager.this.canScrollHorizontally(-1)) {
-                accessibilityNodeInfoCompat.addAction(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                accessibilityNodeInfoCompat.addAction(8192);
             }
         }
 
@@ -1289,7 +1289,7 @@ public class ViewPager extends ViewGroup {
 
     void initViewPager() {
         setWillNotDraw(false);
-        setDescendantFocusability(262144);
+        setDescendantFocusability(TLRPC.FLAG_18);
         setFocusable(true);
         Context context = getContext();
         this.mScroller = new Scroller(context, sInterpolator);
@@ -1576,7 +1576,7 @@ public class ViewPager extends ViewGroup {
                     int i19 = ((int) (infoForChild.offset * f)) + paddingLeft;
                     if (layoutParams2.needsMeasure) {
                         layoutParams2.needsMeasure = false;
-                        childAt2.measure(View.MeasureSpec.makeMeasureSpec((int) (f * layoutParams2.widthFactor), 1073741824), View.MeasureSpec.makeMeasureSpec((i8 - paddingTop) - paddingBottom, 1073741824));
+                        childAt2.measure(View.MeasureSpec.makeMeasureSpec((int) (f * layoutParams2.widthFactor), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((i8 - paddingTop) - paddingBottom, TLRPC.FLAG_30));
                     }
                     childAt2.layout(i19, paddingTop, childAt2.getMeasuredWidth() + i19, childAt2.getMeasuredHeight() + paddingTop);
                 }
@@ -1619,7 +1619,7 @@ public class ViewPager extends ViewGroup {
         int i6 = 0;
         while (true) {
             boolean z = true;
-            int i7 = 1073741824;
+            int i7 = TLRPC.FLAG_30;
             if (i6 >= childCount) {
                 break;
             }
@@ -1632,17 +1632,17 @@ public class ViewPager extends ViewGroup {
                 if (i9 != 3 && i9 != 5) {
                     z = false;
                 }
-                int i11 = Integer.MIN_VALUE;
+                int i11 = TLRPC.FLAG_31;
                 if (z2) {
-                    i11 = 1073741824;
+                    i11 = TLRPC.FLAG_30;
                 } else if (z) {
-                    i3 = 1073741824;
+                    i3 = TLRPC.FLAG_30;
                     i4 = ((ViewGroup.LayoutParams) layoutParams2).width;
                     if (i4 == -2) {
                         if (i4 == -1) {
                             i4 = paddingLeft;
                         }
-                        i11 = 1073741824;
+                        i11 = TLRPC.FLAG_30;
                     } else {
                         i4 = paddingLeft;
                     }
@@ -1660,7 +1660,7 @@ public class ViewPager extends ViewGroup {
                         paddingLeft -= childAt.getMeasuredWidth();
                     }
                 }
-                i3 = Integer.MIN_VALUE;
+                i3 = TLRPC.FLAG_31;
                 i4 = ((ViewGroup.LayoutParams) layoutParams2).width;
                 if (i4 == -2) {
                 }
@@ -1673,8 +1673,8 @@ public class ViewPager extends ViewGroup {
             }
             i6++;
         }
-        this.mChildWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, 1073741824);
-        this.mChildHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824);
+        this.mChildWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_30);
+        this.mChildHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredHeight, TLRPC.FLAG_30);
         this.mInLayout = true;
         populate();
         this.mInLayout = false;
@@ -1682,7 +1682,7 @@ public class ViewPager extends ViewGroup {
         for (int i12 = 0; i12 < childCount2; i12++) {
             View childAt2 = getChildAt(i12);
             if (childAt2.getVisibility() != 8 && ((layoutParams = (LayoutParams) childAt2.getLayoutParams()) == null || !layoutParams.isDecor)) {
-                childAt2.measure(View.MeasureSpec.makeMeasureSpec((int) (paddingLeft * layoutParams.widthFactor), 1073741824), this.mChildHeightMeasureSpec);
+                childAt2.measure(View.MeasureSpec.makeMeasureSpec((int) (paddingLeft * layoutParams.widthFactor), TLRPC.FLAG_30), this.mChildHeightMeasureSpec);
             }
         }
     }

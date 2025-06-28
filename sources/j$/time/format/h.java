@@ -9,59 +9,59 @@ final class h implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         Long e = rVar.e(j$.time.temporal.a.INSTANT_SECONDS);
         j$.time.temporal.k d = rVar.d();
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
-        Long valueOf = d.e(aVar) ? Long.valueOf(rVar.d().b(aVar)) : null;
+        Long valueOf = d.k(aVar) ? Long.valueOf(rVar.d().h(aVar)) : null;
         int i = 0;
         if (e == null) {
             return false;
         }
         long longValue = e.longValue();
-        int f = aVar.f(valueOf != null ? valueOf.longValue() : 0L);
+        int m = aVar.m(valueOf != null ? valueOf.longValue() : 0L);
         if (longValue >= -62167219200L) {
             long j = longValue - 253402300800L;
             long j2 = j$.com.android.tools.r8.a.j(j, 315569520000L) + 1;
-            LocalDateTime j3 = LocalDateTime.j(j$.com.android.tools.r8.a.i(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
+            LocalDateTime u = LocalDateTime.u(j$.com.android.tools.r8.a.i(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
             if (j2 > 0) {
                 sb.append('+');
                 sb.append(j2);
             }
-            sb.append(j3);
-            if (j3.g() == 0) {
+            sb.append(u);
+            if (u.o() == 0) {
                 sb.append(":00");
             }
         } else {
-            long j4 = longValue + 62167219200L;
-            long j5 = j4 / 315569520000L;
-            long j6 = j4 % 315569520000L;
-            LocalDateTime j7 = LocalDateTime.j(j6 - 62167219200L, 0, ZoneOffset.UTC);
+            long j3 = longValue + 62167219200L;
+            long j4 = j3 / 315569520000L;
+            long j5 = j3 % 315569520000L;
+            LocalDateTime u2 = LocalDateTime.u(j5 - 62167219200L, 0, ZoneOffset.UTC);
             int length = sb.length();
-            sb.append(j7);
-            if (j7.g() == 0) {
+            sb.append(u2);
+            if (u2.o() == 0) {
                 sb.append(":00");
             }
-            if (j5 < 0) {
-                if (j7.h() == -10000) {
-                    sb.replace(length, length + 2, Long.toString(j5 - 1));
-                } else if (j6 == 0) {
-                    sb.insert(length, j5);
+            if (j4 < 0) {
+                if (u2.p() == -10000) {
+                    sb.replace(length, length + 2, Long.toString(j4 - 1));
+                } else if (j5 == 0) {
+                    sb.insert(length, j4);
                 } else {
-                    sb.insert(length + 1, Math.abs(j5));
+                    sb.insert(length + 1, Math.abs(j4));
                 }
             }
         }
-        if (f > 0) {
+        if (m > 0) {
             sb.append('.');
             int i2 = 100000000;
             while (true) {
-                if (f <= 0 && i % 3 == 0 && i >= -2) {
+                if (m <= 0 && i % 3 == 0 && i >= -2) {
                     break;
                 }
-                int i3 = f / i2;
+                int i3 = m / i2;
                 sb.append((char) (i3 + 48));
-                f -= i3 * i2;
+                m -= i3 * i2;
                 i2 /= 10;
                 i++;
             }

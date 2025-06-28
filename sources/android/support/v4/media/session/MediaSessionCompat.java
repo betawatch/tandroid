@@ -51,7 +51,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
@@ -2739,7 +2738,7 @@ public class MediaSessionCompat {
         if (componentName2 != null && pendingIntent == null) {
             Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
             intent.setComponent(componentName2);
-            pendingIntent = PendingIntent.getBroadcast(context, 0, intent, Build.VERSION.SDK_INT >= 31 ? ConnectionsManager.FileTypeVideo : 0);
+            pendingIntent = PendingIntent.getBroadcast(context, 0, intent, Build.VERSION.SDK_INT >= 31 ? 33554432 : 0);
         }
         PendingIntent pendingIntent2 = pendingIntent;
         int i = Build.VERSION.SDK_INT;

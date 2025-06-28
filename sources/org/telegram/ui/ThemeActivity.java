@@ -248,7 +248,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         */
         public void onItemClick(int i) {
             if (i == -1) {
-                ThemeActivity.this.lambda$onBackPressed$348();
+                ThemeActivity.this.lambda$onBackPressed$354();
                 return;
             }
             if (i == 1) {
@@ -402,7 +402,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
             SeekBarView seekBarView = this.sizeBar;
             int i3 = SharedConfig.bubbleRadius;
             int i4 = this.startRadius;
@@ -504,7 +504,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30));
         }
 
         public void setCheckedState(float f) {
@@ -585,7 +585,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30));
         }
     }
 
@@ -1906,7 +1906,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                             radioColorCell.setTextAndValue(charSequenceArr[i5], i5 == SharedConfig.searchEngineType);
                                             radioColorCell.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 2));
                                             linearLayout.addView(radioColorCell);
-                                            radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda11
+                                            radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda10
                                                 @Override // android.view.View.OnClickListener
                                                 public final void onClick(View view2) {
                                                     ThemeActivity.this.lambda$createView$4(i5, atomicReference, view2);
@@ -1933,7 +1933,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                         int i8 = Theme.key_listSelector;
                                         radioColorCell2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i8), 2));
                                         linearLayout.addView(radioColorCell2);
-                                        radioColorCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda12
+                                        radioColorCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda11
                                             @Override // android.view.View.OnClickListener
                                             public final void onClick(View view2) {
                                                 ThemeActivity.this.lambda$createView$5(atomicReference, view2);
@@ -1945,7 +1945,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                         radioColorCell3.setTextAndText2AndValue(LocaleController.getString(R.string.MicrophoneForVoiceMessagesScoIfConnected), LocaleController.getString(R.string.MicrophoneForVoiceMessagesScoHint), SharedConfig.recordViaSco);
                                         radioColorCell3.setBackground(Theme.createSelectorDrawable(Theme.getColor(i8), 2));
                                         linearLayout.addView(radioColorCell3);
-                                        radioColorCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda13
+                                        radioColorCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda12
                                             @Override // android.view.View.OnClickListener
                                             public final void onClick(View view2) {
                                                 ThemeActivity.this.lambda$createView$7(atomicReference, view2);
@@ -1965,7 +1965,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                                     }
                                                     builder = new AlertDialog.Builder(getParentActivity());
                                                     builder.setTitle(LocaleController.getString("SortBy", R.string.SortBy));
-                                                    builder.setItems(new CharSequence[]{LocaleController.getString("Default", R.string.Default), LocaleController.getString("SortFirstName", R.string.SortFirstName), LocaleController.getString("SortLastName", R.string.SortLastName)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda15
+                                                    builder.setItems(new CharSequence[]{LocaleController.getString("Default", R.string.Default), LocaleController.getString("SortFirstName", R.string.SortFirstName), LocaleController.getString("SortLastName", R.string.SortLastName)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda14
                                                         @Override // android.content.DialogInterface.OnClickListener
                                                         public final void onClick(DialogInterface dialogInterface, int i9) {
                                                             ThemeActivity.this.lambda$createView$9(i, dialogInterface, i9);
@@ -2054,7 +2054,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                                                 int i11 = i10 / 60;
                                                                 int i12 = i10 - (i11 * 60);
                                                                 final TextSettingsCell textSettingsCell = (TextSettingsCell) view;
-                                                                showDialog(new TimePickerDialog(getParentActivity(), new TimePickerDialog.OnTimeSetListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda16
+                                                                showDialog(new TimePickerDialog(getParentActivity(), new TimePickerDialog.OnTimeSetListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda15
                                                                     @Override // android.app.TimePickerDialog.OnTimeSetListener
                                                                     public final void onTimeSet(TimePicker timePicker, int i13, int i14) {
                                                                         ThemeActivity.this.lambda$createView$10(i, textSettingsCell, timePicker, i13, i14);
@@ -2104,7 +2104,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                                 textCheckCell = (TextCheckCell) view;
                                                 chatBlurEnabled = getMessagesController().showSensitiveContent();
                                             } else {
-                                                builder = new AlertDialog.Builder(context, this.resourceProvider).setTitle(LocaleController.getString(R.string.ConfirmSensitiveContentTitle)).setMessage(LocaleController.getString(R.string.ConfirmSensitiveContentText)).setPositiveButton(LocaleController.getString(R.string.Confirm), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda14
+                                                builder = new AlertDialog.Builder(context, this.resourceProvider).setTitle(LocaleController.getString(R.string.ConfirmSensitiveContentTitle)).setMessage(LocaleController.getString(R.string.ConfirmSensitiveContentText)).setPositiveButton(LocaleController.getString(R.string.Confirm), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda13
                                                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                                     public final void onClick(AlertDialog alertDialog, int i13) {
                                                         ThemeActivity.this.lambda$createView$8(view, alertDialog, i13);
@@ -2139,7 +2139,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                                         radioColorCell4.setTextAndValue(charSequenceArr2[i13], i13 == SharedConfig.distanceSystemType);
                                         radioColorCell4.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 2));
                                         linearLayout.addView(radioColorCell4);
-                                        radioColorCell4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda10
+                                        radioColorCell4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda9
                                             @Override // android.view.View.OnClickListener
                                             public final void onClick(View view2) {
                                                 ThemeActivity.this.lambda$createView$3(i13, atomicReference, view2);
@@ -2199,7 +2199,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$13() {
-        this.listView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda9
+        this.listView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.IntReturnCallback
             public final int run() {
                 int lambda$createView$12;
@@ -2404,7 +2404,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         }
         if (fromLocation.size() > 0) {
             str = fromLocation.get(0).getLocality();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda4
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
                     ThemeActivity.this.lambda$updateSunTime$16(str);
@@ -2412,7 +2412,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             });
         }
         str = null;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda4
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
                 ThemeActivity.this.lambda$updateSunTime$16(str);
@@ -2941,7 +2941,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
                     builder.setTopAnimation(R.raw.permission_request_location, 72, false, Theme.getColor(Theme.key_dialogTopBackground));
                     builder.setMessage(LocaleController.getString("GpsDisabledAlertText", R.string.GpsDisabledAlertText));
-                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", R.string.ConnectingToProxyEnable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda2
+                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", R.string.ConnectingToProxyEnable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda6
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             ThemeActivity.this.lambda$updateSunTime$15(alertDialog, i);
@@ -2981,7 +2981,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         Theme.autoNightLastSunCheckDay = calendar.get(5);
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda3
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 ThemeActivity.this.lambda$updateSunTime$17();
@@ -3050,7 +3050,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             this.menuItem.addSubItem(1, R.drawable.msg_palette, LocaleController.getString("CreateNewThemeMenu", R.string.CreateNewThemeMenu));
             this.menuItem.addSubItem(4, R.drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", R.string.ThemeResetToDefaults));
             if (getMessagesController().getContentSettings() == null) {
-                getMessagesController().getContentSettings(new Utilities.Callback() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda5
+                getMessagesController().getContentSettings(new Utilities.Callback() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         ThemeActivity.this.lambda$createView$2((TL_account.contentSettings) obj);
@@ -3074,7 +3074,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         this.listView.setAdapter(this.listAdapter);
         ((DefaultItemAnimator) this.listView.getItemAnimator()).setDelayAnimations(false);
         frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda6
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i3) {
                 return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i3);
@@ -3102,7 +3102,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             updateRows(false);
             this.highlightSensitiveRow = false;
             this.listView.scrollToPosition(this.listAdapter.getItemCount() - 1);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda7
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     ThemeActivity.this.lambda$createView$13();
@@ -3290,7 +3290,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         int i14 = Theme.key_windowBackgroundWhiteHintText;
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{AppIconsSelectorCell.class}, null, null, null, i14));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{AppIconsSelectorCell.class}, null, null, null, i6));
-        arrayList.addAll(SimpleThemeDescription.createThemeDescriptions(new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda8
+        arrayList.addAll(SimpleThemeDescription.createThemeDescriptions(new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ThemeActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 ThemeActivity.this.lambda$getThemeDescriptions$18();

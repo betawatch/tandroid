@@ -26,6 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 
@@ -50,7 +51,7 @@ public class QRCodeBottomSheet extends BottomSheet {
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
                 int size = View.MeasureSpec.getSize(i);
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
             }
         };
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -155,7 +156,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         intent.setType("text/plain");
         intent.putExtra("android.intent.extra.TEXT", str);
         Intent createChooser = Intent.createChooser(intent, LocaleController.getString(R.string.ShareLink));
-        createChooser.setFlags(268435456);
+        createChooser.setFlags(TLRPC.FLAG_28);
         context.startActivity(createChooser);
     }
 

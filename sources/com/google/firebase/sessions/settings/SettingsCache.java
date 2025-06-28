@@ -17,6 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowKt;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public final class SettingsCache {
@@ -114,8 +115,8 @@ public final class SettingsCache {
         if (continuation instanceof SettingsCache$updateConfigValue$1) {
             settingsCache$updateConfigValue$1 = (SettingsCache$updateConfigValue$1) continuation;
             int i2 = settingsCache$updateConfigValue$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                settingsCache$updateConfigValue$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                settingsCache$updateConfigValue$1.label = i2 - TLRPC.FLAG_31;
                 Object obj2 = settingsCache$updateConfigValue$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = settingsCache$updateConfigValue$1.label;

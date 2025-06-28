@@ -13,7 +13,7 @@ class n implements f {
     }
 
     @Override // j$.time.format.f
-    public boolean a(r rVar, StringBuilder sb) {
+    public boolean f(r rVar, StringBuilder sb) {
         ZoneId zoneId = (ZoneId) rVar.f(this.a);
         if (zoneId == null) {
             return false;

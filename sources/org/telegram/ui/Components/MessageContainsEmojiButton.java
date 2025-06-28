@@ -404,6 +404,6 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         if (paddingLeft < 0) {
             paddingLeft = 0;
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), TLRPC.FLAG_30));
     }
 }

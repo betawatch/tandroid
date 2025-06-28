@@ -582,7 +582,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), 1073741824), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLRPC.FLAG_30), i2);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener

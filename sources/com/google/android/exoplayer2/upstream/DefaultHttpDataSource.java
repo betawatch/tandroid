@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.zip.GZIPInputStream;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSource {
@@ -359,9 +358,9 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         if (j == 0) {
             return;
         }
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+        byte[] bArr = new byte[4096];
         while (j > 0) {
-            int read = ((InputStream) Util.castNonNull(this.inputStream)).read(bArr, 0, (int) Math.min(j, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM));
+            int read = ((InputStream) Util.castNonNull(this.inputStream)).read(bArr, 0, (int) Math.min(j, 4096));
             if (Thread.currentThread().isInterrupted()) {
                 throw new HttpDataSource.HttpDataSourceException(new InterruptedIOException(), dataSpec, 2000, 1);
             }

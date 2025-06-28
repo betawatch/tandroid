@@ -457,7 +457,7 @@ public class ChangeUsernameActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
         }
     }
 
@@ -682,7 +682,7 @@ public class ChangeUsernameActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
         }
 
         public void set(TLRPC.TL_username tL_username, boolean z, boolean z2) {
@@ -874,7 +874,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public void update() {
             if (this.text2View.getVisibility() == 0) {
-                this.text2View.measure(View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), 1073741824), View.MeasureSpec.makeMeasureSpec(9999999, Integer.MIN_VALUE));
+                this.text2View.measure(View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLRPC.FLAG_31));
             }
             ValueAnimator valueAnimator = this.heightUpdateAnimator;
             if (valueAnimator != null) {
@@ -902,7 +902,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         protected void onMeasure(int i, int i2) {
             Integer num = this.height;
             if (num != null) {
-                i2 = View.MeasureSpec.makeMeasureSpec(num.intValue(), 1073741824);
+                i2 = View.MeasureSpec.makeMeasureSpec(num.intValue(), TLRPC.FLAG_30);
             }
             super.onMeasure(i, i2);
         }
@@ -1280,7 +1280,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         MessagesController.getInstance(this.currentAccount).putUsers(arrayList, false);
         MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(arrayList, null, false, true);
         UserConfig.getInstance(this.currentAccount).saveConfig(true);
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1290,7 +1290,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1322,7 +1322,7 @@ public class ChangeUsernameActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void saveName() {
         if (this.botId != 0) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         if (this.username.startsWith("@")) {
@@ -1341,7 +1341,7 @@ public class ChangeUsernameActivity extends BaseFragment {
             publicUsername = "";
         }
         if (publicUsername.equals(this.username)) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         final AlertDialog alertDialog = new AlertDialog(getParentActivity(), 3);
@@ -1420,7 +1420,7 @@ public class ChangeUsernameActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ChangeUsernameActivity.this.lambda$onBackPressed$348();
+                    ChangeUsernameActivity.this.lambda$onBackPressed$354();
                 } else if (i == 1) {
                     ChangeUsernameActivity.this.sendReorder();
                     ChangeUsernameActivity.this.saveName();
@@ -1476,7 +1476,7 @@ public class ChangeUsernameActivity extends BaseFragment {
                 int childAdapterPosition;
                 int size = ChangeUsernameActivity.this.usernames.size() + 3;
                 int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i5 = Integer.MIN_VALUE;
+                int i5 = TLRPC.FLAG_31;
                 for (int i6 = 0; i6 < getChildCount(); i6++) {
                     View childAt = getChildAt(i6);
                     if (childAt != null && (childAdapterPosition = getChildAdapterPosition(childAt)) >= 4 && childAdapterPosition <= size) {

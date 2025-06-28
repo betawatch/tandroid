@@ -132,7 +132,6 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -535,7 +534,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     TextView textView3 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.4
                         @Override // android.widget.TextView, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                         }
                     };
                     this.cantAccessEmailView = textView3;
@@ -554,7 +553,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     TextView textView4 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.5
                         @Override // android.widget.TextView, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), Integer.MIN_VALUE));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLRPC.FLAG_31));
                         }
                     };
                     this.emailResetInView = textView4;
@@ -592,7 +591,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.6
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                         }
                     };
                     Animation loadAnimation = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
@@ -701,7 +700,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView32 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.4
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                 }
             };
             this.cantAccessEmailView = textView32;
@@ -720,7 +719,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView42 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.5
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), Integer.MIN_VALUE));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLRPC.FLAG_31));
                 }
             };
             this.emailResetInView = textView42;
@@ -758,7 +757,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.6
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                 }
             };
             Animation loadAnimation3 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
@@ -1062,7 +1061,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(TLObject tLObject, Bundle bundle) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$348();
+                LoginActivity.this.lambda$onBackPressed$354();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 LoginActivity.this.lambda$resendCodeFromSafetyNet$19(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
@@ -4859,7 +4858,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.firstNameField.setImeOptions(268435461);
             this.firstNameField.setTextSize(1, 17.0f);
             this.firstNameField.setMaxLines(1);
-            this.firstNameField.setInputType(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            this.firstNameField.setInputType(8192);
             this.firstNameField.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view2, boolean z) {
@@ -4888,7 +4887,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.lastNameField.setImeOptions(268435462);
             this.lastNameField.setTextSize(1, 17.0f);
             this.lastNameField.setMaxLines(1);
-            this.lastNameField.setInputType(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            this.lastNameField.setInputType(8192);
             this.lastNameField.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view2, boolean z) {
@@ -6045,7 +6044,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             String string;
             int i;
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$348();
+                LoginActivity.this.lambda$onBackPressed$354();
                 LoginActivity.this.emailChangeFinishCallback.run();
                 return;
             }
@@ -6662,7 +6661,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                         }
                     };
                     if (this.currentType == 15) {
@@ -6846,7 +6845,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.4
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i52, int i62) {
-                    super.onMeasure(i52, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                    super.onMeasure(i52, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                 }
             };
             if (this.currentType == 15) {
@@ -7344,7 +7343,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$22(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$348();
+            LoginActivity.this.lambda$onBackPressed$354();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7499,7 +7498,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$348();
+            LoginActivity.this.lambda$onBackPressed$354();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8156,7 +8155,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             NotificationCenter globalInstance;
             int i;
             if (LoginActivity.this.activityMode != 0) {
-                LoginActivity.this.lambda$onBackPressed$348();
+                LoginActivity.this.lambda$onBackPressed$354();
                 return false;
             }
             int i2 = this.prevType;
@@ -8975,7 +8974,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.cells[1].set(org.telegram.messenger.R.drawable.menu_feature_code, LocaleController.getString(org.telegram.messenger.R.string.SMSFee2Title), LocaleController.getString(org.telegram.messenger.R.string.SMSFee2Text));
             addView(this.cells[1], LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 6));
             this.cells[2] = new ExplainStarsSheet.FeatureCell(context, 1);
-            this.cells[2].set(org.telegram.messenger.R.drawable.menu_feature_hands, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(org.telegram.messenger.R.string.SMSFee3Title), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda9
+            this.cells[2].set(org.telegram.messenger.R.drawable.menu_feature_hands, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(org.telegram.messenger.R.string.SMSFee3Title), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.LoginPayView.this.lambda$new$0();
@@ -8991,7 +8990,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$0() {
-            LoginActivity.this.presentFragment(new PremiumPreviewFragment("sms"));
+            PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment("sms");
+            premiumPreviewFragment.setCurrentAccount(((BaseFragment) LoginActivity.this).currentAccount);
+            LoginActivity.this.presentFragment(premiumPreviewFragment);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -9003,7 +9004,43 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$10(BillingResult billingResult, List list, String str, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable) {
+        public /* synthetic */ void lambda$setParams$10(final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, Purchase purchase, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+            Runnable runnable2;
+            if (tLObject instanceof TLRPC.Updates) {
+                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                Iterator it = MessagesController.findUpdatesAndRemove(updates, TLRPC.TL_updateSentPhoneCode.class).iterator();
+                while (it.hasNext()) {
+                    final TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TLRPC.TL_updateSentPhoneCode) it.next();
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda3
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            LoginActivity.LoginPayView.this.lambda$setParams$7(tL_inputStorePaymentAuthCode, tL_updateSentPhoneCode);
+                        }
+                    });
+                }
+                LoginActivity.this.getMessagesController().processUpdates(updates, false);
+                BillingController.getInstance().consumeGiftPurchase(purchase, tL_payments_canPurchaseStore.purpose, null);
+                runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        LoginActivity.LoginPayView.this.lambda$setParams$8();
+                    }
+                };
+            } else if (tL_error == null) {
+                return;
+            } else {
+                runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda5
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        runnable.run();
+                    }
+                };
+            }
+            AndroidUtilities.runOnUIThread(runnable2);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setParams$11(BillingResult billingResult, List list, String str, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable) {
             if (billingResult.getResponseCode() == 0 && list != null && !list.isEmpty()) {
                 Iterator it = list.iterator();
                 while (it.hasNext()) {
@@ -9015,10 +9052,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         tL_dataJSON.data = purchase.getOriginalJson();
                         tL_inputStorePaymentAuthCode.restore = true;
                         tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentAuthCode;
-                        LoginActivity.this.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda4
+                        LoginActivity.this.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda0
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LoginActivity.LoginPayView.this.lambda$setParams$9(purchase, tL_payments_canPurchaseStore, runnable, tLObject, tL_error);
+                                LoginActivity.LoginPayView.this.lambda$setParams$10(tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore, runnable, tLObject, tL_error);
                             }
                         }, 74);
                         return;
@@ -9029,53 +9066,53 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$11(final String str, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable, final BillingResult billingResult, final List list) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda2
+        public /* synthetic */ void lambda$setParams$12(final String str, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable, final BillingResult billingResult, final List list) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.LoginPayView.this.lambda$setParams$10(billingResult, list, str, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, runnable);
+                    LoginActivity.LoginPayView.this.lambda$setParams$11(billingResult, list, str, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$12(final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, View view) {
+        public /* synthetic */ void lambda$setParams$13(final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, View view) {
             if (this.button.isLoading()) {
                 return;
             }
             this.button.setLoading(true);
-            final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda15
+            final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda13
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     LoginActivity.LoginPayView.this.lambda$setParams$1((String) obj);
                 }
             };
             FileLog.d("LoginBilling, querying done purchases...");
-            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda16
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.LoginPayView.this.lambda$setParams$6(productDetails, callback, tL_inputStorePaymentAuthCode);
                 }
             };
-            BillingController.getInstance().queryPurchases("inapp", new PurchasesResponseListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda17
+            BillingController.getInstance().queryPurchases("inapp", new PurchasesResponseListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda15
                 @Override // com.android.billingclient.api.PurchasesResponseListener
                 public final void onQueryPurchasesResponse(BillingResult billingResult, List list) {
-                    LoginActivity.LoginPayView.this.lambda$setParams$11(str, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, runnable, billingResult, list);
+                    LoginActivity.LoginPayView.this.lambda$setParams$12(str, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, runnable, billingResult, list);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$13(TLObject tLObject, TLRPC.TL_error tL_error, ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails, final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+        public /* synthetic */ void lambda$setParams$14(TLObject tLObject, TLRPC.TL_error tL_error, ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails, final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
             FileLog.d("LoginBilling canPurchaseStore returned " + tLObject + " " + tL_error);
             if (tLObject instanceof TLRPC.TL_boolTrue) {
                 this.button.setText(LocaleController.formatString(org.telegram.messenger.R.string.SMSFeePurchaseTitle, oneTimePurchaseOfferDetails.getFormattedPrice()), false);
                 this.button.setSubText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeePurchaseText), false);
                 this.button.setLoading(false);
-                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda14
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda12
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LoginActivity.LoginPayView.this.lambda$setParams$12(productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore, view);
+                        LoginActivity.LoginPayView.this.lambda$setParams$13(productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore, view);
                     }
                 });
                 return;
@@ -9088,17 +9125,17 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$14(final ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails, final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda13
+        public /* synthetic */ void lambda$setParams$15(final ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails, final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.LoginPayView.this.lambda$setParams$13(tLObject, tL_error, oneTimePurchaseOfferDetails, productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore);
+                    LoginActivity.LoginPayView.this.lambda$setParams$14(tLObject, tL_error, oneTimePurchaseOfferDetails, productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$15(final String str, BillingResult billingResult, List list, String str2, String str3) {
+        public /* synthetic */ void lambda$setParams$16(final String str, BillingResult billingResult, List list, String str2, String str3) {
             FileLog.d("LoginBilling queried \"" + str + "\" product: " + BillingController.getResponseCodeString(billingResult.getResponseCode()));
             if (billingResult.getResponseCode() != 0) {
                 BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, BillingController.getResponseCodeString(billingResult.getResponseCode())));
@@ -9121,33 +9158,33 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FileLog.d("LoginBilling found \"" + str + "\" product, with currency=" + tL_inputStorePaymentAuthCode.currency + " amount=" + tL_inputStorePaymentAuthCode.amount + "; phone=" + str3 + ", phone_code_hash=" + str2);
             final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
             tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentAuthCode;
-            ConnectionsManager.getInstance(((BaseFragment) LoginActivity.this).currentAccount).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda12
+            ConnectionsManager.getInstance(((BaseFragment) LoginActivity.this).currentAccount).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda10
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    LoginActivity.LoginPayView.this.lambda$setParams$14(oneTimePurchaseOfferDetails, productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore, tLObject, tL_error);
+                    LoginActivity.LoginPayView.this.lambda$setParams$15(oneTimePurchaseOfferDetails, productDetails, tL_inputStorePaymentAuthCode, str, tL_payments_canPurchaseStore, tLObject, tL_error);
                 }
             }, 10);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$16(final String str, final String str2, final String str3, final BillingResult billingResult, final List list) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda11
+        public /* synthetic */ void lambda$setParams$17(final String str, final String str2, final String str3, final BillingResult billingResult, final List list) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.LoginPayView.this.lambda$setParams$15(str, billingResult, list, str2, str3);
+                    LoginActivity.LoginPayView.this.lambda$setParams$16(str, billingResult, list, str2, str3);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$17(final String str, final String str2, final String str3) {
+        public /* synthetic */ void lambda$setParams$18(final String str, final String str2, final String str3) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(str).build());
             FileLog.d("LoginBilling querying \"" + str + "\" product");
-            BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda10
+            BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda8
                 @Override // com.android.billingclient.api.ProductDetailsResponseListener
                 public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                    LoginActivity.LoginPayView.this.lambda$setParams$16(str, str2, str3, billingResult, list);
+                    LoginActivity.LoginPayView.this.lambda$setParams$17(str, str2, str3, billingResult, list);
                 }
             });
         }
@@ -9155,7 +9192,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$setParams$3(final Utilities.Callback callback, BillingResult billingResult) {
             final String responseCodeString = billingResult.getResponseCode() == 0 ? null : BillingController.getResponseCodeString(billingResult.getResponseCode());
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda5
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     Utilities.Callback.this.run(responseCodeString);
@@ -9165,7 +9202,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$setParams$5(final Utilities.Callback callback) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     Utilities.Callback.this.run("CANCELLED");
@@ -9175,13 +9212,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setParams$6(ProductDetails productDetails, final Utilities.Callback callback, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode) {
-            BillingController.getInstance().addResultListener(productDetails.getProductId(), new Consumer() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda0
+            BillingController.getInstance().addResultListener(productDetails.getProductId(), new Consumer() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda17
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
                     LoginActivity.LoginPayView.lambda$setParams$3(Utilities.Callback.this, (BillingResult) obj);
                 }
             });
-            BillingController.getInstance().setOnCanceled(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda1
+            BillingController.getInstance().setOnCanceled(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.LoginPayView.lambda$setParams$5(Utilities.Callback.this);
@@ -9191,33 +9228,21 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$7() {
-            this.button.setLoading(false);
+        public /* synthetic */ void lambda$setParams$7(TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
+            LoginActivity loginActivity = (LoginActivity) LaunchActivity.findFragment(LoginActivity.class);
+            if (loginActivity == null) {
+                loginActivity = new LoginActivity(((BaseFragment) LoginActivity.this).currentAccount);
+                BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+                if (safeLastFragment != null) {
+                    safeLastFragment.presentFragment(loginActivity);
+                }
+            }
+            loginActivity.open(tL_inputStorePaymentAuthCode.phone_number, tL_updateSentPhoneCode.sent_code);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setParams$9(Purchase purchase, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-            Runnable runnable2;
-            if (tLObject instanceof TLRPC.Updates) {
-                LoginActivity.this.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                BillingController.getInstance().consumeGiftPurchase(purchase, tL_payments_canPurchaseStore.purpose, null);
-                runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        LoginActivity.LoginPayView.this.lambda$setParams$7();
-                    }
-                };
-            } else if (tL_error == null) {
-                return;
-            } else {
-                runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda7
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        runnable.run();
-                    }
-                };
-            }
-            AndroidUtilities.runOnUIThread(runnable2);
+        public /* synthetic */ void lambda$setParams$8() {
+            this.button.setLoading(false);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -9247,10 +9272,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             this.button.setVisibility(0);
             this.button.setLoading(true);
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda8
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.LoginPayView.this.lambda$setParams$17(string, string3, string2);
+                    LoginActivity.LoginPayView.this.lambda$setParams$18(string, string3, string2);
                 }
             };
             if (BillingController.getInstance().isReady()) {
@@ -9315,7 +9340,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             addView(this.blurredView, LayoutHelper.createFrame(-1, -1.0f));
             View view3 = new View(getContext());
             this.dimmView = view3;
-            view3.setBackgroundColor(1073741824);
+            view3.setBackgroundColor(TLRPC.FLAG_30);
             this.dimmView.setAlpha(0.0f);
             addView(this.dimmView, LayoutHelper.createFrame(-1, -1.0f));
             TransformableLoginButtonView transformableLoginButtonView = new TransformableLoginButtonView(getContext());
@@ -10676,7 +10701,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (UserConfig.selectedAccount != i) {
                 ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
             }
-            LoginActivity.this.lambda$onBackPressed$348();
+            LoginActivity.this.lambda$onBackPressed$354();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11796,7 +11821,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         }
     }
 
@@ -12280,7 +12305,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             });
             this.pendingSwitchingAccount = false;
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         if (z && z2) {
@@ -12360,7 +12385,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             string = LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber);
         }
         builder.setMessage(string);
-        builder.setNeutralButton(LocaleController.getString("BotHelp", org.telegram.messenger.R.string.BotHelp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda17
+        builder.setNeutralButton(LocaleController.getString("BotHelp", org.telegram.messenger.R.string.BotHelp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda29
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 LoginActivity.lambda$needShowInvalidAlert$11(z, str, baseFragment, alertDialog, i2);
@@ -13106,7 +13131,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i3 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
                 } else if (i3 == -1 && LoginActivity.this.onBackPressed()) {
-                    LoginActivity.this.lambda$onBackPressed$348();
+                    LoginActivity.this.lambda$onBackPressed$354();
                 }
             }
         });
@@ -13194,7 +13219,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     if (!slideView.hasCustomKeyboard() && LoginActivity.this.keyboardView.getVisibility() == 0) {
                         dp += AndroidUtilities.dp(230.0f);
                     }
-                    slideView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams.rightMargin) - marginLayoutParams.leftMargin, 1073741824), View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+                    slideView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams.rightMargin) - marginLayoutParams.leftMargin, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
                 }
             }
         };
@@ -13548,7 +13573,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         });
         final int color = Theme.getColor(Theme.key_windowBackgroundWhite);
         final int alpha = Color.alpha(color);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda29
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda17
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 LoginActivity.this.lambda$onCustomTransitionAnimation$31(color, alpha, layoutParams, width, i, height, transformableLoginButtonView, f, width2, f2, height2, valueAnimator);
@@ -13710,8 +13735,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
     }
 
-    public void open(TLRPC.auth_SentCode auth_sentcode) {
-        lambda$fillNextCodeParams$27(new Bundle(), auth_sentcode, true);
+    public void open(String str, TLRPC.auth_SentCode auth_sentcode) {
+        Bundle bundle = new Bundle();
+        bundle.putString("phone", "+" + str);
+        bundle.putString("ephone", "+" + str);
+        bundle.putString("phoneFormated", str);
+        lambda$fillNextCodeParams$27(bundle, auth_sentcode, true);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

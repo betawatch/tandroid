@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import org.telegram.tgnet.TLRPC;
 import org.xmlpull.v1.XmlPullParserException;
 
 /* loaded from: classes.dex */
@@ -176,7 +177,7 @@ public class FileProvider extends ContentProvider {
 
     private static int modeToMode(String str) {
         if ("r".equals(str)) {
-            return 268435456;
+            return TLRPC.FLAG_28;
         }
         if ("w".equals(str) || "wt".equals(str)) {
             return 738197504;

@@ -33,7 +33,7 @@ public class UserObject {
                     return false;
                 }
                 user.contact_require_premium = false;
-                i = user.flags2 | LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                i = user.flags2 | 16384;
                 user.flags2 = i;
                 user.send_paid_messages_stars = j;
                 return true;
@@ -70,7 +70,7 @@ public class UserObject {
                     return false;
                 }
                 userFull.contact_require_premium = false;
-                i = userFull.flags2 | LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                i = userFull.flags2 | 16384;
                 userFull.flags2 = i;
                 userFull.send_paid_messages_stars = j;
                 return true;

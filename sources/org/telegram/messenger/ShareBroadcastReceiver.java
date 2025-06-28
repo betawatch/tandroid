@@ -3,6 +3,7 @@ package org.telegram.messenger;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public class ShareBroadcastReceiver extends BroadcastReceiver {
@@ -14,7 +15,7 @@ public class ShareBroadcastReceiver extends BroadcastReceiver {
             intent2.setType("text/plain");
             intent2.putExtra("android.intent.extra.TEXT", dataString);
             Intent createChooser = Intent.createChooser(intent2, LocaleController.getString(R.string.ShareLink));
-            createChooser.setFlags(268435456);
+            createChooser.setFlags(TLRPC.FLAG_28);
             context.startActivity(createChooser);
         }
     }

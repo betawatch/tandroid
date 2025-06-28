@@ -11,6 +11,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class SafeBrowsingData extends AbstractSafeParcelable {
@@ -79,7 +80,7 @@ public class SafeBrowsingData extends AbstractSafeParcelable {
                 }
                 try {
                     fileOutputStream = new FileOutputStream(file);
-                    this.zzd = ParcelFileDescriptor.open(file, 268435456);
+                    this.zzd = ParcelFileDescriptor.open(file, TLRPC.FLAG_28);
                     if (file != null) {
                         file.delete();
                     }

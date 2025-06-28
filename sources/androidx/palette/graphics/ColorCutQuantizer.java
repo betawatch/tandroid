@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class ColorCutQuantizer {
@@ -80,9 +81,9 @@ final class ColorCutQuantizer {
             int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            int i4 = Integer.MIN_VALUE;
-            int i5 = Integer.MIN_VALUE;
-            int i6 = Integer.MIN_VALUE;
+            int i4 = TLRPC.FLAG_31;
+            int i5 = TLRPC.FLAG_31;
+            int i6 = TLRPC.FLAG_31;
             int i7 = 0;
             for (int i8 = this.mLowerIndex; i8 <= this.mUpperIndex; i8++) {
                 int i9 = iArr[i8];

@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -21,12 +23,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
@@ -42,13 +45,13 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
     private boolean alwaysShowText2;
     private CheckBox2 checkBox;
     private AnimatorSet checkBoxAnimation;
-    private ImageView deleteImageView;
+    public ImageView deleteImageView;
     private ChatActivityEnterViewAnimatedIconView emojiButton;
-    private ImageView moveImageView;
+    public ImageView moveImageView;
     private boolean needDivider;
     private final Theme.ResourcesProvider resourcesProvider;
     private boolean showNextButton;
-    private EditTextBoldCursor textView;
+    public EditTextBoldCursor textView;
     private SimpleTextView textView2;
     private ValueAnimator valueAnimator;
 
@@ -90,6 +93,32 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
                 PollEditTextCell.this.onEditTextFocusChanged(z2);
             }
 
+            @Override // org.telegram.ui.Components.EditTextCaption, android.widget.EditText, android.widget.TextView
+            public boolean onTextContextMenuItem(int i2) {
+                ClipData primaryClip;
+                if (i2 == 16908322 && (primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip()) != null && primaryClip.getItemCount() == 1 && AndroidUtilities.charSequenceIndexOf(primaryClip.getItemAt(0).getText(), "\n") > 0) {
+                    CharSequence text = primaryClip.getItemAt(0).getText();
+                    ArrayList arrayList = new ArrayList();
+                    StringBuilder sb = new StringBuilder();
+                    for (int i3 = 0; i3 < text.length(); i3++) {
+                        char charAt = text.charAt(i3);
+                        if (charAt == '\n') {
+                            arrayList.add(sb.toString());
+                            sb.setLength(0);
+                        } else {
+                            sb.append(charAt);
+                        }
+                    }
+                    if (!TextUtils.isEmpty(sb)) {
+                        arrayList.add(sb);
+                    }
+                    if (PollEditTextCell.this.onPastedMultipleLines(arrayList)) {
+                        return true;
+                    }
+                }
+                return super.onTextContextMenuItem(i2);
+            }
+
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (!isEnabled()) {
@@ -121,11 +150,11 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         this.textView.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText, resourcesProvider));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setMaxLines(i == 1 ? 4 : ConnectionsManager.DEFAULT_DATACENTER_ID);
-        this.textView.setBackgroundDrawable(null);
+        this.textView.setBackground(null);
         EditTextBoldCursor editTextBoldCursor = this.textView;
-        editTextBoldCursor.setImeOptions(editTextBoldCursor.getImeOptions() | 268435456);
+        editTextBoldCursor.setImeOptions(editTextBoldCursor.getImeOptions() | TLRPC.FLAG_28);
         EditTextBoldCursor editTextBoldCursor2 = this.textView;
-        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | 16384);
         this.textView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
         if (onClickListener != null) {
             int i2 = i == 1 ? 102 : 58;
@@ -366,25 +395,25 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         int size = View.MeasureSpec.getSize(i);
         ImageView imageView = this.deleteImageView;
         if (imageView != null) {
-            imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
         ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = this.emojiButton;
         if (chatActivityEnterViewAnimatedIconView != null) {
-            chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
         ImageView imageView2 = this.moveImageView;
         if (imageView2 != null) {
-            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
         SimpleTextView simpleTextView = this.textView2;
         if (simpleTextView != null) {
-            simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), 1073741824));
+            simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
         }
         CheckBox2 checkBox2 = this.checkBox;
         if (checkBox2 != null) {
-            checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.needDeleteDialog : 122), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.needDeleteDialog : 122), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.textView.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), this.textView.getMeasuredHeight()) + (this.needDivider ? 1 : 0));
         SimpleTextView simpleTextView2 = this.textView2;
@@ -392,6 +421,10 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             return;
         }
         simpleTextView2.setAlpha(measuredHeight >= AndroidUtilities.dp(52.0f) ? 1.0f : 0.0f);
+    }
+
+    public boolean onPastedMultipleLines(ArrayList arrayList) {
+        return false;
     }
 
     public void setChecked(boolean z, boolean z2) {

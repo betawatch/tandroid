@@ -1,5 +1,6 @@
 package j$.time;
 
+import j$.time.temporal.p;
 import j$.time.temporal.q;
 import j$.util.A;
 import java.io.Serializable;
@@ -13,11 +14,11 @@ public final class OffsetDateTime implements j$.time.temporal.k, Comparable<Offs
         LocalDateTime localDateTime = LocalDateTime.c;
         ZoneOffset zoneOffset = ZoneOffset.g;
         localDateTime.getClass();
-        f(localDateTime, zoneOffset);
+        m(localDateTime, zoneOffset);
         LocalDateTime localDateTime2 = LocalDateTime.d;
         ZoneOffset zoneOffset2 = ZoneOffset.f;
         localDateTime2.getClass();
-        f(localDateTime2, zoneOffset2);
+        m(localDateTime2, zoneOffset2);
     }
 
     private OffsetDateTime(LocalDateTime localDateTime, ZoneOffset zoneOffset) {
@@ -26,80 +27,34 @@ public final class OffsetDateTime implements j$.time.temporal.k, Comparable<Offs
         this.b = zoneOffset;
     }
 
-    public static OffsetDateTime f(LocalDateTime localDateTime, ZoneOffset zoneOffset) {
+    public static OffsetDateTime m(LocalDateTime localDateTime, ZoneOffset zoneOffset) {
         return new OffsetDateTime(localDateTime, zoneOffset);
     }
 
-    public static OffsetDateTime g(Instant instant, ZoneId zoneId) {
+    public static OffsetDateTime n(Instant instant, ZoneId zoneId) {
         A.z(instant, "instant");
         A.z(zoneId, "zone");
         ZoneOffset offset = zoneId.getRules().getOffset(instant);
-        return new OffsetDateTime(LocalDateTime.j(instant.i(), instant.j(), offset), offset);
-    }
-
-    @Override // j$.time.temporal.k
-    public final q a(j$.time.temporal.l lVar) {
-        return lVar instanceof j$.time.temporal.a ? (lVar == j$.time.temporal.a.INSTANT_SECONDS || lVar == j$.time.temporal.a.OFFSET_SECONDS) ? ((j$.time.temporal.a) lVar).a() : this.a.a(lVar) : lVar.d(this);
-    }
-
-    @Override // j$.time.temporal.k
-    public final long b(j$.time.temporal.l lVar) {
-        if (!(lVar instanceof j$.time.temporal.a)) {
-            return lVar.b(this);
-        }
-        int i = k.a[((j$.time.temporal.a) lVar).ordinal()];
-        ZoneOffset zoneOffset = this.b;
-        LocalDateTime localDateTime = this.a;
-        return i != 1 ? i != 2 ? localDateTime.b(lVar) : zoneOffset.getTotalSeconds() : localDateTime.k(zoneOffset);
-    }
-
-    @Override // j$.time.temporal.k
-    public final Object c(j$.time.temporal.n nVar) {
-        if (nVar == j$.time.temporal.j.g() || nVar == j$.time.temporal.j.i()) {
-            return this.b;
-        }
-        if (nVar == j$.time.temporal.j.j()) {
-            return null;
-        }
-        j$.time.temporal.m e = j$.time.temporal.j.e();
-        LocalDateTime localDateTime = this.a;
-        return nVar == e ? localDateTime.l() : nVar == j$.time.temporal.j.f() ? localDateTime.m() : nVar == j$.time.temporal.j.d() ? j$.time.chrono.g.a : nVar == j$.time.temporal.j.h() ? j$.time.temporal.b.NANOS : nVar.a(this);
+        return new OffsetDateTime(LocalDateTime.u(instant.p(), instant.q(), offset), offset);
     }
 
     @Override // java.lang.Comparable
     public final int compareTo(OffsetDateTime offsetDateTime) {
-        int h;
+        int o;
         OffsetDateTime offsetDateTime2 = offsetDateTime;
         ZoneOffset zoneOffset = offsetDateTime2.b;
         ZoneOffset zoneOffset2 = this.b;
         if (zoneOffset2.equals(zoneOffset)) {
-            h = toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime());
+            o = toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime());
         } else {
             LocalDateTime localDateTime = this.a;
-            long k = localDateTime.k(zoneOffset2);
+            long w = localDateTime.w(zoneOffset2);
             ZoneOffset zoneOffset3 = offsetDateTime2.b;
             LocalDateTime localDateTime2 = offsetDateTime2.a;
-            int compare = Long.compare(k, localDateTime2.k(zoneOffset3));
-            h = compare == 0 ? localDateTime.m().h() - localDateTime2.m().h() : compare;
+            int compare = Long.compare(w, localDateTime2.w(zoneOffset3));
+            o = compare == 0 ? localDateTime.a().o() - localDateTime2.a().o() : compare;
         }
-        return h == 0 ? toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime()) : h;
-    }
-
-    @Override // j$.time.temporal.k
-    public final int d(j$.time.temporal.a aVar) {
-        if (!(aVar instanceof j$.time.temporal.a)) {
-            return j$.time.temporal.j.a(this, aVar);
-        }
-        int i = k.a[aVar.ordinal()];
-        if (i != 1) {
-            return i != 2 ? this.a.d(aVar) : this.b.getTotalSeconds();
-        }
-        throw new j$.time.temporal.p("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
-    }
-
-    @Override // j$.time.temporal.k
-    public final boolean e(j$.time.temporal.l lVar) {
-        return (lVar instanceof j$.time.temporal.a) || (lVar != null && lVar.c(this));
+        return o == 0 ? toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime()) : o;
     }
 
     public final boolean equals(Object obj) {
@@ -113,8 +68,54 @@ public final class OffsetDateTime implements j$.time.temporal.k, Comparable<Offs
         return this.a.equals(offsetDateTime.a) && this.b.equals(offsetDateTime.b);
     }
 
+    @Override // j$.time.temporal.k
+    public final q f(j$.time.temporal.l lVar) {
+        return lVar instanceof j$.time.temporal.a ? (lVar == j$.time.temporal.a.INSTANT_SECONDS || lVar == j$.time.temporal.a.OFFSET_SECONDS) ? ((j$.time.temporal.a) lVar).f() : this.a.f(lVar) : lVar.j(this);
+    }
+
+    @Override // j$.time.temporal.k
+    public final long h(j$.time.temporal.l lVar) {
+        if (!(lVar instanceof j$.time.temporal.a)) {
+            return lVar.h(this);
+        }
+        int i = k.a[((j$.time.temporal.a) lVar).ordinal()];
+        ZoneOffset zoneOffset = this.b;
+        LocalDateTime localDateTime = this.a;
+        return i != 1 ? i != 2 ? localDateTime.h(lVar) : zoneOffset.getTotalSeconds() : localDateTime.w(zoneOffset);
+    }
+
     public final int hashCode() {
         return this.a.hashCode() ^ this.b.hashCode();
+    }
+
+    @Override // j$.time.temporal.k
+    public final Object i(j$.time.temporal.n nVar) {
+        if (nVar == j$.time.temporal.j.g() || nVar == j$.time.temporal.j.i()) {
+            return this.b;
+        }
+        if (nVar == j$.time.temporal.j.j()) {
+            return null;
+        }
+        j$.time.temporal.m e = j$.time.temporal.j.e();
+        LocalDateTime localDateTime = this.a;
+        return nVar == e ? localDateTime.x() : nVar == j$.time.temporal.j.f() ? localDateTime.a() : nVar == j$.time.temporal.j.d() ? j$.time.chrono.f.a : nVar == j$.time.temporal.j.h() ? j$.time.temporal.b.NANOS : nVar.a(this);
+    }
+
+    @Override // j$.time.temporal.k
+    public final int j(j$.time.temporal.a aVar) {
+        if (!(aVar instanceof j$.time.temporal.a)) {
+            return j$.time.temporal.j.a(this, aVar);
+        }
+        int i = k.a[aVar.ordinal()];
+        if (i != 1) {
+            return i != 2 ? this.a.j(aVar) : this.b.getTotalSeconds();
+        }
+        throw new p("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
+    }
+
+    @Override // j$.time.temporal.k
+    public final boolean k(j$.time.temporal.l lVar) {
+        return (lVar instanceof j$.time.temporal.a) || (lVar != null && lVar.i(this));
     }
 
     public LocalDateTime toLocalDateTime() {

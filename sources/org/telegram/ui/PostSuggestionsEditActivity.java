@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesStorage;
@@ -161,13 +160,14 @@ public class PostSuggestionsEditActivity extends BaseFragment {
                 textInfoPrivacyCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
                 textInfoPrivacyCell.setTopPadding(12);
                 textInfoPrivacyCell.setBottomPadding(16);
-                double d = PostSuggestionsEditActivity.this.suggestionsStarsCount * (PostSuggestionsEditActivity.this.getMessagesController().starsPaidMessageCommissionPermille / 1000.0f);
+                int i2 = PostSuggestionsEditActivity.this.getMessagesController().starsPaidMessageCommissionPermille;
+                double d = PostSuggestionsEditActivity.this.suggestionsStarsCount * (i2 / 1000.0f);
                 Double.isNaN(d);
                 double d2 = PostSuggestionsEditActivity.this.getMessagesController().starsUsdWithdrawRate1000;
                 Double.isNaN(d2);
                 double d3 = (int) ((d / 1000.0d) * d2);
                 Double.isNaN(d3);
-                formatString = LocaleController.formatString(R.string.PostSuggestionsPriceInfo, AffiliateProgramFragment.percents(850), String.valueOf(d3 / 100.0d));
+                formatString = LocaleController.formatString(R.string.PostSuggestionsPriceInfo, AffiliateProgramFragment.percents(i2), String.valueOf(d3 / 100.0d));
             }
             textInfoPrivacyCell.setText(formatString);
         }
@@ -212,7 +212,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         long j2 = chat2 != null ? chat2.send_paid_messages_stars : 0L;
         boolean z = chat != null && chat.broadcast_messages_allowed;
         this.initialSuggestionsEnabled = z;
-        long clamp = Utilities.clamp(z ? j2 : 10L, getMessagesController().starsPaidMessageAmountMax, 0L);
+        long clamp = Utilities.clamp(z ? j2 : getMessagesController().config.starsPaidMessagesChannelAmountDefault.get(), getMessagesController().starsPaidMessageAmountMax, 0L);
         this.initialSuggestionsStarsCount = clamp;
         this.isSuggestionsEnabled = z;
         this.suggestionsStarsCount = clamp;
@@ -265,7 +265,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -285,7 +285,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         if (longCallback != null) {
             longCallback.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -304,7 +304,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         this.doneButtonDrawable.animateToProgress(1.0f);
@@ -332,7 +332,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(chat.linked_monoforum_id));
             if (chat2 != null) {
                 if (this.isSuggestionsEnabled) {
-                    chat2.flags2 |= LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                    chat2.flags2 |= 16384;
                     chat2.send_paid_messages_stars = this.suggestionsStarsCount;
                 } else {
                     chat2.flags2 &= -16385;
@@ -375,7 +375,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (PostSuggestionsEditActivity.this.onBackPressed()) {
-                        PostSuggestionsEditActivity.this.lambda$onBackPressed$348();
+                        PostSuggestionsEditActivity.this.lambda$onBackPressed$354();
                     }
                 } else if (i == 1) {
                     PostSuggestionsEditActivity.this.processDone();

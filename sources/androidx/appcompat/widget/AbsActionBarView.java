@@ -14,6 +14,7 @@ import androidx.appcompat.R$styleable;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.core.view.ViewPropertyAnimatorListener;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 abstract class AbsActionBarView extends ViewGroup {
@@ -85,7 +86,7 @@ abstract class AbsActionBarView extends ViewGroup {
     }
 
     protected int measureChildView(View view, int i, int i2, int i3) {
-        view.measure(View.MeasureSpec.makeMeasureSpec(i, Integer.MIN_VALUE), i2);
+        view.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_31), i2);
         return Math.max(0, (i - view.getMeasuredWidth()) - i3);
     }
 

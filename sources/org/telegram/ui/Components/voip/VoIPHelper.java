@@ -52,6 +52,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.CheckBoxCell;
 import org.telegram.ui.Cells.TextCheckCell;
+import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.BetterRatingView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.JoinCallAlert;
@@ -151,7 +152,7 @@ public abstract class VoIPHelper {
                 i2 = 32768;
             } else {
                 i = chatFull.flags;
-                i2 = ConnectionsManager.FileTypeFile;
+                i2 = 67108864;
             }
             chatFull.flags = i | i2;
         }
@@ -919,7 +920,7 @@ public abstract class VoIPHelper {
             return;
         }
         if (userFull != null && userFull.phone_calls_private) {
-            new AlertDialog.Builder(activity).setTitle(LocaleController.getString(R.string.VoipFailed)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("CallNotAvailable", R.string.CallNotAvailable, ContactsController.formatName(user.first_name, user.last_name)))).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+            AlertsCreator.showCallsForbidden(activity, accountInstance.getCurrentAccount(), user.id, null);
             return;
         }
         if (ConnectionsManager.getInstance(UserConfig.selectedAccount).getConnectionState() != 3) {

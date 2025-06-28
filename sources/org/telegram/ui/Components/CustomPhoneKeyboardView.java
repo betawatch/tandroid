@@ -17,6 +17,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GestureDetectorCompat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -309,7 +310,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
         int height = (getHeight() - AndroidUtilities.dp(42.0f)) / 4;
         for (View view : this.views) {
             if (view != null) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(width, 1073741824), View.MeasureSpec.makeMeasureSpec(height, 1073741824));
+                view.measure(View.MeasureSpec.makeMeasureSpec(width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(height, TLRPC.FLAG_30));
             }
         }
     }

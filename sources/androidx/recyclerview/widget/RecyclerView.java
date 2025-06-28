@@ -55,10 +55,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class RecyclerView extends ViewGroup implements NestedScrollingChild {
@@ -791,19 +791,19 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                     i2 = 0;
                     i4 = 0;
                 }
-                i2 = 1073741824;
+                i2 = TLRPC.FLAG_30;
             } else {
                 if (i4 < 0) {
                     if (i4 != -1) {
                         if (i4 == -2) {
-                            i2 = (i2 == Integer.MIN_VALUE || i2 == 1073741824) ? Integer.MIN_VALUE : 0;
+                            i2 = (i2 == Integer.MIN_VALUE || i2 == 1073741824) ? TLRPC.FLAG_31 : 0;
                         }
                         i2 = 0;
                         i4 = 0;
                     }
                     i4 = max;
                 }
-                i2 = 1073741824;
+                i2 = TLRPC.FLAG_30;
             }
             return View.MeasureSpec.makeMeasureSpec(i4, i2);
         }
@@ -1332,11 +1332,11 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
 
         public void onInitializeAccessibilityNodeInfo(Recycler recycler, State state, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
             if (this.mRecyclerView.canScrollVertically(-1) || this.mRecyclerView.canScrollHorizontally(-1)) {
-                accessibilityNodeInfoCompat.addAction(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                accessibilityNodeInfoCompat.addAction(8192);
                 accessibilityNodeInfoCompat.setScrollable(true);
             }
             if (this.mRecyclerView.canScrollVertically(1) || this.mRecyclerView.canScrollHorizontally(1)) {
-                accessibilityNodeInfoCompat.addAction(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+                accessibilityNodeInfoCompat.addAction(4096);
                 accessibilityNodeInfoCompat.setScrollable(true);
             }
             accessibilityNodeInfoCompat.setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(getRowCountForAccessibility(recycler, state), getColumnCountForAccessibility(recycler, state), isLayoutHierarchical(recycler, state), getSelectionModeForAccessibility(recycler, state)));
@@ -1561,7 +1561,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         public abstract int scrollVerticallyBy(int i, Recycler recycler, State state);
 
         void setExactMeasureSpecsFrom(RecyclerView recyclerView) {
-            setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(recyclerView.getHeight(), 1073741824));
+            setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(recyclerView.getHeight(), TLRPC.FLAG_30));
         }
 
         void setMeasureSpecs(int i, int i2) {
@@ -1594,8 +1594,8 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 this.mRecyclerView.defaultOnMeasure(i, i2);
                 return;
             }
-            int i3 = Integer.MIN_VALUE;
-            int i4 = Integer.MIN_VALUE;
+            int i3 = TLRPC.FLAG_31;
+            int i4 = TLRPC.FLAG_31;
             int i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i6 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (int i7 = 0; i7 < childCount; i7++) {
@@ -1637,8 +1637,8 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 height = recyclerView.getHeight();
             }
             this.mHeight = height;
-            this.mWidthMode = 1073741824;
-            this.mHeightMode = 1073741824;
+            this.mWidthMode = TLRPC.FLAG_30;
+            this.mHeightMode = TLRPC.FLAG_30;
         }
 
         boolean shouldMeasureChild(View view, int i, int i2, LayoutParams layoutParams) {
@@ -1900,7 +1900,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 }
                 AccessibilityDelegateCompat accessibilityDelegate = ViewCompat.getAccessibilityDelegate(view);
                 if (accessibilityDelegate == null || accessibilityDelegate.getClass().equals(AccessibilityDelegateCompat.class)) {
-                    viewHolder.addFlags(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                    viewHolder.addFlags(16384);
                     ViewCompat.setAccessibilityDelegate(view, RecyclerView.this.mAccessibilityDelegate.getItemDelegate());
                 }
             }
@@ -1951,8 +1951,8 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
 
         void addViewHolderToRecycledViewPool(ViewHolder viewHolder, boolean z) {
             RecyclerView.clearNestedRecyclerViewIfNotNested(viewHolder);
-            if (viewHolder.hasAnyOfTheFlags(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
-                viewHolder.setFlags(0, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            if (viewHolder.hasAnyOfTheFlags(16384)) {
+                viewHolder.setFlags(0, 16384);
                 ViewCompat.setAccessibilityDelegate(viewHolder.itemView, null);
             }
             if (z) {
@@ -2443,10 +2443,10 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                             this.mRecyclerPool.factorInCreateTime(itemViewType, RecyclerView.this.getNanoTime() - nanoTime);
                             viewHolder2 = createViewHolder;
                             z3 = z2;
-                            if (z3 && !RecyclerView.this.mState.isPreLayout() && viewHolder2.hasAnyOfTheFlags(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM)) {
-                                viewHolder2.setFlags(0, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                            if (z3 && !RecyclerView.this.mState.isPreLayout() && viewHolder2.hasAnyOfTheFlags(8192)) {
+                                viewHolder2.setFlags(0, 8192);
                                 if (RecyclerView.this.mState.mRunSimpleAnimations) {
-                                    int buildAdapterChangeFlagsForAnimations = ItemAnimator.buildAdapterChangeFlagsForAnimations(viewHolder2) | LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                                    int buildAdapterChangeFlagsForAnimations = ItemAnimator.buildAdapterChangeFlagsForAnimations(viewHolder2) | 4096;
                                     RecyclerView recyclerView2 = RecyclerView.this;
                                     RecyclerView.this.recordAnimationInfoIfBouncedHiddenView(viewHolder2, recyclerView2.mItemAnimator.recordPreLayoutInformation(recyclerView2.mState, viewHolder2, buildAdapterChangeFlagsForAnimations, viewHolder2.getUnmodifiedPayloads()));
                                 }
@@ -2487,7 +2487,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                     viewHolder2 = viewHolder;
                     z3 = z2;
                     if (z3) {
-                        viewHolder2.setFlags(0, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                        viewHolder2.setFlags(0, 8192);
                         if (RecyclerView.this.mState.mRunSimpleAnimations) {
                         }
                     }
@@ -2703,7 +2703,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             private int mJumpToPosition;
 
             public Action(int i, int i2) {
-                this(i, i2, Integer.MIN_VALUE, null);
+                this(i, i2, TLRPC.FLAG_31, null);
             }
 
             public Action(int i, int i2, int i3, Interpolator interpolator) {
@@ -3018,7 +3018,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 this.mInterpolator = interpolator2;
                 this.mOverScroller = new OverScroller(RecyclerView.this.getContext(), interpolator2);
             }
-            this.mOverScroller.fling(0, 0, i, i2, Integer.MIN_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, Integer.MIN_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID);
+            this.mOverScroller.fling(0, 0, i, i2, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID);
             postOnAnimation();
         }
 
@@ -3627,7 +3627,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         }
         this.mAccessibilityManager = (AccessibilityManager) getContext().getSystemService("accessibility");
         setAccessibilityDelegateCompat(new RecyclerViewAccessibilityDelegate(this));
-        setDescendantFocusability(262144);
+        setDescendantFocusability(TLRPC.FLAG_18);
         setNestedScrollingEnabled(true);
     }
 
@@ -3749,9 +3749,9 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 ViewHolder childViewHolderInt2 = getChildViewHolderInt(this.mChildHelper.getChildAt(i2));
                 if (!childViewHolderInt2.shouldIgnore() && !this.mViewInfoStore.isInPreLayout(childViewHolderInt2)) {
                     int buildAdapterChangeFlagsForAnimations = ItemAnimator.buildAdapterChangeFlagsForAnimations(childViewHolderInt2);
-                    boolean hasAnyOfTheFlags = childViewHolderInt2.hasAnyOfTheFlags(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                    boolean hasAnyOfTheFlags = childViewHolderInt2.hasAnyOfTheFlags(8192);
                     if (!hasAnyOfTheFlags) {
-                        buildAdapterChangeFlagsForAnimations |= LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                        buildAdapterChangeFlagsForAnimations |= 4096;
                     }
                     ItemAnimator.ItemHolderInfo recordPreLayoutInformation = this.mItemAnimator.recordPreLayoutInformation(this.mState, childViewHolderInt2, buildAdapterChangeFlagsForAnimations, childViewHolderInt2.getUnmodifiedPayloads());
                     if (hasAnyOfTheFlags) {
@@ -3897,7 +3897,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             return;
         }
         int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i2 = Integer.MIN_VALUE;
+        int i2 = TLRPC.FLAG_31;
         for (int i3 = 0; i3 < childCount; i3++) {
             ViewHolder childViewHolderInt = getChildViewHolderInt(this.mChildHelper.getChildAt(i3));
             if (childViewHolderInt != null && !childViewHolderInt.shouldIgnore()) {
@@ -5759,7 +5759,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 }
                 scrollByInternal((int) (axisValue * this.mScaledHorizontalScrollFactor), (int) (f * this.mScaledVerticalScrollFactor), motionEvent);
             } else {
-                if ((motionEvent.getSource() & 4194304) != 0) {
+                if ((motionEvent.getSource() & TLRPC.FLAG_22) != 0) {
                     axisValue = motionEvent.getAxisValue(26);
                     if (this.mLayout.canScrollVertically()) {
                         f = -axisValue;
@@ -5906,7 +5906,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             dispatchLayoutStep2();
             this.mLayout.setMeasuredDimensionFromChildren(i, i2);
             if (this.mLayout.shouldMeasureTwice()) {
-                this.mLayout.setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+                this.mLayout.setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
                 this.mState.mIsMeasuring = true;
                 dispatchLayoutStep2();
                 this.mLayout.setMeasuredDimensionFromChildren(i, i2);
@@ -6171,7 +6171,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
     }
 
     void recordAnimationInfoIfBouncedHiddenView(ViewHolder viewHolder, ItemAnimator.ItemHolderInfo itemHolderInfo) {
-        viewHolder.setFlags(0, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+        viewHolder.setFlags(0, 8192);
         if (this.mState.mTrackOldChangeHolders && viewHolder.isUpdated() && !viewHolder.isRemoved() && !viewHolder.shouldIgnore()) {
             this.mViewInfoStore.addToOldChangeHolders(getChangedHolderKey(viewHolder), viewHolder);
         }
@@ -6697,7 +6697,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         if (i == 0 && i2 == 0) {
             return;
         }
-        this.mViewFlinger.smoothScrollBy(i, i2, Integer.MIN_VALUE, interpolator);
+        this.mViewFlinger.smoothScrollBy(i, i2, TLRPC.FLAG_31, interpolator);
     }
 
     public void smoothScrollToPosition(int i) {

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 abstract class PlatformMediaRouter1RouteProvider extends MediaRouteProvider {
@@ -222,7 +223,7 @@ abstract class PlatformMediaRouter1RouteProvider extends MediaRouteProvider {
             builder.setVolume(systemRouteRecord.mRoute.getVolume());
             builder.setVolumeMax(systemRouteRecord.mRoute.getVolumeMax());
             builder.setVolumeHandling(systemRouteRecord.mRoute.getVolumeHandling());
-            builder.setIsSystemRoute((supportedTypes & 8388608) == 0);
+            builder.setIsSystemRoute((supportedTypes & TLRPC.FLAG_23) == 0);
             if (!systemRouteRecord.mRoute.isEnabled()) {
                 builder.setEnabled(false);
             }
@@ -258,7 +259,7 @@ abstract class PlatformMediaRouter1RouteProvider extends MediaRouteProvider {
                 int i2 = 0;
                 while (i < size) {
                     String str = (String) controlCategories.get(i);
-                    i2 = str.equals("android.media.intent.category.LIVE_AUDIO") ? i2 | 1 : str.equals("android.media.intent.category.LIVE_VIDEO") ? i2 | 2 : i2 | 8388608;
+                    i2 = str.equals("android.media.intent.category.LIVE_AUDIO") ? i2 | 1 : str.equals("android.media.intent.category.LIVE_VIDEO") ? i2 | 2 : i2 | TLRPC.FLAG_23;
                     i++;
                 }
                 z = mediaRouteDiscoveryRequest.isActiveScan();

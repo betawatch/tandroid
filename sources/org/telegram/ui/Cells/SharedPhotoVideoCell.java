@@ -386,7 +386,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
             this.photoVideoViews[i3].setLayoutParams(layoutParams);
         }
         this.ignoreLayout = false;
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((this.isFirst ? 0 : AndroidUtilities.dp(2.0f)) + size, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((this.isFirst ? 0 : AndroidUtilities.dp(2.0f)) + size, TLRPC.FLAG_30));
     }
 
     @Override // android.view.View, android.view.ViewParent

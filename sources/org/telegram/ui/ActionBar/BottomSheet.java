@@ -46,7 +46,6 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
@@ -54,6 +53,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -354,9 +354,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             int i3 = this.currentType;
             int i4 = i3 == 2 ? 80 : 48;
             if (i3 == 0) {
-                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i4), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i4), TLRPC.FLAG_30));
         }
 
         public void setChecked(boolean z) {
@@ -1194,7 +1194,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     viewGroup = bottomSheet14.containerView;
                     if (viewGroup != null) {
                         if (bottomSheet14.fullWidth) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((bottomSheet14.backgroundPaddingLeft * 2) + i10, 1073741824);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((bottomSheet14.backgroundPaddingLeft * 2) + i10, TLRPC.FLAG_30);
                         } else {
                             if (AndroidUtilities.isTablet()) {
                                 Point point = AndroidUtilities.displaySize;
@@ -1203,10 +1203,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                                 BottomSheet bottomSheet15 = BottomSheet.this;
                                 bottomSheetWidth = bottomSheet15.getBottomSheetWidth(bottomSheet15.isPortrait, i10, i9);
                             }
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(bottomSheetWidth + (BottomSheet.this.backgroundPaddingLeft * 2), 1073741824);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(bottomSheetWidth + (BottomSheet.this.backgroundPaddingLeft * 2), TLRPC.FLAG_30);
                             viewGroup = BottomSheet.this.containerView;
                         }
-                        viewGroup.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i9, Integer.MIN_VALUE));
+                        viewGroup.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i9, TLRPC.FLAG_31));
                     }
                     childCount = getChildCount();
                     for (int i11 = 0; i11 < childCount; i11++) {
@@ -1214,7 +1214,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         if (childAt.getVisibility() != 8) {
                             BottomSheet bottomSheet16 = BottomSheet.this;
                             if (childAt != bottomSheet16.containerView && !bottomSheet16.onCustomMeasure(childAt, i10, i9)) {
-                                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i10, 1073741824), 0, View.MeasureSpec.makeMeasureSpec(i9, 1073741824), 0);
+                                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i9, TLRPC.FLAG_30), 0);
                             }
                         }
                     }
@@ -1917,7 +1917,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             setContentView(this.container, new ViewGroup.LayoutParams(-1, -1));
         }
         if (this.useLightStatusBar && Build.VERSION.SDK_INT >= 23 && Theme.getColor(Theme.key_actionBarDefault, null, true) == -1) {
-            this.container.setSystemUiVisibility(this.container.getSystemUiVisibility() | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            this.container.setSystemUiVisibility(this.container.getSystemUiVisibility() | 8192);
         }
         if (this.useLightNavBar && Build.VERSION.SDK_INT >= 26) {
             AndroidUtilities.setLightNavigationBar(getWindow(), false);
@@ -2071,7 +2071,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             if (this.focusable) {
                 attributes.softInputMode = 16;
             } else {
-                attributes.flags = i3 | 131072;
+                attributes.flags = i3 | TLRPC.FLAG_17;
             }
             if (this.isFullscreen) {
                 if (Build.VERSION.SDK_INT >= 21) {
@@ -2747,7 +2747,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             i = attributes.flags & (-131073);
         } else {
             attributes.softInputMode = 48;
-            i = attributes.flags | 131072;
+            i = attributes.flags | TLRPC.FLAG_17;
         }
         attributes.flags = i;
         window.setAttributes(attributes);
@@ -2867,7 +2867,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         if (Build.VERSION.SDK_INT >= 23) {
             int color = Theme.getColor(Theme.key_actionBarDefault, null, true);
             int systemUiVisibility = this.container.getSystemUiVisibility();
-            this.container.setSystemUiVisibility((this.useLightStatusBar && color == -1) ? systemUiVisibility | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : systemUiVisibility & (-8193));
+            this.container.setSystemUiVisibility((this.useLightStatusBar && color == -1) ? systemUiVisibility | 8192 : systemUiVisibility & (-8193));
         }
         if (this.attachedFragment != null) {
             LaunchActivity.instance.checkSystemBarColors(true, true, true, false);
@@ -2892,7 +2892,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             }
             this.dismissed = false;
             cancelSheetAnimation();
-            this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+            this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
             if (this.showWithoutAnimation) {
                 this.backDrawable.setAlpha(this.dimBehind ? this.dimBehindAlpha : 0);
                 this.containerView.setTranslationY(0.0f);

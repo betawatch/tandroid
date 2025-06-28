@@ -377,18 +377,18 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         int makeMeasureSpec;
         int dp;
         if (this.itemSizeChanged) {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, 1073741824);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, TLRPC.FLAG_30);
             dp = this.itemSize + AndroidUtilities.dp(5.0f);
         } else {
             if (this.isVertical) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30);
                 dp = AndroidUtilities.dp((this.isLast ? 0 : 6) + 80);
             } else {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 0 : 6) + 80), 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 0 : 6) + 80), TLRPC.FLAG_30);
                 dp = AndroidUtilities.dp(80.0f);
             }
         }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */

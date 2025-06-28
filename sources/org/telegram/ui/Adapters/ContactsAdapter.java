@@ -553,7 +553,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                     if (!ContactsAdapter.this.isAdmin && !ContactsAdapter.this.needPhonebook) {
                         dp2 += dp;
                     }
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(dp2 < size ? size - dp2 : 0, 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < size ? size - dp2 : 0, TLRPC.FLAG_30));
                 }
             };
             frameLayout.addView(new ContactsEmptyView(this.mContext), LayoutHelper.createFrame(-2, -2, 17));

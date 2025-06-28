@@ -242,7 +242,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        ActionIntroActivity.this.lambda$onBackPressed$348();
+                        ActionIntroActivity.this.lambda$onBackPressed$354();
                     }
                 }
             });
@@ -454,7 +454,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 int size = View.MeasureSpec.getSize(i4);
                 int size2 = View.MeasureSpec.getSize(i5);
                 if (((BaseFragment) ActionIntroActivity.this).actionBar != null) {
-                    ((BaseFragment) ActionIntroActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i5);
+                    ((BaseFragment) ActionIntroActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i5);
                 }
                 int i7 = ActionIntroActivity.this.currentType;
                 float f3 = 50.0f;
@@ -462,21 +462,21 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     RLottieImageView rLottieImageView2 = ActionIntroActivity.this.imageView;
                     if (size > size2) {
                         f = size;
-                        rLottieImageView2.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), 1073741824));
+                        rLottieImageView2.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), TLRPC.FLAG_30));
                         textView6 = ActionIntroActivity.this.titleTextView;
                         int i8 = (int) (f * 0.6f);
-                        textView6.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        textView6.measure(View.MeasureSpec.makeMeasureSpec(i8, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i8, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         textView7 = ActionIntroActivity.this.buttonTextView;
-                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, 1073741824);
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, TLRPC.FLAG_30);
                         f3 = 42.0f;
                     } else {
-                        rLottieImageView2.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), 1073741824));
-                        ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        rLottieImageView2.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), TLRPC.FLAG_30));
+                        ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         textView7 = ActionIntroActivity.this.buttonTextView;
                         dp3 = AndroidUtilities.dp(72.0f);
-                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - dp3, 1073741824);
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - dp3, TLRPC.FLAG_30);
                     }
                 } else {
                     if (i7 != 3) {
@@ -489,74 +489,74 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                                     rLottieImageView = ActionIntroActivity.this.imageView;
                                     f2 = 100.0f;
                                 }
-                                rLottieImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), 1073741824));
+                                rLottieImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), TLRPC.FLAG_30));
                                 textView6 = ActionIntroActivity.this.titleTextView;
                                 if (size > size2) {
                                     f = size;
                                     int i82 = (int) (f * 0.6f);
-                                    textView6.measure(View.MeasureSpec.makeMeasureSpec(i82, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                                    ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i82, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                    textView6.measure(View.MeasureSpec.makeMeasureSpec(i82, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                    ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i82, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                     textView7 = ActionIntroActivity.this.buttonTextView;
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i82, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i82, TLRPC.FLAG_30);
                                     f3 = 42.0f;
                                 } else {
-                                    textView6.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                                    ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                    textView6.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                    ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 }
                             }
                         } else if (ActionIntroActivity.this.showingAsBottomSheet) {
-                            ActionIntroActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.32f), 1073741824));
-                            ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            ActionIntroActivity.this.descriptionLayout.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            ActionIntroActivity.this.buttonTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), 1073741824));
+                            ActionIntroActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.32f), TLRPC.FLAG_30));
+                            ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            ActionIntroActivity.this.descriptionLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            ActionIntroActivity.this.buttonTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLRPC.FLAG_30));
                             size2 = ActionIntroActivity.this.buttonTextView.getMeasuredHeight() + ActionIntroActivity.this.imageView.getMeasuredHeight() + ActionIntroActivity.this.titleTextView.getMeasuredHeight() + AndroidUtilities.dp(20.0f) + ActionIntroActivity.this.titleTextView.getMeasuredHeight() + ActionIntroActivity.this.descriptionLayout.getMeasuredHeight();
                         } else {
                             RLottieImageView rLottieImageView3 = ActionIntroActivity.this.imageView;
                             if (size > size2) {
                                 float f4 = size;
-                                rLottieImageView3.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f4), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), 1073741824));
+                                rLottieImageView3.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f4), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), TLRPC.FLAG_30));
                                 i6 = (int) (f4 * 0.6f);
-                                ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i6, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 view = ActionIntroActivity.this.descriptionLayout;
-                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i6, Integer.MIN_VALUE);
+                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_31);
                                 view.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 textView7 = ActionIntroActivity.this.buttonTextView;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, Integer.MIN_VALUE);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_31);
                                 f3 = 42.0f;
                             } else {
-                                rLottieImageView3.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), 1073741824));
-                                ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                                ActionIntroActivity.this.descriptionLayout.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                rLottieImageView3.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), TLRPC.FLAG_30));
+                                ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                                ActionIntroActivity.this.descriptionLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 textView7 = ActionIntroActivity.this.buttonTextView;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31);
                                 f3 = 42.0f;
                             }
                         }
                         setMeasuredDimension(size, size2);
                     }
-                    ActionIntroActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), 1073741824));
+                    ActionIntroActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLRPC.FLAG_30));
                     ActionIntroActivity actionIntroActivity = ActionIntroActivity.this;
                     if (size > size2) {
                         float f5 = size;
-                        actionIntroActivity.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f5), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        actionIntroActivity.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f5), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         i6 = (int) (f5 * 0.6f);
-                        ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i6, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        ActionIntroActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         view = ActionIntroActivity.this.descriptionText;
-                        makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i6, 1073741824);
+                        makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_30);
                         view.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(size2, 0));
                         textView7 = ActionIntroActivity.this.buttonTextView;
-                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, Integer.MIN_VALUE);
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, TLRPC.FLAG_31);
                         f3 = 42.0f;
                     } else {
-                        actionIntroActivity.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        ActionIntroActivity.this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        actionIntroActivity.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        ActionIntroActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                        ActionIntroActivity.this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         textView7 = ActionIntroActivity.this.buttonTextView;
                         dp3 = AndroidUtilities.dp(48.0f);
-                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - dp3, 1073741824);
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - dp3, TLRPC.FLAG_30);
                     }
                 }
-                textView7.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), 1073741824));
+                textView7.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLRPC.FLAG_30));
                 setMeasuredDimension(size, size2);
             }
         };

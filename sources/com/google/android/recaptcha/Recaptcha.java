@@ -8,6 +8,7 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class Recaptcha {
@@ -44,8 +45,8 @@ public final class Recaptcha {
             if (continuation instanceof Recaptcha$getClient$1) {
                 recaptcha$getClient$1 = (Recaptcha$getClient$1) continuation;
                 int i2 = recaptcha$getClient$1.zzc;
-                if ((i2 & Integer.MIN_VALUE) != 0) {
-                    recaptcha$getClient$1.zzc = i2 - Integer.MIN_VALUE;
+                if ((i2 & TLRPC.FLAG_31) != 0) {
+                    recaptcha$getClient$1.zzc = i2 - TLRPC.FLAG_31;
                     Recaptcha$getClient$1 recaptcha$getClient$12 = recaptcha$getClient$1;
                     Object obj = recaptcha$getClient$12.zza;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

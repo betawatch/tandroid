@@ -43,7 +43,7 @@ public class SlotsDrawable extends RLottieDrawable {
         this.secondNativePtrs = new long[3];
         this.secondFrameCounts = new int[3];
         this.secondFrameNums = new int[3];
-        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda0
+        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 SlotsDrawable.this.lambda$new$0();
@@ -543,7 +543,7 @@ public class SlotsDrawable extends RLottieDrawable {
             this.loadingInBackground = true;
             final MessageObject messageObject = chatMessageCell.getMessageObject();
             final int i = chatMessageCell.getMessageObject().currentAccount;
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda1
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     SlotsDrawable.this.lambda$setBaseDice$5(tL_messages_stickerSet, i, messageObject, chatMessageCell);

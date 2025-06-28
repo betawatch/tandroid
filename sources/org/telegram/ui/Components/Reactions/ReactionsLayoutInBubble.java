@@ -1323,6 +1323,11 @@ public class ReactionsLayoutInBubble {
         this.animatedReactions.put(visibleReaction, imageReceiver);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00e1  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public boolean checkTouchEvent(MotionEvent motionEvent) {
         MessageObject messageObject;
         TLRPC.Message message;
@@ -1330,71 +1335,81 @@ public class ReactionsLayoutInBubble {
         if (this.isEmpty || this.isSmall || (messageObject = this.messageObject) == null || (message = messageObject.messageOwner) == null || message.reactions == null) {
             return false;
         }
+        float x = motionEvent.getX();
         float y = motionEvent.getY();
-        if (this.parentView instanceof ChatMessageCell) {
-            y -= r2.getPaddingTop();
-        }
-        float x = motionEvent.getX() - this.x;
-        float f = y - this.y;
-        if (motionEvent.getAction() == 0) {
-            int size = this.reactionButtons.size();
-            while (true) {
-                if (i >= size) {
-                    break;
+        View view = this.parentView;
+        if (!(view instanceof ChatMessageCell)) {
+            if (view instanceof ChatActionCell) {
+                x -= ((ChatActionCell) view).sideMenuWidth / 2.0f;
+            }
+            float f = x - this.x;
+            float f2 = y - this.y;
+            if (motionEvent.getAction() != 0) {
+                int size = this.reactionButtons.size();
+                while (true) {
+                    if (i >= size) {
+                        break;
+                    }
+                    if (f <= ((ReactionButton) this.reactionButtons.get(i)).x || f >= ((ReactionButton) this.reactionButtons.get(i)).x + ((ReactionButton) this.reactionButtons.get(i)).width || f2 <= ((ReactionButton) this.reactionButtons.get(i)).y || f2 >= ((ReactionButton) this.reactionButtons.get(i)).y + ((ReactionButton) this.reactionButtons.get(i)).height) {
+                        i++;
+                    } else {
+                        this.lastX = motionEvent.getX();
+                        this.lastY = y;
+                        this.lastSelectedButton = (ReactionButton) this.reactionButtons.get(i);
+                        Runnable runnable = this.longPressRunnable;
+                        if (runnable != null) {
+                            AndroidUtilities.cancelRunOnUIThread(runnable);
+                            this.longPressRunnable = null;
+                        }
+                        this.lastSelectedButton.bounce.setPressed(true);
+                        final ReactionButton reactionButton = this.lastSelectedButton;
+                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$$ExternalSyntheticLambda1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                ReactionsLayoutInBubble.this.lambda$checkTouchEvent$1(reactionButton);
+                            }
+                        };
+                        this.longPressRunnable = runnable2;
+                        AndroidUtilities.runOnUIThread(runnable2, ViewConfiguration.getLongPressTimeout());
+                        this.pressed = true;
+                    }
                 }
-                if (x <= ((ReactionButton) this.reactionButtons.get(i)).x || x >= ((ReactionButton) this.reactionButtons.get(i)).x + ((ReactionButton) this.reactionButtons.get(i)).width || f <= ((ReactionButton) this.reactionButtons.get(i)).y || f >= ((ReactionButton) this.reactionButtons.get(i)).y + ((ReactionButton) this.reactionButtons.get(i)).height) {
-                    i++;
-                } else {
-                    this.lastX = motionEvent.getX();
-                    this.lastY = y;
-                    this.lastSelectedButton = (ReactionButton) this.reactionButtons.get(i);
-                    Runnable runnable = this.longPressRunnable;
-                    if (runnable != null) {
-                        AndroidUtilities.cancelRunOnUIThread(runnable);
+            } else if (motionEvent.getAction() == 2) {
+                if ((this.pressed && Math.abs(motionEvent.getX() - this.lastX) > this.touchSlop) || Math.abs(y - this.lastY) > this.touchSlop) {
+                    this.pressed = false;
+                    ReactionButton reactionButton2 = this.lastSelectedButton;
+                    if (reactionButton2 != null) {
+                        reactionButton2.bounce.setPressed(false);
+                    }
+                    this.lastSelectedButton = null;
+                    Runnable runnable3 = this.longPressRunnable;
+                    if (runnable3 != null) {
+                        AndroidUtilities.cancelRunOnUIThread(runnable3);
                         this.longPressRunnable = null;
                     }
-                    this.lastSelectedButton.bounce.setPressed(true);
-                    final ReactionButton reactionButton = this.lastSelectedButton;
-                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$$ExternalSyntheticLambda1
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            ReactionsLayoutInBubble.this.lambda$checkTouchEvent$1(reactionButton);
-                        }
-                    };
-                    this.longPressRunnable = runnable2;
-                    AndroidUtilities.runOnUIThread(runnable2, ViewConfiguration.getLongPressTimeout());
-                    this.pressed = true;
                 }
-            }
-        } else if (motionEvent.getAction() == 2) {
-            if ((this.pressed && Math.abs(motionEvent.getX() - this.lastX) > this.touchSlop) || Math.abs(y - this.lastY) > this.touchSlop) {
-                this.pressed = false;
-                ReactionButton reactionButton2 = this.lastSelectedButton;
-                if (reactionButton2 != null) {
-                    reactionButton2.bounce.setPressed(false);
-                }
-                this.lastSelectedButton = null;
-                Runnable runnable3 = this.longPressRunnable;
-                if (runnable3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(runnable3);
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                Runnable runnable4 = this.longPressRunnable;
+                if (runnable4 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(runnable4);
                     this.longPressRunnable = null;
                 }
+                if (this.pressed && this.lastSelectedButton != null && motionEvent.getAction() == 1) {
+                    didPressReaction(this.lastSelectedButton.reactionCount, false, motionEvent.getX(), y);
+                }
+                this.pressed = false;
+                ReactionButton reactionButton3 = this.lastSelectedButton;
+                if (reactionButton3 != null) {
+                    reactionButton3.bounce.setPressed(false);
+                }
+                this.lastSelectedButton = null;
             }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            Runnable runnable4 = this.longPressRunnable;
-            if (runnable4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable4);
-                this.longPressRunnable = null;
-            }
-            if (this.pressed && this.lastSelectedButton != null && motionEvent.getAction() == 1) {
-                didPressReaction(this.lastSelectedButton.reactionCount, false, motionEvent.getX(), y);
-            }
-            this.pressed = false;
-            ReactionButton reactionButton3 = this.lastSelectedButton;
-            if (reactionButton3 != null) {
-                reactionButton3.bounce.setPressed(false);
-            }
-            this.lastSelectedButton = null;
+            return this.pressed;
+        }
+        y -= view.getPaddingTop();
+        float f3 = x - this.x;
+        float f22 = y - this.y;
+        if (motionEvent.getAction() != 0) {
         }
         return this.pressed;
     }

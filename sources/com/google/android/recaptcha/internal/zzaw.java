@@ -24,6 +24,7 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.TimeoutKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
@@ -87,8 +88,8 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         if (continuation instanceof zzao) {
             zzaoVar = (zzao) continuation;
             int i2 = zzaoVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzaoVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzaoVar.zzc = i2 - TLRPC.FLAG_31;
                 Object obj = zzaoVar.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzaoVar.zzc;
@@ -165,8 +166,8 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         if (continuation instanceof zzas) {
             zzasVar = (zzas) continuation;
             int i2 = zzasVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzasVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzasVar.zzc = i2 - TLRPC.FLAG_31;
                 zzas zzasVar2 = zzasVar;
                 Object obj = zzasVar2.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -270,8 +271,8 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         if (continuation instanceof zzap) {
             zzapVar = (zzap) continuation;
             int i2 = zzapVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzapVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzapVar.zzc = i2 - TLRPC.FLAG_31;
                 Object obj = zzapVar.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzapVar.zzc;
@@ -315,8 +316,8 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         if (continuation instanceof zzar) {
             zzarVar = (zzar) continuation;
             int i2 = zzarVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzarVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzarVar.zzc = i2 - TLRPC.FLAG_31;
                 Object obj = zzarVar.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzarVar.zzc;

@@ -8,7 +8,7 @@ enum k implements f {
     LENIENT;
 
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         return true;
     }
 

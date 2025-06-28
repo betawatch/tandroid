@@ -8,8 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -155,7 +155,7 @@ final class zzko implements zzlc {
                         unsafe.putInt(obj, j3, i4);
                         return zzb2;
                     }
-                    if ((i6 & 536870912) != 0 && !zzmd.zza(bArr, zzb2, zzb2 + i10)) {
+                    if ((i6 & TLRPC.FLAG_29) != 0 && !zzmd.zza(bArr, zzb2, zzb2 + i10)) {
                         throw zzjk.zzh();
                     }
                     unsafe.putObject(obj, j, new String(bArr, zzb2, i10, zzjf.zza));
@@ -1074,7 +1074,7 @@ final class zzko implements zzlc {
                             i59 = i83;
                             i15 = i85;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                            if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096 || i72 > 17) {
+                            if ((charAt24 & 4096) == 4096 || i72 > 17) {
                                 i16 = i15;
                                 str = zzd;
                                 i17 = 1048575;
@@ -1121,7 +1121,7 @@ final class zzko implements zzlc {
                     }
                     i15 = i20;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                    if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096) {
+                    if ((charAt24 & 4096) == 4096) {
                     }
                     i16 = i15;
                     str = zzd;
@@ -1135,7 +1135,7 @@ final class zzko implements zzlc {
                 }
                 i15 = i82;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(zza5);
-                if ((charAt24 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 4096) {
+                if ((charAt24 & 4096) == 4096) {
                 }
                 i16 = i15;
                 str = zzd;
@@ -1148,7 +1148,7 @@ final class zzko implements zzlc {
             int i90 = i63 + 1;
             iArr2[i63] = charAt23;
             int i91 = i63 + 2;
-            iArr2[i90] = ((charAt24 & 256) != 0 ? 268435456 : 0) | ((charAt24 & 512) != 0 ? 536870912 : 0) | (i72 << 20) | objectFieldOffset;
+            iArr2[i90] = ((charAt24 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt24 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i72 << 20) | objectFieldOffset;
             i63 += 3;
             iArr2[i91] = i17 | (i19 << 20);
             zzd = str;
@@ -2511,7 +2511,7 @@ final class zzko implements zzlc {
                                 i17 = zza3;
                                 i19 = i2;
                                 if (i33 == 2) {
-                                    i25 = (i34 & 536870912) == 0 ? zzhl.zzc(bArr2, i31, zzhnVar3) : zzhl.zzd(bArr2, i31, zzhnVar3);
+                                    i25 = (i34 & TLRPC.FLAG_29) == 0 ? zzhl.zzc(bArr2, i31, zzhnVar3) : zzhl.zzd(bArr2, i31, zzhnVar3);
                                     obj4 = zzhnVar3.zzc;
                                     unsafe3.putObject(obj5, j4, obj4);
                                     i29 = i40 | i38;
@@ -4041,7 +4041,7 @@ final class zzko implements zzlc {
                             i6 = i22;
                             unsafe3 = unsafe2;
                             if (i25 == 2) {
-                                i18 = (i26 & 536870912) == 0 ? zzhl.zzc(bArr2, i4, zzhnVar2) : zzhl.zzd(bArr2, i4, zzhnVar2);
+                                i18 = (i26 & TLRPC.FLAG_29) == 0 ? zzhl.zzc(bArr2, i4, zzhnVar2) : zzhl.zzd(bArr2, i4, zzhnVar2);
                                 zza2 = zzhnVar2.zzc;
                                 unsafe3.putObject(obj2, j, zza2);
                                 i21 |= i29;

@@ -3,6 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.text.Layout;
 import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes5.dex */
 public class CorrectlyMeasuringTextView extends TextView {
@@ -22,7 +23,7 @@ public class CorrectlyMeasuringTextView extends TextView {
             for (int lineCount = layout.getLineCount() - 1; lineCount >= 0; lineCount--) {
                 i3 = Math.max(i3, Math.round(layout.getPaint().measureText(getText(), layout.getLineStart(lineCount), layout.getLineEnd(lineCount))));
             }
-            super.onMeasure(Math.min(i3 + getPaddingLeft() + getPaddingRight(), getMeasuredWidth()) | 1073741824, 1073741824 | getMeasuredHeight());
+            super.onMeasure(Math.min(i3 + getPaddingLeft() + getPaddingRight(), getMeasuredWidth()) | TLRPC.FLAG_30, 1073741824 | getMeasuredHeight());
         } catch (Exception unused) {
         }
     }

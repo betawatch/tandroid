@@ -5,9 +5,9 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -535,7 +535,7 @@ final class zzva implements zzvi {
                 }
                 int objectFieldOffset = (int) unsafe.objectFieldOffset(zzs4);
                 i19 = 1048575;
-                if ((charAt25 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 0 || i74 > 17) {
+                if ((charAt25 & 4096) == 0 || i74 > 17) {
                     str = zzd;
                     i20 = i16;
                     i21 = 0;
@@ -581,7 +581,7 @@ final class zzva implements zzvi {
             int i99 = i65 + 1;
             iArr2[i65] = charAt24;
             int i100 = i65 + 2;
-            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? 268435456 : 0) | ((charAt25 & 512) != 0 ? 536870912 : 0) | (i75 != 0 ? Integer.MIN_VALUE : 0) | (i74 << 20);
+            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i75 != 0 ? TLRPC.FLAG_31 : 0) | (i74 << 20);
             i65 += 3;
             iArr2[i100] = (i21 << 20) | i19;
             i2 = i22;

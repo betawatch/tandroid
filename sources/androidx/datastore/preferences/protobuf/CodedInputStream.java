@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
@@ -623,7 +622,7 @@ public abstract class CodedInputStream {
         private List readRawBytesSlowPathRemainingChunks(int i) {
             ArrayList arrayList = new ArrayList();
             while (i > 0) {
-                int min = Math.min(i, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+                int min = Math.min(i, 4096);
                 byte[] bArr = new byte[min];
                 int i2 = 0;
                 while (i2 < min) {
@@ -1222,7 +1221,7 @@ public abstract class CodedInputStream {
     }
 
     public static CodedInputStream newInstance(InputStream inputStream) {
-        return newInstance(inputStream, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+        return newInstance(inputStream, 4096);
     }
 
     public static CodedInputStream newInstance(InputStream inputStream, int i) {

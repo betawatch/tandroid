@@ -845,7 +845,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onClick$18(TLRPC.User user, boolean z) {
-            SharedMediaLayout.this.profileActivity.lambda$onBackPressed$348();
+            SharedMediaLayout.this.profileActivity.lambda$onBackPressed$354();
             if (SharedMediaLayout.this.profileActivity instanceof NotificationCenter.NotificationCenterDelegate) {
                 SharedMediaLayout.this.profileActivity.getNotificationCenter().removeObserver((NotificationCenter.NotificationCenterDelegate) SharedMediaLayout.this.profileActivity, NotificationCenter.closeChats);
             }
@@ -2876,7 +2876,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), TLRPC.FLAG_30));
         }
     }
 
@@ -4453,7 +4453,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     break;
                 }
                 sharedMediaDataArr[i] = new SharedMediaData();
-                this.sharedMediaData[i].setMaxId(0, DialogObject.isEncryptedDialog(this.dialogId) ? Integer.MIN_VALUE : ConnectionsManager.DEFAULT_DATACENTER_ID);
+                this.sharedMediaData[i].setMaxId(0, DialogObject.isEncryptedDialog(this.dialogId) ? TLRPC.FLAG_31 : ConnectionsManager.DEFAULT_DATACENTER_ID);
                 i++;
             }
             loadMediaCounts();
@@ -5808,7 +5808,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         break;
                     }
                     sharedMediaDataArr[i4] = new SharedMediaData();
-                    this.sharedMediaData[i4].max_id[0] = DialogObject.isEncryptedDialog(this.dialog_id) ? Integer.MIN_VALUE : ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    this.sharedMediaData[i4].max_id[0] = DialogObject.isEncryptedDialog(this.dialog_id) ? TLRPC.FLAG_31 : ConnectionsManager.DEFAULT_DATACENTER_ID;
                     fillMediaData(i4);
                     if (this.mergeDialogId != 0 && (chatFull2 = this.info) != null) {
                         SharedMediaData sharedMediaData = this.sharedMediaData[i4];
@@ -7757,7 +7757,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         int i = sharedMediaData.filterType;
         sharedMediaData.setTotalCount(i == 0 ? lastMediaCount[0] : i == 1 ? lastMediaCount[6] : lastMediaCount[7]);
         this.sharedMediaData[0].fastScrollDataLoaded = false;
-        jumpToDate(0, DialogObject.isEncryptedDialog(this.dialog_id) ? Integer.MIN_VALUE : ConnectionsManager.DEFAULT_DATACENTER_ID, 0, true);
+        jumpToDate(0, DialogObject.isEncryptedDialog(this.dialog_id) ? TLRPC.FLAG_31 : ConnectionsManager.DEFAULT_DATACENTER_ID, 0, true);
         loadFastScrollData(false);
         this.delegate.updateSelectedMediaTabText();
         boolean isEncryptedDialog = DialogObject.isEncryptedDialog(this.dialog_id);
@@ -8712,7 +8712,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                     public void onTransitionAnimationStart(boolean z, boolean z2) {
                                         if (this.firstCreateView) {
                                             if (this.searchItem != null) {
-                                                lambda$openSearchWithText$351("");
+                                                lambda$openSearchWithText$357("");
                                                 this.searchItem.setSearchFieldText(SharedMediaLayout.this.savedMessagesSearchAdapter.lastQuery, false);
                                             }
                                             SearchTagsList searchTagsList = this.actionBarSearchTags;
@@ -8923,7 +8923,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 }
                 this.profileActivity.getSendMessagesHelper().sendMessage(arrayList2, j, false, false, true, 0, 0L);
             }
-            dialogsActivity.lambda$onBackPressed$348();
+            dialogsActivity.lambda$onBackPressed$354();
             BaseFragment baseFragment = this.profileActivity;
             UndoView undoView = baseFragment instanceof ProfileActivity ? ((ProfileActivity) baseFragment).getUndoView() : null;
             if (undoView != null) {
@@ -12031,7 +12031,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             View childAt = getChildAt(i3);
             if (childAt != null && childAt.getVisibility() != 8) {
                 if (childAt instanceof MediaPage) {
-                    measureChildWithMargins(childAt, i, 0, View.MeasureSpec.makeMeasureSpec(height, 1073741824), 0);
+                    measureChildWithMargins(childAt, i, 0, View.MeasureSpec.makeMeasureSpec(height, TLRPC.FLAG_30), 0);
                     MediaPage mediaPage = (MediaPage) childAt;
                     mediaPage.listView.setPadding(0, mediaPage.listView.topPadding, 0, mediaPage.listView.bottomPadding);
                 } else {

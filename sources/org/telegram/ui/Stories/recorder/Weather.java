@@ -107,7 +107,7 @@ public abstract class Weather {
         final ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         String str2 = messagesController.weatherSearchUsername;
         final TLRPC.User[] userArr = {messagesController.getUser(str2)};
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda0
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 Weather.lambda$fetch$5(MessagesController.this, userArr, d, d2, iArr, connectionsManager, callback, str);
@@ -116,7 +116,7 @@ public abstract class Weather {
         if (userArr[0] == null) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             tL_contacts_resolveUsername.username = str2;
-            iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda1
+            iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda8
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     Weather.lambda$fetch$7(iArr, messagesController, userArr, runnable, callback, tLObject, tL_error);
@@ -125,7 +125,7 @@ public abstract class Weather {
         } else {
             runnable.run();
         }
-        return new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda2
+        return new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 Weather.lambda$fetch$8(iArr, connectionsManager);
@@ -137,7 +137,7 @@ public abstract class Weather {
         if (callback == null) {
             return;
         }
-        getUserLocation(z, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda8
+        getUserLocation(z, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 Weather.lambda$fetch$2(Utilities.Callback.this, z, (Location) obj);
@@ -153,7 +153,7 @@ public abstract class Weather {
         if (callback == null) {
             return;
         }
-        PermissionRequest.ensureEitherPermission(R.raw.permission_request_location, R.string.PermissionNoLocationStory, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda11
+        PermissionRequest.ensureEitherPermission(R.raw.permission_request_location, R.string.PermissionNoLocationStory, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 Weather.lambda$getUserLocation$11(Utilities.Callback.this, z, (Boolean) obj);
@@ -192,7 +192,7 @@ public abstract class Weather {
         if (z) {
             alertDialog.showDelayed(200L);
         }
-        final Runnable fetch = fetch(location.getLatitude(), location.getLongitude(), new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda9
+        final Runnable fetch = fetch(location.getLatitude(), location.getLongitude(), new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 Weather.lambda$fetch$0(z, alertDialog, callback, (Weather.State) obj);
@@ -201,7 +201,7 @@ public abstract class Weather {
         if (!z || fetch == null) {
             return;
         }
-        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda10
+        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda5
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
                 fetch.run();
@@ -239,7 +239,7 @@ public abstract class Weather {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$fetch$4(final int[] iArr, final Utilities.Callback callback, final double d, final double d2, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 Weather.lambda$fetch$3(iArr, tLObject, callback, d, d2, str);
@@ -259,7 +259,7 @@ public abstract class Weather {
         tL_inputGeoPoint.lat = d;
         tL_inputGeoPoint._long = d2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-        iArr[0] = connectionsManager.sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda6
+        iArr[0] = connectionsManager.sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 Weather.lambda$fetch$4(iArr, callback, d, d2, str, tLObject, tL_error);
@@ -286,7 +286,7 @@ public abstract class Weather {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$fetch$7(final int[] iArr, final MessagesController messagesController, final TLRPC.User[] userArr, final Runnable runnable, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 Weather.lambda$fetch$6(iArr, tLObject, messagesController, userArr, runnable, callback);
@@ -337,7 +337,7 @@ public abstract class Weather {
                 try {
                     final Utilities.Callback[] callbackArr = {callback};
                     final LocationListener[] locationListenerArr = {null};
-                    LocationListener locationListener = new LocationListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda4
+                    LocationListener locationListener = new LocationListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda11
                         @Override // android.location.LocationListener
                         public final void onLocationChanged(Location location2) {
                             Weather.lambda$getUserLocation$10(locationListenerArr, locationManager, callbackArr, location2);
@@ -361,7 +361,7 @@ public abstract class Weather {
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setTopAnimation(R.raw.permission_request_location, 72, false, Theme.getColor(Theme.key_dialogTopBackground));
                     builder.setMessage(LocaleController.getString(R.string.GpsDisabledAlertText));
-                    builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda3
+                    builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stories.recorder.Weather$$ExternalSyntheticLambda10
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             Weather.lambda$getUserLocation$9(context, alertDialog, i);

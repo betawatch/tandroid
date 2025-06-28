@@ -11,6 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.PhotoCropView;
@@ -98,7 +99,7 @@ public class SuggestUserPhotoView extends View {
     protected void onMeasure(int i, int i2) {
         this.currentPhoto.setRoundRadius(AndroidUtilities.dp(30.0f));
         this.newPhoto.setRoundRadius(AndroidUtilities.dp(30.0f));
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLRPC.FLAG_30));
     }
 
     public void setImages(TLObject tLObject, View view, PhotoCropView photoCropView) {

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.zip.CRC32;
 import java.util.zip.ZipException;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 abstract class ZipUtil {
@@ -22,7 +21,7 @@ abstract class ZipUtil {
         long j = centralDirectory.size;
         randomAccessFile.seek(centralDirectory.offset);
         int min = (int) Math.min(16384L, j);
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM];
+        byte[] bArr = new byte[16384];
         while (true) {
             int read = randomAccessFile.read(bArr, 0, min);
             if (read == -1) {

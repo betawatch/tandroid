@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.GroupCallActivity;
 import org.telegram.ui.GroupCallTabletGridAdapter;
 
@@ -59,7 +60,7 @@ public abstract class GroupCallGridCell extends FrameLayout {
             float dp2 = (AndroidUtilities.displaySize.x - (AndroidUtilities.dp(14.0f) * 2)) + (GroupCallActivity.isLandscapeMode ? -AndroidUtilities.dp(90.0f) : 0);
             dp = (int) ((GroupCallActivity.isTabletMode ? dp2 / 2.0f : dp2 / f) + AndroidUtilities.dp(4.0f));
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
     }
 
     public void setData(AccountInstance accountInstance, ChatObject.VideoParticipant videoParticipant, ChatObject.Call call, long j) {

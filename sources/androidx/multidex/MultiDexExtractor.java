@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 final class MultiDexExtractor implements Closeable {
@@ -121,7 +120,7 @@ final class MultiDexExtractor implements Closeable {
                 ZipEntry zipEntry2 = new ZipEntry("classes.dex");
                 zipEntry2.setTime(zipEntry.getTime());
                 zipOutputStream.putNextEntry(zipEntry2);
-                byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM];
+                byte[] bArr = new byte[16384];
                 while (true) {
                     int read = inputStream.read(bArr);
                     if (read == -1) {

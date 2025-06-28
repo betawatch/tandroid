@@ -8,6 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -41,7 +42,7 @@ public class LoginOrView extends View {
     protected void onMeasure(int i, int i2) {
         View view = this.measureAfter;
         if (view != null) {
-            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), 1073741824);
+            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLRPC.FLAG_30);
         }
         super.onMeasure(i, i2);
         TextPaint textPaint = this.textPaint;

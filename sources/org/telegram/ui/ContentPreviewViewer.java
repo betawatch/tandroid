@@ -463,7 +463,7 @@ public class ContentPreviewViewer {
                     addItem.setTag(Integer.valueOf(i11));
                     addItem.setOnClickListener(onClickListener);
                 }
-                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
                 linearLayout.addView(createMyStickerPacksListView, new LinearLayout.LayoutParams(actionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindowLayout2.getMeasuredHeight() * 1.5f)));
                 actionBarPopupWindowLayout2.addViewToSwipeBack(linearLayout);
                 frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$1$$ExternalSyntheticLambda5
@@ -575,7 +575,7 @@ public class ContentPreviewViewer {
                             ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                             ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                             ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+                            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
                             ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                             ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                             if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -712,7 +712,7 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                         ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                         ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+                        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
                         ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                         ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                         if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -867,7 +867,7 @@ public class ContentPreviewViewer {
                 ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                 ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                 ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
                 ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                 ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                 if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -1265,7 +1265,7 @@ public class ContentPreviewViewer {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getMyStickersRemote$12(final List list, final TLRPC.TL_messages_getMyStickers tL_messages_getMyStickers, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 ContentPreviewViewer.this.lambda$getMyStickersRemote$11(tL_error, tLObject, list, tL_messages_getMyStickers);
@@ -1818,7 +1818,7 @@ public class ContentPreviewViewer {
                 if (dp <= size) {
                     size = dp;
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
             }
         };
         recyclerListView.setLayoutManager(new LinearLayoutManager(this.parentActivity));
@@ -1951,7 +1951,7 @@ public class ContentPreviewViewer {
                     this.startX = x;
                     this.startY = y;
                     this.currentPreviewCell = childAt;
-                    Runnable runnable = new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda9
+                    Runnable runnable = new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda10
                         @Override // java.lang.Runnable
                         public final void run() {
                             ContentPreviewViewer.this.lambda$onInterceptTouchEvent$5(recyclerListView, i2, resourcesProvider);
@@ -1997,7 +1997,7 @@ public class ContentPreviewViewer {
         }
         if (this.openPreviewRunnable != null || isVisible()) {
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3 || motionEvent.getAction() == 6) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda10
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
                         ContentPreviewViewer.lambda$onTouch$4(RecyclerListView.this, obj);
@@ -2438,7 +2438,7 @@ public class ContentPreviewViewer {
             layoutParams.flags &= -131073;
             layoutParams.softInputMode = 16;
         } else {
-            this.windowLayoutParams.flags |= 131072;
+            this.windowLayoutParams.flags |= TLRPC.FLAG_17;
         }
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
@@ -2479,7 +2479,7 @@ public class ContentPreviewViewer {
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 21) {
             this.windowView.setFitsSystemWindows(true);
-            this.windowView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda6
+            this.windowView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnApplyWindowInsetsListener
                 public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
                     WindowInsets lambda$setParentActivity$6;
@@ -2506,7 +2506,7 @@ public class ContentPreviewViewer {
         this.containerView = frameLayoutDrawer;
         frameLayoutDrawer.setFocusable(false);
         this.windowView.addView(this.containerView, LayoutHelper.createFrame(-1, -1, 51));
-        this.containerView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda7
+        this.containerView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda8
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$setParentActivity$7;

@@ -18,6 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Paint.Views.RoundView;
@@ -274,7 +275,7 @@ public abstract class RoundVideoRecorder extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(this.cameraView.getX() + ((this.cameraView.getWidth() / 2.0f) * (1.0f - this.cameraView.getScaleX())), this.cameraView.getY() + ((this.cameraView.getHeight() / 2.0f) * (1.0f - this.cameraView.getScaleY())), (this.cameraView.getX() + this.cameraView.getWidth()) - ((this.cameraView.getWidth() / 2.0f) * (1.0f - this.cameraView.getScaleX())), (this.cameraView.getY() + this.cameraView.getHeight()) - ((this.cameraView.getHeight() / 2.0f) * (1.0f - this.cameraView.getScaleY())));
-        this.shadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), Theme.multAlpha(536870912, this.alpha));
+        this.shadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), Theme.multAlpha(TLRPC.FLAG_29, this.alpha));
         this.shadowPaint.setAlpha((int) (this.alpha * 255.0f));
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), Math.min(rectF.width() / 2.0f, rectF.height() / 2.0f) - 1.0f, this.shadowPaint);
         super.dispatchDraw(canvas);
@@ -295,7 +296,7 @@ public abstract class RoundVideoRecorder extends FrameLayout {
             float clamp = Utilities.clamp(sinceRecording() / 59500.0f, 1.0f, 0.0f);
             this.progressPaint.setStrokeWidth(AndroidUtilities.dp(3.33f));
             this.progressPaint.setColor(Theme.multAlpha(-1090519041, this.alpha));
-            this.progressPaint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.33f), Theme.multAlpha(536870912, this.alpha));
+            this.progressPaint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.33f), Theme.multAlpha(TLRPC.FLAG_29, this.alpha));
             rectF.inset(-AndroidUtilities.dp(7.665f), -AndroidUtilities.dp(7.665f));
             canvas.drawArc(rectF, -90.0f, clamp * 360.0f, false, this.progressPaint);
             if (this.recordingStopped <= 0) {
@@ -343,7 +344,7 @@ public abstract class RoundVideoRecorder extends FrameLayout {
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         int min = (int) (Math.min(size, size2) * 0.43f);
-        this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(min, 1073741824), View.MeasureSpec.makeMeasureSpec(min, 1073741824));
+        this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30));
         setMeasuredDimension(size, size2);
     }
 

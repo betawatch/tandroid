@@ -6,7 +6,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.SeekBar;
 import com.google.android.gms.common.util.PlatformVersion;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 final class zzg extends View.AccessibilityDelegate {
@@ -29,8 +28,8 @@ final class zzg extends View.AccessibilityDelegate {
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(SeekBar.class.getName());
         if (PlatformVersion.isAtLeastJellyBean() && view.isEnabled()) {
-            accessibilityNodeInfo.addAction(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
-            accessibilityNodeInfo.addAction(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            accessibilityNodeInfo.addAction(4096);
+            accessibilityNodeInfo.addAction(8192);
         }
     }
 

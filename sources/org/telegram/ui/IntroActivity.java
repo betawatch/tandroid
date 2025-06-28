@@ -851,7 +851,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             @Override // android.widget.TextView, android.view.View
             protected void onMeasure(int i3, int i4) {
                 if (View.MeasureSpec.getSize(i3) > AndroidUtilities.dp(260.0f)) {
-                    i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), 1073741824);
+                    i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLRPC.FLAG_30);
                 }
                 super.onMeasure(i3, i4);
             }

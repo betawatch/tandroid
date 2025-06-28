@@ -1374,7 +1374,7 @@ public class AndroidUtilities {
     }
 
     public static boolean copyFile(InputStream inputStream, OutputStream outputStream) {
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+        byte[] bArr = new byte[4096];
         while (true) {
             int read = inputStream.read(bArr);
             if (read <= 0) {
@@ -3346,7 +3346,7 @@ public class AndroidUtilities {
             try {
                 GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(new BufferedOutputStream(new FileOutputStream(file2)));
                 try {
-                    byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+                    byte[] bArr = new byte[8192];
                     while (true) {
                         int read = bufferedInputStream.read(bArr);
                         if (read == -1) {
@@ -3396,7 +3396,7 @@ public class AndroidUtilities {
             return false;
         }
         try {
-            if ((intent.getFlags() & FileLoaderPriorityQueue.PRIORITY_VALUE_MAX) == 0 && (data = intent.getData()) != null) {
+            if ((intent.getFlags() & 1048576) == 0 && (data = intent.getData()) != null) {
                 String scheme = data.getScheme();
                 if (scheme != null) {
                     if (!scheme.equals("http") && !scheme.equals("https")) {
@@ -4346,6 +4346,18 @@ public class AndroidUtilities {
         }
     }
 
+    public static void lerp(Rect rect, RectF rectF, float f, RectF rectF2) {
+        if (rectF2 != null) {
+            rectF2.set(lerp(rect.left, rectF.left, f), lerp(rect.top, rectF.top, f), lerp(rect.right, rectF.right, f), lerp(rect.bottom, rectF.bottom, f));
+        }
+    }
+
+    public static void lerp(RectF rectF, Rect rect, float f, RectF rectF2) {
+        if (rectF2 != null) {
+            rectF2.set(lerp(rectF.left, rect.left, f), lerp(rectF.top, rect.top, f), lerp(rectF.right, rect.right, f), lerp(rectF.bottom, rect.bottom, f));
+        }
+    }
+
     public static void lerp(RectF rectF, RectF rectF2, float f, RectF rectF3) {
         if (rectF3 != null) {
             rectF3.set(lerp(rectF.left, rectF2.left, f), lerp(rectF.top, rectF2.top, f), lerp(rectF.right, rectF2.right, f), lerp(rectF.bottom, rectF2.bottom, f));
@@ -4681,6 +4693,11 @@ public class AndroidUtilities {
         }
     }
 
+    public static void logFlagSecure() {
+        FileLog.d("[FLAG_SECURE]");
+        printStackTrace("FLAG_SECURE");
+    }
+
     public static void makeAccessibilityAnnouncement(CharSequence charSequence) {
         if (TextUtils.isEmpty(charSequence)) {
             return;
@@ -4688,7 +4705,7 @@ public class AndroidUtilities {
         AccessibilityManager accessibilityManager2 = (AccessibilityManager) ApplicationLoader.applicationContext.getSystemService("accessibility");
         if (accessibilityManager2.isEnabled()) {
             AccessibilityEvent obtain = AccessibilityEvent.obtain();
-            obtain.setEventType(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            obtain.setEventType(16384);
             obtain.getText().add(charSequence);
             accessibilityManager2.sendAccessibilityEvent(obtain);
         }
@@ -5239,6 +5256,12 @@ public class AndroidUtilities {
         return replaceSingleTag(str, -1, 2, runnable);
     }
 
+    private static void printStackTrace(String str) {
+        for (StackTraceElement stackTraceElement : Thread.currentThread().getStackTrace()) {
+            FileLog.d("[" + str + "] " + stackTraceElement);
+        }
+    }
+
     private static void pruneOverlaps(ArrayList<LinkSpec> arrayList) {
         int i;
         int i2;
@@ -5301,7 +5324,7 @@ public class AndroidUtilities {
         try {
             byte[] bArr2 = bufferLocal.get();
             if (bArr2 == null) {
-                bArr2 = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+                bArr2 = new byte[4096];
                 bufferLocal.set(bArr2);
             }
             int i2 = 0;
@@ -5371,7 +5394,7 @@ public class AndroidUtilities {
 
     public static void removeAltFocusable(Activity activity, int i) {
         if (activity != null && altFocusableClassGuid == i) {
-            activity.getWindow().clearFlags(131072);
+            activity.getWindow().clearFlags(TLRPC.FLAG_17);
         }
     }
 
@@ -5878,7 +5901,7 @@ public class AndroidUtilities {
         if (activity == null) {
             return;
         }
-        activity.getWindow().setFlags(131072, 131072);
+        activity.getWindow().setFlags(TLRPC.FLAG_17, TLRPC.FLAG_17);
         altFocusableClassGuid = i;
     }
 
@@ -6084,8 +6107,8 @@ public class AndroidUtilities {
             return;
         }
         int systemUiVisibility = view.getSystemUiVisibility();
-        if (((systemUiVisibility & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) > 0) != z) {
-            view.setSystemUiVisibility(z ? systemUiVisibility | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : systemUiVisibility & (-8193));
+        if (((systemUiVisibility & 8192) > 0) != z) {
+            view.setSystemUiVisibility(z ? systemUiVisibility | 8192 : systemUiVisibility & (-8193));
         }
     }
 
@@ -6100,15 +6123,15 @@ public class AndroidUtilities {
             View decorView = window.getDecorView();
             int systemUiVisibility = decorView.getSystemUiVisibility();
             if (z) {
-                if ((systemUiVisibility & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) == 0) {
-                    decorView.setSystemUiVisibility(systemUiVisibility | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                if ((systemUiVisibility & 8192) == 0) {
+                    decorView.setSystemUiVisibility(systemUiVisibility | 8192);
                 }
                 statusBarColor2 = window.getStatusBarColor();
                 if (statusBarColor2 == 0) {
                     return;
                 }
             } else {
-                if ((systemUiVisibility & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0) {
+                if ((systemUiVisibility & 8192) != 0) {
                     decorView.setSystemUiVisibility(systemUiVisibility & (-8193));
                 }
                 statusBarColor = window.getStatusBarColor();

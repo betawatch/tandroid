@@ -17,6 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -827,7 +828,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
     protected void onMeasure(int i, int i2) {
         if (this.isSingleCell) {
             int i3 = this.itemsCount;
-            i2 = View.MeasureSpec.makeMeasureSpec(((i3 <= 1 || !this.ignoreHeightCheck) ? (i3 <= 1 || View.MeasureSpec.getSize(i2) <= 0) ? getCellHeight(View.MeasureSpec.getSize(i)) : Math.min(View.MeasureSpec.getSize(i2), getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) : getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) + getAdditionalHeight(), 1073741824);
+            i2 = View.MeasureSpec.makeMeasureSpec(((i3 <= 1 || !this.ignoreHeightCheck) ? (i3 <= 1 || View.MeasureSpec.getSize(i2) <= 0) ? getCellHeight(View.MeasureSpec.getSize(i)) : Math.min(View.MeasureSpec.getSize(i2), getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) : getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) + getAdditionalHeight(), TLRPC.FLAG_30);
         }
         super.onMeasure(i, i2);
     }

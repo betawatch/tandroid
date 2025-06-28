@@ -3,6 +3,7 @@ package com.google.android.gms.internal.cast;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class zzfu extends zzfm implements Set, j$.util.Set {
@@ -16,7 +17,7 @@ public abstract class zzfu extends zzfm implements Set, j$.util.Set {
         int max = Math.max(i, 2);
         if (max >= 751619276) {
             if (max < 1073741824) {
-                return 1073741824;
+                return TLRPC.FLAG_30;
             }
             throw new IllegalArgumentException("collection too large");
         }

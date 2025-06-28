@@ -433,7 +433,7 @@ public class VoIPGroupNotification {
                         contentIntent.setColor(-13851168);
                         contentIntent.setVibrate(new long[i5]);
                         contentIntent.setCategory("call");
-                        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i5, putExtra, ConnectionsManager.FileTypeVideo), true);
+                        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i5, putExtra, 33554432), true);
                     }
                     Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
                     intent3.setAction(context.getPackageName() + ".HIDE_CALL");

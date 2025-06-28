@@ -139,8 +139,8 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
                 marginLayoutParams.rightMargin = dp;
                 int size = (View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(200.0f)) / 2;
                 GroupCallRecordAlert.this.viewPager.setPadding(size, 0, size, 0);
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), 1073741824));
-                measureChildWithMargins(GroupCallRecordAlert.this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), 1073741824), 0);
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLRPC.FLAG_30));
+                measureChildWithMargins(GroupCallRecordAlert.this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLRPC.FLAG_30), 0);
             }
 
             @Override // android.view.View, android.view.ViewParent

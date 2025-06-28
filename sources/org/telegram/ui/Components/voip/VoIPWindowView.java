@@ -12,6 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.VoIPFragment;
 import org.webrtc.OrientationHelper;
@@ -56,7 +57,7 @@ public abstract class VoIPWindowView extends FrameLayout {
         if (i >= 28) {
             layoutParams.layoutInDisplayCutoutMode = 1;
         }
-        layoutParams.flags = i >= 21 ? -2147286784 : 131072;
+        layoutParams.flags = i >= 21 ? -2147286784 : TLRPC.FLAG_17;
         layoutParams.flags |= 2621568;
         return layoutParams;
     }

@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class OrientationHelper {
@@ -12,7 +13,7 @@ public abstract class OrientationHelper {
     final Rect mTmpRect;
 
     private OrientationHelper(RecyclerView.LayoutManager layoutManager) {
-        this.mLastTotalSpace = Integer.MIN_VALUE;
+        this.mLastTotalSpace = TLRPC.FLAG_31;
         this.mTmpRect = new Rect();
         this.mLayoutManager = layoutManager;
     }

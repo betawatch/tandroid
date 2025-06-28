@@ -16,8 +16,12 @@ final class e implements f {
         this.b = z;
     }
 
+    public final e a() {
+        return !this.b ? this : new e(this.a, false);
+    }
+
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         int length = sb.length();
         boolean z = this.b;
         if (z) {
@@ -25,7 +29,7 @@ final class e implements f {
         }
         try {
             for (f fVar : this.a) {
-                if (!fVar.a(rVar, sb)) {
+                if (!fVar.f(rVar, sb)) {
                     sb.setLength(length);
                     return true;
                 }
@@ -39,10 +43,6 @@ final class e implements f {
                 rVar.a();
             }
         }
-    }
-
-    public final e b() {
-        return !this.b ? this : new e(this.a, false);
     }
 
     public final String toString() {

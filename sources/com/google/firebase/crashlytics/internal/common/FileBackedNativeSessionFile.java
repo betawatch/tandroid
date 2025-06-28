@@ -8,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 class FileBackedNativeSessionFile implements NativeSessionFile {
@@ -23,7 +22,7 @@ class FileBackedNativeSessionFile implements NativeSessionFile {
     }
 
     private byte[] asGzippedBytes() {
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+        byte[] bArr = new byte[8192];
         try {
             InputStream stream = getStream();
             try {

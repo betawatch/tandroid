@@ -171,7 +171,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
         }
 
         public void set(int i, int i2, CharSequence charSequence, CharSequence charSequence2) {
@@ -319,7 +319,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 size--;
             }
             if (baseFragment == null) {
-                lambda$onBackPressed$348();
+                lambda$onBackPressed$354();
                 baseFragment = parentLayout.getBackgroundFragment();
                 if (baseFragment == null) {
                     if (z) {
@@ -342,7 +342,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 parentLayout.removeFragmentFromStack((BaseFragment) fragmentStack.get(size2));
             }
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
         if (baseFragment == null) {
         }
     }
@@ -691,7 +691,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                         i3 = i4;
                     }
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) AffiliateProgramFragment.this).yOffset * 2.5f)), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) AffiliateProgramFragment.this).yOffset * 2.5f)), TLRPC.FLAG_30));
             }
         };
         this.emptyLayout = view;

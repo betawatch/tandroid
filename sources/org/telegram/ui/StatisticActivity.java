@@ -998,7 +998,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i2, int i3) {
                     int size = View.MeasureSpec.getSize(i2);
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i3);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i3);
                     int childCount = getChildCount();
                     int measuredHeight = childCount > 0 ? getChildAt(0).getMeasuredHeight() : 0;
                     int i4 = 0;
@@ -3547,7 +3547,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         };
         this.viewPagerFixed = new ViewPagerFixed(getContext()) { // from class: org.telegram.ui.StatisticActivity.4
             @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onTabAnimationUpdate(boolean z4) {
+            public void onTabAnimationUpdate(boolean z4) {
                 if (z4) {
                     return;
                 }
@@ -3769,7 +3769,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        StatisticActivity.this.lambda$onBackPressed$348();
+                        StatisticActivity.this.lambda$onBackPressed$354();
                     }
                 }
             });
@@ -3895,7 +3895,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    StatisticActivity.this.lambda$onBackPressed$348();
+                    StatisticActivity.this.lambda$onBackPressed$354();
                 }
             }
         });
@@ -3937,7 +3937,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 List fragmentStack2 = getParentLayout().getFragmentStack();
                 BaseFragment baseFragment2 = fragmentStack2.size() >= 2 ? (BaseFragment) fragmentStack2.get(fragmentStack2.size() - 2) : null;
                 if (!booleanValue) {
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                     if (baseFragment2 instanceof ProfileActivity) {
                         BoostDialogs.showBulletin(baseFragment2, chat, false);
                         return;
@@ -3948,7 +3948,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 if (baseFragment2 instanceof ProfileActivity) {
                     getParentLayout().removeFragmentFromStack(baseFragment2);
                 }
-                lambda$onBackPressed$348();
+                lambda$onBackPressed$354();
                 if (baseFragment3 instanceof ChatActivity) {
                     BoostDialogs.showBulletin(baseFragment3, chat, true);
                     return;

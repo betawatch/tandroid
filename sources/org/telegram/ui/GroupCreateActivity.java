@@ -934,7 +934,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             for (int childCount = getChildCount(); i5 < childCount; childCount = i3) {
                 View childAt = getChildAt(i5);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), 1073741824));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
                     boolean contains = this.removingSpans.contains(childAt);
                     if (!contains && childAt.getMeasuredWidth() + i6 > dp) {
                         dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
@@ -1003,7 +1003,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             if (dp - i7 < i8) {
                 dp3 += AndroidUtilities.dp(40.0f);
             }
-            GroupCreateActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i6, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), 1073741824));
+            GroupCreateActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i6, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
             if (!this.animationStarted) {
                 int dp5 = dp3 + AndroidUtilities.dp(42.0f);
                 int dp6 = i6 + AndroidUtilities.dp(16.0f);
@@ -1325,7 +1325,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$11(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1366,7 +1366,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             CallLogActivity.createCallLink(context, this.currentAccount, this.resourceProvider, new Runnable() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCreateActivity.this.lambda$onBackPressed$348();
+                    GroupCreateActivity.this.lambda$onBackPressed$354();
                 }
             });
             return;
@@ -1557,7 +1557,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         if (contactsAddActivityDelegate != null) {
             contactsAddActivityDelegate.didSelectUsers(arrayList, i);
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1662,7 +1662,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     if (groupCreateActivityDelegate != null) {
                         groupCreateActivityDelegate.didSelectUsers(this.selectedPremium != null, this.selectedMiniapps != null, arrayList2);
                     }
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                 } else {
                     Bundle bundle2 = new Bundle();
                     int size = arrayList2.size();
@@ -1886,7 +1886,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                             public void onItemClick(int i5) {
                                 if (i5 == -1) {
                                     if (GroupCreateActivity.this.checkDiscard()) {
-                                        GroupCreateActivity.this.lambda$onBackPressed$348();
+                                        GroupCreateActivity.this.lambda$onBackPressed$354();
                                     }
                                 } else if (i5 == 1) {
                                     GroupCreateActivity.this.onDonePressed(true);
@@ -1974,15 +1974,15 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                                     dp = AndroidUtilities.dp(56.0f);
                                 }
                                 groupCreateActivity.maxSize = dp;
-                                GroupCreateActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(GroupCreateActivity.this.maxSize, Integer.MIN_VALUE));
-                                GroupCreateActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), 1073741824));
-                                GroupCreateActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), 1073741824));
+                                GroupCreateActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(GroupCreateActivity.this.maxSize, TLRPC.FLAG_31));
+                                GroupCreateActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), TLRPC.FLAG_30));
+                                GroupCreateActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), TLRPC.FLAG_30));
                                 if (GroupCreateActivity.this.floatingButton != null) {
                                     int dp2 = AndroidUtilities.dp(Build.VERSION.SDK_INT < 21 ? 60.0f : 56.0f);
-                                    GroupCreateActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(dp2, 1073741824), View.MeasureSpec.makeMeasureSpec(dp2, 1073741824));
+                                    GroupCreateActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30));
                                 }
                                 if (GroupCreateActivity.this.buttonsContainer != null) {
-                                    GroupCreateActivity.this.buttonsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f) + 1, Integer.MIN_VALUE));
+                                    GroupCreateActivity.this.buttonsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f) + 1, TLRPC.FLAG_31));
                                 }
                             }
 
@@ -1995,7 +1995,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                         };
                         this.fragmentView = viewGroup;
                         viewGroup.setFocusableInTouchMode(true);
-                        viewGroup.setDescendantFocusability(131072);
+                        viewGroup.setDescendantFocusability(TLRPC.FLAG_17);
                         ScrollView scrollView = new ScrollView(context) { // from class: org.telegram.ui.GroupCreateActivity.3
                             @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
                             public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
@@ -2298,7 +2298,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             public void onItemClick(int i52) {
                 if (i52 == -1) {
                     if (GroupCreateActivity.this.checkDiscard()) {
-                        GroupCreateActivity.this.lambda$onBackPressed$348();
+                        GroupCreateActivity.this.lambda$onBackPressed$354();
                     }
                 } else if (i52 == 1) {
                     GroupCreateActivity.this.onDonePressed(true);
@@ -2386,15 +2386,15 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     dp = AndroidUtilities.dp(56.0f);
                 }
                 groupCreateActivity.maxSize = dp;
-                GroupCreateActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(GroupCreateActivity.this.maxSize, Integer.MIN_VALUE));
-                GroupCreateActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), 1073741824));
-                GroupCreateActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), 1073741824));
+                GroupCreateActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(GroupCreateActivity.this.maxSize, TLRPC.FLAG_31));
+                GroupCreateActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), TLRPC.FLAG_30));
+                GroupCreateActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - GroupCreateActivity.this.scrollView.getMeasuredHeight(), TLRPC.FLAG_30));
                 if (GroupCreateActivity.this.floatingButton != null) {
                     int dp2 = AndroidUtilities.dp(Build.VERSION.SDK_INT < 21 ? 60.0f : 56.0f);
-                    GroupCreateActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(dp2, 1073741824), View.MeasureSpec.makeMeasureSpec(dp2, 1073741824));
+                    GroupCreateActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30));
                 }
                 if (GroupCreateActivity.this.buttonsContainer != null) {
-                    GroupCreateActivity.this.buttonsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f) + 1, Integer.MIN_VALUE));
+                    GroupCreateActivity.this.buttonsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f) + 1, TLRPC.FLAG_31));
                 }
             }
 
@@ -2407,7 +2407,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         };
         this.fragmentView = viewGroup2;
         viewGroup2.setFocusableInTouchMode(true);
-        viewGroup2.setDescendantFocusability(131072);
+        viewGroup2.setDescendantFocusability(TLRPC.FLAG_17);
         ScrollView scrollView3 = new ScrollView(context) { // from class: org.telegram.ui.GroupCreateActivity.3
             @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
             public boolean requestChildRectangleOnScreen(View view2, Rect rect, boolean z) {

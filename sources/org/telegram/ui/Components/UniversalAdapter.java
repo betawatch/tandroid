@@ -91,12 +91,12 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
             int size;
             if ((getParent() instanceof View) && ((View) getParent()).getMeasuredHeight() > 0) {
                 View view = (View) getParent();
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
                 size = view.getMeasuredHeight();
             } else {
                 if (View.MeasureSpec.getMode(i2) == 0) {
                     int size2 = View.MeasureSpec.getSize(i2);
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
                     measureChildren(makeMeasureSpec, i2);
                     int i3 = 0;
                     for (int i4 = 0; i4 < getChildCount(); i4++) {
@@ -105,13 +105,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     if (size2 > 0) {
                         i3 = Math.min(i3, size2 - this.minusHeight);
                     }
-                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i3, 1073741824);
+                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
                     super.onMeasure(makeMeasureSpec, makeMeasureSpec2);
                 }
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
                 size = View.MeasureSpec.getSize(i2);
             }
-            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - this.minusHeight, 1073741824);
+            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - this.minusHeight, TLRPC.FLAG_30);
             super.onMeasure(makeMeasureSpec, makeMeasureSpec2);
         }
 
@@ -791,13 +791,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     view = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.2
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i3, int i4) {
-                            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), 1073741824);
+                            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLRPC.FLAG_30);
                             measureChildren(makeMeasureSpec, i4);
                             int i5 = 0;
                             for (int i6 = 0; i6 < getChildCount(); i6++) {
                                 i5 = Math.max(i5, getChildAt(i6).getMeasuredHeight());
                             }
-                            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i5, 1073741824));
+                            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_30));
                         }
                     };
                     break;
@@ -805,7 +805,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     view = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.1
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i3, int i4) {
-                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), 1073741824), i4);
+                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLRPC.FLAG_30), i4);
                         }
                     };
                     break;

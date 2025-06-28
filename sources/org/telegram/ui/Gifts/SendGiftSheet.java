@@ -184,6 +184,11 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
+            public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell3, int i2, int i3) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell3, i2, i3);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
             public /* synthetic */ void forceUpdate(ChatActionCell chatActionCell3, boolean z4) {
                 ChatActionCell.ChatActionCellDelegate.-CC.$default$forceUpdate(this, chatActionCell3, z4);
             }
@@ -251,7 +256,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     int measuredHeight = getMeasuredHeight();
                     int i4 = this.maxHeight;
                     if (measuredHeight < i4) {
-                        i3 = View.MeasureSpec.makeMeasureSpec(Math.max(i4, getMeasuredHeight()), Integer.MIN_VALUE);
+                        i3 = View.MeasureSpec.makeMeasureSpec(Math.max(i4, getMeasuredHeight()), TLRPC.FLAG_31);
                     }
                 }
                 super.onMeasure(i2, i3);
@@ -460,7 +465,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 if (starGift == null) {
                     super.onMeasure(i7, i8);
                 } else {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i7) * clamp), 1073741824), i8);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i7) * clamp), TLRPC.FLAG_30), i8);
                 }
             }
         };
@@ -875,7 +880,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     }
                 } else if (baseFragment instanceof ProfileActivity) {
                     if (z && parentLayout.getLastFragment() == baseFragment) {
-                        baseFragment.lambda$onBackPressed$348();
+                        baseFragment.lambda$onBackPressed$354();
                     }
                     baseFragment.removeSelfFromStack();
                 }

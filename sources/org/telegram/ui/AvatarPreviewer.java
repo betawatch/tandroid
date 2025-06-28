@@ -409,9 +409,9 @@ public class AvatarPreviewer {
                     int paddingTop = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
                     int min = Math.min(paddingLeft, paddingTop) - AndroidUtilities.dp(16.0f);
                     int min2 = Math.min(AndroidUtilities.dp(60.0f), min);
-                    Layout.this.menu.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec((paddingTop - min2) - AndroidUtilities.dp(40.0f), Integer.MIN_VALUE));
+                    Layout.this.menu.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec((paddingTop - min2) - AndroidUtilities.dp(40.0f), TLRPC.FLAG_31));
                     int clamp = MathUtils.clamp((paddingTop - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(40.0f), min2, min);
-                    Layout.this.avatarView.measure(View.MeasureSpec.makeMeasureSpec(clamp, 1073741824), View.MeasureSpec.makeMeasureSpec(clamp, 1073741824));
+                    Layout.this.avatarView.measure(View.MeasureSpec.makeMeasureSpec(clamp, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(clamp, TLRPC.FLAG_30));
                     int measuredHeight = (((paddingTop - clamp) - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(40.0f)) / 2;
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) Layout.this.avatarView.getLayoutParams();
                     FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) Layout.this.menu.getLayoutParams();

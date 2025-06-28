@@ -5,6 +5,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.ScopeCoroutine;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public abstract class SafeCollector_commonKt {
@@ -18,7 +19,7 @@ public abstract class SafeCollector_commonKt {
                 CoroutineContext.Key key = element.getKey();
                 CoroutineContext.Element element2 = SafeCollector.this.collectContext.get(key);
                 if (key != Job.Key) {
-                    return Integer.valueOf(element != element2 ? Integer.MIN_VALUE : i + 1);
+                    return Integer.valueOf(element != element2 ? TLRPC.FLAG_31 : i + 1);
                 }
                 Job job = (Job) element2;
                 Intrinsics.checkNotNull(element, "null cannot be cast to non-null type kotlinx.coroutines.Job");

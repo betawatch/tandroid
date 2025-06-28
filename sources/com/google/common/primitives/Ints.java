@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class Ints extends IntsMethodsForWeb {
@@ -192,13 +193,7 @@ public abstract class Ints extends IntsMethodsForWeb {
     }
 
     public static int saturatedCast(long j) {
-        if (j > 2147483647L) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        if (j < -2147483648L) {
-            return Integer.MIN_VALUE;
-        }
-        return (int) j;
+        return j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLRPC.FLAG_31 : (int) j;
     }
 
     public static int[] toArray(Collection collection) {

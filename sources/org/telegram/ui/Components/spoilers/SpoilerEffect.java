@@ -42,6 +42,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.BaseCell;
 import org.telegram.ui.Components.Easings;
@@ -213,7 +214,7 @@ public class SpoilerEffect extends Drawable {
                 if (i == -1 && i2 == -1) {
                     int lineForOffset = layout.getLineForOffset(spanEnd);
                     i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    i4 = Integer.MIN_VALUE;
+                    i4 = TLRPC.FLAG_31;
                     for (int lineForOffset2 = layout.getLineForOffset(spanStart); lineForOffset2 <= lineForOffset; lineForOffset2++) {
                         i3 = Math.min(i3, (int) layout.getLineLeft(lineForOffset2));
                         i4 = Math.max(i4, (int) layout.getLineRight(lineForOffset2));

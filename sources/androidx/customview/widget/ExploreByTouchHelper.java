@@ -16,10 +16,11 @@ import androidx.core.view.accessibility.AccessibilityRecordCompat;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
-    private static final Rect INVALID_PARENT_BOUNDS = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, Integer.MIN_VALUE, Integer.MIN_VALUE);
+    private static final Rect INVALID_PARENT_BOUNDS = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLRPC.FLAG_31, TLRPC.FLAG_31);
     private static final FocusStrategy$BoundsAdapter NODE_ADAPTER = new FocusStrategy$BoundsAdapter() { // from class: androidx.customview.widget.ExploreByTouchHelper.1
     };
     private static final FocusStrategy$CollectionAdapter SPARSE_VALUES_ADAPTER = new FocusStrategy$CollectionAdapter() { // from class: androidx.customview.widget.ExploreByTouchHelper.2
@@ -31,9 +32,9 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
     private final Rect mTempParentRect = new Rect();
     private final Rect mTempVisibleRect = new Rect();
     private final int[] mTempGlobalRect = new int[2];
-    int mAccessibilityFocusedVirtualViewId = Integer.MIN_VALUE;
-    int mKeyboardFocusedVirtualViewId = Integer.MIN_VALUE;
-    private int mHoveredVirtualViewId = Integer.MIN_VALUE;
+    int mAccessibilityFocusedVirtualViewId = TLRPC.FLAG_31;
+    int mKeyboardFocusedVirtualViewId = TLRPC.FLAG_31;
+    private int mHoveredVirtualViewId = TLRPC.FLAG_31;
 
     private class MyNodeProvider extends AccessibilityNodeProviderCompat {
         MyNodeProvider() {
@@ -75,7 +76,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         if (this.mAccessibilityFocusedVirtualViewId != i) {
             return false;
         }
-        this.mAccessibilityFocusedVirtualViewId = Integer.MIN_VALUE;
+        this.mAccessibilityFocusedVirtualViewId = TLRPC.FLAG_31;
         this.mHost.invalidate();
         sendEventForVirtualView(i, 65536);
         return true;
@@ -250,7 +251,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         if (this.mKeyboardFocusedVirtualViewId != i) {
             return false;
         }
-        this.mKeyboardFocusedVirtualViewId = Integer.MIN_VALUE;
+        this.mKeyboardFocusedVirtualViewId = TLRPC.FLAG_31;
         onVirtualViewKeyboardFocusChanged(i, false);
         sendEventForVirtualView(i, 8);
         return true;
@@ -269,7 +270,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         if (action != 10 || this.mHoveredVirtualViewId == Integer.MIN_VALUE) {
             return false;
         }
-        updateHoveredVirtualView(Integer.MIN_VALUE);
+        updateHoveredVirtualView(TLRPC.FLAG_31);
         return true;
     }
 

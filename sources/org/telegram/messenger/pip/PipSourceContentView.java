@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.pip.source.PipSourceHandlerState2;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public class PipSourceContentView extends ViewGroup {
@@ -45,10 +46,10 @@ public class PipSourceContentView extends ViewGroup {
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
-        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
         this.state.updatePositionViewRect(size, size2, ((PipActivityContentLayout) getParent()).isViewInPip());
         for (int i3 = 0; i3 < getChildCount(); i3++) {
-            getChildAt(i3).measure(View.MeasureSpec.makeMeasureSpec(this.state.position.width(), 1073741824), View.MeasureSpec.makeMeasureSpec(this.state.position.height(), 1073741824));
+            getChildAt(i3).measure(View.MeasureSpec.makeMeasureSpec(this.state.position.width(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.state.position.height(), TLRPC.FLAG_30));
         }
     }
 }

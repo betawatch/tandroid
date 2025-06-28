@@ -66,7 +66,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
     private FrameLayout previewContainer;
     private EditTextCell titleEdit;
     private boolean valueSet;
-    private final Runnable updateRandomStickerRunnable = new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda3
+    private final Runnable updateRandomStickerRunnable = new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda5
         @Override // java.lang.Runnable
         public final void run() {
             BusinessIntroActivity.this.updateRandomSticker();
@@ -193,7 +193,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$6(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -220,13 +220,13 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             if (this.inputSticker != null) {
                 getMessagesController().loadFullUser(getUserConfig().getCurrentUser(), 0, true);
             }
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$4(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 BusinessIntroActivity.this.lambda$processDone$3(tL_error, tLObject);
@@ -250,7 +250,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         this.chatAttachAlert.getPhotoLayout().loadGalleryPhotos();
         this.chatAttachAlert.setMaxSelectedPhotos(1, false);
         this.chatAttachAlert.setOpenWithFrontFaceCamera(true);
-        this.chatAttachAlert.enableStickerMode(new Utilities.Callback2() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda9
+        this.chatAttachAlert.enableStickerMode(new Utilities.Callback2() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BusinessIntroActivity.this.setCustomSticker((String) obj, (TLRPC.InputDocument) obj2);
@@ -405,7 +405,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
     public void updateRandomSticker() {
         ChatGreetingsView chatGreetingsView = this.greetingsView;
         if (chatGreetingsView != null && chatGreetingsView.isAttachedToWindow() && this.stickerRandom) {
-            this.greetingsView.setNextSticker(MediaDataController.getInstance(this.currentAccount).getGreetingsSticker(), new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda7
+            this.greetingsView.setNextSticker(MediaDataController.getInstance(this.currentAccount).getGreetingsSticker(), new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     BusinessIntroActivity.this.lambda$updateRandomSticker$0();
@@ -444,7 +444,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             protected void onMeasure(int i, int i2) {
                 BusinessIntroActivity.this.greetingsView.measure(i, i2);
                 invalidate();
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(this.minHeight, BusinessIntroActivity.this.greetingsView.getMeasuredHeight() + AndroidUtilities.dp(36.0f)), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(this.minHeight, BusinessIntroActivity.this.greetingsView.getMeasuredHeight() + AndroidUtilities.dp(36.0f)), TLRPC.FLAG_30));
                 if (this.minHeight < 0) {
                     this.minHeight = getMeasuredHeight();
                 }
@@ -534,7 +534,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     if (BusinessIntroActivity.this.onBackPressed()) {
-                        BusinessIntroActivity.this.lambda$onBackPressed$348();
+                        BusinessIntroActivity.this.lambda$onBackPressed$354();
                     }
                 } else if (i2 == 1) {
                     BusinessIntroActivity.this.processDone();
@@ -640,13 +640,13 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setTitle(LocaleController.getString(R.string.UnsavedChanges));
         builder.setMessage(LocaleController.getString(R.string.BusinessIntroUnsavedChanges));
-        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 BusinessIntroActivity.this.lambda$onBackPressed$5(alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda2
+        builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 BusinessIntroActivity.this.lambda$onBackPressed$6(alertDialog, i);
@@ -661,7 +661,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         int i2 = uItem.id;
         if (i2 == 1) {
             EmojiBottomSheet emojiBottomSheet = new EmojiBottomSheet(getContext(), true, getResourceProvider(), true);
-            emojiBottomSheet.whenDocumentSelected(new Utilities.Callback3Return() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda4
+            emojiBottomSheet.whenDocumentSelected(new Utilities.Callback3Return() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback3Return
                 public final Object run(Object obj, Object obj2, Object obj3) {
                     Boolean lambda$onClick$2;
@@ -669,7 +669,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
                     return lambda$onClick$2;
                 }
             });
-            emojiBottomSheet.whenPlusSelected(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda5
+            emojiBottomSheet.whenPlusSelected(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     BusinessIntroActivity.this.openCustomStickerEditor();

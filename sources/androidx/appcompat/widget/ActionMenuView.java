@@ -19,6 +19,7 @@ import androidx.appcompat.view.menu.MenuPresenter;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class ActionMenuView extends LinearLayoutCompat implements MenuBuilder.ItemInvoker, MenuView {
@@ -129,7 +130,7 @@ public class ActionMenuView extends LinearLayoutCompat implements MenuBuilder.It
         if (i2 > 0) {
             i5 = 2;
             if (!z2 || i2 >= 2) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(i2 * i, Integer.MIN_VALUE), makeMeasureSpec);
+                view.measure(View.MeasureSpec.makeMeasureSpec(i2 * i, TLRPC.FLAG_31), makeMeasureSpec);
                 int measuredWidth = view.getMeasuredWidth();
                 int i6 = measuredWidth / i;
                 if (measuredWidth % i != 0) {
@@ -143,7 +144,7 @@ public class ActionMenuView extends LinearLayoutCompat implements MenuBuilder.It
                 }
                 layoutParams.expandable = z;
                 layoutParams.cellsUsed = i5;
-                view.measure(View.MeasureSpec.makeMeasureSpec(i * i5, 1073741824), makeMeasureSpec);
+                view.measure(View.MeasureSpec.makeMeasureSpec(i * i5, TLRPC.FLAG_30), makeMeasureSpec);
                 return i5;
             }
         }
@@ -153,7 +154,7 @@ public class ActionMenuView extends LinearLayoutCompat implements MenuBuilder.It
         }
         layoutParams.expandable = z;
         layoutParams.cellsUsed = i5;
-        view.measure(View.MeasureSpec.makeMeasureSpec(i * i5, 1073741824), makeMeasureSpec);
+        view.measure(View.MeasureSpec.makeMeasureSpec(i * i5, TLRPC.FLAG_30), makeMeasureSpec);
         return i5;
     }
 
@@ -353,7 +354,7 @@ public class ActionMenuView extends LinearLayoutCompat implements MenuBuilder.It
                 View childAt4 = getChildAt(i34);
                 LayoutParams layoutParams5 = (LayoutParams) childAt4.getLayoutParams();
                 if (layoutParams5.expanded) {
-                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((layoutParams5.cellsUsed * i11) + layoutParams5.extraPixels, 1073741824), childMeasureSpec);
+                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((layoutParams5.cellsUsed * i11) + layoutParams5.extraPixels, TLRPC.FLAG_30), childMeasureSpec);
                 }
             }
         }

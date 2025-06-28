@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -71,7 +72,7 @@ public abstract class BaseFragment {
     private PreviewDelegate previewDelegate;
     private boolean removingFromStack;
     protected Theme.ResourcesProvider resourceProvider;
-    public ArrayList sheetsStack;
+    public ArrayList<AttachedSheet> sheetsStack;
     public Dialog visibleDialog;
     protected int currentAccount = UserConfig.selectedAccount;
     protected boolean hasOwnBackground = false;
@@ -259,6 +260,17 @@ public abstract class BaseFragment {
         this.arguments = bundle;
     }
 
+    public static boolean hasFullyVisibleSheets(BaseFragment baseFragment) {
+        EmptyBaseFragment sheetFragment;
+        if (baseFragment == null) {
+            return false;
+        }
+        if (baseFragment.hasShownFullyVisibleSheet()) {
+            return true;
+        }
+        return (baseFragment.getParentLayout() instanceof ActionBarLayout) && (sheetFragment = ((ActionBarLayout) baseFragment.getParentLayout()).getSheetFragment(false)) != null && sheetFragment.hasShownFullyVisibleSheet();
+    }
+
     public static boolean hasSheets(BaseFragment baseFragment) {
         EmptyBaseFragment sheetFragment;
         if (baseFragment == null) {
@@ -295,7 +307,7 @@ public abstract class BaseFragment {
             return;
         }
         for (int i = 0; i < this.sheetsStack.size(); i++) {
-            AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(i);
+            AttachedSheet attachedSheet = this.sheetsStack.get(i);
             boolean z = true;
             if (i != this.sheetsStack.size() - 1 || !this.isFullyVisible) {
                 z = false;
@@ -306,7 +318,7 @@ public abstract class BaseFragment {
 
     public void addSheet(AttachedSheet attachedSheet) {
         if (this.sheetsStack == null) {
-            this.sheetsStack = new ArrayList();
+            this.sheetsStack = new ArrayList<>();
         }
         StoryViewer lastStoryViewer = getLastStoryViewer();
         if (lastStoryViewer != null) {
@@ -327,7 +339,7 @@ public abstract class BaseFragment {
     public void attachSheets(ActionBarLayout.LayoutContainer layoutContainer) {
         if (this.sheetsStack != null) {
             for (int i = 0; i < this.sheetsStack.size(); i++) {
-                AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(i);
+                AttachedSheet attachedSheet = this.sheetsStack.get(i);
                 if (attachedSheet != null && attachedSheet.attachedToParent()) {
                     AndroidUtilities.removeFromParent(attachedSheet.getWindowView());
                     layoutContainer.addView(attachedSheet.getWindowView());
@@ -341,12 +353,12 @@ public abstract class BaseFragment {
     }
 
     public void clearSheets() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
         for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
-            ((AttachedSheet) this.sheetsStack.get(size)).dismiss(true);
+            this.sheetsStack.get(size).dismiss(true);
         }
         this.sheetsStack.clear();
     }
@@ -386,13 +398,13 @@ public abstract class BaseFragment {
     }
 
     public boolean closeSheet() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList == null) {
             return false;
         }
         for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (((AttachedSheet) this.sheetsStack.get(size)).isShown()) {
-                return ((AttachedSheet) this.sheetsStack.get(size)).onAttachedBackPressed();
+            if (this.sheetsStack.get(size).isShown()) {
+                return this.sheetsStack.get(size).onAttachedBackPressed();
             }
         }
         return false;
@@ -413,7 +425,7 @@ public abstract class BaseFragment {
 
     public ArticleViewer createArticleViewer(boolean z) {
         if (this.sheetsStack == null) {
-            this.sheetsStack = new ArrayList();
+            this.sheetsStack = new ArrayList<>();
         }
         if (!z) {
             if ((getLastSheet() instanceof ArticleViewer.Sheet) && getLastSheet().isShown()) {
@@ -435,7 +447,7 @@ public abstract class BaseFragment {
 
     public StoryViewer createOverlayStoryViewer() {
         if (this.sheetsStack == null) {
-            this.sheetsStack = new ArrayList();
+            this.sheetsStack = new ArrayList<>();
         }
         StoryViewer storyViewer = new StoryViewer(this);
         INavigationLayout iNavigationLayout = this.parentLayout;
@@ -454,7 +466,7 @@ public abstract class BaseFragment {
     public void detachSheets() {
         if (this.sheetsStack != null) {
             for (int i = 0; i < this.sheetsStack.size(); i++) {
-                AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(i);
+                AttachedSheet attachedSheet = this.sheetsStack.get(i);
                 if (attachedSheet != null && attachedSheet.attachedToParent()) {
                     AndroidUtilities.removeFromParent(attachedSheet.getWindowView());
                 }
@@ -479,12 +491,15 @@ public abstract class BaseFragment {
         return true;
     }
 
+    public void drawOverlay(Canvas canvas, View view) {
+    }
+
     public boolean extendActionMode(Menu menu) {
         return false;
     }
 
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$348() {
+    public void lambda$onBackPressed$354() {
         PreviewDelegate previewDelegate;
         Dialog dialog = this.parentDialog;
         if (dialog != null) {
@@ -523,6 +538,14 @@ public abstract class BaseFragment {
 
     public Bundle getArguments() {
         return this.arguments;
+    }
+
+    public INavigationLayout.BackButtonState getBackButtonState() {
+        ActionBar actionBar = this.actionBar;
+        if (actionBar != null) {
+            return actionBar.getBackButtonState();
+        }
+        return null;
     }
 
     public int getClassGuid() {
@@ -571,12 +594,17 @@ public abstract class BaseFragment {
         return this.fragmentView;
     }
 
+    public boolean getInPassivePreviewMode() {
+        INavigationLayout iNavigationLayout = this.parentLayout;
+        return iNavigationLayout != null && iNavigationLayout.isInPassivePreviewMode();
+    }
+
     public AttachedSheet getLastSheet() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList != null && !arrayList.isEmpty()) {
             for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
-                if (((AttachedSheet) this.sheetsStack.get(size)).isShown()) {
-                    return (AttachedSheet) this.sheetsStack.get(size);
+                if (this.sheetsStack.get(size).isShown()) {
+                    return this.sheetsStack.get(size);
                 }
             }
         }
@@ -584,10 +612,10 @@ public abstract class BaseFragment {
     }
 
     public StoryViewer getLastStoryViewer() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList != null && !arrayList.isEmpty()) {
             for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
-                if ((this.sheetsStack.get(size) instanceof StoryViewer) && ((AttachedSheet) this.sheetsStack.get(size)).isShown()) {
+                if ((this.sheetsStack.get(size) instanceof StoryViewer) && this.sheetsStack.get(size).isShown()) {
                     return (StoryViewer) this.sheetsStack.get(size);
                 }
             }
@@ -631,7 +659,7 @@ public abstract class BaseFragment {
         int color = Theme.getColor(Theme.key_windowBackgroundGray, getResourceProvider());
         if (this.sheetsStack != null) {
             for (int i = 0; i < this.sheetsStack.size(); i++) {
-                AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(i);
+                AttachedSheet attachedSheet = this.sheetsStack.get(i);
                 if (attachedSheet.attachedToParent()) {
                     color = attachedSheet.getNavigationBarColor(color);
                 }
@@ -660,12 +688,12 @@ public abstract class BaseFragment {
     public StoryViewer getOrCreateStoryViewer() {
         StoryViewer storyViewer;
         if (this.sheetsStack == null) {
-            this.sheetsStack = new ArrayList();
+            this.sheetsStack = new ArrayList<>();
         }
         if (!this.sheetsStack.isEmpty()) {
-            ArrayList arrayList = this.sheetsStack;
+            ArrayList<AttachedSheet> arrayList = this.sheetsStack;
             if (arrayList.get(arrayList.size() - 1) instanceof StoryViewer) {
-                ArrayList arrayList2 = this.sheetsStack;
+                ArrayList<AttachedSheet> arrayList2 = this.sheetsStack;
                 storyViewer = (StoryViewer) arrayList2.get(arrayList2.size() - 1);
                 if (storyViewer == null) {
                     storyViewer = new StoryViewer(this);
@@ -714,8 +742,8 @@ public abstract class BaseFragment {
         return getAccountInstance().getSendMessagesHelper();
     }
 
-    public ArrayList getThemeDescriptions() {
-        return new ArrayList();
+    public ArrayList<ThemeDescription> getThemeDescriptions() {
+        return new ArrayList<>();
     }
 
     public int getThemedColor(int i) {
@@ -743,9 +771,25 @@ public abstract class BaseFragment {
         return false;
     }
 
+    public boolean hasOwnBackground() {
+        return this.hasOwnBackground;
+    }
+
     public boolean hasSheet() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         return (arrayList == null || arrayList.isEmpty()) ? false : true;
+    }
+
+    public boolean hasShownFullyVisibleSheet() {
+        if (!hasSheet()) {
+            return false;
+        }
+        for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
+            if (this.sheetsStack.get(size).isShown() && this.sheetsStack.get(size).isFullyVisible()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean hasShownSheet() {
@@ -753,7 +797,7 @@ public abstract class BaseFragment {
             return false;
         }
         for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
-            if (((AttachedSheet) this.sheetsStack.get(size)).isShown()) {
+            if (this.sheetsStack.get(size).isShown()) {
                 return true;
             }
         }
@@ -768,8 +812,21 @@ public abstract class BaseFragment {
         return true;
     }
 
+    public boolean isActionBarCrossfadeEnabled() {
+        return this.actionBar != null;
+    }
+
     public boolean isBeginToShow() {
         return this.fragmentBeginToShow;
+    }
+
+    public boolean isBotView(View view) {
+        if (this.sheetsStack != null) {
+            for (int i = 0; i < this.sheetsStack.size(); i++) {
+                this.sheetsStack.get(i);
+            }
+        }
+        return false;
     }
 
     protected boolean isFinishing() {
@@ -811,6 +868,18 @@ public abstract class BaseFragment {
 
     public boolean isRemovingFromStack() {
         return this.removingFromStack;
+    }
+
+    public boolean isStoryViewer(View view) {
+        if (this.sheetsStack != null) {
+            for (int i = 0; i < this.sheetsStack.size(); i++) {
+                AttachedSheet attachedSheet = this.sheetsStack.get(i);
+                if ((attachedSheet instanceof StoryViewer) && view == attachedSheet.getWindowView()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
@@ -901,10 +970,10 @@ public abstract class BaseFragment {
         if (hasForceLightStatusBar() && !AndroidUtilities.isTablet() && getParentLayout().getLastFragment() == this && getParentActivity() != null && !this.finishing) {
             AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), Theme.getColor(Theme.key_actionBarDefault) == -1);
         }
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList != null) {
             for (int size = arrayList.size() - 1; size >= 0; size--) {
-                AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(size);
+                AttachedSheet attachedSheet = this.sheetsStack.get(size);
                 attachedSheet.setLastVisible(false);
                 attachedSheet.dismiss(true);
                 this.sheetsStack.remove(size);
@@ -913,6 +982,15 @@ public abstract class BaseFragment {
     }
 
     public void onLowMemory() {
+    }
+
+    protected void onPanTransitionEnd() {
+    }
+
+    protected void onPanTransitionStart() {
+    }
+
+    protected void onPanTranslationUpdate(float f) {
     }
 
     public void onPause() {
@@ -940,7 +1018,7 @@ public abstract class BaseFragment {
     }
 
     public void onRemoveFromParent() {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
@@ -963,6 +1041,9 @@ public abstract class BaseFragment {
     }
 
     public void onSlideProgress(boolean z, float f) {
+    }
+
+    public void onSlideProgressFront(boolean z, float f) {
     }
 
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
@@ -1033,7 +1114,7 @@ public abstract class BaseFragment {
     }
 
     public void removeSheet(AttachedSheet attachedSheet) {
-        ArrayList arrayList = this.sheetsStack;
+        ArrayList<AttachedSheet> arrayList = this.sheetsStack;
         if (arrayList == null) {
             return;
         }
@@ -1047,6 +1128,9 @@ public abstract class BaseFragment {
             this.isFinished = false;
             this.finishing = false;
         }
+    }
+
+    public void restoreSelfArgs(Bundle bundle) {
     }
 
     protected void resumeDelayedFragmentAnimation() {
@@ -1080,6 +1164,14 @@ public abstract class BaseFragment {
         }
     }
 
+    public void setFragmentView(View view) {
+        this.fragmentView = view;
+    }
+
+    public void setHasOwnBackground(boolean z) {
+        this.hasOwnBackground = z;
+    }
+
     public void setInBubbleMode(boolean z) {
         this.inBubbleMode = z;
     }
@@ -1103,7 +1195,7 @@ public abstract class BaseFragment {
     public void setKeyboardHeightFromParent(int i) {
         if (this.sheetsStack != null) {
             for (int i2 = 0; i2 < this.sheetsStack.size(); i2++) {
-                AttachedSheet attachedSheet = (AttachedSheet) this.sheetsStack.get(i2);
+                AttachedSheet attachedSheet = this.sheetsStack.get(i2);
                 if (attachedSheet != null) {
                     attachedSheet.setKeyboardHeightFromParent(i);
                 }
@@ -1195,6 +1287,17 @@ public abstract class BaseFragment {
         }
     }
 
+    public void setPaused(boolean z) {
+        if (this.isPaused == z) {
+            return;
+        }
+        if (z) {
+            onPause();
+        } else {
+            onResume();
+        }
+    }
+
     public void setPreviewDelegate(PreviewDelegate previewDelegate) {
         this.previewDelegate = previewDelegate;
     }
@@ -1232,7 +1335,7 @@ public abstract class BaseFragment {
         if (getParentActivity() == null) {
             return null;
         }
-        INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.-CC.newLayout(getParentActivity(), false, new Supplier() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda1
+        INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.-CC.newLayout(getParentActivity(), false, new Supplier() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda0
             @Override // androidx.core.util.Supplier
             public final Object get() {
                 BottomSheet lambda$showAsSheet$1;
@@ -1266,10 +1369,10 @@ public abstract class BaseFragment {
     public Dialog showDialog(Dialog dialog, boolean z, final DialogInterface.OnDismissListener onDismissListener) {
         INavigationLayout iNavigationLayout;
         if (dialog != null && (iNavigationLayout = this.parentLayout) != null && !iNavigationLayout.isTransitionAnimationInProgress() && !this.parentLayout.isSwipeInProgress() && (z || !this.parentLayout.checkTransitionAnimation())) {
-            ArrayList arrayList = this.sheetsStack;
+            ArrayList<AttachedSheet> arrayList = this.sheetsStack;
             if (arrayList != null) {
                 for (int size = arrayList.size() - 1; size >= 0; size--) {
-                    if (((AttachedSheet) this.sheetsStack.get(size)).isShown() && ((AttachedSheet) this.sheetsStack.get(size)).showDialog(dialog)) {
+                    if (this.sheetsStack.get(size).isShown() && this.sheetsStack.get(size).showDialog(dialog)) {
                         return dialog;
                     }
                 }
@@ -1286,7 +1389,7 @@ public abstract class BaseFragment {
             try {
                 this.visibleDialog = dialog;
                 dialog.setCanceledOnTouchOutside(true);
-                this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda0
+                this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         BaseFragment.this.lambda$showDialog$0(onDismissListener, dialogInterface);

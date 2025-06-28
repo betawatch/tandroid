@@ -11,7 +11,6 @@ import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.Util;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
 
 /* loaded from: classes.dex */
@@ -255,13 +254,13 @@ public final class MediaCodecInfo {
             }
         } else {
             if (format.channelCount != format2.channelCount) {
-                i |= LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                i |= 4096;
             }
             if (format.sampleRate != format2.sampleRate) {
-                i |= LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                i |= 8192;
             }
             if (format.pcmEncoding != format2.pcmEncoding) {
-                i |= LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                i |= 16384;
             }
             if (i == 0 && MediaController.AUDIO_MIME_TYPE.equals(this.mimeType)) {
                 Pair codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);

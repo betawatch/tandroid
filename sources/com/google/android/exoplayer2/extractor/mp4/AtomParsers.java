@@ -35,6 +35,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 abstract class AtomParsers {
@@ -332,7 +333,7 @@ abstract class AtomParsers {
                 if (i11 == 1819304813 || i11 == 1936684916) {
                     i8 = 2;
                 } else if (i11 == 1953984371) {
-                    i8 = 268435456;
+                    i8 = TLRPC.FLAG_28;
                 } else if (i11 == 778924082 || i11 == 778924083) {
                     str2 = "audio/mpeg";
                 } else if (i11 == 1835557169) {

@@ -11,6 +11,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class Loader implements LoaderErrorThrower {
@@ -296,7 +297,7 @@ public final class Loader implements LoaderErrorThrower {
 
     @Override // com.google.android.exoplayer2.upstream.LoaderErrorThrower
     public void maybeThrowError() {
-        maybeThrowError(Integer.MIN_VALUE);
+        maybeThrowError(TLRPC.FLAG_31);
     }
 
     public void maybeThrowError(int i) {

@@ -11,8 +11,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RadioButton;
@@ -78,12 +80,12 @@ public abstract class ChatListCell extends LinearLayout {
             int i = 0;
             for (int i2 = 2; i < i2; i2 = 2) {
                 int dp3 = AndroidUtilities.dp(i == 0 ? 21.0f : 53.0f);
-                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? 204 : 90, red, green, blue));
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? NotificationCenter.chatWasBoostedByUser : 90, red, green, blue));
                 canvas.drawCircle(AndroidUtilities.dp(22.0f), dp3, AndroidUtilities.dp(11.0f), Theme.dialogs_onlineCirclePaint);
                 int i3 = 0;
                 while (true) {
                     if (i3 < (this.isThreeLines ? 3 : 2)) {
-                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? 204 : 90, red, green, blue));
+                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? NotificationCenter.chatWasBoostedByUser : 90, red, green, blue));
                         if (this.isThreeLines) {
                             float f = i3 * 7;
                             this.rect.set(AndroidUtilities.dp(41.0f), dp3 - AndroidUtilities.dp(8.3f - f), getMeasuredWidth() - AndroidUtilities.dp(i3 == 0 ? 72.0f : 48.0f), dp3 - AndroidUtilities.dp(5.3f - f));
@@ -165,6 +167,6 @@ public abstract class ChatListCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(123.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(123.0f), TLRPC.FLAG_30));
     }
 }

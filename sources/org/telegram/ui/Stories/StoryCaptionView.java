@@ -276,7 +276,7 @@ public class StoryCaptionView extends NestedScrollView {
                 this.textLayout = new Text(r5 != 0 ? r5 : "", 14.0f);
             }
             float f2 = this.animatedSmall.set(this.small);
-            this.backgroundPaint.setColor(1073741824);
+            this.backgroundPaint.setColor(TLRPC.FLAG_30);
             int min = (int) Math.min(f, AndroidUtilities.lerp(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(18.0f), f2) + Math.max(this.titleLayout.getCurrentWidth(), this.textLayout.getCurrentWidth()));
             this.width = min;
             int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(42.0f), AndroidUtilities.dp(22.0f), f2);
@@ -1182,7 +1182,7 @@ public class StoryCaptionView extends NestedScrollView {
             TextState[] textStateArr = this.state;
             int i5 = textStateArr[0].textHeight;
             TextState textState2 = textStateArr[1];
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i4 + AndroidUtilities.lerp(i5, textState2 != null ? textState2.textHeight : 0, this.updateT), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i4 + AndroidUtilities.lerp(i5, textState2 != null ? textState2.textHeight : 0, this.updateT), TLRPC.FLAG_30));
         }
 
         @Override // android.view.View
@@ -1399,7 +1399,7 @@ public class StoryCaptionView extends NestedScrollView {
         this.replytextHash = hashCode3;
         this.isLandscape = z;
         this.prevHeight = i2;
-        storyCaptionTextView.measure(View.MeasureSpec.makeMeasureSpec(i, 1073741824), View.MeasureSpec.makeMeasureSpec(i2, Integer.MIN_VALUE));
+        storyCaptionTextView.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
         return storyCaptionTextView.collapsedTextHeight(i2);
     }
 

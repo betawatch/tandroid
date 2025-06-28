@@ -105,10 +105,10 @@ public class ReactedUsersListView extends FrameLayout {
             }
             if (recyclerListView != null) {
                 for (int i6 = 0; i6 < recyclerListView.getChildCount(); i6++) {
-                    recyclerListView.getChildAt(i6).measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), i2);
+                    recyclerListView.getChildAt(i6).measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), i2);
                 }
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), i2);
         }
     }
 
@@ -251,10 +251,7 @@ public class ReactedUsersListView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$load$2(TLRPC.MessagePeerReaction messagePeerReaction) {
         int i = messagePeerReaction.date;
-        if (i <= 0 || messagePeerReaction.reaction != null) {
-            return Integer.MIN_VALUE;
-        }
-        return -i;
+        return (i <= 0 || messagePeerReaction.reaction != null) ? TLRPC.FLAG_31 : -i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -376,10 +373,7 @@ public class ReactedUsersListView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$setSeenUsers$1(TLRPC.MessagePeerReaction messagePeerReaction) {
         int i = messagePeerReaction.date;
-        if (i <= 0 || messagePeerReaction.reaction != null) {
-            return Integer.MIN_VALUE;
-        }
-        return -i;
+        return (i <= 0 || messagePeerReaction.reaction != null) ? TLRPC.FLAG_31 : -i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

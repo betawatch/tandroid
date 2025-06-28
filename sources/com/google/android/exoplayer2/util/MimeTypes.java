@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
@@ -35,13 +36,10 @@ public abstract class MimeTypes {
             if (i == 29) {
                 return 12;
             }
-            if (i == 42) {
-                return 16;
+            if (i != 42) {
+                return i != 22 ? i != 23 ? 0 : 15 : TLRPC.FLAG_30;
             }
-            if (i != 22) {
-                return i != 23 ? 0 : 15;
-            }
-            return 1073741824;
+            return 16;
         }
     }
 

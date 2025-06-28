@@ -438,7 +438,7 @@ public abstract class WallpaperCell extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int i3 = 0;
         if (this.spanCount == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.size, 1073741824), View.MeasureSpec.makeMeasureSpec(this.size + AndroidUtilities.dp(6.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.size + AndroidUtilities.dp(6.0f), TLRPC.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
             return;
         }
@@ -453,7 +453,7 @@ public abstract class WallpaperCell extends FrameLayout {
             if (i3 >= i6) {
                 return;
             }
-            this.wallpaperViews[i3].measure(View.MeasureSpec.makeMeasureSpec(i3 == i6 + (-1) ? dp : i4, 1073741824), View.MeasureSpec.makeMeasureSpec(dp2, 1073741824));
+            this.wallpaperViews[i3].measure(View.MeasureSpec.makeMeasureSpec(i3 == i6 + (-1) ? dp : i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30));
             dp -= i4;
             i3++;
         }

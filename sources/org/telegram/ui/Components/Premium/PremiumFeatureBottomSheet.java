@@ -35,6 +35,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -45,6 +46,7 @@ import org.telegram.ui.Components.BottomPagesView;
 import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.LaunchActivity;
@@ -272,7 +274,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     }
 
     private class ViewPage extends LinearLayout {
-        TextView description;
+        LinkSpanDrawable.LinksTextView description;
         public int position;
         TextView title;
         PagerHeaderView topHeader;
@@ -295,9 +297,9 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             this.title.setTextSize(1, 20.0f);
             this.title.setTypeface(AndroidUtilities.bold());
             addView(this.title, LayoutHelper.createFrame(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-            TextView textView3 = new TextView(context);
-            this.description = textView3;
-            textView3.setGravity(1);
+            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
+            this.description = linksTextView;
+            linksTextView.setGravity(1);
             this.description.setTextSize(1, 15.0f);
             this.description.setTextColor(PremiumFeatureBottomSheet.this.getThemedColor(i2));
             if (!PremiumFeatureBottomSheet.this.onlySelectedType) {
@@ -356,7 +358,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
         void setFeatureDate(PremiumPreviewFragment.PremiumFeatureData premiumFeatureData) {
             String str;
-            TextView textView;
+            LinkSpanDrawable.LinksTextView linksTextView;
             int i;
             int i2 = premiumFeatureData.type;
             if (i2 == 0 || i2 == 14 || i2 == 28) {
@@ -367,57 +369,57 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 if (PremiumFeatureBottomSheet.this.onlySelectedType) {
                     if (PremiumFeatureBottomSheet.this.startType == 4) {
                         this.title.setText(LocaleController.getString(R.string.AdditionalReactions));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.AdditionalReactionsDescription;
                     } else if (PremiumFeatureBottomSheet.this.startType == 3) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewNoAds));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewNoAdsDescription2;
                     } else if (PremiumFeatureBottomSheet.this.startType == 24) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewTags));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewTagsDescription;
                     } else if (PremiumFeatureBottomSheet.this.startType == 10) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewAppIcon));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewAppIconDescription2;
                     } else if (PremiumFeatureBottomSheet.this.startType == 2) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewDownloadSpeed));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewDownloadSpeedDescription2;
                     } else if (PremiumFeatureBottomSheet.this.startType == 9) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewAdvancedChatManagement));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewAdvancedChatManagementDescription2;
                     } else if (PremiumFeatureBottomSheet.this.startType == 8) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewVoiceToText));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewVoiceToTextDescription2;
                     } else if (PremiumFeatureBottomSheet.this.startType == 13) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewTranslations));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewTranslationsDescription;
                     } else if (PremiumFeatureBottomSheet.this.startType == 38) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewEffects));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewEffectsDescription;
                     } else if (PremiumFeatureBottomSheet.this.startType == 22) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewWallpaper));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewWallpaperDescription;
                     } else if (PremiumFeatureBottomSheet.this.startType == 23) {
                         this.title.setText(LocaleController.getString(R.string.PremiumPreviewProfileColor));
-                        textView = this.description;
+                        linksTextView = this.description;
                         i = R.string.PremiumPreviewProfileColorDescription;
                     } else {
                         this.title.setText(premiumFeatureData.title);
-                        TextView textView2 = this.description;
+                        LinkSpanDrawable.LinksTextView linksTextView2 = this.description;
                         str = premiumFeatureData.description;
-                        textView = textView2;
-                        textView.setText(AndroidUtilities.replaceTags(str));
+                        linksTextView = linksTextView2;
+                        linksTextView.setText(AndroidUtilities.replaceTags(str));
                     }
                     str = LocaleController.getString(i);
-                    textView.setText(AndroidUtilities.replaceTags(str));
+                    linksTextView.setText(AndroidUtilities.replaceTags(str));
                 } else {
                     this.title.setText(premiumFeatureData.title);
                     this.description.setText(AndroidUtilities.replaceTags(premiumFeatureData.description));
@@ -518,7 +520,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(PremiumFeatureBottomSheet.this.contentHeight + AndroidUtilities.dp(2.0f), 1073741824));
+                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(PremiumFeatureBottomSheet.this.contentHeight + AndroidUtilities.dp(2.0f), TLRPC.FLAG_30));
             }
         };
         this.closeLayout = new FrameLayout(getContext());
@@ -606,7 +608,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                     getChildAt(0).measure(i4, View.MeasureSpec.makeMeasureSpec(0, 0));
                     dp = getChildAt(0).getMeasuredHeight();
                 }
-                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(dp + PremiumFeatureBottomSheet.this.topGlobalOffset, 1073741824));
+                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(dp + PremiumFeatureBottomSheet.this.topGlobalOffset, TLRPC.FLAG_30));
             }
 
             @Override // androidx.viewpager.widget.ViewPager, android.view.View
@@ -746,7 +748,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             protected void onMeasure(int i4, int i5) {
                 this.lastSize = (i4 + i5) << 16;
                 PremiumFeatureBottomSheet.this.topGlobalOffset = 0;
-                scrollView.measure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5), Integer.MIN_VALUE));
+                scrollView.measure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5), TLRPC.FLAG_31));
                 PremiumFeatureBottomSheet.this.topGlobalOffset = (View.MeasureSpec.getSize(i5) - scrollView.getMeasuredHeight()) + ((BottomSheet) PremiumFeatureBottomSheet.this).backgroundPaddingTop;
                 super.onMeasure(i4, i5);
                 PremiumFeatureBottomSheet.this.checkTopOffset();

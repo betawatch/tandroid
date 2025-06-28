@@ -13,7 +13,7 @@ final class n extends ZoneId {
         this.c = zoneRules;
     }
 
-    static n h(String str) {
+    static n o(String str) {
         A.z(str, "zoneId");
         int length = str.length();
         if (length < 2) {

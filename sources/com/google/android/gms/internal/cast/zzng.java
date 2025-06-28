@@ -1,7 +1,5 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.LiteMode;
-
 /* loaded from: classes.dex */
 public final class zzng extends zztp implements zzuy {
     private static final zzng zzb;
@@ -82,17 +80,17 @@ public final class zzng extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzm(zzng zzngVar, int i) {
-        zzngVar.zzd |= LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+        zzngVar.zzd |= 4096;
         zzngVar.zzq = i;
     }
 
     static /* synthetic */ void zzn(zzng zzngVar, int i) {
-        zzngVar.zzd |= LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+        zzngVar.zzd |= 8192;
         zzngVar.zzr = i;
     }
 
     static /* synthetic */ void zzo(zzng zzngVar, boolean z) {
-        zzngVar.zzd |= LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+        zzngVar.zzd |= 16384;
         zzngVar.zzs = z;
     }
 

@@ -9,6 +9,7 @@ import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -65,7 +66,7 @@ public class VideoTimerView extends View implements FlashViews.Invertable {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLRPC.FLAG_30));
     }
 
     public void setDuration(long j, boolean z) {
@@ -86,7 +87,7 @@ public class VideoTimerView extends View implements FlashViews.Invertable {
 
     @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
     public void setInvert(float f) {
-        this.backgroundPaint.setColor(ColorUtils.blendARGB(1056964608, 268435456, f));
+        this.backgroundPaint.setColor(ColorUtils.blendARGB(1056964608, TLRPC.FLAG_28, f));
         this.textDrawable.setTextColor(ColorUtils.blendARGB(-1, -16777216, f));
     }
 

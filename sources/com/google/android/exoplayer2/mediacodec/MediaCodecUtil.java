@@ -20,10 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.FileLoaderPriorityQueue;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class MediaCodecUtil {
@@ -218,29 +216,29 @@ public abstract class MediaCodecUtil {
             case 11:
                 return 2048;
             case 12:
-                return LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                return 4096;
             case 13:
-                return LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                return 8192;
             case 14:
-                return LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                return 16384;
             case 15:
                 return 32768;
             case 16:
                 return 65536;
             case 17:
-                return 131072;
+                return TLRPC.FLAG_17;
             case 18:
-                return 262144;
+                return TLRPC.FLAG_18;
             case 19:
-                return 524288;
+                return TLRPC.FLAG_19;
             case 20:
-                return FileLoaderPriorityQueue.PRIORITY_VALUE_MAX;
+                return 1048576;
             case 21:
-                return 2097152;
+                return TLRPC.FLAG_21;
             case 22:
-                return 4194304;
+                return TLRPC.FLAG_22;
             case 23:
-                return 8388608;
+                return TLRPC.FLAG_23;
             default:
                 return -1;
         }
@@ -277,13 +275,13 @@ public abstract class MediaCodecUtil {
                                     case 40:
                                         return 2048;
                                     case 41:
-                                        return LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                                        return 4096;
                                     case 42:
-                                        return LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                                        return 8192;
                                     default:
                                         switch (i) {
                                             case 50:
-                                                return LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                                                return 16384;
                                             case 51:
                                                 return 32768;
                                             case 52:
@@ -316,18 +314,18 @@ public abstract class MediaCodecUtil {
             case 1024:
                 return 1310720;
             case 2048:
-            case LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM /* 4096 */:
-                return 2097152;
-            case LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM /* 8192 */:
+            case 4096:
+                return TLRPC.FLAG_21;
+            case 8192:
                 return 2228224;
-            case LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM /* 16384 */:
+            case 16384:
                 return 5652480;
             case 32768:
             case 65536:
                 return 9437184;
-            case 131072:
-            case 262144:
-            case 524288:
+            case TLRPC.FLAG_17 /* 131072 */:
+            case TLRPC.FLAG_18 /* 262144 */:
+            case TLRPC.FLAG_19 /* 524288 */:
                 return 35651584;
             default:
                 return -1;
@@ -395,7 +393,7 @@ public abstract class MediaCodecUtil {
                 i = 2048;
                 break;
             case "13":
-                i = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                i = 4096;
                 break;
             default:
                 return null;
@@ -504,7 +502,7 @@ public abstract class MediaCodecUtil {
                     Log.w("MediaCodecUtil", sb3);
                     return null;
                 }
-                int i2 = parseInt3 != 8 ? (colorInfo == null || !(colorInfo.hdrStaticInfo != null || (i = colorInfo.colorTransfer) == 7 || i == 6)) ? 2 : LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : 1;
+                int i2 = parseInt3 != 8 ? (colorInfo == null || !(colorInfo.hdrStaticInfo != null || (i = colorInfo.colorTransfer) == 7 || i == 6)) ? 2 : 4096 : 1;
                 int av1LevelNumberToConst = av1LevelNumberToConst(parseInt2);
                 if (av1LevelNumberToConst != -1) {
                     return new Pair(Integer.valueOf(i2), Integer.valueOf(av1LevelNumberToConst));
@@ -1032,49 +1030,49 @@ public abstract class MediaCodecUtil {
                 i = 2048;
                 break;
             case "H123":
-                i = LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                i = 8192;
                 break;
             case "H150":
                 i = 32768;
                 break;
             case "H153":
-                i = 131072;
+                i = TLRPC.FLAG_17;
                 break;
             case "H156":
-                i = 524288;
+                i = TLRPC.FLAG_19;
                 break;
             case "H180":
-                i = 2097152;
+                i = TLRPC.FLAG_21;
                 break;
             case "H183":
-                i = 8388608;
+                i = TLRPC.FLAG_23;
                 break;
             case "H186":
-                i = ConnectionsManager.FileTypeVideo;
+                i = 33554432;
                 break;
             case "L120":
                 i = 1024;
                 break;
             case "L123":
-                i = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                i = 4096;
                 break;
             case "L150":
-                i = LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM;
+                i = 16384;
                 break;
             case "L153":
                 i = 65536;
                 break;
             case "L156":
-                i = 262144;
+                i = TLRPC.FLAG_18;
                 break;
             case "L180":
-                i = FileLoaderPriorityQueue.PRIORITY_VALUE_MAX;
+                i = 1048576;
                 break;
             case "L183":
-                i = 4194304;
+                i = TLRPC.FLAG_22;
                 break;
             case "L186":
-                i = ConnectionsManager.FileTypePhoto;
+                i = 16777216;
                 break;
             default:
                 return null;
@@ -1313,9 +1311,9 @@ public abstract class MediaCodecUtil {
             case 60:
                 return 2048;
             case 61:
-                return LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                return 4096;
             case 62:
-                return LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                return 8192;
             default:
                 return -1;
         }

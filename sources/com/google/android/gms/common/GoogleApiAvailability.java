@@ -30,6 +30,7 @@ import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.common.wrappers.InstantApps;
 import com.google.android.gms.internal.base.zao;
 import com.google.android.gms.internal.base.zap;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
@@ -239,7 +240,7 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
         if (InstantApps.isInstantApp(context) || (errorResolutionPendingIntent = getErrorResolutionPendingIntent(context, connectionResult)) == null) {
             return false;
         }
-        zae(context, connectionResult.getErrorCode(), null, PendingIntent.getActivity(context, 0, GoogleApiActivity.zaa(context, errorResolutionPendingIntent, i, true), zap.zaa | 134217728));
+        zae(context, connectionResult.getErrorCode(), null, PendingIntent.getActivity(context, 0, GoogleApiActivity.zaa(context, errorResolutionPendingIntent, i, true), zap.zaa | TLRPC.FLAG_27));
         return true;
     }
 }

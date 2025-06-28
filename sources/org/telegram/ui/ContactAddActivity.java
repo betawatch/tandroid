@@ -381,7 +381,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user_id);
         if (userFull != null) {
             userFull.personal_photo = tL_photos_photo.photo;
-            userFull.flags |= 2097152;
+            userFull.flags |= TLRPC.FLAG_21;
             getMessagesStorage().updateUserInfo(userFull, true);
         }
         if (user != null) {
@@ -612,7 +612,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ContactAddActivity.this.lambda$onBackPressed$348();
+                    ContactAddActivity.this.lambda$onBackPressed$354();
                     return;
                 }
                 if (i2 != 1 || ContactAddActivity.this.firstNameField.getText().length() == 0) {
@@ -627,7 +627,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 MessagesController.getNotificationsSettings(((BaseFragment) ContactAddActivity.this).currentAccount).edit().putInt("dialog_bar_vis3" + ContactAddActivity.this.user_id, 3).commit();
                 ContactAddActivity.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
                 ContactAddActivity.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(ContactAddActivity.this.user_id));
-                ContactAddActivity.this.lambda$onBackPressed$348();
+                ContactAddActivity.this.lambda$onBackPressed$354();
                 if (ContactAddActivity.this.delegate != null) {
                     ContactAddActivity.this.delegate.didAddToContacts();
                 }
@@ -868,7 +868,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 @Override // org.telegram.ui.Cells.TextCell, android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i12, int i13) {
                     super.onMeasure(i12, i13);
-                    ContactAddActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), 1073741824));
+                    ContactAddActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
                     ContactAddActivity.this.oldAvatarView.setRoundRadius(AndroidUtilities.dp(30.0f));
                 }
             };

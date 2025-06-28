@@ -69,8 +69,8 @@ abstract class T2 implements Spliterator {
     @Override // j$.util.Spliterator
     public final int characteristics() {
         h();
-        int g = R2.g(this.b.p0()) & R2.f;
-        return (g & 64) != 0 ? (g & (-16449)) | (this.d.characteristics() & 16448) : g;
+        int n = R2.n(this.b.p0()) & R2.f;
+        return (n & 64) != 0 ? (n & (-16449)) | (this.d.characteristics() & 16448) : n;
     }
 
     @Override // j$.util.Spliterator
@@ -90,7 +90,7 @@ abstract class T2 implements Spliterator {
     @Override // j$.util.Spliterator
     public final long getExactSizeIfKnown() {
         h();
-        if (R2.SIZED.d(this.b.p0())) {
+        if (R2.SIZED.j(this.b.p0())) {
             return this.d.getExactSizeIfKnown();
         }
         return -1L;

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.common.PlayCoreDialogWrapperActivity;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class as extends com.google.android.play.integrity.internal.q {
@@ -48,7 +49,7 @@ final class as extends com.google.android.play.integrity.internal.q {
             }
             Intent intent = new Intent(this.f, (Class<?>) PlayCoreDialogWrapperActivity.class);
             intent.putExtra("confirmation_intent", pendingIntent);
-            intent.setFlags(536870912);
+            intent.setFlags(TLRPC.FLAG_29);
             intent.putExtra("result_receiver", new ar(this, this.b.c()));
             this.c.a("Starting dialog intent...", new Object[0]);
             this.f.startActivityForResult(intent, 0);

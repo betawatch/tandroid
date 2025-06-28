@@ -131,6 +131,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
     private LinearLayoutManager linearLayoutManager;
     private RecyclerListView listView;
     private ListAdapter listViewAdapter;
+    private int manageDirectRow;
     private int manageRow;
     private int manageTopicsRow;
     private TLRPC.TL_chatAdminRights myAdminRights;
@@ -366,7 +367,10 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             if (i == ChatRightsEditActivity.this.channelEditStoriesRow) {
                 return 42L;
             }
-            return i == ChatRightsEditActivity.this.channelDeleteStoriesRow ? 43L : 0L;
+            if (i == ChatRightsEditActivity.this.channelDeleteStoriesRow) {
+                return 43L;
+            }
+            return i == ChatRightsEditActivity.this.manageDirectRow ? 44L : 0L;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -386,7 +390,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             if (i == 2 || i == ChatRightsEditActivity.this.rankHeaderRow) {
                 return 3;
             }
-            if (i == ChatRightsEditActivity.this.changeInfoRow || i == ChatRightsEditActivity.this.postMessagesRow || i == ChatRightsEditActivity.this.editMesagesRow || i == ChatRightsEditActivity.this.deleteMessagesRow || i == ChatRightsEditActivity.this.addAdminsRow || i == ChatRightsEditActivity.this.banUsersRow || i == ChatRightsEditActivity.this.addUsersRow || i == ChatRightsEditActivity.this.pinMessagesRow || i == ChatRightsEditActivity.this.sendMessagesRow || i == ChatRightsEditActivity.this.anonymousRow || i == ChatRightsEditActivity.this.startVoiceChatRow || i == ChatRightsEditActivity.this.manageRow || i == ChatRightsEditActivity.this.manageTopicsRow) {
+            if (i == ChatRightsEditActivity.this.changeInfoRow || i == ChatRightsEditActivity.this.postMessagesRow || i == ChatRightsEditActivity.this.manageDirectRow || i == ChatRightsEditActivity.this.editMesagesRow || i == ChatRightsEditActivity.this.deleteMessagesRow || i == ChatRightsEditActivity.this.addAdminsRow || i == ChatRightsEditActivity.this.banUsersRow || i == ChatRightsEditActivity.this.addUsersRow || i == ChatRightsEditActivity.this.pinMessagesRow || i == ChatRightsEditActivity.this.sendMessagesRow || i == ChatRightsEditActivity.this.anonymousRow || i == ChatRightsEditActivity.this.startVoiceChatRow || i == ChatRightsEditActivity.this.manageRow || i == ChatRightsEditActivity.this.manageTopicsRow) {
                 return 4;
             }
             if (i == ChatRightsEditActivity.this.cantEditInfoRow || i == ChatRightsEditActivity.this.rankInfoRow) {
@@ -426,6 +430,9 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 }
                 if (adapterPosition == ChatRightsEditActivity.this.postMessagesRow) {
                     return ChatRightsEditActivity.this.myAdminRights.post_messages;
+                }
+                if (adapterPosition == ChatRightsEditActivity.this.manageDirectRow) {
+                    return ChatRightsEditActivity.this.myAdminRights.manage_direct_messages;
                 }
                 if (adapterPosition == ChatRightsEditActivity.this.editMesagesRow) {
                     return ChatRightsEditActivity.this.myAdminRights.edit_messages;
@@ -485,23 +492,23 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
          */
         /* JADX WARN: Code restructure failed: missing block: B:198:0x0465, code lost:
         
-            if (r11.this$0.allDefaultMediaBanned() != false) goto L495;
+            if (r11.this$0.allDefaultMediaBanned() != false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:20:0x0236, code lost:
         
             r3 = org.telegram.messenger.R.drawable.permission_locked;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:214:0x092e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:214:0x0964, code lost:
         
             r0 = org.telegram.messenger.R.drawable.permission_locked;
          */
         /* JADX WARN: Code restructure failed: missing block: B:235:0x04fe, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:253:0x0556, code lost:
         
-            if (r11.this$0.defaultBannedRights.change_info != false) goto L495;
+            if (r11.this$0.defaultBannedRights.change_info != false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:261:0x0572, code lost:
         
@@ -513,7 +520,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
          */
         /* JADX WARN: Code restructure failed: missing block: B:267:0x05a9, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:272:0x0585, code lost:
         
@@ -525,79 +532,83 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
          */
         /* JADX WARN: Code restructure failed: missing block: B:286:0x05df, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:299:0x0615, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:308:0x0639, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:312:0x064b, code lost:
         
-            if (r11.this$0.adminRights.delete_messages != false) goto L315;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:309:0x064e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:321:0x066f, code lost:
+        
+            if (r11.this$0.adminRights.delete_messages != false) goto L329;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:322:0x0684, code lost:
         
             r0 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:314:0x0666, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:327:0x069c, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:319:0x064c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:332:0x0682, code lost:
         
-            if (r11.this$0.adminRights.delete_messages != false) goto L315;
+            if (r11.this$0.adminRights.delete_messages != false) goto L329;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:334:0x06a7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:347:0x06dd, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:34:0x00ad, code lost:
         
             if (r11.this$0.defaultBannedRights.embed_links != false) goto L113;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:351:0x06e8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:364:0x071e, code lost:
         
-            if (r5 == false) goto L495;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:365:0x071e, code lost:
-        
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:378:0x0754, code lost:
         
-            if (r5 == false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:399:0x07b2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:391:0x078a, code lost:
         
-            if (r11.this$0.defaultBannedRights.manage_topics != false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:410:0x07e0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:412:0x07e8, code lost:
         
-            if (r5 == false) goto L495;
+            if (r11.this$0.defaultBannedRights.manage_topics != false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:429:0x0847, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:423:0x0816, code lost:
         
-            if (r11.this$0.defaultBannedRights.invite_users != false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:440:0x0875, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:442:0x087d, code lost:
         
-            if (r5 == false) goto L495;
+            if (r11.this$0.defaultBannedRights.invite_users != false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:44:0x00e5, code lost:
         
             if (r11.this$0.defaultBannedRights.send_polls != false) goto L113;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:456:0x08c2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:453:0x08ab, code lost:
         
-            if (r11.this$0.defaultBannedRights.pin_messages != false) goto L495;
+            if (r5 == false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:467:0x08f9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:469:0x08f8, code lost:
         
-            if (r5 == false) goto L495;
+            if (r11.this$0.defaultBannedRights.pin_messages != false) goto L509;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:479:0x092c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:480:0x092f, code lost:
         
-            if (r11.this$0.defaultBannedRights.send_plain != false) goto L495;
+            if (r5 == false) goto L509;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:492:0x0962, code lost:
+        
+            if (r11.this$0.defaultBannedRights.send_plain != false) goto L509;
          */
         /* JADX WARN: Code restructure failed: missing block: B:54:0x011d, code lost:
         
@@ -619,7 +630,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         
             if (r11.this$0.defaultBannedRights.send_voices != false) goto L113;
          */
-        /* JADX WARN: Removed duplicated region for block: B:203:0x093f  */
+        /* JADX WARN: Removed duplicated region for block: B:203:0x0975  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -762,7 +773,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                     }
                                     i4 = 0;
                                 }
-                                if (ChatRightsEditActivity.this.currentType != 2 && i == ChatRightsEditActivity.this.sendMessagesRow) {
+                                if (ChatRightsEditActivity.this.currentType == 2 && i == ChatRightsEditActivity.this.sendMessagesRow) {
                                     if (!ChatRightsEditActivity.this.bannedRights.view_messages && !ChatRightsEditActivity.this.defaultBannedRights.view_messages) {
                                         z5 = true;
                                     }
@@ -774,7 +785,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                     textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.UserRestrictionsChangeInfo), (ChatRightsEditActivity.this.bannedRights.change_info || ChatRightsEditActivity.this.defaultBannedRights.change_info) ? false : true, ChatRightsEditActivity.this.manageTopicsRow != -1);
                                     break;
                                 }
-                                if (ChatRightsEditActivity.this.currentType != 2) {
+                                if (ChatRightsEditActivity.this.currentType == 2) {
                                     if (!ChatRightsEditActivity.this.bannedRights.view_messages) {
                                         z5 = true;
                                     }
@@ -788,7 +799,16 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
+                            }
+                        } else if (i == ChatRightsEditActivity.this.manageDirectRow) {
+                            textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminManageDirect), z6 && ChatRightsEditActivity.this.adminRights.manage_direct_messages, true);
+                            if (ChatRightsEditActivity.this.currentType == 2) {
+                                if (!ChatRightsEditActivity.this.myAdminRights.manage_direct_messages) {
+                                }
+                                i4 = 0;
+                            }
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.editMesagesRow) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminEditMessages), z6 && ChatRightsEditActivity.this.adminRights.edit_messages, true);
@@ -797,7 +817,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.deleteMessagesRow) {
                             if (ChatRightsEditActivity.this.isChannel) {
@@ -819,7 +839,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.addAdminsRow) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminAddAdmins), z6 && ChatRightsEditActivity.this.adminRights.add_admins, ChatRightsEditActivity.this.anonymousRow != -1);
@@ -828,7 +848,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.anonymousRow) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminSendAnonymously), z6 && ChatRightsEditActivity.this.adminRights.anonymous, ChatRightsEditActivity.this.manageTopicsRow != -1);
@@ -837,7 +857,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.banUsersRow) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminBanUsers), z6 && ChatRightsEditActivity.this.adminRights.ban_users, true);
@@ -846,7 +866,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.startVoiceChatRow) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.StartVoipChatPermission), z6 && ChatRightsEditActivity.this.adminRights.manage_call, true);
@@ -855,7 +875,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.manageTopicsRow) {
                             if (ChatRightsEditActivity.this.currentType == 0) {
@@ -869,7 +889,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i == ChatRightsEditActivity.this.addUsersRow) {
                             if (ChatRightsEditActivity.this.currentType == 0) {
@@ -883,14 +903,14 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (i != ChatRightsEditActivity.this.pinMessagesRow) {
                             if (i == ChatRightsEditActivity.this.sendMessagesRow) {
                                 textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.UserRestrictionsSend), (ChatRightsEditActivity.this.bannedRights.send_plain || ChatRightsEditActivity.this.defaultBannedRights.send_plain) ? false : true, true);
                                 break;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else if (ChatRightsEditActivity.this.currentType == 0 || ChatRightsEditActivity.this.currentType == 2) {
                             textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminPinMessages), (z6 && ChatRightsEditActivity.this.adminRights.pin_messages) || !ChatRightsEditActivity.this.defaultBannedRights.pin_messages, true);
@@ -899,22 +919,22 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                                 }
                                 i4 = 0;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         } else {
                             if (ChatRightsEditActivity.this.currentType == 1) {
                                 textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.UserRestrictionsPinMessages), (ChatRightsEditActivity.this.bannedRights.pin_messages || ChatRightsEditActivity.this.defaultBannedRights.pin_messages) ? false : true, true);
                                 break;
                             }
-                            if (ChatRightsEditActivity.this.currentType != 2) {
+                            if (ChatRightsEditActivity.this.currentType == 2) {
                             }
                         }
                         textCheckCell2.setCollapseArrow(format, z3, runnable);
-                        if (ChatRightsEditActivity.this.currentType != 2) {
+                        if (ChatRightsEditActivity.this.currentType == 2) {
                         }
                     }
                     textCheckCell2.setIcon(i4);
-                    if (ChatRightsEditActivity.this.currentType != 2) {
+                    if (ChatRightsEditActivity.this.currentType == 2) {
                     }
                     break;
                 case 5:
@@ -1165,26 +1185,26 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:203:0x02ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:209:0x02dc, code lost:
     
-        if (r1 != false) goto L248;
+        if (r1 != false) goto L256;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x0389, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x03a2, code lost:
     
         r7 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:205:0x038a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x03a3, code lost:
     
         r16.asAdminT = r7;
         r16.initialIsSet = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:221:0x0386, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:227:0x039f, code lost:
     
         r7 = 1.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:244:0x0384, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x039d, code lost:
     
-        if (r1 != false) goto L248;
+        if (r1 != false) goto L256;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1241,6 +1261,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                         tL_chatAdminRights2.post_stories = tL_chatAdminRights2.post_stories || tL_chatAdminRights3.post_stories;
                         tL_chatAdminRights2.edit_stories = tL_chatAdminRights2.edit_stories || tL_chatAdminRights3.edit_stories;
                         tL_chatAdminRights2.delete_stories = tL_chatAdminRights2.delete_stories || tL_chatAdminRights3.delete_stories;
+                        tL_chatAdminRights2.manage_direct_messages = tL_chatAdminRights2.manage_direct_messages || tL_chatAdminRights3.manage_direct_messages;
                         tL_chatAdminRights2.other = tL_chatAdminRights2.other || tL_chatAdminRights3.other;
                     }
                 }
@@ -1267,6 +1288,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     tL_chatAdminRights4.post_stories = tL_chatAdminRights5.post_stories;
                     tL_chatAdminRights4.edit_stories = tL_chatAdminRights5.edit_stories;
                     tL_chatAdminRights4.delete_stories = tL_chatAdminRights5.delete_stories;
+                    tL_chatAdminRights4.manage_direct_messages = tL_chatAdminRights5.manage_direct_messages;
                     tL_chatAdminRights4.other = tL_chatAdminRights5.other;
                     this.initialIsSet = false;
                 }
@@ -1295,17 +1317,19 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 tL_chatAdminRights6.post_stories = tL_chatAdminRights2.post_stories;
                 tL_chatAdminRights6.edit_stories = tL_chatAdminRights2.edit_stories;
                 tL_chatAdminRights6.delete_stories = tL_chatAdminRights2.delete_stories;
-                boolean z16 = tL_chatAdminRights2.add_admins;
-                tL_chatAdminRights6.add_admins = z16;
-                boolean z17 = tL_chatAdminRights2.anonymous;
-                tL_chatAdminRights6.anonymous = z17;
-                boolean z18 = tL_chatAdminRights2.other;
-                tL_chatAdminRights6.other = z18;
-                boolean z19 = z7 || z8 || z9 || z10 || z12 || z13 || z14 || z16 || z11 || z17 || z15 || z18;
-                this.initialIsSet = z19;
+                boolean z16 = tL_chatAdminRights2.manage_direct_messages;
+                tL_chatAdminRights6.manage_direct_messages = z16;
+                boolean z17 = tL_chatAdminRights2.add_admins;
+                tL_chatAdminRights6.add_admins = z17;
+                boolean z18 = tL_chatAdminRights2.anonymous;
+                tL_chatAdminRights6.anonymous = z18;
+                boolean z19 = tL_chatAdminRights2.other;
+                tL_chatAdminRights6.other = z19;
+                boolean z20 = z7 || z8 || z16 || z9 || z10 || z12 || z13 || z14 || z17 || z11 || z18 || z15 || z19;
+                this.initialIsSet = z20;
                 if (i == 2) {
-                    boolean z20 = this.isChannel || z19;
-                    this.asAdmin = z20;
+                    boolean z21 = this.isChannel || z20;
+                    this.asAdmin = z21;
                 }
             }
             TLRPC.Chat chat3 = this.currentChat;
@@ -1517,6 +1541,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
 
     public static TLRPC.TL_chatAdminRights emptyAdminRights(boolean z) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights = new TLRPC.TL_chatAdminRights();
+        tL_chatAdminRights.manage_direct_messages = z;
         tL_chatAdminRights.delete_stories = z;
         tL_chatAdminRights.edit_stories = z;
         tL_chatAdminRights.post_stories = z;
@@ -1591,7 +1616,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
     private boolean hasAllAdminRights() {
         if (this.isChannel) {
             TLRPC.TL_chatAdminRights tL_chatAdminRights = this.adminRights;
-            return tL_chatAdminRights.change_info && tL_chatAdminRights.post_messages && tL_chatAdminRights.edit_messages && tL_chatAdminRights.delete_messages && tL_chatAdminRights.invite_users && tL_chatAdminRights.add_admins && tL_chatAdminRights.manage_call && tL_chatAdminRights.post_stories && tL_chatAdminRights.edit_stories && tL_chatAdminRights.delete_stories;
+            return tL_chatAdminRights.change_info && tL_chatAdminRights.post_messages && tL_chatAdminRights.edit_messages && tL_chatAdminRights.delete_messages && tL_chatAdminRights.invite_users && tL_chatAdminRights.add_admins && tL_chatAdminRights.manage_call && tL_chatAdminRights.post_stories && tL_chatAdminRights.edit_stories && tL_chatAdminRights.delete_stories && tL_chatAdminRights.manage_direct_messages;
         }
         TLRPC.TL_chatAdminRights tL_chatAdminRights2 = this.adminRights;
         if (tL_chatAdminRights2.change_info && tL_chatAdminRights2.delete_messages && tL_chatAdminRights2.ban_users && tL_chatAdminRights2.invite_users && tL_chatAdminRights2.pin_messages && tL_chatAdminRights2.add_admins && tL_chatAdminRights2.manage_call) {
@@ -1653,7 +1678,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$24(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1855,7 +1880,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     if (chatRightsEditActivityDelegate != null) {
                         chatRightsEditActivityDelegate.didSetRights(0, this.adminRights, this.bannedRights, this.currentRank);
                     }
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                     return;
                 }
                 if (i5 == 1) {
@@ -2089,36 +2114,40 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     TLRPC.TL_chatAdminRights tL_chatAdminRights8 = this.adminRights;
                     isChecked = !tL_chatAdminRights8.post_messages;
                     tL_chatAdminRights8.post_messages = isChecked;
-                } else if (i == this.editMesagesRow) {
+                } else if (i == this.manageDirectRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights9 = this.adminRights;
-                    isChecked = !tL_chatAdminRights9.edit_messages;
-                    tL_chatAdminRights9.edit_messages = isChecked;
-                } else if (i == this.deleteMessagesRow) {
+                    isChecked = !tL_chatAdminRights9.manage_direct_messages;
+                    tL_chatAdminRights9.manage_direct_messages = isChecked;
+                } else if (i == this.editMesagesRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights10 = this.adminRights;
-                    isChecked = !tL_chatAdminRights10.delete_messages;
-                    tL_chatAdminRights10.delete_messages = isChecked;
-                } else if (i == this.addAdminsRow) {
+                    isChecked = !tL_chatAdminRights10.edit_messages;
+                    tL_chatAdminRights10.edit_messages = isChecked;
+                } else if (i == this.deleteMessagesRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights11 = this.adminRights;
-                    isChecked = !tL_chatAdminRights11.add_admins;
-                    tL_chatAdminRights11.add_admins = isChecked;
-                } else if (i == this.anonymousRow) {
+                    isChecked = !tL_chatAdminRights11.delete_messages;
+                    tL_chatAdminRights11.delete_messages = isChecked;
+                } else if (i == this.addAdminsRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights12 = this.adminRights;
-                    isChecked = !tL_chatAdminRights12.anonymous;
-                    tL_chatAdminRights12.anonymous = isChecked;
-                } else if (i == this.banUsersRow) {
+                    isChecked = !tL_chatAdminRights12.add_admins;
+                    tL_chatAdminRights12.add_admins = isChecked;
+                } else if (i == this.anonymousRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights13 = this.adminRights;
-                    isChecked = !tL_chatAdminRights13.ban_users;
-                    tL_chatAdminRights13.ban_users = isChecked;
-                } else if (i == this.startVoiceChatRow) {
+                    isChecked = !tL_chatAdminRights13.anonymous;
+                    tL_chatAdminRights13.anonymous = isChecked;
+                } else if (i == this.banUsersRow) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights14 = this.adminRights;
-                    isChecked = !tL_chatAdminRights14.manage_call;
-                    tL_chatAdminRights14.manage_call = isChecked;
+                    isChecked = !tL_chatAdminRights14.ban_users;
+                    tL_chatAdminRights14.ban_users = isChecked;
+                } else if (i == this.startVoiceChatRow) {
+                    TLRPC.TL_chatAdminRights tL_chatAdminRights15 = this.adminRights;
+                    isChecked = !tL_chatAdminRights15.manage_call;
+                    tL_chatAdminRights15.manage_call = isChecked;
                 } else if (i == this.manageTopicsRow) {
                     int i12 = this.currentType;
                     if (i12 == 0 || i12 == 2) {
-                        TLRPC.TL_chatAdminRights tL_chatAdminRights15 = this.adminRights;
-                        isChecked = !tL_chatAdminRights15.manage_topics;
-                        tL_chatAdminRights15.manage_topics = isChecked;
+                        TLRPC.TL_chatAdminRights tL_chatAdminRights16 = this.adminRights;
+                        isChecked = !tL_chatAdminRights16.manage_topics;
+                        tL_chatAdminRights16.manage_topics = isChecked;
                     } else {
                         TLRPC.TL_chatBannedRights tL_chatBannedRights14 = this.bannedRights;
                         isChecked = !tL_chatBannedRights14.manage_topics;
@@ -2127,9 +2156,9 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 } else if (i == this.addUsersRow) {
                     int i13 = this.currentType;
                     if (i13 == 0 || i13 == 2) {
-                        TLRPC.TL_chatAdminRights tL_chatAdminRights16 = this.adminRights;
-                        isChecked = !tL_chatAdminRights16.invite_users;
-                        tL_chatAdminRights16.invite_users = isChecked;
+                        TLRPC.TL_chatAdminRights tL_chatAdminRights17 = this.adminRights;
+                        isChecked = !tL_chatAdminRights17.invite_users;
+                        tL_chatAdminRights17.invite_users = isChecked;
                     } else {
                         TLRPC.TL_chatBannedRights tL_chatBannedRights15 = this.bannedRights;
                         isChecked = !tL_chatBannedRights15.invite_users;
@@ -2138,9 +2167,9 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 } else if (i == this.pinMessagesRow) {
                     int i14 = this.currentType;
                     if (i14 == 0 || i14 == 2) {
-                        TLRPC.TL_chatAdminRights tL_chatAdminRights17 = this.adminRights;
-                        isChecked = !tL_chatAdminRights17.pin_messages;
-                        tL_chatAdminRights17.pin_messages = isChecked;
+                        TLRPC.TL_chatAdminRights tL_chatAdminRights18 = this.adminRights;
+                        isChecked = !tL_chatAdminRights18.pin_messages;
+                        tL_chatAdminRights18.pin_messages = isChecked;
                     } else {
                         TLRPC.TL_chatBannedRights tL_chatBannedRights16 = this.bannedRights;
                         isChecked = !tL_chatBannedRights16.pin_messages;
@@ -2227,7 +2256,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 this.delegate.didChangeOwner(this.currentUser);
                 removeSelfFromStack();
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$348();
+                twoStepVerificationActivity.lambda$onBackPressed$354();
                 return;
             }
             return;
@@ -2264,7 +2293,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 if (!tL_error.text.equals("CHANNELS_TOO_MUCH")) {
                     if (twoStepVerificationActivity != null) {
                         twoStepVerificationActivity.needHideProgress();
-                        twoStepVerificationActivity.lambda$onBackPressed$348();
+                        twoStepVerificationActivity.lambda$onBackPressed$354();
                     }
                     AlertsCreator.showAddUserAlert(tL_error.text, this, this.isChannel, tL_channels_editCreator);
                     return;
@@ -2402,8 +2431,8 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         ChatRightsEditActivityDelegate chatRightsEditActivityDelegate = this.delegate;
         if (chatRightsEditActivityDelegate != null) {
             TLRPC.TL_chatAdminRights tL_chatAdminRights = this.adminRights;
-            chatRightsEditActivityDelegate.didSetRights((tL_chatAdminRights.change_info || tL_chatAdminRights.post_messages || tL_chatAdminRights.edit_messages || tL_chatAdminRights.delete_messages || tL_chatAdminRights.ban_users || tL_chatAdminRights.invite_users || (this.isForum && tL_chatAdminRights.manage_topics) || tL_chatAdminRights.pin_messages || tL_chatAdminRights.add_admins || tL_chatAdminRights.anonymous || tL_chatAdminRights.manage_call || ((this.isChannel && (tL_chatAdminRights.post_stories || tL_chatAdminRights.edit_stories || tL_chatAdminRights.delete_stories)) || tL_chatAdminRights.other)) ? 1 : 0, tL_chatAdminRights, this.bannedRights, this.currentRank);
-            lambda$onBackPressed$348();
+            chatRightsEditActivityDelegate.didSetRights((tL_chatAdminRights.change_info || tL_chatAdminRights.post_messages || tL_chatAdminRights.manage_direct_messages || tL_chatAdminRights.edit_messages || tL_chatAdminRights.delete_messages || tL_chatAdminRights.ban_users || tL_chatAdminRights.invite_users || (this.isForum && tL_chatAdminRights.manage_topics) || tL_chatAdminRights.pin_messages || tL_chatAdminRights.add_admins || tL_chatAdminRights.anonymous || tL_chatAdminRights.manage_call || ((this.isChannel && (tL_chatAdminRights.post_stories || tL_chatAdminRights.edit_stories || tL_chatAdminRights.delete_stories)) || tL_chatAdminRights.other)) ? 1 : 0, tL_chatAdminRights, this.bannedRights, this.currentRank);
+            lambda$onBackPressed$354();
         }
     }
 
@@ -2576,7 +2605,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 tL_chatAdminRights.post_messages = false;
             }
             TLRPC.TL_chatAdminRights tL_chatAdminRights2 = this.adminRights;
-            if (tL_chatAdminRights2.change_info || tL_chatAdminRights2.post_messages || tL_chatAdminRights2.edit_messages || tL_chatAdminRights2.delete_messages || tL_chatAdminRights2.ban_users || tL_chatAdminRights2.invite_users || ((this.isForum && tL_chatAdminRights2.manage_topics) || tL_chatAdminRights2.pin_messages || tL_chatAdminRights2.add_admins || tL_chatAdminRights2.anonymous || tL_chatAdminRights2.manage_call || (z && (tL_chatAdminRights2.post_stories || tL_chatAdminRights2.edit_stories || tL_chatAdminRights2.delete_stories)))) {
+            if (tL_chatAdminRights2.change_info || tL_chatAdminRights2.post_messages || tL_chatAdminRights2.edit_messages || tL_chatAdminRights2.manage_direct_messages || tL_chatAdminRights2.delete_messages || tL_chatAdminRights2.ban_users || tL_chatAdminRights2.invite_users || ((this.isForum && tL_chatAdminRights2.manage_topics) || tL_chatAdminRights2.pin_messages || tL_chatAdminRights2.add_admins || tL_chatAdminRights2.anonymous || tL_chatAdminRights2.manage_call || (z && (tL_chatAdminRights2.post_stories || tL_chatAdminRights2.edit_stories || tL_chatAdminRights2.delete_stories)))) {
                 tL_chatAdminRights2.other = false;
             } else {
                 tL_chatAdminRights2.other = true;
@@ -2631,7 +2660,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             r1 = true;
         }
         if (r1) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         }
     }
 
@@ -2650,10 +2679,11 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         tL_chatAdminRights3.manage_topics = tL_chatAdminRights.manage_topics || tL_chatAdminRights2.manage_topics;
         tL_chatAdminRights3.post_stories = tL_chatAdminRights.post_stories || tL_chatAdminRights2.post_stories;
         tL_chatAdminRights3.edit_stories = tL_chatAdminRights.edit_stories || tL_chatAdminRights2.edit_stories;
-        if (!tL_chatAdminRights.delete_stories && !tL_chatAdminRights2.delete_stories) {
+        tL_chatAdminRights3.delete_stories = tL_chatAdminRights.delete_stories || tL_chatAdminRights2.delete_stories;
+        if (!tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights2.manage_direct_messages) {
             z = false;
         }
-        tL_chatAdminRights3.delete_stories = z;
+        tL_chatAdminRights3.manage_direct_messages = z;
         return tL_chatAdminRights3;
     }
 
@@ -2717,19 +2747,19 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x0065, code lost:
     
-        if (r5.creator == false) goto L78;
+        if (r5.creator == false) goto L81;
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x007b, code lost:
     
-        if (r8.defaultBannedRights.change_info != false) goto L80;
+        if (r8.defaultBannedRights.change_info != false) goto L83;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x00d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x00e4, code lost:
     
-        if (r8.defaultBannedRights.pin_messages != false) goto L80;
+        if (r8.defaultBannedRights.pin_messages != false) goto L83;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x0107, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0115, code lost:
     
-        if (r5.creator == false) goto L78;
+        if (r5.creator == false) goto L81;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2777,6 +2807,9 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                         if (childAdapterPosition == this.postMessagesRow) {
                             z2 = this.adminRights.post_messages;
                             z3 = this.myAdminRights.post_messages;
+                        } else if (childAdapterPosition == this.manageDirectRow) {
+                            z2 = this.adminRights.manage_direct_messages;
+                            z3 = this.myAdminRights.manage_direct_messages;
                         } else if (childAdapterPosition == this.editMesagesRow) {
                             z2 = this.adminRights.edit_messages;
                             z3 = this.myAdminRights.edit_messages;
@@ -2875,6 +2908,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         this.manageRow = -1;
         this.changeInfoRow = -1;
         this.postMessagesRow = -1;
+        this.manageDirectRow = -1;
         this.editMesagesRow = -1;
         this.deleteMessagesRow = -1;
         this.addAdminsRow = -1;
@@ -2940,10 +2974,11 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     this.channelDeleteStoriesRow = i4 + 3;
                 }
                 int i6 = this.rowCount;
-                this.addUsersRow = i6;
-                this.startVoiceChatRow = i6 + 1;
-                this.rowCount = i6 + 3;
-                this.addAdminsRow = i6 + 2;
+                this.manageDirectRow = i6;
+                this.addUsersRow = i6 + 1;
+                this.startVoiceChatRow = i6 + 2;
+                this.rowCount = i6 + 4;
+                this.addAdminsRow = i6 + 3;
             } else {
                 if (i3 == 2) {
                     this.rowCount = 4;
@@ -3108,7 +3143,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     if (ChatRightsEditActivity.this.checkDiscard()) {
-                        ChatRightsEditActivity.this.lambda$onBackPressed$348();
+                        ChatRightsEditActivity.this.lambda$onBackPressed$354();
                     }
                 } else if (i3 == 1) {
                     ChatRightsEditActivity.this.onDonePressed();
@@ -3212,7 +3247,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                     removeSelfFromStack();
                 } else {
-                    lambda$onBackPressed$348();
+                    lambda$onBackPressed$354();
                 }
             }
         }

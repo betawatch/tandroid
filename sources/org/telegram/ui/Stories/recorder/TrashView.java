@@ -10,6 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.ButtonBounce;
@@ -55,7 +56,7 @@ public class TrashView extends View {
         animatedTextDrawable.setOverrideFullWidth(AndroidUtilities.displaySize.x);
         animatedTextDrawable.setTextSize(AndroidUtilities.dp(14.0f));
         animatedTextDrawable.setTextColor(-1);
-        animatedTextDrawable.setShadowLayer(AndroidUtilities.dpf2(1.33f), 0.0f, AndroidUtilities.dp(1.0f), 1073741824);
+        animatedTextDrawable.setShadowLayer(AndroidUtilities.dpf2(1.33f), 0.0f, AndroidUtilities.dp(1.0f), TLRPC.FLAG_30);
         animatedTextDrawable.setText(LocaleController.getString(R.string.TrashHintDrag));
         animatedTextDrawable.setGravity(17);
     }

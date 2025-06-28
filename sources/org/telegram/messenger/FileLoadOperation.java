@@ -217,13 +217,13 @@ public class FileLoadOperation {
     public FileLoadOperation(int i, WebFile webFile) {
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = 131072;
-        this.cdnChunkCheckSize = 131072;
+        this.downloadChunkSizeBig = TLRPC.FLAG_17;
+        this.cdnChunkCheckSize = TLRPC.FLAG_17;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
-        this.downloadChunkSizeAnimation = 131072;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLRPC.FLAG_17);
+        this.downloadChunkSizeAnimation = TLRPC.FLAG_17;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -243,7 +243,7 @@ public class FileLoadOperation {
         this.datacenterId = i2;
         this.initialDatacenterId = i2;
         String mimeTypePart = FileLoader.getMimeTypePart(webFile.mime_type);
-        this.currentType = webFile.mime_type.startsWith("image/") ? ConnectionsManager.FileTypePhoto : webFile.mime_type.equals("audio/ogg") ? ConnectionsManager.FileTypeAudio : webFile.mime_type.startsWith("video/") ? ConnectionsManager.FileTypeVideo : ConnectionsManager.FileTypeFile;
+        this.currentType = webFile.mime_type.startsWith("image/") ? 16777216 : webFile.mime_type.equals("audio/ogg") ? ConnectionsManager.FileTypeAudio : webFile.mime_type.startsWith("video/") ? 33554432 : 67108864;
         this.allowDisordererFileSave = true;
         this.ext = ImageLoader.getHttpUrlExtension(webFile.url, mimeTypePart);
     }
@@ -253,13 +253,13 @@ public class FileLoadOperation {
         TLRPC.TL_inputStickerSetThumb tL_inputStickerSetThumb;
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = 131072;
-        this.cdnChunkCheckSize = 131072;
+        this.downloadChunkSizeBig = TLRPC.FLAG_17;
+        this.cdnChunkCheckSize = TLRPC.FLAG_17;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
-        this.downloadChunkSizeAnimation = 131072;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLRPC.FLAG_17);
+        this.downloadChunkSizeAnimation = TLRPC.FLAG_17;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -362,7 +362,7 @@ public class FileLoadOperation {
         int i2 = imageLocation.dc_id;
         this.datacenterId = i2;
         this.initialDatacenterId = i2;
-        this.currentType = ConnectionsManager.FileTypePhoto;
+        this.currentType = 16777216;
         this.totalBytesCount = j;
         this.ext = str == null ? "jpg" : str;
     }
@@ -370,13 +370,13 @@ public class FileLoadOperation {
     public FileLoadOperation(SecureDocument secureDocument) {
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = 131072;
-        this.cdnChunkCheckSize = 131072;
+        this.downloadChunkSizeBig = TLRPC.FLAG_17;
+        this.cdnChunkCheckSize = TLRPC.FLAG_17;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
-        this.downloadChunkSizeAnimation = 131072;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLRPC.FLAG_17);
+        this.downloadChunkSizeAnimation = TLRPC.FLAG_17;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -396,7 +396,7 @@ public class FileLoadOperation {
         this.datacenterId = tL_secureFile.dc_id;
         this.totalBytesCount = tL_secureFile.size;
         this.allowDisordererFileSave = true;
-        this.currentType = ConnectionsManager.FileTypeFile;
+        this.currentType = 67108864;
         this.ext = ".jpg";
     }
 
@@ -414,13 +414,13 @@ public class FileLoadOperation {
         int lastIndexOf;
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = 131072;
-        this.cdnChunkCheckSize = 131072;
+        this.downloadChunkSizeBig = TLRPC.FLAG_17;
+        this.cdnChunkCheckSize = TLRPC.FLAG_17;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
-        this.downloadChunkSizeAnimation = 131072;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLRPC.FLAG_17);
+        this.downloadChunkSizeAnimation = TLRPC.FLAG_17;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -499,9 +499,9 @@ public class FileLoadOperation {
                 if (!"audio/ogg".equals(document.mime_type)) {
                     this.currentType = ConnectionsManager.FileTypeAudio;
                 } else if (FileLoader.isVideoMimeType(document.mime_type)) {
-                    this.currentType = ConnectionsManager.FileTypeVideo;
+                    this.currentType = 33554432;
                 } else {
-                    this.currentType = ConnectionsManager.FileTypeFile;
+                    this.currentType = 67108864;
                 }
                 if (this.ext.length() > 1) {
                     this.ext = FileLoader.getExtensionByMimeType(document.mime_type);
@@ -1232,7 +1232,7 @@ public class FileLoadOperation {
             if (this.ungzip) {
                 try {
                     GZIPInputStream gZIPInputStream = new GZIPInputStream(new FileInputStream(file4));
-                    FileLoader.copyFile(gZIPInputStream, this.cacheFileGzipTemp, preloadMaxBytes);
+                    FileLoader.copyFile(gZIPInputStream, this.cacheFileGzipTemp, 2097152);
                     gZIPInputStream.close();
                     file4.delete();
                     file5 = this.cacheFileGzipTemp;
@@ -1907,10 +1907,10 @@ public class FileLoadOperation {
     private void updateParams() {
         int i;
         if ((this.preloadPrefixSize > 0 || MessagesController.getInstance(this.currentAccount).getfileExperimentalParams) && !this.forceSmallChunk) {
-            this.downloadChunkSizeBig = 524288;
+            this.downloadChunkSizeBig = TLRPC.FLAG_19;
             i = 8;
         } else {
-            this.downloadChunkSizeBig = 131072;
+            this.downloadChunkSizeBig = TLRPC.FLAG_17;
             i = 4;
         }
         this.maxDownloadRequests = i;
@@ -2331,7 +2331,7 @@ public class FileLoadOperation {
                     this.preloadStream.writeLong(this.nextAtomOffset);
                     this.preloadStreamFileOffset += 24;
                     long j11 = this.nextPreloadDownloadOffset;
-                    if (j11 != 0 && ((this.moovFound == 0 || this.foundMoovSize >= 0) && this.totalPreloadedBytes <= preloadMaxBytes && j11 < this.totalBytesCount)) {
+                    if (j11 != 0 && ((this.moovFound == 0 || this.foundMoovSize >= 0) && this.totalPreloadedBytes <= 2097152 && j11 < this.totalBytesCount)) {
                         z5 = false;
                         if (!z5) {
                             this.preloadStream.seek(0L);
@@ -3721,7 +3721,7 @@ public class FileLoadOperation {
                     }
                     j = this.nextPreloadDownloadOffset;
                     if (j == -1) {
-                        int i14 = (preloadMaxBytes / this.currentDownloadChunkSize) + i8;
+                        int i14 = (2097152 / this.currentDownloadChunkSize) + i8;
                         long j10 = j7;
                         while (true) {
                             if (i14 == 0) {

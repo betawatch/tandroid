@@ -24,6 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -332,12 +333,12 @@ public abstract class CaptionStory extends CaptionContainerView {
         float dp2 = (AndroidUtilities.dp(36.0f) * lerp) / 2.0f;
         this.lockBounds.set(dp - dp2, lerp3 - lerp2, dp2 + dp, lerp2 + lerp3);
         float lerp4 = AndroidUtilities.lerp(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(14.0f), f3);
-        this.lockShadowPaint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), Theme.multAlpha(536870912, lerp));
+        this.lockShadowPaint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), Theme.multAlpha(TLRPC.FLAG_29, lerp));
         this.lockShadowPaint.setColor(0);
         canvas.drawRoundRect(this.lockBounds, lerp4, lerp4, this.lockShadowPaint);
         Paint paint2 = this.backgroundBlur.getPaint(lerp);
         if (paint2 == null) {
-            this.lockBackgroundPaint.setColor(1073741824);
+            this.lockBackgroundPaint.setColor(TLRPC.FLAG_30);
             this.lockBackgroundPaint.setAlpha((int) (64.0f * lerp));
             rectF2 = this.lockBounds;
             paint = this.lockBackgroundPaint;
@@ -467,7 +468,7 @@ public abstract class CaptionStory extends CaptionContainerView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$6() {
-        setCollapsed(false, Integer.MIN_VALUE);
+        setCollapsed(false, TLRPC.FLAG_31);
         this.roundButton.setVisibility(0);
         this.periodButton.setVisibility(0);
     }

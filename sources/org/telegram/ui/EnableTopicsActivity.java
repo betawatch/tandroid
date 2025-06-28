@@ -169,7 +169,7 @@ public class EnableTopicsActivity extends BaseFragment {
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
         }
 
         public void setChecked(final boolean z, boolean z2) {
@@ -328,7 +328,7 @@ public class EnableTopicsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    EnableTopicsActivity.this.lambda$onBackPressed$348();
+                    EnableTopicsActivity.this.lambda$onBackPressed$354();
                 }
             }
         });

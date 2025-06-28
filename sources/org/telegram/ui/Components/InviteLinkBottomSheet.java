@@ -597,7 +597,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     view = new View(context) { // from class: org.telegram.ui.Components.InviteLinkBottomSheet.Adapter.3
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(5.0f), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(5.0f), TLRPC.FLAG_30));
                         }
                     };
                     break;
@@ -638,7 +638,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), TLRPC.FLAG_30));
         }
     }
 
@@ -681,7 +681,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
         }
 
         public void set(TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing, int i) {
@@ -957,7 +957,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     setPadding(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, 0);
                     InviteLinkBottomSheet.this.ignoreLayout = false;
                 }
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                 this.fullHeight = true;
             }
 
@@ -994,7 +994,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     InviteLinkBottomSheet.this.ignoreLayout = true;
                     InviteLinkBottomSheet.this.listView.setPadding(0, 0, 0, 0);
                     InviteLinkBottomSheet.this.ignoreLayout = false;
-                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE));
+                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31));
                     int measuredHeight = getMeasuredHeight();
                     int i4 = this.lastH;
                     int i5 = (int) ((i4 / 5.0f) * 2.0f);
@@ -1004,7 +1004,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     InviteLinkBottomSheet.this.ignoreLayout = true;
                     InviteLinkBottomSheet.this.listView.setPadding(0, i5, 0, 0);
                     InviteLinkBottomSheet.this.ignoreLayout = false;
-                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE));
+                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31));
                 }
                 super.onMeasure(i2, i3);
             }

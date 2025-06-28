@@ -3,6 +3,7 @@ package com.google.android.exoplayer2.mediacodec;
 import com.google.android.exoplayer2.decoder.DecoderInputBuffer;
 import com.google.android.exoplayer2.util.Assertions;
 import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class BatchBuffer extends DecoderInputBuffer {
@@ -43,7 +44,7 @@ final class BatchBuffer extends DecoderInputBuffer {
             }
         }
         if (decoderInputBuffer.isDecodeOnly()) {
-            setFlags(Integer.MIN_VALUE);
+            setFlags(TLRPC.FLAG_31);
         }
         ByteBuffer byteBuffer = decoderInputBuffer.data;
         if (byteBuffer != null) {

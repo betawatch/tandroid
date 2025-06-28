@@ -112,6 +112,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     private ReactionsContainerDelegate delegate;
     public final float durationScale;
     private float flipVerticalProgress;
+    public boolean forceAttachToParent;
     BaseFragment fragment;
     public boolean hasHint;
     private boolean hasStar;
@@ -1233,6 +1234,9 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     /* JADX WARN: Multi-variable type inference failed */
     public ReactionsContainerLayout(final int i, BaseFragment baseFragment, Context context, int i2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        int i3 = 0;
+        Object[] objArr = 0;
+        this.forceAttachToParent = false;
         this.items = new ArrayList();
         this.oldItems = new ArrayList();
         Paint paint = new Paint(1);
@@ -1251,8 +1255,6 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         this.premiumLockedReactions = new ArrayList(10);
         this.allReactionsList = new ArrayList(20);
         this.rectF = new RectF();
-        int i3 = 0;
-        Object[] objArr = 0;
         this.hasStar = false;
         this.selectedReactions = new HashSet();
         this.alwaysSelectedReactions = new HashSet();
@@ -1986,7 +1988,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         if (this.reactionsWindow != null) {
             return;
         }
-        this.reactionsWindow = new CustomEmojiReactionsWindow(this.type, this.fragment, this.allReactionsList, this.selectedReactions, this, this.resourcesProvider);
+        this.reactionsWindow = new CustomEmojiReactionsWindow(this.type, this.fragment, this.allReactionsList, this.selectedReactions, this, this.resourcesProvider, this.forceAttachToParent);
         invalidateLoopViews();
         this.reactionsWindow.onDismissListener(new Runnable() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
@@ -2506,6 +2508,14 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             return 14;
         }
         return this.showExpandableReactions ? 8 : 1;
+    }
+
+    public View getWindowView() {
+        CustomEmojiReactionsWindow customEmojiReactionsWindow = this.reactionsWindow;
+        if (customEmojiReactionsWindow == null) {
+            return null;
+        }
+        return customEmojiReactionsWindow.windowView;
     }
 
     public void invalidateLoopViews() {

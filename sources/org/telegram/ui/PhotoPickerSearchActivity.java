@@ -25,10 +25,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -169,7 +169,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoPickerSearchActivity.this.lambda$onBackPressed$348();
+                    PhotoPickerSearchActivity.this.lambda$onBackPressed$354();
                 }
             }
         });
@@ -177,7 +177,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
         ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, R.drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.PhotoPickerSearchActivity.2
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public boolean canCollapseSearch() {
-                PhotoPickerSearchActivity.this.lambda$onBackPressed$348();
+                PhotoPickerSearchActivity.this.lambda$onBackPressed$354();
                 return false;
             }
 
@@ -446,7 +446,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                     this.globalIgnoreLayout = false;
                 } else if (!AndroidUtilities.isInMultiwindow) {
                     size2 -= PhotoPickerSearchActivity.this.commentTextView.getEmojiPadding();
-                    i5 = View.MeasureSpec.makeMeasureSpec(size2, 1073741824);
+                    i5 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
                 }
                 int measuredHeight = ((BaseFragment) PhotoPickerSearchActivity.this).actionBar.getMeasuredHeight();
                 this.globalIgnoreLayout = true;
@@ -464,16 +464,16 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                             measureChildWithMargins(childAt, i4, 0, i5, 0);
                         } else {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                 paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, 1073741824));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
                         }
                     }
                 }
@@ -723,7 +723,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
         int color = Theme.getColor(Theme.key_dialogBackground);
         if (Build.VERSION.SDK_INT >= 23 && AndroidUtilities.computePerceivedBrightness(color) >= 0.721f) {
             View view2 = this.fragmentView;
-            view2.setSystemUiVisibility(view2.getSystemUiVisibility() | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            view2.setSystemUiVisibility(view2.getSystemUiVisibility() | 8192);
         }
         return this.fragmentView;
     }

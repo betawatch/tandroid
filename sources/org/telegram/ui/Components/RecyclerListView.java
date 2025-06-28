@@ -48,6 +48,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -1698,14 +1699,14 @@ public class RecyclerListView extends RecyclerView {
             int i = this.sectionsType;
             if (i != 1) {
                 if (i == 2) {
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30);
                     makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
                 }
                 view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
             }
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824);
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(layoutParams.width, 1073741824);
+            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLRPC.FLAG_30);
             view.measure(makeMeasureSpec, makeMeasureSpec2);
             view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
         }
@@ -1907,7 +1908,7 @@ public class RecyclerListView extends RecyclerView {
                 public void requestLayout() {
                     super.requestLayout();
                     try {
-                        measure(View.MeasureSpec.makeMeasureSpec(RecyclerListView.this.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(RecyclerListView.this.getMeasuredHeight(), 1073741824));
+                        measure(View.MeasureSpec.makeMeasureSpec(RecyclerListView.this.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(RecyclerListView.this.getMeasuredHeight(), TLRPC.FLAG_30));
                         layout(0, 0, RecyclerListView.this.overlayContainer.getMeasuredWidth(), RecyclerListView.this.overlayContainer.getMeasuredHeight());
                     } catch (Exception unused) {
                     }
@@ -2033,7 +2034,7 @@ public class RecyclerListView extends RecyclerView {
                             if (this.currentFirst != sectionForPosition || this.pinnedHeader == null) {
                                 View sectionHeaderView = getSectionHeaderView(sectionForPosition, this.pinnedHeader);
                                 this.pinnedHeader = sectionHeaderView;
-                                sectionHeaderView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 0));
+                                sectionHeaderView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 0));
                                 View view5 = this.pinnedHeader;
                                 view5.layout(0, 0, view5.getMeasuredWidth(), this.pinnedHeader.getMeasuredHeight());
                                 this.currentFirst = sectionForPosition;
@@ -2307,7 +2308,7 @@ public class RecyclerListView extends RecyclerView {
 
     protected void drawItemBackground(Canvas canvas, int i, int i2, int i3) {
         int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i5 = Integer.MIN_VALUE;
+        int i5 = TLRPC.FLAG_31;
         for (int i6 = 0; i6 < getChildCount(); i6++) {
             View childAt = getChildAt(i6);
             if (childAt != null && getChildAdapterPosition(childAt) == i) {
@@ -2333,7 +2334,7 @@ public class RecyclerListView extends RecyclerView {
             return;
         }
         int i6 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i7 = Integer.MIN_VALUE;
+        int i7 = TLRPC.FLAG_31;
         for (int i8 = 0; i8 < getChildCount(); i8++) {
             View childAt = getChildAt(i8);
             if (childAt != null) {
@@ -2357,7 +2358,7 @@ public class RecyclerListView extends RecyclerView {
     protected void drawSectionBackgroundExclusive(Canvas canvas, int i, int i2, int i3) {
         int y;
         int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i5 = Integer.MIN_VALUE;
+        int i5 = TLRPC.FLAG_31;
         for (int i6 = 0; i6 < getChildCount(); i6++) {
             View childAt = getChildAt(i6);
             if (childAt != null) {
@@ -2665,7 +2666,7 @@ public class RecyclerListView extends RecyclerView {
             FastScroll fastScroll2 = this.fastScroll;
             int measuredHeight = (getMeasuredHeight() - (fastScroll2.usePadding ? getPaddingTop() : fastScroll2.topOffset)) - getPaddingBottom();
             this.fastScroll.getLayoutParams().height = measuredHeight;
-            this.fastScroll.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(132.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
+            this.fastScroll.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(132.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLRPC.FLAG_30));
         }
         this.touchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
     }
@@ -2734,7 +2735,7 @@ public class RecyclerListView extends RecyclerView {
     public void relayoutPinnedHeader() {
         View view = this.pinnedHeader;
         if (view != null) {
-            view.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 0));
+            view.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 0));
             View view2 = this.pinnedHeader;
             view2.layout(0, 0, view2.getMeasuredWidth(), this.pinnedHeader.getMeasuredHeight());
             invalidate();

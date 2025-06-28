@@ -2208,29 +2208,29 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0423, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:464:0x0434, code lost:
     
         if (r24.previousState != 5) goto L114;
      */
     /* JADX WARN: Failed to find 'out' block for switch in B:14:0x003d. Please report as an issue. */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x043d A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x07f5  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0800  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x043e  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x08cc  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x091b  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0914  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0839  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0861  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0882  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0856  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x080e  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x0a87  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x0a8c  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0abc  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x0ac7  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x044e A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x0805  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0810  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x044f  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x08dc  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x092b  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0924  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x0849  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0871  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0892  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0866  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x081e  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x0a99  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x0a9e  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0ace  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x0ad9  */
     /* JADX WARN: Removed duplicated region for block: B:308:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x0aa0  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0ab2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2295,54 +2295,50 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                         if (TextUtils.equals(lastError, Instance.ERROR_INCOMPATIBLE)) {
                             TLRPC.User user = this.callingUser;
                             formatString = LocaleController.formatString("VoipPeerIncompatible", R.string.VoipPeerIncompatible, ContactsController.formatName(user.first_name, user.last_name));
-                        } else {
-                            if (TextUtils.equals(lastError, Instance.ERROR_PEER_OUTDATED)) {
-                                if (this.isVideoCall) {
-                                    final boolean[] zArr = new boolean[1];
-                                    AlertDialog show = new DarkAlertDialog.Builder(this.activity).setTitle(LocaleController.getString(i5)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerVideoOutdated", R.string.VoipPeerVideoOutdated, UserObject.getFirstName(this.callingUser)))).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda17
-                                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                                        public final void onClick(AlertDialog alertDialog, int i6) {
-                                            VoIPFragment.this.lambda$updateViewState$28(alertDialog, i6);
-                                        }
-                                    }).setPositiveButton(LocaleController.getString(R.string.VoipPeerVideoOutdatedMakeVoice), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda18
-                                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                                        public final void onClick(AlertDialog alertDialog, int i6) {
-                                            VoIPFragment.this.lambda$updateViewState$29(zArr, alertDialog, i6);
-                                        }
-                                    }).show();
-                                    show.setCanceledOnTouchOutside(true);
-                                    show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda19
-                                        @Override // android.content.DialogInterface.OnDismissListener
-                                        public final void onDismiss(DialogInterface dialogInterface) {
-                                            VoIPFragment.this.lambda$updateViewState$30(zArr, dialogInterface);
-                                        }
-                                    });
-                                } else {
-                                    formatString = LocaleController.formatString("VoipPeerOutdated", R.string.VoipPeerOutdated, UserObject.getFirstName(this.callingUser));
-                                }
-                            } else if (TextUtils.equals(lastError, Instance.ERROR_PRIVACY)) {
-                                TLRPC.User user2 = this.callingUser;
-                                formatString = LocaleController.formatString("CallNotAvailable", R.string.CallNotAvailable, ContactsController.formatName(user2.first_name, user2.last_name));
+                        } else if (TextUtils.equals(lastError, Instance.ERROR_PEER_OUTDATED)) {
+                            if (this.isVideoCall) {
+                                final boolean[] zArr = new boolean[1];
+                                AlertDialog show = new DarkAlertDialog.Builder(this.activity).setTitle(LocaleController.getString(i5)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerVideoOutdated", R.string.VoipPeerVideoOutdated, UserObject.getFirstName(this.callingUser)))).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda17
+                                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                                    public final void onClick(AlertDialog alertDialog, int i6) {
+                                        VoIPFragment.this.lambda$updateViewState$28(alertDialog, i6);
+                                    }
+                                }).setPositiveButton(LocaleController.getString(R.string.VoipPeerVideoOutdatedMakeVoice), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda18
+                                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                                    public final void onClick(AlertDialog alertDialog, int i6) {
+                                        VoIPFragment.this.lambda$updateViewState$29(zArr, alertDialog, i6);
+                                    }
+                                }).show();
+                                show.setCanceledOnTouchOutside(true);
+                                show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda19
+                                    @Override // android.content.DialogInterface.OnDismissListener
+                                    public final void onDismiss(DialogInterface dialogInterface) {
+                                        VoIPFragment.this.lambda$updateViewState$30(zArr, dialogInterface);
+                                    }
+                                });
                             } else {
-                                if (TextUtils.equals(lastError, Instance.ERROR_AUDIO_IO)) {
-                                    string = "Error initializing audio hardware";
-                                } else if (TextUtils.equals(lastError, Instance.ERROR_LOCALIZED)) {
-                                    this.windowView.finish();
-                                } else if (TextUtils.equals(lastError, Instance.ERROR_CONNECTION_SERVICE)) {
-                                    string = LocaleController.getString(R.string.VoipErrorUnknown);
-                                } else {
-                                    runnable = new Runnable() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda20
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            VoIPFragment.this.lambda$updateViewState$31();
-                                        }
-                                    };
-                                }
-                                showErrorDialog(string);
+                                formatString = LocaleController.formatString("VoipPeerOutdated", R.string.VoipPeerOutdated, UserObject.getFirstName(this.callingUser));
                             }
-                            z3 = false;
-                            if (this.previewDialog == null) {
+                        } else if (TextUtils.equals(lastError, Instance.ERROR_PRIVACY)) {
+                            TLRPC.User user2 = this.callingUser;
+                            showErrorDialog(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CallNotAvailable, ContactsController.formatName(user2.first_name, user2.last_name))));
+                            AlertsCreator.showCallsForbidden(this.activity, this.currentAccount, this.callingUser.id, null);
+                        } else {
+                            if (TextUtils.equals(lastError, Instance.ERROR_AUDIO_IO)) {
+                                string = "Error initializing audio hardware";
+                            } else if (TextUtils.equals(lastError, Instance.ERROR_LOCALIZED)) {
+                                this.windowView.finish();
+                            } else if (TextUtils.equals(lastError, Instance.ERROR_CONNECTION_SERVICE)) {
+                                string = LocaleController.getString(R.string.VoipErrorUnknown);
+                            } else {
+                                runnable = new Runnable() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda20
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        VoIPFragment.this.lambda$updateViewState$31();
+                                    }
+                                };
                             }
+                            showErrorDialog(string);
                         }
                         string = AndroidUtilities.replaceTags(formatString);
                         showErrorDialog(string);
@@ -2508,7 +2504,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                             break;
                     }
                     z3 = false;
-                    if (this.previewDialog == null) {
+                    if (this.previewDialog != null) {
                         return;
                     }
                     boolean z10 = this.callingUserIsVideo || this.currentUserIsVideo;
@@ -2849,7 +2845,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                 z = false;
                 z2 = false;
                 z3 = false;
-                if (this.previewDialog == null) {
+                if (this.previewDialog != null) {
                 }
             }
             updateKeyView(z8);
@@ -2859,21 +2855,21 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                 }
                 z2 = false;
                 z3 = false;
-                if (this.previewDialog == null) {
+                if (this.previewDialog != null) {
                 }
             } else {
                 this.wasEstablished = true;
                 z = false;
                 z2 = false;
                 z3 = true;
-                if (this.previewDialog == null) {
+                if (this.previewDialog != null) {
                 }
             }
         }
         this.statusTextView.setText(LocaleController.getString(R.string.VoipConnecting), true, z8);
         z2 = false;
         z3 = false;
-        if (this.previewDialog == null) {
+        if (this.previewDialog != null) {
         }
     }
 
@@ -3382,7 +3378,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.rateCallLayout = new RateCallLayout(context, this.backgroundProvider);
         this.endCloseLayout.setAlpha(0.0f);
         this.rateCallLayout.setVisibility(8);
-        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(204, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(NotificationCenter.chatWasBoostedByUser, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
         frameLayout.addView(this.statusLayout, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 135.0f, 0.0f, 0.0f));
         frameLayout.addView(this.hideEmojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.storiesListUpdated, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));

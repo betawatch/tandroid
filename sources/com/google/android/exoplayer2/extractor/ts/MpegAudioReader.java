@@ -7,7 +7,6 @@ import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.extractor.ts.TsPayloadReader;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.ParsableByteArray;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public final class MpegAudioReader implements ElementaryStreamReader {
@@ -93,7 +92,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         this.frameSize = this.header.frameSize;
         if (!this.hasOutputFormat) {
             this.frameDurationUs = (r8.samplesPerFrame * 1000000) / r8.sampleRate;
-            this.output.format(new Format.Builder().setId(this.formatId).setSampleMimeType(this.header.mimeType).setMaxInputSize(LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM).setChannelCount(this.header.channels).setSampleRate(this.header.sampleRate).setLanguage(this.language).build());
+            this.output.format(new Format.Builder().setId(this.formatId).setSampleMimeType(this.header.mimeType).setMaxInputSize(4096).setChannelCount(this.header.channels).setSampleRate(this.header.sampleRate).setLanguage(this.language).build());
             this.hasOutputFormat = true;
         }
         this.headerScratch.setPosition(0);

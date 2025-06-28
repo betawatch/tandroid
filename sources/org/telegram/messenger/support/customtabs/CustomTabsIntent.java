@@ -10,6 +10,7 @@ import android.os.Parcelable;
 import androidx.core.app.BundleCompat;
 import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public final class CustomTabsIntent {
@@ -95,6 +96,6 @@ public final class CustomTabsIntent {
     }
 
     public void setUseNewTask() {
-        this.intent.addFlags(268435456);
+        this.intent.addFlags(TLRPC.FLAG_28);
     }
 }

@@ -42,6 +42,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class SingleProcessDataStore implements DataStore {
@@ -332,8 +333,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$handleUpdate$1) {
             singleProcessDataStore$handleUpdate$1 = (SingleProcessDataStore$handleUpdate$1) continuation;
             int i2 = singleProcessDataStore$handleUpdate$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$handleUpdate$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$handleUpdate$1.label = i2 - TLRPC.FLAG_31;
                 Object obj2 = singleProcessDataStore$handleUpdate$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$handleUpdate$1.label;
@@ -492,8 +493,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$readAndInit$1) {
             singleProcessDataStore$readAndInit$1 = (SingleProcessDataStore$readAndInit$1) continuation;
             int i2 = singleProcessDataStore$readAndInit$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$readAndInit$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$readAndInit$1.label = i2 - TLRPC.FLAG_31;
                 Object obj = singleProcessDataStore$readAndInit$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$readAndInit$1.label;
@@ -664,8 +665,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1) {
             singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1 = (SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1) continuation;
             int i2 = singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1.label = i2 - TLRPC.FLAG_31;
                 Object obj = singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1.label;
@@ -722,8 +723,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$readAndInitOrPropagateFailure$1) {
             singleProcessDataStore$readAndInitOrPropagateFailure$1 = (SingleProcessDataStore$readAndInitOrPropagateFailure$1) continuation;
             int i2 = singleProcessDataStore$readAndInitOrPropagateFailure$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$readAndInitOrPropagateFailure$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$readAndInitOrPropagateFailure$1.label = i2 - TLRPC.FLAG_31;
                 Object obj = singleProcessDataStore$readAndInitOrPropagateFailure$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$readAndInitOrPropagateFailure$1.label;
@@ -797,8 +798,8 @@ public final class SingleProcessDataStore implements DataStore {
             if (continuation instanceof SingleProcessDataStore$readData$1) {
                 SingleProcessDataStore$readData$1 singleProcessDataStore$readData$1 = (SingleProcessDataStore$readData$1) continuation;
                 int i2 = singleProcessDataStore$readData$1.label;
-                if ((i2 & Integer.MIN_VALUE) != 0) {
-                    singleProcessDataStore$readData$1.label = i2 - Integer.MIN_VALUE;
+                if ((i2 & TLRPC.FLAG_31) != 0) {
+                    singleProcessDataStore$readData$1.label = i2 - TLRPC.FLAG_31;
                     r0 = singleProcessDataStore$readData$1;
                     Object obj = r0.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -888,8 +889,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$readDataOrHandleCorruption$1) {
             singleProcessDataStore$readDataOrHandleCorruption$1 = (SingleProcessDataStore$readDataOrHandleCorruption$1) continuation;
             int i2 = singleProcessDataStore$readDataOrHandleCorruption$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$readDataOrHandleCorruption$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$readDataOrHandleCorruption$1.label = i2 - TLRPC.FLAG_31;
                 Object obj = singleProcessDataStore$readDataOrHandleCorruption$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$readDataOrHandleCorruption$1.label;
@@ -1002,8 +1003,8 @@ public final class SingleProcessDataStore implements DataStore {
         if (continuation instanceof SingleProcessDataStore$transformAndWrite$1) {
             singleProcessDataStore$transformAndWrite$1 = (SingleProcessDataStore$transformAndWrite$1) continuation;
             int i2 = singleProcessDataStore$transformAndWrite$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                singleProcessDataStore$transformAndWrite$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                singleProcessDataStore$transformAndWrite$1.label = i2 - TLRPC.FLAG_31;
                 obj = singleProcessDataStore$transformAndWrite$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$transformAndWrite$1.label;
@@ -1121,8 +1122,8 @@ public final class SingleProcessDataStore implements DataStore {
             if (continuation instanceof SingleProcessDataStore$writeData$1) {
                 singleProcessDataStore$writeData$1 = (SingleProcessDataStore$writeData$1) continuation;
                 int i2 = singleProcessDataStore$writeData$1.label;
-                if ((i2 & Integer.MIN_VALUE) != 0) {
-                    singleProcessDataStore$writeData$1.label = i2 - Integer.MIN_VALUE;
+                if ((i2 & TLRPC.FLAG_31) != 0) {
+                    singleProcessDataStore$writeData$1.label = i2 - TLRPC.FLAG_31;
                     Object obj2 = singleProcessDataStore$writeData$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = singleProcessDataStore$writeData$1.label;

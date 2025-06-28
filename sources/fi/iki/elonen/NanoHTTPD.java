@@ -41,7 +41,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 import javax.net.ssl.SSLException;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
@@ -274,7 +273,7 @@ public abstract class NanoHTTPD {
 
         public HTTPSession(TempFileManager tempFileManager, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
             this.tempFileManager = tempFileManager;
-            this.inputStream = new BufferedInputStream(inputStream, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            this.inputStream = new BufferedInputStream(inputStream, 8192);
             this.outputStream = outputStream;
             this.remoteIp = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
             this.remoteHostname = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "localhost" : inetAddress.getHostName().toString();
@@ -383,11 +382,11 @@ public abstract class NanoHTTPD {
                     try {
                         try {
                             try {
-                                bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+                                bArr = new byte[8192];
                                 z = false;
                                 this.splitbyte = 0;
                                 this.rlen = 0;
-                                this.inputStream.mark(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                                this.inputStream.mark(8192);
                             } catch (ResponseException e) {
                                 NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
                                 outputStream = this.outputStream;
@@ -415,7 +414,7 @@ public abstract class NanoHTTPD {
                     this.tempFileManager.clear();
                 }
                 try {
-                    int read = this.inputStream.read(bArr, 0, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+                    int read = this.inputStream.read(bArr, 0, 8192);
                     if (read == -1) {
                         NanoHTTPD.safeClose(this.inputStream);
                         NanoHTTPD.safeClose(this.outputStream);
@@ -604,8 +603,8 @@ public abstract class NanoHTTPD {
             OK(NotificationCenter.smsJobStatusUpdate, "OK"),
             CREATED(NotificationCenter.storyQualityUpdate, "Created"),
             ACCEPTED(NotificationCenter.openBoostForUsersDialog, "Accepted"),
-            NO_CONTENT(204, "No Content"),
-            PARTIAL_CONTENT(NotificationCenter.timezonesUpdated, "Partial Content"),
+            NO_CONTENT(NotificationCenter.chatWasBoostedByUser, "No Content"),
+            PARTIAL_CONTENT(206, "Partial Content"),
             MULTI_STATUS(NotificationCenter.customStickerCreated, "Multi-Status"),
             REDIRECT(NotificationCenter.onDatabaseReset, "Moved Permanently"),
             FOUND(NotificationCenter.wallpaperSettedToUser, "Found"),

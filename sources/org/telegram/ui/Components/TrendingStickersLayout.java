@@ -475,7 +475,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             StickerEmojiCell stickerEmojiCell = new StickerEmojiCell(this.context, false, TrendingStickersLayout.this.resourcesProvider) { // from class: org.telegram.ui.Components.TrendingStickersLayout.TrendingStickersAdapter.1
                 @Override // android.widget.FrameLayout, android.view.View
                 public void onMeasure(int i2, int i3) {
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), 1073741824));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLRPC.FLAG_30));
                 }
             };
             stickerEmojiCell.getImageView().setLayerNum(3);
@@ -849,7 +849,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
 
             @Override // org.telegram.ui.Components.StickersAlert.StickersAlertDelegate
             /* renamed from: onStickerSelected */
-            public void lambda$onStickerSelected$70(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i) {
+            public void lambda$onStickerSelected$74(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i) {
                 TrendingStickersLayout.this.delegate.onStickerSelected(document, obj, z, z2, i);
             }
         } : null, this.resourcesProvider, false);

@@ -1176,7 +1176,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             ViewGroup.LayoutParams layoutParams;
             int i3;
             if (!GroupCallActivity.isLandscapeMode) {
-                i = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(460.0f), View.MeasureSpec.getSize(i)), 1073741824);
+                i = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(460.0f), View.MeasureSpec.getSize(i)), TLRPC.FLAG_30);
             }
             for (int i4 = 0; i4 < 2; i4++) {
                 if (!GroupCallActivity.isLandscapeMode || GroupCallActivity.isTabletMode) {
@@ -1875,7 +1875,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     i2 = 32768;
                 } else {
                     i = chatFull.flags;
-                    i2 = ConnectionsManager.FileTypeFile;
+                    i2 = 67108864;
                 }
                 chatFull.flags = i | i2;
             }
@@ -2577,7 +2577,8 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     attributes.flags = i | (-2013069056);
                 }
                 if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-                    attributes.flags |= LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                    attributes.flags |= 8192;
+                    AndroidUtilities.logFlagSecure();
                 }
                 attributes.flags |= 1152;
                 if (i2 >= 28) {
@@ -3638,7 +3639,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     @Override // org.telegram.ui.Cells.GroupCallTextCell, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i2, int i3) {
                         if (AndroidUtilities.isTablet()) {
-                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), 1073741824);
+                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), TLRPC.FLAG_30);
                         }
                         super.onMeasure(i2, i3);
                     }
@@ -3648,7 +3649,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     @Override // org.telegram.ui.Cells.GroupCallUserCell, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i2, int i3) {
                         if (AndroidUtilities.isTablet()) {
-                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), 1073741824);
+                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), TLRPC.FLAG_30);
                         }
                         super.onMeasure(i2, i3);
                     }
@@ -3680,7 +3681,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     view = new View(this.mContext) { // from class: org.telegram.ui.GroupCallActivity.ListAdapter.5
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(GroupCallActivity.isLandscapeMode ? 0.0f : 8.0f), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(GroupCallActivity.isLandscapeMode ? 0.0f : 8.0f), TLRPC.FLAG_30));
                         }
                     };
                 } else if (i == 6) {
@@ -3705,7 +3706,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     @Override // org.telegram.ui.Cells.GroupCallInvitedCell, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i2, int i3) {
                         if (AndroidUtilities.isTablet()) {
-                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), 1073741824);
+                            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i2)), TLRPC.FLAG_30);
                         }
                         super.onMeasure(i2, i3);
                     }
@@ -4178,7 +4179,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
             double size = View.MeasureSpec.getSize(i);
             double d = this.currentProgress;
             Double.isNaN(size);
@@ -5511,7 +5512,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                 ((GroupCallMiniTextureView) GroupCallActivity.this.attachedRenderers.get(i13)).setFullscreenMode(GroupCallActivity.this.renderersContainer.inFullscreenMode, true);
                             }
                             this.ignoreLayout = false;
-                            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                             measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
                             if (measuredHeight != this.lastSize) {
                                 this.lastSize = measuredHeight;
@@ -5548,7 +5549,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     while (i13 < GroupCallActivity.this.attachedRenderers.size()) {
                     }
                     this.ignoreLayout = false;
-                    super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                    super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                     measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
                     if (measuredHeight != this.lastSize) {
                     }
@@ -6596,7 +6597,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i21, int i22) {
                     int min = Math.min(View.MeasureSpec.getSize(i21), View.MeasureSpec.getSize(i22));
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, 1073741824), View.MeasureSpec.makeMeasureSpec(min + getPaddingBottom(), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(min + getPaddingBottom(), TLRPC.FLAG_30));
                 }
             };
             this.avatarPreviewContainer = frameLayout3;
@@ -7683,7 +7684,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                             ((GroupCallMiniTextureView) GroupCallActivity.this.attachedRenderers.get(i132)).setFullscreenMode(GroupCallActivity.this.renderersContainer.inFullscreenMode, true);
                         }
                         this.ignoreLayout = false;
-                        super.onMeasure(i102, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                        super.onMeasure(i102, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                         measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
                         if (measuredHeight != this.lastSize) {
                             this.lastSize = measuredHeight;
@@ -7720,7 +7721,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 while (i132 < GroupCallActivity.this.attachedRenderers.size()) {
                 }
                 this.ignoreLayout = false;
-                super.onMeasure(i102, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(i102, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                 measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
                 if (measuredHeight != this.lastSize) {
                 }
@@ -8592,7 +8593,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i212, int i222) {
                 int min = Math.min(View.MeasureSpec.getSize(i212), View.MeasureSpec.getSize(i222));
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, 1073741824), View.MeasureSpec.makeMeasureSpec(min + getPaddingBottom(), 1073741824));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(min + getPaddingBottom(), TLRPC.FLAG_30));
             }
         };
         this.avatarPreviewContainer = frameLayout32;
@@ -11760,10 +11761,10 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             protected void onMeasure(int i6, int i7) {
                 int measuredWidth;
                 int measuredHeight2;
-                linearLayout3.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(0, 0));
+                linearLayout3.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
                 LinearLayout linearLayout6 = linearLayout4;
                 if (linearLayout6 != null) {
-                    linearLayout6.measure(View.MeasureSpec.makeMeasureSpec(linearLayout3.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                    linearLayout6.measure(View.MeasureSpec.makeMeasureSpec(linearLayout3.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                     measuredWidth = linearLayout3.getMeasuredWidth();
                     measuredHeight2 = linearLayout3.getMeasuredHeight() + linearLayout4.getMeasuredHeight();
                 } else {
@@ -12011,7 +12012,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         }
         if (z2) {
             groupCallActivity.avatarsPreviewShowed = true;
-            actionBarPopupWindowLayout4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+            actionBarPopupWindowLayout4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
             groupCallActivity.containerView.addView(groupCallActivity.scrimPopupLayout, LayoutHelper.createFrame(-2, -2.0f));
             groupCallActivity.useBlur = true;
             prepareBlurBitmap();
@@ -12070,7 +12071,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         groupCallActivity.scrimPopupWindow.setClippingEnabled(true);
         groupCallActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
         groupCallActivity.scrimPopupWindow.setFocusable(true);
-        actionBarPopupWindowLayout4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+        actionBarPopupWindowLayout4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
         groupCallActivity.scrimPopupWindow.setInputMethodMode(2);
         groupCallActivity.scrimPopupWindow.setSoftInputMode(0);
         groupCallActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);

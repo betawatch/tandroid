@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -203,7 +203,7 @@ final class zzkh<T> implements zzkr<T> {
     }
 
     private static boolean zzM(int i) {
-        return (i & 536870912) != 0;
+        return (i & TLRPC.FLAG_29) != 0;
     }
 
     private final boolean zzN(Object obj, int i) {
@@ -768,7 +768,7 @@ final class zzkh<T> implements zzkr<T> {
                 }
                 int objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
                 i19 = 1048575;
-                if ((charAt25 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 0 || i74 > 17) {
+                if ((charAt25 & 4096) == 0 || i74 > 17) {
                     str = zzd;
                     i20 = i16;
                     i21 = 0;
@@ -814,7 +814,7 @@ final class zzkh<T> implements zzkr<T> {
             int i99 = i65 + 1;
             iArr2[i65] = charAt24;
             int i100 = i65 + 2;
-            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? 268435456 : 0) | ((charAt25 & 512) != 0 ? 536870912 : 0) | (i75 != 0 ? Integer.MIN_VALUE : 0) | (i74 << 20);
+            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i75 != 0 ? TLRPC.FLAG_31 : 0) | (i74 << 20);
             i65 += 3;
             iArr2[i100] = (i21 << 20) | i19;
             i2 = i22;
@@ -3113,7 +3113,7 @@ final class zzkh<T> implements zzkr<T> {
                                     i18 = zzgk.zzi(bArr2, i53, zzgjVar3);
                                     int i69 = zzgjVar3.zza;
                                     zzix zzw = zzkhVar.zzw(i49);
-                                    if ((i58 & Integer.MIN_VALUE) == 0 || zzw == null || zzw.zza(i69)) {
+                                    if ((i58 & TLRPC.FLAG_31) == 0 || zzw == null || zzw.zza(i69)) {
                                         i14 |= i61;
                                         unsafe2.putInt(obj3, j7, i69);
                                     } else {
@@ -4173,7 +4173,7 @@ final class zzkh<T> implements zzkr<T> {
                                                     unsafe8.putObject(obj3, j7, "");
                                                 } else {
                                                     int i93 = zzi13 + i92;
-                                                    if ((i58 & 536870912) != 0 && !zzma.zzf(bArr2, zzi13, i93)) {
+                                                    if ((i58 & TLRPC.FLAG_29) != 0 && !zzma.zzf(bArr2, zzi13, i93)) {
                                                         throw zzje.zzd();
                                                     }
                                                     unsafe8.putObject(obj3, j7, new String(bArr2, zzi13, i92, zzjc.zzb));

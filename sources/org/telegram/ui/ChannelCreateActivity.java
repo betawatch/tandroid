@@ -173,7 +173,7 @@ public class ChannelCreateActivity extends BaseFragment implements NotificationC
                     ChannelCreateActivity.this.showDoneCancelDialog();
                     return;
                 } else {
-                    ChannelCreateActivity.this.lambda$onBackPressed$348();
+                    ChannelCreateActivity.this.lambda$onBackPressed$354();
                     return;
                 }
             }
@@ -1111,16 +1111,16 @@ public class ChannelCreateActivity extends BaseFragment implements NotificationC
                                 measureChildWithMargins(childAt, i5, 0, i6, 0);
                             } else {
                                 if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                     paddingTop = childAt.getLayoutParams().height;
                                 } else if (AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                     paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                                 } else {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                                     paddingTop = (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                                 }
-                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, 1073741824));
+                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
                             }
                         }
                     }
@@ -1834,6 +1834,7 @@ public class ChannelCreateActivity extends BaseFragment implements NotificationC
         radialProgressView.setProgress(f);
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public void restoreSelfArgs(Bundle bundle) {
         if (this.currentStep == 0) {
             ImageUpdater imageUpdater = this.imageUpdater;

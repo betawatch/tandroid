@@ -246,7 +246,7 @@ public class LinkSpanDrawable {
             if (linkSpanDrawable.mReleaseStart < 0) {
                 linkSpanDrawable.release();
                 invalidate(pair2.second);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda1
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
                         LinkSpanDrawable.LinkCollector.this.lambda$removeLink$1(linkSpanDrawable);
@@ -410,7 +410,7 @@ public class LinkSpanDrawable {
             if (linkSpanDrawable.mReleaseStart < 0) {
                 linkSpanDrawable.release();
                 invalidate(pair.second);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         LinkSpanDrawable.LinkCollector.this.lambda$removeLink$0(linkSpanDrawable);

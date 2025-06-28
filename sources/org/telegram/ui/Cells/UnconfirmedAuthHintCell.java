@@ -22,6 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -250,10 +251,10 @@ public class UnconfirmedAuthHintCell extends BlurredFrameLayout {
         if (size <= 0) {
             size = AndroidUtilities.displaySize.x;
         }
-        this.linearLayout.measure(View.MeasureSpec.makeMeasureSpec((size - getPaddingLeft()) - getPaddingRight(), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+        this.linearLayout.measure(View.MeasureSpec.makeMeasureSpec((size - getPaddingLeft()) - getPaddingRight(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
         int measuredHeight = this.linearLayout.getMeasuredHeight() + getPaddingTop() + getPaddingBottom() + 1;
         this.height = measuredHeight;
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(measuredHeight, TLRPC.FLAG_30));
     }
 
     public void set(final BaseFragment baseFragment, final int i) {

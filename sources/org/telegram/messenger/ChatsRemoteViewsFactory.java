@@ -20,6 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.ForegroundColorSpanThemable;
+import org.telegram.ui.Components.Forum.ForumUtilities;
 
 /* loaded from: classes3.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
@@ -67,22 +68,37 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:118|(1:120)(2:128|(1:130)(8:131|(1:133)(1:135)|134|122|123|124|100|101))|121|122|123|124|100|101) */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x038f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:126:0x03c7, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x0390, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x03c8, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r10 = r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x04af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x04e7, code lost:
     
-        if (r3.isMediaEmpty() == false) goto L204;
+        if (r3.isMediaEmpty() == false) goto L217;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0250, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x012c, code lost:
     
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L204;
+        if (r13.local_id != 0) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:235:0x012e, code lost:
+    
+        r14 = r13;
+        r13 = r12;
+        r12 = r0;
+        r0 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:244:0x014a, code lost:
+    
+        if (r13.local_id != 0) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0288, code lost:
+    
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L217;
      */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     /*
@@ -93,10 +109,11 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         String str;
         TLRPC.User user;
         TLRPC.FileLocation fileLocation;
+        String str2;
         TLRPC.FileLocation fileLocation2;
         Bitmap decodeFile;
         int i2;
-        String str2;
+        String str3;
         int i3;
         int i4;
         TLRPC.Chat chat2;
@@ -170,25 +187,42 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             }
         } else {
             TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l.longValue()));
-            if (chat3 != null) {
-                String str3 = chat3.title;
-                TLRPC.ChatPhoto chatPhoto = chat3.photo;
-                if (chatPhoto == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
-                    fileLocation = null;
-                    str = str3;
-                    chat = chat3;
-                    user = null;
-                } else {
-                    fileLocation = fileLocation2;
-                    str = str3;
-                    chat = chat3;
-                    user = null;
-                }
-            } else {
+            if (chat3 == null) {
                 chat = chat3;
                 str = "";
                 user = null;
                 fileLocation = null;
+            } else if (ChatObject.isMonoForum(chat3)) {
+                str2 = ForumUtilities.getMonoForumTitle(this.accountInstance.getCurrentAccount(), chat3);
+                TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
+                if (chat4 != null) {
+                    TLRPC.ChatPhoto chatPhoto = chat4.photo;
+                    if (chatPhoto != null) {
+                        fileLocation2 = chatPhoto.photo_small;
+                        if (fileLocation2 != null) {
+                            if (fileLocation2.volume_id != 0) {
+                            }
+                        }
+                    }
+                }
+                fileLocation = null;
+                str = str2;
+                chat = chat3;
+                user = null;
+            } else {
+                str2 = chat3.title;
+                TLRPC.ChatPhoto chatPhoto2 = chat3.photo;
+                if (chatPhoto2 != null) {
+                    fileLocation2 = chatPhoto2.photo_small;
+                    if (fileLocation2 != null) {
+                        if (fileLocation2.volume_id != 0) {
+                        }
+                    }
+                }
+                fileLocation = null;
+                str = str2;
+                chat = chat3;
+                user = null;
             }
         }
         RemoteViews remoteViews3 = new RemoteViews(this.mContext.getPackageName(), R.layout.shortcut_widget_item);
@@ -419,12 +453,12 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         boolean isUserDialog = DialogObject.isUserDialog(l.longValue());
         long longValue = l.longValue();
         if (isUserDialog) {
-            str2 = "userId";
+            str3 = "userId";
         } else {
             longValue = -longValue;
-            str2 = "chatId";
+            str3 = "chatId";
         }
-        bundle2.putLong(str2, longValue);
+        bundle2.putLong(str3, longValue);
         bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
         Intent intent2 = new Intent();
         intent2.putExtras(bundle2);

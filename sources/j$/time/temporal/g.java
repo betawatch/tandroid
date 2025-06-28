@@ -19,42 +19,42 @@ abstract class g implements l {
     static {
         g gVar = new g() { // from class: j$.time.temporal.c
             @Override // j$.time.temporal.l
-            public final q a() {
+            public final q f() {
                 return q.j(90L, 92L);
             }
 
             @Override // j$.time.temporal.l
-            public final long b(k kVar) {
+            public final long h(k kVar) {
                 int[] iArr;
-                if (!c(kVar)) {
+                if (!i(kVar)) {
                     throw new p("Unsupported field: DayOfQuarter");
                 }
-                int d = kVar.d(a.DAY_OF_YEAR);
-                int d2 = kVar.d(a.MONTH_OF_YEAR);
-                long b2 = kVar.b(a.YEAR);
+                int j = kVar.j(a.DAY_OF_YEAR);
+                int j2 = kVar.j(a.MONTH_OF_YEAR);
+                long h = kVar.h(a.YEAR);
                 iArr = g.a;
-                int i = (d2 - 1) / 3;
-                j$.time.chrono.g.a.getClass();
-                return d - iArr[i + (j$.time.chrono.g.a(b2) ? 4 : 0)];
+                int i = (j2 - 1) / 3;
+                j$.time.chrono.f.a.getClass();
+                return j - iArr[i + (j$.time.chrono.f.f(h) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.l
-            public final boolean c(k kVar) {
-                return kVar.e(a.DAY_OF_YEAR) && kVar.e(a.MONTH_OF_YEAR) && kVar.e(a.YEAR) && g.f(kVar);
+            public final boolean i(k kVar) {
+                return kVar.k(a.DAY_OF_YEAR) && kVar.k(a.MONTH_OF_YEAR) && kVar.k(a.YEAR) && g.m(kVar);
             }
 
             @Override // j$.time.temporal.g, j$.time.temporal.l
-            public final q d(k kVar) {
-                if (!c(kVar)) {
+            public final q j(k kVar) {
+                if (!i(kVar)) {
                     throw new p("Unsupported field: DayOfQuarter");
                 }
-                long b2 = kVar.b(g.QUARTER_OF_YEAR);
-                if (b2 != 1) {
-                    return b2 == 2 ? q.i(1L, 91L) : (b2 == 3 || b2 == 4) ? q.i(1L, 92L) : a();
+                long h = kVar.h(g.QUARTER_OF_YEAR);
+                if (h != 1) {
+                    return h == 2 ? q.i(1L, 91L) : (h == 3 || h == 4) ? q.i(1L, 92L) : f();
                 }
-                long b3 = kVar.b(a.YEAR);
-                j$.time.chrono.g.a.getClass();
-                return j$.time.chrono.g.a(b3) ? q.i(1L, 91L) : q.i(1L, 90L);
+                long h2 = kVar.h(a.YEAR);
+                j$.time.chrono.f.a.getClass();
+                return j$.time.chrono.f.f(h2) ? q.i(1L, 91L) : q.i(1L, 90L);
             }
 
             @Override // java.lang.Enum
@@ -65,21 +65,21 @@ abstract class g implements l {
         DAY_OF_QUARTER = gVar;
         g gVar2 = new g() { // from class: j$.time.temporal.d
             @Override // j$.time.temporal.l
-            public final q a() {
+            public final q f() {
                 return q.i(1L, 4L);
             }
 
             @Override // j$.time.temporal.l
-            public final long b(k kVar) {
-                if (c(kVar)) {
-                    return (kVar.b(a.MONTH_OF_YEAR) + 2) / 3;
+            public final long h(k kVar) {
+                if (i(kVar)) {
+                    return (kVar.h(a.MONTH_OF_YEAR) + 2) / 3;
                 }
                 throw new p("Unsupported field: QuarterOfYear");
             }
 
             @Override // j$.time.temporal.l
-            public final boolean c(k kVar) {
-                return kVar.e(a.MONTH_OF_YEAR) && g.f(kVar);
+            public final boolean i(k kVar) {
+                return kVar.k(a.MONTH_OF_YEAR) && g.m(kVar);
             }
 
             @Override // java.lang.Enum
@@ -90,31 +90,31 @@ abstract class g implements l {
         QUARTER_OF_YEAR = gVar2;
         g gVar3 = new g() { // from class: j$.time.temporal.e
             @Override // j$.time.temporal.l
-            public final q a() {
+            public final q f() {
                 return q.j(52L, 53L);
             }
 
             @Override // j$.time.temporal.l
-            public final long b(k kVar) {
-                if (c(kVar)) {
-                    return g.i(LocalDate.h(kVar));
+            public final long h(k kVar) {
+                if (i(kVar)) {
+                    return g.p(LocalDate.o(kVar));
                 }
                 throw new p("Unsupported field: WeekOfWeekBasedYear");
             }
 
             @Override // j$.time.temporal.l
-            public final boolean c(k kVar) {
-                return kVar.e(a.EPOCH_DAY) && g.f(kVar);
+            public final boolean i(k kVar) {
+                return kVar.k(a.EPOCH_DAY) && g.m(kVar);
             }
 
             @Override // j$.time.temporal.g, j$.time.temporal.l
-            public final q d(k kVar) {
-                q l;
-                if (!c(kVar)) {
+            public final q j(k kVar) {
+                q s;
+                if (!i(kVar)) {
                     throw new p("Unsupported field: WeekOfWeekBasedYear");
                 }
-                l = g.l(LocalDate.h(kVar));
-                return l;
+                s = g.s(LocalDate.o(kVar));
+                return s;
             }
 
             @Override // java.lang.Enum
@@ -125,23 +125,23 @@ abstract class g implements l {
         WEEK_OF_WEEK_BASED_YEAR = gVar3;
         g gVar4 = new g() { // from class: j$.time.temporal.f
             @Override // j$.time.temporal.l
-            public final q a() {
-                return a.YEAR.a();
+            public final q f() {
+                return a.YEAR.f();
             }
 
             @Override // j$.time.temporal.l
-            public final long b(k kVar) {
-                int k;
-                if (!c(kVar)) {
+            public final long h(k kVar) {
+                int r;
+                if (!i(kVar)) {
                     throw new p("Unsupported field: WeekBasedYear");
                 }
-                k = g.k(LocalDate.h(kVar));
-                return k;
+                r = g.r(LocalDate.o(kVar));
+                return r;
             }
 
             @Override // j$.time.temporal.l
-            public final boolean c(k kVar) {
-                return kVar.e(a.EPOCH_DAY) && g.f(kVar);
+            public final boolean i(k kVar) {
+                return kVar.k(a.EPOCH_DAY) && g.m(kVar);
             }
 
             @Override // java.lang.Enum
@@ -157,52 +157,52 @@ abstract class g implements l {
     g(String str, int i) {
     }
 
-    static boolean f(k kVar) {
+    static boolean m(k kVar) {
         A.z(kVar, "temporal");
-        Object obj = (j$.time.chrono.f) kVar.c(j.b);
+        Object obj = (j$.time.chrono.e) kVar.i(j.b);
         if (obj == null) {
-            obj = j$.time.chrono.g.a;
+            obj = j$.time.chrono.f.a;
         }
-        return ((j$.time.chrono.a) obj).equals(j$.time.chrono.g.a);
+        return ((j$.time.chrono.a) obj).equals(j$.time.chrono.f.a);
     }
 
-    static int i(LocalDate localDate) {
-        int ordinal = localDate.j().ordinal();
+    static int p(LocalDate localDate) {
+        int ordinal = localDate.q().ordinal();
         int i = 1;
-        int k = localDate.k() - 1;
-        int i2 = (3 - ordinal) + k;
+        int r = localDate.r() - 1;
+        int i2 = (3 - ordinal) + r;
         int i3 = i2 - ((i2 / 7) * 7);
         int i4 = i3 - 3;
         if (i4 < -3) {
             i4 = i3 + 4;
         }
-        if (k < i4) {
-            return (int) l(localDate.u().q(-1L)).d();
+        if (r < i4) {
+            return (int) s(localDate.A().w(-1L)).d();
         }
-        int i5 = ((k - i4) / 7) + 1;
-        if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.n())) {
+        int i5 = ((r - i4) / 7) + 1;
+        if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.t())) {
             i = i5;
         }
         return i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static int k(LocalDate localDate) {
-        int m = localDate.m();
-        int k = localDate.k();
-        if (k <= 3) {
-            return k - localDate.j().ordinal() < -2 ? m - 1 : m;
+    public static int r(LocalDate localDate) {
+        int year = localDate.getYear();
+        int r = localDate.r();
+        if (r <= 3) {
+            return r - localDate.q().ordinal() < -2 ? year - 1 : year;
         }
-        if (k >= 363) {
-            return ((k - 363) - (localDate.n() ? 1 : 0)) - localDate.j().ordinal() >= 0 ? m + 1 : m;
+        if (r >= 363) {
+            return ((r - 363) - (localDate.t() ? 1 : 0)) - localDate.q().ordinal() >= 0 ? year + 1 : year;
         }
-        return m;
+        return year;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static q l(LocalDate localDate) {
-        LocalDate of = LocalDate.of(k(localDate), 1, 1);
-        return q.i(1L, (of.j() == DayOfWeek.THURSDAY || (of.j() == DayOfWeek.WEDNESDAY && of.n())) ? 53 : 52);
+    public static q s(LocalDate localDate) {
+        LocalDate of = LocalDate.of(r(localDate), 1, 1);
+        return q.i(1L, (of.q() == DayOfWeek.THURSDAY || (of.q() == DayOfWeek.WEDNESDAY && of.t())) ? 53 : 52);
     }
 
     public static g valueOf(String str) {
@@ -213,12 +213,12 @@ abstract class g implements l {
         return (g[]) b.clone();
     }
 
-    public q d(k kVar) {
-        return a();
+    public q j(k kVar) {
+        return f();
     }
 
     @Override // j$.time.temporal.l
-    public final boolean e() {
+    public final boolean k() {
         return true;
     }
 }

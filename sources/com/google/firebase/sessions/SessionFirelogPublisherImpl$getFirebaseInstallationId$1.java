@@ -2,6 +2,7 @@ package com.google.firebase.sessions;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 final class SessionFirelogPublisherImpl$getFirebaseInstallationId$1 extends ContinuationImpl {
@@ -19,7 +20,7 @@ final class SessionFirelogPublisherImpl$getFirebaseInstallationId$1 extends Cont
     public final Object invokeSuspend(Object obj) {
         Object firebaseInstallationId;
         this.result = obj;
-        this.label |= Integer.MIN_VALUE;
+        this.label |= TLRPC.FLAG_31;
         firebaseInstallationId = this.this$0.getFirebaseInstallationId(this);
         return firebaseInstallationId;
     }

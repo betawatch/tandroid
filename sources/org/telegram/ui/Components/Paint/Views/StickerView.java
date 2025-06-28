@@ -244,7 +244,7 @@ public class StickerView extends EntityView {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) this.baseSize.width, 1073741824), View.MeasureSpec.makeMeasureSpec((int) this.baseSize.height, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) this.baseSize.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.baseSize.height, TLRPC.FLAG_30));
     }
 
     protected void stickerDraw(Canvas canvas) {

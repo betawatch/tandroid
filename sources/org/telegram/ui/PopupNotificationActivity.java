@@ -1288,15 +1288,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     View childAt = getChildAt(i4);
                     if (childAt.getVisibility() != 8) {
                         if (PopupNotificationActivity.this.chatActivityEnterView.isPopupView(childAt)) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                             max = childAt.getLayoutParams().height;
                         } else if (PopupNotificationActivity.this.chatActivityEnterView.isRecordCircle(childAt)) {
                             measureChildWithMargins(childAt, i2, 0, i3, 0);
                         } else {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
                             max = Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f) + size2);
                         }
-                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(max, 1073741824));
+                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(max, TLRPC.FLAG_30));
                     }
                 }
             }
@@ -1325,7 +1325,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 for (int i4 = 0; i4 < getChildCount(); i4++) {
                     View childAt = getChildAt(i4);
                     if (childAt.getTag() instanceof String) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), 1073741824));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), TLRPC.FLAG_30));
                     }
                 }
             }
@@ -1354,6 +1354,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public void didPressAttachButton() {
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ void didPressSuggestionButton() {
+                ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$didPressSuggestionButton(this);
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate

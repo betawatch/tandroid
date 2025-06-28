@@ -123,7 +123,7 @@ public class JoinCallAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.hasBackground ? 80.0f : 50.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.hasBackground ? 80.0f : 50.0f), TLRPC.FLAG_30));
         }
 
         public void setText(CharSequence charSequence, boolean z) {
@@ -375,7 +375,7 @@ public class JoinCallAlert extends BottomSheet {
                         JoinCallAlert.this.listView.setPadding(0, i10, 0, 0);
                         JoinCallAlert.this.ignoreLayout = false;
                     }
-                    super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size3, 1073741824));
+                    super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size3, TLRPC.FLAG_30));
                 }
 
                 @Override // android.view.View

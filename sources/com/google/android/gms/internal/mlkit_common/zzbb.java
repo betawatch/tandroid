@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.mlkit_common;
 
 import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzbb extends zzat {
@@ -57,7 +58,7 @@ final class zzbb extends zzat {
                 Double.isNaN(d);
             } while (d * 0.7d < max);
         } else {
-            i2 = 1073741824;
+            i2 = TLRPC.FLAG_30;
             if (max >= 1073741824) {
                 throw new IllegalArgumentException("collection too large");
             }

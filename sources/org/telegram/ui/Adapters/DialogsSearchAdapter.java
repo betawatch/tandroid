@@ -554,7 +554,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                     }
                 }
             }
-            Collections.sort(arrayList5, new Comparator() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda1
+            Collections.sort(arrayList5, new Comparator() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda3
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$loadRecentSearch$6;
@@ -562,7 +562,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                     return lambda$loadRecentSearch$6;
                 }
             });
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     DialogsSearchAdapter.OnRecentSearchLoaded.this.setRecentSearch(arrayList5, longSparseArray);
@@ -2015,7 +2015,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         if (i == 15) {
             return;
         }
-        loadRecentSearch(this.currentAccount, i, new OnRecentSearchLoaded() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda4
+        loadRecentSearch(this.currentAccount, i, new OnRecentSearchLoaded() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Adapters.DialogsSearchAdapter.OnRecentSearchLoaded
             public final void setRecentSearch(ArrayList arrayList, LongSparseArray longSparseArray) {
                 DialogsSearchAdapter.this.lambda$loadRecentSearch$5(arrayList, longSparseArray);
@@ -3259,7 +3259,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         String str = this.lastSearchText;
         filterRecent(str != null ? str.trim() : null);
         notifyDataSetChanged();
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda3
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 DialogsSearchAdapter.this.lambda$putRecentSearch$9(j);

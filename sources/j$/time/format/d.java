@@ -9,7 +9,7 @@ final class d implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         sb.append(this.a);
         return true;
     }

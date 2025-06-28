@@ -29,6 +29,7 @@ import androidx.core.view.NestedScrollingParentHelper;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements DecorContentParent, NestedScrollingParent, NestedScrollingParent2, NestedScrollingParent3 {
@@ -238,7 +239,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
     }
 
     private boolean shouldHideActionBarOnFling(float f) {
-        this.mFlingEstimator.fling(0, 0, 0, (int) f, 0, 0, Integer.MIN_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        this.mFlingEstimator.fling(0, 0, 0, (int) f, 0, 0, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID);
         return this.mFlingEstimator.getFinalY() > this.mActionBarTop.getHeight();
     }
 

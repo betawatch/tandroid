@@ -499,7 +499,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             if (DialogsAdapter.this.isTransitionSupport) {
                 i11 += AndroidUtilities.dp(1000.0f);
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i11, 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i11, TLRPC.FLAG_30));
         }
     }
 
@@ -1508,7 +1508,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 ViewGroup viewGroup6 = new FrameLayout(this.mContext) { // from class: org.telegram.ui.Adapters.DialogsAdapter.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), 1073741824));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLRPC.FLAG_30));
                     }
                 };
                 viewGroup6.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
@@ -1637,7 +1637,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 viewGroup3 = new View(this.mContext) { // from class: org.telegram.ui.Adapters.DialogsAdapter.5
                     @Override // android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(81.0f), 1073741824));
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(81.0f), TLRPC.FLAG_30));
                     }
                 };
                 break;

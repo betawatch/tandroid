@@ -24,7 +24,7 @@ public class DocumentObject {
             TLRPC.WallPaper wallPaper = this.themeSettings.wallpaper;
             if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
                 this.id = -2147483648L;
-                this.dc_id = Integer.MIN_VALUE;
+                this.dc_id = TLRPC.FLAG_31;
                 return;
             }
             TLRPC.Document document = ((TLRPC.TL_wallPaper) wallPaper).document;

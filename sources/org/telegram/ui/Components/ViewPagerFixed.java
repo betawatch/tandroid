@@ -53,7 +53,7 @@ import org.telegram.ui.Components.ViewPagerFixed;
 
 /* loaded from: classes5.dex */
 public class ViewPagerFixed extends FrameLayout {
-    private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
+    private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda0
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
             float lambda$static$0;
@@ -1209,6 +1209,13 @@ public class ViewPagerFixed extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$cancelTouches$4(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.backProgress = floatValue;
+        onBackProgress(floatValue);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onTouchEventInternal$2(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.backProgress = floatValue;
@@ -1366,6 +1373,201 @@ public class ViewPagerFixed extends FrameLayout {
             }
         }
         return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x004f, code lost:
+    
+        if (r4.getX() > (r9.viewPages[0].getMeasuredWidth() >> 1)) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0069, code lost:
+    
+        if (r9.viewPages[0].getX() < (r9.viewPages[0].getMeasuredWidth() >> 1)) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0095, code lost:
+    
+        if (java.lang.Math.abs(0.0f) < java.lang.Math.abs(0.0f)) goto L29;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01e2  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00fe  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void cancelTouches() {
+        boolean z;
+        float f;
+        VelocityTracker velocityTracker = this.velocityTracker;
+        if (velocityTracker != null) {
+            velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.maximumVelocity);
+        }
+        if (this.startedTracking) {
+            float x = this.viewPages[0].getX();
+            this.tabsAnimation = new AnimatorSet();
+            if (this.additionalOffset != 0.0f) {
+                if (Math.abs(0.0f) <= 1500.0f) {
+                    if (this.animatingForward) {
+                        View view = this.viewPages[1];
+                        if (view != null) {
+                        }
+                    }
+                }
+                this.backAnimation = false;
+                if (!this.backAnimation) {
+                    f = Math.abs(x);
+                    if (this.animatingForward) {
+                        this.tabsAnimation.playTogether(translateAnimator(this.viewPages[0], 0.0f));
+                        View view2 = this.viewPages[1];
+                        if (view2 != null) {
+                            this.tabsAnimation.playTogether(translateAnimator(view2, view2.getMeasuredWidth()));
+                        }
+                    } else {
+                        this.tabsAnimation.playTogether(translateAnimator(this.viewPages[0], 0.0f));
+                        View view3 = this.viewPages[1];
+                        if (view3 != null) {
+                            this.tabsAnimation.playTogether(translateAnimator(view3, -view3.getMeasuredWidth()));
+                        }
+                    }
+                } else if (this.nextPosition >= 0) {
+                    f = this.viewPages[0].getMeasuredWidth() - Math.abs(x);
+                    if (this.animatingForward) {
+                        this.tabsAnimation.playTogether(translateAnimator(this.viewPages[0], -r6.getMeasuredWidth()));
+                        View view4 = this.viewPages[1];
+                        if (view4 != null) {
+                            this.tabsAnimation.playTogether(translateAnimator(view4, 0.0f));
+                        }
+                    } else {
+                        this.tabsAnimation.playTogether(translateAnimator(this.viewPages[0], r6.getMeasuredWidth()));
+                        View view5 = this.viewPages[1];
+                        if (view5 != null) {
+                            this.tabsAnimation.playTogether(translateAnimator(view5, 0.0f));
+                        }
+                    }
+                } else {
+                    f = 0.0f;
+                }
+                if (this.nextPosition < 0) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(this.backProgress, this.backAnimation ? 0.0f : 1.0f);
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda4
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            ViewPagerFixed.this.lambda$cancelTouches$4(valueAnimator);
+                        }
+                    });
+                    this.tabsAnimation.playTogether(ofFloat);
+                }
+                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                ofFloat2.addUpdateListener(this.updateTabProgress);
+                this.tabsAnimation.playTogether(ofFloat2);
+                this.tabsAnimation.setInterpolator(interpolator);
+                int measuredWidth = getMeasuredWidth();
+                float f2 = measuredWidth / 2;
+                float distanceInfluenceForSnapDuration = f2 + (distanceInfluenceForSnapDuration(Math.min(1.0f, (f * 1.0f) / measuredWidth)) * f2);
+                this.tabsAnimation.setDuration(Math.max(150, Math.min(Math.abs(0.0f) <= 0.0f ? Math.round(Math.abs(distanceInfluenceForSnapDuration / r4) * 1000.0f) * 4 : (int) (((f / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+                this.tabsAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ViewPagerFixed.9
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        ViewPagerFixed.this.tabsAnimation = null;
+                        ViewPagerFixed viewPagerFixed = ViewPagerFixed.this;
+                        if (viewPagerFixed.nextPosition < 0) {
+                            viewPagerFixed.onBack();
+                        }
+                        ViewPagerFixed viewPagerFixed2 = ViewPagerFixed.this;
+                        if (viewPagerFixed2.viewPages[1] != null) {
+                            if (!viewPagerFixed2.backAnimation) {
+                                ViewPagerFixed.this.swapViews();
+                            }
+                            ViewPagerFixed viewPagerFixed3 = ViewPagerFixed.this;
+                            viewPagerFixed3.viewsByType.put(viewPagerFixed3.viewTypes[1], ViewPagerFixed.this.viewPages[1]);
+                            ViewPagerFixed viewPagerFixed4 = ViewPagerFixed.this;
+                            viewPagerFixed4.removeView(viewPagerFixed4.viewPages[1]);
+                            ViewPagerFixed.this.viewPages[1].setVisibility(8);
+                            ViewPagerFixed.this.viewPages[1] = null;
+                        }
+                        ViewPagerFixed.this.tabsAnimationInProgress = false;
+                        ViewPagerFixed.this.maybeStartTracking = false;
+                        TabsView tabsView = ViewPagerFixed.this.tabsView;
+                        if (tabsView != null) {
+                            tabsView.setEnabled(true);
+                        }
+                        ViewPagerFixed.this.onTabAnimationUpdate(false);
+                        ViewPagerFixed.this.onScrollEnd();
+                        ViewPagerFixed.this.notificationsLocker.unlock();
+                    }
+                });
+                this.tabsAnimation.start();
+                this.tabsAnimationInProgress = true;
+                this.startedTracking = false;
+                onTabAnimationUpdate(false);
+            } else {
+                if (Math.abs(x) < this.viewPages[0].getMeasuredWidth() / 3.0f) {
+                    if (Math.abs(0.0f) >= 3500.0f) {
+                    }
+                    z = true;
+                }
+                z = false;
+            }
+            this.backAnimation = z;
+            if (!this.backAnimation) {
+            }
+            if (this.nextPosition < 0) {
+            }
+            ValueAnimator ofFloat22 = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat22.addUpdateListener(this.updateTabProgress);
+            this.tabsAnimation.playTogether(ofFloat22);
+            this.tabsAnimation.setInterpolator(interpolator);
+            int measuredWidth2 = getMeasuredWidth();
+            float f22 = measuredWidth2 / 2;
+            float distanceInfluenceForSnapDuration2 = f22 + (distanceInfluenceForSnapDuration(Math.min(1.0f, (f * 1.0f) / measuredWidth2)) * f22);
+            this.tabsAnimation.setDuration(Math.max(150, Math.min(Math.abs(0.0f) <= 0.0f ? Math.round(Math.abs(distanceInfluenceForSnapDuration2 / r4) * 1000.0f) * 4 : (int) (((f / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+            this.tabsAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ViewPagerFixed.9
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    ViewPagerFixed.this.tabsAnimation = null;
+                    ViewPagerFixed viewPagerFixed = ViewPagerFixed.this;
+                    if (viewPagerFixed.nextPosition < 0) {
+                        viewPagerFixed.onBack();
+                    }
+                    ViewPagerFixed viewPagerFixed2 = ViewPagerFixed.this;
+                    if (viewPagerFixed2.viewPages[1] != null) {
+                        if (!viewPagerFixed2.backAnimation) {
+                            ViewPagerFixed.this.swapViews();
+                        }
+                        ViewPagerFixed viewPagerFixed3 = ViewPagerFixed.this;
+                        viewPagerFixed3.viewsByType.put(viewPagerFixed3.viewTypes[1], ViewPagerFixed.this.viewPages[1]);
+                        ViewPagerFixed viewPagerFixed4 = ViewPagerFixed.this;
+                        viewPagerFixed4.removeView(viewPagerFixed4.viewPages[1]);
+                        ViewPagerFixed.this.viewPages[1].setVisibility(8);
+                        ViewPagerFixed.this.viewPages[1] = null;
+                    }
+                    ViewPagerFixed.this.tabsAnimationInProgress = false;
+                    ViewPagerFixed.this.maybeStartTracking = false;
+                    TabsView tabsView = ViewPagerFixed.this.tabsView;
+                    if (tabsView != null) {
+                        tabsView.setEnabled(true);
+                    }
+                    ViewPagerFixed.this.onTabAnimationUpdate(false);
+                    ViewPagerFixed.this.onScrollEnd();
+                    ViewPagerFixed.this.notificationsLocker.unlock();
+                }
+            });
+            this.tabsAnimation.start();
+            this.tabsAnimationInProgress = true;
+            this.startedTracking = false;
+            onTabAnimationUpdate(false);
+        } else {
+            this.maybeStartTracking = false;
+            TabsView tabsView = this.tabsView;
+            if (tabsView != null) {
+                tabsView.setEnabled(true);
+            }
+        }
+        VelocityTracker velocityTracker2 = this.velocityTracker;
+        if (velocityTracker2 != null) {
+            velocityTracker2.recycle();
+            this.velocityTracker = null;
+        }
     }
 
     public boolean checkTabsAnimationInProgress() {
@@ -1627,7 +1829,7 @@ public class ViewPagerFixed extends FrameLayout {
     public void onStartTracking() {
     }
 
-    protected void onTabAnimationUpdate(boolean z) {
+    public void onTabAnimationUpdate(boolean z) {
     }
 
     protected void onTabPageSelected(int i) {
@@ -1831,7 +2033,7 @@ public class ViewPagerFixed extends FrameLayout {
                         }
                         if (this.nextPosition < 0) {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.backProgress, this.backAnimation ? 0.0f : 1.0f);
-                            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda2
+                            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
                                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                                     ViewPagerFixed.this.lambda$onTouchEventInternal$2(valueAnimator);
@@ -2121,7 +2323,7 @@ public class ViewPagerFixed extends FrameLayout {
         setTranslationX(view, f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.manualScrolling = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda0
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ViewPagerFixed.this.lambda$scrollToPosition$1(valueAnimator2);

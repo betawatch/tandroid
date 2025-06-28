@@ -1966,7 +1966,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 i = (int) (i + ((PreviewGroupCell) this.groupCells.get(i2)).measure());
             }
             if (this.hintView.getMeasuredHeight() <= 0) {
-                this.hintView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, 1073741824), View.MeasureSpec.makeMeasureSpec(9999, Integer.MIN_VALUE));
+                this.hintView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLRPC.FLAG_31));
             }
             return i + this.hintView.getMeasuredHeight();
         }
@@ -2234,11 +2234,11 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            this.hintView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, Integer.MIN_VALUE));
+            this.hintView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLRPC.FLAG_31));
             if (this.lastMeasuredHeight <= 0) {
                 this.lastMeasuredHeight = measureHeight();
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), this.lastMeasuredHeight), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), this.lastMeasuredHeight), TLRPC.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:16:0x002e  */

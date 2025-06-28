@@ -2,6 +2,7 @@ package androidx.datastore.core;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class SingleProcessDataStore$readData$1 extends ContinuationImpl {
@@ -22,7 +23,7 @@ final class SingleProcessDataStore$readData$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         Object readData;
         this.result = obj;
-        this.label |= Integer.MIN_VALUE;
+        this.label |= TLRPC.FLAG_31;
         readData = this.this$0.readData(this);
         return readData;
     }

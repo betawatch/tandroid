@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoaderPriorityQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -255,7 +254,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         float f2 = max - scrollX;
         int width = (getWidth() - getCompoundPaddingLeft()) - getCompoundPaddingRight();
         float f3 = width;
-        return f2 >= f3 - 1.0f ? (width + scrollX) - (i - this.mTempRect.right) : (Math.abs(f2) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (FileLoaderPriorityQueue.PRIORITY_VALUE_MAX - scrollX)) <= f3 + 1.0f && max <= 1.0f)) ? scrollX - this.mTempRect.left : ((int) max) - this.mTempRect.left;
+        return f2 >= f3 - 1.0f ? (width + scrollX) - (i - this.mTempRect.right) : (Math.abs(f2) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (1048576 - scrollX)) <= f3 + 1.0f && max <= 1.0f)) ? scrollX - this.mTempRect.left : ((int) max) - this.mTempRect.left;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -12,7 +12,7 @@ final class x2 extends a0 {
 
     @Override // j$.util.stream.b
     public final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        if (R2.SORTED.d(bVar.p0())) {
+        if (R2.SORTED.j(bVar.p0())) {
             return bVar.h0(spliterator, false, intFunction);
         }
         int[] iArr = (int[]) ((C0) bVar.h0(spliterator, true, intFunction)).e();
@@ -23,6 +23,6 @@ final class x2 extends a0 {
     @Override // j$.util.stream.b
     public final e2 w0(int i, e2 e2Var) {
         e2Var.getClass();
-        return R2.SORTED.d(i) ? e2Var : R2.SIZED.d(i) ? new C2(e2Var) : new u2(e2Var);
+        return R2.SORTED.j(i) ? e2Var : R2.SIZED.j(i) ? new C2(e2Var) : new u2(e2Var);
     }
 }

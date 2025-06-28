@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 abstract class NativeSessionFileGzipper {
@@ -15,7 +14,7 @@ abstract class NativeSessionFileGzipper {
         if (inputStream == null) {
             return;
         }
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+        byte[] bArr = new byte[8192];
         GZIPOutputStream gZIPOutputStream = null;
         try {
             GZIPOutputStream gZIPOutputStream2 = new GZIPOutputStream(new FileOutputStream(file));

@@ -7,6 +7,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public abstract class AwaitKt {
@@ -28,8 +29,8 @@ public abstract class AwaitKt {
         if (continuation instanceof AwaitKt$joinAll$3) {
             awaitKt$joinAll$3 = (AwaitKt$joinAll$3) continuation;
             int i2 = awaitKt$joinAll$3.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                awaitKt$joinAll$3.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                awaitKt$joinAll$3.label = i2 - TLRPC.FLAG_31;
                 Object obj = awaitKt$joinAll$3.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = awaitKt$joinAll$3.label;

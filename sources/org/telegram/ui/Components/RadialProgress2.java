@@ -312,7 +312,7 @@ public class RadialProgress2 {
         }
         Canvas canvas6 = this.miniDrawCanvas;
         if (canvas6 == null || this.circleCrossfadeColorKey < 0 || this.circleCheckProgress == 1.0f) {
-            i6 = Integer.MIN_VALUE;
+            i6 = TLRPC.FLAG_31;
         } else {
             i6 = canvas6.save();
             float f7 = 1.0f - ((1.0f - this.circleCheckProgress) * 0.1f);
@@ -402,7 +402,7 @@ public class RadialProgress2 {
                         float f11 = this.miniIconScale;
                         canvas.scale(f11, f11, centerX, centerY);
                     } else {
-                        i8 = Integer.MIN_VALUE;
+                        i8 = TLRPC.FLAG_31;
                     }
                     float f12 = i20;
                     canvas.drawCircle(centerX, centerY, (AndroidUtilities.dp(f12) * f) + (AndroidUtilities.dp(1.0f) * (1.0f - this.circleCheckProgress)), this.circleMiniPaint);

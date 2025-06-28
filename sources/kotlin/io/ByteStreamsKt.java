@@ -3,7 +3,6 @@ package kotlin.io;
 import java.io.InputStream;
 import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public abstract class ByteStreamsKt {
@@ -23,7 +22,7 @@ public abstract class ByteStreamsKt {
 
     public static /* synthetic */ long copyTo$default(InputStream inputStream, OutputStream outputStream, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+            i = 8192;
         }
         return copyTo(inputStream, outputStream, i);
     }

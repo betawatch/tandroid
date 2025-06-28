@@ -321,7 +321,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$4() {
-            PassportActivity.this.lambda$onBackPressed$348();
+            PassportActivity.this.lambda$onBackPressed$354();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -430,7 +430,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 }
             }
             if (PassportActivity.this.isHasNotAnyChanges()) {
-                PassportActivity.this.lambda$onBackPressed$348();
+                PassportActivity.this.lambda$onBackPressed$354();
                 return false;
             }
             SecureDocument secureDocument = null;
@@ -572,7 +572,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 if (PassportActivity.this.currentActivityType == 0 || PassportActivity.this.currentActivityType == 5) {
                     PassportActivity.this.callCallback(false);
                 }
-                PassportActivity.this.lambda$onBackPressed$348();
+                PassportActivity.this.lambda$onBackPressed$354();
                 return;
             }
             if (i == 1) {
@@ -669,7 +669,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                             return;
                         }
                         if (PassportActivity.this.isHasNotAnyChanges()) {
-                            PassportActivity.this.lambda$onBackPressed$348();
+                            PassportActivity.this.lambda$onBackPressed$354();
                             return;
                         }
                         if (!PassportActivity.this.documentOnly) {
@@ -1470,7 +1470,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             TextView textView5 = new TextView(context) { // from class: org.telegram.ui.PassportActivity.PhoneConfirmationView.1
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i6, int i7) {
-                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                 }
             };
             this.timeText = textView5;
@@ -1494,7 +1494,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             TextView textView6 = new TextView(context) { // from class: org.telegram.ui.PassportActivity.PhoneConfirmationView.2
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i6, int i7) {
-                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), Integer.MIN_VALUE));
+                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
                 }
             };
             this.problemText = textView6;
@@ -1669,7 +1669,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate.saveValue(tL_secureRequiredType, str, null, null, null, null, null, null, null, null, new Runnable() { // from class: org.telegram.ui.PassportActivity$PhoneConfirmationView$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PassportActivity.this.lambda$onBackPressed$348();
+                        PassportActivity.this.lambda$onBackPressed$354();
                     }
                 }, null);
                 return;
@@ -1745,7 +1745,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$resendCode$1(AlertDialog alertDialog, int i) {
             onBackPressed(true);
-            PassportActivity.this.lambda$onBackPressed$348();
+            PassportActivity.this.lambda$onBackPressed$354();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2433,7 +2433,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, TLRPC.FLAG_30));
         }
 
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -2555,7 +2555,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30));
         }
 
         public void setChecked(boolean z) {
@@ -4150,7 +4150,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                         int lineCount = errorLayout.getLineCount();
                         int i12 = 0;
                         if (lineCount > 1) {
-                            i11 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), 1073741824);
+                            i11 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
                         }
                         if (LocaleController.isRTL) {
                             float f = 0.0f;
@@ -4859,7 +4859,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                                     int lineCount = errorLayout.getLineCount();
                                     int i16 = 0;
                                     if (lineCount > 1) {
-                                        i15 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), 1073741824);
+                                        i15 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
                                     }
                                     if (LocaleController.isRTL) {
                                         float f = 0.0f;
@@ -5040,7 +5040,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                             int lineCount = errorLayout.getLineCount();
                             int i20 = 0;
                             if (lineCount > 1) {
-                                i19 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), 1073741824);
+                                i19 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
                             }
                             if (LocaleController.isRTL) {
                                 float f = 0.0f;
@@ -7483,7 +7483,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$69(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7561,7 +7561,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         this.currentDocumentValues.clear();
         this.delegate.deleteValue(this.currentType, this.currentDocumentsType, this.availableDocumentTypes, zArr[0], null, null);
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8156,7 +8156,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         if (tL_error == null) {
             this.ignoreOnFailure = true;
             callCallback(true);
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         } else {
             showEditDoneProgress(false, false);
             if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
@@ -8716,7 +8716,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         this.uploadingDocuments.put(secureDocument.path, secureDocument);
         this.doneItem.setEnabled(false);
         this.doneItem.setAlpha(0.5f);
-        FileLoader.getInstance(this.currentAccount).uploadFile(secureDocument.path, false, true, ConnectionsManager.FileTypePhoto);
+        FileLoader.getInstance(this.currentAccount).uploadFile(secureDocument.path, false, true, 16777216);
         addDocumentView(secureDocument, i);
         updateUploadText(i);
     }
@@ -11221,6 +11221,11 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             editTextBoldCursor = this.inputFields[0];
         }
         AndroidUtilities.showKeyboard(editTextBoldCursor);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void restoreSelfArgs(Bundle bundle) {
+        this.currentPicturePath = bundle.getString("path");
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

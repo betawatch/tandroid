@@ -7,7 +7,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.io.EOFException;
 import java.io.InterruptedIOException;
 import java.util.Arrays;
-import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class DefaultExtractorInput implements ExtractorInput {
@@ -17,7 +17,7 @@ public final class DefaultExtractorInput implements ExtractorInput {
     private long position;
     private final long streamLength;
     private byte[] peekBuffer = new byte[65536];
-    private final byte[] scratchSpace = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+    private final byte[] scratchSpace = new byte[4096];
 
     static {
         ExoPlayerLibraryInfo.registerModule("goog.exo.extractor");
@@ -39,7 +39,7 @@ public final class DefaultExtractorInput implements ExtractorInput {
         int i2 = this.peekBufferPosition + i;
         byte[] bArr = this.peekBuffer;
         if (i2 > bArr.length) {
-            this.peekBuffer = Arrays.copyOf(this.peekBuffer, Util.constrainValue(bArr.length * 2, 65536 + i2, i2 + 524288));
+            this.peekBuffer = Arrays.copyOf(this.peekBuffer, Util.constrainValue(bArr.length * 2, 65536 + i2, i2 + TLRPC.FLAG_19));
         }
     }
 
@@ -79,7 +79,7 @@ public final class DefaultExtractorInput implements ExtractorInput {
         this.peekBufferLength = i2;
         this.peekBufferPosition = 0;
         byte[] bArr = this.peekBuffer;
-        byte[] bArr2 = i2 < bArr.length - 524288 ? new byte[65536 + i2] : bArr;
+        byte[] bArr2 = i2 < bArr.length - TLRPC.FLAG_19 ? new byte[65536 + i2] : bArr;
         System.arraycopy(bArr, i, bArr2, 0, i2);
         this.peekBuffer = bArr2;
     }

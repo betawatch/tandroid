@@ -69,7 +69,6 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -1586,7 +1585,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 view = new View(this.context) { // from class: org.telegram.ui.Components.ShareAlert.ShareSearchAdapter.6
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, 1073741824));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, TLRPC.FLAG_30));
                     }
                 };
             } else if (i != 5) {
@@ -1845,9 +1844,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this(context, chatActivity, arrayList, str, str2, z, str3, str4, z2, z3, false, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:113:0x07a2  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x07bc  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x07a5  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x07ac  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x07c6  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x07af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1933,12 +1932,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             int size = arrayList2.size();
             for (int i3 = 0; i3 < size; i3++) {
                 MessageObject messageObject2 = (MessageObject) this.sendingMessageObjects.get(i3);
-                if (messageObject2.isPoll()) {
+                if (messageObject2.isTodo()) {
+                    this.hasPoll = 3;
+                } else if (messageObject2.isPoll()) {
                     int i4 = messageObject2.isPublicPoll() ? 2 : 1;
                     this.hasPoll = i4;
                     if (i4 == 2) {
                         break;
                     }
+                } else {
+                    continue;
                 }
             }
         }
@@ -2111,7 +2114,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 if (ShareAlert.this.keyboardSize2 <= AndroidUtilities.dp(20.0f)) {
                     if (!AndroidUtilities.isInMultiwindow) {
                         size3 -= ((BottomSheet) ShareAlert.this).keyboardVisible ? 0 : ShareAlert.this.commentTextView.getEmojiPadding();
-                        i6 = View.MeasureSpec.makeMeasureSpec(size3, 1073741824);
+                        i6 = View.MeasureSpec.makeMeasureSpec(size3, TLRPC.FLAG_30);
                     }
                     int i8 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
                     if (ShareAlert.this.pickerBottomLayout != null) {
@@ -2128,7 +2131,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.ignoreLayout = false;
                 BlurredFrameLayout blurredFrameLayout = ShareAlert.this.navigationBar;
                 if (blurredFrameLayout != null) {
-                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i7, 1073741824), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, 1073741824));
+                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, TLRPC.FLAG_30));
                 }
                 int childCount = getChildCount();
                 for (int i9 = 0; i9 < childCount; i9++) {
@@ -2140,16 +2143,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                                 measureChildWithMargins(childAt, i5, 0, i6, 0);
                             } else {
                                 if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
                                     paddingTop = childAt.getLayoutParams().height;
                                 } else if (AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
                                     paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                                 } else {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, 1073741824);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
                                     paddingTop = (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                                 }
-                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, 1073741824));
+                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
                             }
                         }
                     }
@@ -2252,8 +2255,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 if (Build.VERSION.SDK_INT >= 23) {
                     int systemUiVisibility = getSystemUiVisibility();
                     boolean z6 = this.lightStatusBar && ((float) 0) > ((float) AndroidUtilities.statusBarHeight) * 0.5f;
-                    if (z6 != ((systemUiVisibility & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) > 0)) {
-                        setSystemUiVisibility(z6 ? systemUiVisibility | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : systemUiVisibility & (-8193));
+                    if (z6 != ((systemUiVisibility & 8192) > 0)) {
+                        setSystemUiVisibility(z6 ? systemUiVisibility | 8192 : systemUiVisibility & (-8193));
                     }
                 }
                 canvas.restore();
@@ -2379,7 +2382,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ShareAlert.this.checkCurrentList(false);
                 this.ignoreLayout = false;
                 setMeasuredDimension(View.MeasureSpec.getSize(i5), size2);
-                onMeasureInternal(i5, View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                onMeasureInternal(i5, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
             }
 
             @Override // android.view.View
@@ -3582,7 +3585,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     of2.monoForumPeer = j7;
                     SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of2);
                 }
-                int sendMessage = SendMessagesHelper.getInstance(this.currentAccount).sendMessage(this.sendingMessageObjects, j6, !this.showSendersName, false, z, 0, messageObject2, i, l3 == null ? 0L : l3.longValue(), j7);
+                int sendMessage = SendMessagesHelper.getInstance(this.currentAccount).sendMessage(this.sendingMessageObjects, j6, !this.showSendersName, false, z, 0, messageObject2, i, l3 == null ? 0L : l3.longValue(), j7, null);
                 if (sendMessage != 0) {
                     arrayList3.add(Long.valueOf(j6));
                 }
@@ -3897,7 +3900,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.sendPopupWindow.setSoftInputMode(0);
         this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
         SharedConfig.removeScheduledOrNoSoundHint();
-        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
         this.sendPopupWindow.setFocusable(true);
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
@@ -3985,6 +3988,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     /* JADX INFO: Access modifiers changed from: private */
     public void selectDialog(View view, final TLRPC.Dialog dialog) {
         DialogsSearchAdapter.CategoryAdapterRecycler categoryAdapterRecycler;
+        int i;
         if (dialog instanceof ShareDialogsAdapter.MyStoryDialog) {
             onShareStory(view);
             return;
@@ -3998,10 +4002,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         }
         if (DialogObject.isChatDialog(dialog.id)) {
             TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-dialog.id));
-            if (ChatObject.isChannel(chat) && !chat.megagroup && (!ChatObject.isCanWriteToChannel(-dialog.id, this.currentAccount) || this.hasPoll == 2)) {
+            if (ChatObject.isChannel(chat) && !chat.megagroup && (!ChatObject.isCanWriteToChannel(-dialog.id, this.currentAccount) || (i = this.hasPoll) == 2 || i == 3)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.parentActivity);
                 builder.setTitle(LocaleController.getString(R.string.SendMessageTitle));
-                builder.setMessage(LocaleController.getString(this.hasPoll == 2 ? this.isChannel ? R.string.PublicPollCantForward : ChatObject.isActionBannedByDefault(chat, 10) ? R.string.ErrorSendRestrictedPollsAll : R.string.ErrorSendRestrictedPolls : R.string.ChannelCantSendMessage));
+                int i2 = this.hasPoll;
+                builder.setMessage(LocaleController.getString(i2 == 3 ? ChatObject.isActionBannedByDefault(chat, 10) ? R.string.ErrorSendRestrictedTodoAll : R.string.ErrorSendRestrictedTodo : i2 == 2 ? this.isChannel ? R.string.PublicPollCantForward : ChatObject.isActionBannedByDefault(chat, 10) ? R.string.ErrorSendRestrictedPollsAll : R.string.ErrorSendRestrictedPolls : R.string.ChannelCantSendMessage));
                 builder.setNegativeButton(LocaleController.getString(R.string.OK), null);
                 builder.show();
                 return;
@@ -4009,7 +4014,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         } else if (DialogObject.isEncryptedDialog(dialog.id) && this.hasPoll != 0) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(this.parentActivity);
             builder2.setTitle(LocaleController.getString(R.string.SendMessageTitle));
-            builder2.setMessage(LocaleController.getString(this.hasPoll != 0 ? R.string.PollCantForwardSecretChat : R.string.InvoiceCantForwardSecretChat));
+            int i3 = this.hasPoll;
+            builder2.setMessage(LocaleController.getString(i3 == 3 ? R.string.TodoCantForwardSecretChat : i3 != 0 ? R.string.PollCantForwardSecretChat : R.string.InvoiceCantForwardSecretChat));
             builder2.setNegativeButton(LocaleController.getString(R.string.OK), null);
             builder2.show();
             return;
@@ -4037,10 +4043,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     }
                 });
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                int i = NotificationCenter.topicsDidLoaded;
-                notificationCenter.addObserver(r3, i);
+                int i4 = NotificationCenter.topicsDidLoaded;
+                notificationCenter.addObserver(r3, i4);
                 if (MessagesController.getInstance(this.currentAccount).getTopicsController().getTopics(-dialog.id) != null) {
-                    r3.didReceivedNotification(i, this.currentAccount, Long.valueOf(-dialog.id));
+                    r3.didReceivedNotification(i4, this.currentAccount, Long.valueOf(-dialog.id));
                     return;
                 } else {
                     MessagesController.getInstance(this.currentAccount).getTopicsController().loadTopics(-dialog.id);

@@ -19,7 +19,6 @@ import com.google.android.gms.common.wrappers.Wrappers;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public abstract class GooglePlayServicesUtilLight {
@@ -217,7 +216,7 @@ public abstract class GooglePlayServicesUtilLight {
             }
         }
         try {
-            applicationInfo = context.getPackageManager().getApplicationInfo(str, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            applicationInfo = context.getPackageManager().getApplicationInfo(str, 8192);
         } catch (PackageManager.NameNotFoundException unused2) {
         }
         return equals ? applicationInfo.enabled : applicationInfo.enabled && !isRestrictedUserProfile(context);

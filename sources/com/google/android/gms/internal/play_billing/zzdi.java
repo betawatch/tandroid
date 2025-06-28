@@ -7,9 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -778,7 +778,7 @@ final class zzdi implements zzdp {
                 }
                 int objectFieldOffset3 = (int) unsafe.objectFieldOffset(zzF4);
                 i20 = 1048575;
-                if ((charAt25 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 0 || i73 > 17) {
+                if ((charAt25 & 4096) == 0 || i73 > 17) {
                     str = zzd;
                     i21 = i85;
                     i22 = i16;
@@ -825,7 +825,7 @@ final class zzdi implements zzdp {
             int i97 = i64 + 1;
             iArr2[i64] = charAt24;
             int i98 = i64 + 2;
-            iArr2[i97] = i24 | ((charAt25 & 256) != 0 ? 268435456 : 0) | ((charAt25 & 512) != 0 ? 536870912 : 0) | (i73 << 20);
+            iArr2[i97] = i24 | ((charAt25 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i73 << 20);
             i64 += 3;
             iArr2[i98] = (i23 << 20) | i20;
             i2 = i21;
@@ -1441,7 +1441,7 @@ final class zzdi implements zzdp {
                     if (i13 == 0) {
                         unsafe.putObject(obj, j, "");
                     } else {
-                        if ((i6 & 536870912) != 0 && !zzev.zze(bArr, zzj2, zzj2 + i13)) {
+                        if ((i6 & TLRPC.FLAG_29) != 0 && !zzev.zze(bArr, zzj2, zzj2 + i13)) {
                             throw zzci.zzc();
                         }
                         unsafe.putObject(obj, j, new String(bArr, zzj2, i13, zzcg.zzb));

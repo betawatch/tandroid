@@ -89,7 +89,6 @@ import java.lang.Thread;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 import org.xmlpull.v1.XmlPullParser;
@@ -758,7 +757,7 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
                     appCompatDelegateImpl.doInvalidatePanelMenu(0);
                 }
                 AppCompatDelegateImpl appCompatDelegateImpl2 = AppCompatDelegateImpl.this;
-                if ((appCompatDelegateImpl2.mInvalidatePanelMenuFeatures & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0) {
+                if ((appCompatDelegateImpl2.mInvalidatePanelMenuFeatures & 4096) != 0) {
                     appCompatDelegateImpl2.doInvalidatePanelMenu(108);
                 }
                 AppCompatDelegateImpl appCompatDelegateImpl3 = AppCompatDelegateImpl.this;
@@ -1562,7 +1561,7 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
     private void updateStatusGuardColor(View view) {
         Context context;
         int i;
-        if ((ViewCompat.getWindowSystemUiVisibility(view) & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0) {
+        if ((ViewCompat.getWindowSystemUiVisibility(view) & 8192) != 0) {
             context = this.mContext;
             i = R$color.abc_decor_view_status_guard_light;
         } else {

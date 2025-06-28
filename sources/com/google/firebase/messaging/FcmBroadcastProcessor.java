@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public class FcmBroadcastProcessor {
@@ -98,7 +99,7 @@ public class FcmBroadcastProcessor {
 
     public Task startMessagingService(final Context context, final Intent intent) {
         boolean z = PlatformVersion.isAtLeastO() && context.getApplicationInfo().targetSdkVersion >= 26;
-        final boolean z2 = (intent.getFlags() & 268435456) != 0;
+        final boolean z2 = (intent.getFlags() & TLRPC.FLAG_28) != 0;
         return (!z || z2) ? Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {

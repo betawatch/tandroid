@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public class NotificationImageProvider extends ContentProvider implements NotificationCenter.NotificationCenterDelegate {
@@ -121,7 +122,7 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
                     if (AndroidUtilities.isInternalUri(Uri.fromFile(file2))) {
                         throw new SecurityException("trying to read internal file");
                     }
-                    return ParcelFileDescriptor.open(file2, 268435456);
+                    return ParcelFileDescriptor.open(file2, TLRPC.FLAG_28);
                 }
                 synchronized (this.sync) {
                     this.waitingForFiles.add(str2);
@@ -135,7 +136,7 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
                 throw new SecurityException("trying to read internal file");
             }
         }
-        return ParcelFileDescriptor.open(file, 268435456);
+        return ParcelFileDescriptor.open(file, TLRPC.FLAG_28);
     }
 
     @Override // android.content.ContentProvider

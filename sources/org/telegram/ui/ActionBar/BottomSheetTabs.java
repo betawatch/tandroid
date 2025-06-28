@@ -38,6 +38,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.AnimatedColor;
@@ -109,7 +110,7 @@ public class BottomSheetTabs extends FrameLayout {
             this.clipPath.addRoundRect(this.clipRect, this.clipRadius, Path.Direction.CW);
             this.clipShadowPaint.setAlpha(0);
             if (z) {
-                this.clipShadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), 268435456);
+                this.clipShadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), TLRPC.FLAG_28);
                 canvas.drawPath(this.clipPath, this.clipShadowPaint);
             }
             canvas.clipPath(this.clipPath);
@@ -192,7 +193,7 @@ public class BottomSheetTabs extends FrameLayout {
             this.backgroundPaint.setColor(blendARGB);
             float f4 = f2 * 255.0f;
             this.backgroundPaint.setAlpha((int) f4);
-            this.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(268435456, f2));
+            this.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(TLRPC.FLAG_28, f2));
             float[] fArr = this.radii;
             fArr[3] = f;
             fArr[2] = f;
@@ -547,10 +548,11 @@ public class BottomSheetTabs extends FrameLayout {
         if (safeLastFragment != null) {
             int i = 0;
             while (true) {
-                ArrayList arrayList = safeLastFragment.sheetsStack;
+                ArrayList<BaseFragment.AttachedSheet> arrayList = safeLastFragment.sheetsStack;
                 if (arrayList == null || i >= arrayList.size()) {
                     break;
                 }
+                safeLastFragment.sheetsStack.get(i);
                 i++;
             }
         }

@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public class UserMetadata {
@@ -30,7 +29,7 @@ public class UserMetadata {
 
         public SerializeableKeysMap(boolean z) {
             this.isInternal = z;
-            this.map = new AtomicMarkableReference(new KeysMap(64, z ? LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : 1024), false);
+            this.map = new AtomicMarkableReference(new KeysMap(64, z ? 8192 : 1024), false);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

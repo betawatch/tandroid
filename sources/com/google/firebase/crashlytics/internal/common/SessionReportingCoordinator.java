@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public class SessionReportingCoordinator {
@@ -122,7 +121,7 @@ public class SessionReportingCoordinator {
 
     public static String convertInputStreamToString(InputStream inputStream) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+        byte[] bArr = new byte[8192];
         while (true) {
             int read = inputStream.read(bArr);
             if (read == -1) {

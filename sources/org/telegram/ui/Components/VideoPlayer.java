@@ -84,7 +84,6 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FourierTransform;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
@@ -570,13 +569,13 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
         ByteBuffer byteBuffer;
         long lastUpdateTime;
         private final int BUFFER_SIZE = 1024;
-        private final int MAX_BUFFER_SIZE = LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+        private final int MAX_BUFFER_SIZE = 8192;
         FourierTransform.FFT fft = new FourierTransform.FFT(1024, 48000.0f);
         float[] real = new float[1024];
         int position = 0;
 
         public VisualizerBufferSink() {
-            ByteBuffer allocateDirect = ByteBuffer.allocateDirect(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            ByteBuffer allocateDirect = ByteBuffer.allocateDirect(8192);
             this.byteBuffer = allocateDirect;
             allocateDirect.position(0);
         }
@@ -989,7 +988,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
         for (int i4 = 0; i4 < arrayList2.size(); i4++) {
             try {
                 TLRPC.Document document3 = (TLRPC.Document) arrayList2.get(i4);
-                if (!"application/x-mpegurl".equalsIgnoreCase(document3.mime_type)) {
+                if (!"application/x-mpegurl".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboard".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboardmap".equalsIgnoreCase(document3.mime_type)) {
                     VideoUri of = VideoUri.of(i, document3, (TLRPC.Document) longSparseArray.get(document3.id), i2, z2);
                     if (of.width > 0 && of.height > 0) {
                         if (document3 == document) {

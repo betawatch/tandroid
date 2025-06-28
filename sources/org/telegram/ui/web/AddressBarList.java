@@ -164,7 +164,7 @@ public class AddressBarList extends FrameLayout {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
         }
 
         public void set(int i, String str, View.OnClickListener onClickListener, boolean z, boolean z2, AddressBarList addressBarList, boolean z3) {
@@ -342,7 +342,7 @@ public class AddressBarList extends FrameLayout {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
         }
 
         /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(1:3)(1:68)|(1:5)(1:67)|6|(1:(1:(16:63|64|12|(1:(5:44|(1:46)(1:51)|47|(1:49)|50)(1:43))(1:16)|17|(1:19)|20|(1:22)(1:39)|23|24|25|26|27|(1:29)|30|31)(1:62))(1:58))(1:10)|11|12|(1:14)|(1:41)|44|(0)(0)|47|(0)|50|17|(0)|20|(0)(0)|23|24|25|26|27|(0)|30|31) */
@@ -893,7 +893,7 @@ public class AddressBarList extends FrameLayout {
         this.space = new View(context) { // from class: org.telegram.ui.web.AddressBarList.2
             @Override // android.view.View
             protected void onMeasure(int i3, int i4) {
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(6.0f), 1073741824));
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(6.0f), TLRPC.FLAG_30));
             }
         };
         int i3 = Theme.key_iv_background;

@@ -369,7 +369,7 @@ public abstract class PreviewView extends FrameLayout {
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), 1073741824);
+        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), TLRPC.FLAG_30);
     }
 
     private void extractPointsData(Matrix matrix) {

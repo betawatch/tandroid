@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.R$styleable;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class LinearLayoutCompat extends ViewGroup {
@@ -80,7 +81,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
     }
 
     private void forceUniformHeight(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30);
         for (int i3 = 0; i3 < i; i3++) {
             View virtualChildAt = getVirtualChildAt(i3);
             if (virtualChildAt.getVisibility() != 8) {
@@ -96,7 +97,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
     }
 
     private void forceUniformWidth(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30);
         for (int i3 = 0; i3 < i; i3++) {
             View virtualChildAt = getVirtualChildAt(i3);
             if (virtualChildAt.getVisibility() != 8) {
@@ -566,7 +567,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
         iArr3[0] = -1;
         boolean z5 = this.mBaselineAligned;
         boolean z6 = this.mUseLargestChild;
-        int i18 = 1073741824;
+        int i18 = TLRPC.FLAG_30;
         boolean z7 = mode == 1073741824;
         float f2 = 0.0f;
         int i19 = 0;
@@ -610,7 +611,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                         z2 = z6;
                         z3 = z5;
                         view = virtualChildAt;
-                        i16 = 1073741824;
+                        i16 = TLRPC.FLAG_30;
                         z8 = true;
                         if (mode2 == i16 && ((LinearLayout.LayoutParams) layoutParams).height == -1) {
                             z4 = true;
@@ -652,11 +653,11 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                         iArr3 = iArr;
                         z6 = z2;
                         z5 = z3;
-                        i18 = 1073741824;
+                        i18 = TLRPC.FLAG_30;
                     }
                 } else {
                     if (((LinearLayout.LayoutParams) layoutParams).width != 0 || f3 <= 0.0f) {
-                        i14 = Integer.MIN_VALUE;
+                        i14 = TLRPC.FLAG_31;
                     } else {
                         ((LinearLayout.LayoutParams) layoutParams).width = -2;
                         i14 = 0;
@@ -683,7 +684,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                         i20 = Math.max(measuredWidth, i20);
                     }
                 }
-                i16 = 1073741824;
+                i16 = TLRPC.FLAG_30;
                 if (mode2 == i16) {
                 }
                 z4 = false;
@@ -710,7 +711,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                 iArr3 = iArr;
                 z6 = z2;
                 z5 = z3;
-                i18 = 1073741824;
+                i18 = TLRPC.FLAG_30;
             }
             childrenSkipCount = i19;
             z2 = z6;
@@ -719,7 +720,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
             iArr3 = iArr;
             z6 = z2;
             z5 = z3;
-            i18 = 1073741824;
+            i18 = TLRPC.FLAG_30;
         }
         boolean z11 = z6;
         boolean z12 = z5;
@@ -802,11 +803,11 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                         i9 = virtualChildCount;
                         int childMeasureSpec = ViewGroup.getChildMeasureSpec(i2, getPaddingTop() + getPaddingBottom() + ((LinearLayout.LayoutParams) layoutParams3).topMargin + ((LinearLayout.LayoutParams) layoutParams3).bottomMargin, ((LinearLayout.LayoutParams) layoutParams3).height);
                         if (((LinearLayout.LayoutParams) layoutParams3).width == 0) {
-                            i12 = 1073741824;
+                            i12 = TLRPC.FLAG_30;
                             if (mode == 1073741824) {
                             }
                         } else {
-                            i12 = 1073741824;
+                            i12 = TLRPC.FLAG_30;
                         }
                         i44 = virtualChildAt3.getMeasuredWidth() + i44;
                     } else {
@@ -878,7 +879,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                 for (int i50 = 0; i50 < virtualChildCount; i50++) {
                     View virtualChildAt4 = getVirtualChildAt(i50);
                     if (virtualChildAt4 != null && virtualChildAt4.getVisibility() != 8 && ((LinearLayout.LayoutParams) ((LayoutParams) virtualChildAt4.getLayoutParams())).weight > 0.0f) {
-                        virtualChildAt4.measure(View.MeasureSpec.makeMeasureSpec(i20, 1073741824), View.MeasureSpec.makeMeasureSpec(virtualChildAt4.getMeasuredHeight(), 1073741824));
+                        virtualChildAt4.measure(View.MeasureSpec.makeMeasureSpec(i20, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(virtualChildAt4.getMeasuredHeight(), TLRPC.FLAG_30));
                     }
                 }
             }
@@ -1030,11 +1031,11 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                                 i7 = i37 - i40;
                                 int childMeasureSpec = ViewGroup.getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + ((LinearLayout.LayoutParams) layoutParams2).leftMargin + ((LinearLayout.LayoutParams) layoutParams2).rightMargin, ((LinearLayout.LayoutParams) layoutParams2).width);
                                 if (((LinearLayout.LayoutParams) layoutParams2).height == 0) {
-                                    i10 = 1073741824;
+                                    i10 = TLRPC.FLAG_30;
                                     if (i31 == 1073741824) {
                                     }
                                 } else {
-                                    i10 = 1073741824;
+                                    i10 = TLRPC.FLAG_30;
                                 }
                                 i40 = virtualChildAt2.getMeasuredHeight() + i40;
                             } else {
@@ -1073,7 +1074,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                         for (int i43 = 0; i43 < i3; i43++) {
                             View virtualChildAt3 = getVirtualChildAt(i43);
                             if (virtualChildAt3 != null && virtualChildAt3.getVisibility() != 8 && ((LinearLayout.LayoutParams) ((LayoutParams) virtualChildAt3.getLayoutParams())).weight > 0.0f) {
-                                virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(virtualChildAt3.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(i29, 1073741824));
+                                virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(virtualChildAt3.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i29, TLRPC.FLAG_30));
                             }
                         }
                     }
@@ -1127,7 +1128,7 @@ public abstract class LinearLayoutCompat extends ViewGroup {
                     } else {
                         int i46 = i21;
                         if (((LinearLayout.LayoutParams) layoutParams3).height != 0 || f6 <= 0.0f) {
-                            i11 = Integer.MIN_VALUE;
+                            i11 = TLRPC.FLAG_31;
                         } else {
                             ((LinearLayout.LayoutParams) layoutParams3).height = -2;
                             i11 = 0;

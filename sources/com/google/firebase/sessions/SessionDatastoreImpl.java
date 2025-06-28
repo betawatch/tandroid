@@ -26,6 +26,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public final class SessionDatastoreImpl implements SessionDatastore {
@@ -137,7 +138,7 @@ public final class SessionDatastoreImpl implements SessionDatastore {
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Object invokeSuspend(Object obj) {
                         this.result = obj;
-                        this.label |= Integer.MIN_VALUE;
+                        this.label |= TLRPC.FLAG_31;
                         return 2.this.emit(null, this);
                     }
                 }
@@ -161,8 +162,8 @@ public final class SessionDatastoreImpl implements SessionDatastore {
                     if (continuation instanceof 1) {
                         r0 = (1) continuation;
                         int i2 = r0.label;
-                        if ((i2 & Integer.MIN_VALUE) != 0) {
-                            r0.label = i2 - Integer.MIN_VALUE;
+                        if ((i2 & TLRPC.FLAG_31) != 0) {
+                            r0.label = i2 - TLRPC.FLAG_31;
                             Object obj2 = r0.result;
                             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                             i = r0.label;

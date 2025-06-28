@@ -40,10 +40,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class MatroskaExtractor implements Extractor {
@@ -828,7 +828,7 @@ public class MatroskaExtractor implements Extractor {
                     str = "application/dvbsubs";
                     singletonList = parseVorbisCodecPrivate(getCodecPrivate(this.codecId));
                     str4 = "audio/vorbis";
-                    i2 = LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+                    i2 = 8192;
                     str5 = null;
                     i6 = -1;
                     if (this.dolbyVisionConfigBytes != null) {
@@ -849,7 +849,7 @@ public class MatroskaExtractor implements Extractor {
                     str4 = "audio/mpeg-L2";
                     singletonList = null;
                     str5 = null;
-                    i2 = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                    i2 = 4096;
                     i6 = -1;
                     if (this.dolbyVisionConfigBytes != null) {
                     }
@@ -869,7 +869,7 @@ public class MatroskaExtractor implements Extractor {
                     str4 = "audio/mpeg";
                     singletonList = null;
                     str5 = null;
-                    i2 = LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM;
+                    i2 = 4096;
                     i6 = -1;
                     if (this.dolbyVisionConfigBytes != null) {
                     }
@@ -1240,7 +1240,7 @@ public class MatroskaExtractor implements Extractor {
                     if (i11 == 8) {
                         i6 = 3;
                     } else if (i11 == 16) {
-                        i6 = 268435456;
+                        i6 = TLRPC.FLAG_28;
                     } else {
                         sb = new StringBuilder();
                         str3 = "Unsupported big endian PCM bit depth: ";
@@ -1831,7 +1831,7 @@ public class MatroskaExtractor implements Extractor {
                         byte b = this.sampleSignalByte;
                         if ((b & 1) == 1) {
                             boolean z2 = (b & 2) == 2;
-                            this.blockFlags |= 1073741824;
+                            this.blockFlags |= TLRPC.FLAG_30;
                             if (!this.sampleInitializationVectorRead) {
                                 extractorInput.readFully(this.encryptionInitializationVector.getData(), 0, 8);
                                 this.sampleBytesRead += 8;
@@ -1901,7 +1901,7 @@ public class MatroskaExtractor implements Extractor {
                         }
                     }
                     if (track.samplesHaveSupplementalData(z)) {
-                        this.blockFlags |= 268435456;
+                        this.blockFlags |= TLRPC.FLAG_28;
                         this.supplementalData.reset(0);
                         int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                         this.scratch.reset(4);
@@ -2460,7 +2460,7 @@ public class MatroskaExtractor implements Extractor {
                 return 1;
             case NotificationCenter.audioRouteChanged /* 161 */:
             case NotificationCenter.groupCallUpdated /* 163 */:
-            case NotificationCenter.groupCallScreencastStateChanged /* 165 */:
+            case 165:
             case 16877:
             case 16981:
             case 18402:

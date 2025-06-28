@@ -2,8 +2,7 @@ package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda41;
+import org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda40;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
@@ -2268,15 +2267,15 @@ public class TL_stories {
             this.min = (readInt32 & 512) != 0;
             this.noforwards = (readInt32 & 1024) != 0;
             this.edited = (readInt32 & 2048) != 0;
-            this.contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0;
-            this.selected_contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0;
+            this.contacts = (readInt32 & 4096) != 0;
+            this.selected_contacts = (readInt32 & 8192) != 0;
             this.out = (readInt32 & 65536) != 0;
             this.id = inputSerializedData.readInt32(z);
             this.date = inputSerializedData.readInt32(z);
-            if ((this.flags & 262144) != 0) {
+            if ((this.flags & TLRPC.FLAG_18) != 0) {
                 this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & 131072) != 0) {
+            if ((this.flags & TLRPC.FLAG_17) != 0) {
                 this.fwd_from = StoryFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2284,10 +2283,10 @@ public class TL_stories {
                 this.caption = inputSerializedData.readString(z);
             }
             if ((this.flags & 2) != 0) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda41(), z);
+                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda40(), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 this.media_areas = Vector.deserialize(inputSerializedData, new TL_stories$TL_storyItem$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & 4) != 0) {
@@ -2316,19 +2315,19 @@ public class TL_stories {
             this.flags = i5;
             int i6 = this.edited ? i5 | 2048 : i5 & (-2049);
             this.flags = i6;
-            int i7 = this.contacts ? i6 | LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : i6 & (-4097);
+            int i7 = this.contacts ? i6 | 4096 : i6 & (-4097);
             this.flags = i7;
-            int i8 = this.selected_contacts ? i7 | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : i7 & (-8193);
+            int i8 = this.selected_contacts ? i7 | 8192 : i7 & (-8193);
             this.flags = i8;
             int i9 = this.out ? i8 | 65536 : i8 & (-65537);
             this.flags = i9;
             outputSerializedData.writeInt32(i9);
             outputSerializedData.writeInt32(this.id);
             outputSerializedData.writeInt32(this.date);
-            if ((this.flags & 262144) != 0) {
+            if ((this.flags & TLRPC.FLAG_18) != 0) {
                 this.from_id.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & 131072) != 0) {
+            if ((this.flags & TLRPC.FLAG_17) != 0) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.expire_date);
@@ -2339,7 +2338,7 @@ public class TL_stories {
                 Vector.serialize(outputSerializedData, this.entities);
             }
             this.media.serializeToStream(outputSerializedData);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 Vector.serialize(outputSerializedData, this.media_areas);
             }
             if ((this.flags & 4) != 0) {
@@ -2407,8 +2406,8 @@ public class TL_stories {
             this.min = (readInt32 & 512) != 0;
             this.noforwards = (readInt32 & 1024) != 0;
             this.edited = (readInt32 & 2048) != 0;
-            this.contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0;
-            this.selected_contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0;
+            this.contacts = (readInt32 & 4096) != 0;
+            this.selected_contacts = (readInt32 & 8192) != 0;
             this.id = inputSerializedData.readInt32(z);
             this.date = inputSerializedData.readInt32(z);
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2416,7 +2415,7 @@ public class TL_stories {
                 this.caption = inputSerializedData.readString(z);
             }
             if ((this.flags & 2) != 0) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda41(), z);
+                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda40(), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             if ((this.flags & 4) != 0) {
@@ -2442,9 +2441,9 @@ public class TL_stories {
             this.flags = i5;
             int i6 = this.edited ? i5 | 2048 : i5 & (-2049);
             this.flags = i6;
-            int i7 = this.contacts ? i6 | LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : i6 & (-4097);
+            int i7 = this.contacts ? i6 | 4096 : i6 & (-4097);
             this.flags = i7;
-            int i8 = this.selected_contacts ? i7 | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : i7 & (-8193);
+            int i8 = this.selected_contacts ? i7 | 8192 : i7 & (-8193);
             this.flags = i8;
             outputSerializedData.writeInt32(i8);
             outputSerializedData.writeInt32(this.id);
@@ -2479,8 +2478,8 @@ public class TL_stories {
             this.min = (readInt32 & 512) != 0;
             this.noforwards = (readInt32 & 1024) != 0;
             this.edited = (readInt32 & 2048) != 0;
-            this.contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0;
-            this.selected_contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0;
+            this.contacts = (readInt32 & 4096) != 0;
+            this.selected_contacts = (readInt32 & 8192) != 0;
             this.out = (readInt32 & 65536) != 0;
             this.id = inputSerializedData.readInt32(z);
             this.date = inputSerializedData.readInt32(z);
@@ -2489,10 +2488,10 @@ public class TL_stories {
                 this.caption = inputSerializedData.readString(z);
             }
             if ((this.flags & 2) != 0) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda41(), z);
+                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda40(), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 this.media_areas = Vector.deserialize(inputSerializedData, new TL_stories$TL_storyItem$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & 4) != 0) {
@@ -2521,9 +2520,9 @@ public class TL_stories {
             this.flags = i5;
             int i6 = this.edited ? i5 | 2048 : i5 & (-2049);
             this.flags = i6;
-            int i7 = this.contacts ? i6 | LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : i6 & (-4097);
+            int i7 = this.contacts ? i6 | 4096 : i6 & (-4097);
             this.flags = i7;
-            int i8 = this.selected_contacts ? i7 | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : i7 & (-8193);
+            int i8 = this.selected_contacts ? i7 | 8192 : i7 & (-8193);
             this.flags = i8;
             int i9 = this.out ? i8 | 65536 : i8 & (-65537);
             this.flags = i9;
@@ -2538,7 +2537,7 @@ public class TL_stories {
                 Vector.serialize(outputSerializedData, this.entities);
             }
             this.media.serializeToStream(outputSerializedData);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 Vector.serialize(outputSerializedData, this.media_areas);
             }
             if ((this.flags & 4) != 0) {
@@ -2566,12 +2565,12 @@ public class TL_stories {
             this.min = (readInt32 & 512) != 0;
             this.noforwards = (readInt32 & 1024) != 0;
             this.edited = (readInt32 & 2048) != 0;
-            this.contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) != 0;
-            this.selected_contacts = (readInt32 & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0;
+            this.contacts = (readInt32 & 4096) != 0;
+            this.selected_contacts = (readInt32 & 8192) != 0;
             this.out = (readInt32 & 65536) != 0;
             this.id = inputSerializedData.readInt32(z);
             this.date = inputSerializedData.readInt32(z);
-            if ((this.flags & 131072) != 0) {
+            if ((this.flags & TLRPC.FLAG_17) != 0) {
                 this.fwd_from = StoryFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2579,10 +2578,10 @@ public class TL_stories {
                 this.caption = inputSerializedData.readString(z);
             }
             if ((this.flags & 2) != 0) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda41(), z);
+                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda40(), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 this.media_areas = Vector.deserialize(inputSerializedData, new TL_stories$TL_storyItem$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & 4) != 0) {
@@ -2611,16 +2610,16 @@ public class TL_stories {
             this.flags = i5;
             int i6 = this.edited ? i5 | 2048 : i5 & (-2049);
             this.flags = i6;
-            int i7 = this.contacts ? i6 | LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM : i6 & (-4097);
+            int i7 = this.contacts ? i6 | 4096 : i6 & (-4097);
             this.flags = i7;
-            int i8 = this.selected_contacts ? i7 | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM : i7 & (-8193);
+            int i8 = this.selected_contacts ? i7 | 8192 : i7 & (-8193);
             this.flags = i8;
             int i9 = this.out ? i8 | 65536 : i8 & (-65537);
             this.flags = i9;
             outputSerializedData.writeInt32(i9);
             outputSerializedData.writeInt32(this.id);
             outputSerializedData.writeInt32(this.date);
-            if ((this.flags & 131072) != 0) {
+            if ((this.flags & TLRPC.FLAG_17) != 0) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.expire_date);
@@ -2631,7 +2630,7 @@ public class TL_stories {
                 Vector.serialize(outputSerializedData, this.entities);
             }
             this.media.serializeToStream(outputSerializedData);
-            if ((this.flags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0) {
+            if ((this.flags & 16384) != 0) {
                 Vector.serialize(outputSerializedData, this.media_areas);
             }
             if ((this.flags & 4) != 0) {

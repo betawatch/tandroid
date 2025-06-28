@@ -26,7 +26,6 @@ import java.util.Locale;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
@@ -282,7 +281,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             this.editText = editTextCaption;
             editTextCaption.setLines(1);
             editTextCaption.setSingleLine(true);
-            editTextCaption.setInputType(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            editTextCaption.setInputType(16384);
             editTextCaption.setTextSize(1, 16.0f);
             editTextCaption.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
             editTextCaption.setLinkTextColor(Theme.getColor(Theme.key_chat_messageLinkOut));
@@ -764,7 +763,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
         MessagesStorage.getInstance(this.currentAccount).updateChatInfo(this.info, false);
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatInfoDidLoad, this.info, 0, Boolean.TRUE, Boolean.FALSE);
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupPackUpdated, Long.valueOf(this.info.id), Boolean.valueOf(this.isEmoji));
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1021,7 +1020,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupStickersActivity.this.lambda$onBackPressed$348();
+                    GroupStickersActivity.this.lambda$onBackPressed$354();
                 }
             }
         });

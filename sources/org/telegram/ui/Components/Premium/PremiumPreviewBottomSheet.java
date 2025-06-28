@@ -378,7 +378,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 view = new View(context) { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet.Adapter.7
                     @Override // android.view.View
                     protected void onMeasure(int i5, int i6) {
-                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), 1073741824));
+                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLRPC.FLAG_30));
                     }
                 };
             } else if (i == 4) {
@@ -573,7 +573,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         int i3 = 0;
         for (int i4 = 0; i4 < this.premiumFeatures.size(); i4++) {
             this.dummyCell.setData((PremiumPreviewFragment.PremiumFeatureData) this.premiumFeatures.get(i4), false);
-            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, 1073741824), View.MeasureSpec.makeMeasureSpec(i2, Integer.MIN_VALUE));
+            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
             ((PremiumPreviewFragment.PremiumFeatureData) this.premiumFeatures.get(i4)).yOffset = i3;
             i3 += this.dummyCell.getMeasuredHeight();
         }

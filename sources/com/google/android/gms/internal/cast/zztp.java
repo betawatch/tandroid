@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class zztp extends zzsh {
@@ -122,7 +123,7 @@ public abstract class zztp extends zzsh {
     }
 
     final void zzI(int i) {
-        this.zzd = (this.zzd & Integer.MIN_VALUE) | ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.zzd = (this.zzd & TLRPC.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     @Override // com.google.android.gms.internal.cast.zzux
@@ -131,7 +132,7 @@ public abstract class zztp extends zzsh {
     }
 
     final boolean zzK() {
-        return (this.zzd & Integer.MIN_VALUE) != 0;
+        return (this.zzd & TLRPC.FLAG_31) != 0;
     }
 
     protected abstract Object zzb(int i, Object obj, Object obj2);
@@ -151,7 +152,7 @@ public abstract class zztp extends zzsh {
         }
         int zza2 = zzviVar.zza(this);
         if (zza2 >= 0) {
-            this.zzd = (this.zzd & Integer.MIN_VALUE) | zza2;
+            this.zzd = (this.zzd & TLRPC.FLAG_31) | zza2;
             return zza2;
         }
         throw new IllegalStateException("serialized size must be non-negative, was " + zza2);
@@ -181,7 +182,7 @@ public abstract class zztp extends zzsh {
                 if (i < 0) {
                     throw new IllegalStateException("serialized size must be non-negative, was " + i);
                 }
-                this.zzd = (this.zzd & Integer.MIN_VALUE) | i;
+                this.zzd = (this.zzd & TLRPC.FLAG_31) | i;
             }
         }
         return i;

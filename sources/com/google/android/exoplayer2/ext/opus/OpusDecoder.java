@@ -12,6 +12,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class OpusDecoder extends SimpleDecoder {
@@ -213,7 +214,7 @@ public final class OpusDecoder extends SimpleDecoder {
             return null;
         }
         opusDecoder.skipSamples = i - (opusDecode / samplesToBytes2);
-        simpleDecoderOutputBuffer.addFlag(Integer.MIN_VALUE);
+        simpleDecoderOutputBuffer.addFlag(TLRPC.FLAG_31);
         byteBuffer2.position(opusDecode);
         return null;
     }

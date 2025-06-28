@@ -70,8 +70,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class MediaRouteControllerDialog extends AlertDialog {
@@ -177,7 +177,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
                     if (accessibilityManager == null || !accessibilityManager.isEnabled() || i == 0) {
                         return;
                     }
-                    AccessibilityEvent obtain = AccessibilityEvent.obtain(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                    AccessibilityEvent obtain = AccessibilityEvent.obtain(16384);
                     obtain.setPackageName(MediaRouteControllerDialog.this.mContext.getPackageName());
                     obtain.setClassName(ClickListener.class.getName());
                     obtain.getText().add(MediaRouteControllerDialog.this.mContext.getString(i));
@@ -1262,7 +1262,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
         setLayoutHeight(this.mMediaMainControlLayout, -1);
         updateMediaControlVisibility(canShowPlaybackControlLayout());
         View decorView = getWindow().getDecorView();
-        decorView.measure(View.MeasureSpec.makeMeasureSpec(getWindow().getAttributes().width, 1073741824), 0);
+        decorView.measure(View.MeasureSpec.makeMeasureSpec(getWindow().getAttributes().width, TLRPC.FLAG_30), 0);
         setLayoutHeight(this.mMediaMainControlLayout, layoutHeight);
         if (this.mCustomControlView == null && (this.mArtView.getDrawable() instanceof BitmapDrawable) && (bitmap = ((BitmapDrawable) this.mArtView.getDrawable()).getBitmap()) != null) {
             i = getDesiredArtHeight(bitmap.getWidth(), bitmap.getHeight());

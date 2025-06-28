@@ -19,6 +19,7 @@ import kotlinx.coroutines.CompletableDeferred;
 import kotlinx.coroutines.CompletableDeferredKt;
 import kotlinx.coroutines.TimeoutCancellationException;
 import kotlinx.coroutines.TimeoutKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class zzez implements zza {
@@ -103,8 +104,8 @@ public final class zzez implements zza {
         if (continuation instanceof zzer) {
             zzerVar = (zzer) continuation;
             int i2 = zzerVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzerVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzerVar.zzc = i2 - TLRPC.FLAG_31;
                 Object obj = zzerVar.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzerVar.zzc;
@@ -180,8 +181,8 @@ public final class zzez implements zza {
         if (continuation instanceof zzev) {
             zzevVar = (zzev) continuation;
             int i2 = zzevVar.zzd;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzevVar.zzd = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzevVar.zzd = i2 - TLRPC.FLAG_31;
                 Object obj = zzevVar.zzb;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzevVar.zzd;

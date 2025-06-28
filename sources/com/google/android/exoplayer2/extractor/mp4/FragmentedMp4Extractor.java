@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class FragmentedMp4Extractor implements Extractor {
@@ -127,7 +128,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
         public int getCurrentSampleFlags() {
             int i = !this.currentlyInFragment ? this.moovSampleTable.flags[this.currentSampleIndex] : this.fragment.sampleIsSyncFrameTable[this.currentSampleIndex] ? 1 : 0;
-            return getEncryptionBoxIfEncrypted() != null ? i | 1073741824 : i;
+            return getEncryptionBoxIfEncrypted() != null ? i | TLRPC.FLAG_30 : i;
         }
 
         public long getCurrentSampleOffset() {
@@ -775,7 +776,7 @@ public class FragmentedMp4Extractor implements Extractor {
         int i = 0;
         while (i < readUnsignedShort) {
             int readInt = parsableByteArray.readInt();
-            if ((readInt & Integer.MIN_VALUE) != 0) {
+            if ((readInt & TLRPC.FLAG_31) != 0) {
                 throw ParserException.createForMalformedContainer("Unhandled indirect reference", null);
             }
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();

@@ -17,11 +17,11 @@ import android.view.ViewGroup;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.LayoutHelper;
@@ -198,11 +198,11 @@ public class TextPaintView extends EntityView {
             i3 = 285212672;
         } else {
             editTextOutline = this.editText;
-            i3 = 268435456;
+            i3 = TLRPC.FLAG_28;
         }
         editTextOutline.setImeOptions(i3);
         this.editText.setFocusableInTouchMode(true);
-        this.editText.setInputType(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+        this.editText.setInputType(16384);
         this.editText.setSingleLine(false);
         addView(this.editText, LayoutHelper.createFrame(-2, -2, 51));
         if (i4 >= 29 || i4 >= 23) {

@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzed {
@@ -24,7 +25,7 @@ final class zzed {
     private int zznp;
     private int zznq;
     private int zznr = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    private int zzns = Integer.MIN_VALUE;
+    private int zzns = TLRPC.FLAG_31;
     private int zznt = 0;
     private int zznu = 0;
     private int zznv = 0;

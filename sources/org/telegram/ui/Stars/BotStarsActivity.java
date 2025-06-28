@@ -127,8 +127,8 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
     private final int BUTTON_AFFILIATE = 2;
     private boolean tonTransactionsLoading = false;
     private boolean tonTransactionsEndReached = false;
-    private int tonTransactionsCount = 0;
     private final ArrayList tonTransactions = new ArrayList();
+    private String tonTransactionsLastOffset = "";
     private Runnable setBalanceButtonText = new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
@@ -326,8 +326,8 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         UItem asShadow;
-        TLRPC.BroadcastRevenueBalances broadcastRevenueBalances;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
+        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus2;
         BotStarsController botStarsController = BotStarsController.getInstance(this.currentAccount);
         int i = this.type;
         if (i == 0) {
@@ -335,11 +335,11 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             arrayList.add(UItem.asShadow(-1, null));
             arrayList.add(UItem.asBlackHeader(LocaleController.getString(R.string.BotStarsOverview)));
             TLRPC.TL_payments_starsRevenueStats starsRevenueStats = botStarsController.getStarsRevenueStats(this.bot_id);
-            if (starsRevenueStats != null && (tL_starsRevenueStatus = starsRevenueStats.status) != null) {
+            if (starsRevenueStats != null && (tL_starsRevenueStatus2 = starsRevenueStats.status) != null) {
                 ChannelMonetizationLayout.ProceedOverview proceedOverview = this.availableValue;
                 proceedOverview.contains1 = false;
                 proceedOverview.contains2 = true;
-                TL_stars.StarsAmount starsAmount = tL_starsRevenueStatus.available_balance;
+                TL_stars.StarsAmount starsAmount = tL_starsRevenueStatus2.available_balance;
                 proceedOverview.crypto_amount2 = starsAmount;
                 proceedOverview.crypto_currency2 = "XTR";
                 proceedOverview.currency = "USD";
@@ -350,7 +350,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 ChannelMonetizationLayout.ProceedOverview proceedOverview2 = this.totalValue;
                 proceedOverview2.contains1 = false;
                 proceedOverview2.contains2 = true;
-                TL_stars.StarsAmount starsAmount2 = tL_starsRevenueStatus.current_balance;
+                TL_stars.StarsAmount starsAmount2 = tL_starsRevenueStatus2.current_balance;
                 proceedOverview2.crypto_amount2 = starsAmount2;
                 proceedOverview2.crypto_currency2 = "XTR";
                 double d3 = starsAmount2.amount;
@@ -360,14 +360,14 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 ChannelMonetizationLayout.ProceedOverview proceedOverview3 = this.totalProceedsValue;
                 proceedOverview3.contains1 = false;
                 proceedOverview3.contains2 = true;
-                TL_stars.StarsAmount starsAmount3 = tL_starsRevenueStatus.overall_revenue;
+                TL_stars.StarsAmount starsAmount3 = tL_starsRevenueStatus2.overall_revenue;
                 proceedOverview3.crypto_amount2 = starsAmount3;
                 proceedOverview3.crypto_currency2 = "XTR";
                 double d4 = starsAmount3.amount;
                 Double.isNaN(d4);
                 proceedOverview3.amount2 = (long) (d4 * d2 * 100.0d);
                 proceedOverview3.currency = "USD";
-                setStarsBalance(starsAmount, tL_starsRevenueStatus.next_withdrawal_at);
+                setStarsBalance(starsAmount, tL_starsRevenueStatus2.next_withdrawal_at);
                 this.balanceButtonsLayout.setVisibility(starsRevenueStats.status.withdrawal_enabled ? 0 : 8);
             }
             arrayList.add(UItem.asProceedOverview(this.availableValue));
@@ -389,7 +389,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             if (i != 1) {
                 return;
             }
-            TL_stats.TL_broadcastRevenueStats tONRevenueStats = botStarsController.getTONRevenueStats(this.bot_id, true);
+            TLRPC.TL_payments_starsRevenueStats tONRevenueStats = botStarsController.getTONRevenueStats(this.bot_id, true);
             if (this.titleInfo == null) {
                 this.titleInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.BotMonetizationInfo, 50), -1, 3, new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
@@ -423,10 +423,10 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 arrayList.add(UItem.asChart(2, this.stats_dc, chartViewData2));
                 arrayList.add(UItem.asShadow(-2, null));
             }
-            if (!this.proceedsAvailable && tONRevenueStats != null && (broadcastRevenueBalances = tONRevenueStats.balances) != null) {
+            if (!this.proceedsAvailable && tONRevenueStats != null && (tL_starsRevenueStatus = tONRevenueStats.status) != null) {
                 double d5 = tONRevenueStats.usd_rate;
                 ChannelMonetizationLayout.ProceedOverview proceedOverview4 = this.tonAvailableValue;
-                long j = broadcastRevenueBalances.available_balance;
+                long j = tL_starsRevenueStatus.available_balance.amount;
                 proceedOverview4.crypto_amount = j;
                 double d6 = j;
                 Double.isNaN(d6);
@@ -435,8 +435,8 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 setBalance(j, j2);
                 this.tonAvailableValue.currency = "USD";
                 ChannelMonetizationLayout.ProceedOverview proceedOverview5 = this.tonLastWithdrawalValue;
-                TLRPC.BroadcastRevenueBalances broadcastRevenueBalances2 = tONRevenueStats.balances;
-                long j3 = broadcastRevenueBalances2.current_balance;
+                TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus3 = tONRevenueStats.status;
+                long j3 = tL_starsRevenueStatus3.current_balance.amount;
                 proceedOverview5.crypto_amount = j3;
                 double d7 = j3;
                 Double.isNaN(d7);
@@ -444,14 +444,14 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 proceedOverview5.currency = "USD";
                 ChannelMonetizationLayout.ProceedOverview proceedOverview6 = this.tonLifetimeValue;
                 proceedOverview6.contains1 = true;
-                long j4 = broadcastRevenueBalances2.overall_revenue;
+                long j4 = tL_starsRevenueStatus3.overall_revenue.amount;
                 proceedOverview6.crypto_amount = j4;
                 double d8 = j4;
                 Double.isNaN(d8);
                 proceedOverview6.amount = (long) ((d8 / 1.0E9d) * d5 * 100.0d);
                 proceedOverview6.currency = "USD";
                 this.proceedsAvailable = true;
-                this.tonBalanceButton.setVisibility((broadcastRevenueBalances2.available_balance <= 0 || !broadcastRevenueBalances2.withdrawal_enabled) ? 8 : 0);
+                this.tonBalanceButton.setVisibility((tL_starsRevenueStatus3.available_balance.amount <= 0 || !tL_starsRevenueStatus3.withdrawal_enabled) ? 8 : 0);
             }
             if (this.proceedsAvailable) {
                 arrayList.add(UItem.asBlackHeader(LocaleController.getString(R.string.BotMonetizationOverview)));
@@ -485,7 +485,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 arrayList.add(UItem.asBlackHeader(LocaleController.getString(R.string.BotMonetizationTransactions)));
                 Iterator it = this.tonTransactions.iterator();
                 while (it.hasNext()) {
-                    arrayList.add(UItem.asTransaction((TL_stats.BroadcastRevenueTransaction) it.next()));
+                    arrayList.add(StarsIntroActivity.StarsTransactionView.Factory.asTransaction((TL_stars.StarsTransaction) it.next(), true));
                 }
                 if (!this.tonTransactionsEndReached) {
                     arrayList.add(UItem.asFlicker(1, 7));
@@ -498,33 +498,33 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         arrayList.add(asShadow);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private void initWithdraw(final boolean z, final long j, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity) {
-        TL_stats.TL_getBroadcastRevenueWithdrawalUrl tL_getBroadcastRevenueWithdrawalUrl;
+        TLRPC.TL_payments_getStarsRevenueWithdrawalUrl tL_payments_getStarsRevenueWithdrawalUrl;
         final Activity parentActivity = getParentActivity();
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         if (parentActivity == null || currentUser == null) {
             return;
         }
         if (z) {
-            TLRPC.TL_payments_getStarsRevenueWithdrawalUrl tL_payments_getStarsRevenueWithdrawalUrl = new TLRPC.TL_payments_getStarsRevenueWithdrawalUrl();
+            tL_payments_getStarsRevenueWithdrawalUrl = new TLRPC.TL_payments_getStarsRevenueWithdrawalUrl();
+            tL_payments_getStarsRevenueWithdrawalUrl.ton = false;
             tL_payments_getStarsRevenueWithdrawalUrl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.bot_id);
             if (inputCheckPasswordSRP == null) {
                 inputCheckPasswordSRP = new TLRPC.TL_inputCheckPasswordEmpty();
             }
             tL_payments_getStarsRevenueWithdrawalUrl.password = inputCheckPasswordSRP;
-            tL_payments_getStarsRevenueWithdrawalUrl.stars = j;
-            tL_getBroadcastRevenueWithdrawalUrl = tL_payments_getStarsRevenueWithdrawalUrl;
+            tL_payments_getStarsRevenueWithdrawalUrl.flags |= 2;
+            tL_payments_getStarsRevenueWithdrawalUrl.amount = j;
         } else {
-            TL_stats.TL_getBroadcastRevenueWithdrawalUrl tL_getBroadcastRevenueWithdrawalUrl2 = new TL_stats.TL_getBroadcastRevenueWithdrawalUrl();
-            tL_getBroadcastRevenueWithdrawalUrl2.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.bot_id);
+            tL_payments_getStarsRevenueWithdrawalUrl = new TLRPC.TL_payments_getStarsRevenueWithdrawalUrl();
+            tL_payments_getStarsRevenueWithdrawalUrl.ton = true;
+            tL_payments_getStarsRevenueWithdrawalUrl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.bot_id);
             if (inputCheckPasswordSRP == null) {
                 inputCheckPasswordSRP = new TLRPC.TL_inputCheckPasswordEmpty();
             }
-            tL_getBroadcastRevenueWithdrawalUrl2.password = inputCheckPasswordSRP;
-            tL_getBroadcastRevenueWithdrawalUrl = tL_getBroadcastRevenueWithdrawalUrl2;
+            tL_payments_getStarsRevenueWithdrawalUrl.password = inputCheckPasswordSRP;
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getBroadcastRevenueWithdrawalUrl, new RequestDelegate() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda24
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getStarsRevenueWithdrawalUrl, new RequestDelegate() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda24
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BotStarsActivity.this.lambda$initWithdraw$24(twoStepVerificationActivity, parentActivity, z, j, tLObject, tL_error);
@@ -675,7 +675,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         int i2;
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$348();
+            twoStepVerificationActivity.lambda$onBackPressed$354();
             if (tLObject instanceof TL_stats.TL_broadcastRevenueWithdrawalUrl) {
                 context = getContext();
                 str = ((TL_stats.TL_broadcastRevenueWithdrawalUrl) tLObject).url;
@@ -702,7 +702,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$348();
+                twoStepVerificationActivity.lambda$onBackPressed$354();
             }
             BulletinFactory.showError(tL_error);
             return;
@@ -807,11 +807,11 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTonTransactions$17(TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (tLObject instanceof TL_stats.TL_broadcastRevenueTransactions) {
-            TL_stats.TL_broadcastRevenueTransactions tL_broadcastRevenueTransactions = (TL_stats.TL_broadcastRevenueTransactions) tLObject;
-            this.tonTransactionsCount = tL_broadcastRevenueTransactions.count;
-            this.tonTransactions.addAll(tL_broadcastRevenueTransactions.transactions);
-            this.tonTransactionsEndReached = this.tonTransactions.size() >= this.tonTransactionsCount || tL_broadcastRevenueTransactions.transactions.isEmpty();
+        if (tLObject instanceof TL_stars.StarsStatus) {
+            TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
+            this.tonTransactionsLastOffset = starsStatus.next_offset;
+            this.tonTransactions.addAll(starsStatus.history);
+            this.tonTransactionsEndReached = starsStatus.history.isEmpty();
         } else if (tL_error != null) {
             BulletinFactory.showError(tL_error);
             this.tonTransactionsEndReached = true;
@@ -902,11 +902,12 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             return;
         }
         this.tonTransactionsLoading = true;
-        TL_stats.TL_getBroadcastRevenueTransactions tL_getBroadcastRevenueTransactions = new TL_stats.TL_getBroadcastRevenueTransactions();
-        tL_getBroadcastRevenueTransactions.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.bot_id);
-        tL_getBroadcastRevenueTransactions.offset = this.tonTransactions.size();
-        tL_getBroadcastRevenueTransactions.limit = this.tonTransactions.isEmpty() ? 5 : 20;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getBroadcastRevenueTransactions, new RequestDelegate() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda17
+        TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
+        tL_payments_getStarsTransactions.ton = true;
+        tL_payments_getStarsTransactions.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.bot_id);
+        tL_payments_getStarsTransactions.offset = this.tonTransactionsLastOffset;
+        tL_payments_getStarsTransactions.limit = this.tonTransactions.isEmpty() ? 5 : 20;
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getStarsTransactions, new RequestDelegate() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BotStarsActivity.this.lambda$loadTonTransactions$18(tLObject, tL_error);
@@ -1064,7 +1065,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    BotStarsActivity.this.lambda$onBackPressed$348();
+                    BotStarsActivity.this.lambda$onBackPressed$354();
                 }
             }
         });
@@ -1077,11 +1078,11 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         ActionBar actionBar = this.actionBar;
         int i3 = Theme.key_windowBackgroundWhite;
         actionBar.setBackgroundColor(Theme.getColor(i3));
-        this.transactionsLayout = new StarsIntroActivity.StarsTransactionsLayout(context, this.currentAccount, this.bot_id, getClassGuid(), getResourceProvider());
+        this.transactionsLayout = new StarsIntroActivity.StarsTransactionsLayout(context, this.currentAccount, false, this.bot_id, getClassGuid(), getResourceProvider());
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stars.BotStarsActivity.2
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824), i5);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), i5);
             }
         };
         this.balanceLayout = linearLayout;
@@ -1239,7 +1240,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         LinearLayout linearLayout4 = new LinearLayout(context) { // from class: org.telegram.ui.Stars.BotStarsActivity.7
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i6, int i7) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), 1073741824), i7);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), TLRPC.FLAG_30), i7);
             }
         };
         this.tonBalanceLayout = linearLayout4;

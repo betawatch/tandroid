@@ -280,7 +280,7 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                     FiltersListBottomSheet.this.ignoreLayout = false;
                 }
                 this.fullHeight = dp >= size;
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), TLRPC.FLAG_30));
             }
 
             @Override // android.view.View

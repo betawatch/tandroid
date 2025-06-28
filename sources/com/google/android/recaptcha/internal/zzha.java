@@ -3,7 +3,6 @@ package com.google.android.recaptcha.internal;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
@@ -22,7 +21,7 @@ final class zzha extends zzhc {
         this.zzl = ConnectionsManager.DEFAULT_DATACENTER_ID;
         byte[] bArr = zzjc.zzd;
         this.zze = inputStream;
-        this.zzf = new byte[LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM];
+        this.zzf = new byte[4096];
         this.zzg = 0;
         this.zzi = 0;
         this.zzk = 0;
@@ -31,7 +30,7 @@ final class zzha extends zzhc {
     private final List zzI(int i) {
         ArrayList arrayList = new ArrayList();
         while (i > 0) {
-            int min = Math.min(i, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+            int min = Math.min(i, 4096);
             byte[] bArr = new byte[min];
             int i2 = 0;
             while (i2 < min) {

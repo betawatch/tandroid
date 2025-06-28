@@ -1,9 +1,11 @@
 package j$.time.zone;
 
-import j$.time.Instant;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /* loaded from: classes2.dex */
 public final class a implements Comparable, Serializable {
@@ -12,28 +14,21 @@ public final class a implements Comparable, Serializable {
     private final ZoneOffset c;
 
     a(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = LocalDateTime.j(j, 0, zoneOffset);
+        this.a = LocalDateTime.u(j, 0, zoneOffset);
         this.b = zoneOffset;
         this.c = zoneOffset2;
     }
 
-    public final ZoneOffset a() {
-        return this.c;
-    }
-
-    public final ZoneOffset b() {
-        return this.b;
-    }
-
-    public final long c() {
-        return this.a.k(this.b);
+    a(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = localDateTime;
+        this.b = zoneOffset;
+        this.c = zoneOffset2;
     }
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         a aVar = (a) obj;
-        ZoneOffset zoneOffset = this.b;
-        return Instant.l(this.a.k(zoneOffset), r1.m().h()).compareTo(Instant.l(aVar.a.k(aVar.b), r1.m().h()));
+        return this.a.toInstant(this.b).compareTo(aVar.a.toInstant(aVar.b));
     }
 
     public final boolean equals(Object obj) {
@@ -47,21 +42,50 @@ public final class a implements Comparable, Serializable {
         return this.a.equals(aVar.a) && this.b.equals(aVar.b) && this.c.equals(aVar.c);
     }
 
+    public final LocalDateTime f() {
+        return this.a.v(this.c.getTotalSeconds() - this.b.getTotalSeconds());
+    }
+
+    public final LocalDateTime h() {
+        return this.a;
+    }
+
     public final int hashCode() {
         return (this.a.hashCode() ^ this.b.hashCode()) ^ Integer.rotateLeft(this.c.hashCode(), 16);
     }
 
+    public final j$.time.d i() {
+        return j$.time.d.j(this.c.getTotalSeconds() - this.b.getTotalSeconds());
+    }
+
+    public final ZoneOffset j() {
+        return this.c;
+    }
+
+    public final ZoneOffset k() {
+        return this.b;
+    }
+
+    public final long l() {
+        return this.a.w(this.b);
+    }
+
+    final List m() {
+        return n() ? Collections.emptyList() : Arrays.asList(this.b, this.c);
+    }
+
+    public final boolean n() {
+        return this.c.getTotalSeconds() > this.b.getTotalSeconds();
+    }
+
     public final String toString() {
         StringBuilder sb = new StringBuilder("Transition[");
-        ZoneOffset zoneOffset = this.c;
-        int totalSeconds = zoneOffset.getTotalSeconds();
-        ZoneOffset zoneOffset2 = this.b;
-        sb.append(totalSeconds > zoneOffset2.getTotalSeconds() ? "Gap" : "Overlap");
+        sb.append(n() ? "Gap" : "Overlap");
         sb.append(" at ");
         sb.append(this.a);
-        sb.append(zoneOffset2);
+        sb.append(this.b);
         sb.append(" to ");
-        sb.append(zoneOffset);
+        sb.append(this.c);
         sb.append(']');
         return sb.toString();
     }

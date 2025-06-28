@@ -101,7 +101,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemWidth + this.extraWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemWidth, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemWidth + this.extraWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.itemWidth, TLRPC.FLAG_30));
     }
 
     public void setChecked(int i, boolean z, boolean z2) {

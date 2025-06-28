@@ -607,19 +607,19 @@ public class CustomEmojiReactionsWindow {
                 if (CustomEmojiReactionsWindow.this.type == 5) {
                     dp = Math.min(AndroidUtilities.dp(254.0f), dp);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
             }
             dp = (AndroidUtilities.dp(36.0f) * 8) - AndroidUtilities.dp(8.0f);
             if (CustomEmojiReactionsWindow.this.type == 5) {
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v3 */
     /* JADX WARN: Type inference failed for: r1v7 */
-    public CustomEmojiReactionsWindow(int i, BaseFragment baseFragment, List list, HashSet hashSet, final ReactionsContainerLayout reactionsContainerLayout, Theme.ResourcesProvider resourcesProvider) {
+    public CustomEmojiReactionsWindow(int i, BaseFragment baseFragment, List list, HashSet hashSet, final ReactionsContainerLayout reactionsContainerLayout, Theme.ResourcesProvider resourcesProvider, boolean z) {
         int i2;
         this.type = i;
         this.reactions = list;
@@ -682,7 +682,7 @@ public class CustomEmojiReactionsWindow {
             }
 
             @Override // android.view.ViewGroup, android.view.View
-            protected void dispatchSetPressed(boolean z) {
+            protected void dispatchSetPressed(boolean z2) {
             }
 
             @Override // android.view.View
@@ -720,7 +720,7 @@ public class CustomEmojiReactionsWindow {
                 CustomEmojiReactionsWindow.this.lambda$new$0(view);
             }
         });
-        this.attachToParent = i == 2 || i == 4 || i == 5;
+        this.attachToParent = i == 2 || i == 4 || i == 5 || z;
         this.containerView = new ContainerView(context);
         2 r4 = new 2(baseFragment, context, false, null, reactionsContainerLayout.getWindowType(), i != 1, resourcesProvider, 16, reactionsContainerLayout, baseFragment);
         this.selectAnimatedEmojiDialog = r4;
@@ -946,7 +946,7 @@ public class CustomEmojiReactionsWindow {
             ofFloat = StableAnimator.ofFloat(this.enterTransitionProgress, z ? 1.0f : 0.0f);
         }
         this.valueAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda5
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
                 CustomEmojiReactionsWindow.this.lambda$createTransition$5(z, valueAnimator3);
@@ -1003,7 +1003,7 @@ public class CustomEmojiReactionsWindow {
             this.reactionsContainerLayout.setCustomEmojiReactionsBackground(false);
             final ValueAnimator valueAnimator3 = this.valueAnimator;
             Objects.requireNonNull(valueAnimator3);
-            HwEmojis.prepare(new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda6
+            HwEmojis.prepare(new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     valueAnimator3.start();
@@ -1308,7 +1308,7 @@ public class CustomEmojiReactionsWindow {
             return;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda4
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 CustomEmojiReactionsWindow.this.lambda$dismiss$8(valueAnimator);
@@ -1367,7 +1367,7 @@ public class CustomEmojiReactionsWindow {
         if (this.type != 5) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 7);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 CustomEmojiReactionsWindow.this.lambda$removeView$7();

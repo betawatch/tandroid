@@ -9,6 +9,7 @@ import android.provider.Settings;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import java.util.HashSet;
 import java.util.Set;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public abstract class InstallerUtils {
@@ -34,8 +35,8 @@ public abstract class InstallerUtils {
         Intent intent = new Intent("android.intent.action.INSTALL_PACKAGE");
         intent.setData(uri);
         intent.addFlags(1);
-        intent.addFlags(268435456);
-        intent.addFlags(536870912);
+        intent.addFlags(TLRPC.FLAG_28);
+        intent.addFlags(TLRPC.FLAG_29);
         return intent;
     }
 

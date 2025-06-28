@@ -16,15 +16,15 @@ final class m implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean a(r rVar, StringBuilder sb) {
+    public final boolean f(r rVar, StringBuilder sb) {
         String c;
-        j$.time.chrono.g gVar;
+        j$.time.chrono.f fVar;
         Long e = rVar.e(this.a);
         if (e == null) {
             return false;
         }
-        j$.time.chrono.f fVar = (j$.time.chrono.f) rVar.d().c(j$.time.temporal.j.d());
-        if (fVar == null || fVar == (gVar = j$.time.chrono.g.a)) {
+        j$.time.chrono.e eVar = (j$.time.chrono.e) rVar.d().i(j$.time.temporal.j.d());
+        if (eVar == null || eVar == (fVar = j$.time.chrono.f.a)) {
             c = this.c.c(this.a, e.longValue(), this.b, rVar.c());
         } else {
             u uVar = this.c;
@@ -33,7 +33,7 @@ final class m implements f {
             TextStyle textStyle = this.b;
             Locale c2 = rVar.c();
             uVar.getClass();
-            c = (fVar == gVar || !(lVar instanceof j$.time.temporal.a)) ? uVar.c(lVar, longValue, textStyle, c2) : null;
+            c = (eVar == fVar || !(lVar instanceof j$.time.temporal.a)) ? uVar.c(lVar, longValue, textStyle, c2) : null;
         }
         if (c != null) {
             sb.append(c);
@@ -42,7 +42,7 @@ final class m implements f {
         if (this.d == null) {
             this.d = new i(this.a, 1, 19, x.NORMAL);
         }
-        return this.d.a(rVar, sb);
+        return this.d.f(rVar, sb);
     }
 
     public final String toString() {

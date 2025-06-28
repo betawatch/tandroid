@@ -280,7 +280,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
             int dp = i3 - AndroidUtilities.dp(16.0f);
             layoutParams2.height = dp;
             layoutParams.width = dp;
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), TLRPC.FLAG_30));
         }
 
         public void setDrawImage(boolean z, boolean z2, boolean z3) {

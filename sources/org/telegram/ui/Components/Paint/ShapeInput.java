@@ -9,6 +9,7 @@ import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Paint.Brush;
 import org.telegram.ui.Components.Size;
 
@@ -132,7 +133,7 @@ public class ShapeInput {
         this.linePaint.setColor(-1);
         this.linePaint.setStrokeWidth(AndroidUtilities.dp(0.8f));
         this.linePaint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f)}, 0.0f));
-        this.linePaint.setShadowLayer(4.0f, 0.0f, 1.5f, 1073741824);
+        this.linePaint.setShadowLayer(4.0f, 0.0f, 1.5f, TLRPC.FLAG_30);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

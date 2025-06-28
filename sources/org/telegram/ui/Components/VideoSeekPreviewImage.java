@@ -14,23 +14,31 @@ import android.net.Uri;
 import android.text.TextPaint;
 import android.view.View;
 import android.view.ViewGroup;
+import j$.util.Comparator$-CC;
+import j$.util.function.ToDoubleFunction;
 import java.io.File;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.VideoPlayer;
+import org.telegram.ui.Components.VideoSeekPreviewImage;
 
 /* loaded from: classes5.dex */
-public abstract class VideoSeekPreviewImage extends View {
+public abstract class VideoSeekPreviewImage extends View implements NotificationCenter.NotificationCenterDelegate {
     private Paint bitmapPaint;
     private RectF bitmapRect;
     private BitmapShader bitmapShader;
@@ -38,6 +46,9 @@ public abstract class VideoSeekPreviewImage extends View {
     private Bitmap bitmapToRecycle;
     private int currentPixel;
     private VideoSeekPreviewImageDelegate delegate;
+    private String downloadingStoryBoardMapFilename;
+    private TLRPC.Document downloadingStoryboardMapDocument;
+    private boolean drawStoryBoard;
     private RectF dstR;
     private long duration;
     private AnimatedFileDrawable fileDrawable;
@@ -45,7 +56,8 @@ public abstract class VideoSeekPreviewImage extends View {
     private String frameTime;
     private boolean isQualities;
     private boolean isYoutube;
-    private int lastYoutubePosition;
+    private double lastPosition;
+    private int listeningCurrentAccount;
     private Runnable loadRunnable;
     private Matrix matrix;
     private boolean open;
@@ -54,16 +66,34 @@ public abstract class VideoSeekPreviewImage extends View {
     private int pixelWidth;
     private Runnable progressRunnable;
     private boolean ready;
+    private int storyBoardFrameHeight;
+    private int storyBoardFrameWidth;
+    private ArrayList storyBoardMap;
+    private long storyBoardMapDocId;
+    private long storyBoardPictureDocId;
+    private ImageReceiver storyBoardsReceiver;
     private final TextPaint textPaint;
     private int timeWidth;
     private Uri videoUri;
     private PhotoViewerWebView webView;
-    private ImageReceiver youtubeBoardsReceiver;
     private int ytImageHeight;
     private int ytImageWidth;
     private int ytImageX;
     private int ytImageY;
     private final Path ytPath;
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class StoryBoardFrame {
+        public final int left;
+        public final double pts;
+        public final int top;
+
+        public StoryBoardFrame(double d, int i, int i2) {
+            this.pts = d;
+            this.left = i;
+            this.top = i2;
+        }
+    }
 
     public interface VideoSeekPreviewImageDelegate {
         void onReady();
@@ -80,15 +110,16 @@ public abstract class VideoSeekPreviewImage extends View {
         this.bitmapRect = new RectF();
         this.matrix = new Matrix();
         this.ytPath = new Path();
+        this.listeningCurrentAccount = -1;
         setVisibility(4);
         this.frameDrawable = context.getResources().getDrawable(R.drawable.videopreview);
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setColor(-1);
         this.delegate = videoSeekPreviewImageDelegate;
         ImageReceiver imageReceiver = new ImageReceiver();
-        this.youtubeBoardsReceiver = imageReceiver;
+        this.storyBoardsReceiver = imageReceiver;
         imageReceiver.setParentView(this);
-        this.youtubeBoardsReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda2
+        this.storyBoardsReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver2, boolean z, boolean z2, boolean z3) {
                 VideoSeekPreviewImage.this.lambda$new$0(imageReceiver2, z, z2, z3);
@@ -106,8 +137,46 @@ public abstract class VideoSeekPreviewImage extends View {
         });
     }
 
+    public static TLRPC.Document findDocumentById(MessageObject messageObject, long j) {
+        TLRPC.MessageMedia media = MessageObject.getMedia(messageObject);
+        if (media == null) {
+            return null;
+        }
+        TLRPC.Document document = media.document;
+        if (document != null && document.id == j) {
+            return document;
+        }
+        Iterator<TLRPC.Document> it = media.alt_documents.iterator();
+        while (it.hasNext()) {
+            TLRPC.Document next = it.next();
+            if (next.id == j) {
+                return next;
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.Document findDocumentByMimeType(MessageObject messageObject, String str) {
+        TLRPC.MessageMedia media = MessageObject.getMedia(messageObject);
+        if (media == null) {
+            return null;
+        }
+        TLRPC.Document document = media.document;
+        if (document != null && str.equalsIgnoreCase(document.mime_type)) {
+            return media.document;
+        }
+        Iterator<TLRPC.Document> it = media.alt_documents.iterator();
+        while (it.hasNext()) {
+            TLRPC.Document next = it.next();
+            if (str.equalsIgnoreCase(next.mime_type)) {
+                return next;
+            }
+        }
+        return null;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$close$7() {
+    public /* synthetic */ void lambda$close$8() {
         this.pendingProgress = 0.0f;
         AnimatedFileDrawable animatedFileDrawable = this.fileDrawable;
         if (animatedFileDrawable != null) {
@@ -118,38 +187,72 @@ public abstract class VideoSeekPreviewImage extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        StoryBoardFrame storyBoardFrame;
         int i;
-        if (!z || this.webView == null) {
-            return;
+        int i2;
+        if (z) {
+            if (this.webView == null && this.storyBoardMap == null) {
+                return;
+            }
+            int dp = AndroidUtilities.dp(150.0f);
+            PhotoViewerWebView photoViewerWebView = this.webView;
+            if (photoViewerWebView != null) {
+                int youtubeStoryboardImageCount = photoViewerWebView.getYoutubeStoryboardImageCount((int) this.lastPosition);
+                float bitmapWidth = this.storyBoardsReceiver.getBitmapWidth() / Math.min(youtubeStoryboardImageCount, 5);
+                float bitmapHeight = this.storyBoardsReceiver.getBitmapHeight() / ((int) Math.ceil(youtubeStoryboardImageCount / 5.0f));
+                int min = Math.min(this.webView.getYoutubeStoryboardImageIndex((int) this.lastPosition), youtubeStoryboardImageCount - 1);
+                this.ytImageX = (int) ((min % 5) * bitmapWidth);
+                this.ytImageY = (int) ((min / 5) * bitmapHeight);
+                this.ytImageWidth = (int) bitmapWidth;
+                i = (int) bitmapHeight;
+            } else {
+                int i3 = 0;
+                while (true) {
+                    if (i3 >= this.storyBoardMap.size()) {
+                        storyBoardFrame = null;
+                        break;
+                    }
+                    storyBoardFrame = (StoryBoardFrame) this.storyBoardMap.get(i3);
+                    double d = i3 == 0 ? 0.0d : storyBoardFrame.pts;
+                    double d2 = i3 == this.storyBoardMap.size() - 1 ? 9.9999999E7d : ((StoryBoardFrame) this.storyBoardMap.get(i3 + 1)).pts;
+                    double d3 = this.lastPosition;
+                    if (d3 >= d && d3 <= d2) {
+                        break;
+                    } else {
+                        i3++;
+                    }
+                }
+                if (storyBoardFrame == null) {
+                    return;
+                }
+                this.ytImageX = storyBoardFrame.left;
+                this.ytImageY = storyBoardFrame.top;
+                this.ytImageWidth = this.storyBoardFrameWidth;
+                i = this.storyBoardFrameHeight;
+            }
+            this.ytImageHeight = i;
+            this.drawStoryBoard = true;
+            float f = this.ytImageWidth / this.ytImageHeight;
+            if (f > 1.0f) {
+                i2 = (int) (dp / f);
+            } else {
+                int i4 = (int) (dp * f);
+                i2 = dp;
+                dp = i4;
+            }
+            ViewGroup.LayoutParams layoutParams = getLayoutParams();
+            if (getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i2) {
+                return;
+            }
+            layoutParams.width = dp;
+            layoutParams.height = i2;
+            setVisibility(0);
+            requestLayout();
         }
-        int dp = AndroidUtilities.dp(150.0f);
-        int youtubeStoryboardImageCount = this.webView.getYoutubeStoryboardImageCount(this.lastYoutubePosition);
-        float bitmapWidth = this.youtubeBoardsReceiver.getBitmapWidth() / Math.min(youtubeStoryboardImageCount, 5);
-        float bitmapHeight = this.youtubeBoardsReceiver.getBitmapHeight() / ((int) Math.ceil(youtubeStoryboardImageCount / 5.0f));
-        int min = Math.min(this.webView.getYoutubeStoryboardImageIndex(this.lastYoutubePosition), youtubeStoryboardImageCount - 1);
-        this.ytImageX = (int) ((min % 5) * bitmapWidth);
-        this.ytImageY = (int) ((min / 5) * bitmapHeight);
-        this.ytImageWidth = (int) bitmapWidth;
-        this.ytImageHeight = (int) bitmapHeight;
-        float f = bitmapWidth / bitmapHeight;
-        if (f > 1.0f) {
-            i = (int) (dp / f);
-        } else {
-            i = dp;
-            dp = (int) (dp * f);
-        }
-        ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        if (getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i) {
-            return;
-        }
-        layoutParams.width = dp;
-        layoutParams.height = i;
-        setVisibility(0);
-        requestLayout();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$3() {
+    public /* synthetic */ void lambda$open$4() {
         this.open = true;
         this.loadRunnable = null;
         if (this.fileDrawable != null) {
@@ -159,7 +262,7 @@ public abstract class VideoSeekPreviewImage extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$4(VideoPlayer.VideoUri videoUri) {
+    public /* synthetic */ void lambda$open$5(VideoPlayer.VideoUri videoUri, MessageObject messageObject) {
         Object obj;
         File pathToAttach;
         if (videoUri.isCached()) {
@@ -190,19 +293,19 @@ public abstract class VideoSeekPreviewImage extends View {
         this.duration = this.fileDrawable.getDurationMs();
         float f = this.pendingProgress;
         if (f != 0.0f) {
-            setProgress(f, this.pixelWidth);
+            setProgress(messageObject, f, this.pixelWidth);
             this.pendingProgress = 0.0f;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSeekPreviewImage.this.lambda$open$3();
+                VideoSeekPreviewImage.this.lambda$open$4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$5() {
+    public /* synthetic */ void lambda$open$6() {
         this.open = true;
         this.loadRunnable = null;
         if (this.fileDrawable != null) {
@@ -212,7 +315,7 @@ public abstract class VideoSeekPreviewImage extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$6(Uri uri) {
+    public /* synthetic */ void lambda$open$7(Uri uri, MessageObject messageObject) {
         File pathToAttach;
         if ("tg".equals(uri.getScheme())) {
             int intValue = Utilities.parseInt((CharSequence) uri.getQueryParameter("account")).intValue();
@@ -240,13 +343,13 @@ public abstract class VideoSeekPreviewImage extends View {
         this.duration = this.fileDrawable.getDurationMs();
         float f = this.pendingProgress;
         if (f != 0.0f) {
-            setProgress(f, this.pixelWidth);
+            setProgress(messageObject, f, this.pixelWidth);
             this.pendingProgress = 0.0f;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda4
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSeekPreviewImage.this.lambda$open$5();
+                VideoSeekPreviewImage.this.lambda$open$6();
             }
         });
     }
@@ -319,12 +422,27 @@ public abstract class VideoSeekPreviewImage extends View {
                 frameAtTime = null;
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 VideoSeekPreviewImage.this.lambda$setProgress$1(frameAtTime);
             }
         });
+    }
+
+    private void listen(int i) {
+        int i2 = this.listeningCurrentAccount;
+        if (i2 == i) {
+            return;
+        }
+        if (i == -1) {
+            NotificationCenter.getInstance(i2).removeObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(this.listeningCurrentAccount).removeObserver(this, NotificationCenter.fileLoadFailed);
+        } else {
+            NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.fileLoadFailed);
+        }
+        this.listeningCurrentAccount = i;
     }
 
     public void close() {
@@ -340,10 +458,10 @@ public abstract class VideoSeekPreviewImage extends View {
         if (animatedFileDrawable != null) {
             animatedFileDrawable.resetStream(true);
         }
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda1
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSeekPreviewImage.this.lambda$close$7();
+                VideoSeekPreviewImage.this.lambda$close$8();
             }
         });
         setVisibility(4);
@@ -354,6 +472,31 @@ public abstract class VideoSeekPreviewImage extends View {
         this.videoUri = null;
         this.ready = false;
         this.open = false;
+        if (this.storyBoardMapDocId != 0) {
+            this.storyBoardMapDocId = 0L;
+            this.downloadingStoryBoardMapFilename = null;
+            this.downloadingStoryboardMapDocument = null;
+            this.storyBoardMap = null;
+            listen(-1);
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.fileLoaded) {
+            if (!((String) objArr[0]).equals(this.downloadingStoryBoardMapFilename)) {
+                return;
+            }
+            File pathToAttach = FileLoader.getInstance(i2).getPathToAttach(this.downloadingStoryboardMapDocument);
+            if (pathToAttach != null && pathToAttach.exists()) {
+                parseStoryBoardMap(pathToAttach);
+            }
+        } else if (i != NotificationCenter.fileLoadFailed || !((String) objArr[0]).equals(this.downloadingStoryBoardMapFilename)) {
+            return;
+        }
+        this.downloadingStoryBoardMapFilename = null;
+        this.downloadingStoryboardMapDocument = null;
+        listen(-1);
     }
 
     public boolean isReady() {
@@ -363,13 +506,13 @@ public abstract class VideoSeekPreviewImage extends View {
     @Override // android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.youtubeBoardsReceiver.onAttachedToWindow();
+        this.storyBoardsReceiver.onAttachedToWindow();
     }
 
     @Override // android.view.View
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.youtubeBoardsReceiver.onDetachedFromWindow();
+        this.storyBoardsReceiver.onDetachedFromWindow();
     }
 
     @Override // android.view.View
@@ -379,16 +522,7 @@ public abstract class VideoSeekPreviewImage extends View {
             bitmap.recycle();
             this.bitmapToRecycle = null;
         }
-        if (this.bitmapToDraw != null && this.bitmapShader != null) {
-            this.matrix.reset();
-            float measuredWidth = getMeasuredWidth() / this.bitmapToDraw.getWidth();
-            this.matrix.preScale(measuredWidth, measuredWidth);
-            this.bitmapRect.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            canvas.drawRoundRect(this.bitmapRect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.bitmapPaint);
-        } else {
-            if (!this.isYoutube) {
-                return;
-            }
+        if (this.drawStoryBoard) {
             canvas.save();
             this.ytPath.rewind();
             RectF rectF = AndroidUtilities.rectTmp;
@@ -397,9 +531,18 @@ public abstract class VideoSeekPreviewImage extends View {
             canvas.clipPath(this.ytPath);
             canvas.scale(getWidth() / this.ytImageWidth, getHeight() / this.ytImageHeight);
             canvas.translate(-this.ytImageX, -this.ytImageY);
-            this.youtubeBoardsReceiver.setImageCoords(0.0f, 0.0f, r0.getBitmapWidth(), this.youtubeBoardsReceiver.getBitmapHeight());
-            this.youtubeBoardsReceiver.draw(canvas);
+            this.storyBoardsReceiver.setImageCoords(0.0f, 0.0f, r0.getBitmapWidth(), this.storyBoardsReceiver.getBitmapHeight());
+            this.storyBoardsReceiver.draw(canvas);
             canvas.restore();
+        } else {
+            if (this.bitmapToDraw == null || this.bitmapShader == null) {
+                return;
+            }
+            this.matrix.reset();
+            float measuredWidth = getMeasuredWidth() / this.bitmapToDraw.getWidth();
+            this.matrix.preScale(measuredWidth, measuredWidth);
+            this.bitmapRect.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            canvas.drawRoundRect(this.bitmapRect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.bitmapPaint);
         }
         this.frameDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.frameDrawable.draw(canvas);
@@ -412,7 +555,7 @@ public abstract class VideoSeekPreviewImage extends View {
         setPivotY(getMeasuredHeight());
     }
 
-    public void open(final Uri uri) {
+    public void open(final MessageObject messageObject, final Uri uri) {
         if (uri == null || uri.equals(this.videoUri)) {
             return;
         }
@@ -422,17 +565,17 @@ public abstract class VideoSeekPreviewImage extends View {
         this.isQualities = false;
         this.videoUri = uri;
         DispatchQueue dispatchQueue = Utilities.globalQueue;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda3
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSeekPreviewImage.this.lambda$open$6(uri);
+                VideoSeekPreviewImage.this.lambda$open$7(uri, messageObject);
             }
         };
         this.loadRunnable = runnable;
         dispatchQueue.postRunnable(runnable);
     }
 
-    public void open(final VideoPlayer.VideoUri videoUri) {
+    public void open(final MessageObject messageObject, final VideoPlayer.VideoUri videoUri) {
         if (videoUri == null || videoUri.uri.equals(this.videoUri)) {
             return;
         }
@@ -442,49 +585,141 @@ public abstract class VideoSeekPreviewImage extends View {
         this.isQualities = true;
         this.videoUri = videoUri.uri;
         DispatchQueue dispatchQueue = Utilities.globalQueue;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda0
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSeekPreviewImage.this.lambda$open$4(videoUri);
+                VideoSeekPreviewImage.this.lambda$open$5(videoUri, messageObject);
             }
         };
         this.loadRunnable = runnable;
         dispatchQueue.postRunnable(runnable);
     }
 
-    public void open(VideoPlayer videoPlayer) {
+    public void open(MessageObject messageObject, VideoPlayer videoPlayer) {
         VideoPlayer.Quality currentQuality;
         if (videoPlayer == null) {
             return;
         }
-        if (videoPlayer.getQualitiesCount() <= 0) {
-            open(videoPlayer.getCurrentUri());
-            return;
-        }
-        VideoPlayer.VideoUri videoUri = null;
-        for (int i = 0; i < videoPlayer.getQualitiesCount(); i++) {
-            Iterator it = videoPlayer.getQuality(i).uris.iterator();
-            while (it.hasNext()) {
-                VideoPlayer.VideoUri videoUri2 = (VideoPlayer.VideoUri) it.next();
-                if (videoUri == null || ((!videoUri.isCached() && videoUri2.isCached()) || (videoUri.isCached() == videoUri2.isCached() && videoUri2.width * videoUri2.height < videoUri.width * videoUri.height))) {
-                    videoUri = videoUri2;
+        if (videoPlayer.getQualitiesCount() > 0) {
+            VideoPlayer.VideoUri videoUri = null;
+            for (int i = 0; i < videoPlayer.getQualitiesCount(); i++) {
+                Iterator it = videoPlayer.getQuality(i).uris.iterator();
+                while (it.hasNext()) {
+                    VideoPlayer.VideoUri videoUri2 = (VideoPlayer.VideoUri) it.next();
+                    if (videoUri == null || ((!videoUri.isCached() && videoUri2.isCached()) || (videoUri.isCached() == videoUri2.isCached() && videoUri2.width * videoUri2.height < videoUri.width * videoUri.height))) {
+                        videoUri = videoUri2;
+                    }
                 }
             }
-        }
-        if (videoUri != null && !videoUri.isCached() && (currentQuality = videoPlayer.getCurrentQuality()) != null) {
-            videoUri = currentQuality.getDownloadUri();
-        }
-        if (videoUri == null || videoUri.isCached()) {
-            open(videoUri);
+            if (videoUri != null && !videoUri.isCached() && (currentQuality = videoPlayer.getCurrentQuality()) != null) {
+                videoUri = currentQuality.getDownloadUri();
+            }
+            if (videoUri != null && !videoUri.isCached()) {
+                close();
+                return;
+            } else {
+                if (videoUri != null) {
+                    videoUri.isCached();
+                }
+                open(messageObject, videoUri);
+            }
         } else {
-            close();
+            Uri currentUri = videoPlayer.getCurrentUri();
+            if (currentUri != null) {
+                "file".equalsIgnoreCase(currentUri.getScheme());
+            }
+            open(messageObject, currentUri);
+        }
+        TLRPC.Document findDocumentByMimeType = findDocumentByMimeType(messageObject, "application/x-tgstoryboardmap");
+        long j = findDocumentByMimeType == null ? 0L : findDocumentByMimeType.id;
+        if (this.storyBoardMapDocId != j) {
+            this.storyBoardMapDocId = j;
+            this.storyBoardMap = null;
+            if (findDocumentByMimeType == null) {
+                this.downloadingStoryBoardMapFilename = null;
+                this.downloadingStoryboardMapDocument = null;
+                listen(-1);
+                parseStoryBoardMap(null);
+                return;
+            }
+            File pathToAttach = FileLoader.getInstance(messageObject.currentAccount).getPathToAttach(findDocumentByMimeType);
+            if (pathToAttach == null || !pathToAttach.exists()) {
+                this.downloadingStoryBoardMapFilename = FileLoader.getAttachFileName(findDocumentByMimeType);
+                this.downloadingStoryboardMapDocument = findDocumentByMimeType;
+                listen(messageObject.currentAccount);
+                FileLoader.getInstance(messageObject.currentAccount).loadFile(findDocumentByMimeType, messageObject, 2, 0);
+                return;
+            }
+            this.downloadingStoryBoardMapFilename = null;
+            this.downloadingStoryboardMapDocument = null;
+            listen(-1);
+            parseStoryBoardMap(pathToAttach);
         }
     }
 
-    public void setProgress(final float f, int i) {
+    public void parseStoryBoardMap(File file) {
+        if (file == null) {
+            this.storyBoardMap = null;
+            return;
+        }
+        try {
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            ArrayList arrayList = new ArrayList();
+            long j = 0;
+            int i = 0;
+            int i2 = 0;
+            while (true) {
+                String readLine = randomAccessFile.readLine();
+                if (readLine == null) {
+                    Collections.sort(arrayList, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda1
+                        @Override // j$.util.function.ToDoubleFunction
+                        public final double applyAsDouble(Object obj) {
+                            double d;
+                            d = ((VideoSeekPreviewImage.StoryBoardFrame) obj).pts;
+                            return d;
+                        }
+                    }));
+                    this.storyBoardPictureDocId = j;
+                    this.storyBoardFrameWidth = i2;
+                    this.storyBoardFrameHeight = i;
+                    this.storyBoardMap = arrayList;
+                    return;
+                }
+                if (readLine.startsWith("file=mtproto:")) {
+                    j = Long.parseLong(readLine.substring(13));
+                } else if (readLine.startsWith("frame_width=")) {
+                    i2 = Integer.parseInt(readLine.substring(12));
+                } else if (readLine.startsWith("frame_height=")) {
+                    i = Integer.parseInt(readLine.substring(13));
+                } else {
+                    String[] split = readLine.split(",");
+                    if (split.length == 3) {
+                        arrayList.add(new StoryBoardFrame(Double.parseDouble(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2])));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+            this.storyBoardMap = null;
+        }
+    }
+
+    public void setProgress(MessageObject messageObject, final float f, int i) {
+        boolean z;
+        TLRPC.Document findDocumentById;
         this.webView = null;
         this.isYoutube = false;
-        this.youtubeBoardsReceiver.setImageBitmap((Drawable) null);
+        if (this.storyBoardMap == null || (findDocumentById = findDocumentById(messageObject, this.storyBoardPictureDocId)) == null) {
+            this.storyBoardsReceiver.setImageBitmap((Drawable) null);
+            z = false;
+        } else {
+            double d = this.duration * f;
+            Double.isNaN(d);
+            this.lastPosition = d / 1000.0d;
+            this.storyBoardsReceiver.setImage(ImageLocation.getForDocument(findDocumentById), null, null, null, messageObject, 0);
+            z = true;
+        }
+        this.drawStoryBoard = z;
         if (i != 0) {
             this.pixelWidth = i;
             int i2 = ((int) (i * f)) / 5;
@@ -496,10 +731,13 @@ public abstract class VideoSeekPreviewImage extends View {
         }
         final long j = (long) (this.duration * f);
         this.frameTime = AndroidUtilities.formatShortDuration((int) (j / 1000));
-        this.timeWidth = (int) Math.ceil(this.textPaint.measureText(r8));
+        this.timeWidth = (int) Math.ceil(this.textPaint.measureText(r15));
         invalidate();
         if (this.progressRunnable != null) {
             Utilities.globalQueue.cancelRunnable(this.progressRunnable);
+        }
+        if (z) {
+            return;
         }
         AnimatedFileDrawable animatedFileDrawable = this.fileDrawable;
         if (animatedFileDrawable != null) {
@@ -519,6 +757,13 @@ public abstract class VideoSeekPreviewImage extends View {
     public void setProgressForYouTube(PhotoViewerWebView photoViewerWebView, float f, int i) {
         this.webView = photoViewerWebView;
         this.isYoutube = true;
+        if (this.storyBoardMapDocId != 0) {
+            this.storyBoardMapDocId = 0L;
+            this.downloadingStoryBoardMapFilename = null;
+            this.downloadingStoryboardMapDocument = null;
+            this.storyBoardMap = null;
+            listen(-1);
+        }
         if (i != 0) {
             this.pixelWidth = i;
             int i2 = ((int) (i * f)) / 5;
@@ -534,11 +779,13 @@ public abstract class VideoSeekPreviewImage extends View {
         if (this.progressRunnable != null) {
             Utilities.globalQueue.cancelRunnable(this.progressRunnable);
         }
-        int videoDuration = (int) ((f * photoViewerWebView.getVideoDuration()) / 1000.0f);
-        this.lastYoutubePosition = videoDuration;
-        String youtubeStoryboard = photoViewerWebView.getYoutubeStoryboard(videoDuration);
+        double videoDuration = f * photoViewerWebView.getVideoDuration();
+        Double.isNaN(videoDuration);
+        double d = videoDuration / 1000.0d;
+        this.lastPosition = d;
+        String youtubeStoryboard = photoViewerWebView.getYoutubeStoryboard((int) d);
         if (youtubeStoryboard != null) {
-            this.youtubeBoardsReceiver.setImage(youtubeStoryboard, null, null, null, 0L);
+            this.storyBoardsReceiver.setImage(youtubeStoryboard, null, null, null, 0L);
         }
     }
 }

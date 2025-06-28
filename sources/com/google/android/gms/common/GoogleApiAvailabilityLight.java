@@ -9,6 +9,7 @@ import com.google.android.gms.common.internal.zzt;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.gms.internal.common.zzd;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class GoogleApiAvailabilityLight {
@@ -74,7 +75,7 @@ public class GoogleApiAvailabilityLight {
         if (errorResolutionIntent == null) {
             return null;
         }
-        return PendingIntent.getActivity(context, i2, errorResolutionIntent, zzd.zza | 134217728);
+        return PendingIntent.getActivity(context, i2, errorResolutionIntent, zzd.zza | TLRPC.FLAG_27);
     }
 
     public String getErrorString(int i) {

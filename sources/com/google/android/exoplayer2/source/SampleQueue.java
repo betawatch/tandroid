@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class SampleQueue implements TrackOutput {
@@ -316,7 +317,7 @@ public class SampleQueue implements TrackOutput {
 
     private boolean mayReadSample(int i) {
         DrmSession drmSession = this.currentDrmSession;
-        return drmSession == null || drmSession.getState() == 4 || ((this.flags[i] & 1073741824) == 0 && this.currentDrmSession.playClearSamplesWithoutKeys());
+        return drmSession == null || drmSession.getState() == 4 || ((this.flags[i] & TLRPC.FLAG_30) == 0 && this.currentDrmSession.playClearSamplesWithoutKeys());
     }
 
     private void onFormatResult(Format format, FormatHolder formatHolder) {
@@ -368,7 +369,7 @@ public class SampleQueue implements TrackOutput {
                 long j = this.timesUs[relativeIndex];
                 decoderInputBuffer.timeUs = j;
                 if (j < this.startTimeUs) {
-                    decoderInputBuffer.addFlag(Integer.MIN_VALUE);
+                    decoderInputBuffer.addFlag(TLRPC.FLAG_31);
                 }
                 sampleExtrasHolder.size = this.sizes[relativeIndex];
                 sampleExtrasHolder.offset = this.offsets[relativeIndex];

@@ -22,7 +22,6 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -134,7 +133,7 @@ public class TopicCreateFragment extends BaseFragment {
                             chatActivity.applyDraftMaybe(true, true);
                             chatActivity.reloadPinnedMessages();
                             TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(-TopicCreateFragment.this.chatId, tL_forumTopic, true);
-                            TopicCreateFragment.this.lambda$onBackPressed$348();
+                            TopicCreateFragment.this.lambda$onBackPressed$354();
                         } else {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", TopicCreateFragment.this.chatId);
@@ -182,7 +181,7 @@ public class TopicCreateFragment extends BaseFragment {
         public void onItemClick(int i) {
             final String obj;
             if (i == -1) {
-                TopicCreateFragment.this.lambda$onBackPressed$348();
+                TopicCreateFragment.this.lambda$onBackPressed$354();
                 return;
             }
             if (i == 1) {
@@ -282,7 +281,7 @@ public class TopicCreateFragment extends BaseFragment {
                 TopicsController topicsController = TopicCreateFragment.this.getMessagesController().getTopicsController();
                 TopicCreateFragment topicCreateFragment6 = TopicCreateFragment.this;
                 topicsController.onTopicEdited(-topicCreateFragment6.chatId, topicCreateFragment6.topicForEdit);
-                TopicCreateFragment.this.lambda$onBackPressed$348();
+                TopicCreateFragment.this.lambda$onBackPressed$354();
             }
         }
     }
@@ -491,7 +490,7 @@ public class TopicCreateFragment extends BaseFragment {
         this.editTextBoldCursor.setBackgroundDrawable(null);
         this.editTextBoldCursor.setSingleLine(true);
         EditTextBoldCursor editTextBoldCursor2 = this.editTextBoldCursor;
-        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | 16384);
         frameLayout.addView(this.editTextBoldCursor, LayoutHelper.createFrame(-1, -1.0f, 0, 51.0f, 4.0f, 21.0f, 4.0f));
         this.editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.TopicCreateFragment.3
             @Override // android.text.TextWatcher

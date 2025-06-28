@@ -44,7 +44,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.RandomAccess;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.ConnectionsManager;
@@ -1197,7 +1196,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         }
 
         private int evaluateSelectionEligibility(int i, int i2) {
-            if ((this.format.roleFlags & LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) != 0 || !DefaultTrackSelector.isSupported(i, this.parameters.exceedRendererCapabilitiesIfNecessary)) {
+            if ((this.format.roleFlags & 16384) != 0 || !DefaultTrackSelector.isSupported(i, this.parameters.exceedRendererCapabilitiesIfNecessary)) {
                 return 0;
             }
             if (!this.isWithinMaxConstraints && !this.parameters.exceedVideoConstraintsIfNecessary) {

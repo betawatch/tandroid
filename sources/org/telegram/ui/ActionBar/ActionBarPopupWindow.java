@@ -15,6 +15,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.Property;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -34,6 +35,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
@@ -157,10 +159,10 @@ public class ActionBarPopupWindow extends PopupWindow {
             LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.ActionBar.ActionBarPopupWindow.ActionBarPopupWindowLayout.2
                 @Override // android.view.ViewGroup
                 protected boolean drawChild(Canvas canvas, View view, long j) {
-                    if (view instanceof GapView) {
-                        return false;
+                    if (!(view instanceof GapView) || ActionBarPopupWindowLayout.this.backgroundDrawable == null) {
+                        return super.drawChild(canvas, view, j);
                     }
-                    return super.drawChild(canvas, view, j);
+                    return false;
                 }
 
                 @Override // android.widget.LinearLayout, android.view.View
@@ -550,7 +552,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         }
 
         public int precalculateHeight() {
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31);
             this.linearLayout.measure(makeMeasureSpec, makeMeasureSpec);
             return this.linearLayout.getMeasuredHeight();
         }
@@ -825,17 +827,16 @@ public class ActionBarPopupWindow extends PopupWindow {
     }
 
     private void init() {
-        View contentView = getContentView();
-        if (contentView instanceof ActionBarPopupWindowLayout) {
-            ActionBarPopupWindowLayout actionBarPopupWindowLayout = (ActionBarPopupWindowLayout) contentView;
-            if (actionBarPopupWindowLayout.getSwipeBack() != null) {
-                actionBarPopupWindowLayout.getSwipeBack().setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarPopupWindow$$ExternalSyntheticLambda2
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ActionBarPopupWindow.this.lambda$init$1(view);
-                    }
-                });
-            }
+        final View contentView = getContentView();
+        if ((contentView instanceof ActionBarPopupWindowLayout) && ((ActionBarPopupWindowLayout) contentView).getSwipeBack() != null) {
+            setTouchInterceptor(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarPopupWindow$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnTouchListener
+                public final boolean onTouch(View view, MotionEvent motionEvent) {
+                    boolean lambda$init$1;
+                    lambda$init$1 = ActionBarPopupWindow.this.lambda$init$1(contentView, view, motionEvent);
+                    return lambda$init$1;
+                }
+            });
         }
         Field field = superListenerField;
         if (field != null) {
@@ -849,8 +850,19 @@ public class ActionBarPopupWindow extends PopupWindow {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$1(View view) {
+    public /* synthetic */ boolean lambda$init$1(View view, View view2, MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0) {
+            return false;
+        }
+        Drawable backgroundDrawable = ((ActionBarPopupWindowLayout) view).getBackgroundDrawable();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(backgroundDrawable.getBounds());
+        rectF.offset(view.getX(), view.getY());
+        if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+            return false;
+        }
         dismiss();
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

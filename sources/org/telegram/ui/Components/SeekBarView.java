@@ -32,6 +32,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AudioPlayerAlert;
 
@@ -752,7 +753,7 @@ public class SeekBarView extends FrameLayout {
         super.onMeasure(i, i2);
         int timestampLabelWidth = getTimestampLabelWidth();
         this.lastTimestampLabelWidth = timestampLabelWidth;
-        this.textViewSwitcher.measure(View.MeasureSpec.makeMeasureSpec(timestampLabelWidth, 1073741824), 0);
+        this.textViewSwitcher.measure(View.MeasureSpec.makeMeasureSpec(timestampLabelWidth, TLRPC.FLAG_30), 0);
         if (this.progressToSet == -100.0f || getMeasuredWidth() <= 0) {
             return;
         }

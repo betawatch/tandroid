@@ -24,7 +24,6 @@ import java.util.Locale;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public class CrashlyticsReportPersistence {
@@ -159,7 +158,7 @@ public class CrashlyticsReportPersistence {
     }
 
     private static String readTextFile(File file) {
-        byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+        byte[] bArr = new byte[8192];
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         FileInputStream fileInputStream = new FileInputStream(file);
         while (true) {

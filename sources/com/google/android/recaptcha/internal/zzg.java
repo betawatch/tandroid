@@ -9,6 +9,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlinx.coroutines.CoroutineScopeKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public final class zzg {
@@ -42,8 +43,8 @@ public final class zzg {
         if (continuation instanceof zzd) {
             zzdVar = (zzd) continuation;
             int i2 = zzdVar.zzc;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                zzdVar.zzc = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                zzdVar.zzc = i2 - TLRPC.FLAG_31;
                 Object obj = zzdVar.zza;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzdVar.zzc;

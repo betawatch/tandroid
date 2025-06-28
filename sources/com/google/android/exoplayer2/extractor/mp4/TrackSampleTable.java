@@ -2,6 +2,7 @@ package com.google.android.exoplayer2.extractor.mp4;
 
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class TrackSampleTable {
@@ -28,7 +29,7 @@ final class TrackSampleTable {
         this.sampleCount = jArr.length;
         if (iArr2.length > 0) {
             int length = iArr2.length - 1;
-            iArr2[length] = iArr2[length] | 536870912;
+            iArr2[length] = iArr2[length] | TLRPC.FLAG_29;
         }
     }
 

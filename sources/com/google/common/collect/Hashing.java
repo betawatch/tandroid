@@ -1,5 +1,7 @@
 package com.google.common.collect;
 
+import org.telegram.tgnet.TLRPC;
+
 /* loaded from: classes.dex */
 abstract class Hashing {
     static int closedTableSize(int i, double d) {
@@ -11,10 +13,7 @@ abstract class Hashing {
             return highestOneBit;
         }
         int i2 = highestOneBit << 1;
-        if (i2 > 0) {
-            return i2;
-        }
-        return 1073741824;
+        return i2 > 0 ? i2 : TLRPC.FLAG_30;
     }
 
     static int smear(int i) {

@@ -123,14 +123,6 @@ public class CheckBoxBase {
         this.checkAnimator.start();
     }
 
-    private void cancelCheckAnimator() {
-        ObjectAnimator objectAnimator = this.checkAnimator;
-        if (objectAnimator != null) {
-            objectAnimator.cancel();
-            this.checkAnimator = null;
-        }
-    }
-
     private int getThemedColor(int i) {
         return Theme.getColor(i, this.resourcesProvider);
     }
@@ -145,6 +137,14 @@ public class CheckBoxBase {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Paint lambda$new$0(Void r0) {
         return paint;
+    }
+
+    public void cancelCheckAnimator() {
+        ObjectAnimator objectAnimator = this.checkAnimator;
+        if (objectAnimator != null) {
+            objectAnimator.cancel();
+            this.checkAnimator = null;
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:190:0x00b8, code lost:

@@ -90,7 +90,7 @@ public class MemberRequestsController extends BaseController {
         if (chatFull != null) {
             chatFull.requests_pending = tL_updatePendingJoinRequests.requests_pending;
             chatFull.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;
-            chatFull.flags |= 131072;
+            chatFull.flags |= TLRPC.FLAG_17;
             getMessagesStorage().updateChatInfo(chatFull, false);
             NotificationCenter notificationCenter = getNotificationCenter();
             int i = NotificationCenter.chatInfoDidLoad;

@@ -18,11 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -216,7 +216,7 @@ public class NumberPicker extends LinearLayout {
         this.mLongPressUpdateInterval = 300L;
         this.mSelectorIndexToStringCache = new SparseArray();
         this.mSelectorIndices = new int[this.SELECTOR_WHEEL_ITEM_COUNT];
-        this.mInitialScrollOffset = Integer.MIN_VALUE;
+        this.mInitialScrollOffset = TLRPC.FLAG_31;
         this.mScrollState = 0;
         this.mLastHandledDownDpadKeyCode = -1;
         this.drawDividers = true;
@@ -436,10 +436,10 @@ public class NumberPicker extends LinearLayout {
         int size = View.MeasureSpec.getSize(i);
         int mode = View.MeasureSpec.getMode(i);
         if (mode == Integer.MIN_VALUE) {
-            return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), 1073741824);
+            return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), TLRPC.FLAG_30);
         }
         if (mode == 0) {
-            return View.MeasureSpec.makeMeasureSpec(i2, 1073741824);
+            return View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30);
         }
         if (mode == 1073741824) {
             return i;
@@ -485,7 +485,7 @@ public class NumberPicker extends LinearLayout {
                 String[] strArr = this.mDisplayedValues;
                 String formatNumber = strArr == null ? formatNumber(this.mValue) : strArr[this.mValue - this.mMinValue];
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
-                obtain.setEventType(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                obtain.setEventType(16384);
                 obtain.getText().add(formatNumber);
                 accessibilityManager.sendAccessibilityEvent(obtain);
             }

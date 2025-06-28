@@ -17,6 +17,7 @@ import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class ActionBarContextView extends AbsActionBarView {
@@ -235,21 +236,23 @@ public class ActionBarContextView extends AbsActionBarView {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        if (View.MeasureSpec.getMode(i) != 1073741824) {
+        int mode = View.MeasureSpec.getMode(i);
+        int i3 = TLRPC.FLAG_30;
+        if (mode != 1073741824) {
             throw new IllegalStateException(getClass().getSimpleName() + " can only be used with android:layout_width=\"match_parent\" (or fill_parent)");
         }
         if (View.MeasureSpec.getMode(i2) == 0) {
             throw new IllegalStateException(getClass().getSimpleName() + " can only be used with android:layout_height=\"wrap_content\"");
         }
         int size = View.MeasureSpec.getSize(i);
-        int i3 = this.mContentHeight;
-        if (i3 <= 0) {
-            i3 = View.MeasureSpec.getSize(i2);
+        int i4 = this.mContentHeight;
+        if (i4 <= 0) {
+            i4 = View.MeasureSpec.getSize(i2);
         }
         int paddingTop = getPaddingTop() + getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int i4 = i3 - paddingTop;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, Integer.MIN_VALUE);
+        int i5 = i4 - paddingTop;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_31);
         View view = this.mClose;
         if (view != null) {
             int measureChildView = measureChildView(view, paddingLeft, makeMeasureSpec, 0);
@@ -277,20 +280,22 @@ public class ActionBarContextView extends AbsActionBarView {
         View view2 = this.mCustomView;
         if (view2 != null) {
             ViewGroup.LayoutParams layoutParams = view2.getLayoutParams();
-            int i5 = layoutParams.width;
-            int i6 = i5 != -2 ? 1073741824 : Integer.MIN_VALUE;
-            if (i5 >= 0) {
-                paddingLeft = Math.min(i5, paddingLeft);
+            int i6 = layoutParams.width;
+            int i7 = i6 != -2 ? TLRPC.FLAG_30 : TLRPC.FLAG_31;
+            if (i6 >= 0) {
+                paddingLeft = Math.min(i6, paddingLeft);
             }
-            int i7 = layoutParams.height;
-            int i8 = i7 == -2 ? Integer.MIN_VALUE : 1073741824;
-            if (i7 >= 0) {
-                i4 = Math.min(i7, i4);
+            int i8 = layoutParams.height;
+            if (i8 == -2) {
+                i3 = TLRPC.FLAG_31;
             }
-            this.mCustomView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, i6), View.MeasureSpec.makeMeasureSpec(i4, i8));
+            if (i8 >= 0) {
+                i5 = Math.min(i8, i5);
+            }
+            this.mCustomView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, i7), View.MeasureSpec.makeMeasureSpec(i5, i3));
         }
         if (this.mContentHeight > 0) {
-            setMeasuredDimension(size, i3);
+            setMeasuredDimension(size, i4);
             return;
         }
         int childCount = getChildCount();

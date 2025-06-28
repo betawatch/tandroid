@@ -569,7 +569,7 @@ public class StoryEntry {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkStickers$15(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda0
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
                 StoryEntry.this.lambda$checkStickers$14(tLObject);
@@ -618,7 +618,7 @@ public class StoryEntry {
                     hDRInfo.colorRange = trackFormat.getInteger("color-range");
                 }
                 this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
+                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.this.lambda$detectHDR$12(callback);
@@ -627,7 +627,7 @@ public class StoryEntry {
             } catch (Exception e) {
                 FileLog.e(e);
                 this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
+                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.this.lambda$detectHDR$12(callback);
@@ -637,7 +637,7 @@ public class StoryEntry {
             AndroidUtilities.runOnUIThread(runnable);
         } catch (Throwable th) {
             this.hdrInfo = this.hdrInfo;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryEntry.this.lambda$detectHDR$12(callback);
@@ -989,7 +989,7 @@ public class StoryEntry {
         TLRPC.TL_videoSize_layer127 tL_videoSize_layer127;
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-        tL_fileLocationToBeDeprecated.dc_id = Integer.MIN_VALUE;
+        tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
         tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         if ("mp4".equals(str) || "webm".equals(str)) {
@@ -1170,7 +1170,7 @@ public class StoryEntry {
         Canvas canvas2 = new Canvas(createBitmap);
         if (this.backgroundFile != null) {
             try {
-                Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
+                Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda4
                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                     public final Bitmap decode(BitmapFactory.Options options) {
                         Bitmap lambda$buildBitmap$0;
@@ -1221,7 +1221,7 @@ public class StoryEntry {
                             }
                             if (file != null) {
                                 try {
-                                    scaledBitmap2 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
+                                    scaledBitmap2 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
                                         @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                         public final Bitmap decode(BitmapFactory.Options options) {
                                             Bitmap lambda$buildBitmap$1;
@@ -1294,7 +1294,7 @@ public class StoryEntry {
                         }
                         if (file2 != null) {
                             try {
-                                scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
+                                scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
                                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                     public final Bitmap decode(BitmapFactory.Options options) {
                                         Bitmap lambda$buildBitmap$2;
@@ -1349,7 +1349,7 @@ public class StoryEntry {
                             z = false;
                         }
                         try {
-                            Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
+                            Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
                                 @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                 public final Bitmap decode(BitmapFactory.Options options) {
                                     Bitmap lambda$buildBitmap$3;
@@ -1377,7 +1377,7 @@ public class StoryEntry {
                     }
                     if (this.messageFile != null) {
                         try {
-                            Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
+                            Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
                                 @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                 public final Bitmap decode(BitmapFactory.Options options) {
                                     Bitmap lambda$buildBitmap$4;
@@ -1400,7 +1400,7 @@ public class StoryEntry {
                         return bitmap2;
                     }
                     try {
-                        Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
+                        Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
                             @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                             public final Bitmap decode(BitmapFactory.Options options) {
                                 Bitmap lambda$buildBitmap$5;
@@ -1497,13 +1497,13 @@ public class StoryEntry {
             }
             tL_messages_getAttachedStickers.media = tL_inputStickeredMediaPhoto;
         }
-        final RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda15
+        final RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StoryEntry.this.lambda$checkStickers$15(tLObject, tL_error);
             }
         };
-        this.checkStickersReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda16
+        this.checkStickersReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda15
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StoryEntry.this.lambda$checkStickers$16(storyItem, tL_messages_getAttachedStickers, requestDelegate, tLObject, tL_error);
@@ -1830,7 +1830,7 @@ public class StoryEntry {
             return;
         }
         if (this.isVideo && Build.VERSION.SDK_INT >= 24) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda4
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryEntry.this.lambda$detectHDR$13(callback);
@@ -1877,7 +1877,7 @@ public class StoryEntry {
         final String absolutePath = file == null ? null : file.getAbsolutePath();
         final int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, isCollage() ? this.collageContent.size() : 0), 11);
         iArr[0] = new int[11];
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 StoryEntry.this.lambda$getVideoEditedInfo$9(absolutePath, iArr, callback);
@@ -1888,7 +1888,7 @@ public class StoryEntry {
                 runnable.run();
                 return;
             } else {
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda12
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryEntry.lambda$getVideoEditedInfo$11(absolutePath, iArr, runnable);
@@ -1902,7 +1902,7 @@ public class StoryEntry {
             strArr[i2] = ((StoryEntry) this.collageContent.get(i2)).file == null ? null : ((StoryEntry) this.collageContent.get(i2)).file.getAbsolutePath();
             iArr[i2] = new int[11];
         }
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda12
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 StoryEntry.lambda$getVideoEditedInfo$10(strArr, iArr, runnable);
@@ -1957,7 +1957,7 @@ public class StoryEntry {
                 if (bitmap == null) {
                     return;
                 } else {
-                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda2
+                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda1
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             StoryEntry.this.lambda$setupGradient$7(bitmap, runnable, (int[]) obj);
@@ -1969,7 +1969,7 @@ public class StoryEntry {
                 if (bitmap == null) {
                     return;
                 } else {
-                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda3
+                    callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda2
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             StoryEntry.this.lambda$setupGradient$8(runnable, (int[]) obj);
@@ -2074,7 +2074,7 @@ public class StoryEntry {
         }
         this.filterFile = makeCacheFile(this.currentAccount, z ? "webp" : "jpg");
         if (runnable != null) {
-            Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda1
+            Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryEntry.this.lambda$updateFilter$6(createBitmap, z, runnable);

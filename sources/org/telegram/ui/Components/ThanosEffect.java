@@ -29,13 +29,13 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.BaseCell;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -230,18 +230,18 @@ public class ThanosEffect extends TextureView {
                 this.bitmap = bitmap;
             }
 
-            /* JADX WARN: Can't wrap try/catch for region: R(15:0|1|(1:3)|4|(1:6)|7|(2:9|(8:11|12|(3:14|(1:18)|19)|(1:21)(1:(1:31))|22|23|24|25))|(2:33|(1:35))|12|(0)|(0)(0)|22|23|24|25) */
-            /* JADX WARN: Code restructure failed: missing block: B:28:0x014a, code lost:
+            /* JADX WARN: Can't wrap try/catch for region: R(15:0|1|(1:3)|4|(1:6)|7|(2:9|(9:11|12|13|(3:15|(1:19)|20)|(1:22)(1:(1:32))|23|24|25|26))|(2:34|(2:36|12))|13|(0)|(0)(0)|23|24|25|26) */
+            /* JADX WARN: Code restructure failed: missing block: B:29:0x015c, code lost:
             
-                r7 = move-exception;
+                r8 = move-exception;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:29:0x014b, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:30:0x015d, code lost:
             
-                org.telegram.messenger.FileLog.e(r7);
+                org.telegram.messenger.FileLog.e(r8);
              */
-            /* JADX WARN: Removed duplicated region for block: B:14:0x0105  */
-            /* JADX WARN: Removed duplicated region for block: B:21:0x0129  */
-            /* JADX WARN: Removed duplicated region for block: B:30:0x013e  */
+            /* JADX WARN: Removed duplicated region for block: B:15:0x0117  */
+            /* JADX WARN: Removed duplicated region for block: B:22:0x013b  */
+            /* JADX WARN: Removed duplicated region for block: B:31:0x0150  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -296,8 +296,11 @@ public class ThanosEffect extends TextureView {
                 if (z2) {
                     ChatActionCell chatActionCell = (ChatActionCell) view;
                     if (chatActionCell.hasGradientService()) {
+                        canvas.save();
+                        canvas.translate(chatActionCell.sideMenuWidth / 2.0f, view.getPaddingTop());
                         chatActionCell.drawBackground(canvas, true);
                         chatActionCell.drawReactions(canvas, true, null);
+                        canvas.restore();
                         view.draw(canvas);
                         if (z) {
                             ChatMessageCell chatMessageCell = (ChatMessageCell) view;
@@ -326,7 +329,7 @@ public class ThanosEffect extends TextureView {
                     ChatMessageCell chatMessageCell2 = (ChatMessageCell) view;
                     if (chatMessageCell2.drawBackgroundInParent()) {
                         canvas.save();
-                        canvas.translate(0.0f, chatMessageCell2.getPaddingTop());
+                        canvas.translate(0.0f, view.getPaddingTop());
                         chatMessageCell2.drawBackgroundInternal(canvas, true);
                         canvas.restore();
                     }
@@ -400,8 +403,8 @@ public class ThanosEffect extends TextureView {
                 animation.views.addAll(arrayList);
                 int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 int i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i6 = Integer.MIN_VALUE;
-                int i7 = Integer.MIN_VALUE;
+                int i6 = TLRPC.FLAG_31;
+                int i7 = TLRPC.FLAG_31;
                 for (int i8 = 0; i8 < arrayList.size(); i8++) {
                     View view = (View) arrayList.get(i8);
                     i4 = Math.min(i4, (int) view.getX());
@@ -1038,7 +1041,7 @@ public class ThanosEffect extends TextureView {
 
         private void draw() {
             if (this.alive.get()) {
-                GLES31.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                GLES31.glClear(16384);
                 int i = 0;
                 int i2 = 0;
                 while (i2 < this.pendingAnimations.size()) {

@@ -37,7 +37,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
@@ -432,7 +431,7 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         PackageManager packageManager = context.getPackageManager();
         try {
-            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(str, LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM);
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(str, 8192);
             if (applicationInfo != null) {
                 return packageManager.getResourcesForApplication(applicationInfo);
             }

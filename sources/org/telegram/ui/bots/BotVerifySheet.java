@@ -59,7 +59,7 @@ public abstract class BotVerifySheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$openRemoveVerify$7(final boolean[] zArr, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda0
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 BotVerifySheet.lambda$openRemoveVerify$6(zArr, tLObject, callback);
@@ -78,7 +78,7 @@ public abstract class BotVerifySheet {
         setcustomverification.flags |= 1;
         setcustomverification.bot = MessagesController.getInstance(i).getInputUser(j);
         setcustomverification.peer = MessagesController.getInstance(i).getInputPeer(j2);
-        ConnectionsManager.getInstance(i).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda7
+        ConnectionsManager.getInstance(i).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BotVerifySheet.lambda$openRemoveVerify$7(zArr, callback, tLObject, tL_error);
@@ -102,7 +102,7 @@ public abstract class BotVerifySheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$openSheet$4(final ButtonWithCounterView buttonWithCounterView, final BottomSheet bottomSheet, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 BotVerifySheet.lambda$openSheet$3(ButtonWithCounterView.this, tLObject, bottomSheet, callback);
@@ -130,7 +130,7 @@ public abstract class BotVerifySheet {
         if (!TextUtils.isEmpty(setcustomverification.custom_description)) {
             setcustomverification.flags |= 4;
         }
-        ConnectionsManager.getInstance(i2).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda5
+        ConnectionsManager.getInstance(i2).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BotVerifySheet.lambda$openSheet$4(ButtonWithCounterView.this, bottomSheet, callback, tLObject, tL_error);
@@ -144,10 +144,10 @@ public abstract class BotVerifySheet {
         String str;
         TLRPC.Chat chat;
         if (topicsFragment != null) {
-            topicsFragment.lambda$onBackPressed$348();
+            topicsFragment.lambda$onBackPressed$354();
             dialogsActivity.removeSelfFromStack();
         } else {
-            dialogsActivity.lambda$onBackPressed$348();
+            dialogsActivity.lambda$onBackPressed$354();
         }
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
@@ -176,7 +176,7 @@ public abstract class BotVerifySheet {
             return false;
         }
         final long j2 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        openSheet(dialogsActivity.getContext(), i, j, j2, botverifiersettings, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda2
+        openSheet(dialogsActivity.getContext(), i, j, j2, botverifiersettings, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 BotVerifySheet.lambda$openVerify$0(TopicsFragment.this, dialogsActivity, j2, i, (Boolean) obj);
@@ -228,7 +228,7 @@ public abstract class BotVerifySheet {
         frameLayout2.addView(simpleTextView, LayoutHelper.createFrame(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
         frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
         final boolean[] zArr = new boolean[1];
-        new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.BotRemoveVerificationTitle)).setMessage(LocaleController.getString(j2 >= 0 ? R.string.BotRemoveVerificationText : R.string.BotRemoveVerificationChatText)).setView(frameLayout).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda6
+        new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.BotRemoveVerificationTitle)).setMessage(LocaleController.getString(j2 >= 0 ? R.string.BotRemoveVerificationText : R.string.BotRemoveVerificationChatText)).setView(frameLayout).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 BotVerifySheet.lambda$openRemoveVerify$8(zArr, i, j, j2, callback, alertDialog, i2);
@@ -330,7 +330,7 @@ public abstract class BotVerifySheet {
         editTextBoldCursor.setHighlightColor(Theme.getColor(Theme.key_chat_inTextSelectionHighlight));
         editTextBoldCursor.setHandlesColor(Theme.getColor(Theme.key_chat_TextSelectionCursor));
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda3
+        editTextBoldCursor.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view2, boolean z) {
                 BotVerifySheet.lambda$openSheet$2(OutlineTextContainerView.this, editTextBoldCursor, view2, z);
@@ -401,7 +401,7 @@ public abstract class BotVerifySheet {
         linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(i4, 48));
         builder.setCustomView(linearLayout);
         final BottomSheet create = builder.create();
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda4
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 BotVerifySheet.lambda$openSheet$5(ButtonWithCounterView.this, botverifiersettings, editTextBoldCursor, i3, outlineTextContainerView, i, j, j2, create, callback, view3);
@@ -423,7 +423,7 @@ public abstract class BotVerifySheet {
         bundle.putBoolean("resetDelegate", false);
         final DialogsActivity dialogsActivity = new DialogsActivity(bundle);
         dialogsActivity.setCurrentAccount(i);
-        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda1
+        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
                 boolean lambda$openVerify$1;

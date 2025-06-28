@@ -439,7 +439,7 @@ public class ReactedHeaderView extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int i3 = this.fixedWidth;
         if (i3 > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(i3, 1073741824);
+            i = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
         }
         if (this.flickerLoadingView.getVisibility() == 0) {
             this.ignoreLayout = true;

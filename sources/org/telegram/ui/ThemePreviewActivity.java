@@ -68,6 +68,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.ChatObject;
@@ -319,7 +320,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             Theme.applyPreviousTheme();
             Theme.refreshThemeColors();
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, ThemePreviewActivity.this.applyingTheme, Boolean.valueOf(ThemePreviewActivity.this.nightTheme), null, -1);
-            ThemePreviewActivity.this.lambda$onBackPressed$348();
+            ThemePreviewActivity.this.lambda$onBackPressed$354();
         }
 
         @Override // org.telegram.ui.Components.ColorPicker.ColorPickerDelegate
@@ -361,7 +362,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 return;
             }
             if (ThemePreviewActivity.this.accent.info == null) {
-                ThemePreviewActivity.this.lambda$onBackPressed$348();
+                ThemePreviewActivity.this.lambda$onBackPressed$354();
                 MessagesController.getInstance(((BaseFragment) ThemePreviewActivity.this).currentAccount).saveThemeToServer(ThemePreviewActivity.this.accent.parentTheme, ThemePreviewActivity.this.accent);
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, ThemePreviewActivity.this.accent.parentTheme, ThemePreviewActivity.this.accent);
                 return;
@@ -440,7 +441,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 Theme.saveThemeAccents(ThemePreviewActivity.this.applyingTheme, true, false, false, true);
                 Theme.applyPreviousTheme();
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, ThemePreviewActivity.this.applyingTheme, Boolean.valueOf(ThemePreviewActivity.this.nightTheme), null, -1);
-                ThemePreviewActivity.this.lambda$onBackPressed$348();
+                ThemePreviewActivity.this.lambda$onBackPressed$354();
                 return;
             }
             if (i == 5) {
@@ -1148,7 +1149,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     document.file_reference = new byte[0];
                     document.id = -2147483648L;
                     document.size = 2621440L;
-                    document.dc_id = Integer.MIN_VALUE;
+                    document.dc_id = TLRPC.FLAG_31;
                     TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                     tL_documentAttributeFilename.file_name = LocaleController.getString(R.string.NewThemePreviewReply2) + ".mp3";
                     tL_message6.media.document.attributes.add(tL_documentAttributeFilename);
@@ -1696,6 +1697,16 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didLongPressCustomBotButton(ChatMessageCell chatMessageCell2, BotInlineKeyboard.ButtonCustom buttonCustom) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressCustomBotButton(this, chatMessageCell2, buttonCustom);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean didLongPressToDoButton(ChatMessageCell chatMessageCell2, TLRPC.TodoItem todoItem) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressToDoButton(this, chatMessageCell2, todoItem);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean didLongPressUserAvatar(ChatMessageCell chatMessageCell2, TLRPC.User user, float f, float f2) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressUserAvatar(this, chatMessageCell2, user, f, f2);
                     }
@@ -1748,6 +1759,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressCommentButton(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCommentButton(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressCustomBotButton(ChatMessageCell chatMessageCell2, BotInlineKeyboard.ButtonCustom buttonCustom) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCustomBotButton(this, chatMessageCell2, buttonCustom);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1843,6 +1859,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell2, TLRPC.TodoItem todoItem, boolean z) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell2, todoItem, z);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2060,6 +2081,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
+                    public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell2, int i2, int i3) {
+                        ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell2, i2, i3);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
                     public /* synthetic */ void forceUpdate(ChatActionCell chatActionCell2, boolean z) {
                         ChatActionCell.ChatActionCellDelegate.-CC.$default$forceUpdate(this, chatActionCell2, z);
                     }
@@ -2108,7 +2134,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     FrameLayout frameLayout4 = new FrameLayout(this.mContext) { // from class: org.telegram.ui.ThemePreviewActivity.MessagesAdapter.7
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), 1073741824));
+                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30));
                         }
                     };
                     frameLayout = ThemePreviewActivity.this.backgroundButtonsContainer;
@@ -2117,7 +2143,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     frameLayout3 = new View(ThemePreviewActivity.this.getContext()) { // from class: org.telegram.ui.ThemePreviewActivity.MessagesAdapter.8
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLRPC.FLAG_30));
                         }
                     };
                 } else {
@@ -2127,7 +2153,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     FrameLayout frameLayout5 = new FrameLayout(this.mContext) { // from class: org.telegram.ui.ThemePreviewActivity.MessagesAdapter.9
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), 1073741824));
+                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30));
                         }
                     };
                     frameLayout = ThemePreviewActivity.this.messagesButtonsContainer;
@@ -2942,7 +2968,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         if (this.dialogId < 0) {
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.boostsStatus;
             if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < getCustomWallpaperLevelMin()) {
-                getMessagesController().getBoostsController().userCanBoostChannel(this.dialogId, this.boostsStatus, new Consumer() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda27
+                getMessagesController().getBoostsController().userCanBoostChannel(this.dialogId, this.boostsStatus, new Consumer() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda26
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj3) {
                         ThemePreviewActivity.this.lambda$applyWallpaperBackground$20((ChannelBoostsController.CanApplyBoost) obj3);
@@ -3186,7 +3212,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                             if (this.dialogId != 0) {
                                 if (file4 == 0 || getMessagesController().uploadingWallpaperInfo != overrideWallpaperInfo) {
                                     z4 = false;
-                                    ChatThemeController.getInstance(this.currentAccount).setWallpaperToPeer(this.dialogId, null, overrideWallpaperInfo, this.serverWallpaper, new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda28
+                                    ChatThemeController.getInstance(this.currentAccount).setWallpaperToPeer(this.dialogId, null, overrideWallpaperInfo, this.serverWallpaper, new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda27
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             ThemePreviewActivity.lambda$applyWallpaperBackground$21();
@@ -3243,7 +3269,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 if (wallpaperActivityDelegate != null) {
                                     wallpaperActivityDelegate.didSetNewBackground(tL_wallPaper8);
                                 }
-                                lambda$onBackPressed$348();
+                                lambda$onBackPressed$354();
                                 if (z4) {
                                     return;
                                 }
@@ -3251,7 +3277,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 if (wallpaperActivityDelegate2 != null) {
                                     wallpaperActivityDelegate2.didSetNewBackground(tL_wallPaper8);
                                 }
-                                lambda$onBackPressed$348();
+                                lambda$onBackPressed$354();
                                 return;
                             }
                             Theme.serviceMessageColorBackup = getThemedColor(Theme.key_chat_serviceBackground);
@@ -3725,7 +3751,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (z) {
                 return;
             }
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         Theme.applyPreviousTheme();
@@ -3764,7 +3790,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         if (z) {
             return;
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     private BitmapDrawable checkBlur(Drawable drawable) {
@@ -3849,13 +3875,13 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
             builder.setTitle(LocaleController.getString(R.string.SaveChangesAlertTitle));
             builder.setMessage(LocaleController.getString(R.string.SaveChangesAlertText));
-            builder.setPositiveButton(LocaleController.getString(R.string.Save), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString(R.string.Save), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda21
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     ThemePreviewActivity.this.lambda$checkDiscard$25(alertDialog, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda4
+            builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda22
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     ThemePreviewActivity.this.lambda$checkDiscard$26(alertDialog, i);
@@ -4094,7 +4120,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         limitReachedBottomSheet.setBoostsStats(this.boostsStatus, true);
         limitReachedBottomSheet.setDialogId(this.dialogId);
         if (!insideBottomSheet()) {
-            limitReachedBottomSheet.showStatisticButtonInLink(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda32
+            limitReachedBottomSheet.showStatisticButtonInLink(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda31
                 @Override // java.lang.Runnable
                 public final void run() {
                     ThemePreviewActivity.this.lambda$applyWallpaperBackground$19();
@@ -4351,7 +4377,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             edit.commit();
         }
         BaseFragment baseFragment = (BaseFragment) getParentLayout().getFragmentStack().get(Math.max(0, getParentLayout().getFragmentStack().size() - 2));
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
         if (this.screenType == 0) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didApplyNewTheme, previousTheme, accent, Boolean.valueOf(this.deleteOnCancel));
         }
@@ -4449,7 +4475,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$29(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda35
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 ThemePreviewActivity.this.lambda$didReceivedNotification$28(tLObject);
@@ -4512,7 +4538,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
         tL_inputWallPaperSlug.slug = this.accent.patternSlug;
         getwallpaper.wallpaper = tL_inputWallPaperSlug;
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda26
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda34
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 ThemePreviewActivity.this.lambda$didReceivedNotification$29(tLObject2, tL_error);
@@ -4748,7 +4774,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.progressToDarkTheme, this.onSwitchDayNightDelegate.isDark() ? 1.0f : 0.0f);
             this.changeDayNightViewAnimator2 = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda36
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda35
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     ThemePreviewActivity.this.lambda$toggleTheme$35(valueAnimator2);
@@ -4974,14 +5000,14 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             builder.setTitle(LocaleController.getString(R.string.ChangeChatBackground));
             if (!Theme.hasCustomWallpaper() || Theme.isCustomWallpaperColor()) {
                 builder.setMessage(LocaleController.getString(R.string.ChangeColorToColor));
-                builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda30
+                builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda29
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
                         ThemePreviewActivity.this.lambda$selectColorType$22(alertDialog, i2);
                     }
                 });
                 string = LocaleController.getString(R.string.Continue);
-                onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda31
+                onButtonClickListener = new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda30
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
                         ThemePreviewActivity.this.lambda$selectColorType$23(alertDialog, i2);
@@ -4989,7 +5015,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 };
             } else {
                 builder.setMessage(LocaleController.getString(R.string.ChangeWallpaperToColor));
-                builder.setPositiveButton(LocaleController.getString(R.string.Change), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda29
+                builder.setPositiveButton(LocaleController.getString(R.string.Change), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda28
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
                         ThemePreviewActivity.this.lambda$selectColorType$24(alertDialog, i2);
@@ -5569,7 +5595,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             this.animationHint.setExtraTranslationY(AndroidUtilities.dp(6.0f));
             this.frameLayout.addView(this.animationHint, LayoutHelper.createFrame(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 ThemePreviewActivity.this.lambda$showAnimationHint$32(globalMainSettings);
@@ -6524,7 +6550,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 str = "";
             } else {
                 str = "";
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda7
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         ThemePreviewActivity.this.lambda$createView$2();
@@ -6573,7 +6599,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         size2 -= measuredHeight;
                     }
                     ((FrameLayout.LayoutParams) ThemePreviewActivity.this.listView.getLayoutParams()).topMargin = measuredHeight;
-                    ThemePreviewActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                    ThemePreviewActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
                     measureChildWithMargins(ThemePreviewActivity.this.floatingButton, i21, 0, i22, 0);
                 }
             };
@@ -6588,7 +6614,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             this.listView.setLayoutManager(new LinearLayoutManager(context, 1, false));
             this.listView.setVerticalScrollbarPosition(!LocaleController.isRTL ? 1 : 2);
             this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(this.screenType == 0 ? 12.0f : 0.0f));
-            this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda18
+            this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda15
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view2, int i21) {
                     ThemePreviewActivity.lambda$createView$3(view2, i21);
@@ -6684,12 +6710,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         ThemePreviewActivity themePreviewActivity = ThemePreviewActivity.this;
                         recyclerListView2.setPadding(0, dp3, 0, (AndroidUtilities.dp(((themePreviewActivity.self || themePreviewActivity.dialogId <= 0) ? 0 : 58) + 72) - 12) + (ThemePreviewActivity.this.insideBottomSheet() ? AndroidUtilities.navigationBarHeight : 0));
                     }
-                    ThemePreviewActivity.this.listView2.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - layoutParams2.bottomMargin, 1073741824));
+                    ThemePreviewActivity.this.listView2.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - layoutParams2.bottomMargin, TLRPC.FLAG_30));
                     ((FrameLayout.LayoutParams) ThemePreviewActivity.this.backgroundImage.getLayoutParams()).topMargin = measuredHeight;
-                    ThemePreviewActivity.this.backgroundImage.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                    ThemePreviewActivity.this.backgroundImage.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
                     if (ThemePreviewActivity.this.dimmingSliderContainer != null) {
                         ((FrameLayout.LayoutParams) ThemePreviewActivity.this.dimmingSliderContainer.getLayoutParams()).topMargin = measuredHeight;
-                        ThemePreviewActivity.this.dimmingSliderContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), 1073741824));
+                        ThemePreviewActivity.this.dimmingSliderContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLRPC.FLAG_30));
                     }
                     if (ThemePreviewActivity.this.bottomOverlayChat != null) {
                         ThemePreviewActivity.this.bottomOverlayChat.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (ThemePreviewActivity.this.insideBottomSheet() ? AndroidUtilities.navigationBarHeight : 0));
@@ -6748,7 +6774,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             backgroundView.setVisibility(0);
             this.backgroundImages[1].setVisibility(8);
             if (this.screenType == 2) {
-                this.backgroundImage.getImageReceiver().setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda21
+                this.backgroundImage.getImageReceiver().setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda18
                     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                     public final void didSetImage(ImageReceiver imageReceiver, boolean z6, boolean z7, boolean z8) {
                         ThemePreviewActivity.this.lambda$createView$4(imageReceiver, z6, z7, z8);
@@ -6791,7 +6817,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         this.dropDownContainer.setAllowCloseAnimation(false);
                         this.dropDownContainer.setForceSmoothKeyboard(true);
                         this.actionBar2.addView(this.dropDownContainer, LayoutHelper.createFrame(-2, -1.0f, 51, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f));
-                        this.dropDownContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda22
+                        this.dropDownContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda19
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view2) {
                                 ThemePreviewActivity.this.lambda$createView$5(view2);
@@ -7030,7 +7056,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                             this.page2.addView(this.actionBar2, LayoutHelper.createFrame(i5, -2.0f));
                             WallpaperParallaxEffect wallpaperParallaxEffect = new WallpaperParallaxEffect(context);
                             this.parallaxEffect = wallpaperParallaxEffect;
-                            wallpaperParallaxEffect.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
+                            wallpaperParallaxEffect.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
                                 @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
                                 public final void onOffsetsChanged(int i25, int i26, float f13) {
                                     ThemePreviewActivity.this.lambda$createView$7(i25, i26, f13);
@@ -7113,7 +7139,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                             FrameLayout frameLayout6 = this.frameLayout;
                             this.fragmentView = frameLayout6;
                             ViewTreeObserver viewTreeObserver = frameLayout6.getViewTreeObserver();
-                            ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
+                            ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
                                 @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                                 public final void onGlobalLayout() {
                                     ThemePreviewActivity.this.lambda$createView$16();
@@ -7393,7 +7419,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     this.page2.addView(this.actionBar2, LayoutHelper.createFrame(i5, -2.0f));
                     WallpaperParallaxEffect wallpaperParallaxEffect2 = new WallpaperParallaxEffect(context);
                     this.parallaxEffect = wallpaperParallaxEffect2;
-                    wallpaperParallaxEffect2.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
+                    wallpaperParallaxEffect2.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
                         @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
                         public final void onOffsetsChanged(int i25, int i26, float f13) {
                             ThemePreviewActivity.this.lambda$createView$7(i25, i26, f13);
@@ -7476,7 +7502,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     FrameLayout frameLayout62 = this.frameLayout;
                     this.fragmentView = frameLayout62;
                     ViewTreeObserver viewTreeObserver2 = frameLayout62.getViewTreeObserver();
-                    ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener2 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
+                    ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener2 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
                         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                         public final void onGlobalLayout() {
                             ThemePreviewActivity.this.lambda$createView$16();
@@ -7783,7 +7809,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     this.listView2.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
                     if (this.screenType == 1) {
                         this.page2.addView(this.listView2, LayoutHelper.createFrame(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 273.0f));
-                        this.listView2.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda23
+                        this.listView2.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda20
                             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                             public /* synthetic */ boolean hasDoubleTap(View view2, int i26) {
                                 return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view2, i26);
@@ -7821,7 +7847,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     this.page2.addView(this.actionBar2, LayoutHelper.createFrame(i5, -2.0f));
                     WallpaperParallaxEffect wallpaperParallaxEffect22 = new WallpaperParallaxEffect(context);
                     this.parallaxEffect = wallpaperParallaxEffect22;
-                    wallpaperParallaxEffect22.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
+                    wallpaperParallaxEffect22.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
                         @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
                         public final void onOffsetsChanged(int i252, int i26, float f13) {
                             ThemePreviewActivity.this.lambda$createView$7(i252, i26, f13);
@@ -7890,7 +7916,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                     for (int i28 = 0; i28 < getChildCount(); i28++) {
                                         View childAt = getChildAt(i28);
                                         if (childAt.getMeasuredWidth() > AndroidUtilities.dp(420.0f)) {
-                                            childAt.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(420.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), 1073741824));
+                                            childAt.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(420.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), TLRPC.FLAG_30));
                                         }
                                     }
                                 }
@@ -7903,7 +7929,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                             this.applyButton1 = blurButton2;
                             ScaleStateListAnimator.apply(blurButton2, 0.033f, 1.2f);
                             updateApplyButton1(r8);
-                            this.applyButton1.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda9
+                            this.applyButton1.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda6
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view2) {
                                     ThemePreviewActivity.this.lambda$createView$8(view2);
@@ -7942,7 +7968,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                     blurButton4.setText(Emoji.replaceEmoji(blurButton4.getText(), this.applyButton2.text.getFontMetricsInt(), r8));
                                 } catch (Exception unused) {
                                 }
-                                this.applyButton2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda10
+                                this.applyButton2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda7
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view2) {
                                         ThemePreviewActivity.this.lambda$createView$9(view2);
@@ -8005,7 +8031,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 this.dimmingSlider = sliderView;
                                 sliderView.setValue(this.dimAmount);
                                 this.dimmingSlider.setMinMax(f, 0.9f);
-                                this.dimmingSlider.setOnValueChange(new Utilities.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda11
+                                this.dimmingSlider.setOnValueChange(new Utilities.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj5) {
                                         ThemePreviewActivity.this.lambda$createView$10((Float) obj5);
@@ -8150,7 +8176,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                         }
                                         this.backgroundButtonsContainer.addView(this.backgroundCheckBoxView[i11], layoutParams);
                                         final WallpaperCheckBoxView wallpaperCheckBoxView4 = this.backgroundCheckBoxView[i11];
-                                        wallpaperCheckBoxView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda12
+                                        wallpaperCheckBoxView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda9
                                             @Override // android.view.View.OnClickListener
                                             public final void onClick(View view2) {
                                                 ThemePreviewActivity.this.lambda$createView$11(i11, wallpaperCheckBoxView4, view2);
@@ -8170,7 +8196,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                     }
                                     this.backgroundButtonsContainer.addView(this.backgroundCheckBoxView[i11], layoutParams2);
                                     final WallpaperCheckBoxView wallpaperCheckBoxView42 = this.backgroundCheckBoxView[i11];
-                                    wallpaperCheckBoxView42.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda12
+                                    wallpaperCheckBoxView42.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda9
                                         @Override // android.view.View.OnClickListener
                                         public final void onClick(View view2) {
                                             ThemePreviewActivity.this.lambda$createView$11(i11, wallpaperCheckBoxView42, view2);
@@ -8275,7 +8301,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             }
                                             this.messagesButtonsContainer.addView(this.messagesCheckBoxView[i31], layoutParams3);
                                             final WallpaperCheckBoxView wallpaperCheckBoxView5 = this.messagesCheckBoxView[i31];
-                                            wallpaperCheckBoxView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda13
+                                            wallpaperCheckBoxView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda10
                                                 @Override // android.view.View.OnClickListener
                                                 public final void onClick(View view2) {
                                                     ThemePreviewActivity.this.lambda$createView$12(i31, wallpaperCheckBoxView5, view2);
@@ -8366,7 +8392,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             int i33 = Theme.key_listSelector;
                                             textView4.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i33), r8));
                                             this.patternsButtonsContainer[i12].addView(this.patternsCancelButton[i12], LayoutHelper.createFrame(-2, -1, 51));
-                                            this.patternsCancelButton[i12].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
+                                            this.patternsCancelButton[i12].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda11
                                                 @Override // android.view.View.OnClickListener
                                                 public final void onClick(View view2) {
                                                     ThemePreviewActivity.this.lambda$createView$13(i12, view2);
@@ -8381,7 +8407,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             this.patternsSaveButton[i12].setPadding(AndroidUtilities.dp(21.0f), r8, AndroidUtilities.dp(21.0f), r8);
                                             this.patternsSaveButton[i12].setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i33), r8));
                                             this.patternsButtonsContainer[i12].addView(this.patternsSaveButton[i12], LayoutHelper.createFrame(-2, -1, 53));
-                                            this.patternsSaveButton[i12].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda15
+                                            this.patternsSaveButton[i12].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda12
                                                 @Override // android.view.View.OnClickListener
                                                 public final void onClick(View view2) {
                                                     ThemePreviewActivity.this.lambda$createView$14(i12, view2);
@@ -8437,7 +8463,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                                 }
                                             });
                                             this.patternLayout[i12].addView(this.patternsListView, LayoutHelper.createFrame(-1, 100.0f, 51, 0.0f, 76.0f, 0.0f, 0.0f));
-                                            this.patternsListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda16
+                                            this.patternsListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda13
                                                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                                                 public final void onItemClick(View view2, int i34) {
                                                     ThemePreviewActivity.this.lambda$createView$15(view2, i34);
@@ -8648,7 +8674,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     FrameLayout frameLayout622 = this.frameLayout;
                     this.fragmentView = frameLayout622;
                     ViewTreeObserver viewTreeObserver22 = frameLayout622.getViewTreeObserver();
-                    ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener22 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
+                    ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener22 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
                         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                         public final void onGlobalLayout() {
                             ThemePreviewActivity.this.lambda$createView$16();
@@ -8745,7 +8771,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         this.cancelButton.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
                         this.cancelButton.setTypeface(AndroidUtilities.bold());
                         this.saveButtonsContainer.addView(this.cancelButton, LayoutHelper.createFrame(-2, -1, 51));
-                        this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda19
+                        this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda16
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view4) {
                                 ThemePreviewActivity.this.lambda$createView$17(view4);
@@ -8761,7 +8787,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         this.doneButton.setText(LocaleController.getString(R.string.ApplyTheme).toUpperCase());
                         this.doneButton.setTypeface(AndroidUtilities.bold());
                         this.saveButtonsContainer.addView(this.doneButton, LayoutHelper.createFrame(-2, -1, 53));
-                        this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda20
+                        this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view4) {
                                 ThemePreviewActivity.this.lambda$createView$18(view4);
@@ -8993,7 +9019,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             this.page2.addView(this.actionBar2, LayoutHelper.createFrame(i5, -2.0f));
             WallpaperParallaxEffect wallpaperParallaxEffect222 = new WallpaperParallaxEffect(context);
             this.parallaxEffect = wallpaperParallaxEffect222;
-            wallpaperParallaxEffect222.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
+            wallpaperParallaxEffect222.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
                 public final void onOffsetsChanged(int i252, int i262, float f13) {
                     ThemePreviewActivity.this.lambda$createView$7(i252, i262, f13);
@@ -9076,7 +9102,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             FrameLayout frameLayout6222 = this.frameLayout;
             this.fragmentView = frameLayout6222;
             ViewTreeObserver viewTreeObserver222 = frameLayout6222.getViewTreeObserver();
-            ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener222 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
+            ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener222 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
                 @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                 public final void onGlobalLayout() {
                     ThemePreviewActivity.this.lambda$createView$16();
@@ -9201,7 +9227,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     size2 -= measuredHeight;
                 }
                 ((FrameLayout.LayoutParams) ThemePreviewActivity.this.listView.getLayoutParams()).topMargin = measuredHeight;
-                ThemePreviewActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                ThemePreviewActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
                 measureChildWithMargins(ThemePreviewActivity.this.floatingButton, i212, 0, i222, 0);
             }
         };
@@ -9216,7 +9242,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.listView.setLayoutManager(new LinearLayoutManager(context, 1, false));
         this.listView.setVerticalScrollbarPosition(!LocaleController.isRTL ? 1 : 2);
         this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(this.screenType == 0 ? 12.0f : 0.0f));
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda18
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda15
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view22, int i212) {
                 ThemePreviewActivity.lambda$createView$3(view22, i212);
@@ -9296,12 +9322,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     ThemePreviewActivity themePreviewActivity = ThemePreviewActivity.this;
                     recyclerListView22.setPadding(0, dp33, 0, (AndroidUtilities.dp(((themePreviewActivity.self || themePreviewActivity.dialogId <= 0) ? 0 : 58) + 72) - 12) + (ThemePreviewActivity.this.insideBottomSheet() ? AndroidUtilities.navigationBarHeight : 0));
                 }
-                ThemePreviewActivity.this.listView2.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2 - layoutParams22.bottomMargin, 1073741824));
+                ThemePreviewActivity.this.listView2.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - layoutParams22.bottomMargin, TLRPC.FLAG_30));
                 ((FrameLayout.LayoutParams) ThemePreviewActivity.this.backgroundImage.getLayoutParams()).topMargin = measuredHeight;
-                ThemePreviewActivity.this.backgroundImage.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                ThemePreviewActivity.this.backgroundImage.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
                 if (ThemePreviewActivity.this.dimmingSliderContainer != null) {
                     ((FrameLayout.LayoutParams) ThemePreviewActivity.this.dimmingSliderContainer.getLayoutParams()).topMargin = measuredHeight;
-                    ThemePreviewActivity.this.dimmingSliderContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), 1073741824));
+                    ThemePreviewActivity.this.dimmingSliderContainer.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLRPC.FLAG_30));
                 }
                 if (ThemePreviewActivity.this.bottomOverlayChat != null) {
                     ThemePreviewActivity.this.bottomOverlayChat.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (ThemePreviewActivity.this.insideBottomSheet() ? AndroidUtilities.navigationBarHeight : 0));
@@ -9562,7 +9588,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.page2.addView(this.actionBar2, LayoutHelper.createFrame(i5, -2.0f));
         WallpaperParallaxEffect wallpaperParallaxEffect2222 = new WallpaperParallaxEffect(context);
         this.parallaxEffect = wallpaperParallaxEffect2222;
-        wallpaperParallaxEffect2222.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda8
+        wallpaperParallaxEffect2222.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
             public final void onOffsetsChanged(int i252, int i262, float f13) {
                 ThemePreviewActivity.this.lambda$createView$7(i252, i262, f13);
@@ -9645,7 +9671,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         FrameLayout frameLayout62222 = this.frameLayout;
         this.fragmentView = frameLayout62222;
         ViewTreeObserver viewTreeObserver2222 = frameLayout62222.getViewTreeObserver();
-        ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener2222 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda17
+        ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener2222 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda14
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
                 ThemePreviewActivity.this.lambda$createView$16();
@@ -9777,7 +9803,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (i != NotificationCenter.wallpaperSettedToUser || this.dialogId == 0) {
                 return;
             }
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
             return;
         }
         ArrayList arrayList = (ArrayList) objArr[0];
@@ -9827,7 +9853,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         }
         TL_account.getWallPapers getwallpapers = new TL_account.getWallPapers();
         getwallpapers.hash = j;
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new RequestDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda2
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new RequestDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ThemePreviewActivity.this.lambda$didReceivedNotification$31(tLObject, tL_error);
@@ -9851,7 +9877,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     }
 
     public ArrayList getThemeDescriptionsInternal() {
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda6
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 ThemePreviewActivity.this.lambda$getThemeDescriptionsInternal$33();
@@ -10057,7 +10083,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         }
         int i = this.screenType;
         if ((i == 2 || i == 1) && this.onSwitchDayNightDelegate == null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda1
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     Theme.setChangingWallpaper(false);
@@ -10243,7 +10269,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             }
         };
         this.changeDayNightView = view;
-        view.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda33
+        view.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda32
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view2, MotionEvent motionEvent) {
                 boolean lambda$toggleTheme$34;
@@ -10284,7 +10310,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.changeDayNightViewAnimator.setInterpolator(Easings.easeInOutQuad);
         this.changeDayNightViewAnimator.start();
         frameLayout.addView(this.changeDayNightView, new ViewGroup.LayoutParams(-1, -1));
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda34
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 ThemePreviewActivity.this.lambda$toggleTheme$36();

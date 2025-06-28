@@ -21,7 +21,6 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -198,7 +197,7 @@ public class Painting {
             Size size = this.size;
             GLES20.glViewport(0, 0, (int) size.width, (int) size.height);
             GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            GLES20.glClear(16384);
         }
         GLES20.glBindFramebuffer(36160, 0);
         PaintingDelegate paintingDelegate = this.delegate;
@@ -588,7 +587,7 @@ public class Painting {
             GLES20.glViewport(0, 0, (int) size.width, (int) size.height);
             if (z) {
                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                GLES20.glClear(16384);
             }
             if (this.shaders == null) {
                 return;
@@ -1069,7 +1068,7 @@ public class Painting {
                 texture = getTexture();
                 GLES20.glBindTexture(3553, texture);
                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                GLES20.glClear(16384);
                 GLES20.glBlendFunc(1, 0);
                 GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.vertexBuffer);
                 GLES20.glEnableVertexAttribArray(0);
@@ -1130,7 +1129,7 @@ public class Painting {
         texture = texture2.texture();
         GLES20.glBindTexture(3553, texture);
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        GLES20.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+        GLES20.glClear(16384);
         GLES20.glBlendFunc(1, 0);
         GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.vertexBuffer);
         GLES20.glEnableVertexAttribArray(0);

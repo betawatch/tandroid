@@ -1201,7 +1201,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         };
         this.bottomLayout = frameLayout4;
         frameLayout4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0);
-        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, Integer.MIN_VALUE}));
+        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, TLRPC.FLAG_31}));
         addView(this.bottomLayout, LayoutHelper.createFrame(-1, 104, 80));
         PaintToolsView paintToolsView = new PaintToolsView(context, bitmap2 != null);
         this.paintToolsView = paintToolsView;
@@ -3128,7 +3128,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                 }
             });
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
         this.popupWindow.setFocusable(true);
         if ((i & 48) != 0) {
             i2 -= this.popupLayout.getMeasuredWidth() / 2;
@@ -4062,25 +4062,25 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         }
         int i3 = (int) f2;
         int i4 = (int) floor;
-        this.renderView.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(i4, 1073741824));
-        this.renderInputView.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(i4, 1073741824));
+        this.renderView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
+        this.renderInputView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
         float f4 = f2 / this.paintingSize.width;
         this.baseScale = f4;
         this.entitiesView.setScaleX(f4);
         this.entitiesView.setScaleY(this.baseScale);
-        this.entitiesView.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, 1073741824), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, 1073741824));
+        this.entitiesView.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLRPC.FLAG_30));
         ThanosEffect thanosEffect = this.thanosEffect;
         if (thanosEffect != null) {
-            thanosEffect.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, 1073741824), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, 1073741824));
+            thanosEffect.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLRPC.FLAG_30));
             this.thanosEffect.setScaleX(this.baseScale);
             this.thanosEffect.setScaleY(this.baseScale);
         }
         updateEntitiesSelections();
-        this.selectionContainerView.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(i4, 1073741824));
+        this.selectionContainerView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
         measureChild(this.bottomLayout, i, i2);
         measureChild(this.weightChooserView, i, i2);
         measureChild(this.pipetteContainerLayout, i, i2);
-        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(getPKeyboardHeight(), this.emojiPadding), 1073741824));
+        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(getPKeyboardHeight(), this.emojiPadding), TLRPC.FLAG_30));
         FrameLayout frameLayout = this.topLayout;
         frameLayout.setPadding(frameLayout.getPaddingLeft(), AndroidUtilities.dp(12.0f) + AndroidUtilities.statusBarHeight, this.topLayout.getPaddingRight(), this.topLayout.getPaddingBottom());
         measureChild(this.topLayout, i, i2);

@@ -35,6 +35,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
@@ -381,7 +382,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
                     if (size <= 0) {
                         size = AndroidUtilities.displaySize.x - AndroidUtilities.dp(20.0f);
                     }
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - PowerSaverSlider.this.leftTextView.getPaint().measureText(PowerSaverSlider.this.leftTextView.getText().toString())) - PowerSaverSlider.this.rightTextView.getPaint().measureText(PowerSaverSlider.this.rightTextView.getText().toString())), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - PowerSaverSlider.this.leftTextView.getPaint().measureText(PowerSaverSlider.this.leftTextView.getText().toString())) - PowerSaverSlider.this.rightTextView.getPaint().measureText(PowerSaverSlider.this.rightTextView.getText().toString())), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
                 }
             };
             this.middleTextView = animatedTextView2;
@@ -556,7 +557,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(112.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(112.0f), TLRPC.FLAG_30));
         }
 
         @Override // android.view.View
@@ -642,7 +643,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i2, int i3) {
                     if (View.MeasureSpec.getMode(i2) == Integer.MIN_VALUE) {
-                        i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(52.0f), Integer.MIN_VALUE);
+                        i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(52.0f), TLRPC.FLAG_31);
                     }
                     super.onMeasure(i2, i3);
                 }
@@ -705,7 +706,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
         
-            if ((r4 & org.telegram.messenger.LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) > 0) goto L21;
+            if ((r4 & 16384) > 0) goto L21;
          */
         /* JADX WARN: Code restructure failed: missing block: B:25:0x0031, code lost:
         
@@ -722,10 +723,10 @@ public class LiteModeSettingsActivity extends BaseFragment {
             boolean isPremium = LiteModeSettingsActivity.this.getUserConfig().isPremium();
             int bitCount = Integer.bitCount(i);
             if (isPremium) {
-                if ((i & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) > 0) {
+                if ((i & 4096) > 0) {
                     bitCount--;
                 }
-                if ((i & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) > 0) {
+                if ((i & 8192) > 0) {
                     bitCount--;
                 }
             } else {
@@ -789,7 +790,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
         }
 
         public void set(Item item, boolean z) {
@@ -1061,7 +1062,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    LiteModeSettingsActivity.this.lambda$onBackPressed$348();
+                    LiteModeSettingsActivity.this.lambda$onBackPressed$354();
                 }
             }
         });

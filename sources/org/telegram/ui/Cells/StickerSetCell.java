@@ -351,7 +351,7 @@ public class StickerSetCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30));
     }
 
     protected void onPremiumButtonClick() {
@@ -797,7 +797,7 @@ public class StickerSetCell extends FrameLayout {
     }
 
     public void updateRightMargin() {
-        this.sideButtons.measure(View.MeasureSpec.makeMeasureSpec(999999, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), 1073741824));
+        this.sideButtons.measure(View.MeasureSpec.makeMeasureSpec(999999, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
         int dp = AndroidUtilities.dp(26.0f) + this.sideButtons.getMeasuredWidth();
         if (LocaleController.isRTL) {
             ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).leftMargin = dp;

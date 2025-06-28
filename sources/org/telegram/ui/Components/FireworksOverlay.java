@@ -15,6 +15,7 @@ import java.util.Calendar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -194,40 +195,59 @@ public class FireworksOverlay extends View {
         return i;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:16:0x007d A[Catch: Exception -> 0x0023, TryCatch #0 {Exception -> 0x0023, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x001d, B:8:0x0040, B:12:0x005f, B:13:0x0067, B:14:0x0076, B:16:0x007d, B:19:0x00b3, B:21:0x00cc, B:22:0x00d5, B:25:0x00de, B:27:0x00cf, B:28:0x006b, B:29:0x0026, B:31:0x002a, B:33:0x0032, B:34:0x003a), top: B:2:0x0006 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00b3 A[Catch: Exception -> 0x0023, TryCatch #0 {Exception -> 0x0023, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x001d, B:8:0x0040, B:12:0x005f, B:13:0x0067, B:14:0x0076, B:16:0x007d, B:19:0x00b3, B:21:0x00cc, B:22:0x00d5, B:25:0x00de, B:27:0x00cf, B:28:0x006b, B:29:0x0026, B:31:0x002a, B:33:0x0032, B:34:0x003a), top: B:2:0x0006 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private Particle createParticle(boolean z) {
         SecureRandom secureRandom;
         int length;
+        byte b;
+        float nextFloat;
         Particle particle = new Particle();
-        byte nextInt = (byte) Utilities.random.nextInt(2);
-        particle.type = nextInt;
-        if (this.isFebruary14 && nextInt == 0) {
-            particle.type = (byte) 2;
-            secureRandom = Utilities.random;
-            length = heartColors.length;
-        } else if (this.withStars && Utilities.random.nextBoolean()) {
-            particle.type = (byte) 2;
-            secureRandom = Utilities.random;
-            length = starsColors.length;
-        } else {
-            secureRandom = Utilities.random;
-            length = colors.length;
+        try {
+            byte nextInt = (byte) Utilities.random.nextInt(2);
+            particle.type = nextInt;
+            if (this.isFebruary14 && nextInt == 0) {
+                particle.type = (byte) 2;
+                secureRandom = Utilities.random;
+                length = heartColors.length;
+            } else if (this.withStars && Utilities.random.nextBoolean()) {
+                particle.type = (byte) 2;
+                secureRandom = Utilities.random;
+                length = starsColors.length;
+            } else {
+                secureRandom = Utilities.random;
+                length = colors.length;
+            }
+            particle.colorType = (byte) secureRandom.nextInt(length);
+            particle.side = (byte) Utilities.random.nextInt(2);
+            particle.finishedStart = (byte) (Utilities.random.nextInt(2) + 1);
+            b = particle.type;
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        particle.colorType = (byte) secureRandom.nextInt(length);
-        particle.side = (byte) Utilities.random.nextInt(2);
-        particle.finishedStart = (byte) (Utilities.random.nextInt(2) + 1);
-        byte b = particle.type;
-        particle.typeSize = (byte) (((b == 0 || b == 2) ? Utilities.random.nextFloat() * 2.0f : Utilities.random.nextFloat() * 4.0f) + 4.0f);
+        if (b != 0 && b != 2) {
+            nextFloat = Utilities.random.nextFloat() * 4.0f;
+            particle.typeSize = (byte) (nextFloat + 4.0f);
+            if (z) {
+                int dp = AndroidUtilities.dp(Utilities.random.nextInt(10) + 4);
+                int heightForAnimation = getHeightForAnimation() / 4;
+                particle.x = particle.side == 0 ? -dp : getWidthForAnimation() + dp;
+                particle.moveX = (particle.side == 0 ? 1 : -1) * (AndroidUtilities.dp(1.2f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
+                particle.moveY = -(AndroidUtilities.dp(4.0f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
+                particle.y = (heightForAnimation / 2) + Utilities.random.nextInt(Math.max(1, heightForAnimation * 2));
+            } else {
+                particle.y = (-Utilities.random.nextFloat()) * getHeightForAnimation() * 1.2f;
+                particle.x = AndroidUtilities.dp(5.0f) + Utilities.random.nextInt(Math.max(1, getWidthForAnimation() - AndroidUtilities.dp(10.0f)));
+                particle.xFinished = particle.finishedStart;
+            }
+            return particle;
+        }
+        nextFloat = Utilities.random.nextFloat() * 2.0f;
+        particle.typeSize = (byte) (nextFloat + 4.0f);
         if (z) {
-            particle.y = (-Utilities.random.nextFloat()) * getHeightForAnimation() * 1.2f;
-            particle.x = AndroidUtilities.dp(5.0f) + Utilities.random.nextInt(getWidthForAnimation() - AndroidUtilities.dp(10.0f));
-            particle.xFinished = particle.finishedStart;
-        } else {
-            int dp = AndroidUtilities.dp(Utilities.random.nextInt(10) + 4);
-            int heightForAnimation = getHeightForAnimation() / 4;
-            particle.x = particle.side == 0 ? -dp : getWidthForAnimation() + dp;
-            particle.moveX = (particle.side != 0 ? -1 : 1) * (AndroidUtilities.dp(1.2f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
-            particle.moveY = -(AndroidUtilities.dp(4.0f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
-            particle.y = (heightForAnimation / 2) + Utilities.random.nextInt(heightForAnimation * 2);
         }
         return particle;
     }

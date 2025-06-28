@@ -47,43 +47,43 @@ final class R2 {
 
     static {
         Q2 q2 = Q2.SPLITERATOR;
-        P2 f2 = f(q2);
+        P2 m2 = m(q2);
         Q2 q22 = Q2.STREAM;
-        f2.a(q22);
+        m2.a(q22);
         Q2 q23 = Q2.OP;
-        f2.a.put(q23, 3);
-        R2 r2 = new R2("DISTINCT", 0, 0, f2);
+        m2.a.put(q23, 3);
+        R2 r2 = new R2("DISTINCT", 0, 0, m2);
         DISTINCT = r2;
-        P2 f3 = f(q2);
-        f3.a(q22);
-        f3.a.put(q23, 3);
-        R2 r22 = new R2("SORTED", 1, 1, f3);
+        P2 m3 = m(q2);
+        m3.a(q22);
+        m3.a.put(q23, 3);
+        R2 r22 = new R2("SORTED", 1, 1, m3);
         SORTED = r22;
-        P2 f4 = f(q2);
-        f4.a(q22);
-        Map map = f4.a;
+        P2 m4 = m(q2);
+        m4.a(q22);
+        Map map = m4.a;
         map.put(q23, 3);
         Q2 q24 = Q2.TERMINAL_OP;
         map.put(q24, 2);
         Q2 q25 = Q2.UPSTREAM_TERMINAL_OP;
         map.put(q25, 2);
-        R2 r23 = new R2("ORDERED", 2, 2, f4);
+        R2 r23 = new R2("ORDERED", 2, 2, m4);
         ORDERED = r23;
-        P2 f5 = f(q2);
-        f5.a(q22);
-        f5.a.put(q23, 2);
-        R2 r24 = new R2("SIZED", 3, 3, f5);
+        P2 m5 = m(q2);
+        m5.a(q22);
+        m5.a.put(q23, 2);
+        R2 r24 = new R2("SIZED", 3, 3, m5);
         SIZED = r24;
-        P2 f6 = f(q23);
-        f6.a(q24);
-        R2 r25 = new R2("SHORT_CIRCUIT", 4, 12, f6);
+        P2 m6 = m(q23);
+        m6.a(q24);
+        R2 r25 = new R2("SHORT_CIRCUIT", 4, 12, m6);
         SHORT_CIRCUIT = r25;
         v = new R2[]{r2, r22, r23, r24, r25};
-        f = b(q2);
-        g = b(q22);
-        h = b(q23);
-        b(q24);
-        b(q25);
+        f = h(q2);
+        g = h(q22);
+        h = h(q23);
+        h(q24);
+        h(q25);
         int i2 = 0;
         for (R2 r26 : values()) {
             i2 |= r26.e;
@@ -129,11 +129,11 @@ final class R2 {
         }
     }
 
-    static int a(int i2, int i3) {
+    static int f(int i2, int i3) {
         return i2 | (i3 & (i2 == 0 ? i : ((((j & i2) << 1) | i2) | ((k & i2) >> 1)) ^ (-1)));
     }
 
-    private static int b(Q2 q2) {
+    private static int h(Q2 q2) {
         int i2 = 0;
         for (R2 r2 : values()) {
             i2 |= ((Integer) r2.a.get(q2)).intValue() << r2.b;
@@ -141,20 +141,20 @@ final class R2 {
         return i2;
     }
 
-    static int c(Spliterator spliterator) {
+    static int i(Spliterator spliterator) {
         int characteristics = spliterator.characteristics();
         int i2 = characteristics & 4;
         int i3 = f;
         return (i2 == 0 || spliterator.getComparator() == null) ? characteristics & i3 : characteristics & i3 & (-5);
     }
 
-    private static P2 f(Q2 q2) {
+    private static P2 m(Q2 q2) {
         P2 p2 = new P2(new EnumMap(Q2.class));
         p2.a(q2);
         return p2;
     }
 
-    static int g(int i2) {
+    static int n(int i2) {
         return i2 & ((i2 ^ (-1)) >> 1) & j;
     }
 
@@ -166,11 +166,11 @@ final class R2 {
         return (R2[]) v.clone();
     }
 
-    final boolean d(int i2) {
+    final boolean j(int i2) {
         return (i2 & this.e) == this.c;
     }
 
-    final boolean e(int i2) {
+    final boolean k(int i2) {
         int i3 = this.e;
         return (i2 & i3) == i3;
     }

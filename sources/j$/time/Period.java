@@ -28,7 +28,7 @@ public final class Period implements Serializable {
     }
 
     public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.t(localDate2);
+        return localDate.z(localDate2);
     }
 
     public final boolean equals(Object obj) {

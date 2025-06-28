@@ -2,7 +2,6 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import j$.util.function.IntFunction;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes2.dex */
 final class m2 extends A {
@@ -21,10 +20,10 @@ final class m2 extends A {
         long j;
         long j2;
         long l0 = bVar.l0(spliterator);
-        if (l0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
             return u0.F(bVar, u0.y(bVar.o0(), spliterator, this.m, this.n), true);
         }
-        if (R2.ORDERED.d(bVar.p0())) {
+        if (R2.ORDERED.j(bVar.p0())) {
             return (G0) new o2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
         }
         j$.util.D d = (j$.util.D) bVar.C0(spliterator);
@@ -46,12 +45,12 @@ final class m2 extends A {
         long j2;
         long l0 = bVar.l0(spliterator);
         long j3 = this.n;
-        if (l0 > 0 && spliterator.hasCharacteristics(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM)) {
+        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
             j$.util.D d = (j$.util.D) bVar.C0(spliterator);
             long j4 = this.m;
             return new h3(d, j4, u0.x(j4, j3));
         }
-        if (R2.ORDERED.d(bVar.p0())) {
+        if (R2.ORDERED.j(bVar.p0())) {
             return ((G0) new o2(this, bVar, spliterator, new d0(9), this.m, this.n).invoke()).spliterator();
         }
         j$.util.D d2 = (j$.util.D) bVar.C0(spliterator);

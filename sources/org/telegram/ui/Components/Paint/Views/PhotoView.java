@@ -493,7 +493,7 @@ public class PhotoView extends EntityView {
             f *= cropState.cropPw;
             f2 *= cropState.cropPh;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f, 1073741824), View.MeasureSpec.makeMeasureSpec((int) f2, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f2, TLRPC.FLAG_30));
     }
 
     public void onSwitchSegmentedAnimationStarted(boolean z) {

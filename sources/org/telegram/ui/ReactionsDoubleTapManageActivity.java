@@ -85,7 +85,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
         }
 
         public void update(boolean z) {
@@ -161,7 +161,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ReactionsDoubleTapManageActivity.this.lambda$onBackPressed$348();
+                    ReactionsDoubleTapManageActivity.this.lambda$onBackPressed$354();
                 }
             }
         });
@@ -232,7 +232,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                         View view3 = new View(context) { // from class: org.telegram.ui.ReactionsDoubleTapManageActivity.2.1
                             @Override // android.view.View
                             protected void onMeasure(int i3, int i4) {
-                                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), 1073741824));
+                                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLRPC.FLAG_30));
                             }
                         };
                         context2 = context;

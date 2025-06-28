@@ -2,13 +2,13 @@ package j$.time.temporal;
 
 /* loaded from: classes2.dex */
 public interface l {
-    q a();
+    q f();
 
-    long b(k kVar);
+    long h(k kVar);
 
-    boolean c(k kVar);
+    boolean i(k kVar);
 
-    q d(k kVar);
+    q j(k kVar);
 
-    boolean e();
+    boolean k();
 }

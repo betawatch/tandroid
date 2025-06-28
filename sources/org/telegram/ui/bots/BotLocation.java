@@ -342,7 +342,7 @@ public class BotLocation {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setGranted$2(final Runnable runnable, AlertDialog alertDialog, int i) {
         if (!appHasPermission()) {
-            PermissionRequest.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda11
+            PermissionRequest.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     BotLocation.this.lambda$setGranted$1(runnable, (int[]) obj);
@@ -507,27 +507,27 @@ public class BotLocation {
         builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotLocationPermissionRequest, UserObject.getUserName(user), UserObject.getUserName(user))));
         builder.setTopImage(new BotUserLocationDrawable(this.context, UserConfig.getInstance(this.currentAccount).getCurrentUser(), user), Theme.getColor(Theme.key_dialogTopBackground));
         if (appHasPermission() || !needToOpenSettings()) {
-            builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda8
+            builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda9
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     BotLocation.this.lambda$request$6(zArr, callback2, alertDialog, i);
                 }
             });
         } else {
-            builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda7
+            builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda8
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     BotLocation.lambda$request$4(activity, zArr, callback2, alertDialog, i);
                 }
             });
         }
-        builder.setNegativeButton(LocaleController.getString(R.string.BotLocationPermissionDecline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda9
+        builder.setNegativeButton(LocaleController.getString(R.string.BotLocationPermissionDecline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 BotLocation.this.lambda$request$7(zArr, callback2, alertDialog, i);
             }
         });
-        builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda10
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda11
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 BotLocation.this.lambda$request$8(zArr, callback2, dialogInterface);
@@ -570,7 +570,7 @@ public class BotLocation {
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setTopAnimation(R.raw.permission_request_location, 72, false, Theme.getColor(Theme.key_dialogTopBackground));
                     builder.setMessage(LocaleController.getString(R.string.GpsDisabledAlertText));
-                    builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda6
+                    builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda7
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             BotLocation.lambda$requestObject$9(context, alertDialog, i);

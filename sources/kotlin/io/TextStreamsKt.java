@@ -4,7 +4,6 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public abstract class TextStreamsKt {
@@ -24,7 +23,7 @@ public abstract class TextStreamsKt {
 
     public static /* synthetic */ long copyTo$default(Reader reader, Writer writer, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+            i = 8192;
         }
         return copyTo(reader, writer, i);
     }

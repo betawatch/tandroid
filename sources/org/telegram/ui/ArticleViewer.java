@@ -1241,10 +1241,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             setMeasuredDimension(size, AndroidUtilities.dp(48.0f));
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), 1073741824));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
             this.buttonWidth = this.textView.getMeasuredWidth();
-            this.progressView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), 1073741824));
-            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), 1073741824));
+            this.progressView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
+            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
             TLRPC.TL_pageBlockChannel tL_pageBlockChannel = this.currentBlock;
             if (tL_pageBlockChannel != null) {
                 this.textLayout = ArticleViewer.this.createLayoutForText(this, tL_pageBlockChannel.channel.title, null, (size - AndroidUtilities.dp(52.0f)) - this.buttonWidth, this.textY, this.currentBlock, StaticLayoutEx.ALIGN_LEFT(), 1, this.parentAdapter);
@@ -2044,7 +2044,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     dp = size - AndroidUtilities.dp(36.0f);
                     i3 = size;
                 }
-                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredHeight = this.innerListView.getMeasuredHeight();
                 int dp3 = measuredHeight + AndroidUtilities.dp(8.0f);
                 this.textY = dp3;
@@ -2644,11 +2644,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 int i9 = i6;
                 TouchyWebView touchyWebView = this.webView;
                 if (touchyWebView != null) {
-                    touchyWebView.measure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(i9, 1073741824));
+                    touchyWebView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i9, TLRPC.FLAG_30));
                 }
                 WebPlayerView webPlayerView = this.videoView;
                 if (webPlayerView != null && webPlayerView.getParent() == this) {
-                    this.videoView.measure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i9, 1073741824));
+                    this.videoView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i9, TLRPC.FLAG_30));
                 }
                 int dp3 = AndroidUtilities.dp(8.0f) + i9;
                 this.textY = dp3;
@@ -3410,7 +3410,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             i7 += dp;
                             i3 = 0;
                         }
-                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         if ((this.blockLayout.itemView instanceof BlockParagraphCell) && this.currentBlock.numLayout != null && this.currentBlock.numLayout.getLineCount() > 0 && (drawingText = (blockParagraphCell = (BlockParagraphCell) this.blockLayout.itemView).textLayout) != null && drawingText.getLineCount() > 0) {
                             this.numOffsetY = (this.currentBlock.numLayout.getLineAscent(0) + AndroidUtilities.dp(2.5f)) - blockParagraphCell.textLayout.getLineAscent(0);
                         }
@@ -3940,7 +3940,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             i7 += dp;
                             i3 = 0;
                         }
-                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         if ((this.blockLayout.itemView instanceof BlockParagraphCell) && this.currentBlock.numLayout != null && this.currentBlock.numLayout.getLineCount() > 0 && (drawingText = (blockParagraphCell = (BlockParagraphCell) this.blockLayout.itemView).textLayout) != null && drawingText.getLineCount() > 0) {
                             this.numOffsetY = this.currentBlock.numLayout.getLineAscent(0) - blockParagraphCell.textLayout.getLineAscent(0);
                         }
@@ -4779,7 +4779,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
-            this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+            this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
             setMeasuredDimension(size, this.scrollView.getMeasuredHeight());
         }
 
@@ -5330,9 +5330,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             int size = View.MeasureSpec.getSize(i);
             if (this.currentBlock != null) {
                 int dp = AndroidUtilities.dp(310.0f);
-                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(dp, 1073741824));
+                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
                 this.currentBlock.items.size();
-                this.dotsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), 1073741824));
+                this.dotsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), TLRPC.FLAG_30));
                 int dp2 = size - AndroidUtilities.dp(36.0f);
                 int dp3 = dp + AndroidUtilities.dp(16.0f);
                 this.textY = dp3;
@@ -5761,7 +5761,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     this.listY = AndroidUtilities.dp(8.0f);
                     i4 = 0;
                 }
-                this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size - this.listX, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size - this.listX, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                 i3 = i4 + this.scrollView.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
                 TLRPC.TL_pageBlockTable tL_pageBlockTable3 = this.currentBlock;
                 if (tL_pageBlockTable3.level > 0 && !tL_pageBlockTable3.bottom) {
@@ -6385,7 +6385,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     layoutParams.topMargin = (int) this.imageView.getImageY();
                     layoutParams.width = (int) this.imageView.getImageWidth();
                     layoutParams.height = (int) this.imageView.getImageHeight();
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(i11, 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLRPC.FLAG_30));
                 }
                 float f4 = this.groupPosition.ph;
                 Point point2 = AndroidUtilities.displaySize;
@@ -6402,7 +6402,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             layoutParams2.topMargin = (int) this.imageView.getImageY();
             layoutParams2.width = (int) this.imageView.getImageWidth();
             layoutParams2.height = (int) this.imageView.getImageHeight();
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(i11, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLRPC.FLAG_30));
         }
 
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -7072,7 +7072,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
         }
 
         public void select(boolean z, boolean z2) {
@@ -7337,7 +7337,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     this.ignoreLayout = false;
                     int size = View.MeasureSpec.getSize(i3);
                     Sheet sheet2 = ArticleViewer.this.sheet;
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp((sheet2 == null || sheet2.halfSize()) ? 56.0f : 0.0f)) - AndroidUtilities.statusBarHeight, 1073741824));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp((sheet2 == null || sheet2.halfSize()) ? 56.0f : 0.0f)) - AndroidUtilities.statusBarHeight, TLRPC.FLAG_30));
                 }
 
                 @Override // android.view.View, android.view.ViewParent
@@ -8305,7 +8305,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLRPC.FLAG_30));
         }
 
         public void setViews(int i) {
@@ -8612,7 +8612,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.context = context;
             WindowView windowView = new WindowView(context);
             this.windowView = windowView;
-            new KeyboardNotifier(windowView, true, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda3
+            new KeyboardNotifier(windowView, true, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ArticleViewer.Sheet.this.lambda$new$0((Integer) obj);
@@ -8675,7 +8675,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         public ValueAnimator animateBackProgressTo(float f) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.backProgress, f);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda2
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ArticleViewer.Sheet.this.lambda$animateBackProgressTo$4(valueAnimator);
@@ -8750,7 +8750,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
             this.openAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda0
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
                     ArticleViewer.Sheet.this.lambda$animateOpen$2(valueAnimator3);
@@ -8875,7 +8875,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (z) {
                 LaunchActivity.instance.getBottomSheetTabsOverlay().dismissSheet(this);
             } else {
-                animateDismiss(true, true, new Runnable() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda1
+                animateDismiss(true, true, new Runnable() { // from class: org.telegram.ui.ArticleViewer$Sheet$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         ArticleViewer.Sheet.this.lambda$dismiss$1();
@@ -9861,8 +9861,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (pageLayout == null || (recyclerListView = pageLayout.listView) == null) {
                 return;
             }
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, Integer.MIN_VALUE);
-            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_31);
+            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31);
             int i5 = 0;
             int i6 = 0;
             while (i6 < i4) {
@@ -10397,7 +10397,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 view = new View(this.context) { // from class: org.telegram.ui.ArticleViewer.WebpageAdapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), 1073741824));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLRPC.FLAG_30));
                     }
                 };
             }
@@ -11032,8 +11032,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (articleViewer.sheet == null) {
                 articleViewer.keyboardVisible = size2 < AndroidUtilities.displaySize.y - AndroidUtilities.dp(100.0f);
             }
-            ArticleViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
-            ArticleViewer.this.fullscreenVideoContainer.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+            ArticleViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+            ArticleViewer.this.fullscreenVideoContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
         }
 
         @Override // android.view.View
@@ -11090,7 +11090,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchResults = new ArrayList();
         this.lastSearchIndex = -1;
         this.videoStates = new LongSparseArray();
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda2
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$new$65();
@@ -11098,7 +11098,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         };
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.page0Background = new AnimatedColor(runnable, 320L, cubicBezierInterpolator);
-        this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda3
+        this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$new$66();
@@ -11130,7 +11130,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchResults = new ArrayList();
         this.lastSearchIndex = -1;
         this.videoStates = new LongSparseArray();
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda2
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$new$65();
@@ -11138,7 +11138,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         };
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.page0Background = new AnimatedColor(runnable, 320L, cubicBezierInterpolator);
-        this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda3
+        this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$new$66();
@@ -11391,7 +11391,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         ValueAnimator duration = ValueAnimator.ofObject(new IntEvaluator(), Integer.valueOf(this.currentHeaderHeight), Integer.valueOf(AndroidUtilities.dp(56.0f))).setDuration(180L);
         duration.setInterpolator(new DecelerateInterpolator());
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda11
+        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda39
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 ArticleViewer.this.lambda$checkScrollAnimated$51(valueAnimator);
@@ -13164,7 +13164,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$open$53(final int i, final TLRPC.WebPage webPage, final MessageObject messageObject, final boolean z, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$open$52(tLObject, i, webPage, messageObject, z, str);
@@ -13486,7 +13486,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         showProgressView(true, true);
                         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                         tL_contacts_resolveUsername.username = "previews";
-                        this.previewsReqId = ConnectionsManager.getInstance(i2).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda30
+                        this.previewsReqId = ConnectionsManager.getInstance(i2).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda27
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 ArticleViewer.this.lambda$setParentActivity$14(i2, j, tLObject, tL_error);
@@ -13667,29 +13667,29 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (TextUtils.isEmpty(title)) {
                 title = LocaleController.getString(R.string.WebEmpty);
             }
-            addressBarList.setCurrent(favicon, title, TextUtils.isEmpty(magic2tonsite) ? "about:blank" : magic2tonsite, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda31
+            addressBarList.setCurrent(favicon, title, TextUtils.isEmpty(magic2tonsite) ? "about:blank" : magic2tonsite, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda28
                 @Override // java.lang.Runnable
                 public final void run() {
                     ArticleViewer.this.lambda$setParentActivity$16(magic2tonsite);
                 }
-            }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda32
+            }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda29
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ArticleViewer.this.lambda$setParentActivity$17(pageLayout, activity, (String) obj);
                 }
-            }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda33
+            }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda30
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ArticleViewer.this.lambda$setParentActivity$18((String) obj);
                 }
-            }, new ArticleViewer$$ExternalSyntheticLambda34(this), new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda35
+            }, new ArticleViewer$$ExternalSyntheticLambda31(this), new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda32
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     ArticleViewer.this.lambda$setParentActivity$19(magic2tonsite, pageLayout, view2);
                 }
             });
         }
-        this.actionBar.showAddress("", new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda36
+        this.actionBar.showAddress("", new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda33
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArticleViewer.lambda$setParentActivity$20(ArticleViewer.PageLayout.this, activity, (String) obj);
@@ -13779,7 +13779,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 final int i2 = 0;
                 while (i2 < currentIndex) {
                     WebHistoryItem itemAtIndex = copyBackForwardList.getItemAtIndex(i2);
-                    makeOptions.add(itemAtIndex.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda37
+                    makeOptions.add(itemAtIndex.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda34
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.lambda$setParentActivity$24(currentIndex, i2, webView);
@@ -13840,7 +13840,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             Object obj = this.pagesStack.get(size);
             if (obj instanceof CachedWeb) {
                 CachedWeb cachedWeb = (CachedWeb) obj;
-                makeOptions.add(cachedWeb.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda38
+                makeOptions.add(cachedWeb.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda35
                     @Override // java.lang.Runnable
                     public final void run() {
                         ArticleViewer.this.lambda$setParentActivity$25(size);
@@ -13896,7 +13896,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             } else {
                 if (obj instanceof TLRPC.WebPage) {
                     TLRPC.WebPage webPage = (TLRPC.WebPage) obj;
-                    makeOptions.add(webPage.title, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda39
+                    makeOptions.add(webPage.title, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda36
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.this.lambda$setParentActivity$26(size);
@@ -13924,7 +13924,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (makeOptions.getItemsCount() <= 0) {
             return false;
         }
-        checkScrollAnimated(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda40
+        checkScrollAnimated(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$setParentActivity$28(makeOptions, rotation);
@@ -14074,7 +14074,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 webPage.url = magic2tonsite;
                 webPage.display_url = magic2tonsite;
                 NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.bookmarkAdded, new MessageObject(this.currentAccount, tL_message, false, false));
-                BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.saved_messages, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda41
+                BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.saved_messages, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda40
                     @Override // java.lang.Runnable
                     public final void run() {
                         ArticleViewer.this.lambda$setParentActivity$30(clientUserId);
@@ -14089,12 +14089,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (safeLastFragment == null) {
                     return;
                 } else {
-                    historyFragment = new BookmarksFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda44
+                    historyFragment = new BookmarksFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda43
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.this.lambda$setParentActivity$31();
                         }
-                    } : null, new ArticleViewer$$ExternalSyntheticLambda34(this));
+                    } : null, new ArticleViewer$$ExternalSyntheticLambda31(this));
                 }
             } else if (num.intValue() == 8) {
                 bottomSheetParams = new BaseFragment.BottomSheetParams();
@@ -14103,12 +14103,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (safeLastFragment == null) {
                     return;
                 } else {
-                    historyFragment = new HistoryFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda45
+                    historyFragment = new HistoryFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda44
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.this.lambda$setParentActivity$32();
                         }
-                    } : null, new ArticleViewer$$ExternalSyntheticLambda46(this));
+                    } : null, new ArticleViewer$$ExternalSyntheticLambda45(this));
                 }
             } else {
                 if (num.intValue() == 9) {
@@ -14140,13 +14140,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     }
                     final String hostAuthority = AndroidUtilities.getHostAuthority(str2, true);
                     final String hostAuthority2 = AndroidUtilities.getHostAuthority(str, true);
-                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda47
+                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda46
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.this.lambda$setParentActivity$33(str);
                         }
                     };
-                    final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda48
+                    final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda47
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             ArticleViewer.this.lambda$setParentActivity$34(hostAuthority2, hostAuthority, (Boolean) obj);
@@ -14173,7 +14173,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     checkBoxCell.getTextView().setSingleLine(false);
                     checkBoxCell.getTextView().setMaxLines(3);
                     checkBoxCell.getTextView().setTextSize(1, 16.0f);
-                    checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda49
+                    checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda48
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             ArticleViewer.lambda$setParentActivity$35(CheckBoxCell.this, view);
@@ -14184,13 +14184,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.BrowserExternalText)));
                     checkBoxCell.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BrowserExternalCheck, hostAuthority2)), "", false, false);
                     builder.setView(linearLayout);
-                    builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda50
+                    builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda49
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             ArticleViewer.lambda$setParentActivity$36(CheckBoxCell.this, callback, runnable, alertDialog, i);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda42
+                    builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda41
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             ArticleViewer.lambda$setParentActivity$37(CheckBoxCell.this, callback, alertDialog, i);
@@ -14239,7 +14239,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     }
                     this.fontCells[i].select(i == this.selectedFont, false);
                     this.fontCells[i].setTag(Integer.valueOf(i));
-                    this.fontCells[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda43
+                    this.fontCells[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda42
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             ArticleViewer.this.lambda$setParentActivity$38(view);
@@ -14983,7 +14983,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i, int i2) {
                         super.onMeasure(i, i2);
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredHeight() + AndroidUtilities.dp(8.0f), 1073741824));
+                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredHeight() + AndroidUtilities.dp(8.0f), TLRPC.FLAG_30));
                     }
                 };
                 builder.setDelegate(new BottomSheet.BottomSheetDelegate() { // from class: org.telegram.ui.ArticleViewer.10
@@ -15023,7 +15023,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         int typeForBlock2 = this.pages[0].adapter.getTypeForBlock(pageBlock);
                         RecyclerView.ViewHolder onCreateViewHolder2 = this.pages[0].adapter.onCreateViewHolder(null, typeForBlock2);
                         this.pages[0].adapter.bindBlockToHolder(typeForBlock2, onCreateViewHolder2, pageBlock, 0, 0, false);
-                        onCreateViewHolder2.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        onCreateViewHolder2.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         Integer num4 = (Integer) this.pages[0].adapter.anchorsOffset.get(lowerCase);
                         if (num4.intValue() != -1) {
                             num = num4;
@@ -15108,7 +15108,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         int typeForBlock = this.pages[0].adapter.getTypeForBlock(searchResult.block);
                         RecyclerView.ViewHolder onCreateViewHolder = this.pages[0].adapter.onCreateViewHolder(null, typeForBlock);
                         this.pages[0].adapter.bindBlockToHolder(typeForBlock, onCreateViewHolder, searchResult.block, 0, 0, false);
-                        onCreateViewHolder.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        onCreateViewHolder.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         num = (Integer) this.pages[0].adapter.searchTextOffset.get(str);
                         if (num == null) {
                             num = 0;
@@ -15186,13 +15186,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         builder.setTitle(str2);
         builder.setTitleMultipleLines(true);
-        builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda28
+        builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda25
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ArticleViewer.this.lambda$showCopyPopup$0(str, dialogInterface, i);
             }
         });
-        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda29
+        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda26
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ArticleViewer.this.lambda$showCopyPopup$1(dialogInterface);
@@ -15266,7 +15266,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (actionBarPopupWindowLayout2 != null) {
             actionBarPopupWindowLayout2.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), Integer.MIN_VALUE));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
         this.popupWindow.setFocusable(true);
         this.popupWindow.showAtLocation(view, i, i2, i3);
         this.popupWindow.startAnimation();
@@ -15437,7 +15437,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 webActionBar3.setIsTonsite(pageLayout4 != null && pageLayout4.isTonsite());
                 AnimatorSet animatorSet = this.pageSwitchAnimation;
                 Objects.requireNonNull(animatorSet);
-                AndroidUtilities.runOnUIThread(new ArticleViewer$$ExternalSyntheticLambda9(animatorSet));
+                AndroidUtilities.runOnUIThread(new ArticleViewer$$ExternalSyntheticLambda24(animatorSet));
             }
             if (!z) {
                 this.textSelectionHelper.clear(true);
@@ -15862,7 +15862,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         Property property = View.ALPHA;
         animatorSet.playTogether(ObjectAnimator.ofFloat(windowView, (Property<WindowView, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.containerView, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.windowView, (Property<WindowView, Float>) View.TRANSLATION_X, 0.0f, AndroidUtilities.dp(56.0f)));
         this.animationInProgress = 2;
-        this.animationEndRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda1
+        this.animationEndRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$close$56();
@@ -16141,7 +16141,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (safeLastFragment != null) {
             BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
             bottomSheetParams.transitionFromLeft = true;
-            safeLastFragment.showAsSheet(new WebBrowserSettings(new ArticleViewer$$ExternalSyntheticLambda46(this)), bottomSheetParams);
+            safeLastFragment.showAsSheet(new WebBrowserSettings(new ArticleViewer$$ExternalSyntheticLambda45(this)), bottomSheetParams);
         }
     }
 
@@ -16251,7 +16251,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.windowView.addView(frameLayout, LayoutHelper.createFrame(-1, -1, 51));
         if (Build.VERSION.SDK_INT >= 21 && this.sheet == null) {
             this.windowView.setFitsSystemWindows(true);
-            this.containerView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda12
+            this.containerView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnApplyWindowInsetsListener
                 public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
                     WindowInsets lambda$setParentActivity$11;
@@ -16282,7 +16282,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             pageLayoutArr[i] = pageLayout;
             pageLayout.setVisibility(i == 0 ? 0 : 8);
             this.containerView.addView(pageLayout, LayoutHelper.createFrame(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
-            pageLayout.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda19
+            pageLayout.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda16
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
                 public final boolean onItemClick(View view, int i2) {
                     boolean lambda$setParentActivity$12;
@@ -16290,7 +16290,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     return lambda$setParentActivity$12;
                 }
             });
-            pageLayout.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda20
+            pageLayout.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda17
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ boolean hasDoubleTap(View view, int i2) {
                     return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i2);
@@ -16377,7 +16377,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.actionBar = webActionBar;
         webActionBar.occupyStatusBar(this.sheet != null);
         this.containerView.addView(this.actionBar, LayoutHelper.createFrame(-1, -2, 48));
-        this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda21
+        this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArticleViewer.this.lambda$setParentActivity$21(activity, view);
@@ -16411,19 +16411,19 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
         });
         this.containerView.addView(this.addressBarList, LayoutHelper.createFrame(-1, -1.0f));
-        this.lineProgressTickRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda22
+        this.lineProgressTickRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.lambda$setParentActivity$22();
             }
         };
-        this.actionBar.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda23
+        this.actionBar.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArticleViewer.this.lambda$setParentActivity$23(view);
             }
         });
-        this.actionBar.backButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda24
+        this.actionBar.backButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda21
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$setParentActivity$29;
@@ -16431,13 +16431,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 return lambda$setParentActivity$29;
             }
         });
-        this.actionBar.setMenuListener(new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda25
+        this.actionBar.setMenuListener(new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda22
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArticleViewer.this.lambda$setParentActivity$39(activity, (Integer) obj);
             }
         });
-        this.actionBar.forwardButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda26
+        this.actionBar.forwardButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArticleViewer.this.lambda$setParentActivity$40(view);
@@ -16453,7 +16453,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
         };
         this.searchPanel = frameLayout5;
-        frameLayout5.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda13
+        frameLayout5.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda10
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$setParentActivity$41;
@@ -16469,7 +16469,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchPanel.setClickable(true);
         this.searchPanel.setPadding(0, AndroidUtilities.dp(3.0f), 0, 0);
         this.containerView.addView(this.searchPanel, LayoutHelper.createFrame(-1, 51, 80));
-        new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda14
+        new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArticleViewer.this.lambda$setParentActivity$42((Integer) obj);
@@ -16489,7 +16489,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         int i3 = Theme.key_actionBarActionModeDefaultSelector;
         imageView3.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i3), 1));
         this.searchPanel.addView(this.searchUpButton, LayoutHelper.createFrame(48, 48.0f, 53, 0.0f, 0.0f, 48.0f, 0.0f));
-        this.searchUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda15
+        this.searchUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArticleViewer.this.lambda$setParentActivity$43(view);
@@ -16503,7 +16503,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchDownButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), mode));
         this.searchDownButton.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i3), 1));
         this.searchPanel.addView(this.searchDownButton, LayoutHelper.createFrame(48, 48.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.searchDownButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda16
+        this.searchDownButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ArticleViewer.this.lambda$setParentActivity$44(view);
@@ -16528,7 +16528,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         layoutParams.gravity = 51;
         layoutParams.type = 98;
         layoutParams.softInputMode = 48;
-        layoutParams.flags = 131072;
+        layoutParams.flags = TLRPC.FLAG_17;
         int color = this.sheet == null ? Theme.getColor(Theme.key_windowBackgroundGray, null, true) : getThemedColor(Theme.key_windowBackgroundGray);
         int i4 = (AndroidUtilities.computePerceivedBrightness(color) < 0.721f || Build.VERSION.SDK_INT < 26) ? 1792 : 1808;
         this.navigationBarPaint.setColor(color);
@@ -16545,7 +16545,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.textSelectionHelper = articleTextSelectionHelper;
         articleTextSelectionHelper.setParentView(this.pages[0].listView);
         if (MessagesController.getInstance(this.currentAccount).getTranslateController().isContextTranslateEnabled()) {
-            this.textSelectionHelper.setOnTranslate(new TextSelectionHelper.OnTranslateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda17
+            this.textSelectionHelper.setOnTranslate(new TextSelectionHelper.OnTranslateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda14
                 @Override // org.telegram.ui.Cells.TextSelectionHelper.OnTranslateListener
                 public final void run(CharSequence charSequence, String str, String str2, Runnable runnable) {
                     ArticleViewer.this.lambda$setParentActivity$45(charSequence, str, str2, runnable);
@@ -16573,7 +16573,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         FrameLayout frameLayout6 = this.containerView;
         PinchToZoomHelper pinchToZoomHelper = new PinchToZoomHelper(frameLayout6, frameLayout6);
         this.pinchToZoomHelper = pinchToZoomHelper;
-        pinchToZoomHelper.setClipBoundsListener(new PinchToZoomHelper.ClipBoundsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda18
+        pinchToZoomHelper.setClipBoundsListener(new PinchToZoomHelper.ClipBoundsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda15
             @Override // org.telegram.ui.PinchToZoomHelper.ClipBoundsListener
             public final void getClipTopBottom(float[] fArr) {
                 ArticleViewer.this.lambda$setParentActivity$46(fArr);
@@ -16617,7 +16617,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         try {
             this.visibleDialog = dialog;
             dialog.setCanceledOnTouchOutside(true);
-            this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda27
+            this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda50
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     ArticleViewer.this.lambda$showDialog$64(dialogInterface);

@@ -3617,7 +3617,7 @@ public class ImageLoader {
                             }
                             if (inputStream2 != null) {
                                 try {
-                                    byte[] bArr = new byte[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+                                    byte[] bArr = new byte[8192];
                                     int i = 0;
                                     while (true) {
                                         if (isCancelled()) {
@@ -3952,7 +3952,7 @@ public class ImageLoader {
         int memoryClass = ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).getMemoryClass();
         boolean z = memoryClass >= 192;
         this.canForce8888 = z;
-        int min = Math.min(z ? 30 : 15, memoryClass / 7) * FileLoaderPriorityQueue.PRIORITY_VALUE_MAX;
+        int min = Math.min(z ? 30 : 15, memoryClass / 7) * 1048576;
         float f = min;
         this.memCache = new LruCache<BitmapDrawable>((int) (0.8f * f)) { // from class: org.telegram.messenger.ImageLoader.1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -4274,7 +4274,7 @@ public class ImageLoader {
             int i2 = options.outHeight;
             TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
             tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-            tL_fileLocationToBeDeprecated.dc_id = Integer.MIN_VALUE;
+            tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
             tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
             tL_fileLocationToBeDeprecated.file_reference = new byte[0];
             TLRPC.TL_photoSize_layer127 tL_photoSize_layer127 = new TLRPC.TL_photoSize_layer127();
@@ -6208,7 +6208,7 @@ public class ImageLoader {
         }
         tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-        tL_fileLocationToBeDeprecated.dc_id = Integer.MIN_VALUE;
+        tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
         tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         photoSize = new TLRPC.TL_photoSize_layer127();

@@ -137,7 +137,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, int i, String str, boolean z) {
@@ -206,7 +206,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
         }
 
         public void set(CharSequence charSequence) {
@@ -234,7 +234,7 @@ public class ResaleGiftsFragment extends BaseFragment {
 
         @Override // android.widget.TextView, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLRPC.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:6:0x0048  */
@@ -388,7 +388,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributeModel stargiftattributemodel, int i, String str, boolean z) {
@@ -491,7 +491,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributePattern stargiftattributepattern, int i, String str, boolean z) {
@@ -1447,7 +1447,10 @@ public class ResaleGiftsFragment extends BaseFragment {
                     }
                     this.shownToast = true;
                     BulletinFactory.of(this).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, l.longValue()))).hideAfterBottomSheet(false).show();
-                    this.fireworksOverlay.start(true);
+                    FireworksOverlay fireworksOverlay = this.fireworksOverlay;
+                    if (fireworksOverlay != null) {
+                        fireworksOverlay.start(true);
+                    }
                 }
             }, true);
             Runnable runnable = this.closeParentSheet;
@@ -1605,7 +1608,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ResaleGiftsFragment.this.lambda$onBackPressed$348();
+                    ResaleGiftsFragment.this.lambda$onBackPressed$354();
                 }
             }
         });

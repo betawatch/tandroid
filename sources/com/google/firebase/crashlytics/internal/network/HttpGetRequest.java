@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 public class HttpGetRequest {
@@ -89,7 +88,7 @@ public class HttpGetRequest {
 
     private String readStream(InputStream inputStream) {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
-        char[] cArr = new char[LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM];
+        char[] cArr = new char[8192];
         StringBuilder sb = new StringBuilder();
         while (true) {
             int read = bufferedReader.read(cArr);

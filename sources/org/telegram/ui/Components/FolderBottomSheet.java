@@ -416,7 +416,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
         }
 
         public void setAction(CharSequence charSequence, final Runnable runnable) {
@@ -689,7 +689,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172.0f), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172.0f), TLRPC.FLAG_30));
         }
 
         public void setSelectedCount(int i, boolean z) {
@@ -1069,7 +1069,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 break;
             }
             if (z) {
-                baseFragment.lambda$onBackPressed$348();
+                baseFragment.lambda$onBackPressed$354();
                 z = false;
             } else {
                 baseFragment.removeSelfFromStack();
@@ -1417,7 +1417,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                         List fragmentStack = parentLayout.getFragmentStack();
                         if (fragmentStack.size() >= 2 && (fragmentStack.get(fragmentStack.size() - 2) instanceof FiltersSetupActivity)) {
                             filtersSetupActivity = (FiltersSetupActivity) fragmentStack.get(fragmentStack.size() - 2);
-                            lastFragment.lambda$onBackPressed$348();
+                            lastFragment.lambda$onBackPressed$354();
                         }
                     }
                     undoView = filtersSetupActivity.getUndoView();

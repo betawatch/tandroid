@@ -1,6 +1,7 @@
 package j$.time;
 
 import j$.time.format.TextStyle;
+import j$.time.format.p;
 import j$.time.zone.ZoneRules;
 import j$.util.A;
 import java.io.Serializable;
@@ -53,7 +54,7 @@ public abstract class ZoneId implements Serializable {
         }
     }
 
-    public static ZoneId f(String str, ZoneOffset zoneOffset) {
+    public static ZoneId m(String str, ZoneOffset zoneOffset) {
         A.z(str, "prefix");
         A.z(zoneOffset, "offset");
         if (str.length() == 0) {
@@ -65,20 +66,20 @@ public abstract class ZoneId implements Serializable {
         if (zoneOffset.getTotalSeconds() != 0) {
             str = str.concat(zoneOffset.getId());
         }
-        return new n(str, ZoneRules.e(zoneOffset));
+        return new n(str, ZoneRules.i(zoneOffset));
     }
 
-    private static ZoneId g(String str, int i) {
+    private static ZoneId n(String str, int i) {
         String substring = str.substring(0, i);
         if (str.length() == i) {
-            return f(substring, ZoneOffset.UTC);
+            return m(substring, ZoneOffset.UTC);
         }
         if (str.charAt(i) != '+' && str.charAt(i) != '-') {
-            return n.h(str);
+            return n.o(str);
         }
         try {
-            ZoneOffset h = ZoneOffset.h(str.substring(i));
-            return h == ZoneOffset.UTC ? f(substring, h) : f(substring, h);
+            ZoneOffset o = ZoneOffset.o(str.substring(i));
+            return o == ZoneOffset.UTC ? m(substring, o) : m(substring, o);
         } catch (c e) {
             throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
         }
@@ -88,17 +89,17 @@ public abstract class ZoneId implements Serializable {
         int i;
         A.z(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
-            return ZoneOffset.h(str);
+            return ZoneOffset.o(str);
         }
         if (str.startsWith("UTC") || str.startsWith("GMT")) {
             i = 3;
         } else {
             if (!str.startsWith("UT")) {
-                return n.h(str);
+                return n.o(str);
             }
             i = 2;
         }
-        return g(str, i);
+        return n(str, i);
     }
 
     public static ZoneId systemDefault() {
@@ -124,7 +125,7 @@ public abstract class ZoneId implements Serializable {
     }
 
     public String getDisplayName(TextStyle textStyle, Locale locale) {
-        j$.time.format.p pVar = new j$.time.format.p();
+        p pVar = new p();
         pVar.o(textStyle);
         return pVar.v(locale).a(new m(this));
     }

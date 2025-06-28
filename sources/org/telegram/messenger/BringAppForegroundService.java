@@ -2,6 +2,7 @@ package org.telegram.messenger;
 
 import android.app.IntentService;
 import android.content.Intent;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
 /* loaded from: classes3.dex */
@@ -13,7 +14,7 @@ public class BringAppForegroundService extends IntentService {
     @Override // android.app.IntentService
     protected void onHandleIntent(Intent intent) {
         Intent intent2 = new Intent(this, (Class<?>) LaunchActivity.class);
-        intent2.setFlags(268435456);
+        intent2.setFlags(TLRPC.FLAG_28);
         intent2.setAction("android.intent.action.MAIN");
         startActivity(intent2);
     }

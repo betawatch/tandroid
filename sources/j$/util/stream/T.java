@@ -36,12 +36,12 @@ final class T extends CountedCompleter {
             j = e.f(estimateSize);
             this.d = j;
         }
-        boolean d = R2.SHORT_CIRCUIT.d(this.c.p0());
+        boolean j2 = R2.SHORT_CIRCUIT.j(this.c.p0());
         e2 e2Var = this.b;
         boolean z = false;
         T t = this;
         while (true) {
-            if (d && e2Var.q()) {
+            if (j2 && e2Var.q()) {
                 break;
             }
             if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {

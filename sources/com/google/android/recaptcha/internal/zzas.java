@@ -4,6 +4,7 @@ import kotlin.Result;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzas extends ContinuationImpl {
@@ -24,7 +25,7 @@ final class zzas extends ContinuationImpl {
         Object zzk;
         Object coroutine_suspended;
         this.zza = obj;
-        this.zzc |= Integer.MIN_VALUE;
+        this.zzc |= TLRPC.FLAG_31;
         zzk = this.zzb.zzk(null, 0L, this);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return zzk == coroutine_suspended ? zzk : Result.box-impl(zzk);

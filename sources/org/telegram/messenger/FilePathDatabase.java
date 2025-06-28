@@ -28,6 +28,7 @@ public class FilePathDatabase {
     boolean databaseCreated;
     private DispatchQueue dispatchQueue;
     private File shmCacheFile;
+    private final String NULL_PATH = "~null~";
     private final ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<>();
     private final FileMeta metaTmp = new FileMeta();
 
@@ -204,8 +205,8 @@ public class FilePathDatabase {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0108  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -275,7 +276,7 @@ public class FilePathDatabase {
                 }
             } else {
                 sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + i2).stepThis().dispose();
-                this.cache.remove(j + "_" + i + "_" + i2);
+                this.cache.put(j + "_" + i + "_" + i2, "~null~");
                 sQLitePreparedStatement2 = null;
             }
             if (sQLitePreparedStatement3 != null) {
@@ -572,27 +573,35 @@ public class FilePathDatabase {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01b6  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01a3  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01c3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public String getPath(final long j, final int i, final int i2, boolean z) {
         SQLiteCursor sQLiteCursor;
         String str;
-        SQLiteException sQLiteException;
         String str2;
-        SQLiteCursor sQLiteCursor2;
         String str3;
+        String str4;
+        SQLiteCursor sQLiteCursor2;
         final long currentTimeMillis = System.currentTimeMillis();
-        String str4 = j + "_" + i + "_" + i2;
-        String str5 = this.cache.get(str4);
-        if (str5 != null) {
+        String str5 = j + "_" + i + "_" + i2;
+        String str6 = this.cache.get(str5);
+        if (str6 == "~null~") {
             if (BuildVars.DEBUG_VERSION) {
-                FileLog.d("get file path cached id=" + j + " dc=" + i + " type=" + i2 + " path=" + str5 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                FileLog.d("get file path cached null id=" + j + " dc=" + i + " type=" + i2 + " path=" + ((Object) null) + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
             }
-            return str5;
+            return null;
+        }
+        if (str6 != null) {
+            if (BuildVars.DEBUG_VERSION) {
+                FileLog.d("get file path cached id=" + j + " dc=" + i + " type=" + i2 + " path=" + str6 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+            }
+            return str6;
         }
         DispatchQueue dispatchQueue = this.dispatchQueue;
         if ((dispatchQueue == null || dispatchQueue.getHandler() == null || Thread.currentThread() != this.dispatchQueue.getHandler().getLooper().getThread()) ? z : false) {
@@ -608,9 +617,11 @@ public class FilePathDatabase {
                 countDownLatch.await();
             } catch (Exception unused) {
             }
-            String str6 = strArr[0];
-            if (str6 != null) {
-                this.cache.put(str4, str6);
+            String str7 = strArr[0];
+            if (str7 != null) {
+                this.cache.put(str5, str7);
+            } else {
+                this.cache.put(str5, "~null~");
             }
             return strArr[0];
         }
@@ -620,80 +631,97 @@ public class FilePathDatabase {
         }
         try {
             try {
-                str = str4;
+                StringBuilder sb = new StringBuilder();
+                str2 = "~null~";
                 try {
-                    sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + i2, new Object[0]);
+                    sb.append("SELECT path FROM paths WHERE document_id = ");
+                    sb.append(j);
+                    sb.append(" AND dc_id = ");
+                    sb.append(i);
+                    sb.append(" AND type = ");
+                    sb.append(i2);
+                    str = str5;
                     try {
+                        sQLiteCursor2 = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
+                    } catch (SQLiteException e) {
+                        e = e;
+                        sQLiteCursor = null;
+                        str3 = null;
                         try {
-                            if (sQLiteCursor2.next()) {
-                                str3 = sQLiteCursor2.stringValue(0);
-                                try {
-                                    if (BuildVars.DEBUG_VERSION) {
-                                        FileLog.d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str3 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
-                                    }
-                                } catch (SQLiteException e) {
-                                    sQLiteException = e;
-                                    str2 = str3;
-                                    sQLiteCursor = sQLiteCursor2;
-                                    try {
-                                        FileLog.e(sQLiteException);
-                                        if (sQLiteCursor != null) {
-                                        }
-                                        if (str2 != null) {
-                                        }
-                                        return str2;
-                                    } catch (Throwable th) {
-                                        th = th;
-                                        if (sQLiteCursor != null) {
-                                        }
-                                        throw th;
-                                    }
+                            FileLog.e(e);
+                            if (sQLiteCursor == null) {
+                                str4 = str3;
+                                if (str4 != null) {
                                 }
-                            } else {
-                                str3 = null;
+                                return str4;
                             }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            sQLiteCursor = sQLiteCursor2;
+                            sQLiteCursor2 = sQLiteCursor;
+                            str4 = str3;
+                            sQLiteCursor2.dispose();
+                            if (str4 != null) {
+                            }
+                            return str4;
+                        } catch (Throwable th) {
+                            th = th;
                             if (sQLiteCursor != null) {
                                 sQLiteCursor.dispose();
                             }
                             throw th;
                         }
-                    } catch (SQLiteException e2) {
-                        sQLiteCursor = sQLiteCursor2;
-                        sQLiteException = e2;
-                        str2 = null;
                     }
-                } catch (SQLiteException e3) {
-                    e = e3;
-                    sQLiteException = e;
-                    str2 = null;
-                    sQLiteCursor = null;
-                    FileLog.e(sQLiteException);
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor2 = sQLiteCursor;
-                        str3 = str2;
-                        sQLiteCursor2.dispose();
-                        str2 = str3;
-                    }
-                    if (str2 != null) {
-                    }
-                    return str2;
+                } catch (SQLiteException e2) {
+                    e = e2;
+                    str = str5;
                 }
-            } catch (SQLiteException e4) {
-                e = e4;
-                str = str4;
+            } catch (SQLiteException e3) {
+                e = e3;
+                str = str5;
+                str2 = "~null~";
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            sQLiteCursor = null;
+        }
+        try {
+            try {
+                if (sQLiteCursor2.next()) {
+                    str4 = sQLiteCursor2.stringValue(0);
+                    try {
+                        if (BuildVars.DEBUG_VERSION) {
+                            FileLog.d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str4 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                        }
+                    } catch (SQLiteException e4) {
+                        e = e4;
+                        str3 = str4;
+                        sQLiteCursor = sQLiteCursor2;
+                        FileLog.e(e);
+                        if (sQLiteCursor == null) {
+                        }
+                    }
+                } else {
+                    str4 = null;
+                }
+            } catch (SQLiteException e5) {
+                e = e5;
+                sQLiteCursor = sQLiteCursor2;
+                str3 = null;
+                FileLog.e(e);
+                if (sQLiteCursor == null) {
+                }
             }
             sQLiteCursor2.dispose();
-            str2 = str3;
-            if (str2 != null) {
+            if (str4 != null) {
+                this.cache.put(str, str4);
+            } else {
                 this.cache.put(str, str2);
             }
-            return str2;
+            return str4;
         } catch (Throwable th3) {
             th = th3;
-            sQLiteCursor = null;
+            sQLiteCursor = sQLiteCursor2;
+            if (sQLiteCursor != null) {
+            }
+            throw th;
         }
     }
 

@@ -99,6 +99,12 @@ public class BuildVars {
     }
 
     public static boolean useInvoiceBilling() {
-        return BillingController.billingClientEmpty || DEBUG_VERSION || ApplicationLoader.isStandaloneBuild() || isBetaApp() || isHuaweiStoreApp() || hasDirectCurrency();
+        if (!BillingController.billingClientEmpty && !ApplicationLoader.isStandaloneBuild()) {
+            isBetaApp();
+            if (!isHuaweiStoreApp() && !hasDirectCurrency()) {
+                return false;
+            }
+        }
+        return true;
     }
 }

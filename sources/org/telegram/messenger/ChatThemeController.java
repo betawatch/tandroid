@@ -321,7 +321,7 @@ public class ChatThemeController extends BaseController {
                             if (userFull != null) {
                                 TLRPC.WallPaper wallPaper2 = tL_messageActionSetChatWallPaper.wallpaper;
                                 userFull.wallpaper = wallPaper2;
-                                userFull.flags |= ConnectionsManager.FileTypePhoto;
+                                userFull.flags |= 16777216;
                                 saveChatWallpaper(j, wallPaper2);
                                 getMessagesStorage().updateUserInfo(userFull, false);
                                 NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull);
@@ -548,7 +548,7 @@ public class ChatThemeController extends BaseController {
             if ((tL_updatePeerWallpaper.flags & 1) != 0) {
                 userFull.wallpaper_overridden = tL_updatePeerWallpaper.wallpaper_overridden;
                 userFull.wallpaper = tL_updatePeerWallpaper.wallpaper;
-                i2 = userFull.flags | ConnectionsManager.FileTypePhoto;
+                i2 = userFull.flags | 16777216;
             } else {
                 userFull.wallpaper_overridden = false;
                 userFull.wallpaper = null;
@@ -781,7 +781,7 @@ public class ChatThemeController extends BaseController {
             tL_wallPaper2.flags = i | 4;
             if (userFull2 != null) {
                 userFull2.wallpaper = tL_wallPaper2;
-                userFull2.flags |= ConnectionsManager.FileTypePhoto;
+                userFull2.flags |= 16777216;
                 getMessagesStorage().updateUserInfo(userFull2, false);
                 chatThemeController = this;
                 NotificationCenter.getInstance(chatThemeController.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull2);

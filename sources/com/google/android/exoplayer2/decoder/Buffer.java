@@ -1,5 +1,7 @@
 package com.google.android.exoplayer2.decoder;
 
+import org.telegram.tgnet.TLRPC;
+
 /* loaded from: classes.dex */
 public abstract class Buffer {
     private int flags;
@@ -21,11 +23,11 @@ public abstract class Buffer {
     }
 
     public final boolean hasSupplementalData() {
-        return getFlag(268435456);
+        return getFlag(TLRPC.FLAG_28);
     }
 
     public final boolean isDecodeOnly() {
-        return getFlag(Integer.MIN_VALUE);
+        return getFlag(TLRPC.FLAG_31);
     }
 
     public final boolean isEndOfStream() {
@@ -33,7 +35,7 @@ public abstract class Buffer {
     }
 
     public final boolean isFirstSample() {
-        return getFlag(134217728);
+        return getFlag(TLRPC.FLAG_27);
     }
 
     public final boolean isKeyFrame() {

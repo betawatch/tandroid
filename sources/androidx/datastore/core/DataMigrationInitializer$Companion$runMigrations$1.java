@@ -3,6 +3,7 @@ package androidx.datastore.core;
 import androidx.datastore.core.DataMigrationInitializer;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class DataMigrationInitializer$Companion$runMigrations$1 extends ContinuationImpl {
@@ -22,7 +23,7 @@ final class DataMigrationInitializer$Companion$runMigrations$1 extends Continuat
     public final Object invokeSuspend(Object obj) {
         Object runMigrations;
         this.result = obj;
-        this.label |= Integer.MIN_VALUE;
+        this.label |= TLRPC.FLAG_31;
         runMigrations = this.this$0.runMigrations(null, null, this);
         return runMigrations;
     }

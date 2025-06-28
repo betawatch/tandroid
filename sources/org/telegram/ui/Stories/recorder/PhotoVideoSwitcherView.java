@@ -17,6 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Stories.recorder.FlashViews;
 
@@ -201,7 +202,7 @@ public abstract class PhotoVideoSwitcherView extends View implements FlashViews.
 
     @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
     public void setInvert(float f) {
-        this.selectorPaint.setColor(ColorUtils.blendARGB(855638015, 536870912, f));
+        this.selectorPaint.setColor(ColorUtils.blendARGB(855638015, TLRPC.FLAG_29, f));
         this.textPaint.setColor(ColorUtils.blendARGB(-1, -16777216, f));
     }
 

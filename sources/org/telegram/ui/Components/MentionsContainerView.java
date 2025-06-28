@@ -213,7 +213,7 @@ public abstract class MentionsContainerView extends BlurredFrameLayout implement
                 MentionsContainerView.this.paddedAdapter.setPadding(size);
             }
             MentionsContainerView.this.listViewPadding = (int) Math.min(AndroidUtilities.dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + ((int) MentionsContainerView.this.listViewPadding), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + ((int) MentionsContainerView.this.listViewPadding), TLRPC.FLAG_30));
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView
@@ -256,7 +256,7 @@ public abstract class MentionsContainerView extends BlurredFrameLayout implement
         this.ignoreLayout = false;
         this.scrollToFirst = false;
         this.shown = false;
-        this.updateVisibilityRunnable = new Runnable() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda3
+        this.updateVisibilityRunnable = new Runnable() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 MentionsContainerView.this.lambda$new$0();
@@ -998,7 +998,7 @@ public abstract class MentionsContainerView extends BlurredFrameLayout implement
     public void withDelegate(final Delegate delegate) {
         this.delegate = delegate;
         MentionsListView listView = getListView();
-        RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda1
+        RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 MentionsContainerView.this.lambda$withDelegate$4(delegate, view, i);
@@ -1006,7 +1006,7 @@ public abstract class MentionsContainerView extends BlurredFrameLayout implement
         };
         this.mentionsOnItemClickListener = onItemClickListener;
         listView.setOnItemClickListener(onItemClickListener);
-        getListView().setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda2
+        getListView().setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$withDelegate$5;

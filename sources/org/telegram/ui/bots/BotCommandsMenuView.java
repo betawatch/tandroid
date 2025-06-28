@@ -375,7 +375,7 @@ public class BotCommandsMenuView extends View {
         if (this.expanded) {
             dp += ((int) this.menuTextWidth) + AndroidUtilities.dp(4.0f);
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
     }
 
     protected void onTranslationChanged(float f) {

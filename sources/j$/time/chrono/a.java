@@ -4,7 +4,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Locale;
 
 /* loaded from: classes2.dex */
-public abstract class a implements f {
+public abstract class a implements e {
     static {
         new ConcurrentHashMap();
         new ConcurrentHashMap();
@@ -16,7 +16,7 @@ public abstract class a implements f {
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
-        ((f) obj).getClass();
+        ((e) obj).getClass();
         return 0;
     }
 

@@ -31,9 +31,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoaderPriorityQueue;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -361,7 +359,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkChangesBeforeExit$15(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -418,7 +416,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         }
         this.actionButton.setLoading(false);
         if (tL_error.text.equals("CHAT_NOT_MODIFIED")) {
-            lambda$onBackPressed$348();
+            lambda$onBackPressed$354();
         } else {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
@@ -460,7 +458,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         }, new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
-                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$348();
+                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$354();
             }
         });
     }
@@ -697,7 +695,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
                 if (i != -1 || ChatCustomReactionsEditActivity.this.checkChangesBeforeExit()) {
                     return;
                 }
-                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$348();
+                ChatCustomReactionsEditActivity.this.lambda$onBackPressed$354();
             }
         });
         ScrollView scrollView = new ScrollView(context);
@@ -847,7 +845,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         this.slideView = slideIntChooseView;
         slideIntChooseView.setBackgroundColor(getThemedColor(i2));
         TLRPC.ChatFull chatFull = this.info;
-        int i3 = (!(chatFull instanceof TLRPC.TL_chatFull) ? (chatFull.flags2 & LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM) != 0 : (chatFull.flags & FileLoaderPriorityQueue.PRIORITY_VALUE_MAX) != 0) ? getMessagesController().reactionsUniqMax : chatFull.reactions_limit;
+        int i3 = (!(chatFull instanceof TLRPC.TL_chatFull) ? (chatFull.flags2 & 8192) != 0 : (chatFull.flags & 1048576) != 0) ? getMessagesController().reactionsUniqMax : chatFull.reactions_limit;
         this.reactionsCount = i3;
         this.currentReactionsCount = i3;
         this.slideView.set(this.reactionsCount, SlideIntChooseView.Options.make(0, "MaximumReactionsValue", 1, getMessagesController().reactionsUniqMax), new Utilities.Callback() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda6
@@ -1009,7 +1007,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
             if (iNavigationLayout == null || iNavigationLayout.getLastFragment() != this) {
                 removeSelfFromStack();
             } else {
-                lambda$onBackPressed$348();
+                lambda$onBackPressed$354();
             }
         }
     }

@@ -13,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.DrawerLayoutContainer;
 import org.telegram.ui.LaunchActivity;
@@ -118,7 +117,8 @@ public class PasscodeViewDialog extends Dialog {
         attributes.flags = i;
         attributes.softInputMode = 16;
         if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i | LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS_NOT_PREMIUM;
+            attributes.flags = i | 8192;
+            AndroidUtilities.logFlagSecure();
         }
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 21) {

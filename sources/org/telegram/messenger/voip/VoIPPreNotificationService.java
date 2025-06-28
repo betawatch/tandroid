@@ -196,7 +196,7 @@ public class VoIPPreNotificationService {
             pendingVoIP.putExtra("openFragment", true);
             if (!PermissionRequest.hasPermission("android.permission.RECORD_AUDIO") || (isVideo() && !PermissionRequest.hasPermission("android.permission.CAMERA"))) {
                 try {
-                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(268435456), 1107296256).send();
+                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLRPC.FLAG_28), 1107296256).send();
                     return;
                 } catch (Exception e) {
                     if (BuildVars.LOGS_ENABLED) {
@@ -449,7 +449,7 @@ public class VoIPPreNotificationService {
                         contentIntent.setColor(-13851168);
                         contentIntent.setVibrate(new long[i4]);
                         contentIntent.setCategory("call");
-                        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i4, action, ConnectionsManager.FileTypeVideo), true);
+                        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i4, action, 33554432), true);
                         if (user != null && !TextUtils.isEmpty(user.phone)) {
                             contentIntent.addPerson("tel:" + user.phone);
                         }

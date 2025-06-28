@@ -24,7 +24,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.FileLoaderPriorityQueue;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
@@ -307,7 +306,7 @@ class AppCompatTextViewAutoSizeHelper {
                 if (this.mTextView.getMeasuredHeight() <= 0 || this.mTextView.getMeasuredWidth() <= 0) {
                     return;
                 }
-                int measuredWidth = this.mImpl.isHorizontallyScrollable(this.mTextView) ? FileLoaderPriorityQueue.PRIORITY_VALUE_MAX : (this.mTextView.getMeasuredWidth() - this.mTextView.getTotalPaddingLeft()) - this.mTextView.getTotalPaddingRight();
+                int measuredWidth = this.mImpl.isHorizontallyScrollable(this.mTextView) ? 1048576 : (this.mTextView.getMeasuredWidth() - this.mTextView.getTotalPaddingLeft()) - this.mTextView.getTotalPaddingRight();
                 int height = (this.mTextView.getHeight() - this.mTextView.getCompoundPaddingBottom()) - this.mTextView.getCompoundPaddingTop();
                 if (measuredWidth <= 0 || height <= 0) {
                     return;

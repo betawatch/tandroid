@@ -14,6 +14,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public final class FirebaseSessionsDependencies {
@@ -139,8 +140,8 @@ public final class FirebaseSessionsDependencies {
         if (continuation instanceof FirebaseSessionsDependencies$getRegisteredSubscribers$1) {
             firebaseSessionsDependencies$getRegisteredSubscribers$1 = (FirebaseSessionsDependencies$getRegisteredSubscribers$1) continuation;
             int i2 = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                firebaseSessionsDependencies$getRegisteredSubscribers$1.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                firebaseSessionsDependencies$getRegisteredSubscribers$1.label = i2 - TLRPC.FLAG_31;
                 Object obj = firebaseSessionsDependencies$getRegisteredSubscribers$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;

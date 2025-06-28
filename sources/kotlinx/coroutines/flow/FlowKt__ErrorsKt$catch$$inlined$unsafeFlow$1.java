@@ -7,6 +7,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.InlineMarker;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow {
@@ -26,7 +27,7 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             this.result = obj;
-            this.label |= Integer.MIN_VALUE;
+            this.label |= TLRPC.FLAG_31;
             return FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1.this.collect(null, this);
         }
     }
@@ -52,8 +53,8 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         if (continuation instanceof 1) {
             r0 = (1) continuation;
             int i2 = r0.label;
-            if ((i2 & Integer.MIN_VALUE) != 0) {
-                r0.label = i2 - Integer.MIN_VALUE;
+            if ((i2 & TLRPC.FLAG_31) != 0) {
+                r0.label = i2 - TLRPC.FLAG_31;
                 Object obj = r0.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = r0.label;

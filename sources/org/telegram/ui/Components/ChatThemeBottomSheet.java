@@ -1294,7 +1294,7 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
             }
         };
         AnimatedTextView animatedTextView = new AnimatedTextView(getContext(), true, true, true);

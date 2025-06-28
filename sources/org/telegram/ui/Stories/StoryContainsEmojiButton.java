@@ -93,7 +93,7 @@ public class StoryContainsEmojiButton extends View {
         if (!z) {
             this.loadT = 1.0f;
             invalidate();
-            post(new Runnable() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda5
+            post(new Runnable() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoryContainsEmojiButton.this.requestLayout();
@@ -105,7 +105,7 @@ public class StoryContainsEmojiButton extends View {
         if (this.layout != null && Math.abs(getMeasuredHeight() - ((getPaddingTop() + this.layout.getHeight()) + getPaddingBottom())) <= AndroidUtilities.dp(3.0f)) {
             z2 = false;
         }
-        this.loadAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda4
+        this.loadAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 StoryContainsEmojiButton.this.lambda$animateLoad$5(z2, valueAnimator2);
@@ -182,7 +182,7 @@ public class StoryContainsEmojiButton extends View {
             } else {
                 if (arrayList != null && arrayList.size() >= 1) {
                     zArr[0] = false;
-                    MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) arrayList.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda0
+                    MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) arrayList.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda6
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj2) {
                             StoryContainsEmojiButton.this.lambda$load$0((TLRPC.TL_messages_stickerSet) obj2);
@@ -198,7 +198,7 @@ public class StoryContainsEmojiButton extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$load$2(final Object obj, final ArrayList arrayList, final boolean[] zArr, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 StoryContainsEmojiButton.this.lambda$load$1(tLObject, obj, arrayList, zArr, i);
@@ -344,7 +344,7 @@ public class StoryContainsEmojiButton extends View {
             this.inputSets = arrayList2;
             arrayList2.addAll(arrayList);
             if (this.inputSets.size() == 1) {
-                MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) this.inputSets.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda3
+                MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) this.inputSets.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj2) {
                         StoryContainsEmojiButton.this.lambda$load$4((TLRPC.TL_messages_stickerSet) obj2);
@@ -378,14 +378,14 @@ public class StoryContainsEmojiButton extends View {
                     tL_inputStickeredMediaDocument = tL_inputStickeredMediaDocument2;
                 }
             }
-            requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda1
+            requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     StoryContainsEmojiButton.this.lambda$load$2(obj, arrayList, zArr, i, tLObject2, tL_error);
                 }
             };
             if (lastRequestParentObject == obj || (vector = lastResponse) == null) {
-                ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda2
+                ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                         StoryContainsEmojiButton.lambda$load$3(obj, i, tL_messages_getAttachedStickers, requestDelegate, tLObject2, tL_error);
@@ -411,7 +411,7 @@ public class StoryContainsEmojiButton extends View {
             tL_inputStickeredMediaDocument = tL_inputStickeredMediaPhoto;
         }
         tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
-        requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda1
+        requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 StoryContainsEmojiButton.this.lambda$load$2(obj, arrayList, zArr, i, tLObject2, tL_error);
@@ -419,7 +419,7 @@ public class StoryContainsEmojiButton extends View {
         };
         if (lastRequestParentObject == obj) {
         }
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda2
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 StoryContainsEmojiButton.lambda$load$3(obj, i, tL_messages_getAttachedStickers, requestDelegate, tLObject2, tL_error);

@@ -472,7 +472,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 0, !customBlur());
         this.replyBackgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 8);
         this.replyTextBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 9);
-        paint.setColor(Integer.MIN_VALUE);
+        paint.setColor(TLRPC.FLAG_31);
         this.keyboardNotifier = new KeyboardNotifier(frameLayout, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -777,7 +777,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.rectF.set(0.0f, 1.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight() - 1);
         drawBlur(this.captionBlur, canvas, this.rectF, 0.0f, true, (-this.editText.getX()) - r8.getPaddingLeft(), ((-this.editText.getY()) - r8.getPaddingTop()) - r8.getExtendedPaddingTop(), true, 1.0f);
         canvas.save();
-        this.hintTextBitmapPaint.setAlpha(NotificationCenter.groupCallScreencastStateChanged);
+        this.hintTextBitmapPaint.setAlpha(165);
         canvas.drawBitmap(this.hintTextBitmap, 0.0f, 0.0f, this.hintTextBitmapPaint);
         canvas.restore();
         canvas.restore();

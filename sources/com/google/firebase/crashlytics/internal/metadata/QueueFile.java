@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes3.dex */
 class QueueFile implements Closeable {
@@ -94,7 +93,7 @@ class QueueFile implements Closeable {
             open.setLength(4096L);
             open.seek(0L);
             byte[] bArr = new byte[16];
-            writeInts(bArr, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM, 0, 0, 0);
+            writeInts(bArr, 4096, 0, 0, 0);
             open.write(bArr);
             open.close();
             if (!file2.renameTo(file)) {

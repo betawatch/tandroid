@@ -50,7 +50,7 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
                 remoteViews.setEmptyView(i4, R.id.empty_view);
                 Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
                 intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                intent2.addFlags(ConnectionsManager.FileTypeFile);
+                intent2.addFlags(67108864);
                 intent2.addCategory("android.intent.category.LAUNCHER");
                 remoteViews.setPendingIntentTemplate(i4, PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160));
                 appWidgetManager.updateAppWidget(i, remoteViews);
@@ -64,7 +64,7 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
         remoteViews2.setEmptyView(i42, R.id.empty_view);
         Intent intent22 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
         intent22.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-        intent22.addFlags(ConnectionsManager.FileTypeFile);
+        intent22.addFlags(67108864);
         intent22.addCategory("android.intent.category.LAUNCHER");
         remoteViews2.setPendingIntentTemplate(i42, PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22, 167772160));
         appWidgetManager.updateAppWidget(i, remoteViews2);

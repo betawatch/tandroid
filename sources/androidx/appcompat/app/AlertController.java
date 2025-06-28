@@ -39,6 +39,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.NestedScrollView;
 import java.lang.ref.WeakReference;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 class AlertController {
@@ -615,7 +616,7 @@ class AlertController {
         }
         boolean z = view != null;
         if (!z || !canTextInput(view)) {
-            this.mWindow.setFlags(131072, 131072);
+            this.mWindow.setFlags(TLRPC.FLAG_17, TLRPC.FLAG_17);
         }
         if (!z) {
             viewGroup.setVisibility(8);

@@ -4,6 +4,7 @@ import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
+import j$.time.ZonedDateTime;
 import j$.time.zone.ZoneRules;
 import j$.util.A;
 import java.util.Locale;
@@ -21,32 +22,32 @@ final class r {
     r(j$.time.temporal.k kVar, DateTimeFormatter dateTimeFormatter) {
         ZoneId zoneId;
         ZoneRules rules;
-        j$.time.chrono.f b = dateTimeFormatter.b();
+        j$.time.chrono.e b = dateTimeFormatter.b();
         ZoneId e = dateTimeFormatter.e();
         if (b != null || e != null) {
-            j$.time.chrono.f fVar = (j$.time.chrono.f) kVar.c(j$.time.temporal.j.d());
-            ZoneId zoneId2 = (ZoneId) kVar.c(j$.time.temporal.j.j());
+            j$.time.chrono.e eVar = (j$.time.chrono.e) kVar.i(j$.time.temporal.j.d());
+            ZoneId zoneId2 = (ZoneId) kVar.i(j$.time.temporal.j.j());
             LocalDate localDate = null;
-            b = A.y(b, fVar) ? null : b;
+            b = A.y(b, eVar) ? null : b;
             e = A.y(e, zoneId2) ? null : e;
             if (b != null || e != null) {
-                j$.time.chrono.f fVar2 = b != null ? b : fVar;
+                j$.time.chrono.e eVar2 = b != null ? b : eVar;
                 if (e != null) {
-                    if (kVar.e(j$.time.temporal.a.INSTANT_SECONDS)) {
-                        fVar2 = fVar2 == null ? j$.time.chrono.g.a : fVar2;
-                        Instant h = Instant.h(kVar);
-                        ((j$.time.chrono.g) fVar2).getClass();
-                        kVar = j$.time.p.g(h, e);
+                    if (kVar.k(j$.time.temporal.a.INSTANT_SECONDS)) {
+                        eVar2 = eVar2 == null ? j$.time.chrono.f.a : eVar2;
+                        Instant o = Instant.o(kVar);
+                        ((j$.time.chrono.f) eVar2).getClass();
+                        kVar = ZonedDateTime.o(o, e);
                     } else {
                         try {
                             rules = e.getRules();
                         } catch (j$.time.zone.c unused) {
                         }
-                        if (rules.d()) {
+                        if (rules.h()) {
                             zoneId = rules.getOffset(Instant.c);
                             if (zoneId instanceof ZoneOffset) {
                                 j$.time.temporal.a aVar = j$.time.temporal.a.OFFSET_SECONDS;
-                                if (kVar.e(aVar) && kVar.d(aVar) != e.getRules().getOffset(Instant.c).getTotalSeconds()) {
+                                if (kVar.k(aVar) && kVar.j(aVar) != e.getRules().getOffset(Instant.c).getTotalSeconds()) {
                                     throw new j$.time.c("Unable to apply override zone '" + e + "' because the temporal object being formatted has a different offset but does not represent an instant: " + kVar);
                                 }
                             }
@@ -58,18 +59,18 @@ final class r {
                 }
                 zoneId2 = e != null ? e : zoneId2;
                 if (b != null) {
-                    if (kVar.e(j$.time.temporal.a.EPOCH_DAY)) {
-                        ((j$.time.chrono.g) fVar2).getClass();
-                        localDate = LocalDate.h(kVar);
-                    } else if (b != j$.time.chrono.g.a || fVar != null) {
+                    if (kVar.k(j$.time.temporal.a.EPOCH_DAY)) {
+                        ((j$.time.chrono.f) eVar2).getClass();
+                        localDate = LocalDate.o(kVar);
+                    } else if (b != j$.time.chrono.f.a || eVar != null) {
                         for (j$.time.temporal.a aVar2 : j$.time.temporal.a.values()) {
-                            if (aVar2.e() && kVar.e(aVar2)) {
+                            if (aVar2.k() && kVar.k(aVar2)) {
                                 throw new j$.time.c("Unable to apply override chronology '" + b + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + kVar);
                             }
                         }
                     }
                 }
-                kVar = new q(localDate, kVar, fVar2, zoneId2);
+                kVar = new q(localDate, kVar, eVar2, zoneId2);
             }
         }
         this.a = kVar;
@@ -94,7 +95,7 @@ final class r {
 
     final Long e(j$.time.temporal.l lVar) {
         try {
-            return Long.valueOf(this.a.b(lVar));
+            return Long.valueOf(this.a.h(lVar));
         } catch (j$.time.c e) {
             if (this.c > 0) {
                 return null;
@@ -105,9 +106,9 @@ final class r {
 
     final Object f(j$.time.temporal.n nVar) {
         j$.time.temporal.k kVar = this.a;
-        Object c = kVar.c(nVar);
-        if (c != null || this.c != 0) {
-            return c;
+        Object i = kVar.i(nVar);
+        if (i != null || this.c != 0) {
+            return i;
         }
         throw new j$.time.c("Unable to extract value: " + kVar.getClass());
     }

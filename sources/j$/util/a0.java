@@ -3,8 +3,6 @@ package j$.util;
 import j$.util.function.Consumer;
 import java.util.Comparator;
 import java.util.Iterator;
-import org.telegram.messenger.LiteMode;
-import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes2.dex */
 class a0 implements Spliterator {
@@ -16,7 +14,7 @@ class a0 implements Spliterator {
 
     public a0(java.util.Collection collection, int i) {
         this.a = collection;
-        this.c = (i & LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM) == 0 ? i | 16448 : i;
+        this.c = (i & 4096) == 0 ? i | 16448 : i;
     }
 
     @Override // j$.util.Spliterator
@@ -109,7 +107,7 @@ class a0 implements Spliterator {
             i = (int) j;
         }
         if (i > 33554432) {
-            i = ConnectionsManager.FileTypeVideo;
+            i = 33554432;
         }
         Object[] objArr = new Object[i];
         int i2 = 0;

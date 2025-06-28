@@ -164,6 +164,9 @@ public class PushListenerController {
             case "REACT_TEXT":
                 i = R.string.PushReactText;
                 break;
+            case "REACT_TODO":
+                i = R.string.PushReactTodo;
+                break;
             case "REACT_INVOICE":
                 i = R.string.PushReactInvoice;
                 break;
@@ -236,6 +239,9 @@ public class PushListenerController {
             case "CHAT_REACT_TEXT":
                 i = R.string.PushChatReactText;
                 break;
+            case "CHAT_REACT_TODO":
+                i = R.string.PushChatReactTodo;
+                break;
             default:
                 return null;
         }
@@ -276,7 +282,7 @@ public class PushListenerController {
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 2 */
     public static /* synthetic */ void lambda$processRemoteMessage$6(java.lang.String r62, java.lang.String r63, long r64) {
         /*
-            Method dump skipped, instructions count: 10816
+            Method dump skipped, instructions count: 11262
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.PushListenerController.lambda$processRemoteMessage$6(java.lang.String, java.lang.String, long):void");

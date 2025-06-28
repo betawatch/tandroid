@@ -22,7 +22,6 @@ import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -178,7 +177,7 @@ public class SpoilerEffect2 {
             if (f3 > 1000.0f) {
                 this.t = 0.0f;
             }
-            GLES31.glClear(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            GLES31.glClear(16384);
             GLES31.glBindBuffer(34962, this.particlesData[this.currentBuffer]);
             GLES31.glVertexAttribPointer(0, 2, 5126, false, 24, 0);
             GLES31.glEnableVertexAttribArray(0);

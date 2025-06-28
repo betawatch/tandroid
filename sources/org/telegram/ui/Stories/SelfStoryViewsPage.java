@@ -911,7 +911,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
                     view = new View(SelfStoryViewsPage.this.getContext()) { // from class: org.telegram.ui.Stories.SelfStoryViewsPage.ListAdapter.1
                         @Override // android.view.View
                         protected void onMeasure(int i3, int i4) {
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(SelfStoryViewsPage.this.TOP_PADDING), 1073741824));
+                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(SelfStoryViewsPage.this.TOP_PADDING), TLRPC.FLAG_30));
                         }
                     };
                     break;
@@ -941,7 +941,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
                             if (lastItemHeight >= SelfStoryViewsPage.this.recyclerListView.getPaddingTop() && !SelfStoryViewsPage.this.showSearch) {
                                 lastItemHeight = 0;
                             }
-                            super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(lastItemHeight, 1073741824));
+                            super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(lastItemHeight, TLRPC.FLAG_30));
                         }
                     };
                     break;
@@ -962,7 +962,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
                     StickerEmptyView stickerEmptyView = new StickerEmptyView(SelfStoryViewsPage.this.getContext(), null, SelfStoryViewsPage.this.defaultModel.isExpiredViews ? 12 : (i == 10 || i == 7 || i == 8 || i == 5) ? 1 : 0, SelfStoryViewsPage.this.resourcesProvider) { // from class: org.telegram.ui.Stories.SelfStoryViewsPage.ListAdapter.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i4, int i5) {
-                            super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec((SelfStoryViewsPage.this.measuerdHeight - SelfStoryViewsPage.this.recyclerListView.getPaddingTop()) - AndroidUtilities.dp(SelfStoryViewsPage.this.TOP_PADDING), 1073741824));
+                            super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec((SelfStoryViewsPage.this.measuerdHeight - SelfStoryViewsPage.this.recyclerListView.getPaddingTop()) - AndroidUtilities.dp(SelfStoryViewsPage.this.TOP_PADDING), TLRPC.FLAG_30));
                         }
                     };
                     if (i == 7) {

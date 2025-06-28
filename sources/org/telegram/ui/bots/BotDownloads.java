@@ -430,7 +430,7 @@ public class BotDownloads {
 
         @Override // org.telegram.ui.Components.Bulletin.ButtonLayout, android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLRPC.FLAG_30));
         }
 
         public boolean set(FileDownload fileDownload) {

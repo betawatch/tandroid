@@ -3,6 +3,7 @@ package com.google.android.gms.common.internal;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public abstract class zzt {
@@ -29,7 +30,7 @@ public abstract class zzt {
         }
         intent.setData(appendQueryParameter.build());
         intent.setPackage("com.android.vending");
-        intent.addFlags(524288);
+        intent.addFlags(TLRPC.FLAG_19);
         return intent;
     }
 

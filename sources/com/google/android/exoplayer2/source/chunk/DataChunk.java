@@ -6,7 +6,6 @@ import com.google.android.exoplayer2.upstream.DataSourceUtil;
 import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.util.Util;
 import java.util.Arrays;
-import org.telegram.messenger.LiteMode;
 
 /* loaded from: classes.dex */
 public abstract class DataChunk extends Chunk {
@@ -29,8 +28,8 @@ public abstract class DataChunk extends Chunk {
 
     private void maybeExpandData(int i) {
         byte[] bArr = this.data;
-        if (bArr.length < i + LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM) {
-            this.data = Arrays.copyOf(bArr, bArr.length + LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+        if (bArr.length < i + 16384) {
+            this.data = Arrays.copyOf(bArr, bArr.length + 16384);
         }
     }
 
@@ -53,7 +52,7 @@ public abstract class DataChunk extends Chunk {
             int i2 = 0;
             while (i != -1 && !this.loadCanceled) {
                 maybeExpandData(i2);
-                i = this.dataSource.read(this.data, i2, LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+                i = this.dataSource.read(this.data, i2, 16384);
                 if (i != -1) {
                     i2 += i;
                 }

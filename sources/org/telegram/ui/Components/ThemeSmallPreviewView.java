@@ -573,7 +573,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                 f = size;
                 f2 = 1.35f;
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(i3, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
             this.backupImageView.setPivotY(r4.getMeasuredHeight());
             this.backupImageView.setPivotX(r4.getMeasuredWidth() / 2.0f);
         }
@@ -581,7 +581,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         f = size;
         f2 = 1.2f;
         i3 = (int) (f * f2);
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(i3, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
         this.backupImageView.setPivotY(r4.getMeasuredHeight());
         this.backupImageView.setPivotX(r4.getMeasuredWidth() / 2.0f);
     }

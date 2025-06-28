@@ -20,6 +20,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.BubbleActivity;
@@ -328,7 +329,7 @@ public abstract class MaskPaintView extends FrameLayout {
             f3 = (float) Math.floor((f2 * f4) / f);
             floor = f4;
         }
-        this.renderView.measure(View.MeasureSpec.makeMeasureSpec((int) f3, 1073741824), View.MeasureSpec.makeMeasureSpec((int) floor, 1073741824));
+        this.renderView.measure(View.MeasureSpec.makeMeasureSpec((int) f3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) floor, TLRPC.FLAG_30));
         this.baseScale = 1.0f;
         measureChild(this.weightChooserView, i, i2);
         measureChild(this.buttonsLayout, i, i2);

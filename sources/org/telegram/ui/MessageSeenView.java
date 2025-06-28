@@ -168,7 +168,7 @@ public class MessageSeenView extends FrameLayout {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
         }
 
         public void setUser(TLObject tLObject, int i) {
@@ -489,7 +489,7 @@ public class MessageSeenView extends FrameLayout {
                 if (dp <= size) {
                     size = dp;
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
             }
         };
         this.listView = recyclerListView2;
@@ -532,7 +532,7 @@ public class MessageSeenView extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         View view = (View) getParent();
         if (view != null && view.getWidth() > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), 1073741824);
+            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLRPC.FLAG_30);
         }
         this.ignoreLayout = true;
         boolean z = this.flickerLoadingView.getVisibility() == 0;

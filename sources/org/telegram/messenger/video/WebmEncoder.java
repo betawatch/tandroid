@@ -24,12 +24,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFileDrawable;
 import org.telegram.ui.Components.Paint.PaintTypeface;
@@ -345,9 +345,9 @@ public class WebmEncoder {
             int i4 = mediaEntity.textAlign;
             editTextOutline.setTextAlignment(i4 != 1 ? (i4 == 2 ? !LocaleController.isRTL : LocaleController.isRTL) ? 3 : 2 : 4);
             editTextOutline.setHorizontallyScrolling(false);
-            editTextOutline.setImeOptions(268435456);
+            editTextOutline.setImeOptions(TLRPC.FLAG_28);
             editTextOutline.setFocusableInTouchMode(true);
-            editTextOutline.setInputType(editTextOutline.getInputType() | LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD_NOT_PREMIUM);
+            editTextOutline.setInputType(editTextOutline.getInputType() | 16384);
             if (i3 >= 23) {
                 setBreakStrategy(editTextOutline);
             }
@@ -369,7 +369,7 @@ public class WebmEncoder {
                 editTextOutline.setFrameColor(r4);
                 editTextOutline.setTextColor(mediaEntity.color);
             }
-            editTextOutline.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, 1073741824));
+            editTextOutline.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, TLRPC.FLAG_30));
             editTextOutline.layout(0, 0, mediaEntity.viewWidth, mediaEntity.viewHeight);
             mediaEntity.bitmap = Bitmap.createBitmap(mediaEntity.viewWidth, mediaEntity.viewHeight, Bitmap.Config.ARGB_8888);
             editTextOutline.draw(new Canvas(mediaEntity.bitmap));

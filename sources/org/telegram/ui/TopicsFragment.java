@@ -458,7 +458,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (i == 0) {
                 TopicsFragment.this.updateChatInfo();
             } else {
-                TopicsFragment.this.lambda$onBackPressed$348();
+                TopicsFragment.this.lambda$onBackPressed$354();
             }
         }
 
@@ -533,7 +533,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int i = NotificationCenter.closeChats;
             notificationCenter.removeObserver(topicsFragment, i);
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
-            TopicsFragment.this.lambda$onBackPressed$348();
+            TopicsFragment.this.lambda$onBackPressed$354();
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
         }
 
@@ -553,7 +553,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     TopicsFragment.this.clearSelectedTopics();
                     return;
                 } else {
-                    TopicsFragment.this.lambda$onBackPressed$348();
+                    TopicsFragment.this.lambda$onBackPressed$354();
                     return;
                 }
             }
@@ -1058,7 +1058,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                                 i5 += dp2;
                             }
                         }
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.max(0, i4 > 0 ? (((TopicsFragment.this.recyclerListView.getMeasuredHeight() - TopicsFragment.this.recyclerListView.getPaddingTop()) - TopicsFragment.this.recyclerListView.getPaddingBottom()) - i5) + dp : 0), 1073741824));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.max(0, i4 > 0 ? (((TopicsFragment.this.recyclerListView.getMeasuredHeight() - TopicsFragment.this.recyclerListView.getPaddingTop()) - TopicsFragment.this.recyclerListView.getPaddingBottom()) - i5) + dp : 0), TLRPC.FLAG_30));
                     }
                 });
             }
@@ -2565,7 +2565,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (this.fragmentBeginToShow && z2) {
             AnimatorSet animatorSet = new AnimatorSet();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.floatingButtonHideProgress, this.floatingHidden ? 1.0f : 0.0f);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda0
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda10
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     TopicsFragment.this.lambda$hideFloatingButton$22(valueAnimator);
@@ -2937,7 +2937,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         bundle.putLong("chat_id", -chatActivity.getDialogId());
         chatActivity.getParentLayout().addFragmentToStack(new TopicsFragment(bundle), chatActivity.getParentLayout().getFragmentStack().size() - 1);
         chatActivity.setSwitchFromTopics(true);
-        chatActivity.lambda$onBackPressed$348();
+        chatActivity.lambda$onBackPressed$354();
     }
 
     private void setButtonType(int i) {
@@ -3756,7 +3756,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setActionBarMenuOnItemClick(new 2(context));
-        this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda2
+        this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TopicsFragment.this.lambda$createView$0(view);
@@ -3766,7 +3766,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (this.parentDialogsActivity != null) {
             ActionBarMenuItem addItem = createMenu.addItem(0, R.drawable.ic_ab_search);
             this.searchItem = addItem;
-            addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda7
+            addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TopicsFragment.this.lambda$createView$1(view);
@@ -3881,13 +3881,13 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         RecyclerItemsEnterAnimator recyclerItemsEnterAnimator = new RecyclerItemsEnterAnimator(this.recyclerListView, true);
         this.itemsEnterAnimator = recyclerItemsEnterAnimator;
         this.recyclerListView.setItemsEnterAnimator(recyclerItemsEnterAnimator);
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda8
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i6) {
                 TopicsFragment.this.lambda$createView$2(view, i6);
             }
         });
-        this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda9
+        this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public final boolean onItemClick(View view, int i6, float f, float f2) {
                 boolean lambda$createView$3;
@@ -3966,7 +3966,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         float f = i6 >= 21 ? 56 : 60;
         boolean z = LocaleController.isRTL;
         sizeNotifierFrameLayout2.addView(frameLayout2, LayoutHelper.createFrame(i7, f, (z ? 3 : 5) | 80, z ? 14.0f : 0.0f, 0.0f, z ? 0.0f : 14.0f, 14.0f));
-        this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda10
+        this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TopicsFragment.this.lambda$createView$4(view);
@@ -4062,7 +4062,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.closeReportSpam.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_topPanelClose), PorterDuff.Mode.MULTIPLY));
         this.closeReportSpam.setScaleType(ImageView.ScaleType.CENTER);
         this.bottomOverlayContainer.addView(this.closeReportSpam, LayoutHelper.createFrame(36, 36.0f, 53, 0.0f, 6.0f, 2.0f, 0.0f));
-        this.closeReportSpam.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda3
+        this.closeReportSpam.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TopicsFragment.this.lambda$createView$5(view);
@@ -4097,7 +4097,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 48));
         TLRPC.Chat currentChat = getCurrentChat();
         if (currentChat != null) {
-            ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, this.contentView, currentChat, new ChatActivityMemberRequestsDelegate.Callback() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda4
+            ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, this.contentView, currentChat, new ChatActivityMemberRequestsDelegate.Callback() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.Callback
                 public final void onEnterOffsetChanged() {
                     TopicsFragment.this.updateTopView();
@@ -4145,7 +4145,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
         this.blurredView.setFocusable(false);
         this.blurredView.setImportantForAccessibility(2);
-        this.blurredView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda5
+        this.blurredView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 TopicsFragment.this.lambda$createView$6(view2);
@@ -4178,7 +4178,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         updateChatInfo();
         updateColors();
         if (ChatObject.isBoostSupported(getCurrentChat())) {
-            getMessagesController().getBoostsController().getBoostsStats(-this.chatId, new Consumer() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda6
+            getMessagesController().getBoostsController().getBoostsStats(-this.chatId, new Consumer() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda5
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
                     TopicsFragment.this.lambda$createView$7((TL_stories.TL_premium_boostsStatus) obj);
@@ -4269,6 +4269,23 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void drawOverlay(Canvas canvas, View view) {
+        canvas.save();
+        canvas.translate(this.contentView.getX(), this.contentView.getY());
+        FragmentContextView fragmentContextView = this.fragmentContextView;
+        if (fragmentContextView != null && fragmentContextView.isCallStyle()) {
+            canvas.save();
+            canvas.translate(this.fragmentContextView.getX(), this.topView.getY() + this.fragmentContextView.getY());
+            this.fragmentContextView.setDrawOverlay(true);
+            this.fragmentContextView.draw(canvas);
+            this.fragmentContextView.setDrawOverlay(false);
+            canvas.restore();
+            view.invalidate();
+        }
+        canvas.restore();
+    }
+
     @Override // org.telegram.ui.Components.ChatActivityInterface
     public ChatAvatarContainer getAvatarContainer() {
         return this.avatarContainer;
@@ -4316,7 +4333,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         RecyclerListView recyclerListView;
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda1
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TopicsFragment.this.lambda$getThemeDescriptions$23();
@@ -4500,7 +4517,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (!this.inPreviewMode || getMessagesController().isForum(-this.chatId)) {
             return;
         }
-        lambda$onBackPressed$348();
+        lambda$onBackPressed$354();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

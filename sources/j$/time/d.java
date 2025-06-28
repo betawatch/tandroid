@@ -20,12 +20,16 @@ public final class d implements Comparable, Serializable {
         this.b = i;
     }
 
-    private static d a(long j, int i) {
+    private static d f(long j, int i) {
         return (((long) i) | j) == 0 ? c : new d(j, i);
     }
 
-    public static d b() {
-        return a(j$.com.android.tools.r8.a.g(Long.MAX_VALUE, j$.com.android.tools.r8.a.j(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.i(999999999L, 1000000000L));
+    public static d i() {
+        return f(j$.com.android.tools.r8.a.g(Long.MAX_VALUE, j$.com.android.tools.r8.a.j(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.i(999999999L, 1000000000L));
+    }
+
+    public static d j(long j) {
+        return f(j, 0);
     }
 
     @Override // java.lang.Comparable
@@ -44,6 +48,10 @@ public final class d implements Comparable, Serializable {
         }
         d dVar = (d) obj;
         return this.a == dVar.a && this.b == dVar.b;
+    }
+
+    public final long h() {
+        return this.a;
     }
 
     public final int hashCode() {

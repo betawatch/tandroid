@@ -1313,7 +1313,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                     AudioPlayerAlert.this.listView.setPadding(0, dp, 0, (AudioPlayerAlert.this.searching && ((BottomSheet) AudioPlayerAlert.this).keyboardVisible) ? 0 : AudioPlayerAlert.this.listView.getPaddingBottom());
                 }
                 this.ignoreLayout = false;
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
                 AudioPlayerAlert.this.inFullSize = getMeasuredHeight() >= size;
             }
 
@@ -2195,7 +2195,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$348();
+        dialogsActivity.lambda$onBackPressed$354();
         return true;
     }
 
@@ -3199,7 +3199,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (view != frameLayout) {
             return false;
         }
-        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, 1073741824), View.MeasureSpec.makeMeasureSpec(i2, 1073741824));
+        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30));
         return true;
     }
 

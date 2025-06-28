@@ -27,7 +27,6 @@ import androidx.core.view.MenuItemCompat;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import org.telegram.messenger.LiteMode;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -214,9 +213,9 @@ public class SupportMenuInflater extends MenuInflater {
             this.itemTitleCondensed = obtainStyledAttributes.getText(R$styleable.MenuItem_android_titleCondensed);
             this.itemIconResId = obtainStyledAttributes.getResourceId(R$styleable.MenuItem_android_icon, 0);
             this.itemAlphabeticShortcut = getShortcut(obtainStyledAttributes.getString(R$styleable.MenuItem_android_alphabeticShortcut));
-            this.itemAlphabeticModifiers = obtainStyledAttributes.getInt(R$styleable.MenuItem_alphabeticModifiers, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+            this.itemAlphabeticModifiers = obtainStyledAttributes.getInt(R$styleable.MenuItem_alphabeticModifiers, 4096);
             this.itemNumericShortcut = getShortcut(obtainStyledAttributes.getString(R$styleable.MenuItem_android_numericShortcut));
-            this.itemNumericModifiers = obtainStyledAttributes.getInt(R$styleable.MenuItem_numericModifiers, LiteMode.FLAG_ANIMATED_EMOJI_CHAT_NOT_PREMIUM);
+            this.itemNumericModifiers = obtainStyledAttributes.getInt(R$styleable.MenuItem_numericModifiers, 4096);
             int i = R$styleable.MenuItem_android_checkable;
             this.itemCheckable = obtainStyledAttributes.hasValue(i) ? obtainStyledAttributes.getBoolean(i, false) : this.groupCheckable;
             this.itemChecked = obtainStyledAttributes.getBoolean(R$styleable.MenuItem_android_checked, false);

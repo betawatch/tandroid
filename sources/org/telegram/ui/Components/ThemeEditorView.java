@@ -53,6 +53,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -126,7 +127,7 @@ public class ThemeEditorView {
         */
         public boolean onTouchEvent(MotionEvent motionEvent) {
             INavigationLayout iNavigationLayout;
-            ArrayList themeDescriptions;
+            ArrayList<ThemeDescription> themeDescriptions;
             WindowManager.LayoutParams layoutParams;
             float f;
             float rawX = motionEvent.getRawX();
@@ -342,7 +343,7 @@ public class ThemeEditorView {
                             editTextBoldCursor = this.colorEditText[i];
                             str = "alpha";
                         }
-                        this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | 268435456);
+                        this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLRPC.FLAG_28);
                         this.colorEditText[i].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
                         this.linearLayout.addView(this.colorEditText[i], LayoutHelper.createLinear(55, 36, 0.0f, 0.0f, i == 3 ? 16.0f : 0.0f, 0.0f));
                         this.colorEditText[i].addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.ThemeEditorView.EditorAlert.ColorPicker.1
@@ -418,7 +419,7 @@ public class ThemeEditorView {
                         i++;
                     }
                     editTextBoldCursor.setHint(str);
-                    this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | 268435456);
+                    this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLRPC.FLAG_28);
                     this.colorEditText[i].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
                     this.linearLayout.addView(this.colorEditText[i], LayoutHelper.createLinear(55, 36, 0.0f, 0.0f, i == 3 ? 16.0f : 0.0f, 0.0f));
                     this.colorEditText[i].addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.ThemeEditorView.EditorAlert.ColorPicker.1
@@ -983,7 +984,7 @@ public class ThemeEditorView {
             }
 
             private void updateSearchResults(final ArrayList arrayList, final ArrayList arrayList2, final int i) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$SearchAdapter$$ExternalSyntheticLambda0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$SearchAdapter$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         ThemeEditorView.EditorAlert.SearchAdapter.this.lambda$updateSearchResults$0(i, arrayList, arrayList2);
@@ -1103,7 +1104,7 @@ public class ThemeEditorView {
                     if (str != null && str.length() != 0) {
                         final int i = this.lastSearchId + 1;
                         this.lastSearchId = i;
-                        this.searchRunnable = new Runnable() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$SearchAdapter$$ExternalSyntheticLambda1
+                        this.searchRunnable = new Runnable() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$SearchAdapter$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ThemeEditorView.EditorAlert.SearchAdapter.this.lambda$searchDialogs$1(str, i);
@@ -1387,7 +1388,7 @@ public class ThemeEditorView {
                         }
                         this.ignoreLayout = false;
                     }
-                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
                 }
 
                 @Override // android.view.View

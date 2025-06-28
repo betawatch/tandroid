@@ -26,7 +26,7 @@ final class z2 extends V1 {
 
     @Override // j$.util.stream.b
     public final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        if (R2.SORTED.d(bVar.p0()) && this.m) {
+        if (R2.SORTED.j(bVar.p0()) && this.m) {
             return bVar.h0(spliterator, false, intFunction);
         }
         Object[] s = bVar.h0(spliterator, true, intFunction).s(intFunction);
@@ -37,11 +37,11 @@ final class z2 extends V1 {
     @Override // j$.util.stream.b
     public final e2 w0(int i, e2 e2Var) {
         e2Var.getClass();
-        if (R2.SORTED.d(i) && this.m) {
+        if (R2.SORTED.j(i) && this.m) {
             return e2Var;
         }
-        boolean d = R2.SIZED.d(i);
+        boolean j = R2.SIZED.j(i);
         Comparator comparator = this.n;
-        return d ? new E2(e2Var, comparator) : new A2(e2Var, comparator);
+        return j ? new E2(e2Var, comparator) : new A2(e2Var, comparator);
     }
 }

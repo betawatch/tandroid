@@ -163,7 +163,7 @@ public class BotAdView extends FrameLayout {
 
     public int height() {
         if (this.invalidatedMeasure || getMeasuredHeight() <= 0) {
-            measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, Integer.MIN_VALUE));
+            measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
         }
         return getMeasuredHeight();
     }

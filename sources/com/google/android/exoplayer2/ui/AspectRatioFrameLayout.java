@@ -5,6 +5,7 @@ import android.graphics.Matrix;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 public class AspectRatioFrameLayout extends FrameLayout {
@@ -118,7 +119,7 @@ public class AspectRatioFrameLayout extends FrameLayout {
             measuredHeight = (int) (f / this.videoAspectRatio);
         }
         this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f3, true);
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLRPC.FLAG_30));
         int childCount = getChildCount();
         for (int i4 = 0; i4 < childCount; i4++) {
             View childAt = getChildAt(i4);

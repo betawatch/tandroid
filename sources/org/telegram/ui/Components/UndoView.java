@@ -510,7 +510,7 @@ public class UndoView extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(this.undoViewHeight, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.undoViewHeight, TLRPC.FLAG_30));
         this.backgroundDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 
@@ -1269,7 +1269,7 @@ public class UndoView extends FrameLayout {
                         if (measuredWidth == 0) {
                             measuredWidth = AndroidUtilities.displaySize.x;
                         }
-                        measureChildWithMargins(this.subinfoTextView, View.MeasureSpec.makeMeasureSpec(measuredWidth - AndroidUtilities.dp(16.0f), 1073741824), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                        measureChildWithMargins(this.subinfoTextView, View.MeasureSpec.makeMeasureSpec(measuredWidth - AndroidUtilities.dp(16.0f), TLRPC.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                         max = this.subinfoTextView.getMeasuredHeight() + AndroidUtilities.dp(37.0f);
                     } else {
                         if (!hasSubInfo()) {
@@ -1279,7 +1279,7 @@ public class UndoView extends FrameLayout {
                                 if (measuredWidth2 <= 0) {
                                     measuredWidth2 = AndroidUtilities.displaySize.x;
                                 }
-                                measureChildWithMargins(this.infoTextView, View.MeasureSpec.makeMeasureSpec(measuredWidth2 - AndroidUtilities.dp(16.0f), 1073741824), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                measureChildWithMargins(this.infoTextView, View.MeasureSpec.makeMeasureSpec(measuredWidth2 - AndroidUtilities.dp(16.0f), TLRPC.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                 int measuredHeight = this.infoTextView.getMeasuredHeight();
                                 int i29 = this.currentAction;
                                 int dp2 = measuredHeight + AndroidUtilities.dp((i29 == 16 || i29 == 17 || i29 == 18 || i29 == 84 || i29 == 86) ? 14.0f : 28.0f);

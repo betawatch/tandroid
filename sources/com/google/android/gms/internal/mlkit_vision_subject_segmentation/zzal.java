@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes.dex */
 final class zzal extends AbstractMap implements Serializable {
@@ -232,7 +233,7 @@ final class zzal extends AbstractMap implements Serializable {
             int max = Math.max(i + 1, 2);
             int highestOneBit = Integer.highestOneBit(max);
             if (max > highestOneBit && (highestOneBit = highestOneBit + highestOneBit) <= 0) {
-                highestOneBit = 1073741824;
+                highestOneBit = TLRPC.FLAG_30;
             }
             int max2 = Math.max(4, highestOneBit);
             this.zze = zzam.zzd(max2);

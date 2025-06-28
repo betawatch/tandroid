@@ -126,7 +126,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onTabAnimationUpdate(boolean z3) {
+            public void onTabAnimationUpdate(boolean z3) {
                 float positionAnimated = BoostPagerBottomSheet.this.viewPager.getPositionAnimated();
                 if (positionAnimated <= 0.0f || positionAnimated >= 1.0f) {
                     this.isScrolling = false;
