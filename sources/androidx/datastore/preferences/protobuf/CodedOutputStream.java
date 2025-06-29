@@ -41,11 +41,11 @@ public abstract class CodedOutputStream extends ByteOutput {
         final void bufferFixed32NoTag(int i) {
             byte[] bArr = this.buffer;
             int i2 = this.position;
-            bArr[i2] = (byte) (i & NotificationCenter.suggestedLangpack);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.suggestedLangpack);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.suggestedLangpack);
+            bArr[i2] = (byte) (i & NotificationCenter.reloadInterface);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.reloadInterface);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.reloadInterface);
             this.position = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.suggestedLangpack);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.reloadInterface);
             this.totalBytesWritten += 4;
         }
 
@@ -56,11 +56,11 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i + 1] = (byte) ((j >> 8) & 255);
             bArr[i + 2] = (byte) ((j >> 16) & 255);
             bArr[i + 3] = (byte) (255 & (j >> 24));
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.suggestedLangpack);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.reloadInterface);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.reloadInterface);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.reloadInterface);
             this.position = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.suggestedLangpack);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.reloadInterface);
             this.totalBytesWritten += 8;
         }
 

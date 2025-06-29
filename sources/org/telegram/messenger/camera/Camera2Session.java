@@ -499,7 +499,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.suggestedFiltersLoaded;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.webRtcMicAmplitudeEvent;
+                    i = NotificationCenter.voipServiceCreated;
                 }
                 CameraCharacteristics cameraCharacteristics = this.cameraCharacteristics;
                 key = CameraCharacteristics.SENSOR_ORIENTATION;
@@ -731,7 +731,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.suggestedFiltersLoaded;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.webRtcMicAmplitudeEvent;
+                    i = NotificationCenter.voipServiceCreated;
                 }
                 CameraCharacteristics cameraCharacteristics = this.cameraCharacteristics;
                 key = CameraCharacteristics.SENSOR_ORIENTATION;

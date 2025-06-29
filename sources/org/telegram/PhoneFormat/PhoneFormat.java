@@ -312,10 +312,10 @@ public class PhoneFormat {
                 str = Locale.getDefault().getCountry().toLowerCase();
             }
             this.defaultCountry = str;
-            this.callingCodeOffsets = new HashMap(NotificationCenter.suggestedLangpack);
-            this.callingCodeCountries = new HashMap(NotificationCenter.suggestedLangpack);
+            this.callingCodeOffsets = new HashMap(NotificationCenter.reloadInterface);
+            this.callingCodeCountries = new HashMap(NotificationCenter.reloadInterface);
             this.callingCodeData = new HashMap(10);
-            this.countryCallingCode = new HashMap(NotificationCenter.suggestedLangpack);
+            this.countryCallingCode = new HashMap(NotificationCenter.reloadInterface);
             parseDataHeader();
             this.initialzed = true;
         } catch (Exception e7) {

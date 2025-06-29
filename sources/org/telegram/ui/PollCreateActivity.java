@@ -13,6 +13,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
@@ -580,12 +581,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             PollCreateActivity.this.answers[PollCreateActivity.this.answers.length - 1] = null;
             int i3 = 0;
             PollCreateActivity.this.answersChecks[PollCreateActivity.this.answersChecks.length - 1] = false;
-            PollCreateActivity.access$4810(PollCreateActivity.this);
+            PollCreateActivity.access$4910(PollCreateActivity.this);
             if (PollCreateActivity.this.answerIds != null) {
                 int i4 = PollCreateActivity.this.answersCount;
                 int[] iArr = new int[i4];
                 while (i3 < i4) {
-                    iArr[i3] = PollCreateActivity.this.answerIds[i3 >= i ? i3 - 1 : i3];
+                    iArr[i3] = PollCreateActivity.this.answerIds[i3 > i ? i3 - 1 : i3];
                     i3++;
                 }
                 PollCreateActivity.this.answerIds = iArr;
@@ -725,7 +726,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             if (itemViewType == 0) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == PollCreateActivity.this.questionHeaderRow) {
-                    i2 = PollCreateActivity.this.todo ? R.string.TodoTitle : R.string.PollQuestion;
+                    i2 = PollCreateActivity.this.todo ? PollCreateActivity.this.editing != null ? R.string.TodoEditTitle : R.string.TodoTitle : R.string.PollQuestion;
                 } else if (i == PollCreateActivity.this.answerHeaderRow) {
                     i2 = PollCreateActivity.this.quizOnly == 1 ? R.string.QuizAnswers : PollCreateActivity.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions;
                 } else if (i != PollCreateActivity.this.settingsHeaderRow) {
@@ -823,13 +824,6 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                         final PollEditTextCell pollEditTextCell2 = new PollEditTextCell(this.mContext, false, PollCreateActivity.this.isPremium ? 1 : 0, null) { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.1
                             @Override // org.telegram.ui.Cells.PollEditTextCell
                             protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
-                                if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
-                                    Menu menu = actionMode.getMenu();
-                                    if (menu.findItem(android.R.id.copy) == null) {
-                                        return;
-                                    }
-                                    ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false);
-                                }
                             }
 
                             @Override // org.telegram.ui.Cells.PollEditTextCell
@@ -856,7 +850,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                                         PollCreateActivity.this.answers[length] = PollCreateActivity.this.answers[length - 1];
                                     }
                                     PollCreateActivity.this.answers[i2] = (CharSequence) arrayList.remove(0);
-                                    PollCreateActivity.access$4808(PollCreateActivity.this);
+                                    PollCreateActivity.access$4908(PollCreateActivity.this);
                                     i2++;
                                 }
                                 PollCreateActivity.this.updateRows();
@@ -936,6 +930,17 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             }
 
                             @Override // org.telegram.ui.Cells.PollEditTextCell
+                            protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
+                                if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
+                                    Menu menu = actionMode.getMenu();
+                                    if (menu.findItem(android.R.id.copy) == null) {
+                                        return;
+                                    }
+                                    ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false);
+                                }
+                            }
+
+                            @Override // org.telegram.ui.Cells.PollEditTextCell
                             protected void onCheckBoxClick(PollEditTextCell pollEditTextCell4, boolean z2) {
                                 int adapterPosition;
                                 if (z2 && PollCreateActivity.this.quizPoll) {
@@ -984,7 +989,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                                         PollCreateActivity.this.answers[length] = PollCreateActivity.this.answers[length - 1];
                                     }
                                     PollCreateActivity.this.answers[i2] = (CharSequence) arrayList.remove(0);
-                                    PollCreateActivity.access$4808(PollCreateActivity.this);
+                                    PollCreateActivity.access$4908(PollCreateActivity.this);
                                     i2++;
                                 }
                                 PollCreateActivity.this.updateRows();
@@ -1295,13 +1300,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
     }
 
-    static /* synthetic */ int access$4808(PollCreateActivity pollCreateActivity) {
+    static /* synthetic */ int access$4908(PollCreateActivity pollCreateActivity) {
         int i = pollCreateActivity.answersCount;
         pollCreateActivity.answersCount = i + 1;
         return i;
     }
 
-    static /* synthetic */ int access$4810(PollCreateActivity pollCreateActivity) {
+    static /* synthetic */ int access$4910(PollCreateActivity pollCreateActivity) {
         int i = pollCreateActivity.answersCount;
         pollCreateActivity.answersCount = i - 1;
         return i;
@@ -1765,12 +1770,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             charSequence = this.questionString;
-            i3 = NotificationCenter.suggestedLangpack;
+            i3 = NotificationCenter.reloadInterface;
             if (charSequence != null) {
-                i2 = NotificationCenter.suggestedLangpack;
+                i2 = NotificationCenter.reloadInterface;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.suggestedLangpack;
+                i4 = NotificationCenter.reloadInterface;
                 i2 = i4;
                 i5 = 0;
             }
@@ -1796,12 +1801,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 return;
             }
             charSequence = this.solutionString;
-            i3 = NotificationCenter.smsJobStatusUpdate;
+            i3 = NotificationCenter.emojiKeywordsLoaded;
             if (charSequence != null) {
-                i2 = NotificationCenter.smsJobStatusUpdate;
+                i2 = NotificationCenter.emojiKeywordsLoaded;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.smsJobStatusUpdate;
+                i4 = NotificationCenter.emojiKeywordsLoaded;
                 i2 = i4;
                 i5 = 0;
             }
@@ -2542,7 +2547,9 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             this.questionString = spannableStringBuilder;
             CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false);
             this.questionString = replaceEmoji;
-            this.questionString = MessageObject.replaceAnimatedEmoji(replaceEmoji, tL_messageMediaToDo.todo.title.entities, textPaint.getFontMetricsInt());
+            Spannable replaceAnimatedEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, tL_messageMediaToDo.todo.title.entities, textPaint.getFontMetricsInt());
+            this.questionString = replaceAnimatedEmoji;
+            MessageObject.addEntitiesToText(replaceAnimatedEmoji, tL_messageMediaToDo.todo.title.entities, false, false, false, false);
             int size = tL_messageMediaToDo.todo.list.size();
             this.answersCount = size;
             this.oldAnswersCount = size;
@@ -2559,6 +2566,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 charSequenceArr[i3] = Emoji.replaceEmoji(charSequenceArr[i3], textPaint.getFontMetricsInt(), false);
                 CharSequence[] charSequenceArr2 = this.answers;
                 charSequenceArr2[i3] = MessageObject.replaceAnimatedEmoji(charSequenceArr2[i3], tL_textWithEntities.entities, textPaint.getFontMetricsInt());
+                MessageObject.addEntitiesToText(this.answers[i3], tL_textWithEntities.entities, false, false, false, false);
                 this.answerIds[i3] = tL_messageMediaToDo.todo.list.get(i3).id;
                 i3++;
             }

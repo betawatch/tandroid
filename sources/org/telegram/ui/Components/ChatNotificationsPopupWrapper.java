@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda313;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatNotificationsPopupWrapper;
 import org.telegram.ui.ProfileNotificationsActivity;
@@ -182,7 +182,7 @@ public class ChatNotificationsPopupWrapper {
             }
         };
         final ItemOptions makeSwipeback = itemOptions.makeSwipeback();
-        makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda313(itemOptions));
+        makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda312(itemOptions));
         makeSwipeback.add(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
@@ -448,7 +448,7 @@ public class ChatNotificationsPopupWrapper {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.windowLayout, -2, -2);
         this.popupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.popupWindow.setDismissAnimationDuration(NotificationCenter.webViewResolved);
+        this.popupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
         this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);

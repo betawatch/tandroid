@@ -3838,7 +3838,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (byte b : bArr) {
             i += b & 255;
         }
-        if (i % NotificationCenter.suggestedLangpack != 239) {
+        if (i % NotificationCenter.reloadInterface != 239) {
             return false;
         }
         return l == null || Utilities.bytesToLong(Utilities.computeSHA256(bArr)) == l.longValue();
@@ -6910,7 +6910,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public EncryptionResult encryptData(byte[] bArr) {
         byte[] randomSecret = getRandomSecret();
-        int nextInt = Utilities.random.nextInt(NotificationCenter.premiumFloodWaitReceived) + 32;
+        int nextInt = Utilities.random.nextInt(NotificationCenter.customStickerCreated) + 32;
         while ((bArr.length + nextInt) % 16 != 0) {
             nextInt++;
         }
@@ -7118,15 +7118,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i2 = 0; i2 < 32; i2++) {
             i += 255 & bArr[i2];
         }
-        int i3 = i % NotificationCenter.suggestedLangpack;
+        int i3 = i % NotificationCenter.reloadInterface;
         if (i3 != 239) {
-            int i4 = NotificationCenter.emojiLoaded - i3;
+            int i4 = NotificationCenter.didReceiveCall - i3;
             int nextInt = Utilities.random.nextInt(32);
             int i5 = (bArr[nextInt] & 255) + i4;
             if (i5 < 255) {
-                i5 += NotificationCenter.suggestedLangpack;
+                i5 += NotificationCenter.reloadInterface;
             }
-            bArr[nextInt] = (byte) (i5 % NotificationCenter.suggestedLangpack);
+            bArr[nextInt] = (byte) (i5 % NotificationCenter.reloadInterface);
         }
         return bArr;
     }

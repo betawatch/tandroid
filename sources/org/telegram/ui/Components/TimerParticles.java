@@ -129,7 +129,7 @@ public class TimerParticles {
             particle.currentTime = 0.0f;
             float f6 = 20.0f;
             if (this.big) {
-                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.smsJobStatusUpdate) + 600;
+                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.emojiKeywordsLoaded) + 600;
                 nextFloat = Utilities.random.nextFloat() * 20.0f;
                 f6 = 30.0f;
             } else {

@@ -103,7 +103,7 @@ public class ChooseQualityLayout$QualityIcon extends Drawable {
         int saveCount = canvas.getSaveCount();
         Rect bounds = getBounds();
         if (dp > 0.0f || dp2 > 0.0f || f > 0.0f) {
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.suggestedLangpack, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.reloadInterface, 31);
         }
         Rect rect = AndroidUtilities.rectTmp2;
         rect.set(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), (AndroidUtilities.dp(6.0f) + bounds.width()) - AndroidUtilities.dp(12.0f), (AndroidUtilities.dp(6.0f) + bounds.height()) - AndroidUtilities.dp(12.0f));

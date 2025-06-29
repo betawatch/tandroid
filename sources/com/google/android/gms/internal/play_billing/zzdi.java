@@ -650,7 +650,7 @@ final class zzdi implements zzdp {
                 iArr[i63] = i64;
                 i63++;
             }
-            int i73 = charAt25 & NotificationCenter.suggestedLangpack;
+            int i73 = charAt25 & NotificationCenter.reloadInterface;
             if (i73 >= 51) {
                 int i74 = i16 + 1;
                 int charAt26 = zzd.charAt(i16);
@@ -1969,7 +1969,7 @@ final class zzdi implements zzdp {
     }
 
     private static int zzx(int i) {
-        return (i >>> 20) & NotificationCenter.suggestedLangpack;
+        return (i >>> 20) & NotificationCenter.reloadInterface;
     }
 
     private final int zzy(int i) {

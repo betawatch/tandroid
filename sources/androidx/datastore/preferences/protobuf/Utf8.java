@@ -256,7 +256,7 @@ abstract class Utf8 {
                             char charAt3 = charSequence.charAt(i9);
                             if (Character.isSurrogatePair(charAt2, charAt3)) {
                                 int codePoint = Character.toCodePoint(charAt2, charAt3);
-                                bArr[i7] = (byte) ((codePoint >>> 18) | NotificationCenter.invalidateMotionBackground);
+                                bArr[i7] = (byte) ((codePoint >>> 18) | NotificationCenter.emojiLoaded);
                                 bArr[i7 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                                 int i10 = i7 + 3;
                                 bArr[i7 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
@@ -597,7 +597,7 @@ abstract class Utf8 {
                                 if (Character.isSurrogatePair(charAt2, charAt3)) {
                                     int codePoint = Character.toCodePoint(charAt2, charAt3);
                                     j2 = 1;
-                                    UnsafeUtil.putByte(bArr, j4, (byte) ((codePoint >>> 18) | NotificationCenter.invalidateMotionBackground));
+                                    UnsafeUtil.putByte(bArr, j4, (byte) ((codePoint >>> 18) | NotificationCenter.emojiLoaded));
                                     j3 = j5;
                                     UnsafeUtil.putByte(bArr, j4 + 1, (byte) (((codePoint >>> 12) & 63) | 128));
                                     long j6 = 3 + j4;

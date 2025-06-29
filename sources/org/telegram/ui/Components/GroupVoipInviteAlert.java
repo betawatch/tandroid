@@ -700,7 +700,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
         ListAdapter listAdapter = new ListAdapter(context);
         this.listViewAdapter = listAdapter;
         recyclerListView.setAdapter(listAdapter);
-        loadChatParticipants(0, NotificationCenter.smsJobStatusUpdate);
+        loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
         updateRows();
         setColorProgress(0.0f);
     }
@@ -1070,7 +1070,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
                 this.delayResults = 2;
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
                 this.contactsEndReached = true;
-                loadChatParticipants(0, NotificationCenter.smsJobStatusUpdate, false);
+                loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded, false);
                 tL_channels_getParticipants.filter.q = "";
                 tL_channels_getParticipants.offset = i;
                 tL_channels_getParticipants.limit = i2;

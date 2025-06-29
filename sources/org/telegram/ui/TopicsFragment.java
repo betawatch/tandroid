@@ -4094,7 +4094,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         getMessagesStorage().loadChatInfo(this.chatId, true, null, true, false, 0);
         FrameLayout frameLayout5 = new FrameLayout(context);
         this.topView = frameLayout5;
-        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 48));
+        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 48));
         TLRPC.Chat currentChat = getCurrentChat();
         if (currentChat != null) {
             ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, this.contentView, currentChat, new ChatActivityMemberRequestsDelegate.Callback() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda3

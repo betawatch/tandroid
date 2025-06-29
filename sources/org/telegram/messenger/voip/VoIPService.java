@@ -1449,7 +1449,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         int checkSelfPermission;
         int checkSelfPermission2;
         if (Build.VERSION.SDK_INT < 29) {
-            return NotificationCenter.botDownloadsUpdate;
+            return NotificationCenter.updateStories;
         }
         checkSelfPermission = contextWrapper.checkSelfPermission("android.permission.CAMERA");
         int i = checkSelfPermission == 0 ? 64 : 0;

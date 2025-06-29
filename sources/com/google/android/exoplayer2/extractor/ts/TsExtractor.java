@@ -156,7 +156,7 @@ public final class TsExtractor implements Extractor {
                                 arrayList = arrayList2;
                                 i3 = 89;
                             } else if (readUnsignedByte == 111) {
-                                i3 = NotificationCenter.proxySettingsChanged;
+                                i3 = NotificationCenter.didSetNewWallpapper;
                             }
                         }
                         i3 = NotificationCenter.fileUploaded;
@@ -338,7 +338,7 @@ public final class TsExtractor implements Extractor {
         int limit = this.tsPacketBuffer.limit();
         int findSyncBytePosition = TsUtil.findSyncBytePosition(this.tsPacketBuffer.getData(), position, limit);
         this.tsPacketBuffer.setPosition(findSyncBytePosition);
-        int i = findSyncBytePosition + NotificationCenter.storiesEnabledUpdate;
+        int i = findSyncBytePosition + NotificationCenter.didUpdatePremiumGiftFieldIcon;
         if (i > limit) {
             int i2 = this.bytesSinceLastSync + (findSyncBytePosition - position);
             this.bytesSinceLastSync = i2;
@@ -507,7 +507,7 @@ public final class TsExtractor implements Extractor {
         int i = 0;
         while (i < 188) {
             for (int i2 = 0; i2 < 5; i2++) {
-                if (data[(i2 * NotificationCenter.storiesEnabledUpdate) + i] != 71) {
+                if (data[(i2 * NotificationCenter.didUpdatePremiumGiftFieldIcon) + i] != 71) {
                     break;
                 }
             }

@@ -301,7 +301,7 @@ public class DataUsage2Activity extends BaseFragment {
 
                 @Override // org.telegram.ui.Components.CacheChart
                 protected int heightDp() {
-                    return NotificationCenter.factCheckLoaded;
+                    return NotificationCenter.starSubscriptionsLoaded;
                 }
 
                 @Override // org.telegram.ui.Components.CacheChart

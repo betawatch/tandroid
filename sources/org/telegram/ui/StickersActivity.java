@@ -328,7 +328,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
                     }
                 });
             }
-            makeOptions.setMinWidth(NotificationCenter.storiesLimitUpdate);
+            makeOptions.setMinWidth(NotificationCenter.storiesBlocklistUpdate);
             makeOptions.show();
         }
 

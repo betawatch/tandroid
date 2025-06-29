@@ -35,9 +35,9 @@ public abstract class Ac4Util {
         data[1] = 64;
         data[2] = -1;
         data[3] = -1;
-        data[4] = (byte) ((i >> 16) & NotificationCenter.suggestedLangpack);
-        data[5] = (byte) ((i >> 8) & NotificationCenter.suggestedLangpack);
-        data[6] = (byte) (i & NotificationCenter.suggestedLangpack);
+        data[4] = (byte) ((i >> 16) & NotificationCenter.reloadInterface);
+        data[5] = (byte) ((i >> 8) & NotificationCenter.reloadInterface);
+        data[6] = (byte) (i & NotificationCenter.reloadInterface);
     }
 
     public static Format parseAc4AnnexEFormat(ParsableByteArray parsableByteArray, String str, String str2, DrmInitData drmInitData) {

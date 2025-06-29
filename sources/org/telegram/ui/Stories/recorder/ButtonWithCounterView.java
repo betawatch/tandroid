@@ -85,8 +85,8 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.suggestedLangpack;
-        this.subTextAlpha = NotificationCenter.smsJobStatusUpdate;
+        this.globalAlpha = NotificationCenter.reloadInterface;
+        this.subTextAlpha = NotificationCenter.emojiKeywordsLoaded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);

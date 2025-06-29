@@ -164,7 +164,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.suggestedLangpack;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.reloadInterface;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 
@@ -194,7 +194,7 @@ abstract class AtomParsers {
             }
             int readUnsignedByte = this.data.readUnsignedByte();
             this.currentByte = readUnsignedByte;
-            return (readUnsignedByte & NotificationCenter.invalidateMotionBackground) >> 4;
+            return (readUnsignedByte & NotificationCenter.emojiLoaded) >> 4;
         }
     }
 
@@ -702,7 +702,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.invalidateMotionBackground) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.emojiLoaded) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1337,7 +1337,7 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.webRtcMicAmplitudeEvent;
+            i2 = NotificationCenter.voipServiceCreated;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
             i2 = NotificationCenter.suggestedFiltersLoaded;
         }

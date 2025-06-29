@@ -1039,9 +1039,9 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, R.drawable.avd_speed, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.AccDescrPremiumSpeed));
             this.speedItem = addItemWithWidth;
             addItemWithWidth.getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
-            this.gotoItem = this.actionMode.addItemWithWidth(NotificationCenter.smsJobStatusUpdate, R.drawable.msg_message, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.AccDescrGoToMessage));
-            this.forwardItem = this.actionMode.addItemWithWidth(NotificationCenter.storyQualityUpdate, R.drawable.msg_forward, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Forward));
-            this.deleteItem = this.actionMode.addItemWithWidth(NotificationCenter.openBoostForUsersDialog, R.drawable.msg_delete, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Delete));
+            this.gotoItem = this.actionMode.addItemWithWidth(NotificationCenter.emojiKeywordsLoaded, R.drawable.msg_message, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.AccDescrGoToMessage));
+            this.forwardItem = this.actionMode.addItemWithWidth(NotificationCenter.smsJobStatusUpdate, R.drawable.msg_forward, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Forward));
+            this.deleteItem = this.actionMode.addItemWithWidth(NotificationCenter.storyQualityUpdate, R.drawable.msg_delete, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Delete));
         }
         if (this.selectedMessagesCountTextView != null) {
             DialogsSearchAdapter dialogsSearchAdapter = this.dialogsSearchAdapter;

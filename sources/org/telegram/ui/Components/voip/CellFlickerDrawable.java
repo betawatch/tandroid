@@ -84,7 +84,7 @@ public class CellFlickerDrawable {
     }
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.chatWasBoostedByUser, NotificationCenter.audioRecordTooShort);
+        this(64, NotificationCenter.groupRestrictionsUnlockedByBoosts, NotificationCenter.audioRecordTooShort);
     }
 
     public CellFlickerDrawable(int i, int i2) {
@@ -227,7 +227,7 @@ public class CellFlickerDrawable {
     }
 
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.chatWasBoostedByUser);
+        setColors(i, 64, NotificationCenter.groupRestrictionsUnlockedByBoosts);
     }
 
     public void setColors(int i, int i2, int i3) {

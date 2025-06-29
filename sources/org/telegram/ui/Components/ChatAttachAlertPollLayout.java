@@ -614,17 +614,6 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                     Theme.ResourcesProvider resourcesProvider = ChatAttachAlertPollLayout.this.resourcesProvider;
                     final PollEditTextCell pollEditTextCell2 = new PollEditTextCell(context, false, z ? 1 : 0, null, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.1
                         @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
-                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
-                                Menu menu = actionMode.getMenu();
-                                if (menu.findItem(android.R.id.copy) == null) {
-                                    return;
-                                }
-                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
-                            }
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
                         protected void onEditTextFocusChanged(boolean z2) {
                             ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z2);
                         }
@@ -732,6 +721,17 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                                 return false;
                             }
                             return ChatAttachAlertPollLayout.this.answersChecks[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow];
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
+                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
+                                Menu menu = actionMode.getMenu();
+                                if (menu.findItem(android.R.id.copy) == null) {
+                                    return;
+                                }
+                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
+                            }
                         }
 
                         @Override // org.telegram.ui.Cells.PollEditTextCell
@@ -1730,13 +1730,13 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (view instanceof PollEditTextCell) {
             PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
             if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.suggestedLangpack;
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.reloadInterface;
                 CharSequence charSequence = this.questionString;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.solutionRow) {
                 CharSequence charSequence2 = this.solutionString;
                 length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.smsJobStatusUpdate;
+                i2 = NotificationCenter.emojiKeywordsLoaded;
             } else {
                 int i3 = this.answerStartRow;
                 if (i < i3 || i >= this.answersCount + i3) {
@@ -2103,6 +2103,14 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                 this.parentAlert.sizeNotifierFrameLayout.removeView(emojiView);
             }
         }
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean onDismissWithTouchOutside() {
+        if (checkDiscard()) {
+            return super.onDismissWithTouchOutside();
+        }
+        return false;
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout

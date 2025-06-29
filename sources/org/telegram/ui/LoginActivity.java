@@ -931,7 +931,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.smsJobStatusUpdate);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.emojiKeywordsLoaded);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6007,7 +6007,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null || LoginActivity.this.getParentActivity().isFinishing()) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.smsJobStatusUpdate);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.emojiKeywordsLoaded);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8908,7 +8908,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.smsJobStatusUpdate));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.emojiKeywordsLoaded));
             StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.LoginActivity.LoginPayView.1
                 @Override // org.telegram.ui.Components.Premium.StarParticlesView
                 protected void configure() {
@@ -8935,7 +8935,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.starParticlesView = starParticlesView;
-            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 119));
+            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 119));
             GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 1) { // from class: org.telegram.ui.LoginActivity.LoginPayView.2
                 @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
                 protected void onAttachedToWindow() {
@@ -12770,7 +12770,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             timeInterpolator = null;
         } else if (z) {
             timeInterpolator = AndroidUtilities.decelerateInterpolator;
-            i32 = NotificationCenter.smsJobStatusUpdate;
+            i32 = NotificationCenter.emojiKeywordsLoaded;
         } else {
             timeInterpolator = AndroidUtilities.accelerateInterpolator;
         }
@@ -13228,7 +13228,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setViewToFindFocus(this.slideViewsContainer);
-        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.messagesFeeUpdated));
+        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.adminedChannelsLoaded));
         this.views[0] = new PhoneView(context);
         this.views[1] = new LoginActivitySmsView(context, 1);
         this.views[2] = new LoginActivitySmsView(context, 2);

@@ -992,9 +992,9 @@ public class GroupCallUserCell extends FrameLayout {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.invalidateMotionBackground;
+            i = NotificationCenter.emojiLoaded;
             if (nextInt < 64) {
-                i2 = NotificationCenter.invalidateMotionBackground;
+                i2 = NotificationCenter.emojiLoaded;
                 i = 120;
             } else {
                 i2 = 420;

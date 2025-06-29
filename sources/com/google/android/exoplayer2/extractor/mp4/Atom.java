@@ -72,7 +72,7 @@ abstract class Atom {
     }
 
     public static String getAtomTypeString(int i) {
-        return "" + ((char) ((i >> 24) & NotificationCenter.suggestedLangpack)) + ((char) ((i >> 16) & NotificationCenter.suggestedLangpack)) + ((char) ((i >> 8) & NotificationCenter.suggestedLangpack)) + ((char) (i & NotificationCenter.suggestedLangpack));
+        return "" + ((char) ((i >> 24) & NotificationCenter.reloadInterface)) + ((char) ((i >> 16) & NotificationCenter.reloadInterface)) + ((char) ((i >> 8) & NotificationCenter.reloadInterface)) + ((char) (i & NotificationCenter.reloadInterface));
     }
 
     public static int parseFullAtomFlags(int i) {
@@ -80,7 +80,7 @@ abstract class Atom {
     }
 
     public static int parseFullAtomVersion(int i) {
-        return (i >> 24) & NotificationCenter.suggestedLangpack;
+        return (i >> 24) & NotificationCenter.reloadInterface;
     }
 
     public String toString() {

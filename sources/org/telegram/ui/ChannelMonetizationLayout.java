@@ -1241,7 +1241,6 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
     }
 
     private void initLevel() {
-        int i;
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
         if (chat != null) {
             this.currentBoostLevel = chat.level;
@@ -1260,23 +1259,16 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             tL_payments_getStarsRevenueStats.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
             TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-this.dialogId);
             if (chatFull != null) {
-                int i2 = chatFull.stats_dc;
                 boolean z = chatFull.restricted_sponsored;
                 this.switchOffValue = z;
                 this.initialSwitchOffValue = z;
-                i = i2;
-            } else {
-                i = -1;
-            }
-            if (i == -1) {
-                return;
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getStarsRevenueStats, new RequestDelegate() { // from class: org.telegram.ui.ChannelMonetizationLayout$$ExternalSyntheticLambda30
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ChannelMonetizationLayout.this.lambda$initLevel$33(tLObject, tL_error);
                 }
-            }, null, null, 0, i, 1, true);
+            }, null, null, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         }
     }
 

@@ -69,11 +69,11 @@ final class zzbf extends zzbi {
         try {
             byte[] bArr = this.zzc;
             int i2 = this.zze;
-            bArr[i2] = (byte) (i & NotificationCenter.suggestedLangpack);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.suggestedLangpack);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.suggestedLangpack);
+            bArr[i2] = (byte) (i & NotificationCenter.reloadInterface);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.reloadInterface);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.reloadInterface);
             this.zze = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.suggestedLangpack);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.reloadInterface);
         } catch (IndexOutOfBoundsException e) {
             throw new zzbg(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -90,15 +90,15 @@ final class zzbf extends zzbi {
         try {
             byte[] bArr = this.zzc;
             int i = this.zze;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.suggestedLangpack);
-            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.suggestedLangpack);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.suggestedLangpack);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.reloadInterface);
+            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.reloadInterface);
+            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.reloadInterface);
+            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.reloadInterface);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.reloadInterface);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.reloadInterface);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.reloadInterface);
             this.zze = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.suggestedLangpack);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.reloadInterface);
         } catch (IndexOutOfBoundsException e) {
             throw new zzbg(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }

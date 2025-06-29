@@ -68,9 +68,9 @@ public enum j implements j$.time.temporal.k {
             case 3:
                 return (z ? 1 : 0) + NotificationCenter.recordStarted;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.didSetNewTheme;
+                return (z ? 1 : 0) + NotificationCenter.didReplacedPhotoInMemCache;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.storiesDraftsUpdated;
+                return (z ? 1 : 0) + NotificationCenter.storiesListUpdated;
             case 6:
                 return 1;
             case 7:
@@ -80,9 +80,9 @@ public enum j implements j$.time.temporal.k {
             case 9:
                 return (z ? 1 : 0) + NotificationCenter.giftsToUserSent;
             case 10:
-                return (z ? 1 : 0) + NotificationCenter.starBalanceUpdated;
+                return (z ? 1 : 0) + NotificationCenter.starGiveawayOptionsLoaded;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.appUpdateLoading;
+                return (z ? 1 : 0) + NotificationCenter.appUpdateAvailable;
             default:
                 return (z ? 1 : 0) + 335;
         }

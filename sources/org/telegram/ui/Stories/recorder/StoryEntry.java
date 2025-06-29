@@ -1937,7 +1937,7 @@ public class StoryEntry {
                         long parseInt = Integer.parseInt(this.thumbPath.substring(9));
                         options.inJustDecodeBounds = true;
                         MediaStore.Video.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), parseInt, 1, options);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.emojiLoaded, NotificationCenter.emojiLoaded);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;
@@ -1945,7 +1945,7 @@ public class StoryEntry {
                     } else {
                         options.inJustDecodeBounds = true;
                         BitmapFactory.decodeFile(this.thumbPath);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.emojiLoaded, NotificationCenter.emojiLoaded);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;

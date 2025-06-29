@@ -224,7 +224,7 @@ public class PopupSwipeBackLayout extends FrameLayout {
     }
 
     private boolean processTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & NotificationCenter.suggestedLangpack;
+        int action = motionEvent.getAction() & NotificationCenter.reloadInterface;
         if (this.isAnimationInProgress) {
             return true;
         }

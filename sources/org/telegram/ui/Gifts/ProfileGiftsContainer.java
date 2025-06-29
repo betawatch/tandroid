@@ -483,7 +483,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 linearLayout.setVisibility(i6);
                 this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-                addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 87));
+                addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 87));
             }
             i2 = R.string.ProfileGiftsSendChannel;
         } else {
@@ -507,7 +507,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
         linearLayout.setVisibility(i62);
         this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-        addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.smsJobStatusUpdate, 87));
+        addView(frameLayout3, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 87));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

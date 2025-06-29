@@ -573,7 +573,7 @@ public class GroupMedia {
             for (int i48 = 0; i48 < size; i48++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) this.posArray.get(i48);
                 if (groupedMessagePosition15.maxX == this.maxX || (groupedMessagePosition15.flags & 2) != 0) {
-                    groupedMessagePosition15.spanSize += NotificationCenter.smsJobStatusUpdate;
+                    groupedMessagePosition15.spanSize += NotificationCenter.emojiKeywordsLoaded;
                 }
                 if ((groupedMessagePosition15.flags & 1) != 0) {
                     groupedMessagePosition15.edge = true;
@@ -599,7 +599,7 @@ public class GroupMedia {
             for (int i52 = 0; i52 < size; i52++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition16 = (MessageObject.GroupedMessagePosition) this.posArray.get(i52);
                 if (groupedMessagePosition16.minX == 0) {
-                    groupedMessagePosition16.spanSize += NotificationCenter.smsJobStatusUpdate;
+                    groupedMessagePosition16.spanSize += NotificationCenter.emojiKeywordsLoaded;
                 }
                 if ((groupedMessagePosition16.flags & 2) != 0) {
                     groupedMessagePosition16.edge = true;

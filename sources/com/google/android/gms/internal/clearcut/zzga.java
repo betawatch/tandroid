@@ -35,7 +35,7 @@ public abstract class zzga {
                 if (obj instanceof String) {
                     String str2 = (String) obj;
                     if (!str2.startsWith("http") && str2.length() > 200) {
-                        str2 = String.valueOf(str2.substring(0, NotificationCenter.smsJobStatusUpdate)).concat("[...]");
+                        str2 = String.valueOf(str2.substring(0, NotificationCenter.emojiKeywordsLoaded)).concat("[...]");
                     }
                     int length = str2.length();
                     StringBuilder sb = new StringBuilder(length);

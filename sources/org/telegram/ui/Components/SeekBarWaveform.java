@@ -128,7 +128,7 @@ public class SeekBarWaveform {
                     particle2.x = rectF.left + (rectF.width() * Utilities.random.nextFloat());
                     RectF rectF2 = this.emitArea;
                     particle2.y = rectF2.top + (rectF2.height() * Utilities.random.nextFloat());
-                    double nextInt = Utilities.random.nextInt(NotificationCenter.smsJobStatusUpdate) - 125;
+                    double nextInt = Utilities.random.nextInt(NotificationCenter.emojiKeywordsLoaded) - 125;
                     Double.isNaN(nextInt);
                     double d = nextInt * 0.017453292519943295d;
                     particle2.vx = ((float) (Math.cos(d) - Math.sin(d))) * 0.8f;

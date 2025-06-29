@@ -1252,7 +1252,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 17:
                     SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.priceRow) {
-                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.smsJobStatusUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
+                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.emojiKeywordsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback2Return
                             public final Object run(Object obj, Object obj2) {
                                 CharSequence lambda$onBindViewHolder$3;
@@ -2387,7 +2387,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$13(user, j4);
                 }
-            }).setMinWidth(NotificationCenter.storiesLimitUpdate).show();
+            }).setMinWidth(NotificationCenter.storiesBlocklistUpdate).show();
             return true;
         }
         final long j5 = j;
@@ -2437,7 +2437,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 };
             }
             makeOptions.setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
-            makeOptions.setMinWidth(NotificationCenter.storiesLimitUpdate);
+            makeOptions.setMinWidth(NotificationCenter.storiesBlocklistUpdate);
             z3 = makeOptions.getItemsCount() <= 0;
             if (!z || !z3) {
                 return z3;
@@ -2463,7 +2463,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         };
         makeOptions.add(i2, (CharSequence) string, true, runnable);
         makeOptions.setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
-        makeOptions.setMinWidth(NotificationCenter.storiesLimitUpdate);
+        makeOptions.setMinWidth(NotificationCenter.storiesBlocklistUpdate);
         if (makeOptions.getItemsCount() <= 0) {
         }
         if (!z) {
@@ -2732,7 +2732,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 4) {
-            return NotificationCenter.didUpdateGlobalAutoDeleteTimer;
+            return NotificationCenter.chatSwitchedForum;
         }
         if (i == 5) {
             return 900;
@@ -3601,7 +3601,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$22() {
-        loadChatParticipants(0, NotificationCenter.smsJobStatusUpdate);
+        loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3994,20 +3994,20 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                             tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                             tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                             this.contactsEndReached = true;
-                            arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.smsJobStatusUpdate, false));
+                            arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
                         }
                     } else if (!this.contactsEndReached) {
                         this.delayResults = 3;
                         tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                         tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                         this.contactsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.smsJobStatusUpdate, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
                     } else if (this.botsEndReached) {
                         tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsRecent();
                     } else {
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsBots();
                         this.botsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.smsJobStatusUpdate, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
                     }
                 } else if (i3 == 3) {
                     tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsBanned();
@@ -4240,7 +4240,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         if (indexOf >= 0) {
                             ChatUsersActivity.this.info.participants.participants.set(indexOf, tL_chatParticipantAdmin);
                         }
-                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.smsJobStatusUpdate);
+                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
                     }
                     i5++;
                 }
@@ -5507,7 +5507,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         super.onFragmentCreate();
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.dialogDeleted);
-        loadChatParticipants(0, NotificationCenter.smsJobStatusUpdate);
+        loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
         return true;
     }
 

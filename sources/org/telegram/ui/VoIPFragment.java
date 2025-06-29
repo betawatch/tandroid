@@ -964,7 +964,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomMuteBtn.setAlpha(1.0f);
         this.bottomVideoBtn.setAlpha(1.0f);
         ViewPropertyAnimator translationX = this.bottomEndCallBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f);
-        long j = NotificationCenter.smsJobStatusUpdate;
+        long j = NotificationCenter.emojiKeywordsLoaded;
         translationX.setDuration(j).start();
         this.bottomSpeakerBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
         this.bottomMuteBtn.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j).start();
@@ -3378,10 +3378,10 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.rateCallLayout = new RateCallLayout(context, this.backgroundProvider);
         this.endCloseLayout.setAlpha(0.0f);
         this.rateCallLayout.setVisibility(8);
-        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(NotificationCenter.chatWasBoostedByUser, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.callingUserPhotoViewMini, LayoutHelper.createFrame(NotificationCenter.groupRestrictionsUnlockedByBoosts, 204.0f, 1, 0.0f, 93.0f, 0.0f, 0.0f));
         frameLayout.addView(this.statusLayout, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 135.0f, 0.0f, 0.0f));
         frameLayout.addView(this.hideEmojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
-        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.storiesListUpdated, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
+        frameLayout.addView(this.emojiRationalLayout, LayoutHelper.createFrame(NotificationCenter.storiesUpdated, -2.0f, 49, 0.0f, 118.0f, 0.0f, 0.0f));
         frameLayout.addView(this.emojiLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.endCloseLayout, LayoutHelper.createFrame(-1, 52.0f, 5, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.addView(this.rateCallLayout, LayoutHelper.createFrame(-1, -2.0f, 3, 0.0f, 380.0f, 0.0f, 0.0f));
@@ -3411,7 +3411,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomEndCallBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomEndCallBtn.setScaleX(0.0f);
         this.bottomEndCallBtn.setScaleY(0.0f);
-        this.bottomEndCallBtn.animate().setStartDelay(NotificationCenter.savedMessagesForwarded).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
+        this.bottomEndCallBtn.animate().setStartDelay(NotificationCenter.userIsPremiumBlockedUpadted).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
         this.buttonsLayout.addView(this.bottomSpeakerBtn);
         this.buttonsLayout.addView(this.bottomVideoBtn);
         this.buttonsLayout.addView(this.bottomMuteBtn);

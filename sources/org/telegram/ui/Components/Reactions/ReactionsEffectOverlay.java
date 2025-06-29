@@ -119,36 +119,38 @@ public class ReactionsEffectOverlay {
             ReactionsEffectOverlay.this.removeCurrentView();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:145:0x055a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:146:0x0561, code lost:
         
-            if (((int) (r9 - ((r19.this$0.effectImageView.getImageReceiver().getLottieAnimation().getCurrentFrame() / r19.this$0.effectImageView.getImageReceiver().getLottieAnimation().getFramesCount()) * r9))) < r6.leftTime) goto L236;
+            if (((int) (r9 - ((r19.this$0.effectImageView.getImageReceiver().getLottieAnimation().getCurrentFrame() / r19.this$0.effectImageView.getImageReceiver().getLottieAnimation().getFramesCount()) * r9))) < r6.leftTime) goto L237;
          */
-        /* JADX WARN: Removed duplicated region for block: B:101:0x0303  */
-        /* JADX WARN: Removed duplicated region for block: B:105:0x0330  */
-        /* JADX WARN: Removed duplicated region for block: B:135:0x04e3  */
-        /* JADX WARN: Removed duplicated region for block: B:140:0x0506  */
-        /* JADX WARN: Removed duplicated region for block: B:149:0x058d  */
-        /* JADX WARN: Removed duplicated region for block: B:152:0x0656  */
-        /* JADX WARN: Removed duplicated region for block: B:157:0x0663  */
-        /* JADX WARN: Removed duplicated region for block: B:160:0x0681  */
-        /* JADX WARN: Removed duplicated region for block: B:167:0x0695  */
-        /* JADX WARN: Removed duplicated region for block: B:171:0x0677  */
-        /* JADX WARN: Removed duplicated region for block: B:172:0x0590  */
-        /* JADX WARN: Removed duplicated region for block: B:184:0x03d8  */
-        /* JADX WARN: Removed duplicated region for block: B:237:0x0315  */
-        /* JADX WARN: Removed duplicated region for block: B:245:0x0286  */
-        /* JADX WARN: Removed duplicated region for block: B:248:0x0229  */
-        /* JADX WARN: Removed duplicated region for block: B:249:0x01fb  */
-        /* JADX WARN: Removed duplicated region for block: B:255:0x0195 A[RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:260:0x011b  */
+        /* JADX WARN: Removed duplicated region for block: B:102:0x030a  */
+        /* JADX WARN: Removed duplicated region for block: B:106:0x0337  */
+        /* JADX WARN: Removed duplicated region for block: B:136:0x04ea  */
+        /* JADX WARN: Removed duplicated region for block: B:141:0x050d  */
+        /* JADX WARN: Removed duplicated region for block: B:150:0x0594  */
+        /* JADX WARN: Removed duplicated region for block: B:153:0x065d  */
+        /* JADX WARN: Removed duplicated region for block: B:158:0x066a  */
+        /* JADX WARN: Removed duplicated region for block: B:161:0x0688  */
+        /* JADX WARN: Removed duplicated region for block: B:168:0x069c  */
+        /* JADX WARN: Removed duplicated region for block: B:172:0x067e  */
+        /* JADX WARN: Removed duplicated region for block: B:173:0x0597  */
+        /* JADX WARN: Removed duplicated region for block: B:185:0x03df  */
+        /* JADX WARN: Removed duplicated region for block: B:238:0x031c  */
+        /* JADX WARN: Removed duplicated region for block: B:246:0x028d  */
+        /* JADX WARN: Removed duplicated region for block: B:249:0x0230  */
+        /* JADX WARN: Removed duplicated region for block: B:250:0x0202  */
+        /* JADX WARN: Removed duplicated region for block: B:256:0x019c A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:261:0x0122  */
         /* JADX WARN: Removed duplicated region for block: B:33:0x00bd  */
-        /* JADX WARN: Removed duplicated region for block: B:70:0x01c2  */
-        /* JADX WARN: Removed duplicated region for block: B:73:0x01d2  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x01f0  */
-        /* JADX WARN: Removed duplicated region for block: B:79:0x0226  */
-        /* JADX WARN: Removed duplicated region for block: B:82:0x026c  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x02a0  */
-        /* JADX WARN: Removed duplicated region for block: B:96:0x02c7  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0106  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0114  */
+        /* JADX WARN: Removed duplicated region for block: B:71:0x01c9  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x01d9  */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x01f7  */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x022d  */
+        /* JADX WARN: Removed duplicated region for block: B:83:0x0273  */
+        /* JADX WARN: Removed duplicated region for block: B:87:0x02a7  */
+        /* JADX WARN: Removed duplicated region for block: B:97:0x02ce  */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -173,6 +175,8 @@ public class ReactionsEffectOverlay {
             float f11;
             float f12;
             ReactionsLayoutInBubble.ReactionButton reactionButton;
+            ChatActivity chatActivity;
+            View view;
             if (ReactionsEffectOverlay.this.dismissed) {
                 if (ReactionsEffectOverlay.this.dismissProgress != 1.0f) {
                     ReactionsEffectOverlay.access$216(ReactionsEffectOverlay.this, 0.10666667f);
@@ -220,20 +224,38 @@ public class ReactionsEffectOverlay {
                         if (findCell instanceof ChatMessageCell) {
                             ChatMessageCell chatMessageCell = (ChatMessageCell) findCell;
                             reactionButton = chatMessageCell.getReactionButton(reactionsEffectOverlay2.reaction);
-                            if (chatMessageCell.drawPinnedBottom && !chatMessageCell.shouldDrawTimeOnMedia()) {
-                                f3 += AndroidUtilities.dp(2.0f);
+                            boolean z = chatMessageCell.drawPinnedBottom;
+                            view = chatMessageCell;
+                            if (z) {
+                                boolean shouldDrawTimeOnMedia = chatMessageCell.shouldDrawTimeOnMedia();
+                                view = chatMessageCell;
+                                if (!shouldDrawTimeOnMedia) {
+                                    f3 += AndroidUtilities.dp(2.0f);
+                                    view = chatMessageCell;
+                                }
                             }
+                        } else if (findCell instanceof ChatActionCell) {
+                            reactionButton = ((ChatActionCell) findCell).getReactionButton(reactionsEffectOverlay2.reaction);
+                            view = findCell;
                         } else {
-                            reactionButton = findCell instanceof ChatActionCell ? ((ChatActionCell) findCell).getReactionButton(reactionsEffectOverlay2.reaction) : null;
+                            reactionButton = null;
+                            if (reactionButton != null) {
+                                Rect rect = reactionButton.drawingImageRect;
+                                f2 += rect.left;
+                                f3 += rect.top;
+                            }
+                            chatActivity = this.val$chatActivity;
+                            if (chatActivity != null) {
+                                f3 += chatActivity.drawingChatListViewYoffset;
+                            }
+                            ReactionsEffectOverlay.this.lastDrawnToX = f2;
+                            ReactionsEffectOverlay.this.lastDrawnToY = f3;
                         }
+                        f3 += view.getPaddingTop();
                         if (reactionButton != null) {
-                            Rect rect = reactionButton.drawingImageRect;
-                            f2 += rect.left;
-                            f3 += rect.top;
                         }
-                        ChatActivity chatActivity = this.val$chatActivity;
+                        chatActivity = this.val$chatActivity;
                         if (chatActivity != null) {
-                            f3 += chatActivity.drawingChatListViewYoffset;
                         }
                         ReactionsEffectOverlay.this.lastDrawnToX = f2;
                         ReactionsEffectOverlay.this.lastDrawnToY = f3;
@@ -364,11 +386,11 @@ public class ReactionsEffectOverlay {
                                 if (reactionsEffectOverlay5.animateOutProgress >= 1.0f) {
                                     int i5 = this.val$animationType;
                                     if (i5 == 0 || i5 == 2) {
-                                        View view = this.val$cell;
-                                        if (view instanceof ChatMessageCell) {
-                                            reactionsLayoutInBubble = ((ChatMessageCell) view).reactionsLayoutInBubble;
-                                        } else if (view instanceof ChatActionCell) {
-                                            reactionsLayoutInBubble = ((ChatActionCell) view).reactionsLayoutInBubble;
+                                        View view2 = this.val$cell;
+                                        if (view2 instanceof ChatMessageCell) {
+                                            reactionsLayoutInBubble = ((ChatMessageCell) view2).reactionsLayoutInBubble;
+                                        } else if (view2 instanceof ChatActionCell) {
+                                            reactionsLayoutInBubble = ((ChatActionCell) view2).reactionsLayoutInBubble;
                                         }
                                         reactionsLayoutInBubble.animateReaction(reactionsEffectOverlay5.reaction);
                                     }
@@ -378,11 +400,11 @@ public class ReactionsEffectOverlay {
                                     } else {
                                         ReactionsEffectOverlay.currentOverlay = null;
                                     }
-                                    View view2 = this.val$cell;
-                                    if (view2 != null) {
-                                        view2.invalidate();
-                                        View view3 = this.val$cell;
-                                        if ((view3 instanceof ChatMessageCell) && ((ChatMessageCell) view3).getCurrentMessagesGroup() != null && this.val$cell.getParent() != null) {
+                                    View view3 = this.val$cell;
+                                    if (view3 != null) {
+                                        view3.invalidate();
+                                        View view4 = this.val$cell;
+                                        if ((view4 instanceof ChatMessageCell) && ((ChatMessageCell) view4).getCurrentMessagesGroup() != null && this.val$cell.getParent() != null) {
                                             ((View) this.val$cell.getParent()).invalidate();
                                         }
                                     }
@@ -671,7 +693,7 @@ public class ReactionsEffectOverlay {
             AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
             if (animatedEmojiDrawable != null) {
                 animatedEmojiDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.animatedEmojiDrawable.setAlpha(NotificationCenter.suggestedLangpack);
+                this.animatedEmojiDrawable.setAlpha(NotificationCenter.reloadInterface);
                 this.animatedEmojiDrawable.draw(canvas);
             } else {
                 AnimatedEmojiEffect animatedEmojiEffect = this.emojiEffect;

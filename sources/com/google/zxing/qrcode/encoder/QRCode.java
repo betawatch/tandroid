@@ -42,7 +42,7 @@ public final class QRCode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder(NotificationCenter.smsJobStatusUpdate);
+        StringBuilder sb = new StringBuilder(NotificationCenter.emojiKeywordsLoaded);
         sb.append("<<\n");
         sb.append(" mode: ");
         sb.append(this.mode);
