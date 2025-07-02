@@ -9640,7 +9640,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.topFancyShadowMatrix.reset();
             this.topFancyShadowMatrix.postScale(1.0f, f2 / 16.0f);
             this.topFancyShadow.setLocalMatrix(this.topFancyShadowMatrix);
-            this.topFancyShadowPaint.setAlpha(NotificationCenter.customStickerCreated);
+            this.topFancyShadowPaint.setAlpha(208);
             canvas.drawRect(0.0f, 0.0f, this.containerView.getWidth(), f2, this.topFancyShadowPaint);
             this.bottomFancyShadowMatrix.reset();
             this.bottomFancyShadowMatrix.postScale(1.0f, height / 16.0f);
@@ -12437,7 +12437,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         MessageObject messageObject;
         MessageSuggestionParams of;
         ChatActivity chatActivity = this.parentChatActivity;
-        if (chatActivity != null && (messageObject = chatActivity.editingMessageObject) != null && messageObject.needResendWhenEdit()) {
+        if (chatActivity != null && (messageObject = chatActivity.editingMessageObject) != null && messageObject.needResendWhenEdit() && !ChatObject.canManageMonoForum(this.currentAccount, this.parentChatActivity.editingMessageObject.getDialogId())) {
             if (this.parentFragment == null || (of = this.parentChatActivity.messageSuggestionParams) == null) {
                 of = MessageSuggestionParams.of(this.parentChatActivity.editingMessageObject.messageOwner.suggested_post);
             }

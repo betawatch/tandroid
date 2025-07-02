@@ -6910,7 +6910,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public EncryptionResult encryptData(byte[] bArr) {
         byte[] randomSecret = getRandomSecret();
-        int nextInt = Utilities.random.nextInt(NotificationCenter.customStickerCreated) + 32;
+        int nextInt = Utilities.random.nextInt(208) + 32;
         while ((bArr.length + nextInt) % 16 != 0) {
             nextInt++;
         }

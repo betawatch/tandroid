@@ -11388,13 +11388,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     public TLRPC.InputReplyTo createReplyInput(TLRPC.InputPeer inputPeer, int i, int i2, ChatActivity.ReplyQuote replyQuote) {
         MessageObject messageObject;
+        TLRPC.TodoItem todoItem;
         TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
         tL_inputReplyToMessage.reply_to_msg_id = i;
         if (i2 != 0) {
             tL_inputReplyToMessage.flags |= 1;
             tL_inputReplyToMessage.top_msg_id = i2;
         }
-        if (replyQuote != null) {
+        if (replyQuote != null && replyQuote.todo && (todoItem = replyQuote.task) != null) {
+            tL_inputReplyToMessage.flags |= 64;
+            tL_inputReplyToMessage.todo_item_id = todoItem.id;
+        } else if (replyQuote != null && !replyQuote.todo) {
             String text = replyQuote.getText();
             tL_inputReplyToMessage.quote_text = text;
             if (!TextUtils.isEmpty(text)) {
@@ -11445,6 +11449,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 tL_inputReplyToMessage.flags |= 16;
                 tL_inputReplyToMessage.quote_offset = tL_messageReplyHeader.quote_offset;
             }
+        }
+        if ((tL_messageReplyHeader.flags & 2048) != 0) {
+            tL_inputReplyToMessage.flags |= 64;
+            tL_inputReplyToMessage.todo_item_id = tL_messageReplyHeader.todo_item_id;
         }
         return tL_inputReplyToMessage;
     }
@@ -15621,7 +15629,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         */
     public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r118) {
         /*
-            Method dump skipped, instructions count: 10370
+            Method dump skipped, instructions count: 10425
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");

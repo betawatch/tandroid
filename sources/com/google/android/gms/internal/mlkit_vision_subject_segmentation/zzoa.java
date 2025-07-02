@@ -36,7 +36,7 @@ public enum zzoa implements zzcb {
     zzD(203),
     zzE(NotificationCenter.groupRestrictionsUnlockedByBoosts),
     zzF(NotificationCenter.chatWasBoostedByUser),
-    zzG(206),
+    zzG(NotificationCenter.groupPackUpdated),
     zzH(NotificationCenter.timezonesUpdated),
     zzI(NotificationCenter.didUpdateGlobalAutoDeleteTimer),
     zzJ(NotificationCenter.onDatabaseReset),

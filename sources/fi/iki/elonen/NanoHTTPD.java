@@ -604,7 +604,7 @@ public abstract class NanoHTTPD {
             CREATED(NotificationCenter.smsJobStatusUpdate, "Created"),
             ACCEPTED(NotificationCenter.storyQualityUpdate, "Accepted"),
             NO_CONTENT(NotificationCenter.groupRestrictionsUnlockedByBoosts, "No Content"),
-            PARTIAL_CONTENT(206, "Partial Content"),
+            PARTIAL_CONTENT(NotificationCenter.groupPackUpdated, "Partial Content"),
             MULTI_STATUS(NotificationCenter.timezonesUpdated, "Multi-Status"),
             REDIRECT(NotificationCenter.didUpdateGlobalAutoDeleteTimer, "Moved Permanently"),
             FOUND(NotificationCenter.onDatabaseReset, "Found"),

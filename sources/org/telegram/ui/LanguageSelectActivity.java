@@ -83,20 +83,30 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
+            int i;
             if (this.search) {
                 if (LanguageSelectActivity.this.searchResult == null) {
                     return 0;
                 }
                 return LanguageSelectActivity.this.searchResult.size();
             }
-            int size = LanguageSelectActivity.this.sortedLanguages.size();
-            if (size != 0) {
-                size++;
+            if (LanguageSelectActivity.this.getMessagesController().isTranslationsManualEnabled() || LanguageSelectActivity.this.getMessagesController().isTranslationsAutoEnabled()) {
+                int i2 = LanguageSelectActivity.this.getMessagesController().isTranslationsManualEnabled() ? 3 : 2;
+                if (LanguageSelectActivity.this.getMessagesController().isTranslationsAutoEnabled() && !LanguageSelectActivity.this.getMessagesController().premiumFeaturesBlocked()) {
+                    i2++;
+                }
+                if (LanguageSelectActivity.this.getChatValue() || LanguageSelectActivity.this.getContextValue()) {
+                    i2++;
+                }
+                i = i2 + 1;
+                if (!"system".equals(LanguageSelectActivity.this.getMessagesController().translationsManualEnabled) || !"system".equals(LanguageSelectActivity.this.getMessagesController().translationsAutoEnabled)) {
+                    i = i2 + 2;
+                }
+            } else {
+                i = 1;
             }
-            if (!LanguageSelectActivity.this.unofficialLanguages.isEmpty()) {
-                size += LanguageSelectActivity.this.unofficialLanguages.size() + 1;
-            }
-            return (!LanguageSelectActivity.this.getMessagesController().premiumFeaturesBlocked() ? 1 : 0) + 4 + ((LanguageSelectActivity.this.getChatValue() || LanguageSelectActivity.this.getContextValue()) ? 1 : 0) + 1 + size;
+            int size = i + 1 + LanguageSelectActivity.this.sortedLanguages.size();
+            return !LanguageSelectActivity.this.unofficialLanguages.isEmpty() ? size + LanguageSelectActivity.this.unofficialLanguages.size() + 1 : size;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -177,27 +187,27 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             return itemViewType == 0 || itemViewType == 4 || itemViewType == 5 || itemViewType == 2;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:105:0x027b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:109:0x0293, code lost:
         
             r12 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:112:0x0238, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:116:0x0250, code lost:
         
-            if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L97;
+            if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L101;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:121:0x0279, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:125:0x0291, code lost:
         
-            if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L97;
+            if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L101;
          */
         /* JADX WARN: Code restructure failed: missing block: B:42:0x0104, code lost:
         
             if (r11.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r11.getTextView().getPaint().measureText(r0))) goto L34;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:91:0x0202, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:95:0x021a, code lost:
         
-            if (r12 == (r10.this$0.searchResult.size() - 1)) goto L97;
+            if (r12 == (r10.this$0.searchResult.size() - 1)) goto L101;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:92:0x027d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x0295, code lost:
         
             r12 = false;
          */
@@ -284,7 +294,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     textCheckCell.setCheckBoxIcon(i3);
                     break;
                 case 3:
-                    ((HeaderCell) viewHolder.itemView).setText(LocaleController.getString(i == 0 ? R.string.TranslateMessages : R.string.Language));
+                    ((HeaderCell) viewHolder.itemView).setText(LocaleController.getString((i == 0 && (LanguageSelectActivity.this.getMessagesController().isTranslationsManualEnabled() || LanguageSelectActivity.this.getMessagesController().isTranslationsAutoEnabled())) ? R.string.TranslateMessages : R.string.Language));
                     break;
                 case 4:
                     TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;

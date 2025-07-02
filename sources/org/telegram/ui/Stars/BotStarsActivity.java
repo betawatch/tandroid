@@ -809,9 +809,11 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
     public /* synthetic */ void lambda$loadTonTransactions$17(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TL_stars.StarsStatus) {
             TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
+            MessagesController.getInstance(this.currentAccount).putUsers(starsStatus.users, false);
+            MessagesController.getInstance(this.currentAccount).putChats(starsStatus.chats, false);
             this.tonTransactionsLastOffset = starsStatus.next_offset;
             this.tonTransactions.addAll(starsStatus.history);
-            this.tonTransactionsEndReached = starsStatus.history.isEmpty();
+            this.tonTransactionsEndReached = starsStatus.history.isEmpty() || starsStatus.next_offset == null;
         } else if (tL_error != null) {
             BulletinFactory.showError(tL_error);
             this.tonTransactionsEndReached = true;
@@ -898,7 +900,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public void loadTonTransactions() {
-        if (this.tonTransactionsLoading || this.tonTransactionsEndReached) {
+        if (this.tonTransactionsLoading || this.tonTransactionsEndReached || this.tonTransactionsLastOffset == null) {
             return;
         }
         this.tonTransactionsLoading = true;

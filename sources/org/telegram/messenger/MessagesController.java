@@ -28925,11 +28925,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX WARN: Code restructure failed: missing block: B:166:0x052e, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] < 206) goto L221;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] < 208) goto L221;
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0546, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 206) goto L221;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 208) goto L221;
      */
     /* JADX WARN: Code restructure failed: missing block: B:291:0x0204, code lost:
     
@@ -29289,7 +29289,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (!message4.legacy || message4.layer >= 206) {
+                        if (!message4.legacy || message4.layer >= 208) {
                             if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                                 if (MessageObject.getMedia(message4).bytes.length != 0) {
                                     if (MessageObject.getMedia(message4).bytes.length != 1) {

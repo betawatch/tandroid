@@ -1897,6 +1897,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             return false;
         }
 
+        public boolean hasDoneItem() {
+            return false;
+        }
+
+        public boolean isDoneItemEnabled() {
+            return false;
+        }
+
         public int needsActionBar() {
             return 0;
         }
@@ -4092,7 +4100,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$20(BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider, View view) {
         MessageObject messageObject = this.editingMessageObject;
-        if (messageObject != null && messageObject.needResendWhenEdit()) {
+        if (messageObject != null && messageObject.needResendWhenEdit() && !ChatObject.canManageMonoForum(this.currentAccount, this.editingMessageObject.getDialogId())) {
             BaseFragment baseFragment2 = this.baseFragment;
             if (baseFragment2 instanceof ChatActivity) {
                 ChatActivity chatActivity = (ChatActivity) baseFragment2;
@@ -5361,6 +5369,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         int[] iArr = this.scrollOffsetY;
         iArr[0] = iArr[1];
         setCaptionAbove(this.captionAbove, false);
+        updateDoneItemEnabled();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6198,8 +6207,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x011a  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x018d  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0256  */
+    /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6212,21 +6225,22 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         float currentActionBarHeight;
         float f3;
         ActionBarMenuItem actionBarMenuItem2;
-        ChatAttachAlertPollLayout chatAttachAlertPollLayout;
-        ChatAttachAlertPollLayout chatAttachAlertPollLayout2;
+        float f4;
+        float f5;
         ActionBarMenuItem actionBarMenuItem3;
-        ChatAttachAlertPollLayout chatAttachAlertPollLayout3;
+        int i3;
+        float translationY;
+        float f6;
         AttachAlertLayout attachAlertLayout = i == 0 ? this.currentAttachLayout : this.nextAttachLayout;
         if (attachAlertLayout == null || attachAlertLayout.getVisibility() != 0) {
             return;
         }
-        int scrollOffsetY = getScrollOffsetY(i);
-        int i3 = scrollOffsetY - this.backgroundPaddingTop;
+        int scrollOffsetY = getScrollOffsetY(i) - this.backgroundPaddingTop;
         if (attachAlertLayout == this.pollLayout || attachAlertLayout == this.todoLayout) {
-            dp = i3 - AndroidUtilities.dp(13.0f);
+            dp = scrollOffsetY - AndroidUtilities.dp(13.0f);
             f = 11.0f;
         } else {
-            dp = i3 - AndroidUtilities.dp(39.0f);
+            dp = scrollOffsetY - AndroidUtilities.dp(39.0f);
             f = 43.0f;
         }
         float dp2 = AndroidUtilities.dp(f);
@@ -6246,7 +6260,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         float dp3 = this.actionBar.getAlpha() != 0.0f ? 0.0f : AndroidUtilities.dp((1.0f - this.headerView.getAlpha()) * 26.0f);
         if (this.menuShowed && this.avatarPicker == 0 && !this.storyMediaPicker) {
             actionBarMenuItem = this.selectedMenuItem;
-            currentActionBarHeight = Math.max((ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(i2 + 37), ((scrollOffsetY - AndroidUtilities.dp((i2 * f2) + 37.0f)) + dp3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha()));
+            currentActionBarHeight = Math.max((ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(i2 + 37), ((r13 - AndroidUtilities.dp((i2 * f2) + 37.0f)) + dp3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha()));
         } else {
             actionBarMenuItem = this.selectedMenuItem;
             currentActionBarHeight = (ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(i2 + 37);
@@ -6263,60 +6277,84 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (actionBarMenuItem2 != null) {
                 actionBarMenuItem2.setTranslationY(((ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(i2 + 37)) + this.currentPanTranslationY);
             }
-            float dp4 = ((((scrollOffsetY - AndroidUtilities.dp((i2 * f2) + 25.0f)) + dp3) + this.currentPanTranslationY) + f3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha());
+            float dp4 = ((((r13 - AndroidUtilities.dp((i2 * f2) + 25.0f)) + dp3) + this.currentPanTranslationY) + f3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha());
             this.baseSelectedTextViewTranslationY = dp4;
             this.headerView.setTranslationY(Math.max(this.currentPanTranslationY, dp4));
             this.topCommentContainer.setTranslationY(Math.max(ActionBar.getCurrentActionBarHeight() + this.currentPanTranslationY, this.baseSelectedTextViewTranslationY + (AndroidUtilities.dp(26.0f) * this.headerView.getAlpha()) + AndroidUtilities.dp(8.0f)));
             if (this.captionAbove) {
                 updateCommentTextViewPosition();
             }
-            chatAttachAlertPollLayout = this.pollLayout;
             int i4 = 59;
-            if (chatAttachAlertPollLayout == null && attachAlertLayout == chatAttachAlertPollLayout) {
+            if (this.pollLayout != null) {
                 if (AndroidUtilities.isTablet()) {
-                    i4 = 63;
+                    i3 = 63;
                 } else {
                     android.graphics.Point point2 = AndroidUtilities.displaySize;
-                    if (point2.x > point2.y) {
-                        i4 = 53;
+                    i3 = point2.x > point2.y ? 53 : 59;
+                }
+                ChatAttachAlertPollLayout chatAttachAlertPollLayout = this.pollLayout;
+                if (chatAttachAlertPollLayout == this.nextAttachLayout) {
+                    translationY = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp((i3 * f2) + 7.0f);
+                    f6 = this.translationProgress;
+                } else if (chatAttachAlertPollLayout == this.currentAttachLayout) {
+                    translationY = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp((i3 * f2) + 7.0f);
+                    f6 = this.nextAttachLayout == null ? 1.0f : 1.0f - this.translationProgress;
+                }
+                f4 = translationY * f6;
+                if (this.todoLayout != null) {
+                    if (AndroidUtilities.isTablet()) {
+                        i4 = 63;
+                    } else {
+                        android.graphics.Point point3 = AndroidUtilities.displaySize;
+                        if (point3.x > point3.y) {
+                            i4 = 53;
+                        }
                     }
-                }
-                actionBarMenuItem3 = this.doneItem;
-                chatAttachAlertPollLayout3 = this.pollLayout;
-            } else {
-                chatAttachAlertPollLayout2 = this.todoLayout;
-                if (chatAttachAlertPollLayout2 != null || attachAlertLayout != chatAttachAlertPollLayout2) {
-                }
-                if (AndroidUtilities.isTablet()) {
-                    i4 = 63;
-                } else {
-                    android.graphics.Point point3 = AndroidUtilities.displaySize;
-                    if (point3.x > point3.y) {
-                        i4 = 53;
+                    ChatAttachAlertPollLayout chatAttachAlertPollLayout2 = this.todoLayout;
+                    if (chatAttachAlertPollLayout2 == this.nextAttachLayout) {
+                        f5 = ((chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp((i4 * f2) + 7.0f)) * this.translationProgress;
+                    } else if (chatAttachAlertPollLayout2 == this.currentAttachLayout) {
+                        f5 = ((chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp((i4 * f2) + 7.0f)) * (this.nextAttachLayout != null ? 1.0f - this.translationProgress : 1.0f);
                     }
+                    actionBarMenuItem3 = this.doneItem;
+                    if (actionBarMenuItem3 == null) {
+                        actionBarMenuItem3.setTranslationY(Math.max(0.0f, f4 + f5) + this.currentPanTranslationY);
+                        return;
+                    }
+                    return;
                 }
+                f5 = 0.0f;
                 actionBarMenuItem3 = this.doneItem;
-                chatAttachAlertPollLayout3 = this.todoLayout;
+                if (actionBarMenuItem3 == null) {
+                }
             }
-            actionBarMenuItem3.setTranslationY(Math.max(0.0f, (chatAttachAlertPollLayout3.getTranslationY() + scrollOffsetY) - AndroidUtilities.dp((i4 * f2) + 7.0f)) + this.currentPanTranslationY);
-            return;
+            f4 = 0.0f;
+            if (this.todoLayout != null) {
+            }
+            f5 = 0.0f;
+            actionBarMenuItem3 = this.doneItem;
+            if (actionBarMenuItem3 == null) {
+            }
         }
         f3 = 0.0f;
         actionBarMenuItem2 = this.searchItem;
         if (actionBarMenuItem2 != null) {
         }
-        float dp42 = ((((scrollOffsetY - AndroidUtilities.dp((i2 * f2) + 25.0f)) + dp3) + this.currentPanTranslationY) + f3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha());
+        float dp42 = ((((r13 - AndroidUtilities.dp((i2 * f2) + 25.0f)) + dp3) + this.currentPanTranslationY) + f3) - (this.topCommentContainer.getMeasuredHeight() * this.topCommentContainer.getAlpha());
         this.baseSelectedTextViewTranslationY = dp42;
         this.headerView.setTranslationY(Math.max(this.currentPanTranslationY, dp42));
         this.topCommentContainer.setTranslationY(Math.max(ActionBar.getCurrentActionBarHeight() + this.currentPanTranslationY, this.baseSelectedTextViewTranslationY + (AndroidUtilities.dp(26.0f) * this.headerView.getAlpha()) + AndroidUtilities.dp(8.0f)));
         if (this.captionAbove) {
         }
-        chatAttachAlertPollLayout = this.pollLayout;
         int i42 = 59;
-        if (chatAttachAlertPollLayout == null) {
+        if (this.pollLayout != null) {
         }
-        chatAttachAlertPollLayout2 = this.todoLayout;
-        if (chatAttachAlertPollLayout2 != null) {
+        f4 = 0.0f;
+        if (this.todoLayout != null) {
+        }
+        f5 = 0.0f;
+        actionBarMenuItem3 = this.doneItem;
+        if (actionBarMenuItem3 == null) {
         }
     }
 
@@ -6730,17 +6768,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0256  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01d4  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0263  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01e1  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0124  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x00f1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -6795,7 +6833,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     this.documentsEnabled = ChatObject.canSendDocument(chat);
                 } else {
                     this.pollsEnabled = UserObject.isBot(user) || UserObject.isUserSelf(user);
-                    this.todoEnabled = true;
+                    this.todoEnabled = ((ChatActivity) this.baseFragment).getCurrentEncryptedChat() == null;
                 }
             }
             if ((this.baseFragment instanceof ChatActivity) || this.avatarPicker == 2) {
@@ -7780,6 +7818,22 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.commentTextView.setLayoutParams(marginLayoutParams);
             }
         }
+    }
+
+    public void updateDoneItemEnabled() {
+        AttachAlertLayout attachAlertLayout;
+        this.doneItem.setEnabled(this.currentAttachLayout.isDoneItemEnabled());
+        AttachAlertLayout attachAlertLayout2 = this.currentAttachLayout;
+        float f = 0.0f;
+        if (attachAlertLayout2 != null) {
+            f = 0.0f + ((attachAlertLayout2.isDoneItemEnabled() ? 1.0f : 0.5f) * (this.nextAttachLayout == null ? 1.0f : this.translationProgress));
+        }
+        AttachAlertLayout attachAlertLayout3 = this.nextAttachLayout;
+        if (attachAlertLayout3 != null) {
+            f += (attachAlertLayout3.isDoneItemEnabled() ? 1.0f : 0.5f) * (1.0f - this.translationProgress);
+        }
+        this.doneItem.setAlpha(f);
+        this.doneItem.setVisibility((this.currentAttachLayout.hasDoneItem() || ((attachAlertLayout = this.nextAttachLayout) != null && attachAlertLayout.hasDoneItem())) ? 0 : 4);
     }
 
     public void updateLayout(AttachAlertLayout attachAlertLayout, boolean z, int i) {

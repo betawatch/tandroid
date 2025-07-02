@@ -5487,6 +5487,21 @@ public class MessageObject {
         return null;
     }
 
+    public static TLRPC.TodoItem findTodoItem(MessageObject messageObject, int i) {
+        TLRPC.TL_messageMediaToDo tL_messageMediaToDo;
+        TLRPC.TodoList todoList;
+        TLRPC.MessageMedia media = getMedia(messageObject);
+        if ((media instanceof TLRPC.TL_messageMediaToDo) && (todoList = (tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) media).todo) != null && todoList.list != null) {
+            for (int i2 = 0; i2 < tL_messageMediaToDo.todo.list.size(); i2++) {
+                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i2);
+                if (todoItem.id == i) {
+                    return todoItem;
+                }
+            }
+        }
+        return null;
+    }
+
     public static void fixMessagePeer(ArrayList<TLRPC.Message> arrayList, long j) {
         if (arrayList == null || arrayList.isEmpty() || j == 0) {
             return;
@@ -5511,17 +5526,21 @@ public class MessageObject {
     }
 
     public static CharSequence formatTextWithEntities(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_textWithEntities.text);
-        addEntitiesToText(spannableStringBuilder, tL_textWithEntities.entities, z, false, false, false);
         Theme.createCommonChatResources();
-        return replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, Theme.chat_actionTextPaint.getFontMetricsInt(), false), tL_textWithEntities.entities, Theme.chat_actionTextPaint.getFontMetricsInt());
+        return formatTextWithEntities(tL_textWithEntities, z, Theme.chat_actionTextPaint);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0093  */
+    public static CharSequence formatTextWithEntities(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, TextPaint textPaint) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_textWithEntities.text);
+        addEntitiesToText(spannableStringBuilder, tL_textWithEntities.entities, z, false, false, false);
+        return replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false), tL_textWithEntities.entities, textPaint.getFontMetricsInt());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0016 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0017  */
     /*
@@ -5582,15 +5601,19 @@ public class MessageObject {
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
                         AmountUtils$Amount amountUtils$Amount = of.amount;
                         if (amountUtils$Amount != null && !amountUtils$Amount.isZero()) {
-                            String formatString3 = canManageMonoForum ? LocaleController.formatString(R.string.SuggestionAgreementReachedAdmin2, str2, of.amount.asDecimalString()) : LocaleController.formatString(R.string.SuggestionAgreementReachedUser2, of.amount.asDecimalString());
+                            AmountUtils$Amount amountUtils$Amount2 = of.amount;
+                            AmountUtils$Currency amountUtils$Currency = amountUtils$Amount2.currency;
+                            AmountUtils$Currency amountUtils$Currency2 = AmountUtils$Currency.TON;
+                            boolean z3 = amountUtils$Currency == amountUtils$Currency2;
+                            String formatString3 = canManageMonoForum ? LocaleController.formatString(R.string.SuggestionAgreementReachedAdmin2, str2, amountUtils$Amount2.asDecimalString()) : LocaleController.formatString(R.string.SuggestionAgreementReachedUser2, amountUtils$Amount2.asDecimalString());
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                            spannableStringBuilder.append((CharSequence) StarsIntroActivity.replaceStars(of.amount.currency == AmountUtils$Currency.TON, AndroidUtilities.replaceTags(formatString3), 0.8f));
-                            int i3 = canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin3 : R.string.SuggestionAgreementReachedUser3;
+                            spannableStringBuilder.append((CharSequence) StarsIntroActivity.replaceStars(of.amount.currency == amountUtils$Currency2, AndroidUtilities.replaceTags(formatString3)));
+                            int i3 = z3 ? canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin3TON : R.string.SuggestionAgreementReachedUser3TON : canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin3Stars : R.string.SuggestionAgreementReachedUser3Stars;
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i3, str, Integer.valueOf(i))));
-                            int i4 = canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin4 : R.string.SuggestionAgreementReachedUser4;
+                            int i4 = z3 ? canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin4TON : R.string.SuggestionAgreementReachedUser4TON : canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin4Stars : R.string.SuggestionAgreementReachedUser4Stars;
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             formatString2 = LocaleController.formatString(i4, str, Integer.valueOf(i));
@@ -8179,10 +8202,10 @@ public class MessageObject {
                                                 TLRPC.MessageAction messageAction2 = this.messageOwner.action;
                                                 if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostRefund) {
                                                     boolean z3 = ((TLRPC.TL_messageActionSuggestedPostRefund) messageAction2).payer_initiated;
-                                                    formatString = (obtainSuggestionOfferFromReply == null || (amountUtils$Amount2 = obtainSuggestionOfferFromReply.amount) == null) ? LocaleController.formatString(z3 ? R.string.SuggestedOfferRefundByUserAmountUnknown : R.string.SuggestedOfferRefundByAdminAmountUnknown, name, monoForumTitle) : StarsIntroActivity.replaceStars(amountUtils$Amount2.currency == AmountUtils$Currency.TON, LocaleController.formatString(z3 ? R.string.SuggestedOfferRefundByUserAmount : R.string.SuggestedOfferRefundByAdminAmount, name, monoForumTitle, amountUtils$Amount2.asDecimalString()));
+                                                    formatString = (obtainSuggestionOfferFromReply == null || (amountUtils$Amount2 = obtainSuggestionOfferFromReply.amount) == null) ? LocaleController.formatString(z3 ? R.string.SuggestedOfferRefundByUserAmountUnknown : R.string.SuggestedOfferRefundByAdminAmountUnknown, name, monoForumTitle) : StarsIntroActivity.replaceStars(amountUtils$Amount2.currency == AmountUtils$Currency.TON, LocaleController.formatString(z3 ? R.string.SuggestedOfferRefundByUserAmountF : R.string.SuggestedOfferRefundByAdminAmountF, name, monoForumTitle, amountUtils$Amount2.asDecimalString()));
                                                 } else {
                                                     if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
-                                                        formatString = (obtainSuggestionOfferFromReply == null || (amountUtils$Amount = obtainSuggestionOfferFromReply.amount) == null) ? LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, monoForumTitle) : StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, LocaleController.formatString(R.string.SuggestedOfferCompleteAmount, monoForumTitle, amountUtils$Amount.asDecimalString()));
+                                                        formatString = (obtainSuggestionOfferFromReply == null || (amountUtils$Amount = obtainSuggestionOfferFromReply.amount) == null) ? LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, monoForumTitle) : StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, monoForumTitle, amountUtils$Amount.asDecimalString()));
                                                     }
                                                     str = str10;
                                                 }

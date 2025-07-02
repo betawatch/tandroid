@@ -20,6 +20,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -41,9 +42,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
@@ -60,6 +63,7 @@ import org.telegram.ui.Cells.BaseCell;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Cells.TextSelectionHelper;
+import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
@@ -206,7 +210,7 @@ public class TodoItemMenu extends Dialog {
             }
         };
         this.windowView = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda14
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TodoItemMenu.this.lambda$new$0(view);
@@ -273,7 +277,7 @@ public class TodoItemMenu extends Dialog {
         MessagePreviewView.TabsView tabsView2 = this.tabsView;
         final ViewPagerFixed viewPagerFixed2 = this.viewPager;
         Objects.requireNonNull(viewPagerFixed2);
-        tabsView2.setOnTabClick(new Utilities.Callback() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda15
+        tabsView2.setOnTabClick(new Utilities.Callback() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda17
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ViewPagerFixed.this.scrollToPosition(((Integer) obj).intValue());
@@ -344,10 +348,10 @@ public class TodoItemMenu extends Dialog {
         setupTranslation();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda12
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda14
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                TodoItemMenu.this.lambda$animateOpenTo$14(valueAnimator3);
+                TodoItemMenu.this.lambda$animateOpenTo$16(valueAnimator3);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TodoItemMenu.14
@@ -371,10 +375,10 @@ public class TodoItemMenu extends Dialog {
         this.openAnimator.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.openProgress2, z ? 1.0f : 0.0f);
         this.open2Animator = ofFloat2;
-        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda13
+        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda15
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                TodoItemMenu.this.lambda$animateOpenTo$15(valueAnimator4);
+                TodoItemMenu.this.lambda$animateOpenTo$17(valueAnimator4);
             }
         });
         this.open2Animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TodoItemMenu.15
@@ -389,7 +393,7 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$14(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateOpenTo$16(ValueAnimator valueAnimator) {
         this.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.windowView.invalidate();
         this.containerView.invalidate();
@@ -397,21 +401,21 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$15(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateOpenTo$17(ValueAnimator valueAnimator) {
         this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$12() {
+    public /* synthetic */ void lambda$dismiss$14() {
         super.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$13(boolean z) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda17
+    public /* synthetic */ void lambda$dismiss$15(boolean z) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
-                TodoItemMenu.this.lambda$dismiss$12();
+                TodoItemMenu.this.lambda$dismiss$14();
             }
         });
         ChatMessageCell chatMessageCell = this.cell;
@@ -438,7 +442,7 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$11(View view, Bitmap bitmap) {
+    public /* synthetic */ void lambda$prepareBlur$13(View view, Bitmap bitmap) {
         if (view != null) {
             view.setVisibility(0);
         }
@@ -480,13 +484,26 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$3(TLRPC.TodoItem todoItem) {
+    public /* synthetic */ void lambda$setCell$3(ChatActivity chatActivity, TLRPC.TodoItem todoItem) {
+        MessageObject messageObject = this.messageObject;
+        chatActivity.showFieldPanelForReplyQuote(messageObject, ChatActivity.ReplyQuote.from(messageObject, todoItem.id));
+        dismiss(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCell$4(String str) {
+        AndroidUtilities.addToClipboard(str);
+        dismiss(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCell$5(TLRPC.TodoItem todoItem) {
         AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(todoItem.title, false));
         dismiss(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$4(ChatActivity chatActivity, TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i) {
+    public /* synthetic */ void lambda$setCell$6(ChatActivity chatActivity, TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i) {
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
             TLRPC.MessageMedia messageMedia2 = this.messageObject.messageOwner.media;
             if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
@@ -498,13 +515,13 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$5(final ChatActivity chatActivity, int i) {
+    public /* synthetic */ void lambda$setCell$7(final ChatActivity chatActivity, int i) {
         PollCreateActivity pollCreateActivity = new PollCreateActivity(chatActivity, true, Boolean.FALSE);
         pollCreateActivity.setEditing(MessageObject.getMedia(this.messageObject), false, i);
-        pollCreateActivity.setDelegate(new PollCreateActivity.PollCreateActivityDelegate() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda16
+        pollCreateActivity.setDelegate(new PollCreateActivity.PollCreateActivityDelegate() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.PollCreateActivity.PollCreateActivityDelegate
             public final void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i2) {
-                TodoItemMenu.this.lambda$setCell$4(chatActivity, messageMedia, hashMap, z, i2);
+                TodoItemMenu.this.lambda$setCell$6(chatActivity, messageMedia, hashMap, z, i2);
             }
         });
         chatActivity.presentFragment(pollCreateActivity);
@@ -512,7 +529,7 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$6(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, int i, ChatActivity chatActivity) {
+    public /* synthetic */ void lambda$setCell$8(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, int i, ChatActivity chatActivity) {
         int i2 = 0;
         while (i2 < tL_messageMediaToDo.todo.list.size()) {
             if (tL_messageMediaToDo.todo.list.get(i2).id == i) {
@@ -536,7 +553,22 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setupMessageOptions$10(View view, MotionEvent motionEvent) {
+    public /* synthetic */ void lambda$setupMessageOptions$10() {
+        dismiss(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setupMessageOptions$11(Utilities.Callback callback, int i) {
+        callback.run(Integer.valueOf(i));
+        boolean z = true;
+        if (i != 1 && i != 13) {
+            z = false;
+        }
+        dismiss(z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ boolean lambda$setupMessageOptions$12(View view, MotionEvent motionEvent) {
         if (this.messageOptionsView == null || motionEvent.getAction() != 0) {
             return false;
         }
@@ -552,23 +584,8 @@ public class TodoItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$7() {
+    public /* synthetic */ void lambda$setupMessageOptions$9() {
         dismiss(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$8() {
-        dismiss(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$9(Utilities.Callback callback, int i) {
-        callback.run(Integer.valueOf(i));
-        boolean z = true;
-        if (i != 1 && i != 13) {
-            z = false;
-        }
-        dismiss(z);
     }
 
     private void prepareBlur(final View view) {
@@ -578,7 +595,7 @@ public class TodoItemMenu extends Dialog {
         AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                TodoItemMenu.this.lambda$prepareBlur$11(view, (Bitmap) obj);
+                TodoItemMenu.this.lambda$prepareBlur$13(view, (Bitmap) obj);
             }
         }, 14.0f);
     }
@@ -759,7 +776,7 @@ public class TodoItemMenu extends Dialog {
             animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$dismiss$13(z2);
+                    TodoItemMenu.this.lambda$dismiss$15(z2);
                 }
             });
             this.windowView.invalidate();
@@ -776,7 +793,7 @@ public class TodoItemMenu extends Dialog {
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                TodoItemMenu.this.lambda$dismiss$13(z2);
+                TodoItemMenu.this.lambda$dismiss$15(z2);
             }
         });
         this.windowView.invalidate();
@@ -1706,25 +1723,56 @@ public class TodoItemMenu extends Dialog {
             makeOptions.add(i3, string, runnable);
         }
         if (todoItem != null) {
-            makeOptions.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda9
+            if (chatActivity != null) {
+                makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.Quote), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda9
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        TodoItemMenu.this.lambda$setCell$3(chatActivity, todoItem);
+                    }
+                });
+            }
+            if (this.messageObject.getDialogId() < 0) {
+                MessagesController messagesController = MessagesController.getInstance(this.messageObject.currentAccount);
+                String publicUsername = DialogObject.getPublicUsername(messagesController.getUserOrChat(this.messageObject.getDialogId()));
+                StringBuilder sb = new StringBuilder();
+                sb.append("https://");
+                sb.append(messagesController.linkPrefix);
+                sb.append("/");
+                if (TextUtils.isEmpty(publicUsername)) {
+                    publicUsername = "c/" + (-this.messageObject.getDialogId());
+                }
+                sb.append(publicUsername);
+                sb.append("/");
+                sb.append(this.messageObject.getId());
+                sb.append("?task=");
+                sb.append(todoItem.id);
+                final String sb2 = sb.toString();
+                makeOptions.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda10
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        TodoItemMenu.this.lambda$setCell$4(sb2);
+                    }
+                });
+            }
+            makeOptions.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$setCell$3(todoItem);
+                    TodoItemMenu.this.lambda$setCell$5(todoItem);
                 }
             });
         }
         if (this.messageObject.canEditMessage(chatActivity.currentChat)) {
-            makeOptions.add(R.drawable.msg_edit, LocaleController.getString(R.string.TodoEditItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda10
+            makeOptions.add(R.drawable.msg_edit, LocaleController.getString(R.string.TodoEditItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$setCell$5(chatActivity, i5);
+                    TodoItemMenu.this.lambda$setCell$7(chatActivity, i5);
                 }
             });
             if (tL_messageMediaToDo.todo.list.size() > 1) {
-                makeOptions.add(R.drawable.msg_delete, LocaleController.getString(R.string.TodoDeleteItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda11
+                makeOptions.add(R.drawable.msg_delete, LocaleController.getString(R.string.TodoDeleteItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$6(tL_messageMediaToDo, i, chatActivity);
+                        TodoItemMenu.this.lambda$setCell$8(tL_messageMediaToDo, i, chatActivity);
                     }
                 });
             }
@@ -1788,7 +1836,7 @@ public class TodoItemMenu extends Dialog {
                             messagePrivateSeenView = new MessagePrivateSeenView(getContext(), 1, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    TodoItemMenu.this.lambda$setupMessageOptions$8();
+                                    TodoItemMenu.this.lambda$setupMessageOptions$10();
                                 }
                             }, this.resourcesProvider);
                         }
@@ -1798,7 +1846,7 @@ public class TodoItemMenu extends Dialog {
                             makeOptions.add(((Integer) arrayList.get(i2)).intValue(), (CharSequence) arrayList2.get(i2), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda2
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    TodoItemMenu.this.lambda$setupMessageOptions$9(callback, intValue);
+                                    TodoItemMenu.this.lambda$setupMessageOptions$11(callback, intValue);
                                 }
                             });
                         }
@@ -1819,9 +1867,9 @@ public class TodoItemMenu extends Dialog {
                             this.messageOptionsView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda4
                                 @Override // android.view.View.OnTouchListener
                                 public final boolean onTouch(View view2, MotionEvent motionEvent) {
-                                    boolean lambda$setupMessageOptions$10;
-                                    lambda$setupMessageOptions$10 = TodoItemMenu.this.lambda$setupMessageOptions$10(view2, motionEvent);
-                                    return lambda$setupMessageOptions$10;
+                                    boolean lambda$setupMessageOptions$12;
+                                    lambda$setupMessageOptions$12 = TodoItemMenu.this.lambda$setupMessageOptions$12(view2, motionEvent);
+                                    return lambda$setupMessageOptions$12;
                                 }
                             });
                         }
@@ -1897,7 +1945,7 @@ public class TodoItemMenu extends Dialog {
                     messagePrivateSeenView = new MessagePrivateSeenView(getContext(), 0, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TodoItemMenu.this.lambda$setupMessageOptions$7();
+                            TodoItemMenu.this.lambda$setupMessageOptions$9();
                         }
                     }, this.resourcesProvider);
                     makeOptions.addView(messagePrivateSeenView, LayoutHelper.createLinear(-1, 36));

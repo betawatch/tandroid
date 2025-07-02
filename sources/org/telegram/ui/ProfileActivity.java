@@ -7323,7 +7323,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     ProfileActivity.SearchAdapter.this.lambda$onCreateSearchArray$51();
                 }
             });
-            SearchResult searchResult52 = new SearchResult(this, 206, LocaleController.getString(R.string.NetworkUsage), LocaleController.getString(i9), i10, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90
+            SearchResult searchResult52 = new SearchResult(this, NotificationCenter.groupPackUpdated, LocaleController.getString(R.string.NetworkUsage), LocaleController.getString(i9), i10, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90
                 @Override // java.lang.Runnable
                 public final void run() {
                     ProfileActivity.SearchAdapter.this.lambda$onCreateSearchArray$52();
@@ -7335,7 +7335,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     ProfileActivity.SearchAdapter.this.lambda$onCreateSearchArray$53();
                 }
             });
-            SearchResult searchResult54 = new SearchResult(this, NotificationCenter.customStickerCreated, LocaleController.getString(R.string.WhenUsingMobileData), LocaleController.getString(i9), i10, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92
+            SearchResult searchResult54 = new SearchResult(this, 208, LocaleController.getString(R.string.WhenUsingMobileData), LocaleController.getString(i9), i10, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92
                 @Override // java.lang.Runnable
                 public final void run() {
                     ProfileActivity.SearchAdapter.this.lambda$onCreateSearchArray$54();
@@ -15581,7 +15581,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:473:0x0993, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:473:0x099c, code lost:
     
         if (r3 == false) goto L538;
      */
@@ -15593,9 +15593,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     
         if ((r3 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationToBeDeprecated) == false) goto L72;
      */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x05dd  */
-    /* JADX WARN: Removed duplicated region for block: B:429:0x07b2  */
-    /* JADX WARN: Removed duplicated region for block: B:497:0x08d7  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x05e6  */
+    /* JADX WARN: Removed duplicated region for block: B:429:0x07bb  */
+    /* JADX WARN: Removed duplicated region for block: B:497:0x08e0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -16048,6 +16048,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     this.rowCount = i44 + 1;
                     this.starsRow = i44;
                 }
+                StarsController.getInstance(this.currentAccount, true).getBalance();
                 if (ApplicationLoader.isBetaBuild() || ApplicationLoader.isStandaloneBuild() || ApplicationLoader.isHuaweiStoreBuild() || (StarsController.getInstance(this.currentAccount, true).balanceAvailable() && (StarsController.getInstance(this.currentAccount, true).hasTransactions() || StarsController.getInstance(this.currentAccount, true).getBalance().positive()))) {
                     int i45 = this.rowCount;
                     this.rowCount = i45 + 1;

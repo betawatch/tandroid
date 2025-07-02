@@ -36,7 +36,7 @@ public enum zzke implements zzck {
     zzD(203),
     zzE(NotificationCenter.groupRestrictionsUnlockedByBoosts),
     zzF(NotificationCenter.chatWasBoostedByUser),
-    zzG(206),
+    zzG(NotificationCenter.groupPackUpdated),
     zzH(NotificationCenter.timezonesUpdated),
     zzI(NotificationCenter.didUpdateGlobalAutoDeleteTimer),
     zzJ(NotificationCenter.onDatabaseReset),

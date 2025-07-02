@@ -2398,7 +2398,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case 'N':
-            case NotificationCenter.customStickerCreated /* 208 */:
+            case 208:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 2;
@@ -3183,7 +3183,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case 206:
+            case NotificationCenter.groupPackUpdated /* 206 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 1;
