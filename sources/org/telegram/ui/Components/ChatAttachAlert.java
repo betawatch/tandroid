@@ -6768,17 +6768,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0118  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0263  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01ee  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x01f1  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0129  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x00f1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -6833,7 +6833,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     this.documentsEnabled = ChatObject.canSendDocument(chat);
                 } else {
                     this.pollsEnabled = UserObject.isBot(user) || UserObject.isUserSelf(user);
-                    this.todoEnabled = ((ChatActivity) this.baseFragment).getCurrentEncryptedChat() == null;
+                    BaseFragment baseFragment2 = this.baseFragment;
+                    this.todoEnabled = !(baseFragment2 instanceof ChatActivity) || ((ChatActivity) baseFragment2).getCurrentEncryptedChat() == null;
                 }
             }
             if ((this.baseFragment instanceof ChatActivity) || this.avatarPicker == 2) {

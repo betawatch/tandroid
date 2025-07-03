@@ -2906,13 +2906,17 @@ public abstract class TextSelectionHelper {
         if (this.tempPath2.rectsCount != 0 || z2) {
             return;
         }
-        int primaryHorizontal = (int) layout.getPrimaryHorizontal(i2);
-        int primaryHorizontal2 = (int) layout.getPrimaryHorizontal(i3);
-        int lineTop2 = layout.getLineTop(i);
-        int lineBottom2 = layout.getLineBottom(i);
-        CornerPath cornerPath = this.selectionPath;
-        float f4 = this.cornerRadius;
-        cornerPath.addRect(primaryHorizontal - (f4 / 2.0f), lineTop2, primaryHorizontal2 + (f4 / 4.0f), lineBottom2, Path.Direction.CW);
+        try {
+            int primaryHorizontal = (int) layout.getPrimaryHorizontal(i2);
+            int primaryHorizontal2 = (int) layout.getPrimaryHorizontal(i3);
+            int lineTop2 = layout.getLineTop(i);
+            int lineBottom2 = layout.getLineBottom(i);
+            CornerPath cornerPath = this.selectionPath;
+            float f4 = this.cornerRadius;
+            cornerPath.addRect(primaryHorizontal - (f4 / 2.0f), lineTop2, primaryHorizontal2 + (f4 / 4.0f), lineBottom2, Path.Direction.CW);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3240,96 +3244,108 @@ public abstract class TextSelectionHelper {
         this.movingHandle = false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00f1 A[LOOP:1: B:65:0x00ef->B:66:0x00f1, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0234  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x011d A[LOOP:1: B:69:0x011b->B:70:0x011d, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void drawSelection(Canvas canvas, Layout layout, int i, int i2, boolean z, boolean z2, float f) {
         int i3;
-        Rect rect;
-        Rect rect2;
-        float f2;
         int i4;
         int i5;
+        Rect rect;
+        float f2;
+        Rect rect2;
+        int i6;
+        int i7;
         float lineRight;
         Canvas canvas2;
         float f3;
+        if (layout == null || layout.getText() == null) {
+            return;
+        }
+        int clamp = Utilities.clamp(i, layout.getText().length(), 0);
+        int clamp2 = Utilities.clamp(i2, layout.getText().length(), 0);
         this.selectionPath.reset();
         this.selectionHandlePath.reset();
         float f4 = this.cornerRadius;
         float f5 = f4 * 1.65f;
-        int i6 = (int) (f4 / 2.0f);
-        int lineForOffset = layout.getLineForOffset(i);
-        int lineForOffset2 = layout.getLineForOffset(i2);
+        int i8 = (int) (f4 / 2.0f);
+        int lineForOffset = layout.getLineForOffset(clamp);
+        int lineForOffset2 = layout.getLineForOffset(clamp2);
         if (lineForOffset == lineForOffset2) {
-            drawLine(layout, lineForOffset, i, i2, !z, !z2, f);
+            i3 = lineForOffset2;
+            i4 = lineForOffset;
+            drawLine(layout, lineForOffset, clamp, clamp2, !z, !z2, f);
+            i6 = clamp;
             f2 = f5;
-            i4 = lineForOffset2;
         } else {
-            int lineEnd = layout.getLineEnd(lineForOffset);
-            if (layout.getParagraphDirection(lineForOffset) == -1 || lineEnd <= 0) {
-                i3 = lineEnd;
+            i3 = lineForOffset2;
+            i4 = lineForOffset;
+            int lineEnd = layout.getLineEnd(i4);
+            if (layout.getParagraphDirection(i4) == -1 || lineEnd <= 0) {
+                i5 = lineEnd;
             } else {
-                int i7 = lineEnd - 1;
+                int i9 = lineEnd - 1;
                 CharSequence text = layout.getText();
-                int primaryHorizontal = (int) layout.getPrimaryHorizontal(i7);
-                if (layout.isRtlCharAt(i7)) {
-                    int i8 = i7;
-                    while (layout.isRtlCharAt(i8) && i8 != 0) {
-                        i8--;
+                int primaryHorizontal = (int) layout.getPrimaryHorizontal(i9);
+                if (layout.isRtlCharAt(i9)) {
+                    int i10 = i9;
+                    while (layout.isRtlCharAt(i10) && i10 != 0) {
+                        i10--;
                     }
-                    lineRight = layout.getLineForOffset(i8) == layout.getLineForOffset(i7) ? layout.getPrimaryHorizontal(i8 + 1) : layout.getLineLeft(lineForOffset);
+                    lineRight = layout.getLineForOffset(i10) == layout.getLineForOffset(i9) ? layout.getPrimaryHorizontal(i10 + 1) : layout.getLineLeft(i4);
                 } else {
-                    lineRight = layout.getLineRight(lineForOffset);
+                    lineRight = layout.getLineRight(i4);
                 }
-                int i9 = (int) lineRight;
-                int min = Math.min(primaryHorizontal, i9);
-                int max = Math.max(primaryHorizontal, i9);
-                if (i7 <= 0 || i7 >= text.length() || Character.isWhitespace(text.charAt(lineEnd - 2))) {
-                    i3 = i7;
+                int i11 = (int) lineRight;
+                int min = Math.min(primaryHorizontal, i11);
+                int max = Math.max(primaryHorizontal, i11);
+                if (i9 <= 0 || i9 >= text.length() || Character.isWhitespace(text.charAt(lineEnd - 2))) {
+                    i5 = i9;
                 } else {
-                    rect = new Rect(((int) Math.max(f, min)) - i6, layout.getLineTop(lineForOffset), ((int) Math.max(f, max)) + i6, layout.getLineBottom(lineForOffset));
-                    i3 = i7;
-                    rect2 = rect;
+                    rect = new Rect(((int) Math.max(f, min)) - i8, layout.getLineTop(i4), ((int) Math.max(f, max)) + i8, layout.getLineBottom(i4));
+                    i5 = i9;
                     f2 = f5;
-                    i4 = lineForOffset2;
-                    drawLine(layout, lineForOffset, i, i3, !z, true, f);
+                    rect2 = rect;
+                    i6 = clamp;
+                    drawLine(layout, i4, clamp, i5, !z, true, f);
                     if (rect2 != null) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(rect2);
                         this.selectionPath.addRect(rectF, Path.Direction.CW);
                     }
-                    for (i5 = lineForOffset + 1; i5 < i4; i5++) {
-                        int lineLeft = (int) layout.getLineLeft(i5);
-                        int lineRight2 = (int) layout.getLineRight(i5);
-                        float f6 = i6;
-                        this.selectionPath.addRect(Math.max(f, Math.min(lineLeft, lineRight2)) - f6, layout.getLineTop(i5), Math.max(f, Math.max(lineLeft, lineRight2)) + f6, layout.getLineBottom(i5) + 1, Path.Direction.CW);
+                    for (i7 = i4 + 1; i7 < i3; i7++) {
+                        int lineLeft = (int) layout.getLineLeft(i7);
+                        int lineRight2 = (int) layout.getLineRight(i7);
+                        float f6 = i8;
+                        this.selectionPath.addRect(Math.max(f, Math.min(lineLeft, lineRight2)) - f6, layout.getLineTop(i7), Math.max(f, Math.max(lineLeft, lineRight2)) + f6, layout.getLineBottom(i7) + 1, Path.Direction.CW);
                     }
-                    drawLine(layout, i4, layout.getLineStart(i4), i2, true, !z2, f);
+                    drawLine(layout, i3, layout.getLineStart(i3), clamp2, true, !z2, f);
                 }
             }
             rect = null;
-            rect2 = rect;
             f2 = f5;
-            i4 = lineForOffset2;
-            drawLine(layout, lineForOffset, i, i3, !z, true, f);
+            rect2 = rect;
+            i6 = clamp;
+            drawLine(layout, i4, clamp, i5, !z, true, f);
             if (rect2 != null) {
             }
-            while (i5 < i4) {
+            while (i7 < i3) {
             }
-            drawLine(layout, i4, layout.getLineStart(i4), i2, true, !z2, f);
+            drawLine(layout, i3, layout.getLineStart(i3), clamp2, true, !z2, f);
         }
-        int i10 = Build.VERSION.SDK_INT;
-        boolean z3 = i10 >= 26;
+        int i12 = Build.VERSION.SDK_INT;
+        boolean z3 = i12 >= 26;
         if (z3) {
             canvas.save();
         }
-        float primaryHorizontal2 = layout.getPrimaryHorizontal(i);
-        float primaryHorizontal3 = layout.getPrimaryHorizontal(i2);
-        float lineBottom = layout.getLineBottom(lineForOffset);
-        float lineBottom2 = layout.getLineBottom(i4);
+        int i13 = i6;
+        float primaryHorizontal2 = layout.getPrimaryHorizontal(i13);
+        float primaryHorizontal3 = layout.getPrimaryHorizontal(clamp2);
+        float lineBottom = layout.getLineBottom(i4);
+        float lineBottom2 = layout.getLineBottom(i3);
         if (z && z2 && lineBottom == lineBottom2 && Math.abs(primaryHorizontal3 - primaryHorizontal2) < f2) {
             float min2 = Math.min(primaryHorizontal2, primaryHorizontal3);
             float max2 = Math.max(primaryHorizontal2, primaryHorizontal3);
@@ -3339,28 +3355,28 @@ public abstract class TextSelectionHelper {
             rectF2.set(rect3);
             this.selectionHandlePath.addRect(rectF2, Path.Direction.CW);
             canvas2 = canvas;
-            if (i10 >= 26) {
+            if (i12 >= 26) {
                 canvas2.clipOutRect(rect3);
             }
         } else {
             canvas2 = canvas;
-            if (z && !layout.isRtlCharAt(i)) {
+            if (z && !layout.isRtlCharAt(i13)) {
                 Rect rect4 = AndroidUtilities.rectTmp2;
-                rect4.set((int) primaryHorizontal2, (int) (lineBottom - f2), (int) Math.min(primaryHorizontal2 + f2, layout.getLineRight(lineForOffset)), (int) lineBottom);
+                rect4.set((int) primaryHorizontal2, (int) (lineBottom - f2), (int) Math.min(primaryHorizontal2 + f2, layout.getLineRight(i4)), (int) lineBottom);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect4);
                 this.selectionHandlePath.addRect(rectF3, Path.Direction.CW);
-                if (i10 >= 26) {
+                if (i12 >= 26) {
                     f3 = f2;
                     rect4.set(rect4.left - ((int) f3), rect4.top, rect4.right, rect4.bottom);
                     canvas2.clipOutRect(rect4);
-                    if (z2 && !layout.isRtlCharAt(i2)) {
+                    if (z2 && !layout.isRtlCharAt(clamp2)) {
                         Rect rect5 = AndroidUtilities.rectTmp2;
-                        rect5.set((int) Math.max(primaryHorizontal3 - f3, layout.getLineLeft(i4)), (int) (lineBottom2 - f3), (int) primaryHorizontal3, (int) lineBottom2);
+                        rect5.set((int) Math.max(primaryHorizontal3 - f3, layout.getLineLeft(i3)), (int) (lineBottom2 - f3), (int) primaryHorizontal3, (int) lineBottom2);
                         RectF rectF4 = AndroidUtilities.rectTmp;
                         rectF4.set(rect5);
                         this.selectionHandlePath.addRect(rectF4, Path.Direction.CW);
-                        if (i10 >= 26) {
+                        if (i12 >= 26) {
                             canvas2.clipOutRect(rect5);
                         }
                     }
@@ -3369,11 +3385,11 @@ public abstract class TextSelectionHelper {
             f3 = f2;
             if (z2) {
                 Rect rect52 = AndroidUtilities.rectTmp2;
-                rect52.set((int) Math.max(primaryHorizontal3 - f3, layout.getLineLeft(i4)), (int) (lineBottom2 - f3), (int) primaryHorizontal3, (int) lineBottom2);
+                rect52.set((int) Math.max(primaryHorizontal3 - f3, layout.getLineLeft(i3)), (int) (lineBottom2 - f3), (int) primaryHorizontal3, (int) lineBottom2);
                 RectF rectF42 = AndroidUtilities.rectTmp;
                 rectF42.set(rect52);
                 this.selectionHandlePath.addRect(rectF42, Path.Direction.CW);
-                if (i10 >= 26) {
+                if (i12 >= 26) {
                 }
             }
         }

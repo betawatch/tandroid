@@ -120,6 +120,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     private RecyclerView.LayoutManager layoutManager;
     private ListAdapter listAdapter;
     private RecyclerListView listView;
+    private int maxAnswerId;
     private final int maxAnswersCount;
     private boolean multipleChoise;
     private int multipleRow;
@@ -547,86 +548,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:46:0x013d, code lost:
-        
-            if (r1.isEmojiSearchOpened != false) goto L36;
-         */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x0155  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
-            int adapterPosition;
-            PollCreateActivity pollCreateActivity;
-            if (view.getTag() != null) {
-                return;
-            }
-            view.setTag(1);
-            PollEditTextCell pollEditTextCell = (PollEditTextCell) view.getParent();
-            RecyclerView.ViewHolder findContainingViewHolder = PollCreateActivity.this.listView.findContainingViewHolder(pollEditTextCell);
-            if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
-                return;
-            }
-            int i = adapterPosition - PollCreateActivity.this.answerStartRow;
-            if (PollCreateActivity.this.onlyAdding && i < PollCreateActivity.this.oldAnswersCount) {
-                PollCreateActivity pollCreateActivity2 = PollCreateActivity.this;
-                AndroidUtilities.shakeViewSpring(pollEditTextCell, pollCreateActivity2.shiftDp = -pollCreateActivity2.shiftDp);
-                BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                return;
-            }
-            PollCreateActivity.this.listAdapter.notifyItemRemoved(adapterPosition);
-            int i2 = i + 1;
-            System.arraycopy(PollCreateActivity.this.answers, i2, PollCreateActivity.this.answers, i, (PollCreateActivity.this.answers.length - 1) - i);
-            System.arraycopy(PollCreateActivity.this.answersChecks, i2, PollCreateActivity.this.answersChecks, i, (PollCreateActivity.this.answersChecks.length - 1) - i);
-            PollCreateActivity.this.answers[PollCreateActivity.this.answers.length - 1] = null;
-            int i3 = 0;
-            PollCreateActivity.this.answersChecks[PollCreateActivity.this.answersChecks.length - 1] = false;
-            PollCreateActivity.access$4910(PollCreateActivity.this);
-            if (PollCreateActivity.this.answerIds != null) {
-                int i4 = PollCreateActivity.this.answersCount;
-                int[] iArr = new int[i4];
-                while (i3 < i4) {
-                    iArr[i3] = PollCreateActivity.this.answerIds[i3 > i ? i3 - 1 : i3];
-                    i3++;
-                }
-                PollCreateActivity.this.answerIds = iArr;
-            }
-            if (PollCreateActivity.this.answersCount == PollCreateActivity.this.answers.length - 1) {
-                PollCreateActivity.this.listAdapter.notifyItemInserted((PollCreateActivity.this.answerStartRow + PollCreateActivity.this.answers.length) - 1);
-            }
-            RecyclerView.ViewHolder findViewHolderForAdapterPosition = PollCreateActivity.this.listView.findViewHolderForAdapterPosition(adapterPosition - 1);
-            EditTextBoldCursor textView = pollEditTextCell.getTextView();
-            if (findViewHolderForAdapterPosition != null) {
-                View view2 = findViewHolderForAdapterPosition.itemView;
-                if (view2 instanceof PollEditTextCell) {
-                    ((PollEditTextCell) view2).getTextView().requestFocus();
-                    textView.clearFocus();
-                    PollCreateActivity.this.checkDoneButton();
-                    PollCreateActivity.this.updateRows();
-                    if (PollCreateActivity.this.suggestEmojiPanel != null) {
-                        PollCreateActivity.this.suggestEmojiPanel.forceClose();
-                        PollCreateActivity.this.suggestEmojiPanel.setDelegate(null);
-                    }
-                    PollCreateActivity.this.listAdapter.notifyItemChanged(PollCreateActivity.this.answerSectionRow);
-                }
-            }
-            if (textView.isFocused()) {
-                AndroidUtilities.hideKeyboard(textView);
-                pollCreateActivity = PollCreateActivity.this;
-            } else {
-                pollCreateActivity = PollCreateActivity.this;
-            }
-            pollCreateActivity.hideEmojiPopup(true);
-            textView.clearFocus();
-            PollCreateActivity.this.checkDoneButton();
-            PollCreateActivity.this.updateRows();
-            if (PollCreateActivity.this.suggestEmojiPanel != null) {
-            }
-            PollCreateActivity.this.listAdapter.notifyItemChanged(PollCreateActivity.this.answerSectionRow);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$onCreateViewHolder$1(PollEditTextCell pollEditTextCell, TextView textView, int i, KeyEvent keyEvent) {
+        public /* synthetic */ boolean lambda$onCreateViewHolder$0(PollEditTextCell pollEditTextCell, TextView textView, int i, KeyEvent keyEvent) {
             int adapterPosition;
             if (i != 5) {
                 return false;
@@ -652,7 +574,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$onCreateViewHolder$2(PollEditTextCell pollEditTextCell, View view, int i, KeyEvent keyEvent) {
+        public static /* synthetic */ boolean lambda$onCreateViewHolder$1(PollEditTextCell pollEditTextCell, View view, int i, KeyEvent keyEvent) {
             EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
             if (i != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
                 return false;
@@ -901,10 +823,11 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     } else if (i != 7) {
                         Context context = this.mContext;
                         boolean z = PollCreateActivity.this.isPremium;
+                        final PollCreateActivity pollCreateActivity = PollCreateActivity.this;
                         final PollEditTextCell pollEditTextCell3 = new PollEditTextCell(context, false, z ? 1 : 0, new View.OnClickListener() { // from class: org.telegram.ui.PollCreateActivity$ListAdapter$$ExternalSyntheticLambda0
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view3) {
-                                PollCreateActivity.ListAdapter.this.lambda$onCreateViewHolder$0(view3);
+                                PollCreateActivity.this.deleteItem(view3);
                             }
                         }) { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.5
                             @Override // org.telegram.ui.Cells.PollEditTextCell
@@ -993,8 +916,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                                     i2++;
                                 }
                                 PollCreateActivity.this.updateRows();
-                                PollCreateActivity pollCreateActivity = PollCreateActivity.this;
-                                pollCreateActivity.requestFieldFocusAtPosition = (pollCreateActivity.answerStartRow + i2) - 1;
+                                PollCreateActivity pollCreateActivity2 = PollCreateActivity.this;
+                                pollCreateActivity2.requestFieldFocusAtPosition = (pollCreateActivity2.answerStartRow + i2) - 1;
                                 PollCreateActivity.this.listAdapter.notifyDataSetChanged();
                                 return true;
                             }
@@ -1048,17 +971,17 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                         textView.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.PollCreateActivity$ListAdapter$$ExternalSyntheticLambda1
                             @Override // android.widget.TextView.OnEditorActionListener
                             public final boolean onEditorAction(TextView textView2, int i2, KeyEvent keyEvent) {
-                                boolean lambda$onCreateViewHolder$1;
-                                lambda$onCreateViewHolder$1 = PollCreateActivity.ListAdapter.this.lambda$onCreateViewHolder$1(pollEditTextCell3, textView2, i2, keyEvent);
-                                return lambda$onCreateViewHolder$1;
+                                boolean lambda$onCreateViewHolder$0;
+                                lambda$onCreateViewHolder$0 = PollCreateActivity.ListAdapter.this.lambda$onCreateViewHolder$0(pollEditTextCell3, textView2, i2, keyEvent);
+                                return lambda$onCreateViewHolder$0;
                             }
                         });
                         textView.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.PollCreateActivity$ListAdapter$$ExternalSyntheticLambda2
                             @Override // android.view.View.OnKeyListener
                             public final boolean onKey(View view3, int i2, KeyEvent keyEvent) {
-                                boolean lambda$onCreateViewHolder$2;
-                                lambda$onCreateViewHolder$2 = PollCreateActivity.ListAdapter.lambda$onCreateViewHolder$2(PollEditTextCell.this, view3, i2, keyEvent);
-                                return lambda$onCreateViewHolder$2;
+                                boolean lambda$onCreateViewHolder$1;
+                                lambda$onCreateViewHolder$1 = PollCreateActivity.ListAdapter.lambda$onCreateViewHolder$1(PollEditTextCell.this, view3, i2, keyEvent);
+                                return lambda$onCreateViewHolder$1;
                             }
                         });
                         view2 = pollEditTextCell3;
@@ -1108,8 +1031,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                                 }
                                 PollCreateActivity.this.solutionString = editable;
                                 if (findViewHolderForAdapterPosition != null) {
-                                    PollCreateActivity pollCreateActivity = PollCreateActivity.this;
-                                    pollCreateActivity.setTextLeft(findViewHolderForAdapterPosition.itemView, pollCreateActivity.solutionRow);
+                                    PollCreateActivity pollCreateActivity2 = PollCreateActivity.this;
+                                    pollCreateActivity2.setTextLeft(findViewHolderForAdapterPosition.itemView, pollCreateActivity2.solutionRow);
                                 }
                                 PollCreateActivity.this.checkDoneButton();
                             }
@@ -1306,12 +1229,6 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         return i;
     }
 
-    static /* synthetic */ int access$4910(PollCreateActivity pollCreateActivity) {
-        int i = pollCreateActivity.answersCount;
-        pollCreateActivity.answersCount = i - 1;
-        return i;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public void addNewField() {
         int i;
@@ -1323,25 +1240,15 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         this.answersCount = i3;
         if (this.answerIds != null) {
             int[] iArr = new int[i3];
-            int i4 = 0;
-            int i5 = 0;
-            while (true) {
+            for (int i4 = 0; i4 < i3; i4++) {
                 int[] iArr2 = this.answerIds;
-                if (i4 >= iArr2.length) {
-                    break;
-                }
-                i5 = Math.max(i5, iArr2[i4]);
-                i4++;
-            }
-            for (int i6 = 0; i6 < i3; i6++) {
-                int[] iArr3 = this.answerIds;
-                if (i6 < iArr3.length) {
-                    i = iArr3[i6];
+                if (i4 < iArr2.length) {
+                    i = iArr2[i4];
                 } else {
-                    i = i5 + 1;
-                    i5 = i;
+                    i = this.maxAnswerId + 1;
+                    this.maxAnswerId = i;
                 }
-                iArr[i6] = i;
+                iArr[i4] = i;
             }
             this.answerIds = iArr;
         }
@@ -2272,6 +2179,90 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         return this.fragmentView;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00c0, code lost:
+    
+        if (r9.isEmojiSearchOpened != false) goto L36;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00d0  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void deleteItem(View view) {
+        int adapterPosition;
+        SuggestEmojiView suggestEmojiView;
+        if (view.getTag() != null) {
+            return;
+        }
+        view.setTag(1);
+        PollEditTextCell pollEditTextCell = (PollEditTextCell) view.getParent();
+        RecyclerView.ViewHolder findContainingViewHolder = this.listView.findContainingViewHolder(pollEditTextCell);
+        if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
+            return;
+        }
+        int i = adapterPosition - this.answerStartRow;
+        if (this.onlyAdding && i < this.oldAnswersCount) {
+            int i2 = -this.shiftDp;
+            this.shiftDp = i2;
+            AndroidUtilities.shakeViewSpring(pollEditTextCell, i2);
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+            return;
+        }
+        this.listAdapter.notifyItemRemoved(adapterPosition);
+        CharSequence[] charSequenceArr = this.answers;
+        int i3 = i + 1;
+        System.arraycopy(charSequenceArr, i3, charSequenceArr, i, (charSequenceArr.length - 1) - i);
+        boolean[] zArr = this.answersChecks;
+        System.arraycopy(zArr, i3, zArr, i, (zArr.length - 1) - i);
+        CharSequence[] charSequenceArr2 = this.answers;
+        charSequenceArr2[charSequenceArr2.length - 1] = null;
+        boolean[] zArr2 = this.answersChecks;
+        int i4 = 0;
+        zArr2[zArr2.length - 1] = false;
+        int i5 = this.answersCount - 1;
+        this.answersCount = i5;
+        if (this.answerIds != null) {
+            int[] iArr = new int[i5];
+            while (i4 < i5) {
+                iArr[i4] = this.answerIds[i4 >= i ? i4 + 1 : i4];
+                i4++;
+            }
+            this.answerIds = iArr;
+        }
+        int i6 = this.answersCount;
+        CharSequence[] charSequenceArr3 = this.answers;
+        if (i6 == charSequenceArr3.length - 1) {
+            this.listAdapter.notifyItemInserted((this.answerStartRow + charSequenceArr3.length) - 1);
+        }
+        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(adapterPosition - 1);
+        EditTextBoldCursor textView = pollEditTextCell.getTextView();
+        if (findViewHolderForAdapterPosition != null) {
+            View view2 = findViewHolderForAdapterPosition.itemView;
+            if (view2 instanceof PollEditTextCell) {
+                ((PollEditTextCell) view2).getTextView().requestFocus();
+                textView.clearFocus();
+                checkDoneButton();
+                updateRows();
+                suggestEmojiView = this.suggestEmojiPanel;
+                if (suggestEmojiView != null) {
+                    suggestEmojiView.forceClose();
+                    this.suggestEmojiPanel.setDelegate(null);
+                }
+                this.listAdapter.notifyItemChanged(this.answerSectionRow);
+            }
+        }
+        if (textView.isFocused()) {
+            AndroidUtilities.hideKeyboard(textView);
+        }
+        hideEmojiPopup(true);
+        textView.clearFocus();
+        checkDoneButton();
+        updateRows();
+        suggestEmojiView = this.suggestEmojiPanel;
+        if (suggestEmojiView != null) {
+        }
+        this.listAdapter.notifyItemChanged(this.answerSectionRow);
+    }
+
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.emojiLoaded) {
@@ -2553,6 +2544,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             int size = tL_messageMediaToDo.todo.list.size();
             this.answersCount = size;
             this.oldAnswersCount = size;
+            this.maxAnswerId = 0;
             this.answerIds = new int[size];
             int i3 = 0;
             while (true) {
@@ -2568,6 +2560,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 charSequenceArr2[i3] = MessageObject.replaceAnimatedEmoji(charSequenceArr2[i3], tL_textWithEntities.entities, textPaint.getFontMetricsInt());
                 MessageObject.addEntitiesToText(this.answers[i3], tL_textWithEntities.entities, false, false, false, false);
                 this.answerIds[i3] = tL_messageMediaToDo.todo.list.get(i3).id;
+                this.maxAnswerId = Math.max(this.maxAnswerId, this.answerIds[i3]);
                 i3++;
             }
             TLRPC.TodoList todoList = tL_messageMediaToDo.todo;

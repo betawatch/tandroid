@@ -201,7 +201,6 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         int dialogUnreadCount;
         TextPaint textPaint3;
         int i7;
-        String str2;
         int dp2;
         this.drawNameLock = false;
         this.drawCheck = false;
@@ -306,9 +305,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             }
         }
         CharSequence replaceNewLines = AndroidUtilities.replaceNewLines(charSequence4);
-        if (replaceNewLines.length() == 0) {
+        if (TextUtils.isEmpty(replaceNewLines)) {
             TLRPC.User user3 = this.user;
-            if (user3 == null || (str2 = user3.phone) == null || str2.length() == 0) {
+            if (user3 == null || TextUtils.isEmpty(user3.phone)) {
                 replaceNewLines = LocaleController.getString(R.string.HiddenName);
             } else {
                 replaceNewLines = PhoneFormat.getInstance().format("+" + this.user.phone);
