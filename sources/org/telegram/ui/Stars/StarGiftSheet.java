@@ -5285,18 +5285,18 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         return this;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:115:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x03e5  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x04b9  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x04ea  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x03b9  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x03bc  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x038d  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0390  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0334  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x069b  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0316  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0324  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x03dd  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x04b1  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x03b1  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x03b4  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0385  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0388  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x032c  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x031b  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0693  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5438,7 +5438,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         }
                         spannableStringBuilder = AndroidUtilities.replaceTags(string4);
                     }
-                    releasedByText = releasedByText(this.savedStarGift.gift);
+                    releasedByText = releasedByText(starGift);
                     charSequence3 = null;
                     i = 0;
                     topView4 = topView5;
@@ -5635,7 +5635,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     } else {
                         TopView topView6 = this.topView;
                         string3 = LocaleController.getString(R.string.Gift2TitleProfile);
-                        releasedByText = releasedByText(this.savedStarGift.gift);
+                        releasedByText = releasedByText(starGift);
                         spannableStringBuilder = null;
                         charSequence3 = null;
                         i = 0;

@@ -21593,9 +21593,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (this.needReplyImage && (!this.isReplyQuote || this.replyTextRTL)) {
                             f56 += f17 + AndroidUtilities.dp(3.0f);
                         }
-                        if (this.replyTextRTL && this.replyTextOffset > 0) {
-                            f56 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.replyTextLayout.getWidth();
-                        }
                         if (this.isReplyTask && (checkBoxBase = this.replyTaskCheckbox) != null) {
                             checkBoxBase.setBounds((int) f56, ((int) dp25) + AndroidUtilities.dp(2.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
                             Theme.chat_instantViewRectPaint.setColor(getThemedColor(this.currentMessageObject.isOutOwner() ? Theme.key_chat_outMenu : Theme.key_chat_inMenu));
@@ -21605,6 +21602,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                         if (this.isReplyTask) {
                             f56 += AndroidUtilities.dp(16.0f);
+                        }
+                        if (this.replyTextRTL && this.replyTextOffset > 0) {
+                            f56 = (this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.replyTextLayout.getWidth();
                         }
                         canvas.translate(f56, dp25);
                         TextPaint paint2 = this.replyTextLayout.getPaint();

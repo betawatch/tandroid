@@ -1719,7 +1719,7 @@ public class TodoItemMenu extends Dialog {
         }
         if (todoItem != null) {
             if (chatActivity != null) {
-                makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.Quote), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda9
+                makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.TodoItemQuote), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
                         TodoItemMenu.this.lambda$setCell$3(chatActivity, todoItem);
