@@ -1358,7 +1358,7 @@ public class TimelineView extends View {
         }
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(f3 - AndroidUtilities.dp(10.0f), f, f4 + AndroidUtilities.dp(10.0f), f2);
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.reloadInterface, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.locationPermissionGranted, 31);
         int i = (int) (255.0f * f5);
         this.regionPaint.setAlpha(i);
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.regionPaint);
@@ -1371,7 +1371,7 @@ public class TimelineView extends View {
         float dp = AndroidUtilities.dp(2.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
         Paint paint2 = paint != null ? paint : this.regionHandlePaint;
-        this.regionHandlePaint.setAlpha(NotificationCenter.reloadInterface);
+        this.regionHandlePaint.setAlpha(NotificationCenter.locationPermissionGranted);
         paint2.setAlpha(i);
         float f6 = f + f2;
         float f7 = (f6 - dp2) / 2.0f;
@@ -2960,7 +2960,7 @@ public class TimelineView extends View {
                         f19 = f3;
                         f16 = f127;
                         f18 = f4;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.reloadInterface, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.locationPermissionGranted, 31);
                         float min6 = Math.min(f147, this.w) - AndroidUtilities.dp(12.0f);
                         canvas2.clipRect(dpf22, 0.0f, min6, this.h);
                         if (this.audioAuthor != null) {

@@ -235,7 +235,7 @@ public class RateCallLayout extends FrameLayout {
             }, i);
             this.starsContainer.addView(this.startsViews[i], LayoutHelper.createFrame(-2, -2.0f, 51, i * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.chatSwitchedForum, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.activityPermissionsGranted, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
         addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.smsJobStatusUpdate, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 

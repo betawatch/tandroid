@@ -316,22 +316,22 @@ public class MatroskaExtractor implements Extractor {
                 int i3 = 1;
                 int i4 = 0;
                 while (true) {
-                    i = bArr[i3] & NotificationCenter.reloadInterface;
+                    i = bArr[i3] & NotificationCenter.locationPermissionGranted;
                     if (i != 255) {
                         break;
                     }
-                    i4 += NotificationCenter.reloadInterface;
+                    i4 += NotificationCenter.locationPermissionGranted;
                     i3++;
                 }
                 int i5 = i3 + 1;
                 int i6 = i4 + i;
                 int i7 = 0;
                 while (true) {
-                    i2 = bArr[i5] & NotificationCenter.reloadInterface;
+                    i2 = bArr[i5] & NotificationCenter.locationPermissionGranted;
                     if (i2 != 255) {
                         break;
                     }
-                    i7 += NotificationCenter.reloadInterface;
+                    i7 += NotificationCenter.locationPermissionGranted;
                     i5++;
                 }
                 int i8 = i5 + 1;
@@ -687,7 +687,7 @@ public class MatroskaExtractor implements Extractor {
                                 } else if (Float.compare(this.projectionPosePitch, -180.0f) == 0 || Float.compare(this.projectionPosePitch, 180.0f) == 0) {
                                     i7 = NotificationCenter.suggestedFiltersLoaded;
                                 } else if (Float.compare(this.projectionPosePitch, -90.0f) == 0) {
-                                    i7 = NotificationCenter.voipServiceCreated;
+                                    i7 = NotificationCenter.screenStateChanged;
                                 }
                             }
                             builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i7).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(colorInfo);
@@ -1525,7 +1525,7 @@ public class MatroskaExtractor implements Extractor {
         hashMap.put("htc_video_rotA-000", 0);
         hashMap.put("htc_video_rotA-090", 90);
         hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.suggestedFiltersLoaded));
-        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.voipServiceCreated));
+        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.screenStateChanged));
         TRACK_NAME_TO_ROTATION_DEGREES = Collections.unmodifiableMap(hashMap);
     }
 
@@ -1905,10 +1905,10 @@ public class MatroskaExtractor implements Extractor {
                         this.supplementalData.reset(0);
                         int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                         this.scratch.reset(4);
-                        this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.reloadInterface);
-                        this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.reloadInterface);
-                        this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.reloadInterface);
-                        this.scratch.getData()[3] = (byte) (limit & NotificationCenter.reloadInterface);
+                        this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.locationPermissionGranted);
+                        this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.locationPermissionGranted);
+                        this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.locationPermissionGranted);
+                        this.scratch.getData()[3] = (byte) (limit & NotificationCenter.locationPermissionGranted);
                         trackOutput.sampleData(this.scratch, 4, 2);
                         this.sampleBytesWritten += 4;
                     }
@@ -2395,10 +2395,10 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.filterSettingsUpdated /* 179 */:
             case NotificationCenter.didUpdatePremiumGiftStickers /* 186 */:
             case NotificationCenter.starTransactionsLoaded /* 215 */:
-            case NotificationCenter.messagesFeeUpdated /* 231 */:
-            case NotificationCenter.didReceiveSmsCode /* 238 */:
-            case NotificationCenter.invalidateMotionBackground /* 241 */:
-            case NotificationCenter.needSetDayNightTheme /* 251 */:
+            case NotificationCenter.adminedChannelsLoaded /* 231 */:
+            case NotificationCenter.wallpapersDidLoad /* 238 */:
+            case NotificationCenter.didReceiveCall /* 241 */:
+            case NotificationCenter.needCheckSystemBarColors /* 251 */:
             case 16871:
             case 16980:
             case 17029:
@@ -2438,7 +2438,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.didStartedMultiGiftsSelector /* 183 */:
             case NotificationCenter.didUpdateTonGiftStickers /* 187 */:
             case NotificationCenter.starUserGiftsLoaded /* 224 */:
-            case NotificationCenter.starGiftSoldOut /* 225 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 225 */:
             case 16868:
             case 18407:
             case 19899:
@@ -2552,13 +2552,13 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.starTransactionsLoaded /* 215 */:
                 getCurrentTrack(i).number = (int) j;
                 return;
-            case NotificationCenter.messagesFeeUpdated /* 231 */:
+            case NotificationCenter.adminedChannelsLoaded /* 231 */:
                 this.clusterTimecodeUs = scaleTimecodeToUs(j);
                 return;
-            case NotificationCenter.didReceiveSmsCode /* 238 */:
+            case NotificationCenter.wallpapersDidLoad /* 238 */:
                 this.blockAdditionalId = (int) j;
                 return;
-            case NotificationCenter.invalidateMotionBackground /* 241 */:
+            case NotificationCenter.didReceiveCall /* 241 */:
                 if (this.seenClusterPositionForCurrentCuePoint) {
                     return;
                 }
@@ -2566,7 +2566,7 @@ public class MatroskaExtractor implements Extractor {
                 this.cueClusterPositions.add(j);
                 this.seenClusterPositionForCurrentCuePoint = true;
                 return;
-            case NotificationCenter.needSetDayNightTheme /* 251 */:
+            case NotificationCenter.needCheckSystemBarColors /* 251 */:
                 this.blockHasReferenceBlock = true;
                 return;
             case 16871:

@@ -2195,7 +2195,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$354();
+        dialogsActivity.lambda$onBackPressed$355();
         return true;
     }
 
@@ -2242,10 +2242,20 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             arrayList.add(playingMessageObject);
             dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda15
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                public /* synthetic */ boolean canSelectStories() {
+                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                }
+
+                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList2, CharSequence charSequence, boolean z, boolean z2, int i4, TopicsFragment topicsFragment) {
                     boolean lambda$onSubItemClick$11;
                     lambda$onSubItemClick$11 = AudioPlayerAlert.this.lambda$onSubItemClick$11(arrayList, dialogsActivity2, arrayList2, charSequence, z, z2, i4, topicsFragment);
                     return lambda$onSubItemClick$11;
+                }
+
+                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                 }
             });
             this.parentActivity.lambda$runLinkRequest$93(dialogsActivity);

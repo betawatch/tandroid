@@ -319,7 +319,7 @@ public class QrActivity extends BaseFragment {
                 int i2 = height;
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                canvas.saveLayerAlpha(rectF, NotificationCenter.reloadInterface, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
                 int i3 = width2 + 16;
                 int i4 = i2 + 16;
                 canvas.drawRect(i3, i4, (getWidth() - width2) - 16, (((getWidth() + i2) - width2) - width2) - 16, this.bitmapGradientPaint);
@@ -689,7 +689,7 @@ public class QrActivity extends BaseFragment {
                 if (z) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.saveLayerAlpha(rectF, NotificationCenter.reloadInterface, 31);
+                    canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
                 }
                 Bitmap bitmap2 = this.oldContentBitmap;
                 if (bitmap2 != null) {
@@ -702,7 +702,7 @@ public class QrActivity extends BaseFragment {
                     canvas.save();
                     canvas.translate(0.0f, (-dp) + ((getHeight() + dp) * (1.0f - f)));
                     Paint paint = this.crossfadeToPaint;
-                    i = NotificationCenter.reloadInterface;
+                    i = NotificationCenter.locationPermissionGranted;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight() + dp, paint);
                     canvas.restore();
                     canvas.restore();
@@ -750,7 +750,7 @@ public class QrActivity extends BaseFragment {
                     }
                 }
             }
-            i = NotificationCenter.reloadInterface;
+            i = NotificationCenter.locationPermissionGranted;
             if (f > 0.0f) {
             }
             if (this.hasTimer) {
@@ -1616,7 +1616,7 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$1(View view) {
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1851,7 +1851,7 @@ public class QrActivity extends BaseFragment {
         MotionBackgroundDrawable motionBackgroundDrawable = this.currMotionDrawable;
         this.prevMotionDrawable = motionBackgroundDrawable;
         motionBackgroundDrawable.setIndeterminateAnimation(false);
-        this.prevMotionDrawable.setAlpha(NotificationCenter.reloadInterface);
+        this.prevMotionDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
         MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable();
         this.currMotionDrawable = motionBackgroundDrawable2;
         motionBackgroundDrawable2.setCallback(this.backgroundView);
@@ -1905,7 +1905,7 @@ public class QrActivity extends BaseFragment {
                 this.prevQrColors = iArr2;
                 System.arraycopy(iArr, 0, iArr2, 0, 4);
             }
-            this.currMotionDrawable.setAlpha(NotificationCenter.reloadInterface);
+            this.currMotionDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
             this.currMotionDrawable.setBackgroundAlpha(0.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.patternAlphaAnimator = ofFloat;

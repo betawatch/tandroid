@@ -433,10 +433,20 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                         DialogsActivity dialogsActivity = new DialogsActivity(bundle);
                         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda3
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean canSelectStories() {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i4, TopicsFragment topicsFragment) {
                                 boolean lambda$createView$0;
                                 lambda$createView$0 = SaveToGallerySettingsActivity.this.lambda$createView$0(dialogsActivity2, arrayList, charSequence, z, z2, i4, topicsFragment);
                                 return lambda$createView$0;
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                             }
                         });
                         saveToGallerySettingsActivity = dialogsActivity;
@@ -446,10 +456,20 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     DialogsActivity dialogsActivity2 = new DialogsActivity(bundle);
                     dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda3
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                        public /* synthetic */ boolean canSelectStories() {
+                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                        }
+
+                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                         public final boolean didSelectDialogs(DialogsActivity dialogsActivity22, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i4, TopicsFragment topicsFragment) {
                             boolean lambda$createView$0;
                             lambda$createView$0 = SaveToGallerySettingsActivity.this.lambda$createView$0(dialogsActivity22, arrayList, charSequence, z, z2, i4, topicsFragment);
                             return lambda$createView$0;
+                        }
+
+                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                        public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity22) {
+                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity22);
                         }
                     });
                     saveToGallerySettingsActivity = dialogsActivity2;
@@ -536,7 +556,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             saveGalleryExceptions.put(dialogException.dialogId, dialogException);
             getUserConfig().updateSaveGalleryExceptions(this.type, saveGalleryExceptions);
         }
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -664,7 +684,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$354();
+                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$355();
                 }
             }
         });

@@ -85,16 +85,20 @@ public class ShareDialogCell extends FrameLayout implements NotificationCenter.N
         private final RLottieDrawable lottieDrawable;
         private final Paint paint;
 
-        public RepostStoryDrawable(Context context, View view, boolean z, Theme.ResourcesProvider resourcesProvider) {
+        public RepostStoryDrawable(Context context, View view, int i, Theme.ResourcesProvider resourcesProvider) {
+            this(context, view, false, i, resourcesProvider);
+        }
+
+        public RepostStoryDrawable(Context context, View view, boolean z, int i, Theme.ResourcesProvider resourcesProvider) {
             Paint paint = new Paint(1);
             this.paint = paint;
-            this.alpha = NotificationCenter.reloadInterface;
+            this.alpha = NotificationCenter.locationPermissionGranted;
             LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{Theme.getColor(Theme.key_stories_circle1, resourcesProvider), Theme.getColor(Theme.key_stories_circle2, resourcesProvider)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradient = linearGradient;
             paint.setShader(linearGradient);
             if (!z) {
                 this.lottieDrawable = null;
-                Drawable mutate = context.getResources().getDrawable(R.drawable.large_repost_story).mutate();
+                Drawable mutate = context.getResources().getDrawable(i).mutate();
                 this.drawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 return;
@@ -104,6 +108,10 @@ public class ShareDialogCell extends FrameLayout implements NotificationCenter.N
             rLottieDrawable.setMasterParent(view);
             AndroidUtilities.runOnUIThread(new ShareDialogCell$RepostStoryDrawable$$ExternalSyntheticLambda0(rLottieDrawable), 450L);
             this.drawable = null;
+        }
+
+        public RepostStoryDrawable(Context context, View view, boolean z, Theme.ResourcesProvider resourcesProvider) {
+            this(context, view, z, R.drawable.large_repost_story, resourcesProvider);
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -532,7 +540,7 @@ public class ShareDialogCell extends FrameLayout implements NotificationCenter.N
         if (j == Long.MAX_VALUE) {
             this.nameTextView.setText(repostToCustomName());
             if (this.repostStoryDrawable == null) {
-                this.repostStoryDrawable = new RepostStoryDrawable(getContext(), this.imageView, true, this.resourcesProvider);
+                this.repostStoryDrawable = new RepostStoryDrawable(getContext(), (View) this.imageView, true, this.resourcesProvider);
             }
             this.imageView.setImage((ImageLocation) null, (String) null, this.repostStoryDrawable, (Object) null);
         } else {

@@ -149,28 +149,28 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 return;
             }
             switch (i) {
-                case NotificationCenter.didSetNewWallpapper /* 257 */:
+                case NotificationCenter.reloadInterface /* 257 */:
                     callback.onRouteAdded(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.proxySettingsChanged /* 258 */:
+                case NotificationCenter.suggestedLangpack /* 258 */:
                     callback.onRouteRemoved(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.proxyCheckDone /* 259 */:
+                case NotificationCenter.didSetNewWallpapper /* 259 */:
                     callback.onRouteChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.proxyChangedByRotation /* 260 */:
+                case NotificationCenter.proxySettingsChanged /* 260 */:
                     callback.onRouteVolumeChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.liveLocationsChanged /* 261 */:
+                case NotificationCenter.proxyCheckDone /* 261 */:
                     callback.onRoutePresentationDisplayChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.newLocationAvailable /* 262 */:
+                case NotificationCenter.proxyChangedByRotation /* 262 */:
                     callback.onRouteSelected(mediaRouter, routeInfo, i2, routeInfo);
                     break;
-                case NotificationCenter.liveLocationsCacheChanged /* 263 */:
+                case NotificationCenter.liveLocationsChanged /* 263 */:
                     callback.onRouteUnselected(mediaRouter, routeInfo, i2);
                     break;
-                case NotificationCenter.notificationsCountUpdated /* 264 */:
+                case NotificationCenter.newLocationAvailable /* 264 */:
                     callback.onRouteSelected(mediaRouter, routeInfo, i2, routeInfo2);
                     break;
             }
@@ -197,13 +197,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 return;
             }
             switch (i) {
-                case NotificationCenter.didSetNewWallpapper /* 257 */:
+                case NotificationCenter.reloadInterface /* 257 */:
                     GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteAdded((MediaRouter.RouteInfo) obj);
                     break;
-                case NotificationCenter.proxySettingsChanged /* 258 */:
+                case NotificationCenter.suggestedLangpack /* 258 */:
                     GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteRemoved((MediaRouter.RouteInfo) obj);
                     break;
-                case NotificationCenter.proxyCheckDone /* 259 */:
+                case NotificationCenter.didSetNewWallpapper /* 259 */:
                     GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteChanged((MediaRouter.RouteInfo) obj);
                     break;
             }
@@ -575,7 +575,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                             this.mRoutes.add(routeInfo);
                             if (mediaRouteDescriptor.getGroupMemberIds().isEmpty()) {
                                 routeInfo.maybeUpdateDescriptor(mediaRouteDescriptor);
-                                this.mCallbackHandler.post(NotificationCenter.didSetNewWallpapper, routeInfo);
+                                this.mCallbackHandler.post(NotificationCenter.reloadInterface, routeInfo);
                             } else {
                                 arrayList.add(new Pair(routeInfo, mediaRouteDescriptor));
                             }
@@ -603,7 +603,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 for (Pair pair : arrayList) {
                     MediaRouter.RouteInfo routeInfo3 = (MediaRouter.RouteInfo) pair.first;
                     routeInfo3.maybeUpdateDescriptor((MediaRouteDescriptor) pair.second);
-                    this.mCallbackHandler.post(NotificationCenter.didSetNewWallpapper, routeInfo3);
+                    this.mCallbackHandler.post(NotificationCenter.reloadInterface, routeInfo3);
                 }
                 for (Pair pair2 : arrayList2) {
                     MediaRouter.RouteInfo routeInfo4 = (MediaRouter.RouteInfo) pair2.first;
@@ -619,7 +619,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             }
             updateSelectedRouteIfNeeded(z);
             for (int size2 = providerInfo.mRoutes.size() - 1; size2 >= i; size2--) {
-                this.mCallbackHandler.post(NotificationCenter.proxySettingsChanged, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size2));
+                this.mCallbackHandler.post(NotificationCenter.suggestedLangpack, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size2));
             }
             this.mCallbackHandler.post(515, providerInfo);
         }
@@ -854,7 +854,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     @Override // androidx.mediarouter.media.PlatformMediaRouter1RouteProvider.SyncCallback
     public void onPlatformRouteSelectedByDescriptorId(String str) {
         MediaRouter.RouteInfo findRouteByDescriptorId;
-        this.mCallbackHandler.removeMessages(NotificationCenter.newLocationAvailable);
+        this.mCallbackHandler.removeMessages(NotificationCenter.proxyChangedByRotation);
         MediaRouter.ProviderInfo findProviderInfo = findProviderInfo(this.mPlatformMediaRouter1RouteProvider);
         if (findProviderInfo == null || (findRouteByDescriptorId = findProviderInfo.findRouteByDescriptorId(str)) == null) {
             return;
@@ -992,7 +992,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         }
         this.mSelectedRoute = routeInfo;
         this.mSelectedRouteController = onCreateRouteController;
-        this.mCallbackHandler.post(NotificationCenter.newLocationAvailable, new Pair(null, routeInfo), i);
+        this.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, new Pair(null, routeInfo), i);
     }
 
     void setMediaSessionCompat(MediaSessionCompat mediaSessionCompat) {
@@ -1168,13 +1168,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         int maybeUpdateDescriptor = routeInfo.maybeUpdateDescriptor(mediaRouteDescriptor);
         if (maybeUpdateDescriptor != 0) {
             if ((maybeUpdateDescriptor & 1) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.proxyCheckDone, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.didSetNewWallpapper, routeInfo);
             }
             if ((maybeUpdateDescriptor & 2) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.proxySettingsChanged, routeInfo);
             }
             if ((maybeUpdateDescriptor & 4) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.liveLocationsChanged, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.proxyCheckDone, routeInfo);
             }
         }
         return maybeUpdateDescriptor;

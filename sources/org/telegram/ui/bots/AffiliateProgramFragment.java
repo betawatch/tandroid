@@ -319,7 +319,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 size--;
             }
             if (baseFragment == null) {
-                lambda$onBackPressed$354();
+                lambda$onBackPressed$355();
                 baseFragment = parentLayout.getBackgroundFragment();
                 if (baseFragment == null) {
                     if (z) {
@@ -342,7 +342,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                 parentLayout.removeFragmentFromStack((BaseFragment) fragmentStack.get(size2));
             }
         }
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
         if (baseFragment == null) {
         }
     }
@@ -510,7 +510,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         if (userFull != null) {
             TL_payments.starRefProgram starrefprogram2 = this.program;
             starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.chatSwitchedForum : 86400);
+            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.activityPermissionsGranted : 86400);
             userFull.starref_program = starrefprogram;
             getMessagesStorage().updateUserInfo(userFull, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.bot_id), userFull);

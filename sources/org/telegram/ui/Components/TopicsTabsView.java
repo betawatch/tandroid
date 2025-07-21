@@ -795,7 +795,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                     if (z) {
                         f = dp3;
                         f2 = width;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.reloadInterface, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
                     } else {
                         f = dp3;
                         f2 = width;
@@ -1269,7 +1269,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollHorizontally(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.reloadInterface, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -1404,7 +1404,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollVertically(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.reloadInterface, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);

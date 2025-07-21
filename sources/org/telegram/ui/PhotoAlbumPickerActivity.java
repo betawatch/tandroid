@@ -213,7 +213,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$2(boolean z, int i) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,7 +228,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
         }
     }
 
@@ -243,7 +243,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$5(boolean z, int i) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -261,7 +261,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
         }
     }
 
@@ -588,7 +588,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoAlbumPickerActivity.this.lambda$onBackPressed$354();
+                    PhotoAlbumPickerActivity.this.lambda$onBackPressed$355();
                     return;
                 }
                 if (i3 != 1) {

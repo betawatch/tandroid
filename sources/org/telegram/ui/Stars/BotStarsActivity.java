@@ -675,7 +675,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         int i2;
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$354();
+            twoStepVerificationActivity.lambda$onBackPressed$355();
             if (tLObject instanceof TL_stats.TL_broadcastRevenueWithdrawalUrl) {
                 context = getContext();
                 str = ((TL_stats.TL_broadcastRevenueWithdrawalUrl) tLObject).url;
@@ -702,7 +702,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$354();
+                twoStepVerificationActivity.lambda$onBackPressed$355();
             }
             BulletinFactory.showError(tL_error);
             return;
@@ -1067,7 +1067,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    BotStarsActivity.this.lambda$onBackPressed$354();
+                    BotStarsActivity.this.lambda$onBackPressed$355();
                 }
             }
         });

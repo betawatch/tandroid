@@ -37,6 +37,7 @@ import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
@@ -49,6 +50,7 @@ import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CanvasButton;
 import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.FlickerLoadingView;
@@ -105,8 +107,12 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
     private Paint privacyPaint;
     private int privacyType;
     private final Paint progressPaint;
+    private final Path rectPath;
     private boolean reorder;
     private final Paint scrimPaint;
+    private Text sensitiveText;
+    private Text sensitiveTextShort;
+    private Text sensitiveTextShort2;
     private Shaker shaker;
     SharedResources sharedResources;
     boolean showVideoLayout;
@@ -195,6 +201,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         this.viewsAlpha = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.viewsText = new AnimatedTextView.AnimatedTextDrawable(false, true, true);
         this.path = new Path();
+        this.rectPath = new Path();
         this.style = 0;
         this.scrimPaint = new Paint(1);
         this.progressPaint = new Paint(1);
@@ -205,7 +212,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         setChecked(false, false);
         this.imageReceiver.setParentView(this);
         this.blurImageReceiver.setParentView(this);
-        this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda1
+        this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
                 SharedPhotoVideoCell2.this.lambda$new$0(imageReceiver, z, z2, z3);
@@ -597,10 +604,14 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0405, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x0587, code lost:
     
-        if (r1.getProgress() != 0.0f) goto L143;
+        if (r1.getProgress() != 0.0f) goto L162;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r15v1 */
+    /* JADX WARN: Type inference failed for: r15v10 */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -609,9 +620,11 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         float f;
         float f2;
         float f3;
-        boolean z;
+        ?? r15;
         float dp;
         float f4;
+        int i;
+        boolean z;
         FlickerLoadingView flickerLoadingView;
         super.onDraw(canvas);
         float padding = getPadding();
@@ -631,7 +644,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             f = f9;
             f2 = f8;
             f3 = 1.0f;
-            z = true;
+            r15 = 1;
         } else {
             if (getParent() == null || (flickerLoadingView = this.globalGradientView) == null) {
                 f = f9;
@@ -652,6 +665,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 canvas.drawRect(f11, f12, f11 + f8, f12 + f9, this.globalGradientView.getPaint());
             }
             invalidate();
+            r15 = z;
         }
         float f13 = this.imageAlpha;
         if (f13 != f3) {
@@ -663,15 +677,15 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         if (((checkBoxBase != null && checkBoxBase.isChecked()) || PhotoViewer.isShowingImage(this.currentMessageObject)) && !this.check2) {
             canvas.drawRect(f5, padding, (f5 + f2) - f6, f, this.sharedResources.backgroundPaint);
         }
-        if (this.isStory && this.currentParentColumnsCount == z) {
+        if (this.isStory && this.currentParentColumnsCount == r15) {
             float height = getHeight() * 0.72f;
             Drawable drawable = this.gradientDrawable;
             if (drawable != null) {
                 drawable.setBounds(0, 0, getWidth(), getHeight());
                 this.gradientDrawable.draw(canvas);
             } else if (!this.gradientDrawableLoading && this.imageReceiver.getBitmap() != null) {
-                this.gradientDrawableLoading = z;
-                DominantColors.getColors(false, this.imageReceiver.getBitmap(), Theme.isCurrentThemeDark(), new Utilities.Callback() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda2
+                this.gradientDrawableLoading = r15;
+                DominantColors.getColors(false, this.imageReceiver.getBitmap(), Theme.isCurrentThemeDark(), new Utilities.Callback() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         SharedPhotoVideoCell2.this.lambda$onDraw$2((int[]) obj);
@@ -731,12 +745,67 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                     this.mediaSpoilerEffect.draw(canvas);
                 }
                 canvas.restore();
+                if (this.currentMessageObject.isSensitive()) {
+                    if (this.sensitiveText == null) {
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContent));
+                        spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, r15, 33);
+                        this.sensitiveText = new Text(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                    }
+                    Text text = this.sensitiveText;
+                    int i2 = 13;
+                    if (f2 < (AndroidUtilities.dp(13) * 2) + text.getCurrentWidth()) {
+                        if (this.sensitiveTextShort == null) {
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContentShort));
+                            spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, r15, 33);
+                            this.sensitiveTextShort = new Text(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                        }
+                        text = this.sensitiveTextShort;
+                    }
+                    if (f2 < (AndroidUtilities.dp(26) * 2) + text.getCurrentWidth()) {
+                        if (this.sensitiveTextShort2 == null) {
+                            this.sensitiveTextShort2 = new Text(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                        }
+                        text = this.sensitiveTextShort2;
+                        i2 = 10;
+                        i = 28;
+                    } else {
+                        i = 32;
+                    }
+                    float imageX = this.imageReceiver.getImageX() + (this.imageReceiver.getImageWidth() / 2.0f);
+                    float imageY = this.imageReceiver.getImageY() + (this.imageReceiver.getImageHeight() / 2.0f);
+                    float currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(i2 + i2);
+                    float dp3 = AndroidUtilities.dp(i) / 2.0f;
+                    float lerp = AndroidUtilities.lerp(0.8f, f3, f3 - this.spoilerRevealProgress);
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    float f22 = currentWidth / 2.0f;
+                    float f23 = f22 * lerp;
+                    float f24 = dp3 * lerp;
+                    rectF.set(imageX - f23, imageY - f24, f23 + imageX, imageY + f24);
+                    this.rectPath.reset();
+                    this.rectPath.addRoundRect(rectF, dp3, dp3, Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(this.rectPath);
+                    float alpha = this.blurImageReceiver.getAlpha();
+                    this.blurImageReceiver.setAlpha((f3 - this.spoilerRevealProgress) * alpha);
+                    this.blurImageReceiver.draw(canvas);
+                    this.blurImageReceiver.setAlpha(alpha);
+                    canvas.restore();
+                    Paint themePaint = Theme.getThemePaint("paintChatTimeBackground");
+                    int alpha2 = themePaint.getAlpha();
+                    themePaint.setAlpha((int) (alpha2 * (f3 - this.spoilerRevealProgress) * 0.35f));
+                    canvas.drawRoundRect(rectF, dp3, dp3, themePaint);
+                    themePaint.setAlpha(alpha2);
+                    canvas.save();
+                    canvas.scale(lerp, lerp, imageX, imageY);
+                    text.draw(canvas, (imageX - f22) + AndroidUtilities.dp(i2), imageY, -1, f3 - this.spoilerRevealProgress);
+                    canvas.restore();
+                }
                 invalidate();
             }
             if (!this.isSearchingHashtag) {
-                float f22 = this.highlightProgress;
-                if (f22 > 0.0f) {
-                    this.sharedResources.highlightPaint.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (f22 * 0.5f * 255.0f)));
+                float f25 = this.highlightProgress;
+                if (f25 > 0.0f) {
+                    this.sharedResources.highlightPaint.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (f25 * 0.5f * 255.0f)));
                     canvas.drawRect(this.imageReceiver.getDrawRegion(), this.sharedResources.highlightPaint);
                 }
             }
@@ -749,13 +818,13 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             this.progressPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.progressPaint.setStrokeJoin(Paint.Join.ROUND);
             this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
-            float dp3 = AndroidUtilities.dp(18.0f);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(this.imageReceiver.getCenterX() - dp3, this.imageReceiver.getCenterY() - dp3, this.imageReceiver.getCenterX() + dp3, this.imageReceiver.getCenterY() + dp3);
+            float dp4 = AndroidUtilities.dp(18.0f);
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(this.imageReceiver.getCenterX() - dp4, this.imageReceiver.getCenterY() - dp4, this.imageReceiver.getCenterX() + dp4, this.imageReceiver.getCenterY() + dp4);
             float currentTimeMillis = ((System.currentTimeMillis() % 1500) / 1500.0f) * 360.0f;
             AnimatedFloat animatedFloat = this.animatedProgress;
             MessageObject messageObject2 = this.currentMessageObject;
-            canvas.drawArc(rectF, currentTimeMillis, animatedFloat.set(AndroidUtilities.lerp(0.15f, 0.95f, messageObject2 != null ? messageObject2.getProgress() : 0.0f)) * 360.0f, false, this.progressPaint);
+            canvas.drawArc(rectF2, currentTimeMillis, animatedFloat.set(AndroidUtilities.lerp(0.15f, 0.95f, messageObject2 != null ? messageObject2.getProgress() : 0.0f)) * 360.0f, false, this.progressPaint);
             invalidate();
         }
         this.bounds.set(this.imageReceiver.getImageX(), this.imageReceiver.getImageY(), this.imageReceiver.getImageX2(), this.imageReceiver.getImageY2());
@@ -771,7 +840,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         }
         CheckBoxBase checkBoxBase2 = this.checkBoxBase;
         if (checkBoxBase2 != null) {
-            if (this.style != z) {
+            if (this.style != 1) {
             }
             canvas.save();
             if (this.check2 && this.reorder) {
@@ -782,7 +851,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 this.shaker.concat(canvas, this.checkBoxProgress * 0.5f);
                 canvas.translate(-this.imageReceiver.getCenterX(), -this.imageReceiver.getCenterY());
             }
-            if (this.style == z) {
+            if (this.style == 1) {
                 dp = ((f2 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(25.0f)) - AndroidUtilities.dp(4.0f);
                 f4 = AndroidUtilities.dp(4.0f);
             } else if (this.check2) {
@@ -795,9 +864,9 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             canvas.translate(dp, f4);
             this.checkBoxBase.draw(canvas);
             if (this.canvasButton != null) {
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(dp, f4, this.checkBoxBase.bounds.width() + dp, this.checkBoxBase.bounds.height() + f4);
-                this.canvasButton.setRect(rectF2);
+                RectF rectF3 = AndroidUtilities.rectTmp;
+                rectF3.set(dp, f4, this.checkBoxBase.bounds.width() + dp, this.checkBoxBase.bounds.height() + f4);
+                this.canvasButton.setRect(rectF3);
             }
             canvas.restore();
         }
@@ -1305,7 +1374,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             }
             CanvasButton canvasButton = new CanvasButton(this);
             this.canvasButton = canvasButton;
-            canvasButton.setDelegate(new Runnable() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda3
+            canvasButton.setDelegate(new Runnable() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     SharedPhotoVideoCell2.this.lambda$setStyle$1();
@@ -1331,7 +1400,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         this.spoilerMaxRadius = (float) Math.sqrt(Math.pow(getWidth(), 2.0d) + Math.pow(getHeight(), 2.0d));
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) MathUtils.clamp(this.spoilerMaxRadius * 0.3f, 250.0f, 550.0f));
         duration.setInterpolator(CubicBezierInterpolator.EASE_BOTH);
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda0
+        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 SharedPhotoVideoCell2.this.lambda$startRevealMedia$3(valueAnimator);

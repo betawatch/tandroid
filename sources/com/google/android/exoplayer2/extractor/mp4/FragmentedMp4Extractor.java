@@ -205,12 +205,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = this.scratch.getData();
                 data[0] = 0;
                 data[1] = 1;
-                data[2] = (byte) ((i2 >> 8) & NotificationCenter.reloadInterface);
-                data[3] = (byte) (i2 & NotificationCenter.reloadInterface);
-                data[4] = (byte) ((i >> 24) & NotificationCenter.reloadInterface);
-                data[5] = (byte) ((i >> 16) & NotificationCenter.reloadInterface);
-                data[6] = (byte) ((i >> 8) & NotificationCenter.reloadInterface);
-                data[7] = (byte) (i & NotificationCenter.reloadInterface);
+                data[2] = (byte) ((i2 >> 8) & NotificationCenter.locationPermissionGranted);
+                data[3] = (byte) (i2 & NotificationCenter.locationPermissionGranted);
+                data[4] = (byte) ((i >> 24) & NotificationCenter.locationPermissionGranted);
+                data[5] = (byte) ((i >> 16) & NotificationCenter.locationPermissionGranted);
+                data[6] = (byte) ((i >> 8) & NotificationCenter.locationPermissionGranted);
+                data[7] = (byte) (i & NotificationCenter.locationPermissionGranted);
                 this.output.sampleData(this.scratch, 8, 1);
                 return i3 + 9;
             }
@@ -223,8 +223,8 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data2 = this.scratch.getData();
                 parsableByteArray3.readBytes(data2, 0, i4);
                 int i5 = (((data2[2] & 255) << 8) | (data2[3] & 255)) + i2;
-                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.reloadInterface);
-                data2[3] = (byte) (i5 & NotificationCenter.reloadInterface);
+                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.locationPermissionGranted);
+                data2[3] = (byte) (i5 & NotificationCenter.locationPermissionGranted);
                 parsableByteArray3 = this.scratch;
             }
             this.output.sampleData(parsableByteArray3, i4, 1);
@@ -706,7 +706,7 @@ public class FragmentedMp4Extractor implements Extractor {
         }
         parsableByteArray2.skipBytes(1);
         int readUnsignedByte = parsableByteArray2.readUnsignedByte();
-        int i3 = (readUnsignedByte & NotificationCenter.emojiLoaded) >> 4;
+        int i3 = (readUnsignedByte & NotificationCenter.didReceiveSmsCode) >> 4;
         int i4 = readUnsignedByte & 15;
         boolean z = parsableByteArray2.readUnsignedByte() == 1;
         if (z) {

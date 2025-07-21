@@ -135,6 +135,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         public final Paint bPaint = new Paint(3);
         public final Rect rect = new Rect();
         private float speed = 1.0f;
+        private float lifetime = 1.0f;
         private boolean firstDraw = true;
 
         public class Particle {
@@ -206,7 +207,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
 
         public void gen(Particle particle, long j, boolean z) {
             particle.start = j;
-            long lerp = AndroidUtilities.lerp(500, 2500, Utilities.fastRandom.nextFloat());
+            long lerp = (long) (AndroidUtilities.lerp(500, 2500, Utilities.fastRandom.nextFloat()) * this.lifetime);
             particle.lifetime = lerp;
             if (z) {
                 particle.start -= (long) (lerp * Utilities.clamp01(Utilities.fastRandom.nextFloat()));
@@ -346,7 +347,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.chatSwitchedForum);
+            this.sliderParticles = new Particles(0, NotificationCenter.activityPermissionsGranted);
             this.textParticles = new Particles(2, 30);
             this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradientMatrix = new Matrix();
@@ -818,7 +819,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
                         this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
                         this.anonymousAvatarDrawable.draw(canvas);
-                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.reloadInterface);
+                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
                     }
                 }
                 RectF rectF = AndroidUtilities.rectTmp;

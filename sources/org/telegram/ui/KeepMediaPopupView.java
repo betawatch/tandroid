@@ -215,10 +215,20 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
             final DialogsActivity dialogsActivity = new DialogsActivity(bundle);
             dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.KeepMediaPopupView$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                public /* synthetic */ boolean canSelectStories() {
+                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                }
+
+                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
                     boolean lambda$new$1;
                     lambda$new$1 = KeepMediaPopupView.this.lambda$new$1(dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i2, topicsFragment);
                     return lambda$new$1;
+                }
+
+                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                 }
             });
             cacheChatsExceptionsFragment = dialogsActivity;

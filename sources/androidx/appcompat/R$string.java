@@ -2,16 +2,16 @@ package androidx.appcompat;
 
 /* loaded from: classes.dex */
 public abstract class R$string {
-    public static final int abc_action_bar_up_description = 2131698873;
-    public static final int abc_menu_alt_shortcut_label = 2131698880;
-    public static final int abc_menu_ctrl_shortcut_label = 2131698881;
-    public static final int abc_menu_delete_shortcut_label = 2131698882;
-    public static final int abc_menu_enter_shortcut_label = 2131698883;
-    public static final int abc_menu_function_shortcut_label = 2131698884;
-    public static final int abc_menu_meta_shortcut_label = 2131698885;
-    public static final int abc_menu_shift_shortcut_label = 2131698886;
-    public static final int abc_menu_space_shortcut_label = 2131698887;
-    public static final int abc_menu_sym_shortcut_label = 2131698888;
-    public static final int abc_prepend_shortcut_label = 2131698889;
-    public static final int abc_searchview_description_search = 2131698893;
+    public static final int abc_action_bar_up_description = 2131698915;
+    public static final int abc_menu_alt_shortcut_label = 2131698922;
+    public static final int abc_menu_ctrl_shortcut_label = 2131698923;
+    public static final int abc_menu_delete_shortcut_label = 2131698924;
+    public static final int abc_menu_enter_shortcut_label = 2131698925;
+    public static final int abc_menu_function_shortcut_label = 2131698926;
+    public static final int abc_menu_meta_shortcut_label = 2131698927;
+    public static final int abc_menu_shift_shortcut_label = 2131698928;
+    public static final int abc_menu_space_shortcut_label = 2131698929;
+    public static final int abc_menu_sym_shortcut_label = 2131698930;
+    public static final int abc_prepend_shortcut_label = 2131698931;
+    public static final int abc_searchview_description_search = 2131698935;
 }

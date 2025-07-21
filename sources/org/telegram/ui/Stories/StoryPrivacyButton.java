@@ -13,6 +13,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -107,7 +108,7 @@ public class StoryPrivacyButton extends View {
             canvas.scale(scale, scale, rectF.centerX(), rectF.centerY());
             float f = this.crossfadeT.set(0.0f);
             if (f > 0.0f) {
-                this.backgroundPaint[1].setAlpha(NotificationCenter.reloadInterface);
+                this.backgroundPaint[1].setAlpha(NotificationCenter.locationPermissionGranted);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.backgroundPaint[1]);
             }
             if (f < 1.0f) {
@@ -150,13 +151,14 @@ public class StoryPrivacyButton extends View {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005a  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0068  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean set(boolean z, TL_stories.StoryItem storyItem, boolean z2) {
         int i;
         int i2;
+        ArrayList<TLRPC.PrivacyRule> arrayList;
         this.drawArrow = z;
         this.draw = true;
         if (storyItem != null) {
@@ -168,7 +170,7 @@ public class StoryPrivacyButton extends View {
                 setIcon(R.drawable.msg_folders_private, 17.33f);
                 i = -3905294;
                 i2 = -6923014;
-            } else if (storyItem.selected_contacts) {
+            } else if (storyItem.selected_contacts || (z && ((arrayList = storyItem.privacy) == null || arrayList.isEmpty()))) {
                 setIcon(R.drawable.msg_folders_groups, 17.33f);
                 i = -18621;
                 i2 = -618956;

@@ -2081,7 +2081,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$21(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2141,7 +2141,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$deleteFolder$14(Boolean bool) {
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2155,7 +2155,7 @@ public class FilterCreateActivity extends BaseFragment {
         }
         getMessagesController().removeFilter(this.filter);
         getMessagesStorage().deleteDialogFilter(this.filter);
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2303,7 +2303,7 @@ public class FilterCreateActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$23() {
         if (!this.doNotCloseWhenSave) {
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
             return;
         }
         this.doNotCloseWhenSave = false;
@@ -3090,7 +3090,7 @@ public class FilterCreateActivity extends BaseFragment {
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (FilterCreateActivity.this.checkDiscard()) {
-                        FilterCreateActivity.this.lambda$onBackPressed$354();
+                        FilterCreateActivity.this.lambda$onBackPressed$355();
                     }
                 } else if (i == 1) {
                     FilterCreateActivity.this.processDone();

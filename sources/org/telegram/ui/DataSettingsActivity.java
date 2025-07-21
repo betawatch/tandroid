@@ -1079,7 +1079,7 @@ public class DataSettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    DataSettingsActivity.this.lambda$onBackPressed$354();
+                    DataSettingsActivity.this.lambda$onBackPressed$355();
                 }
             }
         });

@@ -79,6 +79,10 @@ public class Text {
         return this;
     }
 
+    public void detach() {
+        AnimatedEmojiSpan.release(this.parentView, this.animatedEmojis);
+    }
+
     public void draw(Canvas canvas) {
         if (this.layout == null) {
             return;
@@ -86,7 +90,7 @@ public class Text {
         if (!this.doNotSave) {
             float f = this.ellipsizeWidth;
             if (f >= 0.0f && this.width > f) {
-                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.reloadInterface, 31);
+                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.locationPermissionGranted, 31);
             }
         }
         canvas.save();

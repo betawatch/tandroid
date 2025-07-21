@@ -85,7 +85,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.reloadInterface;
+        this.globalAlpha = NotificationCenter.locationPermissionGranted;
         this.subTextAlpha = NotificationCenter.emojiKeywordsLoaded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;

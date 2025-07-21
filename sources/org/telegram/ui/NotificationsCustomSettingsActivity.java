@@ -1289,10 +1289,20 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
                 DialogsActivity dialogsActivity = new DialogsActivity(bundle);
                 dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.NotificationsCustomSettingsActivity$$ExternalSyntheticLambda17
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean canSelectStories() {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                     public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList2, CharSequence charSequence, boolean z6, boolean z7, int i5, TopicsFragment topicsFragment) {
                         boolean lambda$createView$8;
                         lambda$createView$8 = NotificationsCustomSettingsActivity.this.lambda$createView$8(dialogsActivity2, arrayList2, charSequence, z6, z7, i5, topicsFragment);
                         return lambda$createView$8;
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                     }
                 });
                 presentFragment(dialogsActivity);
@@ -2563,7 +2573,7 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    NotificationsCustomSettingsActivity.this.lambda$onBackPressed$354();
+                    NotificationsCustomSettingsActivity.this.lambda$onBackPressed$355();
                 }
             }
         });

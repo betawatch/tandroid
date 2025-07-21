@@ -72,6 +72,7 @@ import org.telegram.ui.Stories.StoriesListPlaceProvider;
 /* loaded from: classes4.dex */
 public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements DialogCell.DialogCellDelegate {
     private static final boolean ALLOW_UPDATE_IN_BACKGROUND = BuildVars.DEBUG_PRIVATE_VERSION;
+    private boolean allowForwardAsStories;
     private Drawable arrowDrawable;
     private boolean collapsedView;
     private int currentAccount;
@@ -643,12 +644,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         });
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0412 A[LOOP:2: B:115:0x0412->B:125:0x0439, LOOP_START, PHI: r4
-      0x0412: PHI (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:114:0x0410, B:125:0x0439] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x043b A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0420 A[LOOP:2: B:119:0x0420->B:129:0x0447, LOOP_START, PHI: r4
+      0x0420: PHI (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:118:0x041e, B:129:0x0447] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0449 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0451  */
     /* JADX WARN: Removed duplicated region for block: B:55:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0371  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -836,6 +837,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             if ((!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) || (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) && this.dialogsCount > 0) {
                                 this.itemInternals.add(new ItemInternal(12));
                             }
+                            if (this.allowForwardAsStories && this.dialogsType == 3) {
+                                this.itemInternals.add(new ItemInternal(21));
+                            }
                             if (!z) {
                                 for (int i12 = 0; i12 < dialogsArray.size(); i12++) {
                                     if (this.dialogsType == 2 && (dialogsArray.get(i12) instanceof DialogsActivity.DialogsHeader)) {
@@ -913,6 +917,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast)) {
                     }
                     this.itemInternals.add(new ItemInternal(12));
+                    if (this.allowForwardAsStories) {
+                        this.itemInternals.add(new ItemInternal(21));
+                    }
                     if (!z) {
                     }
                     if (messagesController.hiddenUndoChats.isEmpty()) {
@@ -980,6 +987,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         }
         if (this.hasHints) {
             i -= MessagesController.getInstance(this.currentAccount).hintDialogs.size() + 2;
+        }
+        if (this.allowForwardAsStories && this.dialogsType == 3) {
+            i--;
         }
         int i2 = this.dialogsType;
         return (i2 == 11 || i2 == 13) ? i - 2 : i2 == 12 ? i - 1 : i;
@@ -1084,6 +1094,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         return ((ItemInternal) this.itemInternals.get(i)).viewType;
     }
 
+    public boolean isAllowForwardAsStories() {
+        return this.allowForwardAsStories;
+    }
+
     public boolean isDataSetChanged() {
         return true;
     }
@@ -1134,9 +1148,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x03b9  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x03dd  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x03bb  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x03f6  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x041a  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x03f8  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1156,10 +1170,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         MessagesController.DialogFilter currentFilter;
         long j;
         DialogsActivity dialogsActivity2;
-        int i4;
         HeaderCell headerCell;
-        int i5;
+        int i4;
         String string2;
+        int i5;
         int i6;
         int itemViewType = viewHolder.getItemViewType();
         if (itemViewType == 0) {
@@ -1256,24 +1270,6 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     dialogsPreloader.add(dialog.id);
                 }
             }
-        } else if (itemViewType == 20) {
-            GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
-            DialogsActivity dialogsActivity3 = this.parentFragment;
-            if (dialogsActivity3 != null && dialogsActivity3.isReplyTo) {
-                if (i == 0) {
-                    i4 = R.string.ReplyDialogMessageAuthor;
-                    graySectionCell.setText(LocaleController.getString(i4));
-                }
-                i4 = R.string.ReplyDialogYourChats;
-                graySectionCell.setText(LocaleController.getString(i4));
-            } else if (this.dialogsType == 3) {
-                if (i == 0) {
-                    i4 = R.string.ForwardDialogYourChannel;
-                    graySectionCell.setText(LocaleController.getString(i4));
-                }
-                i4 = R.string.ReplyDialogYourChats;
-                graySectionCell.setText(LocaleController.getString(i4));
-            }
         } else if (itemViewType == 4) {
             ((DialogMeUrlCell) viewHolder.itemView).setRecentMeUrl((TLRPC.RecentMeUrl) getItem(i));
         } else if (itemViewType == 5) {
@@ -1316,7 +1312,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             if (itemViewType == 7) {
                 headerCell = (HeaderCell) viewHolder.itemView;
                 int i10 = this.dialogsType;
-                i5 = (i10 == 11 || i10 == 12 || i10 == 13) ? i == 0 ? R.string.ImportHeader : R.string.ImportHeaderContacts : (this.dialogsCount == 0 && this.forceUpdatingContacts) ? R.string.ConnectingYourContacts : R.string.YourContacts;
+                i4 = (i10 == 11 || i10 == 12 || i10 == 13) ? i == 0 ? R.string.ImportHeader : R.string.ImportHeaderContacts : (this.dialogsCount == 0 && this.forceUpdatingContacts) ? R.string.ConnectingYourContacts : R.string.YourContacts;
             } else if (itemViewType == 11) {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                 textInfoPrivacyCell.setText(LocaleController.getString(R.string.TapOnThePencil));
@@ -1327,25 +1323,66 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 LinkSpanDrawable.LinksTextView textView = textInfoPrivacyCell.getTextView();
                 textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
-                DialogsActivity dialogsActivity4 = this.parentFragment;
-                textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (dialogsActivity4 == null || !dialogsActivity4.storiesEnabled) ? this.arrowDrawable : null, (Drawable) null);
+                DialogsActivity dialogsActivity3 = this.parentFragment;
+                textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (dialogsActivity3 == null || !dialogsActivity3.storiesEnabled) ? this.arrowDrawable : null, (Drawable) null);
                 textView.getLayoutParams().width = -2;
-            } else if (itemViewType != 12) {
+            } else if (itemViewType == 12) {
+                View view = viewHolder.itemView;
+                if (!(view instanceof TextCell)) {
+                    return;
+                }
+                TextCell textCell = (TextCell) view;
+                int i11 = Theme.key_windowBackgroundWhiteBlueText4;
+                textCell.setColors(i11, i11);
+                TLRPC.RequestPeerType requestPeerType = this.requestPeerType;
+                if (requestPeerType != null) {
+                    if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+                        string2 = LocaleController.getString(R.string.CreateChannelForThis);
+                        i5 = R.drawable.msg_channel_create;
+                    } else {
+                        string2 = LocaleController.getString(R.string.CreateGroupForThis);
+                        i5 = R.drawable.msg_groups_create;
+                    }
+                    textCell.setTextAndIcon((CharSequence) string2, i5, true);
+                } else {
+                    textCell.setTextAndIcon(LocaleController.getString(R.string.CreateGroupForImport), R.drawable.msg_groups_create, this.dialogsCount != 0);
+                }
+                textCell.setIsInDialogs();
+                textCell.setOffsetFromImage(75);
+            } else if (itemViewType == 20) {
+                GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
+                DialogsActivity dialogsActivity4 = this.parentFragment;
+                if (dialogsActivity4 != null && dialogsActivity4.isReplyTo) {
+                    if (i == 0) {
+                        i6 = R.string.ReplyDialogMessageAuthor;
+                        graySectionCell.setText(LocaleController.getString(i6));
+                    }
+                    i6 = R.string.ReplyDialogYourChats;
+                    graySectionCell.setText(LocaleController.getString(i6));
+                } else if (this.dialogsType == 3) {
+                    if (i == 0) {
+                        i6 = R.string.ForwardDialogYourChannel;
+                        graySectionCell.setText(LocaleController.getString(i6));
+                    }
+                    i6 = R.string.ReplyDialogYourChats;
+                    graySectionCell.setText(LocaleController.getString(i6));
+                }
+            } else if (itemViewType != 21) {
                 switch (itemViewType) {
                     case 14:
                         headerCell = (HeaderCell) viewHolder.itemView;
                         headerCell.setTextSize(14.0f);
                         headerCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
                         headerCell.setBackgroundColor(Theme.getColor(Theme.key_graySection));
-                        int i11 = ((DialogsActivity.DialogsHeader) getItem(i)).headerType;
-                        if (i11 == 0) {
-                            i5 = R.string.MyChannels;
+                        int i12 = ((DialogsActivity.DialogsHeader) getItem(i)).headerType;
+                        if (i12 == 0) {
+                            i4 = R.string.MyChannels;
                             break;
-                        } else if (i11 == 1) {
-                            i5 = R.string.MyGroups;
+                        } else if (i12 == 1) {
+                            i4 = R.string.MyGroups;
                             break;
-                        } else if (i11 == 2) {
-                            i5 = R.string.FilterGroups;
+                        } else if (i12 == 2) {
+                            i4 = R.string.FilterGroups;
                             break;
                         }
                         break;
@@ -1366,30 +1403,20 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         break;
                 }
             } else {
-                View view = viewHolder.itemView;
-                if (!(view instanceof TextCell)) {
-                    return;
+                TLRPC.Dialog dialog3 = (TLRPC.Dialog) getItem(i + 1);
+                DialogCell dialogCell2 = (DialogCell) viewHolder.itemView;
+                DialogCell.CustomDialog customDialog = new DialogCell.CustomDialog();
+                customDialog.name = LocaleController.getString(R.string.StoriesForwardTitle);
+                customDialog.message = LocaleController.getString(R.string.StoriesForwardText);
+                dialogCell2.useSeparator = dialog3 != null;
+                if (dialog3 != null && !dialog3.pinned) {
+                    r7 = true;
                 }
-                TextCell textCell = (TextCell) view;
-                int i12 = Theme.key_windowBackgroundWhiteBlueText4;
-                textCell.setColors(i12, i12);
-                TLRPC.RequestPeerType requestPeerType = this.requestPeerType;
-                if (requestPeerType != null) {
-                    if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-                        string2 = LocaleController.getString(R.string.CreateChannelForThis);
-                        i6 = R.drawable.msg_channel_create;
-                    } else {
-                        string2 = LocaleController.getString(R.string.CreateGroupForThis);
-                        i6 = R.drawable.msg_groups_create;
-                    }
-                    textCell.setTextAndIcon((CharSequence) string2, i6, true);
-                } else {
-                    textCell.setTextAndIcon(LocaleController.getString(R.string.CreateGroupForImport), R.drawable.msg_groups_create, this.dialogsCount != 0);
-                }
-                textCell.setIsInDialogs();
-                textCell.setOffsetFromImage(75);
+                dialogCell2.fullSeparator = r7;
+                dialogCell2.setDialog(customDialog);
+                dialogCell2.checkHeight();
             }
-            headerCell.setText(LocaleController.getString(i5));
+            headerCell.setText(LocaleController.getString(i4));
         } else {
             ((UserCell) viewHolder.itemView).setData((TLRPC.User) getItem(i), null, null, 0);
         }
@@ -1409,7 +1436,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     public void onCreateGroupForThisClick() {
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0223, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x022a, code lost:
     
         r5.setBackgroundColor(org.telegram.ui.ActionBar.Theme.getColor(org.telegram.ui.ActionBar.Theme.key_windowBackgroundWhite));
         r5 = r5;
@@ -1420,11 +1447,11 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
      */
     /* JADX WARN: Code restructure failed: missing block: B:4:0x0016, code lost:
     
-        if (r19.dialogsType == 15) goto L58;
+        if (r19.dialogsType == 15) goto L61;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x0221, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0228, code lost:
     
-        if (r19.dialogsType == 15) goto L58;
+        if (r19.dialogsType == 15) goto L61;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v1, types: [org.telegram.ui.Components.FlickerLoadingView] */
@@ -1433,7 +1460,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     /* JADX WARN: Type inference failed for: r4v2, types: [android.view.ViewGroup, org.telegram.ui.Cells.HeaderCell] */
     /* JADX WARN: Type inference failed for: r4v32 */
     /* JADX WARN: Type inference failed for: r4v33 */
-    /* JADX WARN: Type inference failed for: r5v37, types: [org.telegram.ui.Adapters.DialogsAdapter$5] */
+    /* JADX WARN: Type inference failed for: r5v38, types: [org.telegram.ui.Adapters.DialogsAdapter$5] */
     /* JADX WARN: Type inference failed for: r6v4, types: [org.telegram.ui.Cells.DialogCell] */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
@@ -1450,6 +1477,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         ViewGroup viewGroup5;
         switch (i) {
             case 0:
+            case 21:
                 int i2 = this.dialogsType;
                 if (i2 == 2 || i2 == 15) {
                     viewGroup2 = new ProfileSearchCell(this.mContext);
@@ -1467,6 +1495,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     dialogCell.setPreloader(this.preloader);
                     dialogCell.setDialogCellDelegate(this);
                     dialogCell.setIsTransitionSupport(this.isTransitionSupport);
+                    if (i == 21) {
+                        dialogCell.setIsShareToStoryCell();
+                    }
                     viewGroup2 = dialogCell;
                 }
                 viewGroup3 = viewGroup2;
@@ -1718,6 +1749,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         if (dialogsPreloader != null) {
             dialogsPreloader.resume();
         }
+    }
+
+    public void setAllowForwardAsStories(boolean z) {
+        this.allowForwardAsStories = z;
     }
 
     public void setArchivedPullDrawable(PullForegroundDrawable pullForegroundDrawable) {

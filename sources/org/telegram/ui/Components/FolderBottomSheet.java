@@ -551,7 +551,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 float f2;
                 float f3;
                 super.onDraw(canvas);
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.reloadInterface, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
                 float measuredWidth = getMeasuredWidth() / 2.0f;
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 if (this.middleFolder != null) {
@@ -1069,7 +1069,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 break;
             }
             if (z) {
-                baseFragment.lambda$onBackPressed$354();
+                baseFragment.lambda$onBackPressed$355();
                 z = false;
             } else {
                 baseFragment.removeSelfFromStack();
@@ -1417,7 +1417,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                         List fragmentStack = parentLayout.getFragmentStack();
                         if (fragmentStack.size() >= 2 && (fragmentStack.get(fragmentStack.size() - 2) instanceof FiltersSetupActivity)) {
                             filtersSetupActivity = (FiltersSetupActivity) fragmentStack.get(fragmentStack.size() - 2);
-                            lastFragment.lambda$onBackPressed$354();
+                            lastFragment.lambda$onBackPressed$355();
                         }
                     }
                     undoView = filtersSetupActivity.getUndoView();

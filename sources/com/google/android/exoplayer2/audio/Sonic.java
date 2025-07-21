@@ -197,7 +197,7 @@ final class Sonic {
 
     private int findPitchPeriodInRange(short[] sArr, int i, int i2, int i3) {
         int i4 = i * this.channelCount;
-        int i5 = NotificationCenter.reloadInterface;
+        int i5 = NotificationCenter.locationPermissionGranted;
         int i6 = 1;
         int i7 = 0;
         int i8 = 0;

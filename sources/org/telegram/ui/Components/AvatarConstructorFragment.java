@@ -664,7 +664,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     float f6 = this.size;
                     float f7 = this.cy;
                     gradientTools2.setBounds(f5 - f6, f7 - f6, f5 + f6, f7 + f6);
-                    this.outGradientTools.paint.setAlpha(NotificationCenter.reloadInterface);
+                    this.outGradientTools.paint.setAlpha(NotificationCenter.locationPermissionGranted);
                     float f8 = measuredWidth;
                     drawBackround(canvas, this.cx, this.cy, f8, this.size, this.outGradientTools.paint);
                     this.gradientTools.paint.setAlpha((int) (this.changeBackgroundProgress * 255.0f));
@@ -676,7 +676,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     }
                     invalidate();
                 } else {
-                    this.gradientTools.paint.setAlpha(NotificationCenter.reloadInterface);
+                    this.gradientTools.paint.setAlpha(NotificationCenter.locationPermissionGranted);
                     drawBackround(canvas, this.cx, this.cy, measuredWidth, this.size, this.gradientTools.paint);
                 }
             }
@@ -838,7 +838,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             return;
         }
         if (!this.wasChanged) {
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
@@ -872,7 +872,7 @@ public class AvatarConstructorFragment extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$discardEditor$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -972,7 +972,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             delegate.onDone(previewView.backgroundGradient, previewView.documentId, previewView.document, previewView);
         }
         if (this.finishOnDone) {
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
         }
     }
 
@@ -1664,10 +1664,10 @@ public class AvatarConstructorFragment extends BaseFragment {
     public void startFrom(TLRPC.VideoSize videoSize) {
         long j;
         BackgroundGradient backgroundGradient = new BackgroundGradient();
-        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.reloadInterface);
-        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.reloadInterface) : 0;
-        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.reloadInterface) : 0;
-        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.reloadInterface) : 0;
+        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.locationPermissionGranted);
+        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.locationPermissionGranted) : 0;
+        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.locationPermissionGranted) : 0;
+        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.locationPermissionGranted) : 0;
         this.previewView.setGradient(backgroundGradient, false);
         updateButton();
         TLRPC.Document document = null;

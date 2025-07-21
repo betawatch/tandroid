@@ -156,7 +156,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean lambda$createView$0(DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
-        dialogsActivity.lambda$onBackPressed$354();
+        dialogsActivity.lambda$onBackPressed$355();
         CacheByChatsController.KeepMediaException keepMediaException = null;
         int i2 = 0;
         int i3 = 0;
@@ -227,7 +227,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         this.exceptionsDialogs.clear();
         getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(this.currentType, this.exceptionsDialogs);
         updateRows();
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -273,10 +273,20 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 final DialogsActivity dialogsActivity = new DialogsActivity(bundle);
                 dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda2
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean canSelectStories() {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                     public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i4, TopicsFragment topicsFragment) {
                         boolean lambda$createView$0;
                         lambda$createView$0 = CacheChatsExceptionsFragment.this.lambda$createView$0(dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i4, topicsFragment);
                         return lambda$createView$0;
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                     }
                 });
                 presentFragment(dialogsActivity);
@@ -288,10 +298,20 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         final DialogsActivity dialogsActivity2 = new DialogsActivity(bundle);
         dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean canSelectStories() {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity22, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i4, TopicsFragment topicsFragment) {
                 boolean lambda$createView$0;
                 lambda$createView$0 = CacheChatsExceptionsFragment.this.lambda$createView$0(dialogsActivity2, dialogsActivity22, arrayList, charSequence, z, z2, i4, topicsFragment);
                 return lambda$createView$0;
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity22) {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity22);
             }
         });
         presentFragment(dialogsActivity2);
@@ -385,7 +405,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    CacheChatsExceptionsFragment.this.lambda$onBackPressed$354();
+                    CacheChatsExceptionsFragment.this.lambda$onBackPressed$355();
                 }
             }
         });

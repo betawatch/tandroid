@@ -3037,8 +3037,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 int i2 = (int) (ChatActivityEnterView.this.slideToCancelProgress >= 0.93f ? ((ChatActivityEnterView.this.slideToCancelProgress - 0.93f) / 0.07f) * 255.0f : 0.0f);
                 drawable3.setAlpha(i2);
                 drawable3.draw(canvas);
-                drawable3.setAlpha(NotificationCenter.reloadInterface);
-                i = NotificationCenter.reloadInterface - i2;
+                drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
+                i = NotificationCenter.locationPermissionGranted - i2;
             } else if (ChatActivityEnterView.this.canceledByGesture) {
                 return;
             }
@@ -3856,7 +3856,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             boolean z;
             Canvas canvas2;
             RectF rectF;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.reloadInterface, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
             updateColors();
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
             int measuredWidth = (getMeasuredWidth() - (getMeasuredHeight() / 2)) - (drawable.getIntrinsicWidth() / 2);
@@ -4659,7 +4659,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.reloadInterface);
+                this.textPaint.setAlpha(NotificationCenter.locationPermissionGranted);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -8228,7 +8228,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         }
         TLRPC.User user = this.accountInstance.getMessagesController().getUser(Long.valueOf(j));
         if (user == null) {
-            dialogsActivity.lambda$onBackPressed$354();
+            dialogsActivity.lambda$onBackPressed$355();
             return true;
         }
         long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
@@ -8250,7 +8250,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 return true;
             }
         }
-        dialogsActivity.lambda$onBackPressed$354();
+        dialogsActivity.lambda$onBackPressed$355();
         return true;
     }
 
@@ -8288,7 +8288,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        dialogsActivity.lambda$onBackPressed$354();
+        dialogsActivity.lambda$onBackPressed$355();
         return true;
     }
 
@@ -11007,10 +11007,20 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         DialogsActivity dialogsActivity = new DialogsActivity(bundle);
                         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda61
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean canSelectStories() {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
                                 boolean lambda$didPressedBotButton$71;
                                 lambda$didPressedBotButton$71 = ChatActivityEnterView.this.lambda$didPressedBotButton$71(messageObject2, keyboardButton, dialogsActivity2, arrayList, charSequence, z, z2, i2, topicsFragment);
                                 return lambda$didPressedBotButton$71;
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                             }
                         });
                         this.parentFragment.presentFragment(dialogsActivity);
@@ -11056,10 +11066,20 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         DialogsActivity dialogsActivity2 = new DialogsActivity(bundle3);
                         dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda63
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean canSelectStories() {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
                                 boolean lambda$didPressedBotButton$73;
                                 lambda$didPressedBotButton$73 = ChatActivityEnterView.this.lambda$didPressedBotButton$73(messageObject2, tL_keyboardButtonRequestPeer, dialogsActivity3, arrayList, charSequence, z, z2, i2, topicsFragment);
                                 return lambda$didPressedBotButton$73;
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity3) {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity3);
                             }
                         });
                         this.parentFragment.presentFragment(dialogsActivity2);
@@ -11639,7 +11659,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.reloadInterface, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.locationPermissionGranted, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {

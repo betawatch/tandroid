@@ -36,7 +36,7 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
     private final String slug;
 
     public PremiumPreviewGiftLinkBottomSheet(BaseFragment baseFragment, int i, TLRPC.User user, GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, String str, boolean z, Theme.ResourcesProvider resourcesProvider) {
-        super(baseFragment, i, user, giftPremiumBottomSheet$GiftTier, resourcesProvider);
+        super(baseFragment, i, user, giftPremiumBottomSheet$GiftTier, null, resourcesProvider);
         this.slug = str;
         this.isUsed = z;
         init();
@@ -104,7 +104,7 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$1() {
-        getBaseFragment().showDialog(new PremiumPreviewBottomSheet(getBaseFragment(), UserConfig.selectedAccount, null, null, this.resourcesProvider).setAnimateConfetti(true).setAnimateConfettiWithStars(true).setOutboundGift(true));
+        getBaseFragment().showDialog(new PremiumPreviewBottomSheet(getBaseFragment(), UserConfig.selectedAccount, null, null, null, this.resourcesProvider).setAnimateConfetti(true).setAnimateConfettiWithStars(true).setOutboundGift(true));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -151,7 +151,7 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
             j = ((MessagesStorage.TopicKey) arrayList.get(i2)).dialogId;
             getBaseFragment().getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str, j, null, null, null, true, null, null, null, true, 0, null, false));
         }
-        dialogsActivity.lambda$onBackPressed$354();
+        dialogsActivity.lambda$onBackPressed$355();
         BoostDialogs.showGiftLinkForwardedBulletin(j);
         return true;
     }
@@ -165,10 +165,20 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
         DialogsActivity dialogsActivity = new DialogsActivity(bundle);
         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean canSelectStories() {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
                 boolean lambda$share$0;
                 lambda$share$0 = PremiumPreviewGiftLinkBottomSheet.this.lambda$share$0(str, dialogsActivity2, arrayList, charSequence, z, z2, i, topicsFragment);
                 return lambda$share$0;
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
             }
         });
         getBaseFragment().presentFragment(dialogsActivity);

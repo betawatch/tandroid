@@ -1001,10 +1001,10 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
         }
         if (topicsFragment != null) {
-            topicsFragment.lambda$onBackPressed$354();
+            topicsFragment.lambda$onBackPressed$355();
             dialogsActivity.removeSelfFromStack();
         } else {
-            dialogsActivity.lambda$onBackPressed$354();
+            dialogsActivity.lambda$onBackPressed$355();
         }
         return true;
     }
@@ -1064,10 +1064,20 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         };
         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean canSelectStories() {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
                 boolean lambda$new$5;
                 lambda$new$5 = BotShareSheet.this.lambda$new$5(i, tL_messages_preparedInlineMessage, j, safeLastFragment, callback2, dialogsActivity2, arrayList, charSequence, z, z2, i2, topicsFragment);
                 return lambda$new$5;
+            }
+
+            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
             }
         });
         safeLastFragment.presentFragment(dialogsActivity);

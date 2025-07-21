@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class PlayPauseDrawable extends Drawable {
-    private int alpha = NotificationCenter.reloadInterface;
+    private int alpha = NotificationCenter.locationPermissionGranted;
     float duration = 300.0f;
     private long lastUpdateTime;
     private final Paint paint;

@@ -334,7 +334,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.chatSwitchedForum);
+        }, NotificationCenter.activityPermissionsGranted);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else {
@@ -356,7 +356,7 @@ public final class BulletinFactory {
         SpannableStringBuilder replaceTags;
         String formatString;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.chatSwitchedForum;
+        int i5 = NotificationCenter.activityPermissionsGranted;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
@@ -1191,6 +1191,22 @@ public final class BulletinFactory {
         twoLineLayout.subtitleTextView.setSingleLine(false);
         twoLineLayout.subtitleTextView.setMaxLines(5);
         return create(twoLineLayout, 5000);
+    }
+
+    public Bulletin createSimpleMultiBulletin(TLRPC.Document document, CharSequence charSequence) {
+        if (document == null) {
+            return new Bulletin.EmptyBulletin();
+        }
+        Bulletin.TwoLineLayout twoLineLayout = new Bulletin.TwoLineLayout(getContext(), this.resourcesProvider);
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, null, false);
+        twoLineLayout.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, closestPhotoSizeWithSize, true), document), "28_28", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "28_28", null, 0L, 0, null);
+        twoLineLayout.imageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(5.0f));
+        twoLineLayout.titleTextView.setText(charSequence);
+        twoLineLayout.titleTextView.setTextSize(1, 14.0f);
+        twoLineLayout.titleTextView.setMaxLines(3);
+        twoLineLayout.titleTextView.setTypeface(null);
+        twoLineLayout.subtitleTextView.setVisibility(8);
+        return create(twoLineLayout, charSequence.length() < 20 ? 1500 : 2750);
     }
 
     public Bulletin createStaticEmojiBulletin(TLRPC.Document document, CharSequence charSequence) {

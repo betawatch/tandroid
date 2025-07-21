@@ -88,7 +88,7 @@ public class InstantCameraVideoEncoderOverlayHelper {
         this.glTextures = iArr;
         this.videoWidth = i;
         this.videoHeight = i2;
-        float[] fArr3 = new float[NotificationCenter.commonChatsLoaded];
+        float[] fArr3 = new float[NotificationCenter.messagesFeeUpdated];
         setTextureCords(fArr3, 0, 0.0f, 1.0f, 1.0f, 0.0f);
         setTextureCords(fArr3, 8, 0.0f, 0.0f, 1.0f, 1.0f);
         float[] fArr4 = new float[36];

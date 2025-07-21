@@ -180,7 +180,7 @@ final class zzlv {
         zzlu zzluVar = zzf;
         long j2 = (-4) & j;
         int i = ((((int) j) ^ (-1)) & 3) << 3;
-        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.reloadInterface << i) ^ (-1))));
+        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.locationPermissionGranted << i) ^ (-1))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,7 +188,7 @@ final class zzlv {
         zzlu zzluVar = zzf;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.reloadInterface << i) ^ (-1))));
+        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.locationPermissionGranted << i) ^ (-1))));
     }
 
     static double zza(Object obj, long j) {
@@ -260,11 +260,11 @@ final class zzlv {
     }
 
     static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((j ^ (-1)) & 3) << 3))) & NotificationCenter.reloadInterface)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((j ^ (-1)) & 3) << 3))) & NotificationCenter.locationPermissionGranted)) != 0;
     }
 
     static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.reloadInterface)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.locationPermissionGranted)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -502,7 +502,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.reloadInterface;
+            this.alpha = NotificationCenter.locationPermissionGranted;
             this.bounds = new android.graphics.Rect();
             this.parentView = view;
             animatedFloat.setParent(view);
@@ -892,7 +892,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.reloadInterface;
+        private int alpha = NotificationCenter.locationPermissionGranted;
         private Drawable drawable;
         int height;
         int width;
@@ -1504,6 +1504,20 @@ public class AnimatedEmojiDrawable extends Drawable {
             this.holders.add(invalidateHolder);
         }
         updateAttachState();
+    }
+
+    public void addViewListening(View view) {
+        view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable.2
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewAttachedToWindow(View view2) {
+                AnimatedEmojiDrawable.this.addView(view2);
+            }
+
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewDetachedFromWindow(View view2) {
+                AnimatedEmojiDrawable.this.removeView(view2);
+            }
+        });
     }
 
     public boolean canOverrideColor() {

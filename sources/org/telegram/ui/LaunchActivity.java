@@ -57,6 +57,7 @@ import com.google.common.primitives.Longs;
 import j$.util.function.Consumer;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -195,6 +196,7 @@ import org.telegram.ui.Stars.SuperRippleFallback;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoriesListPlaceProvider;
 import org.telegram.ui.Stories.StoryViewer;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bots.BotWebViewSheet;
@@ -2266,10 +2268,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 DialogsActivity dialogsActivity2 = new DialogsActivity(bundle);
                 dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda167
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean canSelectStories() {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                     public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList4, CharSequence charSequence, boolean z, boolean z2, int i3, TopicsFragment topicsFragment) {
                         boolean lambda$processAttachMenuBot$119;
                         lambda$processAttachMenuBot$119 = LaunchActivity.this.lambda$processAttachMenuBot$119(user2, str3, i, dialogsActivity3, arrayList4, charSequence, z, z2, i3, topicsFragment);
                         return lambda$processAttachMenuBot$119;
+                    }
+
+                    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                    public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity3) {
+                        return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity3);
                     }
                 });
                 dialogsActivity = dialogsActivity2;
@@ -3526,10 +3538,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         final TLRPC.User user4 = MessagesController.getInstance(i2).getUser(l3);
                         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda97
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean canSelectStories() {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList3, CharSequence charSequence, boolean z11, boolean z12, int i6, TopicsFragment topicsFragment) {
                                 boolean lambda$runLinkRequest$68;
                                 lambda$runLinkRequest$68 = LaunchActivity.this.lambda$runLinkRequest$68(str, i2, user4, dialogsActivity2, arrayList3, charSequence, z11, z12, i6, topicsFragment);
                                 return lambda$runLinkRequest$68;
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                             }
                         });
                         getActionBarLayout().presentFragment(dialogsActivity, !AndroidUtilities.isTablet() ? this.actionBarLayout.getFragmentStack().size() <= 1 || !(this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity) : this.layersActionBarLayout.getFragmentStack().size() <= 0 || !(this.layersActionBarLayout.getFragmentStack().get(this.layersActionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity), true, true, false);
@@ -3687,10 +3709,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         final String str32 = str31;
                         dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda99
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean canSelectStories() {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList5, CharSequence charSequence, boolean z12, boolean z13, int i6, TopicsFragment topicsFragment) {
                                 boolean lambda$runLinkRequest$73;
                                 lambda$runLinkRequest$73 = LaunchActivity.this.lambda$runLinkRequest$73(i2, user6, str12, str32, dialogsActivity2, dialogsActivity3, arrayList5, charSequence, z12, z13, i6, topicsFragment);
                                 return lambda$runLinkRequest$73;
+                            }
+
+                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity3) {
+                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity3);
                             }
                         });
                         lambda$runLinkRequest$93(dialogsActivity2);
@@ -5561,10 +5593,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     DialogsActivity dialogsActivity = new DialogsActivity(bundle);
                     dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda70
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                        public /* synthetic */ boolean canSelectStories() {
+                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                        }
+
+                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                         public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList4, CharSequence charSequence, boolean z10, boolean z11, int i7, TopicsFragment topicsFragment) {
                             boolean lambda$runLinkRequest$84;
                             lambda$runLinkRequest$84 = LaunchActivity.this.lambda$runLinkRequest$84(z, i5, str9, dialogsActivity2, arrayList4, charSequence, z10, z11, i7, topicsFragment);
                             return lambda$runLinkRequest$84;
+                        }
+
+                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                        public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                         }
                     });
                     presentFragment(dialogsActivity, false, true);
@@ -6282,6 +6324,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.navBarAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.navBarAnimator.setDuration(320L);
         this.navBarAnimator.start();
+    }
+
+    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+    public boolean canSelectStories() {
+        ArrayList arrayList = this.photoPathsArray;
+        return (arrayList != null && arrayList.size() == 1) || this.videoPath != null;
     }
 
     public void checkAppUpdate(boolean z, final Browser.Progress progress) {
@@ -7007,7 +7055,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                         View view2 = this.rippleAbove;
                         if (view2 != null && view2.getBackground() != null) {
-                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.reloadInterface);
+                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.locationPermissionGranted);
                         }
                         this.frameLayout.removeView(this.themeSwitchImageView);
                         ImageView imageView = new ImageView(this);
@@ -7281,7 +7329,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     chatActivity2 = chatActivity;
                     z3 = true;
                     if (dialogsActivity != null && chatActivity2 == null && !z3) {
-                        dialogsActivity.lambda$onBackPressed$354();
+                        dialogsActivity.lambda$onBackPressed$355();
                     }
                 }
             }
@@ -7501,7 +7549,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             chatActivity2 = chatActivity;
             if (dialogsActivity != null) {
-                dialogsActivity.lambda$onBackPressed$354();
+                dialogsActivity.lambda$onBackPressed$355();
             }
         }
         this.photoPathsArray = null;
@@ -7514,6 +7562,82 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.contactsToSendUri = null;
         this.exportingChatUri = null;
         return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0077, code lost:
+    
+        if (r4 == null) goto L28;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x008b A[RETURN] */
+    @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean didSelectStories(DialogsActivity dialogsActivity) {
+        StoryEntry storyEntry;
+        StoryEntry fromPhotoEntry;
+        FileOutputStream fileOutputStream;
+        ArrayList arrayList = this.photoPathsArray;
+        if (arrayList == null || arrayList.isEmpty()) {
+            String str = this.videoPath;
+            if (str == null) {
+                storyEntry = null;
+                if (storyEntry != null) {
+                    return false;
+                }
+                StoriesController.StoryLimit checkStoryLimit = MessagesController.getInstance(this.currentAccount).getStoriesController().checkStoryLimit();
+                if (dialogsActivity != null && checkStoryLimit != null && checkStoryLimit.active(this.currentAccount, 1)) {
+                    dialogsActivity.showDialog(new LimitReachedBottomSheet(dialogsActivity, this, checkStoryLimit.getLimitReachedType(), this.currentAccount, null));
+                    return false;
+                }
+                storyEntry.isShare = true;
+                storyEntry.fileDeletable = false;
+                StoryRecorder.getInstance(this, this.currentAccount).openEdit(null, storyEntry, 0L, true);
+                if (dialogsActivity != null) {
+                    dialogsActivity.lambda$onBackPressed$355();
+                }
+                this.photoPathsArray = null;
+                this.videoPath = null;
+                this.voicePath = null;
+                this.sendingText = null;
+                this.documentsPathsArray = null;
+                this.documentsOriginalPathsArray = null;
+                this.contactsToSend = null;
+                this.contactsToSendUri = null;
+                this.exportingChatUri = null;
+                return true;
+            }
+            MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, str, 0, true, 0, 0, 0L);
+            try {
+                Bitmap createVideoThumbnail = SendMessagesHelper.createVideoThumbnail(this.videoPath, 1);
+                File file = new File(FileLoader.getDirectory(4), "-2147483648_" + SharedConfig.getLastLocalId() + ".jpg");
+                try {
+                    fileOutputStream = new FileOutputStream(file);
+                    try {
+                        createVideoThumbnail.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+                        photoEntry.thumbPath = file.getAbsolutePath();
+                    } catch (Throwable th) {
+                        th = th;
+                        try {
+                            FileLog.e(th);
+                        } finally {
+                        }
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream = null;
+                }
+                fileOutputStream.close();
+            } catch (Throwable unused) {
+            }
+            fromPhotoEntry = StoryEntry.fromPhotoEntry(photoEntry);
+        } else {
+            fromPhotoEntry = StoryEntry.fromMedia(this.photoPathsArray);
+        }
+        storyEntry = fromPhotoEntry;
+        if (storyEntry != null) {
+        }
     }
 
     @Override // androidx.core.app.ComponentActivity, android.app.Activity, android.view.Window.Callback
@@ -8101,7 +8225,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 if (actionBarLayout3 != null && actionBarLayout3.getView().getVisibility() == 0 && !this.rightActionBarLayout.getFragmentStack().isEmpty()) {
                     BaseFragment baseFragment = this.rightActionBarLayout.getFragmentStack().get(this.rightActionBarLayout.getFragmentStack().size() - 1);
                     if (baseFragment.onBackPressed()) {
-                        baseFragment.lambda$onBackPressed$354();
+                        baseFragment.lambda$onBackPressed$355();
                         return;
                     }
                     return;

@@ -136,7 +136,7 @@ public class ColorPicker extends FrameLayout {
             this.paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.paint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (this.paint.getStrokeWidth() * 0.5f), this.paint);
-            this.paint.setAlpha(NotificationCenter.reloadInterface);
+            this.paint.setAlpha(NotificationCenter.locationPermissionGranted);
             this.paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), this.paint);
         }
@@ -498,7 +498,7 @@ public class ColorPicker extends FrameLayout {
         } else {
             fArr[0] = f2 + 20.0f;
         }
-        return Color.HSVToColor(NotificationCenter.reloadInterface, fArr);
+        return Color.HSVToColor(NotificationCenter.locationPermissionGranted, fArr);
     }
 
     private float getBrightness() {
@@ -580,7 +580,7 @@ public class ColorPicker extends FrameLayout {
                 } else {
                     fArr[0] = f + 60.0f;
                 }
-                this.radioButton[2].setColor(Color.HSVToColor(NotificationCenter.reloadInterface, fArr));
+                this.radioButton[2].setColor(Color.HSVToColor(NotificationCenter.locationPermissionGranted, fArr));
             }
             this.delegate.setColor(this.radioButton[2].getColor(), 2, true);
         } else {

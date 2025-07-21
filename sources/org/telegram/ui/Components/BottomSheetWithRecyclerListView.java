@@ -39,10 +39,12 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     private RectF handleRect;
     public final boolean hasFixedSize;
     protected int headerHeight;
+    protected int headerMoveTop;
     protected int headerPaddingBottom;
     protected int headerPaddingTop;
     private final Drawable headerShadowDrawable;
     protected int headerTotalHeight;
+    protected boolean ignoreTouchActionBar;
     protected LinearLayoutManager layoutManager;
     public NestedSizeNotifierLayout nestedSizeNotifierLayout;
     protected RecyclerListView recyclerListView;
@@ -61,6 +63,31 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     public enum ActionBarType {
         FADING,
         SLIDING
+    }
+
+    private class PaddingView extends View {
+        public PaddingView(Context context) {
+            super(context);
+        }
+
+        @Override // android.view.View
+        protected void onMeasure(int i, int i2) {
+            BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView = BottomSheetWithRecyclerListView.this;
+            int i3 = bottomSheetWithRecyclerListView.contentHeight;
+            int dp = i3 == 0 ? AndroidUtilities.dp(300.0f) : (int) (i3 * bottomSheetWithRecyclerListView.topPadding);
+            BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView2 = BottomSheetWithRecyclerListView.this;
+            int i4 = dp - (((bottomSheetWithRecyclerListView2.headerTotalHeight - bottomSheetWithRecyclerListView2.headerHeight) - bottomSheetWithRecyclerListView2.headerPaddingTop) - bottomSheetWithRecyclerListView2.headerPaddingBottom);
+            if (i4 < 1) {
+                i4 = 1;
+            }
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
+        }
+
+        @Override // android.view.View
+        public void setTranslationY(float f) {
+            super.setTranslationY(f);
+            ((BottomSheet) BottomSheetWithRecyclerListView.this).containerView.invalidate();
+        }
     }
 
     public BottomSheetWithRecyclerListView(Context context, BaseFragment baseFragment, boolean z, boolean z2, boolean z3, Theme.ResourcesProvider resourcesProvider) {
@@ -84,6 +111,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         this.headerHeight = 0;
         this.headerPaddingTop = 0;
         this.headerPaddingBottom = 0;
+        this.headerMoveTop = 0;
+        this.ignoreTouchActionBar = true;
         this.actionBarIgnoreTouchEvents = false;
         this.takeTranslationIntoAccount = false;
         this.savedScrollPosition = -1;
@@ -339,7 +368,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             ActionBar actionBar = new ActionBar(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.4
                 @Override // android.view.ViewGroup, android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                    if (BottomSheetWithRecyclerListView.this.actionBarIgnoreTouchEvents) {
+                    BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView = BottomSheetWithRecyclerListView.this;
+                    if (bottomSheetWithRecyclerListView.ignoreTouchActionBar && bottomSheetWithRecyclerListView.actionBarIgnoreTouchEvents) {
                         return false;
                     }
                     return super.dispatchTouchEvent(motionEvent);
@@ -394,6 +424,10 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
     public BottomSheetWithRecyclerListView(BaseFragment baseFragment, boolean z, boolean z2) {
         this(baseFragment, z, z2, false, baseFragment == null ? null : baseFragment.getResourceProvider());
+    }
+
+    public BottomSheetWithRecyclerListView(BaseFragment baseFragment, boolean z, boolean z2, ActionBarType actionBarType) {
+        this(baseFragment.getParentActivity(), baseFragment, z, z2, false, actionBarType, baseFragment.getResourceProvider());
     }
 
     public BottomSheetWithRecyclerListView(BaseFragment baseFragment, boolean z, boolean z2, boolean z3, Theme.ResourcesProvider resourcesProvider) {
@@ -581,7 +615,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             }
             i = i3;
         }
-        int i4 = i - ((this.headerHeight + this.headerPaddingTop) + this.headerPaddingBottom);
+        int i4 = (i - ((this.headerHeight + this.headerPaddingTop) + this.headerPaddingBottom)) + this.headerMoveTop;
         if (this.showHandle && this.handleOffset) {
             i4 -= AndroidUtilities.dp(this.actionBarType == ActionBarType.SLIDING ? 8.0f : 16.0f);
         }
@@ -594,7 +628,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             }
             AndroidUtilities.updateViewVisibilityAnimated(this.actionBar, f != 0.0f, 1.0f, this.wasDrawn);
         } else if (actionBarType == ActionBarType.SLIDING) {
-            float max = Math.max(((AndroidUtilities.dp(8.0f) + i4) + this.headerPaddingTop) - AndroidUtilities.statusBarHeight, 0.0f);
+            float max = Math.max((((i4 - this.headerMoveTop) + AndroidUtilities.dp(8.0f)) + this.headerPaddingTop) - AndroidUtilities.statusBarHeight, 0.0f);
             float f3 = this.actionBarSlideProgress.set(max == 0.0f ? 1.0f : 0.0f);
             if (f3 != 0.0f && f3 != 1.0f) {
                 canvas.save();
@@ -679,31 +713,12 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-                return i == -1000 ? new RecyclerListView.Holder(new View(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7.1
-                    @Override // android.view.View
-                    protected void onMeasure(int i2, int i3) {
-                        BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView = BottomSheetWithRecyclerListView.this;
-                        int i4 = bottomSheetWithRecyclerListView.contentHeight;
-                        int dp = i4 == 0 ? AndroidUtilities.dp(300.0f) : (int) (i4 * bottomSheetWithRecyclerListView.topPadding);
-                        BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView2 = BottomSheetWithRecyclerListView.this;
-                        int i5 = dp - (((bottomSheetWithRecyclerListView2.headerTotalHeight - bottomSheetWithRecyclerListView2.headerHeight) - bottomSheetWithRecyclerListView2.headerPaddingTop) - bottomSheetWithRecyclerListView2.headerPaddingBottom);
-                        if (i5 < 1) {
-                            i5 = 1;
-                        }
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_30));
-                    }
-
-                    @Override // android.view.View
-                    public void setTranslationY(float f) {
-                        super.setTranslationY(f);
-                        ((BottomSheet) BottomSheetWithRecyclerListView.this).containerView.invalidate();
-                    }
-                }) : createAdapter.onCreateViewHolder(viewGroup, i);
+                return i == -1000 ? new RecyclerListView.Holder(BottomSheetWithRecyclerListView.this.new PaddingView(context)) : createAdapter.onCreateViewHolder(viewGroup, i);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void registerAdapterDataObserver(final RecyclerView.AdapterDataObserver adapterDataObserver) {
-                createAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7.2
+                createAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7.1
                     @Override // androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
                     public void onChanged() {
                         adapterDataObserver.onChanged();

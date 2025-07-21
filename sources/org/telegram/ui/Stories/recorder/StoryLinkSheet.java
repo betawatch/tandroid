@@ -214,7 +214,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
 
     public StoryLinkSheet(final Context context, Theme.ResourcesProvider resourcesProvider, final PreviewView previewView, Utilities.Callback callback) {
         super(context, null, true, false, false, true, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, resourcesProvider);
-        this.requestPreview = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda2
+        this.requestPreview = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.lambda$new$7();
@@ -227,7 +227,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         this.headerPaddingBottom = AndroidUtilities.dp(-15.0f);
         EditTextCell editTextCell = new EditTextCell(context, LocaleController.getString(R.string.StoryLinkURLPlaceholder), true, false, -1, resourcesProvider);
         this.urlEditText = editTextCell;
-        editTextCell.whenHitEnter(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda3
+        editTextCell.whenHitEnter(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.processDone();
@@ -249,13 +249,13 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(6.0f), Theme.multAlpha(themedColor, 0.12f), Theme.multAlpha(themedColor, 0.15f)));
         ScaleStateListAnimator.apply(textView, 0.1f, 1.5f);
         this.urlEditText.addView(textView, LayoutHelper.createFrame(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda4
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.lambda$new$0(str, textView);
             }
         };
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda5
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StoryLinkSheet.this.lambda$new$1(runnable, view);
@@ -302,7 +302,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         });
         EditTextCell editTextCell2 = new EditTextCell(context, LocaleController.getString(R.string.StoryLinkNamePlaceholder), true, false, -1, resourcesProvider);
         this.nameEditText = editTextCell2;
-        editTextCell2.whenHitEnter(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda3
+        editTextCell2.whenHitEnter(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.processDone();
@@ -312,7 +312,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
         this.button = buttonWithCounterView;
         buttonWithCounterView.setText(LocaleController.getString(R.string.StoryLinkAdd), false);
-        this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda6
+        this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StoryLinkSheet.this.lambda$new$2(view);
@@ -339,7 +339,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         RecyclerListView recyclerListView = this.recyclerListView;
         int i = this.backgroundPaddingLeft;
         recyclerListView.setPadding(i, 0, i, 0);
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda7
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
                 StoryLinkSheet.this.lambda$new$4(context, previewView, view, i2);
@@ -477,7 +477,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         webPagePreview.webpage = this.webpage;
         webPagePreview.largePhoto = this.photoLarge;
         webPagePreview.captionAbove = this.captionAbove;
-        storyLinkPreviewDialog.set(webPagePreview, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda9
+        storyLinkPreviewDialog.set(webPagePreview, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 StoryLinkSheet.this.lambda$new$3((LinkPreview.WebPagePreview) obj);
@@ -542,7 +542,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$6(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda0
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.lambda$new$5(tLObject);
@@ -554,7 +554,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
     public /* synthetic */ void lambda$new$7() {
         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
         getwebpagepreview.message = this.urlEditText.editText.getText().toString();
-        this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwebpagepreview, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda10
+        this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwebpagepreview, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StoryLinkSheet.this.lambda$new$6(tLObject, tL_error);
@@ -589,7 +589,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda1
+        UniversalAdapter universalAdapter = new UniversalAdapter(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 StoryLinkSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -643,7 +643,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
 
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         if (this.loading || this.webpage != null) {
-            arrayList.add(WebpagePreviewView.Factory.item(this.webpage, new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda11
+            arrayList.add(WebpagePreviewView.Factory.item(this.webpage, new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StoryLinkSheet.this.closePreview(view);
@@ -695,7 +695,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
     public void show() {
         super.show();
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 StoryLinkSheet.this.lambda$show$8();

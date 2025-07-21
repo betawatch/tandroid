@@ -149,9 +149,9 @@ public final class MediaRouter {
             globalMediaRouter.mSelectedRouteController = this.mToRouteController;
             RouteInfo routeInfo2 = this.mRequestedRoute;
             if (routeInfo2 == null) {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.newLocationAvailable, new Pair(this.mFromRoute, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, new Pair(this.mFromRoute, routeInfo), this.mReason);
             } else {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.notificationsCountUpdated, new Pair(routeInfo2, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.newLocationAvailable, new Pair(routeInfo2, routeInfo), this.mReason);
             }
             globalMediaRouter.mRouteControllerMap.clear();
             globalMediaRouter.maybeUpdateMemberRouteControllers();
@@ -170,7 +170,7 @@ public final class MediaRouter {
                 if (routeInfo != routeInfo2) {
                     return;
                 }
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.liveLocationsCacheChanged, routeInfo2, this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.liveLocationsChanged, routeInfo2, this.mReason);
                 MediaRouteProvider.RouteController routeController = globalMediaRouter.mSelectedRouteController;
                 if (routeController != null) {
                     routeController.onUnselect(this.mReason);
@@ -769,7 +769,7 @@ public final class MediaRouter {
                     }
                 }
             }
-            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.proxyCheckDone, this);
+            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.didSetNewWallpapper, this);
         }
     }
 

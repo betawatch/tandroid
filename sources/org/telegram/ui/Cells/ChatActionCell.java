@@ -3177,7 +3177,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f10);
                                 RectF rectF3 = AndroidUtilities.rectTmp;
                                 rectF3.set(0.0f, -AndroidUtilities.dp(20.0f), getWidth(), height2);
-                                canvas.saveLayerAlpha(rectF3, NotificationCenter.reloadInterface, 31);
+                                canvas.saveLayerAlpha(rectF3, NotificationCenter.locationPermissionGranted, 31);
                             } else {
                                 canvas.save();
                             }

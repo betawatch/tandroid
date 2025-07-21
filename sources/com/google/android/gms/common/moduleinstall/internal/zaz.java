@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public final class zaz extends GmsClient {
     protected zaz(Context context, Looper looper, ClientSettings clientSettings, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, NotificationCenter.uploadStoryProgress, clientSettings, connectionCallbacks, onConnectionFailedListener);
+        super(context, looper, NotificationCenter.storiesDraftsUpdated, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient

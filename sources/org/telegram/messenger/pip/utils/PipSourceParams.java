@@ -28,7 +28,7 @@ public class PipSourceParams {
             if (d < 0.45d) {
                 rational = new Rational(45, 100);
             } else if (d > 2.35d) {
-                rational = new Rational(NotificationCenter.pushMessagesUpdated, 100);
+                rational = new Rational(NotificationCenter.conferenceEmojiUpdated, 100);
             } else {
                 Point point2 = this.ratio;
                 rational = new Rational(point2.x, point2.y);

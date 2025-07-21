@@ -48,7 +48,7 @@ public final class zzk {
     static /* bridge */ /* synthetic */ void zzm(zzk zzkVar, int i) {
         zza.d("log session ended with error = %d", Integer.valueOf(i));
         zzkVar.zzs();
-        zzkVar.zzb.zze(zzkVar.zzd.zze(zzkVar.zzh, i), NotificationCenter.channelSuggestedBotsUpdate);
+        zzkVar.zzb.zze(zzkVar.zzd.zze(zzkVar.zzh, i), NotificationCenter.botDownloadsUpdate);
         zzkVar.zzr();
         if (zzkVar.zzj) {
             return;

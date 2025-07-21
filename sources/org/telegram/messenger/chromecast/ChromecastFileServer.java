@@ -160,7 +160,7 @@ public class ChromecastFileServer extends NanoHTTPD {
     }
 
     private static String formatIp4(int i) {
-        return String.valueOf(i & NotificationCenter.reloadInterface) + '.' + ((i >> 8) & NotificationCenter.reloadInterface) + '.' + ((i >> 16) & NotificationCenter.reloadInterface) + '.' + ((i >> 24) & NotificationCenter.reloadInterface);
+        return String.valueOf(i & NotificationCenter.locationPermissionGranted) + '.' + ((i >> 8) & NotificationCenter.locationPermissionGranted) + '.' + ((i >> 16) & NotificationCenter.locationPermissionGranted) + '.' + ((i >> 24) & NotificationCenter.locationPermissionGranted);
     }
 
     private DataSource.Factory getDataSourceFactory(ChromecastMedia chromecastMedia) {

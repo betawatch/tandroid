@@ -16,7 +16,7 @@ public class RecordStatusDrawable extends StatusDrawable {
     private long lastUpdateTime = 0;
     private boolean started = false;
     private RectF rect = new RectF();
-    int alpha = NotificationCenter.reloadInterface;
+    int alpha = NotificationCenter.locationPermissionGranted;
 
     public RecordStatusDrawable(boolean z) {
         if (z) {

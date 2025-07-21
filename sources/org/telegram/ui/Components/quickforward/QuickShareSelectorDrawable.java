@@ -110,13 +110,13 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
         static {
             LinearInterpolator linearInterpolator = new LinearInterpolator();
             LINEAR_INTERPOLATOR = linearInterpolator;
-            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.emojiLoaded, NotificationCenter.emojiLoaded);
-            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.emojiLoaded, NotificationCenter.emojiLoaded);
-            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.channelStarsUpdated, NotificationCenter.emojiLoaded, NotificationCenter.emojiLoaded);
+            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode);
+            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode);
+            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.channelStarsUpdated, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode);
             buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.emojiKeywordsLoaded, 560);
             buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.emojiKeywordsLoaded, 400, 560, true);
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);
-            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.availableEffectsUpdate, 425, 560);
+            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 210, 425, 560);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
             bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 320, 560);
             bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, 320, 560);
@@ -610,7 +610,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        draw(canvas, NotificationCenter.reloadInterface, false);
+        draw(canvas, NotificationCenter.locationPermissionGranted, false);
     }
 
     public void draw(Canvas canvas, int i, boolean z) {

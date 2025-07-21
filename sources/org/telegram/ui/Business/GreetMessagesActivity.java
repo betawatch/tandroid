@@ -132,7 +132,7 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$354();
+        lambda$onBackPressed$355();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -141,7 +141,7 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
         } else if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
         } else {
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
@@ -196,7 +196,7 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$354();
+            lambda$onBackPressed$355();
             return;
         }
         QuickRepliesController.QuickReply findReply = QuickRepliesController.getInstance(this.currentAccount).findReply("hello");
@@ -279,7 +279,7 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (GreetMessagesActivity.this.onBackPressed()) {
-                        GreetMessagesActivity.this.lambda$onBackPressed$354();
+                        GreetMessagesActivity.this.lambda$onBackPressed$355();
                     }
                 } else if (i == 1) {
                     GreetMessagesActivity.this.processDone();

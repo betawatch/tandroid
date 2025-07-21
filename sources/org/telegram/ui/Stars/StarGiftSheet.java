@@ -3023,7 +3023,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         if (tL_error == null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$354();
+            twoStepVerificationActivity.lambda$onBackPressed$355();
             if (tLObject instanceof TL_stars.starGiftWithdrawalUrl) {
                 Browser.openUrlInSystemBrowser(getContext(), ((TL_stars.starGiftWithdrawalUrl) tLObject).url);
                 return;
@@ -3042,7 +3042,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$354();
+                twoStepVerificationActivity.lambda$onBackPressed$355();
             }
             BulletinFactory.showError(tL_error);
             return;
@@ -4936,13 +4936,24 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         switchPage(0, true);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0023, code lost:
+    
+        if (r1 != 0) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onBuyPressed() {
+        final long clientUserId;
         final TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
         if (this.button.isLoading() || uniqueGift == null) {
             return;
         }
         this.button.setLoading(true);
-        final long clientUserId = (this.slugStarGift == null || !this.resale) ? UserConfig.getInstance(this.currentAccount).getClientUserId() : this.dialogId;
+        if (this.slugStarGift != null && this.resale) {
+            clientUserId = this.dialogId;
+        }
+        clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         StarsController.getInstance(this.currentAccount).getResellingGiftForm(uniqueGift, clientUserId, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda35
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
