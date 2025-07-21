@@ -120,8 +120,8 @@ public class PremiumTierCell extends ViewGroup {
         view.layout(rect.left, rect.top, rect.right, rect.bottom);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00f4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -144,7 +144,7 @@ public class PremiumTierCell extends ViewGroup {
         } else {
             if (months != 12) {
                 textView = this.titleView;
-                string = LocaleController.formatPluralString("Months", subscriptionTier.getMonths(), new Object[0]);
+                string = (subscriptionTier.getMonths() <= 12 || subscriptionTier.getMonths() % 12 != 0) ? LocaleController.formatPluralString("Months", subscriptionTier.getMonths(), new Object[0]) : LocaleController.formatPluralString("PremiumTierAnnualYears", subscriptionTier.getMonths() / 12, new Object[0]);
                 textView.setText(string);
                 z2 = BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || subscriptionTier.getOfferDetails() == null);
                 this.isDrawingGradient = z2;

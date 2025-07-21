@@ -851,19 +851,41 @@ public class StarsController {
             }
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         public void sendPinnedOrder() {
-            TL_stars.toggleStarGiftsPinnedToTop togglestargiftspinnedtotop = new TL_stars.toggleStarGiftsPinnedToTop();
-            togglestargiftspinnedtotop.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
-            Iterator it = getPinned().iterator();
-            while (it.hasNext()) {
-                togglestargiftspinnedtotop.stargift.add(getInput((TL_stars.SavedStarGift) it.next()));
-            }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(togglestargiftspinnedtotop, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda2
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsController.GiftsList.lambda$sendPinnedOrder$4(tLObject, tL_error);
+            RequestDelegate requestDelegate;
+            ConnectionsManager connectionsManager;
+            TL_stars.toggleStarGiftsPinnedToTop togglestargiftspinnedtotop;
+            if (this.isCollection) {
+                TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
+                updatestargiftcollection.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
+                updatestargiftcollection.collection_id = this.collectionId;
+                updatestargiftcollection.flags |= 8;
+                Iterator it = this.gifts.iterator();
+                while (it.hasNext()) {
+                    updatestargiftcollection.order.add(getInput((TL_stars.SavedStarGift) it.next()));
                 }
-            }, 64);
+                requestDelegate = null;
+                togglestargiftspinnedtotop = updatestargiftcollection;
+                connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
+            } else {
+                TL_stars.toggleStarGiftsPinnedToTop togglestargiftspinnedtotop2 = new TL_stars.toggleStarGiftsPinnedToTop();
+                togglestargiftspinnedtotop2.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
+                Iterator it2 = getPinned().iterator();
+                while (it2.hasNext()) {
+                    togglestargiftspinnedtotop2.stargift.add(getInput((TL_stars.SavedStarGift) it2.next()));
+                }
+                ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(this.currentAccount);
+                requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda2
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        StarsController.GiftsList.lambda$sendPinnedOrder$4(tLObject, tL_error);
+                    }
+                };
+                togglestargiftspinnedtotop = togglestargiftspinnedtotop2;
+                connectionsManager = connectionsManager2;
+            }
+            connectionsManager.sendRequest(togglestargiftspinnedtotop, requestDelegate, 64);
         }
 
         public void setCollectionId(int i) {
@@ -873,7 +895,7 @@ public class StarsController {
 
         public void setPinned(ArrayList arrayList) {
             this.gifts.removeAll(arrayList);
-            if (this.sort_by_date) {
+            if (this.sort_by_date && !this.isCollection) {
                 Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda4
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
@@ -919,7 +941,7 @@ public class StarsController {
             }
             savedStarGift.pinned_to_top = z;
             this.gifts.removeAll(pinned);
-            if (this.sort_by_date) {
+            if (this.sort_by_date && !this.isCollection) {
                 Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda3
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {

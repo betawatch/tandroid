@@ -4506,7 +4506,7 @@ public class TL_stars {
 
         @Override // org.telegram.tgnet.TLObject
         public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return super.deserializeResponse(inputSerializedData, i, z);
+            return TL_starGiftCollection.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
