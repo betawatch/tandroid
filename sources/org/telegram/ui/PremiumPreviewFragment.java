@@ -772,17 +772,17 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             PremiumPreviewFragment.this.totalTiersGradientHeight = i3;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:100:0x00dc, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:109:0x00d0, code lost:
+        
+            if (java.util.Objects.equals(r0, (r9 == null || (r9 = r9.transaction) == null) ? null : r9.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L45;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:114:0x00dc, code lost:
         
             if (r0.getMonths() == 12) goto L49;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:95:0x00d0, code lost:
-        
-            if (java.util.Objects.equals(r0, (r8 == null || (r8 = r8.transaction) == null) ? null : r8.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L45;
-         */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x00ef  */
-        /* JADX WARN: Removed duplicated region for block: B:50:0x015a  */
-        /* JADX WARN: Removed duplicated region for block: B:65:0x0107  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x00f0  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x018a  */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x0108  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -802,7 +802,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                         SubscriptionTier subscriptionTier = new SubscriptionTier(next);
                         PremiumPreviewFragment.this.subscriptionTiers.add(subscriptionTier);
                         if (PremiumPreviewFragment.this.selectAnnualByDefault && next.months == 12) {
-                            PremiumPreviewFragment.this.selectedTierIndex = r10.subscriptionTiers.size() - 1;
+                            PremiumPreviewFragment premiumPreviewFragment2 = PremiumPreviewFragment.this;
+                            premiumPreviewFragment2.selectedTierIndex = premiumPreviewFragment2.subscriptionTiers.size() - 1;
                         }
                         if (next.current) {
                             PremiumPreviewFragment.this.currentSubscriptionTier = subscriptionTier;
@@ -830,11 +831,25 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     }
                 } else if (BillingController.getInstance().isReady() && BillingController.PREMIUM_PRODUCT_DETAILS != null) {
                     Iterator it3 = PremiumPreviewFragment.this.subscriptionTiers.iterator();
+                    boolean z = false;
                     while (it3.hasNext()) {
                         SubscriptionTier subscriptionTier3 = (SubscriptionTier) it3.next();
                         subscriptionTier3.setGooglePlayProductDetails(BillingController.PREMIUM_PRODUCT_DETAILS);
                         if (subscriptionTier3.getPricePerYear() > j2) {
                             j2 = subscriptionTier3.getPricePerYear();
+                        }
+                        if (subscriptionTier3.getOfferDetails() != null) {
+                            z = true;
+                        }
+                    }
+                    if (z) {
+                        int i = 0;
+                        while (i < PremiumPreviewFragment.this.subscriptionTiers.size()) {
+                            if (((SubscriptionTier) PremiumPreviewFragment.this.subscriptionTiers.get(i)).getOfferDetails() == null) {
+                                PremiumPreviewFragment.this.subscriptionTiers.remove(i);
+                                i--;
+                            }
+                            i++;
                         }
                     }
                     Iterator it4 = PremiumPreviewFragment.this.subscriptionTiers.iterator();
@@ -843,20 +858,20 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     }
                 }
                 if (PremiumPreviewFragment.this.selectedTierIndex == -1) {
-                    int i = 0;
+                    int i2 = 0;
                     while (true) {
-                        if (i >= PremiumPreviewFragment.this.subscriptionTiers.size()) {
+                        if (i2 >= PremiumPreviewFragment.this.subscriptionTiers.size()) {
                             break;
                         }
-                        if (((SubscriptionTier) PremiumPreviewFragment.this.subscriptionTiers.get(i)).getMonths() == 12) {
-                            PremiumPreviewFragment.this.selectedTierIndex = i;
+                        if (((SubscriptionTier) PremiumPreviewFragment.this.subscriptionTiers.get(i2)).getMonths() == 12) {
+                            PremiumPreviewFragment.this.selectedTierIndex = i2;
                             break;
                         }
-                        i++;
+                        i2++;
                     }
-                    PremiumPreviewFragment premiumPreviewFragment2 = PremiumPreviewFragment.this;
-                    if (premiumPreviewFragment2.selectedTierIndex == -1) {
-                        premiumPreviewFragment2.selectedTierIndex = 0;
+                    PremiumPreviewFragment premiumPreviewFragment3 = PremiumPreviewFragment.this;
+                    if (premiumPreviewFragment3.selectedTierIndex == -1) {
+                        premiumPreviewFragment3.selectedTierIndex = 0;
                     }
                 }
                 PremiumPreviewFragment.this.updateButtonText(false);

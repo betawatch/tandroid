@@ -3152,36 +3152,36 @@ public class MessagesStorage extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x045e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x046d, code lost:
     
         if (r8 != null) goto L132;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x049f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x04ae, code lost:
     
         if (r8 == null) goto L133;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x04a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x04b0, code lost:
     
         r8.dispose();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x04a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x04b3, code lost:
     
         reset();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x04a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x04b6, code lost:
     
         return;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04b3  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x04b8  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x04bd  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x03f3  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x03d3 A[Catch: all -> 0x03eb, Exception -> 0x03ef, TRY_LEAVE, TryCatch #23 {Exception -> 0x03ef, all -> 0x03eb, blocks: (B:65:0x02de, B:67:0x02e2, B:69:0x03d3), top: B:64:0x02de }] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0492  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0497  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x049c  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x04ae  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x04c7  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x04cc  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0402  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x03e2 A[Catch: all -> 0x03fa, Exception -> 0x03fe, TRY_LEAVE, TryCatch #23 {Exception -> 0x03fe, all -> 0x03fa, blocks: (B:65:0x02ed, B:67:0x02f1, B:69:0x03e2), top: B:64:0x02ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x04a1  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x04a6  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x04ab  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x04bd  */
     /* JADX WARN: Type inference failed for: r7v13 */
     /* JADX WARN: Type inference failed for: r7v14 */
     /* JADX WARN: Type inference failed for: r7v18 */
@@ -3230,6 +3230,7 @@ public class MessagesStorage extends BaseController {
             this.database.executeFast("DELETE FROM effects").stepThis().dispose();
             this.database.executeFast("DELETE FROM app_config").stepThis().dispose();
             this.database.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
+            this.database.executeFast("DELETE FROM premium_promo").stepThis().dispose();
             int i3 = 0;
             SQLiteCursor queryFinalized = this.database.queryFinalized("SELECT did FROM dialogs WHERE 1", new Object[0]);
             while (queryFinalized.next()) {
@@ -3284,93 +3285,93 @@ public class MessagesStorage extends BaseController {
                                                                 i5 = TLdeserialize.id;
                                                                 try {
                                                                     i = i4;
+                                                                } catch (Exception e2) {
+                                                                    e = e2;
+                                                                    i = i4;
+                                                                    exc2 = e;
                                                                     try {
-                                                                        TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(this.currentAccount).clientUserId);
-                                                                        i5 = i5;
-                                                                    } catch (Exception e2) {
-                                                                        exc2 = e2;
-                                                                        i5 = i5;
+                                                                        checkSQLException(exc2);
+                                                                        i2 = i5;
+                                                                        queryFinalized3.dispose();
+                                                                        this.database.executeFast("DELETE FROM messages_v2 WHERE uid = " + l + " AND mid != " + longValue2 + " AND mid != " + longValue3).stepThis().dispose();
+                                                                        SQLiteDatabase sQLiteDatabase3 = this.database;
+                                                                        StringBuilder sb = new StringBuilder();
+                                                                        sb.append("DELETE FROM messages_holes WHERE uid = ");
+                                                                        sb.append(l);
+                                                                        sQLiteDatabase3.executeFast(sb.toString()).stepThis().dispose();
+                                                                        this.database.executeFast("DELETE FROM bot_keyboard WHERE uid = " + l).stepThis().dispose();
+                                                                        this.database.executeFast("DELETE FROM bot_keyboard_topics WHERE uid = " + l).stepThis().dispose();
+                                                                        this.database.executeFast("DELETE FROM media_counts_v2 WHERE uid = " + l).stepThis().dispose();
+                                                                        this.database.executeFast("DELETE FROM media_v4 WHERE uid = " + l).stepThis().dispose();
+                                                                        this.database.executeFast("DELETE FROM media_holes_v2 WHERE uid = " + l).stepThis().dispose();
+                                                                        MediaDataController.getInstance(this.currentAccount).clearBotKeyboard(l.longValue());
+                                                                        if (i2 == -1) {
+                                                                        }
+                                                                        sQLiteCursor2.dispose();
+                                                                        sQLiteCursor = null;
+                                                                        i4 = i + 1;
+                                                                        arrayList2 = arrayList;
+                                                                        i3 = 0;
+                                                                    } catch (Exception e3) {
+                                                                        e = e3;
+                                                                        sQLiteCursor2 = sQLiteCursor3;
+                                                                        exc = e;
+                                                                        sQLiteCursor = sQLiteCursor2;
+                                                                        sQLitePreparedStatement = executeFast;
+                                                                        sQLitePreparedStatement2 = executeFast2;
                                                                         try {
-                                                                            checkSQLException(exc2);
-                                                                            i2 = i5;
-                                                                            queryFinalized3.dispose();
-                                                                            this.database.executeFast("DELETE FROM messages_v2 WHERE uid = " + l + " AND mid != " + longValue2 + " AND mid != " + longValue3).stepThis().dispose();
-                                                                            SQLiteDatabase sQLiteDatabase3 = this.database;
-                                                                            StringBuilder sb = new StringBuilder();
-                                                                            sb.append("DELETE FROM messages_holes WHERE uid = ");
-                                                                            sb.append(l);
-                                                                            sQLiteDatabase3.executeFast(sb.toString()).stepThis().dispose();
-                                                                            this.database.executeFast("DELETE FROM bot_keyboard WHERE uid = " + l).stepThis().dispose();
-                                                                            this.database.executeFast("DELETE FROM bot_keyboard_topics WHERE uid = " + l).stepThis().dispose();
-                                                                            this.database.executeFast("DELETE FROM media_counts_v2 WHERE uid = " + l).stepThis().dispose();
-                                                                            this.database.executeFast("DELETE FROM media_v4 WHERE uid = " + l).stepThis().dispose();
-                                                                            this.database.executeFast("DELETE FROM media_holes_v2 WHERE uid = " + l).stepThis().dispose();
-                                                                            MediaDataController.getInstance(this.currentAccount).clearBotKeyboard(l.longValue());
-                                                                            if (i2 == -1) {
-                                                                            }
-                                                                            sQLiteCursor2.dispose();
-                                                                            sQLiteCursor = null;
-                                                                            i4 = i + 1;
-                                                                            arrayList2 = arrayList;
-                                                                            i3 = 0;
-                                                                        } catch (Exception e3) {
-                                                                            e = e3;
-                                                                            sQLiteCursor2 = sQLiteCursor3;
-                                                                            exc = e;
-                                                                            sQLiteCursor = sQLiteCursor2;
-                                                                            sQLitePreparedStatement = executeFast;
-                                                                            sQLitePreparedStatement2 = executeFast2;
-                                                                            try {
-                                                                                checkSQLException(exc);
-                                                                                sQLiteDatabase2 = this.database;
-                                                                                if (sQLiteDatabase2 != null) {
-                                                                                }
-                                                                                if (sQLitePreparedStatement != null) {
-                                                                                }
-                                                                                if (sQLitePreparedStatement2 != null) {
-                                                                                }
-                                                                            } catch (Throwable th3) {
-                                                                                th = th3;
-                                                                                sQLiteDatabase = this.database;
-                                                                                if (sQLiteDatabase != null) {
-                                                                                    sQLiteDatabase.commitTransaction();
-                                                                                }
-                                                                                if (sQLitePreparedStatement != null) {
-                                                                                    sQLitePreparedStatement.dispose();
-                                                                                }
-                                                                                if (sQLitePreparedStatement2 != null) {
-                                                                                    sQLitePreparedStatement2.dispose();
-                                                                                }
-                                                                                if (sQLiteCursor != null) {
-                                                                                    sQLiteCursor.dispose();
-                                                                                }
-                                                                                reset();
-                                                                                throw th;
-                                                                            }
-                                                                        } catch (Throwable th4) {
-                                                                            th = th4;
-                                                                            sQLiteCursor2 = sQLiteCursor3;
-                                                                            th = th;
-                                                                            sQLiteCursor = sQLiteCursor2;
-                                                                            sQLitePreparedStatement = executeFast;
-                                                                            sQLitePreparedStatement2 = executeFast2;
-                                                                            sQLiteDatabase = this.database;
-                                                                            if (sQLiteDatabase != null) {
+                                                                            checkSQLException(exc);
+                                                                            sQLiteDatabase2 = this.database;
+                                                                            if (sQLiteDatabase2 != null) {
                                                                             }
                                                                             if (sQLitePreparedStatement != null) {
                                                                             }
                                                                             if (sQLitePreparedStatement2 != null) {
                                                                             }
+                                                                        } catch (Throwable th3) {
+                                                                            th = th3;
+                                                                            sQLiteDatabase = this.database;
+                                                                            if (sQLiteDatabase != null) {
+                                                                                sQLiteDatabase.commitTransaction();
+                                                                            }
+                                                                            if (sQLitePreparedStatement != null) {
+                                                                                sQLitePreparedStatement.dispose();
+                                                                            }
+                                                                            if (sQLitePreparedStatement2 != null) {
+                                                                                sQLitePreparedStatement2.dispose();
+                                                                            }
                                                                             if (sQLiteCursor != null) {
+                                                                                sQLiteCursor.dispose();
                                                                             }
                                                                             reset();
                                                                             throw th;
                                                                         }
+                                                                    } catch (Throwable th4) {
+                                                                        th = th4;
+                                                                        sQLiteCursor2 = sQLiteCursor3;
+                                                                        th = th;
+                                                                        sQLiteCursor = sQLiteCursor2;
+                                                                        sQLitePreparedStatement = executeFast;
+                                                                        sQLitePreparedStatement2 = executeFast2;
+                                                                        sQLiteDatabase = this.database;
+                                                                        if (sQLiteDatabase != null) {
+                                                                        }
+                                                                        if (sQLitePreparedStatement != null) {
+                                                                        }
+                                                                        if (sQLitePreparedStatement2 != null) {
+                                                                        }
+                                                                        if (sQLiteCursor != null) {
+                                                                        }
+                                                                        reset();
+                                                                        throw th;
                                                                     }
+                                                                }
+                                                                try {
+                                                                    TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(this.currentAccount).clientUserId);
+                                                                    i5 = i5;
                                                                 } catch (Exception e4) {
-                                                                    e = e4;
-                                                                    i = i4;
-                                                                    exc2 = e;
+                                                                    exc2 = e4;
+                                                                    i5 = i5;
                                                                     checkSQLException(exc2);
                                                                     i2 = i5;
                                                                     queryFinalized3.dispose();
@@ -3487,10 +3488,13 @@ public class MessagesStorage extends BaseController {
                                                 checkSQLException(exc);
                                                 sQLiteDatabase2 = this.database;
                                                 if (sQLiteDatabase2 != null) {
+                                                    sQLiteDatabase2.commitTransaction();
                                                 }
                                                 if (sQLitePreparedStatement != null) {
+                                                    sQLitePreparedStatement.dispose();
                                                 }
                                                 if (sQLitePreparedStatement2 != null) {
+                                                    sQLitePreparedStatement2.dispose();
                                                 }
                                             } catch (Throwable th7) {
                                                 th = th7;
@@ -3539,63 +3543,60 @@ public class MessagesStorage extends BaseController {
                     }
                     executeFast.dispose();
                     executeFast2.dispose();
-                } catch (Exception e11) {
-                    exc = e11;
-                    sQLitePreparedStatement = executeFast;
-                    sQLitePreparedStatement2 = executeFast2;
-                    sQLiteCursor = null;
-                } catch (Throwable th10) {
-                    th = th10;
-                    sQLitePreparedStatement = executeFast;
-                    sQLitePreparedStatement2 = executeFast2;
-                    sQLiteCursor = null;
-                }
-                try {
-                    this.database.commitTransaction();
-                    this.database.executeFast("PRAGMA journal_size_limit = 0").stepThis().dispose();
-                    this.database.executeFast("VACUUM").stepThis().dispose();
-                    this.database.executeFast("PRAGMA journal_size_limit = -1").stepThis().dispose();
-                    getMessagesController().getTopicsController().databaseCleared();
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda123
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            MessagesStorage.this.lambda$clearLocalDatabase$43();
+                    try {
+                        this.database.commitTransaction();
+                        this.database.executeFast("PRAGMA journal_size_limit = 0").stepThis().dispose();
+                        this.database.executeFast("VACUUM").stepThis().dispose();
+                        this.database.executeFast("PRAGMA journal_size_limit = -1").stepThis().dispose();
+                        getMessagesController().getTopicsController().databaseCleared();
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda123
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                MessagesStorage.this.lambda$clearLocalDatabase$43();
+                            }
+                        });
+                        SQLiteDatabase sQLiteDatabase4 = this.database;
+                        if (sQLiteDatabase4 != null) {
+                            sQLiteDatabase4.commitTransaction();
                         }
-                    });
-                    SQLiteDatabase sQLiteDatabase4 = this.database;
-                    if (sQLiteDatabase4 != null) {
-                        sQLiteDatabase4.commitTransaction();
+                    } catch (Exception e11) {
+                        exc = e11;
+                        sQLitePreparedStatement = null;
+                        sQLitePreparedStatement2 = null;
+                        checkSQLException(exc);
+                        sQLiteDatabase2 = this.database;
+                        if (sQLiteDatabase2 != null) {
+                        }
+                        if (sQLitePreparedStatement != null) {
+                        }
+                        if (sQLitePreparedStatement2 != null) {
+                        }
+                    } catch (Throwable th10) {
+                        th = th10;
+                        sQLitePreparedStatement = null;
+                        sQLitePreparedStatement2 = null;
+                        sQLiteDatabase = this.database;
+                        if (sQLiteDatabase != null) {
+                        }
+                        if (sQLitePreparedStatement != null) {
+                        }
+                        if (sQLitePreparedStatement2 != null) {
+                        }
+                        if (sQLiteCursor != null) {
+                        }
+                        reset();
+                        throw th;
                     }
                 } catch (Exception e12) {
                     exc = e12;
-                    sQLitePreparedStatement = null;
-                    sQLitePreparedStatement2 = null;
-                    checkSQLException(exc);
-                    sQLiteDatabase2 = this.database;
-                    if (sQLiteDatabase2 != null) {
-                        sQLiteDatabase2.commitTransaction();
-                    }
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    if (sQLitePreparedStatement2 != null) {
-                        sQLitePreparedStatement2.dispose();
-                    }
+                    sQLitePreparedStatement = executeFast;
+                    sQLitePreparedStatement2 = executeFast2;
+                    sQLiteCursor = null;
                 } catch (Throwable th11) {
                     th = th11;
-                    sQLitePreparedStatement = null;
-                    sQLitePreparedStatement2 = null;
-                    sQLiteDatabase = this.database;
-                    if (sQLiteDatabase != null) {
-                    }
-                    if (sQLitePreparedStatement != null) {
-                    }
-                    if (sQLitePreparedStatement2 != null) {
-                    }
-                    if (sQLiteCursor != null) {
-                    }
-                    reset();
-                    throw th;
+                    sQLitePreparedStatement = executeFast;
+                    sQLitePreparedStatement2 = executeFast2;
+                    sQLiteCursor = null;
                 }
             } catch (Exception e13) {
                 exc = e13;

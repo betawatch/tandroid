@@ -336,7 +336,7 @@ public class BookmarksFragment extends UniversalFragment {
                 	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
                 	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
                 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-                	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1092)
+                	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1093)
                 	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
                 	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
                 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
