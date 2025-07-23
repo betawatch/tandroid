@@ -3199,14 +3199,19 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         TL_stars.SavedStarGift savedStarGift = this.savedStarGift;
         if (savedStarGift.unsaved) {
             savedStarGift.unsaved = false;
+            StarsController.GiftsCollections profileGiftCollectionsList = StarsController.getInstance(this.currentAccount).getProfileGiftCollectionsList(this.dialogId, false);
+            if (profileGiftCollectionsList != null) {
+                TL_stars.SavedStarGift savedStarGift2 = this.savedStarGift;
+                profileGiftCollectionsList.updateGiftsUnsaved(savedStarGift2, savedStarGift2.unsaved);
+            }
             TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
             savestargift.stargift = getInputStarGift();
             savestargift.unsave = this.savedStarGift.unsaved;
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(savestargift, null, 64);
         }
-        TL_stars.SavedStarGift savedStarGift2 = this.savedStarGift;
-        boolean z = !savedStarGift2.pinned_to_top;
-        if (((StarsController.GiftsList) this.giftsList).togglePinned(savedStarGift2, z, false)) {
+        TL_stars.SavedStarGift savedStarGift3 = this.savedStarGift;
+        boolean z = !savedStarGift3.pinned_to_top;
+        if (((StarsController.GiftsList) this.giftsList).togglePinned(savedStarGift3, z, false)) {
             new ProfileGiftsContainer.UnpinSheet(getContext(), this.dialogId, this.savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda84
                 @Override // org.telegram.messenger.Utilities.Callback0Return
                 public final Object run() {
@@ -4619,6 +4624,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     public void toggleShow() {
         final boolean z;
         TL_stars.StarGift starGift;
+        StarsController.GiftsCollections profileGiftCollectionsList;
         TLRPC.Message message;
         if (this.button.isLoading()) {
             return;
@@ -4652,6 +4658,9 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
         savestargift.unsave = z;
         savestargift.stargift = inputStarGift;
+        if (this.savedStarGift != null && (profileGiftCollectionsList = StarsController.getInstance(this.currentAccount).getProfileGiftCollectionsList(this.dialogId, false)) != null) {
+            profileGiftCollectionsList.updateGiftsUnsaved(this.savedStarGift, savestargift.unsave);
+        }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(savestargift, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda58
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
