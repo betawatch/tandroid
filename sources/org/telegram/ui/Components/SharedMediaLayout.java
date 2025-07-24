@@ -5636,7 +5636,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public SharedMediaLayout(Context context, long j, SharedMediaPreloader sharedMediaPreloader, int i, ArrayList arrayList, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i2, BaseFragment baseFragment, Delegate delegate, int i3, Theme.ResourcesProvider resourcesProvider) {
+    public SharedMediaLayout(final Context context, long j, SharedMediaPreloader sharedMediaPreloader, int i, ArrayList arrayList, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i2, BaseFragment baseFragment, Delegate delegate, int i3, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         int i4;
         SharedMediaData[] sharedMediaDataArr;
@@ -6706,7 +6706,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
                         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                         public final void onItemClick(View view, int i19, float f, float f2) {
-                            SharedMediaLayout.this.lambda$new$17(mediaPage2, view, i19, f, f2);
+                            SharedMediaLayout.this.lambda$new$17(mediaPage2, context, view, i19, f, f2);
                         }
                     });
                     this.mediaPages[i8].listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.21
@@ -8653,7 +8653,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadFastScrollData$23(final TLRPC.TL_error tL_error, final int i, final int i2, final TLObject tLObject) {
-        NotificationCenter.getInstance(this.profileActivity.getCurrentAccount()).doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda30
+        NotificationCenter.getInstance(this.profileActivity.getCurrentAccount()).doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 SharedMediaLayout.this.lambda$loadFastScrollData$22(tL_error, i, i2, tLObject);
@@ -8693,28 +8693,33 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13() {
-        this.profileActivity.presentFragment(new ThemeActivity(0).highlightSensitiveRow());
+    public static /* synthetic */ void lambda$new$13(BaseFragment baseFragment) {
+        baseFragment.presentFragment(new ThemeActivity(0).highlightSensitiveRow());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$14(MessagesController messagesController, Utilities.Callback callback, Boolean bool) {
+    public static /* synthetic */ void lambda$new$14(MessagesController messagesController, Utilities.Callback callback, Boolean bool) {
+        final BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (!bool.booleanValue()) {
-            BulletinFactory.of(this.profileActivity).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText)).show();
-            return;
-        }
-        messagesController.setContentSettings(true);
-        BulletinFactory.of(this.profileActivity).createSimpleBulletinDetail(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda37
-            @Override // java.lang.Runnable
-            public final void run() {
-                SharedMediaLayout.this.lambda$new$13();
+            if (safeLastFragment != null) {
+                BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText)).show();
             }
-        }), true)).show(true);
-        callback.run(Boolean.TRUE);
+        } else {
+            messagesController.setContentSettings(true);
+            if (safeLastFragment != null) {
+                BulletinFactory.of(safeLastFragment).createSimpleBulletinDetail(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda37
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        SharedMediaLayout.lambda$new$13(BaseFragment.this);
+                    }
+                }), true)).show(true);
+            }
+            callback.run(Boolean.TRUE);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$15(final SharedPhotoVideoCell2 sharedPhotoVideoCell2, final float f, final float f2, boolean[] zArr, boolean z, TL_account.contentSettings contentsettings, int i, final MessagesController messagesController, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void lambda$new$15(final SharedPhotoVideoCell2 sharedPhotoVideoCell2, final float f, final float f2, boolean[] zArr, boolean z, TL_account.contentSettings contentsettings, Context context, int i, final MessagesController messagesController, AlertDialog alertDialog, int i2) {
         Boolean bool;
         final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda34
             @Override // org.telegram.messenger.Utilities.Callback
@@ -8726,12 +8731,13 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             bool = Boolean.FALSE;
         } else {
             if (z || (contentsettings != null && contentsettings.sensitive_can_change)) {
-                ThemeActivity.verifyAge(getContext(), i, new Utilities.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda35
+                BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+                ThemeActivity.verifyAge(context, i, new Utilities.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda35
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        SharedMediaLayout.this.lambda$new$14(messagesController, callback, (Boolean) obj);
+                        SharedMediaLayout.lambda$new$14(MessagesController.this, callback, (Boolean) obj);
                     }
-                }, this.profileActivity.getResourceProvider());
+                }, safeLastFragment == null ? null : safeLastFragment.getResourceProvider());
                 return;
             }
             bool = Boolean.TRUE;
@@ -8740,41 +8746,48 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$16(AlertDialog alertDialog, final MessagesController messagesController, final SharedPhotoVideoCell2 sharedPhotoVideoCell2, final float f, final float f2, final int i, final TL_account.contentSettings contentsettings) {
+    public /* synthetic */ void lambda$new$16(AlertDialog alertDialog, final MessagesController messagesController, final Context context, final SharedPhotoVideoCell2 sharedPhotoVideoCell2, final float f, final float f2, final int i, final TL_account.contentSettings contentsettings) {
         alertDialog.dismissUnless(200L);
         final boolean z = messagesController.config.needAgeVideoVerification.get() && !TextUtils.isEmpty(messagesController.verifyAgeBotUsername);
         boolean z2 = (contentsettings == null || !contentsettings.sensitive_can_change) && z;
         final boolean[] zArr = new boolean[1];
-        FrameLayout frameLayout = new FrameLayout(getContext());
+        FrameLayout frameLayout = new FrameLayout(context);
         if (z) {
             zArr[0] = true;
         } else if (contentsettings != null && contentsettings.sensitive_can_change) {
-            CheckBoxCell checkBoxCell = new CheckBoxCell(getContext(), 1, this.profileActivity.getResourceProvider());
+            BaseFragment baseFragment = this.profileActivity;
+            CheckBoxCell checkBoxCell = new CheckBoxCell(context, 1, baseFragment == null ? null : baseFragment.getResourceProvider());
             checkBoxCell.setBackground(Theme.getSelectorDrawable(false));
             checkBoxCell.setText(LocaleController.getString(R.string.MessageShowSensitiveContentAlways), "", zArr[0], false);
             checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
             frameLayout.addView(checkBoxCell, LayoutHelper.createFrame(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-            checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda31
+            checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda30
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     SharedMediaLayout.lambda$new$11(zArr, view);
                 }
             });
         }
-        AlertDialog.Builder negativeButton = new AlertDialog.Builder(getContext(), this.profileActivity.getResourceProvider()).setTitle(LocaleController.getString(R.string.MessageShowSensitiveContentMediaTitle)).setMessage(LocaleController.getString(z2 ? R.string.MessageShowSensitiveContentMediaTextClosed : R.string.MessageShowSensitiveContentMediaText)).setView(frameLayout).setCustomViewOffset(9).setNegativeButton(LocaleController.getString(z2 ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
+        BaseFragment baseFragment2 = this.profileActivity;
+        AlertDialog.Builder negativeButton = new AlertDialog.Builder(context, baseFragment2 == null ? null : baseFragment2.getResourceProvider()).setTitle(LocaleController.getString(R.string.MessageShowSensitiveContentMediaTitle)).setMessage(LocaleController.getString(z2 ? R.string.MessageShowSensitiveContentMediaTextClosed : R.string.MessageShowSensitiveContentMediaText)).setView(frameLayout).setCustomViewOffset(9).setNegativeButton(LocaleController.getString(z2 ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
         if (!z2) {
-            negativeButton.setPositiveButton(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda32
+            negativeButton.setPositiveButton(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda31
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog2, int i2) {
-                    SharedMediaLayout.this.lambda$new$15(sharedPhotoVideoCell2, f, f2, zArr, z, contentsettings, i, messagesController, alertDialog2, i2);
+                    SharedMediaLayout.lambda$new$15(SharedPhotoVideoCell2.this, f, f2, zArr, z, contentsettings, context, i, messagesController, alertDialog2, i2);
                 }
             });
         }
-        this.profileActivity.showDialog(negativeButton.create());
+        BaseFragment baseFragment3 = this.profileActivity;
+        if (baseFragment3 == null || baseFragment3.getContext() == null) {
+            negativeButton.show();
+        } else {
+            this.profileActivity.showDialog(negativeButton.create());
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$17(MediaPage mediaPage, View view, int i, final float f, final float f2) {
+    public /* synthetic */ void lambda$new$17(MediaPage mediaPage, final Context context, View view, int i, final float f, final float f2) {
         MessageObject message;
         ChatActivity chatActivity;
         BaseFragment baseFragment;
@@ -8800,19 +8813,19 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     if (mediaPage.selectedType == 0 && (view instanceof SharedPhotoVideoCell2)) {
                         final SharedPhotoVideoCell2 sharedPhotoVideoCell2 = (SharedPhotoVideoCell2) view;
                         MessageObject messageObject = sharedPhotoVideoCell2.getMessageObject();
-                        if (messageObject.isSensitive()) {
+                        if (messageObject != null && messageObject.isSensitive()) {
                             BaseFragment baseFragment3 = this.profileActivity;
                             if (baseFragment3 == null) {
                                 return;
                             }
                             final int currentAccount = baseFragment3.getCurrentAccount();
                             final MessagesController messagesController = MessagesController.getInstance(currentAccount);
-                            final AlertDialog alertDialog = new AlertDialog(getContext(), 3);
+                            final AlertDialog alertDialog = new AlertDialog(context, 3);
                             alertDialog.showDelayed(200L);
                             messagesController.getContentSettings(new Utilities.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda21
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
-                                    SharedMediaLayout.this.lambda$new$16(alertDialog, messagesController, sharedPhotoVideoCell2, f, f2, currentAccount, (TL_account.contentSettings) obj);
+                                    SharedMediaLayout.this.lambda$new$16(alertDialog, messagesController, context, sharedPhotoVideoCell2, f, f2, currentAccount, (TL_account.contentSettings) obj);
                                 }
                             });
                             return;
@@ -8821,13 +8834,16 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             sharedPhotoVideoCell2.startRevealMedia(f, f2);
                             return;
                         }
-                        i2 = 0;
-                        sharedMediaLayout = this;
-                        i3 = i;
-                        view2 = view;
-                        message = messageObject;
-                        i4 = mediaPage.selectedType;
-                        sharedMediaLayout.onItemClick(i3, view2, message, i2, i4);
+                        if (messageObject != null) {
+                            i2 = mediaPage.selectedType;
+                            sharedMediaLayout = this;
+                            i3 = i;
+                            view2 = view;
+                            message = messageObject;
+                            i4 = 0;
+                            sharedMediaLayout.onItemClick(i3, view2, message, i4, i2);
+                            return;
+                        }
                         return;
                     }
                     if ((mediaPage.selectedType == 8 || mediaPage.selectedType == 9) && (view instanceof SharedPhotoVideoCell2)) {
@@ -8922,12 +8938,12 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         baseFragment = this.profileActivity;
                     }
                 }
-                i4 = mediaPage.selectedType;
-                i2 = 0;
+                i2 = mediaPage.selectedType;
+                i4 = 0;
                 sharedMediaLayout = this;
                 i3 = i;
                 view2 = view;
-                sharedMediaLayout.onItemClick(i3, view2, message, i2, i4);
+                sharedMediaLayout.onItemClick(i3, view2, message, i4, i2);
                 return;
             }
             TLRPC.Chat chat = ((ProfileSearchCell) view).getChat();
