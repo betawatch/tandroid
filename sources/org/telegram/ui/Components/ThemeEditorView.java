@@ -53,7 +53,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -343,7 +343,7 @@ public class ThemeEditorView {
                             editTextBoldCursor = this.colorEditText[i];
                             str = "alpha";
                         }
-                        this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLRPC.FLAG_28);
+                        this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLObject.FLAG_28);
                         this.colorEditText[i].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
                         this.linearLayout.addView(this.colorEditText[i], LayoutHelper.createLinear(55, 36, 0.0f, 0.0f, i == 3 ? 16.0f : 0.0f, 0.0f));
                         this.colorEditText[i].addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.ThemeEditorView.EditorAlert.ColorPicker.1
@@ -366,23 +366,23 @@ public class ThemeEditorView {
                                     ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
                                     intValue = 0;
                                 } else if (intValue > 255) {
-                                    ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.locationPermissionGranted);
+                                    ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.goingToPreviewTheme);
                                     ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
-                                    intValue = NotificationCenter.locationPermissionGranted;
+                                    intValue = NotificationCenter.goingToPreviewTheme;
                                 }
                                 int color = ColorPicker.this.getColor();
                                 int i5 = i;
                                 if (i5 == 2) {
                                     i2 = color & (-256);
-                                    i3 = intValue & NotificationCenter.locationPermissionGranted;
+                                    i3 = intValue & NotificationCenter.goingToPreviewTheme;
                                 } else if (i5 == 1) {
                                     i2 = color & (-65281);
-                                    i3 = (intValue & NotificationCenter.locationPermissionGranted) << 8;
+                                    i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 8;
                                 } else {
                                     if (i5 != 0) {
                                         if (i5 == 3) {
                                             i2 = color & 16777215;
-                                            i3 = (intValue & NotificationCenter.locationPermissionGranted) << 24;
+                                            i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 24;
                                         }
                                         ColorPicker.this.setColor(color);
                                         for (i4 = 0; i4 < ThemeEditorView.this.currentThemeDesription.size(); i4++) {
@@ -391,7 +391,7 @@ public class ThemeEditorView {
                                         EditorAlert.this.ignoreTextChange = false;
                                     }
                                     i2 = color & (-16711681);
-                                    i3 = (intValue & NotificationCenter.locationPermissionGranted) << 16;
+                                    i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 16;
                                 }
                                 color = i2 | i3;
                                 ColorPicker.this.setColor(color);
@@ -419,7 +419,7 @@ public class ThemeEditorView {
                         i++;
                     }
                     editTextBoldCursor.setHint(str);
-                    this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLRPC.FLAG_28);
+                    this.colorEditText[i].setImeOptions((i != 3 ? 6 : 5) | TLObject.FLAG_28);
                     this.colorEditText[i].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
                     this.linearLayout.addView(this.colorEditText[i], LayoutHelper.createLinear(55, 36, 0.0f, 0.0f, i == 3 ? 16.0f : 0.0f, 0.0f));
                     this.colorEditText[i].addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.ThemeEditorView.EditorAlert.ColorPicker.1
@@ -442,23 +442,23 @@ public class ThemeEditorView {
                                 ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
                                 intValue = 0;
                             } else if (intValue > 255) {
-                                ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.locationPermissionGranted);
+                                ColorPicker.this.colorEditText[i].setText("" + NotificationCenter.goingToPreviewTheme);
                                 ColorPicker.this.colorEditText[i].setSelection(ColorPicker.this.colorEditText[i].length());
-                                intValue = NotificationCenter.locationPermissionGranted;
+                                intValue = NotificationCenter.goingToPreviewTheme;
                             }
                             int color = ColorPicker.this.getColor();
                             int i5 = i;
                             if (i5 == 2) {
                                 i2 = color & (-256);
-                                i3 = intValue & NotificationCenter.locationPermissionGranted;
+                                i3 = intValue & NotificationCenter.goingToPreviewTheme;
                             } else if (i5 == 1) {
                                 i2 = color & (-65281);
-                                i3 = (intValue & NotificationCenter.locationPermissionGranted) << 8;
+                                i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 8;
                             } else {
                                 if (i5 != 0) {
                                     if (i5 == 3) {
                                         i2 = color & 16777215;
-                                        i3 = (intValue & NotificationCenter.locationPermissionGranted) << 24;
+                                        i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 24;
                                     }
                                     ColorPicker.this.setColor(color);
                                     for (i4 = 0; i4 < ThemeEditorView.this.currentThemeDesription.size(); i4++) {
@@ -467,7 +467,7 @@ public class ThemeEditorView {
                                     EditorAlert.this.ignoreTextChange = false;
                                 }
                                 i2 = color & (-16711681);
-                                i3 = (intValue & NotificationCenter.locationPermissionGranted) << 16;
+                                i3 = (intValue & NotificationCenter.goingToPreviewTheme) << 16;
                             }
                             color = i2 | i3;
                             ColorPicker.this.setColor(color);
@@ -1388,7 +1388,7 @@ public class ThemeEditorView {
                         }
                         this.ignoreLayout = false;
                     }
-                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                 }
 
                 @Override // android.view.View

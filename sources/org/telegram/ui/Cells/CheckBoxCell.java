@@ -103,7 +103,7 @@ public class CheckBoxCell extends FrameLayout {
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
         }
 
         public void set(boolean z, CharSequence charSequence) {
@@ -508,15 +508,15 @@ public class CheckBoxCell extends FrameLayout {
         int makeMeasureSpec;
         int size = View.MeasureSpec.getSize(i);
         if (this.currentType == 3) {
-            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(34.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_31));
-            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLRPC.FLAG_30));
+            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(34.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_31));
+            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLObject.FLAG_30));
             setMeasuredDimension(this.textView.getMeasuredWidth() + AndroidUtilities.dp(29.0f), AndroidUtilities.dp(50.0f));
         } else {
             boolean z = this.isMultiline;
             int size2 = View.MeasureSpec.getSize(i);
             if (z) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
             } else {
                 setMeasuredDimension(size2, AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0));
                 int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(isCheckboxRound() ? 60.0f : 34.0f);
@@ -530,40 +530,40 @@ public class CheckBoxCell extends FrameLayout {
                     measuredWidth -= ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).rightMargin;
                 }
                 int i3 = measuredWidth / 2;
-                this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+                this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
                 int measuredWidth2 = this.valueTextView.getMeasuredWidth();
                 CollapseButton collapseButton = this.collapseButton;
                 if (collapseButton != null) {
-                    collapseButton.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+                    collapseButton.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
                     measuredWidth2 += this.collapseButton.getMeasuredWidth() - AndroidUtilities.dp(11.0f);
                 }
                 if (this.textView.getLayoutParams().width == -1) {
                     view = this.textView;
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((measuredWidth - ((int) Math.abs(view.getTranslationX()))) - measuredWidth2) - AndroidUtilities.dp(8.0f), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((measuredWidth - ((int) Math.abs(view.getTranslationX()))) - measuredWidth2) - AndroidUtilities.dp(8.0f), TLObject.FLAG_30);
                 } else {
                     view = this.textView;
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((measuredWidth - ((int) Math.abs(view.getTranslationX()))) - measuredWidth2) - AndroidUtilities.dp(8.0f), TLRPC.FLAG_31);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((measuredWidth - ((int) Math.abs(view.getTranslationX()))) - measuredWidth2) - AndroidUtilities.dp(8.0f), TLObject.FLAG_31);
                 }
-                view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
+                view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
                 BackupImageView backupImageView = this.avatarImageView;
                 if (backupImageView != null) {
-                    backupImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLRPC.FLAG_30));
+                    backupImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(34.0f), TLObject.FLAG_30));
                 }
-                this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLRPC.FLAG_30));
+                this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.checkBoxSize), TLObject.FLAG_30));
             }
         }
         View view2 = this.click1Container;
         if (view2 != null) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
-            this.click1Container.measure(View.MeasureSpec.makeMeasureSpec((size - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            this.click1Container.measure(View.MeasureSpec.makeMeasureSpec((size - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         }
         View view3 = this.click2Container;
         if (view3 != null) {
-            view3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            view3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         }
         View view4 = this.collapsedArrow;
         if (view4 != null) {
-            view4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLRPC.FLAG_30));
+            view4.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
         }
     }
 

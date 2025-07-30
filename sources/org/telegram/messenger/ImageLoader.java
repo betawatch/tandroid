@@ -980,22 +980,22 @@ public class ImageLoader {
             boolean z = true;
             if (wallPaperSettings2.second_background_color == 0) {
                 i = AndroidUtilities.getPatternColor(wallPaperSettings2.background_color);
-                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.locationPermissionGranted));
+                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.goingToPreviewTheme));
             } else {
                 int i2 = wallPaperSettings2.third_background_color;
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.locationPermissionGranted);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.goingToPreviewTheme);
                 if (i2 == 0) {
-                    int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.locationPermissionGranted);
+                    int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.goingToPreviewTheme);
                     int averageColor = AndroidUtilities.getAverageColor(alphaComponent, alphaComponent2);
                     GradientDrawable gradientDrawable = new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{alphaComponent, alphaComponent2});
                     gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                     gradientDrawable.draw(canvas);
                     i = averageColor;
                 } else {
-                    int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.locationPermissionGranted);
-                    int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.locationPermissionGranted);
+                    int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.goingToPreviewTheme);
+                    int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.goingToPreviewTheme);
                     int i3 = wallPaper.settings.fourth_background_color;
-                    int alphaComponent5 = i3 == 0 ? 0 : ColorUtils.setAlphaComponent(i3, NotificationCenter.locationPermissionGranted);
+                    int alphaComponent5 = i3 == 0 ? 0 : ColorUtils.setAlphaComponent(i3, NotificationCenter.goingToPreviewTheme);
                     int patternColor = MotionBackgroundDrawable.getPatternColor(alphaComponent, alphaComponent3, alphaComponent4, alphaComponent5);
                     MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                     motionBackgroundDrawable.setColors(alphaComponent, alphaComponent3, alphaComponent4, alphaComponent5);
@@ -4274,7 +4274,7 @@ public class ImageLoader {
             int i2 = options.outHeight;
             TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
             tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-            tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
+            tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
             tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
             tL_fileLocationToBeDeprecated.file_reference = new byte[0];
             TLRPC.TL_photoSize_layer127 tL_photoSize_layer127 = new TLRPC.TL_photoSize_layer127();
@@ -6208,7 +6208,7 @@ public class ImageLoader {
         }
         tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-        tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
+        tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
         tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         photoSize = new TLRPC.TL_photoSize_layer127();

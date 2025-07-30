@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class AccessibilityNodeInfoCompat {
@@ -69,11 +69,11 @@ public class AccessibilityNodeInfoCompat {
         public static final AccessibilityActionCompat ACTION_COPY = new AccessibilityActionCompat(16384, null);
         public static final AccessibilityActionCompat ACTION_PASTE = new AccessibilityActionCompat(32768, null);
         public static final AccessibilityActionCompat ACTION_CUT = new AccessibilityActionCompat(65536, null);
-        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(TLRPC.FLAG_17, null, AccessibilityViewCommand.SetSelectionArguments.class);
-        public static final AccessibilityActionCompat ACTION_EXPAND = new AccessibilityActionCompat(TLRPC.FLAG_18, null);
-        public static final AccessibilityActionCompat ACTION_COLLAPSE = new AccessibilityActionCompat(TLRPC.FLAG_19, null);
+        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(TLObject.FLAG_17, null, AccessibilityViewCommand.SetSelectionArguments.class);
+        public static final AccessibilityActionCompat ACTION_EXPAND = new AccessibilityActionCompat(TLObject.FLAG_18, null);
+        public static final AccessibilityActionCompat ACTION_COLLAPSE = new AccessibilityActionCompat(TLObject.FLAG_19, null);
         public static final AccessibilityActionCompat ACTION_DISMISS = new AccessibilityActionCompat(1048576, null);
-        public static final AccessibilityActionCompat ACTION_SET_TEXT = new AccessibilityActionCompat(TLRPC.FLAG_21, null, AccessibilityViewCommand.SetTextArguments.class);
+        public static final AccessibilityActionCompat ACTION_SET_TEXT = new AccessibilityActionCompat(TLObject.FLAG_21, null, AccessibilityViewCommand.SetTextArguments.class);
 
         static {
             AccessibilityNodeInfo.AccessibilityAction accessibilityAction;
@@ -474,13 +474,13 @@ public class AccessibilityNodeInfoCompat {
                 return "ACTION_PASTE";
             case 65536:
                 return "ACTION_CUT";
-            case TLRPC.FLAG_17 /* 131072 */:
+            case TLObject.FLAG_17 /* 131072 */:
                 return "ACTION_SET_SELECTION";
-            case TLRPC.FLAG_18 /* 262144 */:
+            case TLObject.FLAG_18 /* 262144 */:
                 return "ACTION_EXPAND";
-            case TLRPC.FLAG_19 /* 524288 */:
+            case TLObject.FLAG_19 /* 524288 */:
                 return "ACTION_COLLAPSE";
-            case TLRPC.FLAG_21 /* 2097152 */:
+            case TLObject.FLAG_21 /* 2097152 */:
                 return "ACTION_SET_TEXT";
             case R.id.accessibilityActionMoveWindow:
                 return "ACTION_MOVE_WINDOW";

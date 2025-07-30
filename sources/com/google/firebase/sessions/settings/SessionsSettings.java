@@ -24,7 +24,7 @@ import kotlin.reflect.KProperty;
 import kotlin.time.Duration;
 import kotlin.time.DurationKt;
 import kotlin.time.DurationUnit;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public final class SessionsSettings {
@@ -153,8 +153,8 @@ public final class SessionsSettings {
         if (continuation instanceof SessionsSettings$updateSettings$1) {
             sessionsSettings$updateSettings$1 = (SessionsSettings$updateSettings$1) continuation;
             int i2 = sessionsSettings$updateSettings$1.label;
-            if ((i2 & TLRPC.FLAG_31) != 0) {
-                sessionsSettings$updateSettings$1.label = i2 - TLRPC.FLAG_31;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                sessionsSettings$updateSettings$1.label = i2 - TLObject.FLAG_31;
                 Object obj = sessionsSettings$updateSettings$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = sessionsSettings$updateSettings$1.label;

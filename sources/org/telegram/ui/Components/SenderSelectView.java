@@ -163,7 +163,7 @@ public class SenderSelectView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
         this.avatarImage.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
     }
 

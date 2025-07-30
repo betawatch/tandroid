@@ -684,7 +684,7 @@ public class MessageObject {
                 this.maxSizeWidth -= 50;
                 i = 250;
             } else {
-                i = NotificationCenter.emojiKeywordsLoaded;
+                i = NotificationCenter.savedMessagesForwarded;
             }
             int dp = AndroidUtilities.dp(120.0f);
             float dp2 = AndroidUtilities.dp(120.0f);
@@ -5588,7 +5588,7 @@ public class MessageObject {
                                     spannableStringBuilder.append('\"');
                                     spannableStringBuilder.append((CharSequence) tL_messageActionSuggestedPostApproval.reject_comment);
                                     spannableStringBuilder.append('\"');
-                                    spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.factCheckLoaded), length, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.starSubscriptionsLoaded), length, spannableStringBuilder.length(), 33);
                                 }
                             }
                         }
@@ -6051,7 +6051,7 @@ public class MessageObject {
         if (message == null) {
             return 0;
         }
-        if ((message.flags & TLRPC.FLAG_30) != 0) {
+        if ((message.flags & TLObject.FLAG_30) != 0) {
             return message.quick_reply_shortcut_id;
         }
         TLRPC.InputQuickReplyShortcut inputQuickReplyShortcut = message.quick_reply_shortcut;
@@ -6069,7 +6069,7 @@ public class MessageObject {
         if (message == null) {
             return 0;
         }
-        if ((message.flags & TLRPC.FLAG_30) != 0) {
+        if ((message.flags & TLObject.FLAG_30) != 0) {
             return message.quick_reply_shortcut_id;
         }
         TLRPC.InputQuickReplyShortcut inputQuickReplyShortcut = message.quick_reply_shortcut;
@@ -6216,7 +6216,7 @@ public class MessageObject {
         if (z2) {
             return getMonoForumTopicId(message);
         }
-        if ((message.flags & TLRPC.FLAG_30) != 0 && DialogObject.getPeerDialogId(message.peer_id) == clientUserId) {
+        if ((message.flags & TLObject.FLAG_30) != 0 && DialogObject.getPeerDialogId(message.peer_id) == clientUserId) {
             i2 = message.quick_reply_shortcut_id;
         } else {
             if (!z && i >= 0 && DialogObject.getPeerDialogId(message.peer_id) == clientUserId) {
@@ -6852,7 +6852,7 @@ public class MessageObject {
     }
 
     public static boolean isQuickReply(TLRPC.Message message) {
-        return (message == null || ((message.flags & TLRPC.FLAG_30) == 0 && message.quick_reply_shortcut == null)) ? false : true;
+        return (message == null || ((message.flags & TLObject.FLAG_30) == 0 && message.quick_reply_shortcut == null)) ? false : true;
     }
 
     public static boolean isRoundVideoDocument(TLRPC.Document document) {
@@ -7623,9 +7623,9 @@ public class MessageObject {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1286:0x1b4e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1299:0x1ba2, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1265;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1278;
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00bd, code lost:
     
@@ -7647,27 +7647,27 @@ public class MessageObject {
     
         if (org.telegram.messenger.ChatObject.isChannelAndNotMegaGroup(r13) != false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:783:0x1051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:796:0x10a5, code lost:
     
-        if (isOut() != false) goto L794;
+        if (isOut() != false) goto L807;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:784:0x10bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:797:0x1111, code lost:
     
         r0 = org.telegram.messenger.R.string.ActionTakeScreenshoot;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:785:0x10b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:798:0x110d, code lost:
     
         r0 = org.telegram.messenger.R.string.ActionTakeScreenshootYou;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:800:0x10b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:813:0x110b, code lost:
     
-        if (isOut() != false) goto L794;
+        if (isOut() != false) goto L807;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1194:0x1982  */
-    /* JADX WARN: Removed duplicated region for block: B:1209:0x19d9  */
-    /* JADX WARN: Removed duplicated region for block: B:1210:0x19dd  */
-    /* JADX WARN: Removed duplicated region for block: B:1382:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x1d57  */
+    /* JADX WARN: Removed duplicated region for block: B:1207:0x19d6  */
+    /* JADX WARN: Removed duplicated region for block: B:1222:0x1a2d  */
+    /* JADX WARN: Removed duplicated region for block: B:1223:0x1a31  */
+    /* JADX WARN: Removed duplicated region for block: B:1395:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x1dab  */
     /* JADX WARN: Removed duplicated region for block: B:311:0x0691  */
     /* JADX WARN: Removed duplicated region for block: B:320:0x06ae  */
     /* JADX WARN: Removed duplicated region for block: B:338:0x06ea  */
@@ -7676,16 +7676,16 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:360:0x06fa  */
     /* JADX WARN: Removed duplicated region for block: B:375:0x077c  */
     /* JADX WARN: Removed duplicated region for block: B:383:0x07a3  */
-    /* JADX WARN: Removed duplicated region for block: B:428:0x092e  */
-    /* JADX WARN: Removed duplicated region for block: B:589:0x0c58  */
-    /* JADX WARN: Removed duplicated region for block: B:593:0x0c66  */
-    /* JADX WARN: Removed duplicated region for block: B:613:0x0cae  */
-    /* JADX WARN: Removed duplicated region for block: B:614:0x0cb1  */
-    /* JADX WARN: Removed duplicated region for block: B:630:0x0ceb  */
-    /* JADX WARN: Removed duplicated region for block: B:631:0x0cef  */
+    /* JADX WARN: Removed duplicated region for block: B:427:0x092e  */
+    /* JADX WARN: Removed duplicated region for block: B:602:0x0cac  */
+    /* JADX WARN: Removed duplicated region for block: B:606:0x0cba  */
+    /* JADX WARN: Removed duplicated region for block: B:626:0x0d02  */
+    /* JADX WARN: Removed duplicated region for block: B:627:0x0d05  */
+    /* JADX WARN: Removed duplicated region for block: B:643:0x0d3f  */
+    /* JADX WARN: Removed duplicated region for block: B:644:0x0d43  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:725:0x0eaf  */
-    /* JADX WARN: Removed duplicated region for block: B:745:0x0f46  */
+    /* JADX WARN: Removed duplicated region for block: B:738:0x0f03  */
+    /* JADX WARN: Removed duplicated region for block: B:758:0x0f9a  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x004b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -7738,38 +7738,34 @@ public class MessageObject {
         CharSequence charSequence4;
         int i8;
         TLObject user3;
-        String string3;
-        TLObject tLObject;
-        String string4;
-        TLObject tLObject2;
-        String str6;
-        int i9;
-        TLObject tLObject3;
-        CharSequence spannableStringBuilder;
-        int i10;
         CharSequence replaceWithLink;
+        TLObject tLObject;
+        String string3;
+        TLObject tLObject2;
+        CharSequence spannableStringBuilder;
+        int i9;
+        CharSequence replaceWithLink2;
         int indexOf;
-        TLObject tLObject4;
-        TLObject tLObject5;
+        TLObject tLObject3;
         TLRPC.Chat chat8;
         TLRPC.TL_messageActionGiveawayResults tL_messageActionGiveawayResults;
         String formatPluralString2;
         TLRPC.Chat chat9;
-        String str7;
+        String str6;
         boolean z;
         TLRPC.Chat chat10;
+        int i10;
         int i11;
         int i12;
         int i13;
-        int i14;
         AmountUtils$Amount amountUtils$Amount;
         AmountUtils$Amount amountUtils$Amount2;
         TLRPC.Chat chat11;
+        TLObject tLObject4;
+        TLObject tLObject5;
         TLObject tLObject6;
-        TLObject tLObject7;
-        TLObject tLObject8;
         String formatPluralString3;
-        int i15;
+        int i14;
         TLRPC.Peer peer = this.messageOwner.from_id;
         if (peer instanceof TLRPC.TL_peerUser) {
             user = getUser(abstractMap, longSparseArray, peer.user_id);
@@ -7777,7 +7773,7 @@ public class MessageObject {
             if (peer instanceof TLRPC.TL_peerChannel) {
                 chat = getChat(abstractMap2, longSparseArray2, peer.channel_id);
                 user = null;
-                TLObject tLObject9 = user == null ? user : chat;
+                TLObject tLObject7 = user == null ? user : chat;
                 this.drawServiceWithDefaultTypeface = false;
                 this.channelJoined = false;
                 message = this.messageOwner;
@@ -7788,11 +7784,11 @@ public class MessageObject {
                     String restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(this.messageOwner.restriction_reason);
                     if (TextUtils.isEmpty(restrictionReason)) {
                         if (isMediaEmpty() || isSponsored()) {
-                            String str8 = this.messageOwner.message;
-                            charSequence2 = str8;
-                            if (str8 != null) {
+                            String str7 = this.messageOwner.message;
+                            charSequence2 = str7;
+                            if (str7 != null) {
                                 try {
-                                    if (str8.length() > 200) {
+                                    if (str7.length() > 200) {
                                         matcher = AndroidUtilities.BAD_CHARS_MESSAGE_LONG_PATTERN.matcher(this.messageOwner.message);
                                         str2 = "\u200c";
                                     } else {
@@ -7823,11 +7819,11 @@ public class MessageObject {
                                 if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaStory) {
                                     if (getMedia(this.messageOwner).via_mention) {
                                         TLRPC.User user4 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getMedia(this.messageOwner).user_id));
-                                        String str9 = (user4 == null || (publicUsername = UserObject.getPublicUsername(user4)) == null) ? null : MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername + "/s/" + getMedia(this.messageOwner).id;
-                                        if (str9 != null) {
-                                            SpannableString spannableString2 = new SpannableString(str9);
+                                        String str8 = (user4 == null || (publicUsername = UserObject.getPublicUsername(user4)) == null) ? null : MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername + "/s/" + getMedia(this.messageOwner).id;
+                                        if (str8 != null) {
+                                            SpannableString spannableString2 = new SpannableString(str8);
                                             this.messageText = spannableString2;
-                                            spannableString2.setSpan(new URLSpanReplacement("https://" + str9, new TextStyleSpan.TextStyleRun()), 0, this.messageText.length(), 33);
+                                            spannableString2.setSpan(new URLSpanReplacement("https://" + str8, new TextStyleSpan.TextStyleRun()), 0, this.messageText.length(), 33);
                                         } else {
                                             charSequence = str;
                                         }
@@ -7854,8 +7850,8 @@ public class MessageObject {
                                     TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) getMedia(this.messageOwner);
                                     int size = tL_messageMediaPaidMedia.extended_media.size();
                                     boolean z2 = false;
-                                    for (int i16 = 0; i16 < size; i16++) {
-                                        TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i16);
+                                    for (int i15 = 0; i15 < size; i15++) {
+                                        TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i15);
                                         if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
                                             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
                                             z2 = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && isVideoDocument(messageMedia.document);
@@ -7873,10 +7869,10 @@ public class MessageObject {
                                         formatPluralString = LocaleController.formatPluralString(z2 ? "Media" : "Photos", size, new Object[0]);
                                     }
                                     this.messageText = formatPluralString;
-                                    int i17 = R.string.AttachPaidMedia;
+                                    int i16 = R.string.AttachPaidMedia;
                                     Object[] objArr = new Object[1];
                                     objArr[c] = formatPluralString;
-                                    charSequence2 = StarsIntroActivity.replaceStars(LocaleController.formatString(i17, objArr));
+                                    charSequence2 = StarsIntroActivity.replaceStars(LocaleController.formatString(i16, objArr));
                                 } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
                                     i = (getMedia(this.messageOwner).ttl_seconds == 0 || (this.messageOwner instanceof TLRPC.TL_message_secret)) ? getGroupId() != 0 ? R.string.Album : R.string.AttachPhoto : R.string.AttachDestructingPhoto;
                                 } else if (isVideo() || ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument) && (((getDocument() instanceof TLRPC.TL_documentEmpty) || getDocument() == null) && getMedia(this.messageOwner).ttl_seconds != 0))) {
@@ -7943,7 +7939,7 @@ public class MessageObject {
                 } else {
                     TLRPC.MessageAction messageAction = message.action;
                     if (messageAction != null) {
-                        String str10 = "";
+                        String str9 = "";
                         if (messageAction instanceof TLRPC.TL_messageActionSetSameChatWallPaper) {
                             this.contentType = 1;
                             this.type = 10;
@@ -7962,10 +7958,10 @@ public class MessageObject {
                                 if (user != null) {
                                     formatString = LocaleController.formatString(R.string.ActionSetWallpaperForThisGroupByUser, UserObject.getFirstName(user));
                                 }
-                                str = str10;
+                                str = str9;
                             }
                             charSequence = formatString;
-                            str = str10;
+                            str = str9;
                         } else if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
                             this.contentType = 1;
                             TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
@@ -7985,18 +7981,18 @@ public class MessageObject {
                                     spannableString3.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableString3.length(), 33);
                                     if (tL_messageActionSetChatWallPaper.same) {
                                         this.type = 10;
-                                        i15 = R.string.ActionSetSameWallpaperForThisChat;
+                                        i14 = R.string.ActionSetSameWallpaperForThisChat;
                                     } else {
-                                        i15 = tL_messageActionSetChatWallPaper.for_both ? R.string.ActionSetWallpaperForThisChatBoth : R.string.ActionSetWallpaperForThisChat;
+                                        i14 = tL_messageActionSetChatWallPaper.for_both ? R.string.ActionSetWallpaperForThisChatBoth : R.string.ActionSetWallpaperForThisChat;
                                     }
-                                    this.messageText = LocaleController.getString(i15);
+                                    this.messageText = LocaleController.getString(i14);
                                     formatString = AndroidUtilities.replaceCharSequence("%s", this.messageText, spannableString3);
                                 } else if (tL_messageActionSetChatWallPaper.same) {
                                     this.type = 10;
                                     formatString = LocaleController.formatString(R.string.ActionSetSameWallpaperForThisChatSelf, new Object[0]);
                                 } else if (!tL_messageActionSetChatWallPaper.for_both || user7 == null) {
                                     i = R.string.ActionSetWallpaperForThisChatSelf;
-                                    str = str10;
+                                    str = str9;
                                     charSequence2 = LocaleController.getString(i);
                                     charSequence = charSequence2;
                                 } else {
@@ -8009,29 +8005,29 @@ public class MessageObject {
                                 if (user != null) {
                                     formatString = LocaleController.formatString(R.string.ActionSetWallpaperForThisGroupByUser, UserObject.getFirstName(user));
                                 }
-                                str = str10;
+                                str = str9;
                             }
                             charSequence = formatString;
-                            str = str10;
+                            str = str9;
                         } else {
                             if (messageAction instanceof TLRPC.TL_messageActionGroupCallScheduled) {
                                 TLRPC.TL_messageActionGroupCallScheduled tL_messageActionGroupCallScheduled = (TLRPC.TL_messageActionGroupCallScheduled) messageAction;
                                 formatString = ((message.peer_id instanceof TLRPC.TL_peerChat) || isSupergroup()) ? LocaleController.formatString(R.string.ActionGroupCallScheduled, LocaleController.formatStartsTime(tL_messageActionGroupCallScheduled.schedule_date, 3, false)) : LocaleController.formatString(R.string.ActionChannelCallScheduled, LocaleController.formatStartsTime(tL_messageActionGroupCallScheduled.schedule_date, 3, false));
                             } else {
-                                String str11 = "un1";
+                                String str10 = "un1";
                                 if (messageAction instanceof TLRPC.TL_messageActionGroupCall) {
-                                    int i18 = messageAction.duration;
-                                    if (i18 != 0) {
-                                        int i19 = i18 / 86400;
-                                        if (i19 > 0) {
-                                            formatPluralString3 = LocaleController.formatPluralString("Days", i19, new Object[0]);
+                                    int i17 = messageAction.duration;
+                                    if (i17 != 0) {
+                                        int i18 = i17 / 86400;
+                                        if (i18 > 0) {
+                                            formatPluralString3 = LocaleController.formatPluralString("Days", i18, new Object[0]);
                                         } else {
-                                            int i20 = i18 / 3600;
-                                            if (i20 > 0) {
-                                                formatPluralString3 = LocaleController.formatPluralString("Hours", i20, new Object[0]);
+                                            int i19 = i17 / 3600;
+                                            if (i19 > 0) {
+                                                formatPluralString3 = LocaleController.formatPluralString("Hours", i19, new Object[0]);
                                             } else {
-                                                int i21 = i18 / 60;
-                                                formatPluralString3 = i21 > 0 ? LocaleController.formatPluralString("Minutes", i21, new Object[0]) : LocaleController.formatPluralString("Seconds", i18, new Object[0]);
+                                                int i20 = i17 / 60;
+                                                formatPluralString3 = i20 > 0 ? LocaleController.formatPluralString("Minutes", i20, new Object[0]) : LocaleController.formatPluralString("Seconds", i17, new Object[0]);
                                             }
                                         }
                                         if (!(this.messageOwner.peer_id instanceof TLRPC.TL_peerChat) && !isSupergroup()) {
@@ -8040,9 +8036,9 @@ public class MessageObject {
                                             formatString = LocaleController.formatString(R.string.ActionGroupCallEndedByYou, formatPluralString3);
                                         } else {
                                             formatPluralSpannable = LocaleController.formatString(R.string.ActionGroupCallEndedBy, formatPluralString3);
-                                            str = str10;
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            str = str9;
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         }
                                     } else {
@@ -8052,18 +8048,18 @@ public class MessageObject {
                                             i = R.string.ActionGroupCallStartedByYou;
                                         } else {
                                             i2 = R.string.ActionGroupCallStarted;
-                                            str = str10;
+                                            str = str9;
                                             formatPluralSpannable = LocaleController.getString(i2);
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         }
-                                        str = str10;
+                                        str = str9;
                                         charSequence2 = LocaleController.getString(i);
                                         charSequence = charSequence2;
                                     }
                                 } else {
-                                    String str12 = "un2";
+                                    String str11 = "un2";
                                     if (messageAction instanceof TLRPC.TL_messageActionInviteToGroupCall) {
                                         long j3 = messageAction.user_id;
                                         if (j3 == 0 && messageAction.users.size() == 1) {
@@ -8072,44 +8068,44 @@ public class MessageObject {
                                         if (j3 != 0) {
                                             TLObject user8 = getUser(abstractMap, longSparseArray, j3);
                                             if (isOut()) {
-                                                i14 = R.string.ActionGroupCallYouInvited;
-                                                tLObject8 = user8;
-                                                formatPluralSpannable = LocaleController.getString(i14);
-                                                str11 = "un2";
-                                                tLObject6 = tLObject8;
-                                                str = str10;
-                                                user2 = tLObject6;
-                                                charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                i13 = R.string.ActionGroupCallYouInvited;
+                                                tLObject6 = user8;
+                                                formatPluralSpannable = LocaleController.getString(i13);
+                                                str10 = "un2";
+                                                tLObject4 = tLObject6;
+                                                str = str9;
+                                                user2 = tLObject4;
+                                                charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                 charSequence = charSequence2;
                                             } else if (j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                                                 i2 = R.string.ActionGroupCallInvitedYou;
-                                                str = str10;
+                                                str = str9;
                                                 formatPluralSpannable = LocaleController.getString(i2);
-                                                user2 = tLObject9;
-                                                charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                user2 = tLObject7;
+                                                charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                 charSequence = charSequence2;
                                             } else {
-                                                i13 = R.string.ActionGroupCallInvited;
-                                                tLObject7 = user8;
-                                                formatPluralSpannable = replaceWithLink(LocaleController.getString(i13), "un2", tLObject7);
+                                                i12 = R.string.ActionGroupCallInvited;
+                                                tLObject5 = user8;
+                                                formatPluralSpannable = replaceWithLink(LocaleController.getString(i12), "un2", tLObject5);
                                                 this.messageText = formatPluralSpannable;
-                                                str = str10;
-                                                user2 = tLObject9;
-                                                charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                str = str9;
+                                                user2 = tLObject7;
+                                                charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                 charSequence = charSequence2;
                                             }
                                         } else if (isOut()) {
-                                            i12 = R.string.ActionGroupCallYouInvited;
-                                            str = str10;
-                                            charSequence2 = replaceWithLink(LocaleController.getString(i12), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                            i11 = R.string.ActionGroupCallYouInvited;
+                                            str = str9;
+                                            charSequence2 = replaceWithLink(LocaleController.getString(i11), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                             charSequence = charSequence2;
                                         } else {
-                                            str = str10;
-                                            i11 = R.string.ActionGroupCallInvited;
-                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i11), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                            str = str9;
+                                            i10 = R.string.ActionGroupCallInvited;
+                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i10), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                             this.messageText = formatPluralSpannable;
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         }
                                     } else if (messageAction instanceof TLRPC.TL_messageActionGeoProximityReached) {
@@ -8123,36 +8119,36 @@ public class MessageObject {
                                         } else {
                                             TLObject user10 = peerId2 > 0 ? getUser(abstractMap, longSparseArray, peerId2) : getChat(abstractMap2, longSparseArray2, -peerId2);
                                             if (peerId == clientUserId) {
-                                                tLObject6 = user10;
+                                                tLObject4 = user10;
                                                 formatPluralSpannable = LocaleController.formatString(R.string.ActionUserWithinYouRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2));
-                                                str = str10;
-                                                user2 = tLObject6;
-                                                charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                str = str9;
+                                                user2 = tLObject4;
+                                                charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                 charSequence = charSequence2;
                                             } else {
                                                 formatPluralSpannable = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinOtherRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un2", user10);
                                                 this.messageText = formatPluralSpannable;
                                             }
                                         }
-                                        tLObject6 = user9;
-                                        str = str10;
-                                        user2 = tLObject6;
-                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                        tLObject4 = user9;
+                                        str = str9;
+                                        user2 = tLObject4;
+                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                         charSequence = charSequence2;
                                     } else if (messageAction instanceof TLRPC.TL_messageActionCustomAction) {
                                         formatString = messageAction.message;
                                     } else if (messageAction instanceof TLRPC.TL_messageActionChatCreate) {
                                         if (isOut()) {
                                             i = R.string.ActionYouCreateGroup;
-                                            str = str10;
+                                            str = str9;
                                             charSequence2 = LocaleController.getString(i);
                                             charSequence = charSequence2;
                                         } else {
                                             i2 = R.string.ActionCreateGroup;
-                                            str = str10;
+                                            str = str9;
                                             formatPluralSpannable = LocaleController.getString(i2);
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         }
                                     } else if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
@@ -8161,45 +8157,45 @@ public class MessageObject {
                                             if (message3.action.user_id == message3.from_id.user_id) {
                                                 if (isOut()) {
                                                     i = R.string.ActionYouLeftUser;
-                                                    str = str10;
+                                                    str = str9;
                                                     charSequence2 = LocaleController.getString(i);
                                                     charSequence = charSequence2;
                                                 } else {
                                                     i2 = R.string.ActionLeftUser;
-                                                    str = str10;
+                                                    str = str9;
                                                     formatPluralSpannable = LocaleController.getString(i2);
-                                                    user2 = tLObject9;
-                                                    charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                    user2 = tLObject7;
+                                                    charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                     charSequence = charSequence2;
                                                 }
                                             }
                                         }
                                         TLObject user11 = getUser(abstractMap, longSparseArray, this.messageOwner.action.user_id);
                                         if (isOut()) {
-                                            i14 = R.string.ActionYouKickUser;
-                                            tLObject8 = user11;
-                                            formatPluralSpannable = LocaleController.getString(i14);
-                                            str11 = "un2";
-                                            tLObject6 = tLObject8;
-                                            str = str10;
-                                            user2 = tLObject6;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            i13 = R.string.ActionYouKickUser;
+                                            tLObject6 = user11;
+                                            formatPluralSpannable = LocaleController.getString(i13);
+                                            str10 = "un2";
+                                            tLObject4 = tLObject6;
+                                            str = str9;
+                                            user2 = tLObject4;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         } else if (this.messageOwner.action.user_id == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                                             i2 = R.string.ActionKickUserYou;
-                                            str = str10;
+                                            str = str9;
                                             formatPluralSpannable = LocaleController.getString(i2);
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         } else {
-                                            i13 = R.string.ActionKickUser;
-                                            tLObject7 = user11;
-                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i13), "un2", tLObject7);
+                                            i12 = R.string.ActionKickUser;
+                                            tLObject5 = user11;
+                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i12), "un2", tLObject5);
                                             this.messageText = formatPluralSpannable;
-                                            str = str10;
-                                            user2 = tLObject9;
-                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                            str = str9;
+                                            user2 = tLObject7;
+                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                             charSequence = charSequence2;
                                         }
                                     } else {
@@ -8209,7 +8205,7 @@ public class MessageObject {
                                             long peerDialogId = DialogObject.getPeerDialogId(tL_messageActionPaymentRefunded.peer);
                                             charSequence4 = replaceWithLink(LocaleController.formatString(R.string.ActionRefunded, tL_messageActionPaymentRefunded.currency + " " + LocaleController.formatNumber(tL_messageActionPaymentRefunded.total_amount, ',')), "un1", peerDialogId >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId) : getChat(abstractMap2, longSparseArray2, -peerDialogId));
                                         } else {
-                                            String str13 = ", ";
+                                            String str12 = ", ";
                                             if (TlUtils.isInstance(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
                                                 String monoForumTitle = ForumUtilities.getMonoForumTitle(this.currentAccount, DialogObject.getPeerDialogId(this.messageOwner.peer_id), true);
                                                 if (monoForumTitle == null) {
@@ -8232,7 +8228,7 @@ public class MessageObject {
                                                     if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
                                                         formatString = (obtainSuggestionOfferFromReply == null || (amountUtils$Amount = obtainSuggestionOfferFromReply.amount) == null) ? LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, monoForumTitle) : StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, monoForumTitle, amountUtils$Amount.asDecimalString()));
                                                     }
-                                                    str = str10;
+                                                    str = str9;
                                                 }
                                             } else {
                                                 TLRPC.Message message4 = this.messageOwner;
@@ -8262,52 +8258,52 @@ public class MessageObject {
                                                             } else {
                                                                 i2 = R.string.ActionAddUserSelf;
                                                             }
-                                                            str = str10;
+                                                            str = str9;
                                                             charSequence2 = LocaleController.getString(i);
                                                             charSequence = charSequence2;
                                                         } else if (isOut()) {
-                                                            i14 = R.string.ActionYouAddUser;
-                                                            tLObject8 = user12;
-                                                            formatPluralSpannable = LocaleController.getString(i14);
-                                                            str11 = "un2";
-                                                            tLObject6 = tLObject8;
-                                                            str = str10;
-                                                            user2 = tLObject6;
-                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                            i13 = R.string.ActionYouAddUser;
+                                                            tLObject6 = user12;
+                                                            formatPluralSpannable = LocaleController.getString(i13);
+                                                            str10 = "un2";
+                                                            tLObject4 = tLObject6;
+                                                            str = str9;
+                                                            user2 = tLObject4;
+                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                             charSequence = charSequence2;
                                                         } else if (j5 == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                                                             i2 = this.messageOwner.peer_id.channel_id != 0 ? (chat15 == null || !chat15.megagroup) ? R.string.ChannelAddedBy : R.string.MegaAddedBy : R.string.ActionAddUserYou;
                                                         } else {
-                                                            i13 = R.string.ActionAddUser;
-                                                            tLObject7 = user12;
-                                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i13), "un2", tLObject7);
+                                                            i12 = R.string.ActionAddUser;
+                                                            tLObject5 = user12;
+                                                            formatPluralSpannable = replaceWithLink(LocaleController.getString(i12), "un2", tLObject5);
                                                             this.messageText = formatPluralSpannable;
-                                                            str = str10;
-                                                            user2 = tLObject9;
-                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                            str = str9;
+                                                            user2 = tLObject7;
+                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                             charSequence = charSequence2;
                                                         }
-                                                        str = str10;
+                                                        str = str9;
                                                         formatPluralSpannable = LocaleController.getString(i2);
-                                                        user2 = tLObject9;
-                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                        user2 = tLObject7;
+                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                         charSequence = charSequence2;
                                                     } else if (isOut()) {
-                                                        i12 = R.string.ActionYouAddUser;
-                                                        str = str10;
-                                                        charSequence2 = replaceWithLink(LocaleController.getString(i12), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                                        i11 = R.string.ActionYouAddUser;
+                                                        str = str9;
+                                                        charSequence2 = replaceWithLink(LocaleController.getString(i11), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                                         charSequence = charSequence2;
                                                     } else {
-                                                        str = str10;
-                                                        i11 = R.string.ActionAddUser;
-                                                        formatPluralSpannable = replaceWithLink(LocaleController.getString(i11), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                                        str = str9;
+                                                        i10 = R.string.ActionAddUser;
+                                                        formatPluralSpannable = replaceWithLink(LocaleController.getString(i10), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                                         this.messageText = formatPluralSpannable;
-                                                        user2 = tLObject9;
-                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                        user2 = tLObject7;
+                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                         charSequence = charSequence2;
                                                     }
                                                 } else {
-                                                    str = str10;
+                                                    str = str9;
                                                     if (!(messageAction3 instanceof TLRPC.TL_messageActionChatJoinedByLink)) {
                                                         if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayLaunch) {
                                                             TLRPC.TL_messageActionGiveawayLaunch tL_messageActionGiveawayLaunch = (TLRPC.TL_messageActionGiveawayLaunch) messageAction3;
@@ -8332,24 +8328,24 @@ public class MessageObject {
                                                                     chat9 = getChat(abstractMap2, longSparseArray2, j8);
                                                                     boolean isChannelAndNotMegaGroup3 = ChatObject.isChannelAndNotMegaGroup(chat9);
                                                                     TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
-                                                                    if (tLObject9 instanceof TLRPC.User) {
-                                                                        str7 = tLObject9 instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject9).title : str;
+                                                                    if (tLObject7 instanceof TLRPC.User) {
+                                                                        str6 = tLObject7 instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject7).title : str;
                                                                         z = false;
                                                                     } else {
-                                                                        TLRPC.User user13 = (TLRPC.User) tLObject9;
+                                                                        TLRPC.User user13 = (TLRPC.User) tLObject7;
                                                                         z = UserObject.isUserSelf(user13);
-                                                                        str7 = UserObject.getFirstName(user13);
+                                                                        str6 = UserObject.getFirstName(user13);
                                                                     }
                                                                     if (z) {
-                                                                        int i22 = tL_messageActionBoostApply.boosts;
-                                                                        charSequence2 = i22 <= 1 ? LocaleController.formatString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByUserServiceMsg : R.string.BoostingBoostsGroupByUserServiceMsg, str7) : LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByUserServiceMsgCount" : "BoostingBoostsGroupByUserServiceMsgCount", i22, str7);
+                                                                        int i21 = tL_messageActionBoostApply.boosts;
+                                                                        charSequence2 = i21 <= 1 ? LocaleController.formatString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByUserServiceMsg : R.string.BoostingBoostsGroupByUserServiceMsg, str6) : LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByUserServiceMsgCount" : "BoostingBoostsGroupByUserServiceMsgCount", i21, str6);
                                                                     } else {
-                                                                        int i23 = tL_messageActionBoostApply.boosts;
-                                                                        if (i23 <= 1) {
+                                                                        int i22 = tL_messageActionBoostApply.boosts;
+                                                                        if (i22 <= 1) {
                                                                             i = isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByYouServiceMsg : R.string.BoostingBoostsGroupByYouServiceMsg;
                                                                             charSequence2 = LocaleController.getString(i);
                                                                         } else {
-                                                                            charSequence2 = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByYouServiceMsgCount" : "BoostingBoostsGroupByYouServiceMsgCount", i23, new Object[0]);
+                                                                            charSequence2 = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByYouServiceMsgCount" : "BoostingBoostsGroupByYouServiceMsgCount", i22, new Object[0]);
                                                                         }
                                                                     }
                                                                 }
@@ -8357,7 +8353,7 @@ public class MessageObject {
                                                             chat9 = null;
                                                             boolean isChannelAndNotMegaGroup32 = ChatObject.isChannelAndNotMegaGroup(chat9);
                                                             TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply2 = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
-                                                            if (tLObject9 instanceof TLRPC.User) {
+                                                            if (tLObject7 instanceof TLRPC.User) {
                                                             }
                                                             if (z) {
                                                             }
@@ -8401,48 +8397,47 @@ public class MessageObject {
                                                             if (messageAction3 instanceof TLRPC.TL_messageActionPrizeStars) {
                                                                 TLRPC.TL_messageActionPrizeStars tL_messageActionPrizeStars = (TLRPC.TL_messageActionPrizeStars) messageAction3;
                                                                 TLObject chat16 = getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(tL_messageActionPrizeStars.boost_peer));
-                                                                i9 = (int) tL_messageActionPrizeStars.stars;
-                                                                str6 = "ActionStarGiveawayPrize";
-                                                                tLObject5 = chat16;
+                                                                string3 = LocaleController.formatPluralStringComma("ActionStarGiveawayPrize", (int) tL_messageActionPrizeStars.stars);
+                                                                tLObject3 = chat16;
                                                             } else if (messageAction3 instanceof TLRPC.TL_messageActionStarGift) {
                                                                 TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction3;
                                                                 TL_stars.StarGift starGift = tL_messageActionStarGift.gift;
-                                                                int i24 = (starGift != null ? (int) starGift.stars : 0) + ((int) tL_messageActionStarGift.upgrade_stars);
+                                                                int i23 = (starGift != null ? (int) starGift.stars : 0) + ((int) tL_messageActionStarGift.upgrade_stars);
                                                                 TLRPC.Peer peer7 = tL_messageActionStarGift.peer;
                                                                 boolean z4 = peer7 != null && DialogObject.getPeerDialogId(peer7) < 0;
                                                                 TLRPC.User user14 = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
                                                                 TLRPC.Peer peer8 = tL_messageActionStarGift.from_id;
                                                                 if (peer8 != null) {
                                                                     long peerDialogId2 = DialogObject.getPeerDialogId(peer8);
-                                                                    tLObject9 = peerDialogId2 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId2) : getChat(abstractMap2, longSparseArray2, -peerDialogId2);
+                                                                    tLObject7 = peerDialogId2 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId2) : getChat(abstractMap2, longSparseArray2, -peerDialogId2);
                                                                 }
                                                                 TLRPC.Peer peer9 = tL_messageActionStarGift.peer;
                                                                 if (peer9 != null) {
                                                                     long peerDialogId3 = DialogObject.getPeerDialogId(peer9);
-                                                                    tLObject3 = peerDialogId3 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId3) : getChat(abstractMap2, longSparseArray2, -peerDialogId3);
+                                                                    tLObject2 = peerDialogId3 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId3) : getChat(abstractMap2, longSparseArray2, -peerDialogId3);
                                                                 } else {
-                                                                    tLObject3 = null;
+                                                                    tLObject2 = null;
                                                                 }
                                                                 if (UserObject.isService(getDialogId()) && tL_messageActionStarGift.from_id == null) {
-                                                                    i10 = R.string.ActionGiftSomeone;
+                                                                    i9 = R.string.ActionGiftSomeone;
                                                                 } else if (z4) {
-                                                                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionGiftChannel", i24));
+                                                                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionGiftChannel", i23));
                                                                     this.messageText = replaceTags;
-                                                                    CharSequence replaceWithLink2 = replaceWithLink(replaceTags, "un1", tLObject9);
+                                                                    CharSequence replaceWithLink3 = replaceWithLink(replaceTags, "un1", tLObject7);
+                                                                    this.messageText = replaceWithLink3;
+                                                                    replaceWithLink2 = replaceWithLink(replaceWithLink3, "un2", tLObject2);
                                                                     this.messageText = replaceWithLink2;
-                                                                    replaceWithLink = replaceWithLink(replaceWithLink2, "un2", tLObject3);
-                                                                    this.messageText = replaceWithLink;
                                                                     spannableStringBuilder = LocaleController.getString(R.string.ActionStarGift);
                                                                     this.messageTextShort = spannableStringBuilder;
                                                                     indexOf = this.messageText.toString().indexOf("un2");
                                                                     if (indexOf != -1) {
-                                                                        charSequence2 = SpannableStringBuilder.valueOf(this.messageText).replace(indexOf, indexOf + 3, (CharSequence) LocaleController.formatPluralStringComma("Gift2StarsCount", i24));
+                                                                        charSequence2 = SpannableStringBuilder.valueOf(this.messageText).replace(indexOf, indexOf + 3, (CharSequence) LocaleController.formatPluralStringComma("Gift2StarsCount", i23));
                                                                     }
                                                                 } else if (UserObject.isUserSelf(user14)) {
-                                                                    i10 = R.string.ActionGiftSelf;
+                                                                    i9 = R.string.ActionGiftSelf;
                                                                 } else {
-                                                                    boolean z5 = tLObject9 instanceof TLRPC.User;
-                                                                    if (z5 && ((TLRPC.User) tLObject9).self && !tL_messageActionStarGift.forceIn) {
+                                                                    boolean z5 = tLObject7 instanceof TLRPC.User;
+                                                                    if (z5 && ((TLRPC.User) tLObject7).self && !tL_messageActionStarGift.forceIn) {
                                                                         this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", user14);
                                                                         TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_messageActionStarGift.message;
                                                                         if (tL_textWithEntities2 != null && !TextUtils.isEmpty(tL_textWithEntities2.text)) {
@@ -8450,13 +8445,13 @@ public class MessageObject {
                                                                             addEntitiesToText(spannableStringBuilder, tL_messageActionStarGift.message.entities, isOutOwner(), false, false, false);
                                                                         }
                                                                         spannableStringBuilder = LocaleController.getString(R.string.ActionStarGift);
-                                                                    } else if (z5 && UserObject.isService(((TLRPC.User) tLObject9).id)) {
+                                                                    } else if (z5 && UserObject.isService(((TLRPC.User) tLObject7).id)) {
                                                                         this.messageText = TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{"un1"}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)});
                                                                         indexOf = this.messageText.toString().indexOf("un2");
                                                                         if (indexOf != -1) {
                                                                         }
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject9);
+                                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject7);
                                                                         TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_messageActionStarGift.message;
                                                                         if (tL_textWithEntities3 != null && !TextUtils.isEmpty(tL_textWithEntities3.text)) {
                                                                             spannableStringBuilder = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
@@ -8469,8 +8464,8 @@ public class MessageObject {
                                                                     if (indexOf != -1) {
                                                                     }
                                                                 }
-                                                                replaceWithLink = AndroidUtilities.replaceTags(LocaleController.getString(i10));
-                                                                this.messageText = replaceWithLink;
+                                                                replaceWithLink2 = AndroidUtilities.replaceTags(LocaleController.getString(i9));
+                                                                this.messageText = replaceWithLink2;
                                                                 spannableStringBuilder = LocaleController.getString(R.string.ActionStarGift);
                                                                 this.messageTextShort = spannableStringBuilder;
                                                                 indexOf = this.messageText.toString().indexOf("un2");
@@ -8479,23 +8474,25 @@ public class MessageObject {
                                                             } else if (messageAction3 instanceof TLRPC.TL_messageActionStarGiftUnique) {
                                                                 TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction3;
                                                                 TLRPC.User user15 = getUser(abstractMap, longSparseArray, getDialogId());
-                                                                if (tL_messageActionStarGiftUnique.resale_stars > 0) {
+                                                                TL_stars.StarsAmount starsAmount = tL_messageActionStarGiftUnique.resale_amount;
+                                                                if (starsAmount != null) {
+                                                                    AmountUtils$Amount ofSafe = AmountUtils$Amount.ofSafe(starsAmount);
                                                                     long dialogId = getDialogId();
                                                                     TLRPC.Peer peer10 = tL_messageActionStarGiftUnique.from_id;
                                                                     if (peer10 != null) {
                                                                         dialogId = DialogObject.getPeerDialogId(peer10);
                                                                     }
-                                                                    TLObject user16 = dialogId >= 0 ? getUser(abstractMap, longSparseArray, dialogId) : getChat(abstractMap2, longSparseArray2, -dialogId);
+                                                                    tLObject7 = dialogId >= 0 ? getUser(abstractMap, longSparseArray, dialogId) : getChat(abstractMap2, longSparseArray2, -dialogId);
                                                                     TLRPC.Peer peer11 = tL_messageActionStarGiftUnique.peer;
                                                                     if (peer11 != null) {
                                                                         long peerDialogId4 = DialogObject.getPeerDialogId(peer11);
                                                                         user3 = peerDialogId4 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId4) : getChat(abstractMap2, longSparseArray2, -peerDialogId4);
-                                                                        string3 = LocaleController.formatPluralStringComma("ActionUniqueGiftResaleService", (int) tL_messageActionStarGiftUnique.resale_stars);
-                                                                        tLObject2 = user16;
+                                                                        this.messageText = AndroidUtilities.replaceTags(ofSafe.currency == AmountUtils$Currency.TON ? LocaleController.formatString(R.string.ActionUniqueGiftResaleServiceTON, ofSafe.asFormatString()) : LocaleController.formatPluralStringComma("ActionUniqueGiftResaleService", (int) ofSafe.asDecimal()));
+                                                                        replaceWithLink = replaceWithLink(this.messageText, "un1", tLObject7);
                                                                     } else {
-                                                                        str6 = isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound";
-                                                                        i9 = (int) tL_messageActionStarGiftUnique.resale_stars;
-                                                                        tLObject5 = user16;
+                                                                        formatPluralSpannable = AndroidUtilities.replaceTags(ofSafe.currency == AmountUtils$Currency.TON ? LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleOutboundTON : R.string.ActionUniqueGiftResaleInboundTON, ofSafe.asFormatString()) : LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound", (int) ofSafe.asDecimal()));
+                                                                        user2 = tLObject7;
+                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                                     }
                                                                 } else {
                                                                     if (tL_messageActionStarGiftUnique.upgrade) {
@@ -8519,40 +8516,35 @@ public class MessageObject {
                                                                         if (peer13 != null) {
                                                                             dialogId2 = DialogObject.getPeerDialogId(peer13);
                                                                         }
-                                                                        TLObject user17 = dialogId2 >= 0 ? getUser(abstractMap, longSparseArray, dialogId2) : getChat(abstractMap2, longSparseArray2, -dialogId2);
+                                                                        TLObject user16 = dialogId2 >= 0 ? getUser(abstractMap, longSparseArray, dialogId2) : getChat(abstractMap2, longSparseArray2, -dialogId2);
                                                                         TLRPC.Peer peer14 = tL_messageActionStarGiftUnique.peer;
                                                                         if (peer14 != null) {
                                                                             long peerDialogId6 = DialogObject.getPeerDialogId(peer14);
                                                                             user3 = peerDialogId6 >= 0 ? getUser(abstractMap, longSparseArray, peerDialogId6) : getChat(abstractMap2, longSparseArray2, -peerDialogId6);
-                                                                            string3 = LocaleController.getString(R.string.ActionUniqueGiftTransferService);
-                                                                            tLObject2 = user17;
+                                                                            SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferService));
+                                                                            this.messageText = replaceTags2;
+                                                                            replaceWithLink = replaceWithLink(replaceTags2, "un1", user16);
                                                                         } else if (isOutOwner()) {
                                                                             i8 = R.string.ActionUniqueGiftTransferOutbound;
-                                                                            tLObject = user17;
+                                                                            tLObject = user16;
                                                                         } else {
                                                                             i8 = R.string.ActionUniqueGiftTransferInbound;
-                                                                            tLObject = user17;
+                                                                            tLObject = user16;
                                                                         }
                                                                     }
-                                                                    string4 = LocaleController.getString(i8);
-                                                                    tLObject4 = tLObject;
-                                                                    formatPluralSpannable = AndroidUtilities.replaceTags(string4);
-                                                                    user2 = tLObject4;
-                                                                    charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                    string3 = LocaleController.getString(i8);
+                                                                    tLObject3 = tLObject;
                                                                 }
-                                                                SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(string3);
-                                                                this.messageText = replaceTags2;
-                                                                CharSequence replaceWithLink3 = replaceWithLink(replaceTags2, "un1", tLObject2);
-                                                                this.messageText = replaceWithLink3;
+                                                                this.messageText = replaceWithLink;
                                                                 user2 = user3;
-                                                                formatPluralSpannable = replaceWithLink3;
-                                                                str11 = "un2";
-                                                                charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                formatPluralSpannable = replaceWithLink;
+                                                                str10 = "un2";
+                                                                charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                             } else {
-                                                                str10 = str;
+                                                                str9 = str;
                                                                 if (messageAction3 instanceof TLRPC.TL_messageActionGiftStars) {
-                                                                    boolean z6 = tLObject9 instanceof TLRPC.User;
-                                                                    this.messageText = (z6 && ((TLRPC.User) tLObject9).self) ? replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, message4.peer_id.user_id)) : (z6 && UserObject.isService(((TLRPC.User) tLObject9).id)) ? TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{"un1"}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)}) : replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject9);
+                                                                    boolean z6 = tLObject7 instanceof TLRPC.User;
+                                                                    this.messageText = (z6 && ((TLRPC.User) tLObject7).self) ? replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, message4.peer_id.user_id)) : (z6 && UserObject.isService(((TLRPC.User) tLObject7).id)) ? TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{"un1"}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)}) : replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject7);
                                                                     int indexOf2 = this.messageText.toString().indexOf("un2");
                                                                     if (indexOf2 != -1) {
                                                                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(this.messageText);
@@ -8574,12 +8566,12 @@ public class MessageObject {
                                                                         }
                                                                         formatString = valueOf.replace(indexOf2, indexOf2 + 3, (CharSequence) formatCurrency);
                                                                     }
-                                                                    str = str10;
+                                                                    str = str9;
                                                                 } else {
                                                                     if ((messageAction3 instanceof TLRPC.TL_messageActionGiftCode) && ((TLRPC.TL_messageActionGiftCode) messageAction3).boost_peer != null) {
                                                                         i = R.string.BoostingReceivedGiftNoName;
                                                                     } else if (TlUtils.isInstance(messageAction3, TLRPC.TL_messageActionGiftPremium.class, TLRPC.TL_messageActionGiftCode.class, TLRPC.TL_messageActionGiftTon.class)) {
-                                                                        this.messageText = ((tLObject9 instanceof TLRPC.User) && ((TLRPC.User) tLObject9).self) ? replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id)) : this.messageOwner.action instanceof TLRPC.TL_messageActionGiftTon ? AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftTonInbound)) : replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject9);
+                                                                        this.messageText = ((tLObject7 instanceof TLRPC.User) && ((TLRPC.User) tLObject7).self) ? replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id)) : this.messageOwner.action instanceof TLRPC.TL_messageActionGiftTon ? AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftTonInbound)) : replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject7);
                                                                         int indexOf3 = this.messageText.toString().indexOf("un2");
                                                                         if (indexOf3 != -1) {
                                                                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(this.messageText);
@@ -8618,10 +8610,10 @@ public class MessageObject {
                                                                                         i = isVideoAvatar() ? R.string.ActionChannelChangedVideo : R.string.ActionChannelChangedPhoto;
                                                                                     } else if (isOut()) {
                                                                                         i2 = isVideoAvatar() ? R.string.ActionChangedVideo : R.string.ActionChangedPhoto;
-                                                                                        str = str10;
+                                                                                        str = str9;
                                                                                         formatPluralSpannable = LocaleController.getString(i2);
-                                                                                        user2 = tLObject9;
-                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                                        user2 = tLObject7;
+                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                                                     } else {
                                                                                         i = isVideoAvatar() ? R.string.ActionYouChangedVideo : R.string.ActionYouChangedPhoto;
                                                                                     }
@@ -8642,9 +8634,9 @@ public class MessageObject {
                                                                                         i7 = R.string.ActionChannelChangedTitle;
                                                                                     } else if (isOut()) {
                                                                                         formatPluralSpannable = LocaleController.getString(R.string.ActionChangedTitle).replace("un2", this.messageOwner.action.title);
-                                                                                        str = str10;
-                                                                                        user2 = tLObject9;
-                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                                        str = str9;
+                                                                                        user2 = tLObject7;
+                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                                                     } else {
                                                                                         i7 = R.string.ActionYouChangedTitle;
                                                                                     }
@@ -8666,10 +8658,10 @@ public class MessageObject {
                                                                                         i = R.string.ActionChannelRemovedPhoto;
                                                                                     } else if (isOut()) {
                                                                                         i2 = R.string.ActionRemovedPhoto;
-                                                                                        str = str10;
+                                                                                        str = str9;
                                                                                         formatPluralSpannable = LocaleController.getString(i2);
-                                                                                        user2 = tLObject9;
-                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                                        user2 = tLObject7;
+                                                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                                                     } else {
                                                                                         i = R.string.ActionYouRemovedPhoto;
                                                                                     }
@@ -8683,19 +8675,19 @@ public class MessageObject {
                                                                         } else if (!(messageAction6 instanceof TLRPC.TL_messageActionTTLChange)) {
                                                                             if (messageAction6 instanceof TLRPC.TL_messageActionRequestedPeer) {
                                                                                 ArrayList arrayList4 = new ArrayList();
+                                                                                int i24 = 0;
                                                                                 int i25 = 0;
                                                                                 int i26 = 0;
-                                                                                int i27 = 0;
                                                                                 for (TLRPC.Peer peer18 : ((TLRPC.TL_messageActionRequestedPeer) this.messageOwner.action).peers) {
                                                                                     boolean z7 = peer18 instanceof TLRPC.TL_peerUser;
                                                                                     if (z7) {
-                                                                                        str5 = str12;
+                                                                                        str5 = str11;
                                                                                         obj = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peer18.user_id));
                                                                                         if (obj == null) {
                                                                                             obj = getUser(abstractMap, longSparseArray, peer18.user_id);
                                                                                         }
                                                                                     } else {
-                                                                                        str5 = str12;
+                                                                                        str5 = str11;
                                                                                         if (peer18 instanceof TLRPC.TL_peerChat) {
                                                                                             obj = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(peer18.chat_id));
                                                                                             if (obj == null) {
@@ -8713,47 +8705,47 @@ public class MessageObject {
                                                                                         }
                                                                                     }
                                                                                     if (z7) {
-                                                                                        i25++;
+                                                                                        i24++;
                                                                                     } else if (peer18 instanceof TLRPC.TL_peerChat) {
-                                                                                        i27++;
-                                                                                    } else {
                                                                                         i26++;
+                                                                                    } else {
+                                                                                        i25++;
                                                                                     }
                                                                                     if (obj != null) {
                                                                                         arrayList4.add(obj);
                                                                                     }
-                                                                                    str12 = str5;
+                                                                                    str11 = str5;
                                                                                 }
-                                                                                String str14 = str12;
-                                                                                if (i25 > 0 && i25 != arrayList4.size()) {
-                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerUserPlural", i25);
-                                                                                } else if (i26 > 0 && i26 != arrayList4.size()) {
-                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerChannelPlural", i26);
-                                                                                } else if (i27 <= 0 || i27 == arrayList4.size()) {
+                                                                                String str13 = str11;
+                                                                                if (i24 > 0 && i24 != arrayList4.size()) {
+                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerUserPlural", i24);
+                                                                                } else if (i25 > 0 && i25 != arrayList4.size()) {
+                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerChannelPlural", i25);
+                                                                                } else if (i26 <= 0 || i26 == arrayList4.size()) {
                                                                                     SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-                                                                                    int i28 = 0;
-                                                                                    while (i28 < arrayList4.size()) {
-                                                                                        spannableStringBuilder3.append(replaceWithLink("un1", "un1", (TLObject) arrayList4.get(i28)));
-                                                                                        String str15 = str13;
-                                                                                        if (i28 < arrayList4.size() - 1) {
-                                                                                            spannableStringBuilder3.append((CharSequence) str15);
+                                                                                    int i27 = 0;
+                                                                                    while (i27 < arrayList4.size()) {
+                                                                                        spannableStringBuilder3.append(replaceWithLink("un1", "un1", (TLObject) arrayList4.get(i27)));
+                                                                                        String str14 = str12;
+                                                                                        if (i27 < arrayList4.size() - 1) {
+                                                                                            spannableStringBuilder3.append((CharSequence) str14);
                                                                                         }
-                                                                                        i28++;
-                                                                                        str13 = str15;
+                                                                                        i27++;
+                                                                                        str12 = str14;
                                                                                     }
                                                                                     replaceCharSequence = AndroidUtilities.replaceCharSequence("un1", LocaleController.getString(R.string.ActionRequestedPeer), spannableStringBuilder3);
                                                                                 } else {
-                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerChatPlural", i27);
+                                                                                    replaceCharSequence = LocaleController.getPluralString("ActionRequestedPeerChatPlural", i26);
                                                                                 }
                                                                                 this.messageText = replaceCharSequence;
-                                                                                TLObject user18 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getDialogId()));
-                                                                                if (user18 == null) {
-                                                                                    user18 = getUser(abstractMap, longSparseArray, getDialogId());
+                                                                                TLObject user17 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getDialogId()));
+                                                                                if (user17 == null) {
+                                                                                    user17 = getUser(abstractMap, longSparseArray, getDialogId());
                                                                                 }
-                                                                                user2 = user18;
+                                                                                user2 = user17;
                                                                                 formatPluralSpannable = this.messageText;
-                                                                                str = str10;
-                                                                                str11 = str14;
+                                                                                str = str9;
+                                                                                str10 = str13;
                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionSetMessagesTTL) {
                                                                                 TLRPC.TL_messageActionSetMessagesTTL tL_messageActionSetMessagesTTL = (TLRPC.TL_messageActionSetMessagesTTL) messageAction6;
                                                                                 TLRPC.Peer peer19 = message5.peer_id;
@@ -8779,32 +8771,32 @@ public class MessageObject {
                                                                                                         chat17 = tL_messageActionSetMessagesTTL.auto_setting_from > 0 ? MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from)) : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tL_messageActionSetMessagesTTL.auto_setting_from));
                                                                                                     }
                                                                                                     if (chat17 != null) {
-                                                                                                        tLObject9 = chat17;
+                                                                                                        tLObject7 = chat17;
                                                                                                     }
                                                                                                     formatPluralSpannable = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AutoDeleteGlobalAction, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period)));
-                                                                                                    str = str10;
-                                                                                                    user2 = tLObject9;
+                                                                                                    str = str9;
+                                                                                                    user2 = tLObject7;
                                                                                                 }
                                                                                             } else if (tL_messageActionSetMessagesTTL.period != 0) {
                                                                                                 if (isOut()) {
                                                                                                     formatString = LocaleController.formatString(R.string.ActionTTLYouChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period));
                                                                                                 } else {
                                                                                                     formatPluralSpannable = LocaleController.formatString(R.string.ActionTTLChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period));
-                                                                                                    str = str10;
-                                                                                                    user2 = tLObject9;
+                                                                                                    str = str9;
+                                                                                                    user2 = tLObject7;
                                                                                                 }
                                                                                             } else if (isOut()) {
                                                                                                 i = R.string.ActionTTLYouDisabled;
                                                                                             } else {
                                                                                                 i2 = R.string.ActionTTLDisabled;
-                                                                                                str = str10;
+                                                                                                str = str9;
                                                                                                 formatPluralSpannable = LocaleController.getString(i2);
-                                                                                                user2 = tLObject9;
+                                                                                                user2 = tLObject7;
                                                                                             }
                                                                                         } else {
-                                                                                            int i29 = tL_messageActionSetMessagesTTL.period;
-                                                                                            if (i29 != 0) {
-                                                                                                formatString = LocaleController.formatString(R.string.ActionTTLChannelChanged, LocaleController.formatTTLString(i29));
+                                                                                            int i28 = tL_messageActionSetMessagesTTL.period;
+                                                                                            if (i28 != 0) {
+                                                                                                formatString = LocaleController.formatString(R.string.ActionTTLChannelChanged, LocaleController.formatTTLString(i28));
                                                                                             } else {
                                                                                                 i = R.string.ActionTTLChannelDisabled;
                                                                                             }
@@ -8821,24 +8813,24 @@ public class MessageObject {
                                                                                 long j14 = message5.date * 1000;
                                                                                 if (LocaleController.getInstance().getFormatterDay() == null || LocaleController.getInstance().getFormatterYear() == null) {
                                                                                     StringBuilder sb4 = new StringBuilder();
-                                                                                    str = str10;
+                                                                                    str = str9;
                                                                                     sb4.append(str);
                                                                                     sb4.append(this.messageOwner.date);
                                                                                     sb = sb4.toString();
                                                                                 } else {
                                                                                     sb = LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(j14), LocaleController.getInstance().getFormatterDay().format(j14));
-                                                                                    str = str10;
+                                                                                    str = str9;
                                                                                 }
                                                                                 TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
                                                                                 if (currentUser == null) {
                                                                                     currentUser = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
                                                                                 }
                                                                                 String firstName = currentUser != null ? UserObject.getFirstName(currentUser) : str;
-                                                                                int i30 = R.string.NotificationUnrecognizedDevice;
+                                                                                int i29 = R.string.NotificationUnrecognizedDevice;
                                                                                 TLRPC.MessageAction messageAction7 = this.messageOwner.action;
-                                                                                charSequence2 = LocaleController.formatString(i30, firstName, sb, messageAction7.title, messageAction7.address);
+                                                                                charSequence2 = LocaleController.formatString(i29, firstName, sb, messageAction7.title, messageAction7.address);
                                                                             } else {
-                                                                                str = str10;
+                                                                                str = str9;
                                                                                 if ((messageAction6 instanceof TLRPC.TL_messageActionUserJoined) || (messageAction6 instanceof TLRPC.TL_messageActionContactSignUp)) {
                                                                                     charSequence2 = LocaleController.formatString(R.string.NotificationContactJoined, UserObject.getUserName(user));
                                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
@@ -8902,8 +8894,8 @@ public class MessageObject {
                                                                                             }
                                                                                             String trim = str4 != null ? str4.trim() : "DELETED";
                                                                                             TLRPC.MessageAction messageAction8 = this.messageOwner.action;
-                                                                                            int i31 = messageAction8.flags;
-                                                                                            if ((i31 & 8) > 0) {
+                                                                                            int i30 = messageAction8.flags;
+                                                                                            if ((i30 & 8) > 0) {
                                                                                                 if (((TLRPC.TL_messageActionTopicEdit) messageAction8).hidden) {
                                                                                                     this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicHidden2), "%s", user);
                                                                                                     i6 = R.string.TopicHidden;
@@ -8911,9 +8903,9 @@ public class MessageObject {
                                                                                                     this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicShown2), "%s", user);
                                                                                                     i6 = R.string.TopicShown;
                                                                                                 }
-                                                                                            } else if ((4 & i31) <= 0) {
-                                                                                                int i32 = 2 & i31;
-                                                                                                if (i32 != 0 && (i31 & 1) != 0) {
+                                                                                            } else if ((4 & i30) <= 0) {
+                                                                                                int i31 = 2 & i30;
+                                                                                                if (i31 != 0 && (i30 & 1) != 0) {
                                                                                                     TLRPC.TL_forumTopic tL_forumTopic2 = new TLRPC.TL_forumTopic();
                                                                                                     tL_forumTopic2.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
                                                                                                     tL_forumTopic2.title = tL_messageActionTopicEdit.title;
@@ -8922,7 +8914,7 @@ public class MessageObject {
                                                                                                     this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicChangeIconAndTitleTo), trim), charSequence3);
                                                                                                     this.messageTextShort = LocaleController.getString(R.string.TopicRenamed);
                                                                                                     i5 = R.string.TopicChangeIconAndTitleToInReply;
-                                                                                                } else if (i32 != 0) {
+                                                                                                } else if (i31 != 0) {
                                                                                                     TLRPC.TL_forumTopic tL_forumTopic3 = new TLRPC.TL_forumTopic();
                                                                                                     tL_forumTopic3.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
                                                                                                     tL_forumTopic3.title = str;
@@ -8931,7 +8923,7 @@ public class MessageObject {
                                                                                                     this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicIconChangedTo), trim), charSequence3);
                                                                                                     this.messageTextShort = LocaleController.getString(R.string.TopicIconChanged);
                                                                                                     i5 = R.string.TopicIconChangedToInReply;
-                                                                                                } else if ((1 & i31) != 0) {
+                                                                                                } else if ((1 & i30) != 0) {
                                                                                                     this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicRenamedTo), trim), tL_messageActionTopicEdit.title);
                                                                                                     this.messageTextShort = LocaleController.getString(R.string.TopicRenamed);
                                                                                                     string = LocaleController.getString(R.string.TopicRenamedToInReply);
@@ -8953,9 +8945,9 @@ public class MessageObject {
                                                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionConferenceCall) {
                                                                                             TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction6;
                                                                                             this.messageText = LocaleController.getString(isOutOwner() ? R.string.ConferenceCallOutgoing : tL_messageActionConferenceCall.missed ? R.string.ConferenceCallMissed : R.string.ConferenceCallIncoming);
-                                                                                            int i33 = tL_messageActionConferenceCall.duration;
-                                                                                            if (i33 > 0) {
-                                                                                                String formatCallDuration = LocaleController.formatCallDuration(i33);
+                                                                                            int i32 = tL_messageActionConferenceCall.duration;
+                                                                                            if (i32 > 0) {
+                                                                                                String formatCallDuration = LocaleController.formatCallDuration(i32);
                                                                                                 String formatString2 = LocaleController.formatString(R.string.CallMessageWithDuration, this.messageText, formatCallDuration);
                                                                                                 this.messageText = formatString2;
                                                                                                 String charSequence5 = formatString2.toString();
@@ -8977,9 +8969,9 @@ public class MessageObject {
                                                                                             TLRPC.TL_messageActionPhoneCall tL_messageActionPhoneCall = (TLRPC.TL_messageActionPhoneCall) messageAction6;
                                                                                             boolean z8 = tL_messageActionPhoneCall.reason instanceof TLRPC.TL_phoneCallDiscardReasonMissed;
                                                                                             this.messageText = LocaleController.getString((isFromUser() && this.messageOwner.from_id.user_id == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? z8 ? tL_messageActionPhoneCall.video ? R.string.CallMessageVideoOutgoingMissed : R.string.CallMessageOutgoingMissed : tL_messageActionPhoneCall.video ? R.string.CallMessageVideoOutgoing : R.string.CallMessageOutgoing : z8 ? tL_messageActionPhoneCall.video ? R.string.CallMessageVideoIncomingMissed : R.string.CallMessageIncomingMissed : tL_messageActionPhoneCall.reason instanceof TLRPC.TL_phoneCallDiscardReasonBusy ? tL_messageActionPhoneCall.video ? R.string.CallMessageVideoIncomingDeclined : R.string.CallMessageIncomingDeclined : tL_messageActionPhoneCall.video ? R.string.CallMessageVideoIncoming : R.string.CallMessageIncoming);
-                                                                                            int i34 = tL_messageActionPhoneCall.duration;
-                                                                                            if (i34 > 0) {
-                                                                                                String formatCallDuration2 = LocaleController.formatCallDuration(i34);
+                                                                                            int i33 = tL_messageActionPhoneCall.duration;
+                                                                                            if (i33 > 0) {
+                                                                                                String formatCallDuration2 = LocaleController.formatCallDuration(i33);
                                                                                                 String formatString3 = LocaleController.formatString(R.string.CallMessageWithDuration, this.messageText, formatCallDuration2);
                                                                                                 this.messageText = formatString3;
                                                                                                 String charSequence6 = formatString3.toString();
@@ -9005,32 +8997,32 @@ public class MessageObject {
                                                                                             boolean z9 = messageAction6 instanceof TLRPC.TL_messageActionBotAllowed;
                                                                                             if (z9) {
                                                                                                 TLRPC.TL_messageActionBotAllowed tL_messageActionBotAllowed = (TLRPC.TL_messageActionBotAllowed) messageAction6;
-                                                                                                String str16 = tL_messageActionBotAllowed.domain;
+                                                                                                String str15 = tL_messageActionBotAllowed.domain;
                                                                                                 TLRPC.BotApp botApp = tL_messageActionBotAllowed.app;
                                                                                                 if (tL_messageActionBotAllowed.from_request) {
                                                                                                     i = R.string.ActionBotAllowedWebapp;
                                                                                                 } else if (botApp != null) {
-                                                                                                    String str17 = botApp.title;
-                                                                                                    if (str17 == null) {
-                                                                                                        str17 = str;
-                                                                                                    }
-                                                                                                    String string5 = LocaleController.getString(R.string.ActionBotAllowedApp);
-                                                                                                    int indexOf6 = string5.indexOf("%1$s");
-                                                                                                    SpannableString spannableString5 = new SpannableString(String.format(string5, str17));
-                                                                                                    TLRPC.User user19 = getUser(abstractMap, longSparseArray, getDialogId());
-                                                                                                    if (indexOf6 >= 0 && user19 != null && (publicUsername2 = UserObject.getPublicUsername(user19)) != null) {
-                                                                                                        spannableString5.setSpan(new URLSpanNoUnderlineBold("https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername2 + "/" + botApp.short_name), indexOf6, str17.length() + indexOf6, 33);
-                                                                                                    }
-                                                                                                    charSequence = spannableString5;
-                                                                                                } else {
+                                                                                                    String str16 = botApp.title;
                                                                                                     if (str16 == null) {
                                                                                                         str16 = str;
                                                                                                     }
-                                                                                                    String string6 = LocaleController.getString(R.string.ActionBotAllowed);
-                                                                                                    int indexOf7 = string6.indexOf("%1$s");
-                                                                                                    SpannableString spannableString6 = new SpannableString(String.format(string6, str16));
-                                                                                                    if (indexOf7 >= 0 && !TextUtils.isEmpty(str16)) {
-                                                                                                        spannableString6.setSpan(new URLSpanNoUnderlineBold("http://" + str16), indexOf7, str16.length() + indexOf7, 33);
+                                                                                                    String string4 = LocaleController.getString(R.string.ActionBotAllowedApp);
+                                                                                                    int indexOf6 = string4.indexOf("%1$s");
+                                                                                                    SpannableString spannableString5 = new SpannableString(String.format(string4, str16));
+                                                                                                    TLRPC.User user18 = getUser(abstractMap, longSparseArray, getDialogId());
+                                                                                                    if (indexOf6 >= 0 && user18 != null && (publicUsername2 = UserObject.getPublicUsername(user18)) != null) {
+                                                                                                        spannableString5.setSpan(new URLSpanNoUnderlineBold("https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername2 + "/" + botApp.short_name), indexOf6, str16.length() + indexOf6, 33);
+                                                                                                    }
+                                                                                                    charSequence = spannableString5;
+                                                                                                } else {
+                                                                                                    if (str15 == null) {
+                                                                                                        str15 = str;
+                                                                                                    }
+                                                                                                    String string5 = LocaleController.getString(R.string.ActionBotAllowed);
+                                                                                                    int indexOf7 = string5.indexOf("%1$s");
+                                                                                                    SpannableString spannableString6 = new SpannableString(String.format(string5, str15));
+                                                                                                    if (indexOf7 >= 0 && !TextUtils.isEmpty(str15)) {
+                                                                                                        spannableString6.setSpan(new URLSpanNoUnderlineBold("http://" + str15), indexOf7, str15.length() + indexOf7, 33);
                                                                                                     }
                                                                                                     charSequence = spannableString6;
                                                                                                 }
@@ -9040,10 +9032,10 @@ public class MessageObject {
                                                                                                 TLRPC.TL_messageActionSecureValuesSent tL_messageActionSecureValuesSent = (TLRPC.TL_messageActionSecureValuesSent) messageAction6;
                                                                                                 StringBuilder sb5 = new StringBuilder();
                                                                                                 int size2 = tL_messageActionSecureValuesSent.types.size();
-                                                                                                for (int i35 = 0; i35 < size2; i35++) {
-                                                                                                    TLRPC.SecureValueType secureValueType = tL_messageActionSecureValuesSent.types.get(i35);
+                                                                                                for (int i34 = 0; i34 < size2; i34++) {
+                                                                                                    TLRPC.SecureValueType secureValueType = tL_messageActionSecureValuesSent.types.get(i34);
                                                                                                     if (sb5.length() > 0) {
-                                                                                                        sb5.append(str13);
+                                                                                                        sb5.append(str12);
                                                                                                     }
                                                                                                     if (secureValueType instanceof TLRPC.TL_secureValueTypePhone) {
                                                                                                         i4 = R.string.ActionBotDocumentPhone;
@@ -9079,19 +9071,19 @@ public class MessageObject {
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionWebViewDataSent) {
                                                                                                 charSequence2 = LocaleController.formatString(R.string.ActionBotWebViewData, ((TLRPC.TL_messageActionWebViewDataSent) messageAction6).text);
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionSetChatTheme) {
-                                                                                                String str18 = ((TLRPC.TL_messageActionSetChatTheme) messageAction6).emoticon;
+                                                                                                String str17 = ((TLRPC.TL_messageActionSetChatTheme) messageAction6).emoticon;
                                                                                                 String firstName2 = UserObject.getFirstName(user);
                                                                                                 boolean z10 = user == null && chat13 != null;
                                                                                                 if (z10) {
                                                                                                     firstName2 = chat13.title;
                                                                                                 }
                                                                                                 boolean isUserSelf = UserObject.isUserSelf(user);
-                                                                                                if (TextUtils.isEmpty(str18)) {
-                                                                                                    charSequence2 = isUserSelf ? LocaleController.formatString(R.string.ChatThemeDisabledYou, new Object[0]) : LocaleController.formatString(z10 ? R.string.ChannelThemeDisabled : R.string.ChatThemeDisabled, firstName2, str18);
+                                                                                                if (TextUtils.isEmpty(str17)) {
+                                                                                                    charSequence2 = isUserSelf ? LocaleController.formatString(R.string.ChatThemeDisabledYou, new Object[0]) : LocaleController.formatString(z10 ? R.string.ChannelThemeDisabled : R.string.ChatThemeDisabled, firstName2, str17);
                                                                                                 } else if (isUserSelf) {
-                                                                                                    charSequence2 = LocaleController.formatString(R.string.ChatThemeChangedYou, str18);
+                                                                                                    charSequence2 = LocaleController.formatString(R.string.ChatThemeChangedYou, str17);
                                                                                                 } else {
-                                                                                                    charSequence2 = LocaleController.formatString(z10 ? R.string.ChannelThemeChangedTo : R.string.ChatThemeChangedTo, firstName2, str18);
+                                                                                                    charSequence2 = LocaleController.formatString(z10 ? R.string.ChannelThemeChangedTo : R.string.ChatThemeChangedTo, firstName2, str17);
                                                                                                 }
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionChatJoinedByRequest) {
                                                                                                 if (UserObject.isUserSelf(user)) {
@@ -9099,7 +9091,7 @@ public class MessageObject {
                                                                                                 } else {
                                                                                                     i2 = R.string.UserAcceptedToGroupAction;
                                                                                                     formatPluralSpannable = LocaleController.getString(i2);
-                                                                                                    user2 = tLObject9;
+                                                                                                    user2 = tLObject7;
                                                                                                 }
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesPrice) {
                                                                                                 TLRPC.TL_messageActionPaidMessagesPrice tL_messageActionPaidMessagesPrice = (TLRPC.TL_messageActionPaidMessagesPrice) messageAction6;
@@ -9116,7 +9108,7 @@ public class MessageObject {
                                                                                                         i2 = R.string.PostSuggestionsDisabledUpdated;
                                                                                                     }
                                                                                                     formatPluralSpannable = LocaleController.getString(i2);
-                                                                                                    user2 = tLObject9;
+                                                                                                    user2 = tLObject7;
                                                                                                 } else if (isOutOwner()) {
                                                                                                     charSequence2 = LocaleController.formatPluralStringComma("PaidMessagesPriceUpdatedOut", (int) tL_messageActionPaidMessagesPrice.stars);
                                                                                                 } else {
@@ -9124,7 +9116,7 @@ public class MessageObject {
                                                                                                     str3 = "PaidMessagesPriceUpdated";
                                                                                                 }
                                                                                                 formatPluralSpannable = LocaleController.formatPluralStringComma(str3, i3);
-                                                                                                user2 = tLObject9;
+                                                                                                user2 = tLObject7;
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesRefunded) {
                                                                                                 TLRPC.TL_messageActionPaidMessagesRefunded tL_messageActionPaidMessagesRefunded = (TLRPC.TL_messageActionPaidMessagesRefunded) messageAction6;
                                                                                                 if (isOutOwner()) {
@@ -9136,7 +9128,7 @@ public class MessageObject {
                                                                                                     i3 = (int) tL_messageActionPaidMessagesRefunded.stars;
                                                                                                     str3 = "PaidMessagesRefunded";
                                                                                                     formatPluralSpannable = LocaleController.formatPluralStringComma(str3, i3);
-                                                                                                    user2 = tLObject9;
+                                                                                                    user2 = tLObject7;
                                                                                                 }
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionTodoCompletions) {
                                                                                                 TLRPC.TL_messageActionTodoCompletions tL_messageActionTodoCompletions = (TLRPC.TL_messageActionTodoCompletions) messageAction6;
@@ -9145,8 +9137,8 @@ public class MessageObject {
                                                                                                 MessageObject messageObject = this.replyMessageObject;
                                                                                                 if (messageObject != null && (getMedia(messageObject.messageOwner) instanceof TLRPC.TL_messageMediaToDo)) {
                                                                                                     TLRPC.TL_messageMediaToDo tL_messageMediaToDo2 = (TLRPC.TL_messageMediaToDo) getMedia(this.replyMessageObject.messageOwner);
-                                                                                                    for (int i36 = 0; i36 < tL_messageMediaToDo2.todo.list.size(); i36++) {
-                                                                                                        TLRPC.TodoItem todoItem2 = tL_messageMediaToDo2.todo.list.get(i36);
+                                                                                                    for (int i35 = 0; i35 < tL_messageMediaToDo2.todo.list.size(); i35++) {
+                                                                                                        TLRPC.TodoItem todoItem2 = tL_messageMediaToDo2.todo.list.get(i35);
                                                                                                         if (todoItem2.id == intValue) {
                                                                                                             todoItem = todoItem2;
                                                                                                             break;
@@ -9161,14 +9153,14 @@ public class MessageObject {
                                                                                                         charSequence2 = LocaleController.formatSpannable(z11 ? R.string.TodoTaskCompletedOut : R.string.TodoTaskNotCompletedOut, formatTaskTitle);
                                                                                                     } else {
                                                                                                         formatPluralSpannable = LocaleController.formatSpannable(z11 ? R.string.TodoTaskCompleted : R.string.TodoTaskNotCompleted, formatTaskTitle);
-                                                                                                        user2 = tLObject9;
+                                                                                                        user2 = tLObject7;
                                                                                                     }
                                                                                                 } else if (isOutOwner()) {
                                                                                                     i = z11 ? R.string.TodoTaskCompletedOutUnknown : R.string.TodoTaskNotCompletedOutUnknown;
                                                                                                 } else {
                                                                                                     i2 = z11 ? R.string.TodoTaskCompletedUnknown : R.string.TodoTaskNotCompletedUnknown;
                                                                                                     formatPluralSpannable = LocaleController.getString(i2);
-                                                                                                    user2 = tLObject9;
+                                                                                                    user2 = tLObject7;
                                                                                                 }
                                                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionTodoAppendTasks) {
                                                                                                 TLRPC.TL_messageActionTodoAppendTasks tL_messageActionTodoAppendTasks = (TLRPC.TL_messageActionTodoAppendTasks) messageAction6;
@@ -9182,7 +9174,7 @@ public class MessageObject {
                                                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() >= 4) {
                                                                                                         formatPluralSpannable = LocaleController.formatPluralSpannable("TodoAddedMoreTasks", tL_messageActionTodoAppendTasks.list.size() - 3, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                                                     }
-                                                                                                    user2 = tLObject9;
+                                                                                                    user2 = tLObject7;
                                                                                                 } else if (tL_messageActionTodoAppendTasks.list.size() == 1) {
                                                                                                     charSequence2 = LocaleController.formatSpannable(R.string.TodoAddedOneTaskOut, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)));
                                                                                                 } else if (tL_messageActionTodoAppendTasks.list.size() == 2) {
@@ -9212,26 +9204,24 @@ public class MessageObject {
                                                                                     charSequence2 = LocaleController.getString(i);
                                                                                 }
                                                                             }
-                                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                                         } else if (messageAction6.ttl != 0) {
                                                                             formatString = isOut() ? LocaleController.formatString(R.string.MessageLifetimeChangedOutgoing, LocaleController.formatTTLString(this.messageOwner.action.ttl)) : LocaleController.formatString(R.string.MessageLifetimeChanged, UserObject.getFirstName(user), LocaleController.formatTTLString(this.messageOwner.action.ttl));
                                                                         } else if (isOut()) {
-                                                                            str = str10;
+                                                                            str = str9;
                                                                             i = R.string.MessageLifetimeYouRemoved;
                                                                             charSequence2 = LocaleController.getString(i);
                                                                         } else {
                                                                             formatString = LocaleController.formatString(R.string.MessageLifetimeRemoved, UserObject.getFirstName(user));
                                                                         }
                                                                     }
-                                                                    str = str10;
+                                                                    str = str9;
                                                                     charSequence2 = LocaleController.getString(i);
                                                                 }
                                                             }
-                                                            string4 = LocaleController.formatPluralStringComma(str6, i9);
-                                                            tLObject4 = tLObject5;
-                                                            formatPluralSpannable = AndroidUtilities.replaceTags(string4);
-                                                            user2 = tLObject4;
-                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                            formatPluralSpannable = AndroidUtilities.replaceTags(string3);
+                                                            user2 = tLObject3;
+                                                            charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                         }
                                                         charSequence = charSequence2;
                                                     } else if (isOut()) {
@@ -9241,8 +9231,8 @@ public class MessageObject {
                                                     } else {
                                                         i2 = R.string.ActionInviteUser;
                                                         formatPluralSpannable = LocaleController.getString(i2);
-                                                        user2 = tLObject9;
-                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str11, user2);
+                                                        user2 = tLObject7;
+                                                        charSequence2 = replaceWithLink(formatPluralSpannable, str10, user2);
                                                         charSequence = charSequence2;
                                                     }
                                                 }
@@ -9253,7 +9243,7 @@ public class MessageObject {
                                 }
                             }
                             charSequence = formatString;
-                            str = str10;
+                            str = str9;
                         }
                         this.messageText = charSequence;
                     } else {
@@ -9513,7 +9503,7 @@ public class MessageObject {
             return;
         }
         if (i != 0) {
-            message.flags |= TLRPC.FLAG_30;
+            message.flags |= TLObject.FLAG_30;
             message.quick_reply_shortcut_id = i;
             TLRPC.TL_inputQuickReplyShortcutId tL_inputQuickReplyShortcutId = new TLRPC.TL_inputQuickReplyShortcutId();
             tL_inputQuickReplyShortcutId.shortcut_id = i;
@@ -13783,7 +13773,7 @@ public class MessageObject {
         TLRPC.Message message = this.messageOwner;
         if (message.send_state != 2 || message.id >= 0) {
             if (this.scheduled && message.id > 0) {
-                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.activityPermissionsGranted : 60)) {
+                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.permissionsGranted : 60)) {
                 }
             }
             return false;
@@ -14854,7 +14844,7 @@ public class MessageObject {
                                         getMedia(this.messageOwner).document = new TLRPC.TL_document();
                                         getMedia(this.messageOwner).document.file_reference = new byte[0];
                                         getMedia(this.messageOwner).document.mime_type = "application/x-tgsdice";
-                                        getMedia(this.messageOwner).document.dc_id = TLRPC.FLAG_31;
+                                        getMedia(this.messageOwner).document.dc_id = TLObject.FLAG_31;
                                         getMedia(this.messageOwner).document.id = -2147483648L;
                                         TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
                                         tL_documentAttributeImageSize.w = 512;

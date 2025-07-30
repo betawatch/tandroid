@@ -419,7 +419,7 @@ public class PollVotesAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30);
             measureChildWithMargins(this.middleTextView, i, 0, makeMeasureSpec, 0);
             measureChildWithMargins(this.righTextView, i, 0, makeMeasureSpec, 0);
             measureChildWithMargins(this.textView, i, this.middleTextView.getMeasuredWidth() + this.righTextView.getMeasuredWidth() + AndroidUtilities.dp(32.0f), makeMeasureSpec, 0);
@@ -564,7 +564,7 @@ public class PollVotesAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
@@ -922,7 +922,7 @@ public class PollVotesAlert extends BottomSheet {
                 int sectionCount = PollVotesAlert.this.listAdapter.getSectionCount();
                 for (int i12 = 0; i12 < sectionCount; i12++) {
                     if (i12 == 0) {
-                        PollVotesAlert.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10 - (((BottomSheet) PollVotesAlert.this).backgroundPaddingLeft * 2)), TLRPC.FLAG_30), i11);
+                        PollVotesAlert.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10 - (((BottomSheet) PollVotesAlert.this).backgroundPaddingLeft * 2)), TLObject.FLAG_30), i11);
                         dp += PollVotesAlert.this.titleTextView.getMeasuredHeight();
                     } else {
                         dp += AndroidUtilities.dp(32.0f) + (AndroidUtilities.dp(50.0f) * (PollVotesAlert.this.listAdapter.getCountForSection(i12) - 1));
@@ -935,7 +935,7 @@ public class PollVotesAlert extends BottomSheet {
                     PollVotesAlert.this.listView.setPadding(0, dp2, 0, 0);
                     this.ignoreLayout = false;
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             }
 
             @Override // android.view.View

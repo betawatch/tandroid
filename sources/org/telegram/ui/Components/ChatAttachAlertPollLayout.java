@@ -1730,13 +1730,13 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (view instanceof PollEditTextCell) {
             PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
             if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.locationPermissionGranted;
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.goingToPreviewTheme;
                 CharSequence charSequence = this.questionString;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.solutionRow) {
                 CharSequence charSequence2 = this.solutionString;
                 length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.emojiKeywordsLoaded;
+                i2 = NotificationCenter.savedMessagesForwarded;
             } else {
                 int i3 = this.answerStartRow;
                 if (i < i3 || i >= this.answersCount + i3) {

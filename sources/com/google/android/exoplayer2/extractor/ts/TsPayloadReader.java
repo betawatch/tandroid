@@ -6,7 +6,7 @@ import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public interface TsPayloadReader {
@@ -51,7 +51,7 @@ public interface TsPayloadReader {
         private final int trackIdIncrement;
 
         public TrackIdGenerator(int i, int i2) {
-            this(TLRPC.FLAG_31, i, i2);
+            this(TLObject.FLAG_31, i, i2);
         }
 
         public TrackIdGenerator(int i, int i2, int i3) {
@@ -64,7 +64,7 @@ public interface TsPayloadReader {
             this.formatIdPrefix = str;
             this.firstTrackId = i2;
             this.trackIdIncrement = i3;
-            this.trackId = TLRPC.FLAG_31;
+            this.trackId = TLObject.FLAG_31;
             this.formatId = "";
         }
 

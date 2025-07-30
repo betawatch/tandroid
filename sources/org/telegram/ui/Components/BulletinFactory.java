@@ -334,7 +334,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.activityPermissionsGranted);
+        }, NotificationCenter.permissionsGranted);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else {
@@ -356,7 +356,7 @@ public final class BulletinFactory {
         SpannableStringBuilder replaceTags;
         String formatString;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.activityPermissionsGranted;
+        int i5 = NotificationCenter.permissionsGranted;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);

@@ -17,6 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BackupImageView;
@@ -101,7 +102,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemWidth + this.extraWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.itemWidth, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemWidth + this.extraWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.itemWidth, TLObject.FLAG_30));
     }
 
     public void setChecked(int i, boolean z, boolean z2) {

@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class ImmutableSet extends ImmutableCollection implements Set {
@@ -19,7 +19,7 @@ public abstract class ImmutableSet extends ImmutableCollection implements Set {
         int max = Math.max(i, 2);
         if (max >= 751619276) {
             Preconditions.checkArgument(max < 1073741824, "collection too large");
-            return TLRPC.FLAG_30;
+            return TLObject.FLAG_30;
         }
         int highestOneBit = Integer.highestOneBit(max - 1) << 1;
         while (true) {

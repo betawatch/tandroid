@@ -47,7 +47,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -531,7 +531,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             if (value == 1) {
                 i3 = 60;
             } else if (value == 2) {
-                i3 = NotificationCenter.activityPermissionsGranted;
+                i3 = NotificationCenter.permissionsGranted;
             } else if (value == 3) {
                 i3 = 3600;
             } else if (value == 4) {
@@ -1203,8 +1203,8 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 if (PasscodeActivity.this.keyboardView.getVisibility() != 8 && measureKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
                     size2 -= AndroidUtilities.dp(230.0f);
                 }
-                frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                PasscodeActivity.this.keyboardView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLRPC.FLAG_30));
+                frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                PasscodeActivity.this.keyboardView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
             }
         };
         sizeNotifierFrameLayout.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda0
@@ -1218,7 +1218,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setVisibility(isCustomKeyboardVisible() ? 0 : 8);
-        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.channelConnectedBotsUpdate));
+        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.channelSuggestedBotsUpdate));
         int i5 = this.type;
         if (i5 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Passcode));

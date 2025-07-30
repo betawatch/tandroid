@@ -1,13 +1,13 @@
 package androidx.appcompat.widget;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 class RtlSpacingHelper {
     private int mLeft = 0;
     private int mRight = 0;
-    private int mStart = TLRPC.FLAG_31;
-    private int mEnd = TLRPC.FLAG_31;
+    private int mStart = TLObject.FLAG_31;
+    private int mEnd = TLObject.FLAG_31;
     private int mExplicitLeft = 0;
     private int mExplicitRight = 0;
     private boolean mIsRtl = false;

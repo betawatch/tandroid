@@ -17,7 +17,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedColor;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
@@ -147,7 +147,7 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         }
         editText.setPadding(paddingLeft, paddingTop, AndroidUtilities.dp(f), editText.getPaddingBottom());
         editText.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        editText.setInputType((z ? TLRPC.FLAG_17 : 0) | 573441);
+        editText.setInputType((z ? TLObject.FLAG_17 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
         editText.setCursorColor(Theme.getColor(i3, resourcesProvider));
@@ -261,7 +261,7 @@ public abstract class EditEmojiTextCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 
     protected void onTextChanged(CharSequence charSequence) {

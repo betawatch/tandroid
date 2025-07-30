@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.internal.AbstractSharedFlow;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow, Flow {
@@ -100,8 +100,8 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
             if (continuation instanceof StateFlowImpl$collect$1) {
                 stateFlowImpl$collect$1 = (StateFlowImpl$collect$1) continuation;
                 int i2 = stateFlowImpl$collect$1.label;
-                if ((i2 & TLRPC.FLAG_31) != 0) {
-                    stateFlowImpl$collect$1.label = i2 - TLRPC.FLAG_31;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    stateFlowImpl$collect$1.label = i2 - TLObject.FLAG_31;
                     Object obj4 = stateFlowImpl$collect$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = stateFlowImpl$collect$1.label;

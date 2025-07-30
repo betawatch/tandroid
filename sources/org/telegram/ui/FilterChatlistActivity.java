@@ -149,7 +149,7 @@ public class FilterChatlistActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void setText(CharSequence charSequence, boolean z) {
@@ -284,7 +284,7 @@ public class FilterChatlistActivity extends BaseFragment {
             TextView textView = new TextView(context) { // from class: org.telegram.ui.FilterChatlistActivity.InviteLinkCell.1
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i3, int i4) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i3) - AndroidUtilities.dp(8.0f)) / 2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i3) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
                 }
             };
             this.copyButton = textView;
@@ -313,7 +313,7 @@ public class FilterChatlistActivity extends BaseFragment {
             TextView textView3 = new TextView(context) { // from class: org.telegram.ui.FilterChatlistActivity.InviteLinkCell.2
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i4, int i5) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i4) - AndroidUtilities.dp(8.0f)) / 2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i4) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
                 }
             };
             this.shareButton = textView3;
@@ -489,7 +489,7 @@ public class FilterChatlistActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(127.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(127.0f), TLObject.FLAG_30));
         }
 
         public void options() {

@@ -35,7 +35,7 @@ import com.google.android.gms.internal.cast.zzbf;
 import com.google.android.gms.internal.cast.zzdy;
 import com.google.android.gms.internal.cast.zzed;
 import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
@@ -353,7 +353,7 @@ public final class zzv {
             } else {
                 Intent intent = new Intent();
                 intent.setComponent(this.zzh);
-                activity = PendingIntent.getActivity(this.zzc, 0, intent, zzdy.zza | TLRPC.FLAG_27);
+                activity = PendingIntent.getActivity(this.zzc, 0, intent, zzdy.zza | TLObject.FLAG_27);
             }
             if (activity != null) {
                 mediaSessionCompat2.setSessionActivity(activity);

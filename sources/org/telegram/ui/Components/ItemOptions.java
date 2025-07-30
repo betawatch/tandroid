@@ -24,10 +24,15 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -40,6 +45,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.BlurringShader;
@@ -47,6 +53,7 @@ import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.MessagePreviewView;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
@@ -54,6 +61,7 @@ public class ItemOptions {
     public ActionBarPopupWindow actionBarPopupWindow;
     private boolean allowCenter;
     private boolean allowMoveScrim;
+    private int allowMoveScrimGravity;
     private int animateToHeight;
     private int animateToWidth;
     private boolean blur;
@@ -307,23 +315,34 @@ public class ItemOptions {
                         this.clipPath.addRoundRect(rectF2, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, Path.Direction.CW);
                         canvas.clipPath(this.clipPath);
                     }
-                    if (!(ItemOptions.this.scrimView instanceof GiftSheet.GiftCell) || ItemOptions.this.animateToWidth == 0 || ItemOptions.this.animateToHeight == 0) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, ItemOptions.this.scrimView.getWidth(), ItemOptions.this.scrimView.getHeight(), (int) (this.dimProgress * 255.0f), 31);
-                        if (ItemOptions.this.scrimView instanceof ScrimView) {
-                            ((ScrimView) ItemOptions.this.scrimView).drawScrim(canvas, this.dimProgress);
+                    if (!(ItemOptions.this.scrimView instanceof SharedPhotoVideoCell2)) {
+                        if (!(ItemOptions.this.scrimView instanceof GiftSheet.GiftCell) || ItemOptions.this.animateToWidth == 0 || ItemOptions.this.animateToHeight == 0) {
+                            canvas.saveLayerAlpha(0.0f, 0.0f, ItemOptions.this.scrimView.getWidth(), ItemOptions.this.scrimView.getHeight(), (int) (this.dimProgress * 255.0f), 31);
+                            if (ItemOptions.this.scrimView instanceof ScrimView) {
+                                ((ScrimView) ItemOptions.this.scrimView).drawScrim(canvas, this.dimProgress);
+                            } else {
+                                ItemOptions.this.scrimView.draw(canvas);
+                            }
+                        } else if (ItemOptions.this.scrimView.getAlpha() >= 1.0f) {
+                            ((GiftSheet.GiftCell) ItemOptions.this.scrimView).customDraw(this, canvas, width, f8, this.dimProgress);
                         } else {
-                            ItemOptions.this.scrimView.draw(canvas);
+                            float f9 = width;
+                            canvas.saveLayerAlpha(0.0f, 0.0f, f9, f8, (int) (this.dimProgress * 255.0f), 31);
+                            float lerp = AndroidUtilities.lerp(1.0f, 0.9f, this.dimProgress);
+                            canvas.scale(lerp, lerp, width / 2.0f, f8 / 2.0f);
+                            ((GiftSheet.GiftCell) ItemOptions.this.scrimView).customDraw(this, canvas, f9, f8, this.dimProgress);
                         }
+                        canvas.restore();
                     } else if (ItemOptions.this.scrimView.getAlpha() >= 1.0f) {
-                        ((GiftSheet.GiftCell) ItemOptions.this.scrimView).customDraw(this, canvas, width, f8, this.dimProgress);
+                        ((SharedPhotoVideoCell2) ItemOptions.this.scrimView).customDraw(this, canvas, width, f8, this.dimProgress);
                     } else {
-                        float f9 = width;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, f9, f8, (int) (this.dimProgress * 255.0f), 31);
-                        float lerp = AndroidUtilities.lerp(1.0f, 0.9f, this.dimProgress);
-                        canvas.scale(lerp, lerp, width / 2.0f, f8 / 2.0f);
-                        ((GiftSheet.GiftCell) ItemOptions.this.scrimView).customDraw(this, canvas, f9, f8, this.dimProgress);
+                        float f10 = width;
+                        canvas.saveLayerAlpha(0.0f, 0.0f, f10, f8, (int) (this.dimProgress * 255.0f), 31);
+                        float lerp2 = AndroidUtilities.lerp(1.0f, 0.9f, this.dimProgress);
+                        canvas.scale(lerp2, lerp2, width / 2.0f, f8 / 2.0f);
+                        ((SharedPhotoVideoCell2) ItemOptions.this.scrimView).customDraw(this, canvas, f10, f8, this.dimProgress);
+                        canvas.restore();
                     }
-                    canvas.restore();
                 }
                 canvas.restore();
             }
@@ -397,6 +416,62 @@ public class ItemOptions {
         this.useScrollView = z2;
         this.shownFromBottom = z3;
         init();
+    }
+
+    public static void addAlbumsItemOptions(ItemOptions itemOptions, StoriesController.StoriesCollections storiesCollections, final HashSet hashSet, boolean z, final Runnable runnable, final Utilities.Callback callback) {
+        ArrayList<TLRPC.PhotoSize> arrayList;
+        ScrollView scrollView = new ScrollView(itemOptions.getContext()) { // from class: org.telegram.ui.Components.ItemOptions.7
+            @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+            protected void onMeasure(int i, int i2) {
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i2)), View.MeasureSpec.getMode(i2)));
+            }
+        };
+        LinearLayout linearLayout = new LinearLayout(itemOptions.getContext());
+        scrollView.addView(linearLayout);
+        linearLayout.setOrientation(1);
+        itemOptions.addView(scrollView, LayoutHelper.createLinear(-1, -2));
+        float f = 18.0f;
+        if (z && runnable != null) {
+            ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(itemOptions.getContext(), 2, false, false, itemOptions.resourcesProvider);
+            actionBarMenuSubItem.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+            int i = Theme.key_actionBarDefaultSubmenuItem;
+            actionBarMenuSubItem.setColors(Theme.getColor(i, itemOptions.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, itemOptions.resourcesProvider));
+            actionBarMenuSubItem.setSelectorColor(Theme.multAlpha(Theme.getColor(i, itemOptions.resourcesProvider), 0.12f));
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.StoriesAlbumNewAlbum), R.drawable.menu_album_add);
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    runnable.run();
+                }
+            });
+            linearLayout.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
+        }
+        Iterator it = storiesCollections.collections.iterator();
+        while (it.hasNext()) {
+            final StoriesController.StoryAlbum storyAlbum = (StoriesController.StoryAlbum) it.next();
+            final int i2 = storyAlbum.album_id;
+            final boolean contains = hashSet.contains(Integer.valueOf(i2));
+            ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(itemOptions.getContext(), 2, false, false, itemOptions.resourcesProvider);
+            actionBarMenuSubItem2.setChecked(contains);
+            actionBarMenuSubItem2.setPadding(AndroidUtilities.dp(f), 0, AndroidUtilities.dp(f), 0);
+            int i3 = Theme.key_actionBarDefaultSubmenuItem;
+            actionBarMenuSubItem2.setColors(Theme.getColor(i3, itemOptions.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, itemOptions.resourcesProvider));
+            actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i3, itemOptions.resourcesProvider), 0.12f));
+            TLRPC.Photo photo = storyAlbum.icon_photo;
+            if (photo == null || (arrayList = photo.sizes) == null) {
+                actionBarMenuSubItem2.setTextAndIcon(storyAlbum.title, R.drawable.msg_folders);
+            } else {
+                actionBarMenuSubItem2.setTextAndIcon(storyAlbum.title, ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(storyAlbum.icon_photo.sizes, AndroidUtilities.dp(24.0f), false, FileLoader.getClosestPhotoSizeWithSize(arrayList, 50), true), storyAlbum.icon_photo), "50_50", null, null);
+            }
+            actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    ItemOptions.lambda$addAlbumsItemOptions$14(contains, hashSet, i2, callback, storyAlbum, view);
+                }
+            });
+            linearLayout.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
+            f = 18.0f;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -505,6 +580,16 @@ public class ItemOptions {
         if (this.dismissWithButtons) {
             dismiss();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$addAlbumsItemOptions$14(boolean z, HashSet hashSet, int i, Utilities.Callback callback, StoriesController.StoryAlbum storyAlbum, View view) {
+        if (z) {
+            hashSet.remove(Integer.valueOf(i));
+        } else {
+            hashSet.add(Integer.valueOf(i));
+        }
+        callback.run(storyAlbum);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -619,6 +704,10 @@ public class ItemOptions {
 
     public static ItemOptions makeOptions(BaseFragment baseFragment, View view, boolean z, boolean z2) {
         return new ItemOptions(baseFragment, view, z, !z2, false);
+    }
+
+    public static ItemOptions swipeback(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, Theme.ResourcesProvider resourcesProvider) {
+        return new ItemOptions(actionBarPopupWindowLayout, resourcesProvider);
     }
 
     public ActionBarMenuSubItem add() {
@@ -953,14 +1042,14 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i3, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addChecked$2(runnable, view);
             }
         });
         if (runnable2 != null) {
-            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
+            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
                     boolean lambda$addChecked$3;
@@ -1064,7 +1153,7 @@ public class ItemOptions {
         }
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, this.resourcesProvider);
         this.lastLayout = actionBarPopupWindowLayout;
-        actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
+        actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
             public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                 ItemOptions.this.lambda$addSpaceGap$7(keyEvent);
@@ -1132,6 +1221,11 @@ public class ItemOptions {
 
     public ItemOptions allowMoveScrim() {
         this.allowMoveScrim = true;
+        return this;
+    }
+
+    public ItemOptions allowMoveScrimGravity(int i) {
+        this.allowMoveScrimGravity = i;
         return this;
     }
 
@@ -1262,6 +1356,10 @@ public class ItemOptions {
         return this.layout;
     }
 
+    public LinearLayout getLinearLayout() {
+        return this.linearLayout;
+    }
+
     public ItemOptions hideScrimUnder() {
         this.hideScrimUnder = true;
         return this;
@@ -1327,7 +1425,7 @@ public class ItemOptions {
             ActionBarMenuSubItem actionBarMenuSubItem = (ActionBarMenuSubItem) itemAt;
             actionBarMenuSubItem.setRightIcon(R.drawable.msg_mini_lock3);
             actionBarMenuSubItem.getRightIcon().setAlpha(0.4f);
-            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ItemOptions.this.lambda$putPremiumLock$6(runnable, view);
@@ -1550,10 +1648,11 @@ public class ItemOptions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x03b8  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x03d4  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0368 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0378  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x03d5  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x03e8  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0404  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0385 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0395  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1571,6 +1670,7 @@ public class ItemOptions {
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
         float x;
         float f3;
+        float f4;
         DimView dimView2;
         if (this.actionBarPopupWindow != null || this.linearLayout != null || getItemsCount() <= 0) {
             return this;
@@ -1608,7 +1708,7 @@ public class ItemOptions {
         final ViewGroup viewGroup2 = viewGroup;
         this.pointContainer = viewGroup2;
         if (this.context != null && viewGroup2 != null) {
-            float f4 = AndroidUtilities.displaySize.y / 2.0f;
+            float f5 = AndroidUtilities.displaySize.y / 2.0f;
             View view = this.scrimView;
             if (view != null) {
                 getPointOnScreen(view, viewGroup2, this.point);
@@ -1616,7 +1716,7 @@ public class ItemOptions {
                 f = fArr[1];
                 f2 = fArr[0];
             } else {
-                f = f4;
+                f = f5;
                 f2 = 0.0f;
             }
             RectF rectF = new RectF();
@@ -1634,11 +1734,11 @@ public class ItemOptions {
                 }
                 rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
             }
-            float f5 = f2 + rectF.left;
-            float f6 = f + rectF.top;
+            float f6 = f2 + rectF.left;
+            float f7 = f + rectF.top;
             if (this.ignoreX) {
                 this.point[0] = 0.0f;
-                f5 = 0.0f;
+                f6 = 0.0f;
             }
             if (this.dimAlpha > 0) {
                 final DimView dimView3 = new DimView(this.context);
@@ -1690,10 +1790,13 @@ public class ItemOptions {
             }
             if (this.allowMoveScrim && (dimView2 = this.dimView) != null && this.animateToWidth != 0) {
                 dimView2.moveToX = (viewGroup2.getWidth() - this.animateToWidth) / 2.0f;
-                f5 += (-this.point[0]) + ((viewGroup2.getWidth() - this.animateToWidth) / 2.0f);
+                if (this.allowMoveScrimGravity == 3) {
+                    this.dimView.moveToX = AndroidUtilities.dp(36.0f);
+                }
+                f6 += (-this.point[0]) + this.dimView.moveToX;
             }
-            float f7 = f5;
-            this.layout.measure(View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredWidth(), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredHeight(), TLRPC.FLAG_31));
+            float f8 = f6;
+            this.layout.measure(View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredHeight(), TLObject.FLAG_31));
             RectF rectF2 = new RectF();
             android.graphics.Rect padding = this.lastLayout.getPadding();
             rectF2.set(padding.left, padding.top, this.layout.getMeasuredWidth() - padding.right, this.layout.getMeasuredHeight() - padding.bottom);
@@ -1733,39 +1836,44 @@ public class ItemOptions {
                 this.actionBarPopupWindow.setSoftInputMode(0);
             }
             if (AndroidUtilities.isTablet()) {
-                f6 += viewGroup2.getPaddingTop();
-                f7 -= viewGroup2.getPaddingLeft();
+                f7 += viewGroup2.getPaddingTop();
+                f8 -= viewGroup2.getPaddingLeft();
             }
             if (this.scrimView != null) {
                 int i7 = this.gravity;
-                if (i7 != 5) {
-                    if (i7 == 1) {
-                        x = viewGroup2.getX() + f7 + (rectF.width() / 2.0f);
-                        f3 = this.layout.getMeasuredWidth() / 2.0f;
-                    } else if (rectF2.width() + f7 <= viewGroup2.getWidth()) {
-                        x = viewGroup2.getX() + f7;
-                        f3 = rectF2.left;
+                if (i7 == 3) {
+                    f4 = viewGroup2.getX() + f8;
+                } else {
+                    if (i7 != 5) {
+                        if (i7 == 1) {
+                            x = viewGroup2.getX() + f8 + (rectF.width() / 2.0f);
+                            f3 = this.layout.getMeasuredWidth() / 2.0f;
+                        } else if (f8 + rectF2.width() <= viewGroup2.getWidth()) {
+                            x = viewGroup2.getX() + f8;
+                            f3 = rectF2.left;
+                        }
+                        f4 = x - f3;
                     }
-                    width = (int) (x - f3);
+                    x = viewGroup2.getX() + f8 + rectF.width();
+                    f3 = rectF2.right;
+                    f4 = x - f3;
                 }
-                x = viewGroup2.getX() + f7 + rectF.width();
-                f3 = rectF2.right;
-                width = (int) (x - f3);
+                width = (int) f4;
             } else {
                 width = (viewGroup2.getWidth() - this.layout.getMeasuredWidth()) / 2;
             }
             float height2 = this.onTopOfScrim ? 0.0f : rectF.height();
             if (this.forceBottom) {
-                float f8 = f6 + height2;
-                height = this.allowMoveScrim ? (int) f8 : (int) ((Math.min(f8, AndroidUtilities.displaySize.y) - this.layout.getMeasuredHeight()) + viewGroup2.getY());
+                float f9 = f7 + height2;
+                height = this.allowMoveScrim ? (int) f9 : (int) ((Math.min(f9, AndroidUtilities.displaySize.y) - this.layout.getMeasuredHeight()) + viewGroup2.getY());
             } else if (this.scrimView != null) {
-                if (this.forceTop || f6 + height2 + this.layout.getMeasuredHeight() + AndroidUtilities.dp(16.0f) > AndroidUtilities.displaySize.y - AndroidUtilities.navigationBarHeight) {
-                    f6 = (f6 - height2) - this.layout.getMeasuredHeight();
-                    if (this.allowCenter && Math.max(0.0f, f6 + height2) + this.layout.getMeasuredHeight() > this.point[1] + rectF.top && rectF.height() == this.scrimView.getHeight()) {
-                        f6 = (((viewGroup2.getHeight() - this.layout.getMeasuredHeight()) / 2.0f) - height2) - viewGroup2.getY();
+                if (this.forceTop || f7 + height2 + this.layout.getMeasuredHeight() + AndroidUtilities.dp(16.0f) > AndroidUtilities.displaySize.y - AndroidUtilities.navigationBarHeight) {
+                    f7 = (f7 - height2) - this.layout.getMeasuredHeight();
+                    if (this.allowCenter && Math.max(0.0f, f7 + height2) + this.layout.getMeasuredHeight() > this.point[1] + rectF.top && rectF.height() == this.scrimView.getHeight()) {
+                        f7 = (((viewGroup2.getHeight() - this.layout.getMeasuredHeight()) / 2.0f) - height2) - viewGroup2.getY();
                     } else {
                         z = true;
-                        height = (int) (f6 + height2 + viewGroup2.getY());
+                        height = (int) (f7 + height2 + viewGroup2.getY());
                         if (this.swipeback && z && !this.overridenSwipebackGravity && (actionBarPopupWindowLayout = this.lastLayout) != null) {
                             actionBarPopupWindowLayout.swipeBackGravityBottom = true;
                         }
@@ -1773,6 +1881,9 @@ public class ItemOptions {
                             dimView.moveToY = (viewGroup2.getHeight() - (this.layout.getMeasuredHeight() + rectF.bottom)) / 2.0f;
                             height = (int) (this.dimView.moveToY + rectF.bottom);
                             width = (int) (((this.dimView.moveToX + rectF.right) - this.layout.getMeasuredWidth()) + AndroidUtilities.dp(4.0f));
+                            if (this.allowMoveScrimGravity == 3) {
+                                width = (int) (this.dimView.moveToX - AndroidUtilities.dp(8.0f));
+                            }
                         }
                         baseFragment = this.fragment;
                         if (baseFragment == null && baseFragment.getFragmentView() != null) {
@@ -1782,15 +1893,15 @@ public class ItemOptions {
                         }
                         this.actionBarPopupWindow.setScaleOut(this.scaleOut);
                         ActionBarPopupWindow actionBarPopupWindow2 = this.actionBarPopupWindow;
-                        float f9 = width + this.translateX;
-                        this.offsetX = f9;
-                        float f10 = height + this.translateY;
-                        this.offsetY = f10;
-                        actionBarPopupWindow2.showAtLocation(viewGroup2, 0, (int) f9, (int) f10);
+                        float f10 = width + this.translateX;
+                        this.offsetX = f10;
+                        float f11 = height + this.translateY;
+                        this.offsetY = f11;
+                        actionBarPopupWindow2.showAtLocation(viewGroup2, 0, (int) f10, (int) f11);
                     }
                 }
                 z = false;
-                height = (int) (f6 + height2 + viewGroup2.getY());
+                height = (int) (f7 + height2 + viewGroup2.getY());
                 if (this.swipeback) {
                     actionBarPopupWindowLayout.swipeBackGravityBottom = true;
                 }
@@ -1798,6 +1909,8 @@ public class ItemOptions {
                     dimView.moveToY = (viewGroup2.getHeight() - (this.layout.getMeasuredHeight() + rectF.bottom)) / 2.0f;
                     height = (int) (this.dimView.moveToY + rectF.bottom);
                     width = (int) (((this.dimView.moveToX + rectF.right) - this.layout.getMeasuredWidth()) + AndroidUtilities.dp(4.0f));
+                    if (this.allowMoveScrimGravity == 3) {
+                    }
                 }
                 baseFragment = this.fragment;
                 if (baseFragment == null) {
@@ -1806,11 +1919,11 @@ public class ItemOptions {
                 }
                 this.actionBarPopupWindow.setScaleOut(this.scaleOut);
                 ActionBarPopupWindow actionBarPopupWindow22 = this.actionBarPopupWindow;
-                float f92 = width + this.translateX;
-                this.offsetX = f92;
-                float f102 = height + this.translateY;
-                this.offsetY = f102;
-                actionBarPopupWindow22.showAtLocation(viewGroup2, 0, (int) f92, (int) f102);
+                float f102 = width + this.translateX;
+                this.offsetX = f102;
+                float f112 = height + this.translateY;
+                this.offsetY = f112;
+                actionBarPopupWindow22.showAtLocation(viewGroup2, 0, (int) f102, (int) f112);
             } else {
                 height = (viewGroup2.getHeight() - this.layout.getMeasuredHeight()) / 2;
             }
@@ -1826,11 +1939,11 @@ public class ItemOptions {
             }
             this.actionBarPopupWindow.setScaleOut(this.scaleOut);
             ActionBarPopupWindow actionBarPopupWindow222 = this.actionBarPopupWindow;
-            float f922 = width + this.translateX;
-            this.offsetX = f922;
-            float f1022 = height + this.translateY;
-            this.offsetY = f1022;
-            actionBarPopupWindow222.showAtLocation(viewGroup2, 0, (int) f922, (int) f1022);
+            float f1022 = width + this.translateX;
+            this.offsetX = f1022;
+            float f1122 = height + this.translateY;
+            this.offsetY = f1122;
+            actionBarPopupWindow222.showAtLocation(viewGroup2, 0, (int) f1022, (int) f1122);
         }
         return this;
     }

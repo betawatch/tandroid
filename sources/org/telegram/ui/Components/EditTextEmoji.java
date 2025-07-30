@@ -37,6 +37,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.ActionBar.AlertDialog;
@@ -461,7 +462,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             }
         };
         this.editText = editTextCaption2;
-        editTextCaption2.setImeOptions(TLRPC.FLAG_28);
+        editTextCaption2.setImeOptions(TLObject.FLAG_28);
         EditTextCaption editTextCaption3 = this.editText;
         editTextCaption3.setInputType(editTextCaption3.getInputType() | 16384);
         EditTextCaption editTextCaption4 = this.editText;

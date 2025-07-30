@@ -399,7 +399,7 @@ public abstract class VideoSeekPreviewImage extends View implements Notification
             this.pendingProgress = f;
             return;
         }
-        int max = Math.max(NotificationCenter.emojiKeywordsLoaded, AndroidUtilities.dp(100.0f));
+        int max = Math.max(NotificationCenter.savedMessagesForwarded, AndroidUtilities.dp(100.0f));
         final Bitmap frameAtTime = this.fileDrawable.getFrameAtTime(j, false);
         if (frameAtTime != null) {
             int width = frameAtTime.getWidth();

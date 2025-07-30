@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class SsaDecoder extends SimpleSubtitleDecoder {
@@ -291,7 +291,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
             case 9:
                 break;
         }
-        return TLRPC.FLAG_31;
+        return TLObject.FLAG_31;
     }
 
     private static int toPositionAnchor(int i) {
@@ -315,7 +315,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
             case 9:
                 break;
         }
-        return TLRPC.FLAG_31;
+        return TLObject.FLAG_31;
     }
 
     private static Layout.Alignment toTextAlignment(int i) {

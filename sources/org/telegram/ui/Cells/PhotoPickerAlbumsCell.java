@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.LayoutHelper;
@@ -128,7 +128,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             layoutParams.gravity = 51;
             this.albumViews[i3].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f) + dp, TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f) + dp, TLObject.FLAG_30));
     }
 
     public void setAlbum(int i, MediaController.AlbumEntry albumEntry) {

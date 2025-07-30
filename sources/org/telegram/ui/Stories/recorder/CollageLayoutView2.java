@@ -41,7 +41,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.BlurringShader;
@@ -742,7 +742,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
             onValueChange.fixWidth = AndroidUtilities.dp(220.0f);
             makeOptions.addView(onValueChange).addSpaceGap();
         }
-        makeOptions.setFixedWidth(NotificationCenter.channelStarsUpdated).add(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda6
+        makeOptions.setFixedWidth(NotificationCenter.botStarsTransactionsLoaded).add(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 CollageLayoutView2.this.lambda$onLongPress$2();
@@ -752,7 +752,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
             public final void run() {
                 CollageLayoutView2.this.lambda$onLongPress$3();
             }
-        }).addSpaceGap().addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.channelStarsUpdated, -2)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda8
+        }).addSpaceGap().addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.botStarsTransactionsLoaded, -2)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 CollageLayoutView2.lambda$onLongPress$4();
@@ -963,7 +963,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
                         matrix.postTranslate(f11 + AndroidUtilities.lerp(((float) Math.sqrt(i13 + i13)) * (-1.4f), (float) Math.sqrt((this.rect.width() * this.rect.width()) + (this.rect.height() * this.rect.height())), 1.0f - f9), 0.0f);
                         this.gradientMatrix.postRotate(-25.0f);
                         this.gradient.setLocalMatrix(this.gradientMatrix);
-                        this.highlightPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                        this.highlightPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         this.highlightPath.rewind();
                         float[] fArr5 = this.radii;
                         CollageLayout.Part part9 = part7.part;
@@ -1395,13 +1395,13 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
                     float f = i6;
                     float f2 = i5;
                     float min = Math.min(1.0f, Math.max(f / size, f2 / size2));
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (f * min), TLRPC.FLAG_30);
-                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (f2 * min), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (f * min), TLObject.FLAG_30);
+                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (f2 * min), TLObject.FLAG_30);
                     childAt.measure(makeMeasureSpec, makeMeasureSpec2);
                 }
             }
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
-            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
             childAt.measure(makeMeasureSpec, makeMeasureSpec2);
         }
     }

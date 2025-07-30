@@ -29,6 +29,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BackupImageView;
@@ -386,7 +387,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
             this.photoVideoViews[i3].setLayoutParams(layoutParams);
         }
         this.ignoreLayout = false;
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((this.isFirst ? 0 : AndroidUtilities.dp(2.0f)) + size, TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((this.isFirst ? 0 : AndroidUtilities.dp(2.0f)) + size, TLObject.FLAG_30));
     }
 
     @Override // android.view.View, android.view.ViewParent

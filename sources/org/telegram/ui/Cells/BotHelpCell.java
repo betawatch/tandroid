@@ -76,7 +76,7 @@ public class BotHelpCell extends View {
         this.imageReceiver = imageReceiver;
         imageReceiver.setInvalidateAll(true);
         this.imageReceiver.setCrossfadeWithOldImage(true);
-        this.imageReceiver.setCrossfadeDuration(NotificationCenter.activityPermissionsGranted);
+        this.imageReceiver.setCrossfadeDuration(NotificationCenter.permissionsGranted);
         int color = Theme.getColor(Theme.key_listSelector, resourcesProvider);
         int i = SharedConfig.bubbleRadius;
         this.selectorDrawableRadius = i;
@@ -194,7 +194,7 @@ public class BotHelpCell extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), this.height + AndroidUtilities.dp(8.0f));
+        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), this.height + AndroidUtilities.dp(8.0f));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:83:0x00fc, code lost:

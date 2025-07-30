@@ -18,6 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
@@ -174,7 +175,7 @@ public class DialogsEmptyCell extends LinearLayout {
         int size;
         int i4 = this.currentType;
         if (i4 == 0 || i4 == 1) {
-            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+            i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
             measureUtyanHeight = measureUtyanHeight(i2);
         } else {
             if (i4 == 2 || i4 == 3) {
@@ -197,13 +198,13 @@ public class DialogsEmptyCell extends LinearLayout {
                 if (!arrayList.isEmpty()) {
                     size -= (((AndroidUtilities.dp(72.0f) * arrayList.size()) + arrayList.size()) - 1) + AndroidUtilities.dp(50.0f);
                 }
-                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
-                i3 = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
+                i3 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                 super.onMeasure(i, i3);
             }
             measureUtyanHeight = AndroidUtilities.dp(166.0f);
         }
-        i3 = View.MeasureSpec.makeMeasureSpec(measureUtyanHeight, TLRPC.FLAG_30);
+        i3 = View.MeasureSpec.makeMeasureSpec(measureUtyanHeight, TLObject.FLAG_30);
         super.onMeasure(i, i3);
     }
 

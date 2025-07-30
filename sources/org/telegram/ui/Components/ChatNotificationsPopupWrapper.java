@@ -18,7 +18,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
@@ -448,12 +448,12 @@ public class ChatNotificationsPopupWrapper {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.windowLayout, -2, -2);
         this.popupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.popupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
+        this.popupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
         this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
         this.popupWindow.setFocusable(true);
-        this.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        this.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.popupWindow.setInputMethodMode(2);
         this.popupWindow.getContentView().setFocusableInTouchMode(true);
         while (view != baseFragment.getFragmentView()) {

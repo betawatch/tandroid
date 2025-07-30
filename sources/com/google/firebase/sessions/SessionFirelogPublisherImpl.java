@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.tasks.TasksKt;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public final class SessionFirelogPublisherImpl implements SessionFirelogPublisher {
@@ -73,8 +73,8 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
             if (continuation instanceof SessionFirelogPublisherImpl$getFirebaseInstallationId$1) {
                 sessionFirelogPublisherImpl$getFirebaseInstallationId$1 = (SessionFirelogPublisherImpl$getFirebaseInstallationId$1) continuation;
                 int i2 = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label;
-                if ((i2 & TLRPC.FLAG_31) != 0) {
-                    sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label = i2 - TLRPC.FLAG_31;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label = i2 - TLObject.FLAG_31;
                     Object obj = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label;
@@ -130,8 +130,8 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
         if (continuation instanceof SessionFirelogPublisherImpl$shouldLogSession$1) {
             sessionFirelogPublisherImpl$shouldLogSession$1 = (SessionFirelogPublisherImpl$shouldLogSession$1) continuation;
             int i2 = sessionFirelogPublisherImpl$shouldLogSession$1.label;
-            if ((i2 & TLRPC.FLAG_31) != 0) {
-                sessionFirelogPublisherImpl$shouldLogSession$1.label = i2 - TLRPC.FLAG_31;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                sessionFirelogPublisherImpl$shouldLogSession$1.label = i2 - TLObject.FLAG_31;
                 Object obj = sessionFirelogPublisherImpl$shouldLogSession$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = sessionFirelogPublisherImpl$shouldLogSession$1.label;

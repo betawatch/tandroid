@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -195,7 +195,7 @@ final class zzds implements zzef {
                         unsafe.putInt(obj, j3, i4);
                         return zzb;
                     }
-                    if ((i6 & TLRPC.FLAG_29) != 0 && !zzff.zze(bArr, zzb, zzb + i10)) {
+                    if ((i6 & TLObject.FLAG_29) != 0 && !zzff.zze(bArr, zzb, zzb + i10)) {
                         throw zzco.zzbp();
                     }
                     unsafe.putObject(obj, j, new String(bArr, zzb, i10, zzci.UTF_8));
@@ -1024,7 +1024,7 @@ final class zzds implements zzef {
                                 j = j2;
                                 bArr2 = bArr;
                                 if (i28 == 2) {
-                                    i22 = (i29 & TLRPC.FLAG_29) == 0 ? zzax.zzc(bArr2, i10, zzayVar2) : zzax.zzd(bArr2, i10, zzayVar2);
+                                    i22 = (i29 & TLObject.FLAG_29) == 0 ? zzax.zzc(bArr2, i10, zzayVar2) : zzax.zzd(bArr2, i10, zzayVar2);
                                     obj3 = zzayVar2.zzff;
                                     unsafe2.putObject(obj4, j, obj3);
                                     i24 |= i33;
@@ -1551,7 +1551,7 @@ final class zzds implements zzef {
                             zzdg = zzco.zzdg();
                             iArr[i4] = zzco.zzcx();
                             int i7 = i4 + 1;
-                            iArr[i7] = (!zzco.zzdi() ? TLRPC.FLAG_29 : 0) | (!zzco.zzdh() ? TLRPC.FLAG_28 : 0) | (zzco.zzcy() << 20) | zza;
+                            iArr[i7] = (!zzco.zzdi() ? TLObject.FLAG_29 : 0) | (!zzco.zzdh() ? TLObject.FLAG_28 : 0) | (zzco.zzcy() << 20) | zza;
                             iArr[i4 + 2] = i3 | (zzdg << 20);
                             if (zzco.zzdl() == null) {
                                 int i8 = (i4 / 4) << 1;
@@ -1585,7 +1585,7 @@ final class zzds implements zzef {
                     zzdg = 0;
                     iArr[i4] = zzco.zzcx();
                     int i72 = i4 + 1;
-                    iArr[i72] = (!zzco.zzdi() ? TLRPC.FLAG_29 : 0) | (!zzco.zzdh() ? TLRPC.FLAG_28 : 0) | (zzco.zzcy() << 20) | zza;
+                    iArr[i72] = (!zzco.zzdi() ? TLObject.FLAG_29 : 0) | (!zzco.zzdh() ? TLObject.FLAG_28 : 0) | (zzco.zzcy() << 20) | zza;
                     iArr[i4 + 2] = i3 | (zzdg << 20);
                     if (zzco.zzdl() == null) {
                     }

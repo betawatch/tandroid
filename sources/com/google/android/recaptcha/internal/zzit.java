@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, BuilderType extends zzin<MessageType, BuilderType>> extends zzgf<MessageType, BuilderType> {
@@ -232,11 +232,11 @@ public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, B
     }
 
     final void zzE(int i) {
-        this.zzd = (this.zzd & TLRPC.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     final boolean zzG() {
-        return (this.zzd & TLRPC.FLAG_31) != 0;
+        return (this.zzd & TLObject.FLAG_31) != 0;
     }
 
     @Override // com.google.android.recaptcha.internal.zzke
@@ -271,7 +271,7 @@ public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, B
         }
         int zza2 = zzkrVar.zza(this);
         if (zza2 >= 0) {
-            this.zzd = (this.zzd & TLRPC.FLAG_31) | zza2;
+            this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
             return zza2;
         }
         throw new IllegalStateException("serialized size must be non-negative, was " + zza2);
@@ -303,7 +303,7 @@ public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, B
                 if (i < 0) {
                     throw new IllegalStateException("serialized size must be non-negative, was " + i);
                 }
-                this.zzd = (this.zzd & TLRPC.FLAG_31) | i;
+                this.zzd = (this.zzd & TLObject.FLAG_31) | i;
             }
         }
         return i;

@@ -264,7 +264,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     ViewGroup viewGroup3 = new FrameLayout(BoostsActivity.this.getContext()) { // from class: org.telegram.ui.BoostsActivity.1.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
                         }
                     };
                     TextView textView = new TextView(BoostsActivity.this.getContext());
@@ -355,7 +355,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                         @Override // android.view.View
                         protected void onMeasure(int i3, int i4) {
                             LinearLayoutManager linearLayoutManager = BoostsActivity.this.layoutManager;
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(0, linearLayoutManager instanceof FillLastLinearLayoutManager ? ((FillLastLinearLayoutManager) linearLayoutManager).getLastItemHeight() : 0), TLRPC.FLAG_30));
+                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(0, linearLayoutManager instanceof FillLastLinearLayoutManager ? ((FillLastLinearLayoutManager) linearLayoutManager).getLastItemHeight() : 0), TLObject.FLAG_30));
                         }
                     };
                     view3.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
@@ -903,7 +903,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 this.drawable.setBounds(0, 0, getWidth(), getHeight());
-                this.drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                this.drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 this.drawable.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);

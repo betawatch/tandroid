@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import com.microsoft.appcenter.utils.AppCenterLog;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public class DeepLinkActivity extends Activity {
@@ -45,9 +45,9 @@ public class DeepLinkActivity extends Activity {
             Distribute.getInstance().storeTesterAppUpdateSetupFailedParameter(stringExtra, stringExtra5);
         }
         finish();
-        if ((getIntent().getFlags() & TLRPC.FLAG_28) != 268435456) {
+        if ((getIntent().getFlags() & TLObject.FLAG_28) != 268435456) {
             AppCenterLog.debug("AppCenterDistribute", "Using restart work around to correctly resume app.");
-            launchIntentForPackage = intent.cloneFilter().addFlags(TLRPC.FLAG_28);
+            launchIntentForPackage = intent.cloneFilter().addFlags(TLObject.FLAG_28);
         } else if (!isTaskRoot() || (launchIntentForPackage = getPackageManager().getLaunchIntentForPackage(getPackageName())) == null) {
             return;
         }

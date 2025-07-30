@@ -42,7 +42,7 @@ public final class QRCode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder(NotificationCenter.emojiKeywordsLoaded);
+        StringBuilder sb = new StringBuilder(NotificationCenter.savedMessagesForwarded);
         sb.append("<<\n");
         sb.append(" mode: ");
         sb.append(this.mode);

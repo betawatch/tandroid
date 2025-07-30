@@ -21,6 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -75,7 +76,7 @@ public class ClearHistoryAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
         }
 
         public void setText(CharSequence charSequence) {
@@ -194,7 +195,7 @@ public class ClearHistoryAlert extends BottomSheet {
                     setPadding(0, i7, 0, 0);
                     this.ignoreLayout = false;
                 }
-                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
 
             @Override // androidx.core.widget.NestedScrollView, android.view.View

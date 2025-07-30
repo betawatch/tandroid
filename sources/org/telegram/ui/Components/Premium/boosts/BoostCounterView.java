@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -100,7 +100,7 @@ public class BoostCounterView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(15.0f) + this.countText.getWidth()), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(15.0f) + this.countText.getWidth()), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
     }
 
     public void setCount(int i, boolean z) {

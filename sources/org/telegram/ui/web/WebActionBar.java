@@ -33,7 +33,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.OKLCH;
@@ -395,7 +395,7 @@ public abstract class WebActionBar extends FrameLayout {
         editTextBoldCursor.setClipToPadding(true);
         editTextBoldCursor.setPadding(AndroidUtilities.dp(58.0f), 0, AndroidUtilities.dp(112.0f), 0);
         editTextBoldCursor.setTranslationY(-AndroidUtilities.dp(0.66f));
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLRPC.FLAG_19);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLObject.FLAG_19);
         editTextBoldCursor.setImeOptions(33554435);
         editTextBoldCursor.setTextIsSelectable(false);
         editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda4
@@ -442,7 +442,7 @@ public abstract class WebActionBar extends FrameLayout {
         editTextBoldCursor2.setBackgroundResource(0);
         editTextBoldCursor2.setCursorWidth(1.5f);
         editTextBoldCursor2.setGravity(112);
-        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | TLRPC.FLAG_19);
+        editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | TLObject.FLAG_19);
         editTextBoldCursor2.setImeOptions(33554434);
         editTextBoldCursor2.setTextIsSelectable(false);
         editTextBoldCursor2.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda5
@@ -539,7 +539,7 @@ public abstract class WebActionBar extends FrameLayout {
             makeOptions.setDimAlpha(0);
             makeOptions.setColors(this.menuTextColor, this.menuIconColor);
             makeOptions.translate(0.0f, -AndroidUtilities.dp(52.0f));
-            makeOptions.setMinWidth(NotificationCenter.emojiKeywordsLoaded);
+            makeOptions.setMinWidth(NotificationCenter.savedMessagesForwarded);
             makeOptions.setSelectorColor(Theme.blendOver(this.menuBackgroundColor, Theme.multAlpha(this.menuTextColor, 0.1f)));
             if (AndroidUtilities.computePerceivedBrightness(this.menuBackgroundColor) > 0.721f) {
                 makeOptions.setBackgroundColor(-1);
@@ -845,7 +845,7 @@ public abstract class WebActionBar extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(topPadding() + AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(topPadding() + AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 
     protected abstract void onScrolledProgress(float f);

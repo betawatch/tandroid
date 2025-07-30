@@ -1470,7 +1470,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             TextView textView5 = new TextView(context) { // from class: org.telegram.ui.PassportActivity.PhoneConfirmationView.1
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i6, int i7) {
-                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
             this.timeText = textView5;
@@ -1494,7 +1494,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             TextView textView6 = new TextView(context) { // from class: org.telegram.ui.PassportActivity.PhoneConfirmationView.2
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i6, int i7) {
-                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                    super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
             this.problemText = textView6;
@@ -2433,7 +2433,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, TLObject.FLAG_30));
         }
 
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -2555,7 +2555,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
         }
 
         public void setChecked(boolean z) {
@@ -3838,7 +3838,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (byte b : bArr) {
             i += b & 255;
         }
-        if (i % NotificationCenter.locationPermissionGranted != 239) {
+        if (i % NotificationCenter.goingToPreviewTheme != 239) {
             return false;
         }
         return l == null || Utilities.bytesToLong(Utilities.computeSHA256(bArr)) == l.longValue();
@@ -4150,7 +4150,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                         int lineCount = errorLayout.getLineCount();
                         int i12 = 0;
                         if (lineCount > 1) {
-                            i11 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
+                            i11 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLObject.FLAG_30);
                         }
                         if (LocaleController.isRTL) {
                             float f = 0.0f;
@@ -4859,7 +4859,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                                     int lineCount = errorLayout.getLineCount();
                                     int i16 = 0;
                                     if (lineCount > 1) {
-                                        i15 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
+                                        i15 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLObject.FLAG_30);
                                     }
                                     if (LocaleController.isRTL) {
                                         float f = 0.0f;
@@ -5040,7 +5040,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                             int lineCount = errorLayout.getLineCount();
                             int i20 = 0;
                             if (lineCount > 1) {
-                                i19 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLRPC.FLAG_30);
+                                i19 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.errorLayout.getLineBottom(lineCount - 1) - this.errorLayout.getLineBottom(0)), TLObject.FLAG_30);
                             }
                             if (LocaleController.isRTL) {
                                 float f = 0.0f;
@@ -6910,7 +6910,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public EncryptionResult encryptData(byte[] bArr) {
         byte[] randomSecret = getRandomSecret();
-        int nextInt = Utilities.random.nextInt(NotificationCenter.customStickerCreated) + 32;
+        int nextInt = Utilities.random.nextInt(NotificationCenter.timezonesUpdated) + 32;
         while ((bArr.length + nextInt) % 16 != 0) {
             nextInt++;
         }
@@ -7118,15 +7118,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i2 = 0; i2 < 32; i2++) {
             i += 255 & bArr[i2];
         }
-        int i3 = i % NotificationCenter.locationPermissionGranted;
+        int i3 = i % NotificationCenter.goingToPreviewTheme;
         if (i3 != 239) {
-            int i4 = NotificationCenter.wallpapersNeedReload - i3;
+            int i4 = NotificationCenter.wallpapersDidLoad - i3;
             int nextInt = Utilities.random.nextInt(32);
             int i5 = (bArr[nextInt] & 255) + i4;
             if (i5 < 255) {
-                i5 += NotificationCenter.locationPermissionGranted;
+                i5 += NotificationCenter.goingToPreviewTheme;
             }
-            bArr[nextInt] = (byte) (i5 % NotificationCenter.locationPermissionGranted);
+            bArr[nextInt] = (byte) (i5 % NotificationCenter.goingToPreviewTheme);
         }
         return bArr;
     }

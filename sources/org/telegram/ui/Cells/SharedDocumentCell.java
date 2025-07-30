@@ -34,6 +34,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -768,12 +769,12 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         int dp;
         int i3 = this.viewType;
         if (i3 == 1) {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
             dp = AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0);
         } else {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
             if (i3 != 0) {
-                super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
+                super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
                 int dp2 = AndroidUtilities.dp(34.0f) + this.nameTextView.getMeasuredHeight() + (this.needDivider ? 1 : 0);
                 if (this.caption != null && this.captionTextView != null && this.message.hasHighlightedWords()) {
                     this.ignoreRequestLayout = true;
@@ -786,7 +787,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             }
             dp = AndroidUtilities.dp(56.0f);
         }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

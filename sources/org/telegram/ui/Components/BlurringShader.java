@@ -763,7 +763,7 @@ public class BlurringShader {
                         }
                         this.dimPaint.setColor(-14145495);
                     } else if (drawable != null) {
-                        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.locationPermissionGranted, 31);
+                        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.goingToPreviewTheme, 31);
                         drawable.setBounds(bounds);
                         drawable.draw(canvas);
                         if (StoryBlurDrawer.this.manager == null || !StoryBlurDrawer.this.manager.hasRenderNode()) {

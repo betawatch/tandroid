@@ -43,6 +43,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
@@ -379,12 +380,12 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(autoDeletePopupWrapper.windowLayout, -2, -2);
             this.popupWindow = actionBarPopupWindow2;
             actionBarPopupWindow2.setPauseNotifications(true);
-            this.popupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
+            this.popupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
             this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
             this.popupWindow.setFocusable(true);
-            autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+            autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.popupWindow.setInputMethodMode(2);
             this.popupWindow.getContentView().setFocusableInTouchMode(true);
             this.popupWindow.showAtLocation(getFragmentView(), 0, (int) (view.getX() + f), (int) (view.getY() + f2 + (autoDeletePopupWrapper.windowLayout.getMeasuredHeight() / 2.0f)));
@@ -717,16 +718,16 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                             measureChildWithMargins(childAt, i, 0, i2, 0);
                         } else {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                         }
                     }
                 }

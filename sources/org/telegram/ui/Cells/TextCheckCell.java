@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.AvatarSpan;
 import org.telegram.ui.Components.AnimationProperties;
@@ -225,11 +225,11 @@ public class TextCheckCell extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int makeMeasureSpec;
         boolean z = this.isMultiline;
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
         if (z) {
             makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
         } else {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.valueTextView.getVisibility() == 0 ? 64.0f : this.height) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.valueTextView.getVisibility() == 0 ? 64.0f : this.height) + (this.needDivider ? 1 : 0), TLObject.FLAG_30);
         }
         super.onMeasure(makeMeasureSpec2, makeMeasureSpec);
     }

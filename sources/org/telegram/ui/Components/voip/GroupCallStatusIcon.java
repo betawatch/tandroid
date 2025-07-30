@@ -78,9 +78,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.didReceiveSmsCode;
+            i = NotificationCenter.wallpapersNeedReload;
             if (nextInt < 64) {
-                i2 = NotificationCenter.didReceiveSmsCode;
+                i2 = NotificationCenter.wallpapersNeedReload;
                 i = 120;
             } else {
                 i2 = 420;

@@ -787,7 +787,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         this.frameLayout2 = frameLayout3;
         this.frameContainerView.addView(frameLayout3, LayoutHelper.createFrame(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
         TextureView textureView = new TextureView(context);
-        this.frameLayout2.addView(textureView, LayoutHelper.createFrame(NotificationCenter.emojiKeywordsLoaded, 150, 17));
+        this.frameLayout2.addView(textureView, LayoutHelper.createFrame(NotificationCenter.savedMessagesForwarded, 150, 17));
         textureView.setSurfaceTextureListener(new 2());
         ViewPager viewPager = new ViewPager(context);
         this.viewPager = viewPager;
@@ -851,7 +851,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             @Override // android.widget.TextView, android.view.View
             protected void onMeasure(int i3, int i4) {
                 if (View.MeasureSpec.getSize(i3) > AndroidUtilities.dp(260.0f)) {
-                    i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLRPC.FLAG_30);
+                    i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLObject.FLAG_30);
                 }
                 super.onMeasure(i3, i4);
             }

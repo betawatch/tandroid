@@ -13,7 +13,7 @@ import androidx.appcompat.R$id;
 import androidx.appcompat.R$styleable;
 import androidx.core.view.ViewCompat;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class ActionBarContainer extends FrameLayout {
@@ -193,7 +193,7 @@ public class ActionBarContainer extends FrameLayout {
         View view;
         int i4;
         if (this.mActionBarView == null && View.MeasureSpec.getMode(i2) == Integer.MIN_VALUE && (i4 = this.mHeight) >= 0) {
-            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(i4, View.MeasureSpec.getSize(i2)), TLRPC.FLAG_31);
+            i2 = View.MeasureSpec.makeMeasureSpec(Math.min(i4, View.MeasureSpec.getSize(i2)), TLObject.FLAG_31);
         }
         super.onMeasure(i, i2);
         if (this.mActionBarView == null) {
@@ -308,7 +308,7 @@ public class ActionBarContainer extends FrameLayout {
 
     public void setTransitioning(boolean z) {
         this.mIsTransitioning = z;
-        setDescendantFocusability(z ? 393216 : TLRPC.FLAG_18);
+        setDescendantFocusability(z ? 393216 : TLObject.FLAG_18);
     }
 
     @Override // android.view.View

@@ -1241,10 +1241,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             setMeasuredDimension(size, AndroidUtilities.dp(48.0f));
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30));
             this.buttonWidth = this.textView.getMeasuredWidth();
-            this.progressView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
-            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLRPC.FLAG_30));
+            this.progressView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30));
+            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(39.0f), TLObject.FLAG_30));
             TLRPC.TL_pageBlockChannel tL_pageBlockChannel = this.currentBlock;
             if (tL_pageBlockChannel != null) {
                 this.textLayout = ArticleViewer.this.createLayoutForText(this, tL_pageBlockChannel.channel.title, null, (size - AndroidUtilities.dp(52.0f)) - this.buttonWidth, this.textY, this.currentBlock, StaticLayoutEx.ALIGN_LEFT(), 1, this.parentAdapter);
@@ -2044,7 +2044,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     dp = size - AndroidUtilities.dp(36.0f);
                     i3 = size;
                 }
-                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredHeight = this.innerListView.getMeasuredHeight();
                 int dp3 = measuredHeight + AndroidUtilities.dp(8.0f);
                 this.textY = dp3;
@@ -2644,11 +2644,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 int i9 = i6;
                 TouchyWebView touchyWebView = this.webView;
                 if (touchyWebView != null) {
-                    touchyWebView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i9, TLRPC.FLAG_30));
+                    touchyWebView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30));
                 }
                 WebPlayerView webPlayerView = this.videoView;
                 if (webPlayerView != null && webPlayerView.getParent() == this) {
-                    this.videoView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i9, TLRPC.FLAG_30));
+                    this.videoView.measure(View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i9, TLObject.FLAG_30));
                 }
                 int dp3 = AndroidUtilities.dp(8.0f) + i9;
                 this.textY = dp3;
@@ -3410,7 +3410,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             i7 += dp;
                             i3 = 0;
                         }
-                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         if ((this.blockLayout.itemView instanceof BlockParagraphCell) && this.currentBlock.numLayout != null && this.currentBlock.numLayout.getLineCount() > 0 && (drawingText = (blockParagraphCell = (BlockParagraphCell) this.blockLayout.itemView).textLayout) != null && drawingText.getLineCount() > 0) {
                             this.numOffsetY = (this.currentBlock.numLayout.getLineAscent(0) + AndroidUtilities.dp(2.5f)) - blockParagraphCell.textLayout.getLineAscent(0);
                         }
@@ -3940,7 +3940,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             i7 += dp;
                             i3 = 0;
                         }
-                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        this.blockLayout.itemView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         if ((this.blockLayout.itemView instanceof BlockParagraphCell) && this.currentBlock.numLayout != null && this.currentBlock.numLayout.getLineCount() > 0 && (drawingText = (blockParagraphCell = (BlockParagraphCell) this.blockLayout.itemView).textLayout) != null && drawingText.getLineCount() > 0) {
                             this.numOffsetY = this.currentBlock.numLayout.getLineAscent(0) - blockParagraphCell.textLayout.getLineAscent(0);
                         }
@@ -4779,7 +4779,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
-            this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+            this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
             setMeasuredDimension(size, this.scrollView.getMeasuredHeight());
         }
 
@@ -5330,9 +5330,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             int size = View.MeasureSpec.getSize(i);
             if (this.currentBlock != null) {
                 int dp = AndroidUtilities.dp(310.0f);
-                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+                this.innerListView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
                 this.currentBlock.items.size();
-                this.dotsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), TLRPC.FLAG_30));
+                this.dotsContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f), TLObject.FLAG_30));
                 int dp2 = size - AndroidUtilities.dp(36.0f);
                 int dp3 = dp + AndroidUtilities.dp(16.0f);
                 this.textY = dp3;
@@ -5761,7 +5761,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     this.listY = AndroidUtilities.dp(8.0f);
                     i4 = 0;
                 }
-                this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size - this.listX, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size - this.listX, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                 i3 = i4 + this.scrollView.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
                 TLRPC.TL_pageBlockTable tL_pageBlockTable3 = this.currentBlock;
                 if (tL_pageBlockTable3.level > 0 && !tL_pageBlockTable3.bottom) {
@@ -6385,7 +6385,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     layoutParams.topMargin = (int) this.imageView.getImageY();
                     layoutParams.width = (int) this.imageView.getImageWidth();
                     layoutParams.height = (int) this.imageView.getImageHeight();
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
                 }
                 float f4 = this.groupPosition.ph;
                 Point point2 = AndroidUtilities.displaySize;
@@ -6402,7 +6402,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             layoutParams2.topMargin = (int) this.imageView.getImageY();
             layoutParams2.width = (int) this.imageView.getImageWidth();
             layoutParams2.height = (int) this.imageView.getImageHeight();
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
         }
 
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -7072,7 +7072,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
 
         public void select(boolean z, boolean z2) {
@@ -7337,7 +7337,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     this.ignoreLayout = false;
                     int size = View.MeasureSpec.getSize(i3);
                     Sheet sheet2 = ArticleViewer.this.sheet;
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp((sheet2 == null || sheet2.halfSize()) ? 56.0f : 0.0f)) - AndroidUtilities.statusBarHeight, TLRPC.FLAG_30));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp((sheet2 == null || sheet2.halfSize()) ? 56.0f : 0.0f)) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
                 }
 
                 @Override // android.view.View, android.view.ViewParent
@@ -8305,7 +8305,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
         }
 
         public void setViews(int i) {
@@ -9861,8 +9861,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (pageLayout == null || (recyclerListView = pageLayout.listView) == null) {
                 return;
             }
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_31);
-            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31);
+            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31);
             int i5 = 0;
             int i6 = 0;
             while (i6 < i4) {
@@ -10397,7 +10397,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 view = new View(this.context) { // from class: org.telegram.ui.ArticleViewer.WebpageAdapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLRPC.FLAG_30));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
                     }
                 };
             }
@@ -11032,8 +11032,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (articleViewer.sheet == null) {
                 articleViewer.keyboardVisible = size2 < AndroidUtilities.displaySize.y - AndroidUtilities.dp(100.0f);
             }
-            ArticleViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-            ArticleViewer.this.fullscreenVideoContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+            ArticleViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+            ArticleViewer.this.fullscreenVideoContainer.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -14983,7 +14983,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i, int i2) {
                         super.onMeasure(i, i2);
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredHeight() + AndroidUtilities.dp(8.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredHeight() + AndroidUtilities.dp(8.0f), TLObject.FLAG_30));
                     }
                 };
                 builder.setDelegate(new BottomSheet.BottomSheetDelegate() { // from class: org.telegram.ui.ArticleViewer.10
@@ -15023,7 +15023,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         int typeForBlock2 = this.pages[0].adapter.getTypeForBlock(pageBlock);
                         RecyclerView.ViewHolder onCreateViewHolder2 = this.pages[0].adapter.onCreateViewHolder(null, typeForBlock2);
                         this.pages[0].adapter.bindBlockToHolder(typeForBlock2, onCreateViewHolder2, pageBlock, 0, 0, false);
-                        onCreateViewHolder2.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        onCreateViewHolder2.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         Integer num4 = (Integer) this.pages[0].adapter.anchorsOffset.get(lowerCase);
                         if (num4.intValue() != -1) {
                             num = num4;
@@ -15108,7 +15108,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         int typeForBlock = this.pages[0].adapter.getTypeForBlock(searchResult.block);
                         RecyclerView.ViewHolder onCreateViewHolder = this.pages[0].adapter.onCreateViewHolder(null, typeForBlock);
                         this.pages[0].adapter.bindBlockToHolder(typeForBlock, onCreateViewHolder, searchResult.block, 0, 0, false);
-                        onCreateViewHolder.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        onCreateViewHolder.itemView.measure(View.MeasureSpec.makeMeasureSpec(this.pages[0].listView.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         num = (Integer) this.pages[0].adapter.searchTextOffset.get(str);
                         if (num == null) {
                             num = 0;
@@ -15266,7 +15266,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (actionBarPopupWindowLayout2 != null) {
             actionBarPopupWindowLayout2.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.popupWindow.setFocusable(true);
         this.popupWindow.showAtLocation(view, i, i2, i3);
         this.popupWindow.startAnimation();
@@ -16528,7 +16528,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         layoutParams.gravity = 51;
         layoutParams.type = 98;
         layoutParams.softInputMode = 48;
-        layoutParams.flags = TLRPC.FLAG_17;
+        layoutParams.flags = TLObject.FLAG_17;
         int color = this.sheet == null ? Theme.getColor(Theme.key_windowBackgroundGray, null, true) : getThemedColor(Theme.key_windowBackgroundGray);
         int i4 = (AndroidUtilities.computePerceivedBrightness(color) < 0.721f || Build.VERSION.SDK_INT < 26) ? 1792 : 1808;
         this.navigationBarPaint.setColor(color);

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.CharacterCompat;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -155,7 +155,7 @@ final class zzko implements zzlc {
                         unsafe.putInt(obj, j3, i4);
                         return zzb2;
                     }
-                    if ((i6 & TLRPC.FLAG_29) != 0 && !zzmd.zza(bArr, zzb2, zzb2 + i10)) {
+                    if ((i6 & TLObject.FLAG_29) != 0 && !zzmd.zza(bArr, zzb2, zzb2 + i10)) {
                         throw zzjk.zzh();
                     }
                     unsafe.putObject(obj, j, new String(bArr, zzb2, i10, zzjf.zza));
@@ -980,7 +980,7 @@ final class zzko implements zzlc {
                 i13 = charAt5;
                 i14 = i68;
             }
-            int i72 = charAt24 & NotificationCenter.locationPermissionGranted;
+            int i72 = charAt24 & NotificationCenter.goingToPreviewTheme;
             int i73 = charAt2;
             if ((charAt24 & 1024) != 0) {
                 iArr[i62] = i63;
@@ -1148,7 +1148,7 @@ final class zzko implements zzlc {
             int i90 = i63 + 1;
             iArr2[i63] = charAt23;
             int i91 = i63 + 2;
-            iArr2[i90] = ((charAt24 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt24 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i72 << 20) | objectFieldOffset;
+            iArr2[i90] = ((charAt24 & 256) != 0 ? TLObject.FLAG_28 : 0) | ((charAt24 & 512) != 0 ? TLObject.FLAG_29 : 0) | (i72 << 20) | objectFieldOffset;
             i63 += 3;
             iArr2[i91] = i17 | (i19 << 20);
             zzd = str;
@@ -2511,7 +2511,7 @@ final class zzko implements zzlc {
                                 i17 = zza3;
                                 i19 = i2;
                                 if (i33 == 2) {
-                                    i25 = (i34 & TLRPC.FLAG_29) == 0 ? zzhl.zzc(bArr2, i31, zzhnVar3) : zzhl.zzd(bArr2, i31, zzhnVar3);
+                                    i25 = (i34 & TLObject.FLAG_29) == 0 ? zzhl.zzc(bArr2, i31, zzhnVar3) : zzhl.zzd(bArr2, i31, zzhnVar3);
                                     obj4 = zzhnVar3.zzc;
                                     unsafe3.putObject(obj5, j4, obj4);
                                     i29 = i40 | i38;
@@ -4041,7 +4041,7 @@ final class zzko implements zzlc {
                             i6 = i22;
                             unsafe3 = unsafe2;
                             if (i25 == 2) {
-                                i18 = (i26 & TLRPC.FLAG_29) == 0 ? zzhl.zzc(bArr2, i4, zzhnVar2) : zzhl.zzd(bArr2, i4, zzhnVar2);
+                                i18 = (i26 & TLObject.FLAG_29) == 0 ? zzhl.zzc(bArr2, i4, zzhnVar2) : zzhl.zzd(bArr2, i4, zzhnVar2);
                                 zza2 = zzhnVar2.zzc;
                                 unsafe3.putObject(obj2, j, zza2);
                                 i21 |= i29;

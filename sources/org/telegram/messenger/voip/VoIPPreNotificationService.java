@@ -196,7 +196,7 @@ public class VoIPPreNotificationService {
             pendingVoIP.putExtra("openFragment", true);
             if (!PermissionRequest.hasPermission("android.permission.RECORD_AUDIO") || (isVideo() && !PermissionRequest.hasPermission("android.permission.CAMERA"))) {
                 try {
-                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLRPC.FLAG_28), 1107296256).send();
+                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                     return;
                 } catch (Exception e) {
                     if (BuildVars.LOGS_ENABLED) {

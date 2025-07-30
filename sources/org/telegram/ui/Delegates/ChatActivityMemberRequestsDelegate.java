@@ -16,6 +16,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
@@ -214,7 +215,7 @@ public class ChatActivityMemberRequestsDelegate {
             AvatarsImageView avatarsImageView = new AvatarsImageView(this.fragment.getParentActivity(), false) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.1
                 @Override // org.telegram.ui.Components.AvatarsImageView, android.view.View
                 protected void onMeasure(int i, int i2) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarsDrawable.count == 0 ? 0 : ((r2 - 1) * 20) + 24), TLRPC.FLAG_30), i2);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarsDrawable.count == 0 ? 0 : ((r2 - 1) * 20) + 24), TLObject.FLAG_30), i2);
                 }
             };
             this.avatarsView = avatarsImageView;

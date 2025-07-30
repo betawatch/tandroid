@@ -50,6 +50,7 @@ import org.telegram.messenger.pip.source.IPipSourceDelegate;
 import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AvatarDrawable;
@@ -487,7 +488,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_chat");
             action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
             if (!(context instanceof Activity)) {
-                action.addFlags(TLRPC.FLAG_28);
+                action.addFlags(TLObject.FLAG_28);
             }
             context.startActivity(action);
             dismiss();
@@ -696,7 +697,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             protected void onMeasure(int i2, int i3) {
                 setMeasuredDimension(View.MeasureSpec.getSize(i2), View.MeasureSpec.getSize(i3));
                 if (RTMPStreamPipOverlay.this.contentFrameLayout.getParent() == this) {
-                    RTMPStreamPipOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipHeight, TLRPC.FLAG_30));
+                    RTMPStreamPipOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(RTMPStreamPipOverlay.this.pipHeight, TLObject.FLAG_30));
                 }
             }
         };

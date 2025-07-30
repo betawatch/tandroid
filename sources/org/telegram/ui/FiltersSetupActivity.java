@@ -303,7 +303,7 @@ public class FiltersSetupActivity extends BaseFragment implements NotificationCe
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:101:0x01d7  */
@@ -501,7 +501,7 @@ public class FiltersSetupActivity extends BaseFragment implements NotificationCe
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
     }
 
@@ -1082,8 +1082,8 @@ public class FiltersSetupActivity extends BaseFragment implements NotificationCe
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             AndroidUtilities.dp(48.0f);
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(94.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_30));
-            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(94.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
             setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
         }
 

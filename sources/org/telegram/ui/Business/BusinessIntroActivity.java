@@ -444,7 +444,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             protected void onMeasure(int i, int i2) {
                 BusinessIntroActivity.this.greetingsView.measure(i, i2);
                 invalidate();
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(this.minHeight, BusinessIntroActivity.this.greetingsView.getMeasuredHeight() + AndroidUtilities.dp(36.0f)), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(this.minHeight, BusinessIntroActivity.this.greetingsView.getMeasuredHeight() + AndroidUtilities.dp(36.0f)), TLObject.FLAG_30));
                 if (this.minHeight < 0) {
                     this.minHeight = getMeasuredHeight();
                 }

@@ -17,7 +17,7 @@ import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class ActionBarContextView extends AbsActionBarView {
@@ -237,7 +237,7 @@ public class ActionBarContextView extends AbsActionBarView {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         int mode = View.MeasureSpec.getMode(i);
-        int i3 = TLRPC.FLAG_30;
+        int i3 = TLObject.FLAG_30;
         if (mode != 1073741824) {
             throw new IllegalStateException(getClass().getSimpleName() + " can only be used with android:layout_width=\"match_parent\" (or fill_parent)");
         }
@@ -252,7 +252,7 @@ public class ActionBarContextView extends AbsActionBarView {
         int paddingTop = getPaddingTop() + getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
         int i5 = i4 - paddingTop;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_31);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_31);
         View view = this.mClose;
         if (view != null) {
             int measureChildView = measureChildView(view, paddingLeft, makeMeasureSpec, 0);
@@ -281,13 +281,13 @@ public class ActionBarContextView extends AbsActionBarView {
         if (view2 != null) {
             ViewGroup.LayoutParams layoutParams = view2.getLayoutParams();
             int i6 = layoutParams.width;
-            int i7 = i6 != -2 ? TLRPC.FLAG_30 : TLRPC.FLAG_31;
+            int i7 = i6 != -2 ? TLObject.FLAG_30 : TLObject.FLAG_31;
             if (i6 >= 0) {
                 paddingLeft = Math.min(i6, paddingLeft);
             }
             int i8 = layoutParams.height;
             if (i8 == -2) {
-                i3 = TLRPC.FLAG_31;
+                i3 = TLObject.FLAG_31;
             }
             if (i8 >= 0) {
                 i5 = Math.min(i8, i5);

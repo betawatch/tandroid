@@ -71,7 +71,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class MediaRouteControllerDialog extends AlertDialog {
@@ -515,7 +515,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
                         mediaRouteVolumeSlider.setEnabled(false);
                     }
                 }
-                ((ImageView) view.findViewById(R$id.mr_volume_item_icon)).setAlpha(isEnabled ? NotificationCenter.locationPermissionGranted : (int) (this.mDisabledAlpha * 255.0f));
+                ((ImageView) view.findViewById(R$id.mr_volume_item_icon)).setAlpha(isEnabled ? NotificationCenter.goingToPreviewTheme : (int) (this.mDisabledAlpha * 255.0f));
                 ((LinearLayout) view.findViewById(R$id.volume_item_container)).setVisibility(MediaRouteControllerDialog.this.mGroupMemberRoutesAnimatingWithBitmap.contains(routeInfo) ? 4 : 0);
                 Set set = MediaRouteControllerDialog.this.mGroupMemberRoutesAdded;
                 if (set != null && set.contains(routeInfo)) {
@@ -1262,7 +1262,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
         setLayoutHeight(this.mMediaMainControlLayout, -1);
         updateMediaControlVisibility(canShowPlaybackControlLayout());
         View decorView = getWindow().getDecorView();
-        decorView.measure(View.MeasureSpec.makeMeasureSpec(getWindow().getAttributes().width, TLRPC.FLAG_30), 0);
+        decorView.measure(View.MeasureSpec.makeMeasureSpec(getWindow().getAttributes().width, TLObject.FLAG_30), 0);
         setLayoutHeight(this.mMediaMainControlLayout, layoutHeight);
         if (this.mCustomControlView == null && (this.mArtView.getDrawable() instanceof BitmapDrawable) && (bitmap = ((BitmapDrawable) this.mArtView.getDrawable()).getBitmap()) != null) {
             i = getDesiredArtHeight(bitmap.getWidth(), bitmap.getHeight());

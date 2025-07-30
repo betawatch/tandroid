@@ -21,7 +21,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Paint.Views.EditTextOutline;
 
@@ -139,12 +139,12 @@ public class PaintingOverlay extends FrameLayout {
                 VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.mediaEntityViews.get(childAt);
                 if (mediaEntity != null) {
                     if (childAt instanceof EditTextOutline) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
                         float measuredWidth2 = mediaEntity.customTextView ? (mediaEntity.width * getMeasuredWidth()) / mediaEntity.viewWidth : mediaEntity.scale * ((mediaEntity.textViewWidth * measuredWidth) / mediaEntity.viewWidth);
                         childAt.setScaleX(measuredWidth2);
                         childAt.setScaleY(measuredWidth2);
                     } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * mediaEntity.width), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * mediaEntity.height), TLRPC.FLAG_30));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * mediaEntity.width), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * mediaEntity.height), TLObject.FLAG_30));
                     }
                 }
             }
@@ -303,7 +303,7 @@ public class PaintingOverlay extends FrameLayout {
                 int i5 = mediaEntity.textAlign;
                 editTextOutline.setTextAlignment(i5 != 1 ? (i5 == 2 ? !LocaleController.isRTL : LocaleController.isRTL) ? 3 : 2 : 4);
                 editTextOutline.setHorizontallyScrolling(false);
-                editTextOutline.setImeOptions(TLRPC.FLAG_28);
+                editTextOutline.setImeOptions(TLObject.FLAG_28);
                 editTextOutline.setFocusableInTouchMode(true);
                 editTextOutline.setEnabled(false);
                 editTextOutline.setInputType(editTextOutline.getInputType() | 16384);

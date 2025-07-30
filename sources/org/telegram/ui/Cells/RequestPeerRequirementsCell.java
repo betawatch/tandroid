@@ -16,6 +16,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
@@ -140,7 +141,7 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         View view = new View(getContext()) { // from class: org.telegram.ui.Cells.RequestPeerRequirementsCell.1
             @Override // android.view.View
             protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i), TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i), TLObject.FLAG_30));
             }
         };
         view.setBackground(drawable);

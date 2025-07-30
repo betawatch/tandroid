@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -21,7 +21,7 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
     private final Paint bgPaint;
     private final Path clipPath;
     private final Path clipPath2;
-    private final LinearLayout linearLayout;
+    public final LinearLayout linearLayout;
     private int selectedIndex;
     private final AnimatedFloat selectorEndX;
     private final AnimatedFloat selectorStartX;
@@ -43,7 +43,7 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.round(this.text.getWidth()) + getPaddingLeft() + getPaddingRight(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(Math.round(this.text.getHeight()) + getPaddingTop() + getPaddingBottom(), AndroidUtilities.dp(26.0f)), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.round(this.text.getWidth()) + getPaddingLeft() + getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(Math.round(this.text.getHeight()) + getPaddingTop() + getPaddingBottom(), AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
         }
 
         public void setText(Text text) {

@@ -196,8 +196,8 @@ abstract class DecodedBitStreamParser {
             int readBits = bitSource.readBits(13);
             int i3 = (readBits % 96) | ((readBits / 96) << 8);
             int i4 = i3 + (i3 < 2560 ? 41377 : 42657);
-            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.locationPermissionGranted);
-            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.locationPermissionGranted);
+            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.goingToPreviewTheme);
+            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.goingToPreviewTheme);
             i2 += 2;
             i--;
         }
@@ -278,7 +278,7 @@ abstract class DecodedBitStreamParser {
         if ((readBits & NotificationCenter.storiesSendAsUpdate) == 128) {
             return bitSource.readBits(8) | ((readBits & 63) << 8);
         }
-        if ((readBits & NotificationCenter.starUserGiftsLoaded) == 192) {
+        if ((readBits & NotificationCenter.starGiftsLoaded) == 192) {
             return bitSource.readBits(16) | ((readBits & 31) << 16);
         }
         throw FormatException.getFormatInstance();

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.voip.VoIPHelper;
 
 /* loaded from: classes4.dex */
@@ -16,7 +16,7 @@ public class VoIPFeedbackActivity extends Activity {
 
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
-        getWindow().addFlags(TLRPC.FLAG_19);
+        getWindow().addFlags(TLObject.FLAG_19);
         super.onCreate(bundle);
         overridePendingTransition(0, 0);
         setContentView(new View(this));

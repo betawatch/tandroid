@@ -323,7 +323,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -531,14 +531,14 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(78.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(78.0f), TLObject.FLAG_30));
         }
 
         public void openLanguagesSelect() {
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext()) { // from class: org.telegram.ui.Components.TranslateAlert2.HeaderView.4
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i, int i2) {
-                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i2)), TLRPC.FLAG_30));
+                    super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i2)), TLObject.FLAG_30));
                 }
             };
             Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.popup_fixed_alert).mutate();
@@ -574,14 +574,14 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 }
             };
             actionBarPopupWindow.setPauseNotifications(true);
-            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
+            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
             actionBarPopupWindow.setOutsideTouchable(true);
             actionBarPopupWindow.setClippingEnabled(true);
             actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
             actionBarPopupWindow.setFocusable(true);
             int[] iArr = new int[2];
             this.toLanguageTextView.getLocationInWindow(iArr);
-            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
+            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
             int measuredHeight = actionBarPopupWindowLayout.getMeasuredHeight();
             int i2 = iArr[1];
             actionBarPopupWindow.showAtLocation(((BottomSheet) TranslateAlert2.this).containerView, 51, iArr[0] - AndroidUtilities.dp(8.0f), ((float) i2) > (((float) AndroidUtilities.displaySize.y) * 0.9f) - ((float) measuredHeight) ? (i2 - measuredHeight) + AndroidUtilities.dp(8.0f) : (i2 + this.toLanguageTextView.getMeasuredHeight()) - AndroidUtilities.dp(8.0f));
@@ -697,7 +697,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             return i == 0 ? new RecyclerListView.Holder(new View(this.mContext) { // from class: org.telegram.ui.Components.TranslateAlert2.PaddedAdapter.1
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
                 }
             }) : new RecyclerListView.Holder(this.mMainView);
         }
@@ -739,7 +739,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         this.textViewContainer = new FrameLayout(context) { // from class: org.telegram.ui.Components.TranslateAlert2.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i3, int i4) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLRPC.FLAG_30), i4);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i4);
             }
         };
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, resourcesProvider);
@@ -1263,7 +1263,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
                         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                         public void updateDrawState(TextPaint textPaint) {
-                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.locationPermissionGranted);
+                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.goingToPreviewTheme);
                             if (!(uRLSpan instanceof URLSpanNoUnderline)) {
                                 textPaint.setUnderlineText(true);
                             }

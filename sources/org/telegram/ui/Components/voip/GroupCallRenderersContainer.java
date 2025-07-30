@@ -38,6 +38,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.pip.utils.PipUtils;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BackDrawable;
@@ -163,7 +164,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
         ImageView imageView = new ImageView(context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.2
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLObject.FLAG_30));
             }
         };
         this.backButton = imageView;
@@ -203,7 +204,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
 
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLObject.FLAG_30));
             }
         };
         this.pinButton = imageView2;
@@ -280,7 +281,7 @@ public abstract class GroupCallRenderersContainer extends FrameLayout {
             }
         });
         addView(this.pipView, LayoutHelper.createFrame(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
-        final ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(18.0f), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), NotificationCenter.groupRestrictionsUnlockedByBoosts));
+        final ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(18.0f), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), NotificationCenter.openBoostForUsersDialog));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.5
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {

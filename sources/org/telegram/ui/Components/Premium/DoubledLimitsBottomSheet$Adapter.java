@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.FixedHeightEmptyCell;
 import org.telegram.ui.Components.LayoutHelper;
@@ -89,7 +89,7 @@ public class DoubledLimitsBottomSheet$Adapter extends RecyclerListView.Selection
         int i3 = 0;
         for (int i4 = 0; i4 < this.limits.size(); i4++) {
             doubledLimitsBottomSheet$LimitCell.setData((DoubledLimitsBottomSheet$Limit) this.limits.get(i4));
-            doubledLimitsBottomSheet$LimitCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+            doubledLimitsBottomSheet$LimitCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
             ((DoubledLimitsBottomSheet$Limit) this.limits.get(i4)).yOffset = i3;
             i3 += doubledLimitsBottomSheet$LimitCell.getMeasuredHeight();
         }
@@ -126,7 +126,7 @@ public class DoubledLimitsBottomSheet$Adapter extends RecyclerListView.Selection
             ?? r15 = new FrameLayout(context) { // from class: org.telegram.ui.Components.Premium.DoubledLimitsBottomSheet$Adapter.1
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLRPC.FLAG_30));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLObject.FLAG_30));
                 }
             };
             LinearLayout linearLayout = new LinearLayout(context);

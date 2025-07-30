@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Charts.ChartPickerDelegate;
 import org.telegram.ui.Charts.data.ChartData;
@@ -485,11 +485,11 @@ public abstract class BaseChartView extends View implements ChartPickerDelegate.
                 Double.isNaN(d);
                 Double.isNaN(d);
                 final ChartBottomSignatureData chartBottomSignatureData3 = new ChartBottomSignatureData(highestOneBit, (int) (d + d2), (int) (d - d2));
-                chartBottomSignatureData3.alpha = NotificationCenter.locationPermissionGranted;
+                chartBottomSignatureData3.alpha = NotificationCenter.goingToPreviewTheme;
                 ChartBottomSignatureData chartBottomSignatureData4 = this.currentBottomSignatures;
                 this.currentBottomSignatures = chartBottomSignatureData3;
                 if (chartBottomSignatureData4 == null) {
-                    chartBottomSignatureData3.alpha = NotificationCenter.locationPermissionGranted;
+                    chartBottomSignatureData3.alpha = NotificationCenter.goingToPreviewTheme;
                     this.bottomSignatureDate.add(chartBottomSignatureData3);
                     return;
                 }
@@ -1139,7 +1139,7 @@ public abstract class BaseChartView extends View implements ChartPickerDelegate.
         }
         this.legendSignatureView.setData(i, jArr[i], this.lines, false, chartData.yTooltipFormatter, chartData.yRate);
         this.legendSignatureView.setVisibility(0);
-        this.legendSignatureView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
+        this.legendSignatureView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
         float f2 = (this.chartData.xPercentage[this.selectedIndex] * this.chartFullWidth) - f;
         float width = f2 > (this.chartStart + this.chartWidth) / 2.0f ? f2 - (this.legendSignatureView.getWidth() + DP_5) : f2 + DP_5;
         if (width < 0.0f) {
@@ -1651,7 +1651,7 @@ public abstract class BaseChartView extends View implements ChartPickerDelegate.
                 this.currentMinHeight = f6;
                 this.horizontalLines.clear();
                 this.horizontalLines.add(createHorizontalLinesData);
-                createHorizontalLinesData.alpha = NotificationCenter.locationPermissionGranted;
+                createHorizontalLinesData.alpha = NotificationCenter.goingToPreviewTheme;
                 return;
             }
             this.horizontalLines.add(createHorizontalLinesData);

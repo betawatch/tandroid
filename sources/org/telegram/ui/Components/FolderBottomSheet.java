@@ -416,7 +416,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void setAction(CharSequence charSequence, final Runnable runnable) {
@@ -551,7 +551,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 float f2;
                 float f3;
                 super.onDraw(canvas);
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
                 float measuredWidth = getMeasuredWidth() / 2.0f;
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 if (this.middleFolder != null) {
@@ -689,7 +689,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172.0f), TLObject.FLAG_30));
         }
 
         public void setSelectedCount(int i, boolean z) {

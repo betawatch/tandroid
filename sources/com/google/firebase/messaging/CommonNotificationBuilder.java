@@ -21,7 +21,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public abstract class CommonNotificationBuilder {
@@ -49,7 +49,7 @@ public abstract class CommonNotificationBuilder {
         if (shouldUploadMetrics(notificationParams)) {
             createTargetIntent.putExtra("gcm.n.analytics_data", notificationParams.paramsForAnalyticsIntent());
         }
-        return PendingIntent.getActivity(context, generatePendingIntentRequestCode(), createTargetIntent, getPendingIntentFlags(TLRPC.FLAG_30));
+        return PendingIntent.getActivity(context, generatePendingIntentRequestCode(), createTargetIntent, getPendingIntentFlags(TLObject.FLAG_30));
     }
 
     private static PendingIntent createDeleteIntent(Context context, Context context2, NotificationParams notificationParams) {
@@ -60,7 +60,7 @@ public abstract class CommonNotificationBuilder {
     }
 
     private static PendingIntent createMessagingPendingIntent(Context context, Context context2, Intent intent) {
-        return PendingIntent.getBroadcast(context, generatePendingIntentRequestCode(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(context2.getPackageName()).putExtra("wrapped_intent", intent), getPendingIntentFlags(TLRPC.FLAG_30));
+        return PendingIntent.getBroadcast(context, generatePendingIntentRequestCode(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(context2.getPackageName()).putExtra("wrapped_intent", intent), getPendingIntentFlags(TLObject.FLAG_30));
     }
 
     public static DisplayNotificationInfo createNotificationInfo(Context context, Context context2, NotificationParams notificationParams, String str, Bundle bundle) {
@@ -136,7 +136,7 @@ public abstract class CommonNotificationBuilder {
         if (!TextUtils.isEmpty(string)) {
             Intent intent = new Intent(string);
             intent.setPackage(str);
-            intent.setFlags(TLRPC.FLAG_28);
+            intent.setFlags(TLObject.FLAG_28);
             return intent;
         }
         Uri link = notificationParams.getLink();

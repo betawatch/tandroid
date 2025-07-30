@@ -35,7 +35,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -445,7 +445,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     public PremiumFeatureBottomSheet(final BaseFragment baseFragment, Context context, int i, boolean z, int i2, final boolean z2, PremiumPreviewFragment.SubscriptionTier subscriptionTier) {
         super(context, false, getResourceProvider(baseFragment));
         this.premiumFeatures = new ArrayList();
-        this.gradientAlpha = NotificationCenter.locationPermissionGranted;
+        this.gradientAlpha = NotificationCenter.goingToPreviewTheme;
         this.baseFragment = baseFragment;
         if (baseFragment == null) {
             throw new RuntimeException("fragmnet can't be null");
@@ -520,7 +520,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(PremiumFeatureBottomSheet.this.contentHeight + AndroidUtilities.dp(2.0f), TLRPC.FLAG_30));
+                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(PremiumFeatureBottomSheet.this.contentHeight + AndroidUtilities.dp(2.0f), TLObject.FLAG_30));
             }
         };
         this.closeLayout = new FrameLayout(getContext());
@@ -608,7 +608,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                     getChildAt(0).measure(i4, View.MeasureSpec.makeMeasureSpec(0, 0));
                     dp = getChildAt(0).getMeasuredHeight();
                 }
-                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(dp + PremiumFeatureBottomSheet.this.topGlobalOffset, TLRPC.FLAG_30));
+                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(dp + PremiumFeatureBottomSheet.this.topGlobalOffset, TLObject.FLAG_30));
             }
 
             @Override // androidx.viewpager.widget.ViewPager, android.view.View
@@ -748,7 +748,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             protected void onMeasure(int i4, int i5) {
                 this.lastSize = (i4 + i5) << 16;
                 PremiumFeatureBottomSheet.this.topGlobalOffset = 0;
-                scrollView.measure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5), TLRPC.FLAG_31));
+                scrollView.measure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5), TLObject.FLAG_31));
                 PremiumFeatureBottomSheet.this.topGlobalOffset = (View.MeasureSpec.getSize(i5) - scrollView.getMeasuredHeight()) + ((BottomSheet) PremiumFeatureBottomSheet.this).backgroundPaddingTop;
                 super.onMeasure(i4, i5);
                 PremiumFeatureBottomSheet.this.checkTopOffset();

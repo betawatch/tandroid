@@ -2298,7 +2298,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
         @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
         }
 
         @Override // android.webkit.WebView
@@ -2748,7 +2748,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             this.parentActivity = (Activity) context;
         }
         cellFlickerDrawable.drawFrame = false;
-        cellFlickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.groupRestrictionsUnlockedByBoosts);
+        cellFlickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.openBoostForUsersDialog);
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.web.BotWebViewContainer.1
 
             class 1 extends ImageReceiver {
@@ -6522,7 +6522,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     protected void onMeasure(int i, int i2) {
         int i3 = this.forceHeight;
         if (i3 >= 0) {
-            i2 = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+            i2 = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
         }
         super.onMeasure(i, i2);
         this.flickerDrawable.setParentWidth(getMeasuredWidth());
@@ -6779,6 +6779,6 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     public void updateFlickerBackgroundColor(int i) {
-        this.flickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.groupRestrictionsUnlockedByBoosts);
+        this.flickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.openBoostForUsersDialog);
     }
 }

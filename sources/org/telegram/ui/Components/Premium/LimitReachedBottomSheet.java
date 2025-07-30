@@ -377,7 +377,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                     view = new View(LimitReachedBottomSheet.this.getContext()) { // from class: org.telegram.ui.Components.Premium.LimitReachedBottomSheet.5.3
                         @Override // android.view.View
                         protected void onMeasure(int i3, int i4) {
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLRPC.FLAG_30));
+                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
                         }
                     };
                     break;
@@ -666,7 +666,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.level != null ? 49.0f : 36.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.level != null ? 49.0f : 36.0f), TLObject.FLAG_30));
         }
 
         public void set(BoostFeature boostFeature) {
@@ -2043,7 +2043,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             formatString = LocaleController.formatString("LimitReachedCommunitiesLocked", R.string.LimitReachedCommunitiesLocked, Integer.valueOf(limitParams.defaultLimit));
         } else if (i == 6) {
             limitParams.defaultLimit = 100;
-            limitParams.premiumLimit = NotificationCenter.emojiKeywordsLoaded;
+            limitParams.premiumLimit = NotificationCenter.savedMessagesForwarded;
             limitParams.icon = R.drawable.msg_limit_folder;
             limitParams.descriptionStr = LocaleController.formatString("LimitReachedFileSize", R.string.LimitReachedFileSize, "2 GB", "4 GB");
             limitParams.descriptionStrPremium = LocaleController.formatString("LimitReachedFileSizePremium", R.string.LimitReachedFileSizePremium, "4 GB");

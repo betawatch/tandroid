@@ -29,7 +29,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
@@ -153,7 +153,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         this.textView.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         this.textView.setBackground(null);
         EditTextBoldCursor editTextBoldCursor = this.textView;
-        editTextBoldCursor.setImeOptions(editTextBoldCursor.getImeOptions() | TLRPC.FLAG_28);
+        editTextBoldCursor.setImeOptions(editTextBoldCursor.getImeOptions() | TLObject.FLAG_28);
         EditTextBoldCursor editTextBoldCursor2 = this.textView;
         editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | 16384);
         this.textView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
@@ -396,25 +396,25 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         int size = View.MeasureSpec.getSize(i);
         ImageView imageView = this.deleteImageView;
         if (imageView != null) {
-            imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
         ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = this.emojiButton;
         if (chatActivityEnterViewAnimatedIconView != null) {
-            chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
         ImageView imageView2 = this.moveImageView;
         if (imageView2 != null) {
-            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
         SimpleTextView simpleTextView = this.textView2;
         if (simpleTextView != null) {
-            simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
+            simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
         }
         CheckBox2 checkBox2 = this.checkBox;
         if (checkBox2 != null) {
-            checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.dialogsUnreadCounterChanged : 122), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.dialogsUnreadCounterChanged : 122), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.textView.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), this.textView.getMeasuredHeight()) + (this.needDivider ? 1 : 0));
         SimpleTextView simpleTextView2 = this.textView2;

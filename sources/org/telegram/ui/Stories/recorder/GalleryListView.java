@@ -918,7 +918,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size * this.aspectRatio), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size * this.aspectRatio), TLObject.FLAG_30));
             updateMatrix();
         }
 
@@ -1249,7 +1249,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         this.collaging = z2;
         this.onlyCollaging = z3;
         paint.setColor(-14737633);
-        paint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(-0.4f), TLRPC.FLAG_27);
+        paint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(-0.4f), TLObject.FLAG_27);
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Stories.recorder.GalleryListView.1
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {

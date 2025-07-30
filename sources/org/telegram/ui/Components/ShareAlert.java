@@ -1585,7 +1585,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 view = new View(this.context) { // from class: org.telegram.ui.Components.ShareAlert.ShareSearchAdapter.6
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, TLRPC.FLAG_30));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, TLObject.FLAG_30));
                     }
                 };
             } else if (i != 5) {
@@ -2114,7 +2114,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 if (ShareAlert.this.keyboardSize2 <= AndroidUtilities.dp(20.0f)) {
                     if (!AndroidUtilities.isInMultiwindow) {
                         size3 -= ((BottomSheet) ShareAlert.this).keyboardVisible ? 0 : ShareAlert.this.commentTextView.getEmojiPadding();
-                        i6 = View.MeasureSpec.makeMeasureSpec(size3, TLRPC.FLAG_30);
+                        i6 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
                     }
                     int i8 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
                     if (ShareAlert.this.pickerBottomLayout != null) {
@@ -2131,7 +2131,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.ignoreLayout = false;
                 BlurredFrameLayout blurredFrameLayout = ShareAlert.this.navigationBar;
                 if (blurredFrameLayout != null) {
-                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, TLRPC.FLAG_30));
+                    blurredFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BottomSheet) ShareAlert.this).navigationBarHeight, TLObject.FLAG_30));
                 }
                 int childCount = getChildCount();
                 for (int i9 = 0; i9 < childCount; i9++) {
@@ -2143,16 +2143,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                                 measureChildWithMargins(childAt, i5, 0, i6, 0);
                             } else {
                                 if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30);
                                     paddingTop = childAt.getLayoutParams().height;
                                 } else if (AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30);
                                     paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                                 } else {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30);
                                     paddingTop = (size3 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                                 }
-                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                                childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                             }
                         }
                     }
@@ -2382,7 +2382,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ShareAlert.this.checkCurrentList(false);
                 this.ignoreLayout = false;
                 setMeasuredDimension(View.MeasureSpec.getSize(i5), size2);
-                onMeasureInternal(i5, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                onMeasureInternal(i5, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             }
 
             @Override // android.view.View
@@ -3900,7 +3900,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.sendPopupWindow.setSoftInputMode(0);
         this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
         SharedConfig.removeScheduledOrNoSoundHint();
-        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.sendPopupWindow.setFocusable(true);
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);

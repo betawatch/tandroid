@@ -38,6 +38,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -139,7 +140,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             premiumPreviewBottomSheet.enterTransitionProgress = 1.0f;
             premiumPreviewBottomSheet.iconContainer.invalidate();
             if (this.val$startEnterFromDrawable != null) {
-                ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.locationPermissionGranted);
+                ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.goingToPreviewTheme);
                 final Drawable drawable = this.val$startEnterFromDrawable;
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -380,7 +381,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 view = new View(context) { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet.Adapter.7
                     @Override // android.view.View
                     protected void onMeasure(int i5, int i6) {
-                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
                     }
                 };
             } else if (i == 4) {
@@ -576,7 +577,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         int i3 = 0;
         for (int i4 = 0; i4 < this.premiumFeatures.size(); i4++) {
             this.dummyCell.setData((PremiumPreviewFragment.PremiumFeatureData) this.premiumFeatures.get(i4), false);
-            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
             ((PremiumPreviewFragment.PremiumFeatureData) this.premiumFeatures.get(i4)).yOffset = i3;
             i3 += this.dummyCell.getMeasuredHeight();
         }

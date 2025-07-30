@@ -76,7 +76,7 @@ public class LinkActionView extends LinearLayout {
             this.avatarsImageView = new AvatarsImageView(context, false) { // from class: org.telegram.ui.Components.LinkActionView.AvatarsContainer.1
                 @Override // org.telegram.ui.Components.AvatarsImageView, android.view.View
                 protected void onMeasure(int i, int i2) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, LinkActionView.this.usersCount) == 0 ? 0 : ((r2 - 1) * 20) + 32), TLRPC.FLAG_30), i2);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, LinkActionView.this.usersCount) == 0 ? 0 : ((r2 - 1) * 20) + 32), TLObject.FLAG_30), i2);
                 }
             };
             LinearLayout linearLayout = new LinearLayout(context);

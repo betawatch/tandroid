@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.ColoredImageSpan;
@@ -65,7 +66,7 @@ public class Emoji {
 
     public static abstract class EmojiDrawable extends Drawable {
         public boolean fullSize = false;
-        int placeholderColor = TLRPC.FLAG_28;
+        int placeholderColor = TLObject.FLAG_28;
 
         public boolean isLoaded() {
             return false;
@@ -125,7 +126,7 @@ public class Emoji {
                 canvas.restore();
             }
             if (z) {
-                getDrawable().setAlpha(NotificationCenter.locationPermissionGranted);
+                getDrawable().setAlpha(NotificationCenter.goingToPreviewTheme);
             }
         }
 

@@ -2289,16 +2289,16 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                             measureChildWithMargins(childAt, i8, 0, i9, 0);
                         } else {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                         }
                     }
                 }
@@ -2477,7 +2477,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.descriptionTextView.setEnabled(this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat));
         EditTextBoldCursor editTextBoldCursor5 = this.descriptionTextView;
         editTextBoldCursor5.setFocusable(editTextBoldCursor5.isEnabled());
-        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.locationPermissionGranted)});
+        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.goingToPreviewTheme)});
         this.descriptionTextView.setHint(LocaleController.getString("DescriptionOptionalPlaceholder", R.string.DescriptionOptionalPlaceholder));
         this.descriptionTextView.setCursorColor(Theme.getColor(i10));
         this.descriptionTextView.setCursorSize(AndroidUtilities.dp(20.0f));

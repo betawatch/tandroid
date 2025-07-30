@@ -7,7 +7,7 @@ import com.google.android.exoplayer2.upstream.DefaultAllocator;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class DefaultLoadControl implements LoadControl {
@@ -67,7 +67,7 @@ public class DefaultLoadControl implements LoadControl {
             case 4:
             case 5:
             case 6:
-                return TLRPC.FLAG_17;
+                return TLObject.FLAG_17;
         }
     }
 

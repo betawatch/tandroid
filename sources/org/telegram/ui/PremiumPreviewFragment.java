@@ -449,7 +449,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                                 }
                                 PremiumPreviewFragment.this.firstViewHeight = dp;
                             }
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(PremiumPreviewFragment.this.firstViewHeight, TLRPC.FLAG_30));
+                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(PremiumPreviewFragment.this.firstViewHeight, TLObject.FLAG_30));
                         }
                     };
                     break;
@@ -765,7 +765,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             for (int i4 = 0; i4 < PremiumPreviewFragment.this.subscriptionTiers.size(); i4++) {
                 PremiumPreviewFragment premiumPreviewFragment = PremiumPreviewFragment.this;
                 premiumPreviewFragment.dummyTierCell.bind((SubscriptionTier) premiumPreviewFragment.subscriptionTiers.get(i4), false);
-                PremiumPreviewFragment.this.dummyTierCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+                PremiumPreviewFragment.this.dummyTierCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
                 ((SubscriptionTier) PremiumPreviewFragment.this.subscriptionTiers.get(i4)).yOffset = i3;
                 i3 += PremiumPreviewFragment.this.dummyTierCell.getMeasuredHeight();
             }
@@ -1831,13 +1831,13 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         int i3 = 0;
         for (int i4 = 0; i4 < this.premiumFeatures.size(); i4++) {
             this.dummyCell.setData((PremiumFeatureData) this.premiumFeatures.get(i4), false);
-            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
             ((PremiumFeatureData) this.premiumFeatures.get(i4)).yOffset = i3;
             i3 += this.dummyCell.getMeasuredHeight();
         }
         for (int i5 = 0; i5 < this.morePremiumFeatures.size(); i5++) {
             this.dummyCell.setData((PremiumFeatureData) this.morePremiumFeatures.get(i5), false);
-            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+            this.dummyCell.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
             ((PremiumFeatureData) this.morePremiumFeatures.get(i5)).yOffset = i3;
             i3 += this.dummyCell.getMeasuredHeight();
         }

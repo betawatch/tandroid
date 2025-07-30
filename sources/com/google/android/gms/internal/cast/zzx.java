@@ -145,7 +145,7 @@ final class zzx {
             zza2.zzd(arrayList4);
         }
         zzc.zzl((zznu) zza2.zzq());
-        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.commonChatsLoaded);
+        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.messagesFeeUpdated);
     }
 
     final void zzf(CastSession castSession) {

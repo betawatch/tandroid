@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class MediaCodecUtil {
@@ -226,19 +226,19 @@ public abstract class MediaCodecUtil {
             case 16:
                 return 65536;
             case 17:
-                return TLRPC.FLAG_17;
+                return TLObject.FLAG_17;
             case 18:
-                return TLRPC.FLAG_18;
+                return TLObject.FLAG_18;
             case 19:
-                return TLRPC.FLAG_19;
+                return TLObject.FLAG_19;
             case 20:
                 return 1048576;
             case 21:
-                return TLRPC.FLAG_21;
+                return TLObject.FLAG_21;
             case 22:
-                return TLRPC.FLAG_22;
+                return TLObject.FLAG_22;
             case 23:
-                return TLRPC.FLAG_23;
+                return TLObject.FLAG_23;
             default:
                 return -1;
         }
@@ -315,7 +315,7 @@ public abstract class MediaCodecUtil {
                 return 1310720;
             case 2048:
             case 4096:
-                return TLRPC.FLAG_21;
+                return TLObject.FLAG_21;
             case 8192:
                 return 2228224;
             case 16384:
@@ -323,9 +323,9 @@ public abstract class MediaCodecUtil {
             case 32768:
             case 65536:
                 return 9437184;
-            case TLRPC.FLAG_17 /* 131072 */:
-            case TLRPC.FLAG_18 /* 262144 */:
-            case TLRPC.FLAG_19 /* 524288 */:
+            case TLObject.FLAG_17 /* 131072 */:
+            case TLObject.FLAG_18 /* 262144 */:
+            case TLObject.FLAG_19 /* 524288 */:
                 return 35651584;
             default:
                 return -1;
@@ -1036,16 +1036,16 @@ public abstract class MediaCodecUtil {
                 i = 32768;
                 break;
             case "H153":
-                i = TLRPC.FLAG_17;
+                i = TLObject.FLAG_17;
                 break;
             case "H156":
-                i = TLRPC.FLAG_19;
+                i = TLObject.FLAG_19;
                 break;
             case "H180":
-                i = TLRPC.FLAG_21;
+                i = TLObject.FLAG_21;
                 break;
             case "H183":
-                i = TLRPC.FLAG_23;
+                i = TLObject.FLAG_23;
                 break;
             case "H186":
                 i = 33554432;
@@ -1063,13 +1063,13 @@ public abstract class MediaCodecUtil {
                 i = 65536;
                 break;
             case "L156":
-                i = TLRPC.FLAG_18;
+                i = TLObject.FLAG_18;
                 break;
             case "L180":
                 i = 1048576;
                 break;
             case "L183":
-                i = TLRPC.FLAG_22;
+                i = TLObject.FLAG_22;
                 break;
             case "L186":
                 i = 16777216;

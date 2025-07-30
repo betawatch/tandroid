@@ -22,6 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -553,7 +554,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                     if (!ContactsAdapter.this.isAdmin && !ContactsAdapter.this.needPhonebook) {
                         dp2 += dp;
                     }
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < size ? size - dp2 : 0, TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < size ? size - dp2 : 0, TLObject.FLAG_30));
                 }
             };
             frameLayout.addView(new ContactsEmptyView(this.mContext), LayoutHelper.createFrame(-2, -2, 17));

@@ -51,6 +51,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
@@ -1677,12 +1678,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             charSequence = this.questionString;
-            i3 = NotificationCenter.locationPermissionGranted;
+            i3 = NotificationCenter.goingToPreviewTheme;
             if (charSequence != null) {
-                i2 = NotificationCenter.locationPermissionGranted;
+                i2 = NotificationCenter.goingToPreviewTheme;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.locationPermissionGranted;
+                i4 = NotificationCenter.goingToPreviewTheme;
                 i2 = i4;
                 i5 = 0;
             }
@@ -1708,12 +1709,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 return;
             }
             charSequence = this.solutionString;
-            i3 = NotificationCenter.emojiKeywordsLoaded;
+            i3 = NotificationCenter.savedMessagesForwarded;
             if (charSequence != null) {
-                i2 = NotificationCenter.emojiKeywordsLoaded;
+                i2 = NotificationCenter.savedMessagesForwarded;
                 i5 = charSequence.length();
             } else {
-                i4 = NotificationCenter.emojiKeywordsLoaded;
+                i4 = NotificationCenter.savedMessagesForwarded;
                 i2 = i4;
                 i5 = 0;
             }
@@ -2057,18 +2058,18 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     if (childAt != null && childAt.getVisibility() != 8 && childAt != ((BaseFragment) PollCreateActivity.this).actionBar) {
                         if (PollCreateActivity.this.emojiView != null && PollCreateActivity.this.emojiView == childAt) {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = (paddingTop2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                         } else if (PollCreateActivity.this.listView == childAt) {
-                            childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(paddingTop2 - emojiPadding, TLRPC.FLAG_30));
+                            childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(paddingTop2 - emojiPadding, TLObject.FLAG_30));
                         } else {
                             measureChildWithMargins(childAt, i3, 0, i4, 0);
                         }

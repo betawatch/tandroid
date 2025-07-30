@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
@@ -65,7 +65,7 @@ public class StorageUsageView extends FrameLayout {
             StorageUsageView.this.paintFill.setColor(color);
             StorageUsageView.this.paintProgress.setColor(color);
             StorageUsageView.this.paintProgress2.setColor(color);
-            StorageUsageView.this.paintProgress.setAlpha(NotificationCenter.locationPermissionGranted);
+            StorageUsageView.this.paintProgress.setAlpha(NotificationCenter.goingToPreviewTheme);
             StorageUsageView.this.paintProgress2.setAlpha(82);
             StorageUsageView.this.paintFill.setAlpha(46);
             StorageUsageView.this.bgPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
@@ -124,7 +124,7 @@ public class StorageUsageView extends FrameLayout {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
         }
     }
 
@@ -135,7 +135,7 @@ public class StorageUsageView extends FrameLayout {
         this.paintProgress = new Paint(1);
         this.paintProgress2 = new Paint(1);
         this.bgPaint = new Paint();
-        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.channelStarsUpdated, NotificationCenter.locationPermissionGranted);
+        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.goingToPreviewTheme);
         setWillNotDraw(false);
         this.cellFlickerDrawable.drawFrame = false;
         this.paintFill.setStrokeWidth(AndroidUtilities.dp(6.0f));
@@ -174,7 +174,7 @@ public class StorageUsageView extends FrameLayout {
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
                 int childCount = getChildCount();
                 int i3 = 0;
                 int i4 = 0;

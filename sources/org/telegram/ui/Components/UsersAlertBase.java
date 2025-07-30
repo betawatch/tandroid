@@ -29,7 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -269,7 +269,7 @@ public abstract class UsersAlertBase extends BottomSheet {
                 UsersAlertBase.this.listView.setPadding(0, measurePadding, 0, 0);
                 this.ignoreLayout = false;
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
         }
 
         @Override // android.view.View

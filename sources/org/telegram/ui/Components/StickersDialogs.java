@@ -259,7 +259,7 @@ public abstract class StickersDialogs {
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
         actionBarPopupWindow.setFocusable(true);
-        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.getContentView().setFocusableInTouchMode(true);
         int[] iArr = new int[2];
@@ -295,7 +295,7 @@ public abstract class StickersDialogs {
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.Components.StickersDialogs.1
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
             }
         };
         int i = Theme.key_dialogTextBlack;

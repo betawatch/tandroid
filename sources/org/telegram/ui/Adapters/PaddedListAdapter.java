@@ -3,7 +3,7 @@ package org.telegram.ui.Adapters;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RecyclerListView;
 
 /* loaded from: classes4.dex */
@@ -113,7 +113,7 @@ public class PaddedListAdapter extends RecyclerListView.SelectionAdapter {
 
             @Override // android.view.View
             protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(PaddedListAdapter.this.getPadding(((View) getParent()).getMeasuredHeight()), TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(PaddedListAdapter.this.getPadding(((View) getParent()).getMeasuredHeight()), TLObject.FLAG_30));
             }
         };
         this.paddingView = view;

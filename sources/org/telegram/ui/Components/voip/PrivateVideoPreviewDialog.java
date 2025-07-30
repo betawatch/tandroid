@@ -35,7 +35,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.Theme;
@@ -249,7 +249,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             protected void onDraw(Canvas canvas) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.locationPermissionGranted);
+                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.goingToPreviewTheme);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage]);
                 if (PrivateVideoPreviewDialog.this.pageOffset > 0.0f) {
                     int i2 = PrivateVideoPreviewDialog.this.currentPage + 1;
@@ -608,7 +608,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             marginLayoutParams2.rightMargin = dp2;
         }
         super.onMeasure(i, i2);
-        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLRPC.FLAG_30), 0);
+        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener

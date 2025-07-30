@@ -1894,7 +1894,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].time = j;
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].overrideAlpha = 1.0f;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                         int height = (int) (imageViewEmoji.getHeight() * 0.03f);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set((imageViewEmoji.getLeft() + imageViewEmoji.getPaddingLeft()) - this.startOffset, height, (imageViewEmoji.getRight() - imageViewEmoji.getPaddingRight()) - this.startOffset, ((imageViewEmoji.getMeasuredHeight() + height) - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom());
@@ -2337,7 +2337,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f));
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f) + getPaddingTop() + getPaddingBottom(), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f) + getPaddingTop() + getPaddingBottom(), TLObject.FLAG_30));
         }
     }
 
@@ -2719,7 +2719,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             ((ViewGroup.MarginLayoutParams) this.headerView.getLayoutParams()).topMargin = AndroidUtilities.dp(this.currentButtonState == 0 ? 10.0f : 15.0f);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.currentButtonState == 0 ? 32.0f : 42.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.currentButtonState == 0 ? 32.0f : 42.0f), TLObject.FLAG_30));
         }
 
         public void setStickerSet(EmojiPack emojiPack, boolean z) {
@@ -3310,7 +3310,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     FrameLayout frameLayout = new FrameLayout(EmojiView.this.getContext()) { // from class: org.telegram.ui.Components.EmojiView.EmojiSearchAdapter.1
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((((View) EmojiView.this.getParent()) != null ? (int) (r3.getMeasuredHeight() - EmojiView.this.getY()) : AndroidUtilities.dp(120.0f)) - EmojiView.this.searchFieldHeight, TLRPC.FLAG_30));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((((View) EmojiView.this.getParent()) != null ? (int) (r3.getMeasuredHeight() - EmojiView.this.getY()) : AndroidUtilities.dp(120.0f)) - EmojiView.this.searchFieldHeight, TLObject.FLAG_30));
                         }
                     };
                     TextView textView = new TextView(EmojiView.this.getContext());
@@ -4241,7 +4241,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(!this.loadingState ? (int) ((((r3 - EmojiView.this.searchFieldHeight) - AndroidUtilities.dp(8.0f)) / 3) * 1.7f) : EmojiView.this.gifGridView.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(!this.loadingState ? (int) ((((r3 - EmojiView.this.searchFieldHeight) - AndroidUtilities.dp(8.0f)) / 3) * 1.7f) : EmojiView.this.gifGridView.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
         }
 
         public void setLoadingState(boolean z) {
@@ -4530,7 +4530,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                         this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
                     super.dispatchDraw(canvas);
                     this.fadePaint.setAlpha((int) (SearchField.this.inputBoxGradientAlpha * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), this.fadePaint);
@@ -5228,7 +5228,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 }
                 this.stickersPerRow = measuredWidth / AndroidUtilities.dp(72.0f);
             }
-            int i2 = this.positionToRow.get(i, TLRPC.FLAG_31);
+            int i2 = this.positionToRow.get(i, TLObject.FLAG_31);
             if (i2 == Integer.MIN_VALUE) {
                 return (EmojiView.this.stickerSets.size() - 1) + EmojiView.this.stickersTabOffset;
             }
@@ -5279,7 +5279,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             if (itemViewType == 1) {
                 EmptyCell emptyCell = (EmptyCell) viewHolder.itemView;
                 if (i == this.totalItems) {
-                    int i6 = this.positionToRow.get(i - 1, TLRPC.FLAG_31);
+                    int i6 = this.positionToRow.get(i - 1, TLObject.FLAG_31);
                     if (i6 != Integer.MIN_VALUE) {
                         Object obj = this.rowStartPack.get(i6);
                         if (obj instanceof TLRPC.TL_messages_stickerSet) {
@@ -5383,7 +5383,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     frameLayout2 = new StickerEmojiCell(this.context, true, EmojiView.this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiView.StickersGridAdapter.1
                         @Override // android.widget.FrameLayout, android.view.View
                         public void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLRPC.FLAG_30));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLObject.FLAG_30));
                         }
                     };
                     break;
@@ -6087,7 +6087,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             if (itemViewType == 1) {
                 EmptyCell emptyCell = (EmptyCell) viewHolder.itemView;
                 if (i == this.totalItems) {
-                    int i3 = this.positionToRow.get(i - 1, TLRPC.FLAG_31);
+                    int i3 = this.positionToRow.get(i - 1, TLObject.FLAG_31);
                     if (i3 != Integer.MIN_VALUE) {
                         Object obj = this.rowStartPack.get(i3);
                         if (obj instanceof TLRPC.TL_messages_stickerSet) {
@@ -6193,7 +6193,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     frameLayout = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.3
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) ((((EmojiView.this.stickersGridView.getMeasuredHeight() - EmojiView.this.searchFieldHeight) - AndroidUtilities.dp(8.0f)) / 3) * 1.7f), TLRPC.FLAG_30));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) ((((EmojiView.this.stickersGridView.getMeasuredHeight() - EmojiView.this.searchFieldHeight) - AndroidUtilities.dp(8.0f)) / 3) * 1.7f), TLObject.FLAG_30));
                         }
                     };
                     ImageView imageView = new ImageView(this.context);
@@ -6216,7 +6216,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             frameLayout = new StickerEmojiCell(this.context, z, EmojiView.this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.2
                 @Override // android.widget.FrameLayout, android.view.View
                 public void onMeasure(int i3, int i4) {
-                    super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLRPC.FLAG_30));
+                    super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLObject.FLAG_30));
                 }
             };
             view = frameLayout;
@@ -10045,7 +10045,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             }
             this.currentBackgroundType = 0;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
         this.isLayout = false;
         setTranslationY(getTranslationY());
     }

@@ -263,7 +263,7 @@ public class QuickRepliesController {
                     byteBufferValue.reuse();
                     TLdeserialize.id = queryFinalized2.intValue(2);
                     TLdeserialize.date = queryFinalized2.intValue(3);
-                    TLdeserialize.flags |= TLRPC.FLAG_30;
+                    TLdeserialize.flags |= TLObject.FLAG_30;
                     TLdeserialize.quick_reply_shortcut_id = queryFinalized2.intValue(4);
                     TLdeserialize.ttl = queryFinalized2.intValue(5);
                     MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList4, arrayList5, null);
@@ -368,7 +368,7 @@ public class QuickRepliesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$17(TLRPC.Message message, String str, int i) {
-        if ((message.flags & TLRPC.FLAG_30) != 0) {
+        if ((message.flags & TLObject.FLAG_30) != 0) {
             QuickReply findReply = findReply(message.quick_reply_shortcut_id);
             if (findReply == null) {
                 QuickReply quickReply = new QuickReply();
@@ -718,7 +718,7 @@ public class QuickRepliesController {
                     byteBufferValue.reuse();
                     TLdeserialize.id = queryFinalized.intValue(2);
                     TLdeserialize.date = queryFinalized.intValue(3);
-                    TLdeserialize.flags |= TLRPC.FLAG_30;
+                    TLdeserialize.flags |= TLObject.FLAG_30;
                     TLdeserialize.quick_reply_shortcut_id = queryFinalized.intValue(4);
                     TLdeserialize.ttl = queryFinalized.intValue(5);
                     MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList, arrayList2, null);

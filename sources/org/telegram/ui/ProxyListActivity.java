@@ -39,7 +39,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -160,7 +160,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 intent.setType("text/plain");
                 intent.putExtra("android.intent.extra.TEXT", sb.toString());
                 Intent createChooser = Intent.createChooser(intent, LocaleController.getString(ProxyListActivity.this.selectedItems.size() > 1 ? R.string.ShareLinks : R.string.ShareLink));
-                createChooser.setFlags(TLRPC.FLAG_28);
+                createChooser.setFlags(TLObject.FLAG_28);
                 this.val$context.startActivity(createChooser);
                 if (ProxyListActivity.this.listAdapter == null) {
                     return;
@@ -570,7 +570,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + 1, TLObject.FLAG_30));
         }
 
         public void setChecked(boolean z) {

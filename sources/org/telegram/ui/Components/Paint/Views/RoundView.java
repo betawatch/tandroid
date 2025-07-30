@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
@@ -229,9 +229,9 @@ public class RoundView extends EntityView {
         TextureView textureView = this.textureView;
         if (textureView != null) {
             float f = this.a;
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(f >= 1.0f ? (int) (f * i4) : i3, TLRPC.FLAG_30);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(f >= 1.0f ? (int) (f * i4) : i3, TLObject.FLAG_30);
             float f2 = this.a;
-            textureView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(f2 >= 1.0f ? i4 : (int) (i3 / f2), TLRPC.FLAG_30));
+            textureView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(f2 >= 1.0f ? i4 : (int) (i3 / f2), TLObject.FLAG_30));
         }
         setMeasuredDimension(i3, i4);
     }

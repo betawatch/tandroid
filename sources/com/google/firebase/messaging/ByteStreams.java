@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 abstract class ByteStreams {
@@ -102,7 +102,7 @@ abstract class ByteStreams {
     }
 
     private static int saturatedCast(long j) {
-        return j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLRPC.FLAG_31 : (int) j;
+        return j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLObject.FLAG_31 : (int) j;
     }
 
     public static byte[] toByteArray(InputStream inputStream) {

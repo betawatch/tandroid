@@ -649,7 +649,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -765,7 +765,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void set(TL_stats.BroadcastRevenueTransaction broadcastRevenueTransaction, boolean z) {
@@ -901,7 +901,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.ChannelMonetizationLayout.1
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), i5);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLObject.FLAG_30), i5);
             }
         };
         this.balanceLayout = linearLayout;
@@ -940,7 +940,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         LinearLayout linearLayout2 = new LinearLayout(context) { // from class: org.telegram.ui.ChannelMonetizationLayout.2
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i7, int i8) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLRPC.FLAG_30), i8);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i8);
             }
         };
         this.starsBalanceLayout = linearLayout2;

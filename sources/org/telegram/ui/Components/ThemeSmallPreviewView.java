@@ -38,6 +38,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.Theme;
@@ -573,7 +574,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                 f = size;
                 f2 = 1.35f;
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30));
             this.backupImageView.setPivotY(r4.getMeasuredHeight());
             this.backupImageView.setPivotX(r4.getMeasuredWidth() / 2.0f);
         }
@@ -581,7 +582,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         f = size;
         f2 = 1.2f;
         i3 = (int) (f * f2);
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30));
         this.backupImageView.setPivotY(r4.getMeasuredHeight());
         this.backupImageView.setPivotX(r4.getMeasuredWidth() / 2.0f);
     }
@@ -846,7 +847,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             ChatThemeBottomSheet.ChatThemeItem chatThemeItem3 = this.chatThemeItem;
             int settingsIndex = chatThemeItem3.chatTheme.getSettingsIndex(chatThemeItem3.themeIndex);
             fillOutBubblePaint(themeDrawable.outBubblePaintSecond, tlTheme.settings.get(settingsIndex).message_colors);
-            themeDrawable.outBubblePaintSecond.setAlpha(NotificationCenter.locationPermissionGranted);
+            themeDrawable.outBubblePaintSecond.setAlpha(NotificationCenter.goingToPreviewTheme);
             getPreviewDrawable(tlTheme, settingsIndex);
         } else {
             ChatThemeBottomSheet.ChatThemeItem chatThemeItem4 = this.chatThemeItem;

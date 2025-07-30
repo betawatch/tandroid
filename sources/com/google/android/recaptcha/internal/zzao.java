@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class zzao extends ContinuationImpl {
@@ -22,7 +22,7 @@ final class zzao extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         Object zzj;
         this.zza = obj;
-        this.zzc |= TLRPC.FLAG_31;
+        this.zzc |= TLObject.FLAG_31;
         zzj = this.zzb.zzj(0L, null, null, this);
         return zzj;
     }

@@ -84,7 +84,7 @@ public class CellFlickerDrawable {
     }
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.groupRestrictionsUnlockedByBoosts, NotificationCenter.audioRecordTooShort);
+        this(64, NotificationCenter.openBoostForUsersDialog, NotificationCenter.audioRecordTooShort);
     }
 
     public CellFlickerDrawable(int i, int i2) {
@@ -227,7 +227,7 @@ public class CellFlickerDrawable {
     }
 
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.groupRestrictionsUnlockedByBoosts);
+        setColors(i, 64, NotificationCenter.openBoostForUsersDialog);
     }
 
     public void setColors(int i, int i2, int i3) {

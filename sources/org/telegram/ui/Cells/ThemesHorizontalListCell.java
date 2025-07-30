@@ -188,7 +188,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
                         this.hasWhiteBackground = true;
                     }
                     if (this.themeInfo.getPreviewBackgroundColor() == 0 && this.themeInfo.previewParsed && this.backgroundDrawable == null) {
-                        createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.emojiKeywordsLoaded);
+                        createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.savedMessagesForwarded);
                         this.backgroundDrawable = createDefaultWallpaper;
                         if (createDefaultWallpaper instanceof MotionBackgroundDrawable) {
                             ((MotionBackgroundDrawable) createDefaultWallpaper).setRoundRadius(AndroidUtilities.dp(6.0f));
@@ -206,7 +206,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
             }
             this.hasWhiteBackground = false;
             if (this.themeInfo.getPreviewBackgroundColor() == 0) {
-                createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.emojiKeywordsLoaded);
+                createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.savedMessagesForwarded);
                 this.backgroundDrawable = createDefaultWallpaper;
                 if (createDefaultWallpaper instanceof MotionBackgroundDrawable) {
                 }
@@ -617,7 +617,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 22 : 15) + 76 + (this.isFirst ? 22 : 0)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(148.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 22 : 15) + 76 + (this.isFirst ? 22 : 0)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(148.0f), TLObject.FLAG_30));
         }
 
         @Override // android.view.View

@@ -24,7 +24,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
 /* loaded from: classes5.dex */
@@ -253,7 +253,7 @@ public class VoIPFloatingLayout extends FrameLayout {
         if (voIPFloatingLayoutDelegate != null) {
             voIPFloatingLayoutDelegate.onChange(this.toFloatingModeProgress, this.measuredAsFloatingMode);
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.lastH && getMeasuredWidth() != this.lastW) {
             this.path.reset();
             this.rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());

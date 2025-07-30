@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.text;
 import com.google.android.exoplayer2.decoder.SimpleDecoder;
 import com.google.android.exoplayer2.util.Assertions;
 import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class SimpleSubtitleDecoder extends SimpleDecoder implements SubtitleDecoder {
@@ -46,7 +46,7 @@ public abstract class SimpleSubtitleDecoder extends SimpleDecoder implements Sub
         try {
             ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(subtitleInputBuffer.data);
             subtitleOutputBuffer.setContent(subtitleInputBuffer.timeUs, decode(byteBuffer.array(), byteBuffer.limit(), z), subtitleInputBuffer.subsampleOffsetUs);
-            subtitleOutputBuffer.clearFlag(TLRPC.FLAG_31);
+            subtitleOutputBuffer.clearFlag(TLObject.FLAG_31);
             return null;
         } catch (SubtitleDecoderException e) {
             return e;

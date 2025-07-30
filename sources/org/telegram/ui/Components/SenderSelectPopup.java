@@ -36,6 +36,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.Theme;
@@ -157,7 +158,7 @@ public abstract class SenderSelectPopup extends ActionBarPopupWindow {
 
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), dp), View.MeasureSpec.getMode(i2)));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), dp), View.MeasureSpec.getMode(i2)));
             }
         };
         this.recyclerContainer = linearLayout;
@@ -337,7 +338,7 @@ public abstract class SenderSelectPopup extends ActionBarPopupWindow {
             layoutParams.type = 99;
             int i2 = Build.VERSION.SDK_INT;
             if (i2 >= 21) {
-                layoutParams.flags |= TLRPC.FLAG_31;
+                layoutParams.flags |= TLObject.FLAG_31;
             }
             if (i2 >= 28) {
                 layoutParams.layoutInDisplayCutoutMode = 1;

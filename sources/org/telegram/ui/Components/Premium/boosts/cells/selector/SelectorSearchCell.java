@@ -36,6 +36,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -149,7 +150,7 @@ public abstract class SelectorSearchCell extends ScrollView {
             while (i4 < childCount) {
                 View childAt = getChildAt(i4);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLRPC.FLAG_30));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLObject.FLAG_30));
                     boolean contains = this.removingSpans.contains(childAt);
                     if (!contains && childAt.getMeasuredWidth() + i5 > dp) {
                         dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(4.0f);
@@ -213,7 +214,7 @@ public abstract class SelectorSearchCell extends ScrollView {
             if (dp - i6 < i7) {
                 dp3 += AndroidUtilities.dp(36.0f);
             }
-            SelectorSearchCell.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
+            SelectorSearchCell.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
             SelectorSearchCell.this.editText.setHintVisible(SelectorSearchCell.this.editText.getMeasuredWidth() > SelectorSearchCell.this.hintTextWidth, true);
             if (!this.animationStarted) {
                 int dp5 = dp3 + AndroidUtilities.dp(38.0f);
@@ -555,7 +556,7 @@ public abstract class SelectorSearchCell extends ScrollView {
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.goingToPreviewTheme, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float f = this.topGradientAlpha.set(canScrollVertically(-1));
@@ -596,7 +597,7 @@ public abstract class SelectorSearchCell extends ScrollView {
 
     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLRPC.FLAG_31));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLObject.FLAG_31));
     }
 
     @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent

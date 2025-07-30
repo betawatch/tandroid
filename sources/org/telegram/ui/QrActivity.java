@@ -79,6 +79,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -319,7 +320,7 @@ public class QrActivity extends BaseFragment {
                 int i2 = height;
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
                 int i3 = width2 + 16;
                 int i4 = i2 + 16;
                 canvas.drawRect(i3, i4, (getWidth() - width2) - 16, (((getWidth() + i2) - width2) - width2) - 16, this.bitmapGradientPaint);
@@ -689,7 +690,7 @@ public class QrActivity extends BaseFragment {
                 if (z) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
                 }
                 Bitmap bitmap2 = this.oldContentBitmap;
                 if (bitmap2 != null) {
@@ -702,7 +703,7 @@ public class QrActivity extends BaseFragment {
                     canvas.save();
                     canvas.translate(0.0f, (-dp) + ((getHeight() + dp) * (1.0f - f)));
                     Paint paint = this.crossfadeToPaint;
-                    i = NotificationCenter.locationPermissionGranted;
+                    i = NotificationCenter.goingToPreviewTheme;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight() + dp, paint);
                     canvas.restore();
                     canvas.restore();
@@ -750,7 +751,7 @@ public class QrActivity extends BaseFragment {
                     }
                 }
             }
-            i = NotificationCenter.locationPermissionGranted;
+            i = NotificationCenter.goingToPreviewTheme;
             if (f > 0.0f) {
             }
             if (this.hasTimer) {
@@ -1851,7 +1852,7 @@ public class QrActivity extends BaseFragment {
         MotionBackgroundDrawable motionBackgroundDrawable = this.currMotionDrawable;
         this.prevMotionDrawable = motionBackgroundDrawable;
         motionBackgroundDrawable.setIndeterminateAnimation(false);
-        this.prevMotionDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.prevMotionDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
         MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable();
         this.currMotionDrawable = motionBackgroundDrawable2;
         motionBackgroundDrawable2.setCallback(this.backgroundView);
@@ -1905,7 +1906,7 @@ public class QrActivity extends BaseFragment {
                 this.prevQrColors = iArr2;
                 System.arraycopy(iArr, 0, iArr2, 0, 4);
             }
-            this.currMotionDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.currMotionDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.currMotionDrawable.setBackgroundAlpha(0.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.patternAlphaAnimator = ofFloat;
@@ -2008,7 +2009,7 @@ public class QrActivity extends BaseFragment {
         if (qrView != null) {
             qrView.setForShare(true);
         }
-        this.fragmentView.measure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(max, TLRPC.FLAG_30));
+        this.fragmentView.measure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30));
         this.fragmentView.layout(0, 0, min, max);
         this.fragmentView.draw(canvas);
         animatedDrawable.setBounds(this.logoImageView.getLeft(), this.logoImageView.getTop(), this.logoImageView.getRight(), this.logoImageView.getBottom());
@@ -2155,17 +2156,17 @@ public class QrActivity extends BaseFragment {
                 QrActivity.this.avatarImageView.setVisibility(z4 ? 0 : 8);
                 super.onMeasure(i, i2);
                 if (z4) {
-                    QrActivity.this.themeLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
+                    QrActivity.this.themeLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     qrView = QrActivity.this.qrView;
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30);
                     f = 330.0f;
                 } else {
-                    QrActivity.this.themeLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(273.0f), TLRPC.FLAG_30), i2);
+                    QrActivity.this.themeLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(273.0f), TLObject.FLAG_30), i2);
                     qrView = QrActivity.this.qrView;
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(260.0f), TLObject.FLAG_30);
                     f = 310.0f;
                 }
-                qrView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLRPC.FLAG_30));
+                qrView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLObject.FLAG_30));
                 if (this.prevIsPortrait != z4) {
                     QrActivity.this.qrView.onSizeChanged(QrActivity.this.qrView.getMeasuredWidth(), QrActivity.this.qrView.getMeasuredHeight(), 0, 0);
                 }

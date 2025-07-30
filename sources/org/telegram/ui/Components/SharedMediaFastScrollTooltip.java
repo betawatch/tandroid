@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -58,7 +58,7 @@ public class SharedMediaFastScrollTooltip extends FrameLayout {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
             int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
             int dp = ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7) + AndroidUtilities.dp(1.0f);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT;
@@ -120,6 +120,6 @@ public class SharedMediaFastScrollTooltip extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(300.0f), View.MeasureSpec.getSize(i) - AndroidUtilities.dp(32.0f)), TLRPC.FLAG_31), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(300.0f), View.MeasureSpec.getSize(i) - AndroidUtilities.dp(32.0f)), TLObject.FLAG_31), i2);
     }
 }

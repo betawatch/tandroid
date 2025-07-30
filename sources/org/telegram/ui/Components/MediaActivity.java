@@ -596,19 +596,19 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x065c  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x066f  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x068e  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x06b6  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x051d  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x04c5  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x04bd  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x04cc  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x04db  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x04ff  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x062a  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0649  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x065a  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x066d  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x068c  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x06b4  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x051b  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04d4  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x04c3  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x04bb  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x04ca  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x04d9  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x04fd  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0628  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0647  */
     /* JADX WARN: Type inference failed for: r5v13 */
     /* JADX WARN: Type inference failed for: r5v14, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r5v15 */
@@ -905,7 +905,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
             this.initialTab = 11;
         }
         int i11 = 0;
-        SharedMediaLayout sharedMediaLayout = new SharedMediaLayout(context, this.dialogId, this.sharedMediaPreloader, i11, null, this.currentChatInfo, this.currentUserInfo, this.initialTab, this, new SharedMediaLayout.Delegate() { // from class: org.telegram.ui.Components.MediaActivity.5
+        SharedMediaLayout sharedMediaLayout = new SharedMediaLayout(context, this.dialogId, this.sharedMediaPreloader, i11, null, this.currentChatInfo, this.currentUserInfo, this.initialTab, i11, this, new SharedMediaLayout.Delegate() { // from class: org.telegram.ui.Components.MediaActivity.5
             @Override // org.telegram.ui.Components.SharedMediaLayout.Delegate
             public boolean canSearchMembers() {
                 return false;

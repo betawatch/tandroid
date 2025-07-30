@@ -48,6 +48,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.Theme;
@@ -369,7 +370,7 @@ public abstract class PreviewView extends FrameLayout {
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), TLRPC.FLAG_30);
+        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), TLObject.FLAG_30);
     }
 
     private void extractPointsData(Matrix matrix) {
@@ -1190,7 +1191,7 @@ public abstract class PreviewView extends FrameLayout {
                     canvas.translate((-storyEntry2.width) / 2.0f, (-storyEntry2.height) / 2.0f);
                 }
                 canvas.scale(this.entry.width / this.thumbBitmap.getWidth(), this.entry.height / this.thumbBitmap.getHeight());
-                this.bitmapPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                this.bitmapPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 canvas.drawBitmap(this.thumbBitmap, 0.0f, 0.0f, this.bitmapPaint);
                 canvas.restore();
             }
@@ -1333,7 +1334,7 @@ public abstract class PreviewView extends FrameLayout {
         }
         this.matrix.reset();
         this.matrix.preScale(this.entry.width / this.bitmap.getWidth(), this.entry.height / this.bitmap.getHeight());
-        this.bitmapPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.bitmapPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
         canvas.drawBitmap(this.bitmap, this.matrix, this.bitmapPaint);
     }
 
@@ -2303,7 +2304,7 @@ public abstract class PreviewView extends FrameLayout {
             if (!z) {
                 return;
             }
-            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.activityPermissionsGranted : 120)) {
+            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.permissionsGranted : 120)) {
                 return;
             }
         }
@@ -2383,7 +2384,7 @@ public abstract class PreviewView extends FrameLayout {
             if (!z) {
                 return;
             }
-            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.activityPermissionsGranted : 120)) {
+            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) <= (isCollage() ? NotificationCenter.permissionsGranted : 120)) {
                 return;
             }
         }

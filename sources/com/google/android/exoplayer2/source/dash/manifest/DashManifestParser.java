@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xmlpull.v1.XmlPullParser;
@@ -850,7 +850,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
 
     protected List parseBaseUrl(XmlPullParser xmlPullParser, List list, boolean z) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "dvb:priority");
-        int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : z ? 1 : TLRPC.FLAG_31;
+        int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : z ? 1 : TLObject.FLAG_31;
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "dvb:weight");
         int parseInt2 = attributeValue2 != null ? Integer.parseInt(attributeValue2) : 1;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "serviceLocation");
@@ -1173,7 +1173,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         long parseDuration5 = equals ? parseDuration(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;
         long parseDateTime2 = parseDateTime(xmlPullParser, "publishTime", -9223372036854775807L);
         long j6 = equals ? 0L : -9223372036854775807L;
-        ArrayList newArrayList = Lists.newArrayList(new BaseUrl(uri.toString(), uri.toString(), isDvbProfileDeclared ? 1 : TLRPC.FLAG_31, 1));
+        ArrayList newArrayList = Lists.newArrayList(new BaseUrl(uri.toString(), uri.toString(), isDvbProfileDeclared ? 1 : TLObject.FLAG_31, 1));
         ArrayList arrayList4 = new ArrayList();
         ArrayList arrayList5 = new ArrayList();
         long j7 = equals ? -9223372036854775807L : 0L;

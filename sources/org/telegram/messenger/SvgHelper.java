@@ -585,7 +585,7 @@ public class SvgHelper {
             if (f == null) {
                 f = properties.getFloat(z ? "fill-opacity" : "stroke-opacity");
             }
-            this.paint.setAlpha(f == null ? NotificationCenter.locationPermissionGranted : (int) (f.floatValue() * 255.0f));
+            this.paint.setAlpha(f == null ? NotificationCenter.goingToPreviewTheme : (int) (f.floatValue() * 255.0f));
         }
 
         private boolean doFill(Properties properties) {
@@ -1516,25 +1516,25 @@ public class SvgHelper {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0064, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x0070, code lost:
     
-        if (r4 != 'V') goto L36;
+        if (r4 != 'V') goto L40;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079 A[PHI: r5 r6 r12 r13
-      0x0079: PHI (r5v18 float) = (r5v1 float), (r5v5 float), (r5v6 float), (r5v7 float), (r5v8 float), (r5v10 float), (r5v1 float), (r5v1 float) binds: [B:12:0x0076, B:42:0x011a, B:41:0x0114, B:38:0x0106, B:37:0x00ff, B:33:0x00e5, B:26:0x009e, B:25:0x0098] A[DONT_GENERATE, DONT_INLINE]
-      0x0079: PHI (r6v18 float) = (r6v1 float), (r6v1 float), (r6v1 float), (r6v5 float), (r6v6 float), (r6v8 float), (r6v12 float), (r6v13 float) binds: [B:12:0x0076, B:42:0x011a, B:41:0x0114, B:38:0x0106, B:37:0x00ff, B:33:0x00e5, B:26:0x009e, B:25:0x0098] A[DONT_GENERATE, DONT_INLINE]
-      0x0079: PHI (r12v11 float) = (r12v1 float), (r12v1 float), (r12v1 float), (r12v1 float), (r12v1 float), (r12v5 float), (r12v1 float), (r12v1 float) binds: [B:12:0x0076, B:42:0x011a, B:41:0x0114, B:38:0x0106, B:37:0x00ff, B:33:0x00e5, B:26:0x009e, B:25:0x0098] A[DONT_GENERATE, DONT_INLINE]
-      0x0079: PHI (r13v11 float) = (r13v1 float), (r13v1 float), (r13v1 float), (r13v1 float), (r13v1 float), (r13v5 float), (r13v1 float), (r13v1 float) binds: [B:12:0x0076, B:42:0x011a, B:41:0x0114, B:38:0x0106, B:37:0x00ff, B:33:0x00e5, B:26:0x009e, B:25:0x0098] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0085 A[PHI: r5 r6 r12 r13
+      0x0085: PHI (r5v18 float) = (r5v1 float), (r5v5 float), (r5v6 float), (r5v7 float), (r5v8 float), (r5v10 float), (r5v1 float), (r5v1 float) binds: [B:17:0x0082, B:47:0x0126, B:46:0x0120, B:43:0x0112, B:42:0x010b, B:38:0x00f1, B:31:0x00aa, B:30:0x00a4] A[DONT_GENERATE, DONT_INLINE]
+      0x0085: PHI (r6v18 float) = (r6v1 float), (r6v1 float), (r6v1 float), (r6v5 float), (r6v6 float), (r6v8 float), (r6v12 float), (r6v13 float) binds: [B:17:0x0082, B:47:0x0126, B:46:0x0120, B:43:0x0112, B:42:0x010b, B:38:0x00f1, B:31:0x00aa, B:30:0x00a4] A[DONT_GENERATE, DONT_INLINE]
+      0x0085: PHI (r12v11 float) = (r12v1 float), (r12v1 float), (r12v1 float), (r12v1 float), (r12v1 float), (r12v5 float), (r12v1 float), (r12v1 float) binds: [B:17:0x0082, B:47:0x0126, B:46:0x0120, B:43:0x0112, B:42:0x010b, B:38:0x00f1, B:31:0x00aa, B:30:0x00a4] A[DONT_GENERATE, DONT_INLINE]
+      0x0085: PHI (r13v11 float) = (r13v1 float), (r13v1 float), (r13v1 float), (r13v1 float), (r13v1 float), (r13v5 float), (r13v1 float), (r13v1 float) binds: [B:17:0x0082, B:47:0x0126, B:46:0x0120, B:43:0x0112, B:42:0x010b, B:38:0x00f1, B:31:0x00aa, B:30:0x00a4] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x01a9  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x016c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1543,6 +1543,9 @@ public class SvgHelper {
         boolean z;
         float f;
         float f2;
+        if (ApplicationLoader.isAndroidTestEnvironment()) {
+            return new Path();
+        }
         int length = str.length();
         ParserHelper parserHelper = new ParserHelper(str, 0);
         parserHelper.skipWhitespace();

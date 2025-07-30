@@ -839,7 +839,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
             }
             try {
-                PendingIntent.getActivity(this, 0, new Intent(this, (Class<?>) VoIPPermissionActivity.class).addFlags(TLRPC.FLAG_28), 1107296256).send();
+                PendingIntent.getActivity(this, 0, new Intent(this, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                 return;
             } catch (Exception e) {
                 if (BuildVars.LOGS_ENABLED) {
@@ -1150,7 +1150,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
         if (Build.VERSION.SDK_INT >= 21) {
             WebRtcAudioTrack.setAudioTrackUsageAttribute(hasRtmpStream() ? 1 : 2);
-            WebRtcAudioTrack.setAudioStreamType(hasRtmpStream() ? TLRPC.FLAG_31 : 0);
+            WebRtcAudioTrack.setAudioStreamType(hasRtmpStream() ? TLObject.FLAG_31 : 0);
         }
         this.needPlayEndSound = true;
         final AudioManager audioManager = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
@@ -1449,7 +1449,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         int checkSelfPermission;
         int checkSelfPermission2;
         if (Build.VERSION.SDK_INT < 29) {
-            return NotificationCenter.starGiftSoldOut;
+            return NotificationCenter.starUserGiftCollectionsLoaded;
         }
         checkSelfPermission = contextWrapper.checkSelfPermission("android.permission.CAMERA");
         int i = checkSelfPermission == 0 ? 64 : 0;
@@ -2705,7 +2705,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             return;
         }
         TLRPC.TL_upload_getFile tL_upload_getFile = new TLRPC.TL_upload_getFile();
-        tL_upload_getFile.limit = TLRPC.FLAG_17;
+        tL_upload_getFile.limit = TLObject.FLAG_17;
         TLRPC.TL_inputGroupCallStream tL_inputGroupCallStream = new TLRPC.TL_inputGroupCallStream();
         tL_inputGroupCallStream.call = this.groupCall.getInputGroupCall();
         tL_inputGroupCallStream.time_ms = j;
@@ -7331,7 +7331,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         }
                     }
                     if (intent.getBooleanExtra("start_incall_activity", z2)) {
-                        Intent addFlags = new Intent(this, (Class<?>) LaunchActivity.class).setAction(this.user != null ? "voip" : "voip_chat").addFlags(TLRPC.FLAG_28);
+                        Intent addFlags = new Intent(this, (Class<?>) LaunchActivity.class).setAction(this.user != null ? "voip" : "voip_chat").addFlags(TLObject.FLAG_28);
                         if (this.chat != null) {
                             addFlags.putExtra("currentAccount", this.currentAccount);
                         }

@@ -49,7 +49,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class Distribute extends AbstractAppCenterService {
@@ -1055,7 +1055,7 @@ public class Distribute extends AbstractAppCenterService {
     synchronized void resumeApp(Context context) {
         if (this.mForegroundActivity == null) {
             Intent intent = new Intent(context, (Class<?>) DeepLinkActivity.class);
-            intent.addFlags(TLRPC.FLAG_28);
+            intent.addFlags(TLObject.FLAG_28);
             context.startActivity(intent);
         }
     }

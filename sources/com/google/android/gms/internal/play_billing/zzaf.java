@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.play_billing;
 
 import java.util.Arrays;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class zzaf extends zzx {
@@ -52,7 +52,7 @@ final class zzaf extends zzx {
                 Double.isNaN(d);
             } while (d * 0.7d < max);
         } else {
-            i2 = TLRPC.FLAG_30;
+            i2 = TLObject.FLAG_30;
             if (max >= 1073741824) {
                 throw new IllegalArgumentException("collection too large");
             }

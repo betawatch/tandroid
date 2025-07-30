@@ -25,6 +25,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
@@ -253,7 +254,7 @@ public class HintView extends FrameLayout {
         int measuredWidth2;
         float measuredWidth3;
         int i6;
-        measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_31));
+        measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31));
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
         int dp2 = iArr[1] - AndroidUtilities.dp(4.0f);
@@ -598,7 +599,7 @@ public class HintView extends FrameLayout {
                 return false;
             }
             forwardNameCenterX = chatMessageCell.getNoSoundIconCenterX();
-            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31));
+            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
         } else if (i7 == 5) {
             Integer num = (Integer) obj;
             i6 += i2;
@@ -614,7 +615,7 @@ public class HintView extends FrameLayout {
                     textView = this.textView;
                     formatPluralString = LocaleController.formatPluralString("Answer", num.intValue(), new Object[0]);
                     textView.setText(formatPluralString);
-                    measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31));
+                    measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                     forwardNameCenterX = i;
                 }
             } else if (num.intValue() == 0) {
@@ -624,12 +625,12 @@ public class HintView extends FrameLayout {
                 textView = this.textView;
                 formatPluralString = LocaleController.formatPluralString("Vote", num.intValue(), new Object[0]);
                 textView.setText(formatPluralString);
-                measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31));
+                measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                 forwardNameCenterX = i;
             }
             formatPluralString = LocaleController.getString(i3);
             textView.setText(formatPluralString);
-            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31));
+            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
             forwardNameCenterX = i;
         } else {
             MessageObject messageObject = chatMessageCell.getMessageObject();
@@ -639,7 +640,7 @@ public class HintView extends FrameLayout {
             } else {
                 this.textView.setText(str);
             }
-            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLRPC.FLAG_31));
+            measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
             TLRPC.User currentUser = chatMessageCell.getCurrentUser();
             if (currentUser == null || currentUser.id != 0) {
                 i6 += AndroidUtilities.dp(22.0f);

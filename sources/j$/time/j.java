@@ -68,9 +68,9 @@ public enum j implements j$.time.temporal.k {
             case 3:
                 return (z ? 1 : 0) + NotificationCenter.recordStarted;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.closeOtherAppActivities;
+                return (z ? 1 : 0) + NotificationCenter.invalidateMotionBackground;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.wallpaperSettedToUser;
+                return (z ? 1 : 0) + NotificationCenter.onDatabaseReset;
             case 6:
                 return 1;
             case 7:
@@ -80,9 +80,9 @@ public enum j implements j$.time.temporal.k {
             case 9:
                 return (z ? 1 : 0) + NotificationCenter.giftsToUserSent;
             case 10:
-                return (z ? 1 : 0) + NotificationCenter.starGiveawayOptionsLoaded;
+                return (z ? 1 : 0) + NotificationCenter.starGiftOptionsLoaded;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.webRtcSpeakerAmplitudeEvent;
+                return (z ? 1 : 0) + NotificationCenter.webRtcMicAmplitudeEvent;
             default:
                 return (z ? 1 : 0) + 335;
         }

@@ -44,7 +44,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
@@ -370,8 +370,8 @@ public class Toolbar extends ViewGroup {
             this.mTitleMarginBottom = dimensionPixelOffset5;
         }
         this.mMaxButtonHeight = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_maxButtonHeight, -1);
-        int dimensionPixelOffset6 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStart, TLRPC.FLAG_31);
-        int dimensionPixelOffset7 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEnd, TLRPC.FLAG_31);
+        int dimensionPixelOffset6 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStart, TLObject.FLAG_31);
+        int dimensionPixelOffset7 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEnd, TLObject.FLAG_31);
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_contentInsetLeft, 0);
         int dimensionPixelSize2 = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_contentInsetRight, 0);
         ensureContentInsets();
@@ -379,8 +379,8 @@ public class Toolbar extends ViewGroup {
         if (dimensionPixelOffset6 != Integer.MIN_VALUE || dimensionPixelOffset7 != Integer.MIN_VALUE) {
             this.mContentInsets.setRelative(dimensionPixelOffset6, dimensionPixelOffset7);
         }
-        this.mContentInsetStartWithNavigation = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStartWithNavigation, TLRPC.FLAG_31);
-        this.mContentInsetEndWithActions = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEndWithActions, TLRPC.FLAG_31);
+        this.mContentInsetStartWithNavigation = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStartWithNavigation, TLObject.FLAG_31);
+        this.mContentInsetEndWithActions = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEndWithActions, TLObject.FLAG_31);
         this.mCollapseIcon = obtainStyledAttributes.getDrawable(R$styleable.Toolbar_collapseIcon);
         this.mCollapseDescription = obtainStyledAttributes.getText(R$styleable.Toolbar_collapseContentDescription);
         CharSequence text = obtainStyledAttributes.getText(R$styleable.Toolbar_title);
@@ -656,7 +656,7 @@ public class Toolbar extends ViewGroup {
             if (mode != 0) {
                 i5 = Math.min(View.MeasureSpec.getSize(childMeasureSpec2), i5);
             }
-            childMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_30);
+            childMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30);
         }
         view.measure(childMeasureSpec, childMeasureSpec2);
     }
@@ -1494,7 +1494,7 @@ public class Toolbar extends ViewGroup {
 
     public void setContentInsetEndWithActions(int i) {
         if (i < 0) {
-            i = TLRPC.FLAG_31;
+            i = TLObject.FLAG_31;
         }
         if (i != this.mContentInsetEndWithActions) {
             this.mContentInsetEndWithActions = i;
@@ -1506,7 +1506,7 @@ public class Toolbar extends ViewGroup {
 
     public void setContentInsetStartWithNavigation(int i) {
         if (i < 0) {
-            i = TLRPC.FLAG_31;
+            i = TLObject.FLAG_31;
         }
         if (i != this.mContentInsetStartWithNavigation) {
             this.mContentInsetStartWithNavigation = i;

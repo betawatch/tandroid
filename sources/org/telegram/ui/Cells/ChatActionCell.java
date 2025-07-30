@@ -2764,7 +2764,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         if (this.giftReleasedBackgroundPaint == null) {
                             this.giftReleasedBackgroundPaint = new Paint(1);
                         }
-                        this.giftReleasedBackgroundPaint.setColor(!Theme.isCurrentThemeDark() ? 285212671 : TLRPC.FLAG_28);
+                        this.giftReleasedBackgroundPaint.setColor(!Theme.isCurrentThemeDark() ? 285212671 : TLObject.FLAG_28);
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         rectF2.set(dp7, dp8 - AndroidUtilities.dp(8.0f), width2 + dp7, AndroidUtilities.dp(8.0f) + dp8);
                         canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.giftReleasedBackgroundPaint);
@@ -3177,7 +3177,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f10);
                                 RectF rectF3 = AndroidUtilities.rectTmp;
                                 rectF3.set(0.0f, -AndroidUtilities.dp(20.0f), getWidth(), height2);
-                                canvas.saveLayerAlpha(rectF3, NotificationCenter.locationPermissionGranted, 31);
+                                canvas.saveLayerAlpha(rectF3, NotificationCenter.goingToPreviewTheme, 31);
                             } else {
                                 canvas.save();
                             }
@@ -3303,7 +3303,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 float dp82 = AndroidUtilities.dp(14.0f) + dp + this.giftPremiumTitleLayout.getHeight();
                 if (this.giftReleasedBackgroundPaint == null) {
                 }
-                this.giftReleasedBackgroundPaint.setColor(!Theme.isCurrentThemeDark() ? 285212671 : TLRPC.FLAG_28);
+                this.giftReleasedBackgroundPaint.setColor(!Theme.isCurrentThemeDark() ? 285212671 : TLObject.FLAG_28);
                 RectF rectF22 = AndroidUtilities.rectTmp;
                 rectF22.set(dp72, dp82 - AndroidUtilities.dp(8.0f), width22 + dp72, AndroidUtilities.dp(8.0f) + dp82);
                 canvas.drawRoundRect(rectF22, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.giftReleasedBackgroundPaint);

@@ -7368,7 +7368,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
         StaticLayout createStaticLayout = StaticLayoutEx.createStaticLayout(documentFileName, Theme.chat_docNamePaint, i3, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false, TextUtils.TruncateAt.MIDDLE, i3, 2, false);
         this.docTitleLayout = createStaticLayout;
-        this.docTitleOffsetX = TLRPC.FLAG_31;
+        this.docTitleOffsetX = TLObject.FLAG_31;
         if (createStaticLayout == null || createStaticLayout.getLineCount() <= 0) {
             this.docTitleOffsetX = 0;
             i2 = i3;
@@ -7501,6 +7501,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 i = R.string.OpenUniqueGift;
                             } else if (i3 == 27) {
                                 i2 = R.string.JoinCall;
+                            } else if (i3 == 28) {
+                                str = "VIEW COLLECTION";
                             } else {
                                 i = R.string.InstantView;
                             }
@@ -8295,7 +8297,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             i3 = dp2;
                             i4 = i12;
                             i5 = saveCount;
-                            canvas.saveLayerAlpha(0.0f, 0.0f, dp2, textLayoutBlock.height(this.transitionParams) - 1, NotificationCenter.locationPermissionGranted, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, dp2, textLayoutBlock.height(this.transitionParams) - 1, NotificationCenter.goingToPreviewTheme, 31);
                             f5 = collapsed;
                         }
                         StaticLayout staticLayout = textLayoutBlock.textLayout;
@@ -8519,14 +8521,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             LoadingDrawable loadingDrawable2 = botButton2.loadingDrawable;
                             int i6 = Theme.key_chat_serviceBackgroundSelector;
                             loadingDrawable2.setColors(Theme.multAlpha(Theme.getColor(i6, this.resourcesProvider), 1.0f), Theme.multAlpha(Theme.getColor(i6, this.resourcesProvider), 2.5f), Theme.multAlpha(Theme.getColor(i6, this.resourcesProvider), 3.0f), Theme.multAlpha(Theme.getColor(i6, this.resourcesProvider), 10.0f));
-                            botButton2.loadingDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                            botButton2.loadingDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             botButton2.loadingDrawable.draw(canvas);
                             invalidateOutbounds();
                         }
                         if (botButton2.selectorDrawable == null) {
                             int i7 = (int) dp3;
                             botButton2.selectorDrawable.setBounds(((int) (botButton2.x * f13)) + dp, i7, ((int) (botButton2.x * f13)) + dp + ((int) (botButton2.width * f13)), botButton2.height + i7);
-                            botButton2.selectorDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                            botButton2.selectorDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             botButton2.selectorDrawable.draw(canvas);
                         }
                         canvas.restore();
@@ -8537,7 +8539,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             int i8 = (int) width;
                             i2 = widthForButtons;
                             botButton2.iconDrawable.setBounds(i8, (int) (((botButton2.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp3), i8 + AndroidUtilities.dp(24.0f), ((int) (((botButton2.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp3)) + AndroidUtilities.dp(24.0f));
-                            botButton2.iconDrawable.setAlpha(botButton2.isLocked ? 128 : NotificationCenter.locationPermissionGranted);
+                            botButton2.iconDrawable.setAlpha(botButton2.isLocked ? 128 : NotificationCenter.goingToPreviewTheme);
                             botButton2.iconDrawable.draw(canvas);
                             width += dp8;
                         } else {
@@ -8721,7 +8723,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 this.rect.set(f2, f9, textLayoutBlocks.textWidth + f2, textLayoutBlocks.textHeight(this.transitionParams) + f9);
                                 i = canvas.saveLayerAlpha(this.rect, (int) (f8 * 255.0f), 31);
                             } else {
-                                i = TLRPC.FLAG_31;
+                                i = TLObject.FLAG_31;
                             }
                             if (this.isRoundVideo || !this.transitionParams.animateDrawBackground) {
                                 transitionParams = this.transitionParams;
@@ -8768,13 +8770,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 Theme.chat_timePaint.setColor(ColorUtils.blendARGB(getThemedColor(Theme.key_chat_serviceText), getThemedColor(isDrawSelectionBackground() ? this.currentMessageObject.isOutOwner() ? Theme.key_chat_outTimeSelectedText : Theme.key_chat_inTimeSelectedText : this.currentMessageObject.isOutOwner() ? Theme.key_chat_outTimeText : Theme.key_chat_inTimeText), getVideoTranscriptionProgress()));
                             }
                             if (z2) {
-                                i3 = TLRPC.FLAG_31;
+                                i3 = TLObject.FLAG_31;
                                 i4 = i;
                             } else {
                                 TransitionParams transitionParams4 = this.transitionParams;
                                 if (!transitionParams4.animateMediaAbove || transitionParams4.animateChangeProgress == 1.0f) {
                                     i5 = i;
-                                    i3 = TLRPC.FLAG_31;
+                                    i3 = TLObject.FLAG_31;
                                     arrayList = textLayoutBlocks.textLayoutBlocks;
                                     z3 = false;
                                     z4 = true;
@@ -8822,7 +8824,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     float f17 = textLayoutBlocks.textXOffset;
                                     float f18 = f * (1.0f - this.transitionParams.animateChangeProgress);
                                     i5 = i;
-                                    i3 = TLRPC.FLAG_31;
+                                    i3 = TLObject.FLAG_31;
                                     drawMessageText(f2, f16, canvas, arrayList2, f17, z, f18, true, false, true);
                                     f4 = this.captionAbove ? dp : imageHeight;
                                     arrayList = textLayoutBlocks.textLayoutBlocks;
@@ -8939,7 +8941,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     canvas.scale(f6, f6, msgClockDrawable.getBounds().centerX(), msgClockDrawable.getBounds().centerY());
                 }
                 msgClockDrawable.draw(canvas);
-                msgClockDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                msgClockDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 invalidate();
                 if (!z4) {
                     return;
@@ -8951,7 +8953,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (z4) {
             }
             msgClockDrawable.draw(canvas);
-            msgClockDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            msgClockDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             invalidate();
             if (!z4) {
             }
@@ -8986,7 +8988,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 BaseCell.setDrawableBounds(themedDrawable, dp4 + AndroidUtilities.dp(6.0f), dp + AndroidUtilities.dp(2.0f));
                 themedDrawable.setAlpha(i);
                 themedDrawable.draw(canvas);
-                themedDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                themedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (!z4) {
                     return;
                 }
@@ -9004,7 +9006,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             BaseCell.setDrawableBounds(themedDrawable2, dp4 + AndroidUtilities.dp(6.0f), dp + AndroidUtilities.dp(2.0f));
             themedDrawable2.setAlpha(i2);
             themedDrawable2.draw(canvas);
-            themedDrawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+            themedDrawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
             if (!z4) {
             }
         }
@@ -9160,7 +9162,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
      */
     /* JADX WARN: Code restructure failed: missing block: B:70:0x02e6, code lost:
     
-        r15.setAlpha(org.telegram.messenger.NotificationCenter.locationPermissionGranted);
+        r15.setAlpha(org.telegram.messenger.NotificationCenter.goingToPreviewTheme);
      */
     /* JADX WARN: Code restructure failed: missing block: B:71:0x02e3, code lost:
     
@@ -9220,7 +9222,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 canvas.scale(f6, f6, msgClockDrawable.getBounds().centerX(), msgClockDrawable.getBounds().centerY());
             }
             msgClockDrawable.draw(canvas);
-            msgClockDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            msgClockDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             if (z8) {
                 canvas.restore();
             }
@@ -9309,7 +9311,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (!z8) {
                 }
                 canvas.restore();
-                themedDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                themedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             } else {
                 themedDrawable = getThemedDrawable(z7 ? "drawableMsgOutHalfCheckSelected" : "drawableMsgOutHalfCheck");
                 BaseCell.setDrawableBounds(themedDrawable, (this.layoutWidth - AndroidUtilities.dp(18.0f)) - themedDrawable.getIntrinsicWidth(), ((f3 - AndroidUtilities.dp((this.pinnedBottom || this.pinnedTop) ? 9.0f : 8.0f)) - themedDrawable.getIntrinsicHeight()) + f2);
@@ -9322,7 +9324,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (!z8) {
                 }
                 canvas.restore();
-                themedDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                themedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             }
         }
         if (z4) {
@@ -9346,7 +9348,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 canvas.scale(f6, f6, Theme.chat_msgErrorDrawable.getBounds().centerX(), Theme.chat_msgErrorDrawable.getBounds().centerY());
             }
             Theme.chat_msgErrorDrawable.draw(canvas);
-            Theme.chat_msgErrorDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            Theme.chat_msgErrorDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             if (z8) {
                 canvas.restore();
             }
@@ -9654,7 +9656,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         canvas.translate(f30, dp9);
                         SpoilerEffect.layoutDrawMaybe(staticLayout, canvas);
                         canvas.restore();
-                        Theme.chat_timePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                        Theme.chat_timePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         i4 = i7;
                         f5 = 0.0f;
                     } else {
@@ -9691,7 +9693,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     canvas.translate(f302, dp92);
                     SpoilerEffect.layoutDrawMaybe(staticLayout, canvas);
                     canvas.restore();
-                    Theme.chat_timePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                    Theme.chat_timePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                     i4 = i7;
                     f5 = 0.0f;
                 }
@@ -9718,7 +9720,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 canvas.translate(f3022, dp922);
                 SpoilerEffect.layoutDrawMaybe(staticLayout, canvas);
                 canvas.restore();
-                Theme.chat_timePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                Theme.chat_timePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 i4 = i7;
                 f5 = 0.0f;
             } else {
@@ -10115,7 +10117,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             canvas.scale(f13, f13, (((AndroidUtilities.dp(3.0f) + drawableBounds) + this.repliesTextWidth) / 2.0f) + f15, drawable.getBounds().centerY());
                         }
                         drawable.draw(canvas);
-                        drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                        drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                         if (this.transitionParams.animateReplies) {
                             if (z5) {
                                 canvas.save();
@@ -10173,7 +10175,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (z2) {
                     }
                     drawable.draw(canvas);
-                    drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (this.transitionParams.animateReplies) {
                     }
                     canvas.save();
@@ -10200,7 +10202,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (z2) {
                     }
                     drawable.draw(canvas);
-                    drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (this.transitionParams.animateReplies) {
                     }
                     canvas.save();
@@ -10229,7 +10231,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (z2) {
                 }
                 drawable.draw(canvas);
-                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (this.transitionParams.animateReplies) {
                 }
                 canvas.save();
@@ -10256,7 +10258,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (z2) {
                 }
                 drawable.draw(canvas);
-                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (this.transitionParams.animateReplies) {
                 }
                 canvas.save();
@@ -10311,7 +10313,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     drawable3.setAlpha((int) (f8 * 255.0f));
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (this.transitionParams.animateViewsLayout != null) {
                         canvas.save();
                         TextPaint textPaint2 = Theme.chat_timePaint;
@@ -10344,7 +10346,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     drawable3.setAlpha((int) (f8 * 255.0f));
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (this.transitionParams.animateViewsLayout != null) {
                     }
                     canvas.save();
@@ -10366,7 +10368,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 drawable3.setAlpha((int) (f8 * 255.0f));
                 drawable3.draw(canvas);
-                drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (this.transitionParams.animateViewsLayout != null) {
                 }
                 canvas.save();
@@ -10386,7 +10388,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 drawable3.setAlpha((int) (f8 * 255.0f));
                 drawable3.draw(canvas);
-                drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (this.transitionParams.animateViewsLayout != null) {
                 }
                 canvas.save();
@@ -10441,7 +10443,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (z2) {
                     }
                     drawable2.draw(canvas);
-                    drawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (z2) {
                     }
                     this.transitionParams.lastTimeXPinned = f21;
@@ -10456,7 +10458,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (z2) {
                 }
                 drawable2.draw(canvas);
-                drawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (z2) {
                 }
                 this.transitionParams.lastTimeXPinned = f21;
@@ -10471,7 +10473,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (z2) {
                 }
                 drawable2.draw(canvas);
-                drawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+                drawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
                 if (z2) {
                 }
                 this.transitionParams.lastTimeXPinned = f21;
@@ -10492,7 +10494,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         canvas.scale(f10, f10, (drawableBounds4222 / 2.0f) + f21, drawable2.getBounds().centerY());
                     }
                     drawable2.draw(canvas);
-                    drawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+                    drawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
                     if (z2) {
                         canvas.restore();
                     }
@@ -10507,7 +10509,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (z2) {
             }
             drawable2.draw(canvas);
-            drawable2.setAlpha(NotificationCenter.locationPermissionGranted);
+            drawable2.setAlpha(NotificationCenter.goingToPreviewTheme);
             if (z2) {
             }
             this.transitionParams.lastTimeXPinned = f21;
@@ -11244,7 +11246,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             } else {
                 int dp3 = this.backgroundWidth - AndroidUtilities.dp(21.0f);
                 int dp4 = AndroidUtilities.dp(195.0f);
-                double d3 = TLRPC.FLAG_28;
+                double d3 = TLObject.FLAG_28;
                 Double.isNaN(d3);
                 double d4 = d3 / 3.141592653589793d;
                 double d5 = (d * 3.141592653589793d) / 180.0d;
@@ -14207,7 +14209,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (this.voteRisingCircleLength) {
                 this.voteCurrentCircleLength = (AndroidUtilities.accelerateInterpolator.getInterpolation(this.voteCurrentProgressTime / 500.0f) * 266.0f) + 4.0f;
             } else {
-                this.voteCurrentCircleLength = 4.0f - ((this.firstCircleLength ? 360 : NotificationCenter.screenStateChanged) * (1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(this.voteCurrentProgressTime / 500.0f)));
+                this.voteCurrentCircleLength = 4.0f - ((this.firstCircleLength ? 360 : NotificationCenter.messagePlayingSpeedChanged) * (1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(this.voteCurrentProgressTime / 500.0f)));
             }
             if (this.voteCurrentProgressTime == 500.0f) {
                 boolean z = this.voteRisingCircleLength;
@@ -15458,12 +15460,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         shadowDrawable.setAlpha((int) (getAlpha() * 255.0f));
                         shadowDrawable.setBounds(i, i2, i3, i4);
                         shadowDrawable.draw(canvas);
-                        shadowDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                        shadowDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                     }
                     this.currentBackgroundDrawable.setAlpha((int) (getAlpha() * 255.0f));
                     this.currentBackgroundDrawable.setBounds(i, i2, i3, i4);
                     this.currentBackgroundDrawable.drawCached(canvas, this.backgroundCacheParams);
-                    this.currentBackgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.currentBackgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 }
                 animateCheckboxTranslation();
             }
@@ -15834,7 +15836,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (this.currentMessageObject.isOutOwner()) {
                             }
                             messageDrawable.draw(canvas);
-                            messageDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                            messageDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             canvas.restore();
                         }
                     } else {
@@ -15891,7 +15893,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 messageDrawable.setAlpha((int) (((!this.mediaBackground || this.pinnedBottom) ? f4 - this.transitionParams.changePinnedBottomProgress : this.transitionParams.changePinnedBottomProgress) * 255.0f));
                             }
                             messageDrawable.draw(canvas);
-                            messageDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                            messageDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             canvas.restore();
                         }
                     }
@@ -16071,7 +16073,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (f != 1.0f) {
             themeDrawable.setAlpha((int) (f * 255.0f));
             themeDrawable.draw(canvas);
-            themeDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            themeDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
         } else {
             themeDrawable.draw(canvas);
         }
@@ -16338,7 +16340,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         canvas.translate(i7 + AndroidUtilities.dp(f7), (f5 - AndroidUtilities.dp(0.1f)) + (this.pinnedBottom ? AndroidUtilities.dp(2.0f) : 0));
                         if (this.currentMessageObject.isSent()) {
                             drawable = Theme.chat_commentArrowDrawable;
-                            i10 = NotificationCenter.locationPermissionGranted;
+                            i10 = NotificationCenter.goingToPreviewTheme;
                         } else {
                             TextPaint textPaint3 = Theme.chat_commentTextPaint;
                             i10 = NotificationCenter.dialogIsTranslatable;
@@ -16411,7 +16413,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (f != f2) {
                             Theme.chat_commentDrawable.setAlpha((int) (f * 255.0f));
                             Theme.chat_commentDrawable.draw(canvas);
-                            Theme.chat_commentDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                            Theme.chat_commentDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                         } else {
                             Theme.chat_commentDrawable.draw(canvas);
                         }
@@ -16802,7 +16804,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         Theme.chat_roundVideoShadow.setAlpha((int) ((1.0f - getVideoTranscriptionProgress()) * 255.0f));
                         Theme.chat_roundVideoShadow.setBounds((int) imageX3, (int) imageY, (int) (imageX3 + this.photoImage.getImageWidth() + AndroidUtilities.dp(6.0f)), (int) (imageY + this.photoImage.getImageHeight() + AndroidUtilities.dp(6.0f)));
                         Theme.chat_roundVideoShadow.draw(canvas);
-                        Theme.chat_roundVideoShadow.setAlpha(NotificationCenter.locationPermissionGranted);
+                        Theme.chat_roundVideoShadow.setAlpha(NotificationCenter.goingToPreviewTheme);
                         if (!this.photoImage.hasBitmapImage() || this.photoImage.getCurrentAlpha() != 1.0f) {
                             Theme.chat_docBackPaint.setColor(getThemedColor(this.currentMessageObject.isOutOwner() ? Theme.key_chat_outBubble : Theme.key_chat_inBubble));
                             canvas.drawCircle(this.photoImage.getCenterX(), this.photoImage.getCenterY(), this.photoImage.getImageWidth() / 2.0f, Theme.chat_docBackPaint);
@@ -17113,7 +17115,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     themedDrawable.draw(canvas);
                                     TransitionParams transitionParams5 = this.transitionParams;
                                     if (transitionParams5.animateChangeProgress != f && transitionParams5.animateShouldDrawMenuDrawable) {
-                                        themedDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                        themedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                                     }
                                 }
                             }
@@ -17688,7 +17690,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             drawable.draw(canvas);
                             TransitionParams transitionParams9 = this.transitionParams;
                             if (transitionParams9.animateChangeProgress != 1.0f && transitionParams9.animateShouldDrawMenuDrawable) {
-                                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             }
                         }
                         try {
@@ -17959,7 +17961,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     rectF = rectF2;
                     f2 = f10;
                     i2 = factCheck;
-                    canvas.saveLayerAlpha(0.0f, 0.0f, f11, i7 - 1, NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, f11, i7 - 1, NotificationCenter.goingToPreviewTheme, 31);
                 } else {
                     f3 = f12;
                     f4 = f11;
@@ -18306,23 +18308,23 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         canvas.restoreToCount(saveCount);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:498:0x1127, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:500:0x112b, code lost:
     
-        if (r3 != null) goto L668;
+        if (r3 != null) goto L670;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x112b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:501:0x112f, code lost:
     
         r9 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:500:0x11d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:502:0x11d6, code lost:
     
         r13 = r13 + r19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:501:0x11d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:503:0x11d8, code lost:
     
-        if (r33 == false) goto L691;
+        if (r33 == false) goto L693;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:502:0x11d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:504:0x11da, code lost:
     
         r10 = r13 + org.telegram.messenger.AndroidUtilities.dp(14.0f);
         r11 = org.telegram.ui.ActionBar.Theme.chat_instantViewPaint.getAlpha();
@@ -18331,181 +18333,181 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         org.telegram.ui.ActionBar.Theme.chat_instantViewPaint.setAlpha(r11);
         r1 = r47.drawInstantViewType;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:503:0x1226, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:505:0x122a, code lost:
     
-        if (r1 != 27) goto L674;
+        if (r1 != 27) goto L676;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:504:0x1228, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:506:0x122c, code lost:
     
         r14 = 20.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:505:0x1231, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:507:0x1235, code lost:
     
         r1 = org.telegram.messenger.AndroidUtilities.dp(r14) + r47.instantViewLayoutWidth;
         r5 = r32 + ((r15 - r1) / r29);
         r2 = r47.drawInstantViewType;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x1241, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:508:0x1245, code lost:
     
-        if (r2 != 0) goto L681;
+        if (r2 != 0) goto L683;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:507:0x1243, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:509:0x1247, code lost:
     
         org.telegram.ui.Cells.BaseCell.setDrawableBounds(r9, r5, org.telegram.messenger.AndroidUtilities.dp(1.0f) + r10, org.telegram.messenger.AndroidUtilities.dp(9.0f), org.telegram.messenger.AndroidUtilities.dp(13.0f));
         r9.setAlpha((int) (r49 * 255.0f));
         r9.draw(r7);
         r1 = org.telegram.messenger.AndroidUtilities.dp(15.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x1269, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:510:0x126d, code lost:
     
         r5 = r5 + r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x12b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:512:0x12bc, code lost:
     
-        if (r47.instantViewLayout == null) goto L690;
+        if (r47.instantViewLayout == null) goto L692;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:511:0x12ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:513:0x12be, code lost:
     
         r48.save();
         r7.translate(r5 - r47.instantViewLayoutLeft, r10);
         org.telegram.ui.Components.spoilers.SpoilerEffect.layoutDrawMaybe(r47.instantViewLayout, r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:512:0x12c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:514:0x12cd, code lost:
     
         r48.restore();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:513:0x126c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:515:0x1270, code lost:
     
-        if (r2 != 27) goto L683;
+        if (r2 != 27) goto L685;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:514:0x126e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:516:0x1272, code lost:
     
         org.telegram.ui.Cells.BaseCell.setDrawableBounds(r9, r5, r10, r9.getIntrinsicWidth(), r9.getIntrinsicHeight());
         r9.setAlpha((int) (r49 * 255.0f));
         r9.draw(r7);
         r1 = org.telegram.messenger.AndroidUtilities.dp(20.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x128a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:518:0x128e, code lost:
     
-        if (r2 != 16) goto L686;
+        if (r2 != 16) goto L688;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:517:0x128c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:519:0x1290, code lost:
     
         r5 = r5 - org.telegram.messenger.AndroidUtilities.dp(11.0f);
         org.telegram.ui.Cells.BaseCell.setDrawableBounds(r9, (r1 + r5) + org.telegram.messenger.AndroidUtilities.dp(4.0f), r10 - org.telegram.messenger.AndroidUtilities.dp(r29), org.telegram.messenger.AndroidUtilities.dp(18.0f), org.telegram.messenger.AndroidUtilities.dp(18.0f));
         r9.setAlpha((int) (r49 * 255.0f));
         r9.draw(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:518:0x122b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:520:0x122f, code lost:
     
-        if (r1 != 0) goto L676;
+        if (r1 != 0) goto L678;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:519:0x122d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:521:0x1231, code lost:
     
         r14 = 15.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:520:0x1230, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:522:0x1234, code lost:
     
         r14 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:522:0x12d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:524:0x12da, code lost:
     
-        if (r47.currentMessageObject.isUnsupported() == false) goto L694;
+        if (r47.currentMessageObject.isUnsupported() == false) goto L696;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:523:0x12d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:525:0x12dc, code lost:
     
         r18 = -5.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x12da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:526:0x12de, code lost:
     
         r13 = r13 + org.telegram.messenger.AndroidUtilities.dp(r18);
         r1 = r47.instantButtonLoading;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:525:0x12e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:527:0x12e5, code lost:
     
-        if (r1 == null) goto L702;
+        if (r1 == null) goto L704;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x12e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:528:0x12e7, code lost:
     
-        if (r31 != false) goto L702;
+        if (r31 != false) goto L704;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:528:0x12e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x12ed, code lost:
     
-        if (r1.isDisappeared() != false) goto L702;
+        if (r1.isDisappeared() != false) goto L704;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:530:0x12f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:532:0x12f5, code lost:
     
-        if (r47.instantButtonLoading.isDisappearing() != false) goto L702;
+        if (r47.instantButtonLoading.isDisappearing() != false) goto L704;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:531:0x12f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:533:0x12f7, code lost:
     
         r47.instantButtonLoading.disappear();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x12f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:534:0x12fc, code lost:
     
         r1 = r47.instantButtonLoading;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:533:0x12fa, code lost:
-    
-        if (r1 != null) goto L706;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:534:0x12fc, code lost:
-    
-        if (r31 == false) goto L706;
-     */
     /* JADX WARN: Code restructure failed: missing block: B:535:0x12fe, code lost:
+    
+        if (r1 != null) goto L708;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:536:0x1300, code lost:
+    
+        if (r31 == false) goto L708;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:537:0x1302, code lost:
     
         r1 = new org.telegram.ui.Components.LoadingDrawable();
         r47.instantButtonLoading = r1;
         r1.strokePaint.setStrokeWidth(org.telegram.messenger.AndroidUtilities.dp(1.25f));
         r47.instantButtonLoading.setAppearByGradient(true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:536:0x1334, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:538:0x1338, code lost:
     
         r47.instantButtonRect.set(r32, r13, r14 + r47.instantWidth, org.telegram.messenger.AndroidUtilities.dp(36.0f) + r13);
         r1 = r47.instantButtonBounce.getScale(0.02f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:537:0x1356, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:539:0x135a, code lost:
     
-        if (r1 == 1.0f) goto L716;
+        if (r1 == 1.0f) goto L718;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:538:0x1358, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:540:0x135c, code lost:
     
         r2 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:539:0x135b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:541:0x135f, code lost:
     
-        if (r2 == false) goto L719;
+        if (r2 == false) goto L721;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:540:0x135d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:542:0x1361, code lost:
     
         r48.save();
         r7.scale(r1, r1, r47.instantButtonRect.centerX(), r47.instantButtonRect.centerY());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:542:0x1373, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:544:0x1377, code lost:
     
-        if (android.os.Build.VERSION.SDK_INT < 21) goto L722;
+        if (android.os.Build.VERSION.SDK_INT < 21) goto L724;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:543:0x1375, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:545:0x1379, code lost:
     
         r47.selectorDrawableMaskType[0] = 0;
         createSelectorDrawable(0);
         r47.selectorDrawable[0].setBounds(r14, r13, r14 + r47.instantWidth, org.telegram.messenger.AndroidUtilities.dp(36.0f) + r13);
         r47.selectorDrawable[0].draw(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:544:0x1396, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:546:0x139a, code lost:
     
         r1 = r47.instantButtonLoading;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:545:0x1398, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:547:0x139c, code lost:
     
-        if (r1 == null) goto L727;
+        if (r1 == null) goto L729;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:547:0x139e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:549:0x13a2, code lost:
     
-        if (r1.isDisappeared() != false) goto L727;
+        if (r1.isDisappeared() != false) goto L729;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:548:0x13a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:550:0x13a4, code lost:
     
         r47.instantButtonLoading.setBounds(r47.instantButtonRect);
         r3 = 6.0f;
@@ -18513,45 +18515,45 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         r47.instantButtonLoading.draw(r7);
         invalidate();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:549:0x13b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:551:0x13bd, code lost:
     
         r7.drawRoundRect(r47.instantButtonRect, org.telegram.messenger.AndroidUtilities.dp(r3), org.telegram.messenger.AndroidUtilities.dp(r3), org.telegram.ui.ActionBar.Theme.chat_instantViewButtonPaint);
         r1 = r47.drawInstantViewType;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:550:0x13cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:552:0x13d0, code lost:
     
-        if (r1 != 0) goto L731;
+        if (r1 != 0) goto L733;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:551:0x13ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:553:0x13d2, code lost:
     
         org.telegram.ui.Cells.BaseCell.setDrawableBounds(r9, ((r47.instantTextLeftX + r47.instantTextX) + r14) - org.telegram.messenger.AndroidUtilities.dp(15.0f), org.telegram.messenger.AndroidUtilities.dp(11.5f) + r13, org.telegram.messenger.AndroidUtilities.dp(9.0f), org.telegram.messenger.AndroidUtilities.dp(13.0f));
         r9.setAlpha((int) (r49 * 255.0f));
         r9.draw(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:553:0x14d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:555:0x14dc, code lost:
     
-        if (r47.instantViewLayout == null) goto L744;
+        if (r47.instantViewLayout == null) goto L746;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:554:0x14da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x14de, code lost:
     
         r48.save();
         r7.translate(r14 + r47.instantTextX, r13 + org.telegram.messenger.AndroidUtilities.dp(10.5f));
         org.telegram.ui.Components.spoilers.SpoilerEffect.layoutDrawMaybe(r47.instantViewLayout, r7);
         r48.restore();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:555:0x14f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:557:0x14f9, code lost:
     
-        if (r2 == false) goto L690;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:557:0x13fe, code lost:
-    
-        if (r1 != 16) goto L741;
+        if (r2 == false) goto L692;
      */
     /* JADX WARN: Code restructure failed: missing block: B:559:0x1402, code lost:
     
-        if (r47.instantLinkArrowPaint != null) goto L736;
+        if (r1 != 16) goto L743;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:560:0x1404, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:561:0x1406, code lost:
+    
+        if (r47.instantLinkArrowPaint != null) goto L738;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:562:0x1408, code lost:
     
         r1 = new android.graphics.Paint(1);
         r47.instantLinkArrowPaint = r1;
@@ -18559,21 +18561,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         r47.instantLinkArrowPaint.setStrokeCap(android.graphics.Paint.Cap.ROUND);
         r47.instantLinkArrowPaint.setStrokeJoin(android.graphics.Paint.Join.ROUND);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:561:0x141f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:563:0x1423, code lost:
     
         r47.instantLinkArrowPaint.setColor(org.telegram.ui.ActionBar.Theme.chat_instantViewPaint.getColor());
         r47.instantLinkArrowPaint.setStrokeWidth(org.telegram.messenger.AndroidUtilities.dpf2(1.333f));
         r1 = r47.instantLinkArrowPath;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:562:0x1438, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:564:0x143c, code lost:
     
-        if (r1 != null) goto L739;
+        if (r1 != null) goto L741;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:563:0x143a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:565:0x143e, code lost:
     
         r47.instantLinkArrowPath = new android.graphics.Path();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:564:0x1445, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:566:0x1449, code lost:
     
         r47.instantLinkArrowPath.moveTo(r47.instantButtonRect.right - org.telegram.messenger.AndroidUtilities.dp(11.0f), r47.instantButtonRect.top + org.telegram.messenger.AndroidUtilities.dp(6.0f));
         r47.instantLinkArrowPath.lineTo(r47.instantButtonRect.right - org.telegram.messenger.AndroidUtilities.dp(6.0f), r47.instantButtonRect.top + org.telegram.messenger.AndroidUtilities.dp(6.0f));
@@ -18582,78 +18584,78 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         r47.instantLinkArrowPath.lineTo(r47.instantButtonRect.right - org.telegram.messenger.AndroidUtilities.dp(6.0f), r47.instantButtonRect.top + org.telegram.messenger.AndroidUtilities.dp(6.0f));
         r7.drawPath(r47.instantLinkArrowPath, r47.instantLinkArrowPaint);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:565:0x1442, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:567:0x1446, code lost:
     
         r1.rewind();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:566:0x13b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:568:0x13bb, code lost:
     
         r3 = 6.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:567:0x135a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:569:0x135e, code lost:
     
         r2 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:568:0x1318, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:570:0x131c, code lost:
     
-        if (r1 == null) goto L713;
+        if (r1 == null) goto L715;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:569:0x131a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:571:0x131e, code lost:
     
-        if (r31 == false) goto L713;
+        if (r31 == false) goto L715;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:571:0x1320, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:573:0x1324, code lost:
     
-        if (r1.isDisappeared() != false) goto L712;
+        if (r1.isDisappeared() != false) goto L714;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:573:0x1328, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:575:0x132c, code lost:
     
-        if (r47.instantButtonLoading.isDisappearing() == false) goto L713;
+        if (r47.instantButtonLoading.isDisappearing() == false) goto L715;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:574:0x132a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:576:0x132e, code lost:
     
         r47.instantButtonLoading.reset();
         r47.instantButtonLoading.resetDisappear();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:575:0x11b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:577:0x11b8, code lost:
     
         r3.setColors(org.telegram.ui.ActionBar.Theme.multAlpha(r1, r4), org.telegram.ui.ActionBar.Theme.multAlpha(r1, 0.3f), org.telegram.ui.ActionBar.Theme.multAlpha(r1, 0.3f), org.telegram.ui.ActionBar.Theme.multAlpha(r1, 1.2f));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:595:0x11b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:597:0x11b6, code lost:
     
-        if (r3 != null) goto L668;
+        if (r3 != null) goto L670;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:637:0x094a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:639:0x094e, code lost:
     
-        if (r49 != 1.0f) goto L383;
+        if (r49 != 1.0f) goto L385;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:638:0x0962, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:640:0x0966, code lost:
     
         org.telegram.ui.ActionBar.Theme.chat_instantViewPaint.setAlpha((int) (r49 * 255.0f));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:640:0x0960, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:642:0x0964, code lost:
     
-        if (r49 != 1.0f) goto L383;
+        if (r49 != 1.0f) goto L385;
      */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x0ab2  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x0adb  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0b5d  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0bdb  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x0cfe A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:394:0x0d02  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x0d11  */
-    /* JADX WARN: Removed duplicated region for block: B:431:0x0e3a  */
-    /* JADX WARN: Removed duplicated region for block: B:441:0x0e9a  */
-    /* JADX WARN: Removed duplicated region for block: B:445:0x0ede  */
-    /* JADX WARN: Removed duplicated region for block: B:450:0x0f7e  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x1075  */
-    /* JADX WARN: Removed duplicated region for block: B:476:0x100b  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x1068  */
-    /* JADX WARN: Removed duplicated region for block: B:484:0x10be  */
-    /* JADX WARN: Removed duplicated region for block: B:601:0x0e73  */
-    /* JADX WARN: Removed duplicated region for block: B:616:0x0d2d  */
-    /* JADX WARN: Removed duplicated region for block: B:625:0x0cf6  */
-    /* JADX WARN: Removed duplicated region for block: B:626:0x0ad2  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x0ab6  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x0adf  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0b61  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x0bdf  */
+    /* JADX WARN: Removed duplicated region for block: B:394:0x0d02 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:396:0x0d06  */
+    /* JADX WARN: Removed duplicated region for block: B:399:0x0d15  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x0e3e  */
+    /* JADX WARN: Removed duplicated region for block: B:443:0x0e9e  */
+    /* JADX WARN: Removed duplicated region for block: B:447:0x0ee2  */
+    /* JADX WARN: Removed duplicated region for block: B:452:0x0f82  */
+    /* JADX WARN: Removed duplicated region for block: B:467:0x1079  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x100f  */
+    /* JADX WARN: Removed duplicated region for block: B:483:0x106c  */
+    /* JADX WARN: Removed duplicated region for block: B:486:0x10c2  */
+    /* JADX WARN: Removed duplicated region for block: B:603:0x0e77  */
+    /* JADX WARN: Removed duplicated region for block: B:618:0x0d31  */
+    /* JADX WARN: Removed duplicated region for block: B:627:0x0cfa  */
+    /* JADX WARN: Removed duplicated region for block: B:628:0x0ad6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -18765,7 +18767,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             Theme.chat_replyNamePaint.setColor(this.linkLine.check(this.currentMessageObject, this.currentUser, this.currentChat, this.resourcesProvider, 3));
             ReplyMessageLine replyMessageLine2 = this.linkLine;
             int i25 = this.drawInstantViewType;
-            replyMessageLine2.setEmojiAlpha((i25 == 23 || i25 == 24) ? 0.5f : 1.0f);
+            replyMessageLine2.setEmojiAlpha((i25 == 23 || i25 == 24 || i25 == 28) ? 0.5f : 1.0f);
             boolean z4 = this.currentMessageObject.isSponsored() && !this.isSmallImage;
             boolean z5 = !(z4 || !this.drawInstantView || (i19 = this.drawInstantViewType) == 26 || i19 == 9 || i19 == 2 || i19 == 13 || i19 == 11 || i19 == 25 || i19 == 1 || i19 == 18 || i19 == 22) || (this.drawInstantViewType == 6 && this.imageBackgroundColor != 0);
             boolean z6 = !z4 && (!this.drawInstantView || (i18 = this.drawInstantViewType) == 9 || i18 == 2 || i18 == 11 || i18 == 25 || i18 == 13 || i18 == 1 || i18 == 18 || i18 == 22 || i18 == 32 || this.isSmallImage || i18 == 26);
@@ -19066,7 +19068,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 canvas.drawRoundRect(this.rect, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), Theme.chat_instantViewPaint);
                             }
                             Theme.chat_instantViewPaint.setShader(null);
-                            Theme.chat_instantViewPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                            Theme.chat_instantViewPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         } else {
                             Theme.chat_instantViewPaint.setShader(null);
                             Theme.chat_instantViewPaint.setColor(this.imageBackgroundColor);
@@ -19263,7 +19265,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         canvas2.translate(imageX, imageY4);
                                         this.photosCountLayout.draw(canvas2);
                                         canvas.restore();
-                                        Theme.chat_durationPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                                        Theme.chat_durationPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                                     }
                                     if (this.videoInfoLayout != null && ((!this.drawPhotoImage || this.photoImage.getVisible()) && this.imageBackgroundSideColor == 0)) {
                                         if (this.hasGamePreview && !this.hasInvoicePreview && this.documentAttachType != 8) {
@@ -19381,7 +19383,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             canvas2.translate(imageX2, imageY42);
                             this.photosCountLayout.draw(canvas2);
                             canvas.restore();
-                            Theme.chat_durationPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                            Theme.chat_durationPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         }
                         if (this.videoInfoLayout != null) {
                             if (this.hasGamePreview) {
@@ -19742,7 +19744,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (f4 != 1.0f) {
                             i2 = 0;
                             i3 = 0;
-                            i4 = TLRPC.FLAG_31;
+                            i4 = TLObject.FLAG_31;
                         } else {
                             if (z3 || z4) {
                                 int alpha = Theme.chat_msgTextPaint.getAlpha();
@@ -19752,7 +19754,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 textPaint.linkColor = ColorUtils.setAlphaComponent(textPaint.linkColor, (int) (alpha2 * f4));
                                 i3 = alpha;
                                 i2 = alpha2;
-                                i4 = TLRPC.FLAG_31;
+                                i4 = TLObject.FLAG_31;
                                 z5 = true;
                                 int color = (this.currentMessageObject.isOutOwner() || ChatObject.isChannelAndNotMegaGroup(this.currentMessageObject.getChatId(), this.currentAccount)) ? Theme.chat_msgTextPaint.getColor() : getThemedColor(Theme.key_chat_outTimeText);
                                 quoteHighlight = this.quoteHighlight;
@@ -19939,7 +19941,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             canvas.restore();
                                             i10 = dp3;
                                             textLayoutBlock2 = textLayoutBlock;
-                                            canvas.saveLayerAlpha(dp2, 0.0f, f15 + dp2, textLayoutBlock.height(this.transitionParams) - 1, NotificationCenter.locationPermissionGranted, 31);
+                                            canvas.saveLayerAlpha(dp2, 0.0f, f15 + dp2, textLayoutBlock.height(this.transitionParams) - 1, NotificationCenter.goingToPreviewTheme, 31);
                                             i13 = color3;
                                             f5 = collapsed;
                                         }
@@ -20439,7 +20441,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 this.rect.set(0.0f, 0.0f, getMaxNameWidth(), getMeasuredHeight());
                 i = canvas.saveLayerAlpha(this.rect, (int) (f * 255.0f), 31);
             } else {
-                i = TLRPC.FLAG_31;
+                i = TLObject.FLAG_31;
             }
             if (!this.isRoundVideo || this.hasLinkPreview) {
                 f2 = 1.0f;
@@ -22448,7 +22450,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         this.docTitleLayout.draw(canvas2);
                                                     }
                                                     canvas.restore();
-                                                    Theme.chat_infoPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                                                    Theme.chat_infoPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                                                     getThemedPaint(str2).setAlpha(alpha2);
                                                     i8 = this.animatingDrawVideoImageButton;
                                                     if (i8 != 1) {
@@ -22746,7 +22748,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             canvas2.translate(imageX, imageY2);
                                                             this.durationLayout.draw(canvas2);
                                                             canvas.restore();
-                                                            Theme.chat_timePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                                                            Theme.chat_timePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                                                         }
                                                     }
                                                     if (this.drawPhotoImage && (messageObject5 = this.currentMessageObject) != null && messageObject5.hasMediaSpoilers() && this.currentMessageObject.isSensitive()) {
@@ -22834,7 +22836,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (z3) {
                                             }
                                             canvas.restore();
-                                            Theme.chat_infoPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                                            Theme.chat_infoPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                                             getThemedPaint(str2).setAlpha(alpha2);
                                             i8 = this.animatingDrawVideoImageButton;
                                             if (i8 != 1) {
@@ -23195,7 +23197,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 TransitionParams transitionParams8 = this.transitionParams;
                                 float f60 = transitionParams8.animateTitleLayout != null ? transitionParams8.animateChangeProgress : 1.0f;
                                 ColorFilter adaptiveEmojiColorFilter = getAdaptiveEmojiColorFilter(1, staticLayout6.getPaint().getColor());
-                                i13 = NotificationCenter.locationPermissionGranted;
+                                i13 = NotificationCenter.goingToPreviewTheme;
                                 i12 = 1;
                                 i14 = 4;
                                 j2 = j9;
@@ -23226,7 +23228,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 canvas4 = canvas3;
                                 i12 = 1;
                                 f15 = 1.0f;
-                                i13 = NotificationCenter.locationPermissionGranted;
+                                i13 = NotificationCenter.goingToPreviewTheme;
                                 i14 = 4;
                                 i15 = 0;
                             }
@@ -23610,7 +23612,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 float lerp2 = AndroidUtilities.lerp(0.5f, 1.0f, progress3);
                                                                 pollButton.avatarImageReceiver.setImageCoords(((-AndroidUtilities.dp(!z15 ? 35.0f : 22.0f)) - i25) + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.0f) - (AndroidUtilities.dp(20.0f) / 2), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
                                                                 canvas6 = canvas5;
-                                                                canvas.saveLayerAlpha(pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getImageY(), pollButton.avatarImageReceiver.getImageX2(), pollButton.avatarImageReceiver.getImageY2(), NotificationCenter.locationPermissionGranted, 31);
+                                                                canvas.saveLayerAlpha(pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getImageY(), pollButton.avatarImageReceiver.getImageX2(), pollButton.avatarImageReceiver.getImageY2(), NotificationCenter.goingToPreviewTheme, 31);
                                                                 canvas.save();
                                                                 canvas6.scale(lerp2, lerp2, pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getCenterY());
                                                                 pollButton.avatarImageReceiver.setAlpha(progress3);
@@ -23700,7 +23702,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             float lerp22 = AndroidUtilities.lerp(0.5f, 1.0f, progress32);
                                             pollButton.avatarImageReceiver.setImageCoords(((-AndroidUtilities.dp(!z15 ? 35.0f : 22.0f)) - i25) + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.0f) - (AndroidUtilities.dp(20.0f) / 2), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
                                             canvas6 = canvas5;
-                                            canvas.saveLayerAlpha(pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getImageY(), pollButton.avatarImageReceiver.getImageX2(), pollButton.avatarImageReceiver.getImageY2(), NotificationCenter.locationPermissionGranted, 31);
+                                            canvas.saveLayerAlpha(pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getImageY(), pollButton.avatarImageReceiver.getImageX2(), pollButton.avatarImageReceiver.getImageY2(), NotificationCenter.goingToPreviewTheme, 31);
                                             canvas.save();
                                             canvas6.scale(lerp22, lerp22, pollButton.avatarImageReceiver.getImageX(), pollButton.avatarImageReceiver.getCenterY());
                                             pollButton.avatarImageReceiver.setAlpha(progress32);
@@ -25098,7 +25100,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(this.radialProgress.progressRect);
         rectF.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
-        canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
         this.radialProgress.setBackgroundDrawable(isDrawSelectionBackground() ? this.currentBackgroundSelectedDrawable : this.currentBackgroundDrawable);
         this.radialProgress.iconScale = f;
         runnable.run();
@@ -25148,7 +25150,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.onceRadialPaint.setShader(this.radialProgress.mediaActionDrawable.paint2.getShader());
             this.onceRadialStrokePaint.setShader(this.radialProgress.mediaActionDrawable.paint2.getShader());
             rectF.set(this.onceFire.getBounds());
-            canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
             rectF.inset(1.0f, 1.0f);
             canvas.drawRect(rectF, this.onceRadialPaint);
             this.onceFire.draw(canvas, this.onceRadialCutPaint);
@@ -25190,7 +25192,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         CaptionContainerView.PeriodDrawable periodDrawable3 = this.oncePeriod;
         periodDrawable3.diameterDp = f * 14.0f;
         periodDrawable3.setTextSize(f * 10.0f);
-        canvas.saveLayerAlpha(cos - AndroidUtilities.dp(10.0f), sin - AndroidUtilities.dp(10.0f), cos + AndroidUtilities.dp(10.0f), sin + AndroidUtilities.dp(10.0f), NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(cos - AndroidUtilities.dp(10.0f), sin - AndroidUtilities.dp(10.0f), cos + AndroidUtilities.dp(10.0f), sin + AndroidUtilities.dp(10.0f), NotificationCenter.goingToPreviewTheme, 31);
         canvas.drawCircle(cos, sin, AndroidUtilities.dp(10.0f) * f, this.radialProgress.circlePaint);
         this.oncePeriod.setClear(AndroidUtilities.computePerceivedBrightness(this.radialProgress.circlePaint.getColor()) > 0.8f);
         this.oncePeriod.setCenterXY(cos, sin);
@@ -29112,7 +29114,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         } else {
             this.lastHighlightProgressTime = System.currentTimeMillis();
             this.isHighlightedAnimated = true;
-            i = NotificationCenter.activityPermissionsGranted;
+            i = NotificationCenter.permissionsGranted;
         }
         this.highlightProgress = i;
         updateRadialProgressBackground();

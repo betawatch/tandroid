@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.Cells.TextSelectionHelper;
@@ -35,12 +36,12 @@ public class TableLayout extends View {
     static final Alignment UNDEFINED_ALIGNMENT = new Alignment() { // from class: org.telegram.ui.Components.TableLayout.1
         @Override // org.telegram.ui.Components.TableLayout.Alignment
         public int getAlignmentValue(Child child, int i) {
-            return TLRPC.FLAG_31;
+            return TLObject.FLAG_31;
         }
 
         @Override // org.telegram.ui.Components.TableLayout.Alignment
         int getGravityOffset(Child child, int i) {
-            return TLRPC.FLAG_31;
+            return TLObject.FLAG_31;
         }
     };
     private Path backgroundPath;
@@ -150,8 +151,8 @@ public class TableLayout extends View {
         public boolean trailingMarginsValid;
 
         private Axis(boolean z) {
-            this.definedCount = TLRPC.FLAG_31;
-            this.maxIndex = TLRPC.FLAG_31;
+            this.definedCount = TLObject.FLAG_31;
+            this.maxIndex = TLObject.FLAG_31;
             this.groupBoundsValid = false;
             this.forwardLinksValid = false;
             this.backwardLinksValid = false;
@@ -186,7 +187,7 @@ public class TableLayout extends View {
                 Interval interval = (this.horizontal ? layoutParams.columnSpec : layoutParams.rowSpec).span;
                 i = Math.max(Math.max(Math.max(i, interval.min), interval.max), interval.size());
             }
-            return i == -1 ? TLRPC.FLAG_31 : i;
+            return i == -1 ? TLObject.FLAG_31 : i;
         }
 
         private float calculateTotalWeight() {
@@ -654,7 +655,7 @@ public class TableLayout extends View {
         }
 
         public void invalidateStructure() {
-            this.maxIndex = TLRPC.FLAG_31;
+            this.maxIndex = TLObject.FLAG_31;
             this.groupBounds = null;
             this.forwardLinks = null;
             this.backwardLinks = null;
@@ -723,8 +724,8 @@ public class TableLayout extends View {
         }
 
         protected void reset() {
-            this.before = TLRPC.FLAG_31;
-            this.after = TLRPC.FLAG_31;
+            this.before = TLObject.FLAG_31;
+            this.after = TLObject.FLAG_31;
             this.flexibility = 2;
         }
 
@@ -1150,7 +1151,7 @@ public class TableLayout extends View {
         public Spec rowSpec;
 
         static {
-            Interval interval = new Interval(TLRPC.FLAG_31, -2147483647);
+            Interval interval = new Interval(TLObject.FLAG_31, -2147483647);
             DEFAULT_SPAN = interval;
             DEFAULT_SPAN_SIZE = interval.size();
         }
@@ -1175,7 +1176,7 @@ public class TableLayout extends View {
         }
 
         public LayoutParams(Spec spec, Spec spec2) {
-            this(-2, -2, TLRPC.FLAG_31, TLRPC.FLAG_31, TLRPC.FLAG_31, TLRPC.FLAG_31, spec, spec2);
+            this(-2, -2, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, spec, spec2);
         }
 
         public boolean equals(Object obj) {
@@ -1214,7 +1215,7 @@ public class TableLayout extends View {
         }
 
         public void reset() {
-            this.value = TLRPC.FLAG_31;
+            this.value = TLObject.FLAG_31;
         }
     }
 
@@ -1261,7 +1262,7 @@ public class TableLayout extends View {
     }
 
     public static class Spec {
-        static final Spec UNDEFINED = TableLayout.spec(TLRPC.FLAG_31);
+        static final Spec UNDEFINED = TableLayout.spec(TLObject.FLAG_31);
         final Alignment alignment;
         final Interval span;
         final boolean startDefined;
@@ -1365,7 +1366,7 @@ public class TableLayout extends View {
         BASELINE = new Alignment() { // from class: org.telegram.ui.Components.TableLayout.6
             @Override // org.telegram.ui.Components.TableLayout.Alignment
             public int getAlignmentValue(Child child, int i) {
-                return TLRPC.FLAG_31;
+                return TLObject.FLAG_31;
             }
 
             @Override // org.telegram.ui.Components.TableLayout.Alignment
@@ -1387,7 +1388,7 @@ public class TableLayout extends View {
                     @Override // org.telegram.ui.Components.TableLayout.Bounds
                     protected void reset() {
                         super.reset();
-                        this.size = TLRPC.FLAG_31;
+                        this.size = TLObject.FLAG_31;
                     }
 
                     @Override // org.telegram.ui.Components.TableLayout.Bounds
@@ -1405,7 +1406,7 @@ public class TableLayout extends View {
         FILL = new Alignment() { // from class: org.telegram.ui.Components.TableLayout.7
             @Override // org.telegram.ui.Components.TableLayout.Alignment
             public int getAlignmentValue(Child child, int i) {
-                return TLRPC.FLAG_31;
+                return TLObject.FLAG_31;
             }
 
             @Override // org.telegram.ui.Components.TableLayout.Alignment
@@ -1438,8 +1439,8 @@ public class TableLayout extends View {
         this.radii = new float[8];
         this.childrens = new ArrayList();
         this.textSelectionHelper = articleTextSelectionHelper;
-        setRowCount(TLRPC.FLAG_31);
-        setColumnCount(TLRPC.FLAG_31);
+        setRowCount(TLObject.FLAG_31);
+        setColumnCount(TLObject.FLAG_31);
         setOrientation(0);
         setUseDefaultMargins(false);
         setAlignmentMode(1);

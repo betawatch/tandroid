@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Amount;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Currency;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -354,7 +354,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             this.requiredAmount = amountUtils$Amount;
             HeaderView headerView = new HeaderView(context, this.currentAccount, resourcesProvider);
             this.headerView = headerView;
-            headerView.titleView.setText(LocaleController.formatString(R.string.TonNeededTitle, AmountUtils$Amount.fromNano(amountUtils$Amount.asNano() - StarsController.getTonInstance(this.currentAccount).getBalanceAmount().asNano(), AmountUtils$Currency.TON).asDecimalString()));
+            headerView.titleView.setText(LocaleController.formatString(R.string.TonNeededTitle, AmountUtils$Amount.fromNano(amountUtils$Amount.asNano() - StarsController.getTonInstance(this.currentAccount).getBalanceAmount().asNano(), AmountUtils$Currency.TON).asFormatString()));
             headerView.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
             TextView textView = headerView.subtitleView;
             textView.setMaxWidth(HintView2.cutInFancyHalf(textView.getText(), headerView.subtitleView.getPaint()));
@@ -429,7 +429,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                     universalAdapter.update(true);
                 }
                 AmountUtils$Amount balanceAmount = StarsController.getTonInstance(this.currentAccount).getBalanceAmount();
-                this.headerView.titleView.setText(LocaleController.formatString(R.string.TonNeededTitle, AmountUtils$Amount.fromNano(this.requiredAmount.asNano() - balanceAmount.asNano(), AmountUtils$Currency.TON).asDecimalString()));
+                this.headerView.titleView.setText(LocaleController.formatString(R.string.TonNeededTitle, AmountUtils$Amount.fromNano(this.requiredAmount.asNano() - balanceAmount.asNano(), AmountUtils$Currency.TON).asFormatString()));
                 ActionBar actionBar = this.actionBar;
                 if (actionBar != null) {
                     actionBar.setTitle(getTitle());
@@ -613,7 +613,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                         i3 = i4;
                     }
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) TONIntroActivity.this).yOffset * 2.5f)), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) TONIntroActivity.this).yOffset * 2.5f)), TLObject.FLAG_30));
             }
         };
         this.emptyLayout = view;

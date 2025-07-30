@@ -11,6 +11,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -21,7 +22,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
@@ -85,8 +86,8 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.locationPermissionGranted;
-        this.subTextAlpha = NotificationCenter.emojiKeywordsLoaded;
+        this.globalAlpha = NotificationCenter.goingToPreviewTheme;
+        this.subTextAlpha = NotificationCenter.savedMessagesForwarded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);
@@ -216,6 +217,10 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     @Override // android.view.ViewGroup
     protected boolean drawChild(Canvas canvas, View view, long j) {
         return false;
+    }
+
+    public TextPaint getTextPaint() {
+        return this.text.getPaint();
     }
 
     @Override // android.view.View
@@ -355,7 +360,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.wrapWidth) {
-            i = View.MeasureSpec.makeMeasureSpec((int) Math.min(Math.max(getPaddingLeft() + this.text.getCurrentWidth() + getPaddingRight(), this.minWidth), View.MeasureSpec.getSize(i)), TLRPC.FLAG_30);
+            i = View.MeasureSpec.makeMeasureSpec((int) Math.min(Math.max(getPaddingLeft() + this.text.getCurrentWidth() + getPaddingRight(), this.minWidth), View.MeasureSpec.getSize(i)), TLObject.FLAG_30);
         }
         super.onMeasure(i, i2);
     }

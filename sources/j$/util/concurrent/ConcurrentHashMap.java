@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
@@ -74,7 +74,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         if (i2 < 0) {
             throw new IllegalArgumentException();
         }
-        this.sizeCtl = i2 >= 536870912 ? TLRPC.FLAG_30 : m(i2 + (i2 >>> 1) + 1);
+        this.sizeCtl = i2 >= 536870912 ? TLObject.FLAG_30 : m(i2 + (i2 >>> 1) + 1);
     }
 
     public ConcurrentHashMap(int i2, float f, int i3) {
@@ -84,7 +84,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         double d = (i2 < i3 ? i3 : i2) / f;
         Double.isNaN(d);
         long j2 = (long) (d + 1.0d);
-        this.sizeCtl = j2 >= 1073741824 ? TLRPC.FLAG_30 : m((int) j2);
+        this.sizeCtl = j2 >= 1073741824 ? TLObject.FLAG_30 : m((int) j2);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x0012, code lost:
@@ -355,7 +355,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         if (i8 < 0) {
             return 1;
         }
-        return i8 >= 1073741824 ? TLRPC.FLAG_30 : 1 + i8;
+        return i8 >= 1073741824 ? TLObject.FLAG_30 : 1 + i8;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -619,7 +619,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     private final void p(int i2) {
         int length;
         k[] kVarArr;
-        int m2 = i2 >= 536870912 ? TLRPC.FLAG_30 : m(i2 + (i2 >>> 1) + 1);
+        int m2 = i2 >= 536870912 ? TLObject.FLAG_30 : m(i2 + (i2 >>> 1) + 1);
         while (true) {
             int i3 = this.sizeCtl;
             if (i3 < 0) {
@@ -706,7 +706,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return;
         }
         if (j4 >= 536870912) {
-            m2 = TLRPC.FLAG_30;
+            m2 = TLObject.FLAG_30;
         } else {
             int i2 = (int) j4;
             m2 = m(i2 + (i2 >>> 1) + 1);

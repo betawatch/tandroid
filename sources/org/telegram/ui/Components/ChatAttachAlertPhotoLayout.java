@@ -77,6 +77,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraSessionWrapper;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -1377,12 +1378,12 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 return i != 2 ? i != 4 ? new RecyclerListView.Holder(new PhotoAttachPermissionCell(this.mContext, ChatAttachAlertPhotoLayout.this.resourcesProvider)) : new RecyclerListView.Holder(new AvatarConstructorPreviewCell(this.mContext, ChatAttachAlertPhotoLayout.this.parentAlert.forUser) { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout.PhotoAttachAdapter.4
                     @Override // org.telegram.ui.Components.AvatarConstructorPreviewCell, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.itemSize, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.itemSize, TLRPC.FLAG_30));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.itemSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.itemSize, TLObject.FLAG_30));
                     }
                 }) : new RecyclerListView.Holder(new View(this.mContext) { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout.PhotoAttachAdapter.3
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.gridExtraSpace, TLRPC.FLAG_30));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(ChatAttachAlertPhotoLayout.this.gridExtraSpace, TLObject.FLAG_30));
                     }
                 });
             }
@@ -4109,18 +4110,18 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 FrameLayout frameLayout = this.cameraPanel;
                 if (view == frameLayout) {
                     if (z) {
-                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(126.0f), TLRPC.FLAG_30));
+                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(126.0f), TLObject.FLAG_30));
                     } else {
-                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(126.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30));
+                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(126.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30));
                     }
                     return true;
                 }
                 ZoomControlView zoomControlView = this.zoomControlView;
                 if (view == zoomControlView) {
                     if (z) {
-                        zoomControlView.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+                        zoomControlView.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
                     } else {
-                        zoomControlView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30));
+                        zoomControlView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30));
                     }
                     return true;
                 }
@@ -4128,7 +4129,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 if (view == recyclerListView) {
                     this.cameraPhotoRecyclerViewIgnoreLayout = true;
                     if (z) {
-                        recyclerListView.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30));
+                        recyclerListView.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
                         if (this.cameraPhotoLayoutManager.getOrientation() != 0) {
                             this.cameraPhotoRecyclerView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
                             this.cameraPhotoLayoutManager.setOrientation(0);
@@ -4137,7 +4138,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                         this.cameraPhotoRecyclerViewIgnoreLayout = false;
                         return true;
                     }
-                    recyclerListView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30));
+                    recyclerListView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30));
                     if (this.cameraPhotoLayoutManager.getOrientation() != 1) {
                         this.cameraPhotoRecyclerView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
                         this.cameraPhotoLayoutManager.setOrientation(1);
@@ -4147,13 +4148,13 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                     return true;
                 }
             } else if (this.cameraOpened && !this.cameraAnimationInProgress) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30);
-                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i2 + this.parentAlert.getBottomInset(), TLRPC.FLAG_30);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30);
+                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i2 + this.parentAlert.getBottomInset(), TLObject.FLAG_30);
             }
             return false;
         }
-        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, TLRPC.FLAG_30);
-        makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) ((this.itemSize - this.cameraViewOffsetBottomY) - this.cameraViewOffsetY), TLRPC.FLAG_30);
+        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, TLObject.FLAG_30);
+        makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) ((this.itemSize - this.cameraViewOffsetBottomY) - this.cameraViewOffsetY), TLObject.FLAG_30);
         view2.measure(makeMeasureSpec, makeMeasureSpec2);
         return true;
     }

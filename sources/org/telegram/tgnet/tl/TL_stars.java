@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.utils.tlutils.AmountUtils$Amount;
+import org.telegram.messenger.utils.tlutils.AmountUtils$Currency;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
@@ -114,8 +117,9 @@ public class TL_stars {
         public int per_user_total;
         public TLRPC.Peer released_by;
         public boolean require_premium;
+        public boolean resale_ton_only;
+        public ArrayList<StarsAmount> resell_amount;
         public long resell_min_stars;
-        public long resell_stars;
         public String slug;
         public boolean sold_out;
         public long stars;
@@ -135,8 +139,8 @@ public class TL_stars {
                 case TL_starGiftUnique_layer198.constructor /* -218202550 */:
                     tL_starGift_layer190 = new TL_starGiftUnique_layer198();
                     break;
-                case TL_starGiftUnique.constructor /* -164136786 */:
-                    tL_starGift_layer190 = new TL_starGiftUnique();
+                case TL_starGiftUnique_layer210.constructor /* -164136786 */:
+                    tL_starGift_layer190 = new TL_starGiftUnique_layer210();
                     break;
                 case TL_starGift.constructor /* 12386139 */:
                     tL_starGift_layer190 = new TL_starGift();
@@ -146,6 +150,9 @@ public class TL_stars {
                     break;
                 case TL_starGiftUnique_layer197.constructor /* 880997154 */:
                     tL_starGift_layer190 = new TL_starGiftUnique_layer197();
+                    break;
+                case TL_starGiftUnique.constructor /* 975654224 */:
+                    tL_starGift_layer190 = new TL_starGiftUnique();
                     break;
                 case TL_starGift_layer195.constructor /* 1237678029 */:
                     tL_starGift_layer190 = new TL_starGift_layer195();
@@ -188,6 +195,30 @@ public class TL_stars {
                 }
             }
             return null;
+        }
+
+        public AmountUtils$Amount getResellAmount(AmountUtils$Currency amountUtils$Currency) {
+            ArrayList<StarsAmount> arrayList = this.resell_amount;
+            if (arrayList == null || arrayList.isEmpty()) {
+                return AmountUtils$Amount.fromNano(0L, amountUtils$Currency);
+            }
+            Iterator<StarsAmount> it = this.resell_amount.iterator();
+            while (it.hasNext()) {
+                StarsAmount next = it.next();
+                if (next.getCurrency() == amountUtils$Currency) {
+                    return AmountUtils$Amount.of(next);
+                }
+            }
+            return AmountUtils$Amount.fromNano(0L, amountUtils$Currency);
+        }
+
+        @Deprecated
+        public long getResellStars() {
+            AmountUtils$Amount resellAmount = getResellAmount(AmountUtils$Currency.STARS);
+            if (resellAmount != null) {
+                return resellAmount.asDecimal();
+            }
+            return 0L;
         }
     }
 
@@ -295,6 +326,8 @@ public class TL_stars {
         public boolean equals(StarsAmount starsAmount) {
             return starsAmount != null && this.amount == starsAmount.amount && this.nanos == starsAmount.nanos;
         }
+
+        public abstract AmountUtils$Currency getCurrency();
 
         public boolean negative() {
             long j = this.amount;
@@ -674,7 +707,7 @@ public class TL_stars {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(TLRPC.setFlag(0, 1, this.ton));
+            outputSerializedData.writeInt32(TLObject.setFlag(0, 1, this.ton));
             this.peer.serializeToStream(outputSerializedData);
         }
     }
@@ -718,18 +751,18 @@ public class TL_stars {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLRPC.setFlag(this.flags, 1, this.inbound);
+            int flag = TLObject.setFlag(this.flags, 1, this.inbound);
             this.flags = flag;
-            int flag2 = TLRPC.setFlag(flag, 2, this.outbound);
+            int flag2 = TLObject.setFlag(flag, 2, this.outbound);
             this.flags = flag2;
-            int flag3 = TLRPC.setFlag(flag2, 4, this.ascending);
+            int flag3 = TLObject.setFlag(flag2, 4, this.ascending);
             this.flags = flag3;
-            int flag4 = TLRPC.setFlag(flag3, 8, this.subscription_id != null);
+            int flag4 = TLObject.setFlag(flag3, 8, this.subscription_id != null);
             this.flags = flag4;
-            int flag5 = TLRPC.setFlag(flag4, 16, this.ton);
+            int flag5 = TLObject.setFlag(flag4, 16, this.ton);
             this.flags = flag5;
             outputSerializedData.writeInt32(flag5);
-            if (TLRPC.hasFlag(this.flags, 8)) {
+            if (TLObject.hasFlag(this.flags, 8)) {
                 outputSerializedData.writeString(this.subscription_id);
             }
             this.peer.serializeToStream(outputSerializedData);
@@ -1238,8 +1271,8 @@ public class TL_stars {
             this.sold_out = (readInt32 & 2) != 0;
             this.birthday = (readInt32 & 4) != 0;
             this.can_upgrade = (readInt32 & 8) != 0;
-            this.require_premium = TLRPC.hasFlag(readInt32, 128);
-            this.limited_per_user = TLRPC.hasFlag(this.flags, 256);
+            this.require_premium = TLObject.hasFlag(readInt32, 128);
+            this.limited_per_user = TLObject.hasFlag(this.flags, 256);
             this.id = inputSerializedData.readInt64(z);
             this.sticker = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.stars = inputSerializedData.readInt64(z);
@@ -1267,7 +1300,7 @@ public class TL_stars {
             if ((this.flags & 64) != 0) {
                 this.released_by = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLRPC.hasFlag(this.flags, 256)) {
+            if (TLObject.hasFlag(this.flags, 256)) {
                 this.per_user_total = inputSerializedData.readInt32(z);
                 this.per_user_remains = inputSerializedData.readInt32(z);
             }
@@ -1284,9 +1317,9 @@ public class TL_stars {
             this.flags = i3;
             int i4 = this.can_upgrade ? i3 | 8 : i3 & (-9);
             this.flags = i4;
-            int flag = TLRPC.setFlag(i4, 128, this.require_premium);
+            int flag = TLObject.setFlag(i4, 128, this.require_premium);
             this.flags = flag;
-            int flag2 = TLRPC.setFlag(flag, 256, this.limited_per_user);
+            int flag2 = TLObject.setFlag(flag, 256, this.limited_per_user);
             this.flags = flag2;
             outputSerializedData.writeInt32(flag2);
             outputSerializedData.writeInt64(this.id);
@@ -1316,7 +1349,7 @@ public class TL_stars {
             if ((this.flags & 64) != 0) {
                 this.released_by.serializeToStream(outputSerializedData);
             }
-            if (TLRPC.hasFlag(this.flags, 256)) {
+            if (TLObject.hasFlag(this.flags, 256)) {
                 outputSerializedData.writeInt32(this.per_user_total);
                 outputSerializedData.writeInt32(this.per_user_remains);
             }
@@ -1399,13 +1432,14 @@ public class TL_stars {
     }
 
     public static class TL_starGiftUnique extends StarGift {
-        public static final int constructor = -164136786;
+        public static final int constructor = 975654224;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.require_premium = TLRPC.hasFlag(readInt32, 64);
+            this.require_premium = TLObject.hasFlag(readInt32, 64);
+            this.resale_ton_only = TLObject.hasFlag(this.flags, 128);
             this.id = inputSerializedData.readInt64(z);
             this.title = inputSerializedData.readString(z);
             this.slug = inputSerializedData.readString(z);
@@ -1425,8 +1459,13 @@ public class TL_stars {
             if ((this.flags & 8) != 0) {
                 this.gift_address = inputSerializedData.readString(z);
             }
-            if ((this.flags & 16) != 0) {
-                this.resell_stars = inputSerializedData.readInt64(z);
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.resell_amount = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_stars$TL_starGiftUnique$$ExternalSyntheticLambda1
+                    @Override // org.telegram.tgnet.Vector.TLDeserializer
+                    public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
+                        return TL_stars.StarsAmount.TLdeserialize(inputSerializedData2, i, z2);
+                    }
+                }, z);
             }
             if ((this.flags & 32) != 0) {
                 this.released_by = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -1436,9 +1475,15 @@ public class TL_stars {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLRPC.setFlag(this.flags, 64, this.require_premium);
+            int i = this.flags;
+            ArrayList<StarsAmount> arrayList = this.resell_amount;
+            int flag = TLObject.setFlag(i, 16, (arrayList == null || arrayList.isEmpty()) ? false : true);
             this.flags = flag;
-            outputSerializedData.writeInt32(flag);
+            int flag2 = TLObject.setFlag(flag, 64, this.require_premium);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 128, this.resale_ton_only);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeString(this.title);
             outputSerializedData.writeString(this.slug);
@@ -1459,7 +1504,7 @@ public class TL_stars {
                 outputSerializedData.writeString(this.gift_address);
             }
             if ((this.flags & 16) != 0) {
-                outputSerializedData.writeInt64(this.resell_stars);
+                Vector.serialize(outputSerializedData, this.resell_amount);
             }
             if ((this.flags & 32) != 0) {
                 this.released_by.serializeToStream(outputSerializedData);
@@ -1665,7 +1710,9 @@ public class TL_stars {
                 this.gift_address = inputSerializedData.readString(z);
             }
             if ((this.flags & 16) != 0) {
-                this.resell_stars = inputSerializedData.readInt64(z);
+                ArrayList<StarsAmount> arrayList = new ArrayList<>();
+                this.resell_amount = arrayList;
+                arrayList.add(StarsAmount.ofStars(inputSerializedData.readInt64(z)));
             }
         }
 
@@ -1693,7 +1740,78 @@ public class TL_stars {
                 outputSerializedData.writeString(this.gift_address);
             }
             if ((this.flags & 16) != 0) {
-                outputSerializedData.writeInt64(this.resell_stars);
+                outputSerializedData.writeInt64(getResellStars());
+            }
+        }
+    }
+
+    public static class TL_starGiftUnique_layer210 extends TL_starGiftUnique {
+        public static final int constructor = -164136786;
+
+        @Override // org.telegram.tgnet.tl.TL_stars.TL_starGiftUnique, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.require_premium = TLObject.hasFlag(readInt32, 64);
+            this.id = inputSerializedData.readInt64(z);
+            this.title = inputSerializedData.readString(z);
+            this.slug = inputSerializedData.readString(z);
+            this.num = inputSerializedData.readInt32(z);
+            if ((this.flags & 1) != 0) {
+                this.owner_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if ((this.flags & 2) != 0) {
+                this.owner_name = inputSerializedData.readString(z);
+            }
+            if ((this.flags & 4) != 0) {
+                this.owner_address = inputSerializedData.readString(z);
+            }
+            this.attributes = Vector.deserialize(inputSerializedData, new TL_stars$TL_starGiftUnique$$ExternalSyntheticLambda0(), z);
+            this.availability_issued = inputSerializedData.readInt32(z);
+            this.availability_total = inputSerializedData.readInt32(z);
+            if ((this.flags & 8) != 0) {
+                this.gift_address = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                ArrayList<StarsAmount> arrayList = new ArrayList<>();
+                this.resell_amount = arrayList;
+                arrayList.add(StarsAmount.ofStars(inputSerializedData.readInt64(z)));
+            }
+            if ((this.flags & 32) != 0) {
+                this.released_by = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.tl.TL_stars.TL_starGiftUnique, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 64, this.require_premium);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            outputSerializedData.writeInt64(this.id);
+            outputSerializedData.writeString(this.title);
+            outputSerializedData.writeString(this.slug);
+            outputSerializedData.writeInt32(this.num);
+            if ((this.flags & 1) != 0) {
+                this.owner_id.serializeToStream(outputSerializedData);
+            }
+            if ((this.flags & 2) != 0) {
+                outputSerializedData.writeString(this.owner_name);
+            }
+            if ((this.flags & 4) != 0) {
+                outputSerializedData.writeString(this.owner_address);
+            }
+            Vector.serialize(outputSerializedData, this.attributes);
+            outputSerializedData.writeInt32(this.availability_issued);
+            outputSerializedData.writeInt32(this.availability_total);
+            if ((this.flags & 8) != 0) {
+                outputSerializedData.writeString(this.gift_address);
+            }
+            if ((this.flags & 16) != 0) {
+                outputSerializedData.writeInt64(getResellStars());
+            }
+            if ((this.flags & 32) != 0) {
+                this.released_by.serializeToStream(outputSerializedData);
             }
         }
     }
@@ -2040,6 +2158,11 @@ public class TL_stars {
     public static class TL_starsAmount extends StarsAmount {
         public static final int constructor = -1145654109;
 
+        @Override // org.telegram.tgnet.tl.TL_stars.StarsAmount
+        public AmountUtils$Currency getCurrency() {
+            return AmountUtils$Currency.STARS;
+        }
+
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.amount = inputSerializedData.readInt64(z);
@@ -2376,6 +2499,11 @@ public class TL_stars {
     public static class TL_starsTonAmount extends StarsAmount {
         public static final int constructor = 1957618656;
 
+        @Override // org.telegram.tgnet.tl.TL_stars.StarsAmount
+        public AmountUtils$Currency getCurrency() {
+            return AmountUtils$Currency.TON;
+        }
+
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.amount = inputSerializedData.readInt64(z);
@@ -2454,10 +2582,10 @@ public class TL_stars {
             this.subscription = (readInt32 & 4096) != 0;
             this.floodskip = (readInt32 & 32768) != 0;
             this.stargift_upgrade = (262144 & readInt32) != 0;
-            this.paid_message = (readInt32 & TLRPC.FLAG_19) != 0;
+            this.paid_message = (readInt32 & TLObject.FLAG_19) != 0;
             this.premium_gift = (readInt32 & 1048576) != 0;
             this.business_transfer = (2097152 & readInt32) != 0;
-            this.stargift_resale = (readInt32 & TLRPC.FLAG_22) != 0;
+            this.stargift_resale = (readInt32 & TLObject.FLAG_22) != 0;
             this.id = inputSerializedData.readString(z);
             this.amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.date = inputSerializedData.readInt32(z);
@@ -2499,17 +2627,17 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 this.paid_messages = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 1048576) != 0) {
                 this.premium_gift_months = inputSerializedData.readInt32(z);
             }
-            if (TLRPC.hasFlag(this.flags, TLRPC.FLAG_23)) {
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
                 this.ads_proceeds_from_date = inputSerializedData.readInt32(z);
                 this.ads_proceeds_to_date = inputSerializedData.readInt32(z);
             }
@@ -2532,17 +2660,18 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLRPC.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
             this.flags = i8;
-            int i9 = this.paid_message ? i8 | TLRPC.FLAG_19 : i8 & (-524289);
+            int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
             int i10 = this.premium_gift ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
-            int i11 = this.business_transfer ? i10 | TLRPC.FLAG_21 : i10 & (-2097153);
+            int i11 = this.business_transfer ? i10 | TLObject.FLAG_21 : i10 & (-2097153);
             this.flags = i11;
-            int i12 = this.stargift_resale ? i11 | TLRPC.FLAG_22 : i11 & (-4194305);
+            int i12 = this.stargift_resale ? i11 | TLObject.FLAG_22 : i11 & (-4194305);
             this.flags = i12;
             outputSerializedData.writeInt32(i12);
+            outputSerializedData.writeString(this.id);
             this.amount.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.date);
             this.peer.serializeToStream(outputSerializedData);
@@ -2583,17 +2712,17 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 outputSerializedData.writeInt32(this.paid_messages);
             }
             if ((this.flags & 1048576) != 0) {
                 outputSerializedData.writeInt32(this.premium_gift_months);
             }
-            if (TLRPC.hasFlag(this.flags, TLRPC.FLAG_23)) {
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
                 outputSerializedData.writeInt32(this.ads_proceeds_from_date);
                 outputSerializedData.writeInt32(this.ads_proceeds_to_date);
             }
@@ -3305,7 +3434,7 @@ public class TL_stars {
             this.subscription = (readInt32 & 4096) != 0;
             this.floodskip = (readInt32 & 32768) != 0;
             this.stargift_upgrade = (262144 & readInt32) != 0;
-            this.paid_message = (readInt32 & TLRPC.FLAG_19) != 0;
+            this.paid_message = (readInt32 & TLObject.FLAG_19) != 0;
             this.id = inputSerializedData.readString(z);
             this.amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.date = inputSerializedData.readInt32(z);
@@ -3347,7 +3476,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
@@ -3370,9 +3499,9 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLRPC.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
             this.flags = i8;
-            int i9 = this.paid_message ? i8 | TLRPC.FLAG_19 : i8 & (-524289);
+            int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
             outputSerializedData.writeInt32(i9);
             this.amount.serializeToStream(outputSerializedData);
@@ -3415,7 +3544,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
@@ -3437,7 +3566,7 @@ public class TL_stars {
             this.subscription = (readInt32 & 4096) != 0;
             this.floodskip = (readInt32 & 32768) != 0;
             this.stargift_upgrade = (262144 & readInt32) != 0;
-            this.paid_message = (readInt32 & TLRPC.FLAG_19) != 0;
+            this.paid_message = (readInt32 & TLObject.FLAG_19) != 0;
             this.premium_gift = (readInt32 & 1048576) != 0;
             this.id = inputSerializedData.readString(z);
             this.amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -3480,11 +3609,11 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 this.paid_messages = inputSerializedData.readInt32(z);
             }
         }
@@ -3506,9 +3635,9 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLRPC.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
             this.flags = i8;
-            int i9 = this.paid_message ? i8 | TLRPC.FLAG_19 : i8 & (-524289);
+            int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
             int i10 = this.premium_gift ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -3553,11 +3682,11 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 outputSerializedData.writeInt32(this.paid_messages);
             }
         }
@@ -3578,9 +3707,9 @@ public class TL_stars {
             this.subscription = (readInt32 & 4096) != 0;
             this.floodskip = (readInt32 & 32768) != 0;
             this.stargift_upgrade = (262144 & readInt32) != 0;
-            this.paid_message = (readInt32 & TLRPC.FLAG_19) != 0;
+            this.paid_message = (readInt32 & TLObject.FLAG_19) != 0;
             this.premium_gift = (readInt32 & 1048576) != 0;
-            this.stargift_resale = (readInt32 & TLRPC.FLAG_22) != 0;
+            this.stargift_resale = (readInt32 & TLObject.FLAG_22) != 0;
             this.id = inputSerializedData.readString(z);
             this.amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.date = inputSerializedData.readInt32(z);
@@ -3622,11 +3751,11 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 this.paid_messages = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 1048576) != 0) {
@@ -3651,13 +3780,13 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLRPC.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
             this.flags = i8;
-            int i9 = this.paid_message ? i8 | TLRPC.FLAG_19 : i8 & (-524289);
+            int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
             int i10 = this.premium_gift ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
-            int i11 = this.stargift_resale ? i10 | TLRPC.FLAG_22 : i10 & (-4194305);
+            int i11 = this.stargift_resale ? i10 | TLObject.FLAG_22 : i10 & (-4194305);
             this.flags = i11;
             outputSerializedData.writeInt32(i11);
             this.amount.serializeToStream(outputSerializedData);
@@ -3700,11 +3829,11 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLRPC.FLAG_17) != 0) {
+            if ((this.flags & TLObject.FLAG_17) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLRPC.FLAG_19) != 0) {
+            if ((this.flags & TLObject.FLAG_19) != 0) {
                 outputSerializedData.writeInt32(this.paid_messages);
             }
             if ((this.flags & 1048576) != 0) {
@@ -3739,7 +3868,7 @@ public class TL_stars {
             this.level = inputSerializedData.readInt32(z);
             this.current_level_stars = inputSerializedData.readInt64(z);
             this.stars = inputSerializedData.readInt64(z);
-            if (TLRPC.hasFlag(this.flags, 1)) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_level_stars = inputSerializedData.readInt64(z);
             }
         }
@@ -3751,7 +3880,7 @@ public class TL_stars {
             outputSerializedData.writeInt32(this.level);
             outputSerializedData.writeInt64(this.current_level_stars);
             outputSerializedData.writeInt64(this.stars);
-            if (TLRPC.hasFlag(this.flags, 1)) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt64(this.next_level_stars);
             }
         }
@@ -4089,6 +4218,26 @@ public class TL_stars {
             }
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
+            outputSerializedData.writeInt32(this.count);
+            Vector.serialize(outputSerializedData, this.gifts);
+            if ((this.flags & 1) != 0) {
+                outputSerializedData.writeString(this.next_offset);
+            }
+            if ((this.flags & 2) != 0) {
+                Vector.serialize(outputSerializedData, this.attributes);
+                outputSerializedData.writeInt64(this.attributes_hash);
+            }
+            Vector.serialize(outputSerializedData, this.chats);
+            if ((this.flags & 4) != 0) {
+                Vector.serialize(outputSerializedData, this.counters);
+            }
+            Vector.serialize(outputSerializedData, this.users);
+        }
     }
 
     public static class saveStarGift extends TLObject {
@@ -4311,7 +4460,7 @@ public class TL_stars {
             this.flags = readInt32;
             if ((readInt32 & 1) != 0) {
                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                this.recipient_id = tL_peerUser;
+                this.sender_id = tL_peerUser;
                 tL_peerUser.user_id = inputSerializedData.readInt64(z);
             }
             TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
@@ -4530,13 +4679,13 @@ public class TL_stars {
         }
     }
 
-    public static class updateStarGiftPrice extends TLObject {
-        public static final int constructor = 1001301217;
-        public long resell_stars;
+    public static class updateStarGiftPrice extends TLMethod<TLRPC.Updates> {
+        public static final int constructor = -306287413;
+        public StarsAmount resell_amount;
         public InputSavedStarGift stargift;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -4544,7 +4693,7 @@ public class TL_stars {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             this.stargift.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt64(this.resell_stars);
+            this.resell_amount.serializeToStream(outputSerializedData);
         }
     }
 

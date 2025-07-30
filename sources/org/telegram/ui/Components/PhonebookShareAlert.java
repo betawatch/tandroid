@@ -43,6 +43,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.AlertDialog;
@@ -496,7 +497,7 @@ public class PhonebookShareAlert extends BottomSheet {
                             PhonebookShareAlert.this.scrollView.setPadding(0, i9, 0, 0);
                         }
                         this.ignoreLayout = false;
-                        super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                        super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                     }
 
                     @Override // android.view.View
@@ -724,7 +725,7 @@ public class PhonebookShareAlert extends BottomSheet {
                     PhonebookShareAlert.this.scrollView.setPadding(0, i9, 0, 0);
                 }
                 this.ignoreLayout = false;
-                super.onMeasure(i62, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                super.onMeasure(i62, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
 
             @Override // android.view.View
@@ -912,7 +913,7 @@ public class PhonebookShareAlert extends BottomSheet {
                 if (i4 == 0) {
                     try {
                         Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:" + vcardItem.getValue(false)));
-                        intent.addFlags(TLRPC.FLAG_28);
+                        intent.addFlags(TLObject.FLAG_28);
                         this.parentFragment.getParentActivity().startActivityForResult(intent, 500);
                         return;
                     } catch (Exception e) {

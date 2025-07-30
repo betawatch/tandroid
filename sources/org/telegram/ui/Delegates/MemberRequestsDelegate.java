@@ -209,7 +209,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
                 view = new View(viewGroup.getContext()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
                     }
                 };
             } else if (i == 3) {
@@ -386,13 +386,13 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
                     double measuredHeight = getMeasuredHeight();
                     Double.isNaN(measuredHeight);
                     int min2 = Math.min(min, (int) (measuredHeight * 0.66d)) - (AndroidUtilities.dp(12.0f) * 2);
-                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(min2, TLRPC.FLAG_31);
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(min2, TLObject.FLAG_31);
                     PreviewDialog.this.viewPager.measure(makeMeasureSpec, makeMeasureSpec);
                     PreviewDialog.this.pagerIndicator.measure(makeMeasureSpec, makeMeasureSpec);
-                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(min2 - (AndroidUtilities.dp(16.0f) * 2), TLRPC.FLAG_30);
+                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(min2 - (AndroidUtilities.dp(16.0f) * 2), TLObject.FLAG_30);
                     PreviewDialog.this.nameText.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
                     PreviewDialog.this.bioText.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
-                    PreviewDialog.this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(PreviewDialog.this.viewPager.getMeasuredWidth() + (PreviewDialog.this.shadowPaddingLeft * 2), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
+                    PreviewDialog.this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(PreviewDialog.this.viewPager.getMeasuredWidth() + (PreviewDialog.this.shadowPaddingLeft * 2), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
                 }
 
                 @Override // android.view.View
@@ -636,7 +636,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         /* JADX INFO: Access modifiers changed from: private */
         public void updateBackgroundBitmap() {
             BitmapDrawable bitmapDrawable = this.backgroundDrawable;
-            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.locationPermissionGranted;
+            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.goingToPreviewTheme;
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable(getContext().getResources(), getBlurredBitmap());
             this.backgroundDrawable = bitmapDrawable2;
             bitmapDrawable2.setAlpha(alpha);

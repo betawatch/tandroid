@@ -91,6 +91,7 @@ import org.telegram.messenger.camera.CameraInfo;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AlertsCreator;
@@ -2747,7 +2748,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         int i = 1;
         this.isFrontface = true;
         this.position = new int[2];
-        this.cameraTexture = new int[]{TLRPC.FLAG_31, TLRPC.FLAG_31};
+        this.cameraTexture = new int[]{TLObject.FLAG_31, TLObject.FLAG_31};
         this.oldCameraTexture = new int[1];
         this.cameraTextureAlpha = 1.0f;
         this.previewSize = new org.telegram.messenger.camera.Size[2];
@@ -2977,7 +2978,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         if (!arrayList2.isEmpty()) {
             arrayList = arrayList2;
         }
-        return Build.MANUFACTURER.equalsIgnoreCase("Xiaomi") ? CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false) : CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.screenStateChanged, this.aspectRatio, false);
+        return Build.MANUFACTURER.equalsIgnoreCase("Xiaomi") ? CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false) : CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.messagePlayingSpeedChanged, this.aspectRatio, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4227,7 +4228,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageViewInvertable, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.flashButton, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.muteImageView, (Property<ImageView, Float>) property, 0.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.locationPermissionGranted : 0);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.goingToPreviewTheme : 0);
         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.cameraContainer, (Property<InstantViewCameraContainer, Float>) property, z ? 1.0f : 0.0f);
         InstantViewCameraContainer instantViewCameraContainer = this.cameraContainer;
         Property property2 = View.SCALE_X;

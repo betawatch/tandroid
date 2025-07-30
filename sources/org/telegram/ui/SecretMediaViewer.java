@@ -76,6 +76,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.SimpleTextView;
@@ -1285,7 +1286,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             }
             if (this.photoAnimationInProgress != 3) {
                 if (this.scale != 1.0f || f9 == -1.0f || this.zoomAnimation) {
-                    this.photoBackgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.photoBackgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 } else {
                     float containerViewHeight = getContainerViewHeight() / 4.0f;
                     this.photoBackgroundDrawable.setAlpha((int) Math.max(127.0f, (1.0f - (Math.min(Math.abs(f9), containerViewHeight) / containerViewHeight)) * 255.0f));
@@ -2631,7 +2632,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(actionBar, (Property<ActionBar, Float>) property, 0.0f, 1.0f);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.captionScrollView, (Property<PhotoViewer.CaptionScrollView, Float>) property, 0.0f, 1.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.secretHint, (Property<HintView2, Float>) property, 0.0f, 1.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.photoBackgroundDrawable, (Property<PhotoBackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.locationPermissionGranted);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.photoBackgroundDrawable, (Property<PhotoBackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.goingToPreviewTheme);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this, (Property<SecretMediaViewer, Float>) this.ANIMATION_VALUE, 0.0f, 1.0f);
         VideoPlayerControlFrameLayout videoPlayerControlFrameLayout = this.seekbarContainer;
         Property property2 = videoPlayerControlFrameLayout.SEEKBAR_ALPHA;
@@ -2753,7 +2754,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                     systemWindowInsetLeft = WindowInsetsCompat$$ExternalSyntheticApiModelOutline0.m(SecretMediaViewer.this.lastInsets).getSystemWindowInsetLeft();
                     size -= systemWindowInsetLeft;
                 }
-                SecretMediaViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                SecretMediaViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             }
         };
         this.windowView = frameLayout;
@@ -2790,10 +2791,10 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 if (SecretMediaViewer.this.captionScrollView != null) {
-                    SecretMediaViewer.this.captionScrollView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - ActionBar.getCurrentActionBarHeight()) - (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)) - (SecretMediaViewer.this.seekbarContainer.getVisibility() == 0 ? SecretMediaViewer.this.seekbarContainer.getMeasuredHeight() : 0), TLRPC.FLAG_30));
+                    SecretMediaViewer.this.captionScrollView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - ActionBar.getCurrentActionBarHeight()) - (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0)) - (SecretMediaViewer.this.seekbarContainer.getVisibility() == 0 ? SecretMediaViewer.this.seekbarContainer.getMeasuredHeight() : 0), TLObject.FLAG_30));
                 }
                 if (SecretMediaViewer.this.navigationBar != null) {
-                    SecretMediaViewer.this.navigationBar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.navigationBarHeight, TLRPC.FLAG_30));
+                    SecretMediaViewer.this.navigationBar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.navigationBarHeight, TLObject.FLAG_30));
                 }
             }
         };

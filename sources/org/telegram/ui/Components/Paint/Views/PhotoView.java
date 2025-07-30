@@ -149,7 +149,7 @@ public class PhotoView extends EntityView {
             canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
             canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
             canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);
@@ -334,7 +334,7 @@ public class PhotoView extends EntityView {
         if (this.bitmap == null) {
             return;
         }
-        this.bitmapPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.bitmapPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
         canvas.drawBitmap(this.bitmap, 0.0f, 0.0f, this.bitmapPaint);
     }
 
@@ -406,7 +406,7 @@ public class PhotoView extends EntityView {
         canvas.rotate(this.orientation);
         canvas.translate((-bitmap2.getWidth()) / 2.0f, (-bitmap2.getHeight()) / 2.0f);
         rectF.set(0.0f, 0.0f, bitmap2.getWidth(), bitmap2.getHeight());
-        canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
         canvas.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
         Paint paint = new Paint(3);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
@@ -493,7 +493,7 @@ public class PhotoView extends EntityView {
             f *= cropState.cropPw;
             f2 *= cropState.cropPh;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f2, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f2, TLObject.FLAG_30));
     }
 
     public void onSwitchSegmentedAnimationStarted(boolean z) {
@@ -599,7 +599,7 @@ public class PhotoView extends EntityView {
             }
             if (this.segmentedImage != null) {
                 Size size = this.baseSize;
-                canvas.saveLayerAlpha(0.0f, 0.0f, size.width, size.height, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, size.width, size.height, NotificationCenter.goingToPreviewTheme, 31);
                 drawSegmented(canvas);
                 canvas.save();
                 long currentTimeMillis = System.currentTimeMillis();

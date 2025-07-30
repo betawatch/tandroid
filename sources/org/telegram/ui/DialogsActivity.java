@@ -3592,9 +3592,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 View childAt = getChildAt(i6);
                 if (childAt != null && childAt.getVisibility() != 8 && childAt != DialogsActivity.this.commentView && childAt != ((BaseFragment) DialogsActivity.this).actionBar) {
                     if (childAt instanceof DatabaseMigrationHint) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), (((View.MeasureSpec.getSize(i2) + measureKeyboardHeight) - this.inputFieldHeight) + AndroidUtilities.dp(2.0f)) - ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight()), TLRPC.FLAG_30));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), (((View.MeasureSpec.getSize(i2) + measureKeyboardHeight) - this.inputFieldHeight) + AndroidUtilities.dp(2.0f)) - ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight()), TLObject.FLAG_30));
                     } else if (childAt instanceof ViewPage) {
-                        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                         int dp = ((paddingTop - this.inputFieldHeight) + AndroidUtilities.dp(2.0f)) - DialogsActivity.this.topPadding;
                         DialogsActivity dialogsActivity = DialogsActivity.this;
                         if (dialogsActivity.hasStories || (dialogsActivity.filterTabsView != null && DialogsActivity.this.filterTabsView.getVisibility() == 0)) {
@@ -3629,7 +3629,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                 DialogsActivity dialogsActivity3 = DialogsActivity.this;
                                 int i8 = (!dialogsActivity3.isSlideBackTransition || dialogsActivity3.isDrawerTransition) ? (int) (i7 * 0.05f) : 0;
                                 childAt.setPadding(childAt.getPaddingLeft(), childAt.getPaddingTop(), childAt.getPaddingRight(), i8);
-                                childAt.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), i7 + i8), TLRPC.FLAG_30));
+                                childAt.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), i7 + i8), TLObject.FLAG_30));
                                 childAt.setPivotX(childAt.getMeasuredWidth() / 2);
                             }
                         }
@@ -3638,12 +3638,13 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         if (dialogsActivity32.isSlideBackTransition) {
                         }
                         childAt.setPadding(childAt.getPaddingLeft(), childAt.getPaddingTop(), childAt.getPaddingRight(), i8);
-                        childAt.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), i7 + i8), TLRPC.FLAG_30));
+                        childAt.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), i7 + i8), TLObject.FLAG_30));
                         childAt.setPivotX(childAt.getMeasuredWidth() / 2);
                     } else {
                         if (childAt == DialogsActivity.this.searchViewPager) {
                             DialogsActivity.this.searchViewPager.setTranslationY(DialogsActivity.this.searchViewPagerTranslationY);
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), ((((View.MeasureSpec.getSize(i2) + measureKeyboardHeight) - this.inputFieldHeight) + AndroidUtilities.dp(2.0f)) - ((!DialogsActivity.this.onlySelect || DialogsActivity.this.initialDialogsType == 3) ? ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight() : 0)) - DialogsActivity.this.topPadding) - (DialogsActivity.this.searchTabsView == null ? 0 : AndroidUtilities.dp(44.0f)), TLRPC.FLAG_30));
+                            DialogsActivity.this.searchViewPager.postsSearchContainer.setKeyboardHeight(measureKeyboardHeight);
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), ((((View.MeasureSpec.getSize(i2) + measureKeyboardHeight) - this.inputFieldHeight) + AndroidUtilities.dp(2.0f)) - ((!DialogsActivity.this.onlySelect || DialogsActivity.this.initialDialogsType == 3) ? ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight() : 0)) - DialogsActivity.this.topPadding) - (DialogsActivity.this.searchTabsView == null ? 0 : AndroidUtilities.dp(44.0f)), TLObject.FLAG_30));
                             childAt.setPivotX(childAt.getMeasuredWidth() / 2);
                         } else if (DialogsActivity.this.commentView == null || !DialogsActivity.this.commentView.isPopupView(childAt)) {
                             if (childAt == DialogsActivity.this.rightSlidingDialogContainer) {
@@ -3651,22 +3652,22 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                 DialogsActivity dialogsActivity4 = DialogsActivity.this;
                                 int i9 = (dialogsActivity4.isSlideBackTransition || dialogsActivity4.isDrawerTransition) ? (int) (size3 * 0.05f) : 0;
                                 dialogsActivity4.rightSlidingDialogContainer.setTransitionPaddingBottom(i9);
-                                childAt.measure(i, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), size3 + i9), TLRPC.FLAG_30));
+                                childAt.measure(i, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), size3 + i9), TLObject.FLAG_30));
                             } else {
                                 measureChildWithMargins(childAt, i, 0, i2, 0);
                             }
                         } else {
                             if (!AndroidUtilities.isInMultiwindow) {
-                                i3 = TLRPC.FLAG_30;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                i3 = TLObject.FLAG_30;
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 i4 = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                i3 = TLRPC.FLAG_30;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                i3 = TLObject.FLAG_30;
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 i4 = Math.min(AndroidUtilities.dp(320.0f), ((paddingTop - this.inputFieldHeight) - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                i3 = TLRPC.FLAG_30;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                i3 = TLObject.FLAG_30;
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 i4 = ((paddingTop - this.inputFieldHeight) - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
                             childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i4, i3));
@@ -4110,7 +4111,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             }
             float f6 = DialogsActivity.this.rightFragmentTransitionIsOpen ? 0.0f : DialogsActivity.this.scrollYOffset;
-            int i6 = TLRPC.FLAG_31;
+            int i6 = TLObject.FLAG_31;
             int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             DialogCell dialogCell4 = null;
             float f7 = 2.14748365E9f;
@@ -8637,7 +8638,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         this.sendPopupWindow.setSoftInputMode(0);
         this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
         SharedConfig.removeScheduledOrNoSoundHint();
-        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.sendPopupWindow.setFocusable(true);
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
@@ -9185,7 +9186,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         int i3 = (this.viewPages[0].dialogsType == 0 && hasHiddenArchive() && this.viewPages[0].archivePullViewState == 2) ? 1 : 0;
         int findFirstVisibleItemPosition = this.viewPages[0].layoutManager.findFirstVisibleItemPosition();
         if (dialogFilter != null) {
-            int i4 = dialogFilter.pinnedDialogs.get(j, TLRPC.FLAG_31);
+            int i4 = dialogFilter.pinnedDialogs.get(j, TLObject.FLAG_31);
             if (!z && i4 == Integer.MIN_VALUE) {
                 return;
             }

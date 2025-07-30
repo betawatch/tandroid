@@ -28,6 +28,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.GroupCallUserCell;
@@ -236,7 +237,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 if (this.muteButton.getDrawable() != null) {
                     this.muteButton.getDrawable().setAlpha((int) (this.progress * 255.0f * getAlpha()));
                     this.muteButton.draw(canvas);
-                    this.muteButton.getDrawable().setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.muteButton.getDrawable().setAlpha(NotificationCenter.goingToPreviewTheme);
                 }
                 canvas.restore();
             }
@@ -326,7 +327,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 this.nameWidth = min;
                 this.drawingName = TextUtils.ellipsize(this.name, this.textPaint, min, TextUtils.TruncateAt.END).toString();
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
         }
 
         @Override // org.telegram.ui.Components.voip.GroupCallStatusIcon.Callback
@@ -445,7 +446,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 this.avatarImageView.setTranslationY(0.0f);
                 this.avatarImageView.setScaleX(1.0f);
                 this.avatarImageView.setScaleY(1.0f);
-                this.backgroundPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                this.backgroundPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 invalidate();
                 GroupCallMiniTextureView groupCallMiniTextureView = this.renderer;
                 if (groupCallMiniTextureView != null) {

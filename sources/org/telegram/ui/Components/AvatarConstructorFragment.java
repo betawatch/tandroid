@@ -39,6 +39,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -172,7 +173,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         public BackgroundSelectView(Context context) {
             super(context);
             this.gradients = new ArrayList();
-            this.stableIdPointer = NotificationCenter.emojiKeywordsLoaded;
+            this.stableIdPointer = NotificationCenter.savedMessagesForwarded;
             this.selectedItemId = -1;
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
             linearLayoutManager.setOrientation(0);
@@ -538,7 +539,7 @@ public class AvatarConstructorFragment extends BaseFragment {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AvatarConstructorFragment.this.gradientBackgroundItemWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AvatarConstructorFragment.this.gradientBackgroundItemWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
 
         public void setCustom(boolean z) {
@@ -664,7 +665,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     float f6 = this.size;
                     float f7 = this.cy;
                     gradientTools2.setBounds(f5 - f6, f7 - f6, f5 + f6, f7 + f6);
-                    this.outGradientTools.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.outGradientTools.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                     float f8 = measuredWidth;
                     drawBackround(canvas, this.cx, this.cy, f8, this.size, this.outGradientTools.paint);
                     this.gradientTools.paint.setAlpha((int) (this.changeBackgroundProgress * 255.0f));
@@ -676,7 +677,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     }
                     invalidate();
                 } else {
-                    this.gradientTools.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.gradientTools.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                     drawBackround(canvas, this.cx, this.cy, measuredWidth, this.size, this.gradientTools.paint);
                 }
             }
@@ -740,7 +741,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             if (!AvatarConstructorFragment.this.isLandscapeMode) {
-                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(140.0f), TLRPC.FLAG_30);
+                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(140.0f), TLObject.FLAG_30);
             }
             super.onMeasure(i, i2);
         }
@@ -1148,7 +1149,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         }) { // from class: org.telegram.ui.Components.AvatarConstructorFragment.13
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
             }
         };
         BackgroundGradient backgroundGradient2 = this.previewView.backgroundGradient;
@@ -1664,10 +1665,10 @@ public class AvatarConstructorFragment extends BaseFragment {
     public void startFrom(TLRPC.VideoSize videoSize) {
         long j;
         BackgroundGradient backgroundGradient = new BackgroundGradient();
-        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.locationPermissionGranted);
-        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.locationPermissionGranted) : 0;
-        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.locationPermissionGranted) : 0;
-        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.locationPermissionGranted) : 0;
+        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.goingToPreviewTheme);
+        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.goingToPreviewTheme) : 0;
+        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.goingToPreviewTheme) : 0;
+        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.goingToPreviewTheme) : 0;
         this.previewView.setGradient(backgroundGradient, false);
         updateButton();
         TLRPC.Document document = null;

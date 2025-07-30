@@ -618,7 +618,7 @@ public abstract class Browser {
                     if (z2 && Build.VERSION.SDK_INT >= 30) {
                         parseUri.addCategory("android.intent.category.BROWSABLE");
                         parseUri.addCategory("android.intent.category.DEFAULT");
-                        parseUri.addFlags(TLRPC.FLAG_28);
+                        parseUri.addFlags(TLObject.FLAG_28);
                         parseUri.addFlags(1024);
                     } else if (!z2 && !hasAppToOpen(context, replace)) {
                         return false;
@@ -953,7 +953,7 @@ public abstract class Browser {
         }
         if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
             Intent intent = new Intent("android.intent.action.VIEW", uri2);
-            intent.addFlags(TLRPC.FLAG_28);
+            intent.addFlags(TLObject.FLAG_28);
             ApplicationLoader.applicationContext.startActivity(intent);
             return;
         }

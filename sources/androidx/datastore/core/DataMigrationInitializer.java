@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class DataMigrationInitializer {
@@ -49,8 +49,8 @@ public abstract class DataMigrationInitializer {
             if (continuation instanceof DataMigrationInitializer$Companion$runMigrations$1) {
                 dataMigrationInitializer$Companion$runMigrations$1 = (DataMigrationInitializer$Companion$runMigrations$1) continuation;
                 int i2 = dataMigrationInitializer$Companion$runMigrations$1.label;
-                if ((i2 & TLRPC.FLAG_31) != 0) {
-                    dataMigrationInitializer$Companion$runMigrations$1.label = i2 - TLRPC.FLAG_31;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    dataMigrationInitializer$Companion$runMigrations$1.label = i2 - TLObject.FLAG_31;
                     Object obj = dataMigrationInitializer$Companion$runMigrations$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = dataMigrationInitializer$Companion$runMigrations$1.label;

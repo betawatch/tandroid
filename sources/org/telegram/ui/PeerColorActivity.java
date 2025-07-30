@@ -278,7 +278,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x007d  */
@@ -440,7 +440,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
             if (!this.ignoreMeasure) {
-                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.statusBarHeight + AndroidUtilities.dp(144.0f), TLRPC.FLAG_30);
+                i2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.statusBarHeight + AndroidUtilities.dp(144.0f), TLObject.FLAG_30);
             }
             super.onMeasure(i, i2);
         }
@@ -899,7 +899,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         View view4 = new View(Page.this.getContext()) { // from class: org.telegram.ui.PeerColorActivity.Page.4.2
                             @Override // android.view.View
                             protected void onMeasure(int i2, int i3) {
-                                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLRPC.FLAG_30));
+                                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
                             }
                         };
                         view4.setBackground(Theme.getThemedDrawableByKey(Page.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
@@ -909,7 +909,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         view3 = new View(Page.this.getContext()) { // from class: org.telegram.ui.PeerColorActivity.Page.4.1
                             @Override // android.view.View
                             protected void onMeasure(int i2, int i3) {
-                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLRPC.FLAG_30));
+                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
                             }
                         };
                         break;
@@ -1023,7 +1023,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
             }
 
             public void update(boolean z) {

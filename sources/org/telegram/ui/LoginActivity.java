@@ -534,7 +534,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     TextView textView3 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.4
                         @Override // android.widget.TextView, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                         }
                     };
                     this.cantAccessEmailView = textView3;
@@ -553,7 +553,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     TextView textView4 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.5
                         @Override // android.widget.TextView, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLRPC.FLAG_31));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
                         }
                     };
                     this.emailResetInView = textView4;
@@ -591,7 +591,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.6
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                         }
                     };
                     Animation loadAnimation = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
@@ -700,7 +700,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView32 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.4
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
             this.cantAccessEmailView = textView32;
@@ -719,7 +719,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView42 = new TextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.5
                 @Override // android.widget.TextView, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLRPC.FLAG_31));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i6), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
                 }
             };
             this.emailResetInView = textView42;
@@ -757,7 +757,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.6
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i5, int i6) {
-                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                    super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
             Animation loadAnimation3 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
@@ -931,7 +931,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.emojiKeywordsLoaded);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.savedMessagesForwarded);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6007,7 +6007,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null || LoginActivity.this.getParentActivity().isFinishing()) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.emojiKeywordsLoaded);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.savedMessagesForwarded);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6661,7 +6661,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i5, int i6) {
-                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                            super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                         }
                     };
                     if (this.currentType == 15) {
@@ -6845,7 +6845,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorViewSwitcher = new ViewSwitcher(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.4
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i52, int i62) {
-                    super.onMeasure(i52, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_31));
+                    super.onMeasure(i52, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
             if (this.currentType == 15) {
@@ -8908,7 +8908,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.emojiKeywordsLoaded));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.savedMessagesForwarded));
             StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.LoginActivity.LoginPayView.1
                 @Override // org.telegram.ui.Components.Premium.StarParticlesView
                 protected void configure() {
@@ -8935,7 +8935,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.starParticlesView = starParticlesView;
-            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 119));
+            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 119));
             GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 1) { // from class: org.telegram.ui.LoginActivity.LoginPayView.2
                 @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
                 protected void onAttachedToWindow() {
@@ -9340,7 +9340,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             addView(this.blurredView, LayoutHelper.createFrame(-1, -1.0f));
             View view3 = new View(getContext());
             this.dimmView = view3;
-            view3.setBackgroundColor(TLRPC.FLAG_30);
+            view3.setBackgroundColor(TLObject.FLAG_30);
             this.dimmView.setAlpha(0.0f);
             addView(this.dimmView, LayoutHelper.createFrame(-1, -1.0f));
             TransformableLoginButtonView transformableLoginButtonView = new TransformableLoginButtonView(getContext());
@@ -12770,7 +12770,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             timeInterpolator = null;
         } else if (z) {
             timeInterpolator = AndroidUtilities.decelerateInterpolator;
-            i32 = NotificationCenter.emojiKeywordsLoaded;
+            i32 = NotificationCenter.savedMessagesForwarded;
         } else {
             timeInterpolator = AndroidUtilities.accelerateInterpolator;
         }
@@ -13219,7 +13219,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     if (!slideView.hasCustomKeyboard() && LoginActivity.this.keyboardView.getVisibility() == 0) {
                         dp += AndroidUtilities.dp(230.0f);
                     }
-                    slideView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams.rightMargin) - marginLayoutParams.leftMargin, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+                    slideView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams.rightMargin) - marginLayoutParams.leftMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
                 }
             }
         };
@@ -13228,7 +13228,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setViewToFindFocus(this.slideViewsContainer);
-        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.channelConnectedBotsUpdate));
+        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.channelSuggestedBotsUpdate));
         this.views[0] = new PhoneView(context);
         this.views[1] = new LoginActivitySmsView(context, 1);
         this.views[2] = new LoginActivitySmsView(context, 2);

@@ -1,6 +1,6 @@
 package com.google.common.collect;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 abstract class Hashing {
@@ -13,7 +13,7 @@ abstract class Hashing {
             return highestOneBit;
         }
         int i2 = highestOneBit << 1;
-        return i2 > 0 ? i2 : TLRPC.FLAG_30;
+        return i2 > 0 ? i2 : TLObject.FLAG_30;
     }
 
     static int smear(int i) {

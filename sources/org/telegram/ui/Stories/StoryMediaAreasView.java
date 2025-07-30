@@ -36,6 +36,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -320,7 +321,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         boolean z = areaView2 != null && areaView2.scaleOnTap;
         float f2 = this.parentHighlightScaleAlpha.set(z);
         if (f > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
             canvas.drawColor(Theme.multAlpha(402653184, f));
             for (int i = 0; i < getChildCount(); i++) {
                 View childAt = getChildAt(i);
@@ -860,14 +861,14 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
             View childAt = getChildAt(i3);
             FrameLayout frameLayout = this.hintsContainer;
             if (childAt == frameLayout) {
-                frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             } else {
                 if (childAt instanceof AreaView) {
                     AreaView areaView = (AreaView) getChildAt(i3);
                     double d = areaView.mediaArea.coordinates.w / 100.0d;
                     double d2 = size;
                     Double.isNaN(d2);
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d * d2), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d * d2), TLObject.FLAG_30);
                     mediaArea = areaView.mediaArea;
                     fitViewWidget = areaView;
                 } else if (childAt instanceof FitViewWidget) {
@@ -875,14 +876,14 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
                     double d3 = fitViewWidget2.mediaArea.coordinates.w / 100.0d;
                     double d4 = size;
                     Double.isNaN(d4);
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d3 * d4), TLRPC.FLAG_30);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d3 * d4), TLObject.FLAG_30);
                     mediaArea = fitViewWidget2.mediaArea;
                     fitViewWidget = fitViewWidget2;
                 }
                 double d5 = mediaArea.coordinates.h / 100.0d;
                 double d6 = size2;
                 Double.isNaN(d6);
-                fitViewWidget.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d5 * d6), TLRPC.FLAG_30));
+                fitViewWidget.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec((int) Math.ceil(d5 * d6), TLObject.FLAG_30));
             }
         }
         setMeasuredDimension(size, size2);

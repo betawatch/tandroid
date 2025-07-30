@@ -76,6 +76,7 @@ public class TL_chatlists {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt32(this.filter_id);
             Vector.serialize(outputSerializedData, this.missing_peers);
+            Vector.serialize(outputSerializedData, this.already_peers);
             Vector.serialize(outputSerializedData, this.chats);
             Vector.serialize(outputSerializedData, this.users);
         }

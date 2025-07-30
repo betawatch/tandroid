@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedTextView;
@@ -235,13 +235,13 @@ public class TextSettingsCell extends FrameLayout {
         int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(34.0f);
         int i3 = this.betterLayout ? measuredWidth : measuredWidth / 2;
         if (this.valueImageView.getVisibility() == 0) {
-            this.valueImageView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+            this.valueImageView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
         }
         if (this.imageView.getVisibility() == 0) {
             if (this.imageViewIsColorful) {
-                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
+                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
             } else {
-                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
+                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
             }
             if (this.betterLayout) {
                 i3 -= this.imageView.getMeasuredWidth() + AndroidUtilities.dp(8.0f);
@@ -249,13 +249,13 @@ public class TextSettingsCell extends FrameLayout {
         }
         BackupImageView backupImageView = this.valueBackupImageView;
         if (backupImageView != null) {
-            backupImageView.measure(View.MeasureSpec.makeMeasureSpec(backupImageView.getLayoutParams().height, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.valueBackupImageView.getLayoutParams().width, TLRPC.FLAG_30));
+            backupImageView.measure(View.MeasureSpec.makeMeasureSpec(backupImageView.getLayoutParams().height, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.valueBackupImageView.getLayoutParams().width, TLObject.FLAG_30));
             if (this.betterLayout) {
                 i3 -= this.valueBackupImageView.getMeasuredWidth() + AndroidUtilities.dp(8.0f);
             }
         }
         if (this.valueTextView.getVisibility() == 0) {
-            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
             measuredWidth = this.betterLayout ? i3 - (this.valueTextView.getMeasuredWidth() + AndroidUtilities.dp(8.0f)) : (measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(8.0f);
             if (this.valueImageView.getVisibility() == 0) {
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.valueImageView.getLayoutParams();
@@ -266,7 +266,7 @@ public class TextSettingsCell extends FrameLayout {
                 }
             }
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }
 
     public void setBetterLayout(boolean z) {

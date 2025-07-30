@@ -59,6 +59,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
@@ -238,7 +239,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             this.bottomImage = new View(context) { // from class: org.telegram.ui.CacheControlActivity.CacheChartHeader.1
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + getPaddingLeft() + getPaddingRight(), TLRPC.FLAG_30), i3);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + getPaddingLeft() + getPaddingRight(), TLObject.FLAG_30), i3);
                 }
             };
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -391,7 +392,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             double d = size;
             Double.isNaN(d);
             int min = (int) Math.min(dp, d * 0.8d);
-            super.measureChildren(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
+            super.measureChildren(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
             int dp2 = AndroidUtilities.dp(72.0f);
             int i3 = 0;
             int i4 = 0;
@@ -519,7 +520,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void setDisabled(boolean z) {
@@ -736,7 +737,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             addView(this.percentsTextView, LayoutHelper.createFrame(-1, 32.0f, 49, 0.0f, 176.0f, 0.0f, 0.0f));
             ProgressView progressView = new ProgressView(context);
             this.progressView = progressView;
-            addView(progressView, LayoutHelper.createFrame(NotificationCenter.didReceiveSmsCode, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
+            addView(progressView, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
             TextView textView = new TextView(context);
             this.title = textView;
             textView.setGravity(1);
@@ -751,13 +752,13 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             this.subtitle.setTextColor(Theme.getColor(i));
             this.subtitle.setTextSize(1, 14.0f);
             this.subtitle.setText(LocaleController.getString(R.string.ClearingCacheDescription));
-            addView(this.subtitle, LayoutHelper.createFrame(NotificationCenter.didReceiveSmsCode, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
+            addView(this.subtitle, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
             setProgress(0.0f);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(350.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(350.0f), TLObject.FLAG_30));
         }
 
         public void setProgress(float f) {
@@ -1236,7 +1237,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
                         View view3 = CacheControlActivity.this.cachedMediaLayout = new CachedMediaLayout(this.mContext, CacheControlActivity.this) { // from class: org.telegram.ui.CacheControlActivity.ListAdapter.2
                             @Override // org.telegram.ui.CachedMediaLayout, android.widget.FrameLayout, android.view.View
                             protected void onMeasure(int i4, int i5) {
-                                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5) - (ActionBar.getCurrentActionBarHeight() / 2), TLRPC.FLAG_30));
+                                super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5) - (ActionBar.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
                             }
 
                             @Override // org.telegram.ui.CachedMediaLayout
@@ -1484,10 +1485,10 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(34.0f);
             int i3 = measuredWidth / 2;
             if (this.imageView.getVisibility() == 0) {
-                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(38.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(38.0f), TLRPC.FLAG_30));
+                this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(38.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(38.0f), TLObject.FLAG_30));
             }
             if (this.valueTextView.getVisibility() == 0) {
-                this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+                this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
                 measuredWidth = (measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(8.0f);
             }
             int measuredWidth2 = this.valueTextView.getMeasuredWidth() + AndroidUtilities.dp(12.0f);
@@ -1496,10 +1497,10 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             } else {
                 ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).rightMargin = measuredWidth2;
             }
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth - measuredWidth2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth - measuredWidth2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
             CheckBox2 checkBox2 = this.checkBox;
             if (checkBox2 != null) {
-                checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
+                checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
             }
         }
 

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class zzno extends zztp implements zzuy {
@@ -93,7 +93,7 @@ public final class zzno extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzf(zzno zznoVar, int i) {
-        zznoVar.zzd |= TLRPC.FLAG_31;
+        zznoVar.zzd |= TLObject.FLAG_31;
         zznoVar.zzQ = i;
     }
 
@@ -152,7 +152,7 @@ public final class zzno extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzp(zzno zznoVar, String str) {
-        zznoVar.zzd |= TLRPC.FLAG_18;
+        zznoVar.zzd |= TLObject.FLAG_18;
         zznoVar.zzx = str;
     }
 

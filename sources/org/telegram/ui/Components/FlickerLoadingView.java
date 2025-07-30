@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -300,7 +300,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
                         this.rectF.set(AndroidUtilities.dp(f7), AndroidUtilities.dp(16.0f) + i10, AndroidUtilities.dp((i3 % 2 == 0 ? 92 : 128) + 76), AndroidUtilities.dp(24.0f) + i10);
                         checkRtl(this.rectF);
                         canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
-                        this.rectF.set(AndroidUtilities.dp(f7), AndroidUtilities.dp(38.0f) + i10, AndroidUtilities.dp(NotificationCenter.didReceiveSmsCode), AndroidUtilities.dp(46.0f) + i10);
+                        this.rectF.set(AndroidUtilities.dp(f7), AndroidUtilities.dp(38.0f) + i10, AndroidUtilities.dp(NotificationCenter.wallpapersNeedReload), AndroidUtilities.dp(46.0f) + i10);
                         checkRtl(this.rectF);
                         canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
                         canvas.drawLine(AndroidUtilities.dp(f7), getCellHeight(getMeasuredWidth()) + i10, getMeasuredWidth(), getCellHeight(getMeasuredWidth()) + i10, paint2);
@@ -828,7 +828,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
     protected void onMeasure(int i, int i2) {
         if (this.isSingleCell) {
             int i3 = this.itemsCount;
-            i2 = View.MeasureSpec.makeMeasureSpec(((i3 <= 1 || !this.ignoreHeightCheck) ? (i3 <= 1 || View.MeasureSpec.getSize(i2) <= 0) ? getCellHeight(View.MeasureSpec.getSize(i)) : Math.min(View.MeasureSpec.getSize(i2), getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) : getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) + getAdditionalHeight(), TLRPC.FLAG_30);
+            i2 = View.MeasureSpec.makeMeasureSpec(((i3 <= 1 || !this.ignoreHeightCheck) ? (i3 <= 1 || View.MeasureSpec.getSize(i2) <= 0) ? getCellHeight(View.MeasureSpec.getSize(i)) : Math.min(View.MeasureSpec.getSize(i2), getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) : getCellHeight(View.MeasureSpec.getSize(i)) * this.itemsCount) + getAdditionalHeight(), TLObject.FLAG_30);
         }
         super.onMeasure(i, i2);
     }

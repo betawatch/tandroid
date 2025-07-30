@@ -40,7 +40,7 @@ public final class zzk {
     public static /* synthetic */ void zzf(zzk zzkVar) {
         zzl zzlVar = zzkVar.zzh;
         if (zzlVar != null) {
-            zzkVar.zzb.zze(zzkVar.zzd.zza(zzlVar), NotificationCenter.starGiftsLoaded);
+            zzkVar.zzb.zze(zzkVar.zzd.zza(zzlVar), NotificationCenter.updateAllMessages);
         }
         zzkVar.zzu();
     }
@@ -48,7 +48,7 @@ public final class zzk {
     static /* bridge */ /* synthetic */ void zzm(zzk zzkVar, int i) {
         zza.d("log session ended with error = %d", Integer.valueOf(i));
         zzkVar.zzs();
-        zzkVar.zzb.zze(zzkVar.zzd.zze(zzkVar.zzh, i), NotificationCenter.botDownloadsUpdate);
+        zzkVar.zzb.zze(zzkVar.zzd.zze(zzkVar.zzh, i), NotificationCenter.updateStories);
         zzkVar.zzr();
         if (zzkVar.zzj) {
             return;

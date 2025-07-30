@@ -635,7 +635,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             if (itemViewType == 9) {
                 SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                 if (i == PrivacyControlActivity.this.priceRow) {
-                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.emojiKeywordsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
+                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.savedMessagesForwarded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.Utilities.Callback2Return
                         public final Object run(Object obj, Object obj2) {
                             CharSequence lambda$onBindViewHolder$6;
@@ -980,7 +980,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                         @Override // org.telegram.ui.Cells.TextCell, android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i4, int i5) {
                             super.onMeasure(i4, i5);
-                            PrivacyControlActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
+                            PrivacyControlActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
                             PrivacyControlActivity.this.oldAvatarView.setRoundRadius(AndroidUtilities.dp(30.0f));
                         }
                     };
@@ -1068,7 +1068,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             tL_message.message = LocaleController.getString(R.string.PrivacyForwardsMessageLine);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.proxyCheckDone;
+            tL_message.flags = NotificationCenter.proxySettingsChanged;
             tL_message.from_id = new TLRPC.TL_peerUser();
             tL_message.id = 1;
             TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
@@ -2756,7 +2756,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
         if (tLObject != null) {
             TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
             TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().clientUserId);
-            userFull.flags |= TLRPC.FLAG_22;
+            userFull.flags |= TLObject.FLAG_22;
             userFull.fallback_photo = tL_photos_photo.photo;
             getMessagesStorage().updateUserInfo(userFull, true);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadDialogPhotos, new Object[0]);

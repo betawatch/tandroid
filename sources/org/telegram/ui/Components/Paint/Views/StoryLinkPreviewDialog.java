@@ -37,6 +37,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -114,7 +115,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.2
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), AndroidUtilities.dp(600.0f)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i3), AndroidUtilities.dp(800.0f)), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i3), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
             }
         };
         this.containerView = linearLayout;

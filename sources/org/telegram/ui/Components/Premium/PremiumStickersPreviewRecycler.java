@@ -20,6 +20,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -280,7 +281,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
             int dp = i3 - AndroidUtilities.dp(16.0f);
             layoutParams2.height = dp;
             layoutParams.width = dp;
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), TLObject.FLAG_30));
         }
 
         public void setDrawImage(boolean z, boolean z2, boolean z3) {

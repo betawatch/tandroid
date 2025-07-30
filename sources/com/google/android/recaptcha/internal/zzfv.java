@@ -33,11 +33,11 @@ final class zzfv extends zzfx {
                 int i5 = i + 3;
                 int zzb2 = zzb | (this.zzb.zzb(zze.charAt(i4)) << 6);
                 int i6 = i2 + 2;
-                bArr[i3] = (byte) ((zzb2 >>> 8) & NotificationCenter.locationPermissionGranted);
+                bArr[i3] = (byte) ((zzb2 >>> 8) & NotificationCenter.goingToPreviewTheme);
                 if (i5 < zze.length()) {
                     i += 4;
                     i2 += 3;
-                    bArr[i6] = (byte) ((zzb2 | this.zzb.zzb(zze.charAt(i5))) & NotificationCenter.locationPermissionGranted);
+                    bArr[i6] = (byte) ((zzb2 | this.zzb.zzb(zze.charAt(i5))) & NotificationCenter.goingToPreviewTheme);
                 } else {
                     i2 = i6;
                     i = i5;

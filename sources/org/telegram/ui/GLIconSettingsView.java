@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ColorPicker;
@@ -147,7 +147,7 @@ public class GLIconSettingsView extends LinearLayout {
                 }) { // from class: org.telegram.ui.GLIconSettingsView.3.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                     }
                 };
                 Icon3D icon3D3 = gLIconRenderer.model;
@@ -283,7 +283,7 @@ public class GLIconSettingsView extends LinearLayout {
                 }) { // from class: org.telegram.ui.GLIconSettingsView.6.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                     }
                 };
                 Icon3D icon3D5 = gLIconRenderer.model;

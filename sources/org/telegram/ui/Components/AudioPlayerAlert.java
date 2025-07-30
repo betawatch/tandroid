@@ -76,6 +76,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.audioinfo.AudioInfo;
 import org.telegram.messenger.chromecast.ChromecastController;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -1313,7 +1314,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                     AudioPlayerAlert.this.listView.setPadding(0, dp, 0, (AudioPlayerAlert.this.searching && ((BottomSheet) AudioPlayerAlert.this).keyboardVisible) ? 0 : AudioPlayerAlert.this.listView.getPaddingBottom());
                 }
                 this.ignoreLayout = false;
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 AudioPlayerAlert.this.inFullSize = getMeasuredHeight() >= size;
             }
 
@@ -2258,7 +2259,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                     return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                 }
             });
-            this.parentActivity.lambda$runLinkRequest$93(dialogsActivity);
+            this.parentActivity.lambda$runLinkRequest$94(dialogsActivity);
         } else {
             if (i == 2) {
                 try {
@@ -3209,7 +3210,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (view != frameLayout) {
             return false;
         }
-        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30));
+        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30));
         return true;
     }
 

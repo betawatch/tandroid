@@ -18,6 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -96,7 +97,7 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout = new FrameLayout(context);
             this.leftLayout = frameLayout;
             ScaleStateListAnimator.apply(frameLayout, 0.05f, 1.25f);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.starGiftSoldOut, 1.0f, 119));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftCollectionsLoaded, 1.0f, 119));
             BackupImageView backupImageView = new BackupImageView(context);
             this.leftImageView = backupImageView;
             backupImageView.setImageDrawable(new RLottieDrawable(R.raw.topics_tabs, "topics_tabs", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
@@ -126,7 +127,7 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout4 = new FrameLayout(context);
             this.rightLayout = frameLayout4;
             ScaleStateListAnimator.apply(frameLayout4, 0.05f, 1.25f);
-            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.starGiftSoldOut, 1.0f, 119));
+            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftCollectionsLoaded, 1.0f, 119));
             BackupImageView backupImageView2 = new BackupImageView(context);
             this.rightImageView = backupImageView2;
             backupImageView2.setImageDrawable(new RLottieDrawable(R.raw.topics_list, "topics_list", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
@@ -169,7 +170,7 @@ public class EnableTopicsActivity extends BaseFragment {
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void setChecked(final boolean z, boolean z2) {

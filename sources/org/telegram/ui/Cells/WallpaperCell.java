@@ -26,6 +26,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BackupImageView;
@@ -438,7 +439,7 @@ public abstract class WallpaperCell extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int i3 = 0;
         if (this.spanCount == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.size + AndroidUtilities.dp(6.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.size + AndroidUtilities.dp(6.0f), TLObject.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
             return;
         }
@@ -453,7 +454,7 @@ public abstract class WallpaperCell extends FrameLayout {
             if (i3 >= i6) {
                 return;
             }
-            this.wallpaperViews[i3].measure(View.MeasureSpec.makeMeasureSpec(i3 == i6 + (-1) ? dp : i4, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLRPC.FLAG_30));
+            this.wallpaperViews[i3].measure(View.MeasureSpec.makeMeasureSpec(i3 == i6 + (-1) ? dp : i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30));
             dp -= i4;
             i3++;
         }

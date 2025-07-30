@@ -32,7 +32,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
@@ -250,7 +250,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 this.fillPaint.setAlpha((int) (f2 * 255.0f));
                 canvas.drawCircle(this.cx, this.cy, this.r, this.fillPaint);
             }
-            this.strokePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.strokePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
             canvas.drawCircle(this.cx, this.cy, this.r - AndroidUtilities.dp(1.0f), this.strokePaint);
             if (f2 > 0.0f) {
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.counter;
@@ -278,7 +278,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(98.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(98.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:30:0x0070, code lost:
@@ -628,7 +628,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         RectF rectF = this.buttonBounds;
         drawBlur(canvas, rectF, rectF.width() / 2.0f, 1.0f);
         this.strokePaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.strokePaint.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.strokePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
         canvas.drawCircle(this.buttonBounds.centerX(), this.buttonBounds.centerY(), (this.buttonBounds.width() / 2.0f) - AndroidUtilities.dp(0.9f), this.strokePaint);
         Text text = this.counter;
         if (text != null) {
@@ -743,7 +743,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(176.0f), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(176.0f), TLObject.FLAG_30));
     }
 
     protected abstract void onSwitchToStory(int i, StoryEntry storyEntry);

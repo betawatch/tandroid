@@ -27,7 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CacheChart;
@@ -337,7 +337,7 @@ public abstract class CacheChart extends View {
             float f12 = this.particlesAlphaAnimated.set(this.particlesAlpha);
             this.paint.setAlpha((int) (f4 * 255.0f));
             if (f2 * 2.0f >= 359.0f) {
-                canvas.saveLayerAlpha(this.rectF, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(this.rectF, NotificationCenter.goingToPreviewTheme, 31);
                 canvas.drawCircle(this.rectF.centerX(), this.rectF.centerY(), this.rectF.width() / 2.0f, this.uncut);
                 canvas.drawRect(this.rectF, this.paint);
                 f6 = f10;
@@ -349,7 +349,7 @@ public abstract class CacheChart extends View {
                 f7 = f9;
                 setupPath(this.rectF, rectF2, f, f2, f3);
                 setGradientBounds(this.rectF.centerX(), rectF.centerY(), this.rectF.width() / 2.0f, f);
-                canvas.saveLayerAlpha(this.rectF, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(this.rectF, NotificationCenter.goingToPreviewTheme, 31);
                 canvas.drawPath(this.path, this.uncut);
                 canvas.drawRect(this.rectF, this.paint);
                 drawParticles(canvas, this.rectF.centerX(), this.rectF.centerY(), f7, f6, f - f2, f + f2, rectF2.width() / 2.0f, this.rectF.width() / 2.0f, f11, Math.max(0.0f, (f5 / 0.75f) - 0.75f) * f12);
@@ -707,7 +707,7 @@ public abstract class CacheChart extends View {
                     this.completeDrawable.rect.offset((getMeasuredWidth() - this.completeDrawable.rect.width()) / 2.0f, (getMeasuredHeight() - this.completeDrawable.rect.height()) / 2.0f);
                     this.completeDrawable.rect2.set(f5, f5, getMeasuredWidth(), getMeasuredHeight());
                     this.completeDrawable.resetPositions();
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
                     this.completeDrawable.onDraw(canvas2, f4);
                     int i3 = (int) (f4 * 255.0f);
                     this.completePaint.setAlpha(i3);
@@ -889,7 +889,7 @@ public abstract class CacheChart extends View {
     }
 
     protected int heightDp() {
-        return NotificationCenter.emojiKeywordsLoaded;
+        return NotificationCenter.savedMessagesForwarded;
     }
 
     @Override // android.view.View
@@ -956,7 +956,7 @@ public abstract class CacheChart extends View {
             this.completeDrawable.rect2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.completeDrawable.resetPositions();
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
     }
 
     protected void onSectionClick(int i) {

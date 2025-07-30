@@ -1252,7 +1252,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 17:
                     SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.priceRow) {
-                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.emojiKeywordsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
+                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.savedMessagesForwarded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback2Return
                             public final Object run(Object obj, Object obj2) {
                                 CharSequence lambda$onBindViewHolder$3;
@@ -2732,7 +2732,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 4) {
-            return NotificationCenter.activityPermissionsGranted;
+            return NotificationCenter.permissionsGranted;
         }
         if (i == 5) {
             return 900;
@@ -3601,7 +3601,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$22() {
-        loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
+        loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3994,20 +3994,20 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                             tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                             tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                             this.contactsEndReached = true;
-                            arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
+                            arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
                         }
                     } else if (!this.contactsEndReached) {
                         this.delayResults = 3;
                         tL_channelParticipantsContacts = new TLRPC.TL_channelParticipantsContacts();
                         tL_channels_getParticipants.filter = tL_channelParticipantsContacts;
                         this.contactsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
                     } else if (this.botsEndReached) {
                         tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsRecent();
                     } else {
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsBots();
                         this.botsEndReached = true;
-                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.emojiKeywordsLoaded, false));
+                        arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
                     }
                 } else if (i3 == 3) {
                     tL_channelParticipantsBanned = new TLRPC.TL_channelParticipantsBanned();
@@ -4240,7 +4240,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         if (indexOf >= 0) {
                             ChatUsersActivity.this.info.participants.participants.set(indexOf, tL_chatParticipantAdmin);
                         }
-                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
+                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
                     }
                     i5++;
                 }
@@ -4289,7 +4289,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             int i3 = this.selectedSlowmode;
             if (i3 != this.initialSlowmode && (chatFull = this.info) != null) {
                 chatFull.slowmode_seconds = getSecondsForIndex(i3);
-                this.info.flags |= TLRPC.FLAG_17;
+                this.info.flags |= TLObject.FLAG_17;
                 getMessagesController().setChannelSlowMode(this.chatId, this.info.slowmode_seconds);
             }
             boolean z2 = this.enablePrice;
@@ -5507,7 +5507,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         super.onFragmentCreate();
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.dialogDeleted);
-        loadChatParticipants(0, NotificationCenter.emojiKeywordsLoaded);
+        loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
         return true;
     }
 

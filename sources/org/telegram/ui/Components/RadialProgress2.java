@@ -12,6 +12,7 @@ import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.MediaActionDrawable;
@@ -312,7 +313,7 @@ public class RadialProgress2 {
         }
         Canvas canvas6 = this.miniDrawCanvas;
         if (canvas6 == null || this.circleCrossfadeColorKey < 0 || this.circleCheckProgress == 1.0f) {
-            i6 = TLRPC.FLAG_31;
+            i6 = TLObject.FLAG_31;
         } else {
             i6 = canvas6.save();
             float f7 = 1.0f - ((1.0f - this.circleCheckProgress) * 0.1f);
@@ -402,7 +403,7 @@ public class RadialProgress2 {
                         float f11 = this.miniIconScale;
                         canvas.scale(f11, f11, centerX, centerY);
                     } else {
-                        i8 = TLRPC.FLAG_31;
+                        i8 = TLObject.FLAG_31;
                     }
                     float f12 = i20;
                     canvas.drawCircle(centerX, centerY, (AndroidUtilities.dp(f12) * f) + (AndroidUtilities.dp(1.0f) * (1.0f - this.circleCheckProgress)), this.circleMiniPaint);

@@ -12,7 +12,7 @@ import com.microsoft.appcenter.utils.NetworkStateHelper;
 import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.util.UUID;
 import org.json.JSONException;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 abstract class DistributeUtils {
@@ -63,7 +63,7 @@ abstract class DistributeUtils {
         AppCenterLog.debug("AppCenterDistribute", "No token, need to open tester app to url=" + str);
         SharedPreferencesManager.putString("Distribute.request_id", uuid);
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
-        intent.addFlags(TLRPC.FLAG_28);
+        intent.addFlags(TLObject.FLAG_28);
         activity.startActivity(intent);
     }
 }

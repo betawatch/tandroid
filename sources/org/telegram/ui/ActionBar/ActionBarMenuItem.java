@@ -1099,7 +1099,7 @@ public class ActionBarMenuItem extends FrameLayout {
             this.searchField.setSingleLine(true);
             this.searchField.setBackgroundResource(0);
             this.searchField.setPadding(0, 0, 0, 0);
-            this.searchField.setInputType(this.searchField.getInputType() | TLRPC.FLAG_19);
+            this.searchField.setInputType(this.searchField.getInputType() | TLObject.FLAG_19);
             if (Build.VERSION.SDK_INT < 23) {
                 this.searchField.setCustomSelectionActionModeCallback(new ActionMode.Callback() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem.10
                     @Override // android.view.ActionMode.Callback
@@ -2036,7 +2036,7 @@ public class ActionBarMenuItem extends FrameLayout {
         if (actionBarPopupWindow == null || !actionBarPopupWindow.isShowing()) {
             return;
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
         updateOrShowPopup(true, true);
     }
 
@@ -2874,7 +2874,7 @@ public class ActionBarMenuItem extends FrameLayout {
                         ActionBarMenuItem.this.lambda$toggleSubMenu$10();
                     }
                 });
-                actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
+                actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x - AndroidUtilities.dp(40.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.popupLayout.getSwipeBack() != null && (childAt = this.popupLayout.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = childAt.getMeasuredWidth() + AndroidUtilities.dp(16.0f);
                 }

@@ -34,7 +34,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes4.dex */
 public class DrawerLayoutContainer extends FrameLayout {
@@ -137,7 +137,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         this.allowDrawContent = true;
         this.firstLayout = true;
         this.minDrawerMargin = (int) ((AndroidUtilities.density * 64.0f) + 0.5f);
-        setDescendantFocusability(TLRPC.FLAG_18);
+        setDescendantFocusability(TLObject.FLAG_18);
         setFocusableInTouchMode(true);
         if (Build.VERSION.SDK_INT >= 21) {
             setFitsSystemWindows(true);
@@ -615,10 +615,10 @@ public class DrawerLayoutContainer extends FrameLayout {
                     }
                 }
                 if (this.drawerLayout != childAt) {
-                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLRPC.FLAG_30);
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
                     int i6 = layoutParams.height;
                     if (i6 <= 0) {
-                        i6 = View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLRPC.FLAG_30);
+                        i6 = View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
                     }
                     if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).storyViewerAttached()) {
                         childAt.forceLayout();

@@ -41,11 +41,11 @@ public abstract class CodedOutputStream extends ByteOutput {
         final void bufferFixed32NoTag(int i) {
             byte[] bArr = this.buffer;
             int i2 = this.position;
-            bArr[i2] = (byte) (i & NotificationCenter.locationPermissionGranted);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.locationPermissionGranted);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.locationPermissionGranted);
+            bArr[i2] = (byte) (i & NotificationCenter.goingToPreviewTheme);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
             this.position = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.locationPermissionGranted);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
             this.totalBytesWritten += 4;
         }
 
@@ -56,11 +56,11 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i + 1] = (byte) ((j >> 8) & 255);
             bArr[i + 2] = (byte) ((j >> 16) & 255);
             bArr[i + 3] = (byte) (255 & (j >> 24));
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.locationPermissionGranted);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
             this.position = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.locationPermissionGranted);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
             this.totalBytesWritten += 8;
         }
 

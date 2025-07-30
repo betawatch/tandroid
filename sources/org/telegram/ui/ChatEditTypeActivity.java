@@ -591,7 +591,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
             int childAdapterPosition;
             int size = ChatEditTypeActivity.this.usernames.size();
             int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            int i2 = TLRPC.FLAG_31;
+            int i2 = TLObject.FLAG_31;
             for (int i3 = 0; i3 < getChildCount(); i3++) {
                 View childAt = getChildAt(i3);
                 if (childAt != null && (childAdapterPosition = getChildAdapterPosition(childAt)) >= 1 && childAdapterPosition <= size) {
@@ -608,7 +608,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
 
         @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(9999999, TLRPC.FLAG_31));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
         }
 
         public void toggleUsername(int i, boolean z, boolean z2) {

@@ -1234,7 +1234,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     int dp5 = AndroidUtilities.dp(36.0f);
                     this.rect.set((getMeasuredWidth() - dp5) / 2, dp4, (getMeasuredWidth() + dp5) / 2, dp4 + AndroidUtilities.dp(4.0f));
                     if (needsActionBar == 2) {
-                        themedColor2 = TLRPC.FLAG_29;
+                        themedColor2 = TLObject.FLAG_29;
                         f2 = f;
                     } else if (ChatAttachAlert.this.currentAttachLayout.hasCustomActionBarBackground()) {
                         int customActionBarBackground = ChatAttachAlert.this.currentAttachLayout.getCustomActionBarBackground();
@@ -1353,7 +1353,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
                 if (!AndroidUtilities.isInMultiwindow) {
                     size2 -= emojiPadding;
-                    i2 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
+                    i2 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                 }
                 this.ignoreLayout = true;
                 ChatAttachAlert.this.currentAttachLayout.onPreMeasure(i3, size2);
@@ -1371,19 +1371,19 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         measureChildWithMargins(childAt, i, 0, i2, 0);
                     } else {
                         if (ChatAttachAlert.this.inBubbleMode) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
                             paddingTop = getPaddingTop() + size2;
                         } else if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
                             paddingTop = childAt.getLayoutParams().height;
                         } else if (AndroidUtilities.isTablet()) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
                             paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                         } else {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
                             paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                         }
-                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                     }
                 }
             }
@@ -1530,7 +1530,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     int dp6 = AndroidUtilities.dp(36.0f);
                     this.rect.set((getMeasuredWidth() - dp6) / 2, dp5, (getMeasuredWidth() + dp6) / 2, dp5 + AndroidUtilities.dp(4.0f));
                     if (needsActionBar == 2) {
-                        themedColor2 = TLRPC.FLAG_29;
+                        themedColor2 = TLObject.FLAG_29;
                         alpha = f;
                     } else {
                         themedColor2 = ChatAttachAlert.this.getThemedColor(Theme.key_sheet_scrollUp);
@@ -1738,7 +1738,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         });
                     }
                     this.ignoreLayout = false;
-                    onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                    onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 }
             }
             ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.dp(3.0f));
@@ -1749,7 +1749,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (ChatAttachAlert.this.attachItemSize != min) {
             }
             this.ignoreLayout = false;
-            onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+            onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -2113,7 +2113,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
                 ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
                 canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
                 canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
             }
@@ -2132,7 +2132,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
         }
 
         public void setAttachBot(TLRPC.User user, TLRPC.TL_attachMenuBot tL_attachMenuBot) {
@@ -2191,8 +2191,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             }
                     }
                 }
-                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.locationPermissionGranted);
-                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.locationPermissionGranted);
+                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.goingToPreviewTheme);
+                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.goingToPreviewTheme);
                 TLRPC.Document document = animatedAttachMenuBotIcon.icon;
                 this.imageView.getImageReceiver().setAllowStartLottieAnimation(false);
                 this.imageView.setImage(ImageLocation.getForDocument(document), String.valueOf(tL_attachMenuBot.bot_id), z ? "tgs" : "svg", DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundGray, 1.0f), tL_attachMenuBot);
@@ -2330,7 +2330,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
             ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
             ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
         }
@@ -2345,7 +2345,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), TLObject.FLAG_30));
         }
 
         public void setCheckedState(float f) {
@@ -3132,7 +3132,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.clipPath(this.path);
                 this.backgroundPaint2.setColor(ChatAttachAlert.this.getThemedColor(Theme.key_graySection));
                 canvas.drawPaint(this.backgroundPaint2);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF, 1, 1.0f);
@@ -5681,7 +5681,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.locationPermissionGranted, Math.max(0, (int) (f * 255.0f))));
+        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.goingToPreviewTheme, Math.max(0, (int) (f * 255.0f))));
         AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
         AndroidUtilities.setLightNavigationBar(getWindow(), ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);
         getContainer().invalidate();

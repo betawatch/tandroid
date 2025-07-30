@@ -338,7 +338,7 @@ public class ChannelBoostLayout extends FrameLayout {
                         ViewGroup viewGroup3 = new FrameLayout(ChannelBoostLayout.this.getContext()) { // from class: org.telegram.ui.ChannelBoostLayout.1.3
                             @Override // android.widget.FrameLayout, android.view.View
                             protected void onMeasure(int i2, int i3) {
-                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
                             }
                         };
                         TextView textView = new TextView(ChannelBoostLayout.this.getContext());
@@ -778,7 +778,7 @@ public class ChannelBoostLayout extends FrameLayout {
         this.progressLayout.addView(rLottieImageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
-        addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.didReceiveSmsCode, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
     }
 
     public void updateRows(boolean z) {

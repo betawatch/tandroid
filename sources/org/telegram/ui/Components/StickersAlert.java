@@ -775,7 +775,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 StickerEmojiCell stickerEmojiCell = new StickerEmojiCell(this.context, false, ((BottomSheet) StickersAlert.this).resourcesProvider) { // from class: org.telegram.ui.Components.StickersAlert.GridAdapter.1
                     @Override // android.widget.FrameLayout, android.view.View
                     public void onMeasure(int i2, int i3) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(StickersAlert.this.itemSize, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(StickersAlert.this.itemSize, TLRPC.FLAG_30));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(StickersAlert.this.itemSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(StickersAlert.this.itemSize, TLObject.FLAG_30));
                     }
                 };
                 stickerEmojiCell.getImageView().setLayerNum(7);
@@ -932,7 +932,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             init();
             final int i = 0;
             while (i < 6) {
-                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.activityPermissionsGranted);
+                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.permissionsGranted);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, -2.0f, 0.0f, 2.0f, 0.0f);
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickersAlert$StickersShaker$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -944,7 +944,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat.setRepeatMode(1);
                 ofFloat.setInterpolator(new LinearInterpolator());
                 ofFloat.setCurrentPlayTime(nextFloat);
-                long j = NotificationCenter.activityPermissionsGranted;
+                long j = NotificationCenter.permissionsGranted;
                 ofFloat.setDuration(j);
                 ofFloat.start();
                 float dp = AndroidUtilities.dp(0.5f);
@@ -965,7 +965,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat2.setRepeatMode(1);
                 ofFloat2.setInterpolator(new LinearInterpolator());
                 ofFloat2.setCurrentPlayTime(nextFloat);
-                double d = NotificationCenter.activityPermissionsGranted;
+                double d = NotificationCenter.permissionsGranted;
                 Double.isNaN(d);
                 ofFloat2.setDuration((long) (d * 1.2d));
                 ofFloat2.start();
@@ -1479,7 +1479,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                             dp3 = (int) (dp3 + (StickersAlert.this.itemHeight * 0.15f));
                         }
                         if (StickersAlert.this.descriptionTextView != null) {
-                            StickersAlert.this.descriptionTextView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLRPC.FLAG_31));
+                            StickersAlert.this.descriptionTextView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
                             dp3 += StickersAlert.this.descriptionTextView.getMeasuredHeight();
                         }
                         double d = dp3;
@@ -1506,7 +1506,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                             StickersAlert.this.ignoreLayout = false;
                         }
                         this.fullHeight = dp3 >= size;
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(dp3, size), TLRPC.FLAG_30));
+                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(dp3, size), TLObject.FLAG_30));
                     }
                     dp2 = AndroidUtilities.dp(48.0f) + marginLayoutParams.bottomMargin + (Math.max(StickersAlert.this.isEmoji() ? 2 : 3, StickersAlert.this.stickerSet != null ? (int) Math.ceil(r1.documents.size() / f) : 0) * StickersAlert.this.itemHeight);
                     i3 = ((BottomSheet) StickersAlert.this).backgroundPaddingTop;
@@ -1534,7 +1534,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 if (StickersAlert.this.gridView.getPaddingTop() != i4) {
                 }
                 this.fullHeight = dp3 >= size;
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(dp3, size), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(dp3, size), TLObject.FLAG_30));
             }
 
             @Override // android.view.View
@@ -2459,7 +2459,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$94(new PremiumPreviewFragment(null));
         }
     }
 

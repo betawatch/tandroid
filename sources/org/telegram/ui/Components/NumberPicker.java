@@ -22,7 +22,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -216,7 +216,7 @@ public class NumberPicker extends LinearLayout {
         this.mLongPressUpdateInterval = 300L;
         this.mSelectorIndexToStringCache = new SparseArray();
         this.mSelectorIndices = new int[this.SELECTOR_WHEEL_ITEM_COUNT];
-        this.mInitialScrollOffset = TLRPC.FLAG_31;
+        this.mInitialScrollOffset = TLObject.FLAG_31;
         this.mScrollState = 0;
         this.mLastHandledDownDpadKeyCode = -1;
         this.drawDividers = true;
@@ -436,10 +436,10 @@ public class NumberPicker extends LinearLayout {
         int size = View.MeasureSpec.getSize(i);
         int mode = View.MeasureSpec.getMode(i);
         if (mode == Integer.MIN_VALUE) {
-            return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), TLRPC.FLAG_30);
+            return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), TLObject.FLAG_30);
         }
         if (mode == 0) {
-            return View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_30);
+            return View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30);
         }
         if (mode == 1073741824) {
             return i;
@@ -629,9 +629,9 @@ public class NumberPicker extends LinearLayout {
         }
         this.mPreviousScrollerY = 0;
         if (z) {
-            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.activityPermissionsGranted);
+            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.permissionsGranted);
         } else {
-            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.activityPermissionsGranted);
+            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.permissionsGranted);
         }
         invalidate();
     }

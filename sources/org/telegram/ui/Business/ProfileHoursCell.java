@@ -22,6 +22,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.Theme;
@@ -179,7 +180,7 @@ public abstract class ProfileHoursCell extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int dp;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
         if (!this.expanded) {
             int dp2 = AndroidUtilities.dp(60.0f);
             if (this.todayLinesCount > 2 || this.switchText.getVisibility() == 0) {
@@ -187,7 +188,7 @@ public abstract class ProfileHoursCell extends LinearLayout {
             } else {
                 dp = 0;
             }
-            i2 = View.MeasureSpec.makeMeasureSpec(Math.max(dp2, dp) + (this.needDivider ? 1 : 0), TLRPC.FLAG_30);
+            i2 = View.MeasureSpec.makeMeasureSpec(Math.max(dp2, dp) + (this.needDivider ? 1 : 0), TLObject.FLAG_30);
         }
         super.onMeasure(makeMeasureSpec, i2);
     }

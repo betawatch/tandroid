@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.text.ttml;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class TtmlRegion {
@@ -16,7 +16,7 @@ final class TtmlRegion {
     public final float width;
 
     public TtmlRegion(String str) {
-        this(str, -3.4028235E38f, -3.4028235E38f, TLRPC.FLAG_31, TLRPC.FLAG_31, -3.4028235E38f, -3.4028235E38f, TLRPC.FLAG_31, -3.4028235E38f, TLRPC.FLAG_31);
+        this(str, -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31);
     }
 
     public TtmlRegion(String str, float f, float f2, int i, int i2, float f3, float f4, int i3, float f5, int i4) {

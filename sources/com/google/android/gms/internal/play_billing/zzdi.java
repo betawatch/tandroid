@@ -9,7 +9,7 @@ import java.util.RandomAccess;
 import org.telegram.messenger.CharacterCompat;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -650,7 +650,7 @@ final class zzdi implements zzdp {
                 iArr[i63] = i64;
                 i63++;
             }
-            int i73 = charAt25 & NotificationCenter.locationPermissionGranted;
+            int i73 = charAt25 & NotificationCenter.goingToPreviewTheme;
             if (i73 >= 51) {
                 int i74 = i16 + 1;
                 int charAt26 = zzd.charAt(i16);
@@ -825,7 +825,7 @@ final class zzdi implements zzdp {
             int i97 = i64 + 1;
             iArr2[i64] = charAt24;
             int i98 = i64 + 2;
-            iArr2[i97] = i24 | ((charAt25 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i73 << 20);
+            iArr2[i97] = i24 | ((charAt25 & 256) != 0 ? TLObject.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLObject.FLAG_29 : 0) | (i73 << 20);
             i64 += 3;
             iArr2[i98] = (i23 << 20) | i20;
             i2 = i21;
@@ -1441,7 +1441,7 @@ final class zzdi implements zzdp {
                     if (i13 == 0) {
                         unsafe.putObject(obj, j, "");
                     } else {
-                        if ((i6 & TLRPC.FLAG_29) != 0 && !zzev.zze(bArr, zzj2, zzj2 + i13)) {
+                        if ((i6 & TLObject.FLAG_29) != 0 && !zzev.zze(bArr, zzj2, zzj2 + i13)) {
                             throw zzci.zzc();
                         }
                         unsafe.putObject(obj, j, new String(bArr, zzj2, i13, zzcg.zzb));
@@ -1969,7 +1969,7 @@ final class zzdi implements zzdp {
     }
 
     private static int zzx(int i) {
-        return (i >>> 20) & NotificationCenter.locationPermissionGranted;
+        return (i >>> 20) & NotificationCenter.goingToPreviewTheme;
     }
 
     private final int zzy(int i) {

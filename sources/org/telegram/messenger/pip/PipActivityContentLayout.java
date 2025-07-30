@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 class PipActivityContentLayout extends FrameLayout {
@@ -32,6 +32,6 @@ class PipActivityContentLayout extends FrameLayout {
             this.originalHeight = size2;
         }
         this.isViewInPip = isInPictureInPictureMode && size < this.originalWidth && size2 < this.originalHeight;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }
 }

@@ -15,10 +15,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
+import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CheckBox2;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
@@ -26,6 +28,7 @@ import org.telegram.ui.Components.RLottieImageView;
 
 /* loaded from: classes4.dex */
 public class ActionBarMenuSubItem extends FrameLayout {
+    private BackupImageView backupImageView;
     boolean bottom;
     public CheckBox2 checkView;
     public boolean checkViewLeft;
@@ -195,11 +198,11 @@ public class ActionBarMenuSubItem extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight), TLObject.FLAG_30));
         if (!this.expandIfMultiline || this.textView.getLayout().getLineCount() <= 1) {
             return;
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight + 8), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight + 8), TLObject.FLAG_30));
     }
 
     public void openSwipeBack() {
@@ -425,6 +428,19 @@ public class ActionBarMenuSubItem extends FrameLayout {
             dp2 = this.checkView != null ? AndroidUtilities.dp(43.0f) : 0;
         }
         textViewEmojis.setPadding(dp, 0, dp2, 0);
+    }
+
+    public void setTextAndIcon(CharSequence charSequence, ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        this.textView.setText(charSequence);
+        this.textView.setPadding((this.checkViewLeft && this.checkView == null) ? 0 : AndroidUtilities.dp(43.0f), 0, (!this.checkViewLeft && this.checkView == null) ? 0 : AndroidUtilities.dp(43.0f), 0);
+        if (this.backupImageView == null) {
+            BackupImageView backupImageView = new BackupImageView(getContext());
+            this.backupImageView = backupImageView;
+            backupImageView.setRoundRadius(AndroidUtilities.dp(5.0f));
+            addView(this.backupImageView, LayoutHelper.createFrame(28, 28, (LocaleController.isRTL ? 5 : 3) | 16));
+        }
+        this.imageView.setVisibility(4);
+        this.backupImageView.setImage(imageLocation, str, drawable, obj);
     }
 
     public void setTextColor(int i) {

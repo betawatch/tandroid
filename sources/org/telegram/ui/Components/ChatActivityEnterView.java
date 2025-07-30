@@ -2667,7 +2667,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     }
                 }
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -3037,8 +3037,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 int i2 = (int) (ChatActivityEnterView.this.slideToCancelProgress >= 0.93f ? ((ChatActivityEnterView.this.slideToCancelProgress - 0.93f) / 0.07f) * 255.0f : 0.0f);
                 drawable3.setAlpha(i2);
                 drawable3.draw(canvas);
-                drawable3.setAlpha(NotificationCenter.locationPermissionGranted);
-                i = NotificationCenter.locationPermissionGranted - i2;
+                drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
+                i = NotificationCenter.goingToPreviewTheme - i2;
             } else if (ChatActivityEnterView.this.canceledByGesture) {
                 return;
             }
@@ -3424,7 +3424,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
             View.MeasureSpec.getSize(i);
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(194.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(194.0f), TLObject.FLAG_30));
             float measuredWidth = getMeasuredWidth() * 0.35f;
             if (measuredWidth > AndroidUtilities.dp(140.0f)) {
                 measuredWidth = AndroidUtilities.dp(140.0f);
@@ -3856,7 +3856,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             boolean z;
             Canvas canvas2;
             RectF rectF;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
             updateColors();
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
             int measuredWidth = (getMeasuredWidth() - (getMeasuredHeight() / 2)) - (drawable.getIntrinsicWidth() / 2);
@@ -4659,7 +4659,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+                this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -7011,7 +7011,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         ChatActivity chatActivity2 = this.parentFragment;
         TLRPC.EncryptedChat currentEncryptedChat = chatActivity2 != null ? chatActivity2.getCurrentEncryptedChat() : null;
         this.messageEditText.setAllowTextEntitiesIntersection(supportsSendingNewEntities());
-        int i = (!isKeyboardSupportIncognitoMode() || currentEncryptedChat == null) ? TLRPC.FLAG_28 : 285212672;
+        int i = (!isKeyboardSupportIncognitoMode() || currentEncryptedChat == null) ? TLObject.FLAG_28 : 285212672;
         this.messageEditText.setIncludeFontPadding(false);
         this.messageEditText.setImeOptions(i);
         EditTextCaption editTextCaption2 = this.messageEditText;
@@ -7658,7 +7658,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
+            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$94(new PremiumPreviewFragment(null));
         }
     }
 
@@ -7931,10 +7931,10 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (i >= 21) {
             dialog.getWindow().clearFlags(1024);
             dialog.getWindow().clearFlags(67108864);
-            dialog.getWindow().clearFlags(TLRPC.FLAG_27);
-            dialog.getWindow().addFlags(TLRPC.FLAG_31);
+            dialog.getWindow().clearFlags(TLObject.FLAG_27);
+            dialog.getWindow().addFlags(TLObject.FLAG_31);
             dialog.getWindow().addFlags(512);
-            dialog.getWindow().addFlags(TLRPC.FLAG_17);
+            dialog.getWindow().addFlags(TLObject.FLAG_17);
             dialog.getWindow().getAttributes().windowAnimations = 0;
             dialog.getWindow().getDecorView().setSystemUiVisibility(1792);
             dialog.getWindow().setStatusBarColor(0);
@@ -8142,11 +8142,11 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             };
             this.senderSelectPopupWindow = senderSelectPopup2;
             senderSelectPopup2.setPauseNotifications(true);
-            this.senderSelectPopupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
+            this.senderSelectPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
             this.senderSelectPopupWindow.setOutsideTouchable(true);
             this.senderSelectPopupWindow.setClippingEnabled(true);
             this.senderSelectPopupWindow.setFocusable(true);
-            this.senderSelectPopupWindow.getContentView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+            this.senderSelectPopupWindow.getContentView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.senderSelectPopupWindow.setInputMethodMode(2);
             this.senderSelectPopupWindow.setSoftInputMode(0);
             this.senderSelectPopupWindow.getContentView().setFocusableInTouchMode(true);
@@ -9309,7 +9309,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
                 this.sendWhenOnlineButton.setVisibility(8);
             }
-            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.sendPopupWindow.setFocusable(true);
             view.getLocationInWindow(this.location);
             if (this.keyboardVisible) {
@@ -11215,7 +11215,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (i != NotificationCenter.audioDidSent) {
             if (i == NotificationCenter.audioRouteChanged) {
                 if (this.parentActivity != null) {
-                    this.parentActivity.setVolumeControlStream(((Boolean) objArr[0]).booleanValue() ? 0 : TLRPC.FLAG_31);
+                    this.parentActivity.setVolumeControlStream(((Boolean) objArr[0]).booleanValue() ? 0 : TLObject.FLAG_31);
                     return;
                 }
                 return;
@@ -11246,7 +11246,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
                 TLRPC.ChatFull chatFull3 = this.info;
                 chatFull2.slowmode_next_send_date = currentTime + chatFull3.slowmode_seconds;
-                chatFull3.flags |= TLRPC.FLAG_18;
+                chatFull3.flags |= TLObject.FLAG_18;
                 setSlowModeTimer(chatFull3.slowmode_next_send_date);
                 return;
             }
@@ -11659,7 +11659,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.goingToPreviewTheme, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {
@@ -12360,7 +12360,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
             } else {
                 int i3 = this.senderSelectView.getLayoutParams().width;
-                this.senderSelectView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.senderSelectView.getLayoutParams().height, TLRPC.FLAG_30));
+                this.senderSelectView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.senderSelectView.getLayoutParams().height, TLObject.FLAG_30));
                 ((ViewGroup.MarginLayoutParams) this.emojiButton.getLayoutParams()).leftMargin = AndroidUtilities.dp(16.0f) + i3;
                 EditTextCaption editTextCaption2 = this.messageEditText;
                 if (editTextCaption2 != null) {

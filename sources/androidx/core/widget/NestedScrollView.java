@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements NestedScrollingParent3, NestedScrollingChild {
@@ -377,7 +377,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     private void initScrollView() {
         this.mScroller = new OverScroller(getContext());
         setFocusable(true);
-        setDescendantFocusability(TLRPC.FLAG_18);
+        setDescendantFocusability(TLObject.FLAG_18);
         setWillNotDraw(false);
         ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
         this.mTouchSlop = viewConfiguration.getScaledTouchSlop();
@@ -687,7 +687,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         }
         if (findFocus != null && findFocus.isFocused() && isOffScreen(findFocus)) {
             int descendantFocusability = getDescendantFocusability();
-            setDescendantFocusability(TLRPC.FLAG_17);
+            setDescendantFocusability(TLObject.FLAG_17);
             requestFocus();
             setDescendantFocusability(descendantFocusability);
         }
@@ -948,7 +948,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
 
     public void fling(int i) {
         if (getChildCount() > 0) {
-            this.mScroller.fling(getScrollX(), getScrollY(), 0, i, 0, 0, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
+            this.mScroller.fling(getScrollX(), getScrollY(), 0, i, 0, 0, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
             runAnimatedScroll(true);
         }
     }
@@ -1057,7 +1057,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (MotionEventCompat.isFromSource(motionEvent, 2)) {
             f = motionEvent.getAxisValue(9);
             i = (int) motionEvent.getX();
-        } else if (MotionEventCompat.isFromSource(motionEvent, TLRPC.FLAG_22)) {
+        } else if (MotionEventCompat.isFromSource(motionEvent, TLObject.FLAG_22)) {
             float axisValue = motionEvent.getAxisValue(26);
             i = getWidth() / 2;
             f = axisValue;
@@ -1079,7 +1079,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (action == 2 && this.mIsBeingDragged) {
             return true;
         }
-        int i = action & NotificationCenter.locationPermissionGranted;
+        int i = action & NotificationCenter.goingToPreviewTheme;
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
@@ -1180,7 +1180,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             int measuredHeight = childAt.getMeasuredHeight();
             int measuredHeight2 = (((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - layoutParams.topMargin) - layoutParams.bottomMargin;
             if (measuredHeight < measuredHeight2) {
-                childAt.measure(ViewGroup.getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLRPC.FLAG_30));
+                childAt.measure(ViewGroup.getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_30));
             }
         }
     }

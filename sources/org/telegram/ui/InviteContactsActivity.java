@@ -42,7 +42,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
@@ -378,7 +378,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             while (i4 < childCount) {
                 View childAt = getChildAt(i4);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLRPC.FLAG_30));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLObject.FLAG_30));
                     if (childAt == this.removingSpan || childAt.getMeasuredWidth() + i5 <= dp) {
                         f = 12.0f;
                     } else {
@@ -443,7 +443,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             if (dp - i6 < i7) {
                 dp3 += AndroidUtilities.dp(44.0f);
             }
-            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
+            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(dp - i5, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
             if (!this.animationStarted) {
                 int dp5 = dp3 + AndroidUtilities.dp(44.0f);
                 int dp6 = i5 + AndroidUtilities.dp(16.0f);
@@ -706,12 +706,12 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 int size2 = View.MeasureSpec.getSize(i2);
                 setMeasuredDimension(size, size2);
                 int dp = AndroidUtilities.dp((AndroidUtilities.isTablet() || size2 > size) ? 144.0f : 56.0f);
-                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31));
-                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
                 int measuredHeight = (InviteContactsActivity.this.infoTextView.getVisibility() == 0 ? InviteContactsActivity.this.infoTextView : InviteContactsActivity.this.counterView).getMeasuredHeight();
-                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31));
-                InviteContactsActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, TLRPC.FLAG_30));
-                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, TLRPC.FLAG_30));
+                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+                InviteContactsActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, TLObject.FLAG_30));
+                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, TLObject.FLAG_30));
             }
         };
         this.fragmentView = viewGroup;

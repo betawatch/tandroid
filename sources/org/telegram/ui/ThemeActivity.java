@@ -56,6 +56,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.time.SunDate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -410,7 +411,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
             SeekBarView seekBarView = this.sizeBar;
             int i3 = SharedConfig.bubbleRadius;
             int i4 = this.startRadius;
@@ -482,7 +483,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             this.paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.paint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (this.paint.getStrokeWidth() * 0.5f), this.paint);
-            this.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), this.paint);
             if (this.checkedState != 0.0f) {
@@ -512,7 +513,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
         }
 
         public void setCheckedState(float f) {
@@ -593,7 +594,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
         }
     }
 

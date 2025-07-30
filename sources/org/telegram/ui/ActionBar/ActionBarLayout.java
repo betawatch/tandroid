@@ -49,7 +49,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheetTabs;
@@ -346,7 +346,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
                 View childAt = getChildAt(i8);
                 if (childAt instanceof ActionBar) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     i3 = childAt.getMeasuredHeight();
                     break;
                 }
@@ -1814,7 +1814,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
     public /* synthetic */ void drawHeaderShadow(Canvas canvas, int i) {
-        drawHeaderShadow(canvas, NotificationCenter.locationPermissionGranted, i);
+        drawHeaderShadow(canvas, NotificationCenter.goingToPreviewTheme, i);
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -2333,7 +2333,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         } else {
             int measureKeyboardHeight = measureKeyboardHeight();
             baseFragment.setKeyboardHeightFromParent(measureKeyboardHeight);
-            i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + measureKeyboardHeight, TLRPC.FLAG_30);
+            i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + measureKeyboardHeight, TLObject.FLAG_30);
         }
         super.onMeasure(i, i2);
     }
@@ -2629,7 +2629,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.containerViewBack.addView(view);
         if (actionBarPopupWindowLayout != null) {
             this.containerViewBack.addView(actionBarPopupWindowLayout);
-            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
+            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
             i = actionBarPopupWindowLayout.getMeasuredHeight() + AndroidUtilities.dp(24.0f);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) actionBarPopupWindowLayout.getLayoutParams();
             layoutParams.width = -2;
@@ -3234,7 +3234,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 int green2 = Color.green(iArr[i2]);
                 int blue2 = Color.blue(iArr[i2]);
                 int i3 = size;
-                int argb = Color.argb(Math.min(NotificationCenter.locationPermissionGranted, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.locationPermissionGranted, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.locationPermissionGranted, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.locationPermissionGranted, (int) (blue2 + ((blue - blue2) * f))));
+                int argb = Color.argb(Math.min(NotificationCenter.goingToPreviewTheme, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.goingToPreviewTheme, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.goingToPreviewTheme, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.goingToPreviewTheme, (int) (blue2 + ((blue - blue2) * f))));
                 ThemeDescription themeDescription = (ThemeDescription) arrayList.get(i2);
                 themeDescription.setAnimatedColor(argb);
                 themeDescription.setColor(argb, false, false);

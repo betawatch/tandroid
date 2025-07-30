@@ -2,7 +2,7 @@ package com.google.firebase.sessions.api;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 final class FirebaseSessionsDependencies$getRegisteredSubscribers$1 extends ContinuationImpl {
@@ -25,7 +25,7 @@ final class FirebaseSessionsDependencies$getRegisteredSubscribers$1 extends Cont
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
-        this.label |= TLRPC.FLAG_31;
+        this.label |= TLObject.FLAG_31;
         return this.this$0.getRegisteredSubscribers$com_google_firebase_firebase_sessions(this);
     }
 }

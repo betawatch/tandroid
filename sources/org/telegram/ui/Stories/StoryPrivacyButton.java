@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -108,7 +109,7 @@ public class StoryPrivacyButton extends View {
             canvas.scale(scale, scale, rectF.centerX(), rectF.centerY());
             float f = this.crossfadeT.set(0.0f);
             if (f > 0.0f) {
-                this.backgroundPaint[1].setAlpha(NotificationCenter.locationPermissionGranted);
+                this.backgroundPaint[1].setAlpha(NotificationCenter.goingToPreviewTheme);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.backgroundPaint[1]);
             }
             if (f < 1.0f) {
@@ -148,7 +149,7 @@ public class StoryPrivacyButton extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0068  */

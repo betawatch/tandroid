@@ -3,7 +3,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 import com.google.android.gms.internal.mlkit_language_id.zzeo;
 import com.google.android.gms.internal.mlkit_language_id.zzy$zzau;
 import com.google.android.gms.internal.mlkit_language_id.zzy$zzbh;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class zzy$zzad extends zzeo.zzc implements zzgb {
@@ -135,7 +135,7 @@ public final class zzy$zzad extends zzeo.zzc implements zzgb {
     public final void zza(zzy$zzau zzy_zzau) {
         zzy_zzau.getClass();
         this.zzy = zzy_zzau;
-        this.zzd |= TLRPC.FLAG_19;
+        this.zzd |= TLObject.FLAG_19;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

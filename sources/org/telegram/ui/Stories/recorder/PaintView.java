@@ -1272,7 +1272,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         frameLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f));
         FrameLayout frameLayout2 = this.topLayout;
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        frameLayout2.setBackground(new GradientDrawable(orientation, new int[]{TLRPC.FLAG_30, 0}));
+        frameLayout2.setBackground(new GradientDrawable(orientation, new int[]{TLObject.FLAG_30, 0}));
         addView(this.topLayout, LayoutHelper.createFrame(-1, -2, 48));
         ImageView imageView = new ImageView(context);
         this.undoButton = imageView;
@@ -1464,7 +1464,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         };
         this.bottomLayout = frameLayout3;
         frameLayout3.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0);
-        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, TLRPC.FLAG_31}));
+        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, TLObject.FLAG_31}));
         addView(this.bottomLayout, LayoutHelper.createFrame(-1, 104, 80));
         PaintToolsView paintToolsView = new PaintToolsView(context, (storyEntry == null || storyEntry.isCollage() || storyEntry.isRepostMessage || blurManager == null) ? false : true);
         this.paintToolsView = paintToolsView;
@@ -4312,7 +4312,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 }
             });
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10000.0f), TLRPC.FLAG_31));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10000.0f), TLObject.FLAG_31));
         this.popupWindow.setFocusable(true);
         if ((i & 48) != 0) {
             i2 -= this.popupLayout.getMeasuredWidth() / 2;
@@ -5996,7 +5996,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         measureChild(this.bottomLayout, i, i2);
         measureChild(this.weightChooserView, i, i2);
         measureChild(this.pipetteContainerLayout, i, i2);
-        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(this.emojiPadding - this.parent.getPaddingUnderContainer(), measureKeyboardHeight()), TLRPC.FLAG_30));
+        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(this.emojiPadding - this.parent.getPaddingUnderContainer(), measureKeyboardHeight()), TLObject.FLAG_30));
         FrameLayout frameLayout = this.topLayout;
         frameLayout.setPadding(frameLayout.getPaddingLeft(), AndroidUtilities.dp(12.0f), this.topLayout.getPaddingRight(), this.topLayout.getPaddingBottom());
         measureChild(this.topLayout, i, i2);

@@ -40,6 +40,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -262,7 +263,7 @@ public class CustomEmojiReactionsWindow {
                 float lerp = AndroidUtilities.lerp(customEmojiReactionsWindow5.fromRadius, AndroidUtilities.dp(customEmojiReactionsWindow5.type == 5 ? 20.0f : 8.0f), CustomEmojiReactionsWindow.this.enterTransitionProgress);
                 this.transitionReactions.clear();
                 if (CustomEmojiReactionsWindow.this.type == 1 || (CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate() != null && CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawBackground())) {
-                    CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawRoundRect(canvas, CustomEmojiReactionsWindow.this.drawingRect, lerp, getX(), CustomEmojiReactionsWindow.this.getBlurOffset(), NotificationCenter.locationPermissionGranted, true);
+                    CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawRoundRect(canvas, CustomEmojiReactionsWindow.this.drawingRect, lerp, getX(), CustomEmojiReactionsWindow.this.getBlurOffset(), NotificationCenter.goingToPreviewTheme, true);
                 } else {
                     this.shadow.setAlpha((int) (Utilities.clamp(clamp / 0.05f, 1.0f, 0.0f) * 255.0f));
                     Drawable drawable = this.shadow;
@@ -607,12 +608,12 @@ public class CustomEmojiReactionsWindow {
                 if (CustomEmojiReactionsWindow.this.type == 5) {
                     dp = Math.min(AndroidUtilities.dp(254.0f), dp);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
             }
             dp = (AndroidUtilities.dp(36.0f) * 8) - AndroidUtilities.dp(8.0f);
             if (CustomEmojiReactionsWindow.this.type == 5) {
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
         }
     }
 
@@ -1059,7 +1060,7 @@ public class CustomEmojiReactionsWindow {
     public /* synthetic */ void lambda$new$1(ReactionsContainerLayout reactionsContainerLayout, Canvas canvas, int i, int i2, int i3, int i4, float f, float f2) {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(i, i2, i3, i4);
-        reactionsContainerLayout.getDelegate().drawRoundRect(canvas, rectF, 0.0f, this.containerView.getX() + f, getBlurOffset() + f2, NotificationCenter.locationPermissionGranted, true);
+        reactionsContainerLayout.getDelegate().drawRoundRect(canvas, rectF, 0.0f, this.containerView.getX() + f, getBlurOffset() + f2, NotificationCenter.goingToPreviewTheme, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

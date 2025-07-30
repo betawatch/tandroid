@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
@@ -58,6 +59,7 @@ import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
 /* loaded from: classes5.dex */
 public class StoryEntry {
+    public HashSet albums;
     public boolean allowScreenshots;
     public String audioAuthor;
     public long audioDuration;
@@ -999,7 +1001,7 @@ public class StoryEntry {
         TLRPC.TL_videoSize_layer127 tL_videoSize_layer127;
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-        tL_fileLocationToBeDeprecated.dc_id = TLRPC.FLAG_31;
+        tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
         tL_fileLocationToBeDeprecated.local_id = SharedConfig.getLastLocalId();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         if ("mp4".equals(str) || "webm".equals(str)) {
@@ -1623,6 +1625,7 @@ public class StoryEntry {
         storyEntry.scheduleDate = this.scheduleDate;
         storyEntry.blurredVideoThumb = this.blurredVideoThumb;
         storyEntry.uploadThumbFile = this.uploadThumbFile;
+        storyEntry.albums = this.albums;
         File file = this.uploadThumbFile;
         if (file != null && file.exists()) {
             File makeCacheFile2 = makeCacheFile(this.currentAccount, ext(this.uploadThumbFile));
@@ -1948,7 +1951,7 @@ public class StoryEntry {
                         long parseInt = Integer.parseInt(this.thumbPath.substring(9));
                         options.inJustDecodeBounds = true;
                         MediaStore.Video.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), parseInt, 1, options);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.wallpapersNeedReload, NotificationCenter.wallpapersNeedReload);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;
@@ -1956,7 +1959,7 @@ public class StoryEntry {
                     } else {
                         options.inJustDecodeBounds = true;
                         BitmapFactory.decodeFile(this.thumbPath);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.wallpapersNeedReload, NotificationCenter.wallpapersNeedReload);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;

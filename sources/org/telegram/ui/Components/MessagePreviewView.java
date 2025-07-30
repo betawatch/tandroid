@@ -128,7 +128,7 @@ public abstract class MessagePreviewView extends FrameLayout {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
             setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
         }
 
@@ -3151,7 +3151,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             int mode = View.MeasureSpec.getMode(i);
             int size = View.MeasureSpec.getSize(i);
             int i3 = this.minWidth;
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(mode == 1073741824 ? Math.max(size, i3) : Math.min(size, i3), mode), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(mode == 1073741824 ? Math.max(size, i3) : Math.min(size, i3), mode), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
 
         @Override // android.view.View

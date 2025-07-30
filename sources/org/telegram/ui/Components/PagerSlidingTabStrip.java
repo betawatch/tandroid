@@ -18,7 +18,7 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.viewpager.widget.ViewPager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.Theme$$ExternalSyntheticApiModelOutline0;
 
@@ -392,7 +392,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         if (!this.shouldExpand || View.MeasureSpec.getMode(i) == 0) {
             return;
         }
-        this.tabsContainer.measure(getMeasuredWidth() | TLRPC.FLAG_30, i2);
+        this.tabsContainer.measure(getMeasuredWidth() | TLObject.FLAG_30, i2);
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View

@@ -38,7 +38,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.Theme;
@@ -203,8 +203,8 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 PrivateVideoPreviewDialogNew.this.bgBlueViolet.setBounds(0, 0, 80, 80);
                 PrivateVideoPreviewDialogNew.this.bgGreenShaderTools.setBounds(0.0f, 0.0f, 80.0f, 80.0f);
                 PrivateVideoPreviewDialogNew.this.bgBlueVioletShaderTools.setBounds(0.0f, 0.0f, 80.0f, 80.0f);
-                PrivateVideoPreviewDialogNew.this.bgGreen.setAlpha(NotificationCenter.locationPermissionGranted);
-                PrivateVideoPreviewDialogNew.this.bgBlueViolet.setAlpha(NotificationCenter.locationPermissionGranted);
+                PrivateVideoPreviewDialogNew.this.bgGreen.setAlpha(NotificationCenter.goingToPreviewTheme);
+                PrivateVideoPreviewDialogNew.this.bgBlueViolet.setAlpha(NotificationCenter.goingToPreviewTheme);
                 Canvas canvas = PrivateVideoPreviewDialogNew.this.bgGreenShaderTools.getCanvas();
                 PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
                 canvas.drawColor(0, mode);
@@ -220,7 +220,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 PrivateVideoPreviewDialogNew.this.bgBlueVioletShaderTools.setBounds(-getX(), -getY(), PrivateVideoPreviewDialogNew.this.getWidth() - getX(), PrivateVideoPreviewDialogNew.this.getHeight() - getY());
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage].setAlpha(NotificationCenter.locationPermissionGranted);
+                this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage].setAlpha(NotificationCenter.goingToPreviewTheme);
                 float dp = AndroidUtilities.dp(8.0f) + ((int) ((AndroidUtilities.dp(26.0f) - AndroidUtilities.dp(8.0f)) * (1.0f - PrivateVideoPreviewDialogNew.this.openProgress1)));
                 canvas.drawRoundRect(rectF, dp, dp, this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage]);
                 if (PrivateVideoPreviewDialogNew.this.pageOffset > 0.0f) {
@@ -881,7 +881,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLRPC.FLAG_30), 0);
+        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener

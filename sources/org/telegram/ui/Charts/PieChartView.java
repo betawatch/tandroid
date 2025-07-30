@@ -11,7 +11,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Charts.data.ChartData;
 import org.telegram.ui.Charts.data.StackLinearChartData;
 import org.telegram.ui.Charts.view_data.ChartHorizontalLinesData;
@@ -192,7 +192,7 @@ public class PieChartView extends StackLinearChartView {
             float f6 = this.transitionParams.progress;
             i = (int) (f6 * f6 * 255.0f);
         } else {
-            i = NotificationCenter.locationPermissionGranted;
+            i = NotificationCenter.goingToPreviewTheme;
         }
         float f7 = 1.0f;
         float f8 = 0.0f;
@@ -271,7 +271,7 @@ public class PieChartView extends StackLinearChartView {
                                     ((PieChartViewData) this.lines.get(i5)).paint.setStyle(Paint.Style.STROKE);
                                     canvas.restore();
                                 }
-                                ((PieChartViewData) this.lines.get(i5)).paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                                ((PieChartViewData) this.lines.get(i5)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                                 f14 += f15 * 360.0f;
                                 i7 = i5 + 1;
                                 f = f5;
@@ -287,7 +287,7 @@ public class PieChartView extends StackLinearChartView {
                         if (canvas3 != null) {
                         }
                         i5 = i7;
-                        ((PieChartViewData) this.lines.get(i5)).paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                        ((PieChartViewData) this.lines.get(i5)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         f14 += f15 * 360.0f;
                         i7 = i5 + 1;
                         f = f5;
@@ -355,7 +355,7 @@ public class PieChartView extends StackLinearChartView {
                             canvas2.drawText(str, (float) (centerX + (cos3 * d7)), ((float) (centerY + (d7 * sin3))) - ((this.textPaint.descent() + this.textPaint.ascent()) / 2.0f), this.textPaint);
                         }
                         canvas.restore();
-                        ((PieChartViewData) this.lines.get(i9)).paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                        ((PieChartViewData) this.lines.get(i9)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         f13 += f4 * 360.0f;
                     } else {
                         canvas2 = canvas3;
@@ -519,7 +519,7 @@ public class PieChartView extends StackLinearChartView {
             for (int i9 = 0; i9 < size; i9++) {
                 LineViewData lineViewData3 = (LineViewData) this.lines.get(i9);
                 lineViewData3.paint.setStrokeWidth(length2);
-                lineViewData3.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                lineViewData3.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                 lineViewData3.paint.setAntiAlias(false);
                 canvas.drawLines(lineViewData3.linesPath, 0, lineViewData3.linesPathBottomSize, lineViewData3.paint);
             }
@@ -676,7 +676,7 @@ public class PieChartView extends StackLinearChartView {
             this.pieLegendView.setVisibility(0);
             LineViewData lineViewData = (LineViewData) this.lines.get(i3);
             this.pieLegendView.setData(lineViewData.line.name, (int) this.values[this.currentSelection], lineViewData.lineColor);
-            this.pieLegendView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_31));
+            this.pieLegendView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
             float width = this.rectF.width() / 2.0f;
             double centerX = this.rectF.centerX();
             double d2 = width;

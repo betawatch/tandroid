@@ -40,6 +40,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
@@ -345,7 +346,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 this.sendPopupWindow.setSoftInputMode(0);
                 this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
             }
-            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.sendPopupWindow.setFocusable(true);
             int[] iArr = new int[2];
             view.getLocationInWindow(iArr);
@@ -703,7 +704,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                     this.ignoreLayout = false;
                 } else if (!AndroidUtilities.isInMultiwindow) {
                     size2 -= PhotoAlbumPickerActivity.this.commentTextView.getEmojiPadding();
-                    i4 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
+                    i4 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                 }
                 int childCount = getChildCount();
                 for (int i5 = 0; i5 < childCount; i5++) {
@@ -713,16 +714,16 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                             measureChildWithMargins(childAt, i3, 0, i4, 0);
                         } else {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                         }
                     }
                 }

@@ -23,6 +23,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.MenuDrawable;
@@ -375,7 +376,7 @@ public class BotCommandsMenuView extends View {
         if (this.expanded) {
             dp += ((int) this.menuTextWidth) + AndroidUtilities.dp(4.0f);
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 
     protected void onTranslationChanged(float f) {

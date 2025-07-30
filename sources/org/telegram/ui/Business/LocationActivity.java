@@ -424,7 +424,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         int min = Math.min(2, (int) Math.ceil(f));
         BackupImageView backupImageView2 = this.mapPreview;
         TLRPC.GeoPoint geoPoint = this.geo;
-        backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.didReceiveSmsCode, 15, min)), i + "_" + NotificationCenter.didReceiveSmsCode, this.mapLoadingDrawable, 0, (Object) null);
+        backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.wallpapersNeedReload, 15, min)), i + "_" + NotificationCenter.wallpapersNeedReload, this.mapLoadingDrawable, 0, (Object) null);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -572,7 +572,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
             @Override // android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(240.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(240.0f), TLObject.FLAG_30));
             }
 
             @Override // org.telegram.ui.Components.BackupImageView, android.view.View
@@ -613,7 +613,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
             @Override // android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(85.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(85.0f), TLObject.FLAG_30));
             }
         };
         FrameLayout frameLayout4 = new FrameLayout(context);

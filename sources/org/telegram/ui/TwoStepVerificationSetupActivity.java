@@ -1822,8 +1822,8 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                         if (TwoStepVerificationSetupActivity.this.keyboardView.getVisibility() != 8 && measureKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
                             size2 -= AndroidUtilities.dp(230.0f);
                         }
-                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                        TwoStepVerificationSetupActivity.this.keyboardView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLRPC.FLAG_30));
+                        frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                        TwoStepVerificationSetupActivity.this.keyboardView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
                     }
                 };
                 sizeNotifierFrameLayout.addView(frameLayout);
@@ -1840,9 +1840,9 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     protected void onMeasure(int i7, int i8) {
                         int size = View.MeasureSpec.getSize(i7);
                         int size2 = View.MeasureSpec.getSize(i8);
-                        ((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i8);
-                        TwoStepVerificationSetupActivity.this.actionBarBackground.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(3.0f), TLRPC.FLAG_30));
-                        sizeNotifierFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i8);
+                        ((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i8);
+                        TwoStepVerificationSetupActivity.this.actionBarBackground.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(3.0f), TLObject.FLAG_30));
+                        sizeNotifierFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i8);
                         setMeasuredDimension(size, size2);
                     }
                 };
@@ -2210,29 +2210,29 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                         float f;
                         int size = View.MeasureSpec.getSize(i8);
                         int size2 = View.MeasureSpec.getSize(i9);
-                        ((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i9);
+                        ((BaseFragment) TwoStepVerificationSetupActivity.this).actionBar.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i9);
                         TwoStepVerificationSetupActivity twoStepVerificationSetupActivity = TwoStepVerificationSetupActivity.this;
                         if (size > size2) {
                             float f2 = size;
-                            twoStepVerificationSetupActivity.imageView.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f2), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), TLRPC.FLAG_30));
+                            twoStepVerificationSetupActivity.imageView.measure(View.MeasureSpec.makeMeasureSpec((int) (0.45f * f2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.68f), TLObject.FLAG_30));
                             int i10 = (int) (f2 * 0.6f);
-                            TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            TwoStepVerificationSetupActivity.this.descriptionText2.measure(View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.descriptionText2.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             textView7 = TwoStepVerificationSetupActivity.this.buttonTextView;
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_31);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31);
                             f = 42.0f;
                         } else {
                             float f3 = twoStepVerificationSetupActivity.currentType == 7 ? NotificationCenter.audioRecordTooShort : NotificationCenter.fileLoadFailed;
-                            TwoStepVerificationSetupActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLRPC.FLAG_30));
-                            TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            TwoStepVerificationSetupActivity.this.descriptionText2.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f3), TLObject.FLAG_30));
+                            TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                            TwoStepVerificationSetupActivity.this.descriptionText2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             textView7 = TwoStepVerificationSetupActivity.this.buttonTextView;
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(48.0f), TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(48.0f), TLObject.FLAG_30);
                             f = 50.0f;
                         }
-                        textView7.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLRPC.FLAG_30));
+                        textView7.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f), TLObject.FLAG_30));
                         setMeasuredDimension(size, size2);
                     }
                 };

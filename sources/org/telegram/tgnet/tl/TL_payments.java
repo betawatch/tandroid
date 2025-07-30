@@ -317,6 +317,7 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
             outputSerializedData.writeInt32(this.count);
             Vector.serialize(outputSerializedData, this.suggested_bots);
             Vector.serialize(outputSerializedData, this.users);

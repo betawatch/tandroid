@@ -137,7 +137,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, int i, String str, boolean z) {
@@ -206,7 +206,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
 
         public void set(CharSequence charSequence) {
@@ -234,7 +234,7 @@ public class ResaleGiftsFragment extends BaseFragment {
 
         @Override // android.widget.TextView, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:6:0x0048  */
@@ -388,7 +388,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributeModel stargiftattributemodel, int i, String str, boolean z) {
@@ -491,7 +491,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
                 size = AndroidUtilities.dp(250.0f);
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
 
         public void set(TL_stars.starGiftAttributePattern stargiftattributepattern, int i, String str, boolean z) {

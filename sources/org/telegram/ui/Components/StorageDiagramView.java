@@ -26,7 +26,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Storage.CacheModel;
@@ -223,7 +223,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
             ClearViewData[] clearViewDataArr = this.data;
             int length = clearViewDataArr.length;
             d = 180.0d;
-            i = NotificationCenter.locationPermissionGranted;
+            i = NotificationCenter.goingToPreviewTheme;
             if (i2 >= length) {
                 break;
             }
@@ -235,7 +235,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                         float f9 = ((-360.0f) * f8) + ((1.0f - this.singleProgress) * 10.0f);
                         float f10 = f9 > 0.0f ? 0.0f : f9;
                         clearViewData.paint.setColor(Theme.getColor(clearViewData.colorKey));
-                        this.data[i2].paint.setAlpha(NotificationCenter.locationPermissionGranted);
+                        this.data[i2].paint.setAlpha(NotificationCenter.goingToPreviewTheme);
                         double width = this.rectF.width() / 2.0f;
                         Double.isNaN(width);
                         double d4 = f10;
@@ -308,18 +308,18 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                             canvas.drawArc(this.rectF, (-90.0f) - (f13 * 360.0f), f16, false, this.data[i3].paint);
                             f13 += f14;
                             i3++;
-                            i = NotificationCenter.locationPermissionGranted;
+                            i = NotificationCenter.goingToPreviewTheme;
                             d = 180.0d;
                         }
                     }
                     f13 += f14;
                     i3++;
-                    i = NotificationCenter.locationPermissionGranted;
+                    i = NotificationCenter.goingToPreviewTheme;
                     d = 180.0d;
                 }
             }
             i3++;
-            i = NotificationCenter.locationPermissionGranted;
+            i = NotificationCenter.goingToPreviewTheme;
             d = 180.0d;
         }
         ImageReceiver imageReceiver = this.avatarImageReceiver;
@@ -357,11 +357,11 @@ public abstract class StorageDiagramView extends View implements NotificationCen
         int i4;
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable;
         if (this.dialogId != null) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(166.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(166.0f), TLObject.FLAG_30));
             i3 = (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(110.0f)) / 2;
             this.rectF.set(AndroidUtilities.dp(3.0f) + i3, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(107.0f) + i3, AndroidUtilities.dp(107.0f));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30));
             this.rectF.set(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(107.0f), AndroidUtilities.dp(107.0f));
             i3 = 0;
         }

@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.flow.internal.SafeCollector;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public abstract class AbstractFlow implements Flow {
@@ -24,8 +24,8 @@ public abstract class AbstractFlow implements Flow {
         if (continuation instanceof AbstractFlow$collect$1) {
             abstractFlow$collect$1 = (AbstractFlow$collect$1) continuation;
             int i2 = abstractFlow$collect$1.label;
-            if ((i2 & TLRPC.FLAG_31) != 0) {
-                abstractFlow$collect$1.label = i2 - TLRPC.FLAG_31;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                abstractFlow$collect$1.label = i2 - TLObject.FLAG_31;
                 Object obj = abstractFlow$collect$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = abstractFlow$collect$1.label;

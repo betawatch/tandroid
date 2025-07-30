@@ -26,7 +26,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
     private Rect mHotspotBounds;
     private Drawable mLastDrawable;
     private boolean mMutated;
-    private int mAlpha = NotificationCenter.locationPermissionGranted;
+    private int mAlpha = NotificationCenter.goingToPreviewTheme;
     private int mCurIndex = -1;
 
     private static class Api21Impl {
@@ -568,14 +568,14 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                 if (j <= uptimeMillis) {
                     drawable2.setAlpha(this.mAlpha);
                 } else {
-                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.locationPermissionGranted);
+                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.goingToPreviewTheme);
                     z2 = true;
                     drawable = this.mLastDrawable;
                     if (drawable != null) {
                         long j2 = this.mExitAnimationEnd;
                         if (j2 != 0) {
                             if (j2 > uptimeMillis) {
-                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.locationPermissionGranted);
+                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.goingToPreviewTheme);
                                 if (z && z3) {
                                     scheduleSelf(this.mAnimationRunnable, uptimeMillis + 16);
                                     return;

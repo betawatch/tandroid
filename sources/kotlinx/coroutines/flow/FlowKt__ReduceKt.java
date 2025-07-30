@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.flow.internal.AbortFlowException;
 import kotlinx.coroutines.flow.internal.FlowExceptions_commonKt;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 abstract /* synthetic */ class FlowKt__ReduceKt {
@@ -30,8 +30,8 @@ abstract /* synthetic */ class FlowKt__ReduceKt {
         if (continuation instanceof FlowKt__ReduceKt$first$1) {
             flowKt__ReduceKt$first$1 = (FlowKt__ReduceKt$first$1) continuation;
             int i2 = flowKt__ReduceKt$first$1.label;
-            if ((i2 & TLRPC.FLAG_31) != 0) {
-                flowKt__ReduceKt$first$1.label = i2 - TLRPC.FLAG_31;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                flowKt__ReduceKt$first$1.label = i2 - TLObject.FLAG_31;
                 Object obj2 = flowKt__ReduceKt$first$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ReduceKt$first$1.label;

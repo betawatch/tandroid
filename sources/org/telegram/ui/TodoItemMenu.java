@@ -254,14 +254,14 @@ public class TodoItemMenu extends Dialog {
                         childAt = TodoItemMenu.this.messageOptionsView;
                         f = TodoItemMenu.this.messageOptionsViewMaxWidth;
                     } else if (childAt != TodoItemMenu.this.taskOptionsView || TodoItemMenu.this.taskOptionsViewMaxWidth <= 0.0f) {
-                        makeMeasureSpec = childAt == TodoItemMenu.this.reactionsView ? View.MeasureSpec.makeMeasureSpec(TodoItemMenu.this.reactionsView.getTotalWidth(), TLRPC.FLAG_30) : View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31);
-                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
+                        makeMeasureSpec = childAt == TodoItemMenu.this.reactionsView ? View.MeasureSpec.makeMeasureSpec(TodoItemMenu.this.reactionsView.getTotalWidth(), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31);
+                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     } else {
                         childAt = TodoItemMenu.this.taskOptionsView;
                         f = TodoItemMenu.this.taskOptionsViewMaxWidth;
                     }
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f), TLRPC.FLAG_31);
-                    childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f), TLObject.FLAG_31);
+                    childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                 }
                 setMeasuredDimension(size, size2);
             }

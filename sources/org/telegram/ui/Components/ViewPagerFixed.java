@@ -399,7 +399,7 @@ public class ViewPagerFixed extends FrameLayout {
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
                     if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f) || str2 != null)) {
                         paint = TabsView.this.counterPaint;
-                        i13 = NotificationCenter.locationPermissionGranted;
+                        i13 = NotificationCenter.goingToPreviewTheme;
                     } else {
                         paint = TabsView.this.counterPaint;
                         i13 = (int) (TabsView.this.editingStartAnimationProgress * 255.0f);
@@ -930,6 +930,14 @@ public class ViewPagerFixed extends FrameLayout {
             return this.positionToId.get(0, 0);
         }
 
+        public int getNextPageId(boolean z) {
+            return this.positionToId.get(this.currentPosition + (z ? 1 : -1), -1);
+        }
+
+        public int getPageIdByPosition(int i) {
+            return this.positionToId.get(i, -1);
+        }
+
         public int getPreviousPosition() {
             return this.previousPosition;
         }
@@ -1390,6 +1398,12 @@ public class ViewPagerFixed extends FrameLayout {
         setTranslationX(view, measuredWidth * floatValue);
         this.currentProgress = floatValue;
         onTabAnimationUpdate(true);
+        TabsView tabsView = this.tabsView;
+        if (tabsView != null) {
+            tabsView.listView.invalidate();
+            this.tabsView.listView.invalidateViews();
+            this.tabsView.invalidate();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1756,11 +1770,7 @@ public class ViewPagerFixed extends FrameLayout {
             @Override // org.telegram.ui.Components.ViewPagerFixed.TabsView
             public void selectTab(int i2, int i3, float f) {
                 super.selectTab(i2, i3, f);
-                ViewPagerFixed viewPagerFixed = ViewPagerFixed.this;
-                if (f > 0.5f) {
-                    i2 = i3;
-                }
-                viewPagerFixed.onTabPageSelected(i2);
+                ViewPagerFixed.this.onTabPageSelected(f <= 0.5f ? i2 : i3, i2 < i3);
             }
         };
         this.tabsView = tabsView;
@@ -1851,7 +1861,7 @@ public class ViewPagerFixed extends FrameLayout {
                 ViewPagerFixed viewPagerFixed = ViewPagerFixed.this;
                 viewPagerFixed.nextPosition = i2;
                 viewPagerFixed.updateViewForIndex(1);
-                ViewPagerFixed.this.onTabPageSelected(i2);
+                ViewPagerFixed.this.onTabPageSelected(i2, z2);
                 View view = ViewPagerFixed.this.viewPages[0];
                 int measuredWidth = view != null ? view.getMeasuredWidth() : 0;
                 ViewPagerFixed viewPagerFixed2 = ViewPagerFixed.this;
@@ -2011,6 +2021,10 @@ public class ViewPagerFixed extends FrameLayout {
     }
 
     protected void onTabPageSelected(int i) {
+    }
+
+    protected void onTabPageSelected(int i, boolean z) {
+        onTabPageSelected(i);
     }
 
     protected void onTabScrollEnd(int i) {
@@ -2487,7 +2501,7 @@ public class ViewPagerFixed extends FrameLayout {
         this.animatingForward = z;
         this.nextPosition = i;
         updateViewForIndex(1);
-        onTabPageSelected(i);
+        onTabPageSelected(i, z);
         View view2 = this.viewPages[0];
         int measuredWidth = view2 != null ? view2.getMeasuredWidth() : 0;
         View[] viewArr = this.viewPages;
@@ -2521,8 +2535,16 @@ public class ViewPagerFixed extends FrameLayout {
                     viewPagerFixed4.setTranslationX(viewPagerFixed4.viewPages[0], 0.0f);
                     ViewPagerFixed.this.viewPages[1] = null;
                 }
-                ViewPagerFixed.this.manualScrolling = null;
+                ViewPagerFixed viewPagerFixed5 = ViewPagerFixed.this;
+                viewPagerFixed5.currentPosition = viewPagerFixed5.nextPosition;
+                viewPagerFixed5.manualScrolling = null;
                 ViewPagerFixed.this.onTabAnimationUpdate(true);
+                TabsView tabsView = ViewPagerFixed.this.tabsView;
+                if (tabsView != null) {
+                    tabsView.listView.invalidate();
+                    ViewPagerFixed.this.tabsView.listView.invalidateViews();
+                    ViewPagerFixed.this.tabsView.invalidate();
+                }
                 ViewPagerFixed.this.onScrollEnd();
                 ViewPagerFixed.this.notificationsLocker.unlock();
             }

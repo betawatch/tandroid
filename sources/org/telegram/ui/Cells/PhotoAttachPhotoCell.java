@@ -37,6 +37,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
@@ -377,18 +378,18 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         int makeMeasureSpec;
         int dp;
         if (this.itemSizeChanged) {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, TLRPC.FLAG_30);
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.itemSize, TLObject.FLAG_30);
             dp = this.itemSize + AndroidUtilities.dp(5.0f);
         } else {
             if (this.isVertical) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLRPC.FLAG_30);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30);
                 dp = AndroidUtilities.dp((this.isLast ? 0 : 6) + 80);
             } else {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 0 : 6) + 80), TLRPC.FLAG_30);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.isLast ? 0 : 6) + 80), TLObject.FLAG_30);
                 dp = AndroidUtilities.dp(80.0f);
             }
         }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_30));
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */

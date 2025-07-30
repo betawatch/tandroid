@@ -13,7 +13,7 @@ import com.google.android.gms.common.wrappers.Wrappers;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Executor;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class ConnectionTracker {
@@ -53,7 +53,7 @@ public class ConnectionTracker {
             String packageName = component.getPackageName();
             "com.google.android.gms".equals(packageName);
             try {
-                if ((Wrappers.packageManager(context).getApplicationInfo(packageName, 0).flags & TLRPC.FLAG_21) != 0) {
+                if ((Wrappers.packageManager(context).getApplicationInfo(packageName, 0).flags & TLObject.FLAG_21) != 0) {
                     Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
                     return false;
                 }

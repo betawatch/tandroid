@@ -26,7 +26,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
@@ -109,7 +109,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
                     setPadding(0, i4, 0, 0);
                     this.ignoreLayout = false;
                 }
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
 
             @Override // androidx.core.widget.NestedScrollView, android.view.View

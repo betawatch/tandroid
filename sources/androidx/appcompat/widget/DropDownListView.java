@@ -21,7 +21,7 @@ import androidx.core.widget.ListViewAutoScrollHelper;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 class DropDownListView extends ListView {
@@ -412,7 +412,7 @@ class DropDownListView extends ListView {
                 view.setLayoutParams(layoutParams);
             }
             int i10 = layoutParams.height;
-            view.measure(i, i10 > 0 ? View.MeasureSpec.makeMeasureSpec(i10, TLRPC.FLAG_30) : View.MeasureSpec.makeMeasureSpec(0, 0));
+            view.measure(i, i10 > 0 ? View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(0, 0));
             view.forceLayout();
             if (i7 > 0) {
                 i6 += dividerHeight;

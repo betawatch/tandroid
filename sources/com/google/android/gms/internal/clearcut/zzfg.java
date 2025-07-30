@@ -68,7 +68,7 @@ abstract class zzfg {
                                 int codePoint = Character.toCodePoint(charAt3, charAt4);
                                 int i5 = position + 1;
                                 try {
-                                    byteBuffer.put(position, (byte) ((codePoint >>> 18) | NotificationCenter.didReceiveSmsCode));
+                                    byteBuffer.put(position, (byte) ((codePoint >>> 18) | NotificationCenter.wallpapersNeedReload));
                                     i = position + 2;
                                 } catch (IndexOutOfBoundsException unused3) {
                                     position = i5;
@@ -109,7 +109,7 @@ abstract class zzfg {
                     throw new zzfi(i2, length);
                 }
                 int i6 = position + 1;
-                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | NotificationCenter.starUserGiftsLoaded));
+                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | NotificationCenter.starGiftsLoaded));
                 position += 2;
                 byteBuffer.put(i6, (byte) (((charAt3 >>> 6) & 63) | 128));
                 byteBuffer.put(position, (byte) ((charAt3 & '?') | 128));

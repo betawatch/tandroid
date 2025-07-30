@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
@@ -121,7 +121,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int i3 = this.fixedSize;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i3 == -1 ? View.MeasureSpec.makeMeasureSpec(0, TLRPC.FLAG_30) : i3 != 0 ? View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.fixedSize), TLRPC.FLAG_30) : View.MeasureSpec.makeMeasureSpec(0, 0));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i3 == -1 ? View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30) : i3 != 0 ? View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.fixedSize), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(0, 0));
     }
 
     protected void onTextDraw() {

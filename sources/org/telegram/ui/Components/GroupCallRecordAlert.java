@@ -27,6 +27,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
@@ -139,8 +140,8 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
                 marginLayoutParams.rightMargin = dp;
                 int size = (View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(200.0f)) / 2;
                 GroupCallRecordAlert.this.viewPager.setPadding(size, 0, size, 0);
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLRPC.FLAG_30));
-                measureChildWithMargins(GroupCallRecordAlert.this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLRPC.FLAG_30), 0);
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
+                measureChildWithMargins(GroupCallRecordAlert.this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -224,7 +225,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
             protected void onDraw(Canvas canvas) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[GroupCallRecordAlert.this.currentPage].setAlpha(NotificationCenter.locationPermissionGranted);
+                this.gradientPaint[GroupCallRecordAlert.this.currentPage].setAlpha(NotificationCenter.goingToPreviewTheme);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.gradientPaint[GroupCallRecordAlert.this.currentPage]);
                 if (GroupCallRecordAlert.this.pageOffset > 0.0f) {
                     int i3 = GroupCallRecordAlert.this.currentPage + 1;

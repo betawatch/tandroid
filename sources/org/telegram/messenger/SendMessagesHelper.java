@@ -1577,7 +1577,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i2;
         Iterator<Map.Entry<String, ArrayList<DelayedMessage>>> it = this.delayedMessages.entrySet().iterator();
         DelayedMessage delayedMessage = null;
-        int i3 = TLRPC.FLAG_31;
+        int i3 = TLObject.FLAG_31;
         while (it.hasNext()) {
             ArrayList<DelayedMessage> value = it.next().getValue();
             int size = value.size();
@@ -2456,7 +2456,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         int i11 = message2.quick_reply_shortcut_id;
                         message4.quick_reply_shortcut_id = i11;
                         if (i11 != 0) {
-                            message4.flags |= TLRPC.FLAG_30;
+                            message4.flags |= TLObject.FLAG_30;
                         }
                         updateMediaPaths(messageObject, message2, message2.id, str, false);
                         i3 = messageObject.getMediaExistanceFlags();
@@ -2999,7 +2999,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 int i10 = message.quick_reply_shortcut_id;
                 message2.quick_reply_shortcut_id = i10;
                 if (i10 != 0) {
-                    message2.flags |= TLRPC.FLAG_30;
+                    message2.flags |= TLObject.FLAG_30;
                 }
                 final long j = message.grouped_id;
                 if (!z) {
@@ -12169,9 +12169,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         tL_messages_editMessage.id = messageObject.getId();
         TLRPC.Message message = messageObject.messageOwner;
-        if (message != null && (message.flags & TLRPC.FLAG_30) != 0) {
+        if (message != null && (message.flags & TLObject.FLAG_30) != 0) {
             tL_messages_editMessage.quick_reply_shortcut_id = message.quick_reply_shortcut_id;
-            tL_messages_editMessage.flags |= TLRPC.FLAG_17;
+            tL_messages_editMessage.flags |= TLObject.FLAG_17;
         }
         if (arrayList != null) {
             tL_messages_editMessage.entities = arrayList;
@@ -12766,9 +12766,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     tL_messages_editMessage.schedule_date = message.date;
                     tL_messages_editMessage.flags |= 32768;
                 }
-                if ((message.flags & TLRPC.FLAG_30) != 0) {
+                if ((message.flags & TLObject.FLAG_30) != 0) {
                     tL_messages_editMessage.quick_reply_shortcut_id = message.quick_reply_shortcut_id;
-                    tL_messages_editMessage.flags |= TLRPC.FLAG_17;
+                    tL_messages_editMessage.flags |= TLObject.FLAG_17;
                 }
                 charSequence = messageObject.editingMessage;
                 if (charSequence != null) {
@@ -12851,7 +12851,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (messageObject.scheduled) {
             }
-            if ((message.flags & TLRPC.FLAG_30) != 0) {
+            if ((message.flags & TLObject.FLAG_30) != 0) {
             }
             charSequence = messageObject.editingMessage;
             if (charSequence != null) {
@@ -13659,7 +13659,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(getMessagesController().isUserContactBlocked(DialogObject.getPeerDialogId(inputPeer)));
                 }
                 if (sendPaidMessagesStars > 0) {
-                    tL_messages_sendMedia.flags |= TLRPC.FLAG_21;
+                    tL_messages_sendMedia.flags |= TLObject.FLAG_21;
                     tL_messages_sendMedia.allow_paid_stars = sendPaidMessagesStars;
                 }
                 if (j2 == 0) {
@@ -14535,7 +14535,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             tL_message.params.put("fwd_peer", "" + messageObject4.getDialogId());
                             if (!messageObject4.messageOwner.restriction_reason.isEmpty()) {
                                 tL_message.restriction_reason = messageObject4.messageOwner.restriction_reason;
-                                tL_message.flags |= TLRPC.FLAG_22;
+                                tL_message.flags |= TLObject.FLAG_22;
                             }
                             tL_message.media = (canSendEmbed || !(messageObject4.messageOwner.media instanceof TLRPC.TL_messageMediaWebPage)) ? messageObject4.messageOwner.media : new TLRPC.TL_messageMediaEmpty();
                             TLRPC.Message message3 = messageObject4.messageOwner;
@@ -14555,7 +14555,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 j10 = j9;
                                 tL_messageReplies.channel_id = j10;
                                 tL_messageReplies.flags |= 1;
-                                tL_message.flags |= TLRPC.FLAG_23;
+                                tL_message.flags |= TLObject.FLAG_23;
                             } else {
                                 j10 = j9;
                             }
@@ -14651,7 +14651,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             longSparseArray6.put(messageObject4.messageOwner.grouped_id, l);
                                         }
                                         tL_message.grouped_id = l.longValue();
-                                        tL_message.flags |= TLRPC.FLAG_17;
+                                        tL_message.flags |= TLObject.FLAG_17;
                                     }
                                     peer3 = peer2;
                                     if (peer3.channel_id == 0 && z12) {
@@ -14743,7 +14743,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     }
                                     if (j3 != 0) {
                                         tL_message.saved_peer_id = getMessagesController().getPeer(j3);
-                                        tL_message.flags |= TLRPC.FLAG_28;
+                                        tL_message.flags |= TLObject.FLAG_28;
                                     }
                                     if (messageSuggestionParams != null) {
                                         tL_message.suggested_post = messageSuggestionParams.toTl();
@@ -14872,7 +14872,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             tL_messages_forwardMessages.video_timestamp = i2;
                                                         }
                                                         if (j2 > 0) {
-                                                            tL_messages_forwardMessages.flags |= TLRPC.FLAG_21;
+                                                            tL_messages_forwardMessages.flags |= TLObject.FLAG_21;
                                                             tL_messages_forwardMessages.allow_paid_stars = tL_messages_forwardMessages.id.size() * j2;
                                                         }
                                                         if (messageSuggestionParams != null) {
@@ -15718,7 +15718,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             message2.from_id = tL_peerUser;
             tL_peerUser.user_id = getUserConfig().getClientUserId();
-            message2.flags |= NotificationCenter.newLocationAvailable;
+            message2.flags |= NotificationCenter.liveLocationsChanged;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             message2.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 16;

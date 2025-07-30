@@ -457,7 +457,7 @@ public class ChangeUsernameActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         }
     }
 
@@ -682,7 +682,7 @@ public class ChangeUsernameActivity extends BaseFragment {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
         }
 
         public void set(TLRPC.TL_username tL_username, boolean z, boolean z2) {
@@ -874,7 +874,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public void update() {
             if (this.text2View.getVisibility() == 0) {
-                this.text2View.measure(View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLRPC.FLAG_31));
+                this.text2View.measure(View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
             }
             ValueAnimator valueAnimator = this.heightUpdateAnimator;
             if (valueAnimator != null) {
@@ -902,7 +902,7 @@ public class ChangeUsernameActivity extends BaseFragment {
         protected void onMeasure(int i, int i2) {
             Integer num = this.height;
             if (num != null) {
-                i2 = View.MeasureSpec.makeMeasureSpec(num.intValue(), TLRPC.FLAG_30);
+                i2 = View.MeasureSpec.makeMeasureSpec(num.intValue(), TLObject.FLAG_30);
             }
             super.onMeasure(i, i2);
         }
@@ -1476,7 +1476,7 @@ public class ChangeUsernameActivity extends BaseFragment {
                 int childAdapterPosition;
                 int size = ChangeUsernameActivity.this.usernames.size() + 3;
                 int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i5 = TLRPC.FLAG_31;
+                int i5 = TLObject.FLAG_31;
                 for (int i6 = 0; i6 < getChildCount(); i6++) {
                     View childAt = getChildAt(i6);
                     if (childAt != null && (childAdapterPosition = getChildAdapterPosition(childAt)) >= 4 && childAdapterPosition <= size) {

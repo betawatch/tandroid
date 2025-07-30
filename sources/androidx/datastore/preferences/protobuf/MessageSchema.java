@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.CharacterCompat;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -1255,7 +1255,7 @@ final class MessageSchema implements Schema {
     }
 
     private static boolean isEnforceUtf8(int i) {
-        return (i & TLRPC.FLAG_29) != 0;
+        return (i & TLObject.FLAG_29) != 0;
     }
 
     private boolean isFieldPresent(Object obj, int i) {
@@ -1366,7 +1366,7 @@ final class MessageSchema implements Schema {
     }
 
     private static boolean isRequired(int i) {
-        return (i & TLRPC.FLAG_28) != 0;
+        return (i & TLObject.FLAG_28) != 0;
     }
 
     private static List listAt(Object obj, long j) {
@@ -2377,7 +2377,7 @@ final class MessageSchema implements Schema {
                 z = z2;
                 i15 = i71;
             }
-            int i75 = charAt26 & NotificationCenter.locationPermissionGranted;
+            int i75 = charAt26 & NotificationCenter.goingToPreviewTheme;
             int i76 = charAt;
             if ((charAt26 & 1024) != 0) {
                 iArr[i64] = i65;
@@ -2558,7 +2558,7 @@ final class MessageSchema implements Schema {
             iArr2[i65] = i16;
             int i93 = i65 + 2;
             String str = stringInfo;
-            iArr2[i92] = ((charAt26 & 512) != 0 ? TLRPC.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLRPC.FLAG_28 : 0) | (i75 << 20) | objectFieldOffset;
+            iArr2[i92] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i75 << 20) | objectFieldOffset;
             i65 += 3;
             iArr2[i93] = (i20 << 20) | i19;
             i2 = i17;

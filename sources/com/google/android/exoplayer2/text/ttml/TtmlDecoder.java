@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -518,7 +518,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                         }
                         return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f3, i2);
                     }
-                    i2 = TLRPC.FLAG_31;
+                    i2 = TLObject.FLAG_31;
                     return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f3, i2);
                 }
                 cellResolution2 = cellResolution;
@@ -528,7 +528,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                 attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, "writingMode");
                 if (attributeValue != null) {
                 }
-                i2 = TLRPC.FLAG_31;
+                i2 = TLObject.FLAG_31;
                 return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f32, i2);
             }
             str = "Ignoring region without an extent";

@@ -69,11 +69,11 @@ final class zzhe extends zzhh {
         try {
             byte[] bArr = this.zzc;
             int i2 = this.zze;
-            bArr[i2] = (byte) (i & NotificationCenter.locationPermissionGranted);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.locationPermissionGranted);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.locationPermissionGranted);
+            bArr[i2] = (byte) (i & NotificationCenter.goingToPreviewTheme);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
             this.zze = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.locationPermissionGranted);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
         } catch (IndexOutOfBoundsException e) {
             throw new zzhf(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -90,15 +90,15 @@ final class zzhe extends zzhh {
         try {
             byte[] bArr = this.zzc;
             int i = this.zze;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.locationPermissionGranted);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.locationPermissionGranted);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
             this.zze = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.locationPermissionGranted);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
         } catch (IndexOutOfBoundsException e) {
             throw new zzhf(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }

@@ -378,7 +378,7 @@ public class ReportBottomSheet extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
         }
     }
 
@@ -459,7 +459,7 @@ public class ReportBottomSheet extends BottomSheet {
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
             }
 
             public void setCloseImageVisible(boolean z) {
@@ -593,7 +593,7 @@ public class ReportBottomSheet extends BottomSheet {
         public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
             String str;
             if (this.headerView.getMeasuredHeight() <= 0) {
-                this.headerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLRPC.FLAG_31));
+                this.headerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
             }
             UItem asSpace = UItem.asSpace(this.headerView.getMeasuredHeight());
             asSpace.id = -1;
@@ -719,7 +719,7 @@ public class ReportBottomSheet extends BottomSheet {
         public void setHeaderText(CharSequence charSequence) {
             this.headerView.setText(charSequence);
             this.headerView.getText();
-            this.headerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLRPC.FLAG_31));
+            this.headerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
             UniversalRecyclerView universalRecyclerView = this.listView;
             if (universalRecyclerView != null) {
                 universalRecyclerView.adapter.update(true);

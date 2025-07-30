@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.decoder;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.Format;
 import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class DecoderInputBuffer extends Buffer {
@@ -106,7 +106,7 @@ public class DecoderInputBuffer extends Buffer {
     }
 
     public final boolean isEncrypted() {
-        return getFlag(TLRPC.FLAG_30);
+        return getFlag(TLObject.FLAG_30);
     }
 
     public void resetSupplementalData(int i) {

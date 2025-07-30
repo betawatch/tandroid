@@ -601,7 +601,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$checkFreeDiscSpace$156(i);
+                    LaunchActivity.this.lambda$checkFreeDiscSpace$157(i);
                 }
             }, 2000L);
         }
@@ -1032,9 +1032,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    private boolean handleIntent(android.content.Intent r113, boolean r114, boolean r115, boolean r116, org.telegram.messenger.browser.Browser.Progress r117, boolean r118, boolean r119) {
+    private boolean handleIntent(android.content.Intent r114, boolean r115, boolean r116, boolean r117, org.telegram.messenger.browser.Browser.Progress r118, boolean r119, boolean r120) {
         /*
-            Method dump skipped, instructions count: 14282
+            Method dump skipped, instructions count: 14784
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.handleIntent(android.content.Intent, boolean, boolean, boolean, org.telegram.messenger.browser.Browser$Progress, boolean, boolean):boolean");
@@ -1122,12 +1122,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateNavigationBarColor$165(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateNavigationBarColor$166(ValueAnimator valueAnimator) {
         setNavigationBarColor(((Integer) valueAnimator.getAnimatedValue()).intValue(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkAppUpdate$128(Browser.Progress progress, boolean z, BetaUpdate betaUpdate) {
+    public /* synthetic */ void lambda$checkAppUpdate$129(Browser.Progress progress, boolean z, BetaUpdate betaUpdate) {
         BaseFragment lastFragment;
         BetaUpdate update = ApplicationLoader.applicationLoaderInstance.getUpdate();
         if (progress != null) {
@@ -1145,7 +1145,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkAppUpdate$129(TLRPC.TL_help_appUpdate tL_help_appUpdate, int i, Browser.Progress progress) {
+    public /* synthetic */ void lambda$checkAppUpdate$130(TLRPC.TL_help_appUpdate tL_help_appUpdate, int i, Browser.Progress progress) {
         BaseFragment lastFragment;
         TLRPC.TL_help_appUpdate tL_help_appUpdate2 = SharedConfig.pendingAppUpdate;
         if (tL_help_appUpdate2 == null || !tL_help_appUpdate2.version.equals(tL_help_appUpdate.version)) {
@@ -1170,7 +1170,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkAppUpdate$130(Browser.Progress progress) {
+    public static /* synthetic */ void lambda$checkAppUpdate$131(Browser.Progress progress) {
         if (progress != null) {
             progress.end();
             BaseFragment lastFragment = getLastFragment();
@@ -1181,7 +1181,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkAppUpdate$131(Browser.Progress progress, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$checkAppUpdate$132(Browser.Progress progress, TLRPC.TL_error tL_error) {
         if (progress != null) {
             progress.end();
             BaseFragment lastFragment = getLastFragment();
@@ -1192,34 +1192,34 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkAppUpdate$132(final int i, final Browser.Progress progress, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$checkAppUpdate$133(final int i, final Browser.Progress progress, TLObject tLObject, final TLRPC.TL_error tL_error) {
         Runnable runnable;
         SharedConfig.lastUpdateCheckTime = System.currentTimeMillis();
         SharedConfig.saveConfig();
         if (tLObject instanceof TLRPC.TL_help_appUpdate) {
             final TLRPC.TL_help_appUpdate tL_help_appUpdate = (TLRPC.TL_help_appUpdate) tLObject;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda111
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda91
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$checkAppUpdate$129(tL_help_appUpdate, i, progress);
+                    LaunchActivity.this.lambda$checkAppUpdate$130(tL_help_appUpdate, i, progress);
                 }
             });
             return;
         }
         if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
-            runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda112
+            runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda92
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.lambda$checkAppUpdate$130(Browser.Progress.this);
+                    LaunchActivity.lambda$checkAppUpdate$131(Browser.Progress.this);
                 }
             };
         } else if (tL_error == null) {
             return;
         } else {
-            runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda113
+            runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda93
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.lambda$checkAppUpdate$131(Browser.Progress.this, tL_error);
+                    LaunchActivity.lambda$checkAppUpdate$132(Browser.Progress.this, tL_error);
                 }
             };
         }
@@ -1227,17 +1227,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkAppUpdate$133(int i) {
+    public /* synthetic */ void lambda$checkAppUpdate$134(int i) {
         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(i, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkFreeDiscSpace$154(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$checkFreeDiscSpace$155(DialogInterface dialogInterface) {
         this.checkFreeDiscSpaceShown = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkFreeDiscSpace$155() {
+    public /* synthetic */ void lambda$checkFreeDiscSpace$156() {
         if (this.checkFreeDiscSpaceShown) {
             return;
         }
@@ -1246,7 +1246,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             createFreeSpaceDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda104
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    LaunchActivity.this.lambda$checkFreeDiscSpace$154(dialogInterface);
+                    LaunchActivity.this.lambda$checkFreeDiscSpace$155(dialogInterface);
                 }
             });
             this.checkFreeDiscSpaceShown = true;
@@ -1256,7 +1256,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkFreeDiscSpace$156(int i) {
+    public /* synthetic */ void lambda$checkFreeDiscSpace$157(int i) {
         File directory;
         if (UserConfig.getInstance(this.currentAccount).isClientActivated()) {
             try {
@@ -1269,10 +1269,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             this.alreadyShownFreeDiscSpaceAlertForced = System.currentTimeMillis();
                         }
                         globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda81
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda78
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LaunchActivity.this.lambda$checkFreeDiscSpace$155();
+                                LaunchActivity.this.lambda$checkFreeDiscSpace$156();
                             }
                         });
                     }
@@ -1283,7 +1283,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$141(int i, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void lambda$didReceivedNotification$142(int i, AlertDialog alertDialog, int i2) {
         ArrayList arrayList = mainFragmentsStack;
         if (arrayList.isEmpty()) {
             return;
@@ -1292,12 +1292,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$142(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$didReceivedNotification$143(AlertDialog alertDialog, int i) {
         MessagesController.getInstance(this.currentAccount).performLogout(2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$143(HashMap hashMap, int i, TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
+    public static /* synthetic */ void lambda$didReceivedNotification$144(HashMap hashMap, int i, TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext()) {
             MessageObject messageObject = (MessageObject) ((Map.Entry) it.next()).getValue();
@@ -1306,28 +1306,23 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$144(final HashMap hashMap, final int i, AlertDialog alertDialog, int i2) {
+    public /* synthetic */ void lambda$didReceivedNotification$145(final HashMap hashMap, final int i, AlertDialog alertDialog, int i2) {
         ArrayList arrayList = mainFragmentsStack;
         if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((BaseFragment) arrayList.get(arrayList.size() - 1))) {
             LocationActivity locationActivity = new LocationActivity(0);
-            locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda77
+            locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda86
                 @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
                 public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z, int i4, long j) {
-                    LaunchActivity.lambda$didReceivedNotification$143(hashMap, i, messageMedia, i3, z, i4, j);
+                    LaunchActivity.lambda$didReceivedNotification$144(hashMap, i, messageMedia, i3, z, i4, j);
                 }
             });
-            lambda$runLinkRequest$93(locationActivity);
+            lambda$runLinkRequest$94(locationActivity);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$145(int i, HashMap hashMap, boolean z, boolean z2, AlertDialog alertDialog, int i2) {
-        ContactsController.getInstance(i).syncPhoneBookByAlert(hashMap, z, z2, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$didReceivedNotification$146(int i, HashMap hashMap, boolean z, boolean z2, AlertDialog alertDialog, int i2) {
-        ContactsController.getInstance(i).syncPhoneBookByAlert(hashMap, z, z2, true);
+        ContactsController.getInstance(i).syncPhoneBookByAlert(hashMap, z, z2, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1336,12 +1331,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$148(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void lambda$didReceivedNotification$148(int i, HashMap hashMap, boolean z, boolean z2, AlertDialog alertDialog, int i2) {
+        ContactsController.getInstance(i).syncPhoneBookByAlert(hashMap, z, z2, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$didReceivedNotification$149(ValueAnimator valueAnimator) {
         this.frameLayout.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$149() {
+    public /* synthetic */ void lambda$didReceivedNotification$150() {
         if (this.isNavigationBarColorFrozen) {
             this.isNavigationBarColorFrozen = false;
             checkSystemBarColors(false, true);
@@ -1349,7 +1349,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$150(TLObject tLObject, Theme.ThemeInfo themeInfo) {
+    public /* synthetic */ void lambda$didReceivedNotification$151(TLObject tLObject, Theme.ThemeInfo themeInfo) {
         if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
             onThemeLoadFinish();
             return;
@@ -1362,17 +1362,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$151(final Theme.ThemeInfo themeInfo, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda86
+    public /* synthetic */ void lambda$didReceivedNotification$152(final Theme.ThemeInfo themeInfo, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda69
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$didReceivedNotification$150(tLObject, themeInfo);
+                LaunchActivity.this.lambda$didReceivedNotification$151(tLObject, themeInfo);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$152() {
+    public /* synthetic */ void lambda$didReceivedNotification$153() {
         if (this.loadingTheme == null) {
             return;
         }
@@ -1380,24 +1380,24 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         TLRPC.TL_theme tL_theme = this.loadingTheme;
         Theme.ThemeInfo applyThemeFile = Theme.applyThemeFile(file, tL_theme.title, tL_theme, true);
         if (applyThemeFile != null) {
-            lambda$runLinkRequest$93(new ThemePreviewActivity(applyThemeFile, true, 0, false, false));
+            lambda$runLinkRequest$94(new ThemePreviewActivity(applyThemeFile, true, 0, false, false));
         }
         onThemeLoadFinish();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$153(Theme.ThemeInfo themeInfo, File file) {
+    public /* synthetic */ void lambda$didReceivedNotification$154(Theme.ThemeInfo themeInfo, File file) {
         themeInfo.createBackground(file, themeInfo.pathToWallpaper);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda82
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda84
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$didReceivedNotification$152();
+                LaunchActivity.this.lambda$didReceivedNotification$153();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didSelectDialogs$135(int i, DialogsActivity dialogsActivity, boolean z, ArrayList arrayList, Uri uri, AlertDialog alertDialog, long j) {
+    public /* synthetic */ void lambda$didSelectDialogs$136(int i, DialogsActivity dialogsActivity, boolean z, ArrayList arrayList, Uri uri, AlertDialog alertDialog, long j) {
         String str;
         long j2 = j;
         if (j2 != 0) {
@@ -1432,7 +1432,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didSelectDialogs$136(ChatActivity chatActivity, ArrayList arrayList, int i, CharSequence charSequence, int i2, boolean z, TLRPC.User user, boolean z2, int i3, long j, boolean z3, long j2) {
+    public /* synthetic */ void lambda$didSelectDialogs$137(ChatActivity chatActivity, ArrayList arrayList, int i, CharSequence charSequence, int i2, boolean z, TLRPC.User user, boolean z2, int i3, long j, boolean z3, long j2) {
         MessageObject messageObject;
         TLRPC.TL_forumTopic findTopic;
         if (chatActivity != null) {
@@ -1478,7 +1478,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public /* synthetic */ void lambda$handleIntent$17(AlertDialog alertDialog, TLRPC.TL_error tL_error, String str, Bundle bundle, TLObject tLObject, TL_account.sendConfirmPhoneCode sendconfirmphonecode) {
         alertDialog.dismiss();
         if (tL_error == null) {
-            lambda$runLinkRequest$93(new LoginActivity().cancelAccountDeletion(str, bundle, (TLRPC.TL_auth_sentCode) tLObject));
+            lambda$runLinkRequest$94(new LoginActivity().cancelAccountDeletion(str, bundle, (TLRPC.TL_auth_sentCode) tLObject));
         } else {
             AlertsCreator.processError(this.currentAccount, tL_error, getActionBarLayout().getLastFragment(), sendconfirmphonecode, new Object[0]);
         }
@@ -1486,7 +1486,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleIntent$18(final AlertDialog alertDialog, final String str, final Bundle bundle, final TL_account.sendConfirmPhoneCode sendconfirmphonecode, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda79
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda80
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$handleIntent$17(alertDialog, tL_error, str, bundle, tLObject, sendconfirmphonecode);
@@ -1516,13 +1516,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         LocationActivity locationActivity = new LocationActivity(2);
         locationActivity.setMessageObject(sharingLocationInfo.messageObject);
         final long dialogId = sharingLocationInfo.messageObject.getDialogId();
-        locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda109
+        locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda105
             @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i2, boolean z, int i3, long j) {
                 LaunchActivity.lambda$handleIntent$20(iArr, dialogId, messageMedia, i2, z, i3, j);
             }
         });
-        lambda$runLinkRequest$93(locationActivity);
+        lambda$runLinkRequest$94(locationActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1558,7 +1558,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (tLObject instanceof TLRPC.TL_authorization) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda169
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda171
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.lambda$handleIntent$25(ActionIntroActivity.this, tL_error);
@@ -1568,7 +1568,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$handleIntent$27(final AlertDialog alertDialog, final ActionIntroActivity actionIntroActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda161
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda163
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.lambda$handleIntent$26(AlertDialog.this, tLObject, actionIntroActivity, tL_error);
@@ -1584,7 +1584,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         byte[] decode = Base64.decode(str.substring(17), 8);
         TLRPC.TL_auth_acceptLoginToken tL_auth_acceptLoginToken = new TLRPC.TL_auth_acceptLoginToken();
         tL_auth_acceptLoginToken.token = decode;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_acceptLoginToken, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda151
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_acceptLoginToken, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda155
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 LaunchActivity.lambda$handleIntent$27(AlertDialog.this, actionIntroActivity, tLObject, tL_error);
@@ -1604,7 +1604,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onActivityResult$138() {
+    public /* synthetic */ void lambda$onActivityResult$139() {
         GroupCallPip.clearForce();
         GroupCallPip.updateVisibility(this);
     }
@@ -1648,7 +1648,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(this.currentAccount).getInputUser(tL_attachMenuBot.bot_id);
         tL_messages_toggleBotInAttachMenu.enabled = true;
         tL_messages_toggleBotInAttachMenu.write_allowed = true;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda120
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda122
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 LaunchActivity.this.lambda$onCreate$4(tL_attachMenuBot, tLObject, tL_error);
@@ -1700,7 +1700,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     BaseFragment baseFragment = this.actionBarLayout.getFragmentStack().get(0);
                     LimitReachedBottomSheet limitReachedBottomSheet = new LimitReachedBottomSheet(baseFragment, this, 7, this.currentAccount, null);
                     baseFragment.showDialog(limitReachedBottomSheet);
-                    limitReachedBottomSheet.onShowPremiumScreenRunnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda83
+                    limitReachedBottomSheet.onShowPremiumScreenRunnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda82
                         @Override // java.lang.Runnable
                         public final void run() {
                             LaunchActivity.this.lambda$onCreate$2();
@@ -1714,7 +1714,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 final TLRPC.TL_attachMenuBot attachMenuBot = this.drawerLayoutAdapter.getAttachMenuBot(i);
                 if (attachMenuBot != null) {
                     if (attachMenuBot.inactive || attachMenuBot.side_menu_disclaimer_needed) {
-                        WebAppDisclaimerAlert.show(this, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda84
+                        WebAppDisclaimerAlert.show(this, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda83
                             @Override // com.google.android.exoplayer2.util.Consumer
                             public final void accept(Object obj) {
                                 LaunchActivity.this.lambda$onCreate$5(attachMenuBot, (Boolean) obj);
@@ -1739,7 +1739,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 } else if (id == 4) {
                     SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
                     if (BuildVars.DEBUG_VERSION || !globalMainSettings.getBoolean("channel_intro", false)) {
-                        lambda$runLinkRequest$93(new ActionIntroActivity(0));
+                        lambda$runLinkRequest$94(new ActionIntroActivity(0));
                         globalMainSettings.edit().putBoolean("channel_intro", true).commit();
                     } else {
                         Bundle bundle2 = new Bundle();
@@ -1787,7 +1787,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                 bundle6.putInt("type", 1);
                                 mediaActivity = new MediaActivity(bundle6, null);
                             }
-                            lambda$runLinkRequest$93(mediaActivity);
+                            lambda$runLinkRequest$94(mediaActivity);
                             return;
                         }
                         if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
@@ -1798,9 +1798,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     Browser.openUrl(this, LocaleController.getString(i2));
                 }
-                lambda$runLinkRequest$93(chatActivity);
+                lambda$runLinkRequest$94(chatActivity);
             }
-            lambda$runLinkRequest$93(callLogActivity);
+            lambda$runLinkRequest$94(callLogActivity);
         }
         this.drawerLayoutContainer.closeDrawer(false);
     }
@@ -1880,7 +1880,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPause$139(int i) {
+    public static /* synthetic */ void lambda$onPause$140(int i) {
         ApplicationLoader.mainInterfacePausedStageQueue = true;
         ApplicationLoader.mainInterfacePausedStageQueueTime = 0L;
         if (VoIPService.getSharedInstance() == null) {
@@ -1889,18 +1889,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPowerSaver$137() {
-        lambda$runLinkRequest$93(new LiteModeSettingsActivity());
+    public /* synthetic */ void lambda$onPowerSaver$138() {
+        lambda$runLinkRequest$94(new LiteModeSettingsActivity());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onResume$140() {
+    public static /* synthetic */ void lambda$onResume$141() {
         ApplicationLoader.mainInterfacePausedStageQueue = false;
         ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openForumFromLink$126(TLObject tLObject, Integer num, Integer num2, long j, Runnable runnable, String str, int i, int i2) {
+    public /* synthetic */ void lambda$openForumFromLink$127(TLObject tLObject, Integer num, Integer num2, long j, Runnable runnable, String str, int i, int i2) {
         TLRPC.Message message;
         if (tLObject instanceof TLRPC.messages_Messages) {
             ArrayList<TLRPC.Message> arrayList = ((TLRPC.messages_Messages) tLObject).messages;
@@ -1921,18 +1921,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", -j);
-        lambda$runLinkRequest$93(TopicsFragment.getTopicsOrChat(this, bundle));
+        lambda$runLinkRequest$94(TopicsFragment.getTopicsOrChat(this, bundle));
         if (runnable != null) {
             runnable.run();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openForumFromLink$127(final Integer num, final Integer num2, final long j, final Runnable runnable, final String str, final int i, final int i2, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$openForumFromLink$128(final Integer num, final Integer num2, final long j, final Runnable runnable, final String str, final int i, final int i2, final TLObject tLObject, TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda141
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$openForumFromLink$126(tLObject, num, num2, j, runnable, str, i, i2);
+                LaunchActivity.this.lambda$openForumFromLink$127(tLObject, num, num2, j, runnable, str, i, i2);
             }
         });
     }
@@ -1978,7 +1978,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openMessage$40(final Browser.Progress progress, final long j, final int i, final Integer num, final BaseFragment baseFragment, final Bundle bundle, final ChatActivity chatActivity, final String str, final int i2, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda163
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda164
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$openMessage$39(progress, tLObject, j, i, num, baseFragment, bundle, chatActivity, str, i2);
@@ -2010,14 +2010,14 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
         tL_inputChannel.channel_id = -j;
         tL_channels_getChannels.id.add(tL_inputChannel);
-        final int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda155
+        final int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda156
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 LaunchActivity.this.lambda$openMessage$40(progress, j, i, num, baseFragment, bundle, chatActivity, str, i2, tLObject, tL_error);
             }
         });
         if (progress != null) {
-            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda156
+            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda157
                 @Override // java.lang.Runnable
                 public final void run() {
                     LaunchActivity.this.lambda$openMessage$41(sendRequest);
@@ -2027,7 +2027,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMyStory$166(TLObject tLObject, int i, long j, boolean z) {
+    public /* synthetic */ void lambda$openMyStory$167(TLObject tLObject, int i, long j, boolean z) {
         StoriesListPlaceProvider storiesListPlaceProvider;
         TL_stories.StoryItem storyItem;
         if (tLObject instanceof TL_stories.TL_stories_stories) {
@@ -2073,17 +2073,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMyStory$167(final int i, final long j, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda122
+    public /* synthetic */ void lambda$openMyStory$168(final int i, final long j, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda119
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$openMyStory$166(tLObject, i, j, z);
+                LaunchActivity.this.lambda$openMyStory$167(tLObject, i, j, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openStories$168(int[] iArr, long[] jArr) {
+    public /* synthetic */ void lambda$openStories$169(int[] iArr, long[] jArr) {
         int i = iArr[0] - 1;
         iArr[0] = i;
         if (i == 0) {
@@ -2093,7 +2093,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openStories$169(TLObject tLObject, MessagesController messagesController, long j, Runnable runnable) {
+    public static /* synthetic */ void lambda$openStories$170(TLObject tLObject, MessagesController messagesController, long j, Runnable runnable) {
         if (tLObject instanceof TL_stories.TL_stories_peerStories) {
             TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject;
             messagesController.putUsers(tL_stories_peerStories.users, false);
@@ -2103,11 +2103,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openStories$170(final MessagesController messagesController, final long j, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda121
+    public static /* synthetic */ void lambda$openStories$171(final MessagesController messagesController, final long j, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda98
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.lambda$openStories$169(TLObject.this, messagesController, j, runnable);
+                LaunchActivity.lambda$openStories$170(TLObject.this, messagesController, j, runnable);
             }
         });
     }
@@ -2138,7 +2138,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$processAttachMenuBot$119(TLRPC.User user, String str, int i, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$processAttachMenuBot$120(TLRPC.User user, String str, int i, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
         String str2;
         long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         Bundle bundle = new Bundle();
@@ -2166,7 +2166,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$120(DialogsActivity dialogsActivity, BaseFragment baseFragment, TLRPC.User user, String str) {
+    public /* synthetic */ void lambda$processAttachMenuBot$121(DialogsActivity dialogsActivity, BaseFragment baseFragment, TLRPC.User user, String str) {
         if (dialogsActivity == null) {
             if (baseFragment instanceof ChatActivity) {
                 ((ChatActivity) baseFragment).openAttachBotLayout(user.id, str, true);
@@ -2183,47 +2183,47 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         }
         this.visibleDialogs.clear();
-        lambda$runLinkRequest$93(dialogsActivity);
+        lambda$runLinkRequest$94(dialogsActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$121(TLObject tLObject, int i, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str) {
+    public /* synthetic */ void lambda$processAttachMenuBot$122(TLObject tLObject, int i, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            MediaDataController.getInstance(i).loadAttachMenuBots(false, true, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda174
+            MediaDataController.getInstance(i).loadAttachMenuBots(false, true, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda175
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$processAttachMenuBot$120(dialogsActivity, baseFragment, user, str);
+                    LaunchActivity.this.lambda$processAttachMenuBot$121(dialogsActivity, baseFragment, user, str);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$122(final int i, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda173
+    public /* synthetic */ void lambda$processAttachMenuBot$123(final int i, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda174
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$processAttachMenuBot$121(tLObject, i, dialogsActivity, baseFragment, user, str);
+                LaunchActivity.this.lambda$processAttachMenuBot$122(tLObject, i, dialogsActivity, baseFragment, user, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$123(final int i, long j, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str, Boolean bool) {
+    public /* synthetic */ void lambda$processAttachMenuBot$124(final int i, long j, final DialogsActivity dialogsActivity, final BaseFragment baseFragment, final TLRPC.User user, final String str, Boolean bool) {
         TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
         tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i).getInputUser(j);
         tL_messages_toggleBotInAttachMenu.enabled = true;
         tL_messages_toggleBotInAttachMenu.write_allowed = true;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda170
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda173
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.this.lambda$processAttachMenuBot$122(i, dialogsActivity, baseFragment, user, str, tLObject, tL_error);
+                LaunchActivity.this.lambda$processAttachMenuBot$123(i, dialogsActivity, baseFragment, user, str, tLObject, tL_error);
             }
         }, 66);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$124(TLObject tLObject, final int i, String str, String str2, final TLRPC.User user, final String str3, final long j) {
+    public /* synthetic */ void lambda$processAttachMenuBot$125(TLObject tLObject, final int i, String str, String str2, final TLRPC.User user, final String str3, final long j) {
         BulletinFactory of;
         int i2;
         DialogsActivity dialogsActivity;
@@ -2266,7 +2266,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 bundle.putBoolean("allowChannels", arrayList3.contains("channels"));
                 bundle.putBoolean("allowBots", arrayList3.contains("bots"));
                 DialogsActivity dialogsActivity2 = new DialogsActivity(bundle);
-                dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda167
+                dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda166
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                     public /* synthetic */ boolean canSelectStories() {
                         return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -2274,9 +2274,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                     public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList4, CharSequence charSequence, boolean z, boolean z2, int i3, TopicsFragment topicsFragment) {
-                        boolean lambda$processAttachMenuBot$119;
-                        lambda$processAttachMenuBot$119 = LaunchActivity.this.lambda$processAttachMenuBot$119(user2, str3, i, dialogsActivity3, arrayList4, charSequence, z, z2, i3, topicsFragment);
-                        return lambda$processAttachMenuBot$119;
+                        boolean lambda$processAttachMenuBot$120;
+                        lambda$processAttachMenuBot$120 = LaunchActivity.this.lambda$processAttachMenuBot$120(user2, str3, i, dialogsActivity3, arrayList4, charSequence, z, z2, i3, topicsFragment);
+                        return lambda$processAttachMenuBot$120;
                     }
 
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -2292,10 +2292,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 attachBotIntroTopView.setBackgroundColor(Theme.getColor(Theme.key_dialogTopBackground));
                 attachBotIntroTopView.setAttachBot(tL_attachMenuBot);
                 final DialogsActivity dialogsActivity3 = dialogsActivity;
-                com.google.android.exoplayer2.util.Consumer consumer = new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda168
+                com.google.android.exoplayer2.util.Consumer consumer = new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda167
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj) {
-                        LaunchActivity.this.lambda$processAttachMenuBot$123(i, j, dialogsActivity3, baseFragment2, user, str3, (Boolean) obj);
+                        LaunchActivity.this.lambda$processAttachMenuBot$124(i, j, dialogsActivity3, baseFragment2, user, str3, (Boolean) obj);
                     }
                 };
                 if (!tL_attachMenuBot.request_write_access) {
@@ -2314,7 +2314,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                 }
                 this.visibleDialogs.clear();
-                lambda$runLinkRequest$93(dialogsActivity);
+                lambda$runLinkRequest$94(dialogsActivity);
                 return;
             }
             if (baseFragment2 instanceof ChatActivity) {
@@ -2338,39 +2338,39 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachMenuBot$125(final int i, final String str, final String str2, final TLRPC.User user, final String str3, final long j, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda146
+    public /* synthetic */ void lambda$processAttachMenuBot$126(final int i, final String str, final String str2, final TLRPC.User user, final String str3, final long j, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda150
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$processAttachMenuBot$124(tLObject, i, str, str2, user, str3, j);
+                LaunchActivity.this.lambda$processAttachMenuBot$125(tLObject, i, str, str2, user, str3, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$114(TLRPC.User user) {
+    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$115(TLRPC.User user) {
         MessagesController.getInstance(this.currentAccount).openApp(user, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$115(TLRPC.User user, Utilities.Callback callback) {
+    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$116(TLRPC.User user, Utilities.Callback callback) {
         MessagesController.getInstance(this.currentAccount).putUser(user, true);
         callback.run(user);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$116(long j, final Utilities.Callback callback) {
+    public /* synthetic */ void lambda$processAttachedMenuBotFromShortcut$117(long j, final Utilities.Callback callback) {
         final TLRPC.User user = MessagesStorage.getInstance(this.currentAccount).getUser(j);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda124
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda97
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$115(user, callback);
+                LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$116(user, callback);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processBoostDialog$117(Browser.Progress progress, Long l, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, ChatMessageCell chatMessageCell, Runnable runnable, ChannelBoostsController.CanApplyBoost canApplyBoost) {
+    public /* synthetic */ void lambda$processBoostDialog$118(Browser.Progress progress, Long l, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, ChatMessageCell chatMessageCell, Runnable runnable, ChannelBoostsController.CanApplyBoost canApplyBoost) {
         RightSlidingDialogContainer rightSlidingDialogContainer;
         if (progress != null) {
             progress.end();
@@ -2403,12 +2403,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processBoostDialog$118(final Browser.Progress progress, final Runnable runnable, ChannelBoostsController channelBoostsController, final Long l, final ChatMessageCell chatMessageCell, final TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+    public /* synthetic */ void lambda$processBoostDialog$119(final Browser.Progress progress, final Runnable runnable, ChannelBoostsController channelBoostsController, final Long l, final ChatMessageCell chatMessageCell, final TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
         if (tL_premium_boostsStatus != null) {
-            channelBoostsController.userCanBoostChannel(l.longValue(), tL_premium_boostsStatus, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda91
+            channelBoostsController.userCanBoostChannel(l.longValue(), tL_premium_boostsStatus, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda96
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    LaunchActivity.this.lambda$processBoostDialog$117(progress, l, tL_premium_boostsStatus, chatMessageCell, runnable, (ChannelBoostsController.CanApplyBoost) obj);
+                    LaunchActivity.this.lambda$processBoostDialog$118(progress, l, tL_premium_boostsStatus, chatMessageCell, runnable, (ChannelBoostsController.CanApplyBoost) obj);
                 }
             });
             return;
@@ -2422,12 +2422,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processWebAppBot$109(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, Browser.Progress progress, boolean z3, int i4, boolean z4, String str26, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str27) {
-        runLinkRequest(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, null, null, progress, z3, i4, z4, str26, z5, z6, z7, z8, z9, str27, null);
+    public /* synthetic */ void lambda$processWebAppBot$110(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, Browser.Progress progress, boolean z3, int i4, int i5, int i6, boolean z4, String str26, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str27) {
+        runLinkRequest(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, null, null, progress, z3, i4, i5, i6, z4, str26, z5, z6, z7, z8, z9, str27, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processWebAppBot$110(BaseFragment baseFragment, int i, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z, boolean z2, boolean z3, boolean z4) {
+    public /* synthetic */ void lambda$processWebAppBot$111(BaseFragment baseFragment, int i, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z, boolean z2, boolean z3, boolean z4) {
         if (baseFragment == null || !isActive || isFinishing() || isDestroyed()) {
             return;
         }
@@ -2452,22 +2452,22 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processWebAppBot$112(Runnable runnable, final int i, final TLRPC.User user, final TLRPC.TL_messages_botApp tL_messages_botApp, final String str, final boolean z, final boolean z2, final boolean z3, final boolean z4, boolean z5, boolean z6, Browser.Progress progress) {
+    public /* synthetic */ void lambda$processWebAppBot$113(Runnable runnable, final int i, final TLRPC.User user, final TLRPC.TL_messages_botApp tL_messages_botApp, final String str, final boolean z, final boolean z2, final boolean z3, final boolean z4, boolean z5, boolean z6, Browser.Progress progress) {
         runnable.run();
         final AtomicBoolean atomicBoolean = new AtomicBoolean();
         ArrayList arrayList = mainFragmentsStack;
         BaseFragment baseFragment = (arrayList == null || arrayList.isEmpty()) ? null : (BaseFragment) arrayList.get(arrayList.size() - 1);
         final BaseFragment baseFragment2 = baseFragment;
         BaseFragment baseFragment3 = baseFragment;
-        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda158
+        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda168
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$processWebAppBot$110(baseFragment2, i, user, tL_messages_botApp, atomicBoolean, str, z, z2, z3, z4);
+                LaunchActivity.this.lambda$processWebAppBot$111(baseFragment2, i, user, tL_messages_botApp, atomicBoolean, str, z, z2, z3, z4);
             }
         };
         if (!z5) {
             if (tL_messages_botApp.inactive && z6) {
-                WebAppDisclaimerAlert.show(this, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda159
+                WebAppDisclaimerAlert.show(this, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda169
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj) {
                         runnable2.run();
@@ -2483,23 +2483,23 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processWebAppBot$113(final Browser.Progress progress, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final boolean z3, final int i4, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Runnable runnable, final TLRPC.User user, final String str28, final boolean z10, final boolean z11, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$processWebAppBot$114(final Browser.Progress progress, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Runnable runnable, final TLRPC.User user, final String str28, final boolean z10, final boolean z11, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (progress != null) {
             progress.end();
         }
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda147
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda153
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$processWebAppBot$109(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, z4, str26, z5, z6, z7, z8, z9, str27);
+                    LaunchActivity.this.lambda$processWebAppBot$110(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, i5, i6, z4, str26, z5, z6, z7, z8, z9, str27);
                 }
             });
         } else {
             final TLRPC.TL_messages_botApp tL_messages_botApp = (TLRPC.TL_messages_botApp) tLObject;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda148
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda154
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$processWebAppBot$112(runnable, i, user, tL_messages_botApp, str28, z5, z6, z7, z3, z10, z11, progress);
+                    LaunchActivity.this.lambda$processWebAppBot$113(runnable, i, user, tL_messages_botApp, str28, z5, z6, z7, z3, z10, z11, progress);
                 }
             });
         }
@@ -2561,7 +2561,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             chatActivity.setHighlightMessageId(intValue);
                         }
                     }
-                    lambda$runLinkRequest$93(chatActivity);
+                    lambda$runLinkRequest$94(chatActivity);
                 }
                 if (runnable2 != null) {
                     try {
@@ -2590,7 +2590,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runCommentRequest$31(final int i, final TLRPC.Chat chat, final Long l, final Integer num, final Integer num2, final Runnable runnable, final String str, final Integer num3, final int i2, final int i3, final TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, final Runnable runnable2, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda128
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda129
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$runCommentRequest$30(tLObject, i, chat, l, num, num2, runnable, str, num3, i2, i3, tL_messages_getDiscussionMessage, runnable2);
@@ -2683,7 +2683,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runImportRequest$35(final Uri uri, final int i, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda107
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda102
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$runImportRequest$34(tLObject, uri, i, alertDialog);
@@ -2700,17 +2700,35 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$100(final int[] iArr, final int i, final Runnable runnable, final Integer num, final Integer num2, final Long l, final Integer num3, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda118
+    public /* synthetic */ void lambda$runLinkRequest$100(TLObject tLObject, int[] iArr, int i, Runnable runnable, Integer num, Integer num2, Long l, Integer num3) {
+        if (tLObject instanceof TLRPC.TL_messages_chats) {
+            TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
+            if (!tL_messages_chats.chats.isEmpty()) {
+                MessagesController.getInstance(this.currentAccount).putChats(tL_messages_chats.chats, false);
+                iArr[0] = runCommentRequest(i, runnable, num, num2, l, num3, tL_messages_chats.chats.get(0));
+                return;
+            }
+        }
+        try {
+            runnable.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        showAlertDialog(AlertsCreator.createNoAccessAlert(this, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound), null));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$runLinkRequest$101(final int[] iArr, final int i, final Runnable runnable, final Integer num, final Integer num2, final Long l, final Integer num3, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda90
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$99(tLObject, iArr, i, runnable, num, num2, l, num3);
+                LaunchActivity.this.lambda$runLinkRequest$100(tLObject, iArr, i, runnable, num, num2, l, num3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$101(Runnable runnable) {
+    public static /* synthetic */ void lambda$runLinkRequest$102(Runnable runnable) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -2719,7 +2737,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$102(Runnable runnable, TLObject tLObject, boolean z, Long l, Browser.Progress progress, Long l2, Integer num, Integer num2, BaseFragment baseFragment, int i, Bundle bundle) {
+    public /* synthetic */ void lambda$runLinkRequest$103(Runnable runnable, TLObject tLObject, boolean z, Long l, Browser.Progress progress, Long l2, Integer num, Integer num2, BaseFragment baseFragment, int i, Bundle bundle) {
         Integer num3;
         String str;
         Runnable runnable2;
@@ -2762,17 +2780,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$103(final Runnable runnable, final boolean z, final Long l, final Browser.Progress progress, final Long l2, final Integer num, final Integer num2, final BaseFragment baseFragment, final int i, final Bundle bundle, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda132
+    public /* synthetic */ void lambda$runLinkRequest$104(final Runnable runnable, final boolean z, final Long l, final Browser.Progress progress, final Long l2, final Integer num, final Integer num2, final BaseFragment baseFragment, final int i, final Bundle bundle, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda130
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$102(runnable, tLObject, z, l, progress, l2, num, num2, baseFragment, i, bundle);
+                LaunchActivity.this.lambda$runLinkRequest$103(runnable, tLObject, z, l, progress, l2, num, num2, baseFragment, i, bundle);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$104(final Bundle bundle, final Long l, int[] iArr, final Runnable runnable, final boolean z, final Browser.Progress progress, final Long l2, final Integer num, final Integer num2, final BaseFragment baseFragment, final int i) {
+    public /* synthetic */ void lambda$runLinkRequest$105(final Bundle bundle, final Long l, int[] iArr, final Runnable runnable, final boolean z, final Browser.Progress progress, final Long l2, final Integer num, final Integer num2, final BaseFragment baseFragment, final int i) {
         if (getActionBarLayout().presentFragment(new ChatActivity(bundle))) {
             return;
         }
@@ -2780,16 +2798,16 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
         tL_inputChannel.channel_id = l.longValue();
         tL_channels_getChannels.id.add(tL_inputChannel);
-        iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda105
+        iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda101
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.this.lambda$runLinkRequest$103(runnable, z, l, progress, l2, num, num2, baseFragment, i, bundle, tLObject, tL_error);
+                LaunchActivity.this.lambda$runLinkRequest$104(runnable, z, l, progress, l2, num, num2, baseFragment, i, bundle, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$105(TLObject tLObject) {
+    public /* synthetic */ void lambda$runLinkRequest$106(TLObject tLObject) {
         long j;
         String str;
         if (!(tLObject instanceof TL_account.resolvedBusinessChatLinks)) {
@@ -2820,17 +2838,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$106(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda94
+    public /* synthetic */ void lambda$runLinkRequest$107(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda109
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$105(tLObject);
+                LaunchActivity.this.lambda$runLinkRequest$106(tLObject);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$107(int i, int[] iArr, Runnable runnable, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$runLinkRequest$108(int i, int[] iArr, Runnable runnable, DialogInterface dialogInterface) {
         ConnectionsManager.getInstance(i).cancelRequest(iArr[0], true);
         if (runnable != null) {
             runnable.run();
@@ -2838,7 +2856,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$108(int i, int[] iArr, Runnable runnable) {
+    public static /* synthetic */ void lambda$runLinkRequest$109(int i, int[] iArr, Runnable runnable) {
         ConnectionsManager.getInstance(i).cancelRequest(iArr[0], true);
         if (runnable != null) {
             runnable.run();
@@ -2846,11 +2864,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$45(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i3, boolean z4, String str28, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str29, Integer num3, int i4) {
-        if (i4 != i) {
-            switchToAccount(i4, true);
+    public /* synthetic */ void lambda$runLinkRequest$45(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i3, int i4, int i5, boolean z4, String str28, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str29, Integer num3, int i6) {
+        if (i6 != i) {
+            switchToAccount(i6, true);
         }
-        runLinkRequest(i4, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, 1, i2, str23, str24, str25, str26, str27, progress, z3, i3, z4, str28, z5, z6, z7, z8, z9, str29, num3);
+        runLinkRequest(i6, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, 1, i2, str23, str24, str25, str26, str27, progress, z3, i3, i4, i5, z4, str28, z5, z6, z7, z8, z9, str29, num3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2870,7 +2888,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             MessagesController.getInstance(i).putUser(user, false);
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", user.id);
-            lambda$runLinkRequest$93(new ChatActivity(bundle));
+            lambda$runLinkRequest$94(new ChatActivity(bundle));
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("cant import contact token. token=");
@@ -2889,7 +2907,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$48(final int i, final String str, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda106
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda100
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$runLinkRequest$47(tLObject, i, str, tL_error, runnable);
@@ -2942,7 +2960,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$runLinkRequest$50(final int i, final String str, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda114
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda116
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.lambda$runLinkRequest$49(TLObject.this, i, str, runnable);
@@ -2979,7 +2997,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$52(final int i, final String str, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda100
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda94
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$runLinkRequest$51(tL_error, tLObject, i, str, runnable);
@@ -3029,12 +3047,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
                 final Runnable runnable2 = this.navigateToPremiumGiftCallback;
                 this.navigateToPremiumGiftCallback = null;
-                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda125
+                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda126
                     @Override // java.lang.Runnable
                     public final void run() {
                         LaunchActivity.lambda$runLinkRequest$53(runnable);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda126
+                }, new Utilities.Callback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda127
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         LaunchActivity.lambda$runLinkRequest$54(runnable2, (String) obj);
@@ -3053,14 +3071,14 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 final Runnable runnable3 = this.navigateToPremiumGiftCallback;
                 if (runnable3 != null) {
                     this.navigateToPremiumGiftCallback = null;
-                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda127
+                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda128
                         @Override // org.telegram.ui.PaymentFormActivity.PaymentFormCallback
                         public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
                             LaunchActivity.lambda$runLinkRequest$55(runnable3, invoiceStatus);
                         }
                     });
                 }
-                lambda$runLinkRequest$93(paymentFormActivity);
+                lambda$runLinkRequest$94(paymentFormActivity);
             }
         }
         try {
@@ -3072,7 +3090,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$57(final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final Runnable runnable, final int i, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda119
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda120
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$runLinkRequest$56(tL_error, tLObject, tL_inputInvoiceSlug, runnable, i, str);
@@ -3113,87 +3131,116 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$59(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, Browser.Progress progress, boolean z3, int i4, boolean z4, String str26, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str27, Integer num3) {
-        runLinkRequest(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, null, null, progress, z3, i4, z4, str26, z5, z6, z7, z8, z9, str27, num3);
+    public /* synthetic */ void lambda$runLinkRequest$59(Runnable runnable, Long l, int i, TL_stories.TL_storyAlbum tL_storyAlbum) {
+        try {
+            runnable.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        getLastFragment();
+        if (tL_storyAlbum == null) {
+            BulletinFactory global = BulletinFactory.global();
+            if (global != null) {
+                global.createSimpleBulletin(R.raw.story_bomb2, LocaleController.getString(R.string.StoryAlbumNotFound)).show();
+                return;
+            }
+            return;
+        }
+        Bundle bundle = new Bundle();
+        long longValue = l.longValue();
+        long longValue2 = l.longValue();
+        if (longValue > 0) {
+            bundle.putLong("user_id", longValue2);
+            bundle.putBoolean("my_profile", l.longValue() == UserConfig.getInstance(this.currentAccount).getClientUserId());
+        } else {
+            bundle.putLong("chat_id", -longValue2);
+        }
+        bundle.putInt("open_story_album_id", i);
+        lambda$runLinkRequest$94(new ProfileActivity(bundle));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$60(TLObject tLObject, int i) {
+    public /* synthetic */ void lambda$runLinkRequest$60(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l, Long l2, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, Browser.Progress progress, boolean z3, int i4, int i5, int i6, boolean z4, String str26, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str27, Integer num3) {
+        runLinkRequest(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, null, null, progress, z3, i4, i5, i6, z4, str26, z5, z6, z7, z8, z9, str27, num3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$runLinkRequest$61(TLObject tLObject, int i) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             MediaDataController.getInstance(i).loadAttachMenuBots(false, true, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$61(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$runLinkRequest$62(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda172
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.lambda$runLinkRequest$60(TLObject.this, i);
+                LaunchActivity.lambda$runLinkRequest$61(TLObject.this, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$62(TLRPC.TL_attachMenuBot tL_attachMenuBot, final int i, Long l, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l2, Long l3, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i4, boolean z4, String str28, TLRPC.User user, Runnable runnable, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, boolean z10, String str29, Boolean bool) {
+    public /* synthetic */ void lambda$runLinkRequest$63(TLRPC.TL_attachMenuBot tL_attachMenuBot, final int i, Long l, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l2, Long l3, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i4, int i5, int i6, boolean z4, String str28, TLRPC.User user, Runnable runnable, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, boolean z10, String str29, Boolean bool) {
         tL_attachMenuBot.inactive = false;
         tL_attachMenuBot.request_write_access = false;
         TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
         tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i).getInputUser(l.longValue());
         tL_messages_toggleBotInAttachMenu.enabled = true;
         tL_messages_toggleBotInAttachMenu.write_allowed = true;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda162
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda159
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.lambda$runLinkRequest$61(i, tLObject, tL_error);
+                LaunchActivity.lambda$runLinkRequest$62(i, tLObject, tL_error);
             }
         }, 66);
-        processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l2, l3, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str26, str27, progress, z3, i4, z4, str28, user, runnable, z5, true, z6, z7, z8, z9, z10, str29);
+        processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l2, l3, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str26, str27, progress, z3, i4, i5, i6, z4, str28, user, runnable, z5, true, z6, z7, z8, z9, z10, str29);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$63(TLObject tLObject, int i) {
+    public static /* synthetic */ void lambda$runLinkRequest$64(TLObject tLObject, int i) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             MediaDataController.getInstance(i).loadAttachMenuBots(false, true, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$64(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda171
+    public static /* synthetic */ void lambda$runLinkRequest$65(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda170
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.lambda$runLinkRequest$63(TLObject.this, i);
+                LaunchActivity.lambda$runLinkRequest$64(TLObject.this, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$65(Long l, TLRPC.TL_attachMenuBot tL_attachMenuBot, AtomicBoolean atomicBoolean, final int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l2, Long l3, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i4, boolean z4, String str28, TLRPC.User user, Runnable runnable, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str29) {
+    public /* synthetic */ void lambda$runLinkRequest$66(Long l, TLRPC.TL_attachMenuBot tL_attachMenuBot, AtomicBoolean atomicBoolean, final int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, boolean z, Integer num, Long l2, Long l3, Integer num2, String str13, HashMap hashMap, String str14, String str15, String str16, String str17, TLRPC.TL_wallPaper tL_wallPaper, String str18, String str19, String str20, String str21, boolean z2, String str22, int i2, int i3, String str23, String str24, String str25, String str26, String str27, Browser.Progress progress, boolean z3, int i4, int i5, int i6, boolean z4, String str28, TLRPC.User user, Runnable runnable, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, String str29) {
         SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, l.longValue(), true);
         tL_attachMenuBot.inactive = false;
         tL_attachMenuBot.request_write_access = true ^ atomicBoolean.get();
         TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
         tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i).getInputUser(l.longValue());
         tL_messages_toggleBotInAttachMenu.write_allowed = atomicBoolean.get();
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda165
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda162
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.lambda$runLinkRequest$64(i, tLObject, tL_error);
+                LaunchActivity.lambda$runLinkRequest$65(i, tLObject, tL_error);
             }
         }, 66);
-        processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l2, l3, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str26, str27, progress, z3, i4, z4, str28, user, runnable, false, false, z5, z6, z7, z8, z9, str29);
+        processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l2, l3, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str26, str27, progress, z3, i4, i5, i6, z4, str28, user, runnable, false, false, z5, z6, z7, z8, z9, str29);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$66(TLRPC.TL_error tL_error, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Integer num3, TLObject tLObject, final Long l3, final String str28, final String str29, final TLRPC.User user, final Runnable runnable) {
+    public /* synthetic */ void lambda$runLinkRequest$67(TLRPC.TL_error tL_error, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Integer num3, TLObject tLObject, final Long l3, final String str28, final String str29, final TLRPC.User user, final Runnable runnable) {
         LaunchActivity launchActivity;
         ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10 chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda152
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda147
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$runLinkRequest$59(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, z4, str26, z5, z6, z7, z8, z9, str27, num3);
+                    LaunchActivity.this.lambda$runLinkRequest$60(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, i5, i6, z4, str26, z5, z6, z7, z8, z9, str27, num3);
                 }
             });
             return;
@@ -3203,23 +3250,23 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             final boolean z10 = tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu);
             if ((!tL_attachMenuBot.inactive && !tL_attachMenuBot.side_menu_disclaimer_needed) || !z10) {
                 if (!tL_attachMenuBot.request_write_access && !z3) {
-                    processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, z4, str26, user, runnable, false, false, z5, z6, z7, z8, z9, str27);
+                    processWebAppBot(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, i5, i6, z4, str26, user, runnable, false, false, z5, z6, z7, z8, z9, str27);
                     return;
                 } else {
                     final AtomicBoolean atomicBoolean = new AtomicBoolean(true);
-                    AlertsCreator.createBotLaunchAlert(getLastFragment(), atomicBoolean, user, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda154
+                    AlertsCreator.createBotLaunchAlert(getLastFragment(), atomicBoolean, user, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda149
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LaunchActivity.this.lambda$runLinkRequest$65(l3, tL_attachMenuBot, atomicBoolean, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, z4, str26, user, runnable, z5, z6, z7, z8, z9, str27);
+                            LaunchActivity.this.lambda$runLinkRequest$66(l3, tL_attachMenuBot, atomicBoolean, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, i5, i6, z4, str26, user, runnable, z5, z6, z7, z8, z9, str27);
                         }
                     });
                     return;
                 }
             }
-            com.google.android.exoplayer2.util.Consumer consumer = new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda153
+            com.google.android.exoplayer2.util.Consumer consumer = new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda148
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    LaunchActivity.this.lambda$runLinkRequest$62(tL_attachMenuBot, i, l3, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, z4, str26, user, runnable, z10, z5, z6, z7, z8, z9, str27, (Boolean) obj);
+                    LaunchActivity.this.lambda$runLinkRequest$63(tL_attachMenuBot, i, l3, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, str28, str29, progress, z3, i4, i5, i6, z4, str26, user, runnable, z10, z5, z6, z7, z8, z9, str27, (Boolean) obj);
                 }
             };
             if (progress != null) {
@@ -3234,17 +3281,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$67(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Integer num3, final Long l3, final String str28, final String str29, final TLRPC.User user, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda142
+    public /* synthetic */ void lambda$runLinkRequest$68(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str26, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str27, final Integer num3, final Long l3, final String str28, final String str29, final TLRPC.User user, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda140
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$66(tL_error, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, z4, str26, z5, z6, z7, z8, z9, str27, num3, tLObject, l3, str28, str29, user, runnable);
+                LaunchActivity.this.lambda$runLinkRequest$67(tL_error, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, progress, z3, i4, i5, i6, z4, str26, z5, z6, z7, z8, z9, str27, num3, tLObject, l3, str28, str29, user, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$runLinkRequest$68(String str, int i, TLRPC.User user, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$runLinkRequest$69(String str, int i, TLRPC.User user, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
         String str2;
         long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
@@ -3274,7 +3321,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$69(int i, TLRPC.Chat chat, DialogsActivity dialogsActivity) {
+    public /* synthetic */ void lambda$runLinkRequest$70(int i, TLRPC.Chat chat, DialogsActivity dialogsActivity) {
         NotificationCenter.getInstance(i).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
@@ -3285,7 +3332,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$70(String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z, String str2, final int i, final TLRPC.Chat chat, final DialogsActivity dialogsActivity, TLRPC.User user, long j, String str3) {
+    public /* synthetic */ void lambda$runLinkRequest$71(String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z, String str2, final int i, final TLRPC.Chat chat, final DialogsActivity dialogsActivity, TLRPC.User user, long j, String str3) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights2;
         TLRPC.TL_chatAdminRights tL_chatAdminRights3;
         if (str != null) {
@@ -3359,10 +3406,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             tL_chatAdminRights3 = tL_chatAdminRights;
         }
         if (z && tL_chatAdminRights2 == null && !TextUtils.isEmpty(str2)) {
-            MessagesController.getInstance(this.currentAccount).addUserToChat(chat.id, user, 0, str2, dialogsActivity, true, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda166
+            MessagesController.getInstance(this.currentAccount).addUserToChat(chat.id, user, 0, str2, dialogsActivity, true, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda165
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$runLinkRequest$69(i, chat, dialogsActivity);
+                    LaunchActivity.this.lambda$runLinkRequest$70(i, chat, dialogsActivity);
                 }
             }, null);
             return;
@@ -3383,17 +3430,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$71(final String str, final String str2, final int i, final TLRPC.Chat chat, final DialogsActivity dialogsActivity, final TLRPC.User user, final long j, final boolean z, final TLRPC.TL_chatAdminRights tL_chatAdminRights, final String str3) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda150
+    public /* synthetic */ void lambda$runLinkRequest$72(final String str, final String str2, final int i, final TLRPC.Chat chat, final DialogsActivity dialogsActivity, final TLRPC.User user, final long j, final boolean z, final TLRPC.TL_chatAdminRights tL_chatAdminRights, final String str3) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda151
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$70(str, tL_chatAdminRights, z, str2, i, chat, dialogsActivity, user, j, str3);
+                LaunchActivity.this.lambda$runLinkRequest$71(str, tL_chatAdminRights, z, str2, i, chat, dialogsActivity, user, j, str3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$72(long j, int i, TLRPC.User user, String str, AlertDialog alertDialog, int i2) {
+    public /* synthetic */ void lambda$runLinkRequest$73(long j, int i, TLRPC.User user, String str, AlertDialog alertDialog, int i2) {
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
         long j2 = -j;
@@ -3405,7 +3452,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$runLinkRequest$73(final int i, final TLRPC.User user, final String str, final String str2, final DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$runLinkRequest$74(final int i, final TLRPC.User user, final String str, final String str2, final DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         final TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j));
@@ -3415,18 +3462,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             builder.setTitle(LocaleController.getString(i3));
             builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title)));
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            builder.setPositiveButton(LocaleController.getString(i3), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda130
+            builder.setPositiveButton(LocaleController.getString(i3), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda143
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i4) {
-                    LaunchActivity.this.lambda$runLinkRequest$72(j, i, user, str2, alertDialog, i4);
+                    LaunchActivity.this.lambda$runLinkRequest$73(j, i, user, str2, alertDialog, i4);
                 }
             });
             builder.show();
         } else {
-            MessagesController.getInstance(i).checkIsInChat(false, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda129
+            MessagesController.getInstance(i).checkIsInChat(false, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda142
                 @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
                 public final void run(boolean z3, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
-                    LaunchActivity.this.lambda$runLinkRequest$71(str, str2, i, chat, dialogsActivity, user, j, z3, tL_chatAdminRights2, str3);
+                    LaunchActivity.this.lambda$runLinkRequest$72(str, str2, i, chat, dialogsActivity, user, j, z3, tL_chatAdminRights2, str3);
                 }
             });
         }
@@ -3434,7 +3481,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$74(Runnable runnable) {
+    public static /* synthetic */ void lambda$runLinkRequest$75(Runnable runnable) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -3443,13 +3490,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$75(final Runnable runnable, final int i, final String str, final String str2, final boolean z, final String str3, final String str4, final int i2, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final String str13, final String str14, final String str15, final String str16, final boolean z2, final Integer num, final Long l, final Long l2, final Integer num2, final HashMap hashMap, final String str17, final String str18, final String str19, final String str20, final TLRPC.TL_wallPaper tL_wallPaper, final String str21, final String str22, final String str23, final int i3, final int i4, final String str24, final String str25, final String str26, final Browser.Progress progress, final boolean z3, final boolean z4, final String str27, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str28, final Integer num3, final String str29, int[] iArr, final Long l3) {
+    public /* synthetic */ void lambda$runLinkRequest$76(final Runnable runnable, final int i, final int i2, final String str, final String str2, final boolean z, final String str3, final String str4, final int i3, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final String str13, final String str14, final String str15, final String str16, final boolean z2, final Integer num, final Long l, final Long l2, final Integer num2, final HashMap hashMap, final String str17, final String str18, final String str19, final String str20, final TLRPC.TL_wallPaper tL_wallPaper, final String str21, final String str22, final String str23, final int i4, final int i5, final String str24, final String str25, final String str26, final Browser.Progress progress, final boolean z3, final int i6, final boolean z4, final String str27, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str28, final Integer num3, final String str29, int[] iArr, final Long l3) {
         BulletinFactory of;
         String string;
         long longValue;
         boolean z10;
         BulletinFactory of2;
-        int i5;
+        int i7;
         final TLRPC.User user;
         if (l3 != null && l3.longValue() == Long.MAX_VALUE) {
             try {
@@ -3461,302 +3508,318 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             return;
         }
         if (!isFinishing()) {
-            if (i == 0 || l3 == null) {
-                if (l3 == null || this.actionBarLayout == null || (!(str == null && str2 == null) && ((str == null || l3.longValue() <= 0) && ((str2 == null || l3.longValue() <= 0) && ((!z || l3.longValue() >= 0) && (str3 == null || l3.longValue() >= 0)))))) {
-                    try {
-                        BaseFragment lastFragment = getLastFragment();
-                        if (lastFragment != null) {
-                            if (lastFragment instanceof ChatActivity) {
-                                ((ChatActivity) lastFragment).shakeContent();
-                            }
-                            if (AndroidUtilities.isNumeric(str5)) {
-                                of = BulletinFactory.of(lastFragment);
-                                string = LocaleController.getString(R.string.NoPhoneFound);
-                            } else {
-                                of = BulletinFactory.of(lastFragment);
-                                string = LocaleController.getString(R.string.NoUsernameFound);
-                            }
-                            of.createErrorBulletin(string).show();
-                        }
-                    } catch (Exception e2) {
-                        FileLog.e(e2);
+            if (i != 0 && l3 != null) {
+                MessagesController.getInstance(this.currentAccount).getStoriesController().resolveStoryLink(l3.longValue(), i, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda110
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj) {
+                        LaunchActivity.this.lambda$runLinkRequest$58(runnable, l3, (TL_stories.StoryItem) obj);
                     }
-                } else {
-                    if (!TextUtils.isEmpty(str4) && (user = MessagesController.getInstance(i2).getUser(l3)) != null && user.bot) {
-                        if (!user.bot_attach_menu || MediaDataController.getInstance(i2).botInAttachMenu(user.id)) {
-                            processWebAppBot(i2, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, z2, num, l, l2, num2, str, hashMap, str17, str18, str19, str20, tL_wallPaper, str21, str22, str23, str2, z, str3, i3, i4, str24, str25, str26, str4, str29, progress, z3, i, z4, str27, user, runnable, false, false, z5, z6, z7, z8, z9, str28);
-                            return;
-                        }
-                        TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
-                        tL_messages_getAttachMenuBot.bot = MessagesController.getInstance(i2).getInputUser(l3.longValue());
-                        ConnectionsManager.getInstance(i2).sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda96
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LaunchActivity.this.lambda$runLinkRequest$67(i2, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, z2, num, l, l2, num2, str, hashMap, str17, str18, str19, str20, tL_wallPaper, str21, str22, str23, str2, z, str3, i3, i4, str24, str25, str26, progress, z3, i, z4, str27, z5, z6, z7, z8, z9, str28, num3, l3, str4, str29, user, runnable, tLObject, tL_error);
-                            }
-                        });
-                        return;
-                    }
-                    String str30 = str16;
-                    if (z4 && ChatObject.isBoostSupported(MessagesController.getInstance(i2).getChat(Long.valueOf(-l3.longValue())))) {
-                        processBoostDialog(l3, runnable, progress);
-                        return;
-                    }
-                    if (str29 != null) {
-                        TLRPC.User user2 = MessagesController.getInstance(i2).getUser(l3);
-                        if (user2 != null && user2.bot) {
-                            MessagesController.getInstance(i2).openApp(null, user2, str29, 0, progress, z5, z6);
-                        }
-                    } else if (str24 != null && str25 == null) {
-                        TLRPC.User user3 = MessagesController.getInstance(i2).getUser(l3);
-                        if (user3 == null || !user3.bot) {
-                            ArrayList arrayList = mainFragmentsStack;
-                            of2 = BulletinFactory.of((BaseFragment) arrayList.get(arrayList.size() - 1));
-                            i5 = R.string.BotSetAttachLinkNotBot;
-                        } else if (user3.bot_attach_menu) {
-                            processAttachMenuBot(i2, l3.longValue(), str26, user3, str24, str29);
-                        } else {
-                            ArrayList arrayList2 = mainFragmentsStack;
-                            of2 = BulletinFactory.of((BaseFragment) arrayList2.get(arrayList2.size() - 1));
-                            i5 = R.string.BotCantAddToAttachMenu;
-                        }
-                        of2.createErrorBulletin(LocaleController.getString(i5)).show();
-                    } else if (num != null && ((num2 != null || l2 != null) && l3.longValue() < 0)) {
-                        int runCommentRequest = runCommentRequest(i2, runnable, num, num2, l2, null, MessagesController.getInstance(i2).getChat(Long.valueOf(-l3.longValue())));
-                        iArr[0] = runCommentRequest;
-                        if (runCommentRequest != 0) {
-                            return;
-                        }
-                    } else if (str != null) {
-                        Bundle bundle = new Bundle();
-                        bundle.putBoolean("onlySelect", true);
-                        bundle.putBoolean("cantSendToChannels", true);
-                        bundle.putInt("dialogsType", 1);
-                        bundle.putString("selectAlertString", LocaleController.getString(R.string.SendGameToText));
-                        bundle.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendGameToGroupText));
-                        DialogsActivity dialogsActivity = new DialogsActivity(bundle);
-                        final TLRPC.User user4 = MessagesController.getInstance(i2).getUser(l3);
-                        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda97
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public /* synthetic */ boolean canSelectStories() {
-                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
-                            }
-
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList3, CharSequence charSequence, boolean z11, boolean z12, int i6, TopicsFragment topicsFragment) {
-                                boolean lambda$runLinkRequest$68;
-                                lambda$runLinkRequest$68 = LaunchActivity.this.lambda$runLinkRequest$68(str, i2, user4, dialogsActivity2, arrayList3, charSequence, z11, z12, i6, topicsFragment);
-                                return lambda$runLinkRequest$68;
-                            }
-
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
-                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
-                            }
-                        });
-                        getActionBarLayout().presentFragment(dialogsActivity, !AndroidUtilities.isTablet() ? this.actionBarLayout.getFragmentStack().size() <= 1 || !(this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity) : this.layersActionBarLayout.getFragmentStack().size() <= 0 || !(this.layersActionBarLayout.getFragmentStack().get(this.layersActionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity), true, true, false);
-                        if (SecretMediaViewer.hasInstance() && SecretMediaViewer.getInstance().isVisible()) {
-                            SecretMediaViewer.getInstance().closePhoto(false, false);
-                        } else if (PhotoViewer.hasInstance() && PhotoViewer.getInstance().isVisible()) {
-                            PhotoViewer.getInstance().closePhoto(false, true);
-                        } else if (ArticleViewer.hasInstance() && ArticleViewer.getInstance().isVisible()) {
-                            ArticleViewer.getInstance().close(false, true);
-                        }
-                        StoryRecorder.destroyInstance();
-                        GroupCallActivity groupCallActivity = GroupCallActivity.groupCallInstance;
-                        if (groupCallActivity != null) {
-                            groupCallActivity.dismiss();
-                        }
-                        this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
-                        if (AndroidUtilities.isTablet()) {
-                            this.actionBarLayout.rebuildFragments(1);
-                            this.rightActionBarLayout.rebuildFragments(1);
-                        } else {
-                            this.drawerLayoutContainer.setAllowOpenDrawer(true, false);
-                        }
-                    } else if (str10 == null && str11 == null) {
-                        Bundle bundle2 = new Bundle();
-                        TLRPC.User user5 = MessagesController.getInstance(i2).getUser(l3);
-                        long longValue2 = l3.longValue();
-                        long longValue3 = l3.longValue();
-                        if (longValue2 < 0) {
-                            bundle2.putLong("chat_id", -longValue3);
-                            longValue = l3.longValue();
-                        } else {
-                            bundle2.putLong("user_id", longValue3);
-                            longValue = l3.longValue();
-                            if (str30 != null) {
-                                if (str30.startsWith("@")) {
-                                    str30 = " " + str30;
+                });
+            } else {
+                if (i2 == 0 || l3 == null) {
+                    if (l3 == null || this.actionBarLayout == null || (!(str == null && str2 == null) && ((str == null || l3.longValue() <= 0) && ((str2 == null || l3.longValue() <= 0) && ((!z || l3.longValue() >= 0) && (str3 == null || l3.longValue() >= 0)))))) {
+                        try {
+                            BaseFragment lastFragment = getLastFragment();
+                            if (lastFragment != null) {
+                                if (lastFragment instanceof ChatActivity) {
+                                    ((ChatActivity) lastFragment).shakeContent();
                                 }
-                                bundle2.putString("start_text", str30);
+                                if (AndroidUtilities.isNumeric(str5)) {
+                                    of = BulletinFactory.of(lastFragment);
+                                    string = LocaleController.getString(R.string.NoPhoneFound);
+                                } else {
+                                    of = BulletinFactory.of(lastFragment);
+                                    string = LocaleController.getString(R.string.NoUsernameFound);
+                                }
+                                of.createErrorBulletin(string).show();
                             }
-                        }
-                        if (str9 == null || user5 == null || !user5.bot) {
-                            z10 = false;
-                        } else {
-                            bundle2.putString("botUser", str9);
-                            z10 = true;
-                        }
-                        if (this.navigateToPremiumBot) {
-                            this.navigateToPremiumBot = false;
-                            bundle2.putBoolean("premium_bot", true);
-                        }
-                        if (num != null) {
-                            bundle2.putInt("message_id", num.intValue());
-                            if (num3 != null) {
-                                bundle2.putInt("task_id", num3.intValue());
-                            }
-                        }
-                        if (str2 != null) {
-                            bundle2.putString("voicechat", str2);
-                        }
-                        if (z) {
-                            bundle2.putBoolean("videochat", true);
-                        }
-                        if (str3 != null) {
-                            bundle2.putString("livestream", str3);
-                        }
-                        if (i4 >= 0) {
-                            bundle2.putInt("video_timestamp", i4);
-                        }
-                        if (str25 != null) {
-                            bundle2.putString("attach_bot", str25);
-                        }
-                        if (str24 != null) {
-                            bundle2.putString("attach_bot_start_command", str24);
-                        }
-                        ArrayList arrayList3 = mainFragmentsStack;
-                        BaseFragment baseFragment = (arrayList3.isEmpty() || str2 != null) ? null : (BaseFragment) arrayList3.get(arrayList3.size() - 1);
-                        if (baseFragment == null || MessagesController.getInstance(i2).checkCanOpenChat(bundle2, baseFragment)) {
-                            boolean z11 = (baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getDialogId() == longValue;
-                            if (z10 && z11) {
-                                ((ChatActivity) baseFragment).setBotUser(str9);
-                            } else if (str25 == null || !z11) {
-                                long j = -longValue;
-                                TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j));
-                                if (z8) {
-                                    try {
-                                        runnable.run();
-                                    } catch (Exception e3) {
-                                        FileLog.e(e3);
-                                    }
-                                    if (isFinishing()) {
-                                        return;
-                                    }
-                                    Bundle bundle3 = new Bundle();
-                                    long longValue4 = l3.longValue();
-                                    long longValue5 = l3.longValue();
-                                    if (longValue4 < 0) {
-                                        bundle3.putLong("chat_id", -longValue5);
-                                    } else {
-                                        bundle3.putLong("user_id", longValue5);
-                                    }
-                                    getActionBarLayout().presentFragment(new ProfileActivity(bundle3));
-                                    return;
-                                }
-                                if (chat == null || !chat.forum) {
-                                    MessagesController.getInstance(i2).ensureMessagesLoaded(longValue, num == null ? 0 : num.intValue(), new 19(runnable, str3, baseFragment, longValue, num, bundle2));
-                                    return;
-                                }
-                                Long valueOf = (l2 != null || num == null) ? l2 : Long.valueOf(num.intValue());
-                                if (valueOf != null && valueOf.longValue() != 0) {
-                                    openForumFromLink(longValue, num, null, num3, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda98
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            LaunchActivity.lambda$runLinkRequest$74(runnable);
-                                        }
-                                    }, 0, -1);
-                                    return;
-                                }
-                                Bundle bundle4 = new Bundle();
-                                bundle4.putLong("chat_id", j);
-                                if (str2 != null) {
-                                    bundle4.putString("voicechat", str2);
-                                }
-                                if (z) {
-                                    bundle4.putBoolean("videochat", true);
-                                }
-                                lambda$runLinkRequest$93(TopicsFragment.getTopicsOrChat(this, bundle4));
-                            } else {
-                                ((ChatActivity) baseFragment).openAttachBotLayout(str25);
-                            }
+                        } catch (Exception e2) {
+                            FileLog.e(e2);
                         }
                     } else {
-                        final TLRPC.User user6 = MessagesController.getInstance(i2).getUser(l3);
-                        if (user6 == null || (user6.bot && user6.bot_nochats)) {
-                            try {
-                                ArrayList arrayList4 = mainFragmentsStack;
-                                if (arrayList4.isEmpty()) {
+                        if (!TextUtils.isEmpty(str4) && (user = MessagesController.getInstance(i3).getUser(l3)) != null && user.bot) {
+                            if (!user.bot_attach_menu || MediaDataController.getInstance(i3).botInAttachMenu(user.id)) {
+                                processWebAppBot(i3, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, z2, num, l, l2, num2, str, hashMap, str17, str18, str19, str20, tL_wallPaper, str21, str22, str23, str2, z, str3, i4, i5, str24, str25, str26, str4, str29, progress, z3, i, i2, i6, z4, str27, user, runnable, false, false, z5, z6, z7, z8, z9, str28);
+                                return;
+                            }
+                            TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
+                            tL_messages_getAttachMenuBot.bot = MessagesController.getInstance(i3).getInputUser(l3.longValue());
+                            ConnectionsManager.getInstance(i3).sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda112
+                                @Override // org.telegram.tgnet.RequestDelegate
+                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                    LaunchActivity.this.lambda$runLinkRequest$68(i3, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, z2, num, l, l2, num2, str, hashMap, str17, str18, str19, str20, tL_wallPaper, str21, str22, str23, str2, z, str3, i4, i5, str24, str25, str26, progress, z3, i, i2, i6, z4, str27, z5, z6, z7, z8, z9, str28, num3, l3, str4, str29, user, runnable, tLObject, tL_error);
+                                }
+                            });
+                            return;
+                        }
+                        String str30 = str16;
+                        if (z4 && ChatObject.isBoostSupported(MessagesController.getInstance(i3).getChat(Long.valueOf(-l3.longValue())))) {
+                            processBoostDialog(l3, runnable, progress);
+                            return;
+                        }
+                        if (str29 != null) {
+                            TLRPC.User user2 = MessagesController.getInstance(i3).getUser(l3);
+                            if (user2 != null && user2.bot) {
+                                MessagesController.getInstance(i3).openApp(null, user2, str29, 0, progress, z5, z6);
+                            }
+                        } else if (str24 != null && str25 == null) {
+                            TLRPC.User user3 = MessagesController.getInstance(i3).getUser(l3);
+                            if (user3 == null || !user3.bot) {
+                                ArrayList arrayList = mainFragmentsStack;
+                                of2 = BulletinFactory.of((BaseFragment) arrayList.get(arrayList.size() - 1));
+                                i7 = R.string.BotSetAttachLinkNotBot;
+                            } else if (user3.bot_attach_menu) {
+                                processAttachMenuBot(i3, l3.longValue(), str26, user3, str24, str29);
+                            } else {
+                                ArrayList arrayList2 = mainFragmentsStack;
+                                of2 = BulletinFactory.of((BaseFragment) arrayList2.get(arrayList2.size() - 1));
+                                i7 = R.string.BotCantAddToAttachMenu;
+                            }
+                            of2.createErrorBulletin(LocaleController.getString(i7)).show();
+                        } else if (num != null && ((num2 != null || l2 != null) && l3.longValue() < 0)) {
+                            int runCommentRequest = runCommentRequest(i3, runnable, num, num2, l2, null, MessagesController.getInstance(i3).getChat(Long.valueOf(-l3.longValue())));
+                            iArr[0] = runCommentRequest;
+                            if (runCommentRequest != 0) {
+                                return;
+                            }
+                        } else if (str != null) {
+                            Bundle bundle = new Bundle();
+                            bundle.putBoolean("onlySelect", true);
+                            bundle.putBoolean("cantSendToChannels", true);
+                            bundle.putInt("dialogsType", 1);
+                            bundle.putString("selectAlertString", LocaleController.getString(R.string.SendGameToText));
+                            bundle.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendGameToGroupText));
+                            DialogsActivity dialogsActivity = new DialogsActivity(bundle);
+                            final TLRPC.User user4 = MessagesController.getInstance(i3).getUser(l3);
+                            dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda113
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public /* synthetic */ boolean canSelectStories() {
+                                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                                }
+
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList3, CharSequence charSequence, boolean z11, boolean z12, int i8, TopicsFragment topicsFragment) {
+                                    boolean lambda$runLinkRequest$69;
+                                    lambda$runLinkRequest$69 = LaunchActivity.this.lambda$runLinkRequest$69(str, i3, user4, dialogsActivity2, arrayList3, charSequence, z11, z12, i8, topicsFragment);
+                                    return lambda$runLinkRequest$69;
+                                }
+
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
+                                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
+                                }
+                            });
+                            getActionBarLayout().presentFragment(dialogsActivity, !AndroidUtilities.isTablet() ? this.actionBarLayout.getFragmentStack().size() <= 1 || !(this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity) : this.layersActionBarLayout.getFragmentStack().size() <= 0 || !(this.layersActionBarLayout.getFragmentStack().get(this.layersActionBarLayout.getFragmentStack().size() - 1) instanceof DialogsActivity), true, true, false);
+                            if (SecretMediaViewer.hasInstance() && SecretMediaViewer.getInstance().isVisible()) {
+                                SecretMediaViewer.getInstance().closePhoto(false, false);
+                            } else if (PhotoViewer.hasInstance() && PhotoViewer.getInstance().isVisible()) {
+                                PhotoViewer.getInstance().closePhoto(false, true);
+                            } else if (ArticleViewer.hasInstance() && ArticleViewer.getInstance().isVisible()) {
+                                ArticleViewer.getInstance().close(false, true);
+                            }
+                            StoryRecorder.destroyInstance();
+                            GroupCallActivity groupCallActivity = GroupCallActivity.groupCallInstance;
+                            if (groupCallActivity != null) {
+                                groupCallActivity.dismiss();
+                            }
+                            this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
+                            if (AndroidUtilities.isTablet()) {
+                                this.actionBarLayout.rebuildFragments(1);
+                                this.rightActionBarLayout.rebuildFragments(1);
+                            } else {
+                                this.drawerLayoutContainer.setAllowOpenDrawer(true, false);
+                            }
+                        } else if (str10 == null && str11 == null) {
+                            Bundle bundle2 = new Bundle();
+                            TLRPC.User user5 = MessagesController.getInstance(i3).getUser(l3);
+                            long longValue2 = l3.longValue();
+                            long longValue3 = l3.longValue();
+                            if (longValue2 < 0) {
+                                bundle2.putLong("chat_id", -longValue3);
+                                longValue = l3.longValue();
+                            } else {
+                                bundle2.putLong("user_id", longValue3);
+                                longValue = l3.longValue();
+                                if (str30 != null) {
+                                    if (str30.startsWith("@")) {
+                                        str30 = " " + str30;
+                                    }
+                                    bundle2.putString("start_text", str30);
+                                }
+                            }
+                            if (str9 == null || user5 == null || !user5.bot) {
+                                z10 = false;
+                            } else {
+                                bundle2.putString("botUser", str9);
+                                z10 = true;
+                            }
+                            if (this.navigateToPremiumBot) {
+                                this.navigateToPremiumBot = false;
+                                bundle2.putBoolean("premium_bot", true);
+                            }
+                            if (num != null) {
+                                bundle2.putInt("message_id", num.intValue());
+                                if (num3 != null) {
+                                    bundle2.putInt("task_id", num3.intValue());
+                                }
+                            }
+                            if (str2 != null) {
+                                bundle2.putString("voicechat", str2);
+                            }
+                            if (z) {
+                                bundle2.putBoolean("videochat", true);
+                            }
+                            if (str3 != null) {
+                                bundle2.putString("livestream", str3);
+                            }
+                            if (i5 >= 0) {
+                                bundle2.putInt("video_timestamp", i5);
+                            }
+                            if (str25 != null) {
+                                bundle2.putString("attach_bot", str25);
+                            }
+                            if (str24 != null) {
+                                bundle2.putString("attach_bot_start_command", str24);
+                            }
+                            ArrayList arrayList3 = mainFragmentsStack;
+                            BaseFragment baseFragment = (arrayList3.isEmpty() || str2 != null) ? null : (BaseFragment) arrayList3.get(arrayList3.size() - 1);
+                            if (baseFragment == null || MessagesController.getInstance(i3).checkCanOpenChat(bundle2, baseFragment)) {
+                                boolean z11 = (baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getDialogId() == longValue;
+                                if (z10 && z11) {
+                                    ((ChatActivity) baseFragment).setBotUser(str9);
+                                } else if (str25 == null || !z11) {
+                                    long j = -longValue;
+                                    TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j));
+                                    if (z8 || i6 > 0) {
+                                        try {
+                                            runnable.run();
+                                        } catch (Exception e3) {
+                                            FileLog.e(e3);
+                                        }
+                                        if (isFinishing()) {
+                                            return;
+                                        }
+                                        Bundle bundle3 = new Bundle();
+                                        long longValue4 = l3.longValue();
+                                        long longValue5 = l3.longValue();
+                                        if (longValue4 < 0) {
+                                            bundle3.putLong("chat_id", -longValue5);
+                                        } else {
+                                            bundle3.putLong("user_id", longValue5);
+                                        }
+                                        if (i6 > 0) {
+                                            bundle3.putBoolean("open_gifts", true);
+                                            bundle3.putInt("open_gifts_collection", i6);
+                                            if (l3.longValue() == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                                                bundle3.putBoolean("my_profile", true);
+                                            }
+                                        }
+                                        getActionBarLayout().presentFragment(new ProfileActivity(bundle3));
+                                        return;
+                                    }
+                                    if (chat == null || !chat.forum) {
+                                        MessagesController.getInstance(i3).ensureMessagesLoaded(longValue, num == null ? 0 : num.intValue(), new 19(runnable, str3, baseFragment, longValue, num, bundle2));
+                                        return;
+                                    }
+                                    Long valueOf = (l2 != null || num == null) ? l2 : Long.valueOf(num.intValue());
+                                    if (valueOf != null && valueOf.longValue() != 0) {
+                                        openForumFromLink(longValue, num, null, num3, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda114
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                LaunchActivity.lambda$runLinkRequest$75(runnable);
+                                            }
+                                        }, 0, -1);
+                                        return;
+                                    }
+                                    Bundle bundle4 = new Bundle();
+                                    bundle4.putLong("chat_id", j);
+                                    if (str2 != null) {
+                                        bundle4.putString("voicechat", str2);
+                                    }
+                                    if (z) {
+                                        bundle4.putBoolean("videochat", true);
+                                    }
+                                    lambda$runLinkRequest$94(TopicsFragment.getTopicsOrChat(this, bundle4));
+                                } else {
+                                    ((ChatActivity) baseFragment).openAttachBotLayout(str25);
+                                }
+                            }
+                        } else {
+                            final TLRPC.User user6 = MessagesController.getInstance(i3).getUser(l3);
+                            if (user6 == null || (user6.bot && user6.bot_nochats)) {
+                                try {
+                                    ArrayList arrayList4 = mainFragmentsStack;
+                                    if (arrayList4.isEmpty()) {
+                                        return;
+                                    }
+                                    BulletinFactory.of((BaseFragment) arrayList4.get(arrayList4.size() - 1)).createErrorBulletin(LocaleController.getString(R.string.BotCantJoinGroups)).show();
+                                    return;
+                                } catch (Exception e4) {
+                                    FileLog.e(e4);
                                     return;
                                 }
-                                BulletinFactory.of((BaseFragment) arrayList4.get(arrayList4.size() - 1)).createErrorBulletin(LocaleController.getString(R.string.BotCantJoinGroups)).show();
-                                return;
-                            } catch (Exception e4) {
-                                FileLog.e(e4);
-                                return;
                             }
+                            Bundle bundle5 = new Bundle();
+                            bundle5.putBoolean("onlySelect", true);
+                            bundle5.putInt("dialogsType", 2);
+                            bundle5.putBoolean("resetDelegate", false);
+                            bundle5.putBoolean("closeFragment", false);
+                            bundle5.putBoolean("allowGroups", str10 != null);
+                            bundle5.putBoolean("allowChannels", str11 != null);
+                            String str31 = TextUtils.isEmpty(str10) ? TextUtils.isEmpty(str11) ? null : str11 : str10;
+                            final DialogsActivity dialogsActivity2 = new DialogsActivity(bundle5);
+                            final String str32 = str31;
+                            dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda115
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public /* synthetic */ boolean canSelectStories() {
+                                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
+                                }
+
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList5, CharSequence charSequence, boolean z12, boolean z13, int i8, TopicsFragment topicsFragment) {
+                                    boolean lambda$runLinkRequest$74;
+                                    lambda$runLinkRequest$74 = LaunchActivity.this.lambda$runLinkRequest$74(i3, user6, str12, str32, dialogsActivity2, dialogsActivity3, arrayList5, charSequence, z12, z13, i8, topicsFragment);
+                                    return lambda$runLinkRequest$74;
+                                }
+
+                                @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
+                                public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity3) {
+                                    return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity3);
+                                }
+                            });
+                            lambda$runLinkRequest$94(dialogsActivity2);
                         }
-                        Bundle bundle5 = new Bundle();
-                        bundle5.putBoolean("onlySelect", true);
-                        bundle5.putInt("dialogsType", 2);
-                        bundle5.putBoolean("resetDelegate", false);
-                        bundle5.putBoolean("closeFragment", false);
-                        bundle5.putBoolean("allowGroups", str10 != null);
-                        bundle5.putBoolean("allowChannels", str11 != null);
-                        String str31 = TextUtils.isEmpty(str10) ? TextUtils.isEmpty(str11) ? null : str11 : str10;
-                        final DialogsActivity dialogsActivity2 = new DialogsActivity(bundle5);
-                        final String str32 = str31;
-                        dialogsActivity2.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda99
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public /* synthetic */ boolean canSelectStories() {
-                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
-                            }
-
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList5, CharSequence charSequence, boolean z12, boolean z13, int i6, TopicsFragment topicsFragment) {
-                                boolean lambda$runLinkRequest$73;
-                                lambda$runLinkRequest$73 = LaunchActivity.this.lambda$runLinkRequest$73(i2, user6, str12, str32, dialogsActivity2, dialogsActivity3, arrayList5, charSequence, z12, z13, i6, topicsFragment);
-                                return lambda$runLinkRequest$73;
-                            }
-
-                            @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                            public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity3) {
-                                return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity3);
-                            }
-                        });
-                        lambda$runLinkRequest$93(dialogsActivity2);
+                    }
+                    try {
+                        runnable.run();
+                        return;
+                    } catch (Exception e5) {
+                        FileLog.e(e5);
+                        return;
                     }
                 }
-                try {
-                    runnable.run();
-                    return;
-                } catch (Exception e5) {
-                    FileLog.e(e5);
-                    return;
-                }
+                MessagesController.getInstance(this.currentAccount).getStoriesController().resolveStoryAlbumLink(l3.longValue(), i2, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda111
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj) {
+                        LaunchActivity.this.lambda$runLinkRequest$59(runnable, l3, i2, (TL_stories.TL_storyAlbum) obj);
+                    }
+                });
             }
-            MessagesController.getInstance(this.currentAccount).getStoriesController().resolveStoryLink(l3.longValue(), i, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda95
-                @Override // com.google.android.exoplayer2.util.Consumer
-                public final void accept(Object obj) {
-                    LaunchActivity.this.lambda$runLinkRequest$58(runnable, l3, (TL_stories.StoryItem) obj);
-                }
-            });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$76(boolean[] zArr, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$runLinkRequest$77(boolean[] zArr, DialogInterface dialogInterface) {
         zArr[0] = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$runLinkRequest$77(BaseFragment baseFragment, long j, TLRPC.Chat chat) {
+    public static /* synthetic */ void lambda$runLinkRequest$78(BaseFragment baseFragment, long j, TLRPC.Chat chat) {
         BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.stars_send, LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j, chat.title))).show(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$78(Long l, final long j) {
+    public /* synthetic */ void lambda$runLinkRequest$79(Long l, final long j) {
         BaseFragment safeLastFragment = getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
@@ -3765,24 +3828,24 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         safeLastFragment.presentFragment(of);
         final TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-l.longValue()));
         if (chat != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda164
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda161
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.lambda$runLinkRequest$77(BaseFragment.this, j, chat);
+                    LaunchActivity.lambda$runLinkRequest$78(BaseFragment.this, j, chat);
                 }
             }, 250L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$79(final long j, String str, final Long l) {
+    public /* synthetic */ void lambda$runLinkRequest$80(final long j, String str, final Long l) {
         if (!"paid".equals(str) || l.longValue() == 0) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda149
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda152
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$78(l, j);
+                LaunchActivity.this.lambda$runLinkRequest$79(l, j);
             }
         });
     }
@@ -3795,7 +3858,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$runLinkRequest$80(TLRPC.TL_error tL_error, TLObject tLObject, int i, AlertDialog alertDialog, final Runnable runnable, String str) {
+    public /* synthetic */ void lambda$runLinkRequest$81(TLRPC.TL_error tL_error, TLObject tLObject, int i, AlertDialog alertDialog, final Runnable runnable, String str) {
         int i2;
         if (isFinishing()) {
             return;
@@ -3836,10 +3899,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 ArrayList arrayList2 = mainFragmentsStack;
                 if (arrayList2.isEmpty() || MessagesController.getInstance(i).checkCanOpenChat(bundle, (BaseFragment) arrayList2.get(arrayList2.size() - 1))) {
                     final boolean[] zArr = new boolean[1];
-                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda138
+                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda135
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
-                            LaunchActivity.lambda$runLinkRequest$76(zArr, dialogInterface);
+                            LaunchActivity.lambda$runLinkRequest$77(zArr, dialogInterface);
                         }
                     });
                     if (!chatInvite.chat.forum) {
@@ -3878,7 +3941,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     } else {
                         Bundle bundle2 = new Bundle();
                         bundle2.putLong("chat_id", chatInvite.chat.id);
-                        lambda$runLinkRequest$93(TopicsFragment.getTopicsOrChat(this, bundle2));
+                        lambda$runLinkRequest$94(TopicsFragment.getTopicsOrChat(this, bundle2));
                     }
                 }
             }
@@ -3890,10 +3953,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             } else {
                 final long j = tL_starsSubscriptionPricing.amount;
                 MessagesController.getInstance(i).putChat(chatInvite.chat, false);
-                StarsController.getInstance(this.currentAccount).subscribeTo(str, chatInvite, new Utilities.Callback2() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda139
+                StarsController.getInstance(this.currentAccount).subscribeTo(str, chatInvite, new Utilities.Callback2() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda136
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
-                        LaunchActivity.this.lambda$runLinkRequest$79(j, (String) obj, (Long) obj2);
+                        LaunchActivity.this.lambda$runLinkRequest$80(j, (String) obj, (Long) obj2);
                     }
                 });
             }
@@ -3906,17 +3969,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$81(final int i, final AlertDialog alertDialog, final Runnable runnable, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda115
+    public /* synthetic */ void lambda$runLinkRequest$82(final int i, final AlertDialog alertDialog, final Runnable runnable, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda124
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$80(tL_error, tLObject, i, alertDialog, runnable, str);
+                LaunchActivity.this.lambda$runLinkRequest$81(tL_error, tLObject, i, alertDialog, runnable, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$82(Runnable runnable, TLRPC.TL_error tL_error, TLObject tLObject, int i) {
+    public /* synthetic */ void lambda$runLinkRequest$83(Runnable runnable, TLRPC.TL_error tL_error, TLObject tLObject, int i) {
         if (isFinishing()) {
             return;
         }
@@ -3955,20 +4018,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$83(final int i, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$84(final int i, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tL_error == null) {
             MessagesController.getInstance(i).processUpdates((TLRPC.Updates) tLObject, false);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda92
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda95
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$82(runnable, tL_error, tLObject, i);
+                LaunchActivity.this.lambda$runLinkRequest$83(runnable, tL_error, tLObject, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$runLinkRequest$84(boolean z, int i, String str, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z2, boolean z3, int i2, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$runLinkRequest$85(boolean z, int i, String str, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z2, boolean z3, int i2, TopicsFragment topicsFragment) {
         long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
@@ -3989,7 +4052,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$85(Runnable runnable, TLObject tLObject, int i, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+    public /* synthetic */ void lambda$runLinkRequest$86(Runnable runnable, TLObject tLObject, int i, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -3997,22 +4060,22 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         if (tLObject != null) {
             MessagesController.getInstance(i).putUsers(authorizationform.users, false);
-            lambda$runLinkRequest$93(new PassportActivity(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, str3, authorizationform, (TL_account.Password) tLObject));
+            lambda$runLinkRequest$94(new PassportActivity(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, str3, authorizationform, (TL_account.Password) tLObject));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$86(final Runnable runnable, final int i, final TL_account.authorizationForm authorizationform, final TL_account.getAuthorizationForm getauthorizationform, final String str, final String str2, final String str3, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda131
+    public /* synthetic */ void lambda$runLinkRequest$87(final Runnable runnable, final int i, final TL_account.authorizationForm authorizationform, final TL_account.getAuthorizationForm getauthorizationform, final String str, final String str2, final String str3, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda133
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$85(runnable, tLObject, i, authorizationform, getauthorizationform, str, str2, str3);
+                LaunchActivity.this.lambda$runLinkRequest$86(runnable, tLObject, i, authorizationform, getauthorizationform, str, str2, str3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$87(Runnable runnable, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$88(Runnable runnable, TLRPC.TL_error tL_error) {
         try {
             runnable.run();
             if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
@@ -4026,27 +4089,27 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$88(int[] iArr, final int i, final Runnable runnable, final TL_account.getAuthorizationForm getauthorizationform, final String str, final String str2, final String str3, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$89(int[] iArr, final int i, final Runnable runnable, final TL_account.getAuthorizationForm getauthorizationform, final String str, final String str2, final String str3, TLObject tLObject, final TLRPC.TL_error tL_error) {
         final TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
         if (authorizationform == null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda102
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda108
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$runLinkRequest$87(runnable, tL_error);
+                    LaunchActivity.this.lambda$runLinkRequest$88(runnable, tL_error);
                 }
             });
         } else {
-            iArr[0] = ConnectionsManager.getInstance(i).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda101
+            iArr[0] = ConnectionsManager.getInstance(i).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda107
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                    LaunchActivity.this.lambda$runLinkRequest$86(runnable, i, authorizationform, getauthorizationform, str, str2, str3, tLObject2, tL_error2);
+                    LaunchActivity.this.lambda$runLinkRequest$87(runnable, i, authorizationform, getauthorizationform, str, str2, str3, tLObject2, tL_error2);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$89(Runnable runnable, TLObject tLObject) {
+    public /* synthetic */ void lambda$runLinkRequest$90(Runnable runnable, TLObject tLObject) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -4059,17 +4122,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$90(final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda123
+    public /* synthetic */ void lambda$runLinkRequest$91(final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda125
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$89(runnable, tLObject);
+                LaunchActivity.this.lambda$runLinkRequest$90(runnable, tLObject);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$91(Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$92(Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
         String str;
         AlertDialog.Builder createSimpleAlert;
         try {
@@ -4094,18 +4157,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$92(final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda110
+    public /* synthetic */ void lambda$runLinkRequest$93(final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda121
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$91(runnable, tLObject, tL_error);
+                LaunchActivity.this.lambda$runLinkRequest$92(runnable, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$runLinkRequest$94(Runnable runnable, TLObject tLObject, TLRPC.TL_wallPaper tL_wallPaper, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$95(Runnable runnable, TLObject tLObject, TLRPC.TL_wallPaper tL_wallPaper, TLRPC.TL_error tL_error) {
         try {
             runnable.run();
         } catch (Exception e) {
@@ -4126,21 +4189,21 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(tL_wallPaper2, null, true, false);
         TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
         themePreviewActivity.setInitialModes(wallPaperSettings2.blur, wallPaperSettings2.motion, wallPaperSettings2.intensity);
-        lambda$runLinkRequest$93(themePreviewActivity);
+        lambda$runLinkRequest$94(themePreviewActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$95(final Runnable runnable, final TLRPC.TL_wallPaper tL_wallPaper, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda90
+    public /* synthetic */ void lambda$runLinkRequest$96(final Runnable runnable, final TLRPC.TL_wallPaper tL_wallPaper, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda99
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$94(runnable, tLObject, tL_wallPaper, tL_error);
+                LaunchActivity.this.lambda$runLinkRequest$95(runnable, tLObject, tL_wallPaper, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$96(Browser.Progress progress) {
+    public /* synthetic */ void lambda$runLinkRequest$97(Browser.Progress progress) {
         this.loadingThemeFileName = null;
         this.loadingThemeWallpaperName = null;
         this.loadingThemeWallpaper = null;
@@ -4153,7 +4216,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$97(TLObject tLObject, AlertDialog alertDialog, Runnable runnable, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$runLinkRequest$98(TLObject tLObject, AlertDialog alertDialog, Runnable runnable, TLRPC.TL_error tL_error) {
         char c;
         if (tLObject instanceof TLRPC.TL_theme) {
             TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) tLObject;
@@ -4213,31 +4276,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$98(final AlertDialog alertDialog, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda93
+    public /* synthetic */ void lambda$runLinkRequest$99(final AlertDialog alertDialog, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda123
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$runLinkRequest$97(tLObject, alertDialog, runnable, tL_error);
+                LaunchActivity.this.lambda$runLinkRequest$98(tLObject, alertDialog, runnable, tL_error);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runLinkRequest$99(TLObject tLObject, int[] iArr, int i, Runnable runnable, Integer num, Integer num2, Long l, Integer num3) {
-        if (tLObject instanceof TLRPC.TL_messages_chats) {
-            TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
-            if (!tL_messages_chats.chats.isEmpty()) {
-                MessagesController.getInstance(this.currentAccount).putChats(tL_messages_chats.chats, false);
-                iArr[0] = runCommentRequest(i, runnable, num, num2, l, num3, tL_messages_chats.chats.get(0));
-                return;
-            }
-        }
-        try {
-            runnable.run();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        showAlertDialog(AlertsCreator.createNoAccessAlert(this, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound), null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4268,7 +4313,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAlertDialog$134(AlertDialog alertDialog, DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$showAlertDialog$135(AlertDialog alertDialog, DialogInterface dialogInterface) {
         Bulletin createSimpleBulletin;
         if (alertDialog != null) {
             if (alertDialog == this.localeDialog) {
@@ -4301,7 +4346,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlert$160(HashMap hashMap, LocaleController.LocaleInfo[] localeInfoArr, String str) {
+    public /* synthetic */ void lambda$showLanguageAlert$161(HashMap hashMap, LocaleController.LocaleInfo[] localeInfoArr, String str) {
         this.systemLocaleStrings = hashMap;
         if (this.englishLocaleStrings == null || hashMap == null) {
             return;
@@ -4310,7 +4355,34 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlert$161(final LocaleController.LocaleInfo[] localeInfoArr, final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$showLanguageAlert$162(final LocaleController.LocaleInfo[] localeInfoArr, final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
+        final HashMap hashMap = new HashMap();
+        if (tLObject instanceof Vector) {
+            Vector vector = (Vector) tLObject;
+            for (int i = 0; i < vector.objects.size(); i++) {
+                TLRPC.LangPackString langPackString = (TLRPC.LangPackString) vector.objects.get(i);
+                hashMap.put(langPackString.key, langPackString.value);
+            }
+        }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda106
+            @Override // java.lang.Runnable
+            public final void run() {
+                LaunchActivity.this.lambda$showLanguageAlert$161(hashMap, localeInfoArr, str);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showLanguageAlert$163(HashMap hashMap, LocaleController.LocaleInfo[] localeInfoArr, String str) {
+        this.englishLocaleStrings = hashMap;
+        if (hashMap == null || this.systemLocaleStrings == null) {
+            return;
+        }
+        showLanguageAlertInternal(localeInfoArr[1], localeInfoArr[0], str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showLanguageAlert$164(final LocaleController.LocaleInfo[] localeInfoArr, final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
         final HashMap hashMap = new HashMap();
         if (tLObject instanceof Vector) {
             Vector vector = (Vector) tLObject;
@@ -4322,40 +4394,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda103
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$showLanguageAlert$160(hashMap, localeInfoArr, str);
+                LaunchActivity.this.lambda$showLanguageAlert$163(hashMap, localeInfoArr, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlert$162(HashMap hashMap, LocaleController.LocaleInfo[] localeInfoArr, String str) {
-        this.englishLocaleStrings = hashMap;
-        if (hashMap == null || this.systemLocaleStrings == null) {
-            return;
-        }
-        showLanguageAlertInternal(localeInfoArr[1], localeInfoArr[0], str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlert$163(final LocaleController.LocaleInfo[] localeInfoArr, final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        final HashMap hashMap = new HashMap();
-        if (tLObject instanceof Vector) {
-            Vector vector = (Vector) tLObject;
-            for (int i = 0; i < vector.objects.size(); i++) {
-                TLRPC.LangPackString langPackString = (TLRPC.LangPackString) vector.objects.get(i);
-                hashMap.put(langPackString.key, langPackString.value);
-            }
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda108
-            @Override // java.lang.Runnable
-            public final void run() {
-                LaunchActivity.this.lambda$showLanguageAlert$162(hashMap, localeInfoArr, str);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLanguageAlertInternal$157(LocaleController.LocaleInfo[] localeInfoArr, LanguageCell[] languageCellArr, View view) {
+    public static /* synthetic */ void lambda$showLanguageAlertInternal$158(LocaleController.LocaleInfo[] localeInfoArr, LanguageCell[] languageCellArr, View view) {
         Integer num = (Integer) view.getTag();
         localeInfoArr[0] = ((LanguageCell) view).getCurrentLocale();
         int i = 0;
@@ -4366,10 +4411,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlertInternal$158(View view) {
+    public /* synthetic */ void lambda$showLanguageAlertInternal$159(View view) {
         this.localeDialog = null;
         this.drawerLayoutContainer.closeDrawer(true);
-        lambda$runLinkRequest$93(new LanguageSelectActivity());
+        lambda$runLinkRequest$94(new LanguageSelectActivity());
         for (int i = 0; i < this.visibleDialogs.size(); i++) {
             if (((Dialog) this.visibleDialogs.get(i)).isShowing()) {
                 ((Dialog) this.visibleDialogs.get(i)).dismiss();
@@ -4379,7 +4424,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLanguageAlertInternal$159(LocaleController.LocaleInfo[] localeInfoArr, AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$showLanguageAlertInternal$160(LocaleController.LocaleInfo[] localeInfoArr, AlertDialog alertDialog, int i) {
         LocaleController.getInstance().applyLanguage(localeInfoArr[0], true, false, this.currentAccount);
         rebuildAllFragments(true);
     }
@@ -4454,7 +4499,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
         */
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateCurrentConnectionState$164() {
+    public /* synthetic */ void lambda$updateCurrentConnectionState$165() {
         /*
             r2 = this;
             boolean r0 = org.telegram.messenger.AndroidUtilities.isTablet()
@@ -4484,11 +4529,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         L2e:
             org.telegram.ui.ProxyListActivity r0 = new org.telegram.ui.ProxyListActivity
             r0.<init>()
-            r2.lambda$runLinkRequest$93(r0)
+            r2.lambda$runLinkRequest$94(r0)
         L36:
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.lambda$updateCurrentConnectionState$164():void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.lambda$updateCurrentConnectionState$165():void");
     }
 
     public static void makeRipple(float f, float f2, float f3) {
@@ -4653,7 +4698,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         BulletinFactory.of(lastFragment).createSimpleBulletin(new BatteryDrawable(batteryLevel / 100.0f, -1, lastFragment.getThemedColor(Theme.key_dialogSwipeRemove), 1.3f), LocaleController.getString(R.string.LowPowerEnabledTitle), LocaleController.formatString("LowPowerEnabledSubtitle", R.string.LowPowerEnabledSubtitle, String.format("%d%%", Integer.valueOf(batteryLevel))), LocaleController.getString(R.string.Disable), new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda85
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$onPowerSaver$137();
+                LaunchActivity.this.lambda$onPowerSaver$138();
             }
         }).setDuration(5000).show();
     }
@@ -4776,17 +4821,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
             tL_channels_getMessages.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(-j);
             tL_channels_getMessages.id.add(num);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda117
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda118
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    LaunchActivity.this.lambda$openForumFromLink$127(num, num2, j, runnable, str, i, i2, tLObject, tL_error);
+                    LaunchActivity.this.lambda$openForumFromLink$128(num, num2, j, runnable, str, i, i2, tLObject, tL_error);
                 }
             });
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", -j);
-        lambda$runLinkRequest$93(TopicsFragment.getTopicsOrChat(this, bundle));
+        lambda$runLinkRequest$94(TopicsFragment.getTopicsOrChat(this, bundle));
         if (runnable != null) {
             runnable.run();
         }
@@ -4899,10 +4944,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
         tL_stories_getStoriesByID.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(clientUserId);
         tL_stories_getStoriesByID.id.add(Integer.valueOf(i));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda80
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda81
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.this.lambda$openMyStory$167(i, clientUserId, z, tLObject, tL_error);
+                LaunchActivity.this.lambda$openMyStory$168(i, clientUserId, z, tLObject, tL_error);
             }
         });
     }
@@ -4913,7 +4958,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (z) {
             bundle.putBoolean("expandPhoto", true);
         }
-        lambda$runLinkRequest$93(new ProfileActivity(bundle));
+        lambda$runLinkRequest$94(new ProfileActivity(bundle));
         this.drawerLayoutContainer.closeDrawer(false);
     }
 
@@ -4967,10 +5012,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (!arrayList3.isEmpty() && z) {
             final MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
             final int[] iArr = {arrayList3.size()};
-            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda42
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda65
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$openStories$168(iArr, jArr2);
+                    LaunchActivity.this.lambda$openStories$169(iArr, jArr2);
                 }
             };
             for (int i4 = 0; i4 < arrayList3.size(); i4++) {
@@ -4983,10 +5028,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 } else if (inputPeer == null) {
                     iArr[0] = iArr[0] - 1;
                 } else {
-                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getPeerStories, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda43
+                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getPeerStories, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda66
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.lambda$openStories$170(MessagesController.this, longValue, runnable, tLObject, tL_error);
+                            LaunchActivity.lambda$openStories$171(MessagesController.this, longValue, runnable, tLObject, tL_error);
                         }
                     });
                 }
@@ -5024,7 +5069,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         themeInfo.prevAccentId = themeInfo.currentAccentId;
         themeInfo.setCurrentAccentId(createNewAccent.id);
         createNewAccent.pattern = tL_wallPaper;
-        lambda$runLinkRequest$93(new ThemePreviewActivity(themeInfo, i != themeInfo.lastAccentId, 0, false, false));
+        lambda$runLinkRequest$94(new ThemePreviewActivity(themeInfo, i != themeInfo.lastAccentId, 0, false, false));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0135  */
@@ -5038,7 +5083,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             TLRPC.TL_channels_getForumTopicsByID tL_channels_getForumTopicsByID = new TLRPC.TL_channels_getForumTopicsByID();
             tL_channels_getForumTopicsByID.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(chat.id);
             tL_channels_getForumTopicsByID.topics.add(Integer.valueOf(i2));
-            ConnectionsManager.getInstance(i).sendRequest(tL_channels_getForumTopicsByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda157
+            ConnectionsManager.getInstance(i).sendRequest(tL_channels_getForumTopicsByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda158
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.this.lambda$openTopicRequest$33(i, chat, i2, i3, runnable, str, num, i4, arrayList, i5, tLObject, tL_error);
@@ -5088,7 +5133,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             chatActivity2.scrollToMessageId(i3, i4, true, 0, true, 0, null, null);
         }
-        lambda$runLinkRequest$93(chatActivity2);
+        lambda$runLinkRequest$94(chatActivity2);
         if (runnable == null) {
         }
     }
@@ -5096,10 +5141,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private void processAttachMenuBot(final int i, final long j, final String str, final TLRPC.User user, final String str2, final String str3) {
         TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
         tL_messages_getAttachMenuBot.bot = MessagesController.getInstance(i).getInputUser(j);
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda133
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda132
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.this.lambda$processAttachMenuBot$125(i, str3, str, user, str2, j, tLObject, tL_error);
+                LaunchActivity.this.lambda$processAttachMenuBot$126(i, str3, str, user, str2, j, tLObject, tL_error);
             }
         });
     }
@@ -5129,20 +5174,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
             }
         }
-        final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda73
+        final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda74
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$114((TLRPC.User) obj);
+                LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$115((TLRPC.User) obj);
             }
         };
         TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j));
         if (user != null) {
             callback.run(user);
         } else {
-            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda74
+            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda75
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$116(j, callback);
+                    LaunchActivity.this.lambda$processAttachedMenuBotFromShortcut$117(j, callback);
                 }
             });
         }
@@ -5157,24 +5202,24 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (progress != null) {
             progress.init();
         }
-        boostsController.getBoostsStats(l.longValue(), new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda78
+        boostsController.getBoostsStats(l.longValue(), new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda79
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                LaunchActivity.this.lambda$processBoostDialog$118(progress, runnable, boostsController, l, chatMessageCell, (TL_stories.TL_premium_boostsStatus) obj);
+                LaunchActivity.this.lambda$processBoostDialog$119(progress, runnable, boostsController, l, chatMessageCell, (TL_stories.TL_premium_boostsStatus) obj);
             }
         });
     }
 
-    private void processWebAppBot(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, String str26, final String str27, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final String str28, final TLRPC.User user, final Runnable runnable, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final boolean z11, final String str29) {
+    private void processWebAppBot(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, String str26, final String str27, final Browser.Progress progress, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str28, final TLRPC.User user, final Runnable runnable, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final boolean z11, final String str29) {
         TLRPC.TL_messages_getBotApp tL_messages_getBotApp = new TLRPC.TL_messages_getBotApp();
         TLRPC.TL_inputBotAppShortName tL_inputBotAppShortName = new TLRPC.TL_inputBotAppShortName();
         tL_inputBotAppShortName.bot_id = MessagesController.getInstance(i).getInputUser(user);
         tL_inputBotAppShortName.short_name = str26;
         tL_messages_getBotApp.app = tL_inputBotAppShortName;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getBotApp, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda140
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getBotApp, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda131
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LaunchActivity.this.lambda$processWebAppBot$113(progress, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, z3, i4, z4, str28, z7, z8, z9, z10, z11, str29, runnable, user, str27, z6, z5, tLObject, tL_error);
+                LaunchActivity.this.lambda$processWebAppBot$114(progress, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i2, i3, str23, str24, str25, z3, i4, i5, i6, z4, str28, z7, z8, z9, z10, z11, str29, runnable, user, str27, z6, z5, tLObject, tL_error);
             }
         });
     }
@@ -5330,7 +5375,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         final TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage = new TLRPC.TL_messages_getDiscussionMessage();
         tL_messages_getDiscussionMessage.peer = MessagesController.getInputPeer(chat);
         tL_messages_getDiscussionMessage.msg_id = num2 != null ? num.intValue() : (int) l.longValue();
-        return ConnectionsManager.getInstance(i).sendRequest(tL_messages_getDiscussionMessage, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda116
+        return ConnectionsManager.getInstance(i).sendRequest(tL_messages_getDiscussionMessage, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda117
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 LaunchActivity.this.lambda$runCommentRequest$31(i, chat, l, num2, num, runnable2, str, num3, i2, i3, tL_messages_getDiscussionMessage, runnable, tLObject, tL_error);
@@ -5348,14 +5393,14 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         TLRPC.TL_messages_checkHistoryImport tL_messages_checkHistoryImport = new TLRPC.TL_messages_checkHistoryImport();
         tL_messages_checkHistoryImport.import_head = readImport;
-        iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkHistoryImport, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda71
+        iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkHistoryImport, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda72
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 LaunchActivity.this.lambda$runImportRequest$35(uri, i, alertDialog, tLObject, tL_error);
             }
         });
         final Runnable runnable = null;
-        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda72
+        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda73
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
                 LaunchActivity.lambda$runImportRequest$36(i, iArr, runnable, dialogInterface);
@@ -5367,13 +5412,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x062e  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0638  */
     /* JADX WARN: Removed duplicated region for block: B:40:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private void runLinkRequest(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final String str26, final String str27, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final String str28, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str29, final Integer num3) {
-        final int i5;
+    private void runLinkRequest(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final String str26, final String str27, final Browser.Progress progress, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str28, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final String str29, final Integer num3) {
+        final int i7;
         final int[] iArr;
         char c;
         Runnable runnable;
@@ -5382,19 +5427,19 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         EmojiPacksAlert emojiPacksAlert;
         StickersAlert stickersAlert;
         if (i2 == 0 && UserConfig.getActivatedAccountsCount() >= 2 && hashMap != null) {
-            AlertsCreator.createAccountSelectDialog(this, new AlertsCreator.AccountSelectDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda48
+            AlertsCreator.createAccountSelectDialog(this, new AlertsCreator.AccountSelectDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda36
                 @Override // org.telegram.ui.Components.AlertsCreator.AccountSelectDelegate
-                public final void didSelectAccount(int i6) {
-                    LaunchActivity.this.lambda$runLinkRequest$45(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i3, str23, str24, str25, str26, str27, progress, z3, i4, z4, str28, z5, z6, z7, z8, z9, str29, num3, i6);
+                public final void didSelectAccount(int i8) {
+                    LaunchActivity.this.lambda$runLinkRequest$45(i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, i3, str23, str24, str25, str26, str27, progress, z3, i4, i5, i6, z4, str28, z5, z6, z7, z8, z9, str29, num3, i8);
                 }
             }).show();
             return;
         }
         if (str16 != null) {
             NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-            int i6 = NotificationCenter.didReceiveSmsCode;
-            if (globalInstance.hasObservers(i6)) {
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(i6, str16);
+            int i8 = NotificationCenter.didReceiveSmsCode;
+            if (globalInstance.hasObservers(i8)) {
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(i8, str16);
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -5413,7 +5458,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             return;
         }
         final AlertDialog alertDialog = new AlertDialog(this, 3);
-        final Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda59
+        final Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.lambda$runLinkRequest$46(Browser.Progress.this, alertDialog);
@@ -5423,7 +5468,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (str10 != null) {
             TLRPC.TL_contacts_importContactToken tL_contacts_importContactToken = new TLRPC.TL_contacts_importContactToken();
             tL_contacts_importContactToken.token = str10;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda63
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda51
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.this.lambda$runLinkRequest$48(i, str10, runnable3, tLObject, tL_error);
@@ -5432,7 +5477,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         } else if (str11 != null) {
             TL_chatlists.TL_chatlists_checkChatlistInvite tL_chatlists_checkChatlistInvite = new TL_chatlists.TL_chatlists_checkChatlistInvite();
             tL_chatlists_checkChatlistInvite.slug = str11;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_chatlists_checkChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda64
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_chatlists_checkChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda52
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.lambda$runLinkRequest$50(i, str11, runnable3, tLObject, tL_error);
@@ -5441,7 +5486,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         } else if (str19 != null) {
             TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
             getuniquestargift.slug = str19;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getuniquestargift, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda65
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getuniquestargift, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda53
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.this.lambda$runLinkRequest$52(i, str19, runnable3, tLObject, tL_error);
@@ -5452,7 +5497,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = new TLRPC.TL_inputInvoiceSlug();
             tL_inputInvoiceSlug.slug = str18;
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceSlug;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda66
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda54
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.this.lambda$runLinkRequest$57(tL_inputInvoiceSlug, runnable3, i, str18, tLObject, tL_error);
@@ -5463,13 +5508,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 if (progress != null) {
                     progress.init();
                 }
-                MessagesController.getInstance(i).getUserNameResolver().resolve(str, str29, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda67
+                MessagesController.getInstance(i).getUserNameResolver().resolve(str, str29, new com.google.android.exoplayer2.util.Consumer() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda55
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj) {
-                        LaunchActivity.this.lambda$runLinkRequest$75(runnable3, i4, str13, str21, z2, str22, str26, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, i2, i3, str23, str24, str25, progress, z3, z4, str28, z5, z6, z7, z8, z9, str29, num3, str27, iArr2, (Long) obj);
+                        LaunchActivity.this.lambda$runLinkRequest$76(runnable3, i4, i5, str13, str21, z2, str22, str26, i, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, i2, i3, str23, str24, str25, progress, z3, i6, z4, str28, z5, z6, z7, z8, z9, str29, num3, str27, iArr2, (Long) obj);
                     }
                 });
-                i5 = i;
+                i7 = i;
                 iArr = iArr2;
                 alertDialog = alertDialog;
                 progress2 = progress;
@@ -5477,17 +5522,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 c = 0;
                 runnable2 = runnable;
                 if (iArr[c] == 0) {
-                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda61
+                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda49
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
-                            LaunchActivity.lambda$runLinkRequest$107(i5, iArr, runnable2, dialogInterface);
+                            LaunchActivity.lambda$runLinkRequest$108(i7, iArr, runnable2, dialogInterface);
                         }
                     });
                     if (progress2 != null) {
-                        progress2.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda62
+                        progress2.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda50
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LaunchActivity.lambda$runLinkRequest$108(i5, iArr, runnable2);
+                                LaunchActivity.lambda$runLinkRequest$109(i7, iArr, runnable2);
                             }
                         });
                     }
@@ -5504,16 +5549,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
                 return;
             }
+            String str30 = str3;
             if (str2 != null) {
                 if (i2 == 0) {
                     TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
                     tL_messages_checkChatInvite.hash = str2;
                     iArr = iArr2;
                     c = 0;
-                    iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda68
+                    iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda56
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$81(i, alertDialog, runnable3, str2, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$82(i, alertDialog, runnable3, str2, tLObject, tL_error);
                         }
                     }, 2);
                 } else {
@@ -5522,11 +5568,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     if (i2 == 1) {
                         TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
                         tL_messages_importChatInvite.hash = str2;
-                        i5 = i;
-                        ConnectionsManager.getInstance(i).sendRequest(tL_messages_importChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda69
+                        i7 = i;
+                        ConnectionsManager.getInstance(i).sendRequest(tL_messages_importChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda57
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LaunchActivity.this.lambda$runLinkRequest$83(i5, runnable3, tLObject, tL_error);
+                                LaunchActivity.this.lambda$runLinkRequest$84(i7, runnable3, tLObject, tL_error);
                             }
                         }, 2);
                         alertDialog = alertDialog;
@@ -5534,13 +5580,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         runnable = null;
                     }
                 }
-                i5 = i;
+                i7 = i;
                 alertDialog = alertDialog;
                 progress2 = progress;
                 runnable = null;
             } else {
-                i5 = i;
-                String str30 = str3;
+                i7 = i;
                 iArr = iArr2;
                 c = 0;
                 if (str30 != null) {
@@ -5591,17 +5636,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     bundle.putBoolean("onlySelect", true);
                     bundle.putInt("dialogsType", 3);
                     DialogsActivity dialogsActivity = new DialogsActivity(bundle);
-                    dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda70
+                    dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda58
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                         public /* synthetic */ boolean canSelectStories() {
                             return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
                         }
 
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                        public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList4, CharSequence charSequence, boolean z10, boolean z11, int i7, TopicsFragment topicsFragment) {
-                            boolean lambda$runLinkRequest$84;
-                            lambda$runLinkRequest$84 = LaunchActivity.this.lambda$runLinkRequest$84(z, i5, str9, dialogsActivity2, arrayList4, charSequence, z10, z11, i7, topicsFragment);
-                            return lambda$runLinkRequest$84;
+                        public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList4, CharSequence charSequence, boolean z10, boolean z11, int i9, TopicsFragment topicsFragment) {
+                            boolean lambda$runLinkRequest$85;
+                            lambda$runLinkRequest$85 = LaunchActivity.this.lambda$runLinkRequest$85(z, i7, str9, dialogsActivity2, arrayList4, charSequence, z10, z11, i9, topicsFragment);
+                            return lambda$runLinkRequest$85;
                         }
 
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -5622,41 +5667,41 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     getauthorizationform.bot_id = longValue;
                     getauthorizationform.scope = (String) hashMap.get("scope");
                     getauthorizationform.public_key = (String) hashMap.get("public_key");
-                    iArr[0] = ConnectionsManager.getInstance(i).sendRequest(getauthorizationform, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda49
+                    iArr[0] = ConnectionsManager.getInstance(i).sendRequest(getauthorizationform, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda37
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$88(iArr, i, runnable3, getauthorizationform, str31, str32, str33, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$89(iArr, i, runnable3, getauthorizationform, str31, str32, str33, tLObject, tL_error);
                         }
                     });
                 } else if (str15 != null) {
                     TLRPC.TL_help_getDeepLinkInfo tL_help_getDeepLinkInfo = new TLRPC.TL_help_getDeepLinkInfo();
                     tL_help_getDeepLinkInfo.path = str15;
-                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_help_getDeepLinkInfo, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda50
+                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_help_getDeepLinkInfo, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda38
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$90(runnable3, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$91(runnable3, tLObject, tL_error);
                         }
                     });
                 } else if (str14 != null) {
                     TLRPC.TL_langpack_getLanguage tL_langpack_getLanguage = new TLRPC.TL_langpack_getLanguage();
                     tL_langpack_getLanguage.lang_code = str14;
                     tL_langpack_getLanguage.lang_pack = "android";
-                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getLanguage, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda51
+                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getLanguage, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda39
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$92(runnable3, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$93(runnable3, tLObject, tL_error);
                         }
                     });
                 } else if (tL_wallPaper != null) {
                     if (TextUtils.isEmpty(tL_wallPaper.slug)) {
                         try {
                             TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-                            int i7 = wallPaperSettings.third_background_color;
-                            final ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(i7 != 0 ? new WallpapersListActivity.ColorWallpaper("c", wallPaperSettings.background_color, wallPaperSettings.second_background_color, i7, wallPaperSettings.fourth_background_color) : new WallpapersListActivity.ColorWallpaper("c", wallPaperSettings.background_color, wallPaperSettings.second_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false)), null, true, false);
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda52
+                            int i9 = wallPaperSettings.third_background_color;
+                            final ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(i9 != 0 ? new WallpapersListActivity.ColorWallpaper("c", wallPaperSettings.background_color, wallPaperSettings.second_background_color, i9, wallPaperSettings.fourth_background_color) : new WallpapersListActivity.ColorWallpaper("c", wallPaperSettings.background_color, wallPaperSettings.second_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false)), null, true, false);
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda40
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    LaunchActivity.this.lambda$runLinkRequest$93(themePreviewActivity);
+                                    LaunchActivity.this.lambda$runLinkRequest$94(themePreviewActivity);
                                 }
                             });
                         } catch (Exception e) {
@@ -5667,18 +5712,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                     tL_inputWallPaperSlug.slug = tL_wallPaper.slug;
                     getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda53
+                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda41
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$95(runnable3, tL_wallPaper, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$96(runnable3, tL_wallPaper, tLObject, tL_error);
                         }
                     });
                 } else if (str20 != null) {
                     progress2 = progress;
-                    runnable2 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda54
+                    runnable2 = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda42
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LaunchActivity.this.lambda$runLinkRequest$96(progress2);
+                            LaunchActivity.this.lambda$runLinkRequest$97(progress2);
                         }
                     };
                     TL_account.getTheme gettheme = new TL_account.getTheme();
@@ -5687,10 +5732,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     tL_inputThemeSlug.slug = str20;
                     gettheme.theme = tL_inputThemeSlug;
                     alertDialog = alertDialog;
-                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(gettheme, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda55
+                    iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(gettheme, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda43
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$runLinkRequest$98(alertDialog, runnable3, tLObject, tL_error);
+                            LaunchActivity.this.lambda$runLinkRequest$99(alertDialog, runnable3, tLObject, tL_error);
                         }
                     });
                     if (iArr[c] == 0) {
@@ -5702,10 +5747,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         if (str28 != null) {
                             TL_account.resolveBusinessChatLink resolvebusinesschatlink = new TL_account.resolveBusinessChatLink();
                             resolvebusinesschatlink.slug = str28;
-                            ConnectionsManager.getInstance(this.currentAccount).sendRequest(resolvebusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda60
+                            ConnectionsManager.getInstance(this.currentAccount).sendRequest(resolvebusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda48
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    LaunchActivity.this.lambda$runLinkRequest$106(tLObject, tL_error);
+                                    LaunchActivity.this.lambda$runLinkRequest$107(tLObject, tL_error);
                                 }
                             });
                         }
@@ -5718,10 +5763,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
                             tL_inputChannel.channel_id = l.longValue();
                             tL_channels_getChannels.id.add(tL_inputChannel);
-                            iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda56
+                            iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda44
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    LaunchActivity.this.lambda$runLinkRequest$100(iArr, i, runnable3, num, num2, l2, num3, tLObject, tL_error);
+                                    LaunchActivity.this.lambda$runLinkRequest$101(iArr, i, runnable3, num, num2, l2, num3, tLObject, tL_error);
                                 }
                             });
                         }
@@ -5742,18 +5787,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             BaseFragment baseFragment3 = !arrayList4.isEmpty() ? (BaseFragment) arrayList4.get(arrayList4.size() - 1) : null;
                             if (baseFragment3 == null || MessagesController.getInstance(i).checkCanOpenChat(bundle2, baseFragment3)) {
                                 final BaseFragment baseFragment4 = baseFragment3;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda58
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda46
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        LaunchActivity.this.lambda$runLinkRequest$104(bundle2, l, iArr, runnable3, z4, progress, l2, num, num3, baseFragment4, i);
+                                        LaunchActivity.this.lambda$runLinkRequest$105(bundle2, l, iArr, runnable3, z4, progress, l2, num, num3, baseFragment4, i);
                                     }
                                 });
                             }
                         } else {
-                            openForumFromLink(-l.longValue(), num, null, num3, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda57
+                            openForumFromLink(-l.longValue(), num, null, num3, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda45
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    LaunchActivity.lambda$runLinkRequest$101(runnable3);
+                                    LaunchActivity.lambda$runLinkRequest$102(runnable3);
                                 }
                             }, 0, -1);
                         }
@@ -5769,7 +5814,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         iArr = iArr2;
         progress2 = progress;
         runnable = null;
-        i5 = i;
+        i7 = i;
         c = 0;
         runnable2 = runnable;
         if (iArr[c] == 0) {
@@ -5834,20 +5879,20 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     setMeasuredDimension(size, size2);
                     if (AndroidUtilities.isInMultiwindow || (AndroidUtilities.isSmallTablet() && getResources().getConfiguration().orientation != 2)) {
                         LaunchActivity.this.tabletFullSize = true;
-                        LaunchActivity.this.actionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                        LaunchActivity.this.actionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                     } else {
                         LaunchActivity.this.tabletFullSize = false;
                         int i3 = (size / 100) * 35;
                         if (i3 < AndroidUtilities.dp(320.0f)) {
                             i3 = AndroidUtilities.dp(320.0f);
                         }
-                        LaunchActivity.this.actionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                        LaunchActivity.this.shadowTabletSide.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                        LaunchActivity.this.rightActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(size - i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                        LaunchActivity.this.actionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                        LaunchActivity.this.shadowTabletSide.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                        LaunchActivity.this.rightActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(size - i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                     }
-                    LaunchActivity.this.backgroundTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                    LaunchActivity.this.shadowTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
-                    LaunchActivity.this.layersActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(530.0f), size - AndroidUtilities.dp(16.0f)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(16.0f), TLRPC.FLAG_30));
+                    LaunchActivity.this.backgroundTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                    LaunchActivity.this.shadowTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                    LaunchActivity.this.layersActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(530.0f), size - AndroidUtilities.dp(16.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
                     this.inLayout = false;
                 }
 
@@ -5895,7 +5940,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             frameLayout2.setVisibility(arrayList.isEmpty() ? 8 : 0);
             this.shadowTablet.setBackgroundColor(2130706432);
             this.launchLayout.addView(this.shadowTablet);
-            this.shadowTablet.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda44
+            this.shadowTablet.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda67
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view2, MotionEvent motionEvent) {
                     boolean lambda$setupActionBarLayout$10;
@@ -5903,7 +5948,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     return lambda$setupActionBarLayout$10;
                 }
             });
-            this.shadowTablet.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda45
+            this.shadowTablet.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda68
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     LaunchActivity.lambda$setupActionBarLayout$11(view2);
@@ -6005,10 +6050,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         tL_langpack_getStrings.keys.add("ChooseYourLanguage");
                         tL_langpack_getStrings.keys.add("ChooseYourLanguageOther");
                         tL_langpack_getStrings.keys.add("ChangeLanguageLater");
-                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getStrings, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda40
+                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getStrings, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda63
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LaunchActivity.this.lambda$showLanguageAlert$161(localeInfoArr, str, tLObject, tL_error);
+                                LaunchActivity.this.lambda$showLanguageAlert$162(localeInfoArr, str, tLObject, tL_error);
                             }
                         }, 8);
                         TLRPC.TL_langpack_getStrings tL_langpack_getStrings2 = new TLRPC.TL_langpack_getStrings();
@@ -6017,10 +6062,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         tL_langpack_getStrings2.keys.add("ChooseYourLanguage");
                         tL_langpack_getStrings2.keys.add("ChooseYourLanguageOther");
                         tL_langpack_getStrings2.keys.add("ChangeLanguageLater");
-                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getStrings2, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda41
+                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getStrings2, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda64
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LaunchActivity.this.lambda$showLanguageAlert$163(localeInfoArr, str, tLObject, tL_error);
+                                LaunchActivity.this.lambda$showLanguageAlert$164(localeInfoArr, str, tLObject, tL_error);
                             }
                         }, 8);
                     }
@@ -6073,10 +6118,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     languageCellArr[i].setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 2));
                     languageCellArr[i].setLanguageSelected(i == 0, false);
                     linearLayout.addView(languageCellArr[i], LayoutHelper.createLinear(-1, 50));
-                    languageCellArr[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda143
+                    languageCellArr[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda144
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            LaunchActivity.lambda$showLanguageAlertInternal$157(localeInfoArr2, languageCellArr, view);
+                            LaunchActivity.lambda$showLanguageAlertInternal$158(localeInfoArr2, languageCellArr, view);
                         }
                     });
                     i++;
@@ -6086,18 +6131,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 int i3 = R.string.ChooseYourLanguageOther;
                 languageCell2.setValue(getStringForLanguageAlert(hashMap2, "ChooseYourLanguageOther", i3), getStringForLanguageAlert(this.englishLocaleStrings, "ChooseYourLanguageOther", i3));
                 languageCell2.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 2));
-                languageCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda144
+                languageCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda145
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LaunchActivity.this.lambda$showLanguageAlertInternal$158(view);
+                        LaunchActivity.this.lambda$showLanguageAlertInternal$159(view);
                     }
                 });
                 linearLayout.addView(languageCell2, LayoutHelper.createLinear(-1, 50));
                 builder.setView(linearLayout);
-                builder.setNegativeButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda145
+                builder.setNegativeButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda146
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i4) {
-                        LaunchActivity.this.lambda$showLanguageAlertInternal$159(localeInfoArr2, alertDialog, i4);
+                        LaunchActivity.this.lambda$showLanguageAlertInternal$160(localeInfoArr2, alertDialog, i4);
                     }
                 });
                 this.localeDialog = showAlertDialog(builder);
@@ -6125,18 +6170,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             int i32 = R.string.ChooseYourLanguageOther;
             languageCell22.setValue(getStringForLanguageAlert(hashMap22, "ChooseYourLanguageOther", i32), getStringForLanguageAlert(this.englishLocaleStrings, "ChooseYourLanguageOther", i32));
             languageCell22.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 2));
-            languageCell22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda144
+            languageCell22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda145
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LaunchActivity.this.lambda$showLanguageAlertInternal$158(view);
+                    LaunchActivity.this.lambda$showLanguageAlertInternal$159(view);
                 }
             });
             linearLayout2.addView(languageCell22, LayoutHelper.createLinear(-1, 50));
             builder2.setView(linearLayout2);
-            builder2.setNegativeButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda145
+            builder2.setNegativeButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda146
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i4) {
-                    LaunchActivity.this.lambda$showLanguageAlertInternal$159(localeInfoArr22, alertDialog, i4);
+                    LaunchActivity.this.lambda$showLanguageAlertInternal$160(localeInfoArr22, alertDialog, i4);
                 }
             });
             this.localeDialog = showAlertDialog(builder2);
@@ -6241,7 +6286,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             this.layersActionBarLayout.rebuildLogout();
             this.rightActionBarLayout.rebuildLogout();
         }
-        lambda$runLinkRequest$93(new IntroActivity().setOnLogout());
+        lambda$runLinkRequest$94(new IntroActivity().setOnLogout());
     }
 
     private void updateCurrentConnectionState(int i) {
@@ -6268,10 +6313,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             i2 = 0;
             str = null;
         }
-        this.actionBarLayout.setTitleOverlayText(str, i2, (connectionState == 1 || connectionState == 4) ? new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda46
+        this.actionBarLayout.setTitleOverlayText(str, i2, (connectionState == 1 || connectionState == 4) ? new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda70
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$updateCurrentConnectionState$164();
+                LaunchActivity.this.lambda$updateCurrentConnectionState$165();
             }
         } : null);
     }
@@ -6309,10 +6354,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         ofArgb = ValueAnimator.ofArgb(getNavigationBarColor(), i);
         this.navBarAnimator = ofArgb;
-        ofArgb.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda47
+        ofArgb.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda71
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                LaunchActivity.this.lambda$animateNavigationBarColor$165(valueAnimator2);
+                LaunchActivity.this.lambda$animateNavigationBarColor$166(valueAnimator2);
             }
         });
         this.navBarAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LaunchActivity.24
@@ -6339,10 +6384,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     final BetaUpdate update = ApplicationLoader.applicationLoaderInstance.getUpdate();
                     final boolean z2 = this.firstAppUpdateCheck;
                     this.firstAppUpdateCheck = false;
-                    ApplicationLoader.applicationLoaderInstance.checkUpdate(z, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda37
+                    ApplicationLoader.applicationLoaderInstance.checkUpdate(z, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda60
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LaunchActivity.this.lambda$checkAppUpdate$128(progress, z2, update);
+                            LaunchActivity.this.lambda$checkAppUpdate$129(progress, z2, update);
                         }
                     });
                     return;
@@ -6357,18 +6402,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         tL_help_getAppUpdate.source = "";
                     }
                     final int i = this.currentAccount;
-                    final int sendRequest = ConnectionsManager.getInstance(i).sendRequest(tL_help_getAppUpdate, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda38
+                    final int sendRequest = ConnectionsManager.getInstance(i).sendRequest(tL_help_getAppUpdate, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda61
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LaunchActivity.this.lambda$checkAppUpdate$132(i, progress, tLObject, tL_error);
+                            LaunchActivity.this.lambda$checkAppUpdate$133(i, progress, tLObject, tL_error);
                         }
                     });
                     if (progress != null) {
                         progress.init();
-                        progress.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda39
+                        progress.onCancel(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda62
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LaunchActivity.this.lambda$checkAppUpdate$133(sendRequest);
+                                LaunchActivity.this.lambda$checkAppUpdate$134(sendRequest);
                             }
                         });
                     }
@@ -6562,7 +6607,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     builder.setNegativeButton(LocaleController.getString(R.string.MoreInfo), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda6
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i6) {
-                            LaunchActivity.lambda$didReceivedNotification$141(i2, alertDialog, i6);
+                            LaunchActivity.lambda$didReceivedNotification$142(i2, alertDialog, i6);
                         }
                     });
                 }
@@ -6603,7 +6648,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             builder.setNegativeButton(LocaleController.getString(R.string.LogOut), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda9
                                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                 public final void onClick(AlertDialog alertDialog, int i7) {
-                                    LaunchActivity.this.lambda$didReceivedNotification$142(alertDialog, i7);
+                                    LaunchActivity.this.lambda$didReceivedNotification$143(alertDialog, i7);
                                 }
                             });
                         } else {
@@ -6637,7 +6682,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 builder2.setNegativeButton(LocaleController.getString(R.string.ShareYouLocationUnableManually), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda10
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i7) {
-                        LaunchActivity.this.lambda$didReceivedNotification$144(hashMap2, i2, alertDialog, i7);
+                        LaunchActivity.this.lambda$didReceivedNotification$145(hashMap2, i2, alertDialog, i7);
                     }
                 });
                 builder2.setMessage(LocaleController.getString(R.string.ShareYouLocationUnable));
@@ -6703,19 +6748,19 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     builder3.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda11
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i7) {
-                            LaunchActivity.lambda$didReceivedNotification$145(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
+                            LaunchActivity.lambda$didReceivedNotification$146(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
                         }
                     });
                     builder3.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda12
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i7) {
-                            LaunchActivity.lambda$didReceivedNotification$146(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
+                            LaunchActivity.lambda$didReceivedNotification$147(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
                         }
                     });
                     builder3.setOnBackButtonListener(new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda13
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i7) {
-                            LaunchActivity.lambda$didReceivedNotification$147(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
+                            LaunchActivity.lambda$didReceivedNotification$148(i2, hashMap3, booleanValue, booleanValue2, alertDialog, i7);
                         }
                     });
                     AlertDialog create2 = builder3.create();
@@ -6804,7 +6849,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda8
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            LaunchActivity.this.lambda$didReceivedNotification$153(themeInfo, file);
+                                            LaunchActivity.this.lambda$didReceivedNotification$154(themeInfo, file);
                                         }
                                     });
                                     return;
@@ -6827,7 +6872,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         ConnectionsManager.getInstance(fillThemeValues.account).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda7
                                             @Override // org.telegram.tgnet.RequestDelegate
                                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                                LaunchActivity.this.lambda$didReceivedNotification$151(fillThemeValues, tLObject, tL_error);
+                                                LaunchActivity.this.lambda$didReceivedNotification$152(fillThemeValues, tLObject, tL_error);
                                             }
                                         });
                                         return;
@@ -6835,7 +6880,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     TLRPC.TL_theme tL_theme2 = this.loadingTheme;
                                     Theme.ThemeInfo applyThemeFile = Theme.applyThemeFile(file2, tL_theme2.title, tL_theme2, true);
                                     if (applyThemeFile != null) {
-                                        lambda$runLinkRequest$93(new ThemePreviewActivity(applyThemeFile, true, 0, false, false));
+                                        lambda$runLinkRequest$94(new ThemePreviewActivity(applyThemeFile, true, 0, false, false));
                                     }
                                 }
                             }
@@ -7055,7 +7100,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                         View view2 = this.rippleAbove;
                         if (view2 != null && view2.getBackground() != null) {
-                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.locationPermissionGranted);
+                            this.rippleAbove.getBackground().setAlpha(NotificationCenter.goingToPreviewTheme);
                         }
                         this.frameLayout.removeView(this.themeSwitchImageView);
                         ImageView imageView = new ImageView(this);
@@ -7123,7 +7168,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda14
                                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                    LaunchActivity.this.lambda$didReceivedNotification$148(valueAnimator);
+                                    LaunchActivity.this.lambda$didReceivedNotification$149(valueAnimator);
                                 }
                             });
                             ofFloat.setDuration(createCircularReveal.getDuration());
@@ -7132,7 +7177,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda15
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LaunchActivity.this.lambda$didReceivedNotification$149();
+                                LaunchActivity.this.lambda$didReceivedNotification$150();
                             }
                         }, booleanValue4 ? (measuredHeight - iArr[1]) / AndroidUtilities.dp(2.25f) : 50L);
                         createCircularReveal.start();
@@ -7240,7 +7285,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             SendMessagesHelper.getInstance(currentAccount).prepareImportHistory(((MessagesStorage.TopicKey) arrayList5.get(0)).dialogId, this.exportingChatUri, this.documentsUrisArray, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda87
                 @Override // org.telegram.messenger.MessagesStorage.LongCallback
                 public final void run(long j2) {
-                    LaunchActivity.this.lambda$didSelectDialogs$135(currentAccount, dialogsActivity, z, arrayList6, uri, alertDialog, j2);
+                    LaunchActivity.this.lambda$didSelectDialogs$136(currentAccount, dialogsActivity, z, arrayList6, uri, alertDialog, j2);
                 }
             });
             try {
@@ -7317,7 +7362,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     phonebookShareAlert.setDelegate(new ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda88
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
                         public final void didSelectContact(TLRPC.User user, boolean z10, int i6, long j3, boolean z11, long j4) {
-                            LaunchActivity.this.lambda$didSelectDialogs$136(chatActivity5, arrayList, i4, charSequence, currentAccount, z9, user, z10, i6, j3, z11, j4);
+                            LaunchActivity.this.lambda$didSelectDialogs$137(chatActivity5, arrayList, i4, charSequence, currentAccount, z9, user, z10, i6, j3, z11, j4);
                         }
 
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
@@ -7453,7 +7498,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             if (file.exists()) {
                                 TLRPC.TL_document tL_document = new TLRPC.TL_document();
                                 tL_document.file_reference = new byte[0];
-                                tL_document.dc_id = TLRPC.FLAG_31;
+                                tL_document.dc_id = TLObject.FLAG_31;
                                 tL_document.id = SharedConfig.getLastLocalId();
                                 tL_document.user_id = accountInstance.getUserConfig().getClientUserId();
                                 tL_document.mime_type = "audio/ogg";
@@ -8126,7 +8171,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda34
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LaunchActivity.this.lambda$onActivityResult$138();
+                            LaunchActivity.this.lambda$onActivityResult$139();
                         }
                     }, 200L);
                     return;
@@ -8933,7 +8978,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.lambda$onPause$139(i);
+                LaunchActivity.lambda$onPause$140(i);
             }
         });
         onPasscodePause();
@@ -9078,7 +9123,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.lambda$onResume$140();
+                LaunchActivity.lambda$onResume$141();
             }
         });
         checkFreeDiscSpace(0);
@@ -9299,7 +9344,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     bundle.putLong("chat_id", j2);
                 } else {
                     valueOf = Integer.valueOf(i);
-                    runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda136
+                    runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda138
                         @Override // java.lang.Runnable
                         public final void run() {
                             LaunchActivity.lambda$openMessage$38(Browser.Progress.this);
@@ -9311,7 +9356,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             ArrayList arrayList = mainFragmentsStack;
             final BaseFragment baseFragment = !arrayList.isEmpty() ? (BaseFragment) arrayList.get(arrayList.size() - 1) : null;
             if (baseFragment == null || MessagesController.getInstance(this.currentAccount).checkCanOpenChat(bundle, baseFragment)) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda137
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda139
                     @Override // java.lang.Runnable
                     public final void run() {
                         LaunchActivity.this.lambda$openMessage$42(bundle, num, i, str, i3, j, progress, baseFragment);
@@ -9325,7 +9370,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             progress.init();
         }
         valueOf = Integer.valueOf(i);
-        runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda135
+        runnable = new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda137
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.lambda$openMessage$37(Browser.Progress.this);
@@ -9335,7 +9380,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* renamed from: presentFragment, reason: merged with bridge method [inline-methods] */
-    public void lambda$runLinkRequest$93(BaseFragment baseFragment) {
+    public void lambda$runLinkRequest$94(BaseFragment baseFragment) {
         getActionBarLayout().presentFragment(baseFragment);
     }
 
@@ -9446,7 +9491,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda89
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    LaunchActivity.this.lambda$showAlertDialog$134(show, dialogInterface);
+                    LaunchActivity.this.lambda$showAlertDialog$135(show, dialogInterface);
                 }
             });
             this.visibleDialogs.add(show);
@@ -9510,7 +9555,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             MediaController.getInstance().cleanupPlayer(true, true);
         }
         this.passcodeDialog.show();
-        this.passcodeDialog.passcodeView.onShow(this.overlayPasscodeViews.isEmpty() && z, z2, i, i2, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda75
+        this.passcodeDialog.passcodeView.onShow(this.overlayPasscodeViews.isEmpty() && z, z2, i, i2, new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda76
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$showPasscodeActivity$13(runnable);
@@ -9523,7 +9568,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         SharedConfig.isWaitingForPasscodeEnter = true;
         this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
-        PasscodeView.PasscodeViewDelegate passcodeViewDelegate = new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda76
+        PasscodeView.PasscodeViewDelegate passcodeViewDelegate = new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda77
             @Override // org.telegram.ui.Components.PasscodeView.PasscodeViewDelegate
             public final void didAcceptedPassword(PasscodeView passcodeView) {
                 LaunchActivity.this.lambda$showPasscodeActivity$14(passcodeView);
@@ -9694,7 +9739,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     public void switchToAccount(int i, boolean z) {
-        switchToAccount(i, z, new GenericProvider() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda36
+        switchToAccount(i, z, new GenericProvider() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda59
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
                 DialogsActivity lambda$switchToAccount$12;

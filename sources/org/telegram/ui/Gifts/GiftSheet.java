@@ -57,6 +57,8 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.utils.tlutils.AmountUtils$Currency;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.AccountFrozenAlert;
@@ -386,6 +388,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         private final TextView subtitleView;
         private Text title;
         private final TextView titleView;
+        private final ImageView tonOnlySaleView;
         private TL_stars.SavedStarGift userGift;
 
         public static class Factory extends UItem.UItemFactory {
@@ -564,6 +567,12 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             frameLayout2.addView(imageView, LayoutHelper.createFrame(12.66f, 12.66f, 17));
             frameLayout.addView(frameLayout2, LayoutHelper.createFrame(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f));
+            ImageView imageView2 = new ImageView(context);
+            this.tonOnlySaleView = imageView2;
+            imageView2.setImageResource(R.drawable.ton_16);
+            imageView2.setVisibility(8);
+            imageView2.setScaleType(ImageView.ScaleType.CENTER);
+            frameLayout.addView(imageView2, LayoutHelper.createFrame(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
         }
 
         private TL_stars.TL_starGiftUnique getUniqueStarGift() {
@@ -623,7 +632,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 TL_stars.StarGift starGift2 = savedStarGift.gift;
                 if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
                     this.ribbon.setVisibility(0);
-                    if (this.userGift.gift.resell_stars > 0) {
+                    if (this.userGift.gift.resell_amount != null) {
                         int blendOver = Theme.blendOver(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider), Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), 0.04f));
                         this.ribbon.setColor(Theme.getColor(Theme.key_color_green, this.resourcesProvider));
                         this.ribbon.setStrokeColor(blendOver);
@@ -996,18 +1005,21 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x0339  */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0344 A[ORIG_RETURN, RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:47:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x033b  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x024d  */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x0274  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x02cc  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x02e4  */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x02e8  */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x02ce  */
-        /* JADX WARN: Removed duplicated region for block: B:71:0x028c  */
-        /* JADX WARN: Removed duplicated region for block: B:75:0x0263  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x03cc  */
+        /* JADX WARN: Removed duplicated region for block: B:54:0x03d7 A[ORIG_RETURN, RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:56:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:57:0x03ce  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x02ab  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x02d2  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x032d  */
+        /* JADX WARN: Removed duplicated region for block: B:71:0x0345  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x0362  */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x037e  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x0366  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x0349  */
+        /* JADX WARN: Removed duplicated region for block: B:90:0x032f  */
+        /* JADX WARN: Removed duplicated region for block: B:94:0x02ea  */
+        /* JADX WARN: Removed duplicated region for block: B:98:0x02c1  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1016,6 +1028,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             CharSequence replaceStarsWithPlain;
             ViewGroup.MarginLayoutParams marginLayoutParams;
             float f;
+            TextView textView2;
+            SpannableStringBuilder replaceStars;
             TLRPC.Chat chat;
             Runnable runnable = this.cancel;
             if (runnable != null) {
@@ -1034,6 +1048,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             this.lockView.setBlendWithColor(stargiftattributebackdrop != null ? Integer.valueOf(Theme.multAlpha(stargiftattributebackdrop.center_color | (-16777216), 0.75f)) : null);
             this.pinView.setWaitingImage();
             this.pinView.setBlendWithColor(stargiftattributebackdrop != null ? Integer.valueOf(Theme.multAlpha(stargiftattributebackdrop.center_color | (-16777216), 0.75f)) : null);
+            this.tonOnlySaleView.setVisibility(savedStarGift.gift.resale_ton_only ? 0 : 8);
             this.pinnedView.setBackground(Theme.createCircleDrawable(AndroidUtilities.dp(20.0f), stargiftattributebackdrop != null ? Theme.adaptHSV(stargiftattributebackdrop.center_color | (-16777216), 0.1f, -0.2f) : Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider)));
             FrameLayout.LayoutParams layoutParams = this.imageViewLayoutParams;
             layoutParams.gravity = 17;
@@ -1073,22 +1088,22 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                         }
                     }
                 }
-                if (stargiftattributebackdrop != null || savedStarGift.gift.resell_stars <= 0) {
-                    TextView textView2 = this.priceView;
+                if (stargiftattributebackdrop != null || savedStarGift.gift.resell_amount == null) {
+                    TextView textView3 = this.priceView;
                     if (z) {
-                        textView2.setVisibility(0);
+                        textView3.setVisibility(0);
                         FrameLayout.LayoutParams layoutParams2 = this.imageViewLayoutParams;
                         layoutParams2.topMargin = 0;
                         layoutParams2.bottomMargin = 0;
                     } else {
-                        textView2.setVisibility(8);
+                        textView3.setVisibility(8);
                         this.imageViewLayoutParams.topMargin = AndroidUtilities.dp(12.0f);
                         this.imageViewLayoutParams.bottomMargin = AndroidUtilities.dp(12.0f);
                     }
-                    TextView textView3 = this.priceView;
+                    TextView textView4 = this.priceView;
                     int dp = AndroidUtilities.dp(8.0f);
                     if (z3) {
-                        textView3.setPadding(dp, 0, AndroidUtilities.dp(10.0f), 0);
+                        textView4.setPadding(dp, 0, AndroidUtilities.dp(10.0f), 0);
                         this.priceView.setTextSize(1, 12.0f);
                         textView = this.priceView;
                         StringBuilder sb = new StringBuilder();
@@ -1102,7 +1117,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                         sb.append(LocaleController.formatNumber(Math.max(j, j2), ','));
                         replaceStarsWithPlain = StarsIntroActivity.replaceStarsWithPlain(sb.toString(), 0.66f);
                     } else {
-                        textView3.setPadding(dp, 0, AndroidUtilities.dp(8.0f), 0);
+                        textView4.setPadding(dp, 0, AndroidUtilities.dp(8.0f), 0);
                         this.priceView.setTextSize(1, 12.0f);
                         textView = this.priceView;
                         replaceStarsWithPlain = LocaleController.getString(R.string.Gift2PriceUnique);
@@ -1110,6 +1125,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     textView.setText(replaceStarsWithPlain);
                     this.priceView.setTextColor(!z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
                     this.priceView.setBackground(new StarsBackground(!z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                    this.tonOnlySaleView.setBackground(new StarsBackground(!z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                    this.tonOnlySaleView.setColorFilter(z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
                     ((FrameLayout.LayoutParams) this.priceView.getLayoutParams()).gravity = 49;
                     marginLayoutParams = (ViewGroup.MarginLayoutParams) this.priceView.getLayoutParams();
                     f = 103.0f;
@@ -1121,13 +1138,24 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
                     this.priceView.setTextSize(1, 12.0f);
                     ColoredImageSpan[] coloredImageSpanArr = new ColoredImageSpan[1];
-                    this.priceView.setText(StarsIntroActivity.replaceStars("XTR " + LocaleController.formatNumber(savedStarGift.gift.resell_stars, ','), 0.95f, coloredImageSpanArr));
+                    TL_stars.StarGift starGift2 = savedStarGift.gift;
+                    if (starGift2.resale_ton_only && DialogObject.getPeerDialogId(starGift2.owner_id) == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                        textView2 = this.priceView;
+                        replaceStars = StarsIntroActivity.replaceStars(true, "XTR " + ((Object) StarsIntroActivity.formatStarsAmount(savedStarGift.gift.getResellAmount(AmountUtils$Currency.TON).toTl(), 1.0f, ',')), 0.95f, coloredImageSpanArr);
+                    } else {
+                        textView2 = this.priceView;
+                        replaceStars = StarsIntroActivity.replaceStars("XTR " + LocaleController.formatNumber(savedStarGift.gift.getResellStars(), ','), 0.95f, coloredImageSpanArr);
+                    }
+                    textView2.setText(replaceStars);
                     ColoredImageSpan coloredImageSpan = coloredImageSpanArr[0];
                     if (coloredImageSpan != null) {
                         coloredImageSpan.translate(0.0f, AndroidUtilities.dp(0.5f));
                     }
-                    this.priceView.setBackground(new StarsBackground(1895825407, Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f))));
+                    int blendOver = Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f));
+                    this.priceView.setBackground(new StarsBackground(1895825407, blendOver));
                     this.priceView.setTextColor(-1);
+                    this.tonOnlySaleView.setBackground(new StarsBackground(1895825407, blendOver));
+                    this.tonOnlySaleView.setColorFilter(-1);
                     ((FrameLayout.LayoutParams) this.priceView.getLayoutParams()).gravity = 49;
                     marginLayoutParams = (ViewGroup.MarginLayoutParams) this.priceView.getLayoutParams();
                     f = 69.0f;
@@ -1153,16 +1181,18 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             this.avatarView.setVisibility(8);
             if (stargiftattributebackdrop != null) {
             }
-            TextView textView22 = this.priceView;
+            TextView textView32 = this.priceView;
             if (z) {
             }
-            TextView textView32 = this.priceView;
+            TextView textView42 = this.priceView;
             int dp2 = AndroidUtilities.dp(8.0f);
             if (z3) {
             }
             textView.setText(replaceStarsWithPlain);
             this.priceView.setTextColor(!z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
             this.priceView.setBackground(new StarsBackground(!z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+            this.tonOnlySaleView.setBackground(new StarsBackground(!z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+            this.tonOnlySaleView.setColorFilter(z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
             ((FrameLayout.LayoutParams) this.priceView.getLayoutParams()).gravity = 49;
             marginLayoutParams = (ViewGroup.MarginLayoutParams) this.priceView.getLayoutParams();
             f = 103.0f;
@@ -1186,20 +1216,21 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:32:0x016f  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x018d  */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x01ac  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x01b1  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0191  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x0172  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x01b5  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x01d9  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x01fe  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0210  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x021c  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x0220  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x0202  */
+        /* JADX WARN: Removed duplicated region for block: B:56:0x01dd  */
+        /* JADX WARN: Removed duplicated region for block: B:60:0x01b8  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public boolean setStarsGift(TL_stars.StarGift starGift, boolean z, boolean z2, boolean z3, boolean z4) {
             long j;
             boolean z5;
-            TextView textView;
-            int i;
             Runnable runnable = this.cancel;
             if (runnable != null) {
                 runnable.run();
@@ -1209,11 +1240,13 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             this.cardBackground.setBackdrop(stargiftattributebackdrop);
             this.cardBackground.setPattern((TL_stars.starGiftAttributePattern) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributePattern.class));
-            this.cardBackground.setStrokeColors(starGift.require_premium ? PREMIUM_STROKE : null);
+            long j2 = 0;
+            this.cardBackground.setStrokeColors((!starGift.require_premium || (z3 && starGift.availability_resale > 0)) ? null : PREMIUM_STROKE);
             this.titleView.setVisibility(8);
             this.subtitleView.setVisibility(8);
             this.imageView.setTranslationY(0.0f);
             this.lockView.setVisibility(8);
+            this.tonOnlySaleView.setVisibility(starGift.resale_ton_only ? 0 : 8);
             FrameLayout.LayoutParams layoutParams = this.imageViewLayoutParams;
             layoutParams.gravity = 49;
             this.imageView.setLayoutParams(layoutParams);
@@ -1225,65 +1258,68 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 int blendOver = stargiftattributebackdrop != null ? Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f)) : 1090519039;
                 this.priceView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver, Theme.blendOver(blendOver, 822083583)));
                 this.priceView.setTextColor(-1);
+                this.tonOnlySaleView.setColorFilter(-1);
+                this.tonOnlySaleView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver, Theme.blendOver(blendOver, 822083583)));
+            } else if (z4) {
+                this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                long resellStars = starGift.getResellStars();
+                int blendOver2 = Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f));
+                this.priceView.setText(StarsIntroActivity.replaceStars("XTR " + LocaleController.formatNumber(resellStars, ',')));
+                this.priceView.setBackground(new StarsBackground(1895825407, blendOver2));
+                this.priceView.setTextColor(-1);
+                this.tonOnlySaleView.setColorFilter(-1);
+                this.tonOnlySaleView.setBackground(new StarsBackground(1895825407, blendOver2));
             } else {
-                if (z4) {
-                    this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
-                    long j2 = starGift.resell_stars;
-                    int blendOver2 = Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f));
-                    this.priceView.setText(StarsIntroActivity.replaceStars("XTR " + LocaleController.formatNumber(j2, ',')));
-                    this.priceView.setBackground(new StarsBackground(1895825407, blendOver2));
-                    textView = this.priceView;
-                    i = -1;
-                } else {
-                    this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
-                    long j3 = 0;
-                    if (z3) {
-                        long j4 = starGift.availability_resale;
-                        if (j4 > 0) {
-                            j = starGift.resell_min_stars;
-                            if (j4 > 1 && j < MessagesController.getInstance(this.currentAccount).starsStargiftResaleAmountMax) {
-                                z5 = true;
-                                TextView textView2 = this.priceView;
-                                StringBuilder sb = new StringBuilder();
-                                sb.append("XTR ");
-                                sb.append(LocaleController.formatNumber(j, ','));
-                                sb.append(z5 ? "+" : "");
-                                textView2.setText(StarsIntroActivity.replaceStarsWithPlain(sb.toString(), 0.71f));
-                                this.priceView.setBackground(new StarsBackground(starGift instanceof TL_stars.TL_starGiftUnique ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
-                                textView = this.priceView;
-                                i = Theme.isCurrentThemeDark() ? -1333971 : -2722014;
-                            }
-                            z5 = false;
-                            TextView textView22 = this.priceView;
-                            StringBuilder sb2 = new StringBuilder();
-                            sb2.append("XTR ");
-                            sb2.append(LocaleController.formatNumber(j, ','));
-                            sb2.append(z5 ? "+" : "");
-                            textView22.setText(StarsIntroActivity.replaceStarsWithPlain(sb2.toString(), 0.71f));
-                            this.priceView.setBackground(new StarsBackground(starGift instanceof TL_stars.TL_starGiftUnique ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
-                            textView = this.priceView;
-                            if (Theme.isCurrentThemeDark()) {
-                            }
+                this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
+                if (z3) {
+                    long j3 = starGift.availability_resale;
+                    if (j3 > 0) {
+                        j = starGift.resell_min_stars;
+                        if (j3 > 1 && j < MessagesController.getInstance(this.currentAccount).config.starsStarGiftResaleAmountMax.get()) {
+                            z5 = true;
+                            TextView textView = this.priceView;
+                            StringBuilder sb = new StringBuilder();
+                            sb.append("XTR ");
+                            sb.append(LocaleController.formatNumber(j, ','));
+                            sb.append(z5 ? "+" : "");
+                            textView.setText(StarsIntroActivity.replaceStarsWithPlain(sb.toString(), 0.71f));
+                            boolean z6 = starGift instanceof TL_stars.TL_starGiftUnique;
+                            this.priceView.setBackground(new StarsBackground(z6 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                            this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                            this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                            this.tonOnlySaleView.setBackground(new StarsBackground(z6 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                         }
-                    }
-                    long j5 = starGift.stars;
-                    if (z2 && starGift.can_upgrade) {
-                        j3 = starGift.upgrade_stars;
-                    }
-                    j = j3 + j5;
-                    z5 = false;
-                    TextView textView222 = this.priceView;
-                    StringBuilder sb22 = new StringBuilder();
-                    sb22.append("XTR ");
-                    sb22.append(LocaleController.formatNumber(j, ','));
-                    sb22.append(z5 ? "+" : "");
-                    textView222.setText(StarsIntroActivity.replaceStarsWithPlain(sb22.toString(), 0.71f));
-                    this.priceView.setBackground(new StarsBackground(starGift instanceof TL_stars.TL_starGiftUnique ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
-                    textView = this.priceView;
-                    if (Theme.isCurrentThemeDark()) {
+                        z5 = false;
+                        TextView textView2 = this.priceView;
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("XTR ");
+                        sb2.append(LocaleController.formatNumber(j, ','));
+                        sb2.append(z5 ? "+" : "");
+                        textView2.setText(StarsIntroActivity.replaceStarsWithPlain(sb2.toString(), 0.71f));
+                        boolean z62 = starGift instanceof TL_stars.TL_starGiftUnique;
+                        this.priceView.setBackground(new StarsBackground(z62 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                        this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                        this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                        this.tonOnlySaleView.setBackground(new StarsBackground(z62 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                     }
                 }
-                textView.setTextColor(i);
+                long j4 = starGift.stars;
+                if (z2 && starGift.can_upgrade) {
+                    j2 = starGift.upgrade_stars;
+                }
+                j = j2 + j4;
+                z5 = false;
+                TextView textView22 = this.priceView;
+                StringBuilder sb22 = new StringBuilder();
+                sb22.append("XTR ");
+                sb22.append(LocaleController.formatNumber(j, ','));
+                sb22.append(z5 ? "+" : "");
+                textView22.setText(StarsIntroActivity.replaceStarsWithPlain(sb22.toString(), 0.71f));
+                boolean z622 = starGift instanceof TL_stars.TL_starGiftUnique;
+                this.priceView.setBackground(new StarsBackground(z622 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
+                this.tonOnlySaleView.setBackground(new StarsBackground(z622 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
             }
             ((ViewGroup.MarginLayoutParams) this.priceView.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
             ((FrameLayout.LayoutParams) this.priceView.getLayoutParams()).gravity = 49;
@@ -1563,7 +1599,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             this.ceiledRect = new RectF();
             this.selectedRect = new RectF();
             this.selectedPaint = new Paint(1);
-            this.lastId = TLRPC.FLAG_31;
+            this.lastId = TLObject.FLAG_31;
             this.resourcesProvider = resourcesProvider;
             LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Gifts.GiftSheet.Tabs.1
                 private final void setBounds(RectF rectF, View view) {
@@ -1637,7 +1673,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
 
         @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void set(int i, ArrayList arrayList, int i2, final Utilities.Callback callback) {
@@ -1749,7 +1785,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.Gifts.GiftSheet.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30));
             }
         };
         this.topView = frameLayout2;
@@ -2079,7 +2115,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     BulletinFactory.of(this.container, this.resourcesProvider).createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift.per_user_total))).show();
                     return;
                 }
-                if (starGift.require_premium && !UserConfig.getInstance(i).isPremium()) {
+                if (starGift.require_premium && starGift.availability_resale <= 0 && !UserConfig.getInstance(i).isPremium()) {
                     BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
                     if (safeLastFragment == null) {
                         return;

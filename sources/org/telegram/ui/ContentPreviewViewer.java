@@ -463,7 +463,7 @@ public class ContentPreviewViewer {
                     addItem.setTag(Integer.valueOf(i11));
                     addItem.setOnClickListener(onClickListener);
                 }
-                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                 linearLayout.addView(createMyStickerPacksListView, new LinearLayout.LayoutParams(actionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindowLayout2.getMeasuredHeight() * 1.5f)));
                 actionBarPopupWindowLayout2.addViewToSwipeBack(linearLayout);
                 frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$1$$ExternalSyntheticLambda5
@@ -575,7 +575,7 @@ public class ContentPreviewViewer {
                             ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                             ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                             ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+                            actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                             ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                             ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                             if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -712,7 +712,7 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                         ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                         ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+                        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                         ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                         ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                         if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -867,7 +867,7 @@ public class ContentPreviewViewer {
                 ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
                 ContentPreviewViewer.this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                 ContentPreviewViewer.this.popupWindow.setFocusable(true);
-                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+                actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                 ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                 ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
                 if (Build.VERSION.SDK_INT < 21 || ContentPreviewViewer.this.lastInsets == null) {
@@ -1445,7 +1445,7 @@ public class ContentPreviewViewer {
             if (launchActivity.getActionBarLayout() != null && launchActivity.getActionBarLayout().getLastFragment() != null) {
                 launchActivity.getActionBarLayout().getLastFragment().dismissCurrentDialog();
             }
-            launchActivity.lambda$runLinkRequest$93(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(5)));
+            launchActivity.lambda$runLinkRequest$94(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(5)));
         }
         this.menuVisible = false;
         this.containerView.invalidate();
@@ -1818,7 +1818,7 @@ public class ContentPreviewViewer {
                 if (dp <= size) {
                     size = dp;
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
         };
         recyclerListView.setLayoutManager(new LinearLayoutManager(this.parentActivity));
@@ -2438,7 +2438,7 @@ public class ContentPreviewViewer {
             layoutParams.flags &= -131073;
             layoutParams.softInputMode = 16;
         } else {
-            this.windowLayoutParams.flags |= TLRPC.FLAG_17;
+            this.windowLayoutParams.flags |= TLObject.FLAG_17;
         }
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);

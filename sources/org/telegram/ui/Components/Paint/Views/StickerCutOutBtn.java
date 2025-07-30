@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.Components.ColoredImageSpan;
@@ -75,7 +75,7 @@ public abstract class StickerCutOutBtn extends ButtonWithCounterView {
     @Override // org.telegram.ui.Stories.recorder.ButtonWithCounterView, android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.wrapContent) {
-            i = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + ((int) this.text.getCurrentWidth()) + getPaddingRight(), TLRPC.FLAG_30);
+            i = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + ((int) this.text.getCurrentWidth()) + getPaddingRight(), TLObject.FLAG_30);
         }
         super.onMeasure(i, i2);
     }

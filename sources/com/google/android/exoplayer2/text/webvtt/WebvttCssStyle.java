@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class WebvttCssStyle {
@@ -76,7 +76,7 @@ public final class WebvttCssStyle {
         if (this.targetId.isEmpty() && this.targetTag.isEmpty() && this.targetClasses.isEmpty() && this.targetVoice.isEmpty()) {
             return TextUtils.isEmpty(str2) ? 1 : 0;
         }
-        int updateScoreForMatch = updateScoreForMatch(updateScoreForMatch(updateScoreForMatch(0, this.targetId, str, TLRPC.FLAG_30), this.targetTag, str2, 2), this.targetVoice, str3, 4);
+        int updateScoreForMatch = updateScoreForMatch(updateScoreForMatch(updateScoreForMatch(0, this.targetId, str, TLObject.FLAG_30), this.targetTag, str2, 2), this.targetVoice, str3, 4);
         if (updateScoreForMatch == -1 || !set.containsAll(this.targetClasses)) {
             return 0;
         }

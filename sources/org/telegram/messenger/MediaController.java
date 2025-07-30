@@ -5126,7 +5126,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         TLRPC.TL_document tL_document = new TLRPC.TL_document();
         this.recordingAudio = tL_document;
         this.recordingGuid = i;
-        tL_document.dc_id = TLRPC.FLAG_31;
+        tL_document.dc_id = TLObject.FLAG_31;
         tL_document.id = draftVoice.id;
         tL_document.user_id = UserConfig.getInstance(i2).getClientUserId();
         TLRPC.TL_document tL_document2 = this.recordingAudio;
@@ -5651,7 +5651,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             this.recordingAudio = tL_document;
             this.recordingGuid = i2;
             tL_document.file_reference = new byte[0];
-            tL_document.dc_id = TLRPC.FLAG_31;
+            tL_document.dc_id = TLObject.FLAG_31;
             tL_document.id = SharedConfig.getLastLocalId();
             this.recordingAudio.user_id = UserConfig.getInstance(i).getClientUserId();
             TLRPC.TL_document tL_document2 = this.recordingAudio;
@@ -9024,7 +9024,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             z2 = true;
         }
         int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i2 = TLRPC.FLAG_31;
+        int i2 = TLObject.FLAG_31;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             MessageObject messageObject2 = arrayList.get(size);
             if (messageObject2.isMusic()) {

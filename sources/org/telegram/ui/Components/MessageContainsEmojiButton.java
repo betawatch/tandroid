@@ -22,6 +22,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
@@ -359,7 +360,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         if (this.mainTextLayout != null) {
             canvas.save();
             canvas.translate(getPaddingLeft(), getPaddingTop());
-            this.textPaint.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.mainTextLayout.draw(canvas);
             LoadingDrawable loadingDrawable = this.loadingDrawable;
             if (loadingDrawable != null && this.loadingDrawableBoundsSet) {
@@ -404,6 +405,6 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         if (paddingLeft < 0) {
             paddingLeft = 0;
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), TLObject.FLAG_30));
     }
 }

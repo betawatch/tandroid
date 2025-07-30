@@ -31,6 +31,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.EmojiTabsStrip;
@@ -642,11 +643,11 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             setMeasuredDimension(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
             BackupImageView backupImageView = this.imageView;
             if (backupImageView != null) {
-                backupImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
+                backupImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
             }
             PremiumLockIconView premiumLockIconView = this.lockView;
             if (premiumLockIconView != null) {
-                premiumLockIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLRPC.FLAG_30));
+                premiumLockIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
             }
         }
 
@@ -869,7 +870,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
 
                 @Override // android.widget.LinearLayout, android.view.View
                 protected void onMeasure(int i, int i2) {
-                    super.onMeasure(Math.max(View.MeasureSpec.getSize(i), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(EmojiTabsView.this.contentView.getChildCount() * 32), TLRPC.FLAG_30)), i2);
+                    super.onMeasure(Math.max(View.MeasureSpec.getSize(i), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(EmojiTabsView.this.contentView.getChildCount() * 32), TLObject.FLAG_30)), i2);
                 }
             };
             this.contentView = linearLayout;
@@ -926,7 +927,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
 
         @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(AndroidUtilities.dp(30.0f), maxWidth(), this.showT), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(AndroidUtilities.dp(30.0f), maxWidth(), this.showT), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
         }
 
         @Override // org.telegram.ui.Components.ScrollableHorizontalScrollView, android.widget.HorizontalScrollView, android.view.View
@@ -1193,7 +1194,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             protected void onMeasure(int i3, int i4) {
                 EmojiTabButton emojiTabButton;
                 EmojiTabButton emojiTabButton2;
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(99999999, TLRPC.FLAG_31);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(99999999, TLObject.FLAG_31);
                 float f = 0.0f;
                 int paddingLeft = (getPaddingLeft() + getPaddingRight()) - ((int) ((EmojiTabsStrip.this.recentIsShown || (emojiTabButton2 = EmojiTabsStrip.this.recentTab) == null) ? 0.0f : emojiTabButton2.getAlpha() * AndroidUtilities.dp(33.0f)));
                 if (!EmojiTabsStrip.this.giftsIsShown && (emojiTabButton = EmojiTabsStrip.this.giftsTab) != null) {

@@ -32,7 +32,7 @@ import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.DialogCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -674,7 +674,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
         this.layoutX = 0.0f;
         this.layoutY = 0.0f;
         boolean z = this.scrollNonFitText && (this.textDoesNotFit || this.scrollingOffset != 0.0f);
-        int saveLayerAlpha = (z || this.ellipsizeByGradient) ? canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31) : TLRPC.FLAG_31;
+        int saveLayerAlpha = (z || this.ellipsizeByGradient) ? canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31) : TLObject.FLAG_31;
         this.totalWidth = this.textWidth;
         Drawable drawable = this.leftDrawable;
         if (drawable == null || this.leftDrawableOutside) {
@@ -881,7 +881,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                     f = 0.0f;
                 } else {
                     paint2 = this.fadePaint;
-                    i = NotificationCenter.locationPermissionGranted;
+                    i = NotificationCenter.goingToPreviewTheme;
                 }
                 paint2.setAlpha(i);
                 f3 = 0.0f;

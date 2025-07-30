@@ -4,6 +4,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import java.util.ArrayList;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
@@ -24,7 +25,7 @@ public class DocumentObject {
             TLRPC.WallPaper wallPaper = this.themeSettings.wallpaper;
             if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
                 this.id = -2147483648L;
-                this.dc_id = TLRPC.FLAG_31;
+                this.dc_id = TLObject.FLAG_31;
                 return;
             }
             TLRPC.Document document = ((TLRPC.TL_wallPaper) wallPaper).document;

@@ -11,7 +11,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class GridLayoutManager extends LinearLayoutManager {
@@ -650,7 +650,7 @@ public class GridLayoutManager extends LinearLayoutManager {
             i16 = 0;
             for (int i18 = 0; i18 < i14; i18++) {
                 View view2 = this.mSet[i18];
-                measureChild(view2, TLRPC.FLAG_30, true);
+                measureChild(view2, TLObject.FLAG_30, true);
                 int decoratedMeasurement2 = this.mOrientationHelper.getDecoratedMeasurement(view2);
                 if (decoratedMeasurement2 > i16) {
                     i16 = decoratedMeasurement2;
@@ -666,11 +666,11 @@ public class GridLayoutManager extends LinearLayoutManager {
                 int i21 = rect.left + rect.right + ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin;
                 int spaceForSpanRange = getSpaceForSpanRange(layoutParams.mSpanIndex, layoutParams.mSpanSize);
                 if (this.mOrientation == 1) {
-                    i11 = RecyclerView.LayoutManager.getChildMeasureSpec(spaceForSpanRange, TLRPC.FLAG_30, i21, ((ViewGroup.MarginLayoutParams) layoutParams).width, false);
-                    childMeasureSpec = View.MeasureSpec.makeMeasureSpec(i16 - i20, TLRPC.FLAG_30);
+                    i11 = RecyclerView.LayoutManager.getChildMeasureSpec(spaceForSpanRange, TLObject.FLAG_30, i21, ((ViewGroup.MarginLayoutParams) layoutParams).width, false);
+                    childMeasureSpec = View.MeasureSpec.makeMeasureSpec(i16 - i20, TLObject.FLAG_30);
                 } else {
-                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i16 - i21, TLRPC.FLAG_30);
-                    childMeasureSpec = RecyclerView.LayoutManager.getChildMeasureSpec(spaceForSpanRange, TLRPC.FLAG_30, i20, ((ViewGroup.MarginLayoutParams) layoutParams).height, false);
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i16 - i21, TLObject.FLAG_30);
+                    childMeasureSpec = RecyclerView.LayoutManager.getChildMeasureSpec(spaceForSpanRange, TLObject.FLAG_30, i20, ((ViewGroup.MarginLayoutParams) layoutParams).height, false);
                     i11 = makeMeasureSpec;
                 }
                 measureChildWithDecorationsAndMargin(view3, i11, childMeasureSpec, true);

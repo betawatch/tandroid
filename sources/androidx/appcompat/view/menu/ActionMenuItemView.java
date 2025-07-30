@@ -18,7 +18,7 @@ import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.ForwardingListener;
 import androidx.appcompat.widget.TooltipCompat;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class ActionMenuItemView extends AppCompatTextView implements MenuView.ItemView, View.OnClickListener, ActionMenuView.ActionMenuChildView {
@@ -170,7 +170,7 @@ public class ActionMenuItemView extends AppCompatTextView implements MenuView.It
         int measuredWidth = getMeasuredWidth();
         int min = mode == Integer.MIN_VALUE ? Math.min(size, this.mMinWidth) : this.mMinWidth;
         if (mode != 1073741824 && this.mMinWidth > 0 && measuredWidth < min) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), i2);
         }
         if (hasText || this.mIcon == null) {
             return;

@@ -36,7 +36,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
@@ -136,7 +136,7 @@ public class ColorPicker extends FrameLayout {
             this.paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.paint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (this.paint.getStrokeWidth() * 0.5f), this.paint);
-            this.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), this.paint);
         }
@@ -153,7 +153,7 @@ public class ColorPicker extends FrameLayout {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
         }
 
         public void setChecked(boolean z, boolean z2) {
@@ -498,7 +498,7 @@ public class ColorPicker extends FrameLayout {
         } else {
             fArr[0] = f2 + 20.0f;
         }
-        return Color.HSVToColor(NotificationCenter.locationPermissionGranted, fArr);
+        return Color.HSVToColor(NotificationCenter.goingToPreviewTheme, fArr);
     }
 
     private float getBrightness() {
@@ -580,7 +580,7 @@ public class ColorPicker extends FrameLayout {
                 } else {
                     fArr[0] = f + 60.0f;
                 }
-                this.radioButton[2].setColor(Color.HSVToColor(NotificationCenter.locationPermissionGranted, fArr));
+                this.radioButton[2].setColor(Color.HSVToColor(NotificationCenter.goingToPreviewTheme, fArr));
             }
             this.delegate.setColor(this.radioButton[2].getColor(), 2, true);
         } else {

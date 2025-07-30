@@ -123,7 +123,7 @@ public abstract class BlockingUpdateView extends FrameLayout implements Notifica
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
                 if (View.MeasureSpec.getSize(i5) > AndroidUtilities.dp(260.0f)) {
-                    i5 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLRPC.FLAG_30);
+                    i5 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLObject.FLAG_30);
                 }
                 super.onMeasure(i5, i6);
             }

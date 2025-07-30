@@ -36,6 +36,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
@@ -992,9 +993,9 @@ public class GroupCallUserCell extends FrameLayout {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.didReceiveSmsCode;
+            i = NotificationCenter.wallpapersNeedReload;
             if (nextInt < 64) {
-                i2 = NotificationCenter.didReceiveSmsCode;
+                i2 = NotificationCenter.wallpapersNeedReload;
                 i = 120;
             } else {
                 i2 = 420;
@@ -1177,7 +1178,7 @@ public class GroupCallUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

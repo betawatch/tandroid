@@ -197,7 +197,7 @@ public class ChangeBioActivity extends BaseFragment {
         this.firstNameField.setMaxLines(4);
         this.firstNameField.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), AndroidUtilities.dp(6.0f));
         this.firstNameField.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.firstNameField.setImeOptions(TLRPC.FLAG_28);
+        this.firstNameField.setImeOptions(TLObject.FLAG_28);
         this.firstNameField.setInputType(147457);
         this.firstNameField.setImeOptions(6);
         this.firstNameField.setFilters(new InputFilter[]{new CodepointsLengthInputFilter(getMessagesController().getAboutLimit()) { // from class: org.telegram.ui.ChangeBioActivity.3

@@ -285,7 +285,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
 
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), HorizontalTabView.this.counterText.getAnimateToWidth() + AndroidUtilities.dp(10.0f)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLRPC.FLAG_30));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), HorizontalTabView.this.counterText.getAnimateToWidth() + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
                 }
 
                 @Override // android.view.View
@@ -464,7 +464,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             this.textView.measure(i, i2);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(getMeasuringWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(getMeasuringWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -795,7 +795,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                     if (z) {
                         f = dp3;
                         f2 = width;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
                     } else {
                         f = dp3;
                         f2 = width;
@@ -991,7 +991,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), i2);
         }
 
         public void set(long j, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
@@ -1269,7 +1269,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollHorizontally(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -1404,7 +1404,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollVertically(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);

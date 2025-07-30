@@ -26,6 +26,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.voip.VoIPButtonsLayout;
@@ -61,7 +62,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.invalidateGradient = true;
         setOrientation(1);
         this.currentAccount = i;
-        this.paint.setAlpha(NotificationCenter.appConfigUpdated);
+        this.paint.setAlpha(NotificationCenter.commonChatsLoaded);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.GroupCallPipAlertView.1
             @Override // android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
@@ -582,7 +583,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLRPC.FLAG_30), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30), i2);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener

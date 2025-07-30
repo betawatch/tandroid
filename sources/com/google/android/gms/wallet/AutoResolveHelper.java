@@ -15,7 +15,7 @@ import com.google.android.gms.common.internal.ApiExceptionUtil;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.TimeUnit;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class AutoResolveHelper {
@@ -64,7 +64,7 @@ public abstract class AutoResolveHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void zze(Activity activity, int i, int i2, Intent intent) {
-        PendingIntent createPendingResult = activity.createPendingResult(i, intent, TLRPC.FLAG_30);
+        PendingIntent createPendingResult = activity.createPendingResult(i, intent, TLObject.FLAG_30);
         if (createPendingResult == null) {
             if (Log.isLoggable("AutoResolveHelper", 5)) {
                 Log.w("AutoResolveHelper", "Null pending result returned when trying to deliver task result!");

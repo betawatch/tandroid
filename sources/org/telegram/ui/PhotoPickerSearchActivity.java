@@ -28,7 +28,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -446,7 +446,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                     this.globalIgnoreLayout = false;
                 } else if (!AndroidUtilities.isInMultiwindow) {
                     size2 -= PhotoPickerSearchActivity.this.commentTextView.getEmojiPadding();
-                    i5 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
+                    i5 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                 }
                 int measuredHeight = ((BaseFragment) PhotoPickerSearchActivity.this).actionBar.getMeasuredHeight();
                 this.globalIgnoreLayout = true;
@@ -464,16 +464,16 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                             measureChildWithMargins(childAt, i4, 0, i5, 0);
                         } else {
                             if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = childAt.getLayoutParams().height;
                             } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                             } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                                 paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                             }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                         }
                     }
                 }

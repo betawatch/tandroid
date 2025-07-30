@@ -1791,7 +1791,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case 2:
-            case NotificationCenter.activeGroupCallsUpdated /* 166 */:
+            case 166:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 3;
@@ -1905,7 +1905,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case NotificationCenter.filePreparingFailed /* 143 */:
             case NotificationCenter.closeInCallActivity /* 170 */:
             case NotificationCenter.unconfirmedAuthUpdate /* 193 */:
-            case NotificationCenter.starGiftsLoaded /* 223 */:
+            case NotificationCenter.updateAllMessages /* 223 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 2;
@@ -1979,9 +1979,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case '[':
             case NotificationCenter.httpFileDidFailedLoad /* 133 */:
             case NotificationCenter.recordStartError /* 153 */:
-            case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 204 */:
-            case NotificationCenter.starUserGiftCollectionsLoaded /* 225 */:
-            case NotificationCenter.commonChatsLoaded /* 233 */:
+            case NotificationCenter.openBoostForUsersDialog /* 204 */:
+            case NotificationCenter.starUserGiftsLoaded /* 225 */:
+            case NotificationCenter.messagesFeeUpdated /* 233 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 4;
@@ -2049,7 +2049,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 break;
             case 31:
             case 150:
-            case NotificationCenter.adminedChannelsLoaded /* 231 */:
+            case NotificationCenter.channelConnectedBotsUpdate /* 231 */:
                 // fill-array-data instruction
                 iArr[0] = 3;
                 iArr[1] = 1;
@@ -2238,8 +2238,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case '6':
-            case NotificationCenter.smsJobStatusUpdate /* 201 */:
-            case NotificationCenter.timezonesUpdated /* 207 */:
+            case NotificationCenter.emojiKeywordsLoaded /* 201 */:
+            case NotificationCenter.groupPackUpdated /* 207 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 3;
@@ -2326,7 +2326,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case 'F':
-            case NotificationCenter.chatWasBoostedByUser /* 205 */:
+            case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 205 */:
                 // fill-array-data instruction
                 iArr[0] = 3;
                 iArr[1] = 4;
@@ -2348,8 +2348,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'p':
             case 's':
             case 'w':
-            case NotificationCenter.emojiKeywordsLoaded /* 200 */:
-            case NotificationCenter.starUserGiftsLoaded /* 224 */:
+            case NotificationCenter.savedMessagesForwarded /* 200 */:
+            case NotificationCenter.starGiftsLoaded /* 224 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 2;
@@ -2398,7 +2398,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case 'N':
-            case NotificationCenter.customStickerCreated /* 208 */:
+            case NotificationCenter.timezonesUpdated /* 208 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 2;
@@ -2525,8 +2525,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 1;
                 break;
             case 'b':
-            case NotificationCenter.starTransactionsLoaded /* 215 */:
-            case NotificationCenter.channelConnectedBotsUpdate /* 230 */:
+            case NotificationCenter.starBalanceUpdated /* 215 */:
+            case NotificationCenter.channelSuggestedBotsUpdate /* 230 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 2;
@@ -2673,7 +2673,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case '{':
-            case NotificationCenter.botStarsTransactionsLoaded /* 219 */:
+            case NotificationCenter.botStarsUpdated /* 219 */:
                 // fill-array-data instruction
                 iArr[0] = 3;
                 iArr[1] = 3;
@@ -2692,8 +2692,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case NotificationCenter.dialogIsTranslatable /* 127 */:
-            case NotificationCenter.starGiftOptionsLoaded /* 212 */:
-            case NotificationCenter.pushMessagesUpdated /* 237 */:
+            case NotificationCenter.starOptionsLoaded /* 212 */:
+            case NotificationCenter.contentSettingsLoaded /* 237 */:
                 // fill-array-data instruction
                 iArr[0] = 3;
                 iArr[1] = 2;
@@ -2757,7 +2757,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case NotificationCenter.fileUploadFailed /* 136 */:
-            case NotificationCenter.factCheckLoaded /* 217 */:
+            case NotificationCenter.starSubscriptionsLoaded /* 217 */:
                 // fill-array-data instruction
                 iArr[0] = 3;
                 iArr[1] = 4;
@@ -2965,8 +2965,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 3;
                 iArr[5] = 2;
                 break;
-            case 165:
-            case NotificationCenter.savedMessagesForwarded /* 199 */:
+            case NotificationCenter.groupCallScreencastStateChanged /* 165 */:
+            case NotificationCenter.storyAlbumsCollectionsUpdate /* 199 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 3;
@@ -3147,7 +3147,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case NotificationCenter.savedReactionTagsUpdate /* 197 */:
-            case 210:
+            case NotificationCenter.premiumFloodWaitReceived /* 210 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 2;
@@ -3165,7 +3165,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.storyQualityUpdate /* 202 */:
+            case NotificationCenter.smsJobStatusUpdate /* 202 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 4;
@@ -3183,7 +3183,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.groupPackUpdated /* 206 */:
+            case NotificationCenter.chatWasBoostedByUser /* 206 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 1;
@@ -3192,7 +3192,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.premiumFloodWaitReceived /* 209 */:
+            case NotificationCenter.customStickerCreated /* 209 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 2;
@@ -3201,8 +3201,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.starOptionsLoaded /* 211 */:
-            case NotificationCenter.webViewResolved /* 221 */:
+            case 211:
+            case NotificationCenter.channelStarsUpdated /* 221 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 1;
@@ -3211,7 +3211,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.starGiveawayOptionsLoaded /* 213 */:
+            case NotificationCenter.starGiftOptionsLoaded /* 213 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 0;
@@ -3220,7 +3220,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 3;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.starBalanceUpdated /* 214 */:
+            case NotificationCenter.starGiveawayOptionsLoaded /* 214 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 4;
@@ -3229,7 +3229,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.starSubscriptionsLoaded /* 216 */:
+            case NotificationCenter.starTransactionsLoaded /* 216 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 2;
@@ -3238,7 +3238,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 0;
                 iArr[5] = 0;
                 break;
-            case NotificationCenter.botStarsUpdated /* 218 */:
+            case NotificationCenter.factCheckLoaded /* 218 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 1;
@@ -3247,7 +3247,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 4;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.channelStarsUpdated /* 220 */:
+            case NotificationCenter.botStarsTransactionsLoaded /* 220 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 1;
@@ -3256,7 +3256,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 3;
                 iArr[5] = 1;
                 break;
-            case NotificationCenter.updateAllMessages /* 222 */:
+            case NotificationCenter.webViewResolved /* 222 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 2;
@@ -3265,7 +3265,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 3;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.starGiftSoldOut /* 226 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 226 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 2;
@@ -3274,7 +3274,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.updateStories /* 227 */:
+            case NotificationCenter.starGiftSoldOut /* 227 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 2;
@@ -3283,7 +3283,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.botDownloadsUpdate /* 228 */:
+            case NotificationCenter.updateStories /* 228 */:
                 // fill-array-data instruction
                 iArr[0] = 0;
                 iArr[1] = 0;
@@ -3292,7 +3292,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 1;
                 break;
-            case NotificationCenter.channelSuggestedBotsUpdate /* 229 */:
+            case NotificationCenter.botDownloadsUpdate /* 229 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 3;
@@ -3301,7 +3301,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.messagesFeeUpdated /* 232 */:
+            case NotificationCenter.adminedChannelsLoaded /* 232 */:
                 // fill-array-data instruction
                 iArr[0] = 1;
                 iArr[1] = 2;
@@ -3310,7 +3310,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.appConfigUpdated /* 234 */:
+            case NotificationCenter.commonChatsLoaded /* 234 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 3;
@@ -3319,7 +3319,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.conferenceEmojiUpdated /* 235 */:
+            case NotificationCenter.appConfigUpdated /* 235 */:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 3;
@@ -3328,7 +3328,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.contentSettingsLoaded /* 236 */:
+            case NotificationCenter.conferenceEmojiUpdated /* 236 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 4;

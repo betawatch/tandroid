@@ -26,7 +26,7 @@ import kotlin.time.DurationUnit;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 import kotlinx.coroutines.tasks.TasksKt;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public final class RemoteSettings implements SettingsProvider {
@@ -120,8 +120,8 @@ public final class RemoteSettings implements SettingsProvider {
             if (continuation instanceof RemoteSettings$updateSettings$1) {
                 remoteSettings$updateSettings$1 = (RemoteSettings$updateSettings$1) continuation;
                 int i = remoteSettings$updateSettings$1.label;
-                if ((i & TLRPC.FLAG_31) != 0) {
-                    remoteSettings$updateSettings$1.label = i - TLRPC.FLAG_31;
+                if ((i & TLObject.FLAG_31) != 0) {
+                    remoteSettings$updateSettings$1.label = i - TLObject.FLAG_31;
                     Object obj3 = remoteSettings$updateSettings$1.result;
                     coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     r8 = remoteSettings$updateSettings$1.label;

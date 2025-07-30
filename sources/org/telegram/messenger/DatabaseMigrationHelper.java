@@ -1439,12 +1439,18 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("PRAGMA user_version = 164").stepThis().dispose();
             i7 = NotificationCenter.groupCallSpeakingUsersUpdated;
         }
-        if (i7 != 164) {
+        if (i7 == 164) {
+            sQLiteDatabase.executeFast("ALTER TABLE topics ADD COLUMN nopaid_messages_exception INTEGER default 0;").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 165").stepThis().dispose();
+            i7 = NotificationCenter.groupCallScreencastStateChanged;
+        }
+        if (i7 != 165) {
             return i7;
         }
-        sQLiteDatabase.executeFast("ALTER TABLE topics ADD COLUMN nopaid_messages_exception INTEGER default 0;").stepThis().dispose();
-        sQLiteDatabase.executeFast("PRAGMA user_version = 165").stepThis().dispose();
-        return 165;
+        sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));").stepThis().dispose();
+        sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));").stepThis().dispose();
+        sQLiteDatabase.executeFast("PRAGMA user_version = 166").stepThis().dispose();
+        return 166;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:58:0x02bb A[RETURN] */
@@ -1500,7 +1506,7 @@ public class DatabaseMigrationHelper {
             e = e4;
             j = 0;
         }
-        if (intValue != 165) {
+        if (intValue != 166) {
             FileLog.e("can't restore database from version " + intValue);
             return false;
         }

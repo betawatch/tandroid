@@ -75,10 +75,10 @@ public final class zzmh {
             for (int i12 = 0; i12 < 16; i12++) {
                 int i13 = iArr6[i12];
                 int i14 = i12 * 4;
-                bArr6[i14] = (byte) (i13 & NotificationCenter.locationPermissionGranted);
-                bArr6[i14 + 1] = (byte) ((i13 >> 8) & NotificationCenter.locationPermissionGranted);
-                bArr6[i14 + 2] = (byte) ((i13 >> 16) & NotificationCenter.locationPermissionGranted);
-                bArr6[i14 + 3] = (byte) ((i13 >> 24) & NotificationCenter.locationPermissionGranted);
+                bArr6[i14] = (byte) (i13 & NotificationCenter.goingToPreviewTheme);
+                bArr6[i14 + 1] = (byte) ((i13 >> 8) & NotificationCenter.goingToPreviewTheme);
+                bArr6[i14 + 2] = (byte) ((i13 >> 16) & NotificationCenter.goingToPreviewTheme);
+                bArr6[i14 + 3] = (byte) ((i13 >> 24) & NotificationCenter.goingToPreviewTheme);
             }
             for (int i15 = 0; i15 < Math.min(64, i11); i15++) {
                 int i16 = i8 + i15;

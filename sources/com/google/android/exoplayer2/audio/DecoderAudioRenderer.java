@@ -25,7 +25,7 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.TraceUtil;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.base.MoreObjects;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class DecoderAudioRenderer extends BaseRenderer implements MediaClock {
@@ -213,7 +213,7 @@ public abstract class DecoderAudioRenderer extends BaseRenderer implements Media
         }
         if (!this.firstStreamSampleRead) {
             this.firstStreamSampleRead = true;
-            this.inputBuffer.addFlag(TLRPC.FLAG_27);
+            this.inputBuffer.addFlag(TLObject.FLAG_27);
         }
         this.inputBuffer.flip();
         DecoderInputBuffer decoderInputBuffer2 = this.inputBuffer;

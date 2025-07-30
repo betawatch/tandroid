@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes5.dex */
 public class VoIPButtonsLayout extends FrameLayout {
@@ -69,7 +69,7 @@ public class VoIPButtonsLayout extends FrameLayout {
         int i4 = 0;
         for (int i5 = 0; i5 < getChildCount(); i5++) {
             if (getChildAt(i5).getVisibility() != 8) {
-                getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(this.childWidth, TLRPC.FLAG_30), i2);
+                getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(this.childWidth, TLObject.FLAG_30), i2);
                 if (getChildAt(i5).getMeasuredHeight() > i4) {
                     i4 = getChildAt(i5).getMeasuredHeight();
                 }

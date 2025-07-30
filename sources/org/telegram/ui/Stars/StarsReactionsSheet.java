@@ -347,7 +347,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.activityPermissionsGranted);
+            this.sliderParticles = new Particles(0, NotificationCenter.permissionsGranted);
             this.textParticles = new Particles(2, 30);
             this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
             this.gradientMatrix = new Matrix();
@@ -819,7 +819,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
                         this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
                         this.anonymousAvatarDrawable.draw(canvas);
-                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                     }
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
@@ -1169,7 +1169,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         TextView textView = new TextView(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.2
             @Override // android.widget.TextView, android.view.View
             protected void onMeasure(int i6, int i7) {
-                super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLRPC.FLAG_30));
+                super.onMeasure(i6, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLObject.FLAG_30));
             }
         };
         this.titleView = textView;

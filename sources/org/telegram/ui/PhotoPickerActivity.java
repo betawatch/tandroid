@@ -469,7 +469,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                 PhotoPickerActivity photoPickerActivity = PhotoPickerActivity.this;
                 if (photoPickerActivity.commentTextView != null && photoPickerActivity.frameLayout2.getParent() == this) {
                     size2 -= PhotoPickerActivity.this.commentTextView.getEmojiPadding();
-                    i2 = View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30);
+                    i2 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                 }
             }
             if (measureKeyboardHeight > AndroidUtilities.dp(20.0f) && (editTextEmoji = PhotoPickerActivity.this.commentTextView) != null) {
@@ -492,16 +492,16 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         measureChildWithMargins(childAt, i, 0, i2, 0);
                     } else {
                         if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                             paddingTop = childAt.getLayoutParams().height;
                         } else if (AndroidUtilities.isTablet()) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                             paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
                         } else {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                             paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
                         }
-                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30));
+                        childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
                     }
                 }
             }
@@ -628,7 +628,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         PhotoPickerActivity.this.layoutManager.setSpanCount(1);
                     }
                     this.ignoreLayout = false;
-                    onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+                    onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 }
             }
             photoPickerActivity = PhotoPickerActivity.this;
@@ -641,7 +641,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
             if (PhotoPickerActivity.this.listSort) {
             }
             this.ignoreLayout = false;
-            onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30));
+            onMeasureInternal(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
         }
 
         @Override // android.view.View, android.view.ViewParent
@@ -1204,7 +1204,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                 this.sendPopupWindow.setSoftInputMode(0);
                 this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
             }
-            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.sendPopupWindow.setFocusable(true);
             int[] iArr = new int[2];
             view.getLocationInWindow(iArr);

@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -65,7 +65,7 @@ public class SlideChooseView extends View {
     public SlideChooseView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.dashedFrom = -1;
-        this.minIndex = TLRPC.FLAG_31;
+        this.minIndex = TLObject.FLAG_31;
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
         this.selectedIndexAnimatedHolder = new AnimatedFloat(this, 120L, cubicBezierInterpolator);
         this.movingAnimatedHolder = new AnimatedFloat(this, 150L, cubicBezierInterpolator);
@@ -264,7 +264,7 @@ public class SlideChooseView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(74.0f), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(74.0f), TLObject.FLAG_30));
         this.circleSize = AndroidUtilities.dp(6.0f);
         this.gapSize = AndroidUtilities.dp(2.0f);
         this.sideSide = AndroidUtilities.dp(22.0f);

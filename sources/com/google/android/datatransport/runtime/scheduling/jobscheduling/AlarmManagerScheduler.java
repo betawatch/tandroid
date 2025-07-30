@@ -12,7 +12,7 @@ import com.google.android.datatransport.runtime.logging.Logging;
 import com.google.android.datatransport.runtime.scheduling.persistence.EventStore;
 import com.google.android.datatransport.runtime.time.Clock;
 import com.google.android.datatransport.runtime.util.PriorityMapping;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class AlarmManagerScheduler implements WorkScheduler {
@@ -35,7 +35,7 @@ public class AlarmManagerScheduler implements WorkScheduler {
     }
 
     boolean isJobServiceOn(Intent intent) {
-        return PendingIntent.getBroadcast(this.context, 0, intent, Build.VERSION.SDK_INT >= 23 ? 603979776 : TLRPC.FLAG_29) != null;
+        return PendingIntent.getBroadcast(this.context, 0, intent, Build.VERSION.SDK_INT >= 23 ? 603979776 : TLObject.FLAG_29) != null;
     }
 
     @Override // com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkScheduler

@@ -29,6 +29,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.FixedHeightEmptyCell;
@@ -183,7 +184,7 @@ public class FeaturesPageView extends BaseListPageView {
         protected void onMeasure(int i, int i2) {
             int i3 = this.height;
             if (i3 > 0) {
-                i2 = View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30);
+                i2 = View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30);
             }
             super.onMeasure(i, i2);
         }

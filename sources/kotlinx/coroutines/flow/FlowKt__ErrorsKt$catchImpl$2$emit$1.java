@@ -2,7 +2,7 @@ package kotlinx.coroutines.flow;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 final class FlowKt__ErrorsKt$catchImpl$2$emit$1 extends ContinuationImpl {
@@ -20,7 +20,7 @@ final class FlowKt__ErrorsKt$catchImpl$2$emit$1 extends ContinuationImpl {
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
-        this.label |= TLRPC.FLAG_31;
+        this.label |= TLObject.FLAG_31;
         return this.this$0.emit(null, this);
     }
 }

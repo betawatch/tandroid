@@ -36,6 +36,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -110,7 +111,7 @@ public class BottomSheetTabs extends FrameLayout {
             this.clipPath.addRoundRect(this.clipRect, this.clipRadius, Path.Direction.CW);
             this.clipShadowPaint.setAlpha(0);
             if (z) {
-                this.clipShadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), TLRPC.FLAG_28);
+                this.clipShadowPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(1.0f), TLObject.FLAG_28);
                 canvas.drawPath(this.clipPath, this.clipShadowPaint);
             }
             canvas.clipPath(this.clipPath);
@@ -193,7 +194,7 @@ public class BottomSheetTabs extends FrameLayout {
             this.backgroundPaint.setColor(blendARGB);
             float f4 = f2 * 255.0f;
             this.backgroundPaint.setAlpha((int) f4);
-            this.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(TLRPC.FLAG_28, f2));
+            this.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(TLObject.FLAG_28, f2));
             float[] fArr = this.radii;
             fArr[3] = f;
             fArr[2] = f;

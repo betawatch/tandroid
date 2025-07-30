@@ -26,6 +26,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -573,7 +574,7 @@ public class GroupMedia {
             for (int i48 = 0; i48 < size; i48++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) this.posArray.get(i48);
                 if (groupedMessagePosition15.maxX == this.maxX || (groupedMessagePosition15.flags & 2) != 0) {
-                    groupedMessagePosition15.spanSize += NotificationCenter.emojiKeywordsLoaded;
+                    groupedMessagePosition15.spanSize += NotificationCenter.savedMessagesForwarded;
                 }
                 if ((groupedMessagePosition15.flags & 1) != 0) {
                     groupedMessagePosition15.edge = true;
@@ -599,7 +600,7 @@ public class GroupMedia {
             for (int i52 = 0; i52 < size; i52++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition16 = (MessageObject.GroupedMessagePosition) this.posArray.get(i52);
                 if (groupedMessagePosition16.minX == 0) {
-                    groupedMessagePosition16.spanSize += NotificationCenter.emojiKeywordsLoaded;
+                    groupedMessagePosition16.spanSize += NotificationCenter.savedMessagesForwarded;
                 }
                 if ((groupedMessagePosition16.flags & 2) != 0) {
                     groupedMessagePosition16.edge = true;
@@ -1021,7 +1022,7 @@ public class GroupMedia {
         this.clipPath.addRoundRect(this.clipRect, f9, f9, Path.Direction.CW);
         canvas.save();
         canvas.clipPath(this.clipPath);
-        canvas.drawColor(Theme.multAlpha(TLRPC.FLAG_30, timeAlpha));
+        canvas.drawColor(Theme.multAlpha(TLObject.FLAG_30, timeAlpha));
         this.priceText.draw(canvas, (((this.x + this.width) - dp3) - dp5) + AndroidUtilities.dp(5.66f), this.y + dp5 + f9, -1, timeAlpha);
         canvas.restore();
     }
@@ -1031,7 +1032,7 @@ public class GroupMedia {
         this.clipPath.rewind();
         this.clipPath.addRoundRect(rectF, f, f, Path.Direction.CW);
         canvas.clipPath(this.clipPath);
-        canvas.drawColor(TLRPC.FLAG_30);
+        canvas.drawColor(TLObject.FLAG_30);
         canvas.restore();
     }
 
@@ -1153,7 +1154,7 @@ public class GroupMedia {
                     canvas.save();
                     canvas.clipPath(this.clipPath);
                     drawBlurred(canvas, f);
-                    canvas.drawColor(Theme.multAlpha(TLRPC.FLAG_30, 1.0f));
+                    canvas.drawColor(Theme.multAlpha(TLObject.FLAG_30, 1.0f));
                     mediaHolder2.durationText.draw(canvas, this.x + mediaHolder2.l + dp3 + AndroidUtilities.dp(5.66f), this.y + mediaHolder2.t + dp3 + f10, -1, 1.0f);
                     canvas.restore();
                 }

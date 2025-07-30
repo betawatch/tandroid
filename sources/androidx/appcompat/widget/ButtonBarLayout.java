@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.R$id;
 import androidx.appcompat.R$styleable;
 import androidx.core.view.ViewCompat;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
@@ -77,7 +77,7 @@ public class ButtonBarLayout extends LinearLayout {
             i3 = i;
             z = false;
         } else {
-            i3 = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_31);
+            i3 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31);
             z = true;
         }
         super.onMeasure(i3, i2);

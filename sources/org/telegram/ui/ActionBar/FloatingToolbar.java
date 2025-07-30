@@ -59,7 +59,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.FloatingToolbar;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
@@ -308,7 +308,7 @@ public final class FloatingToolbar {
                 int height2;
                 height = this.mPopup.mOverflowPanelSize.getHeight();
                 height2 = this.mPopup.mOverflowButtonSize.getHeight();
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(height - height2, TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(height - height2, TLObject.FLAG_30));
             }
         }
 
@@ -579,7 +579,7 @@ public final class FloatingToolbar {
                     int width;
                     if (FloatingToolbarPopup.this.isOverflowAnimating() && FloatingToolbarPopup.this.mMainPanelSize != null) {
                         width = FloatingToolbarPopup.this.mMainPanelSize.getWidth();
-                        i = View.MeasureSpec.makeMeasureSpec(width, TLRPC.FLAG_30);
+                        i = View.MeasureSpec.makeMeasureSpec(width, TLObject.FLAG_30);
                     }
                     super.onMeasure(i, i2);
                 }

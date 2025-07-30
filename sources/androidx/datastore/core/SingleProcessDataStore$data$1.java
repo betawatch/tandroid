@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class SingleProcessDataStore$data$1 extends SuspendLambda implements Function2 {
@@ -115,7 +115,7 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                         public final Object invokeSuspend(Object obj) {
                             this.result = obj;
-                            this.label |= TLRPC.FLAG_31;
+                            this.label |= TLObject.FLAG_31;
                             return 2.this.emit(null, this);
                         }
                     }
@@ -137,8 +137,8 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                         if (continuation instanceof 1) {
                             r0 = (1) continuation;
                             int i2 = r0.label;
-                            if ((i2 & TLRPC.FLAG_31) != 0) {
-                                r0.label = i2 - TLRPC.FLAG_31;
+                            if ((i2 & TLObject.FLAG_31) != 0) {
+                                r0.label = i2 - TLObject.FLAG_31;
                                 Object obj2 = r0.result;
                                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                                 i = r0.label;

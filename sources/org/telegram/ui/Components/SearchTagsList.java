@@ -40,6 +40,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.AlertDialogDecor;
@@ -192,7 +193,7 @@ public abstract class SearchTagsList extends BlurredFrameLayout implements Notif
         protected void onMeasure(int i, int i2) {
             int dp = AndroidUtilities.dp(8.67f);
             ReactionsLayoutInBubble.ReactionButton reactionButton = this.reactionButton;
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp + (reactionButton != null ? reactionButton.width : AndroidUtilities.dp(44.33f)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp + (reactionButton != null ? reactionButton.width : AndroidUtilities.dp(44.33f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:23:0x00cc  */
@@ -694,7 +695,7 @@ public abstract class SearchTagsList extends BlurredFrameLayout implements Notif
 
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
             }
 
             @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
@@ -904,7 +905,7 @@ public abstract class SearchTagsList extends BlurredFrameLayout implements Notif
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
     protected abstract void onShownUpdate(boolean z);

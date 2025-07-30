@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes4.dex */
 public class FixedHeightEmptyCell extends View {
@@ -16,6 +16,6 @@ public class FixedHeightEmptyCell extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.heightInDp), TLRPC.FLAG_30));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.heightInDp), TLObject.FLAG_30));
     }
 }

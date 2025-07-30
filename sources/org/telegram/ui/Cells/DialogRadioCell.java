@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RadioButton;
@@ -80,12 +80,12 @@ public class DialogRadioCell extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0));
         int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp((this.valueTextView.getVisibility() == 0 ? 12 : 0) + 84);
-        this.radioButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLRPC.FLAG_30));
+        this.radioButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
         if (this.valueTextView.getVisibility() == 0) {
-            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
             measuredWidth -= this.valueTextView.getMeasuredWidth() + AndroidUtilities.dp(12.0f);
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }
 
     public void setChecked(boolean z, boolean z2) {

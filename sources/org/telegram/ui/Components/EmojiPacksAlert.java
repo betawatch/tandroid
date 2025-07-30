@@ -699,7 +699,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                         int i3 = this.threadIndex;
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].time = j;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set(emojiImageView.getLeft() + emojiImageView.getPaddingLeft(), emojiImageView.getPaddingTop(), emojiImageView.getRight() - emojiImageView.getPaddingRight(), emojiImageView.getMeasuredHeight() - emojiImageView.getPaddingBottom());
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].setBounds(rect);
@@ -999,7 +999,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
             setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -1122,7 +1122,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                     ((ViewGroup.MarginLayoutParams) this.unlockButtonView.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
                     this.unlockButtonView.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
                     addView(this.unlockButtonView, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
-                    this.unlockButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
+                    this.unlockButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                     f7 = (this.unlockButtonView.getMeasuredWidth() + AndroidUtilities.dp(16.0f)) / AndroidUtilities.density;
                 }
                 TextView textView = new TextView(context);
@@ -1142,7 +1142,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                     }
                 });
                 addView(this.addButtonView, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
-                this.addButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
+                this.addButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                 float max = Math.max(f7, (this.addButtonView.getMeasuredWidth() + AndroidUtilities.dp(16.0f)) / AndroidUtilities.density);
                 TextView textView3 = new TextView(context);
                 this.removeButtonView = textView3;
@@ -1163,7 +1163,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 this.removeButtonView.setScaleX(0.0f);
                 this.removeButtonView.setScaleY(0.0f);
                 this.removeButtonView.setAlpha(0.0f);
-                this.removeButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLRPC.FLAG_30));
+                this.removeButtonView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                 f = Math.max(max, (this.removeButtonView.getMeasuredWidth() + AndroidUtilities.dp(16.0f)) / AndroidUtilities.density);
             }
             LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider);
@@ -1321,7 +1321,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.single ? 42.0f : 56.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.single ? 42.0f : 56.0f), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1842,7 +1842,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 android.graphics.Point point = AndroidUtilities.displaySize;
                 int i4 = point.x;
                 int i5 = point.y;
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (i5 * (i4 < i5 ? 0.56f : 0.3f)), TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (i5 * (i4 < i5 ? 0.56f : 0.3f)), TLObject.FLAG_30));
             }
         };
         RecyclerListView recyclerListView = new RecyclerListView(context, this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiPacksAlert.4
@@ -1856,7 +1856,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                         float f = EmojiPacksAlert.this.highlightAlpha.set(0.0f);
                         if (f > 0.0f) {
                             int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                            int i3 = TLRPC.FLAG_31;
+                            int i3 = TLObject.FLAG_31;
                             for (int i4 = 0; i4 < getChildCount(); i4++) {
                                 View childAt = getChildAt(i4);
                                 int childAdapterPosition = getChildAdapterPosition(childAt);
@@ -2710,7 +2710,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$93(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$94(new PremiumPreviewFragment(null));
         }
     }
 

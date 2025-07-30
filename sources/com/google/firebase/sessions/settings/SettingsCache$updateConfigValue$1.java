@@ -2,7 +2,7 @@ package com.google.firebase.sessions.settings;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 final class SettingsCache$updateConfigValue$1 extends ContinuationImpl {
@@ -20,7 +20,7 @@ final class SettingsCache$updateConfigValue$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         Object updateConfigValue;
         this.result = obj;
-        this.label |= TLRPC.FLAG_31;
+        this.label |= TLObject.FLAG_31;
         updateConfigValue = this.this$0.updateConfigValue(null, null, this);
         return updateConfigValue;
     }

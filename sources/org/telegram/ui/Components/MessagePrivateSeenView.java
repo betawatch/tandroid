@@ -356,7 +356,7 @@ public class MessagePrivateSeenView extends FrameLayout {
             simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
             simpleTextView.setText(" " + LocaleController.getString(R.string.PremiumOr) + " ");
             simpleTextView.setTextSize(14);
-            linearLayout.addView(simpleTextView, LayoutHelper.createLinear(NotificationCenter.screenStateChanged, -2, 1, 12, 17, 12, 17));
+            linearLayout.addView(simpleTextView, LayoutHelper.createLinear(NotificationCenter.messagePlayingSpeedChanged, -2, 1, 12, 17, 12, 17));
             TextView textView3 = new TextView(context);
             textView3.setTypeface(AndroidUtilities.bold());
             textView3.setGravity(17);
@@ -432,10 +432,10 @@ public class MessagePrivateSeenView extends FrameLayout {
             }
             this.minWidth = dp;
         }
-        int i4 = TLRPC.FLAG_30;
+        int i4 = TLObject.FLAG_30;
         if (view != null && view.getWidth() > 0) {
             size = view.getWidth();
-            mode = TLRPC.FLAG_30;
+            mode = TLObject.FLAG_30;
         }
         float f2 = size;
         float f3 = this.minWidth;

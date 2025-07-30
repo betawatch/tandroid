@@ -57,6 +57,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.Theme;
@@ -276,7 +277,7 @@ public class StoryCaptionView extends NestedScrollView {
                 this.textLayout = new Text(r5 != 0 ? r5 : "", 14.0f);
             }
             float f2 = this.animatedSmall.set(this.small);
-            this.backgroundPaint.setColor(TLRPC.FLAG_30);
+            this.backgroundPaint.setColor(TLObject.FLAG_30);
             int min = (int) Math.min(f, AndroidUtilities.lerp(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(18.0f), f2) + Math.max(this.titleLayout.getCurrentWidth(), this.textLayout.getCurrentWidth()));
             this.width = min;
             int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(42.0f), AndroidUtilities.dp(22.0f), f2);
@@ -1136,7 +1137,7 @@ public class StoryCaptionView extends NestedScrollView {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.showMore != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
             } else {
                 canvas.save();
             }
@@ -1182,7 +1183,7 @@ public class StoryCaptionView extends NestedScrollView {
             TextState[] textStateArr = this.state;
             int i5 = textStateArr[0].textHeight;
             TextState textState2 = textStateArr[1];
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i4 + AndroidUtilities.lerp(i5, textState2 != null ? textState2.textHeight : 0, this.updateT), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i4 + AndroidUtilities.lerp(i5, textState2 != null ? textState2.textHeight : 0, this.updateT), TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -1399,7 +1400,7 @@ public class StoryCaptionView extends NestedScrollView {
         this.replytextHash = hashCode3;
         this.isLandscape = z;
         this.prevHeight = i2;
-        storyCaptionTextView.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+        storyCaptionTextView.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
         return storyCaptionTextView.collapsedTextHeight(i2);
     }
 

@@ -72,7 +72,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraSessionWrapper;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -1220,17 +1220,17 @@ public class CameraScanActivity extends BaseFragment {
                 ((BaseFragment) CameraScanActivity.this).actionBar.measure(i, i2);
                 if (CameraScanActivity.this.currentType != 0) {
                     if (CameraScanActivity.this.cameraView != null) {
-                        CameraScanActivity.this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                        CameraScanActivity.this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                     }
-                    CameraScanActivity.this.recognizedMrzView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    CameraScanActivity.this.recognizedMrzView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     if (CameraScanActivity.this.galleryButton != null) {
-                        CameraScanActivity.this.galleryButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30));
+                        CameraScanActivity.this.galleryButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
                     }
-                    CameraScanActivity.this.flashButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30));
+                    CameraScanActivity.this.flashButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
                 } else if (CameraScanActivity.this.cameraView != null) {
-                    CameraScanActivity.this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size * 0.704f), TLRPC.FLAG_30));
+                    CameraScanActivity.this.cameraView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size * 0.704f), TLObject.FLAG_30));
                 }
-                CameraScanActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(72.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                CameraScanActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(72.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 if (CameraScanActivity.this.currentType == 3) {
                     textView = CameraScanActivity.this.descriptionText;
                     i3 = size - AndroidUtilities.dp(72.0f);
@@ -1238,7 +1238,7 @@ public class CameraScanActivity extends BaseFragment {
                     textView = CameraScanActivity.this.descriptionText;
                     i3 = (int) (size * 0.9f);
                 }
-                textView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                textView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 setMeasuredDimension(size, size2);
             }
         };

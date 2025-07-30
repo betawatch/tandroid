@@ -31,6 +31,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.NumberPicker;
@@ -210,7 +211,7 @@ public class ProximitySheet extends FrameLayout {
                 return Button.class.getName();
             }
         };
-        linearLayout2.addView(this.kmPicker, LayoutHelper.createLinear(0, NotificationCenter.screenStateChanged, 0.5f));
+        linearLayout2.addView(this.kmPicker, LayoutHelper.createLinear(0, NotificationCenter.messagePlayingSpeedChanged, 0.5f));
         this.kmPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i) {
@@ -234,7 +235,7 @@ public class ProximitySheet extends FrameLayout {
         this.mPicker.setMaxValue(10);
         this.mPicker.setWrapSelectorWheel(false);
         this.mPicker.setTextOffset(-AndroidUtilities.dp(20.0f));
-        linearLayout2.addView(this.mPicker, LayoutHelper.createLinear(0, NotificationCenter.screenStateChanged, 0.5f));
+        linearLayout2.addView(this.mPicker, LayoutHelper.createLinear(0, NotificationCenter.messagePlayingSpeedChanged, 0.5f));
         this.mPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i) {
@@ -556,12 +557,12 @@ public class ProximitySheet extends FrameLayout {
         getRootView();
         getWindowVisibleDisplayFrame(this.rect);
         setMeasuredDimension(size, size2);
-        this.containerView.measure(View.MeasureSpec.makeMeasureSpec((this.backgroundPaddingLeft * 2) + size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_31));
+        this.containerView.measure(View.MeasureSpec.makeMeasureSpec((this.backgroundPaddingLeft * 2) + size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
         int childCount = getChildCount();
         for (int i3 = 0; i3 < childCount; i3++) {
             View childAt = getChildAt(i3);
             if (childAt.getVisibility() != 8 && childAt != this.containerView) {
-                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30), 0);
+                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30), 0);
             }
         }
     }
@@ -647,7 +648,7 @@ public class ProximitySheet extends FrameLayout {
     public void show() {
         this.dismissed = false;
         cancelSheetAnimation();
-        this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLRPC.FLAG_31));
+        this.containerView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x + (this.backgroundPaddingLeft * 2), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
         startOpenAnimation();
         updateText(true, false);
     }

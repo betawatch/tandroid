@@ -475,7 +475,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             StickerEmojiCell stickerEmojiCell = new StickerEmojiCell(this.context, false, TrendingStickersLayout.this.resourcesProvider) { // from class: org.telegram.ui.Components.TrendingStickersLayout.TrendingStickersAdapter.1
                 @Override // android.widget.FrameLayout, android.view.View
                 public void onMeasure(int i2, int i3) {
-                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLRPC.FLAG_30));
+                    super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLObject.FLAG_30));
                 }
             };
             stickerEmojiCell.getImageView().setLayerNum(3);

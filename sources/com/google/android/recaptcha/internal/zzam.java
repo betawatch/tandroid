@@ -17,7 +17,7 @@ import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.TimeoutKt;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class zzam {
@@ -84,8 +84,8 @@ public final class zzam {
                     if (continuation instanceof zzai) {
                         zzai zzaiVar = (zzai) continuation;
                         int i2 = zzaiVar.zzg;
-                        if ((i2 & TLRPC.FLAG_31) != 0) {
-                            zzaiVar.zzg = i2 - TLRPC.FLAG_31;
+                        if ((i2 & TLObject.FLAG_31) != 0) {
+                            zzaiVar.zzg = i2 - TLObject.FLAG_31;
                             r1 = zzaiVar;
                             Object obj = r1.zze;
                             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

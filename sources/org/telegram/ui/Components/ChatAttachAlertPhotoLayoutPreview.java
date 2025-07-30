@@ -48,6 +48,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
@@ -682,7 +683,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 for (i24 = 0; i24 < i23; i24 += r14) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) groupCalculator.posArray.get(i24);
                     if (groupedMessagePosition15.minX == 0) {
-                        groupedMessagePosition15.spanSize += NotificationCenter.emojiKeywordsLoaded;
+                        groupedMessagePosition15.spanSize += NotificationCenter.savedMessagesForwarded;
                     }
                     if ((groupedMessagePosition15.flags & 2) != 0) {
                         groupedMessagePosition15.edge = r14;
@@ -1966,7 +1967,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 i = (int) (i + ((PreviewGroupCell) this.groupCells.get(i2)).measure());
             }
             if (this.hintView.getMeasuredHeight() <= 0) {
-                this.hintView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLRPC.FLAG_31));
+                this.hintView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
             }
             return i + this.hintView.getMeasuredHeight();
         }
@@ -2234,11 +2235,11 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            this.hintView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLRPC.FLAG_31));
+            this.hintView.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
             if (this.lastMeasuredHeight <= 0) {
                 this.lastMeasuredHeight = measureHeight();
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), this.lastMeasuredHeight), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i2), this.lastMeasuredHeight), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:16:0x002e  */

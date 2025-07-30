@@ -1062,7 +1062,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                         }
                         if (!BotWebViewSheet.this.fullscreen && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                             Point point2 = AndroidUtilities.displaySize;
-                            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLRPC.FLAG_30);
+                            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLObject.FLAG_30);
                         }
                         size = View.MeasureSpec.getSize(i2);
                         if (!BotWebViewSheet.this.fullscreen) {
@@ -1071,7 +1071,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                         if (BotWebViewSheet.this.botButtons != null && BotWebViewSheet.this.botButtons.getTotalHeight() > 0) {
                             size -= BotWebViewSheet.this.botButtons.getTotalHeight();
                         }
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
                     }
                 }
                 i3 = (size2 / 5) * 2;
@@ -1086,7 +1086,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 }
                 if (!BotWebViewSheet.this.fullscreen) {
                     Point point22 = AndroidUtilities.displaySize;
-                    i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLRPC.FLAG_30);
+                    i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLObject.FLAG_30);
                 }
                 size = View.MeasureSpec.getSize(i2);
                 if (!BotWebViewSheet.this.fullscreen) {
@@ -1094,7 +1094,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 if (BotWebViewSheet.this.botButtons != null) {
                     size -= BotWebViewSheet.this.botButtons.getTotalHeight();
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + AndroidUtilities.dp(24.0f), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -1159,7 +1159,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.linePaint.setStyle(Paint.Style.FILL_AND_STROKE);
         this.linePaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
         this.linePaint.setStrokeCap(Paint.Cap.ROUND);
-        this.dimPaint.setColor(TLRPC.FLAG_30);
+        this.dimPaint.setColor(TLObject.FLAG_30);
         this.actionBarColor = getColor(i);
         this.navBarColor = getColor(Theme.key_windowBackgroundGray);
         AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
@@ -1181,7 +1181,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             protected void onMeasure(int i2, int i3) {
                 if (!BotWebViewSheet.this.fullscreen && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                     Point point = AndroidUtilities.displaySize;
-                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLRPC.FLAG_30);
+                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
                 }
                 super.onMeasure(i2, i3);
             }
@@ -1238,7 +1238,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         FrameLayout frameLayout = new FrameLayout(context);
         this.bulletinContainer = frameLayout;
         WindowView windowView4 = this.windowView;
-        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 55);
+        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 55);
         this.bulletinContainerLayoutParams = createFrame3;
         windowView4.addView(frameLayout, createFrame3);
         this.actionBarShadow = ContextCompat.getDrawable(getContext(), R.drawable.header_shadow).mutate();
@@ -1247,7 +1247,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             protected void onMeasure(int i2, int i3) {
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                     Point point = AndroidUtilities.displaySize;
-                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLRPC.FLAG_30);
+                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
                 }
                 super.onMeasure(i2, i3);
             }
@@ -1276,7 +1276,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             protected void onMeasure(int i2, int i3) {
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                     Point point = AndroidUtilities.displaySize;
-                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLRPC.FLAG_30);
+                    i2 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
                 }
                 super.onMeasure(i2, i3);
             }
@@ -1676,7 +1676,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public /* synthetic */ void lambda$openOptions$35() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).lambda$runLinkRequest$93(ChatActivity.of(this.botId));
+            ((LaunchActivity) activity).lambda$runLinkRequest$94(ChatActivity.of(this.botId));
         }
         dismiss(true);
     }
@@ -2652,7 +2652,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
             this.verifiedDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            this.verifiedDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.verifiedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.actionBar.getTitleTextView().setDrawablePadding(AndroidUtilities.dp(2.0f));
             this.actionBar.getTitleTextView().setRightDrawable(new Drawable() { // from class: org.telegram.ui.bots.BotWebViewSheet.9
                 @Override // android.graphics.drawable.Drawable

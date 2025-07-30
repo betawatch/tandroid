@@ -970,7 +970,7 @@ public class ChatbotsActivity extends BaseFragment {
         FrameLayout frameLayout5 = new FrameLayout(context) { // from class: org.telegram.ui.Business.ChatbotsActivity.3
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
             }
         };
         this.emptyView = frameLayout5;

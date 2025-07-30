@@ -35,7 +35,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class WebvttCueParser {
@@ -131,9 +131,9 @@ public abstract class WebvttCueParser {
         public int lineType = 1;
         public int lineAnchor = 0;
         public float position = -3.4028235E38f;
-        public int positionAnchor = TLRPC.FLAG_31;
+        public int positionAnchor = TLObject.FLAG_31;
         public float size = 1.0f;
-        public int verticalType = TLRPC.FLAG_31;
+        public int verticalType = TLObject.FLAG_31;
 
         private static float computeLine(float f, int i) {
             if (f == -3.4028235E38f || i != 0 || (f >= 0.0f && f <= 1.0f)) {
@@ -217,23 +217,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.locationPermissionGranted, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, 0, NotificationCenter.locationPermissionGranted)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.locationPermissionGranted)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, NotificationCenter.goingToPreviewTheme)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.goingToPreviewTheme)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = Collections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.locationPermissionGranted, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, NotificationCenter.locationPermissionGranted, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.locationPermissionGranted, 0, NotificationCenter.locationPermissionGranted)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.locationPermissionGranted)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, NotificationCenter.goingToPreviewTheme)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.goingToPreviewTheme)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = Collections.unmodifiableMap(hashMap2);
     }
@@ -641,7 +641,7 @@ public abstract class WebvttCueParser {
                 return 0;
             default:
                 Log.w("WebvttCueParser", "Invalid anchor value: " + str);
-                return TLRPC.FLAG_31;
+                return TLObject.FLAG_31;
         }
     }
 
@@ -674,7 +674,7 @@ public abstract class WebvttCueParser {
                 return 2;
             default:
                 Log.w("WebvttCueParser", "Invalid anchor value: " + str);
-                return TLRPC.FLAG_31;
+                return TLObject.FLAG_31;
         }
     }
 
@@ -716,6 +716,6 @@ public abstract class WebvttCueParser {
             return 1;
         }
         Log.w("WebvttCueParser", "Invalid 'vertical' value: " + str);
-        return TLRPC.FLAG_31;
+        return TLObject.FLAG_31;
     }
 }

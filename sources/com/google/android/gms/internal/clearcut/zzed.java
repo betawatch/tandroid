@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class zzed {
@@ -25,7 +25,7 @@ final class zzed {
     private int zznp;
     private int zznq;
     private int zznr = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    private int zzns = TLRPC.FLAG_31;
+    private int zzns = TLObject.FLAG_31;
     private int zznt = 0;
     private int zznu = 0;
     private int zznv = 0;
@@ -138,7 +138,7 @@ final class zzed {
         this.zzny = this.zznh.next();
         int next = this.zznh.next();
         this.zznz = next;
-        int i2 = next & NotificationCenter.locationPermissionGranted;
+        int i2 = next & NotificationCenter.goingToPreviewTheme;
         this.zzoa = i2;
         int i3 = this.zzny;
         if (i3 < this.zznr) {

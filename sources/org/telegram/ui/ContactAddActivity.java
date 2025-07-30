@@ -381,7 +381,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user_id);
         if (userFull != null) {
             userFull.personal_photo = tL_photos_photo.photo;
-            userFull.flags |= TLRPC.FLAG_21;
+            userFull.flags |= TLObject.FLAG_21;
             getMessagesStorage().updateUserInfo(userFull, true);
         }
         if (user != null) {
@@ -868,7 +868,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 @Override // org.telegram.ui.Cells.TextCell, android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i12, int i13) {
                     super.onMeasure(i12, i13);
-                    ContactAddActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
+                    ContactAddActivity.this.oldAvatarView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
                     ContactAddActivity.this.oldAvatarView.setRoundRadius(AndroidUtilities.dp(30.0f));
                 }
             };

@@ -15,7 +15,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SlideIntChooseView;
 import org.telegram.ui.Components.AnimatedTextView;
@@ -117,7 +117,7 @@ public class SlideIntChooseView extends FrameLayout {
 
     public SlideIntChooseView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.minValueAllowed = TLRPC.FLAG_31;
+        this.minValueAllowed = TLObject.FLAG_31;
         this.toMaxTextEmojiSaturation = -1.0f;
         this.resourcesProvider = resourcesProvider;
         AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
@@ -349,7 +349,7 @@ public class SlideIntChooseView extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), TLRPC.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), TLObject.FLAG_30));
         if (Build.VERSION.SDK_INT >= 29) {
             setSystemGestureExclusionRects(Arrays.asList(new Rect(0, 0, AndroidUtilities.dp(80.0f), getMeasuredHeight()), new Rect(getMeasuredWidth() - AndroidUtilities.dp(80.0f), 0, getMeasuredWidth(), getMeasuredHeight())));
         }

@@ -40,6 +40,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
@@ -182,7 +183,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
                 textView2.setTextAlignment(4);
                 textView2.setGravity(17);
                 textView2.setTypeface(AndroidUtilities.bold());
-                addView(textView2, LayoutHelper.createLinear(165, -2, 17, 0, 17, 0, 12));
+                addView(textView2, LayoutHelper.createLinear(NotificationCenter.groupCallScreencastStateChanged, -2, 17, 0, 17, 0, 12));
                 ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, false, resourcesProvider);
                 this.button2View = buttonWithCounterView2;
                 buttonWithCounterView2.setMinWidth(AndroidUtilities.dp(200.0f));
@@ -797,7 +798,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
             textView.setTextAlignment(4);
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
-            stickerEmptyView.linearLayout.addView(textView, LayoutHelper.createLinear(165, -2, 17, 0, 17, 0, 12));
+            stickerEmptyView.linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.groupCallScreencastStateChanged, -2, 17, 0, 17, 0, 12));
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, false, BotPreviewsEditContainer.this.resourcesProvider);
             this.emptyViewButton2 = buttonWithCounterView;
             buttonWithCounterView.setMinWidth(AndroidUtilities.dp(200.0f));
@@ -1335,7 +1336,7 @@ public abstract class BotPreviewsEditContainer extends FrameLayout implements No
 
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
             }
 
             public void set(TranslateController.Language language, boolean z) {

@@ -2745,7 +2745,7 @@ public class StarsController {
             TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(j3);
             if (chatFull != null) {
                 chatFull.stargifts_count++;
-                chatFull.flags2 |= TLRPC.FLAG_18;
+                chatFull.flags2 |= TLObject.FLAG_18;
                 MessagesController.getInstance(this.currentAccount).putChatFull(chatFull);
             }
             if (lastFragment instanceof ProfileActivity) {
@@ -4903,6 +4903,7 @@ public class StarsController {
         TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
         tL_inputInvoiceStarGiftResale.slug = starGift.slug;
         tL_inputInvoiceStarGiftResale.to_id = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        tL_inputInvoiceStarGiftResale.ton = this.ton;
         TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
         JSONObject makeThemeParams = BotWebViewSheet.makeThemeParams(resourceProvider);
         if (makeThemeParams != null) {
@@ -5234,6 +5235,7 @@ public class StarsController {
         TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
         tL_inputInvoiceStarGiftResale.slug = starGift.slug;
         tL_inputInvoiceStarGiftResale.to_id = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        tL_inputInvoiceStarGiftResale.ton = this.ton;
         TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
         JSONObject makeThemeParams = BotWebViewSheet.makeThemeParams(resourceProvider);
         if (makeThemeParams != null) {

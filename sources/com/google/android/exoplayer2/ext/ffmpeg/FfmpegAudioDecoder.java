@@ -11,7 +11,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.nio.ByteBuffer;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 final class FfmpegAudioDecoder extends SimpleDecoder {
@@ -91,12 +91,12 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
         byte[] bArr2 = list.get(1);
         byte[] bArr3 = new byte[bArr.length + bArr2.length + 6];
         bArr3[0] = (byte) (bArr.length >> 8);
-        bArr3[1] = (byte) (bArr.length & NotificationCenter.locationPermissionGranted);
+        bArr3[1] = (byte) (bArr.length & NotificationCenter.goingToPreviewTheme);
         System.arraycopy(bArr, 0, bArr3, 2, bArr.length);
         bArr3[bArr.length + 2] = 0;
         bArr3[bArr.length + 3] = 0;
         bArr3[bArr.length + 4] = (byte) (bArr2.length >> 8);
-        bArr3[bArr.length + 5] = (byte) (bArr2.length & NotificationCenter.locationPermissionGranted);
+        bArr3[bArr.length + 5] = (byte) (bArr2.length & NotificationCenter.goingToPreviewTheme);
         System.arraycopy(bArr2, 0, bArr3, bArr.length + 6, bArr2.length);
         return bArr3;
     }
@@ -141,11 +141,11 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
             return new FfmpegDecoderException("Error decoding (see logcat).");
         }
         if (ffmpegDecode == -1) {
-            simpleDecoderOutputBuffer.setFlags(TLRPC.FLAG_31);
+            simpleDecoderOutputBuffer.setFlags(TLObject.FLAG_31);
             return null;
         }
         if (ffmpegDecode == 0) {
-            simpleDecoderOutputBuffer.setFlags(TLRPC.FLAG_31);
+            simpleDecoderOutputBuffer.setFlags(TLObject.FLAG_31);
             return null;
         }
         if (!this.hasOutputFormat) {

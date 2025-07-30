@@ -58,7 +58,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class RecyclerView extends ViewGroup implements NestedScrollingChild {
@@ -791,19 +791,19 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                     i2 = 0;
                     i4 = 0;
                 }
-                i2 = TLRPC.FLAG_30;
+                i2 = TLObject.FLAG_30;
             } else {
                 if (i4 < 0) {
                     if (i4 != -1) {
                         if (i4 == -2) {
-                            i2 = (i2 == Integer.MIN_VALUE || i2 == 1073741824) ? TLRPC.FLAG_31 : 0;
+                            i2 = (i2 == Integer.MIN_VALUE || i2 == 1073741824) ? TLObject.FLAG_31 : 0;
                         }
                         i2 = 0;
                         i4 = 0;
                     }
                     i4 = max;
                 }
-                i2 = TLRPC.FLAG_30;
+                i2 = TLObject.FLAG_30;
             }
             return View.MeasureSpec.makeMeasureSpec(i4, i2);
         }
@@ -1561,7 +1561,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         public abstract int scrollVerticallyBy(int i, Recycler recycler, State state);
 
         void setExactMeasureSpecsFrom(RecyclerView recyclerView) {
-            setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(recyclerView.getHeight(), TLRPC.FLAG_30));
+            setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(recyclerView.getHeight(), TLObject.FLAG_30));
         }
 
         void setMeasureSpecs(int i, int i2) {
@@ -1594,8 +1594,8 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 this.mRecyclerView.defaultOnMeasure(i, i2);
                 return;
             }
-            int i3 = TLRPC.FLAG_31;
-            int i4 = TLRPC.FLAG_31;
+            int i3 = TLObject.FLAG_31;
+            int i4 = TLObject.FLAG_31;
             int i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i6 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (int i7 = 0; i7 < childCount; i7++) {
@@ -1637,8 +1637,8 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 height = recyclerView.getHeight();
             }
             this.mHeight = height;
-            this.mWidthMode = TLRPC.FLAG_30;
-            this.mHeightMode = TLRPC.FLAG_30;
+            this.mWidthMode = TLObject.FLAG_30;
+            this.mHeightMode = TLObject.FLAG_30;
         }
 
         boolean shouldMeasureChild(View view, int i, int i2, LayoutParams layoutParams) {
@@ -2703,7 +2703,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             private int mJumpToPosition;
 
             public Action(int i, int i2) {
-                this(i, i2, TLRPC.FLAG_31, null);
+                this(i, i2, TLObject.FLAG_31, null);
             }
 
             public Action(int i, int i2, int i3, Interpolator interpolator) {
@@ -3018,7 +3018,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 this.mInterpolator = interpolator2;
                 this.mOverScroller = new OverScroller(RecyclerView.this.getContext(), interpolator2);
             }
-            this.mOverScroller.fling(0, 0, i, i2, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, TLRPC.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID);
+            this.mOverScroller.fling(0, 0, i, i2, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID);
             postOnAnimation();
         }
 
@@ -3627,7 +3627,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         }
         this.mAccessibilityManager = (AccessibilityManager) getContext().getSystemService("accessibility");
         setAccessibilityDelegateCompat(new RecyclerViewAccessibilityDelegate(this));
-        setDescendantFocusability(TLRPC.FLAG_18);
+        setDescendantFocusability(TLObject.FLAG_18);
         setNestedScrollingEnabled(true);
     }
 
@@ -3897,7 +3897,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             return;
         }
         int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i2 = TLRPC.FLAG_31;
+        int i2 = TLObject.FLAG_31;
         for (int i3 = 0; i3 < childCount; i3++) {
             ViewHolder childViewHolderInt = getChildViewHolderInt(this.mChildHelper.getChildAt(i3));
             if (childViewHolderInt != null && !childViewHolderInt.shouldIgnore()) {
@@ -5759,7 +5759,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
                 }
                 scrollByInternal((int) (axisValue * this.mScaledHorizontalScrollFactor), (int) (f * this.mScaledVerticalScrollFactor), motionEvent);
             } else {
-                if ((motionEvent.getSource() & TLRPC.FLAG_22) != 0) {
+                if ((motionEvent.getSource() & TLObject.FLAG_22) != 0) {
                     axisValue = motionEvent.getAxisValue(26);
                     if (this.mLayout.canScrollVertically()) {
                         f = -axisValue;
@@ -5906,7 +5906,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
             dispatchLayoutStep2();
             this.mLayout.setMeasuredDimensionFromChildren(i, i2);
             if (this.mLayout.shouldMeasureTwice()) {
-                this.mLayout.setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLRPC.FLAG_30));
+                this.mLayout.setMeasureSpecs(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
                 this.mState.mIsMeasuring = true;
                 dispatchLayoutStep2();
                 this.mLayout.setMeasuredDimensionFromChildren(i, i2);
@@ -6697,7 +6697,7 @@ public abstract class RecyclerView extends ViewGroup implements NestedScrollingC
         if (i == 0 && i2 == 0) {
             return;
         }
-        this.mViewFlinger.smoothScrollBy(i, i2, TLRPC.FLAG_31, interpolator);
+        this.mViewFlinger.smoothScrollBy(i, i2, TLObject.FLAG_31, interpolator);
     }
 
     public void smoothScrollToPosition(int i) {

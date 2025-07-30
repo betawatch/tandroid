@@ -95,6 +95,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -955,7 +956,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 TextView textView = new TextView(SelectAnimatedEmojiDialog.this.getContext()) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.Adapter.1
                     @Override // android.widget.TextView, android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLRPC.FLAG_30));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
                     }
                 };
                 textView.setTextSize(1, 13.0f);
@@ -1137,7 +1138,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                     rect.inset((int) ((-rect.width()) * 0.15f), (int) ((-rect.height()) * 0.15f));
                                 }
                                 drawable.setBounds(rect);
-                                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                             } else if (imageViewEmoji.isDefaultReaction || imageViewEmoji.isStaticIcon) {
                                 ImageReceiver imageReceiver = imageViewEmoji.imageReceiver;
                                 if (imageReceiver != null) {
@@ -1145,7 +1146,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                 }
                                 drawable = null;
                             } else if ((imageViewEmoji.span != null || SelectAnimatedEmojiDialog.this.type == 13) && !imageViewEmoji.notDraw && (drawable = imageViewEmoji.drawable) != null) {
-                                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                                 drawable.setBounds(rect);
                             }
                             if (SelectAnimatedEmojiDialog.this.premiumStarColorFilter != null) {
@@ -1206,7 +1207,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                 f *= ((1.0f - Math.max(imageViewEmoji.selectedProgress * 0.8f, imageViewEmoji.pressedProgress)) * 0.2f) + 0.8f;
                             }
                             if (premiumStar != null) {
-                                premiumStar.setAlpha(NotificationCenter.locationPermissionGranted);
+                                premiumStar.setAlpha(NotificationCenter.goingToPreviewTheme);
                                 int width = (imageViewEmoji.getWidth() - imageViewEmoji.getPaddingLeft()) - imageViewEmoji.getPaddingRight();
                                 int height = (imageViewEmoji.getHeight() - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom();
                                 Rect rect = AndroidUtilities.rectTmp2;
@@ -1399,9 +1400,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                         canvas.restore();
                         if (imageViewEmoji.getBackground() != null) {
                             imageViewEmoji.getBackground().setBounds((int) imageViewEmoji.getX(), (int) imageViewEmoji.getY(), ((int) imageViewEmoji.getX()) + imageViewEmoji.getWidth(), ((int) imageViewEmoji.getY()) + imageViewEmoji.getHeight());
-                            imageViewEmoji.getBackground().setAlpha((int) (NotificationCenter.locationPermissionGranted * imageViewEmoji.getAlpha()));
+                            imageViewEmoji.getBackground().setAlpha((int) (NotificationCenter.goingToPreviewTheme * imageViewEmoji.getAlpha()));
                             imageViewEmoji.getBackground().draw(canvas);
-                            imageViewEmoji.getBackground().setAlpha(NotificationCenter.locationPermissionGranted);
+                            imageViewEmoji.getBackground().setAlpha(NotificationCenter.goingToPreviewTheme);
                         }
                         if (arrayList3 == null) {
                             if (this.unusedArrays.isEmpty()) {
@@ -1710,7 +1711,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f) + getPaddingTop() + getPaddingBottom(), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f) + getPaddingTop() + getPaddingBottom(), TLObject.FLAG_30));
         }
 
         public void set(String str, boolean z, boolean z2, View.OnClickListener onClickListener) {
@@ -1821,7 +1822,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
         }
 
         public void setText(CharSequence charSequence, String str, boolean z) {
@@ -1977,7 +1978,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                     }
                 }
             };
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLRPC.FLAG_30);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30);
             this.premiumLockIconView.measure(makeMeasureSpec, makeMeasureSpec);
             PremiumLockIconView premiumLockIconView2 = this.premiumLockIconView;
             premiumLockIconView2.layout(0, 0, premiumLockIconView2.getMeasuredWidth(), this.premiumLockIconView.getMeasuredHeight());
@@ -2090,7 +2091,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
 
         @Override // android.view.View
         public void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30));
         }
 
         public void setAnimatedScale(float f) {
@@ -2556,7 +2557,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 imageViewEmoji = new View(SelectAnimatedEmojiDialog.this.getContext()) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchAdapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
                     }
                 };
                 imageViewEmoji.setTag("searchbox");
@@ -2758,7 +2759,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                         paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                         this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
                     super.dispatchDraw(canvas);
                     this.fadePaint.setAlpha((int) (SearchBox.this.inputBoxGradientAlpha * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), this.fadePaint);
@@ -3087,7 +3088,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLRPC.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
         }
 
         public void showProgress(boolean z) {
@@ -3410,7 +3411,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLRPC.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
             }
         }
 
@@ -4546,7 +4547,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                             this.gridViewContainer = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.11
                                 @Override // android.widget.FrameLayout, android.view.View
                                 protected void onMeasure(int i14, int i15) {
-                                    super.onMeasure(i14, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
+                                    super.onMeasure(i14, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
                                 }
                             };
                             FrameLayout frameLayout3 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.12
@@ -4839,7 +4840,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                         this.gridViewContainer = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.11
                             @Override // android.widget.FrameLayout, android.view.View
                             protected void onMeasure(int i142, int i15) {
-                                super.onMeasure(i142, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
+                                super.onMeasure(i142, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
                             }
                         };
                         FrameLayout frameLayout32 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.12
@@ -5130,7 +5131,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 this.gridViewContainer = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.11
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i1422, int i15) {
-                        super.onMeasure(i1422, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
+                        super.onMeasure(i1422, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
                     }
                 };
                 FrameLayout frameLayout322 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.12
@@ -5427,7 +5428,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         this.gridViewContainer = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.11
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i14222, int i15) {
-                super.onMeasure(i14222, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLRPC.FLAG_30));
+                super.onMeasure(i14222, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i15) + AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
             }
         };
         FrameLayout frameLayout3222 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.12
@@ -7959,9 +7960,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             }
             super.onMeasure(i, i2);
         }
-        i = View.MeasureSpec.makeMeasureSpec((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f), TLRPC.FLAG_30);
+        i = View.MeasureSpec.makeMeasureSpec((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f), TLObject.FLAG_30);
         f = Math.min(AndroidUtilities.dp(330.0f), AndroidUtilities.displaySize.y * 0.75f);
-        i2 = View.MeasureSpec.makeMeasureSpec((int) f, TLRPC.FLAG_31);
+        i2 = View.MeasureSpec.makeMeasureSpec((int) f, TLObject.FLAG_31);
         super.onMeasure(i, i2);
     }
 

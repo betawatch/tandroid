@@ -17,7 +17,7 @@ public class ViewsForPeerStoriesRequester {
     int currentReqId;
     final long dialogId;
     boolean isRunning;
-    final Runnable scheduleRequestRunnable = new Runnable() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1
+    final Runnable scheduleRequestRunnable = new Runnable() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
             ViewsForPeerStoriesRequester.this.lambda$new$0();
@@ -71,7 +71,7 @@ public class ViewsForPeerStoriesRequester {
             return false;
         }
         tL_stories_getStoriesViews.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
-        this.currentReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesViews, new RequestDelegate() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda0
+        this.currentReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesViews, new RequestDelegate() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ViewsForPeerStoriesRequester.this.lambda$requestInternal$2(tL_stories_getStoriesViews, tLObject, tL_error);

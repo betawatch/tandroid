@@ -271,9 +271,9 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             int size2 = View.MeasureSpec.getSize(i2);
             EmojiBottomSheet.this.maxPadding = Math.min(size2 * 0.45f, (AndroidUtilities.dp(350.0f) / 0.55f) * 0.45f);
             EmojiBottomSheet.this.viewPager.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-            EmojiBottomSheet.this.viewPager.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+            EmojiBottomSheet.this.viewPager.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             if (EmojiBottomSheet.this.tabsView != null) {
-                EmojiBottomSheet.this.tabsView.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), 0);
+                EmojiBottomSheet.this.tabsView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), 0);
             }
             setMeasuredDimension(size, size2);
         }
@@ -560,7 +560,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
                 super.onMeasure(makeMeasureSpec, makeMeasureSpec);
             }
 
@@ -1521,7 +1521,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(170.0f), (AndroidUtilities.displaySize.y * 0.34999996f) - AndroidUtilities.dp(142.0f)), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(170.0f), (AndroidUtilities.displaySize.y * 0.34999996f) - AndroidUtilities.dp(142.0f)), TLObject.FLAG_30));
         }
 
         public void update() {
@@ -2722,7 +2722,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         }
 
         public void setOnSearchQuery(Utilities.Callback2 callback2) {
@@ -2814,7 +2814,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 canvas.scale(scale, scale, this.bounds.centerX(), this.bounds.centerY());
                 canvas.drawRoundRect(this.bounds, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), StoryWidgetsCell.this.bgPaint);
                 if (this.lockDrawable != null) {
-                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.locationPermissionGranted, 31);
+                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.goingToPreviewTheme, 31);
                 }
                 if (this.drawable == null) {
                     Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(this.emojiDrawable);

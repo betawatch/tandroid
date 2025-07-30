@@ -7,7 +7,7 @@ import java.util.List;
 import org.telegram.messenger.CharacterCompat;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
@@ -395,7 +395,7 @@ final class zzva implements zzvi {
                 iArr[i64] = i65;
                 i64++;
             }
-            int i74 = charAt25 & NotificationCenter.locationPermissionGranted;
+            int i74 = charAt25 & NotificationCenter.goingToPreviewTheme;
             int i75 = charAt25 & 2048;
             int i76 = length;
             if (i74 >= 51) {
@@ -581,7 +581,7 @@ final class zzva implements zzvi {
             int i99 = i65 + 1;
             iArr2[i65] = charAt24;
             int i100 = i65 + 2;
-            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? TLRPC.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLRPC.FLAG_29 : 0) | (i75 != 0 ? TLRPC.FLAG_31 : 0) | (i74 << 20);
+            iArr2[i99] = i23 | ((charAt25 & 256) != 0 ? TLObject.FLAG_28 : 0) | ((charAt25 & 512) != 0 ? TLObject.FLAG_29 : 0) | (i75 != 0 ? TLObject.FLAG_31 : 0) | (i74 << 20);
             i65 += 3;
             iArr2[i100] = (i21 << 20) | i19;
             i2 = i22;
@@ -614,7 +614,7 @@ final class zzva implements zzvi {
     }
 
     private static int zzn(int i) {
-        return (i >>> 20) & NotificationCenter.locationPermissionGranted;
+        return (i >>> 20) & NotificationCenter.goingToPreviewTheme;
     }
 
     private final int zzo(int i) {

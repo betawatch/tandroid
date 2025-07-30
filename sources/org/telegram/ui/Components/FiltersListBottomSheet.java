@@ -33,6 +33,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -280,7 +281,7 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                     FiltersListBottomSheet.this.ignoreLayout = false;
                 }
                 this.fullHeight = dp >= size;
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), TLRPC.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), TLObject.FLAG_30));
             }
 
             @Override // android.view.View

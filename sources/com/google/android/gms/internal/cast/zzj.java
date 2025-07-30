@@ -27,7 +27,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzf = zzmVar.zzf(zzlVar, i, i2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzf, NotificationCenter.messagesFeeUpdated);
+        zzgVar.zze(zzf, NotificationCenter.adminedChannelsLoaded);
         this.zza.zzj = false;
     }
 
@@ -45,7 +45,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzg = zzmVar.zzg(zzlVar, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzg, NotificationCenter.adminedChannelsLoaded);
+        zzgVar.zze(zzg, NotificationCenter.channelConnectedBotsUpdate);
         this.zza.zzj = false;
         this.zza.zzh = null;
     }
@@ -65,6 +65,6 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzg = zzmVar.zzg(zzlVar, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzg, NotificationCenter.channelConnectedBotsUpdate);
+        zzgVar.zze(zzg, NotificationCenter.channelSuggestedBotsUpdate);
     }
 }

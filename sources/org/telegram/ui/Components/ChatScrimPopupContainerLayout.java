@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.Components.PopupSwipeBackLayout;
 
@@ -73,7 +73,7 @@ public abstract class ChatScrimPopupContainerLayout extends LinearLayout {
     protected void onMeasure(int i, int i2) {
         int i3;
         int i4 = this.maxHeight;
-        int makeMeasureSpec = i4 != 0 ? View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_31) : i2;
+        int makeMeasureSpec = i4 != 0 ? View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_31) : i2;
         ReactionsContainerLayout reactionsContainerLayout = this.reactionsLayout;
         if (reactionsContainerLayout == null || this.popupWindowLayout == null) {
             i3 = i;
@@ -91,7 +91,7 @@ public abstract class ChatScrimPopupContainerLayout extends LinearLayout {
                 measuredWidth = this.popupWindowLayout.getMeasuredWidth();
             }
             if (this.reactionsLayout.showCustomEmojiReaction()) {
-                i3 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLRPC.FLAG_30);
+                i3 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
             }
             this.reactionsLayout.measureHint();
             int totalWidth = this.reactionsLayout.getTotalWidth();

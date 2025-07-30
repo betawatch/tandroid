@@ -39,7 +39,7 @@ import java.util.Collection;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer {
@@ -1521,7 +1521,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             case 5:
                 return getMaxSampleSize(i * i2, 2);
             case 2:
-                return Math.max(TLRPC.FLAG_21, getMaxSampleSize(i * i2, 2));
+                return Math.max(TLObject.FLAG_21, getMaxSampleSize(i * i2, 2));
             case 4:
                 String str2 = Util.MODEL;
                 if ("BRAVIA 4K 2015".equals(str2) || ("Amazon".equals(Util.MANUFACTURER) && ("KFSOWI".equals(str2) || ("AFTS".equals(str2) && mediaCodecInfo.secure)))) {

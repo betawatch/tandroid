@@ -255,7 +255,7 @@ public class CheckBoxBase {
                 f5 = f;
                 i3 = 12;
                 i4 = 13;
-                canvas.saveLayerAlpha(f16 - f, f17 - f, f16 + f, f17 + f, NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(f16 - f, f17 - f, f16 + f, f17 + f, NotificationCenter.goingToPreviewTheme, 31);
             }
             i5 = this.backgroundColorKey;
             if (i5 < 0) {
@@ -420,7 +420,7 @@ public class CheckBoxBase {
                             float dp2 = AndroidUtilities.dp(this.size) / 2.0f;
                             int save = canvas.save();
                             canvas.translate(i2 - dp2, i - dp2);
-                            canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.locationPermissionGranted, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.goingToPreviewTheme, 31);
                             Paint paint5 = (Paint) this.circlePaintProvider.provide(z);
                             int i23 = this.backgroundType;
                             if (i23 == 12 || i23 == 13) {

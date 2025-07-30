@@ -35,7 +35,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 abstract class AtomParsers {
@@ -164,7 +164,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.locationPermissionGranted;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.goingToPreviewTheme;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 
@@ -194,7 +194,7 @@ abstract class AtomParsers {
             }
             int readUnsignedByte = this.data.readUnsignedByte();
             this.currentByte = readUnsignedByte;
-            return (readUnsignedByte & NotificationCenter.didReceiveSmsCode) >> 4;
+            return (readUnsignedByte & NotificationCenter.wallpapersNeedReload) >> 4;
         }
     }
 
@@ -333,7 +333,7 @@ abstract class AtomParsers {
                 if (i11 == 1819304813 || i11 == 1936684916) {
                     i8 = 2;
                 } else if (i11 == 1953984371) {
-                    i8 = TLRPC.FLAG_28;
+                    i8 = TLObject.FLAG_28;
                 } else if (i11 == 778924082 || i11 == 778924083) {
                     str2 = "audio/mpeg";
                 } else if (i11 == 1835557169) {
@@ -702,7 +702,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.didReceiveSmsCode) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.wallpapersNeedReload) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1337,7 +1337,7 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.screenStateChanged;
+            i2 = NotificationCenter.messagePlayingSpeedChanged;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
             i2 = NotificationCenter.suggestedFiltersLoaded;
         }

@@ -250,7 +250,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
         }
 
         public void set(TL_payments.connectedBotStarRef connectedbotstarref, boolean z, boolean z2) {
@@ -1444,7 +1444,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         View view = new View(context) { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment.1
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
             }
         };
         this.emptyLayout = view;

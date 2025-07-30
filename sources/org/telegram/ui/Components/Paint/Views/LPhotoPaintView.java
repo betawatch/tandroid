@@ -73,6 +73,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
@@ -1201,7 +1202,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         };
         this.bottomLayout = frameLayout4;
         frameLayout4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0);
-        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, TLRPC.FLAG_31}));
+        this.bottomLayout.setBackground(new GradientDrawable(orientation, new int[]{0, TLObject.FLAG_31}));
         addView(this.bottomLayout, LayoutHelper.createFrame(-1, 104, 80));
         PaintToolsView paintToolsView = new PaintToolsView(context, bitmap2 != null);
         this.paintToolsView = paintToolsView;
@@ -3128,7 +3129,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                 }
             });
         }
-        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.popupWindow.setFocusable(true);
         if ((i & 48) != 0) {
             i2 -= this.popupLayout.getMeasuredWidth() / 2;
@@ -3357,7 +3358,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
             if (f > 0.0f) {
                 this.shadowPaint.setShadowLayer(AndroidUtilities.dp(24.0f * f), 0.0f, 0.0f, Theme.multAlpha(1090519039, f));
                 this.shadowPaint.setColor(0);
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
                 canvas.translate(this.entitiesView.getX(), this.entitiesView.getY());
                 canvas.scale(this.entitiesView.getScaleX(), this.entitiesView.getScaleY(), this.entitiesView.getWidth() / 2.0f, this.entitiesView.getHeight() / 2.0f);
                 canvas.drawRect(0.0f, 0.0f, this.entitiesView.getWidth(), this.entitiesView.getHeight(), this.shadowPaint);
@@ -4062,25 +4063,25 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         }
         int i3 = (int) f2;
         int i4 = (int) floor;
-        this.renderView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
-        this.renderInputView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
+        this.renderView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
+        this.renderInputView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
         float f4 = f2 / this.paintingSize.width;
         this.baseScale = f4;
         this.entitiesView.setScaleX(f4);
         this.entitiesView.setScaleY(this.baseScale);
-        this.entitiesView.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLRPC.FLAG_30));
+        this.entitiesView.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLObject.FLAG_30));
         ThanosEffect thanosEffect = this.thanosEffect;
         if (thanosEffect != null) {
-            thanosEffect.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLRPC.FLAG_30));
+            thanosEffect.measure(View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.paintingSize.height, TLObject.FLAG_30));
             this.thanosEffect.setScaleX(this.baseScale);
             this.thanosEffect.setScaleY(this.baseScale);
         }
         updateEntitiesSelections();
-        this.selectionContainerView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLRPC.FLAG_30));
+        this.selectionContainerView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
         measureChild(this.bottomLayout, i, i2);
         measureChild(this.weightChooserView, i, i2);
         measureChild(this.pipetteContainerLayout, i, i2);
-        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(getPKeyboardHeight(), this.emojiPadding), TLRPC.FLAG_30));
+        measureChild(this.overlayLayout, i, View.MeasureSpec.makeMeasureSpec(size2 - Math.max(getPKeyboardHeight(), this.emojiPadding), TLObject.FLAG_30));
         FrameLayout frameLayout = this.topLayout;
         frameLayout.setPadding(frameLayout.getPaddingLeft(), AndroidUtilities.dp(12.0f) + AndroidUtilities.statusBarHeight, this.topLayout.getPaddingRight(), this.topLayout.getPaddingBottom());
         measureChild(this.topLayout, i, i2);

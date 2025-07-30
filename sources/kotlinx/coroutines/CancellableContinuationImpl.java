@@ -15,7 +15,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public class CancellableContinuationImpl extends DispatchedTask implements CancellableContinuation, CoroutineStackFrame, Waiter {
@@ -235,7 +235,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 }
                 throw new IllegalStateException("Already resumed".toString());
             }
-        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLRPC.FLAG_30 + (536870911 & i)));
+        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLObject.FLAG_30 + (536870911 & i)));
         return true;
     }
 
@@ -267,7 +267,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 }
                 throw new IllegalStateException("Already suspended".toString());
             }
-        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLRPC.FLAG_29 + (536870911 & i)));
+        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLObject.FLAG_29 + (536870911 & i)));
         return true;
     }
 

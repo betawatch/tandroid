@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.Job;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 abstract /* synthetic */ class FlowKt__ErrorsKt {
@@ -32,8 +32,8 @@ abstract /* synthetic */ class FlowKt__ErrorsKt {
         if (continuation instanceof FlowKt__ErrorsKt$catchImpl$1) {
             flowKt__ErrorsKt$catchImpl$1 = (FlowKt__ErrorsKt$catchImpl$1) continuation;
             int i2 = flowKt__ErrorsKt$catchImpl$1.label;
-            if ((i2 & TLRPC.FLAG_31) != 0) {
-                flowKt__ErrorsKt$catchImpl$1.label = i2 - TLRPC.FLAG_31;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                flowKt__ErrorsKt$catchImpl$1.label = i2 - TLObject.FLAG_31;
                 Object obj = flowKt__ErrorsKt$catchImpl$1.result;
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ErrorsKt$catchImpl$1.label;

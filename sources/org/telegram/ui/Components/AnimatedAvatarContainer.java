@@ -5,7 +5,7 @@ import android.os.Build;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 
@@ -70,8 +70,8 @@ public class AnimatedAvatarContainer extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i) + this.titleTextView.getPaddingRight();
         int dp = size - AndroidUtilities.dp(16.0f);
-        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), TLRPC.FLAG_31));
-        this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLRPC.FLAG_31));
+        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), TLObject.FLAG_31));
+        this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
         setMeasuredDimension(size, View.MeasureSpec.getSize(i2));
     }
 }

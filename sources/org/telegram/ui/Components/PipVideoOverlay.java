@@ -47,7 +47,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.pip.PipSource;
 import org.telegram.messenger.pip.source.IPipSourceDelegate;
 import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.ui.Components.PipVideoOverlay;
@@ -761,7 +761,7 @@ public class PipVideoOverlay implements IPipSourceDelegate {
             LaunchActivity.onResumeStaticCallback = new EmbedBottomSheet$$ExternalSyntheticLambda6(view);
             Context context = ApplicationLoader.applicationContext;
             Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-            intent.addFlags(TLRPC.FLAG_28);
+            intent.addFlags(TLObject.FLAG_28);
             context.startActivity(intent);
             return;
         }
@@ -1173,7 +1173,7 @@ public class PipVideoOverlay implements IPipSourceDelegate {
             @Override // android.view.View
             protected void onMeasure(int i4, int i5) {
                 setMeasuredDimension(View.MeasureSpec.getSize(i4), View.MeasureSpec.getSize(i5));
-                PipVideoOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(PipVideoOverlay.this.pipWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(PipVideoOverlay.this.pipHeight, TLRPC.FLAG_30));
+                PipVideoOverlay.this.contentFrameLayout.measure(View.MeasureSpec.makeMeasureSpec(PipVideoOverlay.this.pipWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(PipVideoOverlay.this.pipHeight, TLObject.FLAG_30));
             }
         };
         this.contentView = pipVideoViewGroup;

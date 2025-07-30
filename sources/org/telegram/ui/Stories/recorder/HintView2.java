@@ -34,12 +34,12 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
+import android.text.style.ReplacementSpan;
 import android.util.StateSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
@@ -50,13 +50,12 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda51;
+import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda57;
 
 /* loaded from: classes5.dex */
 public class HintView2 extends View {
@@ -177,7 +176,7 @@ public class HintView2 extends View {
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.show = new AnimatedFloat(this, 350L, cubicBezierInterpolator);
         this.iconMargin = AndroidUtilities.dp(2.0f);
-        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda51(this);
+        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda57(this);
         this.bounceT = 1.0f;
         this.bounce = new ButtonBounce(this, 2.0f, 5.0f);
         this.boundsWithArrow = new Rect();
@@ -578,18 +577,9 @@ public class HintView2 extends View {
         }
         Spanned spanned = (Spanned) charSequence;
         TypefaceSpan[] typefaceSpanArr = (TypefaceSpan[]) spanned.getSpans(0, charSequence.length(), TypefaceSpan.class);
-        AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spanned.getSpans(0, charSequence.length(), AnimatedEmojiSpan.class);
-        Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spanned.getSpans(0, charSequence.length(), Emoji.EmojiSpan.class);
-        ColoredImageSpan[] coloredImageSpanArr = (ColoredImageSpan[]) spanned.getSpans(0, charSequence.length(), ColoredImageSpan.class);
         int i = 0;
-        for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
-            i = (int) (i + Math.max(0.0f, emojiSpan.size - textPaint.measureText(spanned, spanned.getSpanStart(emojiSpan), spanned.getSpanEnd(emojiSpan))));
-        }
-        for (ColoredImageSpan coloredImageSpan : coloredImageSpanArr) {
-            i = (int) (i + Math.max(0.0f, coloredImageSpan.getSize(textPaint, charSequence, r15, r5, textPaint.getFontMetricsInt()) - textPaint.measureText(spanned, spanned.getSpanStart(coloredImageSpan), spanned.getSpanEnd(coloredImageSpan))));
-        }
-        for (AnimatedEmojiSpan animatedEmojiSpan : animatedEmojiSpanArr) {
-            i = (int) (i + Math.max(0.0f, animatedEmojiSpan.getSize(textPaint, charSequence, r13, r14, textPaint.getFontMetricsInt()) - textPaint.measureText(spanned, spanned.getSpanStart(animatedEmojiSpan), spanned.getSpanEnd(animatedEmojiSpan))));
+        for (ReplacementSpan replacementSpan : (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class)) {
+            i = (int) (i + Math.max(0.0f, replacementSpan.getSize(textPaint, charSequence, r14, r15, textPaint.getFontMetricsInt()) - textPaint.measureText(spanned, spanned.getSpanStart(replacementSpan), spanned.getSpanEnd(replacementSpan))));
         }
         if (typefaceSpanArr == null || typefaceSpanArr.length == 0) {
             return textPaint.measureText(charSequence.toString()) + i;
@@ -814,7 +804,7 @@ public class HintView2 extends View {
 
     protected void drawBgPath(Canvas canvas) {
         if (this.blurBackgroundPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
             canvas.drawPath(this.path, this.blurBackgroundPaint);
             canvas.drawPath(this.path, this.blurCutPaint);
             canvas.restore();

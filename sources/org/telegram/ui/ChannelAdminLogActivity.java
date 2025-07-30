@@ -2410,12 +2410,12 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         };
         this.scrimPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.channelStarsUpdated);
+        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
         this.scrimPopupWindow.setOutsideTouchable(true);
         this.scrimPopupWindow.setClippingEnabled(true);
         this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
         this.scrimPopupWindow.setFocusable(true);
-        chatScrimPopupContainerLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        chatScrimPopupContainerLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.scrimPopupWindow.setInputMethodMode(2);
         this.scrimPopupWindow.setSoftInputMode(48);
         this.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
@@ -2869,7 +2869,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = NotificationCenter.emojiKeywordsLoaded;
+        tL_channels_getParticipants.limit = NotificationCenter.savedMessagesForwarded;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3154,7 +3154,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                             case 17:
                                 try {
                                     Intent intent2 = new Intent("android.intent.action.DIAL", Uri.parse("tel:" + this.selectedObject.messageOwner.media.phone_number));
-                                    intent2.addFlags(TLRPC.FLAG_28);
+                                    intent2.addFlags(TLObject.FLAG_28);
                                     getParentActivity().startActivityForResult(intent2, 500);
                                     break;
                                 } catch (Exception e) {
@@ -3975,11 +3975,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                     View childAt = getChildAt(i4);
                     if (childAt != null && childAt.getVisibility() != 8 && childAt != ((BaseFragment) ChannelAdminLogActivity.this).actionBar) {
                         if (childAt == ChannelAdminLogActivity.this.chatListView || childAt == ChannelAdminLogActivity.this.progressView) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
-                            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), paddingTop - AndroidUtilities.dp(50.0f)), TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+                            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), paddingTop - AndroidUtilities.dp(50.0f)), TLObject.FLAG_30);
                         } else if (childAt == ChannelAdminLogActivity.this.emptyViewContainer) {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30);
-                            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingTop, TLRPC.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+                            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30);
                         } else {
                             measureChildWithMargins(childAt, i2, 0, i3, 0);
                         }
@@ -4873,7 +4873,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         if (recyclerListView == null || this.chatLayoutManager == null || recyclerListView.getChildCount() <= 0) {
             return;
         }
-        int i = z ? ConnectionsManager.DEFAULT_DATACENTER_ID : TLRPC.FLAG_31;
+        int i = z ? ConnectionsManager.DEFAULT_DATACENTER_ID : TLObject.FLAG_31;
         View view = null;
         int i2 = -1;
         for (int i3 = 0; i3 < this.chatListView.getChildCount(); i3++) {

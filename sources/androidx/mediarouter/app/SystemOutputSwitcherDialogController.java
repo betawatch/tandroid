@@ -9,7 +9,7 @@ import android.media.MediaRouter2;
 import android.os.Build;
 import java.util.Iterator;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class SystemOutputSwitcherDialogController {
@@ -68,7 +68,7 @@ public abstract class SystemOutputSwitcherDialogController {
 
     private static boolean showDialogForAndroidR(Context context) {
         ApplicationInfo applicationInfo;
-        Intent putExtra = new Intent().addFlags(TLRPC.FLAG_28).setAction("com.android.settings.panel.action.MEDIA_OUTPUT").putExtra("com.android.settings.panel.extra.PACKAGE_NAME", context.getPackageName());
+        Intent putExtra = new Intent().addFlags(TLObject.FLAG_28).setAction("com.android.settings.panel.action.MEDIA_OUTPUT").putExtra("com.android.settings.panel.extra.PACKAGE_NAME", context.getPackageName());
         Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
         while (it.hasNext()) {
             ActivityInfo activityInfo = it.next().activityInfo;

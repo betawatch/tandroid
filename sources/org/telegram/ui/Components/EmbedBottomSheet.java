@@ -52,6 +52,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -262,7 +263,7 @@ public class EmbedBottomSheet extends BottomSheet {
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
-                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(((int) Math.min(EmbedBottomSheet.this.height / (EmbedBottomSheet.this.width / View.MeasureSpec.getSize(i5)), AndroidUtilities.displaySize.y / 2)) + AndroidUtilities.dp((EmbedBottomSheet.this.hasDescription ? 22 : 0) + 84) + 1, TLRPC.FLAG_30));
+                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(((int) Math.min(EmbedBottomSheet.this.height / (EmbedBottomSheet.this.width / View.MeasureSpec.getSize(i5)), AndroidUtilities.displaySize.y / 2)) + AndroidUtilities.dp((EmbedBottomSheet.this.hasDescription ? 22 : 0) + 84) + 1, TLObject.FLAG_30));
             }
         };
         this.containerLayout = frameLayout2;

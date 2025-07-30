@@ -28,7 +28,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
@@ -244,7 +244,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             if (f3 > 0.01f || !GradientHeaderActivity.this.drawActionBarShadow()) {
                 return;
             }
-            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.locationPermissionGranted, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
+            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.goingToPreviewTheme, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -461,7 +461,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(50) { // from class: org.telegram.ui.GradientHeaderActivity.8.1
                     @Override // org.telegram.ui.Components.Premium.StarParticlesView.Drawable
                     protected int getPathColor(int i) {
-                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.emojiKeywordsLoaded);
+                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.savedMessagesForwarded);
                     }
                 };
                 this.drawable = drawable;
@@ -585,7 +585,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                     GradientHeaderActivity.this.firstViewHeight = i3;
                 }
                 GradientHeaderActivity.access$024(GradientHeaderActivity.this, r5.yOffset * 2.5f);
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(GradientHeaderActivity.this.firstViewHeight, TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(GradientHeaderActivity.this.firstViewHeight, TLObject.FLAG_30));
             }
         };
     }

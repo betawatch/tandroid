@@ -1084,7 +1084,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stars.BotStarsActivity.2
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLRPC.FLAG_30), i5);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), TLObject.FLAG_30), i5);
             }
         };
         this.balanceLayout = linearLayout;
@@ -1242,7 +1242,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         LinearLayout linearLayout4 = new LinearLayout(context) { // from class: org.telegram.ui.Stars.BotStarsActivity.7
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i6, int i7) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), TLRPC.FLAG_30), i7);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), TLObject.FLAG_30), i7);
             }
         };
         this.tonBalanceLayout = linearLayout4;

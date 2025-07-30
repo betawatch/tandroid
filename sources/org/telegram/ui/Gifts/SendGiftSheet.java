@@ -256,7 +256,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
                     int measuredHeight = getMeasuredHeight();
                     int i4 = this.maxHeight;
                     if (measuredHeight < i4) {
-                        i3 = View.MeasureSpec.makeMeasureSpec(Math.max(i4, getMeasuredHeight()), TLRPC.FLAG_31);
+                        i3 = View.MeasureSpec.makeMeasureSpec(Math.max(i4, getMeasuredHeight()), TLObject.FLAG_31);
                     }
                 }
                 super.onMeasure(i2, i3);
@@ -465,7 +465,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
                 if (starGift == null) {
                     super.onMeasure(i7, i8);
                 } else {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i7) * clamp), TLRPC.FLAG_30), i8);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i7) * clamp), TLObject.FLAG_30), i8);
                 }
             }
         };

@@ -44,6 +44,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.ActionBar.Theme;
@@ -472,7 +473,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 0, !customBlur());
         this.replyBackgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 8);
         this.replyTextBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 9);
-        paint.setColor(TLRPC.FLAG_31);
+        paint.setColor(TLObject.FLAG_31);
         this.keyboardNotifier = new KeyboardNotifier(frameLayout, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -762,7 +763,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 return;
             }
             EditTextCaption editText = this.editText.getEditText();
-            canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), NotificationCenter.goingToPreviewTheme, 31);
             runnable.run();
             canvas.drawRect(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), paint);
             canvas.restore();
@@ -773,11 +774,11 @@ public abstract class CaptionContainerView extends FrameLayout {
             return;
         }
         canvas.translate(-this.editText.getEditText().hintLayoutX, 0.0f);
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight(), NotificationCenter.locationPermissionGranted, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight(), NotificationCenter.goingToPreviewTheme, 31);
         this.rectF.set(0.0f, 1.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight() - 1);
         drawBlur(this.captionBlur, canvas, this.rectF, 0.0f, true, (-this.editText.getX()) - r8.getPaddingLeft(), ((-this.editText.getY()) - r8.getPaddingTop()) - r8.getExtendedPaddingTop(), true, 1.0f);
         canvas.save();
-        this.hintTextBitmapPaint.setAlpha(165);
+        this.hintTextBitmapPaint.setAlpha(NotificationCenter.groupCallScreencastStateChanged);
         canvas.drawBitmap(this.hintTextBitmap, 0.0f, 0.0f, this.hintTextBitmapPaint);
         canvas.restore();
         canvas.restore();
@@ -815,7 +816,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
         if (paint2 != null) {
             RectF rectF2 = this.bounds;
-            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.goingToPreviewTheme, 31);
         }
         Path path = this.replyClipPath;
         if (path == null) {
@@ -1163,7 +1164,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
         invalidateDrawOver2();
         if (f7 > 0.0f) {
-            canvas.saveLayerAlpha(this.bounds, NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(this.bounds, NotificationCenter.goingToPreviewTheme, 31);
         }
         drawReply(canvas);
         super.dispatchDraw(canvas);
@@ -1204,7 +1205,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             canvas.drawRoundRect(this.bounds, f, f, this.collapsePaint);
             canvas.restore();
             canvas.restore();
-            canvas.saveLayerAlpha(this.bounds, NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(this.bounds, NotificationCenter.goingToPreviewTheme, 31);
             drawOver(canvas, this.bounds);
             this.collapseGradientMatrix.reset();
             this.collapseGradientMatrix.postTranslate(dp2, dp3);
@@ -1264,7 +1265,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         boolean drawChild;
         if (view == this.editText) {
             float max = isAtTop() ? 0.0f : Math.max(0, (this.editText.getHeight() - AndroidUtilities.dp(82.0f)) - this.editText.getScrollY()) * (1.0f - this.keyboardT);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.locationPermissionGranted, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
             canvas.save();
             canvas.clipRect(this.bounds);
             canvas.translate(0.0f, max);

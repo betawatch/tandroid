@@ -1195,14 +1195,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 i6 = i5;
                                                 drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i6 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                                    drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                                                 }
                                             }
                                             i5 = (int) ((f5 - min) * f3 * 255.0f);
                                             i6 = i5;
                                             drawDrawable(canvas, drawable, i6, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i6 != 255) {
-                                                drawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                                drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                                             }
                                         }
                                     }
@@ -4271,7 +4271,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if ((drawable == null || (bitmapShader = this.thumbShader) == null) && ((drawable = this.staticThumbDrawable) == null || (bitmapShader = this.staticThumbShader) == null)) {
             return false;
         }
-        drawDrawable(null, drawable, NotificationCenter.locationPermissionGranted, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable, NotificationCenter.goingToPreviewTheme, bitmapShader, 0, 0, 0, null);
         return true;
     }
 }

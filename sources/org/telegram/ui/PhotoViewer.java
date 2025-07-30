@@ -1022,9 +1022,9 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             int paddingBottom = size2 - getPaddingBottom();
             setMeasuredDimension(paddingLeft, paddingBottom);
             ViewGroup.LayoutParams layoutParams = PhotoViewer.this.animatingImageView.getLayoutParams();
-            PhotoViewer.this.animatingImageView.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLRPC.FLAG_31));
-            PhotoViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLRPC.FLAG_30));
-            PhotoViewer.this.navigationBar.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(PhotoViewer.this.navigationBarHeight, TLRPC.FLAG_30));
+            PhotoViewer.this.animatingImageView.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_31));
+            PhotoViewer.this.containerView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
+            PhotoViewer.this.navigationBar.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(PhotoViewer.this.navigationBarHeight, TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -3458,7 +3458,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     PhotoViewer.this.animationEndRunnable = null;
                 }
                 PhotoViewer.this.containerView.setAlpha(1.0f);
-                PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 int i6 = 0;
                 while (true) {
                     ClippingImageView[] clippingImageViewArr5 = this.val$animatingImageViews;
@@ -3497,7 +3497,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (clippingImageViewArr.length > 1) {
                     arrayList2.add(ObjectAnimator.ofFloat(PhotoViewer.this.animatingImageView, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
                 }
-                arrayList2.add(ObjectAnimator.ofInt(PhotoViewer.this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.locationPermissionGranted));
+                arrayList2.add(ObjectAnimator.ofInt(PhotoViewer.this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.goingToPreviewTheme));
                 FrameLayoutDrawer frameLayoutDrawer = PhotoViewer.this.containerView;
                 Property property = View.ALPHA;
                 arrayList2.add(ObjectAnimator.ofFloat(frameLayoutDrawer, (Property<FrameLayoutDrawer, Float>) property, 0.0f, 1.0f));
@@ -3702,7 +3702,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     private static class ActionBarToggleParams {
         public static final ActionBarToggleParams DEFAULT = new ActionBarToggleParams();
         public Interpolator animationInterpolator;
-        public int animationDuration = NotificationCenter.emojiKeywordsLoaded;
+        public int animationDuration = NotificationCenter.savedMessagesForwarded;
         public boolean enableStatusBarAnimation = true;
         public boolean enableTranslationAnimation = true;
 
@@ -3990,7 +3990,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.textHash = hashCode;
             this.isLandscape = z;
             this.prevHeight = i2;
-            currentView.measure(View.MeasureSpec.makeMeasureSpec(i, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLRPC.FLAG_31));
+            currentView.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
             Layout layout = currentView.getLayout();
             int lineCount = layout.getLineCount();
             if ((!z || lineCount > 2) && (z || lineCount > 5)) {
@@ -4504,7 +4504,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             int measuredHeight = getMeasuredHeight() / 2;
-            this.paint.setAlpha(NotificationCenter.locationPermissionGranted);
+            this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
             this.rect.set(AndroidUtilities.dp(1.0f), measuredHeight - AndroidUtilities.dp(14.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), measuredHeight + AndroidUtilities.dp(14.0f));
             canvas.drawRoundRect(this.rect, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), this.paint);
             if (this.staticLayout != null) {
@@ -4523,7 +4523,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.max(this.width + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(30.0f)), TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.max(this.width + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(30.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
         }
 
         public void setCount(int i) {
@@ -4547,7 +4547,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this, (Property<CounterView, Float>) View.SCALE_Y, 0.0f, 1.0f);
                     Paint paint2 = this.paint;
                     Property property2 = AnimationProperties.PAINT_ALPHA;
-                    animatorSet.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofInt(paint2, (Property<Paint, Integer>) property2, 0, NotificationCenter.locationPermissionGranted), ObjectAnimator.ofInt(this.textPaint, (Property<TextPaint, Integer>) property2, 0, NotificationCenter.locationPermissionGranted));
+                    animatorSet.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofInt(paint2, (Property<Paint, Integer>) property2, 0, NotificationCenter.goingToPreviewTheme), ObjectAnimator.ofInt(this.textPaint, (Property<TextPaint, Integer>) property2, 0, NotificationCenter.goingToPreviewTheme));
                     overshootInterpolator = new DecelerateInterpolator();
                 } else {
                     Property property3 = View.SCALE_X;
@@ -5331,7 +5331,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 View childAt = getChildAt(i10);
                 if (childAt.getVisibility() != 8 && childAt != PhotoViewer.this.groupedPhotosListView) {
                     if (childAt == PhotoViewer.this.aspectRatioFrameLayout) {
-                        childAt.measure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y + (isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0), TLRPC.FLAG_30));
+                        childAt.measure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y + (isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0), TLObject.FLAG_30));
                     } else if (childAt == PhotoViewer.this.paintingOverlay) {
                         if (PhotoViewer.this.aspectRatioFrameLayout == null || PhotoViewer.this.aspectRatioFrameLayout.getVisibility() != 0) {
                             bitmapWidth = PhotoViewer.this.centerImage.getBitmapWidth();
@@ -5345,25 +5345,25 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             bitmapWidth = paddingRight;
                             bitmapHeight = paddingBottom;
                         }
-                        PhotoViewer.this.paintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(bitmapWidth, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(bitmapHeight, TLRPC.FLAG_30));
+                        PhotoViewer.this.paintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(bitmapWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(bitmapHeight, TLObject.FLAG_30));
                     } else {
                         if (PhotoViewer.this.captionEdit.editText.isPopupView(childAt) || PhotoViewer.this.topCaptionEdit.editText.isPopupView(childAt)) {
                             i4 = i10;
                             if (PhotoViewer.this.inBubbleMode) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30);
-                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLRPC.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30);
+                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30);
                             } else {
                                 if (!AndroidUtilities.isInMultiwindow) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30);
                                     i5 = childAt.getLayoutParams().height + AndroidUtilities.navigationBarHeight;
                                 } else if (AndroidUtilities.isTablet()) {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30);
                                     i5 = Math.min(AndroidUtilities.dp(320.0f), paddingBottom - AndroidUtilities.statusBarHeight);
                                 } else {
-                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30);
+                                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30);
                                     i5 = paddingBottom - AndroidUtilities.statusBarHeight;
                                 }
-                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, TLRPC.FLAG_30);
+                                makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30);
                             }
                             childAt.measure(makeMeasureSpec, makeMeasureSpec2);
                         } else if (childAt != PhotoViewer.this.captionScrollView) {
@@ -5375,30 +5375,30 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 i4 = i10;
                                 measureChildWithMargins(childAt, i, 0, i2, 0);
                             }
-                            childAt.measure(i, View.MeasureSpec.makeMeasureSpec(paddingBottom - (i6 + ActionBar.getCurrentActionBarHeight()), TLRPC.FLAG_30));
+                            childAt.measure(i, View.MeasureSpec.makeMeasureSpec(paddingBottom - (i6 + ActionBar.getCurrentActionBarHeight()), TLObject.FLAG_30));
                         } else if (PhotoViewer.this.dontChangeCaptionPosition) {
                             if (this.captionAbove) {
                                 i7 = dp + i3;
                                 int currentActionBarHeight = (paddingBottom - ((!isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight())) - i7;
                                 ((ViewGroup.MarginLayoutParams) PhotoViewer.this.captionScrollView.getLayoutParams()).bottomMargin = i7;
-                                childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight, TLRPC.FLAG_30));
+                                childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight, TLObject.FLAG_30));
                             }
                             i7 = dp;
                             int currentActionBarHeight2 = (paddingBottom - ((!isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight())) - i7;
                             ((ViewGroup.MarginLayoutParams) PhotoViewer.this.captionScrollView.getLayoutParams()).bottomMargin = i7;
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight2, TLRPC.FLAG_30));
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight2, TLObject.FLAG_30));
                         } else if (!PhotoViewer.this.groupedPhotosListView.hasPhotos() || (!AndroidUtilities.isTablet() && paddingBottom <= paddingRight)) {
                             this.captionAbove = false;
                             i7 = dp;
                             int currentActionBarHeight22 = (paddingBottom - ((!isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight())) - i7;
                             ((ViewGroup.MarginLayoutParams) PhotoViewer.this.captionScrollView.getLayoutParams()).bottomMargin = i7;
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight22, TLRPC.FLAG_30));
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight22, TLObject.FLAG_30));
                         } else {
                             i7 = dp + i3;
                             this.captionAbove = true;
                             int currentActionBarHeight222 = (paddingBottom - ((!isStatusBarVisible() ? AndroidUtilities.statusBarHeight : 0) + ActionBar.getCurrentActionBarHeight())) - i7;
                             ((ViewGroup.MarginLayoutParams) PhotoViewer.this.captionScrollView.getLayoutParams()).bottomMargin = i7;
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight222, TLRPC.FLAG_30));
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight222, TLObject.FLAG_30));
                         }
                     }
                 }
@@ -5695,7 +5695,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.marginTop = ActionBar.getCurrentActionBarHeight() + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
             this.left.setOverrideFullWidth(size);
             this.right.setOverrideFullWidth(size);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.marginTop + AndroidUtilities.dp(43.0f), TLRPC.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.marginTop + AndroidUtilities.dp(43.0f), TLObject.FLAG_30));
         }
 
         public void set(int i, int i2) {
@@ -5774,7 +5774,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             resetAlphas();
             PlayPauseDrawable playPauseDrawable = new PlayPauseDrawable(28);
             this.playPauseDrawable = playPauseDrawable;
-            playPauseDrawable.setDuration(NotificationCenter.emojiKeywordsLoaded);
+            playPauseDrawable.setDuration(NotificationCenter.savedMessagesForwarded);
             this.playDrawable = new CombinedDrawable(ContextCompat.getDrawable(PhotoViewer.this.parentActivity, R.drawable.circle_big).mutate(), playPauseDrawable);
         }
 
@@ -6123,7 +6123,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 this.lastHeight = i5;
                 updateOrientation();
             }
-            this.container.measure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - i3, TLRPC.FLAG_30));
+            this.container.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - i3, TLObject.FLAG_30));
             setMeasuredDimension(size, size2);
         }
 
@@ -6559,13 +6559,13 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 i = -2147286784;
             } else {
                 layoutParams = PhotoViewer.this.windowLayoutParams;
-                i = TLRPC.FLAG_17;
+                i = TLObject.FLAG_17;
             }
             layoutParams.flags = i;
-            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.voipServiceCreated;
+            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.didClearDatabase;
             PhotoViewer.this.windowView.setFocusable(false);
             PhotoViewer.this.containerView.setFocusable(false);
-            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
             PhotoViewer.this.containerView.setAlpha(1.0f);
             PhotoViewer photoViewer = PhotoViewer.this;
             ArrayList arrayList = this.messages;
@@ -6620,7 +6620,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 drawable.setBounds(measuredWidth, 0, drawable.getIntrinsicWidth() + measuredWidth, AndroidUtilities.dp(6.0f));
                 this.arrowDrawable.draw(canvas);
                 int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i2 = TLRPC.FLAG_31;
+                int i2 = TLObject.FLAG_31;
                 for (int i3 = 0; i3 < childCount; i3++) {
                     View childAt = getChildAt(i3);
                     i = (int) Math.min(i, Math.floor(childAt.getX()));
@@ -8454,7 +8454,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property3, x));
                 arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property4, y));
-                arrayList.add(ObjectAnimator.ofInt(this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, NotificationCenter.locationPermissionGranted));
+                arrayList.add(ObjectAnimator.ofInt(this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, NotificationCenter.goingToPreviewTheme));
                 FirstFrameView firstFrameView2 = this.firstFrameView;
                 if (firstFrameView2 != null) {
                     arrayList.add(ObjectAnimator.ofFloat(firstFrameView2, (Property<FirstFrameView, Float>) property, 1.0f));
@@ -9650,7 +9650,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.topFancyShadowMatrix.reset();
             this.topFancyShadowMatrix.postScale(1.0f, f2 / 16.0f);
             this.topFancyShadow.setLocalMatrix(this.topFancyShadowMatrix);
-            this.topFancyShadowPaint.setAlpha(NotificationCenter.customStickerCreated);
+            this.topFancyShadowPaint.setAlpha(NotificationCenter.timezonesUpdated);
             canvas.drawRect(0.0f, 0.0f, this.containerView.getWidth(), f2, this.topFancyShadowPaint);
             this.bottomFancyShadowMatrix.reset();
             this.bottomFancyShadowMatrix.postScale(1.0f, height / 16.0f);
@@ -11583,7 +11583,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         } else {
             this.parentChatActivity.getChatActivityEnterView().closeKeyboard();
         }
-        this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
         this.containerView.setAlpha(1.0f);
         onPhotoShow(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
         this.pickerView.setTranslationY(AndroidUtilities.dp(this.isCurrentVideo ? 154.0f : 96.0f));
@@ -12089,7 +12089,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (this.muteHints == null) {
                 this.muteHints = new ArrayList();
             }
-            this.containerView.addView(hintView2, LayoutHelper.createFrame(-1, NotificationCenter.emojiKeywordsLoaded, 83));
+            this.containerView.addView(hintView2, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 83));
             this.muteHints.add(hintView2);
             hintView2.show();
         }
@@ -12680,7 +12680,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.sendPopupWindow.setInputMethodMode(2);
         this.sendPopupWindow.setSoftInputMode(0);
         this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
-        this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLRPC.FLAG_31));
+        this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         this.sendPopupWindow.setFocusable(true);
         int[] iArr2 = new int[2];
         view.getLocationInWindow(iArr2);
@@ -13297,7 +13297,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             i = 0;
         }
         layoutParams.flags = i;
-        this.windowLayoutParams.softInputMode = NotificationCenter.voipServiceCreated;
+        this.windowLayoutParams.softInputMode = NotificationCenter.didClearDatabase;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -14020,7 +14020,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         canvas2.drawColor(-16777216);
                     }
                 } else if (this.currentEditMode != 0 || (i34 = this.sendPhotoType) == 1 || i34 == 11 || this.scale != 1.0f || f8 == -1.0f || this.zoomAnimation) {
-                    this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                    this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                 } else {
                     float f65 = containerViewWidth / 4.0f;
                     this.backgroundDrawable.setAlpha((int) Math.max(127.0f, (1.0f - (Math.min(Math.abs(f8), f65) / f65)) * 255.0f));
@@ -14139,7 +14139,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     if (paintingOverlay2 == null && paintingOverlay2.getVisibility() == 0) {
                                         canvas2.clipRect(i41, i42, i39 / 2, i40 / 2);
                                         if (this.rightPaintingOverlay.getMeasuredWidth() != bitmapWidth2 || this.rightPaintingOverlay.getMeasuredHeight() != i38) {
-                                            this.rightPaintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(bitmapWidth2, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i38, TLRPC.FLAG_30));
+                                            this.rightPaintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(bitmapWidth2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i38, TLObject.FLAG_30));
                                             this.rightPaintingOverlay.layout(0, 0, bitmapWidth2, i38);
                                         }
                                         canvas2.scale(min2, min2);
@@ -15057,7 +15057,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                             if (paintingOverlay == null && paintingOverlay.getVisibility() == 0) {
                                                 canvas2.clipRect(i59, i60, i57 / 2, i58 / 2);
                                                 if (this.leftPaintingOverlay.getMeasuredWidth() != i27 || this.leftPaintingOverlay.getMeasuredHeight() != i25) {
-                                                    this.leftPaintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(i27, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(i25, TLRPC.FLAG_30));
+                                                    this.leftPaintingOverlay.measure(View.MeasureSpec.makeMeasureSpec(i27, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i25, TLObject.FLAG_30));
                                                     this.leftPaintingOverlay.layout(0, 0, i27, i25);
                                                 }
                                                 canvas2.scale(min5, min5);
@@ -17835,7 +17835,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: private */
     public void requestAdjust() {
-        this.windowLayoutParams.softInputMode = NotificationCenter.voipServiceCreated;
+        this.windowLayoutParams.softInputMode = NotificationCenter.didClearDatabase;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -18128,7 +18128,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 builder.setDialogButtonColorKey(Theme.key_voipgroup_listeningText);
                 AlertDialog create = builder.create();
                 create.setBlurParams(0.8f, false, true);
-                create.setBackgroundColor(ColorUtils.setAlphaComponent(-15461356, NotificationCenter.groupRestrictionsUnlockedByBoosts));
+                create.setBackgroundColor(ColorUtils.setAlphaComponent(-15461356, NotificationCenter.openBoostForUsersDialog));
                 create.show();
                 create.setTextColor(Theme.getColor(Theme.key_voipgroup_nameText));
                 create.setOnDismissListener(photoViewer.new 38());
@@ -27419,7 +27419,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (Build.VERSION.SDK_INT >= 21) {
                     layoutParams3.flags = -2147286784;
                 } else {
-                    layoutParams3.flags = TLRPC.FLAG_17;
+                    layoutParams3.flags = TLObject.FLAG_17;
                 }
                 if ((chatActivity == null || chatActivity.getCurrentEncryptedChat() == null) && ((this.avatarsDialogId == 0 || !MessagesController.getInstance(this.currentAccount).isChatNoForwards(-this.avatarsDialogId)) && ((messageObject == null || (!MessagesController.getInstance(this.currentAccount).isChatNoForwards(messageObject.getChatId()) && ((message = messageObject.messageOwner) == null || !message.noforwards))) && (messageObject == null || !messageObject.hasRevealedExtendedMedia())))) {
                     layoutParams = this.windowLayoutParams;
@@ -27430,7 +27430,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
                 layoutParams.flags = i2;
                 AndroidUtilities.logFlagSecure();
-                this.windowLayoutParams.softInputMode = NotificationCenter.voipServiceCreated;
+                this.windowLayoutParams.softInputMode = NotificationCenter.didClearDatabase;
                 this.windowView.setFocusable(false);
                 this.containerView.setFocusable(false);
                 windowManager.addView(this.windowView, this.windowLayoutParams);
@@ -27657,7 +27657,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                             super.onAnimationEnd(animator);
                                             PhotoViewer.this.animationInProgress = 0;
                                             PhotoViewer.this.invalidateBlur();
-                                            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+                                            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
                                             PhotoViewer.this.containerView.invalidate();
                                             PhotoViewer.this.pickerView.setTranslationY(0.0f);
                                             if (PhotoViewer.this.isEmbedVideo) {
@@ -27796,7 +27796,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.skipFirstBufferingProgress = false;
         this.playerInjected = false;
         makeFocusable();
-        this.backgroundDrawable.setAlpha(NotificationCenter.locationPermissionGranted);
+        this.backgroundDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
         this.containerView.setAlpha(1.0f);
         onPhotoShow(null, fileLocation, imageLocation, null, null, null, arrayList, i, null);
         initCropView();
@@ -28116,7 +28116,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         if (i2 >= 28) {
             layoutParams.layoutInDisplayCutoutMode = 1;
         }
-        layoutParams.flags = i2 >= 21 ? -2147286784 : TLRPC.FLAG_17;
+        layoutParams.flags = i2 >= 21 ? -2147286784 : TLObject.FLAG_17;
         PaintingOverlay paintingOverlay = new PaintingOverlay(this.parentActivity);
         this.paintingOverlay = paintingOverlay;
         this.containerView.addView(paintingOverlay, LayoutHelper.createFrame(-2, -2.0f));
@@ -29266,7 +29266,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     for (int i15 = 0; i15 < childCount; i15++) {
                         View childAt = getChildAt(i15);
                         if (childAt.getVisibility() != 8) {
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(min, TLRPC.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLRPC.FLAG_30));
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                         }
                     }
                     size = min * i13;

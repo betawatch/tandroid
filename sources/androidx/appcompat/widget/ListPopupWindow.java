@@ -25,7 +25,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.widget.PopupWindowCompat;
 import java.lang.reflect.Method;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class ListPopupWindow implements ShowableListMenu {
@@ -236,7 +236,7 @@ public abstract class ListPopupWindow implements ShowableListMenu {
         int measureHeightOfChildrenCompat;
         int i3;
         DropDownListView dropDownListView = this.mDropDownList;
-        int i4 = TLRPC.FLAG_31;
+        int i4 = TLObject.FLAG_31;
         if (dropDownListView == null) {
             Context context = this.mContext;
             this.mShowDropDownRunnable = new Runnable() { // from class: androidx.appcompat.widget.ListPopupWindow.2
@@ -296,7 +296,7 @@ public abstract class ListPopupWindow implements ShowableListMenu {
                 }
                 int i6 = this.mDropDownWidth;
                 if (i6 >= 0) {
-                    i3 = TLRPC.FLAG_31;
+                    i3 = TLObject.FLAG_31;
                 } else {
                     i6 = 0;
                     i3 = 0;
@@ -337,9 +337,9 @@ public abstract class ListPopupWindow implements ShowableListMenu {
         }
         int i8 = this.mDropDownWidth;
         if (i8 != -2) {
-            i4 = TLRPC.FLAG_30;
+            i4 = TLObject.FLAG_30;
             if (i8 != -1) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, TLRPC.FLAG_30);
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_30);
                 measureHeightOfChildrenCompat = this.mDropDownList.measureHeightOfChildrenCompat(makeMeasureSpec, 0, -1, maxAvailableHeight - i, -1);
                 if (measureHeightOfChildrenCompat > 0) {
                     i += i2 + this.mDropDownList.getPaddingTop() + this.mDropDownList.getPaddingBottom();

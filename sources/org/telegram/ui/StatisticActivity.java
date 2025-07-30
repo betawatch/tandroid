@@ -998,7 +998,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 @Override // android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i2, int i3) {
                     int size = View.MeasureSpec.getSize(i2);
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLRPC.FLAG_30), i3);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i3);
                     int childCount = getChildCount();
                     int measuredHeight = childCount > 0 ? getChildAt(0).getMeasuredHeight() : 0;
                     int i4 = 0;
@@ -3714,7 +3714,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
             this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
             this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
-            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.didReceiveSmsCode, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
             if (this.adapter == null) {
                 this.adapter = new Adapter();
             }
@@ -3841,7 +3841,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView22, LayoutHelper.createLinear(-2, -2, 1));
-        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.didReceiveSmsCode, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         if (this.adapter == null) {
         }
         this.recyclerListView.setAdapter(this.adapter);

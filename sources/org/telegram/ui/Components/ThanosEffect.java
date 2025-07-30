@@ -35,7 +35,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.BaseCell;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -403,8 +403,8 @@ public class ThanosEffect extends TextureView {
                 animation.views.addAll(arrayList);
                 int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 int i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i6 = TLRPC.FLAG_31;
-                int i7 = TLRPC.FLAG_31;
+                int i6 = TLObject.FLAG_31;
+                int i7 = TLObject.FLAG_31;
                 for (int i8 = 0; i8 < arrayList.size(); i8++) {
                     View view = (View) arrayList.get(i8);
                     i4 = Math.min(i4, (int) view.getX());

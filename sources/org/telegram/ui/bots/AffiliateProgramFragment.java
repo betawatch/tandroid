@@ -171,7 +171,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLRPC.FLAG_30), i2);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
         }
 
         public void set(int i, int i2, CharSequence charSequence, CharSequence charSequence2) {
@@ -510,7 +510,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         if (userFull != null) {
             TL_payments.starRefProgram starrefprogram2 = this.program;
             starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.activityPermissionsGranted : 86400);
+            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.permissionsGranted : 86400);
             userFull.starref_program = starrefprogram;
             getMessagesStorage().updateUserInfo(userFull, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.bot_id), userFull);
@@ -691,7 +691,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
                         i3 = i4;
                     }
                 }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) AffiliateProgramFragment.this).yOffset * 2.5f)), TLRPC.FLAG_30));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) AffiliateProgramFragment.this).yOffset * 2.5f)), TLObject.FLAG_30));
             }
         };
         this.emptyLayout = view;

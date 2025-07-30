@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class LinearLayoutManager extends RecyclerView.LayoutManager implements ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider {
@@ -97,7 +97,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
         void reset() {
             this.mPosition = -1;
-            this.mCoordinate = TLRPC.FLAG_31;
+            this.mCoordinate = TLObject.FLAG_31;
             this.mLayoutFromEnd = false;
             this.mValid = false;
         }
@@ -264,7 +264,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         this.mSmoothScrollbarEnabled = true;
         this.mPendingScrollPosition = -1;
         this.mPendingScrollPositionBottom = true;
-        this.mPendingScrollPositionOffset = TLRPC.FLAG_31;
+        this.mPendingScrollPositionOffset = TLObject.FLAG_31;
         this.mPendingSavedState = null;
         this.mAnchorInfo = new AnchorInfo();
         this.mLayoutChunkResult = new LayoutChunkResult();
@@ -521,7 +521,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
                 return true;
             }
             this.mPendingScrollPosition = -1;
-            this.mPendingScrollPositionOffset = TLRPC.FLAG_31;
+            this.mPendingScrollPositionOffset = TLObject.FLAG_31;
         }
         return false;
     }
@@ -588,7 +588,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         layoutState.mCurrentPosition = i;
         layoutState.mLayoutDirection = 1;
         layoutState.mOffset = i2;
-        layoutState.mScrollingOffset = TLRPC.FLAG_31;
+        layoutState.mScrollingOffset = TLObject.FLAG_31;
     }
 
     private void updateLayoutStateToFillEnd(AnchorInfo anchorInfo) {
@@ -602,7 +602,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         layoutState.mItemDirection = this.mShouldReverseLayout ? 1 : -1;
         layoutState.mLayoutDirection = -1;
         layoutState.mOffset = i2;
-        layoutState.mScrollingOffset = TLRPC.FLAG_31;
+        layoutState.mScrollingOffset = TLObject.FLAG_31;
     }
 
     private void updateLayoutStateToFillStart(AnchorInfo anchorInfo) {
@@ -734,24 +734,24 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
             if (this.mOrientation == 0) {
                 return -1;
             }
-            return TLRPC.FLAG_31;
+            return TLObject.FLAG_31;
         }
         if (i == 33) {
             if (this.mOrientation == 1) {
                 return -1;
             }
-            return TLRPC.FLAG_31;
+            return TLObject.FLAG_31;
         }
         if (i == 66) {
             if (this.mOrientation == 0) {
                 return 1;
             }
-            return TLRPC.FLAG_31;
+            return TLObject.FLAG_31;
         }
         if (i == 130 && this.mOrientation == 1) {
             return 1;
         }
-        return TLRPC.FLAG_31;
+        return TLObject.FLAG_31;
     }
 
     LayoutState createLayoutState() {
@@ -1060,7 +1060,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         ensureLayoutState();
         updateLayoutState(convertFocusDirectionToLayoutDirection, (int) (this.mOrientationHelper.getTotalSpace() * 0.33333334f), false, state);
         LayoutState layoutState = this.mLayoutState;
-        layoutState.mScrollingOffset = TLRPC.FLAG_31;
+        layoutState.mScrollingOffset = TLObject.FLAG_31;
         layoutState.mRecycle = false;
         fill(recycler, layoutState, state, true);
         View findPartiallyOrCompletelyInvisibleChildClosestToStart = convertFocusDirectionToLayoutDirection == -1 ? findPartiallyOrCompletelyInvisibleChildClosestToStart() : findPartiallyOrCompletelyInvisibleChildClosestToEnd();
@@ -1234,7 +1234,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         super.onLayoutCompleted(state);
         this.mPendingSavedState = null;
         this.mPendingScrollPosition = -1;
-        this.mPendingScrollPositionOffset = TLRPC.FLAG_31;
+        this.mPendingScrollPositionOffset = TLObject.FLAG_31;
         this.mAnchorInfo.reset();
     }
 
@@ -1377,7 +1377,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
     @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void scrollToPosition(int i) {
         this.mPendingScrollPosition = i;
-        this.mPendingScrollPositionOffset = TLRPC.FLAG_31;
+        this.mPendingScrollPositionOffset = TLObject.FLAG_31;
         SavedState savedState = this.mPendingSavedState;
         if (savedState != null) {
             savedState.invalidateAnchor();
