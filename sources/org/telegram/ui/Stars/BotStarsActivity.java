@@ -390,15 +390,17 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
                 return;
             }
             TLRPC.TL_payments_starsRevenueStats tONRevenueStats = botStarsController.getTONRevenueStats(this.bot_id, true);
-            if (this.titleInfo == null) {
-                this.titleInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.BotMonetizationInfo, 50), -1, 3, new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda18
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        BotStarsActivity.this.lambda$fillItems$14();
-                    }
-                }, this.resourceProvider), true);
+            if (!this.self) {
+                if (this.titleInfo == null) {
+                    this.titleInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.BotMonetizationInfo, 50), -1, 3, new Runnable() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda18
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            BotStarsActivity.this.lambda$fillItems$14();
+                        }
+                    }, this.resourceProvider), true);
+                }
+                arrayList.add(UItem.asCenterShadow(this.titleInfo));
             }
-            arrayList.add(UItem.asCenterShadow(this.titleInfo));
             if (this.impressionsChart == null && tONRevenueStats != null) {
                 StatisticActivity.ChartViewData createViewData = StatisticActivity.createViewData(tONRevenueStats.top_hours_graph, LocaleController.getString(R.string.BotMonetizationGraphImpressions), 0);
                 this.impressionsChart = createViewData;
@@ -1266,7 +1268,7 @@ public class BotStarsActivity extends BaseFragment implements NotificationCenter
         ButtonWithCounterView buttonWithCounterView3 = new ButtonWithCounterView(context, this.resourceProvider);
         this.tonBalanceButton = buttonWithCounterView3;
         buttonWithCounterView3.setEnabled(MessagesController.getInstance(this.currentAccount).channelRevenueWithdrawalEnabled);
-        this.tonBalanceButton.setText(LocaleController.getString(R.string.MonetizationWithdraw), false);
+        this.tonBalanceButton.setText(LocaleController.getString(this.self ? R.string.MonetizationSelfWithdraw : R.string.MonetizationWithdraw), false);
         this.tonBalanceButton.setVisibility(8);
         this.tonBalanceButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.BotStarsActivity$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener

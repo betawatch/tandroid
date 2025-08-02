@@ -2433,7 +2433,7 @@ public class MatroskaExtractor implements Extractor {
             case 2274716:
                 return 3;
             case NotificationCenter.audioRecordTooShort /* 160 */:
-            case 166:
+            case NotificationCenter.activeGroupCallsUpdated /* 166 */:
             case NotificationCenter.needDeleteDialog /* 174 */:
             case NotificationCenter.didStartedMultiGiftsSelector /* 183 */:
             case NotificationCenter.didUpdateTonGiftStickers /* 187 */:

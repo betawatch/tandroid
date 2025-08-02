@@ -2111,41 +2111,33 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     });
                     return;
                 }
-                if (starGift.limited_per_user && starGift.per_user_remains <= 0) {
-                    BulletinFactory.of(this.container, this.resourcesProvider).createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift.per_user_total))).show();
-                    return;
-                }
-                if (starGift.require_premium && starGift.availability_resale <= 0 && !UserConfig.getInstance(i).isPremium()) {
+                if (item.accent && starGift.availability_resale > 0) {
                     BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
                     if (safeLastFragment == null) {
                         return;
                     }
-                    PremiumPreviewBottomSheet premiumPreviewBottomSheet = new PremiumPreviewBottomSheet(safeLastFragment, i, null, null, starGift, this.resourcesProvider);
-                    BackupImageView backupImageView = new BackupImageView(getContext());
-                    final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(backupImageView, AndroidUtilities.dp(160.0f), 4);
-                    backupImageView.setImageDrawable(swapAnimatedEmojiDrawable);
-                    backupImageView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Gifts.GiftSheet.7
-                        @Override // android.view.View.OnAttachStateChangeListener
-                        public void onViewAttachedToWindow(View view2) {
-                            swapAnimatedEmojiDrawable.attach();
-                        }
-
-                        @Override // android.view.View.OnAttachStateChangeListener
-                        public void onViewDetachedFromWindow(View view2) {
-                            swapAnimatedEmojiDrawable.detach();
+                    BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
+                    bottomSheetParams.transitionFromLeft = true;
+                    bottomSheetParams.allowNestedScroll = false;
+                    ResaleGiftsFragment resaleGiftsFragment = new ResaleGiftsFragment(j, starGift.title, starGift.id, this.resourcesProvider);
+                    resaleGiftsFragment.setCloseParentSheet(new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda11
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            GiftSheet.this.lambda$new$11(runnable);
                         }
                     });
-                    swapAnimatedEmojiDrawable.set(starGift.getDocument(), false);
-                    premiumPreviewBottomSheet.overrideTitleIcon = backupImageView;
-                    premiumPreviewBottomSheet.show();
-                    swapAnimatedEmojiDrawable.play();
+                    safeLastFragment.showAsSheet(resaleGiftsFragment, bottomSheetParams);
                     return;
                 }
-                if (!item.accent || starGift.availability_resale <= 0) {
-                    if (starGift.sold_out) {
-                        StarsIntroActivity.showSoldOutGiftSheet(context, i, starGift, this.resourcesProvider);
-                        return;
-                    }
+                if (starGift.sold_out) {
+                    StarsIntroActivity.showSoldOutGiftSheet(context, i, starGift, this.resourcesProvider);
+                    return;
+                }
+                if (starGift.limited_per_user && starGift.per_user_remains <= 0) {
+                    BulletinFactory.of(this.container, this.resourcesProvider).createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift.per_user_total))).show();
+                    return;
+                }
+                if (!starGift.require_premium || UserConfig.getInstance(i).isPremium()) {
                     long j2 = this.dialogId;
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda12
                         @Override // java.lang.Runnable
@@ -2167,17 +2159,25 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 if (safeLastFragment2 == null) {
                     return;
                 }
-                BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
-                bottomSheetParams.transitionFromLeft = true;
-                bottomSheetParams.allowNestedScroll = false;
-                ResaleGiftsFragment resaleGiftsFragment = new ResaleGiftsFragment(j, starGift.title, starGift.id, this.resourcesProvider);
-                resaleGiftsFragment.setCloseParentSheet(new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda11
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        GiftSheet.this.lambda$new$11(runnable);
+                PremiumPreviewBottomSheet premiumPreviewBottomSheet = new PremiumPreviewBottomSheet(safeLastFragment2, i, null, null, starGift, this.resourcesProvider);
+                BackupImageView backupImageView = new BackupImageView(getContext());
+                final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(backupImageView, AndroidUtilities.dp(160.0f), 4);
+                backupImageView.setImageDrawable(swapAnimatedEmojiDrawable);
+                backupImageView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Gifts.GiftSheet.7
+                    @Override // android.view.View.OnAttachStateChangeListener
+                    public void onViewAttachedToWindow(View view2) {
+                        swapAnimatedEmojiDrawable.attach();
+                    }
+
+                    @Override // android.view.View.OnAttachStateChangeListener
+                    public void onViewDetachedFromWindow(View view2) {
+                        swapAnimatedEmojiDrawable.detach();
                     }
                 });
-                safeLastFragment2.showAsSheet(resaleGiftsFragment, bottomSheetParams);
+                swapAnimatedEmojiDrawable.set(starGift.getDocument(), false);
+                premiumPreviewBottomSheet.overrideTitleIcon = backupImageView;
+                premiumPreviewBottomSheet.show();
+                swapAnimatedEmojiDrawable.play();
             }
         }
     }

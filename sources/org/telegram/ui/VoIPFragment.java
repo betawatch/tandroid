@@ -3403,7 +3403,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomVideoBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomVideoBtn.setScaleX(0.0f);
         this.bottomVideoBtn.setScaleY(0.0f);
-        this.bottomVideoBtn.animate().setStartDelay(166).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
+        this.bottomVideoBtn.animate().setStartDelay(NotificationCenter.activeGroupCallsUpdated).translationY(0.0f).scaleY(1.0f).scaleX(1.0f).setDuration(250L).start();
         this.bottomMuteBtn.setTranslationY(AndroidUtilities.dp(100.0f));
         this.bottomMuteBtn.setScaleX(0.0f);
         this.bottomMuteBtn.setScaleY(0.0f);

@@ -1444,13 +1444,19 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("PRAGMA user_version = 165").stepThis().dispose();
             i7 = NotificationCenter.groupCallScreencastStateChanged;
         }
-        if (i7 != 165) {
+        if (i7 == 165) {
+            sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 166").stepThis().dispose();
+            i7 = NotificationCenter.activeGroupCallsUpdated;
+        }
+        if (i7 != 166) {
             return i7;
         }
-        sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));").stepThis().dispose();
-        sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));").stepThis().dispose();
-        sQLiteDatabase.executeFast("PRAGMA user_version = 166").stepThis().dispose();
-        return 166;
+        sQLiteDatabase.executeFast("DROP TABLE profile_stories").stepThis().dispose();
+        sQLiteDatabase.executeFast("CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));").stepThis().dispose();
+        sQLiteDatabase.executeFast("PRAGMA user_version = 167").stepThis().dispose();
+        return 167;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:58:0x02bb A[RETURN] */
@@ -1506,7 +1512,7 @@ public class DatabaseMigrationHelper {
             e = e4;
             j = 0;
         }
-        if (intValue != 166) {
+        if (intValue != 167) {
             FileLog.e("can't restore database from version " + intValue);
             return false;
         }

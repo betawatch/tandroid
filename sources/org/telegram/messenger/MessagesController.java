@@ -8540,7 +8540,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     z9 = z11;
                     z8 = z12;
                     tL_jsonObject6 = tL_jsonObject7;
-                case 166:
+                case NotificationCenter.activeGroupCallsUpdated /* 166 */:
                     TLRPC.JSONValue jSONValue180 = tL_jsonObjectValue.value;
                     if (jSONValue180 instanceof TLRPC.TL_jsonNumber) {
                         j = (long) ((TLRPC.TL_jsonNumber) jSONValue180).value;
@@ -8561,7 +8561,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     z9 = z11;
                     z8 = z12;
                     tL_jsonObject6 = tL_jsonObject7;
-                case NotificationCenter.applyGroupCallVisibleParticipants /* 167 */:
+                case 167:
                     TLRPC.JSONValue jSONValue181 = tL_jsonObjectValue.value;
                     if (jSONValue181 instanceof TLRPC.TL_jsonNumber) {
                         long j5 = (long) ((TLRPC.TL_jsonNumber) jSONValue181).value;

@@ -1791,7 +1791,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[5] = 2;
                 break;
             case 2:
-            case 166:
+            case NotificationCenter.activeGroupCallsUpdated /* 166 */:
                 // fill-array-data instruction
                 iArr[0] = 4;
                 iArr[1] = 3;
@@ -2975,7 +2975,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 iArr[4] = 2;
                 iArr[5] = 2;
                 break;
-            case NotificationCenter.applyGroupCallVisibleParticipants /* 167 */:
+            case 167:
                 // fill-array-data instruction
                 iArr[0] = 2;
                 iArr[1] = 1;

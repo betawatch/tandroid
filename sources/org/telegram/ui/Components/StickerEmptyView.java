@@ -2,6 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,6 +46,9 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
     public BackupImageView stickerView;
     public final LinkSpanDrawable.LinksTextView subtitle;
     public final SpoilersTextView title;
+    private ValueAnimator visibilityAnimator;
+    private float visibilityFactor;
+    private boolean visibilityValue;
 
     public StickerEmptyView(Context context, View view, int i) {
         this(context, view, i, null);
@@ -94,7 +98,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         linearLayout.setOrientation(1);
         BackupImageView backupImageView = new BackupImageView(context);
         this.stickerView = backupImageView;
-        backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda0
+        backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 StickerEmptyView.this.lambda$new$0(view2);
@@ -154,6 +158,13 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setVisibility$2(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.visibilityFactor = floatValue;
+        onVisibilityChange(floatValue);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void setSticker() {
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
         TLRPC.Document document;
@@ -210,6 +221,35 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         this.stickerView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
     }
 
+    private void setVisibility(boolean z, boolean z2, boolean z3) {
+        if (this.visibilityValue != z || z3) {
+            this.visibilityValue = z;
+            setEnabled(z);
+            ValueAnimator valueAnimator = this.visibilityAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.visibilityAnimator = null;
+            }
+            if (!z2) {
+                float f = z ? 1.0f : 0.0f;
+                this.visibilityFactor = f;
+                onVisibilityChange(f);
+            } else {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.visibilityFactor, z ? 1.0f : 0.0f);
+                this.visibilityAnimator = ofFloat;
+                ofFloat.setDuration(480L);
+                this.visibilityAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+                this.visibilityAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda0
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        StickerEmptyView.this.lambda$setVisibility$2(valueAnimator2);
+                    }
+                });
+                this.visibilityAnimator.start();
+            }
+        }
+    }
+
     public void createButtonLayout(CharSequence charSequence, final Runnable runnable) {
         ((LinearLayout.LayoutParams) this.subtitle.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
         TextView textView = new TextView(getContext());
@@ -227,7 +267,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
                 return true;
             }
         };
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda1
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AndroidUtilities.runOnUIThread(runnable, 100L);
@@ -245,6 +285,10 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         if (i == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0]) && getVisibility() == 0) {
             setSticker();
         }
+    }
+
+    public float getVisibilityFactor() {
+        return this.visibilityFactor;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -282,6 +326,10 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
             }
         }
         this.lastH = getMeasuredHeight();
+    }
+
+    protected void onVisibilityChange(float f) {
+        invalidate();
     }
 
     public void setAnimateLayoutChange(boolean z) {
@@ -364,7 +412,12 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
 
     @Override // android.view.View
     public void setVisibility(int i) {
+        setVisibility(i, true);
+    }
+
+    public void setVisibility(int i, boolean z) {
         ViewPropertyAnimator scaleX;
+        setVisibility(i == 0, z, false);
         if (getVisibility() != i && i == 0) {
             if (this.progressShowing) {
                 this.linearLayout.animate().alpha(0.0f).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();

@@ -212,10 +212,10 @@ public class SessionCell extends FrameLayout {
         return createDrawable(i, tL_authorization);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0136  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0142  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -251,6 +251,8 @@ public class SessionCell extends FrameLayout {
                             if (!lowerCase.contains("android")) {
                                 if (lowerCase.contains("fragment")) {
                                     i2 = R.drawable.fragment;
+                                } else if (lowerCase.equalsIgnoreCase("search")) {
+                                    i2 = R.drawable.msg_search;
                                 } else if (lowerCase.contains("anonymous")) {
                                     i2 = R.drawable.large_hidden;
                                 } else {
