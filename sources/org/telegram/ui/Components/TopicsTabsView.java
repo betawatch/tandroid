@@ -39,7 +39,6 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -70,7 +69,6 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     private final HashSet excludeTopics;
     private final BaseFragment fragment;
     private long lastSelectedTopicId;
-    private int lastTabId;
     private final boolean mono;
     private boolean notificationsAttached;
     private Utilities.Callback2 onDialogSelected;
@@ -84,7 +82,6 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     public boolean sidemenuAnimating;
     public boolean sidemenuEnabled;
     public float sidemenuT;
-    private final LongSparseLongArray tabToDialog;
     private final UniversalRecyclerView topTabs;
     private final BlurredFrameLayout topTabsContainer;
     private final View topTabsShadowView;
@@ -1159,8 +1156,6 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
 
     public TopicsTabsView(Context context, BaseFragment baseFragment, SizeNotifierFrameLayout sizeNotifierFrameLayout, int i, long j, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.lastTabId = 0;
-        this.tabToDialog = new LongSparseLongArray();
         this.sidemenuT = 0.0f;
         this.excludeTopics = new HashSet();
         this.fragment = baseFragment;
@@ -1603,7 +1598,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             arrayList.add(HorizontalTabView.Factory.asLoading(-3));
             arrayList.add(HorizontalTabView.Factory.asLoading(-4));
         }
-        if (this.mono || !ChatObject.canManageTopics(chat)) {
+        if (this.mono || !ChatObject.canCreateTopic(chat)) {
             return;
         }
         arrayList.add(HorizontalTabView.Factory.asAdd());
@@ -1644,7 +1639,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             arrayList.add(VerticalTabView.Factory.asLoading(-3));
             arrayList.add(VerticalTabView.Factory.asLoading(-4));
         }
-        if (this.mono || !ChatObject.canManageTopics(chat)) {
+        if (this.mono || !ChatObject.canCreateTopic(chat)) {
             return;
         }
         arrayList.add(VerticalTabView.Factory.asAdd(false));

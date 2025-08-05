@@ -666,6 +666,11 @@ public class ResaleGiftsFragment extends BaseFragment {
         }
 
         @Override // org.telegram.ui.Stars.StarsController.IGiftsList
+        public int findGiftToUpgrade(int i) {
+            return -1;
+        }
+
+        @Override // org.telegram.ui.Stars.StarsController.IGiftsList
         public Object get(int i) {
             return this.gifts.get(i);
         }
@@ -810,6 +815,10 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (callback != null) {
                 callback.run(Boolean.TRUE);
             }
+        }
+
+        @Override // org.telegram.ui.Stars.StarsController.IGiftsList
+        public void set(int i, Object obj) {
         }
 
         public void setSorting(Sorting sorting) {

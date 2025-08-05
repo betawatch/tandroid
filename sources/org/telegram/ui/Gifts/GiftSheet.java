@@ -2102,7 +2102,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                             GiftSheet giftSheet = GiftSheet.this;
                             return BulletinFactory.of(giftSheet.container, giftSheet.resourcesProvider);
                         }
-                    }.set(savedStarGift, null);
+                    }.set(savedStarGift, (StarsController.IGiftsList) null);
                     starGiftSheet.openTransferAlert(j, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda10
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj2) {

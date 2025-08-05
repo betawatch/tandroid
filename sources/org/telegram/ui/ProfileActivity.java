@@ -14782,7 +14782,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public void updateProfileData(boolean r38) {
         /*
-            Method dump skipped, instructions count: 3763
+            Method dump skipped, instructions count: 3746
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.ProfileActivity.updateProfileData(boolean):void");
@@ -19654,7 +19654,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     TL_stars.SavedStarGift findUserStarGift = StarsController.getInstance(((BaseFragment) ProfileActivity.this).currentAccount).findUserStarGift(tL_starGiftUnique.id);
                     if (findUserStarGift != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
                         MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
-                        new StarGiftSheet(getContext(), ((BaseFragment) ProfileActivity.this).currentAccount, UserConfig.getInstance(((BaseFragment) ProfileActivity.this).currentAccount).getClientUserId(), ProfileActivity.this.resourcesProvider).set(findUserStarGift, null).setupWearPage().show();
+                        new StarGiftSheet(getContext(), ((BaseFragment) ProfileActivity.this).currentAccount, UserConfig.getInstance(((BaseFragment) ProfileActivity.this).currentAccount).getClientUserId(), ProfileActivity.this.resourcesProvider).set(findUserStarGift, (StarsController.IGiftsList) null).setupWearPage().show();
                         if (selectAnimatedEmojiDialogWindowArr[0] != null) {
                             ProfileActivity.this.selectAnimatedEmojiDialog = null;
                             selectAnimatedEmojiDialogWindowArr[0].dismiss();

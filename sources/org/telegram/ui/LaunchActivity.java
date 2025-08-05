@@ -1034,7 +1034,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         */
     private boolean handleIntent(android.content.Intent r114, boolean r115, boolean r116, boolean r117, org.telegram.messenger.browser.Browser.Progress r118, boolean r119, boolean r120) {
         /*
-            Method dump skipped, instructions count: 14784
+            Method dump skipped, instructions count: 14814
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.handleIntent(android.content.Intent, boolean, boolean, boolean, org.telegram.messenger.browser.Browser$Progress, boolean, boolean):boolean");
@@ -9653,7 +9653,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
                             Context context = getContext();
                             int i4 = LaunchActivity.this.currentAccount;
-                            new StarGiftSheet(context, i4, UserConfig.getInstance(i4).getClientUserId(), null).set(findUserStarGift, null).setupWearPage().show();
+                            new StarGiftSheet(context, i4, UserConfig.getInstance(i4).getClientUserId(), null).set(findUserStarGift, (StarsController.IGiftsList) null).setupWearPage().show();
                             if (selectAnimatedEmojiDialogWindowArr[0] != null) {
                                 LaunchActivity.this.selectAnimatedEmojiDialog = null;
                                 selectAnimatedEmojiDialogWindowArr[0].dismiss();

@@ -589,17 +589,20 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
     }
 
     private void updateButtonsLayouts(final boolean z, boolean z2) {
+        if (this.twoButtons == z) {
+            return;
+        }
         this.twoButtons = z;
         if (z2) {
             this.oneButtonsLayout.setVisibility(0);
             this.twoButtonsLayout.setVisibility(0);
-            this.oneButtonsLayout.animate().alpha(z ? 0.0f : 1.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda6
+            this.oneButtonsLayout.animate().alpha(z ? 0.0f : 1.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     TONIntroActivity.this.lambda$updateButtonsLayouts$5(z);
                 }
             }).start();
-            this.twoButtonsLayout.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda7
+            this.twoButtonsLayout.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     TONIntroActivity.this.lambda$updateButtonsLayouts$6(z);
@@ -625,7 +628,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
 
     @Override // org.telegram.ui.GradientHeaderActivity
     protected RecyclerView.Adapter createAdapter() {
-        UniversalAdapter universalAdapter = new UniversalAdapter(this.listView, getContext(), this.currentAccount, this.classGuid, true, new Utilities.Callback2() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda5
+        UniversalAdapter universalAdapter = new UniversalAdapter(this.listView, getContext(), this.currentAccount, this.classGuid, true, new Utilities.Callback2() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TONIntroActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -741,19 +744,19 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.starBalanceTitleView.setText(LocaleController.getString(R.string.YourTonBalance));
         this.starBalanceTitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, this.resourceProvider));
         this.balanceLayout.addView(this.starBalanceTitleView, LayoutHelper.createFrame(-1, 20.0f, 17, 24.0f, 0.0f, 24.0f, 8.0f));
-        if (this.allowTopUp) {
-            FrameLayout frameLayout2 = new FrameLayout(getContext());
-            FrameLayout frameLayout3 = new FrameLayout(getContext()) { // from class: org.telegram.ui.TON.TONIntroActivity.2
-                @Override // android.view.ViewGroup, android.view.View
-                public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                    if (TONIntroActivity.this.twoButtons) {
-                        return false;
-                    }
-                    return super.dispatchTouchEvent(motionEvent);
+        FrameLayout frameLayout2 = new FrameLayout(getContext());
+        FrameLayout frameLayout3 = new FrameLayout(getContext()) { // from class: org.telegram.ui.TON.TONIntroActivity.2
+            @Override // android.view.ViewGroup, android.view.View
+            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                if (TONIntroActivity.this.twoButtons) {
+                    return false;
                 }
-            };
-            this.oneButtonsLayout = frameLayout3;
-            frameLayout2.addView(frameLayout3);
+                return super.dispatchTouchEvent(motionEvent);
+            }
+        };
+        this.oneButtonsLayout = frameLayout3;
+        frameLayout2.addView(frameLayout3);
+        if (this.allowTopUp) {
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), this.resourceProvider);
             this.buyButton = buttonWithCounterView;
             buttonWithCounterView.setText(LocaleController.getString(R.string.TopUpViaFragment), false);
@@ -764,43 +767,51 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 }
             });
             this.oneButtonsLayout.addView(this.buyButton, LayoutHelper.createFrame(-1, 48, 119));
-            LinearLayout linearLayout2 = new LinearLayout(getContext()) { // from class: org.telegram.ui.TON.TONIntroActivity.3
-                @Override // android.view.ViewGroup, android.view.View
-                public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                    if (TONIntroActivity.this.twoButtons) {
-                        return super.dispatchTouchEvent(motionEvent);
-                    }
-                    return false;
-                }
-            };
-            this.twoButtonsLayout = linearLayout2;
-            frameLayout2.addView(linearLayout2);
-            this.topUpButton = new ButtonWithCounterView(getContext(), this.resourceProvider);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  ");
-            spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.mini_topup, 2), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.TonTopUp));
-            this.topUpButton.setText(spannableStringBuilder, false);
-            this.topUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    TONIntroActivity.this.lambda$createView$3(view2);
-                }
-            });
-            this.twoButtonsLayout.addView(this.topUpButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 8, 0));
-            this.withdrawButton = new ButtonWithCounterView(getContext(), this.resourceProvider);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x  ");
-            spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.mini_stats, 2), 0, 1, 33);
-            spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.TonStats));
-            this.withdrawButton.setText(spannableStringBuilder2, false);
-            this.withdrawButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    TONIntroActivity.this.lambda$createView$4(view2);
-                }
-            });
-            this.twoButtonsLayout.addView(this.withdrawButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 0, 0));
-            this.balanceLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 48.0f, 17, 20.0f, 6.0f, 20.0f, 4.0f));
         }
+        LinearLayout linearLayout2 = new LinearLayout(getContext()) { // from class: org.telegram.ui.TON.TONIntroActivity.3
+            @Override // android.view.ViewGroup, android.view.View
+            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                if (TONIntroActivity.this.twoButtons) {
+                    return super.dispatchTouchEvent(motionEvent);
+                }
+                return false;
+            }
+        };
+        this.twoButtonsLayout = linearLayout2;
+        frameLayout2.addView(linearLayout2);
+        this.topUpButton = new ButtonWithCounterView(getContext(), this.resourceProvider);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  ");
+        spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.mini_topup, 2), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.TonTopUp));
+        this.topUpButton.setText(spannableStringBuilder, false);
+        this.topUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                TONIntroActivity.this.lambda$createView$3(view2);
+            }
+        });
+        if (this.allowTopUp) {
+            this.twoButtonsLayout.addView(this.topUpButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 8, 0));
+        }
+        this.withdrawButton = new ButtonWithCounterView(getContext(), this.resourceProvider);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x  ");
+        spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.mini_stats, 2), 0, 1, 33);
+        spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.TonStats));
+        this.withdrawButton.setText(spannableStringBuilder2, false);
+        this.withdrawButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda4
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                TONIntroActivity.this.lambda$createView$4(view2);
+            }
+        });
+        this.twoButtonsLayout.addView(this.withdrawButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 0, 0));
+        this.balanceLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 48.0f, 17, 20.0f, 6.0f, 20.0f, 4.0f));
+        this.oneButtonsLayout.animate().cancel();
+        this.twoButtonsLayout.animate().cancel();
+        this.twoButtonsLayout.setAlpha(this.twoButtons ? 1.0f : 0.0f);
+        this.oneButtonsLayout.setAlpha(this.twoButtons ? 0.0f : 1.0f);
+        this.twoButtonsLayout.setVisibility(this.twoButtons ? 0 : 8);
+        this.oneButtonsLayout.setVisibility(this.twoButtons ? 8 : 0);
         updateBalance();
         UniversalAdapter universalAdapter = this.adapter;
         if (universalAdapter != null) {

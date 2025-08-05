@@ -8,6 +8,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
+import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -1359,7 +1360,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 if (this.lastPermissionsDialog != null) {
                     this.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
-                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda20
+                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda21
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onGeolocationPermissionsShowPrompt$10(callback, str, (Boolean) obj);
@@ -1464,7 +1465,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 if (this.lastPermissionsDialog != null) {
                     this.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
-                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda19
+                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda20
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$12(permissionRequest, str, (Boolean) obj);
@@ -1491,7 +1492,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 if (this.lastPermissionsDialog != null) {
                     this.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
-                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda21
+                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda22
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$14(permissionRequest, str, (Boolean) obj);
@@ -1518,7 +1519,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 if (this.lastPermissionsDialog != null) {
                     this.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
-                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda18
+                        MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda19
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$16(permissionRequest, strArr, (Boolean) obj);
@@ -1601,7 +1602,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
                 MyWebView.this.d("onGeolocationPermissionsShowPrompt " + str);
                 String userName = this.val$bot ? UserObject.getUserName(MyWebView.this.botWebViewContainer.botUser) : AndroidUtilities.getHostAuthority(MyWebView.this.getUrl());
-                Dialog createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, R.raw.permission_request_location, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermission : R.string.WebViewRequestGeolocationPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermissionWithHint : R.string.WebViewRequestGeolocationPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda17
+                Dialog createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, R.raw.permission_request_location, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermission : R.string.WebViewRequestGeolocationPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermissionWithHint : R.string.WebViewRequestGeolocationPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda18
                     @Override // androidx.core.util.Consumer
                     public final void accept(Object obj) {
                         BotWebViewContainer.MyWebView.3.this.lambda$onGeolocationPermissionsShowPrompt$11(callback, str, (Boolean) obj);
@@ -1614,12 +1615,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             @Override // android.webkit.WebChromeClient
             public boolean onJsAlert(WebView webView, String str, String str2, final JsResult jsResult) {
                 final boolean[] zArr = {false};
-                new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda12
+                new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda13
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsAlert$0(zArr, jsResult, alertDialog, i);
                     }
-                }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda13
+                }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda14
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsAlert$1(zArr, jsResult, dialogInterface);
@@ -1631,17 +1632,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             @Override // android.webkit.WebChromeClient
             public boolean onJsConfirm(WebView webView, String str, String str2, final JsResult jsResult) {
                 final boolean[] zArr = {false};
-                new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda9
+                new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda10
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$2(zArr, jsResult, alertDialog, i);
                     }
-                }).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda10
+                }).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda11
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$3(zArr, jsResult, alertDialog, i);
                     }
-                }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda11
+                }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda12
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$4(zArr, jsResult, dialogInterface);
@@ -1673,25 +1674,25 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 message.makeCustomMaxHeight();
                 message.setView(linearLayout);
                 message.setWidth(AndroidUtilities.dp(292.0f));
-                message.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda4
+                message.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda5
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$5(zArr, jsPromptResult, alertDialog, i);
                     }
                 });
-                message.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda5
+                message.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$6(zArr, jsPromptResult, editTextCaption, alertDialog, i);
                     }
                 });
-                message.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda6
+                message.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda7
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$7(zArr, jsPromptResult, dialogInterface);
                     }
                 });
-                message.overrideDismissListener(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda7
+                message.overrideDismissListener(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$8(EditTextCaption.this, (Runnable) obj);
@@ -1713,7 +1714,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         return true;
                     }
                 });
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda8
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
                         EditTextCaption.this.requestFocus();
@@ -1751,7 +1752,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     }
                     str.hashCode();
                     if (str.equals("android.webkit.resource.VIDEO_CAPTURE")) {
-                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermission : R.string.WebViewRequestCameraPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermissionWithHint : R.string.WebViewRequestCameraPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda15
+                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermission : R.string.WebViewRequestCameraPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermissionWithHint : R.string.WebViewRequestCameraPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda16
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$15(permissionRequest, str, (Boolean) obj);
@@ -1760,7 +1761,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     } else if (!str.equals("android.webkit.resource.AUDIO_CAPTURE")) {
                         return;
                     } else {
-                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.RECORD_AUDIO"}, R.raw.permission_request_microphone, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermission : R.string.WebViewRequestMicrophonePermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermissionWithHint : R.string.WebViewRequestMicrophonePermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda14
+                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.RECORD_AUDIO"}, R.raw.permission_request_microphone, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermission : R.string.WebViewRequestMicrophonePermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermissionWithHint : R.string.WebViewRequestMicrophonePermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda15
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$13(permissionRequest, str, (Boolean) obj);
@@ -1777,7 +1778,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     if (!"android.webkit.resource.AUDIO_CAPTURE".equals(resources[1]) && !"android.webkit.resource.VIDEO_CAPTURE".equals(resources[1])) {
                         return;
                     } else {
-                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermission : R.string.WebViewRequestCameraMicPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermissionWithHint : R.string.WebViewRequestCameraMicPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda16
+                        createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermission : R.string.WebViewRequestCameraMicPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermissionWithHint : R.string.WebViewRequestCameraMicPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda17
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
                                 BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$17(permissionRequest, resources, (Boolean) obj);
@@ -1864,6 +1865,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             @Override // android.webkit.WebChromeClient
             public boolean onShowFileChooser(WebView webView, ValueCallback valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {
                 Intent createChooser;
+                int mode;
                 MyWebView myWebView;
                 String str;
                 Activity findActivity = AndroidUtilities.findActivity(MyWebView.this.getContext());
@@ -1877,7 +1879,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         }
                         MyWebView.this.botWebViewContainer.mFilePathCallback = valueCallback;
                         if (Build.VERSION.SDK_INT >= 21) {
+                            mode = fileChooserParams.getMode();
+                            boolean z = mode == 1;
                             createChooser = fileChooserParams.createIntent();
+                            if (z) {
+                                createChooser.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+                            }
                         } else {
                             Intent intent = new Intent("android.intent.action.GET_CONTENT");
                             intent.addCategory("android.intent.category.OPENABLE");
@@ -6408,10 +6415,25 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     public void onActivityResult(int i, int i2, Intent intent) {
+        Uri[] uriArr;
         if (i != 3000 || this.mFilePathCallback == null) {
             return;
         }
-        this.mFilePathCallback.onReceiveValue((i2 != -1 || intent == null || intent.getDataString() == null) ? null : new Uri[]{Uri.parse(intent.getDataString())});
+        if (i2 == -1 && intent != null) {
+            if (intent.getClipData() != null) {
+                ClipData clipData = intent.getClipData();
+                uriArr = new Uri[clipData.getItemCount()];
+                for (int i3 = 0; i3 < clipData.getItemCount(); i3++) {
+                    uriArr[i3] = clipData.getItemAt(i3).getUri();
+                }
+            } else if (intent.getData() != null) {
+                uriArr = new Uri[]{intent.getData()};
+            }
+            this.mFilePathCallback.onReceiveValue(uriArr);
+            this.mFilePathCallback = null;
+        }
+        uriArr = null;
+        this.mFilePathCallback.onReceiveValue(uriArr);
         this.mFilePathCallback = null;
     }
 
