@@ -4305,6 +4305,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                                     return true;
                                                 }
                                                 int i16 = (isGiftsVisible() ? 1 : 0) + 1;
+                                                if (!isGiftsVisible()) {
+                                                    i14--;
+                                                }
                                                 if (isGiftsVisible() && i14 == 1) {
                                                     i15 = SelectAnimatedEmojiDialog.this.giftsSectionRow;
                                                 } else {
@@ -4399,6 +4402,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                             return true;
                                         }
                                         int i16 = (isGiftsVisible() ? 1 : 0) + 1;
+                                        if (!isGiftsVisible()) {
+                                            i14--;
+                                        }
                                         if (isGiftsVisible() && i14 == 1) {
                                             i15 = SelectAnimatedEmojiDialog.this.giftsSectionRow;
                                         } else {
